@@ -25,7 +25,15 @@ def khoi_viec5():
         '<div class="d"><em>%02d</em><div><h4>%s</h4><p>%s</p></div></div>' % (i+1,t,p)
         for i,(t,p) in enumerate(VIEC5))
 
-def the_bai_lon(b, p=""):
+# Thẻ bài lớn luôn dùng ảnh thật của Coach Duy. Ba ảnh này đúng tỉ lệ 3:2 nên
+# không bị cắt, và thẻ nổi bật nhất trên trang thì nên là mặt người viết.
+ANH_LON = ["img/cd-dung-lop.webp", "img/cd-workshop.webp", "img/cd-giang-slide.webp"]
+ALT_LON = ["Coach Duy Nguyễn nói trước một phòng người sáng lập",
+           "Coach Duy Nguyễn đưa micro cho một học viên",
+           "Coach Duy Nguyễn giảng trước màn chiếu"]
+
+def the_bai_lon(b, p="", i=0):
+    anh, alt = ANH_LON[i % 3], ALT_LON[i % 3]
     return """<a class="bai-lon" href="%sbai-viet/%s">
   <div class="anh"><img src="%s%s" alt="%s" loading="lazy"></div>
   <div class="chu">
@@ -33,13 +41,14 @@ def the_bai_lon(b, p=""):
     <h3>%s</h3>
     <p>%s</p>
   </div>
-</a>""" % (p, b["tep"], p, b["anh"], b["alt"], b["ngay_viet"], b["doc"], b["tieu"], b["mo"])
+</a>""" % (p, b["tep"], p, anh, alt, b["ngay_viet"], b["doc"], b["tieu"], b["mo"])
 
 def the_bai_nho(b, p=""):
     return """<a class="bai-nho" href="%sbai-viet/%s">
   <div class="anh"><img src="%s%s" alt="%s" loading="lazy"></div>
-  <div><p class="meta">%s</p><h3>%s</h3></div>
-</a>""" % (p, b["tep"], p, b["anh"], b["alt"], b["ngay_viet"], b["tieu"])
+  <div><p class="meta">%s &nbsp;·&nbsp; %s</p><h3>%s</h3><p>%s</p></div>
+</a>""" % (p, b["tep"], p, b["anh"], b["alt"], b["chu_de"], b["doc"], b["tieu"],
+           b["mo"][:88] + ("..." if len(b["mo"]) > 88 else ""))
 
 def the_bai_luoi(b, p=""):
     return """<a class="the-bai" data-cd="%s" href="%sbai-viet/%s">
@@ -179,7 +188,7 @@ INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_ht
          .replace("{VIEC5}", khoi_viec5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{QUY_DAO}", so_do.quy_dao()).replace("{HE_SINH_THAI}", so_do.he_sinh_thai())
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
-         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:4])))
+         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
 trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
       "Coach Duy Nguyễn đi cùng nhà sáng lập biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành. Bốn năng lực, quỹ đạo niềm tin, và cộng đồng Next Gen Founder.",
@@ -597,7 +606,7 @@ BLOG = dau_trang("Blog", "Tôi viết về đúng những gì đang làm",
   <div class="chu-de hien">%s</div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
-""" % (BAI[0]["tieu"], the_bai_lon(BAI[0]), "".join(the_bai_nho(b) for b in BAI[1:4]),
+""" % (BAI[0]["tieu"], the_bai_lon(BAI[0]), "".join(the_bai_nho(b) for b in BAI[1:5]),
        len(BAI), chu_de_html, "".join(the_bai_luoi(b) for b in BAI))
 
 trang("blog.html", "Blog của Coach Duy Nguyễn · Bài viết cho nhà sáng lập",
@@ -723,7 +732,7 @@ SACH = dau_trang("Sách", "Sách tôi đang viết",
  bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
      "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
      "Đang biên soạn"),
- the_bai_lon(BAI[3]), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4]]))
+ the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
 
 trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
       "Sách Bán Bằng Vị Thế đang viết, dự kiến quý 4 năm 2026, và Bộ Sách Thực Chiến Bất Động Sản đang biên soạn.",

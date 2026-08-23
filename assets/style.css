@@ -229,8 +229,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .tran > .bd{position:relative;z-index:2}
 
 /* ---------- blog: một bài lớn cộng danh sách ---------- */
-.blog{display:grid;gap:24px}
-@media(min-width:960px){.blog{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:34px}}
+.blog{display:grid;gap:24px;align-items:start}
+@media(min-width:960px){.blog{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:34px}}
 .bai-lon{display:block;text-decoration:none;border-radius:var(--r);overflow:hidden;position:relative;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
 @media(hover:hover){.bai-lon:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
 .bai-lon .anh{border:0;border-radius:0;aspect-ratio:3/2}
@@ -238,11 +238,13 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .bai-lon .meta,.bai-nho .meta{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang);margin-bottom:10px}
 .bai-lon h3{font-size:24px;margin-bottom:10px}
 .bai-lon p{font-size:15.5px;color:var(--ink-2)}
-.ds-bai{display:grid;gap:0;border-top:1px solid var(--line)}
-.bai-nho{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background-color .2s var(--ease)}
+.ds-bai{display:grid;gap:0;align-content:start;border-top:1px solid var(--line)}
+.bai-nho{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background-color .2s var(--ease),padding-left .2s var(--ease)}
+@media(max-width:520px){.bai-nho{grid-template-columns:96px minmax(0,1fr);gap:14px}}
 @media(hover:hover){.bai-nho:hover{background:rgba(249,245,240,.03)}}
-.bai-nho .anh{aspect-ratio:1;border-radius:var(--r-s)}
-.bai-nho h3{font-size:17.5px;line-height:1.32}
+.bai-nho .anh{aspect-ratio:4/3;border-radius:var(--r-s)}
+.bai-nho h3{font-size:17px;line-height:1.34}
+.bai-nho p{font-size:14.5px;color:var(--ink-3);margin-top:6px}
 .bai-nho .meta{margin-bottom:7px}
 .blog-them{margin-top:26px;text-align:center}
 
