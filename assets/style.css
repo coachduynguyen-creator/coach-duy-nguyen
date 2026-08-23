@@ -588,3 +588,122 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 
 /* nút Cộng đồng trên thanh chỉ hiện khi có chỗ; dưới 1140px dùng menu gập */
 @media(max-width:1139px){#nav .nav-cta{display:none}}
+
+/* ============ ĐỌC BÀI: bề mặt sáng hơn, chữ dễ đọc hơn ============ */
+:root{ --ink-doc:#E8DFD5; --doc-bg:#221C18; --doc-bg-2:#2A231D; }
+.bai-than{max-width:none;margin:40px auto 0;padding:0}
+.doc{background-image:linear-gradient(180deg,var(--doc-bg-2) 0%,var(--doc-bg) 100%);background-color:var(--doc-bg);
+  border:1px solid var(--line-2);border-radius:var(--r);box-shadow:var(--shadow);padding:44px 46px;max-width:74ch;margin-inline:auto}
+@media(max-width:700px){.doc{padding:30px 22px;border-radius:12px}}
+.doc p{font-size:18px;line-height:1.78;color:var(--ink-doc)}
+.doc p + p{margin-top:20px}
+.doc b,.doc strong{color:var(--ink);font-weight:700}
+.doc h2{font-size:clamp(23px,2.9vw,30px);margin:46px 0 16px;color:var(--ink)}
+.doc h3{font-size:20px;margin:32px 0 12px;color:var(--ink)}
+.doc ul,.doc ol{margin:18px 0 0;padding-left:22px}
+.doc li{font-size:17.5px;line-height:1.72;color:var(--ink-doc);margin-top:9px}
+.doc a{color:var(--vang);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.doc a:hover{color:var(--vang-2)}
+.dan-manh{margin:32px 0;padding:24px 26px;border-left:3px solid var(--vang);background:var(--vang-mo);border-radius:0 var(--r-s) var(--r-s) 0;font-size:18.5px;font-weight:600;line-height:1.6;color:var(--ink)}
+
+/* khối trả lời nhanh, để máy tìm kiếm và AI trích được ngay */
+.tra-loi{margin:0 0 34px;padding:24px 26px;border:1px solid rgba(242,177,74,.34);border-radius:var(--r);background:var(--vang-mo)}
+.tra-loi b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.tra-loi p{font-size:18px;line-height:1.68;color:var(--ink);font-weight:500}
+
+/* mục lục */
+.muc-luc{margin:0 0 34px;padding:22px 26px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel)}
+.muc-luc b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.muc-luc ol{margin:0;padding-left:20px}
+.muc-luc li{font-size:16px;margin-top:8px;color:var(--ink-2)}
+.muc-luc a{color:var(--ink-2);text-decoration:none}
+.muc-luc a:hover{color:var(--vang)}
+
+/* bảng trong bài */
+.doc .bang{overflow-x:auto;margin:28px 0;border:1px solid var(--line-2);border-radius:var(--r-s)}
+.doc table{width:100%;border-collapse:collapse;min-width:520px}
+.doc th,.doc td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-doc);vertical-align:top}
+.doc th{background:var(--panel-2);font-family:var(--f-than);font-weight:700;color:var(--ink);font-size:15px}
+.doc tr:last-child td{border-bottom:0}
+
+/* hỏi đáp trong bài */
+.hoi-dap{max-width:74ch;margin:40px auto 0}
+.hoi-dap > b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--vang);margin-bottom:16px}
+.hoi-dap .muc{border-top:1px solid var(--line)}
+.hoi-dap .muc:last-child{border-bottom:1px solid var(--line)}
+.hoi-dap h3{font-size:18.5px;margin:0;padding:20px 0 10px;color:var(--ink)}
+.hoi-dap p{font-size:16.5px;line-height:1.7;color:var(--ink-2);padding-bottom:20px}
+
+/* hộp tác giả */
+.tac-gia{max-width:74ch;margin:40px auto 0;display:grid;gap:20px;align-items:center;background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+@media(min-width:620px){.tac-gia{grid-template-columns:88px minmax(0,1fr)}}
+.tac-gia .anh-tg{width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid var(--vang);box-shadow:0 0 0 6px rgba(242,177,74,.1)}
+.tac-gia .anh-tg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.18) contrast(1.06)}
+.tac-gia b{display:block;font-family:var(--f-tit);font-weight:800;font-size:19px;margin-bottom:6px}
+.tac-gia p{font-size:15.5px;color:var(--ink-2)}
+.tac-gia .lk-v{margin-top:12px;font-size:15px}
+
+/* vụn đường dẫn */
+.vun{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-3);margin-bottom:18px}
+.vun a{color:var(--ink-3);text-decoration:none}
+.vun a:hover{color:var(--vang)}
+.vun span{color:var(--ink-3)}
+
+/* thẻ bài trong danh sách: sáng hơn một bậc */
+.the-bai{background-image:linear-gradient(180deg,#2A231D 0%,#221C18 100%);background-color:#241D19}
+.the-bai p{color:var(--ink-doc)}
+.bai-lon{background-image:linear-gradient(180deg,#2A231D 0%,#221C18 100%);background-color:#241D19}
+.bai-lon p{color:var(--ink-doc)}
+.bai-dau .tom{color:var(--ink-doc)}
+
+/* ---------- ba chân dung: thẻ ngang, ảnh nhỏ ---------- */
+.cd-hang{display:grid;gap:16px}
+@media(min-width:900px){.cd-hang{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cd-hang article{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:start;
+  background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)}
+@media(hover:hover){.cd-hang article:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow-h)}}
+.cd-hang .anh{width:76px;height:76px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2)}
+.cd-hang h3{font-size:18px;margin-bottom:7px}
+.cd-hang p{font-size:15px;color:var(--ink-2)}
+
+/* ---------- mốc thời gian ---------- */
+.moc-tg{display:grid;gap:0;border-top:1px solid var(--line);max-width:78ch;margin-inline:auto}
+.moc-tg div{display:grid;gap:8px;padding:22px 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.moc-tg div{grid-template-columns:150px minmax(0,1fr);gap:28px}}
+.moc-tg b{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang)}
+.moc-tg h4{font-size:19px;margin-bottom:7px}
+.moc-tg p{font-size:16px;color:var(--ink-2)}
+
+/* ---------- ô niềm tin ---------- */
+.niem-tin{display:grid;gap:18px}
+@media(min-width:820px){.niem-tin{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.niem-tin article{background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-left:3px solid var(--vang);border-radius:0 var(--r) var(--r) 0;padding:24px 26px}
+.niem-tin h3{font-size:19px;margin-bottom:9px}
+.niem-tin p{font-size:15.5px;color:var(--ink-2)}
+
+/* ---------- kênh YouTube ---------- */
+.yt-hang{display:grid;gap:16px}
+@media(min-width:900px){.yt-hang{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.yt-the{background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-s)}
+.yt-the .so{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin-bottom:12px}
+.yt-the h3{font-size:19px;margin-bottom:9px}
+.yt-the p{font-size:15.5px;color:var(--ink-2)}
+.yt-nut{display:inline-flex;align-items:center;gap:10px}
+.yt-nut i{width:22px;height:16px;border-radius:5px;background:#F2B14A;position:relative;flex:0 0 auto}
+.yt-nut i::after{content:"";position:absolute;left:8px;top:4px;border-left:6px solid #17120F;border-top:4px solid transparent;border-bottom:4px solid transparent}
+
+/* ---------- thẻ và lưới dùng chung ---------- */
+.luoi{display:grid;gap:18px}
+@media(min-width:760px){.luoi.c2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:980px){.luoi.c3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.the{background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow-s);padding:26px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+@media(hover:hover){.the:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.the h3{font-size:19.5px;margin-bottom:10px}
+.the p{font-size:15.5px;color:var(--ink-2)}
+
+/* ---------- khối nét đứt: điều chưa hợp, ranh giới ---------- */
+.dut{margin-top:24px;border:1px dashed var(--line-2);border-radius:var(--r-s);padding:22px 24px;background:rgba(249,245,240,.022)}
+.dut b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.dut p{font-size:15.5px;color:var(--ink-2)}

@@ -7,7 +7,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
  tieu="Bốn câu tôi nghe nhiều nhất từ người sáng lập",
  mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, tôi thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
- anh="img/cd-dung-lop.jpg", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
+ anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
  than="""
 <p>Trong các buổi trao đổi với người sáng lập, tôi nghe đi nghe lại bốn câu. Người nói ra thường tin rằng mình đang gặp bốn vấn đề tách rời nhau, rồi đi tìm bốn giải pháp khác nhau. Đó là chỗ tốn tiền và tốn thời gian nhất.</p>
 
@@ -40,7 +40,7 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
  tieu="Vì sao tôi không dùng phễu để thiết kế quan hệ với khách",
  mo="Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.",
  ngay="2026-08-16", ngay_viet="16 tháng 8, 2026", doc="5 phút đọc",
- anh="img/cd-giang-slide.jpg", alt="Coach Duy Nguyễn giảng trước màn chiếu",
+ anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
  than="""
 <p>Cái phễu bán hàng là một công cụ đo tốt. Bao nhiêu người biết tới, bao nhiêu người để lại thông tin, bao nhiêu người tham dự, bao nhiêu người mua. Với một chiến dịch có điểm bắt đầu và điểm kết thúc, phễu cho bạn con số để cải tiến.</p>
 <p>Vấn đề bắt đầu khi người ta dùng phễu để thiết kế cả quan hệ với khách, chứ không chỉ để đo.</p>
@@ -70,7 +70,7 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
  tieu="Năm việc của một người cố vấn",
  mo="Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm.",
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
- anh="img/cd-workshop.jpg", alt="Coach Duy Nguyễn đưa micro cho một học viên",
+ anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
  than="""
 <p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe không có cách nào kiểm. Nên tôi viết ra năm việc mà tôi tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm tôi và kiểm bất kỳ ai khác.</p>
 
@@ -104,7 +104,7 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
  tieu="Uy tín không phải để nổi tiếng",
  mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần thứ khác: được đúng người tin, đủ để họ chủ động tìm đến.",
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
- anh="img/founder-nam-1.jpg", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/founder-nam-1.webp", alt="Ảnh minh hoạ một nhà sáng lập",
  than="""
 <p>Có một câu hỏi tôi hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai thứ đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt.</p>
 
@@ -133,7 +133,7 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
  tieu="Cái nút thắt mang tên bạn",
  mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Nó làm cái nút thắt mang tên bạn siết chặt hơn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
- anh="img/cd-san-khau.jpg", alt="Coach Duy Nguyễn trên sân khấu",
+ anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
  than="""
 <p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội đông hơn. Nhưng người chủ thì mệt hơn năm ngoái, ngủ ít hơn, và bắt đầu sợ những ngày đi vắng.</p>
 <p>Đó không phải dấu hiệu bạn làm sai. Đó là dấu hiệu bạn đã chạm trần của mô hình hiện tại.</p>
@@ -166,7 +166,7 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
  tieu="Kinh nghiệm phải trở thành hệ thống, không nằm trong trí nhớ",
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
- anh="img/founder-nam-2.jpg", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/founder-nam-2.webp", alt="Ảnh minh hoạ một nhà sáng lập",
  than="""
 <p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và vài người giỏi nhất.</p>
 <p>Đó là sức mạnh, vì nó khó bắt chước. Nhưng nó cũng là rủi ro lớn nhất, vì nó đi ra khỏi công ty cùng lúc với người mang nó.</p>
@@ -198,7 +198,7 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
  tieu="Cộng đồng không phải một nhóm đăng bài",
  mo="Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó, và đó mới là cộng đồng.",
  ngay="2026-07-24", ngay_viet="24 tháng 7, 2026", doc="6 phút đọc",
- anh="img/founder-nu-1.jpg", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/founder-nu-1.webp", alt="Ảnh minh hoạ một nhà sáng lập",
  than="""
 <p>Rất nhiều người chủ đã mở một nhóm. Nhóm có vài trăm tới vài nghìn người. Rồi sau ba tháng, chỉ còn người chủ đăng bài, vài người thả biểu tượng cảm xúc, và không ai nhớ nhóm để làm gì.</p>
 <p>Đó không phải cộng đồng. Đó là một kênh phát nội dung có phần bình luận.</p>
@@ -228,7 +228,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
  tieu="AI làm nhanh phần đã đúng, không làm thay phán đoán",
  mo="AI không cứu được một định vị mơ hồ. Nó chỉ làm sự mơ hồ đó lan nhanh hơn và đều hơn.",
  ngay="2026-07-18", ngay_viet="18 tháng 7, 2026", doc="5 phút đọc",
- anh="img/founder-nu-2.jpg", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/founder-nu-2.webp", alt="Ảnh minh hoạ một nhà sáng lập",
  than="""
 <p>Câu hỏi tôi nhận nhiều nhất trong năm nay là dùng AI thế nào để làm nội dung nhanh hơn. Câu trả lời thật lòng của tôi thường làm người hỏi hơi hụt hẫng: nếu nội dung của bạn đang chưa đúng, AI sẽ giúp bạn sai nhanh hơn.</p>
 
@@ -257,7 +257,7 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
  tieu="Thương hiệu cá nhân không xây bằng số lượng bài đăng",
  mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
- anh="img/nguoi-chuyen-gia.jpg", alt="Ảnh minh hoạ một chuyên gia",
+ anh="img/nguoi-chuyen-gia.webp", alt="Ảnh minh hoạ một chuyên gia",
  than="""
 <p>Người ta hay hỏi tôi nên đăng mấy bài một tuần. Đó gần như luôn là câu hỏi sai, đặt ra trước câu hỏi đúng.</p>
 <p>Câu hỏi đúng là: sau khi xem ba nội dung của bạn, người ta gọi tên bạn là ai.</p>
@@ -287,7 +287,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
  tieu="Khi nào nên nói không với một khách hàng",
  mo="Nhận một khách sai không chỉ mất tiền. Nó chiếm chỗ của khách đúng, và làm hỏng thứ khó xây nhất là uy tín.",
  ngay="2026-07-06", ngay_viet="6 tháng 7, 2026", doc="5 phút đọc",
- anh="img/nguoi-chu-dn.jpg", alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ",
+ anh="img/nguoi-chu-dn.webp", alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ",
  than="""
 <p>Nói không với một khách sẵn sàng trả tiền là việc khó, nhất là trong tháng doanh thu chưa đạt. Nhưng đây là một trong vài quyết định phân biệt rõ nhất giữa người bán và người cố vấn.</p>
 

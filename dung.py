@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
-import json, os
-from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, trang, dau_trang, dd)
+import json, os, re
+from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, trang, dau_trang, dd)
 from bai_viet import BAI
+from bo_sung_bai import BO_SUNG
 from chuong_trinh import CT
 import so_do
 
@@ -64,11 +65,11 @@ def dsk(muc, khong=False):
 # ---------------------------------------------------------------- TRANG CHỦ
 INDEX = """
 <header id="hero">
-  <div class="hero-nen"><img src="img/cd-dung-lop.jpg" alt="" width="1600" height="1067"></div>
+  <div class="hero-nen"><img src="img/cd-dung-lop.webp" alt="" width="1600" height="1067"></div>
   <div class="hero-in">
     <div class="hero-goc"><span>Coach Duy Nguyễn</span><span>2026</span></div>
     <div class="hero-giua">
-      <div class="hero-avt"><img src="img/cd-avatar.png" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
+      <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono">Người cố vấn · Next Gen Founder</p>
       <div class="ten">Coach Duy <em>Nguyễn</em></div>
       <div class="bang-hieu">
@@ -100,11 +101,11 @@ INDEX = """
     </div>
     <div class="vt-anh hien">
       <div class="quang" aria-hidden="true"></div>
-      <div class="nguoi"><img src="img/cd-chan-dung.png" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
+      <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
       <div class="manh">
-        <div class="anh m1"><img src="img/cd-san-khau.jpg" alt="Coach Duy Nguyễn trên sân khấu" loading="lazy"></div>
-        <div class="anh m2"><img src="img/cd-workshop.jpg" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
-        <div class="anh m3"><img src="img/cd-giang-slide.jpg" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
+        <div class="anh m1"><img src="img/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" loading="lazy"></div>
+        <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
+        <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -137,7 +138,7 @@ INDEX = """
 </section>
 
 <section class="phan tran" id="quy-dao">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">CDN Trust Orbit</p>
@@ -184,24 +185,51 @@ trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng l�
 print("  index.html")
 
 # ---------------------------------------------------------------- VỀ TÔI
+MOC = [
+ ("Trước 2020", "Làm nghề, không dạy nghề",
+  "Tôi bán hàng và điều hành trước khi đứng lớp. Phần lớn những gì tôi dạy sau này đến từ giai đoạn đó, gồm cả những quyết định sai mà tôi đã trả giá."),
+ ("Từ 2020", "Bắt đầu làm nội dung đều đặn",
+  "Không phải để nổi tiếng. Ban đầu chỉ là cách ghi lại những gì vừa xử lý xong trong tuần. Sáu năm sau, chính kho ghi chép đó thành nền của mọi chương trình tôi dạy."),
+ ("Năm năm gần đây", "Đào tạo hàng nghìn người làm bán hàng",
+  "Tôi xây The Trusted Advisor, phương pháp bán bằng chẩn đoán và niềm tin thay vì kỹ thuật chốt. Cộng đồng Sales Bứt Phá lên 26,6 nghìn thành viên."),
+ ("2026", "Nhận ra bài toán thật nằm ở người chủ",
+  "Tôi thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Bán giỏi hơn không gỡ được chỗ đó."),
+ ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder",
+  "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính, vì một khoá học tạo hiểu biết, chỉ có nhịp mới tạo thói quen."),
+]
+moc_html = "".join('<div><b>%s</b><div><h4>%s</h4><p>%s</p></div></div>' % m for m in MOC)
+
+NIEM_TIN = [
+ ("Uy tín không phải để nổi tiếng",
+  "Nổi tiếng là nhiều người biết tên bạn. Được tin cậy là đúng người hiểu bạn làm gì, tin bạn làm được và chủ động tìm tới. Tôi làm việc cho vế thứ hai."),
+ ("Tăng trưởng không thể chỉ nằm trong một người",
+  "Nếu mọi nội dung, giao dịch lớn và quyết định quan trọng đều chờ người chủ, doanh thu tăng chỉ làm họ bận hơn. Nút thắt mang tên bạn không tự gỡ."),
+ ("Kinh nghiệm phải thành hệ thống",
+  "Kết quả không thể chỉ nằm trong trí nhớ và sự đôn đốc của người chủ. Một hệ thống cần kết quả rõ, người chịu trách nhiệm, tiêu chuẩn, dữ liệu và một nhịp cải tiến."),
+ ("Cộng đồng biến quan hệ thành năng lực",
+  "Cộng đồng không phải nhóm đăng bài. Giá trị phải được tạo giữa các thành viên với nhau, không chỉ chảy một chiều từ người sáng lập xuống."),
+]
+niem_tin_html = "".join('<article><h3>%s</h3><p>%s</p></article>' % n for n in NIEM_TIN)
+
 VE_TOI = dau_trang("Về tôi", "Người đi trước vài chặng, không phải người biết hết",
-  "Tôi là Coach Duy Nguyễn. Tôi đi cùng nhà sáng lập biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành.") + """
+  "Tôi là Coach Duy Nguyễn. Tôi đi cùng nhà sáng lập biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe tôi hay không.") + """
 <section class="phan bd">
   <div class="vt">
     <div class="vt-chu hien">
-      <p class="mono">Tôi nói với ai</p>
-      <h2>Người mà khách mua vì tin ở chính họ</h2>
-      <p>Chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi.</p>
-      <p>Tôi bắt đầu nghề bằng việc dạy bán hàng. Suốt sáu năm, tôi làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy tôi chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
-      <p>Tôi không rời bỏ phần bán hàng. Tôi dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn.</p>
+      <p class="mono">Tôi làm gì</p>
+      <h2>Tôi giúp người chủ đưa doanh nghiệp ra khỏi đầu mình</h2>
+      <p>Tôi làm việc với người mà khách mua vì tin ở chính họ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi. Đó vừa là lợi thế lớn nhất, vừa là trần lớn nhất.</p>
+      <p>Tôi bắt đầu nghề bằng việc dạy bán hàng. Suốt năm năm, tôi làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy tôi chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
+      <p>Tôi không rời bỏ phần bán hàng. Tôi dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn: làm sao để cách bán, cách tư vấn và cách ra quyết định của người chủ trở thành năng lực của cả đội.</p>
+      <a class="lk-v" href="phuong-phap.html">Xem phương pháp tôi dùng <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
       <div class="quang" aria-hidden="true"></div>
-      <div class="nguoi"><img src="img/cd-chan-dung.png" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
+      <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
       <div class="manh">
-        <div class="anh m1"><img src="img/cd-workshop.jpg" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
-        <div class="anh m2"><img src="img/cd-dung-lop.jpg" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
-        <div class="anh m3"><img src="img/cd-giang-slide.jpg" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
+        <div class="anh m1"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
+        <div class="anh m2"><img src="img/cd-dung-lop.webp" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
+        <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -209,78 +237,85 @@ VE_TOI = dau_trang("Về tôi", "Người đi trước vài chặng, không ph�
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
+    <p class="mono">Đường đi</p>
+    <h2>Tôi đến chỗ này bằng con đường nào</h2>
+    <p>Tôi để cả phần đầu, khi tôi còn làm nghề chứ chưa dạy nghề. Vì phần lớn những gì tôi dạy đến từ giai đoạn đó.</p>
+  </div>
+  <div class="moc-tg hien">%s</div>
+</section>
+
+<section class="phan bd hoa-van">
+  <div class="phan-dau hien">
+    <p class="mono">Bốn điều tôi tin</p>
+    <h2>Nếu bạn không đồng ý bốn điều này, chúng ta khó làm việc cùng nhau</h2>
+    <p>Tôi viết ra để bạn biết mình có cùng cách nghĩ với tôi không, trước khi mất thời gian của cả hai.</p>
+  </div>
+  <div class="niem-tin tre hien">%s</div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
     <p class="mono">Ba người tôi hay ngồi cùng</p>
     <h2>Bạn có nằm trong ba chân dung này không</h2>
-    <p>Nếu có, phần lớn những gì tôi viết trên trang này sẽ chạm đúng chỗ bạn đang nghĩ.</p>
   </div>
-  <div class="luoi c3 tre hien">
-    <article class="the cd-the">
-      <div class="anh"><img src="img/nguoi-chuyen-gia.jpg" alt="Ảnh minh hoạ một chuyên gia có nghề" loading="lazy"></div>
-      <div class="noi"><h3>Chuyên gia có nghề</h3>
-      <p>Bạn giỏi việc của mình và khách tìm tới vì tên bạn. Nhưng thu nhập vẫn buộc chặt vào số giờ bạn ngồi xuống làm.</p></div>
+  <div class="cd-hang tre hien">
+    <article>
+      <div class="anh"><img src="img/nguoi-chuyen-gia.webp" alt="Ảnh minh hoạ một chuyên gia có nghề" loading="lazy"></div>
+      <div><h3>Chuyên gia có nghề</h3><p>Bạn giỏi việc của mình và khách tìm tới vì tên bạn. Nhưng thu nhập vẫn buộc chặt vào số giờ bạn ngồi xuống làm.</p></div>
     </article>
-    <article class="the cd-the">
-      <div class="anh"><img src="img/nguoi-chu-dn.jpg" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
-      <div class="noi"><h3>Chủ doanh nghiệp dịch vụ</h3>
-      <p>Đã có khách, có doanh thu, có đội. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
+    <article>
+      <div class="anh"><img src="img/nguoi-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
+      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu, có đội. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
-    <article class="the cd-the">
-      <div class="anh"><img src="img/nguoi-dan-doi.jpg" alt="Ảnh minh hoạ một người đang dẫn một đội" loading="lazy"></div>
-      <div class="noi"><h3>Người đang dẫn một đội</h3>
-      <p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
+    <article>
+      <div class="anh"><img src="img/nguoi-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội" loading="lazy"></div>
+      <div><h3>Người đang dẫn một đội</h3><p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
     </article>
   </div>
   <div class="dut hien">
     <b>Chưa hợp lúc này</b>
-    <p>Người chưa có khách trả tiền, người đang tìm cách tăng nhanh lượt xem, và người muốn tôi làm thay phần việc của mình. Ba nhóm này tôi nói thẳng ngay từ đầu để không ai mất thời gian.</p>
+    <p>Người chưa có khách trả tiền, người đang tìm cách tăng nhanh lượt xem, và người muốn tôi làm thay phần việc của mình. Ba nhóm này tôi nói thẳng ngay từ đầu để không ai mất thời gian, của bạn và của tôi.</p>
   </div>
 </section>
 
 <section class="phan bd hoa-van">
   <div class="phan-dau hien">
-    <p class="mono">Điều tôi nhìn thấy</p>
-    <h2>Bốn câu nghe như bốn vấn đề, thật ra một chỗ</h2>
+    <p class="mono">Cách tôi làm việc</p>
+    <h2>Năm việc tôi làm, và ba việc tôi không làm</h2>
+    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Tôi viết ra để bạn có tiêu chí kiểm tôi.</p>
   </div>
   <div class="clv">
-    <div class="hop hien">
-      <h3>Bốn câu tôi nghe nhiều nhất</h3>
-      <p class="dan-hop">Người nói ra thường đi tìm bốn giải pháp khác nhau. Đó là chỗ tốn tiền nhất.</p>
-      <div class="viec5">
-        <div class="d"><em>01</em><div><h4>Nội dung nhiều, khách sai</h4><p>Đăng đều đặn nhiều tháng, có lượt xem, nhưng người nhắn tin không phải người trả tiền được.</p></div></div>
-        <div class="d"><em>02</em><div><h4>Đội chờ tôi mới chốt</h4><p>Có người, có kịch bản, có quy trình. Nhưng tới giao dịch lớn thì khách vẫn hỏi gặp người chủ.</p></div></div>
-        <div class="d"><em>03</em><div><h4>Tuyển thêm, bận hơn</h4><p>Đây là câu làm người chủ hoang mang nhất, vì nó ngược với điều họ mong khi tuyển người.</p></div></div>
-        <div class="d"><em>04</em><div><h4>Tháng tốt tháng kém</h4><p>Doanh thu lên xuống mà không chỉ ra được nguyên nhân, nên cũng không lặp lại được tháng tốt.</p></div></div>
-      </div>
-    </div>
-    <div class="hop hien">
-      <h3>Chúng về cùng một chỗ</h3>
-      <p class="dan-hop">Hỏi ngược lại từng câu, cả bốn đều dẫn về một câu trả lời giống nhau.</p>
-      <p style="font-size:16.5px;color:var(--ink-2)">Vì sao nội dung không ra đúng khách? Vì luận điểm nằm trong đầu người chủ, chưa thành một câu mà cả đội nói giống nhau. Vì sao đội chờ người chủ? Vì cách đọc khách vẫn nằm trong đầu người chủ. Vì sao tuyển thêm mà bận hơn? Vì việc chưa được viết thành luồng. Vì sao tháng tốt tháng kém? Vì không có dữ liệu nào ghi lại điều gì tạo ra tháng tốt.</p>
-      <div class="nl-ai" style="margin-top:22px"><b>Gốc</b><p>Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội.</p></div>
-      <a class="lk-v" style="margin-top:20px" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html">Đọc bài đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <div class="hop hien"><h3>Năm việc tôi làm</h3><p class="dan-hop">Mỗi lần làm việc phải đi đủ năm bước, không bỏ bước nào.</p>%s</div>
+    <div class="hop hien"><h3>Ba việc tôi không làm</h3><p class="dan-hop">Ranh giới này giữ cho việc đồng hành không biến thành sự lệ thuộc.</p>%s
+      <div class="nl-ai" style="margin-top:22px"><b>Vì sao</b><p>Nếu bạn chỉ đi được khi có tôi, tôi đã làm sai việc của mình.</p></div>
     </div>
   </div>
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Số công khai</p>
       <h2>Bạn có quyền kiểm người mình sắp nghe</h2>
       <p>Tôi để số ở đây, và nói luôn giới hạn của nó.</p>
     </div>
-    <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">{SO_LIEU}</div>
+    <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
+    <p class="hero-ghi" style="margin-top:18px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
     <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
       <b>Điều số này không nói</b>
       <p>Nó nói tôi có mặt đủ lâu và đủ đều để bạn kiểm chứng, không nói tôi giúp được bạn. Câu đó chỉ có bằng chứng trong chính doanh nghiệp của bạn mới trả lời được, và đó là thứ tôi cùng bạn đi tìm.</p>
     </div>
   </div>
 </section>
-""".replace("{SO_LIEU}", so_lieu_html)
+""" % (moc_html, niem_tin_html, khoi_viec5(),
+       dsk(["Không làm thay phần việc của bạn. Tôi chỉ đường và giữ chuẩn, bạn tự bước.",
+            "Không hứa một con số doanh thu khi chưa đủ điều kiện.",
+            "Không giữ ai ở lại bằng cảm giác lệ thuộc."], khong=True),
+       so_lieu_html)
 
-trang("ve-toi.html", "Về Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập",
-      "Coach Duy Nguyễn nói với ai, nhìn thấy vấn đề gì ở người sáng lập, và làm việc theo cách nào. Số liệu công khai và giới hạn của nó.",
+trang("ve-toi.html", "Về Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
+      "Coach Duy Nguyễn là ai, đến chỗ này bằng con đường nào, tin điều gì, nói với ai, làm việc theo cách nào, và số liệu công khai kèm giới hạn của nó.",
       VE_TOI, "ve-toi.html")
 print("  ve-toi.html")
 
@@ -323,7 +358,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">CDN Trust Orbit</p>
@@ -380,7 +415,7 @@ CHUONG_TRINH = dau_trang("Chương trình", "Hệ sinh thái Next Gen Founder",
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Đồng hành</p>
@@ -516,7 +551,7 @@ for c in CT:
 %s
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="%simg/cd-dung-lop.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="%simg/cd-dung-lop.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien"><p class="mono">Ranh giới</p><h2>Chương trình này không làm gì</h2>
     <p>Tôi ghi phần này rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p></div>
@@ -568,38 +603,85 @@ trang("blog.html", "Blog của Coach Duy Nguyễn · Bài viết cho nhà sáng 
       BLOG, "blog.html")
 print("  blog.html")
 
+CAP_NHAT = "24 tháng 8, 2026"
+
+def khoi_faq(faq):
+    muc = "".join('<div class="muc"><h3>%s</h3><p>%s</p></div>' % (q, a) for q, a in faq)
+    return '<div class="hoi-dap hien"><b>Câu hỏi thường gặp</b>%s</div>' % muc
+
+def muc_luc(than):
+    tieu = re.findall(r'<h2>(.*?)</h2>', than)
+    if len(tieu) < 3: return "", than
+    for i, t in enumerate(tieu):
+        than = than.replace('<h2>%s</h2>' % t, '<h2 id="m%d">%s</h2>' % (i+1, t), 1)
+    li = "".join('<li><a href="#m%d">%s</a></li>' % (i+1, t) for i, t in enumerate(tieu))
+    return '<div class="muc-luc"><b>Trong bài này</b><ol>%s</ol></div>' % li, than
+
+HOP_TAC_GIA = """<div class="tac-gia hien">
+  <div class="anh-tg"><img src="../img/cd-avatar.webp" alt="Coach Duy Nguyễn" loading="lazy" width="256" height="256"></div>
+  <div>
+    <b>Coach Duy Nguyễn</b>
+    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Sáu năm làm nội dung đều đặn trên bốn kênh, làm việc với hàng nghìn người bán hàng và người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
+    <a class="lk-v" href="../ve-toi.html">Xem hồ sơ đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div>
+</div>"""
+
 for i, b in enumerate(BAI):
     p = "../"
+    bs = BO_SUNG.get(b["tep"], {})
     khac = [x for x in BAI if x is not b and x["chu_de"] == b["chu_de"]][:2]
     if len(khac) < 2:
         khac += [x for x in BAI if x is not b and x not in khac][:2 - len(khac)]
-    ld = json.dumps({
-        "@context":"https://schema.org","@type":"BlogPosting","headline":b["tieu"],
-        "description":b["mo"],"datePublished":b["ngay"],"dateModified":b["ngay"],
-        "articleSection":b["chu_de"],"inLanguage":"vi",
-        "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html"},
-        "publisher":{"@type":"Person","name":"Coach Duy Nguyễn"},
-        "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]}, ensure_ascii=False)
+    faq = bs.get("faq", [])
+    ml, than_bai = muc_luc(b["than"])
+    tra_loi = ('<div class="tra-loi"><b>Trả lời nhanh</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
+
+    ld = {"@context":"https://schema.org","@graph":[
+      {"@type":"BlogPosting","headline":b["tieu"],"description":b["mo"],
+       "datePublished":b["ngay"],"dateModified":"2026-08-24","articleSection":b["chu_de"],
+       "inLanguage":"vi","wordCount":len(re.sub(r"<[^>]+>"," ",b["than"]).split()),
+       "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html",
+                 "jobTitle":"Người cố vấn cho nhà sáng lập","knowsAbout":[b["chu_de"]]},
+       "publisher":{"@type":"Person","name":"Coach Duy Nguyễn"},
+       "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]},
+      {"@type":"BreadcrumbList","itemListElement":[
+       {"@type":"ListItem","position":1,"name":"Trang chủ","item":BASE+"/"},
+       {"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog.html"},
+       {"@type":"ListItem","position":3,"name":b["tieu"]}]}]}
+    if faq:
+        ld["@graph"].append({"@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faq]})
+    ld = json.dumps(ld, ensure_ascii=False)
+
     than = """<article>
   <div class="bd bai-dau hien">
-    <p class="meta"><a href="%sblog.html" style="color:inherit;text-decoration:none">%s</a> &nbsp;·&nbsp; %s &nbsp;·&nbsp; %s</p>
+    <nav class="vun" aria-label="Đường dẫn"><a href="%sindex.html">Trang chủ</a><span>&rsaquo;</span><a href="%sblog.html">Blog</a><span>&rsaquo;</span><span>%s</span></nav>
+    <p class="meta">%s &nbsp;·&nbsp; Đăng %s &nbsp;·&nbsp; Cập nhật %s &nbsp;·&nbsp; %s</p>
     <h1>%s</h1>
     <p class="tom">%s</p>
   </div>
   <div class="bd hien"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
-  <div class="bd"><div class="bai-than hien">%s</div>
-  <div class="bai-cuoi">
-    <p>Viết bởi Coach Duy Nguyễn</p>
-    <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
-  </div></div>
+  <div class="bd">
+    <div class="bai-than">
+      <div class="doc hien">%s%s%s</div>
+      %s
+      %s
+      <div class="bai-cuoi" style="max-width:74ch;margin-inline:auto">
+        <p>Viết bởi Coach Duy Nguyễn</p>
+        <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
 </article>
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien"><p class="mono">Đọc tiếp</p><h2>Hai bài cùng mạch</h2></div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
-""" % (p, b["chu_de"], b["ngay_viet"], b["doc"], b["tieu"], b["mo"], p, b["anh"], b["alt"],
-       b["than"], p, "".join(the_bai_luoi(x, p) for x in khac))
+""" % (p, p, b["chu_de"], b["chu_de"], b["ngay_viet"], CAP_NHAT, b["doc"], b["tieu"], b["mo"],
+       p, b["anh"], b["alt"], tra_loi, ml, than_bai,
+       khoi_faq(faq) if faq else "", HOP_TAC_GIA, p,
+       "".join(the_bai_luoi(x, p) for x in khac))
     trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld)
     print("  bai-viet/" + b["tep"])
 
@@ -622,7 +704,7 @@ SACH = dau_trang("Sách", "Sách tôi đang viết",
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Trong lúc chờ sách</p>
@@ -646,57 +728,75 @@ trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
       SACH, "sach.html")
 print("  sach.html")
 
-# ---------------------------------------------------------------- PODCAST
-TAP_MAU = [
-  ("01","Người chủ giỏi bán nhất công ty, và cái giá của điều đó","Khách mời sẽ được công bố","Chưa ghi","~45 phút"),
-  ("02","Bỏ một dòng doanh thu đang chạy tốt để đi xa hơn","Khách mời sẽ được công bố","Chưa ghi","~52 phút"),
-  ("03","Lần đầu giao quyền quyết định giá cho người khác","Khách mời sẽ được công bố","Chưa ghi","~38 phút"),
-  ("04","Xây một cộng đồng mà mình không phải là trung tâm","Khách mời sẽ được công bố","Chưa ghi","~50 phút"),
+# ---------------------------------------------------------------- KÊNH YOUTUBE
+YT_CHU_DE = [
+ ("01","Điểm nghẽn của người sáng lập","Vì sao càng bán tốt càng bận, vì sao tuyển thêm người lại bận hơn, và cách gỡ từng luồng ra khỏi đầu người chủ."),
+ ("02","Bán bằng chẩn đoán","Cách dẫn một buổi tư vấn để khách tự nhìn ra vấn đề, thay vì bị thuyết phục. Xử lý từ chối bằng phản chiếu."),
+ ("03","Thương hiệu của người sáng lập","Làm rõ lãnh địa và luận điểm, biến công việc thật thành kho câu chuyện, giữ nhịp mà một người vận hành được."),
+ ("04","Xây hệ thống cùng đội ngũ","Năm thứ làm nên một hệ thống chạy được, cách giao quyền mà không mất kiểm soát, nhịp rà soát hằng tuần."),
+ ("05","Kiến tạo cộng đồng","Vì sao một nhóm đăng bài chưa phải cộng đồng, và bốn thứ quyết định cộng đồng sống hay chết."),
+ ("06","AI trong công việc của người chủ","Việc nào giao được cho máy, việc nào phải giữ, và cách dùng AI mà không mất giọng riêng."),
 ]
-tap_html = "".join("""<div class="tap">
-  <span class="so-tap">TẬP %s</span>
-  <div class="art" aria-hidden="true"><span>DN</span></div>
-  <div><h3>%s</h3><p class="phu">%s</p></div>
-  <span class="ngay">%s</span><span class="dai">%s</span>
-</div>""" % t for t in TAP_MAU)
+yt_the = "".join('<article class="yt-the"><span class="so">Chủ đề %s</span><h3>%s</h3><p>%s</p></article>' % t for t in YT_CHU_DE)
 
-PODCAST = dau_trang("Podcast", "Podcast Nhà sáng lập thế hệ mới",
-  "Đối thoại với người sáng lập và người điều hành về một thay đổi thật họ đã làm, kèm điều kiện và cái giá phải trả. Không phải phỏng vấn thành công.") + """
-<section class="phan bd hoa-van" style="padding-bottom:44px">
-  <div class="nen-tang hien"><span>Sẽ có trên</span><b><i aria-hidden="true"></i>Spotify</b><b><i aria-hidden="true"></i>Apple Podcasts</b><b><i aria-hidden="true"></i>YouTube</b></div>
-  <div class="ghi-mau hien" style="margin-top:34px"><b>Chưa mở</b><p>Chưa có tập nào được ghi. Phần dưới là bản thiết kế để bạn hình dung trang khi đã có tập. Tên tập là ví dụ về hướng nội dung, không phải tập đã có thật.</p></div>
-</section>
-
-<section class="phan bd hoa-van duoi" style="padding-top:0">
-  <div class="phan-dau hien"><p class="mono">Bản thiết kế</p><h2>Trang sẽ trông như thế này</h2>
-  <p>Mỗi tập gắn với một thay đổi thật trong cách khách mời xây doanh nghiệp. Tôi không mở podcast chỉ để có thêm một kênh.</p></div>
-  <div class="ds-tap hien">%s</div>
-</section>
-
-<section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-dung-lop.jpg" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Tiêu chuẩn một tập</p><h2>Ba điều một tập phải có, thiếu thì tôi không phát</h2></div>
-    <div class="dx tre hien">
-      <article><div><span class="trang-thai"><i aria-hidden="true"></i>Một</span><h3>Một thay đổi thật</h3><p>Khách mời kể một quyết định họ đã đổi, kèm mốc thời gian, không nói chung về triết lý.</p></div></article>
-      <article><div><span class="trang-thai"><i aria-hidden="true"></i>Hai</span><h3>Cái giá đã trả</h3><p>Thay đổi nào cũng có giá. Tập nào không nói được cái giá thì tập đó chưa đủ thật.</p></div></article>
-      <article><div><span class="trang-thai"><i aria-hidden="true"></i>Ba</span><h3>Điều kiện áp dụng</h3><p>Cách làm đó hợp với ai và không hợp với ai. Người nghe cần biết mình có nằm trong nhóm đó không.</p></div></article>
-      <article><div><span class="trang-thai im"><i aria-hidden="true"></i>Không có</span><h3>Không phỏng vấn thành công</h3><p>Tôi không mời khách lên để kể mình giỏi thế nào. Đó là loại nội dung nghe xong không dùng được.</p></div></article>
+KENH = dau_trang("Kênh YouTube", "Nơi tôi nói dài và nói sâu nhất",
+  "YouTube là kênh nội dung dài của tôi. TikTok mở đầu câu chuyện, Facebook kể trải nghiệm, còn YouTube là nơi tôi trình bày hết một phương pháp, kèm ví dụ và điều kiện áp dụng.") + """
+<section class="phan bd hoa-van">
+  <div class="doi-cot">
+    <div class="hien">
+      <p class="mono">Vai trò của kênh</p>
+      <h2>Ba kênh, ba việc khác nhau</h2>
+      <p>Tôi không đăng lại một nội dung lên cả ba kênh. Mỗi kênh làm một việc riêng, và YouTube làm việc khó nhất: giúp người xem hiểu sâu, tin sâu, rồi tự quyết bước tiếp theo.</p>
+      <div class="bang-tt" style="margin-top:26px">
+        <div><b>TikTok</b><span>Mở rộng nhận biết. Đưa đúng người lạ đến với tôi bằng một vấn đề họ đang sống cùng.</span></div>
+        <div><b>Facebook</b><span>Xây quan hệ và nhận diện. Kể trải nghiệm thật, tạo đối thoại, để người phù hợp nhận ra nhau.</span></div>
+        <div><b>YouTube</b><span>Hiểu sâu và tin sâu. Trình bày trọn một phương pháp, kèm ví dụ, điều kiện và cả chỗ nó không dùng được.</span></div>
+      </div>
+      <p style="margin-top:26px"><a class="nut nut-v yt-nut" href="%s" target="_blank" rel="noopener"><i aria-hidden="true"></i>Xem kênh YouTube <span class="mt" aria-hidden="true">&rarr;</span></a></p>
     </div>
+    <div class="hien"><div class="anh anh-khung ngang"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div></div>
   </div>
 </section>
 
-<section class="phan bd hoa-van">
-  <div class="phan-dau hien"><p class="mono">Trong lúc chờ</p><h2>Nghe tôi ở nơi khác</h2>
-  <p>Tôi làm nội dung đều đặn sáu năm trên bốn kênh. Nội dung dài nhất nằm ở YouTube, nội dung ngắn ở TikTok và Facebook.</p></div>
-  <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
+<section class="phan tran">
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-dung-lop.webp" alt="" loading="lazy"></div>
+  <div class="bd">
+    <div class="phan-dau hien"><p class="mono">Sáu chủ đề</p><h2>Trên kênh có gì</h2>
+    <p>Nội dung của tôi xoay quanh sáu chủ đề. Bốn chủ đề đầu là bốn năng lực của nhà sáng lập thế hệ mới, hai chủ đề còn lại là nền cho cả bốn.</p></div>
+    <div class="yt-hang tre hien">%s</div>
+  </div>
 </section>
-""" % (tap_html, so_lieu_html)
 
-trang("podcast.html", "Podcast Nhà sáng lập thế hệ mới · Coach Duy Nguyễn",
-      "Podcast Nhà sáng lập thế hệ mới của Coach Duy Nguyễn đang chuẩn bị. Mỗi tập gắn với một thay đổi thật trong cách khách mời xây doanh nghiệp.",
-      PODCAST, "podcast.html")
-print("  podcast.html")
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien"><p class="mono">Số công khai</p><h2>Bốn kênh, sáu năm làm đều</h2>
+  <p>Tôi để số ở đây để bạn kiểm được. Số nói tôi có mặt đủ lâu và đủ đều, không nói tôi giúp được bạn.</p></div>
+  <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
+  <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
+  <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
+    <b>Cách tôi chọn chủ đề để quay</b>
+    <p>Tôi không quay theo xu hướng. Chủ đề đến từ ba nguồn: câu hỏi lặp lại trong các buổi tư vấn, tình huống thật vừa xử lý xong trong tuần, và chỗ tôi thấy nhiều người trong ngành đang nói sai. Nếu một chủ đề không thuộc ba nguồn đó, tôi để lại.</p>
+  </div>
+</section>
+""" % (YOUTUBE, yt_the, so_lieu_html)
+
+trang("kenh-youtube.html", "Kênh YouTube Coach Duy Nguyễn · Nội dung dài cho nhà sáng lập",
+      "Kênh YouTube của Coach Duy Nguyễn, nơi trình bày trọn phương pháp cho nhà sáng lập: điểm nghẽn, bán bằng chẩn đoán, thương hiệu cá nhân, hệ thống và cộng đồng.",
+      KENH, "kenh-youtube.html")
+print("  kenh-youtube.html")
+
+# trang cũ podcast.html chuyển hướng sang trang mới, giữ cho liên kết đã chia sẻ không chết
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "podcast.html"), "w", encoding="utf-8").write(
+"""<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<title>Kênh YouTube Coach Duy Nguyễn</title>
+<link rel="canonical" href="%s/kenh-youtube.html">
+<meta name="robots" content="noindex,follow">
+<meta http-equiv="refresh" content="0; url=kenh-youtube.html">
+<style>body{background:#17120F;color:#F9F5F0;font-family:system-ui,sans-serif;padding:60px 24px;text-align:center}
+a{color:#F2B14A}</style></head>
+<body><p>Trang này đã chuyển thành <a href="kenh-youtube.html">Kênh YouTube</a>.</p>
+<script>location.replace('kenh-youtube.html');</script></body></html>""" % BASE)
+print("  podcast.html (chuyen huong)")
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cửa để nói chuyện với tôi",
@@ -731,7 +831,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cửa để nói chuyện với tôi",
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.jpg" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien"><p class="mono">Nơi tôi xuất hiện</p><h2>Bốn kênh tôi làm đều đặn sáu năm</h2>
     <p>Nội dung dài nhất nằm ở YouTube. Nội dung ngắn ở TikTok và Facebook. Zalo là nơi tôi trả lời câu hỏi cụ thể.</p></div>
@@ -765,7 +865,7 @@ print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
 URLS = ["", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
-        "sach.html", "podcast.html", "lien-he.html"] \
+        "sach.html", "kenh-youtube.html", "lien-he.html"] \
      + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
@@ -785,7 +885,7 @@ llms = """# Coach Duy Nguyễn
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Podcast](%(b)s/podcast.html): Nhà sáng lập thế hệ mới, đang chuẩn bị
+- [Kênh YouTube](%(b)s/kenh-youtube.html): nội dung dài, sáu chủ đề, 230 nghìn người đăng ký
 - [Liên hệ](%(b)s/lien-he.html)
 
 ## Chương trình

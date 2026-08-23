@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Khung dựng website Coach Duy Nguyễn. Sửa BASE khi đổi sang tên miền riêng."""
-import os, html, json
+import os, html, json, re
 
 BASE = "https://coachduynguyen-creator.github.io/coach-duy-nguyen"
 CONG_DONG = "https://coachduynguyen-creator.github.io/next-gen-founder/"
@@ -10,7 +10,9 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 # Trang bán The Trusted Creator đang dựng ở ~/Codex_Projects/trusted-creator, chưa đăng.
 # Khi đăng xong, điền địa chỉ vào đây, chạy lại dung.py là mọi nút tự trỏ đúng chỗ.
 TTC_LANDING = ""
-VER = "20260824a"   # tăng số này mỗi lần sửa style.css hoặc site.js
+YOUTUBE = "https://www.youtube.com/@coachduynguyen"
+TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
+VER = "20260824d"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -33,7 +35,7 @@ MENU = [
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
     ("sach.html", "Sách", None),
-    ("podcast.html", "Podcast", None),
+    ("kenh-youtube.html", "YouTube", None),
     ("lien-he.html", "Liên hệ", None),
 ]
 
@@ -149,7 +151,7 @@ def footer(p=""):
       </div>
       <div>
         <b>Nội dung</b>
-        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách</a><a href="%s">Podcast</a>
+        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách</a><a href="%s">Kênh YouTube</a>
       </div>
       <div>
         <b>Đi tiếp</b>
@@ -165,7 +167,7 @@ def footer(p=""):
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>""" % (dd("index.html", p), DN_SVG, ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
-                dd("sach.html", p), dd("podcast.html", p), CONG_DONG, PHIEU, CO_MAY,
+                dd("sach.html", p), dd("kenh-youtube.html", p), CONG_DONG, PHIEU, CO_MAY,
                 dd("ve-toi.html", p), dd("lien-he.html", p), EMAIL, EMAIL)
 
 JSONLD_NGUOI = json.dumps({
@@ -204,6 +206,7 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="%sassets/style.css?v={VER}">
+{PRELOAD}
 <script>if(location.search.indexOf('static=1')>-1)document.documentElement.classList.add('noanim');</script>
 <script type="application/ld+json">%s</script>
 </head>
@@ -217,6 +220,8 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
 </html>""" % (html.escape(tieu_de), html.escape(mo_ta), url, html.escape(tieu_de), html.escape(mo_ta), url,
               p, jsonld or JSONLD_NGUOI, nav(active, p), than, khoi_cuoi(p), footer(p), p)
     doc = doc.replace("{VER}", VER)
+    m = re.search(r'<div class="(?:hero-nen|tran-nen)"[^>]*><img src="([^"]+)"', doc)
+    doc = doc.replace("{PRELOAD}", ('<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)) if m else "")
     duong = os.path.join(GOC, ten_tep)
     os.makedirs(os.path.dirname(duong), exist_ok=True) if sau else None
     open(duong, "w", encoding="utf-8").write(doc)
