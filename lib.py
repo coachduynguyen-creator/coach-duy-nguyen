@@ -7,6 +7,9 @@ CONG_DONG = "https://coachduynguyen-creator.github.io/next-gen-founder/"
 CO_MAY = "https://coachduynguyen-creator.github.io/co-may-noi-dung/"
 PHIEU = "https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html"
 EMAIL = "nextstepacademyvietnam@gmail.com"
+# Trang bán The Trusted Creator đang dựng ở ~/Codex_Projects/trusted-creator, chưa đăng.
+# Khi đăng xong, điền địa chỉ vào đây, chạy lại dung.py là mọi nút tự trỏ đúng chỗ.
+TTC_LANDING = ""
 VER = "20260824a"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)

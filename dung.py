@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import json, os
-from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, trang, dau_trang, dd)
+from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, trang, dau_trang, dd)
 from bai_viet import BAI
 from chuong_trinh import CT
 import so_do
@@ -466,6 +466,29 @@ for c in CT:
   <div class="hien">%s</div>
 </section>""" % so_do.chang_5()
 
+    if c.get("mo_ban"):
+        dich = TTC_LANDING or dd("lien-he.html", p)
+        nhan_nut, tieu_cta, dan_cta = ("Đăng ký khoá đầu tiên", "Khoá đầu tiên khai giảng 28 tháng 9 năm 2026",
+            "Đăng ký sớm áp dụng tới hết ngày 20 tháng 9. Nếu bạn còn phân vân mình có hợp không, làm phiếu chẩn đoán bảy phút trước, rồi quyết.")
+    else:
+        dich = CONG_DONG
+        nhan_nut, tieu_cta, dan_cta = ("Trao đổi trước khi quyết", "Bắt đầu bằng một buổi trao đổi ngắn",
+            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa hợp, bạn được nói thẳng.")
+    ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
+    cta_ct = """<section class="dai-vang">
+  <div class="bd moi">
+    <div class="hien">
+      <p class="mono">Bước tiếp theo</p>
+      <h2>%s</h2>
+      <p>%s</p>
+    </div>
+    <div class="moi-nut hien">
+      <a class="nut nut-toi" href="%s"%s>%s <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="nut nut-vien-toi" href="%s" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
+    </div>
+  </div>
+</section>""" % (tieu_cta, dan_cta, dich, ngoai, nhan_nut, PHIEU)
+
     tt = [("Dành cho", c["cho_ai"]), ("Hình thức", c["hinh_thuc"])]
     if c.get("khai_giang"): tt.insert(1, ("Khai giảng", c["khai_giang"]))
     bang_tt = "".join('<div><b>%s</b><span>%s</span></div>' % t for t in tt)
@@ -501,13 +524,15 @@ for c in CT:
   </div>
 </section>
 
+%s
+
 <section class="phan bd hoa-van">
   <div class="phan-dau hien"><p class="mono">Xem thêm</p><h2>Hai chương trình gần với chương trình này</h2></div>
   <div class="luoi-ct tre hien">%s</div>
 </section>
 """ % (c["ten_vi"], c["luan_diem"], bang_tt, hinh,
        dsk(c["ket_qua"]), chang_html, gia_html, p, dsk(c["khong_gom"], khong=True),
-       "".join(the_ct(x, p) for x in khac))
+       cta_ct, "".join(the_ct(x, p) for x in khac))
 
     ld = json.dumps({"@context":"https://schema.org","@type":"Course","name":c["ten"],
                      "description":c["tom"],"inLanguage":"vi",
