@@ -547,11 +547,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .hst-than,.hst-thanh{display:none}
 @media(min-width:1040px){
   .hst-than{display:block;width:2px;height:30px;background:var(--line-2);margin:0 auto}
-  .hst-thanh{display:block;height:2px;background:var(--line-2);margin:0 16.6%;position:relative}
-  .hst-thanh::before,.hst-thanh::after{content:"";position:absolute;top:0;width:2px;height:26px;background:var(--line-2)}
-  .hst-thanh::before{left:0}.hst-thanh::after{right:0}
+  .hst-thanh{display:block;height:2px;background:var(--line-2);margin-inline:calc((100% - 40px) / 6)}
   .hst-cot{margin-top:26px}
-  .hst-cot > div::before{content:"";position:absolute;left:50%;top:-28px;width:2px;height:28px;background:var(--line-2)}
+  .hst-cot > div::before{content:"";position:absolute;left:calc(50% - 1px);top:-26px;width:2px;height:26px;background:var(--line-2)}
 }
 .hst-cot{display:grid;gap:20px;margin-top:26px}
 @media(min-width:820px){.hst-cot{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -710,3 +708,25 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .dut{margin-top:24px;border:1px dashed var(--line-2);border-radius:var(--r-s);padding:22px 24px;background:rgba(249,245,240,.022)}
 .dut b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
 .dut p{font-size:15.5px;color:var(--ink-2)}
+
+
+/* ---------- rê chuột vào thẻ: sáng lên hẳn một bậc ---------- */
+.hst-nhom{transition:transform .2s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.the,.hop,.dx article,.the-ct,.loi,.the-bai,.bai-lon,.chang,.yt-the,.niem-tin article,.cd-hang article,.hst-nhom{
+  transition:transform .22s var(--ease),background-color .22s var(--ease),background-image .22s var(--ease),border-color .22s var(--ease),box-shadow .22s var(--ease)}
+@media(hover:hover){
+  .the:hover,.hop:hover,.dx article:hover,.the-ct:hover,.loi:not(.vang):hover,.the-bai:hover,.bai-lon:hover,
+  .chang:hover,.yt-the:hover,.niem-tin article:hover,.cd-hang article:hover,.hst-nhom:hover{
+    background-color:#332821;
+    background-image:linear-gradient(180deg,#3B2E24 0%,#2C2219 100%);
+    border-color:rgba(242,177,74,.5);
+    box-shadow:var(--shadow-h),inset 0 1px 0 rgba(242,177,74,.22);
+    transform:translateY(-5px)}
+  .hst-nhom:hover{transform:translateY(-4px)}
+  .loi.vang:hover{filter:brightness(1.06);transform:translateY(-5px);box-shadow:0 20px 44px -16px rgba(242,177,74,.6)}
+  /* dòng trong thẻ cũng sáng theo */
+  .the:hover p,.hop:hover p,.dx article:hover p,.the-ct:hover p,.the-bai:hover p,.bai-lon:hover p,
+  .chang:hover p,.yt-the:hover p,.niem-tin article:hover p,.cd-hang article:hover p{color:var(--ink-doc)}
+  /* hàng trong danh sách cũng phải thấy rõ khi rê */
+  .viec5 .d:hover,.nl .hang:hover,.tap:hover,.bai-nho:hover,.dau .o:hover{background:rgba(242,177,74,.07)}
+}
