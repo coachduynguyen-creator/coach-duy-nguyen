@@ -93,4 +93,94 @@ BO_SUNG = {
        "Ba phần: nói rõ lý do bằng điều kiện chứ không bằng đánh giá con người, đưa một lối khác nếu có, và giữ cửa mở. Người bị từ chối đúng cách thường quay lại, và quay lại với sự tôn trọng."),
       ("Làm sao biết tiêu chí sàng lọc của mình?",
        "Nhìn danh sách khách đang có, chọn một người mà nếu quay lại thời điểm ký bạn sẽ không ký nữa, rồi viết ra dấu hiệu lúc đó bạn đã thấy nhưng bỏ qua. Dấu hiệu đó chính là tiêu chí đầu tiên, và bạn đã trả tiền để có nó.")]),
+
+"lanh-dia-chuyen-mon.html": dict(
+ tra_loi="Lãnh địa chuyên môn là giao của ba thứ: một nhóm người cụ thể, một loại vấn đề cụ thể, và một cách nhìn mà bạn có còn người khác chưa có. Ngành và nghề chưa phải lãnh địa. Người không dám bỏ vùng nào sẽ không sở hữu vùng nào.",
+ faq=[("Làm sao tìm ra lãnh địa của mình?",
+       "Chia giấy ba cột: những gì bạn biết làm, những gì người ta thật sự trả tiền cho bạn, và những gì bạn còn muốn làm sau năm năm nữa. Lãnh địa nằm ở chỗ giao của ba cột. Nếu chỗ giao rỗng, bạn có vấn đề lớn hơn vấn đề nội dung."),
+      ("Chọn lãnh địa hẹp có mất khách không?",
+       "Mất loại khách lẻ tẻ, được khả năng được nhớ. Một lãnh địa tốt phải làm hai việc cùng lúc: khiến đúng người thấy đây là dành cho mình, và khiến người không phù hợp tự rời đi mà không thấy khó chịu."),
+      ("Bao lâu thì biết mình chọn đúng?",
+       "Ba dấu hiệu theo thứ tự: người nghe hỏi tiếp thay vì chỉ gật đầu, có người tự loại mình, và người ta giới thiệu bạn bằng đúng câu bạn dùng. Dấu hiệu cuối thường đến sau sáu tới mười hai tháng nói nhất quán.")]),
+
+"kho-cau-chuyen.html": dict(
+ tra_loi="Người sáng lập hiếm khi hết ý tưởng. Cái họ thiếu là một cái kho và thói quen bỏ đồ vào kho. Ý tưởng đến lúc đang làm việc chứ không đến lúc ngồi trước màn hình trắng, nên phải ghi lại ngay trong ngày, ba dòng một mẩu.",
+ faq=[("Nên ghi lại những loại chất liệu nào?",
+       "Bốn loại: câu hỏi lặp lại từ ba người trở lên, quyết định có đánh đổi kèm lý do, sai lầm đã trả giá, và số liệu ngược với dự đoán. Loại thứ hai quý nhất vì không ai sao chép được cách bạn nghĩ."),
+      ("Ghi thế nào cho dùng được về sau?",
+       "Đúng ba dòng, ngay trong ngày. Dòng một là tình huống, dòng hai là điều bạn làm hoặc thấy, dòng ba là vì sao. Dòng ba biến một mẩu ghi chép thành chất liệu, thiếu nó thì sáu tháng sau bạn đọc lại không hiểu vì sao mình ghi."),
+      ("Cần phần mềm gì để làm kho?",
+       "Một tệp duy nhất, ghi theo ngày, không phân loại. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó. Nếu nói dễ hơn viết thì ghi âm hai phút rồi để máy chuyển thành chữ.")]),
+
+"nhip-lam-noi-dung.html": dict(
+ tra_loi="Nhịp làm nội dung phải được thiết kế cho tuần tệ nhất, không phải tuần rảnh nhất. Cách bền nhất là mỗi tuần làm một nội dung gốc đủ sâu rồi cắt ra thành nhiều mảnh ngắn, tổng cộng khoảng năm giờ một tuần.",
+ faq=[("Nên đăng bao nhiêu bài một tuần?",
+       "Câu hỏi đúng không phải bao nhiêu bài mà là nhịp nào bạn giữ được ba năm. Một nội dung gốc mỗi tuần cắt thành ba tới năm mảnh ngắn là nhịp một người vận hành được và giữ được lâu."),
+      ("Chia thời gian trong tuần thế nào?",
+       "Ba khối: khối gom chất liệu ba mươi phút mỗi ngày, khối làm nội dung gốc chín mươi phút một lần mỗi tuần, và khối cắt mảnh sáu mươi phút một lần mỗi tuần. Chỉ khối làm cần đầu óc tỉnh táo."),
+      ("Lỡ một tuần thì có nên đăng bù không?",
+       "Không. Đăng bù là cách quay lại vòng bung sức rồi kiệt. Lỡ một tuần thì tuần sau đi tiếp như chưa có gì, vì không ai đếm ngoài bạn.")]),
+
+"chan-doan-truoc-khi-ke-don.html": dict(
+ tra_loi="Một buổi tư vấn tốt có bốn phần theo đúng thứ tự: mở và thống nhất mục đích khoảng năm phút, chẩn đoán khoảng hai mươi lăm phút, gọi tên vấn đề khoảng mười phút, rồi mới chọn bước tiếp theo. Trình bày giải pháp trước khi chẩn đoán là lỗi làm hỏng phần lớn buổi tư vấn.",
+ faq=[("Cần lấy những thông tin gì khi chẩn đoán?",
+       "Ba lớp: hiện trạng quan sát được, những gì họ đã thử và kết quả, và cái giá của việc không làm gì trong sáu tháng tới. Thiếu lớp thứ ba, bạn sẽ gặp khách khen phương án hay rồi biến mất."),
+      ("Làm sao biết mình đã gọi đúng tên vấn đề?",
+       "Khách im vài giây rồi nói đúng rồi. Nếu bạn gọi sai, họ sẽ sửa bạn, và điều đó cũng tốt vì bạn học được và họ thấy bạn nghe thật."),
+      ("Ba lỗi hay gặp trong buổi tư vấn là gì?",
+       "Trình bày giải pháp quá sớm, hỏi để dẫn dắt chứ không để hiểu, và không dám nói không hợp. Cái giá của lỗi thứ ba luôn lớn hơn khoản thu được từ ca đó.")]),
+
+"de-toi-suy-nghi-them.html": dict(
+ tra_loi="Câu để tôi suy nghĩ thêm gần như không bao giờ mang nghĩa cần thêm thời gian. Nó có bốn nghĩa: chưa thấy vấn đề đủ lớn, không phải người quyết, chưa tin mình làm nổi, hoặc giá vượt mức tự cho phép. Mỗi nghĩa cần một cách xử lý khác nhau.",
+ faq=[("Hỏi câu gì để biết nghĩa thật?",
+       "Hỏi: anh chị cứ nói thật, nếu bây giờ phải quyết thì điều gì làm anh chị lăn tăn nhất. Câu này cho phép nói thật, hỏi về một điều duy nhất nên dễ trả lời, và không đẩy họ vào thế phải quyết ngay."),
+      ("Vì sao giảm giá là phản ứng tệ nhất?",
+       "Vì giảm giá chỉ trả lời cho một trong bốn nghĩa, và đó là nghĩa ít phổ biến nhất. Chín trên mười lần bạn giảm giá là bạn đang trả lời sai câu hỏi, đồng thời dạy khách rằng giá của bạn không thật."),
+      ("Khi nào câu đó mang nghĩa đen?",
+       "Khi quyết định ảnh hưởng tới người khác trong doanh nghiệp và họ cần trao đổi nội bộ. Lúc đó việc của bạn là gửi một tài liệu ngắn ghi rõ phạm vi, kết quả, điều kiện và cái giá của việc không làm, để họ mang vào cuộc họp.")]),
+
+"vi-sao-giam-gia-lam-hong-quan-he.html": dict(
+ tra_loi="Giảm giá dạy khách ba điều: giá ban đầu không thật, ngần ngại là chiến thuật hiệu quả, và bạn cần họ hơn họ cần bạn. Điều thứ ba đảo vị thế, mà trong tư vấn thì vị thế quyết định lời khuyên của bạn có được nghe hay không.",
+ faq=[("Có cách nào thay cho giảm giá?",
+       "Ba cách: thu hẹp phạm vi mà giữ đơn giá, đổi lịch thanh toán mà không đổi tổng số, hoặc đề nghị một bước nhỏ hơn có phí trước. Cả ba giữ nguyên thông điệp về giá trị."),
+      ("Vì sao khách được giảm mạnh lại khó hơn?",
+       "Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng nên họ có mặt và làm bài. Người được giảm mạnh thường vào với tâm thế thử xem sao, vắng nhiều hơn, và cuối cùng không ra kết quả."),
+      ("Khi nào giảm giá là hợp lý?",
+       "Hai trường hợp, và cả hai phải công khai lý do: giá ra mắt cho khoá đầu tiên khi chưa có bằng chứng người học, và giảm theo một quy tắc áp dụng cho tất cả như đăng ký sớm. Điều làm hỏng quan hệ là mức riêng dành cho người biết mặc cả.")]),
+
+"nam-thu-lam-nen-mot-he-thong.html": dict(
+ tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một cái tên chịu trách nhiệm, tiêu chuẩn hoàn thành, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn thứ kia.",
+ faq=[("Vì sao thư mục quy trình không ai mở?",
+       "Vì quy trình chỉ là một phần năm của hệ thống, và thường là phần ít quan trọng nhất. Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo, thiếu nhịp rà soát thì hệ thống chết trong ba tháng."),
+      ("Nên bắt đầu từ đâu?",
+       "Từ kết quả, rồi tới người chịu trách nhiệm, rồi mới tới cách làm. Khi đã có kết quả rõ và người chịu trách nhiệm, thường chính người đó viết ra quy trình tốt hơn bạn viết hộ, và tài liệu do họ viết thì họ dùng."),
+      ("Làm sao biết luồng đã rời khỏi đầu người chủ?",
+       "Khi người phụ trách xử lý được tám trong mười tình huống mà không hỏi, kể cả tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy.")]),
+
+"giao-quyen-ma-khong-mat-kiem-soat.html": dict(
+ tra_loi="Giao quyền hiệu quả là giao theo vùng, không giao theo việc. Vẽ ba vùng cho người nhận: vùng xanh tự quyết không cần báo, vùng vàng tự quyết rồi báo lại, vùng đỏ hỏi trước khi quyết. Giữ vùng đỏ càng nhỏ càng tốt và viết ra rõ ràng.",
+ faq=[("Hai kiểu giao quyền sai là gì?",
+       "Giao việc mà giữ quyết định, khiến người nhận thành cái máy và không giảm tải cho ai. Và giao hết mà không có ranh giới, khiến bạn phải nhảy vào sửa rồi cả hai mất niềm tin."),
+      ("Vì sao phải viết ranh giới ra?",
+       "Khi ranh giới nằm trong đầu bạn, người kia phải đoán. Người thận trọng sẽ hỏi mọi thứ nên bạn không giảm tải, người mạnh dạn sẽ quyết cả chỗ bạn không muốn nên bạn phải sửa. Cả hai đều đang hành xử hợp lý với thông tin họ có."),
+      ("Dấu hiệu giao quyền đã thành công?",
+       "Không phải khi họ làm đúng như bạn, mà khi họ xử lý một tình huống theo cách khác bạn, bạn thấy chấp nhận được, và họ giải thích được vì sao chọn cách đó.")]),
+
+"muoi-bon-ngay-dau.html": dict(
+ tra_loi="Tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong mười bốn ngày đầu. Người có một thắng nhỏ trong hai tuần đầu thì ở lại, người không có thì âm thầm rời đi. Thắng nhỏ là bằng chứng rằng chỗ này làm được việc và chính họ làm được việc.",
+ faq=[("Bốn việc phải xảy ra trong mười bốn ngày đầu là gì?",
+       "Ngày một tới ba biết mình đang ở đâu qua một cách tự đánh giá. Ngày ba tới bảy làm được một việc nhỏ và thấy kết quả. Ngày bảy tới mười được một người thật nhìn thấy. Ngày mười tới mười bốn biết nhịp tiếp theo là gì."),
+      ("Ba lỗi hay gặp với người mới là gì?",
+       "Đổ hết tài nguyên vào ngày đầu khiến họ choáng, để người mới tự tìm đường, và không ai chào. Một câu chào của người thật có sức nặng hơn mười thông báo tự động."),
+      ("Đo mười bốn ngày đầu bằng gì?",
+       "Tỉ lệ hoàn tất bước tự đánh giá, tỉ lệ có ít nhất một lần đóng góp, tỉ lệ quay lại trong tuần thứ hai, và số người mới được thành viên cũ tương tác.")]),
+
+"do-cong-dong-bang-gi.html": dict(
+ tra_loi="Số thành viên là chỉ số dễ tăng nhất và ít liên quan nhất tới giá trị. Bốn con số nói đúng hơn: tỉ lệ kích hoạt trong mười bốn ngày đầu, tỉ lệ quay lại theo nhịp, giá trị tạo ra giữa các thành viên, và tỉ lệ gia hạn hoặc giới thiệu.",
+ faq=[("Bài kiểm nào cho biết cộng đồng có sống thật không?",
+       "Ngừng đăng trong hai tuần và xem chuyện gì xảy ra. Nếu vẫn có hoạt động thì giá trị đang được tạo giữa các thành viên. Nếu im lặng hoàn toàn thì bạn đang gánh toàn bộ. Đừng làm bài kiểm này khi cộng đồng còn dưới ba tháng tuổi."),
+      ("Hai chỉ số nào nên bỏ?",
+       "Tổng số bài đăng, vì nhiều bài chào hàng tệ hơn ít bài đáng đọc. Và số người theo dõi trang, vì theo dõi là hành vi gần như không tốn gì nên không nói lên mức độ cam kết."),
+      ("Đo xong thì làm gì?",
+       "Kích hoạt thấp thì sửa mười bốn ngày đầu. Quay lại thấp thì sửa nhịp. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì xem lại lời hứa ban đầu có được giữ không.")]),
 }

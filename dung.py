@@ -4,6 +4,8 @@ import json, os, re
 from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
+# bài mới nhất đứng đầu
+BAI = sorted(BAI, key=lambda x: x["ngay"], reverse=True)
 from chuong_trinh import CT
 import so_do
 

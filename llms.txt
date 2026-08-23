@@ -6,7 +6,7 @@
 - [Về tôi](https://coachduynguyen-creator.github.io/coach-duy-nguyen/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](https://coachduynguyen-creator.github.io/coach-duy-nguyen/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen-creator.github.io/coach-duy-nguyen/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
-- [Blog](https://coachduynguyen-creator.github.io/coach-duy-nguyen/blog.html): 10 bài viết cho nhà sáng lập
+- [Blog](https://coachduynguyen-creator.github.io/coach-duy-nguyen/blog.html): 20 bài viết cho nhà sáng lập
 - [Sách](https://coachduynguyen-creator.github.io/coach-duy-nguyen/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Kênh YouTube](https://coachduynguyen-creator.github.io/coach-duy-nguyen/kenh-youtube.html): nội dung dài, sáu chủ đề, 230 nghìn người đăng ký
 - [Liên hệ](https://coachduynguyen-creator.github.io/coach-duy-nguyen/lien-he.html)
@@ -22,15 +22,25 @@
 - [90 Ngày Xây Hệ thống Tăng&nbsp;trưởng](https://coachduynguyen-creator.github.io/coach-duy-nguyen/chuong-trinh/giai-phap-doanh-nghiep.html): Chẩn đoán, thiết kế, xây, chạy thử và bàn giao một hệ thống tăng trưởng có người phụ trách, dữ liệu và nhịp điều hành.
 
 ## Bài viết
+- [Lãnh địa chuyên môn: chọn vùng để sở hữu, và vùng để bỏ](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/lanh-dia-chuyen-mon.html): Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.
 - [Bốn câu tôi nghe nhiều nhất từ người sáng lập](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/bon-cau-toi-nghe-nhieu-nhat.html): Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, tôi thấy chúng thường chỉ về một chỗ.
+- [Kho câu chuyện: biến công việc thật thành chất liệu dùng nhiều năm](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/kho-cau-chuyen.html): Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.
 - [Vì sao tôi không dùng phễu để thiết kế quan hệ với khách](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/vi-sao-toi-khong-dung-phieu.html): Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.
+- [Nhịp làm nội dung mà một người vận hành được](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/nhip-lam-noi-dung.html): Đăng bảy bài một tuần rồi biến mất ba tháng thua đăng một bài một tuần trong ba năm. Bài này viết về cách thiết kế nhịp bạn giữ được.
 - [Năm việc của một người cố vấn](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/nam-viec-cua-mot-nguoi-co-van.html): Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm.
+- [Chẩn đoán trước khi kê đơn: cấu trúc một buổi tư vấn](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/chan-doan-truoc-khi-ke-don.html): Phần lớn buổi tư vấn hỏng ở mười phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.
 - [Uy tín không phải để nổi tiếng](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/uy-tin-khong-phai-de-noi-tieng.html): Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần thứ khác: được đúng người tin, đủ để họ chủ động tìm đến.
+- [Khách nói để tôi suy nghĩ thêm, nghĩa thật là gì](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/de-toi-suy-nghi-them.html): Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có bốn nghĩa khác, và cách xử lý mỗi nghĩa một khác.
 - [Cái nút thắt mang tên bạn](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/cai-nut-that-mang-ten-ban.html): Doanh thu tăng không tự làm người chủ nhẹ đi. Nó làm cái nút thắt mang tên bạn siết chặt hơn.
+- [Vì sao giảm giá làm hỏng quan hệ, không chỉ làm giảm lợi nhuận](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/vi-sao-giam-gia-lam-hong-quan-he.html): Giảm giá không chỉ lấy đi phần chênh lệch. Nó đổi cách khách nhìn bạn, và cái đó không lấy lại được bằng cách tăng giá lần sau.
 - [Kinh nghiệm phải trở thành hệ thống, không nằm trong trí nhớ](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/kinh-nghiem-phai-thanh-he-thong.html): Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.
+- [Năm thứ làm nên một hệ thống chạy được](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/nam-thu-lam-nen-mot-he-thong.html): Thư mục quy trình đầy tài liệu mà không ai mở là chuyện phổ biến. Nguyên nhân là quy trình chỉ là một trong năm thứ, và thường là thứ ít quan trọng nhất.
 - [Cộng đồng không phải một nhóm đăng bài](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/cong-dong-khong-phai-nhom-dang-bai.html): Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó, và đó mới là cộng đồng.
+- [Giao quyền mà không mất kiểm soát](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/giao-quyen-ma-khong-mat-kiem-soat.html): Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.
 - [AI làm nhanh phần đã đúng, không làm thay phán đoán](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/ai-lam-nhanh-phan-da-dung.html): AI không cứu được một định vị mơ hồ. Nó chỉ làm sự mơ hồ đó lan nhanh hơn và đều hơn.
+- [Mười bốn ngày đầu quyết định phần lớn](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/muoi-bon-ngay-dau.html): Người mới vào cộng đồng quyết định ở lại hay không trong hai tuần đầu, và họ quyết dựa trên việc có đạt được một thắng nhỏ hay không.
 - [Thương hiệu cá nhân không xây bằng số lượng bài đăng](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/thuong-hieu-khong-xay-bang-so-bai-dang.html): Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.
+- [Đo cộng đồng bằng gì ngoài số người](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/do-cong-dong-bang-gi.html): Số thành viên là chỉ số dễ đo nhất và dễ đánh lừa nhất. Có bốn con số khác nói đúng hơn về việc cộng đồng của bạn có sống hay không.
 - [Khi nào nên nói không với một khách hàng](https://coachduynguyen-creator.github.io/coach-duy-nguyen/bai-viet/khi-nao-nen-noi-khong.html): Nhận một khách sai không chỉ mất tiền. Nó chiếm chỗ của khách đúng, và làm hỏng thứ khó xây nhất là uy tín.
 
 ## Trang liên quan cùng hệ sinh thái
