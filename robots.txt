@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /kiem-tat-ca.html
-Disallow: /kiem-chu.js
-Disallow: /kiem-mo-coi.js
 
 Sitemap: https://coachduynguyen-creator.github.io/coach-duy-nguyen/sitemap.xml

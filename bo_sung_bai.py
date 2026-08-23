@@ -167,7 +167,7 @@ BO_SUNG = {
        "Không phải khi họ làm đúng như bạn, mà khi họ xử lý một tình huống theo cách khác bạn, bạn thấy chấp nhận được, và họ giải thích được vì sao chọn cách đó.")]),
 
 "muoi-bon-ngay-dau.html": dict(
- tra_loi="Tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong mười bốn ngày đầu. Người có một kết quả nhỏ nhìn thấy được trong hai tuần đầu thì ở lại, người không có thì âm thầm rời đi. Thắng nhỏ là bằng chứng rằng chỗ này làm được việc và chính họ làm được việc.",
+ tra_loi="Tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong mười bốn ngày đầu. Người có một kết quả nhỏ nhìn thấy được trong hai tuần đầu thì ở lại, người không có thì âm thầm rời đi. Một kết quả như vậy là bằng chứng rằng chỗ này làm được việc, và chính họ làm được việc.",
  faq=[("Bốn việc phải xảy ra trong mười bốn ngày đầu là gì?",
        "Ngày một tới ba biết mình đang ở đâu qua một cách tự đánh giá. Ngày ba tới bảy làm được một việc nhỏ và thấy kết quả. Ngày bảy tới mười được một người thật nhìn thấy. Ngày mười tới mười bốn biết nhịp tiếp theo là gì."),
       ("Ba lỗi hay gặp với người mới là gì?",

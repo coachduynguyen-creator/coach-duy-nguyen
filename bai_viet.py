@@ -20,7 +20,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 <h2>Hỏi ngược lại từng câu</h2>
 <p>Vì sao nội dung không ra đúng khách? Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì.</p>
 <p>Vì sao đội chờ người chủ mới chốt? Vì cách đọc khách, cách xử lý một tình huống khó và cách quyết định nhượng bộ tới đâu đều nằm trong đầu người chủ. Kịch bản chỉ ghi lại lời nói, không ghi lại cách nghĩ.</p>
-<p>Vì sao tuyển thêm mà bận hơn? Vì việc chưa được viết ra thành luồng có đầu ra và người chịu trách nhiệm. Người mới vào không có gì để bám, nên hỏi. Mỗi người mới là thêm một nguồn câu hỏi đổ về bàn của bạn.</p>
+<p>Vì sao tuyển thêm mà bận hơn? Vì việc chưa được viết ra thành luồng rõ ai làm, làm xong thì có gì. Người mới vào không có gì để bám, nên hỏi. Mỗi người mới là thêm một nguồn câu hỏi đổ về bàn của bạn.</p>
 <p>Vì sao tháng tốt tháng kém? Vì không có dữ liệu nào ghi lại điều gì đã tạo ra tháng tốt. Không đo được thì không lặp lại được, chỉ còn cách hy vọng.</p>
 
 <div class="dan-manh">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội.</div>
@@ -131,7 +131,7 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
 
 dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ",
  tieu="Nút thắt nằm ở chính bạn",
- mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Nó làm cái nút thắt mang tên bạn siết chặt hơn.",
+ mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Càng tăng, mọi việc càng dồn về đúng một người là bạn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
  than="""
@@ -226,7 +226,7 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
 <h2>Bốn điều quyết định một cộng đồng sống hay chết</h2>
 <p><b>Lời hứa rõ.</b> Vào đây thì được gì và không được gì. Lời hứa mơ hồ thu hút người mơ hồ.</p>
 <p><b>Tiêu chuẩn thành viên.</b> Ai hợp, ai chưa hợp. Một cộng đồng mở cửa cho tất cả sẽ mất người giỏi trước tiên, vì họ là người nhạy nhất với chất lượng.</p>
-<p><b>Trải nghiệm bắt đầu.</b> Hai tuần đầu quyết định gần như tất cả. Người mới cần biết ngay: làm gì trước, gặp ai, và thắng nhỏ đầu tiên là gì.</p>
+<p><b>Trải nghiệm bắt đầu.</b> Hai tuần đầu quyết định gần như tất cả. Người mới cần biết ngay: làm gì trước, gặp ai, và kết quả đầu tiên nhìn thấy được là gì.</p>
 <p><b>Nhịp.</b> Có hoạt động cố định để người ta biết khi nào quay lại. Không có nhịp thì cộng đồng chỉ sống bằng thông báo, và thông báo thì ngày càng bị bỏ qua.</p>
 
 <h2>Đo bằng gì</h2>
@@ -647,7 +647,7 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
 <h2>Bảng tự kiểm cho một luồng</h2>
 <div class="bang"><table>
 <tr><th>Câu hỏi</th><th>Nếu chưa trả lời được bằng một câu ngắn</th></tr>
-<tr><td>Luồng này tạo ra kết quả gì</td><td>Chưa nên viết quy trình, hãy làm rõ đầu ra trước</td></tr>
+<tr><td>Luồng này tạo ra kết quả gì</td><td>Chưa nên viết quy trình, hãy làm rõ kết quả cần có trước</td></tr>
 <tr><td>Ai chịu trách nhiệm</td><td>Luồng sẽ quay về bàn của bạn trong hai tuần</td></tr>
 <tr><td>Thế nào là xong và đủ tốt</td><td>Bạn sẽ thành trọng tài cho mọi tranh cãi</td></tr>
 <tr><td>Đo bằng con số nào</td><td>Không lặp lại được tháng tốt vì không biết vì sao nó tốt</td></tr>
