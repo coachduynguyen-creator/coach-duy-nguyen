@@ -7,7 +7,7 @@ NANG_LUC_4 = [
     ("01", "Thương hiệu", "được tin cậy", "Đúng khách hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới."),
     ("02", "Tư vấn", "có trách nhiệm", "Bán bằng chẩn đoán và sự thật, kể cả khi sự thật là bạn nên nói không."),
     ("03", "Hệ thống", "cùng đội ngũ", "Kinh nghiệm trong đầu bạn thành kết quả rõ, người chịu trách nhiệm và một nhịp cải tiến."),
-    ("04", "Kiến tạo", "cộng đồng", "Giá trị được tạo ra giữa các thành viên với nhau, không chỉ chảy một chiều từ bạn xuống."),
+    ("04", "Kiến tạo", "cộng đồng", "Thành viên tạo giá trị cho nhau với nhau, không chỉ chảy một chiều từ bạn xuống."),
 ]
 
 def _cung(cx, cy, ri, ro, a1, a2):
@@ -57,10 +57,10 @@ def he_sinh_thai(p=""):
           ("The Trusted Advisor", "chuong-trinh/the-trusted-advisor.html"),
           ("Founder Growth System", "chuong-trinh/founder-growth-system.html"),
           ("Community Growth System", "chuong-trinh/community-growth-system.html")]),
-        ("Đồng hành", "Ở lại đủ lâu để thay đổi thành thói quen",
+        ("Đồng hành", "Ở lại đủ lâu để cái mới thành thói quen",
          [("Cộng đồng Thành viên", "chuong-trinh/cong-dong-thanh-vien.html"),
           ("Diamond Founder Club", "chuong-trinh/diamond-founder-club.html")]),
-        ("Riêng", "Khi quyết định đủ lớn để cần một phạm vi riêng",
+        ("Riêng", "Khi việc đủ lớn để cần một phạm vi riêng",
          [("Cố vấn riêng", "chuong-trinh/co-van-rieng.html"),
           ("Giải pháp doanh nghiệp", "chuong-trinh/giai-phap-doanh-nghiep.html")]),
     ]
@@ -115,7 +115,7 @@ QUY_DAO_BANG = """<div class="qd-bang" aria-live="polite">
   <h3 id="qd-tit">Người ta gặp bạn lần đầu</h3>
   <p id="qd-mo">Đưa cách nghĩ của mình tới một nhóm rộng, chưa cần ai để lại thông tin và chưa mời ai làm gì.</p>
   <div class="qd-hang">
-    <div><b>Tôi làm gì</b><span id="qd-lam">Nội dung dễ chia sẻ, nhận lời mời nói chuyện, hợp tác với người cùng tệp khách.</span></div>
+    <div><b>Tôi làm gì</b><span id="qd-lam">Nội dung dễ chia sẻ, nhận lời mời nói chuyện, hợp tác với người cùng nhóm khách.</span></div>
     <div><b>Dấu hiệu đi tiếp</b><span id="qd-dau">Đúng nhóm người bắt đầu xuất hiện trong danh sách người xem mới.</span></div>
     <div><b>Chưa làm lúc này</b><span id="qd-chua">Chưa mời mua, chưa xin thông tin, chưa nói về chương trình.</span></div>
   </div>

@@ -21,7 +21,7 @@ CT_MENU = [
     ("chuong-trinh/founder-growth-system.html", "Founder Growth System", "Hệ thống tăng trưởng cùng đội ngũ"),
     ("chuong-trinh/community-growth-system.html", "Community Growth System", "Hệ thống tăng trưởng từ cộng đồng"),
     ("SEP", "", ""),
-    ("chuong-trinh/cong-dong-thanh-vien.html", "Cộng đồng Thành viên", "Nơi bốn năng lực được luyện cả năm"),
+    ("chuong-trinh/cong-dong-thanh-vien.html", "Cộng đồng Thành viên", "Luyện đủ bốn năng lực suốt một năm"),
     ("chuong-trinh/diamond-founder-club.html", "Diamond Founder Club", "Cộng đồng cao cấp, theo lời mời"),
     ("chuong-trinh/co-van-rieng.html", "Cố vấn riêng", "Bốn tháng một kèm một, nhận rất giới hạn"),
     ("chuong-trinh/giai-phap-doanh-nghiep.html", "Giải pháp doanh nghiệp", "90 ngày xây hệ thống tăng trưởng"),
@@ -100,7 +100,7 @@ def khoi_cuoi(p=""):
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Bước tiếp theo</p>
-      <h2>Chọn một cửa, cửa nào cũng đủ nhỏ</h2>
+      <h2>Bắt đầu từ việc nhỏ nhất cũng được</h2>
       <p>Bạn không cần quyết hôm nay. Ba lối dưới đây đều bắt đầu bằng một việc làm trong vài phút.</p>
     </div>
     <div class="ba-loi tre hien">
