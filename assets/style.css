@@ -182,19 +182,22 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .vt-chu p + p{margin-top:15px}
 .vt-chu .nhan{color:var(--vang)}
 .vt-chu .lk-v{margin-top:26px}
-.vt-anh{position:relative;padding-top:58px}
-.vt-anh .nguoi{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;z-index:0}
-.vt-anh .nguoi img{width:min(76%,330px);height:auto;filter:grayscale(1) sepia(.1) contrast(1.1) brightness(1.02);
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,rgba(0,0,0,.25) 88%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 62%,rgba(0,0,0,.25) 88%,transparent 100%)}
-.vt-anh .quang{position:absolute;left:50%;top:22px;width:min(84%,360px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(242,177,74,.78) 0%,rgba(242,177,74,.42) 34%,rgba(242,177,74,.1) 56%,rgba(242,177,74,0) 72%);z-index:0}
-.vt-anh .manh{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:52px}
-.vt-anh .manh .anh{box-shadow:var(--shadow)}
-.vt-anh .m1{grid-column:1/7;grid-row:2/5}
-.vt-anh .m2{grid-column:7/13;grid-row:4/7}
-.vt-anh .m3{grid-column:2/8;grid-row:7/10}
-@media(max-width:620px){.vt-anh{padding-top:44px}.vt-anh .manh{grid-auto-rows:44px}.vt-anh .nguoi img{width:min(70%,250px)}}
+/* khối ảnh Về tôi: đặt bằng toạ độ phần trăm để ô ảnh không bao giờ đè lên mặt.
+   Người đứng dưới đáy khung, đầu chiếm khoảng 28% trên của ảnh, nên mọi ô ảnh
+   đều bắt đầu từ 46% chiều cao trở xuống. */
+.vt-anh{position:relative;width:100%;max-width:520px;margin-inline:auto;aspect-ratio:4/5}
+.vt-anh .quang{position:absolute;left:50%;top:2%;width:76%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(242,177,74,.72) 0%,rgba(242,177,74,.38) 34%,rgba(242,177,74,.09) 56%,rgba(242,177,74,0) 72%);z-index:0}
+.vt-anh .nguoi{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:center}
+.vt-anh .nguoi img{width:66%;height:auto;filter:grayscale(1) sepia(.1) contrast(1.1) brightness(1.02);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.3) 90%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.3) 90%,transparent 100%)}
+.vt-anh .manh{position:absolute;inset:0;z-index:2}
+.vt-anh .manh .anh{position:absolute;width:47%;aspect-ratio:3/2;box-shadow:var(--shadow)}
+.vt-anh .m1{left:0;top:46%}
+.vt-anh .m2{right:0;top:62%}
+.vt-anh .m3{left:9%;bottom:0}
+@media(max-width:620px){.vt-anh{max-width:400px}}
 
 /* ---------- cách tôi làm việc ---------- */
 .clv{display:grid;gap:20px}
