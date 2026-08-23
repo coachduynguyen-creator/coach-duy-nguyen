@@ -105,7 +105,7 @@ INDEX = """
       <div class="quang" aria-hidden="true"></div>
       <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
       <div class="manh">
-        <div class="anh m1"><img src="img/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" loading="lazy"></div>
+        <div class="anh m1"><img src="img/cd-dung-lop.webp" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
         <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
       </div>

@@ -730,3 +730,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   /* hàng trong danh sách cũng phải thấy rõ khi rê */
   .viec5 .d:hover,.nl .hang:hover,.tap:hover,.bai-nho:hover,.dau .o:hover{background:rgba(242,177,74,.07)}
 }
+
+
+/* ---------- giữ đầu người trong khung ----------
+   Toàn bộ ảnh nhà sáng lập là ảnh dọc 2:3, còn khung bài viết và thẻ là 3:2.
+   Cắt từ giữa sẽ mất đầu. Đẩy điểm neo lên gần đỉnh để phần đầu luôn nằm trong khung. */
+.anh img,.bai-anh img,.cd-hang .anh img,.bai-nho .anh img{object-position:50% 12%}
+/* ô chân dung tròn nhỏ cần neo cao hơn nữa vì khung vuông cắt sâu */
+.cd-hang .anh img{object-position:50% 8%}

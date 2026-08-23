@@ -13,6 +13,15 @@ function nap(u,w){return new Promise(function(res){
   fr.src=u+'?static=1&kiem=1&_='+Math.random();
 });}
 function chay(fr,ma){ return fr.contentWindow.eval(ma); }
+window.kiemAnh = async function(w){
+  var ka = await (await fetch('kiem-anh.js')).text();
+  var out=[];
+  for(var i=0;i<PAGES.length;i++){
+    var fr = await nap(PAGES[i], w);
+    try{ var a=JSON.parse(chay(fr,ka)); if(a.length) out.push({t:PAGES[i], anh:a}); }catch(e){ out.push({t:PAGES[i], loi:e.message}); }
+  }
+  return JSON.stringify({kho:w, soTrangLoi:out.length, ds:out});
+};
 window.chayTatCa = async function(w){
   var kc = await (await fetch('kiem-chu.js')).text();
   var km = await (await fetch('kiem-mo-coi.js')).text();
