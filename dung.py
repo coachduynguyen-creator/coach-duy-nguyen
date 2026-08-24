@@ -170,19 +170,6 @@ INDEX = """
     </div>
   </div>
 </section>
-
-<section class="phan tran" id="quy-dao">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien">
-      <p class="mono">CDN Trust Orbit</p>
-      <h2>Tôi tích luỹ niềm tin trước, rồi mới mời</h2>
-      <p>Cái phễu bán hàng đo được một chiến dịch, nhưng nó không mô tả đúng cách một người quyết định tin ai. Nên tôi thiết kế quan hệ bằng quỹ đạo: khách ở giữa, năm vòng quay quanh, và họ tiến gần hay lùi ra lúc nào cũng được mà vẫn còn trong quan hệ.</p>
-      <p style="margin-top:20px"><a class="nut nut-vien" href="phuong-phap.html#quy-dao">Xem bản vẽ quỹ đạo <span class="mt" aria-hidden="true">&rarr;</span></a></p>
-    </div>
-  </div>
-</section>
-
 <section class="phan bd hoa-van" id="chuong-trinh">
   <div class="phan-dau hien">
     <p class="mono">Bắt đầu từ đâu</p>
