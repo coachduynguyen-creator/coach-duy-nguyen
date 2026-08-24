@@ -30,10 +30,15 @@ KENH = [("Facebook", "334.000", "theo dõi"),
         ("Zalo",      "22.000", "theo dõi")]
 THEM = [("26.600", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
 
+# Con số tổng làm đầu, bốn kênh làm phần chia nhỏ bên dưới.
+# Coach Duy chốt ngày 25/08/2026 dùng con số tổng 800.000+, theo slide của mình.
+TONG = ("800.000", "người theo dõi trên các nền tảng")
 so_lieu_html = (
+    '<div class="so-tong"><b>%s+</b><span>%s</span></div>'
     '<div class="kenh4">%s</div>'
     '<div class="kenh-them">%s</div>'
-    % ("".join('<div class="k"><p class="k-ten">%s</p>'
+    % (TONG[0], TONG[1],
+       "".join('<div class="k"><p class="k-ten">%s</p>'
                '<p class="k-so"><b>%s</b><span>%s</span></p></div>' % (t, n, dv)
                for t, n, dv in KENH),
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
@@ -114,7 +119,7 @@ INDEX = """
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
-    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh. Số nói tôi có mặt đủ lâu và đủ đều, không nói tôi giúp được bạn.</p>
+    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh. Con số tổng là cộng bốn kênh, nên một người theo dõi hai kênh sẽ được đếm hai lần. Số nói tôi có mặt đủ lâu và đủ đều, không nói tôi giúp được bạn.</p>
   </div>
 </header>
 
