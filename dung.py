@@ -132,7 +132,7 @@ INDEX = """
 
 <section class="kh">
   <div class="bd">
-    <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội của họ</p>
+    <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội ngũ của họ</p>
     <div class="kh-luoi">{KHACH}</div>
     <p class="kh-them">và một số doanh nghiệp khác</p>
   </div>
@@ -143,9 +143,9 @@ INDEX = """
     <div class="vt-chu hien">
       <p class="mono">Về Duy</p>
       <h2>Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp</h2>
-      <p>Duy làm việc với người mà khách mua vì tin ở chính họ: chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi.</p>
-      <p>Điều Duy nghe nhiều nhất là bốn câu. Đăng nội dung nhiều nhưng không ra đúng khách. Đội bán hàng vẫn phải chờ Duy xuất hiện mới chốt được. Tuyển thêm người nhưng Duy lại bận hơn trước. Tháng tốt tháng kém mà không rõ vì sao.</p>
-      <p><span class="nhan">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ.</span> Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội. Vì vậy càng bán tốt, người chủ càng bận.</p>
+      <p>Duy làm việc với người mà khách mua vì tin ở chính họ: chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi.</p>
+      <p>Điều Duy nghe nhiều nhất là bốn câu. Đăng nội dung nhiều nhưng không ra đúng khách. Đội ngũ bán hàng vẫn phải chờ Duy xuất hiện mới chốt được. Tuyển thêm người nhưng Duy lại bận hơn trước. Tháng tốt tháng kém mà không rõ vì sao.</p>
+      <p><span class="nhan">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ.</span> Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
@@ -255,7 +255,7 @@ MOC = [
   "Duy bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
  ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy", "img/mc/mc-phongnho.webp",
   "Facebook 60.000 · YouTube 50.000",
-  "MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
+  "MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội ngũ của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
  ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người", "img/mc/mc-sankhau.webp",
   "Facebook 120.000 · YouTube 130.000 · TikTok 21.000",
   "Hơn 500 học viên. Duy bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của Duy."),
@@ -310,7 +310,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
       <h2>Doanh nghiệp của bạn bớt phụ thuộc vào chính bạn</h2>
       <p>Duy làm việc với người mà khách mua vì tin ở chính họ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi. Đó vừa là lợi thế lớn nhất, vừa là giới hạn lớn nhất.</p>
       <p>Duy bắt đầu nghề bằng việc dạy bán hàng. Suốt năm năm, Duy làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy Duy chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
-      <p>Duy không rời bỏ phần bán hàng. Duy dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn: làm sao để cách bán, cách tư vấn và cách ra quyết định của người chủ trở thành năng lực của cả đội.</p>
+      <p>Duy không rời bỏ phần bán hàng. Duy dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn: làm sao để cách bán, cách tư vấn và cách ra quyết định của người chủ trở thành năng lực của cả đội ngũ.</p>
       <a class="lk-v" href="phuong-phap.html">Xem phương pháp Duy dùng <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
@@ -364,11 +364,11 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
     </article>
     <article>
       <div class="anh"><img src="img/nguoi-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
-      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu, có đội. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
+      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu, có đội ngũ. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
     <article>
-      <div class="anh"><img src="img/nguoi-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội" loading="lazy"></div>
-      <div><h3>Người đang dẫn một đội</h3><p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
+      <div class="anh"><img src="img/nguoi-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội ngũ" loading="lazy"></div>
+      <div><h3>Người đang dẫn một đội ngũ</h3><p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
     </article>
   </div>
   <div class="dut hien">
@@ -605,7 +605,7 @@ for c in CT:
     else:
         dich = CONG_DONG
         nhan_nut, tieu_cta, dan_cta = ("Trao đổi trước khi quyết", "Bắt đầu bằng một buổi trao đổi ngắn",
-            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa hợp, bạn được nói thẳng.")
+            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội ngũ Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa hợp, bạn được nói thẳng.")
     ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
     cta_ct = """<section class="dai-vang">
   <div class="bd moi">
@@ -904,7 +904,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
   <div class="lh tre hien">
     <div class="hop">
       <h3>Muốn tham gia cộng đồng</h3>
-      <p>Đây là cửa chính. Điền biểu mẫu khoảng hai phút, đội Next Gen Founder sẽ liên hệ để xem cộng đồng có giải được điều bạn đang kẹt không. Nếu chưa hợp, bạn được nói thẳng.</p>
+      <p>Đây là cửa chính. Điền biểu mẫu khoảng hai phút, đội ngũ Next Gen Founder sẽ liên hệ để xem cộng đồng có giải được điều bạn đang kẹt không. Nếu chưa hợp, bạn được nói thẳng.</p>
       <a class="lk-v" href="{CONG_DONG}" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">

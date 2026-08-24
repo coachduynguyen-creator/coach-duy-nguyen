@@ -114,7 +114,7 @@ KET_HST = {
  "co-van-rieng.html":
    "Tôi đang có một quyết định lớn, cần đưa ra bàn với một người ngoài cuộc.",
  "giai-phap-doanh-nghiep.html":
-   "Cả đội tôi cần cùng xây một hệ thống, không phải mình tôi đi học rồi về kể lại.",
+   "Cả đội ngũ tôi cần cùng xây một hệ thống, không phải mình tôi đi học rồi về kể lại.",
  "cong-dong-mo.html":
    "Tôi mới nghe tới Next Gen Founder, muốn xem thử xem có hợp mình không đã.",
  "founder-growth-system-lab.html":

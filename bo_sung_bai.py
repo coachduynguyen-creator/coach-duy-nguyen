@@ -5,9 +5,9 @@ Máy tìm kiếm và trợ lý AI trích đúng hai khối này."""
 
 BO_SUNG = {
 "bon-cau-toi-nghe-nhieu-nhat.html": dict(
- tra_loi="Bốn câu người sáng lập hay nói nhất đều dẫn về một nguyên nhân: uy tín, cách ra quyết định và cách tạo kết quả vẫn nằm trong đầu người chủ, chưa thành tài sản, quy trình, dữ liệu và năng lực của đội. Vì vậy càng bán tốt, người chủ càng bận.",
+ tra_loi="Bốn câu người sáng lập hay nói nhất đều dẫn về một nguyên nhân: uy tín, cách ra quyết định và cách tạo kết quả vẫn nằm trong đầu người chủ, chưa thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.",
  faq=[("Vì sao đăng nội dung nhiều mà không ra đúng khách?",
-       "Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì. Tăng tần suất không sửa được chỗ này."),
+       "Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì. Tăng tần suất không sửa được chỗ này."),
       ("Tuyển thêm người mà tôi lại bận hơn, gỡ từ đâu?",
        "Bắt đầu bằng một luồng công việc, không phải cả công ty. Viết ra kết quả rõ ràng của luồng đó, ai chịu trách nhiệm, đo bằng chỉ số nào, và bao lâu rà lại một lần. Chỗ nào bạn ấp úng khi trả lời, chỗ đó là điểm nghẽn thật."),
       ("Làm sao biết luồng đã ra khỏi đầu tôi?",
@@ -43,20 +43,20 @@ BO_SUNG = {
 "cai-nut-that-mang-ten-ban.html": dict(
  tra_loi="Nút thắt hình thành khi người chủ tự quyết nhiều việc mà không viết lại lý do quyết. Mỗi lần như vậy tạo thêm một điểm chỉ họ xử lý được. Nút này không đau khi công ty nhỏ, chỉ đau đúng lúc công ty lớn lên, tức lúc người chủ cần rảnh nhất.",
  faq=[("Ba dấu hiệu nút thắt đã siết là gì?",
-       "Bạn đi vắng ba ngày là có việc bình thường phải chờ. Người giỏi trong đội hỏi bạn nhiều hơn năm ngoái vì họ sợ làm sai. Và bạn bắt đầu né tuyển thêm, vì trong lòng biết tuyển thêm là bận thêm."),
+       "Bạn đi vắng ba ngày là có việc bình thường phải chờ. Người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái vì họ sợ làm sai. Và bạn bắt đầu né tuyển thêm, vì trong lòng biết tuyển thêm là bận thêm."),
       ("Viết quy trình có gỡ được nút thắt không?",
-       "Không đủ. Quy trình mô tả các bước, còn cái đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, tiêu chuẩn hoàn thành, dữ liệu, và một nhịp rà soát cố định."),
+       "Không đủ. Quy trình mô tả các bước, còn cái đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và một nhịp rà soát cố định."),
       ("Nên bắt đầu từ đâu?",
        "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà lại. Một luồng một quý, bốn luồng một năm. Sau hai năm cái nút ở chỗ bạn không còn nữa.")]),
 
 "kinh-nghiem-phai-thanh-he-thong.html": dict(
  tra_loi="Trong doanh nghiệp dịch vụ, cái tạo ra kết quả tốt nhất thường nằm trong đầu người chủ và vài người giỏi nhất. Đó là sức mạnh vì khó bắt chước, nhưng cũng là rủi ro lớn nhất vì nó rời khỏi công ty cùng lúc với người mang nó.",
- faq=[("Đội có tự học được cách nghĩ của người chủ không?",
+ faq=[("Đội ngũ có tự học được cách nghĩ của người chủ không?",
        "Học được một phần và rất chậm. Người giỏi học được cách bạn làm, nhưng không học được vì sao bạn quyết như vậy trong tình huống ngoại lệ. Mà nghề dịch vụ thì phần lớn giá trị nằm ở tình huống ngoại lệ."),
       ("Cách rẻ nhất để lấy kinh nghiệm ra khỏi đầu là gì?",
        "Ghi lại quyết định, không ghi lại thao tác. Mỗi tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. Dòng thứ ba là dòng có giá trị nhất và cũng hay bị bỏ nhất."),
       ("Năm phần làm nên một hệ thống là gì?",
-       "Kết quả rõ ràng, người chịu trách nhiệm là một cái tên chứ không phải một phòng ban, tiêu chuẩn hoàn thành, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
+       "Kết quả rõ ràng, người chịu trách nhiệm là một cái tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
 
 "cong-dong-khong-phai-nhom-dang-bai.html": dict(
  tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ người sáng lập. Bài kiểm nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
@@ -86,7 +86,7 @@ BO_SUNG = {
        "Không phải người đăng nhiều nhất, mà là người còn đăng sau năm thứ ba.")]),
 
 "khi-nao-nen-noi-khong.html": dict(
- tra_loi="Nhận một khách sai tốn bốn thứ: thời gian giao hàng cho người không đạt kết quả, chỗ của một khách đúng, năng lượng của đội, và đắt nhất là uy tín, vì người không đạt kết quả sẽ kể lại trải nghiệm theo cách họ thấy chứ không theo cách bạn giải thích.",
+ tra_loi="Nhận một khách sai tốn bốn thứ: thời gian giao hàng cho người không đạt kết quả, chỗ của một khách đúng, năng lượng của đội ngũ, và đắt nhất là uy tín, vì người không đạt kết quả sẽ kể lại trải nghiệm theo cách họ thấy chứ không theo cách bạn giải thích.",
  faq=[("Bốn dấu hiệu nên nói không là gì?",
        "Khách chưa đủ điều kiện để bắt đầu. Khách thật ra muốn bạn làm thay. Khách đang tìm một lời bảo đảm chứ không mua một phương pháp. Và khách không có mặt để làm, dù họ trả đủ tiền."),
       ("Nói không thế nào để không mất quan hệ?",
@@ -149,7 +149,7 @@ BO_SUNG = {
        "Hai trường hợp, và cả hai phải công khai lý do: giá ra mắt cho khoá đầu tiên khi chưa có bằng chứng người học, và giảm theo một quy tắc áp dụng cho tất cả như đăng ký sớm. Cái làm hỏng quan hệ là mức riêng dành cho người biết mặc cả.")]),
 
 "nam-thu-lam-nen-mot-he-thong.html": dict(
- tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một cái tên chịu trách nhiệm, tiêu chuẩn hoàn thành, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
+ tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một cái tên chịu trách nhiệm, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
  faq=[("Vì sao thư mục quy trình không ai mở?",
        "Vì quy trình chỉ là một phần năm của hệ thống, và thường là phần ít quan trọng nhất. Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo, thiếu nhịp rà soát thì hệ thống chết trong ba tháng."),
       ("Nên bắt đầu từ đâu?",

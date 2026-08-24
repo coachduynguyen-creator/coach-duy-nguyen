@@ -13,17 +13,17 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <h2>Bốn câu đó là gì</h2>
 <p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, nhưng người nhắn tin lại không phải người có tiền mua thứ họ bán.</p>
-<p><b>Câu thứ hai: đội bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội có người, có kịch bản, có quy trình. Nhưng tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ.</p>
+<p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ có người, có kịch bản, có quy trình. Nhưng tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ.</p>
 <p><b>Câu thứ ba: tuyển thêm người nhưng tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang nhất, vì nó đi ngược hẳn với điều họ mong đợi khi bỏ tiền tuyển người.</p>
 <p><b>Câu thứ tư: tháng tốt tháng kém mà không rõ vì sao.</b> Doanh thu lên xuống theo tháng, người chủ không chỉ ra được nguyên nhân, nên cũng không lặp lại được tháng tốt.</p>
 
 <h2>Hỏi ngược lại từng câu</h2>
-<p>Vì sao nội dung không ra đúng khách? Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì.</p>
-<p>Vì sao đội chờ người chủ mới chốt? Vì cách đọc khách, cách xử lý một tình huống khó và cách quyết định nhượng bộ tới đâu đều nằm trong đầu người chủ. Kịch bản chỉ ghi lại lời nói, không ghi lại cách nghĩ.</p>
+<p>Vì sao nội dung không ra đúng khách? Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì.</p>
+<p>Vì sao đội ngũ chờ người chủ mới chốt? Vì cách đọc khách, cách xử lý một tình huống khó và cách quyết định nhượng bộ tới đâu đều nằm trong đầu người chủ. Kịch bản chỉ ghi lại lời nói, không ghi lại cách nghĩ.</p>
 <p>Vì sao tuyển thêm mà bận hơn? Vì việc chưa được viết ra thành luồng rõ ai làm, làm xong thì có gì. Người mới vào không có gì để bám, nên hỏi. Mỗi người mới là thêm một nguồn câu hỏi đổ về bàn của bạn.</p>
 <p>Vì sao tháng tốt tháng kém? Vì không có dữ liệu nào ghi lại điều gì đã tạo ra tháng tốt. Không đo được thì không lặp lại được, chỉ còn cách hy vọng.</p>
 
-<div class="dan-manh">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội.</div>
+<div class="dan-manh">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ.</div>
 
 <h2>Vì sao càng bán tốt lại càng bận</h2>
 <p>Nhiều người không lường trước phần này. Khi người chủ bán giỏi, doanh thu tăng. Doanh thu tăng thì số việc tăng. Nhưng nếu phần quyết định vẫn chưa rời khỏi đầu người chủ, mỗi việc mới lại tạo thêm một điểm phải chờ họ.</p>
@@ -76,7 +76,7 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
 
 <h2>Một: soi đúng</h2>
 <p>Việc đầu tiên là tách điều bạn đang thấy khỏi vấn đề thật phía sau. Người cố vấn bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác.</p>
-<p>Ví dụ. Bạn nói đội ngũ thiếu chủ động. Nhưng nếu mọi quyết định cuối cùng vẫn phải quay về bạn, vấn đề không chỉ nằm ở thái độ của đội. Cấu trúc trách nhiệm đang dạy họ chờ bạn.</p>
+<p>Ví dụ. Bạn nói đội ngũ thiếu chủ động. Nhưng nếu mọi quyết định cuối cùng vẫn phải quay về bạn, vấn đề không chỉ nằm ở thái độ của đội ngũ. Cấu trúc trách nhiệm đang dạy họ chờ bạn.</p>
 
 <h2>Hai: chỉ đường</h2>
 <p>Việc thứ hai là cho bạn thấy đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với mức trưởng thành hiện tại, không phải một danh sách mẹo.</p>
@@ -124,7 +124,7 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
 <p>Uy tín chỉ làm được một việc: khiến người ta chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó trở đi, cái quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cái cửa đẹp dẫn vào phòng trống.</p>
 
 <h2>Ba câu để tự kiểm tuần này</h2>
-<p>Một: nếu phải nói trong một câu bạn giúp ai giải quyết điều gì, bạn nói được không, và câu đó có giống câu đội bạn sẽ nói không.</p>
+<p>Một: nếu phải nói trong một câu bạn giúp ai giải quyết điều gì, bạn nói được không, và câu đó có giống câu đội ngũ bạn sẽ nói không.</p>
 <p>Hai: trong ba tháng qua, có bao nhiêu người chủ động tìm tới bạn mà không qua giới thiệu. Con số đó nói về uy tín thật hơn mọi chỉ số nền tảng.</p>
 <p>Ba: người vừa làm việc với bạn xong có kể lại được cách bạn làm việc cho người thứ ba không. Nếu không, bạn chưa có phương pháp, mới có phong độ.</p>
 """),
@@ -135,7 +135,7 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
  than="""
-<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội đông hơn. Nhưng người chủ thì mệt hơn năm ngoái, ngủ ít hơn, và bắt đầu sợ những ngày đi vắng.</p>
+<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội ngũ đông hơn. Nhưng người chủ thì mệt hơn năm ngoái, ngủ ít hơn, và bắt đầu sợ những ngày đi vắng.</p>
 <p>Đó không phải dấu hiệu bạn làm sai. Đó là dấu hiệu bạn đã chạm giới hạn của mô hình hiện tại.</p>
 
 <h2>Nút thắt hình thành thế nào</h2>
@@ -145,14 +145,14 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
 
 <h2>Ba dấu hiệu nút đã siết</h2>
 <p><b>Một, bạn đi vắng ba ngày là có việc phải chờ.</b> Không phải việc khẩn cấp bất thường, mà việc bình thường của tuần.</p>
-<p><b>Hai, người giỏi trong đội hỏi bạn nhiều hơn năm ngoái.</b> Nghe thì ngược, nhưng khi hệ thống thiếu, người càng có trách nhiệm càng hỏi nhiều, vì họ sợ làm sai.</p>
+<p><b>Hai, người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái.</b> Nghe thì ngược, nhưng khi hệ thống thiếu, người càng có trách nhiệm càng hỏi nhiều, vì họ sợ làm sai.</p>
 <p><b>Ba, bạn bắt đầu né tuyển thêm.</b> Vì trong lòng bạn biết tuyển thêm là bận thêm, dù không nói ra.</p>
 
 <div class="dan-manh">Nếu mọi nội dung, giao dịch lớn và quyết định quan trọng đều chờ nhà sáng lập, doanh thu tăng có thể làm người chủ bận hơn.</div>
 
 <h2>Không phải cứ viết quy trình là xong</h2>
 <p>Nhiều người nghe tới đây là đi viết quy trình. Ba tháng sau, có một thư mục đầy tài liệu mà không ai mở. Vì quy trình mô tả các bước, còn cái đang thiếu là cách nghĩ đằng sau các bước.</p>
-<p>Một hệ thống chạy được cần năm phần, không phải một: kết quả rõ ràng, người chịu trách nhiệm, tiêu chuẩn hoàn thành, dữ liệu để biết đang tốt hay xấu, và một nhịp rà soát cố định.</p>
+<p>Một hệ thống chạy được cần năm phần, không phải một: kết quả rõ ràng, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu để biết đang tốt hay xấu, và một nhịp rà soát cố định.</p>
 <p>Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo. Thiếu dữ liệu thì không ai biết mình làm tốt hay không. Thiếu nhịp rà soát thì hệ thống chết dần trong ba tháng.</p>
 
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
@@ -172,13 +172,13 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 <p>Đó là sức mạnh, vì nó khó bắt chước. Nhưng nó cũng là rủi ro lớn nhất, vì nó đi ra khỏi công ty cùng lúc với người mang nó.</p>
 
 <h2>Kinh nghiệm không tự chuyển thành hệ thống</h2>
-<p>Nhiều người chủ tin rằng nếu làm việc cùng nhau đủ lâu, đội sẽ tự học được cách nghĩ của mình. Điều đó đúng một phần và rất chậm. Người giỏi trong đội học được cách bạn làm, nhưng không học được vì sao bạn quyết như vậy trong tình huống ngoại lệ.</p>
+<p>Nhiều người chủ tin rằng nếu làm việc cùng nhau đủ lâu, đội ngũ sẽ tự học được cách nghĩ của mình. Điều đó đúng một phần và rất chậm. Người giỏi trong đội ngũ học được cách bạn làm, nhưng không học được vì sao bạn quyết như vậy trong tình huống ngoại lệ.</p>
 <p>Mà nghề dịch vụ thì phần lớn giá trị nằm ở tình huống ngoại lệ.</p>
 
 <h2>Năm phần làm nên một hệ thống</h2>
 <p><b>Kết quả rõ ràng.</b> Luồng này tạo ra cái gì, đo bằng gì. Không phải mô tả hoạt động, mà mô tả kết quả.</p>
 <p><b>Người chịu trách nhiệm.</b> Một cái tên, không phải một phòng ban. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người, tức là không ai.</p>
-<p><b>Tiêu chuẩn hoàn thành.</b> Làm thế nào thì gọi là xong và đủ tốt. Thiếu cái này, mỗi người hiểu một kiểu về chữ xong.</p>
+<p><b>Thế nào là xong.</b> Làm thế nào thì gọi là xong và đủ tốt. Thiếu cái này, mỗi người hiểu một kiểu về chữ xong.</p>
 <p><b>Dữ liệu.</b> Vài con số cho biết luồng đang khoẻ hay yếu. Không cần bảng điều khiển đẹp, cần con số được nhìn đều.</p>
 <p><b>Nhịp rà soát.</b> Bao lâu ngồi lại một lần để sửa. Không có nhịp thì hệ thống chết trong ba tháng, kể cả khi tài liệu vẫn còn đó.</p>
 
@@ -191,7 +191,7 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 
 <h2>Dấu hiệu kinh nghiệm đã chuyển giao được</h2>
 <p>Không phải khi người khác học thuộc quy trình. Mà khi họ xử lý được một tình huống chưa có trong tài liệu, theo cách bạn thấy chấp nhận được, và giải thích được vì sao họ làm vậy.</p>
-<p>Trước lúc đó, bạn vẫn đang thuê người thực hiện. Sau lúc đó, bạn mới thật sự có đội.</p>
+<p>Trước lúc đó, bạn vẫn đang thuê người thực hiện. Sau lúc đó, bạn mới thật sự có đội ngũ.</p>
 
 <h2>Ba mức chuyển giao kinh nghiệm</h2>
 <p><b>Mức một, chuyển thao tác.</b> Người khác làm được đúng các bước bạn làm. Mức này dễ đạt nhất và cũng dễ vỡ nhất, vì gặp tình huống ngoài kịch bản là họ dừng.</p>
@@ -334,7 +334,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 
 <h2>Cái giá thật của một khách sai</h2>
 <p>Người ta hay tính cái giá đó bằng tiền hoàn lại. Thực tế nó gồm bốn phần.</p>
-<p>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả. Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận. Phần thứ ba là năng lượng của đội, vì đội biết rất rõ khi nào đang làm một việc không dẫn tới đâu.</p>
+<p>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả. Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận. Phần thứ ba là năng lượng của đội ngũ, vì đội ngũ biết rất rõ khi nào đang làm một việc không dẫn tới đâu.</p>
 <p>Phần thứ tư đắt nhất: một người không đạt kết quả sẽ kể lại trải nghiệm đó. Và họ kể trung thực theo cách họ thấy, không theo cách bạn giải thích.</p>
 
 <h2>Bốn dấu hiệu tôi nói không</h2>
@@ -382,7 +382,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <h2>Lãnh địa không phải ngành, cũng không phải nghề</h2>
 <p>Nói tôi làm về bất động sản là nói ngành. Nói tôi là huấn luyện viên là nói nghề. Cả hai đều chưa phải lãnh địa.</p>
 <p>Lãnh địa là giao của ba thứ: một nhóm người cụ thể, một loại vấn đề cụ thể, và một cách nhìn mà bạn có còn người khác chưa có.</p>
-<p>Ví dụ từ chính tôi. Ngành là đào tạo. Nghề là cố vấn. Lãnh địa là <b>giúp người chủ doanh nghiệp dịch vụ đưa uy tín và cách ra quyết định của mình ra khỏi đầu mình, thành năng lực của đội</b>. Câu sau dài hơn nhưng nó loại được chín mươi phần trăm người đọc, và giữ lại đúng người tôi muốn.</p>
+<p>Ví dụ từ chính tôi. Ngành là đào tạo. Nghề là cố vấn. Lãnh địa là <b>giúp người chủ doanh nghiệp dịch vụ đưa uy tín và cách ra quyết định của mình ra khỏi đầu mình, thành năng lực của đội ngũ</b>. Câu sau dài hơn nhưng nó loại được chín mươi phần trăm người đọc, và giữ lại đúng người tôi muốn.</p>
 
 <div class="dan-manh">Một lãnh địa tốt phải làm được hai việc cùng lúc: khiến đúng người thấy đây là dành cho mình, và khiến người không phù hợp tự rời đi mà không thấy khó chịu.</div>
 
@@ -626,7 +626,7 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
 <p>Không phải một phòng ban, không phải hai người. Một cái tên. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người, tức là không ai.</p>
 <p>Người chịu trách nhiệm khác người thực hiện. Có thể ba người cùng làm, nhưng chỉ một người trả lời câu hỏi vì sao tháng này luồng chạy kém.</p>
 
-<h3>Ba: tiêu chuẩn hoàn thành</h3>
+<h3>Ba: thế nào là xong</h3>
 <p>Làm thế nào thì gọi là xong và đủ tốt. Thiếu phần này, mỗi người hiểu chữ xong một kiểu, và người chủ trở thành trọng tài cho mọi việc.</p>
 <p>Tiêu chuẩn tốt nhất là cái nhìn ba mươi giây đã biết đạt hay chưa, không phải một đoạn văn mô tả chất lượng.</p>
 
@@ -664,10 +664,10 @@ dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đ�
  tieu="Giao quyền mà không mất kiểm soát",
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
- anh="img/nguoi-dan-doi.webp", alt="Ảnh minh hoạ một người đang dẫn một đội",
+ anh="img/nguoi-dan-doi.webp", alt="Ảnh minh hoạ một người đang dẫn một đội ngũ",
  than="""
-<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm. Lý do là hai lần thử đầu đều hỏng, và sau lần thứ hai họ kết luận đội chưa đủ giỏi.</p>
-<p>Thường thì không phải đội chưa đủ giỏi. Thường thì việc giao được làm sai cách.</p>
+<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm. Lý do là hai lần thử đầu đều hỏng, và sau lần thứ hai họ kết luận đội ngũ chưa đủ giỏi.</p>
+<p>Thường thì không phải đội ngũ chưa đủ giỏi. Thường thì việc giao được làm sai cách.</p>
 
 <h2>Hai kiểu giao sai</h2>
 <p><b>Giao việc, giữ quyết định.</b> Người kia làm mọi thao tác nhưng mọi quyết định vẫn quay về bạn. Kiểu này không giảm tải cho ai, chỉ thêm một khâu trung gian, và làm người nhận thấy mình như cái máy.</p>
