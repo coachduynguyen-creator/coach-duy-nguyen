@@ -167,7 +167,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .bang-hieu .vach i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--vang-3),transparent)}
 .bang-hieu .vach b{width:6px;height:6px;border-radius:50%;background:var(--vang);flex:0 0 auto}
 .bang-hieu .khau-hieu{font-family:var(--f-than);font-weight:600;font-size:clamp(14px,1.6vw,18px);letter-spacing:.14em;color:var(--vang-2);text-transform:uppercase}
-#hero h1{font-size:clamp(17px,1.95vw,22px);font-weight:500;font-family:var(--f-than);line-height:1.5;letter-spacing:0;color:var(--ink-2);max-width:46ch;margin:26px auto 0}
+#hero h1{font-size:clamp(15.5px,1.5vw,18.5px);font-weight:500;font-family:var(--f-than);line-height:1.62;letter-spacing:0;color:var(--ink-2);max-width:60ch;margin:26px auto 0}
 .hero-nut{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
 .hero-so{position:relative;z-index:2;margin-top:46px;padding-top:26px;border-top:1px solid rgba(249,245,240,.13)}
 .hero-ghi{position:relative;z-index:2;margin-top:15px;font-size:13px;color:var(--ink-3);text-align:center}
@@ -814,14 +814,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .kenh4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   border:1px solid rgba(249,245,240,.11);border-radius:var(--r);overflow:hidden;
   background:rgba(23,18,15,.34);backdrop-filter:blur(3px)}
-.kenh4 .k{padding:18px 18px 17px;border-left:1px solid rgba(249,245,240,.09);text-align:left}
+.kenh4 .k{padding:17px 20px 16px;border-left:1px solid rgba(249,245,240,.09);text-align:left}
 .kenh4 .k:first-child{border-left:0}
 .k-ten{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:var(--vang);margin-bottom:9px}
-.k-so{display:flex;align-items:baseline;gap:6px;margin-bottom:8px}
-.k-so b{font-family:var(--f-tit);font-weight:800;font-size:34px;line-height:1;color:var(--ink);
-  letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.k-so span{font-size:13px;color:var(--ink-3)}
+.k-so{display:flex;align-items:baseline;gap:7px;margin-bottom:0}
+.k-so b{font-family:var(--f-tit);font-weight:800;font-size:clamp(28px,2.9vw,40px);line-height:1;
+  color:var(--ink);letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.k-so span{font-size:13.5px;color:var(--ink-3)}
 .k-vai{font-size:13.5px;line-height:1.5;color:var(--ink-3);text-wrap:balance}
 
 .kenh-them{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:16px}

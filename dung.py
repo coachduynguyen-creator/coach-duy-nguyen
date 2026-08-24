@@ -21,18 +21,21 @@ def chu_so(n, hoa=False):
 # một cái là thành viên cộng đồng, một cái là số năm. Xếp chung một hàng thì
 # sáu con số nhìn như nhau trong khi chúng không cùng nghĩa.
 # Dòng vai trò lấy đúng cách trang kenh-youtube.html đã mô tả, không thêm tuyên bố mới.
-KENH = [("Facebook", "334", "nghìn theo dõi", "Nơi tôi kể trải nghiệm"),
-        ("YouTube",  "230", "nghìn đăng ký",  "Nơi tôi trình bày hết một phương pháp"),
-        ("TikTok",   "231", "nghìn theo dõi", "Nơi tôi mở đầu câu chuyện"),
-        ("Zalo",      "22", "nghìn theo dõi", "Nơi tôi trả lời câu hỏi cụ thể")]
-THEM = [("26,6 nghìn", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
+# Viết đủ số. "334.000" đọc ra sức nặng thật, "334 nghìn" thì không.
+# Bỏ dòng vai trò của từng kênh, vì nó làm loãng chính con số. Vai trò các
+# kênh đã nói kỹ ở trang kenh-youtube.html.
+KENH = [("Facebook", "334.000", "theo dõi"),
+        ("YouTube",  "230.000", "đăng ký"),
+        ("TikTok",   "231.000", "theo dõi"),
+        ("Zalo",      "22.000", "theo dõi")]
+THEM = [("26.600", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
 
 so_lieu_html = (
     '<div class="kenh4">%s</div>'
     '<div class="kenh-them">%s</div>'
     % ("".join('<div class="k"><p class="k-ten">%s</p>'
-               '<p class="k-so"><b>%s</b><span>%s</span></p>'
-               '<p class="k-vai">%s</p></div>' % (t, n, dv, v) for t, n, dv, v in KENH),
+               '<p class="k-so"><b>%s</b><span>%s</span></p></div>' % (t, n, dv)
+               for t, n, dv in KENH),
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
 
 VIEC5 = [("Soi đúng","Tách điều bạn đang thấy khỏi vấn đề thật phía sau. Bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác."),
