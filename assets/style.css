@@ -233,7 +233,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(hover:hover){.bai-lon:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
 .bai-lon .anh{border:0;border-radius:0;aspect-ratio:3/2}
 .bai-lon .chu{padding:24px}
-.bai-lon .meta,.bai-nho .meta{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.bai-lon .meta,.bai-nho .meta{font-family:var(--f-than);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--vang);margin-bottom:10px}
 .bai-lon h3{font-size:24px;margin-bottom:10px}
 .bai-lon p{font-size:15.5px;color:var(--ink-2)}
 .ds-bai{display:grid;gap:0;align-content:start;border-top:1px solid var(--line)}
@@ -331,13 +331,13 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(hover:hover){.the-bai:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
 .the-bai .anh{border:0;border-radius:0;aspect-ratio:3/2}
 .the-bai .chu{padding:22px}
-.the-bai .meta{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.the-bai .meta{font-family:var(--f-than);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--vang);margin-bottom:10px}
 .the-bai h2{font-size:20px;margin-bottom:9px}
 .the-bai p{font-size:15.5px;color:var(--ink-2)}
 
 /* ---------- trang bài viết ---------- */
 .bai-dau{padding:60px 0 34px}
-.bai-dau .meta{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin-bottom:14px}
+.bai-dau .meta{font-family:var(--f-than);font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--vang);margin-bottom:14px;line-height:1.6}
 .bai-dau h1{font-size:clamp(30px,4.6vw,52px);max-width:24ch}
 .bai-dau .tom{font-size:18.5px;color:var(--ink-2);margin-top:18px;max-width:58ch}
 .bai-anh{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/2;box-shadow:var(--shadow)}
@@ -878,8 +878,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .b14{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 }
 @media(max-width:640px){
-  .cd-luoi-mat{grid-template-columns:repeat(5,1fr)}
-  .cd-m:nth-child(n+11){display:none}
+  .cd-luoi-mat{grid-template-columns:repeat(3,1fr)}
   .cd-luoi{grid-template-columns:1fr}
   .b14{grid-template-columns:1fr}
   .cd-nhip{margin-top:40px}
@@ -1012,3 +1011,26 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   color:var(--vang);font-variant-numeric:tabular-nums}
 .so-tong span{font-size:clamp(14px,1.5vw,17px);color:var(--ink-2)}
 @media(max-width:560px){.so-tong{margin-bottom:18px}}
+
+/* Ảnh tròn chỉ dùng ở khổ hẹp, nơi ảnh tách nền không đủ chỗ đứng.
+   Từ 1000px trở lên đã có ảnh tách nền lớn bên phải nên ẩn ảnh tròn đi. */
+@media(min-width:1000px){ #hero .hero-avt{display:none} }
+@media(max-width:999px){
+  #hero .hero-avt{display:block;width:112px;height:112px;border-radius:50%;overflow:hidden;
+    margin:0 auto 20px;border:2px solid var(--vang);box-shadow:var(--shadow-v)}
+  #hero .hero-avt img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;
+    display:block;filter:saturate(1.06) contrast(1.04)}
+}
+/* Đơn vị đi liền con số, không để "theo dõi" rớt xuống hai dòng. */
+.k-so span{white-space:nowrap}
+@media(max-width:560px){
+  .k-so{flex-wrap:wrap;gap:2px 6px}
+  .k-so b{font-size:26px}
+}
+
+/* Chín ảnh thì chỉ 9 cột hoặc 3 cột mới chia hết. Các số khác đều để lại
+   một hàng cụt, nhìn lệch. */
+@media(max-width:900px) and (min-width:641px){
+  .cd-luoi-mat{grid-template-columns:repeat(3,1fr);max-width:560px;margin-inline:auto}
+}
+@media(max-width:640px){ .cd-luoi-mat{gap:10px} }

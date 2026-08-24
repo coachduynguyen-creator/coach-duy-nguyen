@@ -109,6 +109,7 @@ INDEX = """
     <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
     <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
+      <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono">Người cố vấn · Next Gen Founder</p>
       <div class="ten">Duy <em>Nguyễn</em></div>
       <h1>Tôi đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
