@@ -1034,3 +1034,17 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .cd-luoi-mat{grid-template-columns:repeat(3,1fr);max-width:560px;margin-inline:auto}
 }
 @media(max-width:640px){ .cd-luoi-mat{gap:10px} }
+
+/* ===== Nhãn dài thì thôi dùng font máy chữ =====
+   Đo ngày 25/08/2026: font máy chữ viết hoa kèm giãn chữ đọc tốt tới khoảng
+   20 ký tự tiếng Việt. Dài hơn thì dấu bị chật, mắt phải dò từng chữ.
+   Sáu chỗ dưới đây đều vượt ngưỡng đó. */
+.mono-dai,.tang-dai{font-family:var(--f-than) !important;font-size:13.5px !important;
+  font-weight:600 !important;letter-spacing:0 !important;text-transform:none !important;
+  line-height:1.55}
+.banh-ghi,.tt,.khong b,.kh-them{font-family:var(--f-than);letter-spacing:0;
+  text-transform:none}
+.banh-ghi{font-size:14px;line-height:1.6}
+.tt{font-size:13.5px}
+.khong b{font-size:13.5px;font-weight:700}
+.kh-them{font-size:13.5px}

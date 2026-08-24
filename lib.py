@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260825d"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260825e"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -230,11 +230,18 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
     open(duong, "w", encoding="utf-8").write(doc)
     return ten_tep
 
+# Font máy chữ viết hoa kèm giãn chữ chỉ đọc tốt tới khoảng 20 ký tự tiếng Việt.
+# Dài hơn thì dấu bị chật và mắt phải dò từng chữ. Hàm này tự chọn lớp theo độ dài,
+# nên nội dung thêm về sau cũng tự đúng, không phải nhớ.
+NGUONG_MONO = 20
+def lop_nhan(t):
+    return "mono" if len(t) <= NGUONG_MONO else "mono mono-dai"
+
 def dau_trang(nhan, tieu, dan):
     return """<header class="dau-trang hoa-van">
   <div class="bd">
-    <p class="mono">%s</p>
+    <p class="%s">%s</p>
     <h1>%s</h1>
     <p class="dan">%s</p>
   </div>
-</header>""" % (nhan, tieu, dan)
+</header>""" % (lop_nhan(nhan), nhan, tieu, dan)

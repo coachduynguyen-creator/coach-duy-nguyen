@@ -90,12 +90,13 @@ def the_bai_luoi(b, p=""):
 
 def the_ct(c, p=""):
     return """<a class="the-ct" href="%schuong-trinh/%s">
-  <span class="tang">%s</span>
+  <span class="tang%s">%s</span>
   <h3>%s</h3>
   <p class="vi">%s</p>
   <p>%s</p>
   <span class="xem">Xem chương trình <span class="mt" aria-hidden="true">&rarr;</span></span>
-</a>""" % (p, c["tep"], c["nang_luc"], c["ten"], c["ten_vi"], c["tom"])
+</a>""" % (p, c["tep"], "" if len(c["nang_luc"]) <= 20 else " tang-dai",
+           c["nang_luc"], c["ten"], c["ten_vi"], c["tom"])
 
 def dsk(muc, khong=False):
     return '<div class="dsk%s">%s</div>' % (" khong" if khong else "",
