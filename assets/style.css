@@ -669,12 +669,6 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .cd-hang p{font-size:15px;color:var(--ink-2)}
 
 /* ---------- mốc thời gian ---------- */
-.moc-tg{display:grid;gap:0;border-top:1px solid var(--line);max-width:78ch;margin-inline:auto}
-.moc-tg div{display:grid;gap:8px;padding:22px 0;border-bottom:1px solid var(--line)}
-@media(min-width:760px){.moc-tg div{grid-template-columns:150px minmax(0,1fr);gap:28px}}
-.moc-tg b{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang)}
-.moc-tg h4{font-size:19px;margin-bottom:7px}
-.moc-tg p{font-size:16px;color:var(--ink-2)}
 
 /* ---------- ô niềm tin ---------- */
 .niem-tin{display:grid;gap:18px}
@@ -949,4 +943,54 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(max-width:620px){
   .hv-d{grid-template-columns:1fr;gap:6px;padding:16px 0}
   .hv-d > b{padding-top:0}
+}
+
+/* Hai dòng trên bảng đèn thương hiệu, đặt ở chân trang như một dấu hiệu nhận
+   diện. Trước đây nằm ở hero, chiếm hai dòng mà không nói thêm điều gì. */
+.ft-bang{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px;
+  font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-4)}
+.ft-bang i{width:16px;height:1px;background:var(--line-2);display:inline-block}
+
+.moc-tg{margin-top:8px}
+/* ===== Dòng thời gian có ảnh, chạy ngang và đi lên =====
+   Dựng theo slide "Kỷ nguyên của giá trị cá nhân": các mốc nối nhau bằng một
+   đường đi lên, mỗi mốc một ảnh sự kiện thật. Bản chỉ có chữ trước đây quá đơn điệu. */
+.mc-ray{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(258px,1fr);
+  gap:20px;align-items:end;overflow-x:auto;overflow-y:hidden;
+  padding:8px 4px 26px;scroll-snap-type:x mandatory;
+  scrollbar-color:var(--line-2) transparent}
+.mc-ray::-webkit-scrollbar{height:6px}
+.mc-ray::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px}
+.mc-the{scroll-snap-align:start;position:relative;display:flex;flex-direction:column;
+  /* mỗi mốc nhích lên một bậc, tạo cảm giác đi lên */
+  margin-bottom:calc(var(--i) * 16px)}
+.mc-the::before{content:"";position:absolute;left:0;right:-20px;bottom:-14px;height:2px;
+  background:linear-gradient(90deg,var(--line-2),var(--vang-3))}
+.mc-the:last-child::before{right:0}
+.mc-the::after{content:"";position:absolute;left:-5px;bottom:-19px;width:12px;height:12px;
+  border-radius:50%;background:var(--vang);box-shadow:0 0 0 4px var(--bg)}
+
+.mc-anh{aspect-ratio:3/2;border-radius:var(--r);overflow:hidden;background:var(--bg-2);
+  border:1px solid var(--line);margin-bottom:16px}
+.mc-anh img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block;
+  filter:saturate(.98) contrast(1.03);transition:transform .6s var(--ease),filter .4s var(--ease)}
+@media(hover:hover){.mc-the:hover .mc-anh img{transform:scale(1.05);filter:saturate(1.08) brightness(1.05)}}
+.mc-trong{background-image:var(--paper);border-style:dashed}
+
+.mc-ngay{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--vang);margin-bottom:8px}
+.mc-chu h4{font-family:var(--f-tit);font-weight:700;font-size:18px;line-height:1.25;
+  color:var(--ink);margin-bottom:8px;text-wrap:balance}
+.mc-so{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-bottom:9px;
+  font-variant-numeric:tabular-nums}
+.mc-chu p:last-child{font-size:14.5px;line-height:1.62;color:var(--ink-3)}
+
+@media(max-width:760px){
+  /* Khổ hẹp thì xếp dọc, vì cuộn ngang trên điện thoại dễ bị bỏ sót nội dung. */
+  .mc-ray{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;gap:26px;padding-bottom:0}
+  .mc-the{margin-bottom:0;padding-left:22px;border-left:2px solid var(--line-2)}
+  .mc-the::before{display:none}
+  .mc-the::after{left:-7px;bottom:auto;top:6px}
+  .mc-anh{aspect-ratio:16/9}
 }

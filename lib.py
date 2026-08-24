@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260824v"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260824x"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -145,6 +145,7 @@ def footer(p=""):
     <div class="ct-gioi">
       <a class="logo" href="%s" aria-label="Coach Duy Nguyễn">%s<span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
       <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng, soi đúng, chỉ đường, giữ chuẩn, rồi trả lại quyền tự chủ.</p>
+        <p class="ft-bang"><span>Coach. Trainer. Entrepreneur.</span><i aria-hidden="true"></i><span>Lead. Inspire. Impact.</span></p>
     </div>
     <div class="ct-cot">
       <div>

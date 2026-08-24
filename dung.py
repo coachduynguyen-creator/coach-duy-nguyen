@@ -105,12 +105,7 @@ INDEX = """
     <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
       <p class="mono">Người cố vấn · Next Gen Founder</p>
-      <div class="ten">Coach Duy <em>Nguyễn</em></div>
-      <div class="bang-hieu">
-        <p class="danh-xung">Coach. Trainer. Entrepreneur.</p>
-        <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
-        <p class="khau-hieu">Lead. Inspire. Impact.</p>
-      </div>
+      <div class="ten">Duy <em>Nguyễn</em></div>
       <h1>Tôi đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -263,20 +258,35 @@ print("  index.html")
 # Nguồn: slide "Kỷ nguyên của giá trị cá nhân" và PROFILE COACH DUY NGUYỄN.
 # Không nhắc tên Next Step Group theo yêu cầu của Coach Duy.
 MOC = [
- ("Trước 2021", "Làm nghề, chưa dạy nghề",
-  "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản. Phần lớn những gì tôi dạy sau này đến từ giai đoạn đó, gồm cả những quyết định sai tôi đã trả giá."),
- ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc",
-  "Facebook 0 người theo dõi. YouTube 0 người đăng ký. Tôi bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ tôi đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
- ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy",
-  "Năm tháng sau: Facebook 60.000, YouTube 50.000. MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội của họ. Đây là lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
- ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người",
-  "Facebook 120.000, YouTube 130.000, TikTok 21.000. Hơn 500 học viên. Tôi bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của mình."),
- ("Năm năm sau", "Hơn ba nghìn học viên và một cách nghĩ khác",
-  "Dạy hàng nghìn người bán hàng, tôi thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Bán giỏi hơn không gỡ được chỗ đó."),
- ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder",
-  "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính, vì một khoá học tạo hiểu biết, chỉ có nhịp mới tạo thói quen."),
+ ("Trước 2021", "Làm nghề, chưa dạy nghề", "", "",
+  "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
+ ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "img/cd-giang-slide.webp",
+  "Facebook 0 · YouTube 0",
+  "Tôi bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ tôi đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
+ ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy", "img/mc/mc-chungnhan.webp",
+  "Facebook 60.000 · YouTube 50.000",
+  "MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
+ ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người", "img/mc/mc-sankhau.webp",
+  "Facebook 120.000 · YouTube 130.000 · TikTok 21.000",
+  "Hơn 500 học viên. Tôi bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của mình."),
+ ("Năm năm sau", "Hơn ba nghìn học viên và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
+  "Hơn 3.000 học viên",
+  "Dạy hàng nghìn người bán hàng, tôi thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ."),
+ ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder", "img/mc/mc-daotao.webp",
+  "Đích tới năm 2031: 10.000 nhà sáng lập",
+  "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính."),
 ]
-moc_html = "".join('<div><b>%s</b><div><h4>%s</h4><p>%s</p></div></div>' % m for m in MOC)
+def the_moc(m, i):
+    ngay, tieu, anh, so, mo = m
+    a = ('<div class="mc-anh"><img src="%s" alt="%s" width="900" height="600"'
+         ' loading="lazy" decoding="async"></div>' % (anh, tieu)) if anh else \
+        '<div class="mc-anh mc-trong" aria-hidden="true"></div>'
+    return ('<article class="mc-the" style="--i:%d">%s'
+            '<div class="mc-chu"><p class="mc-ngay">%s</p><h4>%s</h4>'
+            '%s<p>%s</p></div></article>'
+            % (i, a, ngay, tieu,
+               '<p class="mc-so">%s</p>' % so if so else "", mo))
+moc_html = '<div class="mc-ray">%s</div>' % "".join(the_moc(m, i) for i, m in enumerate(MOC))
 
 HOC_VAN = [
  ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
