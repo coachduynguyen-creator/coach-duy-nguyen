@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260825g"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260825h"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -32,7 +32,7 @@ CT_MENU = [
 ]
 
 MENU = [
-    ("ve-toi.html", "Về tôi", None),
+    ("ve-toi.html", "Về Duy", None),
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
@@ -102,8 +102,8 @@ def khoi_cuoi(p=""):
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Bước tiếp theo</p>
-      <h2>Người tôi thấy đi được xa thường bắt đầu bằng một việc rất nhỏ</h2>
-      <p>Không phải bằng một quyết định lớn. Ba lối dưới đây đều là một việc như vậy: đủ nhỏ để làm xong trong tuần này, và đủ thật để bạn biết mình có hợp với cách tôi làm hay không.</p>
+      <h2>Người Duy thấy đi được xa thường bắt đầu bằng một việc rất nhỏ</h2>
+      <p>Không phải bằng một quyết định lớn. Ba lối dưới đây đều là một việc như vậy: đủ nhỏ để làm xong trong tuần này, và đủ thật để bạn biết mình có hợp với cách Duy làm hay không.</p>
     </div>
     <div class="ba-loi tre hien">
       <article class="loi vang">
@@ -115,17 +115,17 @@ def khoi_cuoi(p=""):
       <article class="loi">
         <span class="so">Lối 02 · Đọc trước đã</span>
         <h3>Nhận Thư Next Gen Founder</h3>
-        <p>Mỗi tuần một lá thư ngắn: một điểm nghẽn thật của người sáng lập, cách tôi soi nó, và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
+        <p>Mỗi tuần một lá thư ngắn: một điểm nghẽn thật của người sáng lập, cách Duy soi nó, và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
         <form class="bt-form" novalidate>
           <input type="email" name="email" placeholder="Thư điện tử của bạn" aria-label="Thư điện tử của bạn" required>
           <button class="nut nut-v" type="submit">Đăng ký nhận thư</button>
         </form>
         <p class="bt-xong">Cảm ơn bạn. Ứng dụng thư vừa mở với nội dung soạn sẵn, bấm Gửi là xong.</p>
-        <p class="bt-loi">Địa chỉ thư chưa đúng. Bạn kiểm lại giúp tôi.</p>
+        <p class="bt-loi">Địa chỉ thư chưa đúng. Bạn kiểm lại giúp Duy.</p>
       </article>
       <article class="loi">
         <span class="so">Lối 03 · Hỏi thẳng</span>
-        <h3>Liên hệ với tôi</h3>
+        <h3>Liên hệ với Duy</h3>
         <p>Chưa rõ mình đang kẹt ở đâu thì làm phiếu chẩn đoán bảy phút trước. Muốn mời nói chuyện, hợp tác truyền thông hay hỏi về cố vấn riêng thì vào trang liên hệ, ở đó có đúng bốn cửa.</p>
         <a class="nut nut-vien" href="%s">Xem cách liên hệ <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
@@ -161,7 +161,7 @@ def footer(p=""):
         <a href="%s" target="_blank" rel="noopener">Cộng đồng Next Gen Founder</a>
         <a href="%s" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
         <a href="%s" target="_blank" rel="noopener">Cỗ máy Nội dung Một người</a>
-        <a href="%s">Về tôi</a><a href="%s">Liên hệ</a>
+        <a href="%s">Về Duy</a><a href="%s">Liên hệ</a>
       </div>
     </div>
   </div>

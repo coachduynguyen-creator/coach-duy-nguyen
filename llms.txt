@@ -3,7 +3,7 @@
 > Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Phương pháp riêng: bốn năng lực của nhà sáng lập thế hệ mới và CDN Trust Orbit, hệ thống quỹ đạo niềm tin.
 
 ## Trang chính
-- [Về tôi](https://coachduynguyen-creator.github.io/coach-duy-nguyen/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
+- [Về Duy](https://coachduynguyen-creator.github.io/coach-duy-nguyen/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](https://coachduynguyen-creator.github.io/coach-duy-nguyen/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen-creator.github.io/coach-duy-nguyen/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Blog](https://coachduynguyen-creator.github.io/coach-duy-nguyen/blog.html): 20 bài viết cho nhà sáng lập

@@ -208,7 +208,7 @@ QUY_DAO_BANG = """<div class="qd-bang" aria-live="polite">
   <h3 id="qd-tit">Người ta gặp bạn lần đầu</h3>
   <p id="qd-mo">Đưa cách nghĩ của mình tới một nhóm rộng, chưa cần ai để lại thông tin và chưa mời ai làm gì.</p>
   <div class="qd-hang">
-    <div><b>Tôi làm gì</b><span id="qd-lam">Nội dung dễ chia sẻ, nhận lời mời nói chuyện, hợp tác với người cùng nhóm khách.</span></div>
+    <div><b>Duy làm gì</b><span id="qd-lam">Nội dung dễ chia sẻ, nhận lời mời nói chuyện, hợp tác với người cùng nhóm khách.</span></div>
     <div><b>Dấu hiệu đi tiếp</b><span id="qd-dau">Đúng nhóm người bắt đầu xuất hiện trong danh sách người xem mới.</span></div>
     <div><b>Chưa làm lúc này</b><span id="qd-chua">Chưa mời mua, chưa xin thông tin, chưa nói về chương trình.</span></div>
   </div>
