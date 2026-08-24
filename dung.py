@@ -99,11 +99,11 @@ def dsk(muc, khong=False):
 # ---------------------------------------------------------------- TRANG CHỦ
 INDEX = """
 <header id="hero">
-  <div class="hero-nen"><img src="img/cd-dung-lop.webp" alt="" width="1600" height="1067"></div>
+  <div class="hero-nen"><img src="img/cd-workshop.webp" alt="" width="1400" height="933"></div>
+  <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
   <div class="hero-in">
     <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
-      <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono">Người cố vấn · Next Gen Founder</p>
       <div class="ten">Coach Duy <em>Nguyễn</em></div>
       <div class="bang-hieu">

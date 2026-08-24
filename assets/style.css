@@ -890,3 +890,26 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .b14{grid-template-columns:1fr}
   .cd-nhip{margin-top:40px}
 }
+
+/* ===== Hero: ảnh tách nền đứng lớn, chữ dồn về trái ===== */
+/* Chặn chiều cao để ảnh không đè lên dải số phía dưới. */
+.hero-nguoi{position:absolute;right:2%;bottom:104px;z-index:1;width:min(40%,460px);
+  max-height:calc(100% - 150px);pointer-events:none;
+  display:flex;align-items:flex-end;justify-content:flex-end}
+.hero-nguoi img{width:auto;max-width:100%;height:100%;object-fit:contain;object-position:bottom;display:block;
+  filter:saturate(1.04) contrast(1.05) drop-shadow(-24px 0 60px rgba(23,18,15,.85));
+  -webkit-mask-image:linear-gradient(to bottom,#000 0 82%,transparent 100%);
+          mask-image:linear-gradient(to bottom,#000 0 82%,transparent 100%)}
+
+@media(min-width:1000px){
+  /* Chữ dồn về trái để không đè lên người. Dưới 1000px thì quay lại canh giữa
+     và ẩn ảnh tách nền, vì khổ hẹp không đủ chỗ cho hai thứ cạnh nhau. */
+  #hero .hero-giua{text-align:left;max-width:min(56%,620px)}
+  #hero .hero-giua .bang-hieu{justify-content:flex-start}
+  #hero h1{margin-left:0;margin-right:0}
+  #hero .hero-nut{justify-content:flex-start}
+  .hero-nen img{object-position:22% 34%}
+}
+@media(max-width:999px){
+  .hero-nguoi{display:none}
+}
