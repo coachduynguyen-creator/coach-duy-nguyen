@@ -1000,3 +1000,6 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(min-width:1000px){
   .mc-the.mc-khong{grid-template-columns:150px minmax(0,1fr)}
 }
+
+/* Ảnh bàn làm việc: người ngồi lệch phải, neo theo đó để không cắt mất mặt. */
+.mc-the img[src*="banlamviec"]{object-position:62% 45%}

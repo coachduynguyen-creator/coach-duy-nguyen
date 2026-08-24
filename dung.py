@@ -260,7 +260,7 @@ print("  index.html")
 MOC = [
  ("Trước 2021", "Làm nghề, chưa dạy nghề", "", "",
   "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
- ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "",
+ ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "img/mc/mc-banlamviec.webp",
   "Facebook 0 · YouTube 0",
   "Tôi bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ tôi đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
  ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy", "img/mc/mc-phongnho.webp",
