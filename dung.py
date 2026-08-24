@@ -126,7 +126,7 @@ INDEX = """
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
-    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh. Con số tổng là cộng bốn kênh, nên một người theo dõi hai kênh sẽ được đếm hai lần. Số nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn.</p>
+    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh. Con số tổng cộng từ bốn kênh nên có người được đếm hai lần.</p>
   </div>
 </header>
 
@@ -135,7 +135,6 @@ INDEX = """
     <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội của họ</p>
     <div class="kh-luoi">{KHACH}</div>
     <p class="kh-them">và một số doanh nghiệp khác</p>
-    <p class="kh-ghi">Danh sách này nói các doanh nghiệp đó đã tin Duy đủ để mời vào dạy người của mình. Nó không nói Duy sẽ hợp với bạn.</p>
   </div>
 </section>
 
@@ -190,33 +189,12 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cộng đồng Next Gen Founder</p>
     <h2>Nơi bạn luyện bốn năng lực cùng những người có cùng tiêu chuẩn</h2>
-    <p>Một khoá học tạo ra hiểu biết. Chỉ có nhịp và những người cùng tiêu chuẩn mới biến hiểu biết thành thói quen. Đây không phải kho video, không phải nhóm đăng bài, và không phải nơi chào hàng.</p>
+    <p>Một khoá học tạo ra hiểu biết. Chỉ có nhịp và những người cùng tiêu chuẩn mới biến hiểu biết đó thành thói quen trong công việc thật.</p>
   </div>
 
   <div class="cd-mat hien">
     {MAT_NGUOI}
     <p class="cd-ghi">Ảnh minh hoạ. Cộng đồng đang nhận danh sách chờ cho đợt đầu, và mỗi người đều qua một buổi trao đổi trước khi vào.</p>
-  </div>
-
-  <div class="cd-nhip hien">
-    <h3>Mỗi tháng có bốn nhịp, chạy song song suốt năm</h3>
-    <div class="cd-luoi">
-      <div><b>Học và làm nghề</b><p>Phân tích tình huống thật của thành viên, giờ làm chung, nhóm đồng hành nhỏ giữ nhịp cho nhau.</p></div>
-      <div><b>Quan hệ và kinh doanh</b><p>Bàn tròn theo ngành, kết nối nhu cầu thật, thăm doanh nghiệp của nhau.</p></div>
-      <div><b>Con người và lãnh đạo</b><p>Đối thoại về những quyết định khó, phát triển quản lý chủ chốt, cách giao quyền.</p></div>
-      <div><b>Sức khoẻ và sở thích</b><p>Thể thao, thử thách kỷ luật theo nhóm, sách, và những chuyến đi.</p></div>
-    </div>
-    <p class="cd-ket">Không buổi nào chỉ để lấp lịch. Mỗi buổi phải dẫn tới một quan hệ, một lần thực hành hoặc một kết quả.</p>
-  </div>
-
-  <div class="cd-14 hien">
-    <h3>Mười bốn ngày đầu, để bạn sớm thấy mình thuộc về</h3>
-    <ol class="b14">
-      <li><b>Hồ sơ ngắn</b><span>Ngành, giai đoạn, mục tiêu, và điều bạn có thể đóng góp cho người khác.</span></li>
-      <li><b>Một người chào đón</b><span>Có tên, có mặt, nói rõ cộng đồng có gì và không có gì.</span></li>
-      <li><b>Ngày 7, một kết nối</b><span>Nối bạn với ít nhất một hoạt động hoặc một người phù hợp.</span></li>
-      <li><b>Ngày 14, một hành động</b><span>Một việc có ý nghĩa đã làm, và lộ trình năng lực đầu tiên được xác nhận.</span></li>
-    </ol>
   </div>
 
   <div class="blog-them">
