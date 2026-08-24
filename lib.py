@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260824q"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260824r"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [

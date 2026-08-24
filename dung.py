@@ -170,14 +170,43 @@ INDEX = """
     </div>
   </div>
 </section>
-<section class="phan bd hoa-van" id="chuong-trinh">
+<section class="phan bd hoa-van" id="cong-dong">
   <div class="phan-dau hien">
-    <p class="mono">Bắt đầu từ đâu</p>
-    <h2>Chỗ bạn thấy khó nhất thường không phải chỗ đang chặn bạn</h2>
-    <p>Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. {SO_CAU} câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập. Tìm câu gần bạn nhất.</p>
+    <p class="mono">Cộng đồng Next Gen Founder</p>
+    <h2>Chỗ tôi dồn phần lớn thời gian trong năm nay</h2>
+    <p>Một khoá học tạo ra hiểu biết. Chỉ có nhịp và những người cùng tiêu chuẩn mới biến hiểu biết thành thói quen. Đây không phải kho video, không phải nhóm đăng bài, và không phải nơi chào hàng.</p>
   </div>
-  <div class="hien">{HE_SINH_THAI}</div>
-  <div class="blog-them"><a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+
+  <div class="cd-mat hien">
+    {MAT_NGUOI}
+    <p class="cd-ghi">Ảnh minh hoạ. Cộng đồng đang nhận danh sách chờ cho đợt đầu, và mỗi người đều qua một buổi trao đổi trước khi vào.</p>
+  </div>
+
+  <div class="cd-nhip hien">
+    <h3>Mỗi tháng có bốn nhịp, chạy song song suốt năm</h3>
+    <div class="cd-luoi">
+      <div><b>Học và làm nghề</b><p>Phân tích tình huống thật của thành viên, giờ làm chung, nhóm đồng hành nhỏ giữ nhịp cho nhau.</p></div>
+      <div><b>Quan hệ và kinh doanh</b><p>Bàn tròn theo ngành, kết nối nhu cầu thật, thăm doanh nghiệp của nhau.</p></div>
+      <div><b>Con người và lãnh đạo</b><p>Đối thoại về những quyết định khó, phát triển quản lý chủ chốt, cách giao quyền.</p></div>
+      <div><b>Sức khoẻ và sở thích</b><p>Thể thao, thử thách kỷ luật theo nhóm, sách, và những chuyến đi.</p></div>
+    </div>
+    <p class="cd-ket">Không buổi nào chỉ để lấp lịch. Mỗi buổi phải dẫn tới một quan hệ, một lần thực hành hoặc một kết quả.</p>
+  </div>
+
+  <div class="cd-14 hien">
+    <h3>Mười bốn ngày đầu, để bạn sớm thấy mình thuộc về</h3>
+    <ol class="b14">
+      <li><b>Hồ sơ ngắn</b><span>Ngành, giai đoạn, mục tiêu, và điều bạn có thể đóng góp cho người khác.</span></li>
+      <li><b>Một người chào đón</b><span>Có tên, có mặt, nói rõ cộng đồng có gì và không có gì.</span></li>
+      <li><b>Ngày 7, một kết nối</b><span>Nối bạn với ít nhất một hoạt động hoặc một người phù hợp.</span></li>
+      <li><b>Ngày 14, một hành động</b><span>Một việc có ý nghĩa đã làm, và lộ trình năng lực đầu tiên được xác nhận.</span></li>
+    </ol>
+  </div>
+
+  <div class="blog-them">
+    <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình</a>
+  </div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="blog">
@@ -193,9 +222,11 @@ INDEX = """
   <div class="blog-them"><a class="nut nut-vien" href="blog.html">Xem tất cả bài viết <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
+MAT_NGUOI = '<div class="cd-luoi-mat">%s</div>' % """<div class="cd-m"><img src="img/founder-nu-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chuyen-gia.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chu-dn.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-dan-doi.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div>"""
+
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VIEC5}", khoi_viec5()).replace("{BANG_NL}", so_do.bang_nang_luc())
-         .replace("{HE_SINH_THAI}", so_do.he_sinh_thai()).replace("{SO_CAU}", chu_so(len(CT), True))
+         .replace("{MAT_NGUOI}", MAT_NGUOI)
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
