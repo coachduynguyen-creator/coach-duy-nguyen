@@ -113,6 +113,11 @@ INDEX = """
       <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono">Người cố vấn · Next Gen Founder</p>
       <div class="ten">Duy <em>Nguyễn</em></div>
+      <div class="bang-hieu">
+        <p class="danh-xung">Coach. Trainer. Entrepreneur.</p>
+        <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
+        <p class="khau-hieu">Lead. Inspire. Impact.</p>
+      </div>
       <h1>Duy đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -269,7 +274,7 @@ MOC = [
   "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
  ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "img/mc/mc-banlamviec.webp",
   "Facebook 0 · YouTube 0",
-  "Duy bắt tay xây thương hiệu cá nhân của chính Duy, đúng thứ Duy đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
+  "Duy bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
  ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy", "img/mc/mc-phongnho.webp",
   "Facebook 60.000 · YouTube 50.000",
   "MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
@@ -319,7 +324,7 @@ NIEM_TIN = [
 niem_tin_html = "".join('<article><h3>%s</h3><p>%s</p></article>' % n for n in NIEM_TIN)
 
 VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp",
-  "Duy là Coach Duy Nguyễn. Duy đi cùng nhà sáng lập biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.") + """
+  "Duy đi cùng nhà sáng lập biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.") + """
 <section class="phan bd">
   <div class="vt">
     <div class="vt-chu hien">
@@ -346,7 +351,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Đường đi</p>
     <h2>Duy đi từ đâu tới đây</h2>
-    <p>Duy để cả phần đầu, khi Duy còn làm nghề chứ chưa dạy nghề. Vì phần lớn những gì Duy dạy đến từ giai đoạn đó.</p>
+    <p>Duy để cả phần đầu, khi còn làm nghề chứ chưa dạy nghề. Vì phần lớn những gì dạy về sau đến từ giai đoạn đó.</p>
   </div>
   <div class="moc-tg hien">%s</div>
 </section>
@@ -813,7 +818,7 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai):
 </div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
 
 SACH = dau_trang("Sách", "Sách Duy đang viết",
-  "Duy chưa có sách đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
+  "Chưa có cuốn nào đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>
@@ -856,7 +861,7 @@ YT_CHU_DE = [
 yt_the = "".join('<article class="yt-the"><span class="so">Chủ đề %s</span><h3>%s</h3><p>%s</p></article>' % t for t in YT_CHU_DE)
 
 KENH = dau_trang("Kênh YouTube", "Nơi Duy nói dài và nói sâu nhất",
-  "YouTube là kênh nội dung dài của Duy. TikTok mở đầu câu chuyện, Facebook kể trải nghiệm, còn YouTube là nơi Duy trình bày hết một phương pháp, kèm ví dụ và điều kiện áp dụng.") + """
+  "Đây là kênh nội dung dài nhất. TikTok mở đầu câu chuyện, Facebook kể trải nghiệm, còn YouTube là nơi Duy trình bày hết một phương pháp, kèm ví dụ và điều kiện áp dụng.") + """
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
@@ -916,7 +921,7 @@ print("  podcast.html (chuyen huong)")
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
-  "Duy nhận rất giới hạn. Chọn đúng cửa dưới đây thì Duy trả lời nhanh hơn, và bạn cũng đỡ mất thời gian chờ.") + """
+  "Số lượng nhận rất giới hạn. Chọn đúng cửa dưới đây thì Duy trả lời nhanh hơn, và bạn cũng đỡ mất thời gian chờ.") + """
 <section class="phan bd hoa-van">
   <div class="lh tre hien">
     <div class="hop">
@@ -941,8 +946,8 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
     </div>
   </div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
-    <b>Điều Duy không nhận</b>
-    <p>Duy không nhận làm thay phần việc của bạn, không nhận lời mời cam kết một con số doanh thu, và không nhận người mà Duy biết mình chưa giúp được. Nói không sớm là cách Duy giữ chuẩn.</p>
+    <b>Những việc Duy không nhận</b>
+    <p>Không nhận làm thay phần việc của bạn, không nhận lời mời cam kết một con số doanh thu, và không nhận người mà Duy biết mình chưa giúp được. Nói không sớm là cách Duy giữ chuẩn.</p>
   </div>
 </section>
 

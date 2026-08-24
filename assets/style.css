@@ -161,7 +161,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* Tên để một màu. Tô vàng nửa cái tên là màu trang trí, không mang nghĩa gì. */
 .ten em{font-style:normal;color:inherit}
 /* danh xưng và khẩu hiệu, lấy đúng bố cục bảng đèn thương hiệu */
-.bang-hieu{margin:26px auto 0;max-width:640px}
+.bang-hieu{margin:20px auto 0;max-width:640px}
 .bang-hieu .danh-xung{font-family:var(--f-than);font-weight:800;font-size:clamp(17px,2.3vw,26px);line-height:1.25;letter-spacing:.02em;color:var(--vang);text-transform:uppercase}
 .bang-hieu .vach{display:flex;align-items:center;gap:10px;margin:15px auto;max-width:400px}
 .bang-hieu .vach i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--vang-3),transparent)}
@@ -1048,3 +1048,12 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .tt{font-size:13.5px}
 .khong b{font-size:13.5px;font-weight:700}
 .kh-them{font-size:13.5px}
+
+/* Bảng hiệu thương hiệu ở hero: khổ rộng thì bám trái theo cột chữ và nhỏ lại,
+   để không dựng lại chồng năm khối chữ như bản đầu. */
+@media(min-width:1000px){
+  #hero .bang-hieu{margin-left:0;margin-right:0;margin-top:18px;max-width:none}
+  #hero .bang-hieu .vach{margin-left:0;max-width:280px}
+  #hero .bang-hieu .danh-xung{font-size:clamp(16px,1.55vw,20px)}
+  #hero .bang-hieu .khau-hieu{font-size:clamp(12.5px,1.05vw,14.5px)}
+}
