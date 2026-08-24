@@ -168,10 +168,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .bang-hieu .khau-hieu{font-family:var(--f-than);font-weight:600;font-size:clamp(14px,1.6vw,18px);letter-spacing:.14em;color:var(--vang-2);text-transform:uppercase}
 #hero h1{font-size:clamp(17px,1.95vw,22px);font-weight:500;font-family:var(--f-than);line-height:1.5;letter-spacing:0;color:var(--ink-2);max-width:46ch;margin:26px auto 0}
 .hero-nut{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
-.hero-so{position:relative;z-index:2;margin-top:50px;padding-top:24px;border-top:1px solid rgba(249,245,240,.13);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px}
-.hero-so div{display:flex;align-items:baseline;gap:7px}
-.hero-so b{font-family:var(--f-tit);font-weight:800;font-size:19px;color:var(--vang);letter-spacing:-.02em}
-.hero-so span{font-size:13.5px;color:var(--ink-3)}
+.hero-so{position:relative;z-index:2;margin-top:46px;padding-top:26px;border-top:1px solid rgba(249,245,240,.13)}
 .hero-ghi{position:relative;z-index:2;margin-top:15px;font-size:13px;color:var(--ink-3);text-align:center}
 
 /* ---------- về tôi: ảnh tách nền lớn cộng lưới ảnh chồng lên ---------- */
@@ -810,4 +807,33 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .hst-chu{padding:20px 18px 22px}
   .hst-so{grid-template-columns:1fr}
   .hst-ket{padding:12px 13px}
+}
+
+/* ===== Dải số: bốn kênh, rồi hai con số khác loại ===== */
+.kenh4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid rgba(249,245,240,.11);border-radius:var(--r);overflow:hidden;
+  background:rgba(23,18,15,.34);backdrop-filter:blur(3px)}
+.kenh4 .k{padding:18px 18px 17px;border-left:1px solid rgba(249,245,240,.09);text-align:left}
+.kenh4 .k:first-child{border-left:0}
+.k-ten{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--vang);margin-bottom:9px}
+.k-so{display:flex;align-items:baseline;gap:6px;margin-bottom:8px}
+.k-so b{font-family:var(--f-tit);font-weight:800;font-size:34px;line-height:1;color:var(--ink);
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.k-so span{font-size:13px;color:var(--ink-3)}
+.k-vai{font-size:13.5px;line-height:1.5;color:var(--ink-3);text-wrap:balance}
+
+.kenh-them{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:16px}
+.kenh-them div{display:flex;align-items:baseline;gap:7px}
+.kenh-them b{font-family:var(--f-tit);font-weight:800;font-size:17px;color:var(--vang);letter-spacing:-.02em}
+.kenh-them span{font-size:13.5px;color:var(--ink-3)}
+
+@media(max-width:860px){
+  .kenh4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kenh4 .k:nth-child(3),.kenh4 .k:nth-child(4){border-top:1px solid rgba(249,245,240,.09)}
+  .kenh4 .k:nth-child(odd){border-left:0}
+}
+@media(max-width:420px){
+  .kenh4 .k{padding:15px 14px}
+  .k-so b{font-size:29px}
 }
