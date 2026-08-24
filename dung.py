@@ -91,7 +91,7 @@ INDEX = """
 <header id="hero">
   <div class="hero-nen"><img src="img/cd-dung-lop.webp" alt="" width="1600" height="1067"></div>
   <div class="hero-in">
-    <div class="hero-goc"><span>Coach Duy Nguyễn</span><span>2026</span></div>
+    <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
       <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono">Người cố vấn · Next Gen Founder</p>
@@ -101,7 +101,7 @@ INDEX = """
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
         <p class="khau-hieu">Lead. Inspire. Impact.</p>
       </div>
-      <h1>Tôi làm việc với người mà khách mua vì tin ở chính họ, và giúp uy tín đó thành một hệ thống đội ngũ cùng chạy được, thay vì nằm mãi trong đầu một người.</h1>
+      <h1>Tôi đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
         <a class="nut nut-vien" href="chuong-trinh.html">Xem chương trình</a>

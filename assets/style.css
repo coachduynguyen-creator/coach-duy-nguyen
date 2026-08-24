@@ -158,7 +158,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .hero-avt{width:104px;height:104px;border-radius:50%;overflow:hidden;margin:0 auto 22px;border:2px solid var(--vang);box-shadow:0 0 0 9px rgba(242,177,74,.1),var(--shadow)}
 .hero-avt img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
 .ten{font-family:var(--f-tit);font-weight:800;letter-spacing:-.035em;line-height:.95;text-transform:uppercase;font-size:clamp(38px,7.6vw,84px);margin:10px 0 0}
-.ten em{font-style:normal;color:var(--vang)}
+/* Tên để một màu. Tô vàng nửa cái tên là màu trang trí, không mang nghĩa gì. */
+.ten em{font-style:normal;color:inherit}
 /* danh xưng và khẩu hiệu, lấy đúng bố cục bảng đèn thương hiệu */
 .bang-hieu{margin:26px auto 0;max-width:640px}
 .bang-hieu .danh-xung{font-family:var(--f-than);font-weight:800;font-size:clamp(17px,2.3vw,26px);line-height:1.25;letter-spacing:.02em;color:var(--vang);text-transform:uppercase}
@@ -837,3 +838,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .kenh4 .k{padding:15px 14px}
   .k-so b{font-size:29px}
 }
+
+/* Dấu hiệu là nút về trang chủ. Thêm trạng thái rê chuột vì trước đó
+   nhìn không ra là bấm được. */
+.logo{transition:opacity .2s var(--ease)}
+.logo:hover{opacity:.82}
+.logo:hover .dn{stroke:var(--vang-2)}
+.logo:focus-visible{outline:2px solid var(--vang);outline-offset:4px;border-radius:8px}
