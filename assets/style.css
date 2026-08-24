@@ -995,3 +995,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .mc-anh{grid-column:1;aspect-ratio:16/9}
   .mc-chu h4{font-size:18px}
 }
+}
+/* Mốc chưa có ảnh: chữ trải hết bề ngang, không để khung trống. */
+@media(min-width:1000px){
+  .mc-the.mc-khong{grid-template-columns:150px minmax(0,1fr)}
+}
