@@ -163,9 +163,9 @@ INDEX = """
 
 <section class="phan bd hoa-van" id="chuong-trinh">
   <div class="phan-dau hien">
-    <p class="mono">Hệ sinh thái</p>
-    <h2>Bạn vào đúng chỗ mình đang kẹt, không mua lần lượt</h2>
-    <p>Đây là một hệ sinh thái theo nhu cầu và mức sẵn sàng, không phải một cái thang. Bạn vào đúng chỗ mình đang kẹt, và ra khi đã đủ.</p>
+    <p class="mono">Bắt đầu từ đâu</p>
+    <h2>Chỗ bạn thấy khó nhất thường không phải chỗ đang chặn bạn</h2>
+    <p>Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. Tám câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập. Tìm câu gần bạn nhất.</p>
   </div>
   <div class="hien">{HE_SINH_THAI}</div>
   <div class="blog-them"><a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình <span class="mt" aria-hidden="true">&rarr;</span></a></div>
@@ -410,8 +410,8 @@ print("  phuong-phap.html")
 def nhom_ct(ten):
     return [c for c in CT if c["nhom"] == ten]
 
-CHUONG_TRINH = dau_trang("Chương trình", "Hệ sinh thái Next Gen Founder",
-  "Không phải một cái thang bắt bạn mua lần lượt từ rẻ tới đắt. Là một hệ sinh thái theo nhu cầu và mức sẵn sàng. Bạn vào đúng chỗ mình đang kẹt, và ra khi đã đủ.") + """
+CHUONG_TRINH = dau_trang("Chương trình", "Chỗ bạn thấy khó nhất thường không phải chỗ đang chặn bạn",
+  "Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. Tám câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập.") + """
 <section class="phan bd hoa-van">
   <div class="hien">{HE_SINH_THAI}</div>
 </section>

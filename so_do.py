@@ -50,30 +50,119 @@ def bang_nang_luc():
         for so, d1, d2, mo in NANG_LUC_4)
 
 def he_sinh_thai(p=""):
-    """Một nguồn, ba nhánh. Vẽ bằng HTML và CSS, không dùng SVG."""
-    nhom = [
-        ("Bốn năng lực", "Luyện từng năng lực khi bạn biết mình thiếu gì",
-         [("The Trusted Creator", "chuong-trinh/the-trusted-creator.html"),
-          ("The Trusted Advisor", "chuong-trinh/the-trusted-advisor.html"),
-          ("Founder Growth System", "chuong-trinh/founder-growth-system.html"),
-          ("Community Growth System", "chuong-trinh/community-growth-system.html")]),
-        ("Đồng hành", "Ở lại đủ lâu để cái mới thành thói quen",
-         [("Cộng đồng Thành viên", "chuong-trinh/cong-dong-thanh-vien.html"),
-          ("Diamond Founder Club", "chuong-trinh/diamond-founder-club.html")]),
-        ("Riêng", "Khi việc đủ lớn để cần một phạm vi riêng",
-         [("Cố vấn riêng", "chuong-trinh/co-van-rieng.html"),
-          ("Giải pháp doanh nghiệp", "chuong-trinh/giai-phap-doanh-nghiep.html")]),
-    ]
-    cot = []
-    for ten, phu, muc in nhom:
-        li = "".join('<a href="%s%s">%s</a>' % (p, h, t) for t, h in muc)
-        cot.append('<div class="hst-nhom"><b>%s</b><p>%s</p><div class="hst-muc">%s</div></div>' % (ten, phu, li))
-    return """<div class="hst">
-  <div class="hst-nguon"><span>Bạn và điều bạn đang kẹt</span></div>
-  <div class="hst-than" aria-hidden="true"></div>
-  <div class="hst-thanh" aria-hidden="true"></div>
-  <div class="hst-cot">%s</div>
-</div>""" % "".join(cot)
+    """Khối chọn theo điều đang kẹt.
+
+    Người xem chọn câu mô tả đúng chỗ mình đang kẹt, bảng bên cạnh hiện chương
+    trình dành cho chỗ đó. Dữ liệu lấy thẳng từ chuong_trinh.py, không gõ lại,
+    nên sửa một chỗ là cả trang đổi theo.
+    """
+    import chuong_trinh, html as H
+
+    nut, bang = [], []
+    for ten_nhom, phu in NHOM_HST:
+        nut.append('<p class="hst-lan"><b>%s</b><span>%s</span></p>' % (ten_nhom, phu))
+        for d in [x for x in chuong_trinh.CT if x["nhom"] == ten_nhom]:
+            i = d["tep"].replace(".html", "")
+            nut.append(
+                '<button class="hst-ket" type="button" data-ct="%s" aria-controls="hst-%s">'
+                '<span class="hst-cau">%s</span>'
+                '<span class="hst-ten">%s%s</span></button>'
+                % (i, i, H.escape(KET_HST[d["tep"]]), _sach(d["ten"]),
+                   ' <i class="hst-cham" aria-hidden="true"></i>' if d.get("mo_ban") else ""))
+            bang.append("""<article class="hst-bg" id="hst-%s"%s>
+  <div class="hst-anh"><img src="%s%s" alt="%s" width="720" height="315" loading="lazy" decoding="async" style="%s"></div>
+  <div class="hst-chu">
+    <p class="hst-nl">%s</p>
+    <h3>%s</h3>
+    <p class="hst-en">%s</p>
+    <p class="hst-tom">%s</p>
+    <dl class="hst-so">
+      <div><dt>Thời lượng</dt><dd>%s</dd></div>
+      <div><dt>Hình thức</dt><dd>%s</dd></div>
+      <div><dt>Trạng thái</dt><dd>%s</dd></div>
+    </dl>
+    <p class="hst-ai"><b>Dành cho</b> %s</p>
+    <a class="nut nut-v" href="%schuong-trinh/%s">Xem chương trình <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div>
+</article>""" % (i, "" if d is chuong_trinh.CT[0] else " hidden",
+                 p, d.get("anh", ""), H.escape(d.get("alt", "")), _neo(d.get("anh", "")),
+                 d.get("nang_luc", ""), _sach(d.get("ten_vi", "")), _sach(d["ten"]),
+                 d.get("tom", ""), _thoi_luong(d), _hinh_thuc(d),
+                 "Đang mở bán" if d.get("mo_ban") else "Đang xây",
+                 d.get("cho_ai", ""), p, d["tep"]))
+
+    return ('<div class="hst2">'
+            '<div class="hst-cot-ket">%s</div>'
+            '<div class="hst-cot-bg">%s</div></div>'
+            % ("".join(nut), "".join(bang)))
+
+
+# Câu mô tả chỗ đang kẹt, viết từ phía người đọc, bằng lời họ nói ra miệng.
+KET_HST = {
+ "the-trusted-creator.html":
+   "Tôi làm nghề giỏi, nhưng đăng bài mãi mà người ta vẫn không biết tôi giỏi cái gì.",
+ "the-trusted-advisor.html":
+   "Khách nghe tôi tư vấn xong vẫn do dự, và tôi không biết mình bỏ sót chỗ nào.",
+ "founder-growth-system.html":
+   "Việc quan trọng nào cũng phải qua tay tôi thì mới chạy.",
+ "community-growth-system.html":
+   "Khách mua xong là quan hệ dừng lại. Mỗi lần bán là mỗi lần bắt đầu từ đầu.",
+ "cong-dong-thanh-vien.html":
+   "Tôi học nhiều khoá rời rạc mà chưa cái nào thành thói quen trong công việc thật.",
+ "diamond-founder-club.html":
+   "Tôi cần ngồi cùng những người đã đi xa hơn, không cần thêm một lớp học nữa.",
+ "co-van-rieng.html":
+   "Tôi đang có một quyết định lớn, cần đưa ra bàn với một người ngoài cuộc.",
+ "giai-phap-doanh-nghiep.html":
+   "Cả đội tôi cần cùng xây một hệ thống, không phải mình tôi đi học rồi về kể lại.",
+}
+
+# Điểm neo riêng cho từng ảnh, đọc từ vị trí mặt trên ảnh gốc.
+# Số thứ hai là phần trăm chiều cao chỗ đặt mặt người. Số thứ ba là mức phóng to,
+# chỉ dùng cho ảnh có chữ trên màn chiếu cần đẩy ra khỏi khung.
+ANH_NEO = {
+    "img/cd-giang-slide.webp": ("34% 40%", 1.22),   # có chữ slide, phóng để đẩy chữ ra
+    "img/cd-workshop.webp":    ("62% 42%", 1.0),
+    "img/cd-dung-lop.webp":    ("50% 32%", 1.0),
+    "img/founder-nu-1.webp":   ("50% 11%", 1.0),    # ảnh đứng, mặt rất cao
+    "img/cd-san-khau.webp":    ("50% 22%", 1.0),
+    "img/founder-nam-1.webp":  ("50% 21%", 1.0),
+    "img/cd-chan-dung.webp":   ("50% 17%", 1.0),
+    "img/founder-nam-2.webp":  ("50% 40%", 1.0),
+}
+
+NHOM_HST = [
+    ("Bốn năng lực", "Luyện đúng năng lực đang thiếu"),
+    ("Đồng hành",    "Ở lại đủ lâu để thành thói quen"),
+    ("Riêng",        "Khi việc đủ lớn để cần phạm vi riêng"),
+]
+
+def _neo(anh):
+    """Điểm neo và mức phóng cho một ảnh cụ thể."""
+    vi, ph = ANH_NEO.get(anh, ("50% 30%", 1.0))
+    r = "object-position:%s;transform-origin:%s" % (vi, vi)
+    return r + (";transform:scale(%s)" % ph if ph != 1.0 else ";transform:none")
+
+def _sach(s):
+    """Bỏ dấu cách không ngắt, dùng khi cần chuỗi thuần."""
+    return s.replace("&nbsp;", " ")
+
+def _thoi_luong(d):
+    h = _sach(d.get("hinh_thuc", ""))
+    for m in ("30 ngày", "90 ngày", "bốn tháng", "theo năm", "4 đến 6 buổi"):
+        if m in h:
+            return {"4 đến 6 buổi": "4 tới 6 buổi", "theo năm": "Theo năm"}.get(m, m.capitalize())
+    return "Xét mời"
+
+def _hinh_thuc(d):
+    """Câu đầu của mô tả hình thức, bỏ phần thời lượng vì ô bên cạnh đã nói rồi."""
+    h = _sach(d.get("hinh_thuc", "")).split(".")[0].strip()
+    for m in ("30 ngày, ", "90 ngày. ", "90 ngày, "):
+        if h.startswith(m):
+            h = h[len(m):]
+    return h[0].upper() + h[1:] if h else h
+
+
 
 CHANG_TTC = [
     ("Chặng 1", "Định vị", "Làm rõ lãnh địa chuyên môn và luận điểm, để thị trường nhớ đúng bạn vì một giá trị."),

@@ -140,3 +140,15 @@
     chon('1');
   }
 })();
+
+/* Khối hệ sinh thái: bấm một câu đang kẹt thì hiện chương trình dành cho chỗ đó. */
+(function () {
+  var nut = document.querySelectorAll('.hst-ket');
+  if (!nut.length) return;
+  function chon(id) {
+    document.querySelectorAll('.hst-bg').forEach(function (b) { b.hidden = b.id !== 'hst-' + id; });
+    nut.forEach(function (n) { n.setAttribute('aria-current', String(n.dataset.ct === id)); });
+  }
+  nut.forEach(function (n) { n.addEventListener('click', function () { chon(n.dataset.ct); }); });
+  chon(nut[0].dataset.ct);
+})();

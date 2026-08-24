@@ -740,3 +740,74 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .anh img,.bai-anh img,.cd-hang .anh img,.bai-nho .anh img{object-position:50% 12%}
 /* ô chân dung tròn nhỏ cần neo cao hơn nữa vì khung vuông cắt sâu */
 .cd-hang .anh img{object-position:50% 8%}
+
+/* ===== Khối hệ sinh thái: chọn theo điều đang kẹt ===== */
+.hst2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:30px;align-items:start}
+
+.hst-cot-ket{display:flex;flex-direction:column;gap:2px}
+.hst-lan{margin:22px 0 8px;display:flex;flex-direction:column;gap:2px}
+.hst-lan:first-child{margin-top:0}
+.hst-lan b{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--vang)}
+.hst-lan span{font-size:13.5px;color:var(--ink-3)}
+
+.hst-ket{display:block;width:100%;text-align:left;cursor:pointer;background:transparent;
+  border:1px solid transparent;border-radius:var(--r-s);padding:13px 15px;color:inherit;
+  font-family:var(--f-than);transition:background-color .22s var(--ease),
+  border-color .22s var(--ease),transform .22s var(--ease)}
+.hst-cau{display:block;font-size:15.5px;line-height:1.56;color:var(--ink-2)}
+.hst-ten{display:block;margin-top:6px;font-family:var(--f-mono);font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.hst-cham{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--vang);
+  margin-left:5px;vertical-align:middle}
+.hst-ket:hover{background-color:var(--panel-3);border-color:rgba(242,177,74,.34);transform:translateX(3px)}
+.hst-ket:focus-visible{outline:2px solid var(--vang);outline-offset:2px}
+.hst-ket[aria-current="true"]{background-color:var(--panel-2);border-color:rgba(242,177,74,.55);
+  box-shadow:inset 3px 0 0 var(--vang)}
+.hst-ket[aria-current="true"] .hst-cau{color:var(--ink)}
+.hst-ket[aria-current="true"] .hst-ten{color:var(--vang)}
+
+.hst-cot-bg{position:sticky;top:88px}
+.hst-bg{background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-s)}
+.hst-bg[hidden]{display:none}
+/* Ảnh có chữ trên màn chiếu thì cắt sát vào người và phủ mờ dần, để chữ đó
+   thành nền chứ không tranh đọc với nội dung thật. */
+.hst-anh{aspect-ratio:16/7;overflow:hidden;background:var(--bg-2);position:relative}
+/* Điểm neo và mức phóng đặt riêng cho từng ảnh ngay trên thẻ img, vì khung 16/7
+   rất ngang nên mỗi ảnh cắt một kiểu. Ở đây chỉ để mức mặc định. */
+.hst-anh img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;
+  filter:grayscale(1) brightness(1.18) contrast(1.06)}
+.hst-anh::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 0 38%,rgba(36,29,25,.55) 66%,rgba(36,29,25,.9) 100%),
+             linear-gradient(to top,rgba(36,29,25,.85),transparent 46%)}
+.hst-chu{padding:26px 28px 28px}
+.hst-nl{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.hst-bg h3{font-family:var(--f-tit);font-weight:800;font-size:clamp(22px,2.4vw,28px);
+  line-height:1.15;margin-bottom:4px;letter-spacing:-.01em;text-wrap:balance}
+.hst-en{font-family:var(--f-mono);font-size:12px;letter-spacing:.07em;color:var(--ink-3);margin-bottom:16px}
+.hst-tom{font-size:16px;line-height:1.7;color:var(--ink-2);margin-bottom:22px}
+
+.hst-so{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-bottom:20px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden}
+.hst-so > div{background:var(--bg-2);padding:12px 14px}
+.hst-so dt{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.hst-so dd{font-size:14px;line-height:1.45;color:var(--ink);font-variant-numeric:tabular-nums}
+
+.hst-ai{font-size:14.5px;line-height:1.65;color:var(--ink-3);margin-bottom:22px;
+  padding-top:18px;border-top:1px solid var(--line)}
+.hst-ai b{display:block;margin-bottom:5px;font-family:var(--f-mono);font-size:10.5px;
+  font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+
+@media(max-width:940px){
+  .hst2{grid-template-columns:1fr;gap:24px}
+  .hst-cot-bg{position:static;order:-1}
+  .hst-anh{aspect-ratio:16/8}
+}
+@media(max-width:560px){
+  .hst-chu{padding:20px 18px 22px}
+  .hst-so{grid-template-columns:1fr}
+  .hst-ket{padding:12px 13px}
+}
