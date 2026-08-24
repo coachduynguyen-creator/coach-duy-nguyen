@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260824n"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260824p"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -21,8 +21,10 @@ CT_MENU = [
     ("chuong-trinh/founder-growth-system.html", "Founder Growth System", "Hệ thống tăng trưởng cùng đội ngũ"),
     ("chuong-trinh/community-growth-system.html", "Community Growth System", "Hệ thống tăng trưởng từ cộng đồng"),
     ("SEP", "", ""),
+    ("chuong-trinh/cong-dong-mo.html", "Cộng đồng Mở", "Cửa vào, không mất phí nhưng có sàng lọc"),
     ("chuong-trinh/cong-dong-thanh-vien.html", "Cộng đồng Thành viên", "Luyện đủ bốn năng lực suốt một năm"),
     ("chuong-trinh/diamond-founder-club.html", "Diamond Founder Club", "Cộng đồng cao cấp, theo lời mời"),
+    ("chuong-trinh/founder-growth-system-lab.html", "Founder Growth System Lab", "Chạy thử một luồng thật, 8 tới 12 tuần"),
     ("chuong-trinh/co-van-rieng.html", "Cố vấn riêng", "Bốn tháng một kèm một, nhận rất giới hạn"),
     ("chuong-trinh/giai-phap-doanh-nghiep.html", "Giải pháp doanh nghiệp", "90 ngày xây hệ thống tăng trưởng"),
     ("SEP", "", ""),

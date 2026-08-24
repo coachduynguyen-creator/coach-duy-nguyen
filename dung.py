@@ -9,6 +9,13 @@ BAI = sorted(BAI, key=lambda x: x["ngay"], reverse=True)
 from chuong_trinh import CT
 import so_do
 
+# Số chương trình tự đếm, khỏi phải nhớ sửa tay mỗi lần thêm bớt.
+CHU_SO = {8: "Tám", 9: "Chín", 10: "Mười", 11: "Mười một", 12: "Mười hai"}
+def chu_so(n, hoa=False):
+    t = CHU_SO.get(n, str(n))
+    return t if hoa else t.lower()
+
+
 # ---------------------------------------------------------------- khối dùng lại
 # Bốn kênh và hai con số khác loại. Tách riêng vì một cái là người theo dõi,
 # một cái là thành viên cộng đồng, một cái là số năm. Xếp chung một hàng thì
@@ -167,10 +174,9 @@ INDEX = """
     <div class="phan-dau hien">
       <p class="mono">CDN Trust Orbit</p>
       <h2>Tôi tích luỹ niềm tin trước, rồi mới mời</h2>
-      <p>Cái phễu bán hàng đo được một chiến dịch, nhưng nó không mô tả đúng cách một người quyết định tin ai. Nên tôi thiết kế quan hệ bằng quỹ đạo: khách ở giữa, năm vòng quay quanh.</p>
+      <p>Cái phễu bán hàng đo được một chiến dịch, nhưng nó không mô tả đúng cách một người quyết định tin ai. Nên tôi thiết kế quan hệ bằng quỹ đạo: khách ở giữa, năm vòng quay quanh, và họ tiến gần hay lùi ra lúc nào cũng được mà vẫn còn trong quan hệ.</p>
+      <p style="margin-top:20px"><a class="nut nut-vien" href="phuong-phap.html#quy-dao">Xem bản vẽ quỹ đạo <span class="mt" aria-hidden="true">&rarr;</span></a></p>
     </div>
-    {QUY_DAO}
-    <p class="ket">Khi niềm tin đã đủ, lời mời chỉ cần một câu.</p>
   </div>
 </section>
 
@@ -178,7 +184,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Bắt đầu từ đâu</p>
     <h2>Chỗ bạn thấy khó nhất thường không phải chỗ đang chặn bạn</h2>
-    <p>Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. Tám câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập. Tìm câu gần bạn nhất.</p>
+    <p>Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. {SO_CAU} câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập. Tìm câu gần bạn nhất.</p>
   </div>
   <div class="hien">{HE_SINH_THAI}</div>
   <div class="blog-them"><a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình <span class="mt" aria-hidden="true">&rarr;</span></a></div>
@@ -199,7 +205,7 @@ INDEX = """
 """
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VIEC5}", khoi_viec5()).replace("{BANG_NL}", so_do.bang_nang_luc())
-         .replace("{QUY_DAO}", so_do.quy_dao()).replace("{HE_SINH_THAI}", so_do.he_sinh_thai())
+         .replace("{HE_SINH_THAI}", so_do.he_sinh_thai()).replace("{SO_CAU}", chu_so(len(CT), True))
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
@@ -381,7 +387,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   </div>
 </section>
 
-<section class="phan tran">
+<section class="phan tran" id="quy-dao">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
@@ -423,11 +429,10 @@ print("  phuong-phap.html")
 def nhom_ct(ten):
     return [c for c in CT if c["nhom"] == ten]
 
-CHUONG_TRINH = dau_trang("Chương trình", "Chỗ bạn thấy khó nhất thường không phải chỗ đang chặn bạn",
-  "Tôi để ý phần lớn nhà sáng lập dồn sức vào chỗ mình thấy khó nhất, còn điều thật sự giữ họ lại thì ít khi được gọi tên. Tám câu dưới đây là những chỗ tôi gặp nhiều nhất khi ngồi cùng các nhà sáng lập.") + """
-<section class="phan bd hoa-van">
-  <div class="hien">{HE_SINH_THAI}</div>
-</section>
+CHUONG_TRINH = dau_trang("Chương trình",
+  "%s chương trình, nhưng lúc này bạn chỉ cần đúng một" % chu_so(len(CT), True),
+  "Không ai đi hết cả %s. Mỗi người chỉ kẹt ở một chỗ tại một thời điểm, và gỡ đúng chỗ đó rồi thì phần còn lại nhẹ đi nhiều. Chưa rõ mình đang kẹt ở đâu thì quay về trang chủ, ở đó có một danh sách để bạn tự soi." % chu_so(len(CT))) + """
+
 
 <section class="phan bd hoa-van duoi" style="padding-top:0">
   <div class="phan-dau hien">
@@ -479,8 +484,7 @@ CHUONG_TRINH = dau_trang("Chương trình", "Chỗ bạn thấy khó nhất thư
     </article>
   </div>
 </section>
-""".replace("{HE_SINH_THAI}", so_do.he_sinh_thai()) \
-   .replace("{NL4}", "".join(the_ct(c) for c in nhom_ct("Bốn năng lực"))) \
+"""   .replace("{NL4}", "".join(the_ct(c) for c in nhom_ct("Bốn năng lực"))) \
    .replace("{DONGHANH}", "".join(the_ct(c) for c in nhom_ct("Đồng hành"))) \
    .replace("{RIENG}", "".join(the_ct(c) for c in nhom_ct("Riêng"))) \
    .replace("{PHIEU}", PHIEU).replace("{CO_MAY}", CO_MAY)
@@ -550,6 +554,8 @@ for c in CT:
 
     tt = [("Dành cho", c["cho_ai"]), ("Hình thức", c["hinh_thuc"])]
     if c.get("khai_giang"): tt.insert(1, ("Khai giảng", c["khai_giang"]))
+    # Tên chương trình sẽ đổi thì người mua có quyền biết trước.
+    if c.get("chuyen_tiep"): tt.append(("Tên chương trình", c["chuyen_tiep"]))
     bang_tt = "".join('<div><b>%s</b><span>%s</span></div>' % t for t in tt)
 
     than = dau_trang(c["nang_luc"], c["ten"], c["tom"]) + """
