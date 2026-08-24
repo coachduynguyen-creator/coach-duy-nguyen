@@ -100,8 +100,8 @@ img{max-width:100%;display:block}
 
 /* ---------- ảnh: đen trắng, rê vào thì lên màu và sáng lên ---------- */
 .anh{position:relative;overflow:hidden;border-radius:var(--r);background:var(--panel);border:1px solid var(--line)}
-.anh img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.16) contrast(1.04) brightness(.94);transition:filter .55s var(--ease),transform .7s var(--ease)}
-@media(hover:hover){.anh:hover img{filter:grayscale(0) saturate(1.06) contrast(1.02) brightness(1.08);transform:scale(1.035)}
+.anh img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.04) brightness(.97);transition:filter .55s var(--ease),transform .7s var(--ease)}
+@media(hover:hover){.anh:hover img{filter:saturate(1.1) contrast(1.02) brightness(1.09);transform:scale(1.035)}
 .anh:hover{border-color:var(--line-2)}}
 
 /* ---------- khung phần chung ---------- */
@@ -149,14 +149,14 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
    =================================================================== */
 #hero{position:relative;overflow:hidden;min-height:min(100svh,900px);display:flex;align-items:center;border-bottom:1px solid var(--line)}
 .hero-nen{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-nen img{width:100%;height:100%;object-fit:cover;object-position:66% 30%;transform:scale(1.05);filter:grayscale(1) sepia(.24) contrast(1.04) brightness(.62) blur(1.5px)}
+.hero-nen img{width:100%;height:100%;object-fit:cover;object-position:66% 30%;transform:scale(1.05);filter:saturate(.62) sepia(.26) contrast(1.05) brightness(.56) blur(1.5px)}
 .hero-nen::after{content:"";position:absolute;inset:0;background:radial-gradient(76% 62% at 44% 44%,rgba(23,18,15,.6) 0%,rgba(23,18,15,.9) 58%,rgba(23,18,15,.99) 100%)}
 .hero-in{position:relative;z-index:2;width:min(100% - 40px,1080px);margin-inline:auto;padding:92px 0 44px;text-align:center}
 .hero-goc{position:absolute;top:24px;left:0;right:0;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .hero-giua > *{opacity:0;transform:translateY(16px)}
 .noanim .hero-giua > *,#hero.len .hero-giua > *{opacity:1;transform:none;transition:opacity .72s var(--ease),transform .72s var(--ease)}
 .hero-avt{width:104px;height:104px;border-radius:50%;overflow:hidden;margin:0 auto 22px;border:2px solid var(--vang);box-shadow:0 0 0 9px rgba(242,177,74,.1),var(--shadow)}
-.hero-avt img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.18) contrast(1.06)}
+.hero-avt img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
 .ten{font-family:var(--f-tit);font-weight:800;letter-spacing:-.035em;line-height:.95;text-transform:uppercase;font-size:clamp(38px,7.6vw,84px);margin:10px 0 0}
 .ten em{font-style:normal;color:var(--vang)}
 /* danh xưng và khẩu hiệu, lấy đúng bố cục bảng đèn thương hiệu */
@@ -189,7 +189,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .vt-anh .quang{position:absolute;left:50%;top:2%;width:76%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
   background:radial-gradient(circle,rgba(242,177,74,.72) 0%,rgba(242,177,74,.38) 34%,rgba(242,177,74,.09) 56%,rgba(242,177,74,0) 72%);z-index:0}
 .vt-anh .nguoi{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:center}
-.vt-anh .nguoi img{width:66%;height:auto;filter:grayscale(1) sepia(.1) contrast(1.1) brightness(1.02);
+.vt-anh .nguoi img{width:66%;height:auto;filter:saturate(1.03) contrast(1.06) brightness(1.02);
   -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.3) 90%,transparent 100%);
   mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.3) 90%,transparent 100%)}
 .vt-anh .manh{position:absolute;inset:0;z-index:2}
@@ -224,7 +224,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* ---------- khối trên ảnh nền tràn ---------- */
 .tran{position:relative;overflow:hidden;border-block:1px solid var(--line)}
 .tran-nen{position:absolute;inset:0;z-index:0;overflow:hidden}
-.tran-nen img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);filter:grayscale(1) sepia(.24) contrast(1.02) brightness(.4) blur(5px)}
+.tran-nen img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);filter:saturate(.6) sepia(.28) contrast(1.02) brightness(.38) blur(5px)}
 .tran-nen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,18,15,.95) 0%,rgba(23,18,15,.86) 45%,rgba(23,18,15,.97) 100%)}
 .tran > .bd{position:relative;z-index:2}
 
@@ -343,8 +343,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .bai-dau h1{font-size:clamp(30px,4.6vw,52px);max-width:24ch}
 .bai-dau .tom{font-size:18.5px;color:var(--ink-2);margin-top:18px;max-width:58ch}
 .bai-anh{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/2;box-shadow:var(--shadow)}
-.bai-anh img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.16) contrast(1.04) brightness(.96);transition:filter .55s var(--ease)}
-@media(hover:hover){.bai-anh:hover img{filter:grayscale(0) saturate(1.06) brightness(1.06)}}
+.bai-anh img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.04) brightness(.98);transition:filter .55s var(--ease)}
+@media(hover:hover){.bai-anh:hover img{filter:saturate(1.1) brightness(1.07)}}
 .bai-than{max-width:70ch;margin:44px auto 0;padding-bottom:24px}
 .bai-than p{font-size:17.5px;line-height:1.72;color:var(--ink-2)}
 .bai-than p + p{margin-top:19px}
@@ -373,7 +373,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* ---------- đăng ký bản tin ---------- */
 .ban-tin{position:relative;overflow:hidden;border-block:1px solid var(--line);background:var(--bg-2)}
 .ban-tin .nen{position:absolute;inset:0;z-index:0}
-.ban-tin .nen img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);filter:grayscale(1) sepia(.3) contrast(1.02) brightness(.4) blur(4px)}
+.ban-tin .nen img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);filter:saturate(.6) sepia(.3) contrast(1.02) brightness(.38) blur(4px)}
 .ban-tin .nen::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,18,15,.97) 0%,rgba(23,18,15,.88) 55%,rgba(23,18,15,.94) 100%)}
 .bt-in{position:relative;z-index:2;padding:52px 0 56px;display:grid;gap:28px;align-items:center}
 @media(min-width:960px){.bt-in{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px}}
@@ -641,7 +641,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .tac-gia{max-width:74ch;margin:40px auto 0;display:grid;gap:20px;align-items:center;background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
 @media(min-width:620px){.tac-gia{grid-template-columns:88px minmax(0,1fr)}}
 .tac-gia .anh-tg{width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid var(--vang);box-shadow:0 0 0 6px rgba(242,177,74,.1)}
-.tac-gia .anh-tg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.18) contrast(1.06)}
+.tac-gia .anh-tg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04)}
 .tac-gia b{display:block;font-family:var(--f-tit);font-weight:800;font-size:19px;margin-bottom:6px}
 .tac-gia p{font-size:15.5px;color:var(--ink-2)}
 .tac-gia .lk-v{margin-top:12px;font-size:15px}
@@ -777,7 +777,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* Điểm neo và mức phóng đặt riêng cho từng ảnh ngay trên thẻ img, vì khung 16/7
    rất ngang nên mỗi ảnh cắt một kiểu. Ở đây chỉ để mức mặc định. */
 .hst-anh img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;
-  filter:grayscale(1) brightness(1.18) contrast(1.06)}
+  filter:saturate(1.02) brightness(1.06) contrast(1.03)}
 .hst-anh::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(105deg,transparent 0 38%,rgba(36,29,25,.55) 66%,rgba(36,29,25,.9) 100%),
              linear-gradient(to top,rgba(36,29,25,.85),transparent 46%)}

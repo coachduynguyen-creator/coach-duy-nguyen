@@ -88,7 +88,7 @@ INDEX = """
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
         <p class="khau-hieu">Lead. Inspire. Impact.</p>
       </div>
-      <h1>Tôi đi trước bạn vài chặng. Tôi đi cùng để bạn tự bước, chứ không phải để bạn cần tôi mãi.</h1>
+      <h1>Tôi làm việc với người mà khách mua vì tin ở chính họ, và giúp uy tín đó thành một hệ thống đội ngũ cùng chạy được, thay vì nằm mãi trong đầu một người.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
         <a class="nut nut-vien" href="chuong-trinh.html">Xem chương trình</a>
@@ -174,7 +174,7 @@ INDEX = """
 <section class="phan bd hoa-van duoi" id="blog">
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
-    <h2>Bài viết mới nhất</h2>
+    <h2>Gần đây tôi viết gì</h2>
     <p>Tôi chỉ viết những việc mình đang làm thật: điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống.</p>
   </div>
   <div class="blog hien">
@@ -267,7 +267,7 @@ VE_TOI = dau_trang("Về tôi", "Người đi trước vài chặng, không ph�
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
     <p class="mono">Ba người tôi hay ngồi cùng</p>
-    <h2>Bạn có nằm trong ba chân dung này không</h2>
+    <h2>Không giống ai trong ba người này thì tôi chưa chắc giúp được bạn</h2>
   </div>
   <div class="cd-hang tre hien">
     <article>
@@ -332,7 +332,7 @@ print("  ve-toi.html")
 
 # ---------------------------------------------------------------- PHƯƠNG PHÁP
 PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn và quỹ đạo niềm tin",
-  "Ba thứ tôi dùng mỗi ngày: năm việc phải làm được khi đi cùng một nhà sáng lập, bốn năng lực làm bản đồ, và cách tôi thiết kế quan hệ với khách bằng quỹ đạo thay cho phễu.") + """
+  "Ba bản đồ tôi mở ra mỗi ngày: năm việc phải làm được khi đi cùng một nhà sáng lập, bốn năng lực làm bản đồ, và cách tôi thiết kế quan hệ với khách bằng quỹ đạo thay cho phễu.") + """
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
@@ -449,7 +449,7 @@ CHUONG_TRINH = dau_trang("Chương trình", "Chỗ bạn thấy khó nhất thư
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
     <p class="mono">Công cụ mở</p>
-    <h2>Hai công cụ dùng được ngay, miễn phí</h2>
+    <h2>Hai công cụ tôi làm cho mình dùng trước, rồi mở cho bạn</h2>
   </div>
   <div class="luoi c2 tre hien">
     <article class="the">
@@ -602,7 +602,7 @@ BLOG = dau_trang("Blog", "Tôi chỉ viết những việc mình đang làm th�
 </section>
 
 <section class="phan bd hoa-van duoi" style="padding-top:0">
-  <div class="phan-dau hien"><p class="mono">Tất cả %d bài</p><h2>Chọn theo chủ đề</h2></div>
+  <div class="phan-dau hien"><p class="mono">Tất cả %d bài</p><h2>Đọc theo chỗ bạn đang vướng</h2></div>
   <div class="chu-de hien">%s</div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
@@ -772,7 +772,7 @@ KENH = dau_trang("Kênh YouTube", "Nơi tôi nói dài và nói sâu nhất",
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-dung-lop.webp" alt="" loading="lazy"></div>
   <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Sáu chủ đề</p><h2>Trên kênh có gì</h2>
+    <div class="phan-dau hien"><p class="mono">Sáu chủ đề</p><h2>Sáu chủ đề tôi quay đi quay lại</h2>
     <p>Nội dung của tôi xoay quanh sáu chủ đề. Bốn chủ đề đầu là bốn năng lực của nhà sáng lập thế hệ mới, hai chủ đề còn lại là nền cho cả bốn.</p></div>
     <div class="yt-hang tre hien">%s</div>
   </div>
