@@ -279,14 +279,13 @@ MOC = [
 def the_moc(m, i):
     ngay, tieu, anh, so, mo = m
     a = ('<div class="mc-anh"><img src="%s" alt="%s" width="900" height="600"'
-         ' loading="lazy" decoding="async"></div>' % (anh, tieu)) if anh else \
-        '<div class="mc-anh mc-trong" aria-hidden="true"></div>'
-    return ('<article class="mc-the" style="--i:%d">%s'
-            '<div class="mc-chu"><p class="mc-ngay">%s</p><h4>%s</h4>'
-            '%s<p>%s</p></div></article>'
-            % (i, a, ngay, tieu,
-               '<p class="mc-so">%s</p>' % so if so else "", mo))
-moc_html = '<div class="mc-ray">%s</div>' % "".join(the_moc(m, i) for i, m in enumerate(MOC))
+         ' loading="lazy" decoding="async"></div>' % (anh, tieu)) if anh else ""
+    return ('<article class="mc-the">'
+            '<p class="mc-ngay">%s</p>'
+            '<div class="mc-chu"><h4>%s</h4>%s<p>%s</p></div>'
+            '%s</article>'
+            % (ngay, tieu, '<p class="mc-so">%s</p>' % so if so else "", mo, a))
+moc_html = '<div class="mc-doc">%s</div>' % "".join(the_moc(m, i) for i, m in enumerate(MOC))
 
 HOC_VAN = [
  ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
