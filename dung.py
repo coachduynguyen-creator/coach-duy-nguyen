@@ -100,8 +100,8 @@ def dsk(muc, khong=False):
 INDEX = """
 <header id="hero">
   <div class="hero-nen"><img src="img/cd-workshop.webp" alt="" width="1400" height="933"></div>
-  <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
   <div class="hero-in">
+    <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
     <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
       <p class="mono">Người cố vấn · Next Gen Founder</p>
@@ -127,6 +127,7 @@ INDEX = """
   <div class="bd">
     <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời tôi vào đào tạo nội bộ cho đội của họ</p>
     <div class="kh-luoi">{KHACH}</div>
+    <p class="kh-them">và một số doanh nghiệp khác</p>
     <p class="kh-ghi">Danh sách này nói các doanh nghiệp đó đã tin tôi đủ để mời vào dạy người của mình. Nó không nói tôi sẽ hợp với bạn.</p>
   </div>
 </section>
@@ -242,9 +243,7 @@ KHACH = [("mobifone","MobiFone"),("aia","AIA"),("acb","ACB"),("prudential","Prud
  ("bighomes","BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
  ("hac-viet","một doanh nghiệp khách hàng"),("w-group","một doanh nghiệp khách hàng"),
  ("bs-group","một doanh nghiệp khách hàng"),("phan-hang","một doanh nghiệp khách hàng")]
-khach_html = "".join(
-    '<div class="kh-o"><img src="img/kh/%s.webp" alt="Logo %s" width="300" height="300"'
-    ' loading="lazy" decoding="async"></div>' % (t, n) for t, n in KHACH)
+khach_html = "".join('<span class="kh-t">%s</span>' % n for t, n in KHACH if not n.startswith("một"))
 
 MAT_NGUOI = '<div class="cd-luoi-mat">%s</div>' % """<div class="cd-m"><img src="img/founder-nu-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chuyen-gia.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chu-dn.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-dan-doi.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div>"""
 
@@ -260,19 +259,35 @@ trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng l�
 print("  index.html")
 
 # ---------------------------------------------------------------- VỀ TÔI
+# Dòng thời gian có ngày tháng và con số thật.
+# Nguồn: slide "Kỷ nguyên của giá trị cá nhân" và PROFILE COACH DUY NGUYỄN.
+# Không nhắc tên Next Step Group theo yêu cầu của Coach Duy.
 MOC = [
- ("Trước 2020", "Làm nghề, không dạy nghề",
-  "Tôi bán hàng và điều hành trước khi đứng lớp. Phần lớn những gì tôi dạy sau này đến từ giai đoạn đó, gồm cả những quyết định sai mà tôi đã trả giá."),
- ("Từ 2020", "Bắt đầu làm nội dung đều đặn",
-  "Không phải để nổi tiếng. Ban đầu chỉ là cách ghi lại những gì vừa xử lý xong trong tuần. Sáu năm sau, chính kho ghi chép đó thành nền của mọi chương trình tôi dạy."),
- ("Năm năm gần đây", "Đào tạo hàng nghìn người làm bán hàng",
-  "Tôi xây The Trusted Advisor, phương pháp bán bằng chẩn đoán và niềm tin thay vì kỹ thuật chốt. Cộng đồng Sales Bứt Phá lên 26,6 nghìn thành viên."),
- ("2026", "Nhận ra bài toán thật nằm ở người chủ",
-  "Tôi thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Bán giỏi hơn không gỡ được chỗ đó."),
+ ("Trước 2021", "Làm nghề, chưa dạy nghề",
+  "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản. Phần lớn những gì tôi dạy sau này đến từ giai đoạn đó, gồm cả những quyết định sai tôi đã trả giá."),
+ ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc",
+  "Facebook 0 người theo dõi. YouTube 0 người đăng ký. Tôi bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ tôi đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
+ ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy",
+  "Năm tháng sau: Facebook 60.000, YouTube 50.000. MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội của họ. Đây là lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
+ ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người",
+  "Facebook 120.000, YouTube 130.000, TikTok 21.000. Hơn 500 học viên. Tôi bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của mình."),
+ ("Năm năm sau", "Hơn ba nghìn học viên và một cách nghĩ khác",
+  "Dạy hàng nghìn người bán hàng, tôi thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Bán giỏi hơn không gỡ được chỗ đó."),
  ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder",
   "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính, vì một khoá học tạo hiểu biết, chỉ có nhịp mới tạo thói quen."),
 ]
 moc_html = "".join('<div><b>%s</b><div><h4>%s</h4><p>%s</p></div></div>' % m for m in MOC)
+
+HOC_VAN = [
+ ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
+ ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với hơn mười lăm ngân hàng và tổ chức tài chính"),
+ ("2012", "Deloitte UK", "Anh", "Chuyên viên tư vấn chiến lược doanh nghiệp"),
+ ("2011", "University of Birmingham", "Anh", "Thạc sĩ Quản trị Kinh doanh, khoá xếp hạng 60 thế giới"),
+ ("2008", "Đại học Ngoại Thương Hà Nội", "Việt Nam", "Cử nhân Kinh tế Đối ngoại"),
+]
+hoc_van_html = "".join(
+    '<div class="hv-d"><b>%s</b><div><h4>%s <span>%s</span></h4><p>%s</p></div></div>' % h
+    for h in HOC_VAN)
 
 NIEM_TIN = [
  ("Xây uy tín để được tin, không phải để được biết",
@@ -317,6 +332,15 @@ VE_TOI = dau_trang("Về tôi", "Người đi trước vài chặng, không ph�
     <p>Tôi để cả phần đầu, khi tôi còn làm nghề chứ chưa dạy nghề. Vì phần lớn những gì tôi dạy đến từ giai đoạn đó.</p>
   </div>
   <div class="moc-tg hien">%s</div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
+    <p class="mono">Học vấn và chứng chỉ</p>
+    <h2>Chỗ tôi học cách nghĩ, trước khi có gì để dạy</h2>
+    <p>Bằng cấp không làm ai giỏi nghề. Nhưng bạn có quyền biết người mình sắp nghe đã học ở đâu ra.</p>
+  </div>
+  <div class="hv hien">%s</div>
 </section>
 
 <section class="phan bd hoa-van">
@@ -383,7 +407,7 @@ VE_TOI = dau_trang("Về tôi", "Người đi trước vài chặng, không ph�
     </div>
   </div>
 </section>
-""" % (moc_html, niem_tin_html, khoi_viec5(),
+""" % (moc_html, hoc_van_html, niem_tin_html, khoi_viec5(),
        dsk(["Không làm thay phần việc của bạn. Tôi chỉ đường và giữ chuẩn, bạn tự bước.",
             "Không hứa một con số doanh thu khi chưa đủ điều kiện.",
             "Không giữ ai ở lại bằng cảm giác lệ thuộc."], khong=True),

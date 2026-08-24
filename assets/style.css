@@ -169,7 +169,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .bang-hieu .khau-hieu{font-family:var(--f-than);font-weight:600;font-size:clamp(14px,1.6vw,18px);letter-spacing:.14em;color:var(--vang-2);text-transform:uppercase}
 #hero h1{font-size:clamp(15.5px,1.5vw,18.5px);font-weight:500;font-family:var(--f-than);line-height:1.62;letter-spacing:0;color:var(--ink-2);max-width:60ch;margin:26px auto 0}
 .hero-nut{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
-.hero-so{position:relative;z-index:2;margin-top:46px;padding-top:26px;border-top:1px solid rgba(249,245,240,.13)}
+.hero-so{position:relative;z-index:1;margin-top:46px;padding-top:26px;border-top:1px solid rgba(249,245,240,.13)}
 .hero-ghi{position:relative;z-index:2;margin-top:15px;font-size:13px;color:var(--ink-3);text-align:center}
 
 /* ---------- về tôi: ảnh tách nền lớn cộng lưới ảnh chồng lên ---------- */
@@ -892,9 +892,10 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 }
 
 /* ===== Hero: ảnh tách nền đứng lớn, chữ dồn về trái ===== */
-/* Chặn chiều cao để ảnh không đè lên dải số phía dưới. */
-.hero-nguoi{position:absolute;right:2%;bottom:104px;z-index:1;width:min(40%,460px);
-  max-height:calc(100% - 150px);pointer-events:none;
+/* Nằm trong cột nội dung nên right:0 là mép cột, không phải mép màn hình.
+   Trước đây neo vào mép màn hình làm chữ và người dạt xa nhau ở màn rộng. */
+.hero-nguoi{position:absolute;right:0;bottom:96px;z-index:0;width:min(42%,470px);
+  max-height:calc(100% - 190px);pointer-events:none;
   display:flex;align-items:flex-end;justify-content:flex-end}
 .hero-nguoi img{width:auto;max-width:100%;height:100%;object-fit:contain;object-position:bottom;display:block;
   filter:saturate(1.04) contrast(1.05) drop-shadow(-24px 0 60px rgba(23,18,15,.85));
@@ -904,7 +905,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(min-width:1000px){
   /* Chữ dồn về trái để không đè lên người. Dưới 1000px thì quay lại canh giữa
      và ẩn ảnh tách nền, vì khổ hẹp không đủ chỗ cho hai thứ cạnh nhau. */
-  #hero .hero-giua{text-align:left;max-width:min(56%,620px)}
+  #hero .hero-giua{position:relative;z-index:1;text-align:left;max-width:min(56%,620px)}
   #hero .hero-giua .bang-hieu{justify-content:flex-start}
   #hero h1{margin-left:0;margin-right:0}
   #hero .hero-nut{justify-content:flex-start}
@@ -914,26 +915,38 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .hero-nguoi{display:none}
 }
 
-/* ===== Dải logo khách hàng đào tạo nội bộ =====
-   Ô logo để nền sáng. Đây là chỗ duy nhất trên trang có nền sáng, và đó là
-   chủ đích: nó cắt mạch tối, đồng thời logo gốc vốn thiết kế cho nền sáng
-   nên để nguyên mới đọc đúng màu thương hiệu của họ. */
+/* ===== Dải khách hàng đào tạo nội bộ =====
+   Đặt tên doanh nghiệp bằng chính font của trang thay vì dán logo cắt từ bản in.
+   Logo cắt ra còn nền xám và vân giấy của bản gốc, không tách được nếu không có
+   tệp logo nguồn, nên dán vào sẽ lệch tông. Chữ thì luôn đúng tông. */
 .kh{background:var(--bg-2);border-block:1px solid var(--line);padding:44px 0 40px}
-.kh-dan{text-align:center;max-width:44ch;margin:0 auto 26px;font-size:15.5px;line-height:1.6;
+.kh-dan{text-align:center;max-width:46ch;margin:0 auto 26px;font-size:15.5px;line-height:1.6;
   color:var(--ink-2)}
-.kh-luoi{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
-.kh-o{aspect-ratio:1;border-radius:var(--r-s);overflow:hidden;background:#EFECE7;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-.kh-o img{width:100%;height:100%;object-fit:contain;display:block;
-  filter:saturate(.92);transition:filter .3s var(--ease)}
-@media(hover:hover){
-  .kh-o:hover{transform:translateY(-3px);box-shadow:0 10px 22px -8px rgba(0,0,0,.7)}
-  .kh-o:hover img{filter:saturate(1.05)}
-}
-.kh-ghi{text-align:center;max-width:62ch;margin:24px auto 0;font-size:13.5px;line-height:1.6;
+.kh-luoi{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;
+  max-width:76ch;margin-inline:auto}
+.kh-t{font-family:var(--f-tit);font-weight:700;font-size:clamp(16px,1.7vw,20px);
+  line-height:1.35;color:var(--ink-2);letter-spacing:-.005em;white-space:nowrap;
+  transition:color .25s var(--ease)}
+.kh-t::after{content:"·";margin:0 14px;color:var(--vang);font-weight:400}
+.kh-t:last-child::after{content:none}
+@media(hover:hover){.kh-t:hover{color:var(--ink)}}
+.kh-them{text-align:center;margin-top:14px;font-family:var(--f-mono);font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4)}
+.kh-ghi{text-align:center;max-width:64ch;margin:26px auto 0;font-size:13.5px;line-height:1.6;
   color:var(--ink-3)}
+@media(max-width:560px){.kh-t::after{margin:0 9px}}}}}}
 
-@media(max-width:1000px){.kh-luoi{grid-template-columns:repeat(6,minmax(0,1fr))}}
-@media(max-width:700px){.kh-luoi{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}}
-@media(max-width:420px){.kh-luoi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* ===== Học vấn và chứng chỉ ===== */
+.hv{display:grid;gap:0;border-top:1px solid var(--line)}
+.hv-d{display:grid;grid-template-columns:92px minmax(0,1fr);gap:22px;padding:20px 0;
+  border-bottom:1px solid var(--line);align-items:start}
+.hv-d > b{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--vang);
+  font-variant-numeric:tabular-nums;padding-top:2px}
+.hv-d h4{font-family:var(--f-tit);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:5px}
+.hv-d h4 span{font-family:var(--f-than);font-weight:400;font-size:14px;color:var(--ink-3);
+  margin-left:8px;letter-spacing:0}
+.hv-d p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+@media(max-width:620px){
+  .hv-d{grid-template-columns:1fr;gap:6px;padding:16px 0}
+  .hv-d > b{padding-top:0}
+}
