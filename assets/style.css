@@ -913,3 +913,27 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(max-width:999px){
   .hero-nguoi{display:none}
 }
+
+/* ===== Dải logo khách hàng đào tạo nội bộ =====
+   Ô logo để nền sáng. Đây là chỗ duy nhất trên trang có nền sáng, và đó là
+   chủ đích: nó cắt mạch tối, đồng thời logo gốc vốn thiết kế cho nền sáng
+   nên để nguyên mới đọc đúng màu thương hiệu của họ. */
+.kh{background:var(--bg-2);border-block:1px solid var(--line);padding:44px 0 40px}
+.kh-dan{text-align:center;max-width:44ch;margin:0 auto 26px;font-size:15.5px;line-height:1.6;
+  color:var(--ink-2)}
+.kh-luoi{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
+.kh-o{aspect-ratio:1;border-radius:var(--r-s);overflow:hidden;background:#EFECE7;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.kh-o img{width:100%;height:100%;object-fit:contain;display:block;
+  filter:saturate(.92);transition:filter .3s var(--ease)}
+@media(hover:hover){
+  .kh-o:hover{transform:translateY(-3px);box-shadow:0 10px 22px -8px rgba(0,0,0,.7)}
+  .kh-o:hover img{filter:saturate(1.05)}
+}
+.kh-ghi{text-align:center;max-width:62ch;margin:24px auto 0;font-size:13.5px;line-height:1.6;
+  color:var(--ink-3)}
+
+@media(max-width:1000px){.kh-luoi{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:700px){.kh-luoi{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}}
+@media(max-width:420px){.kh-luoi{grid-template-columns:repeat(3,minmax(0,1fr))}}

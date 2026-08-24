@@ -123,6 +123,14 @@ INDEX = """
   </div>
 </header>
 
+<section class="kh">
+  <div class="bd">
+    <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời tôi vào đào tạo nội bộ cho đội của họ</p>
+    <div class="kh-luoi">{KHACH}</div>
+    <p class="kh-ghi">Danh sách này nói các doanh nghiệp đó đã tin tôi đủ để mời vào dạy người của mình. Nó không nói tôi sẽ hợp với bạn.</p>
+  </div>
+</section>
+
 <section class="phan bd hoa-van" id="ve-toi">
   <div class="vt">
     <div class="vt-chu hien">
@@ -222,11 +230,27 @@ INDEX = """
   <div class="blog-them"><a class="nut nut-vien" href="blog.html">Xem tất cả bài viết <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
+# Logo doanh nghiệp đã mời Coach Duy đào tạo nội bộ.
+# Nguồn: PROFILE COACH DUY NGUYỄN, trang 9. Đây là bằng chứng thật, dùng thay cho
+# dải "Featured in" của các trang tham chiếu vốn không dùng được.
+# Bốn logo không đọc rõ tên thì để mô tả chung, không đoán tên doanh nghiệp.
+KHACH = [("mobifone","MobiFone"),("aia","AIA"),("acb","ACB"),("prudential","Prudential"),
+ ("bao-viet-life","Bảo Việt Nhân thọ"),("kb-securities","KB Securities"),("hsc","HSC"),
+ ("mascom","Mascom"),("hung-vuong","Hưng Vượng Holdings"),("john-partners","John & Partners"),
+ ("gaia","GAIA"),("minh-minh","Minh Minh Group"),("an-thuong-yen","An Thượng Yến"),
+ ("nhan-ai","Nhân Ái"),("vulcano","Vulcano"),("kenli","KENLI"),("micc","MICC Group"),
+ ("bighomes","BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
+ ("hac-viet","một doanh nghiệp khách hàng"),("w-group","một doanh nghiệp khách hàng"),
+ ("bs-group","một doanh nghiệp khách hàng"),("phan-hang","một doanh nghiệp khách hàng")]
+khach_html = "".join(
+    '<div class="kh-o"><img src="img/kh/%s.webp" alt="Logo %s" width="300" height="300"'
+    ' loading="lazy" decoding="async"></div>' % (t, n) for t, n in KHACH)
+
 MAT_NGUOI = '<div class="cd-luoi-mat">%s</div>' % """<div class="cd-m"><img src="img/founder-nu-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chuyen-gia.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chu-dn.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-dan-doi.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div>"""
 
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VIEC5}", khoi_viec5()).replace("{BANG_NL}", so_do.bang_nang_luc())
-         .replace("{MAT_NGUOI}", MAT_NGUOI)
+         .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
