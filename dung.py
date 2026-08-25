@@ -43,11 +43,11 @@ so_lieu_html = (
                for t, n, dv in KENH),
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
 
-VIEC5 = [("Soi đúng","Tách điều bạn đang thấy khỏi vấn đề thật phía sau. Bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác."),
-         ("Chỉ đường","Cho bạn thấy đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức, không phải một danh sách mẹo."),
-         ("Làm mẫu","Đưa quyết định thật, tài liệu thật và cả sai lầm đã trả giá của chính Duy, kèm điều kiện áp dụng, không chỉ kể phần kết quả đẹp."),
-         ("Giữ chuẩn","Nói rõ điều gì được chấp nhận, điều gì không, và cái giá của việc tiếp tục cách cũ. Duy không làm nhẹ sự thật để bạn dễ chịu."),
-         ("Trao lại quyền tự chủ","Để lại cho bạn một tiêu chí tự đánh giá và một câu hỏi bạn còn dùng được sau khi rời khỏi Duy.")]
+VIEC5 = [("Soi đúng","Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
+         ("Chỉ đường","Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
+         ("Làm mẫu","Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
+         ("Giữ chuẩn","Duy nói rõ điều gì đủ, điều gì chưa, và cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới, không nằm ở giọng nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
+         ("Đi cùng và trao lại","Duy ở bên trong lúc bạn tập cách làm mới, rồi để lại một tiêu chí bạn tự đánh giá được và một câu hỏi còn dùng được lâu sau đó. Đích đến là bạn tự đi được, không phải bạn cần Duy mãi.")]
 def khoi_viec5():
     return '<div class="viec5">%s</div>' % "".join(
         '<div class="d"><em>%02d</em><div><h4>%s</h4><p>%s</p></div></div>' % (i+1,t,p)
@@ -190,7 +190,7 @@ INDEX = """
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
     <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: người ta tin bạn trước khi tin công ty bạn.</p>
-    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực ở trên trong công việc thật, cùng những người có cùng tiêu chuẩn, và có một người đi trước giữ nhịp.</p>
+    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực ở trên trong công việc thật, cùng những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua. Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
   </div>
 
   <div class="cd-mat hien">
@@ -926,7 +926,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
   </div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
     <b>Những việc Duy không nhận</b>
-    <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói và chỉ bạn chỗ hợp hơn. Nói không sớm là cách Duy giữ chuẩn.</p>
+    <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn. Nói không sớm là cách Duy giữ chuẩn.</p>
   </div>
 </section>
 

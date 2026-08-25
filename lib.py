@@ -12,7 +12,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260825v"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260825w"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -103,19 +103,19 @@ def khoi_cuoi(p=""):
     <div class="phan-dau hien">
       <p class="mono">Bước tiếp theo</p>
       <h2>Người Duy thấy đi được xa thường bắt đầu bằng một việc rất nhỏ</h2>
-      <p>Không phải bằng một quyết định lớn. Ba lối dưới đây đều là một việc như vậy: đủ nhỏ để làm xong trong tuần này, và đủ thật để bạn biết mình có hợp với cách Duy làm hay không.</p>
+      <p>Không phải bằng một quyết định lớn. Ba lối dưới đây đều là một việc như vậy, đủ nhỏ để làm xong trong tuần này. Bạn cứ đi chậm cũng được, Duy không giục ai.</p>
     </div>
     <div class="ba-loi tre hien">
       <article class="loi vang">
         <span class="so">Lối 01 · Đi cùng nhau</span>
         <h3>Vào Cộng đồng Next Gen Founder</h3>
-        <p>Nơi nhà sáng lập luyện bốn năng lực trong công việc thật, có nhịp, có phản hồi và có người đi cùng. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
+        <p>Nơi nhà sáng lập luyện bốn năng lực trong công việc thật, có nhịp, có phản hồi, và có người hiểu chuyện mình đang gặp ở bên cạnh. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
         <a class="nut nut-toi" href="%s" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="loi">
         <span class="so">Lối 02 · Đọc trước đã</span>
         <h3>Nhận Thư Next Gen Founder</h3>
-        <p>Mỗi tuần một lá thư ngắn: một điểm nghẽn thật của người sáng lập, cách Duy soi nó, và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
+        <p>Mỗi tuần một lá thư ngắn: một điểm nghẽn thật của người sáng lập, cách Duy nhìn nó, và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
         <form class="bt-form" novalidate>
           <input type="email" name="email" placeholder="Thư điện tử của bạn" aria-label="Thư điện tử của bạn" required>
           <button class="nut nut-v" type="submit">Đăng ký nhận thư</button>
