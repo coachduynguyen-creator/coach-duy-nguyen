@@ -1218,10 +1218,16 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
    điều hướng. Chỉ trừ những chỗ thật sự một hai dòng, vì căn đều một dòng lẻ
    thì chữ giãn ra nhìn rất rõ. Chữ trong thẻ giới thiệu vẫn căn đều, vì thường
    dài ba bốn dòng. */
-.phan-dau p, .kh-dan, .cd-ghi, .meta, .mono, .k-vai, .hst-en, .v5-so,
-.hero-ghi p, .bang-hieu p, .nut, figcaption, .bai-cuoi p, .mc-so,
-.dau-trang .mono, .muc-luc li, .muc-luc b, nav li, .vach li,
-.vi, .tang, .k-so span{text-align:inherit;text-justify:auto}
+/* Nhóm căn giữa: giữ nguyên căn giữa của chính nó. Phải ghi kèm .bd vì
+   quy tắc căn đều ở trên dùng .bd p, độ ưu tiên cao hơn một lớp đơn. */
+.phan-dau p, .bd .kh-dan, .bd .cd-ghi{text-align:center;text-justify:auto}
+/* Nhóm căn trái: nhãn, dòng thông tin, chú thích, danh sách điều hướng. */
+.bd .meta, .bd .mono, .bd .k-vai, .bd .hst-en, .bd .v5-so,
+.bd .hero-ghi p, .bd .bang-hieu p, .bd .nut, .bd figcaption, .bd .bai-cuoi p,
+.bd .mc-so, .dau-trang .mono, .bd .muc-luc li, .bd .muc-luc b, .bd nav li,
+.bd .vach li, .bd .vi, .bd .tang, .bd .k-so span,
+.meta, .mono, .k-vai, .hst-en, .v5-so, .nut, figcaption,
+.muc-luc li, .muc-luc b, nav li, .vach li, .vi, .tang{text-align:left;text-justify:auto}
 
 /* Chữ trong ô hẹp dưới 34 ký tự thì luôn căn trái, dù nằm trong .bd */
 .so-tong span, .kenh4 p, .kenh-them p, .k-so span{text-align:left}

@@ -241,13 +241,13 @@ khach_html = ('<div class="kh-chay"><div class="kh-day">%s</div>'
 # trình duyệt xếp những ô đã biết hàng trước những ô chưa biết, nên nếu để nó
 # tự xếp thì cột ngoài cùng bên phải nhảy về đứng thứ hai từ trái.
 MN_COT = [
-    (1, "44px", [("cao", "founder-nu-1"), ("vuong", "nguoi-chuyen-gia")]),
-    (2,  "4px", [("cao", "founder-nam-1")]),
-    (3, "76px", [("vuong", "nguoi-chu-dn")]),
+    (1, "44px", [("cao", "ngf-nu-1"), ("vuong", "ngf-nam-4")]),
+    (2,  "4px", [("cao", "ngf-nam-1")]),
+    (3, "76px", [("vuong", "ngf-nu-2")]),
     (4,  "0px", None),                       # None nghĩa là chỗ của Coach Duy
-    (5, "76px", [("vuong", "founder-nu-3")]),
-    (6,  "4px", [("cao", "nguoi-dan-doi")]),
-    (7, "44px", [("vuong", "founder-nu-2"), ("cao", "founder-nam-2")]),
+    (5, "76px", [("vuong", "ngf-nu-3")]),
+    (6,  "4px", [("cao", "ngf-nam-2")]),
+    (7, "44px", [("cao", "ngf-nam-3"), ("vuong", "ngf-nu-4")]),
 ]
 
 def _the(kieu, ten):
