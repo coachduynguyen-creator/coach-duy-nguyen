@@ -570,11 +570,11 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
  ngay="2026-07-24", ngay_viet="24 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-vo-tay.webp", alt="Một hội trường đông người đứng vỗ tay",
  than="""
-<p>Rất nhiều người chủ đã mở một nhóm. Nhóm có vài trăm tới vài nghìn người. Rồi sau ba tháng, chỉ còn người chủ đăng bài, vài người thả biểu tượng cảm xúc, và không ai nhớ nhóm để làm gì.</p>
-<p>Đó không phải cộng đồng. Đó là một kênh phát nội dung có phần bình luận.</p>
+<p>Rất nhiều người chủ đã mở một nhóm, và nhóm đó có vài trăm tới vài nghìn người. Rồi sau ba tháng thì chỉ còn người chủ đăng bài, vài người thả biểu tượng cảm xúc, và không ai nhớ nhóm này lập ra để làm gì.</p>
+<p><span class="nhan">Đó không phải cộng đồng, đó là một kênh phát nội dung có phần bình luận.</span> Hai thứ này khác nhau ở một điểm duy nhất mà cũng là điểm quyết định: giá trị chảy một chiều hay chảy giữa các thành viên.</p>
 
 <h2>Thử một câu hỏi</h2>
-<p>Nếu bạn ngừng đăng trong hai tuần, nhóm của bạn còn hoạt động không.</p>
+<p>Có một câu hỏi tách được hai thứ đó ra: nếu bạn ngừng đăng trong hai tuần thì nhóm của bạn còn hoạt động không.</p>
 <p>Nếu câu trả lời là không, giá trị vẫn đang chảy một chiều từ bạn xuống. Bạn đang gánh toàn bộ, và mô hình đó không lớn được, vì giới hạn của nó là số giờ trong ngày của bạn.</p>
 
 <h2>Giá trị phải được tạo giữa các thành viên</h2>
@@ -583,21 +583,51 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
 
 <div class="dan-manh">Chất lượng thành viên, nhịp tham gia và tiến bộ có bằng chứng quan trọng hơn số người trong nhóm.</div>
 
+<h2>Vì sao người sáng lập khó bớt nói</h2>
+
+<p>Duy nói riêng phần này vì nó là chỗ chính mình từng mắc. Khi bạn mở một cộng đồng, bạn mở nó bằng chuyên môn của mình, nên phản xạ tự nhiên là trả lời mọi câu hỏi và trả lời cho thật hay.</p>
+
+<p>Phản xạ đó tốt trong tháng đầu và có hại từ tháng thứ ba. Nó dạy cả nhóm một điều rất nhanh: cứ hỏi rồi người sáng lập sẽ trả lời, không cần ai khác lên tiếng. Sau vài tuần thì thành viên nào định trả lời cũng thấy thừa, vì câu của họ chắc chắn kém câu của bạn.</p>
+
+<p>Cái giá phải trả xuất hiện muộn, thường vào tháng thứ sáu. Bạn mệt, bạn bận, bạn đi công tác một tuần, và cả cộng đồng lặng đi. Lúc đó bạn nghĩ mình chưa chăm đủ, trong khi thật ra bạn đã chăm quá mức.</p>
+
 <h2>Bốn điều quyết định một cộng đồng sống hay chết</h2>
-<p><b>Lời hứa rõ.</b> Vào đây thì được gì và không được gì. Lời hứa mơ hồ thu hút người mơ hồ.</p>
-<p><b>Tiêu chuẩn thành viên.</b> Ai hợp, ai chưa hợp. Một cộng đồng mở cửa cho tất cả sẽ mất người giỏi trước tiên, vì họ là người nhạy nhất với chất lượng.</p>
-<p><b>Trải nghiệm bắt đầu.</b> Hai tuần đầu quyết định gần như tất cả. Người mới cần biết ngay: làm gì trước, gặp ai, và kết quả đầu tiên nhìn thấy được là gì.</p>
-<p><b>Nhịp.</b> Có hoạt động cố định để người ta biết khi nào quay lại. Không có nhịp thì cộng đồng chỉ sống bằng thông báo, và thông báo thì ngày càng bị bỏ qua.</p>
+<p><b>Lời hứa rõ:</b> vào đây thì được gì và không được gì, nói thẳng cả hai vế, vì một lời hứa mơ hồ chỉ thu hút được những người cũng đang mơ hồ về việc mình cần gì.</p>
+<p><b>Tiêu chuẩn thành viên:</b> ai hợp và ai chưa hợp, và phải dám nói ra, vì một cộng đồng mở cửa cho tất cả sẽ mất người giỏi trước tiên do họ là người nhạy nhất với chất lượng.</p>
+<p><b>Trải nghiệm bắt đầu:</b> hai tuần đầu quyết định gần như tất cả, nên người mới cần biết ngay làm gì trước, gặp ai, và kết quả đầu tiên nhìn thấy được là gì.</p>
+<p><b>Nhịp:</b> phải có hoạt động cố định để người ta biết khi nào quay lại, vì không có nhịp thì cộng đồng chỉ sống bằng thông báo, mà thông báo thì ngày càng bị bỏ qua.</p>
+
+<h2>Ba cơ chế tạo giá trị giữa thành viên</h2>
+
+<p>Nói phải tạo dịp để thành viên hữu ích với nhau thì dễ, làm thì cần cơ chế cụ thể. Duy dùng ba cái, và cả ba đều rẻ.</p>
+
+<p><b>Đặt câu hỏi công khai theo lịch cố định:</b> mỗi tuần một buổi mà ai đang mắc gì thì nêu ra, và quy tắc là người dẫn không trả lời trước, phải đợi ít nhất hai thành viên nói xong. Quy tắc đợi này quan trọng hơn cả buổi hỏi, vì nếu người dẫn luôn trả lời đầu tiên thì không ai buồn trả lời nữa.</p>
+
+<p><b>Ghép cặp theo tháng:</b> hai thành viên gặp nhau ba mươi phút, có sẵn ba câu hỏi để hỏi nhau, và không cần báo cáo lại cho ai. Cơ chế này tạo ra nhiều quan hệ thật nhất trên mỗi giờ công bỏ ra.</p>
+
+<p><b>Kể lại một việc vừa làm:</b> mỗi tháng vài người kể một việc họ vừa áp dụng và kết quả ra sao, kể cả kết quả xấu. Người kể được nhìn thấy, người nghe có bằng chứng rằng chỗ này làm được việc.</p>
+
+<p><span class="nhan dam">Ba cơ chế trên đều có một điểm chung: chúng buộc người dẫn phải bớt nói.</span> Đây là phần khó nhất với người sáng lập, vì im lặng trong chính cộng đồng của mình cho cảm giác như đang bỏ bê nó.</p>
 
 <h2>Đo bằng gì</h2>
 <p>Không đo bằng số người trong nhóm. Đo bằng bốn con số: bao nhiêu người bắt đầu tham gia thật trong mười bốn ngày đầu, bao nhiêu người quay lại theo nhịp, bao nhiêu giá trị thành viên tạo cho nhau, và bao nhiêu người gia hạn hoặc giới thiệu người khác.</p>
 <p>Con số cuối cùng là con số trung thực nhất. Người ta không giới thiệu bạn bè vào một chỗ mà chính họ thấy nhạt.</p>
 
 <h2>Ba vai người dẫn cộng đồng phải làm được</h2>
-<p><b>Người đặt tiêu chuẩn.</b> Quyết ai hợp, ai chưa hợp, và điều gì không được làm trong nhóm. Vai này không dễ chịu, và nếu người dẫn né nó thì cộng đồng sẽ tự trôi về mức trung bình của người ồn ào nhất.</p>
-<p><b>Người nối.</b> Nhớ ai đang làm gì để khi một thành viên nêu vấn đề, người dẫn biết ngay nên nối họ với ai. Vai này tạo ra nhiều giá trị nhất và cũng tốn công nhất, vì nó đòi hỏi thật sự biết từng người.</p>
-<p><b>Người giữ nhịp.</b> Đảm bảo hoạt động diễn ra đúng lịch kể cả tuần vắng. Một cộng đồng lỡ nhịp hai lần liên tiếp thì thành viên ngừng đặt lịch cho nó.</p>
-<p>Vai thứ nhất giao cho người khác được sau một thời gian. Vai thứ hai khó giao nhất. Vai thứ ba nên giao sớm nhất có thể.</p>
+<p><b>Người đặt tiêu chuẩn:</b> quyết ai hợp, ai chưa hợp, và điều gì không được làm trong nhóm. Vai này không dễ chịu, và nếu người dẫn né nó thì cộng đồng sẽ tự trôi về mức trung bình của người ồn ào nhất.</p>
+<p><b>Người nối:</b> nhớ ai đang làm gì để khi một thành viên nêu vấn đề, người dẫn biết ngay nên nối họ với ai. Vai này tạo ra nhiều giá trị nhất và cũng tốn công nhất, vì nó đòi hỏi thật sự biết từng người.</p>
+<p><b>Người giữ nhịp:</b> đảm bảo hoạt động diễn ra đúng lịch kể cả tuần vắng. Một cộng đồng lỡ nhịp hai lần liên tiếp thì thành viên ngừng đặt lịch cho nó.</p>
+<p>Vai thứ nhất giao cho người khác được sau một thời gian, khi tiêu chuẩn đã đủ rõ để người khác áp dụng. Vai thứ hai khó giao nhất vì nó nằm trong trí nhớ của bạn về từng người. Vai thứ ba thì nên giao sớm nhất có thể, vì nó là việc lặp lại và giao đi thì bạn còn thời gian cho hai vai kia.</p>
+
+<h2>Sai lầm hay gặp ở tháng thứ nhất</h2>
+
+<p>Người mở cộng đồng thường mắc cùng một lỗi ở đầu: mời càng nhiều người càng tốt để nhóm trông không vắng.</p>
+
+<p>Lỗi này dễ hiểu vì một nhóm ba mươi người trông rất trống, còn ba trăm người trông có vẻ đang sống. Nhưng ba trăm người mời đại vào sẽ đặt luôn tiêu chuẩn cho nhóm ở mức của người ồn ào nhất trong ba trăm người đó, và tiêu chuẩn đã đặt xuống thì kéo lên rất khó.</p>
+
+<p>Duy khuyên làm ngược lại. Bắt đầu với hai mươi tới ba mươi người bạn chọn từng người một, chạy đủ ba tháng để cách làm việc trong nhóm định hình, rồi mới mở rộng. Ba mươi người đúng sẽ tự tạo ra hoạt động, còn ba trăm người sai thì không.</p>
+
+<p>Có một dấu hiệu cho biết đã đến lúc mở rộng: khi thành viên bắt đầu tự hỏi có được rủ người quen vào không. Câu hỏi đó nghĩa là họ thấy chỗ này đáng để đặt uy tín của mình vào, và người họ rủ vào cũng sẽ giống họ.</p>
 
 <h2>Vì sao Duy chọn cộng đồng làm nơi luyện chính</h2>
 <p>Một khoá học tạo ra hiểu biết. Người học kết thúc với một cuốn sổ đầy ý hay, rồi quay về công việc cũ và ba tuần sau mọi thứ như trước.</p>
@@ -615,33 +645,64 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
 
 <h2>AI khuếch đại cái sẵn có</h2>
 <p>Đưa cho AI một luận điểm rõ, một kho câu chuyện thật và một giọng đã định hình, nó giúp bạn tiết kiệm rất nhiều giờ. Đưa cho nó một sự mơ hồ, nó trả lại cho bạn sự mơ hồ được viết trơn tru hơn.</p>
-<p>Trơn tru là chỗ nguy hiểm. Một bản nháp vụng về khiến bạn biết mình chưa nghĩ xong. Một bản nháp trơn tru khiến bạn tưởng mình đã nghĩ xong.</p>
+<p><span class="nhan">Sự trơn tru chính là chỗ nguy hiểm nhất.</span> Một bản nháp vụng về khiến bạn biết mình chưa nghĩ xong, còn một bản nháp trơn tru khiến bạn tưởng mình đã nghĩ xong, và cái tưởng đó tốn của bạn nhiều tháng.</p>
 
 <h2>Việc nào giao cho máy, việc nào giữ lại</h2>
-<p><b>Giao được:</b> tìm và tóm tắt tài liệu, sắp xếp ý đã có, chuyển một nội dung dài thành nhiều định dạng, soát chính tả và nhịp câu, gợi ý các góc nhìn bạn chưa xét, dựng khung cho một bài.</p>
+<p><b>Giao được cho máy:</b> tìm và tóm tắt tài liệu, sắp xếp ý đã có, chuyển một nội dung dài thành nhiều định dạng, soát chính tả và nhịp câu, gợi ý các góc nhìn bạn chưa xét, dựng khung cho một bài.</p>
 <p><b>Không giao được:</b> quyết định bạn tin điều gì, chọn lập trường trong một vấn đề gây tranh cãi, đánh giá một con người, và chịu trách nhiệm cho một câu bạn nói ra trước công chúng.</p>
 
 <div class="dan-manh">AI giúp nghiên cứu, chuẩn bị, tóm tắt, chuẩn hoá và phát hiện tín hiệu. Con người vẫn chịu trách nhiệm cho phán đoán, quan hệ, văn hoá và quyết định có trách nhiệm.</div>
 
+<h2>Vì sao nội dung do AI viết đọc lên nghe giống nhau</h2>
+
+<p>Có một điều bạn để ý được nếu đọc nhiều: nội dung do máy viết trong cùng một ngành đọc lên rất giống nhau, dù người dùng máy là những người khác hẳn nhau.</p>
+
+<p>Lý do thì không có gì bí ẩn. Máy viết bằng cách chọn cách diễn đạt phổ biến nhất cho từng chỗ, nên nó luôn kéo mọi thứ về giữa. Mà thương hiệu cá nhân lại nằm đúng ở chỗ bạn khác với giữa, không nằm ở chỗ bạn đứng đúng giữa.</p>
+
+<p>Điều này giải thích một hiện tượng nhiều người gặp mà không hiểu vì sao. Từ ngày dùng máy để viết, nội dung của họ đều đặn hơn, ít lỗi hơn, đọc dễ hơn, mà tin nhắn hỏi mua lại ít đi. Không có gì hỏng cả, chỉ là họ vừa xoá đi phần khiến người ta nhớ mình.</p>
+
 <h2>Cách Duy dùng AI trong công việc của mình</h2>
-<p>Duy không dùng AI để viết bài từ số không. Duy dùng nó ở ba chỗ.</p>
-<p>Chỗ thứ nhất là gom chất liệu. Sau một buổi làm việc, Duy ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời. Chất liệu là của Duy, việc sắp xếp là của máy.</p>
-<p>Chỗ thứ hai là phản biện. Duy đưa một lập luận và yêu cầu chỉ ra chỗ yếu nhất. Nó không thay được một người hiểu ngành, nhưng nó bắt được những chỗ Duy lười nghĩ.</p>
-<p>Chỗ thứ ba là chuyển định dạng. Một bài dài thành dàn ý video, thành mấy đoạn ngắn. Việc này lặp đi lặp lại, đúng chỗ máy làm giỏi hơn người.</p>
+<p>Duy không dùng AI để viết bài từ số không, mà dùng nó ở ba chỗ khác.</p>
+<p><b>Chỗ thứ nhất là gom chất liệu:</b> sau một buổi làm việc thì Duy ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời, tức là chất liệu vẫn của Duy còn việc sắp xếp thì của máy.</p>
+<p><b>Chỗ thứ hai là phản biện:</b> Duy đưa một lập luận rồi yêu cầu nó chỉ ra chỗ yếu nhất, và tuy nó không thay được một người hiểu ngành, nó vẫn bắt được những chỗ Duy lười nghĩ.</p>
+<p><b>Chỗ thứ ba là chuyển định dạng:</b> một bài dài thành dàn ý video rồi thành mấy đoạn ngắn, việc này lặp đi lặp lại nên đúng là chỗ máy làm giỏi hơn người.</p>
+
+<h2>Câu hỏi thật phía sau chuyện AI</h2>
+
+<p>Khi ai đó hỏi Duy về AI, câu hỏi họ nói ra là làm sao nhanh hơn. Câu hỏi thật nằm bên dưới thường là khác: liệu mình có bị bỏ lại phía sau không.</p>
+
+<p>Duy hiểu nỗi lo đó và cũng thấy nó có cơ sở, chỉ là nó đang chỉ sai hướng. Người bị bỏ lại không phải người dùng AI ít, mà là người không có gì riêng để đưa vào AI.</p>
+
+<p>Nghĩ kỹ thì công cụ càng mạnh, phần chung càng rẻ đi. Việc viết trơn tru trước đây là một lợi thế, giờ ai cũng có. Việc tóm tắt tài liệu nhanh trước đây là một kỹ năng, giờ nó miễn phí.</p>
+
+<p>Cái còn lại giá trị thì lại là những thứ cũ kỹ nhất: bạn đã trực tiếp giải bao nhiêu ca thật, bạn dám đứng về phía nào trong một chuyện gây tranh cãi, và người ta có tin bạn đủ để kể cho bạn nghe chuyện thật của họ không. <span class="nhan dam">Ba thứ đó không rẻ đi vì có AI, chúng đắt lên.</span></p>
 
 <h2>Một ranh giới Duy giữ</h2>
 <p>Duy không để AI sở hữu tiếng nói của mình. Câu nào Duy không tự nói được trước một phòng người thì không đăng, kể cả khi nó nghe hay.</p>
 <p>Bạn có thể kiểm điều này ở người khác rất nhanh. Đọc một bài của họ, rồi nghe họ nói mười phút. Nếu đọc và nghe ra hai người khác nhau, bạn biết ai đang viết.</p>
 
 <h2>Ba dấu hiệu bạn đang để AI nghĩ hộ</h2>
-<p><b>Bạn không sửa bản nháp.</b> Nếu bản đầu tiên máy trả về đã đủ tốt để đăng, khả năng cao nội dung đó chưa có gì riêng của bạn. Bản nháp tốt là bản khiến bạn muốn cãi lại vài chỗ.</p>
-<p><b>Bạn không nhớ mình đã viết gì.</b> Sau khi đăng một tuần, nếu có người hỏi lại về bài đó mà bạn phải mở ra đọc lại mới trả lời được, bài đó không phải của bạn.</p>
-<p><b>Bạn không dám nói câu đó trước một phòng người.</b> Bài kiểm này là bài cuối, và nghiêm khắc nhất. Nếu bạn ngại đứng lên bảo vệ một câu, đừng để nó mang tên bạn.</p>
+<p><b>Bạn không sửa bản nháp:</b> nếu bản đầu tiên máy trả về đã đủ tốt để đăng thì khả năng cao nội dung đó chưa có gì riêng của bạn, vì một bản nháp tốt là bản khiến bạn muốn cãi lại vài chỗ.</p>
+<p><b>Bạn không nhớ mình đã viết gì:</b> sau khi đăng một tuần, nếu có người hỏi lại về bài đó mà bạn phải mở ra đọc lại mới trả lời được, thì bài đó không phải của bạn.</p>
+<p><b>Bạn không dám nói câu đó trước một phòng người:</b> bài kiểm này là bài cuối và cũng nghiêm khắc nhất, vì nếu bạn ngại đứng lên bảo vệ một câu thì đừng ký tên mình vào đó.</p>
 
 <h2>Chỗ AI hữu ích nhất mà ít người dùng</h2>
-<p>Không phải viết. Là <b>phản biện trước khi công bố</b>.</p>
+<p>Chỗ đó không phải là viết, mà là <b>phản biện trước khi công bố</b>.</p>
 <p>Đưa lập luận của bạn cho máy và yêu cầu nó đóng vai một người trong ngành đang không đồng ý, chỉ ra chỗ yếu nhất và những trường hợp lập luận của bạn sai. Nó không thay được người hiểu ngành, nhưng nó bắt được những chỗ bạn lười nghĩ, và nó không ngại làm bạn mất mặt.</p>
 <p>Duy dùng cách này trước khi đăng bất kỳ nội dung nào có luận điểm mạnh. Khoảng một phần ba số lần, Duy phải sửa lại một đoạn.</p>
+
+
+<h2>Ba việc nên làm trước khi mở phần mềm AI ra</h2>
+
+<p>Phần lớn thất vọng với AI đến từ việc mở nó ra quá sớm, tức là mở ra lúc mình chưa biết mình muốn gì. Có ba việc làm trước thì kết quả khác hẳn.</p>
+
+<p><b>Viết ra bằng tay ba dòng về điều bạn muốn nói:</b> ba dòng thôi, xấu cũng được, vì chính ba dòng đó là phần máy không tạo ra được và cũng là phần quyết định bài viết có gì riêng hay không.</p>
+
+<p><b>Nói cho máy nghe bối cảnh thật:</b> bạn đang nói với ai, họ đang mắc gì, bạn đã thấy gì trong công việc của mình, càng cụ thể thì bản nháp càng ít giống bản nháp của người khác.</p>
+
+<p><b>Quyết trước bạn sẽ không nói gì:</b> phần này ít ai làm mà nó cứu bài viết nhiều nhất, vì máy có xu hướng nói thêm cho đầy đủ, mà đầy đủ thì thường là kẻ thù của sắc nét.</p>
+
+<p>Ba việc trên tốn chừng mười phút. Mười phút đó đổi lại một bản nháp mà bạn sửa được, thay vì một bản nháp trơn tru mà bạn không biết nên bắt đầu sửa từ đâu.</p>
 """),
 
 dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu cá nhân",
