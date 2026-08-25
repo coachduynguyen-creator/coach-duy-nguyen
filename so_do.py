@@ -227,11 +227,11 @@ def quy_dao():
 # Năm việc của người cố vấn, vẽ thành vòng tròn năm phần bấm được.
 # Mỗi phần một ảnh thật, để phần nói về triết lý không còn là một cột chữ.
 VIEC5_VONG = [
- ("Soi đúng", "img/mc/mc-banlam.webp",
+ ("Soi đúng", "img/v5-soi-dung.webp",
   "Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
- ("Chỉ đường", "img/cd-giang-slide.webp",
+ ("Chỉ đường", "img/v5-chi-duong.webp",
   "Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
- ("Làm mẫu", "img/mc/mc-banlamviec.webp",
+ ("Làm mẫu", "img/v5-lam-mau.webp",
   "Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
  ("Giữ chuẩn", "img/cd-dung-lop.webp",
   "Duy nói rõ điều gì đủ, điều gì chưa, và cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới, không nằm ở giọng nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
