@@ -128,11 +128,12 @@ ANH_NEO = {
     "img/cd-giang-slide.webp": ("34% 40%", 1.22),   # có chữ slide, phóng để đẩy chữ ra
     "img/cd-workshop.webp":    ("62% 42%", 1.0),
     "img/cd-dung-lop.webp":    ("50% 32%", 1.0),
-    "img/founder-nu-1.webp":   ("50% 11%", 1.0),    # ảnh đứng, mặt rất cao
     "img/cd-san-khau.webp":    ("50% 22%", 1.0),
-    "img/founder-nam-1.webp":  ("50% 21%", 1.0),
     "img/cd-chan-dung.webp":   ("50% 17%", 1.0),
-    "img/founder-nam-2.webp":  ("50% 40%", 1.0),
+    # Bộ ảnh NGF chụp cùng một kiểu, mặt đều nằm khoảng 18 phần trăm chiều cao.
+    "img/ngf-nu-2.webp":       ("50% 18%", 1.0),
+    "img/ngf-nam-4.webp":      ("50% 18%", 1.0),
+    "img/ngf-nam-2.webp":      ("50% 18%", 1.0),
 }
 
 NHOM_HST = [

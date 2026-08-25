@@ -1221,6 +1221,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* Nhóm căn giữa: giữ nguyên căn giữa của chính nó. Phải ghi kèm .bd vì
    quy tắc căn đều ở trên dùng .bd p, độ ưu tiên cao hơn một lớp đơn. */
 .phan-dau p, .bd .kh-dan, .bd .cd-ghi{text-align:center;text-justify:auto}
+/* Nhãn nhỏ mở khối: căn giữa theo khối và trả lại màu vàng của .mono, vì
+   .phan-dau p vốn đè lên cả hai. Các nhãn nhỏ khác trên trang đều màu vàng. */
+.bd .phan-dau .mono, .phan-dau p.mono{text-align:center;color:var(--vang)}
 /* Nhóm căn trái: nhãn, dòng thông tin, chú thích, danh sách điều hướng. */
 .bd .meta, .bd .mono, .bd .k-vai, .bd .hst-en, .bd .v5-so,
 .bd .hero-ghi p, .bd .bang-hieu p, .bd .nut, .bd figcaption, .bd .bai-cuoi p,

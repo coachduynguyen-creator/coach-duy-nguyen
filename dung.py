@@ -404,15 +404,15 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   </div>
   <div class="cd-hang tre hien">
     <article>
-      <div class="anh"><img src="img/nguoi-chuyen-gia.webp" alt="Ảnh minh hoạ một chuyên gia có nghề" loading="lazy"></div>
+      <div class="anh"><img src="img/ngf-chuyen-gia.webp" alt="Ảnh minh hoạ một chuyên gia có nghề" loading="lazy"></div>
       <div><h3>Chuyên gia có nghề</h3><p>Bạn giỏi việc của mình và khách tìm tới vì tên bạn. Nhưng thu nhập vẫn buộc chặt vào số giờ bạn ngồi xuống làm.</p></div>
     </article>
     <article>
-      <div class="anh"><img src="img/nguoi-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
+      <div class="anh"><img src="img/ngf-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
       <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu, có đội ngũ. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
     <article>
-      <div class="anh"><img src="img/nguoi-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội ngũ" loading="lazy"></div>
+      <div class="anh"><img src="img/ngf-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội ngũ" loading="lazy"></div>
       <div><h3>Người đang dẫn một đội ngũ</h3><p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
     </article>
   </div>
