@@ -1010,6 +1010,11 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml"), "w
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "robots.txt"), "w", encoding="utf-8").write(
     "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE)
 
+# GitHub Pages đọc tệp này để biết tên miền riêng. Sinh cùng lúc với robots.txt
+# nên không bao giờ bị mất khi dựng lại trang.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w",
+     encoding="utf-8").write(BASE.split("//")[1] + "\n")
+
 llms = """# Coach Duy Nguyễn
 
 > Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Phương pháp riêng: bốn năng lực của nhà sáng lập thế hệ mới và CDN Trust Orbit, hệ thống quỹ đạo niềm tin.

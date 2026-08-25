@@ -2,7 +2,7 @@
 """Khung dựng website Coach Duy Nguyễn. Sửa BASE khi đổi sang tên miền riêng."""
 import os, html, json, re
 
-BASE = "https://coachduynguyen-creator.github.io/coach-duy-nguyen"
+BASE = "https://coachduynguyen.vn"
 CONG_DONG = "https://coachduynguyen-creator.github.io/next-gen-founder/"
 CO_MAY = "https://coachduynguyen-creator.github.io/co-may-noi-dung/"
 PHIEU = "https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html"
