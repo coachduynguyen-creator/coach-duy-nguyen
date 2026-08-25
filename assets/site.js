@@ -175,41 +175,69 @@
   chon(0);
 })();
 
-/* Rạp podcast: bấm một tập thì khung rạp đổi tập và phát ngay tại trang. */
+/* Rạp podcast: bấm một tập thì khung rạp phát ngay tại trang. Bấm một dải
+   chuyên mục thì lưới tập lọc theo chuyên mục đó, quá 6 tập thì lật trang. */
 (function () {
   var man = document.getElementById('pd-man');
   if (!man) return;
-  var poster = document.getElementById('pd-poster');
-  var hien = { yt: document.querySelector('.pd-tap.chon') ? document.querySelector('.pd-tap.chon').dataset.yt : '' };
+  var TRANG = 6;
+  var tatca = [].slice.call(document.querySelectorAll('.pd-tap'));
+  var loc = { muc: 0, trang: 0, yt: (document.querySelector('.pd-tap.chon') || {dataset:{}}).dataset.yt || '' };
+
   function phat(yt) {
     man.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt +
       '?autoplay=1&rel=0" title="Video podcast" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
   }
+  function poster(yt) {
+    man.innerHTML = '<button class="pd-poster" type="button" aria-label="Phát tập đang chọn">' +
+      '<img src="https://i.ytimg.com/vi/' + yt + '/maxresdefault.jpg" alt="">' +
+      '<span class="pd-play" aria-hidden="true"></span></button>';
+    man.querySelector('.pd-poster').addEventListener('click', function () { phat(loc.yt); });
+  }
   function chonTap(a, tuPhat) {
     var d = a.dataset;
-    hien.yt = d.yt;
-    document.getElementById('pd-rap-muc').textContent = d.muc;
+    loc.yt = d.yt;
+    document.getElementById('pd-rap-muc').textContent = d.mucten;
     document.getElementById('pd-rap-tieu').textContent = d.tieu;
     document.getElementById('pd-rap-mo').textContent = d.mo;
     document.getElementById('pd-rap-lydo').textContent = d.lydo;
     var cta = document.getElementById('pd-rap-cta');
     cta.href = d.ctah;
     cta.innerHTML = d.ctan + ' <span class="mt" aria-hidden="true">&rarr;</span>';
-    document.querySelectorAll('.pd-tap').forEach(function (x) {
+    tatca.forEach(function (x) {
       var dung = x === a;
       x.classList.toggle('chon', dung);
       if (dung) { x.setAttribute('aria-current', 'true'); } else { x.removeAttribute('aria-current'); }
     });
-    if (tuPhat) { phat(d.yt); }
-    else {
-      man.innerHTML = '<button class="pd-poster" type="button" aria-label="Phát tập đang chọn">' +
-        '<img src="https://i.ytimg.com/vi/' + d.yt + '/maxresdefault.jpg" alt="">' +
-        '<span class="pd-play" aria-hidden="true"></span></button>';
-      man.querySelector('.pd-poster').addEventListener('click', function () { phat(hien.yt); });
-    }
+    if (tuPhat) { phat(d.yt); } else { poster(d.yt); }
   }
-  if (poster) { poster.addEventListener('click', function () { phat(hien.yt); }); }
-  document.querySelectorAll('.pd-tap').forEach(function (a) {
+
+  function ve() {
+    var ds = loc.muc ? tatca.filter(function (x) { return +x.dataset.muc === loc.muc; }) : tatca;
+    var soTrang = Math.max(1, Math.ceil(ds.length / TRANG));
+    if (loc.trang >= soTrang) loc.trang = soTrang - 1;
+    var dau = loc.trang * TRANG;
+    tatca.forEach(function (x) { x.style.display = 'none'; });
+    ds.slice(dau, dau + TRANG).forEach(function (x) { x.style.display = ''; });
+    var ten = document.getElementById('pd-loc-ten');
+    ten.textContent = (loc.muc ? ds[0].dataset.mucten : 'Tất cả các tập') + ' · ' + ds.length + ' tập';
+    document.getElementById('pd-loc-xoa').hidden = !loc.muc;
+    var nhieu = soTrang > 1;
+    document.getElementById('pd-truoc').hidden = !nhieu;
+    document.getElementById('pd-sau').hidden = !nhieu;
+    var tr = document.getElementById('pd-trang');
+    tr.hidden = !nhieu;
+    tr.textContent = (loc.trang + 1) + ' / ' + soTrang;
+    document.getElementById('pd-truoc').disabled = loc.trang === 0;
+    document.getElementById('pd-sau').disabled = loc.trang >= soTrang - 1;
+    return ds;
+  }
+
+  document.getElementById('pd-truoc').addEventListener('click', function () { loc.trang--; ve(); });
+  document.getElementById('pd-sau').addEventListener('click', function () { loc.trang++; ve(); });
+  document.getElementById('pd-loc-xoa').addEventListener('click', function () { loc.muc = 0; loc.trang = 0; ve(); });
+
+  tatca.forEach(function (a) {
     a.addEventListener('click', function (ev) {
       ev.preventDefault();
       chonTap(a, true);
@@ -217,10 +245,23 @@
       document.getElementById('xem').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-  /* Mở trang bằng liên kết sâu #tap-<mã> thì chọn sẵn tập đó, không tự phát. */
+
+  /* Dải chuyên mục: lọc lưới và đưa tập đầu của chuyên mục vào khung rạp. */
+  document.querySelectorAll('.pd-band[data-muc]').forEach(function (b) {
+    b.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      loc.muc = +b.dataset.muc; loc.trang = 0;
+      var ds = ve();
+      if (ds.length) { chonTap(ds[0], false); }
+      document.getElementById('xem').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* Liên kết sâu #tap-<mã>: chọn sẵn tập, không tự phát. */
   var m = location.hash.match(/^#tap-([\w-]{11})$/);
   if (m) {
     var a = document.querySelector('.pd-tap[data-yt="' + m[1] + '"]');
-    if (a) { chonTap(a, false); }
+    if (a) { loc.muc = 0; chonTap(a, false); }
   }
+  ve();
 })();

@@ -897,7 +897,7 @@ PD_MUC = [
   "img/bl-may-tinh.webp","50% 30%"),
 ]
 pd_band = "".join(
- '''<a class="pd-band hien" href="%s" target="_blank" rel="noopener" aria-label="Chuyên mục %s: %s">
+ '''<a class="pd-band hien" href="#xem" data-muc="%d" aria-label="Chuyên mục %s: %s. Bấm để xem các tập của chuyên mục này.">
   <img src="%s" alt="" loading="lazy" style="object-position:%s">
   <div class="bd">
     <span class="pd-cham" aria-hidden="true"></span>
@@ -908,7 +908,7 @@ pd_band = "".join(
     </div>
     <span class="pd-dem" aria-hidden="true"><b>%s</b><i></i>06</span>
   </div>
-</a>''' % (YOUTUBE, so, ten, anh, neo, so, ten, mo, so)
+</a>''' % (int(so), so, ten, anh, neo, so, ten, mo, so)
  for so, ten, mo, anh, neo in PD_MUC)
 
 
@@ -917,49 +917,176 @@ pd_band = "".join(
 # một mô tả, một lý do nên xem và một lời mời riêng. Bấm tập nào thì khung
 # rạp ở trên phát tập đó ngay trên trang, không rời sang YouTube.
 PD_TAP = [
- dict(yt="TDQj-qAswCc", muc="Chuyên mục 01 · Điểm nghẽn của người sáng lập",
-  tieu="10 năm làm nghề, và cú chuyển mình chỉ sau 30 ngày",
-  mo="Một học viên làm sales 10 năm ngồi kể lại điều gì thật sự đổi trong 30 ngày làm việc cùng Duy. Không phải mẹo mới, mà là đổi cách nhìn về chính vị thế của mình.",
-  lydo="Nghe một người thật kể bằng lời của họ, bạn tự đối chiếu được với chỗ mình đang đứng.",
-  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
- dict(yt="eGQbItur-co", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
-  tieu="Càng bán nhiều thứ, khách càng khó mua",
-  mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
-  lydo="Nếu bạn đang nghĩ thêm gói, thêm dịch vụ là thêm doanh thu, tập này cho bạn thấy chiều ngược lại trước khi bạn tốn tiền vào nó.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
- dict(yt="l4tnX9lG8NE", muc="Chuyên mục 03 · Thương hiệu của người sáng lập",
-  tieu="Thương hiệu cá nhân giữa thời AI",
-  mo="AI làm nội dung nhanh hơn cho tất cả mọi người, nghĩa là nhanh không còn là lợi thế. Tập này nói về thứ máy không thay được: trải nghiệm thật và tiếng nói riêng của người chủ.",
-  lydo="Xem trước khi bạn đầu tư thêm vào nội dung, để công sức đổ vào đúng chỗ tạo khác biệt.",
-  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
- dict(yt="7aCWr74vWkI", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
-  tieu="Không phải do giá. Đây là lý do khách rời bỏ bạn",
-  mo="Khách nói đắt rồi đi, nhưng phần lớn không đi vì giá. Tập này lần ngược về chỗ niềm tin bị hụt trong buổi tư vấn, trước cả khi con số được nói ra.",
-  lydo="Nếu bạn từng giảm giá mà khách vẫn không mua, tập này giải thích vì sao, và bạn sẽ thôi giảm nữa.",
-  cta_nhan="Đọc bài: Vì sao giảm giá làm hỏng quan hệ", cta="bai-viet/vi-sao-giam-gia-lam-hong-quan-he.html"),
- dict(yt="YbiDnjbCK8Q", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
-  tieu="Đừng thuyết phục nữa. Đây là cách khách tự mua",
-  mo="Người bán càng cố thuyết phục, khách càng phòng thủ. Tập này trình bày cách dẫn buổi tư vấn bằng câu hỏi chẩn đoán, để khách tự nhìn ra vấn đề và tự đi tới quyết định.",
-  lydo="Đây là lõi của cách Duy bán suốt nhiều năm, trình bày gọn trong một tập.",
-  cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
- dict(yt="mNRObOgqONc", muc="Chuyên mục 01 · Điểm nghẽn của người sáng lập",
+ # ---- Chuyên mục 01 · Điểm nghẽn của người sáng lập
+ dict(yt="mNRObOgqONc", muc=1,
   tieu="80 phần trăm thất bại không đến từ kỹ năng chốt",
   mo="Người ta hay đổ cho khâu chốt, rồi đi học thêm kỹ thuật chốt. Tập này chỉ ra chỗ hỏng thật nằm sớm hơn nhiều trong quan hệ với khách, và vì sao luyện chốt không cứu được nó.",
   lydo="Giúp bạn thôi tốn tiền vào sai chỗ, trước khi mua thêm một khoá kỹ năng nữa.",
   cta_nhan="Đăng ký nhận thư hằng tuần", cta="lien-he.html"),
+ dict(yt="YnRjTGhwoQg", muc=1,
+  tieu="Nếu phải khởi nghiệp lại, Duy sẽ làm gì trước",
+  mo="Câu trả lời thẳng cho câu hỏi Duy hay được hỏi: bắt đầu lại từ đầu vào lúc này thì đi đường nào trước, và bỏ hẳn bước nào.",
+  lydo="Nghe để soi lại thứ tự ưu tiên của chính mình, nhất là khi bạn đang tính làm lại một mảng.",
+  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+ dict(yt="yFz8MHt20vQ", muc=1,
+  tieu="Hai chữ giữ việc kinh doanh vững trong năm khó",
+  mo="Hai từ khoá Duy chọn cho năm 2026, và cách chúng đổi tiêu chí bạn dùng để chọn việc đáng làm.",
+  lydo="Tập ngắn, nhưng đủ để bạn kiểm lại kế hoạch năm của mình trong một buổi cà phê.",
+  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+ dict(yt="yh_u6x1-qCo", muc=1,
+  tieu="Bốn bước đi lên từ hai bàn tay trắng",
+  mo="Con đường người mới hay bỏ qua vì nóng vội, kể theo đúng thứ tự Duy đã đi từ lúc chưa có gì trong tay.",
+  lydo="Hợp với người đang ở đoạn đầu, để khỏi đốt tiền vào bước chưa tới lượt.",
+  cta_nhan="Xem các chương trình", cta="chuong-trinh.html"),
+ dict(yt="tr38f_RNwwU", muc=1,
+  tieu="Bỏ một thói quen này trước khi mong bứt doanh số",
+  mo="Một thói quen tư vấn rất phổ biến đang âm thầm phá buổi bán hàng, và cách thay nó bằng một việc làm được ngay.",
+  lydo="Soi được ngay trong buổi tư vấn gần nhất của bạn, không cần chờ.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+
+ # ---- Chuyên mục 02 · Bán bằng chẩn đoán
+ dict(yt="eGQbItur-co", muc=2,
+  tieu="Càng bán nhiều thứ, khách càng khó mua",
+  mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
+  lydo="Nếu bạn đang nghĩ thêm gói, thêm dịch vụ là thêm doanh thu, tập này cho bạn thấy chiều ngược lại trước khi bạn tốn tiền vào nó.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="7aCWr74vWkI", muc=2,
+  tieu="Không phải do giá. Đây là lý do khách rời bỏ bạn",
+  mo="Khách nói đắt rồi đi, nhưng phần lớn không đi vì giá. Tập này lần ngược về chỗ niềm tin bị hụt trong buổi tư vấn, trước cả khi con số được nói ra.",
+  lydo="Nếu bạn từng giảm giá mà khách vẫn không mua, tập này giải thích vì sao, và bạn sẽ thôi giảm nữa.",
+  cta_nhan="Đọc bài: Vì sao giảm giá làm hỏng quan hệ", cta="bai-viet/vi-sao-giam-gia-lam-hong-quan-he.html"),
+ dict(yt="YbiDnjbCK8Q", muc=2,
+  tieu="Đừng thuyết phục nữa. Đây là cách khách tự mua",
+  mo="Người bán càng cố thuyết phục, khách càng phòng thủ. Tập này trình bày cách dẫn buổi tư vấn bằng câu hỏi chẩn đoán, để khách tự nhìn ra vấn đề và tự đi tới quyết định.",
+  lydo="Đây là lõi của cách Duy bán suốt nhiều năm, trình bày gọn trong một tập.",
+  cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
+ dict(yt="IAYzc91zZ3A", muc=2,
+  tieu="Giá có thật là điều khách quan tâm nhất?",
+  mo="Khách nói đắt, nhưng hành vi mua lại nói một điều khác. Tập này tách hai chuyện đó ra để bạn nhìn cho rõ.",
+  lydo="Giúp bạn thôi sửa giá trong khi chỗ hỏng nằm ở niềm tin.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="r_Hj2t1mS8M", muc=2,
+  tieu="Ba yếu tố quyết định việc khách xuống tiền",
+  mo="Ba thứ chạy trong đầu khách trước khi quyết, và thứ tự chúng xuất hiện trong buổi tư vấn.",
+  lydo="Nắm được thứ tự này thì buổi tư vấn đi đúng nhịp, không đốt cháy giai đoạn.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="bANYQ5imP3Y", muc=2,
+  tieu="Tâm lý mua của khách hàng cao cấp",
+  mo="Người trả tiền lớn quyết định theo cách khác hẳn người mua phổ thông, mà phần lớn người bán chưa từng được dạy điều đó.",
+  lydo="Cần cho ai đang nâng phân khúc và thấy cách bán cũ không còn chạy.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="2VRKnLdYFuU", muc=2,
+  tieu="Làm chủ cuộc trò chuyện với khách cao cấp",
+  mo="Cách giữ nhịp buổi nói chuyện mà không lấn át, để khách thấy mình được dẫn chứ không bị ép.",
+  lydo="Là phần thực hành lời nói đi kèm với tập về chẩn đoán.",
+  cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
+ dict(yt="BaN9P8UYUj8", muc=2,
+  tieu="Bán giá cao giữa thị trường biến động",
+  mo="Ghi từ giai đoạn thị trường khó, nói về việc chọn khách và giữ chuẩn khi xung quanh ai cũng vội hạ giá.",
+  lydo="Ví dụ lấy từ bất động sản, nhưng cách nghĩ dùng được cho mọi ngành bán giá cao.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="iej3kmn7l1Q", muc=2,
+  tieu="Vượt qua giai đoạn thị trường trầm lắng",
+  mo="Khi thị trường chậm lại, việc gì đáng làm và việc gì chỉ đốt sức. Tập này xếp lại danh sách việc của người bán trong mùa khó.",
+  lydo="Hợp để xem cùng đội ngũ trước một quý được dự báo chậm.",
+  cta_nhan="Xem các chương trình", cta="chuong-trinh.html"),
+ dict(yt="iWGg9QfOXQg", muc=2,
+  tieu="Ba bước dẫn một buổi bán cho bất kỳ khách nào",
+  mo="Một khung ba bước đơn giản để buổi tư vấn nào cũng có mở, có thân, có kết, thay vì trôi theo khách.",
+  lydo="Dễ áp nhất trong các tập, dùng được ngay buổi hẹn kế tiếp.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+
+ # ---- Chuyên mục 03 · Thương hiệu của người sáng lập
+ dict(yt="s1UF9mSxM0s", muc=3,
+  tieu="Nâng tầm vị thế chuyên gia trong mắt khách",
+  mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
+  lydo="Bạn kiểm được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
+  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+ dict(yt="sBaDKQOxRZw", muc=3,
+  tieu="Vì sao nói nhiều làm mất vị thế",
+  mo="Người bán hay lấp khoảng lặng bằng lời, và mỗi câu thừa là một lần tự hạ giá mình. Tập này nói về sức nặng của việc nói ít lại.",
+  lydo="Nghe xong bạn sẽ để ý được chính mình trong buổi nói chuyện kế tiếp.",
+  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+ dict(yt="Jgc233EB_H4", muc=3,
+  tieu="Nói ít lại để được lắng nghe nhiều hơn",
+  mo="Phần tiếp của chủ đề vị thế trong lời nói: cách đặt câu hỏi và giữ khoảng lặng để lời mình nói ra có trọng lượng.",
+  lydo="Xem cùng tập trên thành một cặp, một tập chỉ vấn đề, một tập chỉ cách sửa.",
+  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+ dict(yt="CIyxENto-7Y", muc=3,
+  tieu="Khách khó tính, hay mình chưa biết cách hiện diện?",
+  mo="Nhiều người than gặp toàn khách khó. Tập này lật lại: cách bạn xuất hiện đang mời kiểu khách nào tới, và đổi cách hiện diện thì tệp khách đổi theo.",
+  lydo="Đáng xem nếu bạn thấy mình cứ gặp mãi một kiểu khách mệt mỏi.",
+  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+ dict(yt="ToQMhBlWhyw", muc=3,
+  tieu="Gây ấn tượng với khách cao cấp ngay lần đầu",
+  mo="Ấn tượng đầu với người có tiền không nằm ở bộ vest hay lời chào khéo, mà ở vài chi tiết chuẩn bị mà rất ít người làm.",
+  lydo="Danh sách chi tiết đủ cụ thể để soát lại trước buổi gặp quan trọng.",
+  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+
+ # ---- Chuyên mục 04 · Xây hệ thống cùng đội ngũ
+ dict(yt="IUNdDgUxGWM", muc=4,
+  tieu="Mười bước biến doanh nghiệp thành cỗ máy bán hàng",
+  mo="Bức tranh đầy đủ nhất Duy từng trình bày về một hệ thống bán hàng chạy được mà không cần người chủ đứng cạnh từng bước.",
+  lydo="Tập dài và nặng nhất danh sách này, xem khi bạn thật sự định xây.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+ dict(yt="r_yjjvexSVA", muc=4,
+  tieu="Tăng tỷ lệ chốt sau một tuần: sửa quy trình, không sửa người",
+  mo="Chỗ tăng nhanh nhất không nằm ở việc ép đội ngũ cố thêm, mà ở vài điểm hở trong quy trình mà tuần nào cũng rò khách.",
+  lydo="Có việc làm được trong bảy ngày, đo được bằng số.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+ dict(yt="MOCQeUnyFak", muc=4,
+  tieu="Kỹ năng lõi của một người bán chuyên nghiệp",
+  mo="Nếu chỉ được luyện cho đội ngũ một kỹ năng, Duy chọn kỹ năng này. Tập này giải thích vì sao và luyện nó thế nào.",
+  lydo="Dùng làm bài mở đầu khi đào tạo người mới trong đội ngũ.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+ dict(yt="7lZvXC4baY8", muc=4,
+  tieu="30 phút luyện nhận diện khách tiềm năng",
+  mo="Một bài luyện ngắn giúp đội ngũ phân biệt người hỏi chơi với người sắp mua, để dồn giờ vào đúng khách.",
+  lydo="Cho cả đội ngũ xem chung được, có bài tập làm ngay trong buổi họp.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+ dict(yt="5vLoXS0WjHw", muc=4,
+  tieu="Bán thêm đúng thời điểm mà không làm hỏng quan hệ",
+  mo="Bán thêm sai lúc thì mất cả đơn đầu. Tập này chỉ ra thời điểm đúng và câu dẫn tự nhiên để giá trị đơn tăng mà khách vẫn thoải mái.",
+  lydo="Một quy trình nhỏ nhưng cộng thẳng vào doanh thu mỗi tháng.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+ dict(yt="qqbdg4g7HUc", muc=4,
+  tieu="Thiết kế trải nghiệm cho khách hàng giá cao",
+  mo="Khách trả giá cao đang mua cả hành trình chứ không chỉ món hàng. Tập này đi qua từng chặng của hành trình đó và chỗ hay bị bỏ quên.",
+  lydo="Xem để viết lại hành trình khách của chính bạn thành các bước giao được cho đội ngũ.",
+  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+
+ # ---- Chuyên mục 05 · Kiến tạo cộng đồng
+ # Kênh chưa có video đúng chủ đề này. Tạm xếp câu chuyện học viên vào đây,
+ # các tập podcast quay mới về cộng đồng sẽ thay dần.
+ dict(yt="TDQj-qAswCc", muc=5,
+  tieu="10 năm làm nghề, và cú chuyển mình chỉ sau 30 ngày",
+  mo="Một học viên làm sales 10 năm ngồi kể lại điều gì thật sự đổi trong 30 ngày làm việc cùng Duy. Không phải mẹo mới, mà là đổi cách nhìn về chính vị thế của mình.",
+  lydo="Nghe một người thật kể bằng lời của họ, bạn tự đối chiếu được với chỗ mình đang đứng.",
+  cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
+
+ # ---- Chuyên mục 06 · AI trong công việc của người chủ
+ dict(yt="l4tnX9lG8NE", muc=6,
+  tieu="Thương hiệu cá nhân giữa thời AI",
+  mo="AI làm nội dung nhanh hơn cho tất cả mọi người, nghĩa là nhanh không còn là lợi thế. Tập này nói về thứ máy không thay được: trải nghiệm thật và tiếng nói riêng của người chủ.",
+  lydo="Xem trước khi bạn đầu tư thêm vào nội dung, để công sức đổ vào đúng chỗ tạo khác biệt.",
+  cta_nhan="Đọc bài: AI làm nhanh phần đã rõ", cta="bai-viet/ai-lam-nhanh-phan-da-dung.html"),
 ]
+
+def _ten_muc(n):
+    so, ten = PD_MUC[n-1][0], PD_MUC[n-1][1]
+    return "Chuyên mục %s · %s" % (so, ten)
 
 def _rap_html():
     t = PD_TAP[0]
     the = "".join(
         ('<a class="pd-tap%s" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener" '
-         'data-yt="%s" data-muc="%s" data-tieu="%s" data-mo="%s" data-lydo="%s" '
+         'data-yt="%s" data-muc="%s" data-mucten="%s" data-tieu="%s" data-mo="%s" data-lydo="%s" '
          'data-ctan="%s" data-ctah="%s"%s>'
          '<span class="pd-tap-anh"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="" '
          'loading="lazy" decoding="async"><i class="pd-tap-play" aria-hidden="true"></i></span>'
          '<span class="pd-tap-so">Tập %02d</span><b>%s</b></a>')
         % ((" chon" if i == 0 else ""), x["yt"], x["yt"], x["muc"],
-           x["tieu"].replace('"', "&quot;"), x["mo"].replace('"', "&quot;"),
+           _ten_muc(x["muc"]), x["tieu"].replace('"', "&quot;"), x["mo"].replace('"', "&quot;"),
            x["lydo"].replace('"', "&quot;"), x["cta_nhan"], dd(x["cta"]),
            ' aria-current="true"' if i == 0 else "", x["yt"], i + 1, x["tieu"])
         for i, x in enumerate(PD_TAP))
@@ -980,12 +1107,18 @@ def _rap_html():
     </div>
   </div>
   <div class="pd-tap-dau hien">
-    <p class="mono" style="margin:0;text-align:left">6 tập xem ngay</p>
-    <p class="pd-ghi">Bấm một tập để xem tại đây. Tập podcast quay mới sẽ xếp dần vào danh sách này.</p>
+    <p class="mono" id="pd-loc-ten" style="margin:0;text-align:left">Tất cả các tập</p>
+    <div class="pd-lat">
+      <button class="pd-loc-xoa" id="pd-loc-xoa" type="button" hidden>Xem tất cả các tập</button>
+      <button class="pd-mui" id="pd-truoc" type="button" aria-label="Trang trước">&larr;</button>
+      <span class="pd-trang" id="pd-trang"></span>
+      <button class="pd-mui" id="pd-sau" type="button" aria-label="Trang sau">&rarr;</button>
+    </div>
   </div>
-  <div class="pd-tap-luoi hien">%s</div>
+  <div class="pd-tap-luoi hien" id="pd-luoi">%s</div>
+  <p class="pd-ghi" style="margin-top:16px">Bấm một tập để xem tại đây. Tập đang xếp theo chuyên mục gần nhất; khi mỗi chuyên mục có danh sách phát YouTube riêng, danh sách ở đây sẽ theo đúng nó.</p>
 </section>
-''' % (t["yt"], t["muc"], t["tieu"], t["mo"], t["lydo"], dd(t["cta"]), t["cta_nhan"], the)
+''' % (t["yt"], _ten_muc(t["muc"]), t["tieu"], t["mo"], t["lydo"], dd(t["cta"]), t["cta_nhan"], the)
 
 
 KENH = """<section class="pd-hero">
@@ -1010,7 +1143,7 @@ KENH = """<section class="pd-hero">
 {RAP}<section class="pd-muc" id="chuyen-muc">
   <div class="bd pd-muc-dau">
     <p class="mono" style="margin:0">6 chuyên mục</p>
-    <p class="pd-ghi">Bấm một dải để mở kênh. Các tập mới xếp vào đúng chuyên mục của nó.</p>
+    <p class="pd-ghi">Bấm một chuyên mục để xem các tập của nó ở khung phía trên.</p>
   </div>
   {BANDS}
 </section>
