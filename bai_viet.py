@@ -8,33 +8,79 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
  mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, tôi thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""
-<p>Trong các buổi trao đổi với người sáng lập, tôi nghe đi nghe lại bốn câu. Người nói ra thường tin rằng mình đang gặp bốn vấn đề tách rời nhau, rồi đi tìm bốn giải pháp khác nhau. Đó là chỗ tốn tiền và tốn thời gian nhất.</p>
+ than="""<p>Tôi ngồi với người sáng lập gần như mỗi tuần. Có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác. Nhưng có bốn câu tôi nghe đi nghe lại tới mức thuộc.</p>
+
+<p>Điều đáng nói không nằm ở bốn câu đó. Nó nằm ở chỗ người nói tin rằng mình đang gặp bốn vấn đề tách rời nhau. Rồi họ đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua khoá đào tạo bán hàng, tuyển thêm quản lý, lắp phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ, và sau sáu tháng thì bốn câu vẫn còn nguyên.</p>
 
 <h2>Bốn câu đó là gì</h2>
-<p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, nhưng người nhắn tin lại không phải người có tiền mua thứ họ bán.</p>
-<p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ có người, có kịch bản, có quy trình. Nhưng tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ.</p>
-<p><b>Câu thứ ba: tuyển thêm người nhưng tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang nhất, vì nó đi ngược hẳn với điều họ mong đợi khi bỏ tiền tuyển người.</p>
-<p><b>Câu thứ tư: tháng tốt tháng kém mà không rõ vì sao.</b> Doanh thu lên xuống theo tháng, người chủ không chỉ ra được nguyên nhân, nên cũng không lặp lại được tháng tốt.</p>
+
+<p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, thỉnh thoảng có bài lên vài chục nghìn lượt. Nhưng người nhắn tin lại hỏi những thứ rẻ tiền hơn hẳn thứ họ bán, hoặc hỏi xong rồi im. Họ mở trang cá nhân của mình ra đọc lại, thấy bài nào cũng đúng, mà cả trang không nói lên được họ là ai.</p>
+
+<p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ có người, có kịch bản, có quy trình, có phần mềm ghi lại từng cuộc gọi. Nhưng tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ. Người chủ vào, nói chừng hai mươi phút, khách gật. Ai cũng vui, trừ người chủ, vì họ biết tháng sau chuyện đó lặp lại.</p>
+
+<p><b>Câu thứ ba: tuyển thêm người mà tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang nhất, vì nó đi ngược hẳn điều họ mong đợi khi bỏ tiền tuyển người. Họ tuyển để nhẹ đi. Kết quả là thêm một người cần được hỏi, được duyệt, được sửa bài. Có người nói với tôi rằng làm một mình còn nhanh hơn, và họ nói câu đó với vẻ mặt của người vừa thừa nhận một điều mình không muốn thừa nhận.</p>
+
+<p><b>Câu thứ tư: tháng tốt tháng kém mà không rõ vì sao.</b> Doanh thu lên xuống theo tháng. Tháng tốt thì mừng, tháng kém thì lo, nhưng cả hai tháng đều không giải thích được. Không giải thích được nghĩa là không lặp lại được tháng tốt, và cũng không tránh được tháng kém.</p>
+
+<h2>Vì sao bốn câu này nghe như bốn vấn đề khác nhau</h2>
+
+<p>Vì chúng xuất hiện ở bốn chỗ khác nhau trong công ty. Một cái ở khâu nội dung, một cái ở khâu bán hàng, một cái ở khâu nhân sự, một cái ở khâu tài chính. Bốn phòng ban khác nhau, bốn người phụ trách khác nhau, bốn cách đo khác nhau.</p>
+
+<p>Và cách chúng ta được dạy để giải quyết vấn đề cũng cổ vũ chuyện đó. Vấn đề ở đâu thì sửa ở đó. Cách nghĩ này rất tốt khi hỏng máy. Nó không tốt khi thứ đang hỏng là cách một con người ra quyết định, vì cách ra quyết định của người chủ chạy qua cả bốn khâu cùng lúc.</p>
 
 <h2>Hỏi ngược lại từng câu</h2>
-<p>Vì sao nội dung không ra đúng khách? Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì.</p>
-<p>Vì sao đội ngũ chờ người chủ mới chốt? Vì cách đọc khách, cách xử lý một tình huống khó và cách quyết định nhượng bộ tới đâu đều nằm trong đầu người chủ. Kịch bản chỉ ghi lại lời nói, không ghi lại cách nghĩ.</p>
-<p>Vì sao tuyển thêm mà bận hơn? Vì việc chưa được viết ra thành luồng rõ ai làm, làm xong thì có gì. Người mới vào không có gì để bám, nên hỏi. Mỗi người mới là thêm một nguồn câu hỏi đổ về bàn của bạn.</p>
-<p>Vì sao tháng tốt tháng kém? Vì không có dữ liệu nào ghi lại điều gì đã tạo ra tháng tốt. Không đo được thì không lặp lại được, chỉ còn cách hy vọng.</p>
 
-<div class="dan-manh">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ.</div>
+<p>Trong buổi làm việc, tôi không trả lời ngay. Tôi hỏi ngược lại. Bốn câu hỏi này bạn tự hỏi mình cũng được.</p>
+
+<p><b>Vì sao nội dung không ra đúng khách?</b> Tôi thường hỏi: nếu tôi chặn một người trong đội ngũ của bạn ngoài hành lang và hỏi công ty mình đứng về điều gì, họ sẽ nói gì? Câu trả lời hay gặp là mỗi người nói một kiểu, và không kiểu nào giống câu người chủ vừa nói với tôi mười phút trước. Luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng. Người xem đọc năm bài, thấy bài nào cũng hợp lý, rồi không nhớ được bạn đại diện cho điều gì.</p>
+
+<p><b>Vì sao đội ngũ chờ người chủ mới chốt?</b> Tôi hỏi xin xem kịch bản bán hàng. Gần như lần nào kịch bản cũng ghi rất kỹ phần nói: chào thế nào, giới thiệu thế nào, xử lý từ chối thế nào. Phần không được ghi là phần nghĩ. Đọc một người đang do dự vì tiền hay vì chưa tin, xử lý một tình huống chưa từng gặp, quyết định nhượng bộ tới đâu thì dừng. Ba việc đó vẫn nằm nguyên trong đầu người chủ. Kịch bản chép lại lời nói, không chép lại cách nghĩ, nên tới chỗ cần nghĩ thì khách phải gặp người chủ.</p>
+
+<p><b>Vì sao tuyển thêm người mà càng bận?</b> Tôi hỏi: khi giao một việc, bạn giao kết quả hay giao cách làm? Phần lớn giao kết quả, vì giao cách làm mất thời gian hơn. Nhưng cách làm chưa được viết ra thì người mới phải đoán, đoán sai thì quay lại hỏi, và mỗi lần hỏi là một lần người chủ mất mạch. Mười người mới nghĩa là mười nguồn câu hỏi. Tuyển người trong lúc chưa có cách làm viết sẵn thì càng tuyển càng bận, đó là chuyện tất nhiên chứ không phải xui.</p>
+
+<p><b>Vì sao tháng tốt tháng kém mà không rõ vì sao?</b> Tôi hỏi tháng tốt gần nhất đến từ đâu. Câu trả lời hay gặp là nhờ một mối quen giới thiệu, hoặc nhờ một bài tự nhiên lan xa. Cả hai đều là chuyện xảy tới chứ không phải chuyện mình làm ra. Không ghi lại được nguyên nhân thì không lặp lại được kết quả.</p>
+
+<h2>Bốn câu, một nguyên nhân</h2>
+
+<p>Bốn câu trả lời trên đều dừng ở cùng một chỗ. Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Công ty chưa chuyển chúng thành ba thứ có thể trao tay: một luận điểm nghề nghiệp mà cả đội ngũ nói giống nhau, một cách làm được viết ra đủ rõ để người khác làm theo, và một cách ghi lại điều gì đã tạo ra kết quả.</p>
+
+<p>Tôi gọi đó là điểm nghẽn người sáng lập. Nó không phải lỗi. Nó là hệ quả tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất. Đúng ở giai đoạn đó, và chính vì nó đúng nên người ta giữ nó quá lâu.</p>
 
 <h2>Vì sao càng bán tốt lại càng bận</h2>
-<p>Nhiều người không lường trước phần này. Khi người chủ bán giỏi, doanh thu tăng. Doanh thu tăng thì số việc tăng. Nhưng nếu phần quyết định vẫn chưa rời khỏi đầu người chủ, mỗi việc mới lại tạo thêm một điểm phải chờ họ.</p>
-<p>Tức là doanh thu tăng không tự làm bạn nhẹ đi. Nó chỉ làm cái nút ở chỗ bạn siết chặt hơn. Và cái nút đó siết đúng vào lúc bạn cần rảnh nhất để nghĩ chuyện lớn.</p>
+
+<p>Chỗ này mới là chỗ khó chịu. Khi công ty bán tốt lên, số việc cần một quyết định của người chủ tăng theo. Thêm khách nghĩa là thêm tình huống lạ. Thêm người nghĩa là thêm câu hỏi. Thêm dự án nghĩa là thêm ngoại lệ.</p>
+
+<p>Nếu cách nghĩ vẫn nằm trong đầu một người, thì mọi đường đi trong công ty đều dẫn về cái đầu đó. Bán càng tốt, đường về càng đông. Người chủ trở thành chỗ tắc của chính công ty mình xây, và tắc vì lý do đáng lẽ phải mừng.</p>
+
+<p>Tôi đã ở trong chỗ đó. Có quãng tôi nhận nhiều việc hơn bao giờ hết, doanh thu tốt hơn bao giờ hết, và tôi làm tới mười một giờ đêm gần như mọi ngày. Tôi từng nghĩ mình cần thêm kỷ luật. Sự thật là tôi cần bớt việc phải quyết. Hai chuyện đó nghe giống nhau nhưng cách sửa khác hẳn nhau.</p>
+
+<h2>Ba dấu hiệu để tự kiểm</h2>
+
+<p>Bạn không cần chờ tới lúc gặp tôi mới biết mình có đang ở trong chỗ này hay không. Ba dấu hiệu dưới đây tự kiểm được trong một buổi chiều.</p>
+
+<p><b>Một.</b> Hỏi ba người trong đội ngũ cùng một câu: công ty mình đứng về điều gì, và khách nên chọn mình thay vì đối thủ vì lý do nào. Hỏi riêng từng người, đừng hỏi trong cuộc họp. Ba câu trả lời khác nhau nghĩa là luận điểm nghề nghiệp chưa ra khỏi đầu bạn.</p>
+
+<p><b>Hai.</b> Mở lại năm giao dịch lớn gần nhất. Đếm xem bao nhiêu giao dịch có mặt bạn ở khúc cuối. Bốn trên năm trở lên nghĩa là cách nghĩ chưa được viết ra.</p>
+
+<p><b>Ba.</b> Nhớ lại tháng tốt gần nhất và viết ra một câu giải thích vì sao nó tốt. Nếu câu đó có chữ may, chữ tự nhiên, hoặc tên một người quen, thì bạn chưa nắm được nguyên nhân của kết quả mình đã có.</p>
 
 <h2>Bước đầu tiên tôi hay đề nghị</h2>
-<p>Chưa phải xây quy trình cho cả công ty. Chỉ cần chọn một luồng công việc quan trọng nhất và trả lời bốn câu hỏi.</p>
-<p>Kết quả rõ ràng của luồng này là gì. Ai chịu trách nhiệm cuối cùng. Đo bằng chỉ số nào. Bao lâu rà lại một lần.</p>
-<p>Nếu bốn câu đó chưa trả lời được bằng một câu ngắn cho từng câu, thì việc cần làm trước không phải tuyển thêm người hay đăng thêm nội dung. Việc cần làm là ngồi xuống viết ra một luồng.</p>
-<p>Bạn thử ngay hôm nay: lấy giấy, viết tên một luồng, rồi trả lời bốn câu. Chỗ nào bạn ấp úng, chỗ đó là điểm nghẽn thật.</p>
-"""),
+
+<p>Không phải viết quy trình. Quy trình viết ra lúc chưa gọi đúng tên vấn đề thì viết xong để đó.</p>
+
+<p>Bước đầu tiên là chọn một việc bạn đang làm ngon nhất và cũng bị gọi nhiều nhất. Với phần lớn người sáng lập dịch vụ, đó là buổi tư vấn đầu với khách lớn. Trong ba lần tới, sau mỗi buổi, ngồi lại mười lăm phút và trả lời ba câu: mình đã hỏi những câu nào, mình nghe được gì từ câu trả lời của họ, và mình quyết định gì tại chỗ nào.</p>
+
+<p>Ba lần là ba trang giấy. Ba trang đó là bản nháp đầu tiên của cách nghĩ, thứ mà trước nay chưa từng ra khỏi đầu bạn. Nó chưa phải quy trình, và cũng chưa cần phải là quy trình. Nhưng khi có nó rồi, người kế tiếp học được nhanh hơn hẳn, vì họ không còn phải đoán.</p>
+
+<p>Mười lăm phút sau mỗi buổi nghe ít tới mức dễ bỏ qua. Tôi vẫn đề nghị vì đúng chỗ ít đó lại là chỗ khó giữ nhất. Ai giữ được ba lần liền thì thường giữ được tiếp.</p>
+
+<h2>Điều tôi không hứa</h2>
+
+<p>Làm xong bước này, bốn câu kia không biến mất trong một tháng. Chuyển thứ nằm trong đầu một người thành thứ cả đội ngũ dùng được là việc của nhiều quý, không phải nhiều tuần.</p>
+
+<p>Nhưng có một thứ đổi ngay. Bạn thôi đi tìm bốn giải pháp cho bốn vấn đề. Bạn nhìn thấy một chỗ nghẽn và biết mình đang gỡ chỗ nào. Riêng chuyện đó đã đủ tiết kiệm cho bạn vài trăm triệu và vài quý, so với cách đi cũ.</p>
+
+<p>Nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua. Khác nhau chỉ ở chỗ có gọi đúng tên nó ra hay không.</p>"""),
 
 dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
  tieu="Vì sao tôi không nghĩ về khách bằng cái phễu",

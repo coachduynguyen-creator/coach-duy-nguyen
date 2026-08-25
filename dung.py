@@ -1,11 +1,20 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
-import json, os, re
+import html, json, os, re
 from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
 BAI = sorted(BAI, key=lambda x: x["ngay"], reverse=True)
+
+# Thời gian đọc tính thẳng từ số chữ của thân bài, khỏi phải sửa tay mỗi lần
+# viết thêm. Lấy 200 chữ một phút, là nhịp đọc tiếng Việt trên màn hình.
+def _phut_doc(than):
+    van = html.unescape(re.sub(r"<[^>]+>", " ", than))
+    return max(1, round(len(van.split()) / 200.0))
+
+for _b in BAI:
+    _b["doc"] = "%d phút đọc" % _phut_doc(_b["than"])
 from chuong_trinh import CT
 import so_do
 
