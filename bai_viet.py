@@ -266,32 +266,63 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
  mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Càng tăng, mọi việc càng dồn về đúng một người là bạn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
- than="""
-<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội ngũ đông hơn. Nhưng người chủ thì mệt hơn năm ngoái, ngủ ít hơn, và bắt đầu sợ những ngày đi vắng.</p>
-<p>Đó không phải dấu hiệu bạn làm sai. Đó là dấu hiệu bạn đã chạm giới hạn của mô hình hiện tại.</p>
+ than="""<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
+
+<p><span class="nhan dam">Con anh giỏi, nhưng mỗi lần cần số liệu lại phải hỏi kế toán, ngồi tổng hợp cả buổi.</span></p>
+
+<p>Bác không nói con mình kém, bác nói một điều khác hẳn: người kế nhiệm không nhìn thấy bức tranh toàn cảnh, vì bức tranh đó chưa bao giờ tồn tại ở đâu ngoài đầu bác.</p>
+
+<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội ngũ đông hơn năm ngoái, nhưng người chủ thì mệt hơn, ngủ ít hơn, và bắt đầu sợ những ngày mình đi vắng. Đó không phải dấu hiệu bạn làm sai, mà <span class="nhan">là dấu hiệu bạn đã chạm giới hạn của cách làm hiện tại</span>, cái cách vốn rất đúng ở giai đoạn trước.</p>
 
 <h2>Nút thắt hình thành thế nào</h2>
-<p>Ở giai đoạn đầu, việc người chủ ôm hết là hợp lý. Bạn hiểu khách nhất, bạn quyết nhanh nhất, và công ty nhỏ nên chi phí của việc ôm hết là thấp.</p>
-<p>Nhưng mỗi lần bạn tự quyết một việc mà không viết lại lý do quyết, bạn tạo thêm một điểm mà chỉ bạn xử lý được. Sau vài năm, những điểm đó nối lại thành một cái nút. Và cái nút đó nằm ở chính bạn.</p>
-<p>Chỗ nguy hiểm là cái nút này không đau khi công ty nhỏ. Nó chỉ đau đúng lúc công ty lớn lên, tức là đúng lúc bạn cần rảnh nhất để nghĩ chuyện lớn.</p>
+
+<p>Ở giai đoạn đầu, việc người chủ ôm hết là hợp lý. Bạn hiểu khách nhất, bạn quyết nhanh nhất, và công ty còn nhỏ nên cái giá của việc ôm hết gần như bằng không. Mỗi quyết định bạn tự xử lý đều tiết kiệm được một vòng giải thích.</p>
+
+<p>Nhưng mỗi lần bạn quyết một việc mà không viết lại lý do quyết, bạn tạo thêm một điểm trong công ty mà chỉ mình bạn xử lý được. Một điểm thì không sao, nhưng sau vài năm, những điểm đó nối lại thành một cái nút, và cái nút nằm ở chính bạn.</p>
+
+<p>Chỗ hiểm của cái nút này là nó không đau khi công ty còn nhỏ. Nó chỉ bắt đầu siết đúng lúc công ty lớn lên, tức là đúng lúc bạn cần rảnh đầu nhất để nghĩ chuyện lớn. Và vì nó siết dần đều chứ không siết đột ngột, người chủ thường quen với sức nặng đó trước khi kịp nhận ra nó bất thường.</p>
 
 <h2>Ba dấu hiệu nút đã siết</h2>
-<p><b>Một, bạn đi vắng ba ngày là có việc phải chờ.</b> Không phải việc khẩn cấp bất thường, mà việc bình thường của tuần.</p>
-<p><b>Hai, người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái.</b> Nghe thì ngược, nhưng khi hệ thống thiếu, người càng có trách nhiệm càng hỏi nhiều, vì họ sợ làm sai.</p>
-<p><b>Ba, bạn bắt đầu né tuyển thêm.</b> Vì trong lòng bạn biết tuyển thêm là bận thêm, dù không nói ra.</p>
 
-<div class="dan-manh">Nếu mọi nội dung, giao dịch lớn và quyết định quan trọng đều chờ nhà sáng lập, doanh thu tăng có thể làm người chủ bận hơn.</div>
+<p><b>Một:</b> bạn đi vắng ba ngày là có việc phải chờ, mà không phải việc khẩn cấp bất thường, chỉ là việc bình thường của một tuần bình thường. Nếu lịch nghỉ của bạn phải tính theo lịch giao hàng của công ty thì cái nút đã hình thành rồi.</p>
+
+<p><b>Hai:</b> người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái, nghe thì ngược đời nhưng đây lại là dấu hiệu đáng tin nhất. Khi hệ thống thiếu, người càng có trách nhiệm càng hỏi nhiều, bởi họ sợ làm sai và không có gì để dựa vào ngoài ý bạn.</p>
+
+<p><b>Ba:</b> bạn bắt đầu né tuyển thêm, có thể không nói ra và thậm chí không thừa nhận với chính mình, nhưng trong lòng vẫn biết tuyển thêm nghĩa là bận thêm. <span class="nhan">Khi tuyển người không còn làm nhẹ đi, đó không phải chuyện nhân sự, đó là chuyện hệ thống.</span></p>
+
+<h2>Vì sao càng bán tốt lại càng siết chặt</h2>
+
+<p>Chỗ này mới là chỗ khó chịu nhất. Khi công ty bán tốt lên, số việc cần một quyết định của người chủ tăng theo, chứ không giảm. Thêm khách nghĩa là thêm tình huống lạ, thêm người nghĩa là thêm câu hỏi, còn thêm dự án nghĩa là thêm ngoại lệ chưa có trong bất kỳ quy trình nào.</p>
+
+<p>Nếu cách nghĩ vẫn nằm trong đầu một người, thì mọi đường đi trong công ty đều dẫn về đúng cái đầu đó, và bán càng tốt thì đường về càng đông. Người chủ trở thành chỗ tắc của chính công ty mình dựng lên, tắc vì một lý do mà đáng lẽ phải mừng.</p>
 
 <h2>Không phải cứ viết quy trình là xong</h2>
-<p>Nhiều người nghe tới đây là đi viết quy trình. Ba tháng sau, có một thư mục đầy tài liệu mà không ai mở. Vì quy trình mô tả các bước, còn cái đang thiếu là cách nghĩ đằng sau các bước.</p>
-<p>Một hệ thống chạy được cần năm phần, không phải một: kết quả rõ ràng, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu để biết đang tốt hay xấu, và một nhịp rà soát cố định.</p>
-<p>Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo. Thiếu dữ liệu thì không ai biết mình làm tốt hay không. Thiếu nhịp rà soát thì hệ thống chết dần trong ba tháng.</p>
+
+<p>Nhiều người nghe tới đây là đi viết quy trình. Ba tháng sau, công ty có một thư mục đầy tài liệu mà không ai mở tới lần thứ hai.</p>
+
+<p>Lý do không nằm ở chỗ người ta lười đọc, mà nằm ở chỗ quy trình mô tả các bước, còn cái đang thiếu là <span class="nhan">cách nghĩ đằng sau các bước</span>. Người mới đọc quy trình sẽ làm được đúng những việc đã có trong đó, rồi dừng lại ở tình huống đầu tiên nằm ngoài. Mà nghề dịch vụ thì phần lớn giá trị nằm ở đúng những tình huống nằm ngoài ấy.</p>
+
+<p>Một luồng chạy được cần đủ năm phần chứ không phải một: kết quả rõ ràng đo được bằng con số, một người chịu trách nhiệm có tên chứ không phải một phòng ban, mốc thế nào là xong và đủ tốt, vài con số để biết luồng đang khoẻ hay yếu, và một nhịp rà soát cố định.</p>
+
+<p>Thiếu người chịu trách nhiệm thì quy trình chỉ còn là tài liệu tham khảo, thiếu con số thì không ai biết mình làm tốt hay không, nên cũng không ai sửa. Thiếu nhịp rà soát thì luồng chết dần trong ba tháng, kể cả khi tài liệu vẫn còn nguyên trong thư mục.</p>
 
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
-<p>Duy không đề nghị ai xây hệ thống cho cả doanh nghiệp trong một quý. Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất. Có thể là luồng tư vấn khách mới, có thể là luồng bàn giao sau khi ký.</p>
-<p>Với luồng đó, viết ra năm phần ở trên. Chạy sáu tuần. Rà lại. Nếu người phụ trách xử lý được tám trong mười tình huống mà không hỏi bạn, luồng đó đã rời khỏi đầu bạn. Sang luồng tiếp theo.</p>
-<p>Một luồng một quý. Bốn luồng một năm. Sau hai năm, cái nút ở chỗ bạn không còn nữa. Đó là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi.</p>
-"""),
+
+<p>Duy không đề nghị ai xây hệ thống cho cả doanh nghiệp trong một quý. Làm vậy thì phần lớn thời gian sẽ trôi vào họp và vẽ sơ đồ, còn công việc thật vẫn chạy theo cách cũ.</p>
+
+<p>Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, và với phần lớn doanh nghiệp dịch vụ, đó là luồng tư vấn khách mới, hoặc luồng bàn giao sau khi ký hợp đồng. Với luồng đó, viết ra đủ năm phần ở trên rồi cho chạy sáu tuần.</p>
+
+<p>Sau sáu tuần thì ngồi lại rà, và có một mốc để biết luồng đó đã rời khỏi đầu bạn hay chưa: <span class="nhan">người phụ trách xử lý được tám trong mười tình huống mà không cần hỏi bạn</span>. Chưa tới mức đó thì đừng vội sang luồng khác, vì bỏ dở giữa chừng còn tệ hơn không bắt đầu.</p>
+
+<p>Một luồng một quý, bốn luồng một năm, và sau hai năm thì chỗ nghẽn ở phía bạn không còn nữa. Đó là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Làm xong luồng đầu tiên thì bạn chưa nhẹ đi bao nhiêu. Sáu tuần đầu thậm chí còn nặng hơn, vì bạn vừa làm việc cũ vừa phải viết lại cách mình làm.</p>
+
+<p>Nhưng có một điều đổi ngay từ luồng đầu: bạn biết cái nút nằm ở đâu và đang gỡ chỗ nào. <span class="nhan">Trước đó bạn chỉ có cảm giác mệt, sau đó bạn có một bản đồ</span>. Riêng chuyện đó đã đáng làm, vì cảm giác mệt thì không sửa được, còn một chỗ nghẽn có tên thì sửa được.</p>
+
+<p>Bác chủ vật liệu xây dựng hôm đó cuối cùng không đổi cách điều hành ngay. Bác chỉ làm một việc: yêu cầu kế toán gửi đúng năm con số vào chiều thứ sáu hằng tuần, cho cả bác và con trai. Ba tháng sau, lần đầu tiên hai bố con ngồi bàn một quyết định mà không ai phải đi tổng hợp số liệu trước.</p>"""),
 
 
 dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội ngũ",
@@ -299,42 +330,69 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-viet-tay.webp", alt="Coach Duy Nguyễn ngồi ghi lại một quy trình bằng tay",
- than="""
-<p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và vài người giỏi nhất.</p>
-<p>Đó là sức mạnh, vì nó khó bắt chước. Nhưng nó cũng là rủi ro lớn nhất, vì nó đi ra khỏi công ty cùng lúc với người mang nó.</p>
+ than="""<p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và trong đầu vài người giỏi nhất của công ty.</p>
+
+<p>Đó là sức mạnh vì không đối thủ nào sao chép được, nhưng đồng thời cũng là rủi ro lớn nhất, vì <span class="nhan dam">nó đi ra khỏi công ty cùng lúc với người mang nó</span>, và thường đi vào đúng lúc bạn không lường trước.</p>
 
 <h2>Kinh nghiệm không tự chuyển thành hệ thống</h2>
-<p>Nhiều người chủ tin rằng nếu làm việc cùng nhau đủ lâu, đội ngũ sẽ tự học được cách nghĩ của mình. Điều đó đúng một phần và rất chậm. Người giỏi trong đội ngũ học được cách bạn làm, nhưng không học được vì sao bạn quyết như vậy trong tình huống ngoại lệ.</p>
-<p>Mà nghề dịch vụ thì phần lớn giá trị nằm ở tình huống ngoại lệ.</p>
+
+<p>Nhiều người chủ tin rằng nếu làm việc cùng nhau đủ lâu, đội ngũ sẽ tự học được cách nghĩ của mình. Niềm tin đó đúng được một phần, và phần đúng đó diễn ra rất chậm.</p>
+
+<p>Người giỏi trong đội ngũ học được cách bạn làm, vì họ nhìn thấy bạn làm mỗi ngày. Cái họ không học được là vì sao bạn quyết như vậy trong tình huống ngoại lệ, bởi lúc đó bạn quyết trong đầu, mất ba giây, và không ai nghe thấy phần lập luận. <span class="nhan">Mà nghề dịch vụ thì phần lớn giá trị nằm đúng ở tình huống ngoại lệ.</span></p>
+
+<p>Duy gặp rất nhiều người chủ nói rằng nghề của họ không chuyển giao được, phải có năng khiếu. Gần như lần nào ngồi kỹ cũng thấy không phải vậy, vì cái chưa chuyển giao được không phải năng khiếu, mà là phần lập luận chưa bao giờ được nói thành lời.</p>
 
 <h2>Năm phần làm nên một hệ thống</h2>
-<p><b>Kết quả rõ ràng.</b> Luồng này tạo ra cái gì, đo bằng gì. Không phải mô tả hoạt động, mà mô tả kết quả.</p>
-<p><b>Người chịu trách nhiệm.</b> Một cái tên, không phải một phòng ban. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người, tức là không ai.</p>
-<p><b>Thế nào là xong.</b> Làm thế nào thì gọi là xong và đủ tốt. Thiếu cái này, mỗi người hiểu một kiểu về chữ xong.</p>
-<p><b>Dữ liệu.</b> Vài con số cho biết luồng đang khoẻ hay yếu. Không cần bảng điều khiển đẹp, cần con số được nhìn đều.</p>
-<p><b>Nhịp rà soát.</b> Bao lâu ngồi lại một lần để sửa. Không có nhịp thì hệ thống chết trong ba tháng, kể cả khi tài liệu vẫn còn đó.</p>
 
-<div class="dan-manh">Một hệ thống không phải một tập tài liệu. Nó là kết quả rõ, người chịu trách nhiệm, tiêu chuẩn, dữ liệu, bàn giao và nhịp cải tiến, đủ cả sáu.</div>
+<p><b>Kết quả rõ ràng:</b> luồng này tạo ra cái gì và đo bằng con số nào, phải mô tả kết quả chứ không mô tả hoạt động. "Chăm sóc khách hàng tốt" không phải kết quả, "khách quay lại trong sáu tháng" mới là.</p>
+
+<p><b>Người chịu trách nhiệm:</b> một cái tên cụ thể chứ không phải một phòng ban. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người, tức là không ai cả, và lúc có việc thì cả ba đều quay về hỏi bạn.</p>
+
+<p><b>Thế nào là xong:</b> làm tới đâu thì gọi là xong và đủ tốt, vì thiếu mốc này thì mỗi người hiểu chữ xong một kiểu, và người duy nhất phán được là bạn, nên bạn lại thành chỗ tắc.</p>
+
+<p><b>Dữ liệu:</b> vài con số cho biết luồng đang khoẻ hay yếu, không cần bảng điều khiển đẹp mà chỉ cần con số được nhìn đều đặn. Duy từng nghe một anh chủ nói câu rất đúng: anh không ngại quyết định, anh chỉ sợ quyết sai vì không đủ dữ liệu.</p>
+
+<p><b>Nhịp rà soát:</b> bao lâu thì ngồi lại một lần để sửa. Không có nhịp thì hệ thống chết trong ba tháng, kể cả khi tài liệu vẫn còn đó và ai cũng nhớ nó tồn tại.</p>
 
 <h2>Cách lấy kinh nghiệm ra khỏi đầu</h2>
-<p>Cách rẻ nhất Duy biết là ghi lại quyết định, không phải ghi lại thao tác.</p>
-<p>Lần tới khi bạn xử lý một tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. Dòng thứ ba là dòng có giá trị nhất và cũng là dòng hay bị bỏ.</p>
-<p>Sau hai mươi tình huống, bạn có một tài liệu mà không khoá đào tạo nào mua được: cách nghĩ của bạn, viết bằng chữ của bạn, trên ca thật của công ty bạn.</p>
+
+<p>Cách rẻ nhất Duy biết là ghi lại quyết định, không phải ghi lại thao tác. Hai việc này nghe giống nhau nhưng cho ra hai kết quả khác hẳn.</p>
+
+<p>Lần tới khi bạn xử lý một tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. <span class="nhan">Dòng thứ ba là dòng có giá trị nhất, và cũng là dòng hay bị bỏ nhất</span>, vì lúc viết nó có vẻ hiển nhiên với người trong cuộc.</p>
+
+<p>Sau hai mươi tình huống, bạn có một tài liệu mà không khoá đào tạo nào bán được: cách nghĩ của bạn, viết bằng chữ của bạn, trên những ca thật của công ty bạn. Người mới đọc hai mươi ca đó học nhanh hơn hẳn so với đọc một quyển quy trình, vì họ thấy được cách bạn cân nhắc chứ không chỉ thấy kết luận.</p>
+
+<h2>Ba mức chuyển giao, và chỗ phần lớn dừng lại</h2>
+
+<p><b>Mức một, chuyển thao tác:</b> người khác làm được đúng các bước bạn vẫn làm. Mức này dễ đạt nhất và cũng dễ vỡ nhất, vì gặp tình huống ngoài kịch bản là họ dừng và quay lại hỏi.</p>
+
+<p><b>Mức hai, chuyển tiêu chuẩn:</b> họ biết thế nào là làm tốt và tự đánh giá được việc của mình mà không cần bạn duyệt từng lần. Tới mức này bạn mới bắt đầu thật sự nhẹ đi, vì phần lớn thời gian của người chủ không mất vào việc làm, nó mất vào việc duyệt.</p>
+
+<p><b>Mức ba, chuyển cách nghĩ:</b> họ xử lý được tình huống chưa từng có, theo cách bạn thấy chấp nhận được, và giải thích được vì sao họ làm vậy. Chỉ tới mức này thì kinh nghiệm mới rời hẳn khỏi đầu bạn và ở lại với công ty.</p>
+
+<p>Phần lớn doanh nghiệp dịch vụ dừng ở mức một, rồi kết luận rằng nghề này không chuyển giao được. <span class="nhan">Kết luận đó sai, nhưng nó rất dễ tin</span>, vì bằng chứng trước mắt đúng là người ta làm theo được mà không tự xoay được.</p>
 
 <h2>Dấu hiệu kinh nghiệm đã chuyển giao được</h2>
-<p>Không phải khi người khác học thuộc quy trình. Mà khi họ xử lý được một tình huống chưa có trong tài liệu, theo cách bạn thấy chấp nhận được, và giải thích được vì sao họ làm vậy.</p>
-<p>Trước lúc đó, bạn vẫn đang thuê người thực hiện. Sau lúc đó, bạn mới thật sự có đội ngũ.</p>
 
-<h2>Ba mức chuyển giao kinh nghiệm</h2>
-<p><b>Mức một, chuyển thao tác.</b> Người khác làm được đúng các bước bạn làm. Mức này dễ đạt nhất và cũng dễ vỡ nhất, vì gặp tình huống ngoài kịch bản là họ dừng.</p>
-<p><b>Mức hai, chuyển tiêu chuẩn.</b> Họ biết thế nào là làm tốt và tự đánh giá được việc của mình mà không cần bạn duyệt. Ở mức này bạn bắt đầu thật sự nhẹ đi.</p>
-<p><b>Mức ba, chuyển cách nghĩ.</b> Họ xử lý được tình huống chưa từng có, theo cách bạn thấy chấp nhận được, và giải thích được lý do. Chỉ tới mức này, kinh nghiệm mới rời hẳn khỏi đầu bạn.</p>
-<p>Phần lớn doanh nghiệp dịch vụ dừng ở mức một, rồi kết luận rằng nghề này không chuyển giao được.</p>
+<p>Không phải khi người khác học thuộc quy trình. Cũng không phải khi họ làm đúng mọi bước trong ba tháng liền mà không sai lần nào.</p>
+
+<p>Dấu hiệu thật là khi họ xử lý một tình huống chưa có trong tài liệu, theo cách bạn thấy chấp nhận được, và giải thích được vì sao họ chọn như vậy. Trước lúc đó bạn đang thuê người thực hiện, còn sau lúc đó bạn mới thật sự có một đội ngũ.</p>
+
+<p>Có một cách kiểm nhanh: đưa cho người phụ trách một ca cũ mà bạn đã xử lý, giấu phần bạn quyết, và hỏi họ sẽ làm gì. Nếu hướng đi của họ khác bạn nhưng lý do họ đưa ra đứng vững, đó là tin tốt chứ không phải tin xấu.</p>
 
 <h2>Vì sao viết tài liệu một mình luôn thất bại</h2>
-<p>Người chủ ngồi viết tài liệu trong phòng riêng sẽ viết ra thứ đúng nhưng không dùng được, vì họ đã quên mất người mới không biết điều gì.</p>
-<p>Cách hiệu quả hơn: để người phụ trách viết bản đầu tiên sau khi bạn làm mẫu một lần, rồi bạn sửa. Bản họ viết sẽ thiếu và sai vài chỗ, nhưng nó dùng đúng ngôn ngữ của người sẽ dùng nó, và quan trọng nhất là họ thấy đó là tài liệu của mình.</p>
-"""),
+
+<p>Người chủ ngồi viết tài liệu trong phòng riêng sẽ viết ra thứ đúng nhưng không dùng được. Lý do rất người: bạn đã quên mất người mới không biết điều gì. Những chỗ bạn thấy hiển nhiên nên bỏ qua lại đúng là những chỗ họ vấp.</p>
+
+<p>Cách hiệu quả hơn là đảo vai: bạn làm mẫu một lần và nói to phần lập luận ngay trong lúc làm, người phụ trách viết bản đầu tiên, rồi bạn sửa trên bản của họ.</p>
+
+<p>Bản họ viết chắc chắn sẽ thiếu và sai vài chỗ, nhưng bù lại nó dùng đúng ngôn ngữ của người sẽ dùng nó, và quan trọng hơn cả, <span class="nhan">họ thấy đó là tài liệu của mình chứ không phải luật của sếp</span>. Tài liệu do người dùng viết ra thì có cơ hội được mở lại, còn tài liệu do sếp ban xuống thì hiếm khi.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Ghi hai mươi ca không làm công ty tự chạy. Nó chỉ làm được một việc, nhưng là việc không có đường tắt: đưa phần lập luận ra khỏi đầu bạn, thành thứ người khác đọc được.</p>
+
+<p>Phần còn lại vẫn cần thời gian và cần bạn quay lại đều đặn. Nhưng từ lúc có hai mươi ca đó, mỗi người mới vào công ty đều bắt đầu từ chỗ cao hơn người trước, thay vì ai cũng phải học lại từ đầu bằng cách đi theo bạn.</p>"""),
 
 dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
  tieu="Một nhóm đăng bài chưa phải là cộng đồng",
