@@ -306,6 +306,14 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
 
 <p>Thiếu người chịu trách nhiệm thì quy trình chỉ còn là tài liệu tham khảo, thiếu con số thì không ai biết mình làm tốt hay không, nên cũng không ai sửa. Thiếu nhịp rà soát thì luồng chết dần trong ba tháng, kể cả khi tài liệu vẫn còn nguyên trong thư mục.</p>
 
+<h2>Ba lý do quy trình bị bỏ, và cách nhận ra sớm</h2>
+
+<p><b>Lý do thứ nhất là nó tả việc chứ không tả chỗ khó.</b> Người viết thường tả tuần tự các bước, mà các bước dễ thì ai cũng làm được, còn chỗ người mới thật sự vấp thì lại bị bỏ qua vì với người viết nó quá hiển nhiên. Dấu hiệu nhận ra sớm: đọc xong tài liệu mà không thấy chỗ nào nói phải cân nhắc điều gì.</p>
+
+<p><b>Lý do thứ hai là nó không có ai đứng sau.</b> Tài liệu không thuộc về ai thì không ai có trách nhiệm sửa khi thực tế đổi, mà thực tế thì đổi liên tục. Chỉ cần ba lần tài liệu nói một đằng công việc làm một nẻo là người ta thôi mở nó.</p>
+
+<p><b>Lý do thứ ba là nó ra đời cùng lúc quá nhiều.</b> Viết mười quy trình trong một tháng nghe rất năng suất, nhưng không luồng nào được chạy thử đủ lâu để biết chỗ nào sai. <span class="nhan">Một quy trình được sửa ba lần đáng giá hơn mười quy trình chưa từng được dùng.</span></p>
+
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
 
 <p>Duy không đề nghị ai xây hệ thống cho cả doanh nghiệp trong một quý. Làm vậy thì phần lớn thời gian sẽ trôi vào họp và vẽ sơ đồ, còn công việc thật vẫn chạy theo cách cũ.</p>
@@ -801,93 +809,168 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
  mo="Thư mục quy trình đầy tài liệu mà không ai mở là chuyện phổ biến. Nguyên nhân là quy trình chỉ là một trong năm thứ, và thường là thứ ít quan trọng nhất.",
  ngay="2026-07-28", ngay_viet="28 tháng 7, 2026", doc="7 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""
-<p>Người chủ nào cũng từng có một đợt hăng hái viết quy trình. Ba tháng sau, thư mục vẫn còn đó, đầy tài liệu, và không ai mở. Việc vẫn chạy theo cách cũ, tức là hỏi người chủ.</p>
-<p>Nguyên nhân không phải tài liệu viết dở. Nguyên nhân là quy trình chỉ là một phần năm của một hệ thống.</p>
+ than="""<p>Người chủ nào cũng từng có một đợt hăng hái viết quy trình. Thường nó bắt đầu sau một sự cố, hoặc sau một khoá học, và trong hai tuần đầu thì khí thế rất tốt.</p>
+
+<p>Ba tháng sau, thư mục vẫn còn đó, đầy tài liệu, và không ai mở tới lần thứ hai. Việc vẫn chạy theo cách cũ, tức là hỏi người chủ. Điều đáng nói là gần như không ai nhắc lại chuyện đó nữa, cả người viết lẫn người đáng lẽ phải dùng, như thể cả hai bên ngầm hiểu rằng nó đã chết.</p>
+
+<p>Nguyên nhân không nằm ở chỗ tài liệu viết dở. Nó nằm ở chỗ <span class="nhan dam">quy trình chỉ là một phần năm của một hệ thống</span>, mà lại thường là phần ít quyết định nhất trong năm phần đó.</p>
 
 <h2>Năm phần, thiếu một là hỏng</h2>
 
-<h3>Một: kết quả rõ ràng</h3>
-<p>Luồng này tạo ra cái gì, đo bằng gì. Đây phải là mô tả kết quả, không phải mô tả hoạt động.</p>
-<p>Sai: chăm sóc khách hàng sau bán. Đúng: trong bảy ngày sau khi ký, khách hoàn tất buổi khởi động và biết ba việc phải làm trong tháng đầu.</p>
-<p>Không có kết quả rõ thì không ai biết mình đang làm tốt hay không, và mọi tranh cãi về sau đều thành tranh cãi cảm tính.</p>
+<p><b>Một, kết quả rõ ràng:</b> luồng này tạo ra cái gì và đo bằng con số nào. Đây phải là mô tả kết quả chứ không phải mô tả hoạt động, và khoảng cách giữa hai thứ đó lớn hơn nhiều người tưởng.</p>
 
-<h3>Hai: một cái tên chịu trách nhiệm</h3>
-<p>Không phải một phòng ban, không phải hai người. Một cái tên. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người, tức là không ai.</p>
-<p>Người chịu trách nhiệm khác người thực hiện. Có thể ba người cùng làm, nhưng chỉ một người trả lời câu hỏi vì sao tháng này luồng chạy kém.</p>
+<p>Viết "chăm sóc khách hàng sau bán" là mô tả hoạt động, ai đọc cũng gật mà không ai làm khác đi. Viết "trong bảy ngày sau khi ký, khách hoàn tất buổi khởi động và biết ba việc phải làm trong tháng đầu" mới là kết quả, vì nó đúng hoặc sai chứ không có vùng xám. Không có kết quả rõ thì mọi tranh cãi về sau đều thành tranh cãi cảm tính, và người phân xử luôn là bạn.</p>
 
-<h3>Ba: thế nào là xong</h3>
-<p>Làm thế nào thì gọi là xong và đủ tốt. Thiếu phần này, mỗi người hiểu chữ xong một kiểu, và người chủ trở thành trọng tài cho mọi việc.</p>
-<p>Tiêu chuẩn tốt nhất là cái nhìn ba mươi giây đã biết đạt hay chưa, không phải một đoạn văn mô tả chất lượng.</p>
+<p><b>Hai, một cái tên chịu trách nhiệm:</b> không phải một phòng ban, không phải hai người, mà một cái tên. Khi hỏi ai chịu trách nhiệm mà câu trả lời là ba người thì thực chất là không ai cả.</p>
 
-<h3>Bốn: dữ liệu</h3>
-<p>Vài con số cho biết luồng đang khoẻ hay yếu. Không cần bảng điều khiển đẹp, cần con số được nhìn đều.</p>
-<p>Ba con số đúng chỗ có giá trị hơn ba mươi con số đầy đủ. Chọn con số nào mà khi nó xấu đi, bạn biết ngay phải làm gì.</p>
+<p>Người chịu trách nhiệm khác với người thực hiện, và đây là chỗ hay lẫn nhất. Có thể ba người cùng làm, nhưng chỉ một người trả lời được câu hỏi vì sao tháng này luồng chạy kém.</p>
 
-<h3>Năm: nhịp rà soát</h3>
-<p>Bao lâu ngồi lại một lần để sửa. Phần này hay bị bỏ nhất, mà thiếu nó thì hệ thống chết nhanh nhất.</p>
-<p>Không có nhịp, hệ thống chết trong ba tháng dù tài liệu vẫn còn nguyên. Có nhịp, một hệ thống viết sơ sài vẫn tự tốt lên theo thời gian.</p>
+<p><b>Ba, thế nào là xong:</b> làm tới đâu thì gọi là xong và đủ tốt. Thiếu phần này thì mỗi người hiểu chữ xong một kiểu, và người chủ lại trở thành trọng tài cho mọi việc lớn nhỏ.</p>
 
-<div class="dan-manh">Một hệ thống không phải một tập tài liệu. Nó là kết quả rõ, người chịu trách nhiệm, tiêu chuẩn, dữ liệu và nhịp cải tiến. Quy trình chỉ là cách ghi lại bốn phần kia.</div>
+<p>Tiêu chuẩn tốt nhất là loại <span class="nhan">nhìn ba mươi giây đã biết đạt hay chưa đạt</span>, chứ không phải một đoạn văn mô tả chất lượng bằng những chữ như chuyên nghiệp hay chỉn chu. Chữ càng đẹp thì càng khó dùng để phân xử.</p>
 
-<h2>Vì sao thứ tự quan trọng</h2>
-<p>Phần lớn người chủ bắt đầu từ quy trình, tức là bắt đầu từ giữa. Thứ tự đúng là kết quả trước, người chịu trách nhiệm sau, rồi mới tới cách làm.</p>
-<p>Khi có kết quả rõ và người chịu trách nhiệm, thường chính người đó viết ra quy trình tốt hơn bạn viết hộ. Và tài liệu do họ viết thì họ dùng.</p>
+<p><b>Bốn, dữ liệu:</b> vài con số cho biết luồng đang khoẻ hay yếu. Không cần bảng điều khiển đẹp, chỉ cần con số được nhìn đều đặn và ai cũng đọc được cùng một cách.</p>
+
+<p>Ba con số đúng chỗ có giá trị hơn ba mươi con số đầy đủ. Cách chọn: lấy những con số mà khi nó xấu đi, bạn biết ngay phải làm gì. Con số nào xấu đi mà bạn chỉ biết lo thì con số đó chưa đáng theo dõi hằng tuần.</p>
+
+<p><b>Năm, nhịp rà soát:</b> bao lâu thì ngồi lại một lần để sửa. Phần này hay bị bỏ nhất, mà thiếu nó thì hệ thống chết nhanh nhất.</p>
+
+<p>Không có nhịp, hệ thống chết trong ba tháng dù tài liệu vẫn còn nguyên trong thư mục. Có nhịp, thì <span class="nhan">một hệ thống viết sơ sài vẫn tự tốt lên theo thời gian</span>, vì mỗi lần rà là một lần nó được sửa cho gần thực tế hơn.</p>
+
+<h2>Vì sao thứ tự lại quan trọng</h2>
+
+<p>Phần lớn người chủ bắt đầu từ quy trình, tức là bắt đầu từ khúc giữa. Thứ tự đúng là kết quả trước, người chịu trách nhiệm sau, rồi mới tới cách làm.</p>
+
+<p>Lý do rất thực tế: khi đã có kết quả rõ và có người chịu trách nhiệm, thường chính người đó viết ra quy trình tốt hơn bạn viết hộ, vì họ là người ngày nào cũng chạm vào công việc. Và tài liệu do họ viết thì họ dùng, còn tài liệu do bạn viết thì họ đọc một lần cho phải phép.</p>
+
+<h2>Cái giá của việc không có hệ thống, tính bằng con số</h2>
+
+<p>Người chủ thường nghĩ cái giá của việc thiếu hệ thống là mình bận. Bận thì có bận, nhưng đó là phần rẻ nhất. Ba khoản đắt hơn nằm ở chỗ ít ai tính.</p>
+
+<p><b>Khoản thứ nhất là trần tăng trưởng.</b> Công ty chạy bằng người chủ thì công suất tối đa của công ty bằng công suất của người chủ, nên tới một mức nào đó nhận thêm khách là giảm chất lượng. Rất nhiều doanh nghiệp dịch vụ đứng yên nhiều năm ở đúng ngưỡng này mà tưởng là thị trường khó.</p>
+
+<p><b>Khoản thứ hai là người giỏi bỏ đi.</b> Người giỏi cần được quyết, mà công ty không có ranh giới rõ thì mọi thứ đều phải qua người chủ, nên họ thấy mình chỉ là người thi hành. Họ thường không phàn nàn, họ chỉ đi.</p>
+
+<p><b>Khoản thứ ba là giá trị công ty bằng không nếu bạn rời khỏi.</b> Đây là khoản đắt nhất và cũng là khoản người ta nhận ra muộn nhất, thường là lúc muốn nghỉ ngơi, muốn mở nhánh mới, hoặc muốn bán lại.</p>
+
+<h2>Phần hay bị bỏ nhất là phần thứ tư</h2>
+
+<p>Trong năm phần thì phần bị bỏ nhiều nhất là phần đo. Duy hiểu vì sao: bốn phần kia đều tạo ra cảm giác đang làm việc, còn phần đo thì phải chờ mới có kết quả, mà chờ thì không đã tay.</p>
+
+<p>Nhưng thiếu phần đo là thứ khiến người chủ mãi không thoát ra được. Không có con số thì mọi cuộc trao đổi về chất lượng đều thành chuyện cảm nhận, mà cảm nhận thì người có quyền lớn nhất sẽ thắng, tức là bạn. Vậy là bạn lại phải có mặt trong mọi cuộc, đúng cái việc bạn muốn thoát khỏi.</p>
+
+<p>Con số không cần phức tạp. Một luồng chăm sóc khách có thể chỉ cần ba con số: bao lâu thì phản hồi lần đầu, bao nhiêu phần trăm ca xử lý xong trong ngày, và mỗi tháng có bao nhiêu ca phải đẩy lên cho bạn. Con số thứ ba là quan trọng nhất vì nó đo đúng thứ bạn quan tâm, và nếu nó không giảm sau ba tháng thì hệ thống chưa chạy, dù bốn phần kia trông rất đầy đủ.</p>
 
 <h2>Bảng tự kiểm cho một luồng</h2>
-<div class="bang"><table>
-<tr><th>Câu hỏi</th><th>Nếu chưa trả lời được bằng một câu ngắn</th></tr>
-<tr><td>Luồng này tạo ra kết quả gì</td><td>Chưa nên viết quy trình, hãy làm rõ kết quả cần có trước</td></tr>
-<tr><td>Ai chịu trách nhiệm</td><td>Luồng sẽ quay về bàn của bạn trong hai tuần</td></tr>
-<tr><td>Thế nào là xong và đủ tốt</td><td>Bạn sẽ thành trọng tài cho mọi tranh cãi</td></tr>
-<tr><td>Đo bằng con số nào</td><td>Không lặp lại được tháng tốt vì không biết vì sao nó tốt</td></tr>
-<tr><td>Bao lâu rà lại một lần</td><td>Hệ thống sẽ chết trong ba tháng</td></tr>
-</table></div>
+
+<p>Năm câu dưới đây trả lời được bằng một câu ngắn thì luồng đó ổn. Câu nào phải giải thích dài mới nói xong thì đó chính là phần đang thiếu.</p>
+
+<p><b>Luồng này tạo ra kết quả gì:</b> chưa trả lời gọn được thì chưa nên viết quy trình, hãy làm rõ kết quả cần có trước đã.</p>
+
+<p><b>Ai chịu trách nhiệm:</b> chưa có một cái tên thì luồng sẽ quay về bàn của bạn trong khoảng hai tuần.</p>
+
+<p><b>Thế nào là xong và đủ tốt:</b> chưa rõ thì bạn sẽ thành trọng tài cho mọi tranh cãi về chất lượng.</p>
+
+<p><b>Đo bằng con số nào:</b> chưa có thì bạn sẽ không lặp lại được tháng tốt, vì không biết vì sao nó tốt.</p>
+
+<p><b>Bao lâu rà lại một lần:</b> chưa có nhịp thì hệ thống sẽ chết trong ba tháng, và lần sau bạn sẽ tin rằng công ty mình không hợp với hệ thống.</p>
 
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
-<p>Chọn luồng đang tốn nhiều thời gian của bạn nhất. Viết ra năm thứ. Chạy sáu tuần rồi rà lại.</p>
-<p>Dấu hiệu luồng đã rời khỏi đầu bạn: người phụ trách xử lý được tám trong mười tình huống mà không hỏi, kể cả tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy.</p>
-<p>Một luồng một quý. Bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự tới nơi.</p>
-"""),
+
+<p>Chọn luồng đang tốn nhiều thời gian của bạn nhất, viết ra đủ năm phần, rồi cho chạy sáu tuần và ngồi lại rà.</p>
+
+<p>Sáu tuần là con số Duy chọn sau khi thử nhiều mốc khác. Ngắn hơn thì chưa gặp đủ tình huống lạ để biết tài liệu hở chỗ nào, dài hơn thì người ta đã kịp quay về cách làm cũ và buổi rà thành buổi kiểm điểm. Sáu tuần đủ để luồng va vào thực tế vài lần mà vẫn còn nóng.</p>
+
+<p>Có một mốc để biết luồng đã rời khỏi đầu bạn: người phụ trách xử lý được tám trong mười tình huống mà không cần hỏi, kể cả những tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy. Chưa tới mốc đó thì đừng vội sang luồng khác.</p>
+
+<p>Một luồng một quý, bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi. <span class="nhan">Cái nhanh thường chỉ nhanh ở phần viết ra, còn phần chạy được thì vẫn mất từng ấy thời gian.</span></p>"""),
 
 dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đội ngũ",
  tieu="Giao quyền mà không mất kiểm soát",
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-giua-doan.webp", alt="Coach Duy Nguyễn đứng giữa những người tham dự",
- than="""
-<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm. Lý do là hai lần thử đầu đều hỏng, và sau lần thứ hai họ kết luận đội ngũ chưa đủ giỏi.</p>
-<p>Thường thì không phải đội ngũ chưa đủ giỏi. Thường thì việc giao được làm sai cách.</p>
+ than="""<p>Duy từng ngồi với một anh chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề, và hỏi anh một câu rất đơn giản: trong tuần vừa rồi anh đã tự quyết bao nhiêu việc mà lẽ ra người khác quyết được. Anh nghĩ một lúc rồi cười, nói chắc khoảng ba mươi. Duy hỏi tiếp vì sao anh không giao, thì anh trả lời một câu mà rất nhiều người sẽ thấy quen:</p>
+
+<p><span class="nhan">Anh giao rồi, hai lần, cả hai lần đều phải nhảy vào sửa.</span></p>
+
+<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm việc, mà là hai lần thử đầu tiên đều hỏng, và sau lần thứ hai họ lặng lẽ kết luận rằng đội ngũ mình chưa đủ giỏi.</p>
+
+<p>Duy nghe kết luận đó nhiều tới mức gần như đoán được lúc nào nó sẽ được nói ra. Và gần như lần nào ngồi kỹ lại từng lần hỏng cũng thấy <span class="nhan dam">không phải đội ngũ chưa đủ giỏi, mà là việc giao được làm sai cách</span>.</p>
 
 <h2>Hai kiểu giao sai</h2>
-<p><b>Giao việc, giữ quyết định.</b> Người kia làm mọi thao tác nhưng mọi quyết định vẫn quay về bạn. Kiểu này không giảm tải cho ai, chỉ thêm một khâu trung gian, và làm người nhận thấy mình như cái máy.</p>
-<p><b>Giao hết, không có ranh giới.</b> Bạn nói em cứ chủ động, rồi ba tuần sau thấy một quyết định lệch hẳn và phải nhảy vào sửa. Người kia mất tự tin, bạn mất niềm tin, và cả hai kết luận giao quyền không hợp với công ty mình.</p>
+
+<p><b>Kiểu thứ nhất, giao việc nhưng giữ quyết định:</b> người kia làm mọi thao tác, còn mọi quyết định vẫn quay về bàn bạn. Kiểu này không giảm tải cho ai cả, nó chỉ thêm một khâu trung gian và làm người nhận thấy mình như một cái máy chờ lệnh.</p>
+
+<p>Điều tệ hơn là người chủ vẫn tin mình đã giao quyền, nên khi thấy vẫn bận thì lại quy cho khối lượng công việc chứ không nhìn ra cách giao. Thế là lần sau vẫn giao đúng kiểu đó, chỉ khác người nhận.</p>
+
+<p><b>Kiểu thứ hai, giao hết mà không có ranh giới:</b> bạn nói em cứ chủ động, rồi ba tuần sau thấy một quyết định lệch hẳn và phải nhảy vào sửa. Người kia mất tự tin, bạn mất niềm tin, và cả hai cùng đi tới kết luận rằng giao quyền không hợp với công ty mình.</p>
+
+<p>Chỗ đáng tiếc là trong cả hai kiểu, người nhận đều đang hành xử rất hợp lý với thông tin họ có. Cái sai không nằm ở họ, nó nằm ở phần thông tin chưa được đưa ra.</p>
 
 <h2>Đường ở giữa: giao theo vùng, không giao theo việc</h2>
-<p>Thay vì giao từng việc, hãy vẽ ra ba vùng quyết định cho người nhận.</p>
-<p><b>Vùng xanh: tự quyết, không cần báo.</b> Đây là vùng bạn chấp nhận cả khi họ quyết khác bạn. Nếu bạn không chấp nhận được điều đó, việc này chưa thuộc vùng xanh.</p>
-<p><b>Vùng vàng: tự quyết, báo lại sau.</b> Họ quyết và làm, rồi kể lại trong buổi rà soát hằng tuần. Vùng này là nơi họ học nhanh nhất, vì được thử và được phản hồi.</p>
-<p><b>Vùng đỏ: hỏi trước khi quyết.</b> Giữ vùng này càng nhỏ càng tốt, và viết ra rõ ràng. Thường chỉ gồm: vượt một mức tiền, ảnh hưởng tới khách lớn, hoặc tạo tiền lệ mới.</p>
 
-<div class="dan-manh">Giao quyền không phải trao toàn bộ quyết định. Nó là vẽ ranh giới đủ rõ để người kia dám quyết trong vùng của mình mà không phải đoán ý bạn.</div>
+<p>Thay vì giao từng việc một, hãy vẽ ra ba vùng quyết định cho người nhận, và viết nó thành chữ chứ đừng để trong đầu.</p>
+
+<p><b>Vùng xanh, tự quyết và không cần báo:</b> đây là vùng bạn chấp nhận cả khi họ quyết khác với cách bạn sẽ làm. Nếu bạn không chấp nhận được điều đó thì việc này chưa thuộc vùng xanh, dù bạn rất muốn nó thuộc về đó.</p>
+
+<p><b>Vùng vàng, tự quyết rồi báo lại sau:</b> họ quyết và làm, rồi kể lại trong buổi rà soát hằng tuần. <span class="nhan">Đây là vùng người ta học nhanh nhất</span>, vì được thử thật và được phản hồi ngay khi việc còn nóng.</p>
+
+<p><b>Vùng đỏ, hỏi trước khi quyết:</b> giữ vùng này càng nhỏ càng tốt và viết ra thật rõ. Thường chỉ gồm ba loại việc: vượt một mức tiền, ảnh hưởng tới khách lớn, hoặc tạo ra một tiền lệ mới cho những lần sau.</p>
+
+<p>Nói cho gọn thì giao quyền không phải là trao toàn bộ quyết định. Nó là vẽ ranh giới đủ rõ để người kia dám quyết trong vùng của mình mà không phải ngồi đoán ý bạn.</p>
 
 <h2>Vì sao viết ra lại quan trọng đến vậy</h2>
-<p>Khi ranh giới nằm trong đầu bạn, người kia phải đoán. Người thận trọng sẽ hỏi mọi thứ, tức là bạn không giảm tải. Người mạnh dạn sẽ quyết cả những chỗ bạn không muốn, tức là bạn phải sửa.</p>
-<p>Cả hai kiểu người đều đang hành xử hợp lý với thông tin họ có. Vấn đề nằm ở thông tin bạn chưa đưa.</p>
+
+<p>Khi ranh giới còn nằm trong đầu bạn, người kia buộc phải đoán, và cách họ đoán phụ thuộc vào tính người chứ không phụ thuộc vào việc.</p>
+
+<p>Người thận trọng sẽ hỏi gần như mọi thứ, tức là bạn không giảm tải được chút nào. Người mạnh dạn sẽ quyết cả những chỗ bạn không muốn, tức là bạn phải đi sửa. <span class="nhan">Cả hai kiểu người đều đang làm đúng với thông tin họ có</span>, và cả hai đều làm bạn mệt, chỉ theo hai cách khác nhau.</p>
+
+<p>Ba dòng viết ra thay được hàng chục lần hỏi đi hỏi lại. Đó là khoản đầu tư rẻ nhất mà Duy biết trong chuyện quản trị.</p>
 
 <h2>Ba việc phải làm cùng lúc với giao quyền</h2>
-<p><b>Một, giao cả ngân sách hoặc nguồn lực.</b> Giao trách nhiệm mà không giao nguồn lực là giao áp lực, không phải giao quyền.</p>
-<p><b>Hai, đặt một nhịp rà soát cố định.</b> Ba mươi phút một tuần trong tháng đầu, rồi giãn dần. Nhịp này thay cho việc bạn hỏi thăm ngẫu nhiên, thứ khiến người nhận cảm thấy bị theo dõi.</p>
-<p><b>Ba, thoả thuận trước về cách xử lý khi sai.</b> Nói rõ rằng sẽ có quyết định sai và điều bạn quan tâm là họ phát hiện sớm và nói ra sớm. Không có câu này, người nhận sẽ giấu lỗi tới lúc không giấu được.</p>
+
+<p><b>Một, giao cả ngân sách hoặc nguồn lực:</b> giao trách nhiệm mà không giao nguồn lực thì đó là giao áp lực chứ không phải giao quyền, và người nhận sẽ nhận ra điều đó rất nhanh.</p>
+
+<p><b>Hai, đặt một nhịp rà soát cố định:</b> ba mươi phút mỗi tuần trong tháng đầu, rồi giãn dần khi mọi thứ vào guồng. Nhịp cố định này thay cho việc bạn hỏi thăm ngẫu nhiên, thứ luôn khiến người nhận có cảm giác đang bị theo dõi chứ không phải được đồng hành.</p>
+
+<p><b>Ba, thoả thuận trước về cách xử lý khi sai:</b> nói rõ ngay từ đầu rằng sẽ có quyết định sai, và điều bạn quan tâm là họ phát hiện sớm rồi nói ra sớm. Thiếu câu này thì người nhận sẽ giấu lỗi cho tới lúc không giấu được nữa, và lúc đó cái giá đã lớn hơn nhiều.</p>
 
 <h2>Dấu hiệu giao quyền đã thành</h2>
-<p>Không phải khi họ làm đúng như bạn. Mà khi họ xử lý một tình huống theo cách khác bạn, bạn thấy chấp nhận được, và họ giải thích được vì sao chọn cách đó.</p>
-<p>Nếu mọi quyết định của họ đều giống hệt bạn, có khả năng họ vẫn đang đoán ý bạn chứ chưa thật sự tự quyết.</p>
+
+<p>Không phải khi họ làm đúng y như bạn. Dấu hiệu thật là khi họ xử lý một tình huống theo cách khác bạn, bạn thấy chấp nhận được, và họ giải thích được vì sao chọn cách đó.</p>
+
+<p>Ngược lại, nếu mọi quyết định của họ đều giống hệt cách bạn sẽ làm, khả năng cao là họ vẫn đang đoán ý bạn chứ chưa thật sự tự quyết. <span class="nhan">Sự giống nhau hoàn toàn thường là dấu hiệu của việc đoán, không phải dấu hiệu của việc hiểu.</span></p>
+
+<h2>Giao xong thì rà lại thế nào cho đúng</h2>
+
+<p>Nhiều người chủ giao xong thì rơi vào một trong hai thái cực. Một là buông hẳn, ba tháng sau mở ra thấy hỏng rồi kết luận rằng giao quyền không hiệu quả. Hai là hỏi mỗi ngày, và người được giao hiểu ngay rằng họ không thật sự được giao.</p>
+
+<p>Chỗ đứng giữa là một cuộc rà có lịch, có nội dung cố định, và không đổi lịch tuỳ hứng. Duy thường gợi ý hai tuần một lần trong ba tháng đầu, sau đó giãn ra hàng tháng. Điều quan trọng hơn tần suất là bạn hỏi gì trong buổi đó.</p>
+
+<p>Ba câu hỏi Duy hay dùng. Thứ nhất, tuần vừa rồi có quyết định nào em phân vân không biết thuộc vùng nào, câu này lộ ra chỗ ranh giới còn mờ. Thứ hai, có việc nào em xin ý kiến anh mà thật ra em đã biết câu trả lời, câu này lộ ra chỗ người ta chưa dám tin vào quyền của mình. Thứ ba, có việc nào em quyết mà sau đó thấy lẽ ra nên hỏi, câu này lộ ra vùng đỏ vẽ chưa đủ.</p>
+
+<p><span class="nhan">Ba câu đó rà ranh giới chứ không rà con người.</span> Đây là khác biệt lớn, vì rà con người thì mỗi lần sai là một lần mất mặt, còn rà ranh giới thì mỗi lần sai là một lần bản đồ rõ hơn.</p>
+
+<h2>Nỗi sợ thật phía sau việc không dám giao</h2>
+
+<p>Khi ngồi kỹ với người chủ, nỗi sợ họ nói ra đầu tiên thường là sợ người kia làm hỏng việc. Nhưng nói thêm một lúc thì thường lộ ra một nỗi sợ khác, ít ai nói thẳng: sợ mất chỗ đứng của mình trong công ty.</p>
+
+<p>Nỗi sợ đó không vô lý. Nếu suốt mười lăm năm giá trị của bạn nằm ở chỗ bạn là người duy nhất xử lý được những ca khó, thì giao đi phần đó nghe như tự làm mình bớt cần thiết. Duy nghĩ đây là chỗ nhiều người kẹt lại mà không gọi tên được.</p>
+
+<p>Cách nhìn khác giúp gỡ chỗ này: <span class="nhan">giá trị của người chủ chuyển từ xử lý ca khó sang tạo ra những người xử lý được ca khó</span>. Việc thứ hai khó hơn nhiều và ít người làm được, nên nó không làm bạn bớt cần thiết, nó làm bạn cần thiết theo một cách khác.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Vẽ ba vùng xong thì tháng đầu vẫn sẽ có vài quyết định làm bạn khó chịu. Đó là phần giá phải trả, và nó không có cách nào tránh được, vì người ta chỉ học ra ranh giới bằng cách chạm vào nó vài lần.</p>
+
+<p>Điều đổi ngay là bạn biết mỗi lần khó chịu ấy thuộc vùng nào, nên biết phải sửa cái gì: nếu nó nằm trong vùng xanh thì bạn đã vẽ vùng sai, còn nếu nó nằm trong vùng đỏ mà họ vẫn tự quyết thì đó mới là chuyện phải nói thẳng.</p>
 
 <h2>Một việc làm được tuần này</h2>
-<p>Chọn một người và một mảng việc. Viết ba dòng: vùng xanh gồm gì, vùng vàng gồm gì, vùng đỏ gồm gì. Gửi cho họ và hỏi lại họ thấy chỗ nào chưa rõ.</p>
-<p>Ba dòng đó thường tiết kiệm cho bạn nhiều giờ hơn cả một tháng họp.</p>
-"""),
+
+<p>Chọn một người và một mảng việc, rồi viết đúng ba dòng: vùng xanh gồm gì, vùng vàng gồm gì, vùng đỏ gồm gì. Gửi cho họ, và quan trọng nhất là hỏi lại xem họ thấy chỗ nào chưa rõ.</p>
+
+<p>Câu hỏi ngược đó thường lộ ra vài chỗ bạn tưởng đã rõ mà thật ra chưa. Ba dòng ấy tiết kiệm cho bạn nhiều giờ hơn cả một tháng họp hành, và nó mất chưa tới hai mươi phút để viết.</p>"""),
 
 dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
  tieu="Hai tuần đầu quyết định gần như tất cả",
