@@ -342,27 +342,85 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
  anh="img/bl-nhin-thang.webp", alt="Coach Duy Nguyễn nhìn thẳng vào người đối diện trong một buổi trao đổi",
  than="""
-<p>Có một câu hỏi Duy hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt.</p>
+<p>Có một câu hỏi Duy hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt, nên họ làm cách thứ nhất trong khi cần kết quả của cách thứ hai.</p>
 
 <h2>Nổi tiếng và được tin cậy không cùng một việc</h2>
-<p>Nổi tiếng là nhiều người biết tên bạn. Nó đo bằng lượt xem, lượt theo dõi, mức độ lan toả. Được tin cậy là đúng người hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới khi họ có vấn đề bạn giải được.</p>
-<p>Một người có thể rất nổi tiếng mà không ai thuê. Và một người chỉ có vài nghìn người theo dõi vẫn có thể kín lịch cả năm. Khác biệt không nằm ở số, nằm ở chỗ người xem có gọi được tên chuyên môn của bạn hay không.</p>
+
+<p>Nổi tiếng là nhiều người biết tên bạn, và nó đo được bằng lượt xem, lượt theo dõi, mức độ lan toả. Được tin cậy là đúng người hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới khi họ có đúng vấn đề bạn giải được.</p>
+
+<p>Một người có thể rất nổi tiếng mà không ai thuê. Và một người chỉ có vài nghìn người theo dõi vẫn có thể kín lịch cả năm. <span class="nhan">Khác biệt không nằm ở con số, nó nằm ở chỗ người xem có gọi được tên chuyên môn của bạn hay không.</span></p>
+
+<p>Duy từng gặp một anh có gần hai trăm nghìn người theo dõi, nội dung hay, dựng đẹp, đăng đều. Anh kể rằng mỗi tháng có vài trăm tin nhắn mà gần như không tin nào hỏi về dịch vụ của anh. Người ta nhắn để khen, để xin lời khuyên miễn phí, để mời hợp tác bán hàng. Không ai xếp anh vào ô người có thể thuê.</p>
 
 <h2>Nội dung không bù được định vị mơ hồ</h2>
-<p>Duy thấy đây chính là chỗ tốn tiền nhất. Người chủ cảm thấy thương hiệu chưa mạnh, nên tăng tần suất đăng. Đăng ba bài một tuần thành bảy bài. Thuê thêm người viết. Kết quả là cùng một sự mơ hồ, nhưng lan nhanh hơn.</p>
-<p>Có một bài kiểm rất rẻ để biết mình đang ở đâu. Lấy năm nội dung gần nhất của bạn, xoá tên và ảnh, rồi đưa cho một người cùng ngành xem. Hỏi họ: bao nhiêu bài trong số này bạn có thể đăng nguyên văn lên trang của mình mà không ai thấy lạ.</p>
-<p>Nếu câu trả lời là bốn hoặc năm, vấn đề của bạn không phải tần suất. Việc đầu tiên là làm rõ luận điểm nghề nghiệp, chưa phải tăng sản lượng.</p>
+
+<p>Duy thấy đây chính là chỗ tốn tiền nhất trong việc xây thương hiệu. Người chủ cảm thấy thương hiệu chưa mạnh nên tăng tần suất đăng, từ ba bài một tuần lên bảy bài, rồi thuê thêm người viết. Kết quả là cùng một sự mơ hồ, nhưng lan nhanh hơn và tốn hơn.</p>
+
+<p>Có một bài kiểm rất rẻ để biết mình đang ở đâu. Lấy năm nội dung gần nhất của bạn, xoá tên và ảnh, rồi đưa cho một người cùng ngành xem. Hỏi họ một câu duy nhất: bao nhiêu bài trong số này bạn có thể đăng nguyên văn lên trang của mình mà không ai thấy lạ.</p>
+
+<p>Nếu câu trả lời là bốn hoặc năm, vấn đề của bạn không phải tần suất. Việc đầu tiên là làm rõ luận điểm nghề nghiệp, chưa phải tăng sản lượng, vì tăng sản lượng lúc này chỉ làm bạn kiệt sức nhanh hơn.</p>
 
 <div class="dan-manh">Không ai xây được thương hiệu cá nhân bằng số lượng bài đăng. Nó lớn dần khi đúng người liên tục nhận ra cùng một chuyên môn, cùng một tiêu chuẩn và cùng một cách nhìn qua những bằng chứng thật.</div>
 
+<h2>Ba thứ tạo ra sự tin cậy</h2>
+
+<p>Nếu tin cậy là mục tiêu thì phải biết nó được làm bằng gì. Duy thấy có ba thứ, và cả ba đều mất thời gian chứ không mua được.</p>
+
+<p><b>Thứ nhất là chuyên môn nhìn thấy được:</b> không phải bằng cấp hay chức danh, mà là những lần bạn gọi tên đúng một vấn đề trước khi người khác kịp thấy, và người đọc nhận ra rằng bạn đã đứng trong tình huống đó rồi.</p>
+
+<p><b>Thứ hai là tiêu chuẩn nhất quán:</b> người ta tin một người mà họ đoán được, nên nói điều khó nghe hôm nay rồi làm nhẹ điều đó tuần sau là cách phá tin cậy nhanh nhất, nhanh hơn cả việc sai một lần.</p>
+
+<p><b>Thứ ba là bằng chứng thật của chính bạn:</b> quyết định thật, con số thật, sai lầm đã trả giá bằng tiền của mình, và đây là phần duy nhất không ai sao chép được, cũng là phần hay bị thay bằng lý thuyết chung nhất.</p>
+
 <h2>Uy tín mở cánh cửa, chất lượng giữ quan hệ</h2>
+
 <p>Duy thấy nhiều người dồn toàn bộ công sức vào phần mở cửa. Họ làm nội dung rất tốt, khách tìm tới rất nhiều, rồi quan hệ chết ở buổi tư vấn đầu tiên vì cách tư vấn không xứng với hình ảnh trên mạng.</p>
-<p>Uy tín chỉ làm được một việc: khiến người ta chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó trở đi, cái quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cái cửa đẹp dẫn vào phòng trống.</p>
+
+<p>Uy tín chỉ làm được một việc, là khiến người ta chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó trở đi, cái quyết định là chất lượng tư vấn và chất lượng giao hàng. <span class="nhan dam">Xây thương hiệu mà không nâng hai phần kia là xây một cái cửa đẹp dẫn vào phòng trống.</span></p>
+
+<p>Điều đáng nói là khoảng cách giữa hình ảnh và thực tế càng lớn thì thiệt hại càng lớn. Một người bình thường tư vấn bình thường thì không ai thất vọng. Một người trông như chuyên gia hàng đầu mà tư vấn bình thường thì người ta nhớ rất lâu, và họ kể lại.</p>
+
+<h2>Đo phần được tin bằng gì</h2>
+
+<p>Phần được biết thì nền tảng nào cũng đo hộ bạn, còn phần được tin thì không có bảng nào hiện ra. Duy dùng bốn con số, và cả bốn đều phải tự ghi tay.</p>
+
+<p><b>Số người chủ động nhắn hỏi đúng thứ bạn bán, mỗi tháng:</b> đây là con số quan trọng nhất trong bốn, vì nó chỉ tăng khi người ta vừa hiểu bạn làm gì vừa tin bạn làm được.</p>
+
+<p><b>Tỉ lệ khách mới đến từ lời giới thiệu:</b> con số này đo phần tin cậy đã lan ra ngoài phạm vi bạn tự nói.</p>
+
+<p><b>Số lần phải giải thích giá trong một quý:</b> càng được tin thì càng ít phải giải thích, và khi con số này tăng lên thì thường là định vị đang mờ đi chứ không phải giá đang cao.</p>
+
+<p><b>Quãng thời gian từ lúc biết bạn tới lúc mua:</b> ghi lại con số này cho từng khách, sau một năm bạn sẽ biết chu kỳ thật của mình và thôi sốt ruột ở tháng thứ hai.</p>
+
+<h2>Vì sao được tin lại chậm hơn được biết</h2>
+
+<p>Được biết có thể xảy ra trong một tuần, chỉ cần một nội dung lan đủ rộng. Được tin thì không có đường tắt nào cả, vì nó cần thời gian trôi qua.</p>
+
+<p>Lý do rất đơn giản. Người ta chỉ tin một điều sau khi thấy nó lặp lại đủ số lần, và số lần đó cần thời gian để xảy ra. Bạn không thể nén sáu lần xuất hiện nhất quán vào một tuần rồi mong người ta tin như đã theo dõi bạn sáu tháng.</p>
+
+<p>Đây là lý do Duy hay khuyên người mới đừng nhìn vào chỉ số của tháng đầu. Tháng đầu chỉ đo được phần được biết, còn phần được tin thì phải tới quý thứ ba mới bắt đầu hiện ra, và nó hiện ra dưới dạng người nhắn tin hỏi đúng thứ bạn bán.</p>
+
+<h2>Ba việc làm hỏng tin cậy nhanh nhất</h2>
+
+<p>Xây thì chậm mà phá thì nhanh, và có ba cách phá mà người ta thường không nhận ra mình đang làm.</p>
+
+<p><b>Nhận việc ngoài chuyên môn vì tiếc tiền:</b> mỗi lần nhận là một lần bạn tự làm mờ cái nhãn của mình trong đầu người khác, và người giới thiệu bạn cho người thứ ba cũng không biết nên giới thiệu bạn là ai nữa.</p>
+
+<p><b>Nói mạnh hơn mức bằng chứng cho phép:</b> một câu khẳng định lớn không có gì đỡ phía sau sẽ được người trong nghề nhận ra ngay, và họ không phản đối gì cả, họ chỉ bớt tin bạn từ đó.</p>
+
+<p><b>Im lặng khi cần lên tiếng trong đúng vùng của mình:</b> nếu chuyện lớn xảy ra ngay trong lãnh địa bạn đứng mà bạn không nói gì, người ta hiểu rằng bạn hoặc không theo kịp, hoặc ngại va chạm, và cả hai cách hiểu đều làm giảm vị thế.</p>
+
+<p>Việc thứ ba khó nhất vì nó đòi bạn chấp nhận có người không đồng ý. <span class="nhan">Một người không bao giờ làm ai phật ý cũng là một người không ai nhớ nổi đang đứng ở đâu.</span></p>
 
 <h2>Ba câu để tự kiểm tuần này</h2>
-<p>Một: nếu phải nói trong một câu bạn giúp ai giải quyết điều gì, bạn nói được không, và câu đó có giống câu đội ngũ bạn sẽ nói không.</p>
-<p>Hai: trong ba tháng qua, có bao nhiêu người chủ động tìm tới bạn mà không qua giới thiệu. Con số đó nói về uy tín thật hơn mọi chỉ số nền tảng.</p>
-<p>Ba: người vừa làm việc với bạn xong có kể lại được cách bạn làm việc cho người thứ ba không. Nếu không, bạn chưa có phương pháp, mới có phong độ.</p>
+
+<p><b>Một:</b> nếu phải nói trong một câu rằng bạn giúp ai giải quyết điều gì, bạn nói được không, và câu đó có giống câu đội ngũ bạn sẽ nói không.</p>
+
+<p><b>Hai:</b> trong ba tháng qua có bao nhiêu người chủ động tìm tới bạn mà không qua giới thiệu, vì con số đó nói về uy tín thật hơn mọi chỉ số của nền tảng.</p>
+
+<p><b>Ba:</b> người vừa làm việc với bạn xong có kể lại được cách bạn làm việc cho người thứ ba không, vì nếu không thì bạn chưa có phương pháp, mới chỉ có phong độ.</p>
+
+<p>Ba câu này Duy tự hỏi mình mỗi quý, và câu thứ ba là câu khó nhất. Phong độ thì hôm nay có ngày mai mất, còn phương pháp thì gọi tên được, dạy lại được, và người khác nhắc lại được khi bạn không có mặt.</p>
 """),
 
 dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ",
@@ -592,38 +650,72 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
  than="""
-<p>Người ta hay hỏi Duy nên đăng mấy bài một tuần. Đó gần như luôn là câu hỏi sai, đặt ra trước câu hỏi đúng.</p>
-<p>Câu hỏi đúng là: sau khi xem ba nội dung của bạn, người ta gọi tên bạn là ai.</p>
+<p>Người ta hay hỏi Duy nên đăng mấy bài một tuần, và đó gần như luôn là câu hỏi sai được đặt ra trước câu hỏi đúng. Câu hỏi đúng là sau khi xem ba nội dung của bạn thì người ta gọi tên bạn là ai.</p>
 
 <h2>Vì sao tần suất không cứu được</h2>
-<p>Thương hiệu cá nhân nằm trong trí nhớ của người khác. Trí nhớ đó chỉ đậm lên khi người ta nhận ra cùng một điều nhiều lần. Nhìn thấy nhiều điều khác nhau thì chẳng đọng lại gì.</p>
-<p>Nếu bảy bài trong tuần nói bảy chuyện không liên quan, người xem không tích luỹ gì cả. Họ chỉ tiêu thụ. Còn bạn thì kiệt sức và tưởng mình đang xây.</p>
+<p>Thương hiệu cá nhân nằm trong trí nhớ của người khác, không nằm trong kế hoạch nội dung của bạn. Trí nhớ đó chỉ đậm lên khi người ta nhận ra cùng một điều nhiều lần, còn nhìn thấy nhiều điều khác nhau thì không đọng lại gì.</p>
+<p>Nếu bảy bài trong tuần nói bảy chuyện không liên quan, người xem không tích luỹ được gì cả, họ chỉ tiêu thụ rồi đi. Còn bạn thì kiệt sức và vẫn tin rằng mình đang xây một thứ gì đó.</p>
+<p><span class="nhan">Sản lượng cao trên một luận điểm mờ là cách đắt nhất để không được ai nhớ.</span> Nó đắt vì bạn trả bằng thời gian, tiền thuê người, và cả sức bền mà lẽ ra để dành cho năm thứ ba.</p>
 
 <h2>Ba lớp phải rõ trước khi tăng sản lượng</h2>
-<p><b>Lãnh địa.</b> Bạn nói về vùng nào, và cố ý không nói về vùng nào. Người không dám bỏ vùng nào sẽ không sở hữu vùng nào.</p>
-<p><b>Luận điểm.</b> Bạn tin điều gì mà nhiều người trong ngành chưa tin, và bạn có bằng chứng gì cho niềm tin đó.</p>
-<p><b>Bằng chứng thật.</b> Câu chuyện, quyết định, số liệu, sai lầm từ công việc thật của bạn. Không ai sao chép được phần này, mà nó cũng hay bị thay bằng lý thuyết chung.</p>
+<p><b>Lãnh địa:</b> bạn nói về vùng nào và cố ý không nói về vùng nào, vì người không dám bỏ vùng nào thì sẽ không sở hữu được vùng nào.</p>
+<p><b>Luận điểm:</b> bạn tin điều gì mà nhiều người trong ngành chưa tin, và bạn có bằng chứng gì cho niềm tin đó ngoài việc mình thấy vậy.</p>
+<p><b>Bằng chứng thật:</b> câu chuyện, quyết định, số liệu và sai lầm từ công việc thật của bạn, phần duy nhất không ai sao chép được mà cũng là phần hay bị thay bằng lý thuyết chung nhất.</p>
 
 <div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải mẹo viết bài.</div>
 
 <h2>Bài kiểm xoá tên</h2>
 <p>Duy đã nói ở một bài khác nhưng nhắc lại vì nó rẻ và tàn nhẫn. Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành. Hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ.</p>
-<p>Bốn trên năm là tín hiệu rõ: bạn đang sản xuất nội dung có thể thay thế. Sửa luận điểm trước, đừng sửa lịch đăng.</p>
+<p>Bốn trên năm là tín hiệu rõ rằng bạn đang sản xuất loại nội dung có thể thay thế được, và lúc đó việc cần sửa là luận điểm chứ không phải lịch đăng.</p>
+
+<h2>Trí nhớ người khác hoạt động thế nào</h2>
+
+<p>Duy để ý một điều khi ngồi với khách. Khi họ cần tìm người giúp, họ không mở máy ra tìm. Họ nghĩ trong đầu chừng vài giây, và một hai cái tên bật lên.</p>
+
+<p>Cái tên bật lên không phải cái tên họ thấy nhiều nhất, mà là cái tên gắn với đúng loại vấn đề họ đang có. Tần suất thua sự nhất quán đúng ở chỗ này, và thua rất rõ.</p>
+
+<p>Có một cách hình dung Duy hay dùng. Trong đầu mỗi người, bạn được cấp đúng một cái nhãn, và cái nhãn đó chỉ chứa được vài chữ. Mỗi nội dung bạn đăng là một lần ghi lên nhãn ấy. Ghi cùng một chữ nhiều lần thì chữ đậm dần lên, còn ghi mỗi lần một chữ khác thì cái nhãn thành một mớ không đọc được.</p>
+
+<p>Điều này giải thích vì sao một người đăng một bài mỗi tuần trong ba năm lại được nhớ rõ hơn người đăng mỗi ngày trong sáu tháng. Người thứ nhất ghi một trăm năm mươi lần cùng một chữ, còn người thứ hai ghi một trăm tám mươi lần mà mỗi lần một chữ khác.</p>
 
 <h2>Nhịp một người vận hành được</h2>
-<p>Khi ba lớp trên đã rõ, tần suất mới thành câu hỏi có nghĩa. Và lúc đó câu trả lời thường thấp hơn người ta nghĩ.</p>
+<p>Khi ba lớp trên đã rõ thì tần suất mới thành một câu hỏi có nghĩa, và lúc đó câu trả lời thường thấp hơn hẳn con số người ta nghĩ trong đầu.</p>
 <p>Một nội dung dài mỗi tuần, cắt ra thành vài mẩu ngắn, cộng với việc trả lời thật kỹ những câu hỏi người xem đặt ra. Nhịp đó một người làm được, giữ được nhiều năm, và tích luỹ tốt hơn hẳn kiểu bung sức ba tháng rồi biến mất.</p>
-<p>Điều Duy thấy đúng sau sáu năm làm nội dung đều: người thắng không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</p>
+<p>Điều Duy thấy đúng sau sáu năm làm nội dung đều đặn là người thắng không phải người đăng nhiều nhất, mà là người còn đăng sau năm thứ ba. Số người còn lại tới lúc đó ít hơn bạn tưởng rất nhiều, nên vạch đích thật ra gần hơn vẻ ngoài của nó.</p>
 
 <h2>Ba mức trưởng thành của một thương hiệu cá nhân</h2>
 <p>Duy hay dùng ba mức này để biết một người đang ở đâu và nên làm gì tiếp.</p>
-<p><b>Mức một, được biết.</b> Người ta nhận ra mặt và tên bạn. Ở mức này bạn có sự chú ý nhưng chưa có vị thế. Dấu hiệu: nhiều lượt xem, ít tin nhắn nghiêm túc. Việc cần làm không phải đăng nhiều hơn, mà là chọn một lãnh địa và nói đi nói lại về nó.</p>
-<p><b>Mức hai, được nhớ vì một điều.</b> Khi ai đó gặp đúng vấn đề bạn giải, tên bạn bật lên trong đầu họ. Tới mức này thương hiệu mới bắt đầu ra tiền, và cũng là mức phần lớn người làm nội dung không tới được, vì họ đổi hướng trước khi trí nhớ người khác kịp đóng lại.</p>
-<p><b>Mức ba, được nhắc lại.</b> Người khác dùng câu của bạn để giải thích cho người thứ ba, dù bạn không có mặt. Tới lúc này thương hiệu tự đi, bạn không phải đẩy nữa. Từ mức hai lên mức ba thường mất thêm hai tới ba năm, và điều kiện gần như duy nhất là bạn không đổi luận điểm giữa chừng.</p>
+<p><b>Mức một, được biết:</b> người ta nhận ra mặt và tên bạn, tức là bạn có sự chú ý nhưng chưa có vị thế. Dấu hiệu của mức này là nhiều lượt xem mà ít tin nhắn nghiêm túc, và việc cần làm không phải đăng nhiều hơn mà là chọn một lãnh địa rồi nói đi nói lại về nó.</p>
+<p><b>Mức hai, được nhớ vì một điều:</b> khi ai đó gặp đúng vấn đề bạn giải, tên bạn bật lên trong đầu họ. Tới mức này thương hiệu mới bắt đầu ra tiền, và cũng là mức phần lớn người làm nội dung không tới được, vì họ đổi hướng trước khi trí nhớ người khác kịp đóng lại.</p>
+<p><b>Mức ba, được nhắc lại:</b> người khác dùng câu của bạn để giải thích cho người thứ ba, dù bạn không có mặt. Tới lúc này thương hiệu tự đi và bạn không phải đẩy nữa. Từ mức hai lên mức ba thường mất thêm hai tới ba năm, và điều kiện gần như duy nhất là bạn không đổi luận điểm giữa chừng.</p>
+
+<h2>Cách kiểm mình đang ở mức nào</h2>
+
+<p>Ba mức trên nghe thì rõ, nhưng tự chấm mình thì hay sai. Có ba câu hỏi cho ra câu trả lời gọn hơn.</p>
+
+<p><b>Người nhắn tin cho bạn hỏi gì:</b> hỏi lung tung nhiều chủ đề là mức một, hỏi đúng thứ bạn làm là mức hai, còn nhắn để giới thiệu người khác cho bạn là mức ba.</p>
+
+<p><b>Khách đến từ đâu:</b> đến từ một nội dung vừa lan là mức một, đến vì đã theo dõi một thời gian là mức hai, đến vì có người bảo họ tìm bạn là mức ba.</p>
+
+<p><b>Bạn phải giải thích mình là ai trong bao lâu:</b> mức một thì giải thích mỗi lần gặp ai đó, mức hai thì thỉnh thoảng, mức ba thì người ta giải thích hộ bạn trước khi bạn kịp mở lời.</p>
+
+<p><span class="nhan dam">Câu hỏi thứ ba là câu chính xác nhất, vì nó không đo được bằng bất kỳ chỉ số nào trên nền tảng.</span></p>
+
+<h2>Từ mức một lên mức hai mất bao lâu</h2>
+
+<p>Câu hỏi này Duy bị hỏi nhiều và câu trả lời thật thì không dễ nghe: nó phụ thuộc vào việc bạn giữ được một luận điểm bao lâu, chứ không phụ thuộc vào việc bạn làm nhanh tới đâu.</p>
+
+<p>Theo những gì Duy quan sát được, một người nói nhất quán về đúng một vùng thường mất khoảng chín tới mười tám tháng để lên mức hai. Người đổi hướng hai lần trong quãng đó thì đồng hồ chạy lại từ đầu, không phải chạy tiếp.</p>
+
+<p>Chỗ khó nằm ở tháng thứ tư tới tháng thứ tám. Lúc đó bạn đã chán chủ đề của mình vì đã nói nhiều lần rồi, trong khi người xem mới chỉ nghe được vài lần. Cảm giác lặp lại là cảm giác của người viết, không phải của người đọc.</p>
+
+<p><span class="nhan dam">Bạn phải chịu chán trước khi được nhớ.</span> Đây là cái giá thật của mức hai, và nó là lý do phần lớn người dừng lại đúng lúc sắp tới nơi.</p>
 
 <h2>Một sai lầm tốn nhiều năm</h2>
 <p>Người ở mức một hay nhìn người ở mức ba rồi bắt chước cách họ đang làm hôm nay. Nhưng người ở mức ba đang gặt thứ họ gieo từ nhiều năm trước, và cách làm hiện tại của họ chỉ hợp với vị thế hiện tại của họ.</p>
-<p>Nếu bạn ở mức một, thứ đáng bắt chước là cách họ làm hồi ở mức một, không phải cách họ làm bây giờ.</p>
+<p>Nếu bạn đang ở mức một thì thứ đáng bắt chước là cách họ làm hồi còn ở mức một, không phải cách họ làm bây giờ. Chuyện này khó ở chỗ cách làm cũ của họ thường không còn ai lưu lại, còn cách làm mới thì hiện ra trước mắt bạn mỗi ngày.</p>
+
+<p><span class="nhan">Cách gần đúng nhất là tìm nội dung đầu tiên của họ chứ đừng xem nội dung mới nhất.</span> Đọc mười bài đầu tiên của một người bạn ngưỡng mộ sẽ cho bạn nhiều thứ dùng được hơn là đọc mười bài gần nhất.</p>
 """),
 
 dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
@@ -725,32 +817,67 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <h2>Vì sao nói về nhiều mảng lại là bất lợi</h2>
 <p>Thương hiệu cá nhân nằm trong trí nhớ của người khác, không nằm ở bạn. Mà trí nhớ đó rất hẹp. Một người bình thường giữ được cho bạn đúng một ô, và ô đó chỉ chứa được một cụm từ.</p>
 <p>Khi bạn nói về sáu chủ đề, bạn không chiếm sáu ô. Bạn không chiếm ô nào, vì người ta không biết xếp bạn vào đâu. Đến lúc họ có vấn đề thật và cần tìm người, cái tên bật lên trong đầu họ là người chỉ nói về đúng vấn đề đó.</p>
-<p>Nhiều chuyên gia giỏi thua người kém hơn mình ở đúng chỗ này. Không phải vì kém chuyên môn, mà vì chuyên môn của họ trải quá rộng để ai đó nhớ nổi.</p>
+<p>Nhiều chuyên gia giỏi thua người kém hơn mình ở đúng chỗ này, không phải vì kém chuyên môn mà vì chuyên môn của họ trải quá rộng để ai đó nhớ nổi. <span class="nhan">Người kia không thắng bằng năng lực, họ thắng bằng việc dễ nhớ hơn.</span></p>
 
 <h2>Lãnh địa không phải ngành, cũng không phải nghề</h2>
-<p>Nói tôi làm về bất động sản là nói ngành. Nói tôi là huấn luyện viên là nói nghề. Cả hai đều chưa phải lãnh địa.</p>
+<p>Nói tôi làm về bất động sản là nói ngành, còn nói tôi là huấn luyện viên là nói nghề, và cả hai đều chưa phải lãnh địa. Đây là chỗ nhiều người dừng lại rồi tưởng mình đã định vị xong.</p>
 <p>Lãnh địa là giao của ba thứ: một nhóm người cụ thể, một loại vấn đề cụ thể, và một cách nhìn mà bạn có còn người khác chưa có.</p>
 <p>Ví dụ từ chính Duy. Ngành là đào tạo. Nghề là cố vấn. Lãnh địa là <b>giúp người chủ doanh nghiệp dịch vụ đưa uy tín và cách ra quyết định của mình ra khỏi đầu mình, thành năng lực của đội ngũ</b>. Câu sau dài hơn nhưng nó loại được chín mươi phần trăm người đọc, và giữ lại đúng người Duy muốn.</p>
 
 <div class="dan-manh">Một lãnh địa tốt phải làm được hai việc cùng lúc: khiến đúng người thấy đây là dành cho mình, và khiến người không phù hợp tự rời đi mà không thấy khó chịu.</div>
 
+<h2>Ba nỗi sợ khiến người ta không dám chọn</h2>
+
+<p>Ai cũng gật đầu với việc phải chọn một vùng, mà rất ít người làm. Duy thấy có ba nỗi sợ đứng đằng sau, và nói ra được thì gỡ dễ hơn.</p>
+
+<p><b>Sợ mất khách:</b> nỗi sợ này nghe hợp lý nhất mà lại sai nhất, vì người ta không thuê bạn dựa trên danh sách những việc bạn làm được, họ thuê dựa trên việc bạn có phải người rõ nhất cho vấn đề của họ không.</p>
+
+<p><b>Sợ chọn sai rồi kẹt lại:</b> lãnh địa không phải một lời thề trọn đời, nó là hướng bạn đi trong vài năm, và sau vài năm bạn vẫn mở rộng được từ chỗ đã có vị thế, chứ mở rộng từ chỗ không có vị thế nào mới là việc bất khả.</p>
+
+<p><b>Sợ vùng đó quá nhỏ:</b> nỗi sợ này gần như luôn không có cơ sở, vì một vùng hẹp ở Việt Nam vẫn thường còn vài nghìn doanh nghiệp, và bạn chỉ cần vài chục người trong số đó để kín lịch cả năm.</p>
+
 <h2>Bài tập ba cột</h2>
-<p>Lấy một tờ giấy, chia ba cột.</p>
-<p><b>Cột một, những gì bạn biết làm.</b> Viết hết, kể cả việc bạn chỉ làm được ở mức khá. Thường ra mười tới hai mươi mục.</p>
-<p><b>Cột hai, những gì người ta trả tiền cho bạn.</b> Nhìn lại mười giao dịch gần nhất, khách thật sự mua điều gì. Cột này luôn ngắn hơn cột một rất nhiều, và đó là thông tin quý.</p>
-<p><b>Cột ba, những gì bạn còn muốn làm sau năm năm nữa.</b> Vì lãnh địa là chỗ bạn sẽ đứng lâu, chọn một vùng bạn sẽ chán sau tám tháng là tự hại mình.</p>
-<p>Lãnh địa nằm ở chỗ giao của ba cột. Nếu chỗ giao rỗng, bạn đang có vấn đề lớn hơn vấn đề nội dung.</p>
+<p>Lấy một tờ giấy và chia ba cột, làm trong khoảng bốn mươi phút, không cần đẹp.</p>
+<p><b>Cột một, những gì bạn biết làm:</b> viết hết ra, kể cả việc bạn chỉ làm được ở mức khá, và cột này thường ra mười tới hai mươi mục.</p>
+<p><b>Cột hai, những gì người ta trả tiền cho bạn:</b> nhìn lại mười giao dịch gần nhất và ghi ra khách thật sự mua điều gì, cột này luôn ngắn hơn cột một rất nhiều và chính khoảng chênh đó là thông tin quý.</p>
+<p><b>Cột ba, những gì bạn còn muốn làm sau năm năm nữa:</b> lãnh địa là chỗ bạn sẽ đứng lâu, nên chọn một vùng mà bạn sẽ chán sau tám tháng là tự hại mình.</p>
+<p>Lãnh địa nằm ở chỗ giao của ba cột, và nếu chỗ giao đó rỗng thì bạn đang có một vấn đề lớn hơn hẳn vấn đề nội dung. Rỗng nghĩa là thứ bạn giỏi, thứ người ta trả tiền, và thứ bạn muốn làm lâu dài đang là ba thứ khác nhau, mà đó là chuyện phải giải trước khi nghĩ tới việc đăng bài.</p>
 
 <h2>Phần khó: viết ra vùng bạn bỏ</h2>
-<p>Bước này hầu như ai cũng né. Viết một câu bắt đầu bằng "tôi không làm về" và điền vào ba việc bạn thật sự làm được nhưng quyết định không nhận nữa.</p>
-<p>Cảm giác lúc viết rất khó chịu, vì nó giống như tự đóng cửa cơ hội. Nhưng cơ hội bạn đóng là loại cơ hội lẻ tẻ, còn cái bạn mở ra là khả năng được nhớ.</p>
-<p>Duy đã bỏ mảng đào tạo kỹ năng chung cho nhân viên văn phòng, dù nó ra tiền đều. Bỏ vì mỗi lần nhận, Duy lại phải giải thích lại mình là ai.</p>
+<p>Bước này hầu như ai cũng né. Viết một câu bắt đầu bằng tôi không làm về, rồi điền vào ba việc bạn thật sự làm được nhưng quyết định không nhận nữa.</p>
+<p>Cảm giác lúc viết rất khó chịu vì nó giống như tự đóng cửa cơ hội. Nhưng cơ hội bạn đóng là loại cơ hội lẻ tẻ và không lặp lại, còn thứ bạn mở ra là khả năng được nhớ, mà khả năng đó thì lãi kép qua từng năm.</p>
+<p>Duy đã bỏ mảng đào tạo kỹ năng chung cho nhân viên văn phòng dù nó ra tiền đều và không khó làm. Bỏ vì mỗi lần nhận là một lần phải giải thích lại mình là ai, và sau vài lần thì chính Duy cũng thấy câu giới thiệu của mình dài ra một cách khó chịu.</p>
+<p>Có một cách làm nhẹ bớt bước này nếu bạn chưa dám bỏ hẳn. Đừng xoá khỏi việc kinh doanh, chỉ xoá khỏi phần nói ra bên ngoài. Vẫn nhận nếu có người tìm tới, nhưng không nhắc tới nó trong bất kỳ nội dung nào, không để trên trang giới thiệu, không dùng nó để mở đầu khi gặp người mới. Sau một năm phần đó sẽ tự teo lại mà bạn không phải quyết định gì cả.</p>
+
+<h2>Viết câu lãnh địa của bạn ra thế nào</h2>
+
+<p>Sau khi có chỗ giao của ba cột, bạn vẫn phải gói nó thành một câu nói ra được. Duy dùng một khung bốn phần, và thiếu phần nào thì câu sẽ hụt đúng phần đó.</p>
+
+<p><b>Phần một, người cụ thể:</b> không phải doanh nghiệp nói chung mà là loại người cụ thể, ví dụ người chủ doanh nghiệp dịch vụ có dưới ba mươi nhân sự.</p>
+
+<p><b>Phần hai, vấn đề cụ thể:</b> nói bằng lời của họ chứ không bằng thuật ngữ của nghề bạn, vì họ chỉ nhận ra vấn đề khi nghe đúng cách họ vẫn kể nó.</p>
+
+<p><b>Phần ba, kết quả họ đang muốn:</b> phần này phải cụ thể tới mức hình dung ra được, chứ nói phát triển bền vững thì không ai hình dung được gì.</p>
+
+<p><b>Phần bốn, cách nhìn riêng của bạn:</b> đây là phần khiến câu của bạn khác câu của mười người khác cùng làm nghề, và cũng là phần khó viết nhất nên nhiều người bỏ luôn.</p>
+
+<p>Viết xong thì đọc to lên một lần. Nếu bạn thấy ngượng vì nó quá hẹp thì nhiều khả năng là bạn đã viết đúng.</p>
 
 <h2>Dấu hiệu bạn đã chọn đúng lãnh địa</h2>
 <p>Có ba dấu hiệu, xuất hiện theo thứ tự.</p>
-<p><b>Thứ nhất, bạn nói tên lãnh địa và người nghe hỏi tiếp.</b> Nếu họ chỉ gật đầu, câu của bạn còn chung chung.</p>
-<p><b>Thứ hai, có người tự loại mình.</b> Câu "à vậy không hợp với em rồi" là dấu hiệu tốt, không phải dấu hiệu xấu.</p>
-<p><b>Thứ ba, người ta giới thiệu bạn bằng đúng câu bạn dùng.</b> Dấu hiệu này mạnh nhất, và nó chỉ đến sau sáu tới mười hai tháng nói nhất quán.</p>
+<p><b>Thứ nhất, bạn nói tên lãnh địa và người nghe hỏi tiếp:</b> nếu họ chỉ gật đầu cho phải phép thì câu của bạn còn chung chung, vì một câu đủ sắc luôn làm người ta muốn biết thêm.</p>
+<p><b>Thứ hai, có người tự loại mình:</b> câu à vậy không hợp với em rồi là một dấu hiệu tốt chứ không phải dấu hiệu xấu, và nếu chưa ai từng nói câu đó với bạn thì lãnh địa của bạn chưa đủ rõ.</p>
+<p><b>Thứ ba, người ta giới thiệu bạn bằng đúng câu bạn dùng:</b> dấu hiệu này mạnh nhất và cũng đến muộn nhất, thường sau sáu tới mười hai tháng nói nhất quán.</p>
+
+<h2>Lãnh địa hẹp không có nghĩa là nội dung hẹp</h2>
+
+<p>Có một hiểu nhầm hay gặp: chọn một vùng hẹp thì sẽ hết chuyện để nói sau vài tháng. Duy thấy ngược lại, và lý do khá dễ hiểu.</p>
+
+<p>Khi vùng còn rộng, bạn chỉ nói được lớp trên cùng của mọi thứ, vì người đọc của bạn quá khác nhau nên không thể đi sâu vào đâu cả. Vùng hẹp lại cho phép bạn đi xuống lớp thứ hai, thứ ba, và mỗi lớp sâu hơn lại mở ra nhiều thứ để nói hơn lớp trên.</p>
+
+<p>Lấy ngay lãnh địa của Duy làm ví dụ. Nghe thì chỉ là một câu, mà bên trong nó có chuyện giao quyền, chuyện viết quy trình, chuyện đào tạo người thay thế, chuyện đo chất lượng tư vấn, chuyện người chủ sợ mất chỗ đứng. Mỗi chuyện đủ cho vài chục nội dung.</p>
+
+<p><span class="nhan dam">Người hết chuyện để nói không phải vì vùng quá hẹp, mà vì họ chưa từng đi xuống dưới lớp mặt.</span></p>
 
 <h2>Chọn xong thì làm gì</h2>
 <p>Đừng đổi toàn bộ nội dung trong một tuần. Lấy lãnh địa mới làm bộ lọc: mọi nội dung mới phải nằm trong vùng đó, còn nội dung cũ để nguyên. Sau ba tháng, phần lớn những gì người mới thấy đã là vùng bạn chọn.</p>
