@@ -778,7 +778,7 @@ for i, b in enumerate(BAI):
         khac += [x for x in BAI if x is not b and x not in khac][:2 - len(khac)]
     faq = bs.get("faq", [])
     ml, than_bai = muc_luc(b["than"])
-    tra_loi = ('<div class="tra-loi"><b>Trả lời nhanh</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
+    tra_loi = ('<div class="tra-loi"><b>Tóm tắt</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
 
     ld = {"@context":"https://schema.org","@graph":[
       {"@type":"BlogPosting","headline":b["tieu"],"description":b["mo"],

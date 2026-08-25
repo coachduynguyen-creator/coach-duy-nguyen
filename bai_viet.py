@@ -4,21 +4,21 @@
 BAI = [
 
 dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người sáng lập",
- tieu="Bốn câu tôi nghe nhiều nhất từ người sáng lập",
- mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, tôi thấy chúng thường chỉ về một chỗ.",
+ tieu="Bốn câu Duy nghe nhiều nhất từ người sáng lập",
+ mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""<p>Tôi ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu tôi nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
+ than="""<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
 
 <p>Điều đáng nói không nằm ở bốn câu đó, mà nằm ở chỗ người nói ra chúng gần như luôn tin rằng mình đang gặp bốn vấn đề tách rời nhau. Tin như vậy thì đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua một khoá đào tạo bán hàng, tuyển thêm một quản lý, rồi lắp một phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ kết quả, và sau sáu tháng thì bốn câu ấy vẫn còn nguyên ở đó.</p>
 
 <h2>Bốn câu đó là gì</h2>
 
-<p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, thỉnh thoảng có một bài lên tới vài chục nghìn lượt và cả nhà mừng. Nhưng người nhắn tin lại hỏi những thứ rẻ tiền hơn hẳn thứ họ bán, hoặc hỏi xong rồi im luôn. Có người mở trang cá nhân của chính mình ra đọc lại trước mặt tôi, đọc chừng mười bài, rồi nói một câu mà tôi nhớ mãi: bài nào cũng đúng, mà cả trang này không nói lên được tôi là ai.</p>
+<p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, thỉnh thoảng có một bài lên tới vài chục nghìn lượt và cả nhà mừng. Nhưng người nhắn tin lại hỏi những thứ rẻ tiền hơn hẳn thứ họ bán, hoặc hỏi xong rồi im luôn. Có người mở trang cá nhân của chính mình ra đọc lại trước mặt Duy, đọc chừng mười bài, rồi nói một câu mà tới giờ vẫn còn nhớ: bài nào cũng đúng, mà cả trang này không nói lên được tôi là ai.</p>
 
 <p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ có người, có kịch bản, có quy trình, thậm chí có phần mềm ghi lại từng cuộc gọi và chấm điểm từng bước. Nhưng cứ tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ, và người chủ vào nói chừng hai mươi phút thì khách gật. Ai cũng vui sau buổi đó, trừ người chủ, vì họ biết rõ tháng sau chuyện y hệt sẽ lặp lại thêm một lần nữa.</p>
 
-<p><b>Câu thứ ba: tuyển thêm người mà tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang hơn cả ba câu kia, vì nó đi ngược hẳn điều họ mong đợi khi quyết định bỏ tiền ra tuyển người. Họ tuyển để nhẹ đi, kết quả là có thêm một người cần được hỏi, cần được duyệt, cần được sửa bài và cần được giải thích lại từ đầu. Có người nói với tôi rằng làm một mình còn nhanh hơn, và họ nói câu đó với vẻ mặt của người vừa thừa nhận một điều mà chính họ cũng không muốn thừa nhận.</p>
+<p><b>Câu thứ ba: tuyển thêm người mà tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang hơn cả ba câu kia, vì nó đi ngược hẳn điều họ mong đợi khi quyết định bỏ tiền ra tuyển người. Họ tuyển để nhẹ đi, kết quả là có thêm một người cần được hỏi, cần được duyệt, cần được sửa bài và cần được giải thích lại từ đầu. Có người nói với Duy rằng làm một mình còn nhanh hơn, và họ nói câu đó với vẻ mặt của người vừa thừa nhận một điều mà chính họ cũng không muốn thừa nhận.</p>
 
 <p><b>Câu thứ tư: tháng tốt tháng kém mà không rõ vì sao.</b> Doanh thu lên xuống theo tháng, tháng tốt thì mừng nhưng không giải thích được vì sao tốt, tháng kém thì lo nhưng cũng không chỉ ra được chỗ nào hỏng. Không giải thích được nghĩa là không lặp lại được tháng tốt, và cũng không tránh được tháng kém, nên cả năm trôi qua trong cảm giác mình đang bị dẫn đi chứ không phải mình đang dẫn.</p>
 
@@ -30,21 +30,21 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <h2>Hỏi ngược lại từng câu</h2>
 
-<p>Trong buổi làm việc tôi không trả lời ngay, tôi hỏi ngược lại. Bốn câu hỏi dưới đây bạn tự hỏi mình cũng được, không cần có tôi ngồi đó.</p>
+<p>Trong buổi làm việc Duy không trả lời ngay mà hỏi ngược lại. Bốn câu hỏi dưới đây bạn tự hỏi mình cũng được, không cần có Duy ngồi đó.</p>
 
-<p><b>Vì sao nội dung không ra đúng khách?</b> Tôi thường hỏi thế này: nếu tôi chặn một người trong đội ngũ của bạn ngoài hành lang và hỏi công ty mình đứng về điều gì, họ sẽ trả lời ra sao. Câu trả lời hay gặp là mỗi người nói một kiểu, và không kiểu nào giống câu mà chính người chủ vừa nói với tôi mười phút trước đó. Luận điểm nghề nghiệp vẫn còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau, nên nội dung mỗi bài đi một hướng. Người xem đọc năm bài, thấy bài nào cũng hợp lý cả, rồi gấp máy lại và không nhớ được bạn đại diện cho điều gì.</p>
+<p><b>Vì sao nội dung không ra đúng khách?</b> Duy thường hỏi thế này: nếu chặn một người trong đội ngũ của bạn ngoài hành lang và hỏi công ty mình đứng về điều gì, họ sẽ trả lời ra sao. Câu trả lời hay gặp là mỗi người nói một kiểu, và không kiểu nào giống câu mà chính người chủ vừa nói với Duy mười phút trước đó. Luận điểm nghề nghiệp vẫn còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau, nên nội dung mỗi bài đi một hướng. Người xem đọc năm bài, thấy bài nào cũng hợp lý cả, rồi gấp máy lại và không nhớ được bạn đại diện cho điều gì.</p>
 
-<p><b>Vì sao đội ngũ chờ người chủ mới chốt?</b> Tôi hỏi xin xem kịch bản bán hàng, và gần như lần nào kịch bản cũng ghi rất kỹ phần nói: chào thế nào, giới thiệu thế nào, xử lý từ chối bằng câu gì. Phần không ai ghi lại là phần nghĩ, tức là đọc một người đang do dự vì tiền hay vì chưa đủ tin, xử lý một tình huống chưa từng gặp trong kịch bản, và quyết định nhượng bộ tới đâu thì phải dừng lại. Ba việc đó vẫn nằm nguyên trong đầu người chủ, nên kịch bản chỉ chép lại được lời nói chứ không chép lại được cách nghĩ, và tới đúng chỗ cần nghĩ thì khách buộc phải gặp người chủ.</p>
+<p><b>Vì sao đội ngũ chờ người chủ mới chốt?</b> Duy hỏi xin xem kịch bản bán hàng, và gần như lần nào kịch bản cũng ghi rất kỹ phần nói: chào thế nào, giới thiệu thế nào, xử lý từ chối bằng câu gì. Phần không ai ghi lại là phần nghĩ, tức là đọc một người đang do dự vì tiền hay vì chưa đủ tin, xử lý một tình huống chưa từng gặp trong kịch bản, và quyết định nhượng bộ tới đâu thì phải dừng lại. Ba việc đó vẫn nằm nguyên trong đầu người chủ, nên kịch bản chỉ chép lại được lời nói chứ không chép lại được cách nghĩ, và tới đúng chỗ cần nghĩ thì khách buộc phải gặp người chủ.</p>
 
-<p><b>Vì sao tuyển thêm người mà càng bận?</b> Tôi hỏi một câu ngắn: khi giao một việc, bạn giao kết quả hay giao cách làm. Phần lớn trả lời là giao kết quả, vì giao cách làm thì mất thời gian hơn nhiều mà lúc đó ai cũng đang vội. Nhưng cách làm chưa được viết ra thì người mới buộc phải đoán, đoán sai thì quay lại hỏi, và mỗi lần quay lại hỏi là một lần người chủ mất mạch công việc đang làm dở. Mười người mới nghĩa là mười nguồn câu hỏi cùng đổ về một chỗ, nên tuyển người trong lúc chưa có cách làm viết sẵn thì càng tuyển càng bận, đó là chuyện tất nhiên chứ không phải xui rủi gì.</p>
+<p><b>Vì sao tuyển thêm người mà càng bận?</b> Duy hỏi một câu ngắn: khi giao một việc, bạn giao kết quả hay giao cách làm. Phần lớn trả lời là giao kết quả, vì giao cách làm thì mất thời gian hơn nhiều mà lúc đó ai cũng đang vội. Nhưng cách làm chưa được viết ra thì người mới buộc phải đoán, đoán sai thì quay lại hỏi, và mỗi lần quay lại hỏi là một lần người chủ mất mạch công việc đang làm dở. Mười người mới nghĩa là mười nguồn câu hỏi cùng đổ về một chỗ, nên tuyển người trong lúc chưa có cách làm viết sẵn thì càng tuyển càng bận, đó là chuyện tất nhiên chứ không phải xui rủi gì.</p>
 
-<p><b>Vì sao tháng tốt tháng kém mà không rõ vì sao?</b> Tôi hỏi tháng tốt gần nhất đến từ đâu, và câu trả lời hay gặp là nhờ một mối quen giới thiệu, hoặc nhờ một bài tự nhiên lan xa hơn bình thường. Cả hai đều là chuyện xảy tới với mình chứ không phải chuyện mình chủ động làm ra, mà thứ mình không ghi lại được nguyên nhân thì mình cũng không lặp lại được kết quả.</p>
+<p><b>Vì sao tháng tốt tháng kém mà không rõ vì sao?</b> Duy hỏi tháng tốt gần nhất đến từ đâu, và câu trả lời hay gặp là nhờ một mối quen giới thiệu, hoặc nhờ một bài tự nhiên lan xa hơn bình thường. Cả hai đều là chuyện xảy tới với mình chứ không phải chuyện mình chủ động làm ra, mà thứ mình không ghi lại được nguyên nhân thì mình cũng không lặp lại được kết quả.</p>
 
 <h2>Bốn câu, một nguyên nhân</h2>
 
 <p>Bốn câu trả lời ở trên đều dừng lại ở cùng một chỗ: uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Công ty chưa chuyển được chúng thành ba thứ có thể trao tay cho người khác, đó là một luận điểm nghề nghiệp mà cả đội ngũ nói giống nhau, một cách làm được viết ra đủ rõ để người khác làm theo mà không phải đoán, và một cách ghi lại xem điều gì đã thật sự tạo ra kết quả.</p>
 
-<p>Tôi gọi chỗ đó là điểm nghẽn người sáng lập, và tôi muốn nói rõ rằng nó không phải lỗi của ai cả. Nó là hệ quả rất tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất, nên gom hết vào mình là cách đi đúng. Đúng ở giai đoạn đó, và chính vì nó từng đúng nên người ta mới giữ nó lâu hơn mức cần thiết.</p>
+<p>Duy gọi chỗ đó là điểm nghẽn người sáng lập, và muốn nói rõ ngay rằng nó không phải lỗi của ai cả. Nó là hệ quả rất tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất, nên gom hết vào mình là cách đi đúng. Đúng ở giai đoạn đó, và chính vì nó từng đúng nên người ta mới giữ nó lâu hơn mức cần thiết.</p>
 
 <h2>Vì sao càng bán tốt lại càng bận</h2>
 
@@ -52,11 +52,11 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Nếu cách nghĩ vẫn nằm trong đầu một người, thì mọi đường đi trong công ty đều dẫn về đúng cái đầu đó, và bán càng tốt thì đường về càng đông. Người chủ trở thành chỗ tắc của chính công ty mình dựng lên, tắc vì một lý do mà đáng lẽ phải mừng.</p>
 
-<p>Tôi đã ở trong chỗ đó rồi nên tôi không nói lý thuyết. Có một quãng tôi nhận nhiều việc hơn bao giờ hết, doanh thu tốt hơn bao giờ hết, và tôi ngồi làm tới mười một giờ đêm gần như mọi ngày trong tuần. Lúc đó tôi tưởng mình thiếu kỷ luật nên tìm cách dậy sớm hơn và cắt bớt giải trí, nhưng sự thật là tôi không thiếu kỷ luật, tôi chỉ có quá nhiều việc phải tự quyết. Hai chuyện đó nghe thì gần giống nhau, mà cách sửa lại khác hẳn nhau.</p>
+<p>Duy đã ở trong chỗ đó rồi nên không nói lý thuyết. Có một quãng Duy nhận nhiều việc hơn bao giờ hết, doanh thu tốt hơn bao giờ hết, và ngồi làm tới mười một giờ đêm gần như mọi ngày trong tuần. Lúc đó Duy tưởng mình thiếu kỷ luật nên tìm cách dậy sớm hơn và cắt bớt giải trí, nhưng sự thật không phải vậy: kỷ luật thì có, chỉ là có quá nhiều việc phải tự quyết. Hai chuyện đó nghe thì gần giống nhau, mà cách sửa lại khác hẳn nhau.</p>
 
 <h2>Ba dấu hiệu để tự kiểm</h2>
 
-<p>Bạn không cần chờ tới lúc ngồi với tôi mới biết mình có đang ở trong chỗ này hay không, vì ba dấu hiệu dưới đây tự kiểm được trong một buổi chiều.</p>
+<p>Bạn không cần chờ tới lúc ngồi với Duy mới biết mình có đang ở trong chỗ này hay không, vì ba dấu hiệu dưới đây tự kiểm được trong một buổi chiều.</p>
 
 <p><b>Một.</b> Hỏi riêng ba người trong đội ngũ cùng một câu: công ty mình đứng về điều gì, và khách nên chọn mình thay vì đối thủ vì lý do nào. Hỏi riêng từng người chứ đừng hỏi trong cuộc họp, vì trong họp thì người sau sẽ nói theo người trước. Ba câu trả lời khác nhau nghĩa là luận điểm nghề nghiệp của bạn chưa ra khỏi đầu bạn.</p>
 
@@ -64,7 +64,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p><b>Ba.</b> Nhớ lại tháng tốt gần nhất và viết ra một câu giải thích vì sao tháng đó tốt. Nếu trong câu đó có chữ may, chữ tự nhiên, hoặc tên riêng của một người quen, thì bạn chưa nắm được nguyên nhân của chính kết quả mình đã có.</p>
 
-<h2>Bước đầu tiên tôi hay đề nghị</h2>
+<h2>Bước đầu tiên Duy hay đề nghị</h2>
 
 <p>Bước đầu tiên không phải là ngồi viết quy trình, vì quy trình viết ra lúc chưa gọi đúng tên vấn đề thì viết xong cũng để đó và không ai mở lại.</p>
 
@@ -72,18 +72,18 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Ba lần như vậy là ba trang giấy, và ba trang đó chính là bản nháp đầu tiên của cách nghĩ, thứ mà từ trước tới giờ chưa từng ra khỏi đầu bạn. Nó chưa phải quy trình và cũng chưa cần phải là quy trình, nhưng khi đã có nó rồi thì người kế tiếp học được nhanh hơn hẳn, đơn giản vì họ không còn phải ngồi đoán nữa.</p>
 
-<p>Mười lăm phút sau mỗi buổi nghe ít tới mức rất dễ bỏ qua, và tôi vẫn đề nghị đúng chừng đó chứ không đề nghị nhiều hơn, vì chính chỗ ít ỏi ấy lại là chỗ khó giữ nhất. Ai giữ được ba lần liền thì thường sẽ giữ được tiếp, còn ai định làm hẳn một buổi hai tiếng cho ra tấm ra món thì thường không có buổi nào cả.</p>
+<p>Mười lăm phút sau mỗi buổi nghe ít tới mức rất dễ bỏ qua, và Duy vẫn đề nghị đúng chừng đó chứ không đề nghị nhiều hơn, vì chính chỗ ít ỏi ấy lại là chỗ khó giữ nhất. Ai giữ được ba lần liền thì thường sẽ giữ được tiếp, còn ai định làm hẳn một buổi hai tiếng cho ra tấm ra món thì thường không có buổi nào cả.</p>
 
-<h2>Điều tôi không hứa</h2>
+<h2>Điều Duy không hứa</h2>
 
-<p>Làm xong bước này thì bốn câu kia không biến mất trong một tháng, tôi nói trước như vậy để bạn khỏi thất vọng. Chuyển thứ đang nằm trong đầu một người thành thứ cả đội ngũ dùng được là việc của nhiều quý chứ không phải nhiều tuần, và nó cần bạn quay lại đều đặn chứ không cần bạn cố sức một đợt.</p>
+<p>Làm xong bước này thì bốn câu kia không biến mất trong một tháng, nói trước như vậy để bạn khỏi thất vọng. Chuyển thứ đang nằm trong đầu một người thành thứ cả đội ngũ dùng được là việc của nhiều quý chứ không phải nhiều tuần, và nó cần bạn quay lại đều đặn chứ không cần bạn cố sức một đợt.</p>
 
 <p>Nhưng có một thứ đổi được ngay từ tuần đầu: bạn thôi đi tìm bốn giải pháp cho bốn vấn đề, bạn nhìn thấy một chỗ nghẽn duy nhất và biết rõ mình đang gỡ chỗ nào. Riêng chuyện đó thôi cũng đã đủ tiết kiệm cho bạn vài trăm triệu và vài quý, so với cách đi cũ.</p>
 
-<p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì tôi muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>"""),
+<p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì Duy muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>"""),
 
 dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
- tieu="Vì sao tôi không nghĩ về khách bằng cái phễu",
+ tieu="Vì sao Duy không nghĩ về khách bằng cái phễu",
  mo="Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.",
  ngay="2026-08-16", ngay_viet="16 tháng 8, 2026", doc="5 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
@@ -97,7 +97,7 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
 <p>Khi bạn tin vào phễu, bạn xử lý người chưa mua như một thất bại cần cứu. Bạn gọi thêm, nhắn thêm, giảm giá. Và bạn tiêu đúng cái mình cần nhất: sự tin cậy.</p>
 
 <h2>Quỹ đạo thay cho phễu</h2>
-<p>Tôi thiết kế quan hệ bằng quỹ đạo. Khách đúng nằm ở giữa. Năm vòng quay quanh, và một người có thể tiến gần hoặc lùi ra bất cứ lúc nào mà vẫn còn trong hệ.</p>
+<p>Duy thiết kế quan hệ bằng quỹ đạo. Khách đúng nằm ở giữa. Năm vòng quay quanh, và một người có thể tiến gần hoặc lùi ra bất cứ lúc nào mà vẫn còn trong hệ.</p>
 <p>Vòng ngoài cùng là lúc người ta gặp bạn lần đầu. Vòng thứ hai là lúc đúng người nhận ra vấn đề của họ. Vòng thứ ba là lúc họ đồng ý cho bạn giữ liên lạc. Vòng thứ tư là niềm tin lớn dần theo thời gian. Vòng trong cùng là lúc họ chọn bước tiếp theo, kể cả khi bước đúng là dừng lại.</p>
 
 <div class="dan-manh">Dùng phễu để đo. Dùng quỹ đạo để thiết kế quan hệ.</div>
@@ -106,7 +106,7 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
 <p>Nó đổi cách bạn viết nội dung. Ở vòng ngoài, bạn chưa mời mua, chưa xin thông tin. Ở vòng giữa, bạn giúp họ tự đánh giá. Chỉ ở vòng trong cùng bạn mới nói tới chương trình, phạm vi và điều kiện.</p>
 <p>Nó cũng đổi cách bạn đọc tín hiệu. Người vừa để lại số điện thoại không phải người đã sẵn sàng, họ chỉ vừa cho phép bạn giữ liên lạc. Gọi bán ngay lúc đó là kéo họ nhảy ba vòng, và phần lớn sẽ bật ra.</p>
 
-<h2>Mỗi lần xuất hiện, tôi phải để lại được gì</h2>
+<h2>Mỗi lần xuất hiện, Duy phải để lại được gì</h2>
 <p>Mỗi lần xuất hiện trước một người, bạn nên đạt ít nhất một trong ba điều: giúp họ hiểu vấn đề rõ hơn, giúp họ tự đánh giá bối cảnh của mình, hoặc giúp họ tiến một bước nhỏ có ích.</p>
 <p>Nếu không đạt điều nào, đó là một lần bạn tiêu bớt niềm tin chứ không tích thêm. Một bản tin chỉ để nhắc khách nhớ bạn còn tồn tại là một lần tiêu.</p>
 <p>Cách kiểm nhanh: đọc lại năm nội dung gần nhất của bạn, và với từng nội dung, viết ra một câu người xem có được sau khi đọc. Nếu bạn phải nghĩ lâu, nội dung đó chưa làm việc gì cả.</p>
@@ -118,7 +118,7 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
  than="""
-<p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe không có cách nào kiểm. Nên tôi viết ra năm việc mà tôi tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm tôi và kiểm bất kỳ ai khác.</p>
+<p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe không có cách nào kiểm. Nên Duy viết ra năm việc mà mình tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm Duy và kiểm bất kỳ ai khác.</p>
 
 <h2>Một: soi đúng</h2>
 <p>Việc đầu tiên là tách điều bạn đang thấy khỏi vấn đề thật phía sau. Người cố vấn bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác.</p>
@@ -143,7 +143,7 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
 
 <h2>Ba việc một người cố vấn không nên làm</h2>
 <p>Không làm thay phần việc của bạn. Không hứa một con số kết quả khi chưa đủ điều kiện. Và không giữ ai ở lại bằng cảm giác lệ thuộc.</p>
-<p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm tôi. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, thử đếm xem họ làm được mấy việc.</p>
+<p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm Duy. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, thử đếm xem họ làm được mấy việc.</p>
 """),
 
 dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhân",
@@ -152,21 +152,21 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
  anh="img/bl-nhin-thang.webp", alt="Coach Duy Nguyễn nhìn thẳng vào người đối diện trong một buổi trao đổi",
  than="""
-<p>Có một câu hỏi tôi hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt.</p>
+<p>Có một câu hỏi Duy hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt.</p>
 
 <h2>Nổi tiếng và được tin cậy không cùng một việc</h2>
 <p>Nổi tiếng là nhiều người biết tên bạn. Nó đo bằng lượt xem, lượt theo dõi, mức độ lan toả. Được tin cậy là đúng người hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới khi họ có vấn đề bạn giải được.</p>
 <p>Một người có thể rất nổi tiếng mà không ai thuê. Và một người chỉ có vài nghìn người theo dõi vẫn có thể kín lịch cả năm. Khác biệt không nằm ở số, nằm ở chỗ người xem có gọi được tên chuyên môn của bạn hay không.</p>
 
 <h2>Nội dung không bù được định vị mơ hồ</h2>
-<p>Tôi thấy đây chính là chỗ tốn tiền nhất. Người chủ cảm thấy thương hiệu chưa mạnh, nên tăng tần suất đăng. Đăng ba bài một tuần thành bảy bài. Thuê thêm người viết. Kết quả là cùng một sự mơ hồ, nhưng lan nhanh hơn.</p>
+<p>Duy thấy đây chính là chỗ tốn tiền nhất. Người chủ cảm thấy thương hiệu chưa mạnh, nên tăng tần suất đăng. Đăng ba bài một tuần thành bảy bài. Thuê thêm người viết. Kết quả là cùng một sự mơ hồ, nhưng lan nhanh hơn.</p>
 <p>Có một bài kiểm rất rẻ để biết mình đang ở đâu. Lấy năm nội dung gần nhất của bạn, xoá tên và ảnh, rồi đưa cho một người cùng ngành xem. Hỏi họ: bao nhiêu bài trong số này bạn có thể đăng nguyên văn lên trang của mình mà không ai thấy lạ.</p>
 <p>Nếu câu trả lời là bốn hoặc năm, vấn đề của bạn không phải tần suất. Việc đầu tiên là làm rõ luận điểm nghề nghiệp, chưa phải tăng sản lượng.</p>
 
 <div class="dan-manh">Không ai xây được thương hiệu cá nhân bằng số lượng bài đăng. Nó lớn dần khi đúng người liên tục nhận ra cùng một chuyên môn, cùng một tiêu chuẩn và cùng một cách nhìn qua những bằng chứng thật.</div>
 
 <h2>Uy tín mở cánh cửa, chất lượng giữ quan hệ</h2>
-<p>Tôi thấy nhiều người dồn toàn bộ công sức vào phần mở cửa. Họ làm nội dung rất tốt, khách tìm tới rất nhiều, rồi quan hệ chết ở buổi tư vấn đầu tiên vì cách tư vấn không xứng với hình ảnh trên mạng.</p>
+<p>Duy thấy nhiều người dồn toàn bộ công sức vào phần mở cửa. Họ làm nội dung rất tốt, khách tìm tới rất nhiều, rồi quan hệ chết ở buổi tư vấn đầu tiên vì cách tư vấn không xứng với hình ảnh trên mạng.</p>
 <p>Uy tín chỉ làm được một việc: khiến người ta chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó trở đi, cái quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cái cửa đẹp dẫn vào phòng trống.</p>
 
 <h2>Ba câu để tự kiểm tuần này</h2>
@@ -202,9 +202,9 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
 <p>Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo. Thiếu dữ liệu thì không ai biết mình làm tốt hay không. Thiếu nhịp rà soát thì hệ thống chết dần trong ba tháng.</p>
 
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
-<p>Tôi không đề nghị ai xây hệ thống cho cả doanh nghiệp trong một quý. Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất. Có thể là luồng tư vấn khách mới, có thể là luồng bàn giao sau khi ký.</p>
+<p>Duy không đề nghị ai xây hệ thống cho cả doanh nghiệp trong một quý. Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất. Có thể là luồng tư vấn khách mới, có thể là luồng bàn giao sau khi ký.</p>
 <p>Với luồng đó, viết ra năm phần ở trên. Chạy sáu tuần. Rà lại. Nếu người phụ trách xử lý được tám trong mười tình huống mà không hỏi bạn, luồng đó đã rời khỏi đầu bạn. Sang luồng tiếp theo.</p>
-<p>Một luồng một quý. Bốn luồng một năm. Sau hai năm, cái nút ở chỗ bạn không còn nữa. Đó là con đường chậm, và tôi chưa thấy con đường nhanh nào thật sự đi tới nơi.</p>
+<p>Một luồng một quý. Bốn luồng một năm. Sau hai năm, cái nút ở chỗ bạn không còn nữa. Đó là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi.</p>
 """),
 
 
@@ -231,7 +231,7 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 <div class="dan-manh">Một hệ thống không phải một tập tài liệu. Nó là kết quả rõ, người chịu trách nhiệm, tiêu chuẩn, dữ liệu, bàn giao và nhịp cải tiến, đủ cả sáu.</div>
 
 <h2>Cách lấy kinh nghiệm ra khỏi đầu</h2>
-<p>Cách rẻ nhất tôi biết là ghi lại quyết định, không phải ghi lại thao tác.</p>
+<p>Cách rẻ nhất Duy biết là ghi lại quyết định, không phải ghi lại thao tác.</p>
 <p>Lần tới khi bạn xử lý một tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. Dòng thứ ba là dòng có giá trị nhất và cũng là dòng hay bị bỏ.</p>
 <p>Sau hai mươi tình huống, bạn có một tài liệu mà không khoá đào tạo nào mua được: cách nghĩ của bạn, viết bằng chữ của bạn, trên ca thật của công ty bạn.</p>
 
@@ -285,10 +285,10 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
 <p><b>Người giữ nhịp.</b> Đảm bảo hoạt động diễn ra đúng lịch kể cả tuần vắng. Một cộng đồng lỡ nhịp hai lần liên tiếp thì thành viên ngừng đặt lịch cho nó.</p>
 <p>Vai thứ nhất giao cho người khác được sau một thời gian. Vai thứ hai khó giao nhất. Vai thứ ba nên giao sớm nhất có thể.</p>
 
-<h2>Vì sao tôi chọn cộng đồng làm nơi luyện chính</h2>
+<h2>Vì sao Duy chọn cộng đồng làm nơi luyện chính</h2>
 <p>Một khoá học tạo ra hiểu biết. Người học kết thúc với một cuốn sổ đầy ý hay, rồi quay về công việc cũ và ba tuần sau mọi thứ như trước.</p>
 <p>Thay đổi thật cần ba điều mà khoá học không cho được: thời gian đủ dài để thói quen hình thành, phản hồi lặp lại trên việc thật của chính mình, và những người khác đang đi cùng chặng để so và để hỏi.</p>
-<p>Đó là lý do tôi dồn phần lớn thời gian vào cộng đồng chứ không vào việc mở thêm khoá.</p>
+<p>Đó là lý do Duy dồn phần lớn thời gian vào cộng đồng chứ không vào việc mở thêm khoá.</p>
 """),
 
 dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
@@ -297,7 +297,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
  ngay="2026-07-18", ngay_viet="18 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-may-tinh.webp", alt="Coach Duy Nguyễn làm việc với máy tính và điện thoại",
  than="""
-<p>Câu hỏi tôi nhận nhiều nhất trong năm nay là dùng AI thế nào để làm nội dung nhanh hơn. Câu trả lời thật lòng của tôi thường làm người hỏi hơi hụt hẫng: nếu nội dung của bạn đang chưa đúng, AI sẽ giúp bạn sai nhanh hơn.</p>
+<p>Câu hỏi Duy nhận nhiều nhất trong năm nay là dùng AI thế nào để làm nội dung nhanh hơn. Câu trả lời thật lòng của Duy thường làm người hỏi hơi hụt hẫng: nếu nội dung của bạn đang chưa đúng, AI sẽ giúp bạn sai nhanh hơn.</p>
 
 <h2>AI khuếch đại cái sẵn có</h2>
 <p>Đưa cho AI một luận điểm rõ, một kho câu chuyện thật và một giọng đã định hình, nó giúp bạn tiết kiệm rất nhiều giờ. Đưa cho nó một sự mơ hồ, nó trả lại cho bạn sự mơ hồ được viết trơn tru hơn.</p>
@@ -309,14 +309,14 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
 
 <div class="dan-manh">AI giúp nghiên cứu, chuẩn bị, tóm tắt, chuẩn hoá và phát hiện tín hiệu. Con người vẫn chịu trách nhiệm cho phán đoán, quan hệ, văn hoá và quyết định có trách nhiệm.</div>
 
-<h2>Cách tôi dùng AI trong công việc của mình</h2>
-<p>Tôi không dùng AI để viết bài từ số không. Tôi dùng nó ở ba chỗ.</p>
-<p>Chỗ thứ nhất là gom chất liệu. Sau một buổi làm việc, tôi ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời. Chất liệu là của tôi, việc sắp xếp là của máy.</p>
-<p>Chỗ thứ hai là phản biện. Tôi đưa một lập luận và yêu cầu chỉ ra chỗ yếu nhất. Nó không thay được một người hiểu ngành, nhưng nó bắt được những chỗ tôi lười nghĩ.</p>
+<h2>Cách Duy dùng AI trong công việc của mình</h2>
+<p>Duy không dùng AI để viết bài từ số không. Duy dùng nó ở ba chỗ.</p>
+<p>Chỗ thứ nhất là gom chất liệu. Sau một buổi làm việc, Duy ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời. Chất liệu là của Duy, việc sắp xếp là của máy.</p>
+<p>Chỗ thứ hai là phản biện. Duy đưa một lập luận và yêu cầu chỉ ra chỗ yếu nhất. Nó không thay được một người hiểu ngành, nhưng nó bắt được những chỗ Duy lười nghĩ.</p>
 <p>Chỗ thứ ba là chuyển định dạng. Một bài dài thành dàn ý video, thành mấy đoạn ngắn. Việc này lặp đi lặp lại, đúng chỗ máy làm giỏi hơn người.</p>
 
-<h2>Một ranh giới tôi giữ</h2>
-<p>Tôi không để AI sở hữu tiếng nói của mình. Câu nào tôi không tự nói được trước một phòng người, tôi không đăng, kể cả khi nó nghe hay.</p>
+<h2>Một ranh giới Duy giữ</h2>
+<p>Duy không để AI sở hữu tiếng nói của mình. Câu nào Duy không tự nói được trước một phòng người thì không đăng, kể cả khi nó nghe hay.</p>
 <p>Bạn có thể kiểm điều này ở người khác rất nhanh. Đọc một bài của họ, rồi nghe họ nói mười phút. Nếu đọc và nghe ra hai người khác nhau, bạn biết ai đang viết.</p>
 
 <h2>Ba dấu hiệu bạn đang để AI nghĩ hộ</h2>
@@ -327,7 +327,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
 <h2>Chỗ AI hữu ích nhất mà ít người dùng</h2>
 <p>Không phải viết. Là <b>phản biện trước khi công bố</b>.</p>
 <p>Đưa lập luận của bạn cho máy và yêu cầu nó đóng vai một người trong ngành đang không đồng ý, chỉ ra chỗ yếu nhất và những trường hợp lập luận của bạn sai. Nó không thay được người hiểu ngành, nhưng nó bắt được những chỗ bạn lười nghĩ, và nó không ngại làm bạn mất mặt.</p>
-<p>Tôi dùng cách này trước khi đăng bất kỳ nội dung nào có luận điểm mạnh. Khoảng một phần ba số lần, tôi phải sửa lại một đoạn.</p>
+<p>Duy dùng cách này trước khi đăng bất kỳ nội dung nào có luận điểm mạnh. Khoảng một phần ba số lần, Duy phải sửa lại một đoạn.</p>
 """),
 
 dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu cá nhân",
@@ -336,7 +336,7 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
  than="""
-<p>Người ta hay hỏi tôi nên đăng mấy bài một tuần. Đó gần như luôn là câu hỏi sai, đặt ra trước câu hỏi đúng.</p>
+<p>Người ta hay hỏi Duy nên đăng mấy bài một tuần. Đó gần như luôn là câu hỏi sai, đặt ra trước câu hỏi đúng.</p>
 <p>Câu hỏi đúng là: sau khi xem ba nội dung của bạn, người ta gọi tên bạn là ai.</p>
 
 <h2>Vì sao tần suất không cứu được</h2>
@@ -351,16 +351,16 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
 <div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải mẹo viết bài.</div>
 
 <h2>Bài kiểm xoá tên</h2>
-<p>Tôi đã nói ở một bài khác nhưng nhắc lại vì nó rẻ và tàn nhẫn. Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành. Hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ.</p>
+<p>Duy đã nói ở một bài khác nhưng nhắc lại vì nó rẻ và tàn nhẫn. Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành. Hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ.</p>
 <p>Bốn trên năm là tín hiệu rõ: bạn đang sản xuất nội dung có thể thay thế. Sửa luận điểm trước, đừng sửa lịch đăng.</p>
 
 <h2>Nhịp một người vận hành được</h2>
 <p>Khi ba lớp trên đã rõ, tần suất mới thành câu hỏi có nghĩa. Và lúc đó câu trả lời thường thấp hơn người ta nghĩ.</p>
 <p>Một nội dung dài mỗi tuần, cắt ra thành vài mẩu ngắn, cộng với việc trả lời thật kỹ những câu hỏi người xem đặt ra. Nhịp đó một người làm được, giữ được nhiều năm, và tích luỹ tốt hơn hẳn kiểu bung sức ba tháng rồi biến mất.</p>
-<p>Điều tôi thấy đúng sau sáu năm làm nội dung đều: người thắng không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</p>
+<p>Điều Duy thấy đúng sau sáu năm làm nội dung đều: người thắng không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</p>
 
 <h2>Ba mức trưởng thành của một thương hiệu cá nhân</h2>
-<p>Tôi hay dùng ba mức này để biết một người đang ở đâu và nên làm gì tiếp.</p>
+<p>Duy hay dùng ba mức này để biết một người đang ở đâu và nên làm gì tiếp.</p>
 <p><b>Mức một, được biết.</b> Người ta nhận ra mặt và tên bạn. Ở mức này bạn có sự chú ý nhưng chưa có vị thế. Dấu hiệu: nhiều lượt xem, ít tin nhắn nghiêm túc. Việc cần làm không phải đăng nhiều hơn, mà là chọn một lãnh địa và nói đi nói lại về nó.</p>
 <p><b>Mức hai, được nhớ vì một điều.</b> Khi ai đó gặp đúng vấn đề bạn giải, tên bạn bật lên trong đầu họ. Tới mức này thương hiệu mới bắt đầu ra tiền, và cũng là mức phần lớn người làm nội dung không tới được, vì họ đổi hướng trước khi trí nhớ người khác kịp đóng lại.</p>
 <p><b>Mức ba, được nhắc lại.</b> Người khác dùng câu của bạn để giải thích cho người thứ ba, dù bạn không có mặt. Tới lúc này thương hiệu tự đi, bạn không phải đẩy nữa. Từ mức hai lên mức ba thường mất thêm hai tới ba năm, và điều kiện gần như duy nhất là bạn không đổi luận điểm giữa chừng.</p>
@@ -383,10 +383,10 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 <p>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả. Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận. Phần thứ ba là năng lượng của đội ngũ, vì đội ngũ biết rất rõ khi nào đang làm một việc không dẫn tới đâu.</p>
 <p>Phần thứ tư đắt nhất: một người không đạt kết quả sẽ kể lại trải nghiệm đó. Và họ kể trung thực theo cách họ thấy, không theo cách bạn giải thích.</p>
 
-<h2>Bốn dấu hiệu tôi nói không</h2>
-<p><b>Chưa đủ điều kiện để bắt đầu.</b> Chương trình cần bạn đã có khách trả tiền, mà bạn chưa có. Nhận vào là hứa một kết quả tôi biết chưa thể xảy ra.</p>
-<p><b>Muốn tôi làm thay.</b> Nếu điều họ thật sự cần là một người làm hộ, tôi không phải người đó, và nói sớm thì cả hai đỡ mất thời gian.</p>
-<p><b>Đang tìm một lời bảo đảm.</b> Khi câu hỏi lặp đi lặp lại là có chắc chắn ra kết quả không, người đó chưa mua một phương pháp, họ đang mua sự an tâm. Sự an tâm đó tôi không bán được.</p>
+<h2>Bốn dấu hiệu Duy nói không</h2>
+<p><b>Chưa đủ điều kiện để bắt đầu.</b> Chương trình cần bạn đã có khách trả tiền, mà bạn chưa có. Nhận vào là hứa một kết quả Duy biết chưa thể xảy ra.</p>
+<p><b>Muốn Duy làm thay.</b> Nếu điều họ thật sự cần là một người làm hộ, Duy không phải người đó, và nói sớm thì cả hai đỡ mất thời gian.</p>
+<p><b>Đang tìm một lời bảo đảm.</b> Khi câu hỏi lặp đi lặp lại là có chắc chắn ra kết quả không, người đó chưa mua một phương pháp, họ đang mua sự an tâm. Sự an tâm đó Duy không bán được.</p>
 <p><b>Không có mặt để làm.</b> Một người quá bận để dự các buổi và làm bài sẽ không đạt kết quả, dù họ trả đủ tiền.</p>
 
 <div class="dan-manh">Từ chối hứa kết quả khi thiếu điều kiện. Nói không sớm là một cách giữ chuẩn, không phải một cách mất khách.</div>
@@ -395,7 +395,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 <p>Có ba phần trong một lời từ chối tử tế.</p>
 <p>Nói rõ lý do bằng điều kiện, không bằng đánh giá con người. Không nói bạn chưa nghiêm túc, mà nói chương trình này cần ba buổi mỗi tuần trong ba mươi ngày, và lịch của bạn tháng này chưa cho phép điều đó.</p>
 <p>Đưa một lối khác nếu có. Một tài liệu, một bước rẻ hơn, hoặc một thời điểm quay lại phù hợp hơn.</p>
-<p>Giữ cửa mở. Người bị từ chối đúng cách thường quay lại, và họ quay lại với sự tôn trọng. Tôi đã nhận nhiều khách tốt nhất theo đúng con đường đó, sau khi từ chối họ một hoặc hai năm trước.</p>
+<p>Giữ cửa mở. Người bị từ chối đúng cách thường quay lại, và họ quay lại với sự tôn trọng. Duy đã nhận nhiều khách tốt nhất theo đúng con đường đó, sau khi từ chối họ một hoặc hai năm trước.</p>
 
 <h2>Thử một lần trong tháng này</h2>
 <p>Nhìn lại danh sách khách hàng đang có. Chọn ra một người mà nếu quay lại thời điểm ký, bạn sẽ không ký nữa. Viết ra dấu hiệu mà lúc đó bạn đã thấy nhưng bỏ qua.</p>
@@ -418,7 +418,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
  ngay="2026-08-22", ngay_viet="22 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-cam-but.webp", alt="Coach Duy Nguyễn cầm bút giải thích một ý",
  than="""
-<p>Câu hỏi tôi hay nhận nhất khi ai đó bắt đầu xây thương hiệu cá nhân là nên nói về chủ đề gì. Câu trả lời thật lòng làm nhiều người khó chịu: quan trọng hơn là bạn quyết định không nói về chủ đề gì.</p>
+<p>Câu hỏi Duy hay nhận nhất khi ai đó bắt đầu xây thương hiệu cá nhân là nên nói về chủ đề gì. Câu trả lời thật lòng làm nhiều người khó chịu: quan trọng hơn là bạn quyết định không nói về chủ đề gì.</p>
 
 <h2>Vì sao nói về nhiều mảng lại là bất lợi</h2>
 <p>Thương hiệu cá nhân nằm trong trí nhớ của người khác, không nằm ở bạn. Mà trí nhớ đó rất hẹp. Một người bình thường giữ được cho bạn đúng một ô, và ô đó chỉ chứa được một cụm từ.</p>
@@ -428,7 +428,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <h2>Lãnh địa không phải ngành, cũng không phải nghề</h2>
 <p>Nói tôi làm về bất động sản là nói ngành. Nói tôi là huấn luyện viên là nói nghề. Cả hai đều chưa phải lãnh địa.</p>
 <p>Lãnh địa là giao của ba thứ: một nhóm người cụ thể, một loại vấn đề cụ thể, và một cách nhìn mà bạn có còn người khác chưa có.</p>
-<p>Ví dụ từ chính tôi. Ngành là đào tạo. Nghề là cố vấn. Lãnh địa là <b>giúp người chủ doanh nghiệp dịch vụ đưa uy tín và cách ra quyết định của mình ra khỏi đầu mình, thành năng lực của đội ngũ</b>. Câu sau dài hơn nhưng nó loại được chín mươi phần trăm người đọc, và giữ lại đúng người tôi muốn.</p>
+<p>Ví dụ từ chính Duy. Ngành là đào tạo. Nghề là cố vấn. Lãnh địa là <b>giúp người chủ doanh nghiệp dịch vụ đưa uy tín và cách ra quyết định của mình ra khỏi đầu mình, thành năng lực của đội ngũ</b>. Câu sau dài hơn nhưng nó loại được chín mươi phần trăm người đọc, và giữ lại đúng người Duy muốn.</p>
 
 <div class="dan-manh">Một lãnh địa tốt phải làm được hai việc cùng lúc: khiến đúng người thấy đây là dành cho mình, và khiến người không phù hợp tự rời đi mà không thấy khó chịu.</div>
 
@@ -442,7 +442,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <h2>Phần khó: viết ra vùng bạn bỏ</h2>
 <p>Bước này hầu như ai cũng né. Viết một câu bắt đầu bằng "tôi không làm về" và điền vào ba việc bạn thật sự làm được nhưng quyết định không nhận nữa.</p>
 <p>Cảm giác lúc viết rất khó chịu, vì nó giống như tự đóng cửa cơ hội. Nhưng cơ hội bạn đóng là loại cơ hội lẻ tẻ, còn cái bạn mở ra là khả năng được nhớ.</p>
-<p>Tôi đã bỏ mảng đào tạo kỹ năng chung cho nhân viên văn phòng, dù nó ra tiền đều. Bỏ vì mỗi lần nhận, tôi lại phải giải thích lại mình là ai.</p>
+<p>Duy đã bỏ mảng đào tạo kỹ năng chung cho nhân viên văn phòng, dù nó ra tiền đều. Bỏ vì mỗi lần nhận, Duy lại phải giải thích lại mình là ai.</p>
 
 <h2>Dấu hiệu bạn đã chọn đúng lãnh địa</h2>
 <p>Có ba dấu hiệu, xuất hiện theo thứ tự.</p>
@@ -461,7 +461,7 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
  than="""
-<p>Câu than phiền phổ biến nhất của người làm nội dung là hết ý tưởng. Tôi cho rằng gần như không ai hết ý tưởng. Cái họ thiếu là một cái kho, và một thói quen bỏ đồ vào kho.</p>
+<p>Câu than phiền phổ biến nhất của người làm nội dung là hết ý tưởng. Duy cho rằng gần như không ai hết ý tưởng. Cái họ thiếu là một cái kho, và một thói quen bỏ đồ vào kho.</p>
 
 <h2>Ý tưởng không đến lúc bạn ngồi viết</h2>
 <p>Ý tưởng đến lúc bạn đang làm việc. Lúc một khách hỏi một câu lạ. Lúc bạn quyết định điều gì đó trái với thói quen. Lúc một nhân sự làm sai và bạn nhận ra lý do sâu xa. Lúc bạn đọc một con số và thấy nó ngược với điều mình tưởng.</p>
@@ -481,7 +481,7 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
 <p>Dòng ba là dòng biến một mẩu ghi chép thành chất liệu. Không có nó, sáu tháng sau bạn đọc lại và không hiểu vì sao mình ghi.</p>
 
 <h2>Kho không cần phần mềm đắt tiền</h2>
-<p>Tôi dùng một tệp duy nhất, ghi theo ngày, không phân loại. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó. Tìm kiếm bằng chữ đủ dùng cho vài trăm mẩu đầu tiên.</p>
+<p>Duy dùng một tệp duy nhất, ghi theo ngày, không phân loại. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó. Tìm kiếm bằng chữ đủ dùng cho vài trăm mẩu đầu tiên.</p>
 <p>Nếu bạn hay nói dễ hơn viết, ghi âm hai phút rồi để máy chuyển thành chữ. Quan trọng là ghi trong vòng vài giờ, đừng để sang ngày hôm sau.</p>
 
 <h2>Từ kho ra bài</h2>
@@ -490,7 +490,7 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
 
 <h2>Sau sáu tháng</h2>
 <p>Bạn có khoảng một trăm tới hai trăm mẩu. Lúc đó điều thú vị xảy ra: bạn bắt đầu thấy các mẩu lặp lại thành nhóm. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng chứ không bằng cách ngồi nghĩ.</p>
-<p>Với tôi, kho ghi chép sáu năm là nền của mọi chương trình tôi dạy hôm nay. Không có nó, tôi chỉ dạy lại những gì mình đọc được của người khác.</p>
+<p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó, Duy chỉ dạy lại những gì mình đọc được của người khác.</p>
 """),
 
 dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
@@ -509,7 +509,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
 <div class="dan-manh">Người thắng trong làm nội dung không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</div>
 
 <h2>Một nội dung gốc, nhiều mảnh</h2>
-<p>Cách rẻ nhất tôi biết: mỗi tuần làm đúng một nội dung gốc đủ sâu, rồi cắt ra thành nhiều mảnh ngắn.</p>
+<p>Cách rẻ nhất Duy biết: mỗi tuần làm đúng một nội dung gốc đủ sâu, rồi cắt ra thành nhiều mảnh ngắn.</p>
 <p>Nội dung gốc có thể là một video mười lăm phút, một bài viết một nghìn chữ, hoặc một buổi phát trực tiếp. Từ đó cắt ra ba tới năm mẩu ngắn, mỗi mẩu một ý.</p>
 <p>Cách này khác hẳn việc nghĩ ra năm ý riêng biệt cho năm bài. Nó chỉ đòi bạn nghĩ sâu một lần trong tuần, phần còn lại là thao tác.</p>
 
@@ -547,7 +547,7 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
 
 <h3>Phần một: mở đúng cách, khoảng năm phút</h3>
 <p>Phần này không phải để làm quen. Nó dùng để thống nhất hôm nay hai bên bàn chuyện gì và kết thúc ra sao.</p>
-<p>Một câu mở tôi hay dùng: hôm nay tôi muốn hiểu tình hình của anh chị đủ rõ để nói được một trong hai điều, hoặc tôi giúp được và giúp thế nào, hoặc tôi chưa giúp được và anh chị nên tìm ai. Anh chị thấy vậy hợp lý không.</p>
+<p>Một câu mở Duy hay dùng: hôm nay tôi muốn hiểu tình hình của anh chị đủ rõ để nói được một trong hai điều, hoặc tôi giúp được và giúp thế nào, hoặc tôi chưa giúp được và anh chị nên tìm ai. Anh chị thấy vậy hợp lý không.</p>
 <p>Câu này làm hai việc: cho phép bạn hỏi sâu, và báo trước rằng kết quả có thể là không, nên khách bớt phòng thủ.</p>
 
 <h3>Phần hai: chẩn đoán, khoảng hai mươi lăm phút</h3>
@@ -633,7 +633,7 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
 <div class="dan-manh">Người bán giảm giá để cứu một giao dịch thường đánh đổi luôn chất lượng của giao dịch đó. Khách trả ít hơn sẽ nghe ít hơn, và làm ít hơn.</div>
 
 <h2>Điều ít ai nói: khách trả rẻ là khách khó nhất</h2>
-<p>Nghe ngược đời, nhưng gần như lần nào tôi cũng thấy đúng. Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng, nên họ có mặt, làm bài, và hỏi những câu sâu.</p>
+<p>Nghe ngược đời, nhưng gần như lần nào Duy cũng thấy đúng. Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng, nên họ có mặt, làm bài, và hỏi những câu sâu.</p>
 <p>Người được giảm mạnh thường vào với tâm thế thử xem sao. Họ vắng nhiều hơn, làm ít hơn, và cuối cùng không ra kết quả. Rồi họ kể lại trải nghiệm đó cho người khác.</p>
 <p>Tức là giảm giá không chỉ làm giảm doanh thu. Nó tăng khả năng bạn có một trường hợp thất bại để đời.</p>
 
@@ -643,12 +643,12 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
 <p><b>Đề nghị một bước nhỏ hơn trước.</b> Một buổi chẩn đoán có phí, hoặc một phạm vi thử. Nếu bước nhỏ ra kết quả, bước lớn không còn phải bàn về giá nữa.</p>
 
 <h2>Khi nào giảm giá là đúng</h2>
-<p>Có hai trường hợp tôi thấy hợp lý, và cả hai đều phải công khai lý do.</p>
+<p>Có hai trường hợp Duy thấy hợp lý, và cả hai đều phải công khai lý do.</p>
 <p><b>Giá ra mắt cho khoá đầu tiên</b>, khi chương trình chưa có bằng chứng người học. Lúc đó khách chịu một phần rủi ro và được trả ít hơn. Nhưng phải nói thẳng đây là giá riêng của đợt đầu và ghi rõ ngày quay về giá chuẩn.</p>
 <p><b>Giảm theo một quy tắc áp dụng cho tất cả</b>, ví dụ đăng ký sớm. Hỏng quan hệ không phải vì con số thấp hơn. Hỏng vì con số đó chỉ dành cho người biết mặc cả.</p>
 
-<h2>Câu tôi dùng khi khách hỏi giảm</h2>
-<p>Tôi không có mức khác cho người này người kia, vì như vậy không công bằng với người đã trả đủ. Nhưng tôi làm được hai việc: thu phạm vi lại cho vừa ngân sách, hoặc chia lịch thanh toán. Anh chị muốn xem hướng nào.</p>
+<h2>Câu Duy dùng khi khách hỏi giảm</h2>
+<p>Tôi không có mức khác cho người này người kia, vì như vậy không công bằng với người đã trả đủ. Nhưng Duy làm được hai việc: thu phạm vi lại cho vừa ngân sách, hoặc chia lịch thanh toán. Anh chị muốn xem hướng nào.</p>
 <p>Câu này giữ được ba điều cùng lúc: giá, sự tôn trọng với khách cũ, và cửa để đi tiếp.</p>
 """),
 
@@ -703,7 +703,7 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
 <h2>Bắt đầu từ một luồng, không phải cả công ty</h2>
 <p>Chọn luồng đang tốn nhiều thời gian của bạn nhất. Viết ra năm thứ. Chạy sáu tuần rồi rà lại.</p>
 <p>Dấu hiệu luồng đã rời khỏi đầu bạn: người phụ trách xử lý được tám trong mười tình huống mà không hỏi, kể cả tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy.</p>
-<p>Một luồng một quý. Bốn luồng một năm. Đây là con đường chậm, và tôi chưa thấy con đường nhanh nào thật sự tới nơi.</p>
+<p>Một luồng một quý. Bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự tới nơi.</p>
 """),
 
 dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đội ngũ",
@@ -751,7 +751,7 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
  ngay="2026-07-16", ngay_viet="16 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-noi-2.webp", alt="Coach Duy Nguyễn đang nói với người đối diện",
  than="""
-<p>Trong mọi cộng đồng tôi từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại. Người không có thì âm thầm rời đi, thường không nói gì.</p>
+<p>Trong mọi cộng đồng Duy từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại. Người không có thì âm thầm rời đi, thường không nói gì.</p>
 
 <h2>Vì sao hai tuần, không phải hai tháng</h2>
 <p>Vì đó là khoảng thời gian sự háo hức ban đầu còn đủ để người ta bỏ công. Sau hai tuần, cộng đồng phải cạnh tranh với công việc thật, và nó sẽ thua nếu chưa chứng minh được giá trị.</p>
@@ -790,7 +790,7 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
  ngay="2026-07-10", ngay_viet="10 tháng 7, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
  than="""
-<p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của tôi là bao nhiêu người trong đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống.</p>
+<p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của Duy là bao nhiêu người trong đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống.</p>
 <p>Số thành viên là con số dễ tăng nhất và ít liên quan nhất tới việc cộng đồng có tạo ra giá trị hay không.</p>
 
 <h2>Bốn con số nói đúng hơn</h2>
