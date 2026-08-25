@@ -25,8 +25,8 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-than);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--f-tit);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0;text-wrap:balance}
-h1 span,h2 span,h3 span,h4 span{text-wrap:balance}
+h1,h2,h3,h4{font-family:var(--f-tit);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0;text-wrap:pretty}
+h1 span,h2 span,h3 span,h4 span{text-wrap:pretty}
 p,li{text-wrap:pretty;margin:0}
 a{color:inherit}
 img{max-width:100%;display:block}
@@ -124,7 +124,7 @@ img{max-width:100%;display:block}
 .phan{padding:86px 0}
 .phan.hep{padding:64px 0}
 .phan-dau{text-align:center;max-width:62ch;margin:0 auto 46px}
-.phan-dau h2{font-size:clamp(28px,3.9vw,46px);margin-top:12px}
+.phan-dau h2{font-size:clamp(28px,3.9vw,46px);margin-top:12px;text-wrap:balance}
 .phan-dau p{font-size:17px;color:var(--ink-2);margin-top:16px}
 .ket{display:flex;gap:14px;margin-top:38px;padding-left:18px;border-left:3px solid var(--vang);font-size:16.5px;font-weight:600;color:var(--ink)}
 
@@ -335,7 +335,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* ---------- đầu trang phụ ---------- */
 .dau-trang{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:72px 0 64px;background:var(--bg-2)}
 .dau-trang .bd{position:relative;z-index:1}
-.dau-trang h1{font-size:clamp(32px,5vw,58px);margin-top:14px;max-width:22ch}
+.dau-trang h1{font-size:clamp(32px,5vw,58px);margin-top:14px;max-width:min(34ch,100%)}
 .dau-trang p.dan{font-size:17.5px;color:var(--ink-2);margin-top:18px;max-width:60ch}
 
 /* ---------- danh sách bài đầy đủ ---------- */
@@ -353,7 +353,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* ---------- trang bài viết ---------- */
 .bai-dau{padding:60px 0 34px}
 .bai-dau .meta{font-family:var(--f-than);font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--vang);margin-bottom:14px;line-height:1.6}
-.bai-dau h1{font-size:clamp(30px,4.6vw,52px);max-width:24ch}
+.bai-dau h1{font-size:clamp(30px,4.6vw,52px);max-width:min(34ch,100%)}
 .bai-dau .tom{font-size:18.5px;color:var(--ink-2);margin-top:18px;max-width:58ch}
 .bai-anh{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/2;box-shadow:var(--shadow)}
 .bai-anh img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.04) brightness(.98);transition:filter .55s var(--ease)}
@@ -792,7 +792,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .hst-nl{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.13em;
   text-transform:uppercase;color:var(--vang);margin-bottom:10px}
 .hst-bg h3{font-family:var(--f-tit);font-weight:800;font-size:clamp(22px,2.4vw,28px);
-  line-height:1.15;margin-bottom:4px;letter-spacing:-.01em;text-wrap:balance}
+  line-height:1.15;margin-bottom:4px;letter-spacing:-.01em;text-wrap:pretty}
 .hst-en{font-family:var(--f-mono);font-size:12px;letter-spacing:.07em;color:var(--ink-3);margin-bottom:16px}
 .hst-tom{font-size:16px;line-height:1.7;color:var(--ink-2);margin-bottom:22px}
 
@@ -831,7 +831,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .k-so b{font-family:var(--f-tit);font-weight:800;font-size:clamp(28px,2.9vw,40px);line-height:1;
   color:var(--ink);letter-spacing:-.035em;font-variant-numeric:tabular-nums}
 .k-so span{font-size:13.5px;color:var(--ink-3)}
-.k-vai{font-size:13.5px;line-height:1.5;color:var(--ink-3);text-wrap:balance}
+.k-vai{font-size:13.5px;line-height:1.5;color:var(--ink-3);text-wrap:pretty}
 
 .kenh-them{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:16px}
 .kenh-them div{display:flex;align-items:baseline;gap:7px}
@@ -924,7 +924,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 
 .cd-nhip{margin-top:52px}
 .cd-nhip h3,.cd-14 h3{font-family:var(--f-tit);font-weight:800;font-size:clamp(20px,2.2vw,26px);
-  line-height:1.2;margin-bottom:22px;letter-spacing:-.01em;text-wrap:balance}
+  line-height:1.2;margin-bottom:22px;letter-spacing:-.01em;text-wrap:pretty}
 .cd-luoi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .cd-luoi > div{background-image:var(--paper);background-color:var(--panel);padding:20px 20px 22px}
@@ -1044,7 +1044,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .mc-ngay{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;color:var(--vang);padding-top:3px}
 .mc-chu h4{font-family:var(--f-tit);font-weight:700;font-size:20px;line-height:1.25;
-  color:var(--ink);margin-bottom:8px;text-wrap:balance}
+  color:var(--ink);margin-bottom:8px;text-wrap:pretty}
 .mc-so{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2);margin-bottom:10px;
   font-variant-numeric:tabular-nums}
 .mc-chu > p:last-child{font-size:15.5px;line-height:1.68;color:var(--ink-2)}
@@ -1180,7 +1180,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .v5-so{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;color:var(--vang);margin-bottom:10px}
 .v5-chu h4{font-family:var(--f-tit);font-weight:700;font-size:30px;line-height:1.18;
-  color:var(--ink);margin-bottom:14px;text-wrap:balance}
+  color:var(--ink);margin-bottom:14px;text-wrap:pretty}
 .v5-chu > p:last-child{font-size:16.5px;line-height:1.72;color:var(--ink-2)}
 
 @media(max-width:900px){
@@ -1190,4 +1190,23 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .v5-chip{flex:0 0 auto;min-width:0;padding:12px 14px 13px}
   .v5-chip span{font-size:15px}
   .v5-tab{margin-bottom:24px}
+}
+
+/* ===== Chuẩn căn lề =====
+   Chữ đọc dài thì căn đều hai bên cho khối chữ vuông vắn. Chỉ áp cho cột đủ
+   rộng: tiếng Việt không cắt được từ giữa dòng, nên cột hẹp mà căn đều thì
+   khoảng cách giữa các chữ hở ra rất rõ. Dưới 620px trả về căn trái. */
+.bai-than p,
+.bai-than li,
+.vt-chu > p,
+.v5-chu > p:last-child,
+.dau-trang p.dan,
+.bai-dau .tom{text-align:justify;text-justify:inter-word;hyphens:none}
+@media(max-width:620px){
+  .bai-than p,
+  .bai-than li,
+  .vt-chu > p,
+  .v5-chu > p:last-child,
+  .dau-trang p.dan,
+  .bai-dau .tom{text-align:left}
 }

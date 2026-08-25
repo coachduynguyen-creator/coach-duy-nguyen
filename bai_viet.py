@@ -104,7 +104,7 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
  tieu="Xây uy tín để được tin, không phải để được biết",
  mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần điều khác: được đúng người tin, đủ để họ chủ động tìm đến.",
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
- anh="img/founder-nam-1.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-nhin-thang.webp", alt="Coach Duy Nguyễn nhìn thẳng vào người đối diện trong một buổi trao đổi",
  than="""
 <p>Có một câu hỏi tôi hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt.</p>
 
@@ -166,7 +166,7 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
  tieu="Đừng để kinh nghiệm chỉ nằm trong trí nhớ vài người",
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
- anh="img/founder-nam-2.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-viet-tay.webp", alt="Coach Duy Nguyễn ngồi ghi lại một quy trình bằng tay",
  than="""
 <p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và vài người giỏi nhất.</p>
 <p>Đó là sức mạnh, vì nó khó bắt chước. Nhưng nó cũng là rủi ro lớn nhất, vì nó đi ra khỏi công ty cùng lúc với người mang nó.</p>
@@ -208,7 +208,7 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
  tieu="Một nhóm đăng bài chưa phải là cộng đồng",
  mo="Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó, và đó mới là cộng đồng.",
  ngay="2026-07-24", ngay_viet="24 tháng 7, 2026", doc="6 phút đọc",
- anh="img/founder-nu-1.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-vo-tay.webp", alt="Một hội trường đông người đứng vỗ tay",
  than="""
 <p>Rất nhiều người chủ đã mở một nhóm. Nhóm có vài trăm tới vài nghìn người. Rồi sau ba tháng, chỉ còn người chủ đăng bài, vài người thả biểu tượng cảm xúc, và không ai nhớ nhóm để làm gì.</p>
 <p>Đó không phải cộng đồng. Đó là một kênh phát nội dung có phần bình luận.</p>
@@ -249,7 +249,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
  tieu="AI làm nhanh phần bạn đã nghĩ đúng, không nghĩ hộ bạn",
  mo="AI không cứu được một định vị mơ hồ. Nó chỉ làm sự mơ hồ đó lan nhanh hơn và đều hơn.",
  ngay="2026-07-18", ngay_viet="18 tháng 7, 2026", doc="5 phút đọc",
- anh="img/founder-nu-2.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-may-tinh.webp", alt="Coach Duy Nguyễn làm việc với máy tính và điện thoại",
  than="""
 <p>Câu hỏi tôi nhận nhiều nhất trong năm nay là dùng AI thế nào để làm nội dung nhanh hơn. Câu trả lời thật lòng của tôi thường làm người hỏi hơi hụt hẫng: nếu nội dung của bạn đang chưa đúng, AI sẽ giúp bạn sai nhanh hơn.</p>
 
@@ -288,7 +288,7 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
  tieu="Đăng nhiều không làm nên thương hiệu cá nhân",
  mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
- anh="img/nguoi-chuyen-gia.webp", alt="Ảnh minh hoạ một chuyên gia",
+ anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
  than="""
 <p>Người ta hay hỏi tôi nên đăng mấy bài một tuần. Đó gần như luôn là câu hỏi sai, đặt ra trước câu hỏi đúng.</p>
 <p>Câu hỏi đúng là: sau khi xem ba nội dung của bạn, người ta gọi tên bạn là ai.</p>
@@ -328,7 +328,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
  tieu="Khi nào nên nói không với một khách hàng",
  mo="Nhận một khách sai không chỉ mất tiền. Nó chiếm chỗ của khách đúng, và làm hỏng thứ khó xây nhất là uy tín.",
  ngay="2026-07-06", ngay_viet="6 tháng 7, 2026", doc="5 phút đọc",
- anh="img/nguoi-chu-dn.webp", alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ",
+ anh="img/bl-noi-3.webp", alt="Coach Duy Nguyễn ngồi nghĩ trước khi trả lời",
  than="""
 <p>Nói không với một khách sẵn sàng trả tiền là việc khó, nhất là trong tháng doanh thu chưa đạt. Nhưng đây là một trong vài quyết định phân biệt rõ nhất giữa người bán và người cố vấn.</p>
 
@@ -370,7 +370,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
  tieu="Chọn một vùng chuyên môn để đứng, và dám bỏ phần còn lại",
  mo="Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.",
  ngay="2026-08-22", ngay_viet="22 tháng 8, 2026", doc="6 phút đọc",
- anh="img/founder-nam-3.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-cam-but.webp", alt="Coach Duy Nguyễn cầm bút giải thích một ý",
  than="""
 <p>Câu hỏi tôi hay nhận nhất khi ai đó bắt đầu xây thương hiệu cá nhân là nên nói về chủ đề gì. Câu trả lời thật lòng làm nhiều người khó chịu: quan trọng hơn là bạn quyết định không nói về chủ đề gì.</p>
 
@@ -451,7 +451,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
  tieu="Làm nội dung một mình mà vẫn giữ được lâu",
  mo="Đăng bảy bài một tuần rồi biến mất ba tháng thua đăng một bài một tuần trong ba năm. Bài này viết về cách thiết kế nhịp bạn giữ được.",
  ngay="2026-08-14", ngay_viet="14 tháng 8, 2026", doc="6 phút đọc",
- anh="img/founder-nu-3.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-ban-lam-viec.webp", alt="Coach Duy Nguyễn ngồi làm việc tại bàn",
  than="""
 <p>Người sáng lập bắt đầu làm nội dung thường bung sức. Tuần đầu bảy bài, tuần hai năm bài, tuần bốn hai bài, tuần tám im lặng. Sau đó là ba tháng thấy có lỗi, rồi lại bung sức một đợt nữa.</p>
 <p>Chuyện này không nằm ở kỷ luật. Nó nằm ở cách bạn sắp việc.</p>
@@ -535,7 +535,7 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
  tieu="Khách nói để tôi suy nghĩ thêm, thật ra họ đang nói gì",
  mo="Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có bốn nghĩa khác, và cách xử lý mỗi nghĩa một khác.",
  ngay="2026-08-06", ngay_viet="6 tháng 8, 2026", doc="6 phút đọc",
- anh="img/nguoi-chu-dn.webp", alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ",
+ anh="img/bl-noi-1.webp", alt="Coach Duy Nguyễn đang trao đổi với người đối diện",
  than="""
 <p>Đây là câu người bán dịch vụ nghe nhiều nhất, và cũng là câu bị hiểu sai nhiều nhất. Phần lớn người bán phản ứng bằng cách hẹn gọi lại sau ba ngày, rồi ba ngày sau gọi và không ai bắt máy.</p>
 <p>Vấn đề là câu đó gần như không bao giờ mang nghĩa đen.</p>
@@ -575,7 +575,7 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
  tieu="Giảm giá không chỉ mất tiền, còn mất cả vị thế",
  mo="Giảm giá không chỉ lấy đi phần chênh lệch. Nó đổi cách khách nhìn bạn, và cái đó không lấy lại được bằng cách tăng giá lần sau.",
  ngay="2026-08-02", ngay_viet="2 tháng 8, 2026", doc="6 phút đọc",
- anh="img/founder-nam-1.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-noi-4.webp", alt="Coach Duy Nguyễn nói trong một buổi trao đổi",
  than="""
 <p>Người ta thường tính cái giá của việc giảm giá bằng phần trăm lợi nhuận mất đi. Cách tính đó bỏ qua phần đắt nhất: những gì diễn ra trong đầu khách sau khi bạn giảm.</p>
 
@@ -664,7 +664,7 @@ dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đ�
  tieu="Giao quyền mà không mất kiểm soát",
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
- anh="img/nguoi-dan-doi.webp", alt="Ảnh minh hoạ một người đang dẫn một đội ngũ",
+ anh="img/bl-giua-doan.webp", alt="Coach Duy Nguyễn đứng giữa những người tham dự",
  than="""
 <p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm. Lý do là hai lần thử đầu đều hỏng, và sau lần thứ hai họ kết luận đội ngũ chưa đủ giỏi.</p>
 <p>Thường thì không phải đội ngũ chưa đủ giỏi. Thường thì việc giao được làm sai cách.</p>
@@ -703,7 +703,7 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
  tieu="Hai tuần đầu quyết định gần như tất cả",
  mo="Người mới vào cộng đồng quyết định ở lại hay không trong hai tuần đầu, và họ quyết dựa trên việc có đạt được một kết quả nhỏ nhìn thấy được hay không.",
  ngay="2026-07-16", ngay_viet="16 tháng 7, 2026", doc="6 phút đọc",
- anh="img/founder-nu-2.webp", alt="Ảnh minh hoạ một nhà sáng lập",
+ anh="img/bl-noi-2.webp", alt="Coach Duy Nguyễn đang nói với người đối diện",
  than="""
 <p>Trong mọi cộng đồng tôi từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại. Người không có thì âm thầm rời đi, thường không nói gì.</p>
 
