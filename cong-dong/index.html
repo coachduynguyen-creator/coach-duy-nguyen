@@ -1,0 +1,1436 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next Gen Founder by Coach Duy Nguyễn</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M25.53 10.5A11 11 0 1 0 25.53 21.5' fill='none' stroke='%230F1218' stroke-width='3.4' stroke-linecap='round'/%3E%3Ccircle cx='27' cy='16' r='3.6' fill='%23D97757'/%3E%3C/svg%3E">
+<meta name="description" content="Cộng đồng phát triển dành cho nhà sáng lập doanh nghiệp dịch vụ mà khách tin người trước khi tin công ty. Đăng ký danh sách chờ để được trao đổi và mời đúng lúc.">
+<link rel="canonical" href="https://coachduynguyen.vn/cong-dong/">
+<meta property="og:url" content="https://coachduynguyen.vn/cong-dong/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script>(function(r){r.classList.add('js');if(location.search.indexOf('static')>-1)r.classList.add('noanim');})(document.documentElement);</script>
+<style>
+/* ============ BẢNG MÀU: một nền trắng, chữ than, một màu nhấn dùng rất ít ============ */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --bg-2:#F6F7F9; --bg-3:#EDEFF3;
+  --line:#E3E6EB; --line-2:#CBD0D8;
+  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79; --on-ink:#FFFFFF;
+  --cam:#D97757;             /* cam thương hiệu: chấm logo, nét vẽ, mảng tô, chữ lớn trên nền tối */
+  --cam-dam:#B34E30;         /* cam đậm: nền nút chữ trắng và chữ cam trên nền sáng, đạt 4.5:1 */
+  --cam-mo:#F6E7E0;          /* cam rất nhạt: số mờ lớn làm nền trang trí */
+  --nhan:var(--cam);
+  --dung:#1F7A4D;            /* trạng thái gửi thành công */
+  --anh-bg:linear-gradient(180deg,#F3F5F8 0%,#DFE4EB 100%);
+  --paper:linear-gradient(180deg,#FFFFFF 0%,#FAFBFC 100%);
+  --shadow-s:0 1px 2px rgba(15,18,24,.05),0 12px 28px -16px rgba(15,18,24,.22);
+  --shadow:0 2px 4px rgba(15,18,24,.06),0 30px 60px -28px rgba(15,18,24,.34);
+  --shadow-h:0 3px 6px rgba(15,18,24,.07),0 22px 44px -20px rgba(15,18,24,.30);
+  --r:16px; --r-s:12px;
+  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
+  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-family:var(--f-tit);font-variation-settings:'opsz' 72;letter-spacing:-.025em;line-height:1.08;font-weight:700;text-wrap:balance}
+h1 span,h2 span{text-wrap:balance}
+.quyet b,.nam5 b,.dk b,.moc b,.dong b,.nhan-duoc li,.vach li p,.khong-phai li,.nl .dat,.cap-the .mota{text-wrap:balance}
+p,li{text-wrap:pretty}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+.bao{max-width:1120px;margin:0 auto;padding:0 24px}
+.bao-rong{max-width:1400px;margin:0 auto;padding:0 24px}
+.xam{color:var(--ink-3)}
+.mono{font-family:var(--f-mono)}
+.nhan{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.nhan .mono{font-weight:600;letter-spacing:.04em}
+
+/* ============ NÚT ============ */
+.nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;border:1px solid var(--cam-dam);background:var(--cam-dam);color:#fff;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .16s var(--ease),background .16s,box-shadow .16s;white-space:nowrap}
+.nut:hover{background:#9E4229;border-color:#9E4229;box-shadow:0 6px 18px -8px rgba(179,78,48,.55)}
+.nut:active{transform:scale(.97)}
+.nut svg{width:16px;height:16px;transition:transform .16s var(--ease)}
+.nut:hover svg{transform:translateX(3px)}
+.nut.phu{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.nut.phu:hover{background:var(--bg-2);box-shadow:none}
+.nut.nho{height:40px;padding:0 16px;font-size:14px;gap:.28em;flex:none}
+.nut .nowrap{white-space:nowrap;display:inline-flex;gap:.28em}
+.lien{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.lien:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* ============ THANH ĐIỀU HƯỚNG ============ */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+.nav .bao-rong{display:flex;align-items:center;gap:20px;height:64px;flex-wrap:nowrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.logo .dau-hieu{width:28px;height:28px;flex:none;color:var(--ink)}
+.logo .ten-hieu{display:flex;flex-direction:column;line-height:1.05;font-family:var(--f-tit);font-weight:800;font-size:17.5px;letter-spacing:-.02em;font-variation-settings:'opsz' 40}
+.logo .ten-hieu small{font-family:var(--f-than);font-weight:500;font-size:13px;letter-spacing:0;color:var(--ink-3);margin-top:3px}
+.nav-links{display:flex;gap:2px;margin-left:auto;position:relative;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--ml,0px),#000 calc(100% - var(--mr,0px)),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 var(--ml,0px),#000 calc(100% - var(--mr,0px)),transparent 100%)}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{flex:none;white-space:nowrap;font-size:14px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.on{color:var(--ink);background:var(--bg-3)}
+.nav .nut{margin-left:auto}
+.nav-links + .nut{margin-left:8px}
+.tien{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+@media (max-width:900px){.nav-links{display:none}}
+@media (max-width:420px){.logo .ten-hieu small{display:none}}
+@media (max-width:520px){.nav .duoi{display:none}.nav .bao-rong{padding:0 16px}}
+
+/* ============ HERO: lưới chân dung, Coach Duy ở giữa ============ */
+.hero{position:relative;padding:44px 0 88px;overflow:hidden}
+.luoi{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.5fr) repeat(4,minmax(0,1fr));gap:16px;align-items:start;--fr:calc((100% - 8*16px)/9.5)}
+.cot{position:relative;display:flex;flex-direction:column;gap:16px;padding-top:var(--pt,0px)}
+.cot.ngoai{grid-row:1/3}
+/* vạch dọc mảnh phía sau từng cột, như bản mẫu */
+.vach-doc{position:absolute;top:-40px;bottom:-60px;width:1px;background:linear-gradient(180deg,transparent,var(--line) 8%,var(--line) 88%,transparent);pointer-events:none;z-index:0;left:calc(var(--k)*(var(--fr) + 16px) + var(--fr)/2)}
+.vach-doc.giua{left:calc(4*(var(--fr) + 16px) + var(--fr)*.75)}
+.vach-doc.phai{left:calc(4*(var(--fr) + 16px) + var(--fr)*1.5 + 16px + var(--k)*(var(--fr) + 16px) + var(--fr)/2)}
+.the{position:relative;z-index:1;border-radius:var(--r);background:var(--paper);background-color:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s);overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.the:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.the.anh{border:0;background:var(--anh-bg);background-color:#E6EAF0;aspect-ratio:1}
+.the.anh.cao{aspect-ratio:3/4}
+.the.anh.vuong{aspect-ratio:1}
+.the.anh img{width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block}
+.the.anh.cat{aspect-ratio:3/4}
+.the.anh.cat img{position:absolute;left:50%;bottom:0;height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom;transform:translateX(-50%)}
+.the.anh.noi{box-shadow:var(--shadow)}
+.the.anh.noi::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(15,18,24,.10);pointer-events:none}
+.the.anh .ten{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;color:var(--ink);font-size:13.5px;font-weight:700;line-height:1.3;letter-spacing:-.005em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:10px;padding:8px 10px;box-shadow:0 1px 2px rgba(15,18,24,.06)}
+.the.anh .ten span{display:block;font-weight:500;color:var(--ink-3);font-size:13px;margin-top:1px;letter-spacing:0}
+.hero-chu{grid-column:3/8;grid-row:2;position:relative;z-index:2;text-align:center;padding:28px 8px 0;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-chu::before{content:'';position:absolute;inset:0 -40px -40px -40px;z-index:-1;background:radial-gradient(ellipse 70% 80% at 50% 55%,var(--bg) 40%,rgba(255,255,255,0) 100%);pointer-events:none}
+.vien{display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:5px 12px 5px 10px;line-height:1.3;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:.01em}
+.vien i{width:7px;height:7px;border-radius:50%;background:var(--nhan);box-shadow:0 0 0 0 rgba(194,65,12,.35);animation:nhay 2s ease-out infinite;flex:none}
+@keyframes nhay{0%{box-shadow:0 0 0 0 rgba(194,65,12,.35)}70%{box-shadow:0 0 0 7px rgba(194,65,12,0)}100%{box-shadow:0 0 0 0 rgba(194,65,12,0)}}
+.hero h1{font-size:clamp(30px,3.1vw,46px);line-height:1.06;letter-spacing:-.03em}
+.hero h1 span{display:block;color:var(--ink-3)}
+.hero .dan{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:56ch}
+.hero .nutnhom{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.hero .chu-nho{font-size:13.5px;color:var(--ink-3);max-width:60ch}
+/* ẩn hiện theo khổ: dưới 1200 các cột tan ra, Coach Duy đứng đầu và chiếm 2x2 */
+@media (max-width:1199px){
+  .luoi{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .vach-doc{display:none}
+  .cot,.cot.rong,.cot.ngoai,.cot.giua{display:contents;grid-column:auto;grid-row:auto}
+  .the.anh.cao,.the.anh.vuong,.the.anh.cat{aspect-ratio:1}
+  .the.anh.trung-tam{grid-column:3/5;grid-row:1/3}
+  .hero-chu{grid-column:1/-1;grid-row:auto;padding-top:36px}
+  .luoi .the.uu3{display:none}
+  .hero h1{font-size:clamp(30px,4.2vw,44px)}
+}
+@media (max-width:759px){.luoi{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.the.anh.trung-tam{grid-column:2/4}.the.anh .ten{left:10px;right:10px;bottom:10px;padding:6px 8px;font-size:13px}.the.anh .ten span{display:none}}
+@media (max-width:479px){.luoi{grid-template-columns:repeat(2,minmax(0,1fr))}.the.anh.trung-tam{grid-column:1/3}.luoi .the.anh:not(.uu1b):not(.trung-tam){display:none}.the.anh .ten span{display:block}.hero{padding-top:28px}}
+
+/* ============ PHẦN ============ */
+.phan{padding:96px 0;border-top:1px solid var(--line)}
+.phan.nen{background:var(--bg-2)}
+.dau-phan{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;max-width:820px;margin-bottom:48px}
+.dau-phan .nhan{display:flex;align-items:center;gap:10px}
+.dau-phan .nhan::before{content:'';width:18px;height:2px;background:var(--cam)}
+.dau-phan h2{font-size:clamp(28px,3.2vw,42px)}
+.dau-phan h2 span{color:var(--ink-3)}
+.dau-phan .dan{font-size:17.5px;color:var(--ink-2);max-width:66ch}
+.dau-phan.giua{margin-left:auto;margin-right:auto;text-align:center;justify-items:center}
+.dau-phan.giua .nhan::before{display:none}
+.ket{margin-top:40px;padding-top:18px;border-top:1px solid var(--ink);display:flex;gap:14px;align-items:baseline;max-width:820px}
+.ket b{font-family:var(--f-mono);font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;flex:none}
+.ket p{font-size:16.5px;color:var(--ink);font-weight:500}
+@media (max-width:760px){.phan{padding:64px 0}.dau-phan{margin-bottom:32px}}
+
+/* lưới thẻ chung */
+.o3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.o4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.o2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.o4{grid-template-columns:repeat(2,minmax(0,1fr))}.o3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.o4,.o3,.o2{grid-template-columns:minmax(0,1fr)}}
+.ô,.o{background:var(--paper);background-color:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.o:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.o .so{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:.06em}
+.o h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin:10px 0 8px}
+.o p{font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.o .ghi{font-size:14px;color:var(--ink-3);margin-top:10px}
+.o.phang{box-shadow:none;background:transparent;border-color:var(--line)}
+
+/* danh sách có vạch */
+.vach{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.vach li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .2s,transform .2s}
+.vach li b{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.04em}
+.vach li p{font-size:16px;color:var(--ink-2)}
+.vach li p strong{color:var(--ink);font-weight:600}
+@media (hover:hover){.vach li:hover{background:#fff;transform:translateX(2px)}}
+
+/* ============ ẢNH LỚN, LỘ ẢNH KHI CUỘN ============ */
+figure{margin:0}
+.anh-khung{position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg-3);box-shadow:var(--shadow)}
+.anh-khung img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+@media (hover:hover){.anh-khung:hover img{transform:scale(1.03)}}
+/* Ảnh luôn hiện, không có hiệu ứng nào giấu nó đi.
+   Đã thử lộ dần bằng clip-path (cả bằng đoạn mã lẫn bằng CSS gắn thanh cuộn) và loại ngày 23/08/2026:
+   khi hiệu ứng không chạy thì ảnh bị che vĩnh viễn, và trình duyệt hoãn tải ảnh lazy. Xem SKILL mục 7b. */
+
+/* ============ 01 LÀ GÌ: ảnh trái, chữ phải; bốn năng lực là bảng chỉ mục ============ */
+.chia{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.chia .anh-khung{aspect-ratio:4/5}
+.chia h2{font-size:clamp(28px,3.2vw,42px)}
+.chia h2 span{color:var(--ink-3)}
+.chia .dan{margin-top:16px;font-size:17px;color:var(--ink-2)}
+.khong-phai{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--line)}
+.khong-phai li{padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--ink-2);transition:background .2s,transform .2s}
+.khong-phai li b{color:var(--ink);font-weight:700}
+@media (hover:hover){.khong-phai li:hover{transform:translateX(2px)}}
+@media (max-width:900px){.chia{grid-template-columns:minmax(0,1fr);gap:28px}.chia .anh-khung{aspect-ratio:16/10}}
+.nang-luc{margin-top:80px}
+.nang-luc .tieu{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;max-width:62ch}
+.nang-luc .tieu h3{font-size:clamp(22px,2.4vw,30px)}
+.nang-luc .tieu p{font-size:15.5px;color:var(--ink-3)}
+.nl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.nl > div{padding:24px 22px 26px 0;display:flex;flex-direction:column;gap:8px;position:relative;transition:background .2s}
+.nl .dat{margin-top:auto}
+.nl > div + div{padding-left:22px;border-left:1px solid var(--line)}
+.nl .so{font-family:var(--f-tit);font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--cam-dam);font-weight:700;margin-bottom:6px}
+.nl h4{font-family:var(--f-than);font-size:18px;font-weight:700;letter-spacing:-.015em;line-height:1.3}
+.nl p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.nl .lam-duoc{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line-2)}
+.lam-nhan{margin-top:4px;color:var(--cam-dam)}
+.lam-duoc{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.lam-duoc li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.lam-duoc li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--cam-dam)}
+.ai-dai{margin-top:56px;padding-top:32px;border-top:1px solid var(--ink);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2.2fr);gap:40px;align-items:start}
+.ai-tieu .nhan{color:var(--cam-dam);display:block;margin-bottom:10px}
+.ai-tieu p{font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.ai-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 32px}
+.ai-o b{display:block;font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:5px}
+.ai-o p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:980px){.ai-dai{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media (max-width:620px){.ai-o{grid-template-columns:minmax(0,1fr);gap:18px}}
+@media (max-width:980px){.nl{grid-template-columns:repeat(2,minmax(0,1fr))}.nl > div:nth-child(3){padding-left:0;border-left:0}.nl > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.nl{grid-template-columns:minmax(0,1fr)}.nl > div{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}.nl > div:last-child{border-bottom:0}}
+
+/* ============ 02 DÀNH CHO AI: ba điều uy tín quyết định, dải ảnh, ba chân dung ============ */
+.quyet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 56px;border-top:1px solid var(--ink)}
+.quyet > div{padding:20px 26px 22px 0;position:relative;transition:transform .2s var(--ease)}
+.quyet > div + div{padding-left:26px;border-left:1px solid var(--line)}
+.quyet b{display:block;font-family:var(--f-tit);font-size:26px;letter-spacing:-.025em;color:var(--ink);margin-bottom:6px;line-height:1.1}
+.quyet p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+@media (hover:hover){.quyet > div:hover{transform:translateY(-3px)}}
+@media (max-width:760px){.quyet{grid-template-columns:minmax(0,1fr)}.quyet > div{padding:16px 0;border-left:0!important;border-bottom:1px solid var(--line)}.quyet > div + div{padding-left:0}.quyet > div:last-child{border-bottom:0}.quyet b{font-size:22px}}
+
+.nganh3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.nganh3 > div{display:flex;flex-direction:column;gap:0}
+.nganh3 .anh-khung{aspect-ratio:4/5;margin-bottom:18px}
+.nganh3 .anh-khung img{object-position:50% 12%}
+.nganh3 > div > h3{padding-top:16px;border-top:1px solid var(--ink)}
+.nganh3 h3{font-family:var(--f-than);font-size:18px;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin-bottom:8px}
+.nganh3 p{font-size:15.5px;color:var(--ink-2);line-height:1.55}
+@media (max-width:860px){.nganh3{grid-template-columns:minmax(0,1fr);gap:24px}}
+.khong{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.khong > div{padding:18px 22px;border:1px dashed var(--line-2);border-radius:var(--r-s);background:rgba(255,255,255,.6)}
+.khong b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:6px}
+.khong p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+@media (max-width:700px){.khong{grid-template-columns:minmax(0,1fr)}}
+
+.nam-dau{margin-top:64px;max-width:62ch}
+.nam-dau h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:8px}
+.nam-dau .dan{font-size:15.5px;color:var(--ink-3)}
+.nam5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin-top:28px}
+.nam5 > div{position:relative;padding-top:74px;border-top:1px solid var(--line);transition:transform .2s var(--ease)}
+.nam5 > div::before{content:attr(data-so);position:absolute;left:-3px;top:-6px;font-family:var(--f-tit);font-weight:800;font-size:104px;line-height:1;letter-spacing:-.05em;color:var(--cam-mo);pointer-events:none}
+.nam5 b{position:relative;display:block;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px;letter-spacing:-.01em}
+.nam5 p{position:relative;font-size:14px;line-height:1.5;color:var(--ink-2)}
+@media (hover:hover){.nam5 > div:hover{transform:translateY(-3px)}}
+@media (max-width:980px){.nam5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.nam5{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.nam5 > div{padding-top:60px}.nam5 > div::before{font-size:84px}}
+
+/* ============ 03 MỤC TIÊU ============ */
+.do{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:24px;align-items:stretch}
+.do .lon{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;box-shadow:var(--shadow)}
+.do .lon .so{font-family:var(--f-tit);font-size:clamp(64px,7vw,96px);line-height:.95;letter-spacing:-.04em;font-weight:700;color:var(--cam)}
+.do .lon .nhan{color:rgba(255,255,255,.72)}
+.do .lon p{font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.84)}
+.do .hai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.do .hai .o{display:flex;flex-direction:column;gap:6px}
+.do .hai .o .nhan{margin-bottom:6px}
+.do .hai ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.do .hai li{font-size:15.5px;line-height:1.45;display:flex;gap:10px;align-items:flex-start;color:var(--ink-2)}
+.do .hai li i{flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;margin-top:3px}
+.do .hai li i svg{width:10px;height:10px}
+.do .hai .khongtinh li{color:var(--ink-3)}
+.do .hai .khongtinh li i{background:var(--bg-3);color:var(--ink-3)}
+.do .hai .tinh li{color:var(--ink);font-weight:500}
+.do .hai .tinh li i{background:var(--cam-dam);color:#fff}
+.dk-tieu{margin-top:36px;font-size:15.5px;font-weight:600;color:var(--ink)}
+.dk{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:14px;position:relative}
+.dk::before{content:'';position:absolute;left:14px;right:14px;top:14px;height:1px;background:var(--line-2)}
+.dk > div{position:relative;padding-top:42px}
+.dk .tick{position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--cam-dam);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 6px var(--bg)}
+.dk .tick svg{width:14px;height:14px}
+.dk b{display:block;font-size:15px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.01em}
+.dk p{font-size:14px;color:var(--ink-2);line-height:1.45;margin-top:3px}
+@media (max-width:980px){.do{grid-template-columns:minmax(0,1fr)}.dk{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.do .hai{grid-template-columns:minmax(0,1fr)}.dk{grid-template-columns:minmax(0,1fr);gap:14px}.dk::before{left:14px;right:auto;top:14px;bottom:14px;width:1px;height:auto}.dk > div{padding-top:0;padding-left:44px;min-height:28px}}
+
+
+/* ============ CÂU CHUYỆN: chọn một người kể, xem trước và sau ============ */
+.chuyen{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:32px;align-items:start}
+.ch-chon{display:flex;flex-direction:column;gap:8px}
+.ch-chon button{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line);background:#fff;cursor:pointer;transition:transform .18s var(--ease),border-color .18s,background .18s,box-shadow .18s}
+.ch-chon button:hover{border-color:var(--line-2);box-shadow:var(--shadow-s)}
+.ch-chon button:active{transform:scale(.99)}
+.ch-chon button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ch-chon button.on{background:var(--ink);border-color:var(--ink);box-shadow:var(--shadow-s)}
+.ch-chon button.on b,.ch-chon button.on em{color:#fff}
+.ch-chon button.on em{color:rgba(255,255,255,.72)}
+.ch-chon button.on{background:var(--ink);border-color:var(--ink)}
+.ch-chon button.on .ch-nho.so{background:var(--cam-dam);color:#fff}
+.ch-nho{width:42px;height:42px;flex:none;border-radius:50%;overflow:hidden;background:var(--bg-3);display:grid;place-items:center}
+.ch-nho img{width:100%;height:100%;object-fit:cover;display:block}
+.ch-nho.so{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--ink-3)}
+.ch-chon span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ch-chon b{font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.25}
+.ch-chon em{font-style:normal;font-size:13.5px;color:var(--ink-3);line-height:1.35}
+.ch-khung{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);background-color:#fff;box-shadow:var(--shadow-s);padding:26px 28px;min-height:100%}
+.ch-noi{display:flex;flex-direction:column;gap:20px}
+.ch-noi[hidden]{display:none}
+.js .ch-noi.vao{animation:chVao .32s var(--ease)}
+@keyframes chVao{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.noanim .ch-noi.vao{animation:none}
+.ch-dinh{display:flex;align-items:center;flex-wrap:wrap;gap:6px 14px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.ch-mat{width:52px;height:52px;flex:none;border-radius:50%;overflow:hidden;background:var(--bg-3)}
+.ch-mat img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.ch-ten{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ch-dinh b{font-family:var(--f-tit);font-size:22px;letter-spacing:-.02em;color:var(--ink);line-height:1.15}
+.ch-dinh em{font-style:normal;font-size:13.5px;font-weight:600;color:var(--ink-3);letter-spacing:.02em}
+.the-vd{margin-left:auto}
+.the-vd{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-3);border-radius:999px;padding:3px 10px}
+.ch-buoc{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);align-items:start}
+.ch-truoc,.ch-sau{display:flex;flex-direction:column;gap:6px}
+.ch-truoc p,.ch-sau p{font-size:15px;line-height:1.55}
+.ch-truoc p{color:var(--ink-3)}
+.ch-sau p{color:var(--ink);font-weight:500}
+.ch-mui{display:grid;place-items:center;color:var(--nhan);padding-top:22px}
+.ch-mui svg{width:20px;height:20px}
+.ch-chung{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-top:16px;border-top:1px solid var(--line)}
+.ch-chung b{display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.ch-chung p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.chuyen-ghi{margin-top:26px;font-size:14.5px;color:var(--ink-3);max-width:78ch}
+@media (max-width:980px){
+  .chuyen{grid-template-columns:minmax(0,1fr);gap:20px}
+  .ch-chon{flex-direction:row;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .ch-chon::-webkit-scrollbar{display:none}
+  .ch-chon button{flex:none;max-width:74vw}
+}
+@media (max-width:680px){.ch-khung{padding:20px}.ch-buoc{grid-template-columns:minmax(0,1fr);gap:16px}.ch-mui{padding:0;justify-items:start;transform:rotate(90deg);width:20px}.ch-chung{grid-template-columns:minmax(0,1fr);gap:16px}.ch-dinh b{font-size:20px}}
+
+/* ============ 04 LỢI ÍCH: bento có ảnh thật ============ */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.bento .o{display:flex;flex-direction:column}
+.bento .o h3{margin-top:8px}
+.bento .anh-khung.a1{grid-column:1/3;grid-row:1/3;aspect-ratio:auto;min-height:340px}
+.bento .anh-khung.a2{grid-column:3/5;grid-row:3;aspect-ratio:auto;min-height:220px}
+.bento .anh-khung.a1 img,.bento .anh-khung.a2 img{position:absolute;inset:0;width:100%;height:100%}
+.bento .o.rong{grid-column:span 2}
+@media (max-width:980px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.bento .anh-khung.a1{grid-column:1/3;grid-row:auto;aspect-ratio:16/9;min-height:0}.bento .anh-khung.a2{grid-column:1/3;grid-row:auto;aspect-ratio:16/9;min-height:0}.bento .anh-khung.a1 img,.bento .anh-khung.a2 img{position:static}.bento .o.rong{grid-column:1/3}}
+@media (max-width:560px){.bento{grid-template-columns:minmax(0,1fr)}.bento .anh-khung.a1,.bento .anh-khung.a2,.bento .o.rong{grid-column:auto}}
+.nhip{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.nhip .o{padding:28px}
+.nhip h3{font-size:clamp(20px,2vw,24px);margin-bottom:6px}
+.nhip .dan{font-size:15px;color:var(--ink-3);margin-bottom:18px}
+.moc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.moc::before{content:'';position:absolute;left:10px;right:10px;top:9px;height:1px;background:var(--line-2)}
+.moc > div{position:relative;padding:24px 10px 0 0}
+.moc > div::before{content:'';position:absolute;left:0;top:4px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.moc > div:last-child::before{background:var(--ink)}
+.moc b{display:block;font-size:14.5px;color:var(--ink);font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
+.moc p{font-size:14px;color:var(--ink-2);line-height:1.5}
+.dong{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.dong > div{padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--bg-2)}
+.dong b{display:block;font-size:14.5px;color:var(--ink);font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
+.dong p{font-size:14px;color:var(--ink-2);line-height:1.5}
+@media (max-width:980px){.nhip{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.moc{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:8px}.moc::before{display:none}.dong{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ NHỊP SỐNG CỘNG ĐỒNG: bốn ô ảnh so le ============ */
+.song-hd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
+.hd{display:flex;flex-direction:column;gap:16px}
+.hd.cao{padding-top:44px}
+.hd .anh-khung{aspect-ratio:4/5}
+.hd.cao .anh-khung{aspect-ratio:3/4}
+.hd .anh-khung img{object-position:50% 40%}
+.hd-chu b{display:block;font-family:var(--f-tit);font-size:20px;letter-spacing:-.02em;color:var(--ink);line-height:1.2;margin-bottom:7px;text-wrap:balance}
+.hd-chu p{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.hd-ghi{margin-top:34px;font-size:14.5px;color:var(--ink-3);max-width:82ch}
+@media (max-width:1000px){.song-hd{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.hd.cao{padding-top:0}.hd .anh-khung,.hd.cao .anh-khung{aspect-ratio:4/3}}
+@media (max-width:600px){.song-hd{grid-template-columns:minmax(0,1fr)}.hd .anh-khung,.hd.cao .anh-khung{aspect-ratio:16/10}}
+
+/* ============ 05 BA CẤP: một nguồn, ba nhánh, hình mô phỏng ============ */
+.tuyen{position:relative;margin-top:12px}
+.nguon{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:4px 10px;width:max-content;max-width:100%;margin:0 auto;padding:10px 18px;border-radius:999px;border:1px solid var(--nhan);background:#FFF4EC;color:var(--ink);font-size:15px;font-weight:600;text-align:center}
+.nguon b{color:var(--cam-dam);font-weight:700}
+.nguon span{font-weight:500;color:var(--ink-2);font-size:14px}
+.than-noi{width:1px;height:30px;background:var(--ink);margin:0 auto}
+.cap3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative;padding-top:30px}
+.cap3::before{content:'';position:absolute;left:calc((100% - 48px)/6);right:calc((100% - 48px)/6);top:0;height:1px;background:var(--ink)}
+.cot-cap{position:relative}
+.cot-cap::before{content:'';position:absolute;left:50%;top:-30px;height:30px;width:1px;background:var(--ink)}
+.cot-cap::after{content:'';position:absolute;left:calc(50% - 4px);top:-4px;width:9px;height:9px;border-radius:50%;background:var(--ink);transition:transform .2s var(--ease),background .2s}
+@media (hover:hover){.cot-cap:hover::after{transform:scale(1.4);background:var(--cam-dam)}}
+.cap-the{height:100%;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);background-color:#fff;box-shadow:var(--shadow-s);overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.cot-cap:hover .cap-the{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.cot-cap.chinh .cap-the{border-color:var(--ink);box-shadow:var(--shadow)}
+.cap-the .nd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.nhan-cap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.nhan-cap span{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.nhan-cap em{font-style:normal;font-size:13px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--bg-3);color:var(--ink-2)}
+.cot-cap.chinh .nhan-cap em{background:var(--cam-dam);color:#fff}
+.cap-the h3{font-family:var(--f-tit);font-size:24px;letter-spacing:-.02em;margin:0}
+.cap-the .mota{font-size:15px;color:var(--ink-2);line-height:1.5}
+.cap-the .cho{font-size:14.5px;color:var(--ink-2);line-height:1.5;padding-top:2px}
+.cap-the .cho b{color:var(--ink);font-weight:700}
+.nhan-duoc{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.nhan-duoc li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.nhan-duoc li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink)}
+.cot-cap.chinh .nhan-duoc li::before{background:var(--cam-dam);border-color:var(--cam-dam)}
+.dk-cap{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-2);font-size:13.5px;color:var(--ink-2);line-height:1.5;min-height:74px}
+.dk-cap b{display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+.ket-cap{margin-top:32px;padding:4px 0 4px 18px;border-left:3px solid var(--cam);max-width:78ch}
+.ket-cap b{display:block;font-size:17px;color:var(--ink);font-weight:700;letter-spacing:-.01em;line-height:1.4}
+.ket-cap span{display:block;font-size:14.5px;color:var(--ink-2);margin-top:4px;line-height:1.55}
+/* hình mô phỏng: chỉ khối, không chữ nhỏ */
+.mo{position:relative;height:156px;background:var(--bg-3);border-bottom:1px solid var(--line);overflow:hidden}
+.mo i{display:block;position:absolute}
+.mo .m-card{left:18px;top:18px;width:44%;height:66px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 2px rgba(15,18,24,.06)}
+.mo .m-play{left:50%;top:50%;width:0;height:0;border-left:13px solid var(--ink);border-top:8px solid transparent;border-bottom:8px solid transparent;transform:translate(-40%,-50%)}
+.mo .m-row{left:18px;display:flex;align-items:center;gap:8px}
+.mo .m-row.r1{top:98px}.mo .m-row.r2{top:122px}
+.mo .m-row > i{position:static}
+.mo .m-dot{width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.mo .m-bar{height:6px;border-radius:3px;background:var(--line-2)}
+.mo .m-bar.w1{width:96px}.mo .m-bar.w2{width:70px}
+.mo .m-sheet{right:18px;top:18px;width:32%;height:120px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 2px rgba(15,18,24,.06)}
+.mo .m-sheet > i{position:static}
+.mo .m-line{width:60%;height:6px;border-radius:3px;background:var(--ink)}
+.mo .m-chk{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--ink)}
+.mo .m-chk.on{background:var(--ink)}
+.mo .m-path{left:22px;right:22px;top:40px;height:2px;background:var(--line-2)}
+.mo .m-node{top:50%;width:16px;height:16px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);transform:translate(-50%,-50%)}
+.mo .m-node:nth-child(1){left:0}.mo .m-node:nth-child(2){left:33.3%}.mo .m-node:nth-child(3){left:66.6%}.mo .m-node:nth-child(4){left:100%}
+.mo .m-node.done{background:var(--ink)}
+.mo .m-node.here{width:20px;height:20px;border:2px solid var(--nhan);box-shadow:0 0 0 4px rgba(194,65,12,.15)}
+.mo .m-avs{left:22px;top:78px;display:flex}
+.mo .m-avs > i{position:static;width:30px;height:30px;border-radius:50%;border:2px solid var(--bg-3);background:var(--ink-3);margin-left:-9px}
+.mo .m-avs > i:first-child{margin-left:0;background:var(--ink)}
+.mo .m-avs > i:nth-child(3){background:#9AA3B2}.mo .m-avs > i:nth-child(4){background:var(--line-2)}
+.mo .m-cal{right:22px;top:72px;display:grid;grid-template-columns:repeat(7,9px);gap:4px}
+.mo .m-cal > i{position:static;width:9px;height:9px;border-radius:2px;background:var(--line-2)}
+.mo .m-cal > i.on{background:var(--ink)}
+.mo .m-table{left:50%;top:50%;width:104px;height:104px;border-radius:50%;border:1.5px solid var(--ink);transform:translate(-50%,-50%)}
+.mo .m-seat{left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;border:1.5px solid var(--ink)}
+.mo .m-seat.s1{transform:rotate(0deg) translateY(-52px)}.mo .m-seat.s2{transform:rotate(45deg) translateY(-52px)}.mo .m-seat.s3{transform:rotate(90deg) translateY(-52px)}.mo .m-seat.s4{transform:rotate(135deg) translateY(-52px)}.mo .m-seat.s5{transform:rotate(180deg) translateY(-52px)}.mo .m-seat.s6{transform:rotate(225deg) translateY(-52px)}.mo .m-seat.s7{transform:rotate(270deg) translateY(-52px)}.mo .m-seat.s8{transform:rotate(315deg) translateY(-52px)}
+.mo .m-seat.you{background:var(--nhan);border-color:var(--nhan)}
+.mo .m-center{left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--ink)}
+.mo .m-months{right:18px;bottom:16px;display:grid;grid-template-columns:repeat(12,8px);gap:3px}
+.mo .m-months > i{position:static;width:8px;height:8px;border-radius:2px;background:var(--line-2)}
+.mo .m-months > i.on{background:var(--ink)}
+@media (max-width:1040px){.cap3::before,.cot-cap::before,.cot-cap::after{display:none}.cap3{padding-top:0}}
+@media (max-width:960px){.cap3{grid-template-columns:minmax(0,1fr)}.than-noi{height:22px}}
+
+/* ============ 06 AI DỰNG: chân dung sân khấu và câu chuyện ============ */
+.ai2{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:56px;align-items:start}
+.ai2 .anh-khung{aspect-ratio:3/4}
+.ai2 .gioi h3{font-size:clamp(26px,2.8vw,34px);margin-bottom:6px}
+.ai2 .gioi .vai{font-size:15px;color:var(--ink-3);margin-bottom:20px}
+.ai2 .gioi p.doan{font-size:16.5px;line-height:1.6;color:var(--ink-2)}
+.ai2 .gioi p.doan + p.doan{margin-top:12px}
+.ai2 .gioi p.doan b{color:var(--ink);font-weight:600}
+.so-lieu{margin-top:26px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.so-lieu > div{padding:16px 16px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.so-lieu b{display:block;font-family:var(--f-tit);font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.so-lieu b small{font-size:15px;letter-spacing:0;font-weight:600;margin-left:3px}
+.so-lieu span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:6px;line-height:1.4}
+.so-ghi{font-size:13.5px;color:var(--ink-3);margin-top:12px}
+@media (max-width:900px){.ai2{grid-template-columns:minmax(0,1fr);gap:24px}.ai2 .anh-khung{max-width:520px;aspect-ratio:4/3}}
+@media (max-width:560px){.so-lieu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ============ 07 CÁCH THAM GIA: đường cong ba bước ============ */
+.song{position:relative;aspect-ratio:1200/340;margin-top:24px}
+.song-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.song-bong{fill:none;stroke:var(--line);stroke-width:10;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.9}
+.song-net{fill:none;stroke:var(--nhan);stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.6s var(--ease) .15s}
+.song.in .song-net{stroke-dashoffset:0}
+.noanim .song-net{stroke-dashoffset:0!important;transition:none!important}
+.so-mo{position:absolute;font-family:var(--f-tit);font-weight:800;font-size:clamp(96px,12vw,170px);line-height:1;letter-spacing:-.05em;color:var(--cam-mo);z-index:0;pointer-events:none;user-select:none}
+.bc{display:contents}
+.huy{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);width:46px;height:46px;border-radius:14px;background:var(--cam-dam);color:#fff;font-family:var(--f-mono);font-weight:600;font-size:16px;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(179,78,48,.5),0 0 0 6px var(--bg);z-index:2}
+.sb-chu{position:absolute;left:var(--l);top:var(--t);width:27%;z-index:2}
+.sb-chu h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;margin-bottom:6px;color:var(--ink)}
+.sb-chu p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:1100px){.sb-chu p{font-size:14px}.sb-chu h3{font-size:17.5px}}
+@media (max-width:900px){
+  .song{aspect-ratio:auto;display:flex;flex-direction:column;gap:28px}
+  .song-svg,.so-mo{display:none}
+  .bc{display:flex;gap:20px;align-items:flex-start}
+  .huy{position:static;transform:none;flex:none;box-shadow:0 6px 16px -8px rgba(15,18,24,.4)}
+  .sb-chu{position:static;width:auto}
+}
+
+/* ============ 08 HỎI ĐÁP ============ */
+.faq{border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow-s);overflow:hidden}
+.faq .muc{border-bottom:1px solid var(--line)}
+.faq .muc:last-child{border-bottom:0}
+.faq button{all:unset;display:grid;grid-template-columns:40px minmax(0,1fr) 28px;gap:14px;align-items:baseline;width:100%;box-sizing:border-box;padding:20px 24px;cursor:pointer;transition:background .2s}
+.faq button:hover{background:var(--bg-2)}
+.faq button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.faq button b{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.04em}
+.faq button span{font-size:18.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.35}
+.faq button i{justify-self:end;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;position:relative;transition:transform .28s var(--ease),background .2s;align-self:center}
+.faq button i::before,.faq button i::after{content:'';position:absolute;background:var(--ink);width:10px;height:1.5px;left:5px;top:9.5px;transition:transform .28s var(--ease)}
+.faq button i::after{transform:rotate(90deg)}
+.faq .muc.mo button i{background:var(--ink);border-color:var(--ink)}
+.faq .muc.mo button i::before,.faq .muc.mo button i::after{background:#fff}
+.faq .muc.mo button i::after{transform:rotate(0)}
+.faq .than{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s var(--ease)}
+.faq .muc.mo .than{grid-template-rows:1fr}
+.faq .than > div{overflow:hidden}
+.faq .than p{padding:0 24px 22px 78px;font-size:16px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:620px){.faq button{grid-template-columns:30px minmax(0,1fr) 24px;padding:16px 18px}.faq .than p{padding:0 18px 18px 18px}.faq button span{font-size:17px}}
+
+/* ============ ĐĂNG KÝ (khối cuối) ============ */
+.dang-ky{padding:96px 0 104px}
+.dk-khung{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:48px;align-items:start}
+.dk-khung h2{font-size:clamp(30px,3.4vw,44px)}
+.dk-khung h2 span{color:var(--ink-3)}
+.dk-khung .dan{font-size:17px;color:var(--ink-2);margin-top:16px;max-width:48ch}
+.dk-khung .sau{margin-top:24px}
+.dk-khung .sau li p strong{font-weight:600}
+.form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.form .hang{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.form label small{font-weight:500;color:var(--ink-3);font-size:13px}
+.form input,.form select,.form textarea{height:46px;padding:0 14px;border:1px solid var(--line-2);border-radius:12px;background:#fff;font-size:15.5px;font-weight:400;color:var(--ink);width:100%;transition:border-color .16s,box-shadow .16s}
+.form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%233D4451' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form textarea{height:auto;min-height:104px;padding:12px 14px;resize:vertical;line-height:1.5}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--cam-dam);box-shadow:0 0 0 3px rgba(179,78,48,.14)}
+.form input::placeholder,.form textarea::placeholder{color:#8A919D}
+.form .chan{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.form .chan .nut{width:100%;height:52px;font-size:16px}
+.form .chan p{font-size:13.5px;color:var(--ink-3);line-height:1.5}
+.form .chan p a{color:var(--ink-2)}
+.form .xong{display:none;padding:18px;border-radius:12px;background:#EEF7F1;border:1px solid #CFE6D7;color:#17543A;font-size:15px;line-height:1.55}
+.form .xong b{display:block;color:var(--dung);font-weight:700;margin-bottom:4px}
+.form.da-gui .xong{display:block}
+.form .loi{display:none;font-size:13.5px;color:#9A2A1A;margin-top:-6px;margin-bottom:12px}
+.form.co-loi .loi{display:block}
+@media (max-width:900px){.dk-khung{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media (max-width:560px){.form{padding:20px}.form .hang{grid-template-columns:minmax(0,1fr);gap:0}}
+
+/* ============ CHÂN TRANG ============ */
+.chan-trang{border-top:1px solid var(--line);padding:36px 0 44px;font-size:14px;color:var(--ink-3)}
+.chan-trang .bao-rong{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.chan-trang a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.chan-trang a:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
+.chan-trang .lk{display:flex;gap:20px;flex-wrap:wrap}
+.chan-hieu{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.chan-hieu .dau-hieu{width:30px;height:30px;flex:none;color:var(--ink);margin-top:2px}
+.chan-hieu b{font-family:var(--f-tit);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.02em}
+
+
+/* ============ KHOÁ HÀNG THẲNG NHAU (lưới con) ============ */
+@supports (grid-template-rows: subgrid){
+  /* bốn năng lực: số, tên, mô tả, dòng bạn đạt khi */
+  .nl{grid-template-rows:auto auto 1fr auto auto}
+  .nl > div{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:8px}
+  .nl .lam-duoc{margin-top:0}
+  /* ba chân dung: ảnh, tên, mô tả */
+  .nganh3{grid-template-rows:auto auto 1fr}
+  .nganh3 > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:0}
+  .nganh3 .anh-khung{margin-bottom:0}
+  .nganh3 > div > h3{margin-top:18px}
+  .nganh3 > div > p{margin-top:8px}
+  /* ba điều uy tín quyết định: tên, mô tả */
+  .quyet{grid-template-rows:auto 1fr}
+  .quyet > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .quyet b{margin-bottom:0}
+  /* năm điều sẵn sàng: tên, mô tả */
+  .nam5{grid-template-rows:auto 1fr}
+  .nam5 > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .nam5 b{margin-bottom:0}
+  /* năm điều kiện: tên, mô tả */
+  .dk{grid-template-rows:auto 1fr}
+  .dk > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .dk p{margin-top:0}
+  /* dải AI */
+  .ai-o{grid-template-rows:auto 1fr}
+  .ai-o > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .ai-o b{margin-bottom:0}
+  /* bốn nhịp mỗi tháng và bốn mốc mười bốn ngày */
+  .dong{grid-template-rows:auto 1fr}
+  .dong > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .dong b{margin-bottom:0}
+  .moc{grid-template-rows:auto 1fr}
+  .moc > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .moc b{margin-bottom:0}
+  /* bằng chứng và xác nhận trong câu chuyện */
+  .ch-chung{grid-template-rows:auto 1fr}
+  .ch-chung > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .ch-chung b{margin-bottom:0}
+  /* xuất phát và đã đổi */
+  .ch-buoc{grid-template-rows:auto 1fr}
+  .ch-truoc,.ch-sau{display:grid;grid-template-rows:subgrid;grid-row:span 2;gap:6px}
+  .ch-mui{grid-row:span 2;align-self:start}
+}
+@media (max-width:980px){
+  @supports (grid-template-rows: subgrid){
+    .nl > div,.nganh3 > div,.quyet > div,.nam5 > div,.dk > div,.dong > div,.moc > div,.ch-chung > div{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}
+    .nl > div{gap:8px}.nl .lam-duoc{margin-top:auto}
+    .nganh3 .anh-khung{margin-bottom:18px}.nganh3 > div > h3{margin-top:0}
+    .quyet b,.nam5 b,.dong b,.moc b,.ch-chung b{margin-bottom:6px}
+  }
+}
+@media (max-width:680px){
+  @supports (grid-template-rows: subgrid){
+    .ch-truoc,.ch-sau{grid-row:auto;grid-template-rows:none;display:flex}
+    .ch-mui{grid-row:auto}
+  }
+}
+
+/* ============ CHUYỂN ĐỘNG ============ */
+.js .hien{opacity:0;transform:translateY(14px);transition:opacity .56s var(--ease),transform .56s var(--ease)}
+.js .hien.in{opacity:1;transform:none}
+.js .hien.tre > *{opacity:0;transform:translateY(12px);transition:opacity .56s var(--ease),transform .56s var(--ease)}
+.js .hien.tre.in > *{opacity:1;transform:none}
+.js .hero .the,.js .hero .hero-chu > *{opacity:0;transform:translateY(16px)}
+.js .hero.len .the,.js .hero.len .hero-chu > *{opacity:1;transform:none;transition:opacity .72s var(--ease),transform .72s var(--ease)}
+.js .hero.len .the:hover{transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s,opacity .72s var(--ease)}
+.noanim .hien,.noanim .hien.tre > *,.noanim .hero .the,.noanim .hero .hero-chu > *{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+.noanim .vien i{animation:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hien,.js .hien.tre > *,.js .hero .the,.js .hero .hero-chu > *{transform:none!important;transition:opacity .4s!important}
+  .the,.o,.nut,.vach li{transition:none!important}
+  .vien i{animation:none}
+}
+
+/* Đường về trang cá nhân của Coach Duy. Trang cộng đồng trước đây không có
+   lối quay lại, người xem vào rồi là cụt đường. */
+.lk-cdn{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;
+  text-decoration:none;color:#D97757;transition:gap .2s ease}
+.lk-cdn:hover{gap:11px}
+
+/* Thanh menu hai tầng. Tầng trên là menu chung của cả trang coachduynguyen.vn,
+   giống hệt các trang khác. Tầng dưới là các phần trong chính trang này, vì
+   trang dài nên vẫn cần lối nhảy nhanh. Tầng dưới trượt ngang khi hẹp. */
+.nav-phan-bao{border-top:1px solid var(--line);background:rgba(255,255,255,.7)}
+.nav-phan{display:flex;gap:2px;max-width:1200px;margin-inline:auto;padding:0 24px;
+  height:42px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-phan::-webkit-scrollbar{display:none}
+.nav-phan a{flex:none;white-space:nowrap;font-size:13px;font-weight:500;color:var(--ink-3);
+  text-decoration:none;padding:6px 10px;border-radius:999px;
+  transition:color .2s var(--ease),background .2s var(--ease)}
+.nav-phan a:hover{color:var(--ink);background:var(--bg-3)}
+@media(max-width:760px){
+  .nav-phan{padding:0 16px;height:38px}
+  .nav-phan a{font-size:12.5px;padding:5px 9px}
+}
+
+/* Khổ điện thoại. Bản gốc ẩn hẳn thanh menu, tức từ trang này không đi đâu
+   được nữa. Nay cho menu trang xuống thành một dòng riêng trượt ngang, để
+   người xem trên điện thoại vẫn rời trang này sang trang khác được.
+   Dải các phần trong trang thì ẩn đi, đúng như bản gốc, kẻo đầu trang quá cao. */
+@media(max-width:900px){
+  .nav .bao-rong{flex-wrap:wrap;height:auto;padding-block:10px;row-gap:6px}
+  .nav-links{display:flex;order:3;width:100%;margin-left:0}
+  .nav-links a{font-size:13.5px;padding:6px 10px}
+  .nav .nut{margin-left:auto}
+  .nav-phan-bao{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= THANH ĐIỀU HƯỚNG ================= -->
+<header class="nav" id="top">
+  <div class="bao-rong">
+    <a class="logo" href="../"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#D97757"/></svg><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
+    <nav class="nav-links" id="nav-links" aria-label="Các trang"><a class="on" aria-current="page" href="#top">Cộng đồng</a><a href="../ve-toi.html">Về Duy</a><a href="../chuong-trinh.html">Chương trình</a><a href="../phuong-phap.html">Phương pháp</a><a href="../blog.html">Blog</a><a href="../sach.html">Sách</a><a href="../kenh-youtube.html">YouTube</a><a href="../lien-he.html">Liên hệ</a></nav>
+    <a class="nut nho" href="#dang-ky"><span class="nowrap">Đăng ký<span class="duoi">danh sách chờ</span></span></a>
+    <span class="tien" id="tien" aria-hidden="true"></span>
+  </div>
+  <div class="nav-phan-bao">
+    <nav class="nav-phan" aria-label="Các phần của trang"><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#muc-tieu">Mục tiêu</a><a href="#cau-chuyen">Câu chuyện</a><a href="#loi-ich">Lợi ích</a><a href="#nhip-song">Nhịp sống</a><a href="#ba-cap">Ba cấp</a><a href="#ai-dung">Về Coach Duy</a><a href="#tham-gia">Cách tham gia</a><a href="#hoi-dap">Hỏi đáp</a></nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" aria-label="Giới thiệu">
+  <div class="bao-rong">
+    <div class="luoi" id="luoi">
+      <i class="vach-doc" style="--k:0"></i><i class="vach-doc" style="--k:1"></i><i class="vach-doc" style="--k:2"></i><i class="vach-doc" style="--k:3"></i><i class="vach-doc giua"></i><i class="vach-doc phai" style="--k:0"></i><i class="vach-doc phai" style="--k:1"></i><i class="vach-doc phai" style="--k:2"></i><i class="vach-doc phai" style="--k:3"></i>
+      <!-- Cột 1 và 2: nhóm trái, kéo xuống hai hàng -->
+      <div class="cot ngoai" style="--pt:48px">
+        <div class="the anh cao uu1 uu1b"><img src="https://images.pexels.com/photos/33100431/pexels-photo-33100431.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh vuong uu2"><img src="https://images.pexels.com/photos/26425548/pexels-photo-26425548.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot ngoai" style="--pt:0px">
+        <div class="the anh vuong uu1"><img src="https://images.pexels.com/photos/32559271/pexels-photo-32559271.png?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/25884686/pexels-photo-25884686.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 3 và 4: hàng trên -->
+      <div class="cot" style="--pt:72px">
+        <div class="the anh vuong uu1 uu1b"><img src="https://images.pexels.com/photos/36063909/pexels-photo-36063909.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot" style="--pt:24px">
+        <div class="the anh cao uu2"><img src="https://images.pexels.com/photos/24350758/pexels-photo-24350758.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 5: Coach Duy ở giữa -->
+      <div class="cot giua" style="--pt:0px">
+        <div class="the anh cat noi trung-tam"><img src="img/cd-portrait-760.png" alt="Coach Duy Nguyễn, người sáng lập Cộng đồng Next Gen Founder" width="485" height="760" loading="eager" fetchpriority="high"><div class="ten">Coach Duy Nguyễn<span>Sáng lập Cộng đồng Next Gen Founder</span></div></div>
+      </div>
+      <!-- Cột 6 và 7: hàng trên -->
+      <div class="cot" style="--pt:24px">
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/26953810/pexels-photo-26953810.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot" style="--pt:72px">
+        <div class="the anh vuong uu2"><img src="https://images.pexels.com/photos/25884720/pexels-photo-25884720.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 8 và 9: nhóm phải, kéo xuống hai hàng -->
+      <div class="cot ngoai" style="--pt:0px">
+        <div class="the anh vuong uu1 uu1b"><img src="https://images.pexels.com/photos/29995740/pexels-photo-29995740.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/26068375/pexels-photo-26068375.png?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot ngoai" style="--pt:48px">
+        <div class="the anh cao uu1 uu1b"><img src="https://images.pexels.com/photos/9991917/pexels-photo-9991917.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh vuong uu3"><img src="https://images.pexels.com/photos/36764487/pexels-photo-36764487.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+
+      <!-- Khối chữ giữa -->
+      <div class="hero-chu">
+        <span class="vien"><i aria-hidden="true"></i>Cộng đồng Next Gen Founder · đang nhận danh sách chờ</span>
+        <h1>Cộng đồng của người sáng lập thế hệ mới <span>nơi uy tín cá nhân trở thành điểm tựa</span></h1>
+        <p class="dan">Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: người ta tin bạn trước khi tin công ty bạn. Cộng đồng giúp bạn biến niềm tin đó thành thương hiệu, hệ thống và một mạng lưới cùng lớn.</p>
+        <div class="nutnhom">
+          <a class="nut" href="#dang-ky">Đăng ký danh sách chờ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="nut phu" href="#la-gi">Cộng đồng này là gì</a>
+        </div>
+        <p class="chu-nho">Ảnh các nhà sáng lập trong lưới là ảnh minh hoạ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 LÀ GÌ ================= -->
+<section class="phan la-gi" id="la-gi">
+  <div class="bao">
+    <div class="chia">
+      <figure class="anh-khung anh-lo"><img src="img/cd-ca-phong.jpg" alt="Coach Duy Nguyễn đứng giữa một phòng đầy người sáng lập và quản lý" width="1800" height="1182" loading="eager" decoding="async"></figure>
+      <div class="hien">
+        <h2>Một cộng đồng phát triển cho nhà sáng lập, <span>không phải thêm một nhóm trò chuyện</span></h2>
+        <p class="dan">Next Gen Founder, nhà sáng lập thế hệ mới, là người đã nhận ra doanh nghiệp không thể lớn thêm chỉ bằng năng lực cá nhân mình, và biết biến những gì đang nằm trong đầu thành niềm tin trên thị trường, cách tư vấn, hệ thống làm việc và một mạng lưới cùng phát triển. Cộng đồng là nơi bạn đi con đường đó cùng những người có cùng tiêu chuẩn, và được một người đi trước giữ nhịp.</p>
+        <ul class="khong-phai">
+          <li><b>Không phải kho video.</b> Khóa học chỉ là công cụ. Thứ cộng đồng này theo đuổi là sự tiến bộ thật của bạn, nhìn thấy được trong doanh nghiệp.</li>
+          <li><b>Không phải nhóm đăng bài.</b> Một nhịp để học, làm, gặp và lớn: phân tích tình huống thật, giờ làm chung, nhóm trách nhiệm nhỏ, bàn tròn theo ngành.</li>
+          <li><b>Không phải nơi chào hàng.</b> Kết nối kinh doanh có bối cảnh và có đồng ý hai bên. Người vào để săn tài liệu hay chào bán sẽ không ở lại được, nên thảo luận không bị loãng.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nang-luc hien">
+      <div class="tieu">
+        <h3>Bốn năng lực của một Next Gen Founder</h3>
+        <p>Bạn không cần cả bốn cùng lúc. Lộ trình bắt đầu từ năng lực đang cản bước tiếp theo của bạn.</p>
+      </div>
+      <div class="nl">
+        <div>
+          <span class="so">01</span>
+          <h4>Thương hiệu nhà sáng lập được tin cậy</h4>
+          <p>Biến chuyên môn, trải nghiệm, quan điểm và tiêu chuẩn thật thành một cách xuất hiện nhất quán trước thị trường.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Đứng nói trước một phòng khách hàng mà không cần kịch bản</li>
+            <li>Trả lời phỏng vấn và lên sân khấu đúng thông điệp của mình</li>
+            <li>Để đội ngũ đăng bài thay mình mà nội dung vẫn ra giọng mình</li>
+          </ul>
+        </div>
+        <div>
+          <span class="so">02</span>
+          <h4>Chuyên gia tư vấn được tin cậy</h4>
+          <p>Giúp khách nhìn rõ vấn đề, hiểu lựa chọn và ra quyết định phù hợp mà không bị dồn ép.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Dẫn một cuộc gặp với khách lớn mà không rơi vào thế xin</li>
+            <li>Hỏi đúng câu làm khách tự nhìn ra vấn đề của họ</li>
+            <li>Nói chưa phù hợp mà vẫn giữ được quan hệ và uy tín</li>
+          </ul>
+        </div>
+        <div>
+          <span class="so">03</span>
+          <h4>Người xây hệ thống</h4>
+          <p>Chuyển kinh nghiệm và kết quả đang phụ thuộc vào bạn thành một cách làm mà người khác hiểu, thực hiện, đo và cải tiến được.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Giao một luồng việc cho quản lý và nghiệm thu bằng dữ liệu</li>
+            <li>Họp rà soát trong ba mươi phút vì mọi người đã nhìn cùng một bảng số</li>
+            <li>Vắng mặt một tuần mà công việc vẫn chạy đúng chuẩn</li>
+          </ul>
+        </div>
+        <div>
+          <span class="so">04</span>
+          <h4>Người kiến tạo cộng đồng</h4>
+          <p>Tập hợp đúng người quanh một nhân dạng, một vấn đề hoặc một hướng đi chung, rồi tạo điều kiện để họ xây quan hệ và giúp nhau tiến bộ.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Chủ trì một buổi mà người tham dự tự kết nối được với nhau</li>
+            <li>Người mới được đón và hoà vào nhóm khi bạn không có mặt</li>
+            <li>Khách cũ giới thiệu người mới mà bạn không phải nhờ</li>
+          </ul>
+        </div>
+      </div>
+    <div class="ai-dai hien">
+      <div class="ai-tieu">
+        <span class="nhan">AI là năng lực nền cho cả bốn</span>
+        <p>Không phải một môn học riêng. AI được đưa vào để làm nhanh hơn việc đã đúng, giữ nhịp và gom chất liệu thật từ công việc của bạn. Nó không thay phán đoán và không thay quan hệ con người.</p>
+      </div>
+      <div class="ai-o">
+        <div><b>Trong xây thương hiệu</b><p>Gom và sắp xếp chuyện thật từ công việc mỗi ngày, dựng nhịp xuất bản, kiểm bài trước khi đăng có đúng giọng mình không.</p></div>
+        <div><b>Trong chuẩn bị tư vấn</b><p>Dựng bối cảnh khách trước buổi gặp, luyện các tình huống khó, soát lại đề xuất xem đã bám nhu cầu thật chưa.</p></div>
+        <div><b>Trong vận hành hệ thống</b><p>Viết ra quy trình đang nằm trong đầu bạn, tóm tắt dữ liệu thành bảng số để đội ngũ nhìn cùng một chỗ.</p></div>
+        <div><b>Trong giữ nhịp cộng đồng</b><p>Nhớ bối cảnh từng thành viên, gợi ý ghép đúng người với đúng nhu cầu, chuẩn bị nội dung cho từng buổi.</p></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 DÀNH CHO AI ================= -->
+<section class="phan nen" id="danh-cho-ai">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Dành cho người muốn uy tín cá nhân <span>trở thành điểm tựa cho khách, đối tác và người giỏi</span></h2>
+      <p class="dan">Next Gen Founder không giới hạn ở một chức danh. Đó là người đã có nghề, có kết quả thật, và nhận ra tên mình đang là tài sản lớn nhất của doanh nghiệp. Điều bạn cần không phải nổi tiếng hơn, mà là biến uy tín đó thành thứ dẫn được đúng người và không còn phụ thuộc vào một mình bạn.</p>
+    </div>
+
+    <div class="quyet hien tre">
+      <div><b>Khách hàng</b><p>chọn bạn vì tin con người và tiêu chuẩn đứng sau, không phải vì bảng giá.</p></div>
+      <div><b>Đối tác</b><p>muốn đi cùng vì thấy bạn có cách làm rõ ràng và giữ được chữ tín.</p></div>
+      <div><b>Người giỏi</b><p>về với bạn và ở lại vì tin vào hướng đi và cách bạn dẫn dắt.</p></div>
+    </div>
+
+    <div class="nganh3 hien tre">
+      <div>
+        <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một chuyên gia" width="560" height="700" loading="lazy"></figure>
+        <h3>Chuyên gia có nghề, muốn tên mình dẫn được khách</h3>
+        <p>Đào tạo, tư vấn, luật, tài chính, sức khoẻ, thiết kế, bất động sản. Bạn bán thứ mình biết, và tên bạn là lý do người ta gọi.</p>
+      </div>
+      <div>
+        <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/26425558/pexels-photo-26425558.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" width="560" height="700" loading="lazy"></figure>
+        <h3>Chủ doanh nghiệp dịch vụ dựa trên niềm tin</h3>
+        <p>Thẩm mỹ, spa, phòng khám, nha khoa, giáo dục, dịch vụ giá trị cao. Khách cần tư vấn và bằng chứng trước khi quyết, và họ nhìn vào người sáng lập.</p>
+      </div>
+      <div>
+        <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/31268614/pexels-photo-31268614.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một người đang dẫn đội ngũ" width="560" height="700" loading="lazy"></figure>
+        <h3>Người đang dẫn một đội ngũ và muốn thôi gánh một mình</h3>
+        <p>Bạn muốn chuyển cách nghĩ, cách tư vấn và tiêu chuẩn của mình sang đội ngũ, để công việc chạy được cả khi bạn không có mặt.</p>
+      </div>
+    </div>
+
+    <div class="khong hien tre">
+      <div><b>Chưa hợp lúc này</b><p>Chưa có sản phẩm hoặc khách hàng thật nhưng muốn nhân rộng ngay. Muốn có người làm thay nhưng không bố trí ai phối hợp. Đang tìm mẹo nhanh hoặc một khóa học sửa được mọi vấn đề.</p></div>
+      <div><b>Không hợp</b><p>Chỉ muốn tăng người theo dõi, nổi tiếng, hoặc dùng AI để sản xuất thật nhiều nội dung. Mô hình mà người mua chỉ quan tâm giá, không quan tâm ai đứng sau. Sản phẩm có rủi ro pháp lý hoặc đạo đức.</p></div>
+    </div>
+    <div class="nam-dau hien">
+      <h3>Năm điều cho thấy bạn đã sẵn sàng</h3>
+      <p class="dan">Đây là thứ được nhìn trong buổi trao đổi, không phải chức danh, quy mô hay ngân sách. Thiếu một trong năm thì bước đúng có thể là vào Cộng đồng Mở trước.</p>
+    </div>
+    <div class="nam5 hien tre">
+      <div data-so="1"><b>Bạn đã có nghề và có khách thật</b><p>Đủ kết quả để thấy một cách làm đang chạy, không còn là ý tưởng.</p></div>
+      <div data-so="2"><b>Uy tín của bạn có sức nặng</b><p>Khách tin bạn; giao dịch quan trọng thường cần bạn xuất hiện hoặc duyệt.</p></div>
+      <div data-so="3"><b>Bạn không đi một mình</b><p>Có ít nhất một người cùng triển khai điều bạn học được, dù là cộng sự hay nhân sự chủ chốt.</p></div>
+      <div data-so="4"><b>Bạn gọi tên được điểm đang kẹt</b><p>Doanh thu thất thường, nội dung không ra đúng khách, hay đội ngũ vẫn chờ bạn.</p></div>
+      <div data-so="5"><b>Bạn sẵn sàng thử nhỏ, đo rồi sửa</b><p>Dành thời gian, đưa dữ liệu thật và đổi cách làm khi có bằng chứng.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MỤC TIÊU ================= -->
+<section class="phan" id="muc-tieu">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Cộng đồng tự đo mình bằng một thứ: <span>Bước Tăng Trưởng có bằng chứng</span></h2>
+      <p class="dan">Cộng đồng không đếm bạn đã xem bao nhiêu bài hay dự bao nhiêu buổi. Thứ được tính là một thay đổi thật trong doanh nghiệp của bạn: có bằng chứng, có người xác nhận, và còn giữ được sau đó.</p>
+    </div>
+    <div class="do hien tre">
+      <div class="lon">
+        <div>
+          <span class="nhan">Tầm nhìn tới 2031</span>
+          <div class="so">10.000</div>
+        </div>
+        <p>10.000 nhà sáng lập Việt Nam đi qua được chặng này, mỗi người một Bước Tăng Trưởng có bằng chứng. Chỉ tính người đã thật sự đổi được cách làm. Bạn có thể là một trong số đó.</p>
+      </div>
+      <div class="hai">
+        <div class="o khongtinh">
+          <span class="nhan">Không tính là kết quả</span>
+          <ul>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Cảm thấy rõ hơn</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Rất hài lòng với chương trình</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Học hết bài</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Đăng đều hơn</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Lượt xem tăng</li>
+          </ul>
+        </div>
+        <div class="o tinh">
+          <span class="nhan">Tính là Bước Tăng Trưởng</span>
+          <ul>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>Định vị và nội dung tạo được cuộc trao đổi đúng người</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>Một quy trình tư vấn làm tăng chất lượng quyết định của khách</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>Một luồng việc rời khỏi bạn, người khác vận hành được</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>Một nhịp cộng đồng tạo giá trị giữa các thành viên</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="dk-tieu hien">Một Bước Tăng Trưởng chỉ được tính khi có đủ năm điều:</p>
+    <div class="dk hien tre">
+      <div><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><b>Ghi điểm xuất phát</b><p>trước khi bắt đầu làm</p></div>
+      <div><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><b>Thay đổi trong công việc</b><p>không chỉ trong cảm giác</p></div>
+      <div><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><b>Bằng chứng kiểm tra được</b><p>tài liệu, số liệu, luồng đang chạy</p></div>
+      <div><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><b>Có người xác nhận</b><p>không tự chấm cho mình</p></div>
+      <div><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><b>Còn giữ được sau đó</b><p>qua thời gian tối thiểu của lộ trình</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÂU CHUYỆN =================
+     Thẻ 01 là câu chuyện thật của Coach Duy. Thẻ 02 và 03 là ví dụ minh hoạ tình huống, không phải người cụ thể.
+     Khi có câu chuyện thật kèm quyền dùng tên: thay nội dung, xoá class "vi-du" ở thẻ article, đổi ô số thành ảnh,
+     và sửa lại hai câu ghi chú ở đầu và cuối phần. Mỗi câu chuyện phải đủ năm điều kiện nêu ở phần Mục tiêu. -->
+<section class="phan" id="cau-chuyen">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Bước Tăng Trưởng trông như thế nào <span>khi xảy ra với một người thật</span></h2>
+      <p class="dan">Mỗi câu chuyện kể đúng theo năm điều kiện ở trên: xuất phát từ đâu, đổi được gì trong công việc, bằng chứng nào kiểm tra được, ai xác nhận và giữ được bao lâu. Câu chuyện đầu là của chính Coach Duy. Hai ví dụ sau mô tả tình huống điển hình, chưa phải thành viên thật, vì cộng đồng đang mở đợt đầu.</p>
+    </div>
+
+    <div class="chuyen hien" id="chuyen">
+      <div class="ch-chon" role="tablist" aria-label="Chọn câu chuyện">
+        <button type="button" role="tab" data-ch="c1" aria-selected="true" class="on">
+          <i class="ch-nho"><img src="img/cd-avatar.png" alt="" width="256" height="256" loading="lazy"></i>
+          <span><b>Coach Duy Nguyễn</b><em>Sáng lập Cộng đồng Next Gen Founder</em></span>
+        </button>
+        <button type="button" role="tab" data-ch="c2" aria-selected="false">
+          <i class="ch-nho"><img src="https://images.pexels.com/photos/26425558/pexels-photo-26425558.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="" width="200" height="200" loading="lazy"></i>
+          <span><b>Một chủ chuỗi nha khoa</b><em>Ba cơ sở, hai mươi người</em></span>
+        </button>
+        <button type="button" role="tab" data-ch="c3" aria-selected="false">
+          <i class="ch-nho"><img src="https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="" width="200" height="200" loading="lazy"></i>
+          <span><b>Một chuyên gia tư vấn tài chính</b><em>Làm riêng sáu năm</em></span>
+        </button>
+      </div>
+
+      <div class="ch-khung">
+        <article class="ch-noi on" data-ch="c1" role="tabpanel">
+          <div class="ch-dinh"><figure class="ch-mat"><img src="img/cd-avatar.png" alt="Coach Duy Nguyễn" width="256" height="256" loading="lazy"></figure><div class="ch-ten"><b>Coach Duy Nguyễn</b><em>Năng lực: Người kiến tạo cộng đồng</em></div></div>
+          <div class="ch-buoc">
+            <div class="ch-truoc">
+              <span class="nhan">Xuất phát</span>
+              <p>Năm năm bán theo từng khóa. Mỗi khóa là một chiến dịch riêng: một đợt chốt, một đợt giao bài, một đợt chăm sóc. Xong khóa thì quan hệ nguội, muốn đi tiếp phải thuyết phục lại từ đầu.</p>
+            </div>
+            <i class="ch-mui" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+            <div class="ch-sau">
+              <span class="nhan">Đã đổi</span>
+              <p>Tháng 8 năm 2026, công ty đặt cộng đồng làm trung tâm và biến khóa học thành lộ trình năng lực bên trong một hành trình dài hơi.</p>
+            </div>
+          </div>
+          <div class="ch-chung">
+            <div><b>Bằng chứng</b><p>Định hướng đã ban hành thành tài liệu nguồn, ba cấp cộng đồng có điều kiện vào rõ, lộ trình bốn năng lực và một thước đo duy nhất.</p></div>
+            <div><b>Còn đang đi</b><p>Quyết định này mới triển khai theo đợt. Điều chưa biết là nhịp nào đủ giá trị để thành viên muốn ở lại sau năm đầu. Đó là thứ Coach Duy đang cùng nhóm sáng lập kiểm chứng.</p></div>
+          </div>
+        </article>
+
+        <article class="ch-noi" data-ch="c2" role="tabpanel" hidden>
+          <div class="ch-dinh"><figure class="ch-mat"><img src="https://images.pexels.com/photos/26425558/pexels-photo-26425558.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Ảnh minh hoạ" width="200" height="200" loading="lazy"></figure><div class="ch-ten"><b>Một chủ chuỗi nha khoa</b><em>Năng lực: Chuyên gia tư vấn được tin cậy</em></div><span class="the-vd">ví dụ minh hoạ</span></div>
+          <div class="ch-buoc">
+            <div class="ch-truoc">
+              <span class="nhan">Xuất phát</span>
+              <p>Ca chỉnh nha giá cao gần như chỉ chốt được khi chủ trực tiếp ngồi tư vấn. Bác sĩ và lễ tân báo giá xong là khách xin về suy nghĩ rồi im.</p>
+            </div>
+            <i class="ch-mui" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+            <div class="ch-sau">
+              <span class="nhan">Đã đổi</span>
+              <p>Viết ra khung chẩn đoán mà chủ vẫn làm trong đầu, tập cho bốn bác sĩ theo đúng khung đó, và đổi thứ tự: hỏi bối cảnh và điều khách sợ trước, báo giá sau.</p>
+            </div>
+          </div>
+          <div class="ch-chung">
+            <div><b>Bằng chứng</b><p>Khung chẩn đoán thành tài liệu một trang đang dùng hằng ngày. Ghi âm sáu ca tư vấn do bác sĩ tự làm, không có chủ trong phòng.</p></div>
+            <div><b>Xác nhận và thời gian</b><p>Quản lý phòng khám xác nhận sau tám tuần, và ba tháng sau vẫn giữ được nhịp rà soát hai tuần một lần.</p></div>
+          </div>
+        </article>
+
+        <article class="ch-noi" data-ch="c3" role="tabpanel" hidden>
+          <div class="ch-dinh"><figure class="ch-mat"><img src="https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Ảnh minh hoạ" width="200" height="200" loading="lazy"></figure><div class="ch-ten"><b>Một chuyên gia tư vấn tài chính</b><em>Năng lực: Thương hiệu nhà sáng lập được tin cậy</em></div><span class="the-vd">ví dụ minh hoạ</span></div>
+          <div class="ch-buoc">
+            <div class="ch-truoc">
+              <span class="nhan">Xuất phát</span>
+              <p>Đăng bài theo cảm hứng, chủ đề rải rác. Người nhắn tin phần lớn hỏi khoá học rẻ hoặc xin tư vấn miễn phí, không phải nhóm khách muốn phục vụ.</p>
+            </div>
+            <i class="ch-mui" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+            <div class="ch-sau">
+              <span class="nhan">Đã đổi</span>
+              <p>Chốt một câu định vị và ba luận điểm để nói đi nói lại, gom mười hai câu chuyện thật từ việc mình đã làm, giữ nhịp hai bài một tuần.</p>
+            </div>
+          </div>
+          <div class="ch-chung">
+            <div><b>Bằng chứng</b><p>Kho câu chuyện và lịch xuất bản đang chạy. Sổ ghi các cuộc trao đổi đến từ nội dung, chia theo đúng nhóm khách hay không.</p></div>
+            <div><b>Xác nhận và thời gian</b><p>Nhóm đồng hành xác nhận sau mười tuần, dựa trên sổ ghi chứ không dựa trên lượt xem.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <p class="chuyen-ghi">Hai ví dụ trên mô tả tình huống điển hình, không phải người cụ thể. Khi thành viên đầu tiên đạt Bước Tăng Trưởng và đồng ý kể, câu chuyện thật kèm tên sẽ thay vào đây. Cộng đồng không dùng lời chứng chung chung và không dùng con số không truy được nguồn.</p>
+  </div>
+</section>
+
+<!-- ================= 04 LỢI ÍCH ================= -->
+<section class="phan nen" id="loi-ich">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Bạn nhận một hành trình tiến bộ, <span>không phải một tấm vé vào nhóm</span></h2>
+      <p class="dan">Bạn không vào đây để có thêm một tài khoản hay một kho nội dung. Bạn vào để tiến bộ nhanh hơn, có kỷ luật hơn và đi cùng đúng người. Bảy thứ dưới đây là điều bạn thật sự nhận.</p>
+    </div>
+    <div class="bento hien tre">
+      <figure class="anh-khung a1 anh-lo"><img src="img/cd-tuong-tac.jpg" alt="Coach Duy Nguyễn dẫn hai học viên thực hành một cuộc tư vấn" width="1500" height="1000" loading="lazy"></figure>
+      <div class="o"><span class="so">01</span><h3>Một nhân dạng để hướng tới</h3><p>Hình mẫu nhà sáng lập bạn muốn trở thành, có tên và có bốn năng lực đo được.</p></div>
+      <div class="o"><span class="so">02</span><h3>Một lộ trình</h3><p>Biết mình đang ở đâu, cần năng lực nào trước, bước tiếp theo là gì, và thế nào là xong bước đó.</p></div>
+      <div class="o"><span class="so">03</span><h3>Tri thức và công cụ</h3><p>Lộ trình học, mẫu, bài đánh giá, hướng dẫn và tình huống thật từ doanh nghiệp thành viên.</p></div>
+      <div class="o"><span class="so">04</span><h3>Thực hành và phản hồi</h3><p>Có nơi áp dụng lên doanh nghiệp của mình, nhận góp ý theo tiêu chí, sửa cách làm.</p></div>
+      <div class="o"><span class="so">05</span><h3>Quan hệ</h3><p>Gặp những người sáng lập có cùng tiêu chuẩn, học được và hợp tác được.</p></div>
+      <div class="o"><span class="so">06</span><h3>Sự đồng hành</h3><p>Được nhắc nhịp, nhìn lại tiến bộ theo quý, phục hồi khi lệch hướng. Bạn tự làm, nhưng không tự xoay xở một mình.</p></div>
+      <figure class="anh-khung a2 anh-lo"><img src="img/cd-thuc-hanh.jpg" alt="Một buổi thực hành kỹ năng tạo ấn tượng trên sân khấu" width="1500" height="1000" loading="lazy"></figure>
+      <div class="o rong"><span class="so">07</span><h3>Cơ hội</h3><p>Kết nối kinh doanh có bối cảnh và có đồng ý hai bên, nguồn lực, khách mời, đối tác, trải nghiệm ngoài công việc.</p></div>
+      <div class="o rong phang"><span class="so">Không gồm</span><h3>Điều cộng đồng không làm thay bạn</h3><p>Triển khai hệ thống thay doanh nghiệp, tư vấn riêng không giới hạn, làm thuê chức năng, cam kết doanh thu, tiếp cận Coach Duy bất cứ lúc nào.</p></div>
+    </div>
+
+    <div class="nhip hien tre">
+      <div class="o">
+        <h3>Mười bốn ngày đầu</h3>
+        <p class="dan">Để bạn sớm thấy mình thuộc về, không bị thả vào nhóm rồi gửi nội quy dài.</p>
+        <div class="moc">
+          <div><b>Hồ sơ ngắn</b><p>Ngành, giai đoạn, mục tiêu, điều bạn có thể đóng góp.</p></div>
+          <div><b>Một người chào đón</b><p>Có tên, có mặt, nói rõ cộng đồng có gì và không có gì.</p></div>
+          <div><b>Ngày 7: một kết nối</b><p>Nối với ít nhất một hoạt động hoặc một người phù hợp.</p></div>
+          <div><b>Ngày 14: một hành động</b><p>Một hành động có ý nghĩa và lộ trình năng lực đầu tiên được xác nhận.</p></div>
+        </div>
+      </div>
+      <div class="o">
+        <h3>Mỗi tháng, bốn nhịp để học, gặp, lớn và sống</h3>
+        <p class="dan">Không có buổi nào chỉ để lấp lịch. Mỗi buổi phải dẫn tới một quan hệ, một lần thực hành hoặc một kết quả.</p>
+        <div class="dong">
+          <div><b>Học và áp dụng</b><p>Phân tích tình huống thật, giờ làm chung, nhóm trách nhiệm nhỏ.</p></div>
+          <div><b>Quan hệ và kinh doanh</b><p>Bàn tròn theo ngành, kết nối nhu cầu thật, thăm doanh nghiệp thành viên.</p></div>
+          <div><b>Con người và lãnh đạo</b><p>Đối thoại về quyết định khó, phát triển quản lý chủ chốt, cách giao quyền.</p></div>
+          <div><b>Sức khoẻ và sở thích</b><p>Thể thao, thử thách kỷ luật theo nhóm, sách, chuyến đi.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NHỊP SỐNG CỘNG ĐỒNG =================
+     Bốn ô: học và làm nghề, kết nối kinh doanh, con người và gia đình, sức khoẻ và đóng góp.
+     Ô 1 dùng ảnh chương trình của Coach Duy. Ô 2, 3, 4 dùng ảnh Cộng đồng Doanh nghiệp Giá Tốt Việt Nam GT9 Hải Phòng.
+     Ảnh của cộng đồng khác nên dòng ghi nguồn ở cuối phần phải giữ nguyên, không được bỏ. -->
+<section class="phan" id="nhip-song">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Một cộng đồng không chỉ họp và học <span>còn cùng nhau làm, cùng nhau sống</span></h2>
+      <p class="dan">Quan hệ giữa những người sáng lập không bền lên trong một lớp học. Nó bền lên khi cùng làm một việc thật, cùng đi một chuyến, cùng đóng góp cho một điều ngoài công việc. Bốn dòng hoạt động dưới đây chạy song song suốt năm.</p>
+    </div>
+
+    <div class="song-hd hien tre">
+      <article class="hd cao">
+        <figure class="anh-khung anh-lo"><img src="img/cd-dai-hoi.jpg" alt="Một buổi chương trình lớn do Coach Duy dẫn dắt" width="1600" height="739" loading="lazy"></figure>
+        <div class="hd-chu">
+          <b>Học và làm nghề</b>
+          <p>Phân tích tình huống thật của thành viên, giờ làm chung, nhóm đồng hành nhỏ giữ nhịp cho nhau. Bạn mang bài toán của mình tới và mang cách làm về.</p>
+        </div>
+      </article>
+
+      <article class="hd">
+        <figure class="anh-khung anh-lo"><img src="img/cd-networking.jpg" alt="Buổi gặp gỡ kết nối của những người làm kinh doanh" width="1500" height="891" loading="lazy"></figure>
+        <div class="hd-chu">
+          <b>Kết nối và cơ hội</b>
+          <p>Bàn tròn theo ngành, những chuyến đi chung, giới thiệu có bối cảnh và có đồng ý hai bên, thăm doanh nghiệp của nhau để học cách người khác vận hành.</p>
+        </div>
+      </article>
+
+      <article class="hd">
+        <figure class="anh-khung anh-lo"><img src="img/cd-gia-dinh.jpg" alt="Ngày hội gia đình của một cộng đồng doanh nhân" width="1500" height="1000" loading="lazy"></figure>
+        <div class="hd-chu">
+          <b>Con người và gia đình</b>
+          <p>Đối thoại về những quyết định khó, cách giao quyền, và cả những dịp cho gia đình cùng tham gia. Người sáng lập không tách rời khỏi đời sống của mình.</p>
+        </div>
+      </article>
+
+      <article class="hd cao">
+        <figure class="anh-khung anh-lo"><img src="img/cd-thien-nguyen.jpg" alt="Chương trình thiện nguyện Mùa Hè Xanh của một cộng đồng doanh nhân" width="1500" height="1000" loading="lazy"></figure>
+        <div class="hd-chu">
+          <b>Sức khoẻ và đóng góp</b>
+          <p>Thể thao, thử thách kỷ luật theo nhóm và những chương trình thiện nguyện làm cùng nhau. Đây là chỗ quan hệ chuyển từ đối tác sang bạn đồng hành.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="hd-ghi">Ảnh chụp tại chương trình của Coach Duy và tại Cộng đồng Doanh nghiệp Giá Tốt Việt Nam, nơi Coach Duy giữ vai trò Phó Chủ Tịch. Đây là cách những cộng đồng doanh nhân thật vận hành, không phải ảnh hoạt động đã diễn ra của Cộng đồng Next Gen Founder. Lịch hoạt động của Cộng đồng Next Gen Founder được công bố cho thành viên theo từng quý, và không lấp kín nếu đội ngũ không giữ được chất lượng.</p>
+  </div>
+</section>
+
+<!-- ================= 05 BA CẤP ================= -->
+<section class="phan" id="ba-cap">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Một cộng đồng, ba cấp độ, <span>không phải một cái thang bắt buộc</span></h2>
+      <p class="dan">Bạn không phải đi từ cấp thấp nhất lên. Bạn bắt đầu ở cấp hợp với vấn đề và mức sẵn sàng của mình. Một người sáng lập đã có khách và có bài toán thật có thể vào thẳng Cộng đồng Thành viên. Diamond luôn theo lời mời.</p>
+    </div>
+
+    <div class="tuyen hien">
+      <div class="nguon"><b>Bạn</b> và điều bạn đang kẹt <span>một buổi trao đổi ngắn để chọn đúng cấp</span></div>
+      <div class="than-noi" aria-hidden="true"></div>
+      <div class="cap3">
+
+        <div class="cot-cap">
+          <article class="cap-the">
+            <div class="mo mo-1" aria-hidden="true">
+              <i class="m-card"><i class="m-play"></i></i>
+              <i class="m-row r1"><i class="m-dot"></i><i class="m-bar w1"></i></i>
+              <i class="m-row r2"><i class="m-dot"></i><i class="m-bar w2"></i></i>
+              <i class="m-sheet"><i class="m-line"></i><i class="m-chk"></i><i class="m-chk"></i><i class="m-chk on"></i></i>
+            </div>
+            <div class="nd">
+              <div class="nhan-cap"><span>Cấp 1</span><em>Miễn phí, đúng người</em></div>
+              <h3>Cộng đồng Mở</h3>
+              <p class="mota">Nơi đúng người nhận ra vấn đề của mình và trải nghiệm cách cộng đồng này dẫn dắt.</p>
+              <p class="cho"><b>Dành cho</b> người sáng lập, chuyên gia, quản lý chủ chốt muốn xem cách cộng đồng này dẫn dắt trước khi đi sâu.</p>
+              <ul class="nhan-duoc">
+                <li>Nội dung chọn lọc, podcast, livestream</li>
+                <li>Bài đánh giá và công cụ khởi động</li>
+                <li>Hội thảo định kỳ về đúng bài toán của người sáng lập</li>
+                <li>Hướng dẫn chọn bước tiếp theo</li>
+              </ul>
+              <p class="dk-cap"><b>Điều kiện</b> Miễn phí, nhưng dành cho đúng người. Bạn cho biết mình là ai trước khi vào.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="cot-cap chinh">
+          <article class="cap-the">
+            <div class="mo mo-2" aria-hidden="true">
+              <i class="m-path"><i class="m-node done"></i><i class="m-node here"></i><i class="m-node"></i><i class="m-node"></i></i>
+              <i class="m-avs"><i></i><i></i><i></i><i></i></i>
+              <i class="m-cal"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></i>
+            </div>
+            <div class="nd">
+              <div class="nhan-cap"><span>Cấp 2</span><em>Đồng hành cả năm</em></div>
+              <h3>Cộng đồng Thành viên</h3>
+              <p class="mota">Nơi cộng đồng chịu trách nhiệm cho sự tiến bộ liên tục của bạn.</p>
+              <p class="cho"><b>Dành cho</b> người sáng lập hoặc chuyên gia đang vận hành kinh doanh thật, có khách, muốn tiến bộ có hệ thống ở ít nhất một năng lực.</p>
+              <ul class="nhan-duoc">
+                <li>Lộ trình bốn năng lực, kèm mẫu và công cụ dùng ngay</li>
+                <li>Phiên hỏi đáp, phân tích tình huống, thực hành</li>
+                <li>Nhóm đồng hành nhỏ, giữ nhịp và nhắc nhau làm tới nơi</li>
+                <li>Hồ sơ tiến bộ: bạn biết mình đã đi tới đâu và bước tiếp là gì</li>
+                <li>Kết nối kinh doanh, sở thích, thể chất</li>
+              </ul>
+              <p class="dk-cap"><b>Điều kiện</b> Có một bài toán thật để làm và dành được thời gian thực hành mỗi tuần.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="cot-cap">
+          <article class="cap-the">
+            <div class="mo mo-3" aria-hidden="true">
+              <i class="m-table"><i class="m-seat s1"></i><i class="m-seat s2"></i><i class="m-seat s3"></i><i class="m-seat s4"></i><i class="m-seat s5"></i><i class="m-seat s6"></i><i class="m-seat s7"></i><i class="m-seat s8 you"></i><i class="m-center"></i></i>
+              <i class="m-months"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></i>
+            </div>
+            <div class="nd">
+              <div class="nhan-cap"><span>Cấp 3</span><em>Theo lời mời</em></div>
+              <h3>Diamond Founder Club</h3>
+              <p class="mota">Cộng đồng đồng hành cao cấp cho người sáng lập đã có kết quả, đi cùng một nhóm đồng cấp trong cả năm.</p>
+              <p class="cho"><b>Dành cho</b> người đã tạo ít nhất một Bước Tăng Trưởng, có bài toán thật cho mười hai tháng, có tinh thần đóng góp và giữ bảo mật.</p>
+              <ul class="nhan-duoc">
+                <li>Hội đồng nhà sáng lập hằng tháng</li>
+                <li>Buổi chẩn đoán điểm nghẽn cho doanh nghiệp</li>
+                <li>Mạng lưới có chọn lọc, hoạt động đời sống</li>
+                <li>Quyền tham gia chọn lọc cho quản lý chủ chốt</li>
+              </ul>
+              <p class="dk-cap"><b>Điều kiện</b> Vào theo lời mời sau khi hội đồng xét. Sẵn sàng về tài chính là cần, nhưng chưa đủ.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ket-cap hien">
+      <b>Bạn bắt đầu ở cấp đúng với vấn đề của mình, không theo túi tiền hay thứ tự mua.</b>
+      <span>Mức phí từng cấp được trao đổi trong buổi tư vấn sau khi bạn đăng ký. Cố vấn riêng và giải pháp 90 ngày cho doanh nghiệp là hợp đồng riêng, không nằm trong cộng đồng.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 AI DỰNG ================= -->
+<section class="phan nen" id="ai-dung">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Một người đã đi trước vài chặng, <span>và một công ty đã đổi cách làm của chính mình</span></h2>
+      <p class="dan">Không ai ở đây nói như người biết hết. Cộng đồng được dựng bởi người đã tự đi qua đúng con đường bạn đang đứng: xây uy tín bằng nội dung đều đặn, bán bằng niềm tin, rồi nhận ra doanh nghiệp không thể lớn nếu mọi việc vẫn chờ mình.</p>
+    </div>
+    <div class="ai2">
+      <figure class="anh-khung anh-lo"><img src="img/cd-gio-tay.jpg" alt="Coach Duy Nguyễn dẫn một chương trình có hàng trăm người tham dự" width="1500" height="999" loading="lazy"></figure>
+      <div class="gioi hien">
+        <h3>Coach Duy Nguyễn</h3>
+        <p class="vai">Sáng lập Cộng đồng Next Gen Founder. Tác giả phương pháp The Trusted Advisor và CDN Trust Orbit.</p>
+            <p style="margin-top:14px"><a class="lk-cdn" href="../">Xem trang cá nhân của Coach Duy Nguyễn<svg viewBox="0 0 12 12" aria-hidden="true" width="11" height="11"><path d="M3 9L9 3M9 3H4.5M9 3v4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        <p class="doan"><b>Next Gen Founder</b>, nhà sáng lập thế hệ mới, là người biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống và kiến tạo một cộng đồng cùng tạo giá trị, với AI đưa vào cả bốn việc đó. Coach Duy đã đi trước một số chặng trên con đường này và đi cùng bạn bằng những cách làm hợp với thời AI: thương hiệu cá nhân đi trước thương hiệu doanh nghiệp, khách hàng ngày càng nhiều lựa chọn và so sánh kỹ hơn.</p>
+        <p class="doan"><b>CDN Trust Orbit</b>, quỹ đạo niềm tin, là cách cộng đồng này sắp xếp mọi lần gặp khách: đặt khách ở trung tâm, tích luỹ niềm tin trước, nhận ra lúc họ sẵn sàng, rồi mới mời.</p>
+        <div class="so-lieu">
+          <div><b>334<small>nghìn</small></b><span>theo dõi Facebook</span></div>
+          <div><b>230<small>nghìn</small></b><span>đăng ký YouTube</span></div>
+          <div><b>231<small>nghìn</small></b><span>theo dõi TikTok, hai kênh</span></div>
+          <div><b>22<small>nghìn</small></b><span>theo dõi Zalo</span></div>
+          <div><b>26,6<small>nghìn</small></b><span>thành viên Sales Bứt Phá</span></div>
+          <div><b>6<small>năm</small></b><span>làm nội dung đều đặn</span></div>
+        </div>
+        <p class="so-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai và bảng điều khiển kênh. Cộng đồng này không đo bằng lượt xem; nó đo bằng thay đổi có bằng chứng trong doanh nghiệp của thành viên.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 CÁCH THAM GIA ================= -->
+<section class="phan" id="tham-gia">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Ba bước, <span>bước nào cũng đủ nhỏ để không phải quyết vội</span></h2>
+      <p class="dan">Cộng đồng mở theo từng đợt, bắt đầu từ nhóm thành viên sáng lập. Đăng ký danh sách chờ để đội ngũ Next Gen Founder biết bạn là ai, đang kẹt ở đâu, và mời bạn đúng lúc.</p>
+    </div>
+    <div class="song hien tre" id="song">
+      <svg class="song-svg" viewBox="0 0 1200 340" preserveAspectRatio="none" aria-hidden="true">
+        <path class="song-bong" d="M0,185 C100,185 160,211 240,211 S450,75 600,75 S830,150 984,150 S1130,130 1200,120"/>
+        <path class="song-net" pathLength="1000" d="M0,185 C100,185 160,211 240,211 S450,75 600,75 S830,150 984,150 S1130,130 1200,120"/>
+      </svg>
+      <i class="so-mo" style="left:-1%;top:-14%" aria-hidden="true">1</i>
+      <i class="so-mo" style="left:33%;top:30%" aria-hidden="true">2</i>
+      <i class="so-mo" style="left:66%;top:48%" aria-hidden="true">3</i>
+      <div class="bc">
+        <span class="huy" style="--x:20%;--y:62%">1</span>
+        <div class="sb-chu" style="--l:3%;--t:4%"><h3>Đăng ký danh sách chờ</h3><p>Khoảng hai phút: tên, ngành, giai đoạn doanh nghiệp, điều đang kẹt nhất và cách liên lạc. Không mất phí, không ràng buộc.</p></div>
+      </div>
+      <div class="bc">
+        <span class="huy" style="--x:50%;--y:22%">2</span>
+        <div class="sb-chu" style="--l:37%;--t:40%"><h3>Một buổi trao đổi ngắn</h3><p>Đội ngũ Next Gen Founder gọi cho bạn: đang kẹt ở đâu, cộng đồng có giải được không, hợp cấp nào. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn. Đây không phải buổi chào hàng.</p></div>
+      </div>
+      <div class="bc">
+        <span class="huy" style="--x:82%;--y:44%">3</span>
+        <div class="sb-chu" style="--l:71%;--t:60%"><h3>Nhận lời mời khi mở đợt</h3><p>Người đăng ký sớm được mời vào nhóm thành viên sáng lập trước. Bạn biết rõ mức phí, nhịp và điều kiện trước khi quyết, rồi mới bước vào mười bốn ngày đầu.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 HỎI ĐÁP ================= -->
+<section class="phan nen" id="hoi-dap">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <h2>Sáu câu hay được hỏi</h2>
+    </div>
+    <div class="faq hien" id="faq">
+      <div class="muc mo">
+        <button type="button" aria-expanded="true"><b>01</b><span>Cộng đồng đã mở chưa? Đăng ký xong thì bao giờ được vào?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Cộng đồng mở theo từng đợt, bắt đầu từ nhóm thành viên sáng lập. Ngày mở đợt sẽ báo cho bạn ngay khi có. Danh sách chờ là cách để đội ngũ Next Gen Founder biết bạn và liên hệ khi tới đợt phù hợp với bạn.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>02</b><span>Tôi phải mua cả bốn năng lực mới có kết quả?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Không. Bạn bắt đầu từ năng lực đang cản bước tiếp theo của mình. Không ai mời bạn học cả bốn chỉ để bán được nhiều hơn. Lộ trình đi theo vấn đề thật của bạn.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>03</b><span>Tôi có được gặp riêng Coach Duy không?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Cộng đồng không gồm tư vấn riêng không giới hạn hay tiếp cận Coach Duy bất cứ lúc nào. Giá trị được thiết kế để tạo ra giữa các thành viên và qua nhịp hoạt động, không dồn hết vào một người. Cố vấn riêng là hợp đồng riêng, nhận rất giới hạn.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>04</b><span>Cộng đồng có cam kết doanh thu không?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Không. Cam kết là nhịp, tiêu chuẩn, phản hồi và một thước đo có bằng chứng. Bạn tự làm, nhưng không tự xoay xở một mình. Mọi lời hứa kết quả chung từ một trường hợp đều không phải cách cộng đồng này nói.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>05</b><span>Tôi làm bán hàng hoặc quản lý, không phải người sáng lập, có hợp không?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Cộng đồng Mở phù hợp để bạn tìm hiểu và chọn bước tiếp theo. Với người làm bán hàng, có chương trình riêng; đội ngũ sẽ chỉ đúng chỗ khi trao đổi. Quản lý chủ chốt của doanh nghiệp thành viên được tham gia một số hoạt động theo lời mời.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>06</b><span>AI có vai trò gì trong cộng đồng này?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>AI được đưa vào cả bốn năng lực như năng lực nền: làm nhanh hơn việc đã đúng, giữ nhịp, gom và sắp xếp chất liệu thật từ công việc của bạn. Cộng đồng không dùng AI để sản xuất thật nhiều nội dung, và không hợp với người chỉ muốn điều đó.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ĐĂNG KÝ ================= -->
+<section class="dang-ky" id="dang-ky">
+  <div class="bao">
+    <div class="dk-khung">
+      <div class="hien">
+        <span class="nhan">Đăng ký danh sách chờ</span>
+        <h2 style="margin-top:14px">Bạn không cần quyết hôm nay. <span>Chỉ cần một bước đủ nhỏ.</span></h2>
+        <p class="dan">Để lại vài dòng. Đội ngũ Next Gen Founder sẽ liên hệ để trao đổi xem cộng đồng có giải được điều bạn đang kẹt không, và hợp cấp nào. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
+        <ol class="vach sau">
+          <li><b>01</b><p><strong>Điền biểu mẫu</strong>, khoảng hai phút.</p></li>
+          <li><b>02</b><p><strong>Một buổi trao đổi ngắn</strong> với đội ngũ Next Gen Founder.</p></li>
+          <li><b>03</b><p><strong>Nhận lời mời</strong> khi mở đợt phù hợp với bạn.</p></li>
+        </ol>
+      </div>
+      <form class="form hien" id="form" novalidate>
+        <div class="hang">
+          <label>Họ và tên<input type="text" name="ten" placeholder="Nguyễn Văn A" required autocomplete="name"></label>
+          <label>Số điện thoại hoặc Zalo<input type="tel" name="dienthoai" placeholder="09xx xxx xxx" required autocomplete="tel"></label>
+        </div>
+        <label>Doanh nghiệp và ngành<input type="text" name="nganh" placeholder="Ví dụ: phòng khám nha khoa, trung tâm đào tạo, công ty tư vấn" required autocomplete="organization"></label>
+        <label>Giai đoạn hiện tại
+          <select name="giaidoan" required>
+            <option value="" selected disabled>Chọn giai đoạn gần đúng nhất</option>
+            <option>Đã có khách nhưng doanh thu chưa lặp lại</option>
+            <option>Doanh thu lặp lại, đội ngũ dưới 5 người</option>
+            <option>Doanh thu lặp lại, đội ngũ 5 đến 15 người</option>
+            <option>Đội ngũ trên 15 người</option>
+            <option>Chưa có khách trả tiền</option>
+          </select>
+        </label>
+        <label>Điều đang kẹt nhất lúc này <small>Một hai câu là đủ</small><textarea name="ket" placeholder="Ví dụ: đội ngũ bán hàng vẫn chờ tôi xuất hiện mới chốt được" required></textarea></label>
+        <label>Email <small>Không bắt buộc</small><input type="email" name="email" placeholder="ban@congty.vn" autocomplete="email"></label>
+        <p class="loi" id="form-loi">Bạn còn thiếu một vài ô bắt buộc.</p>
+        <div class="chan">
+          <button class="nut" type="submit" id="form-nut">Gửi đăng ký danh sách chờ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <div class="xong" id="form-xong"><b>Thư đăng ký đã được soạn sẵn.</b>Ứng dụng thư của bạn vừa mở với nội dung đăng ký gửi tới đội ngũ Next Gen Founder. Bấm Gửi trong ứng dụng thư là xong. Nếu thư không mở, gửi trực tiếp tới <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a>.</div>
+          <p id="form-ghi">Thông tin chỉ dùng để đội ngũ Next Gen Founder liên hệ trao đổi, không chuyển cho bên thứ ba. Khi bấm gửi, ứng dụng thư của bạn sẽ mở với nội dung soạn sẵn.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="chan-trang">
+  <div class="bao-rong">
+    <div class="chan-hieu"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#D97757"/></svg><span><b>Next Gen Founder</b> by Coach Duy Nguyễn<br><a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span></div>
+    <div class="lk"><a href="../">Trang cá nhân Coach Duy Nguyễn</a><a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/">Cỗ máy Nội dung Một người</a><a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html">Phiếu chẩn đoán 7 phút</a><a href="#top">Lên đầu trang</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document, noanim=d.documentElement.classList.contains('noanim');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- CẤU HÌNH NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi có biểu mẫu thật ----
+     loai: 'thu'  → mở ứng dụng thư với nội dung soạn sẵn (tạm thời)
+     loai: 'form' → gửi tới địa chỉ nhận biểu mẫu (Formspree, Google Apps Script...) bằng POST JSON */
+  var DANG_KY={ loai:'thu', thu:'nextstepacademyvietnam@gmail.com', form:'' };
+
+  /* phần chờ liệu: chỉ mở khi địa chỉ có ?nhap */
+  /* hero hiện theo nhịp */
+  var hero=d.getElementById('hero');
+  function lenHero(){ if(!hero) return; var cards=[].slice.call(hero.querySelectorAll('.the')).filter(function(e){return getComputedStyle(e).display!=='none'}); var texts=[].slice.call(hero.querySelectorAll('.hero-chu > *'));
+    cards.forEach(function(e,i){ e.style.transitionDelay=(noanim||reduce?0:i*60)+'ms'; });
+    texts.forEach(function(e,i){ e.style.transitionDelay=(noanim||reduce?0:cards.length*60+i*80)+'ms'; });
+    hero.classList.add('len'); }
+  if(noanim){ hero.classList.add('len'); } else { setTimeout(lenHero,40); }
+
+  /* hiện khi cuộn tới */
+  var hien=[].slice.call(d.querySelectorAll('.hien'));
+  /* lưới an toàn: dù có chuyện gì thì sau 2,5 giây mọi khối chữ đều phải hiện */
+  var moTatCa=function(){ hien.forEach(function(e){ e.classList.add('in'); }); };
+  setTimeout(moTatCa,2500);
+  if(noanim||!('IntersectionObserver' in window)){ moTatCa(); }
+  else{
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var el=en.target; if(el.classList.contains('tre')){ [].slice.call(el.children).forEach(function(c,i){ c.style.transitionDelay=(reduce?0:i*55)+'ms'; }); } el.classList.add('in'); io.unobserve(el); } }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    hien.forEach(function(e){io.observe(e)});
+  }
+
+  /* thanh điều hướng: ô đang đọc và vạch tiến độ */
+  var nlEl=d.getElementById('nav-links');
+  function moMep(){ if(!nlEl) return; var max=nlEl.scrollWidth-nlEl.clientWidth; nlEl.style.setProperty('--ml', nlEl.scrollLeft>4?'26px':'0px'); nlEl.style.setProperty('--mr', (max-nlEl.scrollLeft)>4?'26px':'0px'); }
+  if(nlEl){ nlEl.addEventListener('scroll',moMep,{passive:true}); addEventListener('resize',moMep); moMep(); }
+  var links=[].slice.call(d.querySelectorAll('#nav-links a')), tien=d.getElementById('tien');
+  var secs=links.map(function(a){ return d.querySelector(a.getAttribute('href')); });
+  var cur=null;
+  function setActive(i){ if(i===cur) return; cur=i; links.forEach(function(a,j){ a.classList.toggle('on',j===i); });
+    if(i!=null && nlEl && nlEl.scrollWidth>nlEl.clientWidth+4){ var a=links[i]; var L=a.offsetLeft-nlEl.scrollLeft, R=L+a.offsetWidth, W=nlEl.clientWidth;
+      if(L<16||R>W-16) nlEl.scrollTo({left:a.offsetLeft-(W-a.offsetWidth)/2, behavior:reduce?'auto':'smooth'}); }
+    moMep(); }
+  function onScroll(){ var y=scrollY, h=d.documentElement.scrollHeight-innerHeight; if(tien) tien.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')'; var mark=y+innerHeight*.38, best=null; for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].offsetTop<=mark) best=i; } setActive(best); }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',function(){cur=null;onScroll();}); onScroll();
+  if(d.fonts&&d.fonts.ready) d.fonts.ready.then(function(){cur=null;onScroll();});
+
+  /* hỏi đáp */
+  var faq=d.getElementById('faq');
+  if(faq){ [].slice.call(faq.querySelectorAll('.muc button')).forEach(function(b){ b.addEventListener('click',function(){ var m=b.parentElement, mo=m.classList.toggle('mo'); b.setAttribute('aria-expanded',mo?'true':'false'); }); }); }
+
+  /* chọn câu chuyện */
+  var ch=d.getElementById('chuyen');
+  if(ch){
+    var nut=[].slice.call(ch.querySelectorAll('.ch-chon button')), noi=[].slice.call(ch.querySelectorAll('.ch-noi'));
+    function chShow(id){
+      nut.forEach(function(b){ var on=b.getAttribute('data-ch')===id; b.classList.toggle('on',on); b.setAttribute('aria-selected',on?'true':'false'); });
+      noi.forEach(function(n){ var on=n.getAttribute('data-ch')===id; n.hidden=!on; n.classList.toggle('on',on); if(on&&!noanim&&!reduce){ n.classList.remove('vao'); void n.offsetWidth; n.classList.add('vao'); } });
+    }
+    nut.forEach(function(b,i){
+      b.addEventListener('click',function(){ chShow(b.getAttribute('data-ch')); });
+      b.addEventListener('keydown',function(e){
+        var k=e.key, j=null;
+        if(k==='ArrowDown'||k==='ArrowRight') j=(i+1)%nut.length;
+        if(k==='ArrowUp'||k==='ArrowLeft') j=(i-1+nut.length)%nut.length;
+        if(j!=null){ e.preventDefault(); nut[j].focus(); chShow(nut[j].getAttribute('data-ch')); }
+      });
+    });
+  }
+
+  /* biểu mẫu đăng ký */
+  var form=d.getElementById('form');
+  if(form){
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var fields=['ten','dienthoai','nganh','giaidoan','ket'], thieu=false, data={};
+      fields.concat(['email']).forEach(function(n){ var el=form.elements[n]; data[n]=(el.value||'').trim(); });
+      fields.forEach(function(n){ var el=form.elements[n]; if(!data[n]){ thieu=true; el.setAttribute('aria-invalid','true'); el.style.borderColor='#9A2A1A'; } else { el.removeAttribute('aria-invalid'); el.style.borderColor=''; } });
+      form.classList.toggle('co-loi',thieu);
+      if(thieu){ var first=form.querySelector('[aria-invalid]'); if(first) first.focus(); return; }
+      var nut=d.getElementById('form-nut');
+      if(DANG_KY.loai==='form'&&DANG_KY.form){
+        nut.disabled=true; nut.textContent='Đang gửi...';
+        fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+          .then(function(r){ if(!r.ok) throw new Error('loi'); form.classList.add('da-gui'); d.getElementById('form-xong').innerHTML='<b>Đã nhận đăng ký của bạn.</b>Đội ngũ Next Gen Founder sẽ liên hệ theo số bạn để lại để hẹn một buổi trao đổi ngắn.'; nut.style.display='none'; })
+          .catch(function(){ nut.disabled=false; nut.textContent='Gửi lại'; form.classList.add('co-loi'); d.getElementById('form-loi').textContent='Chưa gửi được. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.'; });
+        return;
+      }
+      var body='ĐĂNG KÝ DANH SÁCH CHỜ · CỘNG ĐỒNG NEXT GEN FOUNDER\n\n'
+        +'Họ và tên: '+data.ten+'\n'
+        +'Điện thoại hoặc Zalo: '+data.dienthoai+'\n'
+        +'Doanh nghiệp và ngành: '+data.nganh+'\n'
+        +'Giai đoạn: '+data.giaidoan+'\n'
+        +'Điều đang kẹt nhất: '+data.ket+'\n'
+        +(data.email?'Email: '+data.email+'\n':'')
+        +'\nGửi từ trang Cộng đồng Next Gen Founder.';
+      var href='mailto:'+DANG_KY.thu+'?subject='+encodeURIComponent('Đăng ký danh sách chờ: '+data.ten)+'&body='+encodeURIComponent(body);
+      location.href=href;
+      form.classList.add('da-gui'); d.getElementById('form-ghi').style.display='none';
+    });
+  }
+})();
+</script>
+</body>
+</html>

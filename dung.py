@@ -108,7 +108,6 @@ INDEX = """
   <div class="hero-nen"><img src="img/cd-workshop.webp" alt="" width="1400" height="933"></div>
   <div class="hero-in">
     <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
-    <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
       <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
       <p class="mono mono-dai">Nhà sáng lập Cộng đồng Next Gen Founder</p>
@@ -120,7 +119,7 @@ INDEX = """
       </div>
       <h1>Duy đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
       <div class="hero-nut">
-        <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
+        <a class="nut nut-v" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
         <a class="nut nut-vien" href="chuong-trinh.html">Xem chương trình</a>
         <a class="nut nut-vien" href="blog.html">Đọc blog</a>
       </div>
@@ -141,7 +140,7 @@ INDEX = """
       <p class="mono">Về Duy</p>
       <h2>Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp</h2>
       <p>Duy làm việc với người mà khách mua vì tin ở chính họ: chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi.</p>
-      <p>Điều Duy nghe nhiều nhất là bốn câu. Đăng nội dung nhiều nhưng không ra đúng khách. Đội ngũ bán hàng vẫn phải chờ Duy xuất hiện mới chốt được. Tuyển thêm người nhưng Duy lại bận hơn trước. Tháng tốt tháng kém mà không rõ vì sao.</p>
+      <p>Điều Duy nghe nhiều nhất là bốn câu. Đăng nội dung nhiều nhưng không ra đúng khách. Đội ngũ bán hàng vẫn phải chờ mình xuất hiện mới chốt được. Tuyển thêm người mà mình lại bận hơn trước. Tháng tốt tháng kém mà không rõ vì sao.</p>
       <p><span class="nhan">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ.</span> Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
@@ -187,7 +186,7 @@ INDEX = """
   </div>
 
   <div class="blog-them">
-    <a class="nut nut-v" href="{CONG_DONG}" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <a class="nut nut-v" href="{CONG_DONG}">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
     <a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình</a>
   </div>
 </section>
@@ -941,7 +940,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
     <div class="hop">
       <h3>Muốn tham gia cộng đồng</h3>
       <p>Đây là cửa chính. Điền biểu mẫu khoảng hai phút, đội ngũ Next Gen Founder sẽ liên hệ để xem cộng đồng có giải được điều bạn đang kẹt không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
-      <a class="lk-v" href="{CONG_DONG}" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="lk-v" href="{CONG_DONG}">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
       <h3>Chưa rõ mình đang kẹt ở đâu</h3>
@@ -999,7 +998,7 @@ trang("404.html", "Không tìm thấy trang · Coach Duy Nguyễn",
 print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
-URLS = ["", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
+URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
         "sach.html", "kenh-youtube.html", "lien-he.html"] \
      + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

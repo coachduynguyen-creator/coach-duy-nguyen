@@ -241,39 +241,26 @@ VIEC5_VONG = [
 
 
 def vong_5():
-    """Vòng tròn năm phần, bấm một phần thì hiện ảnh và nội dung của phần đó."""
-    C, RI, RO, N = 210, 96, 196, len(VIEC5_VONG)
-    goc = 360.0 / N
-    mieng, chip, bang = [], [], []
+    """Năm việc của người cố vấn: hàng thẻ chọn, bấm một thẻ thì đổi ảnh và chữ.
+
+    Trước đây phần này là một vòng tròn chia năm miếng, mỗi miếng chỉ ghi số.
+    Vòng tròn chiếm gần nửa bề ngang mà không nói được gì ngoài con số, nên
+    ảnh bị ép nhỏ lại. Nay bỏ vòng tròn, lấy chỗ đó cho ảnh lớn hẳn ra.
+    Tên lớp giữ nguyên tiền tố v5 để phần mã chạy không phải sửa theo.
+    """
+    tab, bang = [], []
     for i, (ten, anh, mo) in enumerate(VIEC5_VONG):
-        a1 = -90 + i * goc + 1.2          # chừa khe nhỏ giữa các miếng
-        a2 = -90 + (i + 1) * goc - 1.2
-        giua = math.radians((a1 + a2) / 2)
-        rt = (RI + RO) / 2
-        tx, ty = C + rt * math.cos(giua), C + rt * math.sin(giua)
-        mieng.append(
-            '<g class="v5-mieng" data-i="%d" role="button" tabindex="0" '
-            'aria-label="%s"><path d="%s"/>'
-            '<text x="%.1f" y="%.1f" text-anchor="middle">%02d</text></g>'
-            % (i, ten, _cung(C, C, RI, RO, a1, a2), tx, ty + 6, i + 1))
-        chip.append('<button class="v5-chip" data-i="%d" type="button">%02d %s</button>'
-                    % (i, i + 1, ten))
+        tab.append('<button class="v5-chip%s" data-i="%d" type="button" role="tab" '
+                   'aria-selected="%s" aria-controls="v5-%d">'
+                   '<i>%02d</i><span>%s</span></button>'
+                   % (" chon" if i == 0 else "", i, "true" if i == 0 else "false", i, i + 1, ten))
         bang.append(
-            '<article class="v5-bang" id="v5-%d"%s>'
-            '<div class="v5-anh"><img src="%s" alt="%s" width="900" height="560" '
+            '<article class="v5-bang" id="v5-%d" role="tabpanel"%s>'
+            '<div class="v5-anh"><img src="%s" alt="%s" width="1200" height="900" '
             'loading="lazy" decoding="async"></div>'
             '<div class="v5-chu"><p class="v5-so">Việc %02d</p><h4>%s</h4><p>%s</p></div>'
             '</article>' % (i, "" if i == 0 else " hidden", anh, ten, i + 1, ten, mo))
 
-    return """<div class="v5">
-  <div class="v5-ve">
-    <svg viewBox="0 0 420 420" role="img" aria-label="Năm việc của người cố vấn">
-      %s
-      <circle class="v5-loi" cx="210" cy="210" r="88"/>
-      <text class="v5-loi-t" x="210" y="200" text-anchor="middle">Năm việc</text>
-      <text class="v5-loi-t2" x="210" y="228" text-anchor="middle">của người cố vấn</text>
-    </svg>
-    <div class="v5-chip-hang">%s</div>
-  </div>
-  <div class="v5-cot">%s</div>
-</div>""" % ("".join(mieng), "".join(chip), "".join(bang))
+    return ('<div class="v5">'
+            '<div class="v5-tab" role="tablist" aria-label="Năm việc của người cố vấn">%s</div>'
+            '%s</div>' % ("".join(tab), "".join(bang)))

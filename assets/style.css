@@ -74,7 +74,22 @@ img{max-width:100%;display:block}
 #mo-menu[aria-expanded="true"] span:nth-child(2){opacity:0}
 #mo-menu[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 #menu-nho{display:none;border-top:1px solid var(--line);background:var(--bg-2)}
-#menu-nho.mo{display:block}
+/* Phải có chiều cao tối đa và cho cuộn. Thiếu hai thứ này thì menu dài hơn
+   màn hình sẽ tràn ra ngoài mà không kéo xuống được. dvh tính cả thanh công
+   cụ của trình duyệt điện thoại, vh thì không, nên để vh làm bản dự phòng. */
+#menu-nho.mo{display:block;max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);
+  overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+
+/* Nhóm gấp lại trong menu nhỏ */
+#menu-nho .gap > summary{display:block;position:relative;padding:15px 44px 15px 20px;
+  border-bottom:1px solid var(--line);font-size:16.5px;font-weight:600;color:var(--ink-2);
+  cursor:pointer;list-style:none}
+#menu-nho .gap > summary::-webkit-details-marker{display:none}
+#menu-nho .gap > summary::after{content:"";position:absolute;right:22px;top:50%;
+  width:8px;height:8px;border-right:2px solid var(--ink-3);border-bottom:2px solid var(--ink-3);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s var(--ease)}
+#menu-nho .gap[open] > summary::after{transform:translateY(-30%) rotate(-135deg)}
+#menu-nho .gap[open] > summary{color:var(--ink)}
 #menu-nho a{display:block;padding:15px 20px;border-bottom:1px solid var(--line);text-decoration:none;font-size:16.5px;font-weight:600;color:var(--ink-2)}
 #menu-nho a.on{color:var(--vang)}
 #menu-nho .nut{margin:18px 20px 22px;width:calc(100% - 40px);justify-content:center}
@@ -152,7 +167,6 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .hero-nen img{width:100%;height:100%;object-fit:cover;object-position:66% 30%;transform:scale(1.05);filter:saturate(.62) sepia(.26) contrast(1.05) brightness(.56) blur(1.5px)}
 .hero-nen::after{content:"";position:absolute;inset:0;background:radial-gradient(76% 62% at 44% 44%,rgba(23,18,15,.6) 0%,rgba(23,18,15,.9) 58%,rgba(23,18,15,.99) 100%)}
 .hero-in{position:relative;z-index:2;width:min(100% - 40px,1080px);margin-inline:auto;padding:92px 0 44px;text-align:center}
-.hero-goc{position:absolute;top:24px;left:0;right:0;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
 .hero-giua > *{opacity:0;transform:translateY(16px)}
 .noanim .hero-giua > *,#hero.len .hero-giua > *{opacity:1;transform:none;transition:opacity .72s var(--ease),transform .72s var(--ease)}
 .hero-avt{width:104px;height:104px;border-radius:50%;overflow:hidden;margin:0 auto 22px;border:2px solid var(--vang);box-shadow:0 0 0 9px rgba(242,177,74,.1),var(--shadow)}
@@ -841,7 +855,29 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .logo:focus-visible{outline:2px solid var(--vang);outline-offset:4px;border-radius:8px}
 
 /* ===== Khối Cộng đồng trên trang chủ ===== */
-.cd-mat{margin-top:46px}
+/* Khối ảnh các nhà sáng lập. Đây là chỗ người xem tự hỏi mình có thuộc về đây
+   không, nên tách hẳn ra bằng một mảng nền riêng: quầng sáng vàng ở giữa cho
+   mắt dừng lại, lưới chấm thưa lấy từ hoa văn chung của trang, và một vệt sáng
+   mảnh chạy ngang ở mép trên dưới để đóng khung khối. */
+.cd-mat{position:relative;margin-top:46px;padding:52px 0 44px;isolation:isolate}
+.cd-mat::before{content:"";position:absolute;inset:-1px 50% auto 50%;z-index:-2;
+  width:100vw;height:calc(100% + 2px);transform:translateX(-50%);
+  background:
+    radial-gradient(74% 98% at 50% 46%,rgba(242,177,74,.20) 0%,rgba(242,177,74,.07) 44%,transparent 74%),
+    radial-gradient(rgba(242,177,74,.30) 1.2px,transparent 1.7px),
+    linear-gradient(180deg,var(--bg-2) 0%,var(--bg) 100%);
+  background-size:auto,22px 22px,auto}
+/* Hai vệt sáng mảnh đóng khung trên dưới, đậm ở giữa rồi tan dần ra hai mép. */
+.cd-mat::after{content:"";position:absolute;inset:0 50% auto 50%;z-index:-1;
+  width:100vw;height:100%;transform:translateX(-50%);pointer-events:none;
+  border-top:1px solid transparent;border-bottom:1px solid transparent;
+  background:
+    linear-gradient(90deg,transparent,rgba(242,177,74,.55),transparent) top/100% 1px no-repeat,
+    linear-gradient(90deg,transparent,rgba(242,177,74,.34),transparent) bottom/100% 1px no-repeat}
+@media(max-width:900px){
+  .cd-mat{padding:38px 0 32px;margin-top:34px}
+  .cd-mat::before{background-size:auto,18px 18px,auto}
+}
 /* Lưới ảnh so le, dựng theo dải ảnh đầu trang Cộng đồng Next Gen Founder.
    Bảy cột: ba trái, Coach Duy ở giữa rộng hơn hẳn, ba phải. Mỗi cột tụt xuống
    một khoảng --pt khác nhau nên hàng ảnh gợn sóng chứ không thẳng băng.
@@ -1112,58 +1148,45 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   #hero .bang-hieu .khau-hieu{font-size:clamp(12.5px,1.05vw,14.5px)}
 }
 
-/* ===== Năm việc của người cố vấn: vòng tròn chia năm phần ===== */
-/* Bấm một miếng thì bên phải đổi ảnh và chữ. Không dùng thẻ chi tiết vì muốn
-   ảnh đủ lớn, và muốn miếng đang chọn nhìn thấy được ngay trên vòng tròn. */
-.v5{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:44px;
-  align-items:center;margin-top:34px}
-.v5-ve{position:relative}
-.v5-ve svg{width:100%;height:auto;display:block;overflow:visible}
+/* ===== Năm việc của người cố vấn ===== */
+/* Hàng thẻ chọn ở trên, một khối ảnh lớn kèm chữ ở dưới. Bản trước dùng vòng
+   tròn chia năm miếng, chiếm gần nửa bề ngang chỉ để hiện năm con số, nên ảnh
+   bị ép nhỏ. Bỏ vòng tròn thì ảnh rộng gấp đôi mà khối lại thấp hơn. */
+.v5{margin-top:32px}
+.v5-tab{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;
+  border-bottom:1px solid var(--line);margin-bottom:30px}
+.v5-tab::-webkit-scrollbar{display:none}
+.v5-chip{flex:1 1 0;min-width:132px;display:flex;flex-direction:column;gap:5px;
+  align-items:flex-start;text-align:left;padding:14px 16px 15px;cursor:pointer;
+  background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:border-color .24s var(--ease),background .24s var(--ease)}
+.v5-chip i{font-family:var(--f-mono);font-style:normal;font-size:12px;font-weight:600;
+  letter-spacing:.1em;color:var(--ink-3);transition:color .24s var(--ease)}
+.v5-chip span{font-family:var(--f-tit);font-weight:700;font-size:16px;line-height:1.25;
+  color:var(--ink-2);transition:color .24s var(--ease)}
+@media(hover:hover){.v5-chip:hover span{color:var(--ink)}.v5-chip:hover i{color:var(--ink-2)}}
+.v5-chip:focus-visible{outline:2px solid var(--vang);outline-offset:-3px;border-radius:var(--r-s)}
+.v5-chip.chon{border-bottom-color:var(--vang)}
+.v5-chip.chon i{color:var(--vang)}
+.v5-chip.chon span{color:var(--ink)}
 
-.v5-mieng{cursor:pointer}
-.v5-mieng path{fill:var(--bg-2);stroke:var(--line);stroke-width:1;
-  transition:fill .28s var(--ease),stroke .28s var(--ease)}
-.v5-mieng text{font-family:var(--f-mono);font-size:14px;font-weight:600;
-  fill:var(--ink-3);pointer-events:none;transition:fill .28s var(--ease)}
-@media(hover:hover){
-  .v5-mieng:hover path{fill:var(--bg-3);stroke:var(--vang)}
-  .v5-mieng:hover text{fill:var(--ink)}
-}
-.v5-mieng:focus-visible{outline:none}
-.v5-mieng:focus-visible path{stroke:var(--vang);stroke-width:2}
-.v5-mieng.chon path{fill:var(--vang);stroke:var(--vang)}
-.v5-mieng.chon text{fill:var(--bg)}
-
-.v5-loi{fill:var(--bg);stroke:var(--line);stroke-width:1}
-.v5-loi-t{font-family:var(--f-tit);font-size:22px;font-weight:700;fill:var(--ink)}
-.v5-loi-t2{font-family:var(--f-than);font-size:13px;fill:var(--ink-3)}
-
-/* Hàng nút chữ: đường vào thứ hai cho người dùng bàn phím và cho khổ hẹp,
-   nơi miếng bánh quá nhỏ để bấm trúng. */
-.v5-chip-hang{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
-.v5-chip{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.04em;
-  color:var(--ink-2);background:var(--bg-2);border:1px solid var(--line);
-  border-radius:999px;padding:7px 13px;cursor:pointer;
-  transition:color .24s var(--ease),background .24s var(--ease),border-color .24s var(--ease)}
-@media(hover:hover){.v5-chip:hover{color:var(--ink);border-color:var(--vang)}}
-.v5-chip.chon{background:var(--vang);border-color:var(--vang);color:var(--bg)}
-
+.v5-bang{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,1fr);gap:44px;
+  align-items:center}
 .v5-bang[hidden]{display:none}
 .v5-anh{aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--bg-2);
-  border:1px solid var(--line);margin-bottom:20px}
+  border:1px solid var(--line)}
 .v5-anh img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
 .v5-so{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--vang);margin-bottom:8px}
-.v5-chu h4{font-family:var(--f-tit);font-weight:700;font-size:26px;line-height:1.2;
-  color:var(--ink);margin-bottom:12px;text-wrap:balance}
-.v5-chu > p:last-child{font-size:16px;line-height:1.72;color:var(--ink-2);max-width:56ch}
+  text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.v5-chu h4{font-family:var(--f-tit);font-weight:700;font-size:30px;line-height:1.18;
+  color:var(--ink);margin-bottom:14px;text-wrap:balance}
+.v5-chu > p:last-child{font-size:16.5px;line-height:1.72;color:var(--ink-2)}
 
 @media(max-width:900px){
-  .v5{grid-template-columns:1fr;gap:30px}
-  .v5-ve{max-width:340px;margin-inline:auto}
-  .v5-chu h4{font-size:22px}
+  .v5-bang{grid-template-columns:1fr;gap:24px}
+  .v5-chu h4{font-size:24px}
   .v5-chu > p:last-child{font-size:15.5px}
-}
-@media(prefers-reduced-motion:reduce){
-  .v5-mieng path,.v5-mieng text,.v5-chip{transition:none}
+  .v5-chip{flex:0 0 auto;min-width:0;padding:12px 14px 13px}
+  .v5-chip span{font-size:15px}
+  .v5-tab{margin-bottom:24px}
 }

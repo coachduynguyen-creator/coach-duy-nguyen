@@ -3,7 +3,8 @@
 import os, html, json, re
 
 BASE = "https://coachduynguyen.vn"
-CONG_DONG = "https://coachduynguyen-creator.github.io/next-gen-founder/"
+# Trang Cộng đồng nay là trang con của chính tên miền này, không còn kho riêng.
+CONG_DONG = BASE + "/cong-dong/"
 CO_MAY = "https://coachduynguyen-creator.github.io/co-may-noi-dung/"
 PHIEU = "https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html"
 EMAIL = "nextstepacademyvietnam@gmail.com"
@@ -12,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260825yk"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260825yq"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -32,6 +33,9 @@ CT_MENU = [
 ]
 
 MENU = [
+    # Cộng đồng đứng đầu vì đó là thứ cả trang này dẫn tới. Đường dẫn là
+    # địa chỉ đầy đủ nên đúng ở cả trang gốc lẫn trang trong thư mục con.
+    (CONG_DONG, "Cộng đồng", None),
     ("ve-toi.html", "Về Duy", None),
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
@@ -72,19 +76,26 @@ def nav(active, p=""):
             ra.append('<a href="%s"%s>%s</a>' % (dd(h, p), on, t))
     links = "".join(ra)
 
+    # Menu trên máy nhỏ. Trước đây mười mục chương trình mở sẵn, cộng các mục
+    # còn lại thành hai mươi hai dòng, dài hơn màn hình điện thoại nên không
+    # cuộn tới cuối được. Nay gấp phần chương trình lại bằng thẻ details, ai
+    # cần mới bấm mở. Không cần thêm mã chạy nào.
     nho = []
     for h, t, con in MENU:
         on = ' class="on"' if h == active else ''
-        nho.append('<a href="%s"%s>%s</a>' % (dd(h, p), on, t))
-        if con:
-            nho.append('<div class="nhom">Các chương trình</div>')
-            for ch, ct, cm in con:
-                if ch == "SEP" or ch == "chuong-trinh.html": continue
-                nho.append('<a class="con" href="%s">%s</a>' % (dd(ch, p), ct))
+        if not con:
+            nho.append('<a href="%s"%s>%s</a>' % (dd(h, p), on, t))
+            continue
+        muc = ['<a class="con" href="%s">Tất cả chương trình</a>' % dd(h, p)]
+        for ch, ct, cm in con:
+            if ch == "SEP" or ch == h: continue
+            muc.append('<a class="con" href="%s">%s</a>' % (dd(ch, p), ct))
+        nho.append('<details class="gap"%s><summary>%s</summary>%s</details>'
+                   % (" open" if h == active else "", t, "".join(muc)))
     menu_nho = "".join(nho)
 
-    cta = ('<a class="nut nut-v nut-nho nav-cta" href="%s" target="_blank" rel="noopener">'
-           'Cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>' % CONG_DONG)
+    cta = ('<a class="nut nut-v nut-nho nav-cta" href="%s">'
+           'Danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>' % CONG_DONG)
     return """<nav id="nav">
   <div class="nav-in">
     <a class="logo" href="%s" aria-label="Coach Duy Nguyễn, trang chủ">%s<span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
@@ -92,7 +103,7 @@ def nav(active, p=""):
     %s
     <button id="mo-menu" type="button" aria-expanded="false" aria-controls="menu-nho" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </div>
-  <div id="menu-nho">%s<a class="nut nut-v" href="%s" target="_blank" rel="noopener">Vào cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+  <div id="menu-nho">%s<a class="nut nut-v" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   <div id="tien"></div>
 </nav>""" % (dd("index.html", p), DN_SVG, links, cta, menu_nho, CONG_DONG)
 
@@ -110,7 +121,7 @@ def khoi_cuoi(p=""):
         <span class="so">Lối 01 · Đi cùng nhau</span>
         <h3>Vào Cộng đồng Next Gen Founder</h3>
         <p>Nơi nhà sáng lập luyện bốn năng lực trong công việc thật, có nhịp, có phản hồi, và có người hiểu chuyện mình đang gặp ở bên cạnh. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
-        <a class="nut nut-toi" href="%s" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
+        <a class="nut nut-toi" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="loi">
         <span class="so">Lối 02 · Đọc trước đã</span>
@@ -157,7 +168,7 @@ def footer(p=""):
       </div>
       <div>
         <b>Đi tiếp</b>
-        <a href="%s" target="_blank" rel="noopener">Cộng đồng Next Gen Founder</a>
+        <a href="%s">Cộng đồng Next Gen Founder</a>
         <a href="%s" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
         <a href="%s" target="_blank" rel="noopener">Cỗ máy Nội dung Một người</a>
         <a href="%s">Về Duy</a><a href="%s">Liên hệ</a>
