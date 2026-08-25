@@ -558,6 +558,30 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 
 <p>Bản họ viết chắc chắn sẽ thiếu và sai vài chỗ, nhưng bù lại nó dùng đúng ngôn ngữ của người sẽ dùng nó, và quan trọng hơn cả, <span class="nhan">họ thấy đó là tài liệu của mình chứ không phải luật của sếp</span>. Tài liệu do người dùng viết ra thì có cơ hội được mở lại, còn tài liệu do sếp ban xuống thì hiếm khi.</p>
 
+<h2>Ai nên là người viết ra, và ai nên là người kiểm</h2>
+
+<p>Một câu hỏi rất thực tế mà ít tài liệu nào trả lời: người có kinh nghiệm nên tự viết ra, hay nên để người khác viết hộ.</p>
+
+<p>Duy chọn cách thứ hai và có lý do. Người có kinh nghiệm viết về việc mình làm thì luôn bỏ qua chỗ khó, không phải vì lười mà vì với họ những chỗ ấy đã thành phản xạ, và người ta không mô tả được thứ mình không còn phải nghĩ khi làm.</p>
+
+<p>Cách hiệu quả hơn là để một người ít kinh nghiệm hơn ngồi cạnh, quan sát và hỏi. Câu hỏi của người chưa biết chính là thứ moi ra được phần ngầm, vì họ hỏi đúng những chỗ mà người trong nghề đã quên là mình từng phải học.</p>
+
+<p>Sau đó người có kinh nghiệm đọc lại và sửa. Vai của họ là kiểm chứ không phải viết, và đổi vai như vậy thường rút ngắn được một nửa thời gian, đồng thời cho ra tài liệu mà người mới đọc hiểu được.</p>
+
+<p><span class="nhan dam">Người biết rõ nhất thường là người mô tả tệ nhất, và đó không phải lỗi của họ.</span></p>
+
+<h2>Dấu hiệu chuyển giao đang thất bại</h2>
+
+<p>Có ba dấu hiệu xuất hiện sớm, và thấy sớm thì sửa còn kịp.</p>
+
+<p><b>Người mới làm đúng nhưng không giải thích được vì sao:</b> họ đang chép thao tác chứ chưa hiểu cơ chế, nên khi gặp tình huống lệch khỏi tài liệu thì họ sẽ đứng lại hoặc làm sai một cách tự tin.</p>
+
+<p><b>Câu hỏi gửi về bạn không giảm sau tháng thứ hai:</b> nếu số câu hỏi vẫn y nguyên thì tài liệu chưa trả lời được thứ người ta thật sự cần, và đọc lại các câu hỏi đó sẽ chỉ đúng chỗ phải bổ sung.</p>
+
+<p><b>Người mới hỏi bạn thay vì hỏi tài liệu:</b> hỏi bạn nhanh hơn và chắc chắn hơn, nên nếu bạn luôn trả lời ngay thì không ai mở tài liệu, và thói quen này hình thành trong vòng ba tuần.</p>
+
+<p>Cách gỡ dấu hiệu thứ ba đơn giản mà cần bạn kiên nhẫn. Khi được hỏi, đừng trả lời ngay, hỏi lại rằng phần này trong tài liệu nói gì. Nếu tài liệu có mà họ chưa đọc thì họ tự đọc từ lần sau, còn nếu tài liệu chưa có thì bạn vừa tìm ra một chỗ thiếu.</p>
+
 <h2>Điều Duy không hứa</h2>
 
 <p>Ghi hai mươi ca không làm công ty tự chạy. Nó chỉ làm được một việc, nhưng là việc không có đường tắt: đưa phần lập luận ra khỏi đầu bạn, thành thứ người khác đọc được.</p>
@@ -1526,24 +1550,25 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
  ngay="2026-07-16", ngay_viet="16 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-noi-2.webp", alt="Coach Duy Nguyễn đang nói với người đối diện",
  than="""
-<p>Trong mọi cộng đồng Duy từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại. Người không có thì âm thầm rời đi, thường không nói gì.</p>
+<p>Trong mọi cộng đồng Duy từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như đã được định đoạt ngay trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại, còn người không có thì âm thầm rời đi và thường không nói gì cả.</p>
+<p><span class="nhan">Họ không rời đi vì thất vọng, họ chỉ ngừng mở ứng dụng.</span> Người dựng cộng đồng khó sửa đúng ở chỗ này, vì không có phản hồi nào để đọc, chỉ có một con số lặng lẽ đi xuống sau vài tháng.</p>
 
 <h2>Vì sao hai tuần, không phải hai tháng</h2>
-<p>Vì đó là khoảng thời gian sự háo hức ban đầu còn đủ để người ta bỏ công. Sau hai tuần, cộng đồng phải cạnh tranh với công việc thật, và nó sẽ thua nếu chưa chứng minh được giá trị.</p>
-<p>Điều nhiều người dựng cộng đồng hiểu sai: họ nghĩ nội dung hay sẽ giữ người. Nội dung hay chỉ giữ được người ta chú ý một lúc. Cái giữ người lại là cảm giác mình đang tiến bộ.</p>
+<p>Vì đó là khoảng thời gian mà sự háo hức ban đầu còn đủ để người ta bỏ công ra. Sau hai tuần thì cộng đồng phải cạnh tranh với công việc thật của họ, và nó sẽ thua nếu tới lúc đó vẫn chưa chứng minh được gì.</p>
+<p>Điều nhiều người dựng cộng đồng hiểu sai là họ nghĩ nội dung hay sẽ giữ được người. Nội dung hay chỉ giữ được sự chú ý trong một lúc, còn cái giữ người ở lại là cảm giác mình đang tiến bộ.</p>
 
 <div class="dan-manh">Kết quả nhỏ đó không phải phần thưởng. Nó là bằng chứng cho người mới rằng chỗ này làm được việc, và rằng chính họ làm được việc.</div>
 
 <h2>Bốn việc phải xảy ra trong mười bốn ngày</h2>
-<p><b>Ngày một tới ba: biết mình đang ở đâu.</b> Người mới cần một cách tự đánh giá để biết mình thiếu gì. Không có bước này, họ sẽ đọc mọi thứ và không biết bắt đầu từ đâu.</p>
-<p><b>Ngày ba tới bảy: làm được một việc nhỏ và thấy kết quả.</b> Việc đó phải nhỏ tới mức làm xong trong một buổi, và cụ thể tới mức nhìn thấy kết quả ngay. Không phải học một khái niệm, mà là làm một thứ.</p>
-<p><b>Ngày bảy tới mười: được một người thật nhìn thấy.</b> Có thể là một lời phản hồi, một câu hỏi được trả lời, hoặc được nhắc tên. Cảm giác được nhìn thấy là thứ mạng xã hội không cho, và là lý do người ta ở lại một cộng đồng.</p>
-<p><b>Ngày mười tới mười bốn: biết nhịp tiếp theo là gì.</b> Họ cần biết tuần sau có gì, tháng sau có gì. Không có nhịp rõ, họ sẽ quên quay lại.</p>
+<p><b>Ngày một tới ba, biết mình đang ở đâu:</b> người mới cần một cách tự đánh giá để biết mình đang thiếu gì, vì không có bước này thì họ sẽ đọc mọi thứ mà không biết nên bắt đầu từ đâu.</p>
+<p><b>Ngày ba tới bảy, làm được một việc nhỏ và thấy kết quả:</b> việc đó phải nhỏ tới mức làm xong trong một buổi và cụ thể tới mức nhìn thấy kết quả ngay, tức là làm ra một cái gì đó chứ không phải học một khái niệm.</p>
+<p><b>Ngày bảy tới mười, được một người thật nhìn thấy:</b> có thể là một lời phản hồi, một câu hỏi được trả lời, hoặc chỉ là được nhắc tên, và cảm giác được nhìn thấy chính là cái mà mạng xã hội không cho được, cũng là lý do người ta ở lại một cộng đồng.</p>
+<p><b>Ngày mười tới mười bốn, biết nhịp tiếp theo là gì:</b> họ cần biết tuần sau có gì và tháng sau có gì, vì không có nhịp rõ thì họ sẽ quên quay lại chứ không phải cố ý bỏ.</p>
 
 <h2>Ba lỗi hay gặp</h2>
-<p><b>Đổ hết tài nguyên vào ngày đầu.</b> Người mới nhận một thư viện khổng lồ, thấy choáng, và không mở lại. Nhiều tài nguyên là dấu hiệu của sự hào phóng, nhưng với người mới nó là dấu hiệu của sự mông lung.</p>
-<p><b>Để người mới tự tìm đường.</b> Câu cứ thoải mái khám phá nghe rất dễ chịu và là cách nhanh nhất để mất họ.</p>
-<p><b>Không ai chào.</b> Trong cộng đồng, một câu chào của người thật có sức nặng hơn mười thông báo tự động. Việc này giao được cho thành viên cũ, và chính nó cũng gắn kết người cũ.</p>
+<p><b>Đổ hết tài nguyên vào ngày đầu:</b> người mới nhận một thư viện khổng lồ, thấy choáng, rồi không mở lại lần nào nữa. Với người tặng thì nhiều tài nguyên là dấu hiệu của sự hào phóng, còn với người mới thì nó là dấu hiệu của sự mông lung.</p>
+<p><b>Để người mới tự tìm đường:</b> câu cứ thoải mái khám phá nghe rất dễ chịu và cũng là cách nhanh nhất để mất họ, vì tự do lúc chưa biết gì thì không phải là tự do mà là bị bỏ mặc.</p>
+<p><b>Không ai chào:</b> trong một cộng đồng thì một câu chào của người thật có sức nặng hơn mười thông báo tự động, và việc này giao được cho thành viên cũ, bản thân nó cũng gắn kết chính người cũ.</p>
 
 <h2>Đo mười bốn ngày đầu bằng gì</h2>
 <div class="bang"><table>
@@ -1554,9 +1579,41 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
 <tr><td>Số người mới được thành viên cũ tương tác</td><td>Cộng đồng có tự đón người không, hay chỉ người dẫn đón</td></tr>
 </table></div>
 
+<h2>Điều gì xảy ra ở ngày thứ mười lăm</h2>
+
+<p>Mười bốn ngày đầu làm tốt thì bạn được gì. Không phải một thành viên trung thành mãi mãi, mà là một người đã chuyển từ trạng thái đang thử sang trạng thái đang làm.</p>
+
+<p>Khác biệt giữa hai trạng thái đó rất lớn. Người đang thử tính chi phí mỗi lần mở ứng dụng ra, còn người đang làm thì đã có việc dở dang trong cộng đồng nên họ quay lại vì việc chứ không vì nội dung.</p>
+
+<p>Từ ngày mười lăm trở đi, thứ giữ họ đổi sang một cơ chế khác: quan hệ với vài người cụ thể trong nhóm. Nếu tới tháng thứ hai mà một thành viên chưa quen ai theo kiểu nhớ tên và biết người kia đang làm gì, thì khả năng họ rời đi vẫn còn cao, dù mười bốn ngày đầu đã trôi qua rất tốt.</p>
+
+<p>Nên việc của bạn sau ngày mười lăm không phải là tiếp tục chăm từng người. Việc của bạn là tạo dịp để họ quen được vài người, rồi lùi ra.</p>
+
 <h2>Thiết kế mười bốn ngày đầu như một sản phẩm</h2>
-<p>Phần này đáng đầu tư nhất, mà thường lại bị coi là phần phụ. Nếu bạn chỉ có thời gian làm tốt một thứ trong cộng đồng của mình, hãy làm tốt mười bốn ngày đầu.</p>
-<p>Viết ra từng ngày người mới nhận gì, làm gì, gặp ai. Chạy thử với năm người, hỏi họ ngày nào thấy chán nhất, rồi sửa đúng ngày đó.</p>
+<p>Phần này đáng đầu tư nhất mà thường lại bị coi là phần phụ, vì nó không hào nhoáng và cũng không ai khoe được. <span class="nhan dam">Nếu bạn chỉ có thời gian làm tốt một phần trong cộng đồng của mình, hãy làm tốt mười bốn ngày đầu.</span></p>
+<p>Cách làm rất thủ công. Viết ra từng ngày người mới nhận gì, làm gì và gặp ai, rồi chạy thử với năm người, hỏi họ ngày nào thấy chán nhất, và sửa đúng ngày đó.</p>
+<p>Duy nhấn mạnh câu hỏi ngày nào chán nhất chứ không phải câu hỏi thấy thế nào. Câu thứ hai luôn nhận được lời khen lịch sự, còn câu thứ nhất buộc người ta phải chỉ ra một chỗ cụ thể, và chỗ đó thường là chỗ bạn không ngờ tới.</p>
+
+
+<h2>Kết quả nhỏ đầu tiên nên là gì</h2>
+
+<p>Câu hỏi này khó hơn vẻ ngoài của nó, vì phần lớn người dựng cộng đồng chọn một việc quá lớn rồi tự thấy như vậy mới xứng đáng.</p>
+
+<p>Duy dùng ba tiêu chí để chọn. Việc đó phải làm xong trong một buổi, phải tạo ra một thứ nhìn thấy được, và phải liên quan trực tiếp tới lý do người ta gia nhập. Thiếu tiêu chí nào thì kết quả cũng hụt đúng phần đó.</p>
+
+<p>Vài ví dụ cho dễ hình dung. Với một cộng đồng về bán hàng, kết quả đầu tiên có thể là viết lại đúng một câu mở đầu buổi tư vấn của mình và mang ra dùng thử. Với một cộng đồng về nội dung, đó là ghi ba mẩu chất liệu từ công việc trong tuần. Với một cộng đồng về vận hành, đó là viết ra ba vùng quyết định cho đúng một người trong công ty.</p>
+
+<p>Điểm chung của ba ví dụ trên là chúng nhỏ tới mức nghe hơi tầm thường. Nhưng người mới cần một kết quả nhỏ chắc chắn làm được, không cần một mục tiêu lớn để rồi bỏ dở ở ngày thứ chín.</p>
+
+<h2>Người cũ mới là người đón người mới</h2>
+
+<p>Có một việc đổi được kết quả của mười bốn ngày đầu nhiều hơn mọi thứ khác, và nó gần như không tốn tiền: giao việc đón người mới cho thành viên cũ.</p>
+
+<p>Cách làm đơn giản. Mỗi người mới được ghép với một thành viên đã ở lâu, người này nhắn một câu chào thật, hỏi họ đang mắc gì, và có mặt trong hai tuần đầu nếu người mới cần hỏi.</p>
+
+<p>Việc này có ích cho cả hai đầu. Người mới có một khuôn mặt cụ thể để hỏi thay vì hỏi vào chỗ trống. Còn người cũ thì gắn bó hơn hẳn, vì được giao một vai trong cộng đồng chứ không chỉ là người tham dự.</p>
+
+<p>Duy thấy nhiều nơi làm việc này theo kiểu tự nguyện rồi để đó, và nó chết sau hai tháng. Muốn nó sống thì phải có danh sách, có người theo dõi, và có lời cảm ơn công khai cho những người làm tốt.</p>
 """),
 
 dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
@@ -1565,35 +1622,61 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
  ngay="2026-07-10", ngay_viet="10 tháng 7, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
  than="""
-<p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của Duy là bao nhiêu người trong đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống.</p>
-<p>Số thành viên là con số dễ tăng nhất và ít liên quan nhất tới việc cộng đồng có tạo ra giá trị hay không.</p>
+<p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của Duy là bao nhiêu người trong số đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống một lúc.</p>
+<p><span class="nhan">Số thành viên là con số dễ tăng nhất và ít liên quan nhất tới việc cộng đồng có tạo ra giá trị hay không.</span> Nó dễ tăng vì mời một người vào nhóm gần như không tốn gì, mà thứ không tốn gì thì cũng không nói lên điều gì.</p>
 
 <h2>Bốn con số nói đúng hơn</h2>
 
 <h3>Một: tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu</h3>
-<p>Bao nhiêu phần trăm người mới làm được ít nhất một việc thật trong hai tuần đầu. Chỉ số này dự báo mạnh nhất cho việc họ còn ở lại sau sáu tháng.</p>
-<p>Nếu con số này thấp, mọi nỗ lực thu hút thêm người mới đều là đổ nước vào thùng thủng.</p>
+<p>Đếm xem bao nhiêu phần trăm người mới làm được ít nhất một việc thật trong hai tuần đầu, vì chỉ số này dự báo mạnh nhất cho việc họ còn ở lại sau sáu tháng hay không.</p>
+<p>Nếu con số này thấp thì mọi nỗ lực thu hút thêm người mới đều là đổ nước vào thùng thủng, và bạn càng chi nhiều cho việc kéo người thì càng lỗ nhanh.</p>
 
 <h3>Hai: tỉ lệ quay lại theo nhịp</h3>
-<p>Nếu cộng đồng có nhịp hằng tuần, bao nhiêu phần trăm thành viên xuất hiện ít nhất hai lần trong bốn tuần. Con số này cho biết nhịp của bạn có thật sự là một cái hẹn trong lịch của họ hay không.</p>
+<p>Nếu cộng đồng có nhịp hằng tuần thì đếm xem bao nhiêu phần trăm thành viên xuất hiện ít nhất hai lần trong bốn tuần. Con số này cho biết nhịp của bạn có thật sự là một cái hẹn trong lịch của họ hay chỉ là một thông báo họ lướt qua.</p>
 
 <h3>Ba: giá trị tạo ra giữa các thành viên</h3>
-<p>Con số khó đo nhất và quan trọng nhất. Đếm được bằng vài cách thô: số câu hỏi được trả lời bởi thành viên chứ không phải người dẫn, số lời giới thiệu giữa các thành viên, số hợp tác phát sinh.</p>
-<p>Khi con số này gần bằng không, bạn đang có một kênh phát nội dung có phần bình luận, không phải một cộng đồng.</p>
+<p>Đây là con số khó đo nhất và cũng quan trọng nhất trong bốn con số. Đếm được bằng vài cách khá thô: số câu hỏi được thành viên trả lời chứ không phải người dẫn trả lời, số lời giới thiệu giữa các thành viên với nhau, và số hợp tác phát sinh trong quý.</p>
+<p>Khi con số này gần bằng không thì bạn đang có một kênh phát nội dung có phần bình luận, không phải một cộng đồng, dù trên giấy tờ nó vẫn được gọi là cộng đồng.</p>
 
 <h3>Bốn: tỉ lệ gia hạn và giới thiệu</h3>
-<p>Con số này trung thực nhất, vì nó tốn tiền hoặc tốn uy tín của người bỏ phiếu. Người ta không giới thiệu bạn bè vào một chỗ mà chính họ thấy nhạt.</p>
+<p>Con số này trung thực nhất trong bốn, vì nó tốn tiền hoặc tốn uy tín của người bỏ phiếu. Người ta không giới thiệu bạn bè vào một chỗ mà chính họ thấy nhạt, và cũng không gia hạn một thứ mà họ đã quên mất mình có.</p>
 
 <div class="dan-manh">Chất lượng thành viên, nhịp tham gia và tiến bộ có bằng chứng quan trọng hơn số người trong nhóm.</div>
+
+<h2>Cách đếm khi bạn chưa có công cụ gì</h2>
+
+<p>Người ta hay hoãn việc đo vì nghĩ phải có phần mềm mới đo được. Duy đo bằng một bảng tính trong hơn một năm và nó đủ dùng.</p>
+
+<p>Cách làm rất thô. Mỗi tháng ngồi xuống ba mươi phút, mở nhóm ra và đếm tay. Danh sách người vào trong tháng, đánh dấu ai đã đăng hoặc bình luận ít nhất một lần. Cuộn lại bốn tuần gần nhất, ghi ra tên những người xuất hiện từ hai lần trở lên. Đếm các câu hỏi trong tháng và đánh dấu câu nào do thành viên trả lời trước.</p>
+
+<p>Cách đếm tay này có một lợi ích mà phần mềm không cho: bạn nhớ được tên người. Sau ba tháng đếm tay, bạn biết ai đang lặng đi, ai đang giúp người khác nhiều, ai vào rồi biến mất. Đó là loại hiểu biết không hiện ra trong bất kỳ bảng tổng hợp nào.</p>
+
+<p>Chỉ nên chuyển sang công cụ khi số thành viên hoạt động vượt quá mức bạn nhớ nổi. Trước đó thì công cụ chỉ làm bạn xa cộng đồng của mình hơn.</p>
+
+<h2>Đo bao lâu một lần</h2>
+
+<p>Hằng tháng là đủ, và đừng đo hằng tuần. Con số của một tuần lên xuống theo những thứ ngẫu nhiên như kỳ nghỉ hay một bài tình cờ được chia sẻ, nên nhìn theo tuần thì bạn sẽ phản ứng với nhiễu chứ không phản ứng với xu hướng.</p>
+
+<p>Ngược lại, đo mỗi quý một lần thì quá thưa. Một cộng đồng đi xuống thường mất khoảng hai tháng để xuống hẳn, và nếu bạn chỉ nhìn theo quý thì lúc thấy con số xấu là đã muộn để cứu nhịp.</p>
 
 <h2>Bài kiểm hai tuần</h2>
 <p>Có một bài kiểm rẻ và tàn nhẫn: ngừng đăng trong hai tuần và xem chuyện gì xảy ra.</p>
 <p>Nếu cộng đồng vẫn có hoạt động, giá trị đang được tạo giữa các thành viên. Nếu im lặng hoàn toàn, bạn đang gánh toàn bộ, và mô hình đó có giới hạn là số giờ trong ngày của bạn.</p>
 <p>Đừng làm bài kiểm này khi cộng đồng còn dưới ba tháng tuổi. Lúc đó im lặng là bình thường.</p>
 
+<h2>Con số tốt mà cộng đồng vẫn nhạt</h2>
+
+<p>Có một tình huống làm người dựng cộng đồng bối rối, và Duy gặp vài lần rồi: cả bốn con số đều đẹp, người mới vẫn vào đều, thành viên vẫn quay lại, mà ngồi trong nhóm thì thấy nhạt.</p>
+
+<p>Khi chuyện này xảy ra thì thường là chất lượng của phần giá trị giữa thành viên đang thấp, dù số lượng vẫn cao. Người ta vẫn trả lời câu hỏi của nhau, nhưng trả lời theo kiểu lịch sự và chung chung, tức là ai cũng có mặt mà không ai thật sự nói gì đáng nói.</p>
+
+<p>Nguyên nhân gần như luôn nằm ở một chỗ: nhóm chưa đủ an toàn để người ta nói ra chuyện chưa đẹp của mình. Mà nếu chỉ có chuyện thành công được kể ra, thì mọi câu trả lời đều phải chung chung, vì không ai biết người kia đang thật sự mắc ở đâu.</p>
+
+<p>Cách gỡ thì ngược với trực giác. Người dẫn phải là người kể chuyện chưa đẹp trước, kể một ca mình làm hỏng gần đây kèm lý do, và kể không kèm bài học nào cho êm tai. Sau vài lần như vậy thì mức thật của cả nhóm mới nhích lên được, và bốn con số kia mới có nghĩa.</p>
+
 <h2>Hai chỉ số nên bỏ</h2>
-<p><b>Tổng số bài đăng.</b> Một cộng đồng nhiều bài mà toàn bài chào hàng thì tệ hơn một cộng đồng ít bài mà bài nào cũng đáng đọc.</p>
-<p><b>Số người theo dõi trang.</b> Theo dõi là một hành vi gần như không tốn gì. Nó không nói lên điều gì về mức độ cam kết.</p>
+<p><b>Tổng số bài đăng:</b> một cộng đồng nhiều bài mà toàn bài chào hàng thì tệ hơn hẳn một cộng đồng ít bài mà bài nào cũng đáng đọc, nên con số này càng cao đôi khi càng đáng lo.</p>
+<p><b>Số người theo dõi trang:</b> theo dõi là một hành vi gần như không tốn gì của người bấm, nên nó không nói lên điều gì về mức độ cam kết của họ với chỗ này.</p>
 
 <h2>Một bảng đơn giản để bắt đầu</h2>
 <div class="bang"><table>
@@ -1606,7 +1689,9 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
 <p>Các ngưỡng này là điểm khởi đầu để bạn có cái mà so, không phải chuẩn ngành. Quan trọng là đo cùng một cách qua nhiều tháng, để thấy xu hướng chứ không phải một lát cắt.</p>
 
 <h2>Đo để làm gì</h2>
-<p>Không phải để báo cáo. Để biết sửa chỗ nào. Ít người bắt tay làm thật thì sửa mười bốn ngày đầu. Quay lại thấp thì sửa nhịp. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì xem lại lời hứa ban đầu có được giữ không.</p>
+<p>Đo không phải để báo cáo cho ai, mà để biết mình nên sửa chỗ nào trước. Bốn con số ở trên gắn với bốn việc sửa khác nhau, nên biết con số nào yếu là biết luôn tuần này làm gì.</p>
+<p>Ít người bắt tay làm thật thì sửa mười bốn ngày đầu. Tỉ lệ quay lại thấp thì sửa nhịp. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì quay lại xem lời hứa ban đầu có được giữ không.</p>
+<p><span class="nhan dam">Sai lầm hay gặp là thấy con số nào cũng yếu rồi sửa cả bốn cùng lúc.</span> Bốn con số này xếp theo thứ tự, con số trước hỏng thì con số sau không thể tốt, nên sửa từ con số một và đi lần lượt.</p>
 """),
 
 ]
