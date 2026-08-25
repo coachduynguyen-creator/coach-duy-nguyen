@@ -152,3 +152,25 @@
   nut.forEach(function (n) { n.addEventListener('click', function () { chon(n.dataset.ct); }); });
   chon(nut[0].dataset.ct);
 })();
+
+/* Vòng tròn năm việc: bấm một miếng hoặc một nút chữ thì hiện phần đó. */
+(function () {
+  var mieng = document.querySelectorAll('.v5-mieng, .v5-chip');
+  if (!mieng.length) return;
+  function chon(i) {
+    i = String(i);
+    document.querySelectorAll('.v5-bang').forEach(function (b) { b.hidden = b.id !== 'v5-' + i; });
+    mieng.forEach(function (m) {
+      var dung = m.dataset.i === i;
+      m.classList.toggle('chon', dung);
+      m.setAttribute('aria-selected', String(dung));
+    });
+  }
+  mieng.forEach(function (m) {
+    m.addEventListener('click', function () { chon(m.dataset.i); });
+    m.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chon(m.dataset.i); }
+    });
+  });
+  chon(0);
+})();

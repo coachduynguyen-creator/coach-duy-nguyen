@@ -222,3 +222,58 @@ def quy_dao():
   </div>
   %s
 </div>""" % (QUY_DAO_SVG, QUY_DAO_BANG)
+
+
+# Năm việc của người cố vấn, vẽ thành vòng tròn năm phần bấm được.
+# Mỗi phần một ảnh thật, để phần nói về triết lý không còn là một cột chữ.
+VIEC5_VONG = [
+ ("Soi đúng", "img/mc/mc-banlam.webp",
+  "Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
+ ("Chỉ đường", "img/cd-giang-slide.webp",
+  "Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
+ ("Làm mẫu", "img/mc/mc-banlamviec.webp",
+  "Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
+ ("Giữ chuẩn", "img/cd-dung-lop.webp",
+  "Duy nói rõ điều gì đủ, điều gì chưa, và cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới, không nằm ở giọng nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
+ ("Đi cùng và trao lại", "img/mc/mc-phongnho.webp",
+  "Duy ở bên trong lúc bạn tập cách làm mới, rồi để lại một tiêu chí bạn tự đánh giá được và một câu hỏi còn dùng được lâu sau đó. Đích đến là bạn tự đi được, không phải bạn cần Duy mãi."),
+]
+
+
+def vong_5():
+    """Vòng tròn năm phần, bấm một phần thì hiện ảnh và nội dung của phần đó."""
+    C, RI, RO, N = 210, 96, 196, len(VIEC5_VONG)
+    goc = 360.0 / N
+    mieng, chip, bang = [], [], []
+    for i, (ten, anh, mo) in enumerate(VIEC5_VONG):
+        a1 = -90 + i * goc + 1.2          # chừa khe nhỏ giữa các miếng
+        a2 = -90 + (i + 1) * goc - 1.2
+        giua = math.radians((a1 + a2) / 2)
+        rt = (RI + RO) / 2
+        tx, ty = C + rt * math.cos(giua), C + rt * math.sin(giua)
+        mieng.append(
+            '<g class="v5-mieng" data-i="%d" role="button" tabindex="0" '
+            'aria-label="%s"><path d="%s"/>'
+            '<text x="%.1f" y="%.1f" text-anchor="middle">%02d</text></g>'
+            % (i, ten, _cung(C, C, RI, RO, a1, a2), tx, ty + 6, i + 1))
+        chip.append('<button class="v5-chip" data-i="%d" type="button">%02d %s</button>'
+                    % (i, i + 1, ten))
+        bang.append(
+            '<article class="v5-bang" id="v5-%d"%s>'
+            '<div class="v5-anh"><img src="%s" alt="%s" width="900" height="560" '
+            'loading="lazy" decoding="async"></div>'
+            '<div class="v5-chu"><p class="v5-so">Việc %02d</p><h4>%s</h4><p>%s</p></div>'
+            '</article>' % (i, "" if i == 0 else " hidden", anh, ten, i + 1, ten, mo))
+
+    return """<div class="v5">
+  <div class="v5-ve">
+    <svg viewBox="0 0 420 420" role="img" aria-label="Năm việc của người cố vấn">
+      %s
+      <circle class="v5-loi" cx="210" cy="210" r="88"/>
+      <text class="v5-loi-t" x="210" y="200" text-anchor="middle">Năm việc</text>
+      <text class="v5-loi-t2" x="210" y="228" text-anchor="middle">của người cố vấn</text>
+    </svg>
+    <div class="v5-chip-hang">%s</div>
+  </div>
+  <div class="v5-cot">%s</div>
+</div>""" % ("".join(mieng), "".join(chip), "".join(bang))

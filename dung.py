@@ -131,11 +131,8 @@ INDEX = """
 </header>
 
 <section class="kh">
-  <div class="bd">
-    <p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội ngũ của họ</p>
-    <div class="kh-luoi">{KHACH}</div>
-    <p class="kh-them">và một số doanh nghiệp khác</p>
-  </div>
+  <div class="bd"><p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội ngũ của họ</p></div>
+  {KHACH}
 </section>
 
 <section class="phan bd hoa-van" id="ve-toi">
@@ -166,23 +163,10 @@ INDEX = """
     <h2>Năm điều bạn nhận được mỗi lần chúng ta làm việc</h2>
     <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
   </div>
-  <div class="clv">
-    <div class="hop hien">
-      <h3>Năm điều bạn nhận được khi chúng ta đi cùng nhau</h3>
-      <p class="dan-hop">Mỗi lần làm việc phải đi đủ năm bước này, không bỏ bước nào.</p>
-      {VIEC5}
-      <div class="khong">
-        <b>Ba việc Duy không làm</b>
-        <p>Không làm thay phần việc của bạn. Không hứa một con số doanh thu khi chưa đủ điều kiện. Không giữ ai ở lại bằng cảm giác lệ thuộc.</p>
-      </div>
-    </div>
-    <div class="hop hien">
-      <h3>Bốn năng lực của nhà sáng lập thế hệ mới</h3>
-      <p class="dan-hop">Bản đồ Duy dùng để biết bạn đang thiếu gì. Thường chỉ một năng lực đang chặn ba năng lực còn lại.</p>
-      {BANG_NL}
-      <div class="nl-ai"><b>AI</b><p>AI là năng lực nền của cả bốn việc trên. Nó làm nhanh hơn phần nghiên cứu, chuẩn bị và tóm tắt. Phán đoán, quan hệ và quyết định có trách nhiệm vẫn là phần của con người.</p></div>
-      <a class="lk-v" style="margin-top:20px" href="phuong-phap.html">Xem phương pháp đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
-    </div>
+  <div class="hien">{VONG5}</div>
+  <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
+    <b>Ba việc Duy không làm</b>
+    <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p>
   </div>
 </section>
 <section class="phan bd hoa-van" id="cong-dong">
@@ -190,7 +174,11 @@ INDEX = """
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
     <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: người ta tin bạn trước khi tin công ty bạn.</p>
-    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực ở trên trong công việc thật, cùng những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua. Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
+    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua. Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
+  </div>
+  <div class="cd-nl hien">
+    {BANG_NL}
+    <div class="nl-ai"><b>AI</b><p>AI là năng lực nền của cả bốn năng lực trên. Nó làm nhanh hơn phần nghiên cứu, chuẩn bị và tóm tắt. Phán đoán, quan hệ và quyết định có trách nhiệm vẫn là phần của con người.</p></div>
   </div>
 
   <div class="cd-mat hien">
@@ -229,12 +217,59 @@ KHACH = [("mobifone","MobiFone"),("aia","AIA"),("acb","ACB"),("prudential","Prud
  ("bighomes","BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
  ("hac-viet","một doanh nghiệp khách hàng"),("w-group","một doanh nghiệp khách hàng"),
  ("bs-group","một doanh nghiệp khách hàng"),("phan-hang","một doanh nghiệp khách hàng")]
-khach_html = "".join('<span class="kh-t">%s</span>' % n for t, n in KHACH if not n.startswith("một"))
+_kh1 = "".join('<span class="kh-t">%s</span>' % n
+               for t, n in KHACH if not n.startswith("một"))
+# Nhân đôi danh sách để dải chạy vòng liên tục, mắt không thấy chỗ nối.
+khach_html = ('<div class="kh-chay"><div class="kh-day">%s</div>'
+              '<div class="kh-day" aria-hidden="true">%s</div></div>' % (_kh1, _kh1))
 
-MAT_NGUOI = '<div class="cd-luoi-mat">%s</div>' % """<div class="cd-m"><img src="img/founder-nu-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chuyen-gia.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-chu-dn.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/nguoi-dan-doi.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nu-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div><div class="cd-m"><img src="img/founder-nam-2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"></div>"""
+# Lưới ảnh xếp so le, dựng theo đúng cách trang Cộng đồng Next Gen Founder xếp
+# dải ảnh đầu trang: bảy cột lệch nhau theo chiều dọc, thẻ cao và thẻ vuông xen
+# kẽ, Coach Duy đứng cột giữa. Bốn khuôn mặt mỗi bên nên hai bên cân nhau.
+# Ảnh cột giữa cắt nền, đứng chạm đáy thẻ, khác hẳn ảnh cắt vuông hai bên.
+#
+# Phải ghi rõ số cột cho từng cột. Cột nào có hai ảnh thì chiếm hai hàng, mà
+# trình duyệt xếp những ô đã biết hàng trước những ô chưa biết, nên nếu để nó
+# tự xếp thì cột ngoài cùng bên phải nhảy về đứng thứ hai từ trái.
+MN_COT = [
+    (1, "44px", [("cao", "founder-nu-1"), ("vuong", "nguoi-chuyen-gia")]),
+    (2,  "4px", [("cao", "founder-nam-1")]),
+    (3, "76px", [("vuong", "nguoi-chu-dn")]),
+    (4,  "0px", None),                       # None nghĩa là chỗ của Coach Duy
+    (5, "76px", [("vuong", "founder-nu-3")]),
+    (6,  "4px", [("cao", "nguoi-dan-doi")]),
+    (7, "44px", [("vuong", "founder-nu-2"), ("cao", "founder-nam-2")]),
+]
+
+def _the(kieu, ten):
+    return ('<div class="mn-t mn-%s"><img src="img/%s.webp" alt="" width="300" '
+            'height="400" loading="lazy" decoding="async"></div>' % (kieu, ten))
+
+_GIUA = ('<div class="mn-t mn-cat">'
+         '<img src="img/cd-cat-nen.webp" alt="Coach Duy Nguyễn" width="485" height="760" '
+         'loading="lazy" decoding="async">'
+         '<b class="mn-ten">Coach Duy Nguyễn<span>Sáng lập Cộng đồng Next Gen Founder</span></b>'
+         '</div>')
+
+def _mn():
+    ra = []
+    # Bốn vạch dọc mảnh, đặt ở mép phải cột 1, 2, 5, 6 nên cân hai bên cột giữa.
+    for c in (1, 2, 5, 6):
+        ra.append('<i class="mn-vach" style="grid-column:%d"></i>' % c)
+    for cot, pt, ds in MN_COT:
+        lop = "mn-c"
+        if ds is None:
+            lop += " mn-giua"; ruot = _GIUA
+        else:
+            ruot = "".join(_the(k, t) for k, t in ds)
+        ra.append('<div class="%s" style="--pt:%s;grid-column:%d">%s</div>'
+                  % (lop, pt, cot, ruot))
+    return '<div class="mn">%s</div>' % "".join(ra)
+
+MAT_NGUOI = _mn()
 
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
-         .replace("{VIEC5}", khoi_viec5()).replace("{BANG_NL}", so_do.bang_nang_luc())
+         .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
@@ -485,7 +520,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   <p class="ket">Khi niềm tin đã đủ, lời mời chỉ cần một câu.</p>
 </section>
 """.replace("{BANH_XE}", so_do.banh_xe()).replace("{BANG_NL}", so_do.bang_nang_luc()) \
-   .replace("{VIEC5}", khoi_viec5()).replace("{QUY_DAO}", so_do.quy_dao()) \
+   .replace("{VONG5}", so_do.vong_5()).replace("{QUY_DAO}", so_do.quy_dao()) \
    .replace("{KHONG_LAM}", dsk(["Không làm thay phần việc của bạn. Duy chỉ đường và giữ chuẩn, bạn tự bước.",
                                 "Không hứa một con số doanh thu khi chưa đủ điều kiện. Điều Duy hứa là điểm nghẽn được gọi đúng tên và một năng lực được xây.",
                                 "Không giữ ai ở lại bằng cảm giác lệ thuộc. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá."], khong=True))
