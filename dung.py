@@ -130,7 +130,7 @@ INDEX = """
 </header>
 
 <section class="kh">
-  <div class="bd"><p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy vào đào tạo nội bộ cho đội ngũ của họ</p></div>
+  <div class="bd"><p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy đào tạo nội bộ</p></div>
   {KHACH}
 </section>
 
@@ -147,7 +147,7 @@ INDEX = """
     </div>
     <div class="vt-anh hien">
       <div class="quang" aria-hidden="true"></div>
-      <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
+      <div class="nguoi"><img src="img/cd-cat-noi.webp" alt="Coach Duy Nguyễn đang nói trước một phòng người sáng lập" loading="lazy" width="462" height="1022"></div>
       <div class="manh">
         <div class="anh m1"><img src="img/dh-giua-doan.webp" alt="Coach Duy Nguyễn đi giữa hàng ghế trong một hội trường đông người" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
@@ -246,7 +246,7 @@ def _the(kieu, ten):
             'height="400" loading="lazy" decoding="async"></div>' % (kieu, ten))
 
 _GIUA = ('<div class="mn-t mn-cat">'
-         '<img src="img/cd-cat-nen.webp" alt="Coach Duy Nguyễn" width="485" height="760" '
+         '<img src="img/cd-cat-soc.webp" alt="Coach Duy Nguyễn" width="542" height="1038" '
          'loading="lazy" decoding="async">'
          '<b class="mn-ten">Coach Duy Nguyễn<span>Sáng lập Cộng đồng Next Gen Founder</span></b>'
          '</div>')
@@ -351,7 +351,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
     </div>
     <div class="vt-anh hien">
       <div class="quang" aria-hidden="true"></div>
-      <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
+      <div class="nguoi"><img src="img/cd-cat-vest.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="548" height="908"></div>
       <div class="manh">
         <div class="anh m1"><img src="img/dh-trong-doan.webp" alt="Coach Duy Nguyễn đứng giữa những người tham dự" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-dung-lop.webp" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
@@ -605,7 +605,7 @@ for c in CT:
     khac = [x for x in CT if x is not c and x["nhom"] == c["nhom"]][:2] or [x for x in CT if x is not c][:2]
     if c.get("anh_tach_nen"):
         hinh = ('<div class="vt-anh"><div class="quang" aria-hidden="true"></div>'
-                '<div class="nguoi"><img src="%s%s" alt="%s" loading="lazy" width="485" height="760"></div>'
+                '<div class="nguoi"><img src="%s%s" alt="%s" loading="lazy" width="542" height="1038"></div>'
                 '<div class="manh" style="min-height:300px"></div></div>' % (p, c["anh"], c["alt"]))
     else:
         hinh = '<div class="anh anh-khung ngang"><img src="%s%s" alt="%s" loading="lazy"></div>' % (p, c["anh"], c["alt"])

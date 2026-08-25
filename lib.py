@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260825yt"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260825yw"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -45,9 +45,11 @@ MENU = [
     ("lien-he.html", "Liên hệ", None),
 ]
 
-DN_SVG = ('<svg class="dn" viewBox="0 0 40 40" aria-hidden="true">'
-          '<rect x="1.4" y="1.4" width="37.2" height="37.2" rx="5" fill="none" stroke-width="1.5"></rect>'
-          '<text x="20" y="27.5" text-anchor="middle" font-size="18">DN</text></svg>')
+# Logo chính thức của Coach Duy Nguyễn: khiên chia bốn ô, chữ D và chữ N.
+# Là hàm chứ không phải hằng số vì trang trong thư mục con cần tiền tố ../.
+def dau_hieu(p=""):
+    return ('<img class="dn" src="%simg/logo-dn.webp" alt="" width="260" height="301" '
+            'decoding="async">' % p)
 
 IC_THU = ('<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"></rect>'
           '<path d="M3 7l9 6.5L21 7"></path></svg>')
@@ -105,7 +107,7 @@ def nav(active, p=""):
   </div>
   <div id="menu-nho">%s<a class="nut nut-v" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   <div id="tien"></div>
-</nav>""" % (dd("index.html", p), DN_SVG, links, cta, menu_nho, CONG_DONG)
+</nav>""" % (dd("index.html", p), dau_hieu(p), links, cta, menu_nho, CONG_DONG)
 
 def khoi_cuoi(p=""):
     """Khối cuối trang: ba lối đi. Có trên mọi trang."""
@@ -179,7 +181,7 @@ def footer(p=""):
     <span>Next Gen Founder · Coach Duy Nguyễn · <a href="mailto:%s">%s</a></span>
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
-</footer>""" % (dd("index.html", p), DN_SVG, ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
+</footer>""" % (dd("index.html", p), dau_hieu(p), ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
                 dd("sach.html", p), dd("kenh-youtube.html", p), CONG_DONG, PHIEU, CO_MAY,
                 dd("ve-toi.html", p), dd("lien-he.html", p), EMAIL, EMAIL)
 
@@ -214,7 +216,8 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%%3E%%3Crect width='32' height='32' rx='5' fill='%%2317120F'/%%3E%%3Crect x='2.6' y='2.6' width='26.8' height='26.8' rx='3.4' fill='none' stroke='%%23F2B14A' stroke-width='1.4'/%%3E%%3Ctext x='16' y='22.4' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%%23F2B14A'%%3EDN%%3C/text%%3E%%3C/svg%%3E">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

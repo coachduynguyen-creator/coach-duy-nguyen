@@ -24,7 +24,10 @@ for tep in sorted(trang_html):
             else: tong_anh += 1
             duong = urllib.parse.unquote(u.split('#')[0].split('?')[0])
             if not duong: continue
-            dich = os.path.normpath(os.path.join(thu_muc, duong))
+            # Đường dẫn mở đầu bằng dấu gạch chéo tính từ gốc tên miền,
+            # không tính từ thư mục của trang đang đứng.
+            goc = GOC if duong.startswith('/') else thu_muc
+            dich = os.path.normpath(os.path.join(goc, duong.lstrip('/')))
             if not os.path.exists(dich):
                 loi.append('%s: %s="%s" không tồn tại' % (ten, attr, u))
             neo = u.split('#')[1] if '#' in u else None
