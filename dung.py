@@ -149,9 +149,9 @@ INDEX = """
       <div class="quang" aria-hidden="true"></div>
       <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
       <div class="manh">
-        <div class="anh m1"><img src="img/cd-dung-lop.webp" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
+        <div class="anh m1"><img src="img/dh-giua-doan.webp" alt="Coach Duy Nguyễn đi giữa hàng ghế trong một hội trường đông người" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
-        <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
+        <div class="anh m3"><img src="img/bts-phong-thu.webp" alt="Coach Duy Nguyễn ngồi ghi hình trong phòng thu của mình" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -353,7 +353,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
       <div class="quang" aria-hidden="true"></div>
       <div class="nguoi"><img src="img/cd-chan-dung.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy" width="485" height="760"></div>
       <div class="manh">
-        <div class="anh m1"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
+        <div class="anh m1"><img src="img/dh-trong-doan.webp" alt="Coach Duy Nguyễn đứng giữa những người tham dự" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-dung-lop.webp" alt="Coach Duy Nguyễn nói trước một phòng người sáng lập" loading="lazy"></div>
         <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
       </div>
@@ -493,7 +493,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 </section>
 
 <section class="phan tran" id="quy-dao">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/dh-phong-lon.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">CDN Trust Orbit</p>
@@ -966,7 +966,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
 </section>
 
 <section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-workshop.webp" alt="" loading="lazy"></div>
+  <div class="tran-nen" aria-hidden="true"><img src="img/dh-phong-lon.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien"><p class="mono">Nơi Duy xuất hiện</p><h2>Bốn kênh Duy đăng đều suốt sáu năm</h2>
     <p>Nội dung dài nhất nằm ở YouTube. Nội dung ngắn ở TikTok và Facebook. Zalo là nơi Duy trả lời câu hỏi cụ thể.</p></div>
