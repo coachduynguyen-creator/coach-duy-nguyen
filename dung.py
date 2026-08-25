@@ -208,7 +208,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
     <h2>Chỗ nhà sáng lập hay vấp nhất, và cách gỡ</h2>
-    <p>Điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Tất cả đều là việc Duy đang làm thật.</p>
+    <p>Điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Đây là những chỗ Duy cũng đã đi qua, nên viết từ chỗ đã làm.</p>
   </div>
   <div class="blog hien">
     {BAI_LON}
@@ -588,7 +588,7 @@ for c in CT:
     else:
         gia_html = """<section class="phan bd hoa-van duoi">
   <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Trao đổi trước, nói giá sau</h2>
-  <p>Duy không đặt giá lên trang, vì phạm vi phù hợp với bạn phải được xác định trước. Trong buổi trao đổi, chúng ta làm rõ điểm nghẽn, điều kiện và phạm vi, rồi mới nói tới mức đầu tư. Nếu chưa hợp, bạn được nói thẳng và không mất gì.</p></div>
+  <p>Duy không đặt giá lên trang, vì phạm vi phù hợp với bạn phải được xác định trước. Trong buổi trao đổi, chúng ta làm rõ điểm nghẽn, điều kiện và phạm vi, rồi mới nói tới mức đầu tư. Nếu chưa phải lúc, Duy và đội ngũ sẽ nói rõ vì sao và chỉ bạn bước hợp hơn.</p></div>
 </section>"""
 
     chang_html = ""
@@ -606,7 +606,7 @@ for c in CT:
     else:
         dich = CONG_DONG
         nhan_nut, tieu_cta, dan_cta = ("Trao đổi trước khi quyết", "Bắt đầu bằng một buổi trao đổi ngắn",
-            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội ngũ Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa hợp, bạn được nói thẳng.")
+            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội ngũ Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.")
     ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
     cta_ct = """<section class="dai-vang">
   <div class="bd moi">
@@ -653,7 +653,7 @@ for c in CT:
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="%simg/cd-dung-lop.webp" alt="" loading="lazy"></div>
   <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Ranh giới</p><h2>Chương trình này không hứa điều gì</h2>
+    <div class="phan-dau hien"><p class="mono">Ranh giới</p><h2>Điều chương trình này chưa làm được cho bạn</h2>
     <p>Duy ghi phần này rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p></div>
     <div class="hien" style="max-width:800px;margin-inline:auto">%s</div>
   </div>
@@ -905,7 +905,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
   <div class="lh tre hien">
     <div class="hop">
       <h3>Muốn tham gia cộng đồng</h3>
-      <p>Đây là cửa chính. Điền biểu mẫu khoảng hai phút, đội ngũ Next Gen Founder sẽ liên hệ để xem cộng đồng có giải được điều bạn đang kẹt không. Nếu chưa hợp, bạn được nói thẳng.</p>
+      <p>Đây là cửa chính. Điền biểu mẫu khoảng hai phút, đội ngũ Next Gen Founder sẽ liên hệ để xem cộng đồng có giải được điều bạn đang kẹt không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
       <a class="lk-v" href="{CONG_DONG}" target="_blank" rel="noopener">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
@@ -926,7 +926,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
   </div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
     <b>Những việc Duy không nhận</b>
-    <p>Không nhận làm thay phần việc của bạn, không nhận lời mời cam kết một con số doanh thu, và không nhận người mà Duy biết mình chưa giúp được. Nói không sớm là cách Duy giữ chuẩn.</p>
+    <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói và chỉ bạn chỗ hợp hơn. Nói không sớm là cách Duy giữ chuẩn.</p>
   </div>
 </section>
 
