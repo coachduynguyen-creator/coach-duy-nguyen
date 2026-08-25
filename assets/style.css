@@ -1193,20 +1193,23 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 }
 
 /* ===== Chuẩn căn lề =====
-   Chữ đọc dài thì căn đều hai bên cho khối chữ vuông vắn. Chỉ áp cho cột đủ
-   rộng: tiếng Việt không cắt được từ giữa dòng, nên cột hẹp mà căn đều thì
-   khoảng cách giữa các chữ hở ra rất rõ. Dưới 620px trả về căn trái. */
-.bai-than p,
-.bai-than li,
-.vt-chu > p,
-.v5-chu > p:last-child,
-.dau-trang p.dan,
-.bai-dau .tom{text-align:justify;text-justify:inter-word;hyphens:none}
-@media(max-width:620px){
-  .bai-than p,
-  .bai-than li,
-  .vt-chu > p,
-  .v5-chu > p:last-child,
-  .dau-trang p.dan,
-  .bai-dau .tom{text-align:left}
-}
+   Mọi đoạn chữ đọc đều căn đều hai bên, ở mọi khổ màn hình kể cả điện thoại.
+   Tiếng Việt tách theo âm tiết nên mỗi dòng có rất nhiều chỗ giãn nhỏ, khoảng
+   trắng rải đều chứ không hở thành khe lớn như tiếng Anh. Vì vậy không cần
+   chừa khổ hẹp ra như bản trước.
+
+   Lấy khối bao .bd và .bai-than làm gốc thay vì kể tên từng lớp, để trang thêm
+   sau cũng tự đúng. Bên dưới là danh sách những chỗ phải trừ ra. */
+.bd p, .bd li, .bai-than p, .bai-than li{text-align:justify;text-justify:inter-word;hyphens:none}
+
+/* Trừ ra: chữ căn giữa, dòng thông tin, nhãn ngắn, chú thích, và danh sách
+   điều hướng. Chỉ trừ những chỗ thật sự một hai dòng, vì căn đều một dòng lẻ
+   thì chữ giãn ra nhìn rất rõ. Chữ trong thẻ giới thiệu vẫn căn đều, vì thường
+   dài ba bốn dòng. */
+.phan-dau p, .kh-dan, .cd-ghi, .meta, .mono, .k-vai, .hst-en, .v5-so,
+.hero-ghi p, .bang-hieu p, .nut, figcaption, .bai-cuoi p, .mc-so,
+.dau-trang .mono, .muc-luc li, .muc-luc b, nav li, .vach li,
+.vi, .tang, .k-so span{text-align:inherit;text-justify:auto}
+
+/* Chữ trong ô hẹp dưới 34 ký tự thì luôn căn trái, dù nằm trong .bd */
+.so-tong span, .kenh4 p, .kenh-them p, .k-so span{text-align:left}

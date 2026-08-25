@@ -800,7 +800,7 @@ for i, b in enumerate(BAI):
     than = """<article>
   <div class="bd bai-dau hien">
     <nav class="vun" aria-label="Đường dẫn"><a href="%sindex.html">Trang chủ</a><span>&rsaquo;</span><a href="%sblog.html">Blog</a><span>&rsaquo;</span><span>%s</span></nav>
-    <p class="meta">%s &nbsp;·&nbsp; Đăng %s &nbsp;·&nbsp; Cập nhật %s &nbsp;·&nbsp; %s</p>
+    <p class="meta">%s &nbsp;·&nbsp; %s</p>
     <h1>%s</h1>
     <p class="tom">%s</p>
   </div>
@@ -822,7 +822,7 @@ for i, b in enumerate(BAI):
   <div class="phan-dau hien"><p class="mono">Đọc tiếp</p><h2>Hai bài cùng mạch</h2></div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
-""" % (p, p, b["chu_de"], b["chu_de"], b["ngay_viet"], CAP_NHAT, b["doc"], b["tieu"], b["mo"],
+""" % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["tieu"], b["mo"],
        p, b["anh"], b["alt"], tra_loi, ml, than_bai,
        khoi_faq(faq) if faq else "", HOP_TAC_GIA, p,
        "".join(the_bai_luoi(x, p) for x in khac))
