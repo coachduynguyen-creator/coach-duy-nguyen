@@ -170,7 +170,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cách Duy làm việc</p>
     <h2>Năm điều bạn nhận được mỗi lần chúng ta làm việc</h2>
-    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
+    <p>Người cố vấn không phải là chức danh tự đặt. <span class="nhan">Nó là năm việc phải làm được.</span> Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
   </div>
   <div class="hien">{VONG5}</div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
@@ -182,8 +182,8 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
-    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: người ta tin bạn trước khi tin công ty bạn.</p>
-    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua. Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
+    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: <span class="nhan">người ta tin bạn trước khi tin công ty bạn.</span></p>
+    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng <span class="nhan">những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua.</span> Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
   </div>
   <div class="cd-nl hien">
     {BANG_NL}
@@ -205,7 +205,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
     <h2>Chỗ nhà sáng lập hay vấp nhất, và cách gỡ</h2>
-    <p>Điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Đây là những chỗ Duy cũng đã đi qua, nên viết từ chỗ đã làm.</p>
+    <p><span class="nhan">Điểm nghẽn của người sáng lập</span>, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Đây là những chỗ Duy cũng đã đi qua, nên viết từ chỗ đã làm.</p>
   </div>
   <div class="blog hien">
     {BAI_LON}

@@ -126,6 +126,7 @@ img{max-width:100%;display:block}
 .phan-dau{text-align:center;max-width:62ch;margin:0 auto 46px}
 .phan-dau h2{font-size:clamp(28px,3.9vw,46px);margin-top:12px;text-wrap:balance}
 .phan-dau p{font-size:17px;color:var(--ink-2);margin-top:16px}
+.phan-dau p .nhan{color:var(--vang)}
 .ket{display:flex;gap:14px;margin-top:38px;padding-left:18px;border-left:3px solid var(--vang);font-size:16.5px;font-weight:600;color:var(--ink)}
 
 /* ---------- hộp ---------- */
@@ -227,7 +228,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .nl{border-top:1px solid var(--line)}
 .nl .hang{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:19px 0;border-bottom:1px solid var(--line);transition:background-color .2s var(--ease)}
 @media(hover:hover){.nl .hang:hover{background:rgba(249,245,240,.03)}}
-.nl .stt{font-family:var(--f-tit);font-weight:800;font-size:30px;line-height:1;color:var(--ink-4);letter-spacing:-.03em}
+.nl .stt{font-family:var(--f-tit);font-weight:800;font-size:30px;line-height:1;color:var(--vang);letter-spacing:-.03em}
 .nl h4{font-size:18px;margin-bottom:5px}
 .nl p{font-size:15.5px;color:var(--ink-2)}
 .nl-ai{margin-top:20px;display:flex;gap:14px;background:var(--vang-mo);border:1px solid rgba(242,177,74,.3);border-radius:var(--r-s);padding:17px 19px}
@@ -1170,12 +1171,12 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;
   transition:border-color .24s var(--ease),background .24s var(--ease)}
 .v5-chip i{font-family:var(--f-mono);font-style:normal;font-size:12px;font-weight:600;
-  letter-spacing:.1em;color:var(--ink-3);transition:color .24s var(--ease)}
+  letter-spacing:.1em;color:var(--ink-2);transition:color .24s var(--ease)}
 .v5-chip span{font-family:var(--f-tit);font-weight:700;font-size:16px;line-height:1.25;
-  color:var(--ink-2);transition:color .24s var(--ease)}
+  color:var(--ink);transition:color .24s var(--ease)}
 @media(hover:hover){.v5-chip:hover span{color:var(--ink)}.v5-chip:hover i{color:var(--ink-2)}}
 .v5-chip:focus-visible{outline:2px solid var(--vang);outline-offset:-3px;border-radius:var(--r-s)}
-.v5-chip.chon{border-bottom-color:var(--vang)}
+.v5-chip.chon{border-bottom-color:var(--vang);background:rgba(242,177,74,.06)}
 .v5-chip.chon i{color:var(--vang)}
 .v5-chip.chon span{color:var(--ink)}
 

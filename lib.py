@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260826n"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260826s"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -113,7 +113,7 @@ def khoi_cuoi(p=""):
     <div class="phan-dau hien">
       <p class="mono">Bước tiếp theo</p>
       <h2>Người Duy thấy đi được xa thường bắt đầu bằng một việc rất nhỏ</h2>
-      <p>Không phải bằng một quyết định lớn. Ba lối dưới đây đều là một việc như vậy, đủ nhỏ để làm xong trong tuần này. Bạn cứ đi chậm cũng được, Duy không giục ai.</p>
+      <p><span class="nhan">Không phải bằng một quyết định lớn.</span> Ba lối dưới đây đều là một việc như vậy, đủ nhỏ để làm xong trong tuần này. Bạn cứ đi chậm cũng được, Duy không giục ai.</p>
     </div>
     <div class="ba-loi tre hien">
       <article class="loi vang">
