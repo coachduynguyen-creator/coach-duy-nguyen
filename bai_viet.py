@@ -890,36 +890,71 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
  than="""
-<p>Câu than phiền phổ biến nhất của người làm nội dung là hết ý tưởng. Duy cho rằng gần như không ai hết ý tưởng. Cái họ thiếu là một cái kho, và một thói quen bỏ đồ vào kho.</p>
+<p>Câu than phiền phổ biến nhất của người làm nội dung là hết ý tưởng. Duy cho rằng gần như không ai hết ý tưởng thật, cái họ thiếu là một cái kho và một thói quen bỏ đồ vào kho.</p>
+<p><span class="nhan">Hết ý tưởng là một chẩn đoán sai, và vì chẩn đoán sai nên cách chữa cũng sai theo.</span> Người ta đi tìm nguồn cảm hứng, đọc thêm sách, xem thêm người khác làm, trong khi thứ cần chữa là một thói quen mất ba mươi giây mỗi ngày.</p>
 
 <h2>Ý tưởng không đến lúc bạn ngồi viết</h2>
-<p>Ý tưởng đến lúc bạn đang làm việc. Lúc một khách hỏi một câu lạ. Lúc bạn quyết định điều gì đó trái với thói quen. Lúc một nhân sự làm sai và bạn nhận ra lý do sâu xa. Lúc bạn đọc một con số và thấy nó ngược với điều mình tưởng.</p>
+<p>Ý tưởng đến lúc bạn đang làm việc chứ không đến lúc bạn ngồi trước màn hình. Nó đến lúc một khách hỏi một câu lạ, lúc bạn quyết định điều gì đó trái với thói quen của mình, lúc một nhân sự làm sai và bạn nhận ra lý do sâu xa phía sau, hoặc lúc bạn đọc một con số và thấy nó ngược hẳn với điều mình vẫn tưởng.</p>
 <p>Vấn đề là những khoảnh khắc đó xảy ra khi bạn đang bận, và ba ngày sau bạn không nhớ nổi. Đến lúc ngồi xuống trước màn hình trắng, bạn cố nghĩ ra ý tưởng từ trí nhớ rỗng, rồi kết luận mình hết ý.</p>
 
 <div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải mẹo viết bài.</div>
 
 <h2>Bốn loại chất liệu đáng ghi</h2>
-<p><b>Câu hỏi lặp lại.</b> Câu nào bạn nghe từ ba người trở lên là một bài viết. Nó lặp lại vì nó là điểm nghẽn chung, không phải thắc mắc riêng.</p>
-<p><b>Quyết định có đánh đổi.</b> Lần bạn chọn A và bỏ B, kèm lý do. Loại này quý nhất vì không ai sao chép được, và nó cho thấy cách bạn nghĩ chứ không chỉ điều bạn biết.</p>
-<p><b>Sai lầm đã trả giá.</b> Viết được loại này thì bạn có cái mà mọi khoá học đều thiếu. Điều kiện là bạn phải đủ xa nó để kể mà không cay đắng.</p>
-<p><b>Số liệu ngược với dự đoán.</b> Con số làm bạn ngạc nhiên sẽ làm người đọc ngạc nhiên. Con số xác nhận điều ai cũng biết thì không đáng viết.</p>
+<p><b>Câu hỏi lặp lại:</b> câu nào bạn nghe từ ba người trở lên là một bài viết, vì nó lặp lại nghĩa là nó là điểm nghẽn chung chứ không phải thắc mắc riêng của một người.</p>
+<p><b>Quyết định có đánh đổi:</b> ghi lại lần bạn chọn A và bỏ B kèm lý do, loại này quý nhất vì không ai sao chép được, và nó cho người đọc thấy cách bạn nghĩ chứ không chỉ điều bạn biết.</p>
+<p><b>Sai lầm đã trả giá:</b> viết được loại này thì bạn có đúng thứ mà mọi khoá học đều thiếu, với một điều kiện là bạn phải đủ xa nó rồi mới kể được mà không cay đắng.</p>
+<p><b>Số liệu ngược với dự đoán:</b> con số làm bạn ngạc nhiên sẽ làm người đọc ngạc nhiên, còn con số xác nhận lại điều ai cũng biết thì không đáng bỏ công viết.</p>
 
 <h2>Cách ghi để dùng được về sau</h2>
-<p>Ghi ba dòng, đúng ba dòng, ngay trong ngày. Nhiều hơn thì bạn sẽ bỏ sau một tuần.</p>
-<p>Dòng một là tình huống, viết như kể cho một người bạn. Dòng hai là điều bạn làm hoặc điều bạn thấy. Dòng ba là vì sao, tức bài học rút ra.</p>
-<p>Dòng ba là dòng biến một mẩu ghi chép thành chất liệu. Không có nó, sáu tháng sau bạn đọc lại và không hiểu vì sao mình ghi.</p>
+<p>Ghi ba dòng, đúng ba dòng, ngay trong ngày. Ghi nhiều hơn thì bạn sẽ bỏ thói quen này sau một tuần, và một thói quen bỏ dở thì không tạo ra cái kho nào.</p>
+<p>Dòng một là tình huống, viết như kể cho một người bạn nghe chứ đừng viết cho hay. Dòng hai là điều bạn đã làm hoặc điều bạn vừa thấy. Dòng ba là vì sao, tức bài học rút ra được.</p>
+<p>Dòng ba là dòng biến một mẩu ghi chép thành chất liệu dùng được. Không có nó thì sáu tháng sau bạn đọc lại và không hiểu vì sao ngày ấy mình ghi câu này.</p>
+<p>Duy nói thêm một điều về dòng ba. Bạn không cần viết đúng ngay, và nhiều khi bài học bạn ghi hôm nay sẽ sai sau nửa năm. Không sao cả, vì chính chỗ sai đó lại thành một chất liệu khác, thuộc loại quý hơn: lần bạn đổi ý và lý do đổi.</p>
+
+<h2>Ba thời điểm dễ ghi nhất trong ngày</h2>
+
+<p>Ghi trong lúc đang bận thì không ai làm nổi, nên phải gắn việc ghi vào ba lúc có sẵn khoảng trống.</p>
+
+<p><b>Ngay sau một buổi làm việc với khách:</b> khoảng năm phút lúc vừa đứng dậy là lúc đầu còn nóng nhất, và mọi thứ đáng ghi đều còn nguyên chứ chưa bị việc khác đè lên.</p>
+
+<p><b>Trên đường về:</b> nếu bạn tự lái thì ghi âm hai phút, còn nếu có người lái thì gõ ba dòng, đây là quãng thời gian bị bỏ phí nhiều nhất trong ngày của người sáng lập.</p>
+
+<p><b>Cuối buổi chiều, trước khi rời bàn:</b> nhìn lại một ngày và hỏi hôm nay có điều gì làm mình dừng lại vài giây, câu hỏi này gọn hơn hẳn câu hôm nay có gì đáng viết.</p>
 
 <h2>Kho không cần phần mềm đắt tiền</h2>
-<p>Duy dùng một tệp duy nhất, ghi theo ngày, không phân loại. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó. Tìm kiếm bằng chữ đủ dùng cho vài trăm mẩu đầu tiên.</p>
+<p>Duy dùng một tệp duy nhất, ghi theo ngày và không phân loại gì cả. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó, còn tìm kiếm bằng chữ thì đủ dùng cho vài trăm mẩu đầu tiên.</p>
 <p>Nếu bạn hay nói dễ hơn viết, ghi âm hai phút rồi để máy chuyển thành chữ. Quan trọng là ghi trong vòng vài giờ, đừng để sang ngày hôm sau.</p>
 
+<h2>Khi kho đầy mà vẫn thấy không có gì để viết</h2>
+
+<p>Chuyện này xảy ra và nó không có nghĩa là bạn ghi sai. Duy thấy có hai lý do, và hai lý do đó chữa khác nhau.</p>
+
+<p>Lý do thứ nhất là bạn đang tìm mẩu hay nhất thay vì tìm mẩu gần nhất. Đọc lướt hai trăm mẩu để chọn một mẩu hay thì mệt hơn viết bài, nên chỉ đọc mười mẩu mới nhất rồi chọn trong đó.</p>
+
+<p>Lý do thứ hai là mẩu nào cũng thấy nhỏ quá, không đủ thành một bài. Cảm giác này gần như luôn sai, vì một tình huống nhỏ có thật vẫn hơn hẳn một chủ đề lớn không có gì bên trong. Bài viết được nhớ nhất của Duy đến từ một mẩu ba dòng ghi lại một câu khách nói trong lúc đứng dậy ra về.</p>
+
 <h2>Từ kho ra bài</h2>
-<p>Mỗi tuần, mở kho, đọc lướt các mẩu mới. Chọn một mẩu bạn còn thấy có gì đó chưa nói hết. Đó là mẩu đáng thành bài, vì cảm giác chưa nói hết chính là dấu hiệu còn chiều sâu.</p>
+<p>Mỗi tuần mở kho ra đọc lướt các mẩu mới, rồi chọn một mẩu mà bạn vẫn còn thấy có gì đó chưa nói hết. Đó là mẩu đáng thành bài, vì cảm giác chưa nói hết chính là dấu hiệu bên dưới còn chiều sâu.</p>
 <p>Một mẩu ba dòng thành một bài tám trăm chữ theo cấu trúc đơn giản: kể tình huống, chỉ ra chỗ nhiều người hiểu sai, đưa cách nhìn của bạn, rồi cho người đọc một việc làm được trong tuần.</p>
 
+<h2>Bốn mẩu ghi thật, để bạn hình dung</h2>
+
+<p>Nói về cách ghi thì trừu tượng, nên Duy lấy bốn mẩu trong kho của mình ra làm ví dụ, giữ nguyên độ thô của chúng.</p>
+
+<p><b>Mẩu loại câu hỏi lặp:</b> ba người trong tháng cùng hỏi làm sao biết nhân sự này có nên giữ hay không, mà cả ba đều đã biết câu trả lời và chỉ đang tìm người xác nhận. Dòng ba ghi rằng khi người ta hỏi có nên giữ, nghĩa là họ đã quyết bỏ từ lâu rồi.</p>
+
+<p><b>Mẩu loại quyết định:</b> từ chối một hợp đồng đào tạo lớn vì công ty đó muốn đo kết quả bằng điểm hài lòng sau buổi học. Dòng ba ghi rằng đo bằng điểm hài lòng thì người dạy sẽ tối ưu cho việc dễ chịu chứ không cho việc thay đổi.</p>
+
+<p><b>Mẩu loại sai lầm:</b> có một khoá Duy nhận mười tám người trong khi thiết kế cho tám người, và tới buổi thứ tư thì không còn theo sát được ai. Dòng ba ghi rằng số lượng người học là một phần của phương pháp, không phải một biến kinh doanh tách rời.</p>
+
+<p><b>Mẩu loại số liệu ngược:</b> tra lại thì thấy khách ký sau buổi đầu tiên có tỉ lệ đi hết chương trình thấp hơn hẳn khách ký sau lần gặp thứ hai hoặc thứ ba. Dòng ba ghi rằng quyết nhanh không phải dấu hiệu tốt như mình vẫn tưởng.</p>
+
+<p>Bốn mẩu này đều được ghi trong chưa tới một phút mỗi mẩu, và cả bốn về sau đều thành nội dung. <span class="nhan">Cái quý không nằm ở cách viết, nó nằm ở chỗ chúng có thật.</span></p>
+
 <h2>Sau sáu tháng</h2>
-<p>Bạn có khoảng một trăm tới hai trăm mẩu. Lúc đó điều thú vị xảy ra: bạn bắt đầu thấy các mẩu lặp lại thành nhóm. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng chứ không bằng cách ngồi nghĩ.</p>
-<p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó, Duy chỉ dạy lại những gì mình đọc được của người khác.</p>
+<p>Bạn sẽ có khoảng một trăm tới hai trăm mẩu, và lúc đó một điều thú vị xảy ra: các mẩu bắt đầu tự gom thành nhóm mà bạn không sắp xếp gì cả. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng thay vì bằng cách ngồi nghĩ xem mình nên đứng ở đâu.</p>
+<p><span class="nhan dam">Đây là cách tìm định vị đáng tin nhất Duy biết, vì nó dựa trên việc bạn thật sự quan tâm điều gì đủ để ghi lại.</span> Một câu định vị nghĩ ra trong hai giờ thì đẹp mà không có gốc, còn một câu rút ra từ hai trăm mẩu thì bạn bảo vệ được nó suốt nhiều năm.</p>
+<p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó thì Duy chỉ dạy lại được những gì mình đọc được của người khác, và người học sẽ nhận ra điều đó nhanh hơn bạn nghĩ.</p>
 """),
 
 dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
@@ -928,39 +963,70 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
  ngay="2026-08-14", ngay_viet="14 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-ban-lam-viec.webp", alt="Coach Duy Nguyễn ngồi làm việc tại bàn",
  than="""
-<p>Người sáng lập bắt đầu làm nội dung thường bung sức. Tuần đầu bảy bài, tuần hai năm bài, tuần bốn hai bài, tuần tám im lặng. Sau đó là ba tháng thấy có lỗi, rồi lại bung sức một đợt nữa.</p>
-<p>Chuyện này không nằm ở kỷ luật. Nó nằm ở cách bạn sắp việc.</p>
+<p>Người sáng lập bắt đầu làm nội dung thường bung sức. Tuần đầu bảy bài, tuần hai năm bài, tuần bốn còn hai bài, tuần tám thì im lặng. Sau đó là ba tháng thấy có lỗi với chính mình, rồi lại bung sức thêm một đợt nữa và lặp lại đúng vòng cũ.</p>
+<p><span class="nhan">Chuyện này không nằm ở kỷ luật, nó nằm ở cách bạn sắp việc.</span> Duy nói vậy vì đã gặp quá nhiều người rất kỷ luật trong mọi việc khác mà vẫn hỏng đúng ở chỗ này.</p>
 
 <h2>Nhịp phải chịu được tuần tệ nhất</h2>
-<p>Sai lầm gốc là thiết kế nhịp theo tuần rảnh nhất. Bạn nhìn một tuần thảnh thơi, thấy mình làm được năm bài, rồi lấy đó làm chuẩn.</p>
+<p>Sai lầm gốc là thiết kế nhịp theo tuần rảnh nhất của mình. Bạn nhìn một tuần thảnh thơi, thấy mình làm được năm bài mà không thấy nặng, rồi lấy luôn con số đó làm chuẩn cho cả năm.</p>
 <p>Nhưng một năm có khoảng mười tuần như vậy, và bốn mươi tuần còn lại thì bạn có khách khó, có nhân sự nghỉ, có con ốm, có chuyến đi. Nhịp phải được thiết kế cho bốn mươi tuần kia.</p>
 
 <div class="dan-manh">Người thắng trong làm nội dung không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</div>
 
 <h2>Một nội dung gốc, nhiều mảnh</h2>
-<p>Cách rẻ nhất Duy biết: mỗi tuần làm đúng một nội dung gốc đủ sâu, rồi cắt ra thành nhiều mảnh ngắn.</p>
+<p>Cách rẻ nhất Duy biết là mỗi tuần làm đúng một nội dung gốc đủ sâu, rồi cắt nó ra thành nhiều mảnh ngắn để dùng dần trong tuần.</p>
 <p>Nội dung gốc có thể là một video mười lăm phút, một bài viết một nghìn chữ, hoặc một buổi phát trực tiếp. Từ đó cắt ra ba tới năm mẩu ngắn, mỗi mẩu một ý.</p>
 <p>Cách này khác hẳn việc nghĩ ra năm ý riêng biệt cho năm bài. Nó chỉ đòi bạn nghĩ sâu một lần trong tuần, phần còn lại là thao tác.</p>
 
 <h2>Chia tuần thành ba khối</h2>
-<p><b>Khối gom, ba mươi phút mỗi ngày.</b> Ghi lại chất liệu từ công việc thật, ba dòng một mẩu. Việc này không cần tập trung cao nên làm được lúc mệt.</p>
-<p><b>Khối làm, chín mươi phút một lần mỗi tuần.</b> Chỉ khối này mới cần đầu óc tỉnh táo. Chọn một mẩu, làm thành nội dung gốc. Đặt lịch cố định và bảo vệ nó như một cuộc hẹn với khách.</p>
-<p><b>Khối cắt, sáu mươi phút một lần mỗi tuần.</b> Cắt nội dung gốc thành các mảnh, hẹn giờ đăng. Khối này giao được cho người khác, hoặc để AI làm phần lặp lại.</p>
-<p>Tổng cộng khoảng năm giờ một tuần. Con số này giữ được nhiều năm. Mười lăm giờ một tuần thì không.</p>
+<p><b>Khối gom, ba mươi phút mỗi ngày:</b> ghi lại chất liệu từ công việc thật theo kiểu ba dòng một mẩu, và vì việc này không cần tập trung cao nên bạn làm được cả lúc đang mệt.</p>
+<p><b>Khối làm, chín mươi phút một lần mỗi tuần:</b> chỉ khối này mới cần đầu óc tỉnh táo, bạn chọn một mẩu và làm thành nội dung gốc, đặt lịch cố định rồi bảo vệ nó đúng như bảo vệ một cuộc hẹn với khách.</p>
+<p><b>Khối cắt, sáu mươi phút một lần mỗi tuần:</b> cắt nội dung gốc thành các mảnh và hẹn giờ đăng, khối này giao được cho người khác hoặc để AI làm phần lặp lại.</p>
+<p>Tổng cộng khoảng năm giờ một tuần, và đây là con số bạn giữ được nhiều năm. Mười lăm giờ một tuần thì không, dù trong ba tháng đầu bạn sẽ thấy mình làm được.</p>
 
 <h2>Vai trò của AI ở đây</h2>
-<p>AI làm tốt khối cắt và làm khá ở khâu sắp xếp ý trong khối làm. Nó không làm được khối gom, vì chất liệu nằm trong công việc thật của bạn.</p>
-<p>Đừng để AI viết nội dung gốc từ số không. Bạn tiết kiệm được chín mươi phút, và mất đúng cái duy nhất không ai sao chép được.</p>
+<p>AI làm tốt khối cắt và làm khá ở khâu sắp xếp ý trong khối làm. Nó không làm được khối gom, vì chất liệu nằm trong công việc thật của bạn và nó không có mặt ở đó.</p>
+<p>Đừng để AI viết nội dung gốc từ số không. Bạn tiết kiệm được chín mươi phút và mất đúng cái duy nhất không ai sao chép được, đó là một cuộc đổi rất tệ nếu tính bằng vài năm.</p>
+<p>Cách dùng Duy thấy hợp lý nhất là nói cho AI nghe thay vì bảo nó viết. Bạn kể lại tình huống, nó ghi thành dàn ý, bạn sửa lại chỗ nó hiểu sai, rồi bạn viết. Phần suy nghĩ vẫn của bạn, phần sắp xếp thì để máy làm.</p>
+
+<h2>Ba việc phải bỏ để giữ được nhịp</h2>
+
+<p>Người ta hay hỏi làm sao thêm được năm giờ mỗi tuần. Câu hỏi đúng hơn là bỏ gì để có năm giờ đó, vì không ai có sẵn khoảng trống nằm chờ.</p>
+
+<p><b>Bỏ việc theo dõi chỉ số hằng ngày:</b> mở ứng dụng xem lượt xem tốn ít thời gian mà tốn rất nhiều sự chú ý, và nó kéo bạn về phía làm nội dung dễ có tương tác thay vì nội dung đúng vùng của mình.</p>
+
+<p><b>Bỏ việc chạy theo chủ đề đang nóng:</b> mỗi lần bám vào một chuyện đang được bàn nhiều, bạn được một đợt chú ý ngắn và mất một lần ghi đúng chữ lên cái nhãn của mình trong đầu người khác.</p>
+
+<p><b>Bỏ việc làm mới hình thức:</b> đổi kiểu ảnh bìa, đổi cách dựng, thử một dạng nội dung khác, những việc này ngốn thời gian của khối làm mà không thêm được gì vào phần người ta nhớ về bạn.</p>
+
+<p>Ba việc trên có chung một điểm: chúng đều cho cảm giác đang làm việc mà không tích luỹ. Bỏ cả ba thì năm giờ kia xuất hiện gần như ngay lập tức.</p>
+
+<h2>Tuần đầu tiên nên làm gì</h2>
+
+<p>Đừng bắt đầu bằng việc đăng. Bắt đầu bằng việc đặt hai cuộc hẹn cố định vào lịch của bạn cho khối làm và khối cắt, cho ba tháng tới, và đặt tên chúng như tên một cuộc họp thật.</p>
+
+<p>Sau đó dành tuần đầu chỉ để gom, không đăng gì cả. Cuối tuần bạn sẽ có chừng năm tới bảy mẩu, và lúc đó khối làm của tuần thứ hai mới có nguyên liệu để chạy.</p>
+
+<p>Duy hay khuyên đừng công bố với ai rằng mình sắp làm nội dung đều. Công bố xong thì áp lực xuất hiện trước khi nhịp kịp hình thành, và áp lực đó đẩy bạn về đúng kiểu bung sức mà bài này đang tìm cách tránh.</p>
 
 <h2>Đo bằng gì để không tự lừa mình</h2>
-<p>Không đo bằng lượt xem tuần này. Đo bằng ba con số chậm hơn nhưng thật hơn.</p>
-<p>Một, số tuần liên tiếp bạn giữ được nhịp. Trong sáu tháng đầu, đây chính là con số đáng theo dõi nhất.</p>
-<p>Hai, số người chủ động nhắn tin hỏi đúng vấn đề bạn nói, không phải hỏi giá.</p>
-<p>Ba, số lần bạn nghe ai đó nhắc lại một câu của bạn. Khi điều này bắt đầu xảy ra, thương hiệu đã có chỗ trong trí nhớ người khác.</p>
+<p>Đừng đo bằng lượt xem của tuần này, vì con số đó lên xuống theo những thứ bạn không kiểm soát được và nó sẽ điều khiển tâm trạng của bạn. Đo bằng ba con số chậm hơn nhưng thật hơn.</p>
+<p><b>Một, số tuần liên tiếp bạn giữ được nhịp:</b> trong sáu tháng đầu thì đây chính là con số đáng theo dõi nhất, và nó cũng là con số duy nhất hoàn toàn nằm trong tay bạn.</p>
+<p><b>Hai, số người chủ động nhắn tin hỏi đúng vấn đề bạn nói:</b> hỏi đúng vấn đề chứ không phải hỏi giá, vì hai loại tin nhắn đó đến từ hai loại quan hệ khác hẳn nhau.</p>
+<p><b>Ba, số lần bạn nghe ai đó nhắc lại một câu của bạn:</b> khi điều này bắt đầu xảy ra thì thương hiệu đã có chỗ trong trí nhớ người khác, và đó là lúc mọi thứ bắt đầu chạy mà không cần bạn đẩy.</p>
+
+<h2>Nhịp này áp cho một người, không áp cho một đội ngũ</h2>
+
+<p>Cần nói rõ chỗ này để bạn khỏi áp nhầm. Năm giờ một tuần là nhịp cho một người sáng lập tự làm nội dung của mình, bên cạnh việc điều hành. Nếu bạn có một đội ngũ làm nội dung thì bài toán khác hẳn.</p>
+
+<p>Nhưng có một phần không đổi dù đội ngũ đông tới đâu: khối làm vẫn phải là bạn. Đội ngũ làm được khối cắt, làm được phần dựng, phần đăng, phần trả lời bình luận. Phần suy nghĩ ra luận điểm thì không giao được, vì nếu giao thì thứ ra ngoài không còn là bạn nữa.</p>
+
+<p>Duy đã thấy nhiều người sáng lập giao cả khối làm cho người viết thuê, và kết quả thường giống nhau. Nội dung đúng, sạch, không sai chỗ nào, và cũng không có gì để nhớ. Khách đọc xong không phản đối gì, họ chỉ không nhắn tin.</p>
+
+<p>Nếu quá bận để giữ khối làm chín mươi phút mỗi tuần, cách đúng không phải giao nó đi. Cách đúng là giảm xuống một nội dung gốc mỗi hai tuần, và giữ nguyên việc bạn là người nghĩ ra nó.</p>
 
 <h2>Khi lỡ nhịp</h2>
-<p>Sẽ có tuần bạn lỡ. Quy tắc duy nhất: không bù. Đừng đăng ba bài tuần sau để trả nợ, vì đó là cách quay lại vòng bung sức rồi kiệt.</p>
-<p>Lỡ một tuần thì tuần sau đi tiếp như chưa có gì. Không ai đếm ngoài bạn.</p>
+<p>Sẽ có tuần bạn lỡ, và quy tắc duy nhất là không bù. Đừng đăng ba bài trong tuần sau để trả nợ, vì đó chính là cách bạn quay lại vòng bung sức rồi kiệt mà mình vừa mất công thoát ra.</p>
+<p>Lỡ một tuần thì tuần sau đi tiếp như chưa có chuyện gì, và không ai đếm ngoài bạn. <span class="nhan dam">Thứ giết nhịp không phải tuần bị lỡ, mà là cảm giác có lỗi sau tuần bị lỡ.</span></p>
 """),
 
 dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
