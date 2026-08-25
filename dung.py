@@ -770,109 +770,8 @@ HOP_TAC_GIA = """<div class="tac-gia hien">
   </div>
 </div>"""
 
-for i, b in enumerate(BAI):
-    p = "../"
-    bs = BO_SUNG.get(b["tep"], {})
-    khac = [x for x in BAI if x is not b and x["chu_de"] == b["chu_de"]][:2]
-    if len(khac) < 2:
-        khac += [x for x in BAI if x is not b and x not in khac][:2 - len(khac)]
-    faq = bs.get("faq", [])
-    ml, than_bai = muc_luc(b["than"])
-    tra_loi = ('<div class="tra-loi"><b>Tóm tắt</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
-
-    ld = {"@context":"https://schema.org","@graph":[
-      {"@type":"BlogPosting","headline":b["tieu"],"description":b["mo"],
-       "datePublished":b["ngay"],"dateModified":"2026-08-24","articleSection":b["chu_de"],
-       "inLanguage":"vi","wordCount":len(re.sub(r"<[^>]+>"," ",b["than"]).split()),
-       "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html",
-                 "jobTitle":"Người cố vấn cho nhà sáng lập","knowsAbout":[b["chu_de"]]},
-       "publisher":{"@type":"Person","name":"Coach Duy Nguyễn"},
-       "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]},
-      {"@type":"BreadcrumbList","itemListElement":[
-       {"@type":"ListItem","position":1,"name":"Trang chủ","item":BASE+"/"},
-       {"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog.html"},
-       {"@type":"ListItem","position":3,"name":b["tieu"]}]}]}
-    if faq:
-        ld["@graph"].append({"@type":"FAQPage","mainEntity":[
-          {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faq]})
-    ld = json.dumps(ld, ensure_ascii=False)
-
-    than = """<article>
-  <div class="bd bai-dau hien">
-    <nav class="vun" aria-label="Đường dẫn"><a href="%sindex.html">Trang chủ</a><span>&rsaquo;</span><a href="%sblog.html">Blog</a><span>&rsaquo;</span><span>%s</span></nav>
-    <p class="meta">%s &nbsp;·&nbsp; %s</p>
-    <h1>%s</h1>
-    <p class="tom">%s</p>
-  </div>
-  <div class="bd hien"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
-  <div class="bd">
-    <div class="bai-than">
-      <div class="doc hien">%s%s%s</div>
-      %s
-      %s
-      <div class="bai-cuoi" style="max-width:74ch;margin-inline:auto">
-        <p>Viết bởi Coach Duy Nguyễn</p>
-        <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</article>
-
-<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien"><p class="mono">Đọc tiếp</p><h2>Hai bài cùng mạch</h2></div>
-  <div class="luoi-bai tre hien">%s</div>
-</section>
-""" % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["tieu"], b["mo"],
-       p, b["anh"], b["alt"], tra_loi, ml, than_bai,
-       khoi_faq(faq) if faq else "", HOP_TAC_GIA, p,
-       "".join(the_bai_luoi(x, p) for x in khac))
-    trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld)
-    print("  bai-viet/" + b["tep"])
-
-# ---------------------------------------------------------------- SÁCH
-def bia(nhan, ten, tieu_duoi, mo, trang_thai):
-    return """<div class="bia">
-  <div class="mat">
-    <span class="nhan-bia">%s</span>
-    <span class="ten-bia">%s</span>
-    <span class="tac">Coach Duy Nguyễn</span>
-  </div>
-  <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
-</div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
-
-SACH = dau_trang("Sách", "Sách Duy đang viết",
-  "Chưa có cuốn nào đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
-<section class="phan bd hoa-van">
-  <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
-  <div class="hang-bia hai tre hien">%s%s</div>
-</section>
-
-<section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien">
-      <p class="mono">Trong lúc chờ sách</p>
-      <h2>Phần lớn nội dung Duy đã viết dần trên blog</h2>
-      <p>Bạn đọc trước ở đó, và nói cho Duy biết chỗ nào cần đào sâu. Những chỗ được hỏi nhiều nhất sẽ thành chương dày nhất.</p>
-    </div>
-    <div class="blog hien">%s<div class="ds-bai">%s</div></div>
-  </div>
-</section>
-""" % (
- bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
-     "Gom lại cách bán dựa trên vị thế và niềm tin Duy đã dạy suốt sáu năm. Viết cho người chủ chứ không cho người bán: làm sao để khách tìm tới vì tin bạn, và làm sao để cách bán đó không chỉ nằm trong đầu bạn.",
-     "Đang viết · dự kiến quý 4 năm 2026"),
- bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
-     "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
-     "Đang biên soạn"),
- the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
-
-trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
-      "Sách Bán Bằng Vị Thế đang viết, dự kiến quý 4 năm 2026, và Bộ Sách Thực Chiến Bất Động Sản đang biên soạn.",
-      SACH, "sach.html")
-print("  sach.html")
-
-# ---------------------------------------------------------------- PODCAST
+# Mỗi chủ đề bài viết ứng với một chuyên mục podcast. Bài nào cũng mời xem một
+# tập cụ thể, chọn theo chuyên mục, chứ không mời chung chung vào trang podcast.
 # Trang dựng theo kiểu trang phim tài liệu Coach Duy gửi mẫu ngày 26/08/2026:
 # mở đầu tràn màn hình, sáu dải chuyên mục ảnh tràn viền đánh số, khối xem kênh
 # ở cuối. Podcast là video quay rồi đăng YouTube, nên mọi dải đều mở kênh.
@@ -1072,6 +971,136 @@ PD_TAP = [
   cta_nhan="Đọc bài: AI làm nhanh phần đã rõ", cta="bai-viet/ai-lam-nhanh-phan-da-dung.html"),
 ]
 
+CHU_DE_MUC = {"Điểm nghẽn người sáng lập": 1, "Quan hệ với khách": 2,
+              "Thương hiệu cá nhân": 3, "Hệ thống và đội ngũ": 4,
+              "Cộng đồng": 5, "AI": 6}
+
+def khoi_podcast(b, p=""):
+    muc = CHU_DE_MUC.get(b["chu_de"], 1)
+    tap = next((x for x in PD_TAP if x["muc"] == muc), PD_TAP[0])
+    ten_muc = PD_MUC[muc-1][1]
+    return """<section class="phan bd">
+  <a class="lq-tap hien" href="%spodcast.html#tap-%s">
+    <span class="lq-anh"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt=""
+      loading="lazy" decoding="async"><i class="lq-play" aria-hidden="true"></i></span>
+    <span class="lq-chu">
+      <span class="lq-nhan">Xem tập liên quan · %s</span>
+      <b>%s</b>
+      <span class="lq-mo">%s</span>
+      <span class="lq-di">Xem tập này <span class="mt" aria-hidden="true">&rarr;</span></span>
+    </span>
+  </a>
+</section>
+""" % (p, tap["yt"], tap["yt"], ten_muc, tap["tieu"], tap["lydo"])
+
+for i, b in enumerate(BAI):
+    p = "../"
+    bs = BO_SUNG.get(b["tep"], {})
+    # Ba bài cho kín hàng lưới ba cột. Thiếu bài cùng chủ đề thì lấy bù bài
+    # mới nhất ở chủ đề khác, để hàng không bị hụt ô.
+    khac = [x for x in BAI if x is not b and x["chu_de"] == b["chu_de"]][:3]
+    if len(khac) < 3:
+        khac += [x for x in BAI if x is not b and x not in khac][:3 - len(khac)]
+    if len(khac) < 2:
+        khac += [x for x in BAI if x is not b and x not in khac][:2 - len(khac)]
+    faq = bs.get("faq", [])
+    ml, than_bai = muc_luc(b["than"])
+    tra_loi = ('<div class="tra-loi"><b>Tóm tắt</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
+
+    ld = {"@context":"https://schema.org","@graph":[
+      {"@type":"BlogPosting","headline":b["tieu"],"description":b["mo"],
+       "datePublished":b["ngay"],"dateModified":"2026-08-24","articleSection":b["chu_de"],
+       "inLanguage":"vi","wordCount":len(re.sub(r"<[^>]+>"," ",b["than"]).split()),
+       "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html",
+                 "jobTitle":"Người cố vấn cho nhà sáng lập","knowsAbout":[b["chu_de"]]},
+       "publisher":{"@type":"Person","name":"Coach Duy Nguyễn"},
+       "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]},
+      {"@type":"BreadcrumbList","itemListElement":[
+       {"@type":"ListItem","position":1,"name":"Trang chủ","item":BASE+"/"},
+       {"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog.html"},
+       {"@type":"ListItem","position":3,"name":b["tieu"]}]}]}
+    if faq:
+        ld["@graph"].append({"@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faq]})
+    ld = json.dumps(ld, ensure_ascii=False)
+
+    than = """<article>
+  <div class="bd bai-dau hien">
+    <nav class="vun" aria-label="Đường dẫn"><a href="%sindex.html">Trang chủ</a><span>&rsaquo;</span><a href="%sblog.html">Blog</a><span>&rsaquo;</span><span>%s</span></nav>
+    <p class="meta">%s &nbsp;·&nbsp; %s</p>
+    <h1>%s</h1>
+    <p class="tom">%s</p>
+  </div>
+  <div class="bd hien"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
+  <div class="bd">
+    <div class="bai-than">
+      <div class="doc hien">%s%s%s</div>
+      %s
+      %s
+      <div class="bai-cuoi" style="max-width:74ch;margin-inline:auto">
+        <p>Viết bởi Coach Duy Nguyễn</p>
+        <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+%s<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien"><p class="mono">Đọc tiếp</p><h2>Ba bài cùng mạch</h2></div>
+  <div class="luoi-bai tre hien">%s</div>
+</section>
+""" % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["tieu"], b["mo"],
+       p, b["anh"], b["alt"], tra_loi, ml, than_bai,
+       khoi_faq(faq) if faq else "", HOP_TAC_GIA, p, khoi_podcast(b, p),
+       "".join(the_bai_luoi(x, p) for x in khac))
+    trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld)
+    print("  bai-viet/" + b["tep"])
+
+# ---------------------------------------------------------------- SÁCH
+def bia(nhan, ten, tieu_duoi, mo, trang_thai):
+    return """<div class="bia">
+  <div class="mat">
+    <span class="nhan-bia">%s</span>
+    <span class="ten-bia">%s</span>
+    <span class="tac">Coach Duy Nguyễn</span>
+  </div>
+  <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
+</div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
+
+SACH = dau_trang("Sách", "Sách Duy đang viết",
+  "Chưa có cuốn nào đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
+<section class="phan bd hoa-van">
+  <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
+  <div class="hang-bia hai tre hien">%s%s</div>
+</section>
+
+<section class="phan tran">
+  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
+  <div class="bd">
+    <div class="phan-dau hien">
+      <p class="mono">Trong lúc chờ sách</p>
+      <h2>Phần lớn nội dung Duy đã viết dần trên blog</h2>
+      <p>Bạn đọc trước ở đó, và nói cho Duy biết chỗ nào cần đào sâu. Những chỗ được hỏi nhiều nhất sẽ thành chương dày nhất.</p>
+    </div>
+    <div class="blog hien">%s<div class="ds-bai">%s</div></div>
+  </div>
+</section>
+""" % (
+ bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
+     "Gom lại cách bán dựa trên vị thế và niềm tin Duy đã dạy suốt sáu năm. Viết cho người chủ chứ không cho người bán: làm sao để khách tìm tới vì tin bạn, và làm sao để cách bán đó không chỉ nằm trong đầu bạn.",
+     "Đang viết · dự kiến quý 4 năm 2026"),
+ bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
+     "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
+     "Đang biên soạn"),
+ the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
+
+trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
+      "Sách Bán Bằng Vị Thế đang viết, dự kiến quý 4 năm 2026, và Bộ Sách Thực Chiến Bất Động Sản đang biên soạn.",
+      SACH, "sach.html")
+print("  sach.html")
+
+# ---------------------------------------------------------------- PODCAST
+
 def _ten_muc(n):
     so, ten = PD_MUC[n-1][0], PD_MUC[n-1][1]
     return "Chuyên mục %s · %s" % (so, ten)
@@ -1079,13 +1108,13 @@ def _ten_muc(n):
 def _rap_html():
     t = PD_TAP[0]
     the = "".join(
-        ('<a class="pd-tap%s" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener" '
+        ('<a class="pd-tap%s" id="tap-%s" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener" '
          'data-yt="%s" data-muc="%s" data-mucten="%s" data-tieu="%s" data-mo="%s" data-lydo="%s" '
          'data-ctan="%s" data-ctah="%s"%s>'
          '<span class="pd-tap-anh"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="" '
          'loading="lazy" decoding="async"><i class="pd-tap-play" aria-hidden="true"></i></span>'
          '<span class="pd-tap-so">Tập %02d</span><b>%s</b></a>')
-        % ((" chon" if i == 0 else ""), x["yt"], x["yt"], x["muc"],
+        % ((" chon" if i == 0 else ""), x["yt"], x["yt"], x["yt"], x["muc"],
            _ten_muc(x["muc"]), x["tieu"].replace('"', "&quot;"), x["mo"].replace('"', "&quot;"),
            x["lydo"].replace('"', "&quot;"), x["cta_nhan"], dd(x["cta"]),
            ' aria-current="true"' if i == 0 else "", x["yt"], i + 1, x["tieu"])

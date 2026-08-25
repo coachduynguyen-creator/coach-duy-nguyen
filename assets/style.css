@@ -1412,3 +1412,38 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .pd-trang{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2);
   font-variant-numeric:tabular-nums}
 .pd-band{cursor:pointer}
+
+/* ===== Khối tập podcast liên quan, ở cuối mỗi bài viết ===== */
+/* Một thẻ ngang: ảnh bìa bên trái, nhãn chuyên mục, tên tập và lý do nên xem.
+   Bấm vào đi thẳng tới đúng tập trên trang podcast, không phải trang chung. */
+.lq-tap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:26px;
+  align-items:center;max-width:74ch;margin:0 auto;padding:20px;
+  border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);
+  text-decoration:none;transition:border-color .3s var(--ease),background .3s var(--ease)}
+.lq-anh{position:relative;display:block;aspect-ratio:16/9;border-radius:var(--r-s);
+  overflow:hidden;background:var(--bg-3)}
+.lq-anh img{width:100%;height:100%;object-fit:cover;filter:brightness(.86);
+  transition:filter .4s var(--ease),transform .5s var(--ease)}
+.lq-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;background:rgba(23,18,15,.66);
+  border:1px solid rgba(249,245,240,.45);display:grid;place-items:center;
+  transition:background .3s var(--ease),border-color .3s var(--ease)}
+.lq-play::after{content:"";margin-left:3px;border-left:12px solid var(--ink);
+  border-top:8px solid transparent;border-bottom:8px solid transparent;
+  transition:border-left-color .3s var(--ease)}
+@media(hover:hover){
+  .lq-tap:hover{border-color:var(--vang);background:var(--vang-mo)}
+  .lq-tap:hover .lq-anh img{filter:brightness(1);transform:scale(1.04)}
+  .lq-tap:hover .lq-play{background:var(--vang);border-color:var(--vang)}
+  .lq-tap:hover .lq-play::after{border-left-color:var(--bg)}
+}
+.lq-chu{display:block}
+.lq-nhan{display:block;font-family:var(--f-mono);font-size:11px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin-bottom:8px}
+.lq-tap b{display:block;font-family:var(--f-tit);font-weight:700;font-size:19px;
+  line-height:1.28;color:var(--ink);margin-bottom:7px}
+.lq-mo{display:block;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.lq-di{display:inline-block;margin-top:12px;font-size:14.5px;font-weight:600;color:var(--vang)}
+@media(max-width:760px){
+  .lq-tap{grid-template-columns:1fr;gap:16px;padding:16px}
+}
