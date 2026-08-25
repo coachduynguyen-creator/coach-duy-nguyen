@@ -111,7 +111,7 @@ INDEX = """
     <div class="hero-goc"><span>Next Gen Founder</span><span>2026</span></div>
     <div class="hero-giua">
       <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
-      <p class="mono">Người cố vấn · Next Gen Founder</p>
+      <p class="mono mono-dai">Nhà sáng lập Cộng đồng Next Gen Founder</p>
       <div class="ten">Duy <em>Nguyễn</em></div>
       <div class="bang-hieu">
         <p class="danh-xung">Coach. Trainer. Entrepreneur.</p>
@@ -126,7 +126,7 @@ INDEX = """
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
-    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh. Con số tổng cộng từ bốn kênh nên có người được đếm hai lần.</p>
+    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
   </div>
 </header>
 
@@ -207,8 +207,8 @@ INDEX = """
 <section class="phan bd hoa-van duoi" id="blog">
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
-    <h2>Đọc thử trước khi quyết bất cứ điều gì</h2>
-    <p>Những gì bạn đọc ở đây đều là việc Duy đang làm thật: điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống.</p>
+    <h2>Chỗ nhà sáng lập hay vấp nhất, và cách gỡ</h2>
+    <p>Điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Tất cả đều là việc Duy đang làm thật.</p>
   </div>
   <div class="blog hien">
     {BAI_LON}
@@ -680,7 +680,7 @@ for c in CT:
 CHU_DE = ["Tất cả"] + sorted({b["chu_de"] for b in BAI})
 chu_de_html = "".join('<button type="button" data-cd="%s"%s>%s</button>' % (t, ' class="on"' if i == 0 else '', t) for i, t in enumerate(CHU_DE))
 
-BLOG = dau_trang("Blog", "Duy chỉ viết những việc đang làm thật",
+BLOG = dau_trang("Blog", "Chỗ nhà sáng lập hay vấp nhất, và cách gỡ",
   "Điểm nghẽn của người sáng lập, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Không viết bài theo xu hướng.") + """
 <section class="phan bd hoa-van">
   <div class="phan-dau hien"><p class="mono">Bài mới nhất</p><h2>%s</h2></div>
