@@ -911,6 +911,83 @@ pd_band = "".join(
 </a>''' % (YOUTUBE, so, ten, anh, neo, so, ten, mo, so)
  for so, ten, mo, anh, neo in PD_MUC)
 
+
+# Sáu tập xem ngay tại trang, lấy từ video có sẵn trên kênh ngày 26/08/2026.
+# Tập podcast quay mới sẽ thay dần vào danh sách này: mỗi tập một mã YouTube,
+# một mô tả, một lý do nên xem và một lời mời riêng. Bấm tập nào thì khung
+# rạp ở trên phát tập đó ngay trên trang, không rời sang YouTube.
+PD_TAP = [
+ dict(yt="TDQj-qAswCc", muc="Chuyên mục 01 · Điểm nghẽn của người sáng lập",
+  tieu="10 năm làm nghề, và cú chuyển mình chỉ sau 30 ngày",
+  mo="Một học viên làm sales 10 năm ngồi kể lại điều gì thật sự đổi trong 30 ngày làm việc cùng Duy. Không phải mẹo mới, mà là đổi cách nhìn về chính vị thế của mình.",
+  lydo="Nghe một người thật kể bằng lời của họ, bạn tự đối chiếu được với chỗ mình đang đứng.",
+  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+ dict(yt="eGQbItur-co", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
+  tieu="Càng bán nhiều thứ, khách càng khó mua",
+  mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
+  lydo="Nếu bạn đang nghĩ thêm gói, thêm dịch vụ là thêm doanh thu, tập này cho bạn thấy chiều ngược lại trước khi bạn tốn tiền vào nó.",
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+ dict(yt="l4tnX9lG8NE", muc="Chuyên mục 03 · Thương hiệu của người sáng lập",
+  tieu="Thương hiệu cá nhân giữa thời AI",
+  mo="AI làm nội dung nhanh hơn cho tất cả mọi người, nghĩa là nhanh không còn là lợi thế. Tập này nói về thứ máy không thay được: trải nghiệm thật và tiếng nói riêng của người chủ.",
+  lydo="Xem trước khi bạn đầu tư thêm vào nội dung, để công sức đổ vào đúng chỗ tạo khác biệt.",
+  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+ dict(yt="7aCWr74vWkI", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
+  tieu="Không phải do giá. Đây là lý do khách rời bỏ bạn",
+  mo="Khách nói đắt rồi đi, nhưng phần lớn không đi vì giá. Tập này lần ngược về chỗ niềm tin bị hụt trong buổi tư vấn, trước cả khi con số được nói ra.",
+  lydo="Nếu bạn từng giảm giá mà khách vẫn không mua, tập này giải thích vì sao, và bạn sẽ thôi giảm nữa.",
+  cta_nhan="Đọc bài: Vì sao giảm giá làm hỏng quan hệ", cta="bai-viet/vi-sao-giam-gia-lam-hong-quan-he.html"),
+ dict(yt="YbiDnjbCK8Q", muc="Chuyên mục 02 · Bán bằng chẩn đoán",
+  tieu="Đừng thuyết phục nữa. Đây là cách khách tự mua",
+  mo="Người bán càng cố thuyết phục, khách càng phòng thủ. Tập này trình bày cách dẫn buổi tư vấn bằng câu hỏi chẩn đoán, để khách tự nhìn ra vấn đề và tự đi tới quyết định.",
+  lydo="Đây là lõi của cách Duy bán suốt nhiều năm, trình bày gọn trong một tập.",
+  cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
+ dict(yt="mNRObOgqONc", muc="Chuyên mục 01 · Điểm nghẽn của người sáng lập",
+  tieu="80 phần trăm thất bại không đến từ kỹ năng chốt",
+  mo="Người ta hay đổ cho khâu chốt, rồi đi học thêm kỹ thuật chốt. Tập này chỉ ra chỗ hỏng thật nằm sớm hơn nhiều trong quan hệ với khách, và vì sao luyện chốt không cứu được nó.",
+  lydo="Giúp bạn thôi tốn tiền vào sai chỗ, trước khi mua thêm một khoá kỹ năng nữa.",
+  cta_nhan="Đăng ký nhận thư hằng tuần", cta="lien-he.html"),
+]
+
+def _rap_html():
+    t = PD_TAP[0]
+    the = "".join(
+        ('<a class="pd-tap%s" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener" '
+         'data-yt="%s" data-muc="%s" data-tieu="%s" data-mo="%s" data-lydo="%s" '
+         'data-ctan="%s" data-ctah="%s"%s>'
+         '<span class="pd-tap-anh"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="" '
+         'loading="lazy" decoding="async"><i class="pd-tap-play" aria-hidden="true"></i></span>'
+         '<span class="pd-tap-so">Tập %02d</span><b>%s</b></a>')
+        % ((" chon" if i == 0 else ""), x["yt"], x["yt"], x["muc"],
+           x["tieu"].replace('"', "&quot;"), x["mo"].replace('"', "&quot;"),
+           x["lydo"].replace('"', "&quot;"), x["cta_nhan"], dd(x["cta"]),
+           ' aria-current="true"' if i == 0 else "", x["yt"], i + 1, x["tieu"])
+        for i, x in enumerate(PD_TAP))
+    return '''<section class="phan bd" id="xem">
+  <div class="pd-rap hien">
+    <div class="pd-man" id="pd-man">
+      <button class="pd-poster" id="pd-poster" type="button" aria-label="Phát tập đang chọn">
+        <img id="pd-poster-anh" src="https://i.ytimg.com/vi/%s/maxresdefault.jpg" alt="">
+        <span class="pd-play" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="pd-rap-chu">
+      <p class="pd-nhan" id="pd-rap-muc">%s</p>
+      <h2 id="pd-rap-tieu">%s</h2>
+      <p class="pd-rap-mo" id="pd-rap-mo">%s</p>
+      <div class="pd-lydo"><b>Vì sao nên xem</b><p id="pd-rap-lydo">%s</p></div>
+      <a class="nut nut-v" id="pd-rap-cta" href="%s">%s <span class="mt" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+  <div class="pd-tap-dau hien">
+    <p class="mono" style="margin:0;text-align:left">6 tập xem ngay</p>
+    <p class="pd-ghi">Bấm một tập để xem tại đây. Tập podcast quay mới sẽ xếp dần vào danh sách này.</p>
+  </div>
+  <div class="pd-tap-luoi hien">%s</div>
+</section>
+''' % (t["yt"], t["muc"], t["tieu"], t["mo"], t["lydo"], dd(t["cta"]), t["cta_nhan"], the)
+
+
 KENH = """<section class="pd-hero">
   <div class="pd-nen" aria-hidden="true"><img src="img/dh-giua-doan.webp" alt="" width="1400" height="934" fetchpriority="high"></div>
   <div class="bd pd-hero-in">
@@ -919,7 +996,7 @@ KENH = """<section class="pd-hero">
     <p class="pd-dan">Video podcast của Duy trên YouTube. Ngồi xuống cùng một câu hỏi thật của người sáng lập, đi qua ví dụ, điều kiện áp dụng, và cả chỗ phương pháp không hợp.</p>
     <div class="pd-nut-hang">
       <a class="nut nut-v" href="{YOUTUBE}" target="_blank" rel="noopener">Xem trên YouTube <span class="mt" aria-hidden="true">&rarr;</span></a>
-      <a class="lk-v" href="#chuyen-muc">6 chuyên mục <span class="mt" aria-hidden="true">&darr;</span></a>
+      <a class="lk-v" href="#xem">Xem một tập ngay <span class="mt" aria-hidden="true">&darr;</span></a>
     </div>
     <div class="pd-hieu">
       <span><b>230.000</b> đăng ký YouTube</span>
@@ -930,7 +1007,7 @@ KENH = """<section class="pd-hero">
   <span class="pd-cuon" aria-hidden="true">Cuộn để xem</span>
 </section>
 
-<section class="pd-muc" id="chuyen-muc">
+{RAP}<section class="pd-muc" id="chuyen-muc">
   <div class="bd pd-muc-dau">
     <p class="mono" style="margin:0">6 chuyên mục</p>
     <p class="pd-ghi">Bấm một dải để mở kênh. Các tập mới xếp vào đúng chuyên mục của nó.</p>
@@ -957,7 +1034,7 @@ KENH = """<section class="pd-hero">
     <p>Số ở trang này đọc từ trang công khai của từng kênh, tính tới tháng 8 năm 2026. Nó nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn. Xem một tập rồi hãy quyết.</p>
   </div>
 </section>
-""".replace("{YOUTUBE}", YOUTUBE).replace("{BANDS}", pd_band)
+""".replace("{RAP}", _rap_html()).replace("{YOUTUBE}", YOUTUBE).replace("{BANDS}", pd_band)
 
 trang("podcast.html", "Podcast Next Gen Founder · Coach Duy Nguyễn",
       "Video podcast của Coach Duy Nguyễn trên YouTube: mỗi tập đi trọn một vấn đề của người sáng lập, qua sáu chuyên mục từ điểm nghẽn tới AI.",

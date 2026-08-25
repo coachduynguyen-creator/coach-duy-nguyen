@@ -174,3 +174,53 @@
   });
   chon(0);
 })();
+
+/* Rạp podcast: bấm một tập thì khung rạp đổi tập và phát ngay tại trang. */
+(function () {
+  var man = document.getElementById('pd-man');
+  if (!man) return;
+  var poster = document.getElementById('pd-poster');
+  var hien = { yt: document.querySelector('.pd-tap.chon') ? document.querySelector('.pd-tap.chon').dataset.yt : '' };
+  function phat(yt) {
+    man.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt +
+      '?autoplay=1&rel=0" title="Video podcast" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  }
+  function chonTap(a, tuPhat) {
+    var d = a.dataset;
+    hien.yt = d.yt;
+    document.getElementById('pd-rap-muc').textContent = d.muc;
+    document.getElementById('pd-rap-tieu').textContent = d.tieu;
+    document.getElementById('pd-rap-mo').textContent = d.mo;
+    document.getElementById('pd-rap-lydo').textContent = d.lydo;
+    var cta = document.getElementById('pd-rap-cta');
+    cta.href = d.ctah;
+    cta.innerHTML = d.ctan + ' <span class="mt" aria-hidden="true">&rarr;</span>';
+    document.querySelectorAll('.pd-tap').forEach(function (x) {
+      var dung = x === a;
+      x.classList.toggle('chon', dung);
+      if (dung) { x.setAttribute('aria-current', 'true'); } else { x.removeAttribute('aria-current'); }
+    });
+    if (tuPhat) { phat(d.yt); }
+    else {
+      man.innerHTML = '<button class="pd-poster" type="button" aria-label="Phát tập đang chọn">' +
+        '<img src="https://i.ytimg.com/vi/' + d.yt + '/maxresdefault.jpg" alt="">' +
+        '<span class="pd-play" aria-hidden="true"></span></button>';
+      man.querySelector('.pd-poster').addEventListener('click', function () { phat(hien.yt); });
+    }
+  }
+  if (poster) { poster.addEventListener('click', function () { phat(hien.yt); }); }
+  document.querySelectorAll('.pd-tap').forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      chonTap(a, true);
+      history.replaceState(null, '', '#tap-' + a.dataset.yt);
+      document.getElementById('xem').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  /* Mở trang bằng liên kết sâu #tap-<mã> thì chọn sẵn tập đó, không tự phát. */
+  var m = location.hash.match(/^#tap-([\w-]{11})$/);
+  if (m) {
+    var a = document.querySelector('.pd-tap[data-yt="' + m[1] + '"]');
+    if (a) { chonTap(a, false); }
+  }
+})();
