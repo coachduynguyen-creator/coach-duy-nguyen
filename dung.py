@@ -872,75 +872,109 @@ trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
       SACH, "sach.html")
 print("  sach.html")
 
-# ---------------------------------------------------------------- KÊNH YOUTUBE
-YT_CHU_DE = [
- ("01","Điểm nghẽn của người sáng lập","Vì sao càng bán tốt càng bận, vì sao tuyển thêm người lại bận hơn, và cách gỡ từng luồng ra khỏi đầu người chủ."),
- ("02","Bán bằng chẩn đoán","Cách dẫn một buổi tư vấn để khách tự nhìn ra vấn đề, thay vì bị thuyết phục. Xử lý từ chối bằng phản chiếu."),
- ("03","Thương hiệu của người sáng lập","Làm rõ lãnh địa và luận điểm, biến công việc thật thành kho câu chuyện, giữ nhịp mà một người vận hành được."),
- ("04","Xây hệ thống cùng đội ngũ","Năm phần làm nên một hệ thống chạy được, cách giao quyền mà không mất kiểm soát, nhịp rà soát hằng tuần."),
- ("05","Kiến tạo cộng đồng","Vì sao một nhóm đăng bài chưa phải cộng đồng, và bốn thứ quyết định cộng đồng sống hay chết."),
- ("06","AI trong công việc của người chủ","Việc nào giao được cho máy, việc nào phải giữ, và cách dùng AI mà không mất giọng riêng."),
+# ---------------------------------------------------------------- PODCAST
+# Trang dựng theo kiểu trang phim tài liệu Coach Duy gửi mẫu ngày 26/08/2026:
+# mở đầu tràn màn hình, sáu dải chuyên mục ảnh tràn viền đánh số, khối xem kênh
+# ở cuối. Podcast là video quay rồi đăng YouTube, nên mọi dải đều mở kênh.
+PD_MUC = [
+ ("01","Điểm nghẽn của người sáng lập",
+  "Vì sao càng bán tốt càng bận, vì sao tuyển thêm người lại bận hơn, và cách gỡ từng lớp một.",
+  "img/bl-ban-lam-viec.webp","50% 34%"),
+ ("02","Bán bằng chẩn đoán",
+  "Dẫn một buổi tư vấn để khách tự nhìn ra vấn đề, thay vì bị thuyết phục.",
+  "img/v5-di-cung.webp","50% 38%"),
+ ("03","Thương hiệu của người sáng lập",
+  "Làm rõ lãnh địa và luận điểm, biến công việc thật thành kho câu chuyện.",
+  "img/bl-phong-thu.webp","50% 45%"),
+ ("04","Xây hệ thống cùng đội ngũ",
+  "Năm phần làm nên một hệ thống chạy được, và cách giao quyền mà không mất kiểm soát.",
+  "img/dh-trong-doan.webp","50% 30%"),
+ ("05","Kiến tạo cộng đồng",
+  "Vì sao một nhóm đăng bài chưa phải cộng đồng, và bốn thứ quyết định cộng đồng sống hay chết.",
+  "img/dh-phong-lon.webp","50% 40%"),
+ ("06","AI trong công việc của người chủ",
+  "Việc nào giao được cho máy, việc nào phải giữ, và cách dùng AI mà không mất tiếng nói riêng.",
+  "img/bl-may-tinh.webp","50% 30%"),
 ]
-yt_the = "".join('<article class="yt-the"><span class="so">Chủ đề %s</span><h3>%s</h3><p>%s</p></article>' % t for t in YT_CHU_DE)
-
-KENH = dau_trang("Kênh YouTube", "Nơi Duy nói dài và nói sâu nhất",
-  "Đây là kênh nội dung dài nhất. TikTok mở đầu câu chuyện, Facebook kể trải nghiệm, còn YouTube là nơi Duy trình bày hết một phương pháp, kèm ví dụ và điều kiện áp dụng.") + """
-<section class="phan bd hoa-van">
-  <div class="doi-cot">
-    <div class="hien">
-      <p class="mono">Vai trò của kênh</p>
-      <h2>Ba kênh, ba việc khác nhau</h2>
-      <p>Duy không đăng lại một nội dung lên cả ba kênh. Mỗi kênh làm một việc riêng, và YouTube làm việc khó nhất: giúp người xem hiểu sâu, tin sâu, rồi tự quyết bước tiếp theo.</p>
-      <div class="bang-tt" style="margin-top:26px">
-        <div><b>TikTok</b><span>Mở rộng nhận biết. Đưa đúng người lạ đến với Duy bằng một vấn đề họ đang sống cùng.</span></div>
-        <div><b>Facebook</b><span>Xây quan hệ và nhận diện. Kể trải nghiệm thật, tạo đối thoại, để người phù hợp nhận ra nhau.</span></div>
-        <div><b>YouTube</b><span>Hiểu sâu và tin sâu. Trình bày trọn một phương pháp, kèm ví dụ, điều kiện và cả chỗ nó không dùng được.</span></div>
-      </div>
-      <p style="margin-top:26px"><a class="nut nut-v yt-nut" href="%s" target="_blank" rel="noopener"><i aria-hidden="true"></i>Xem kênh YouTube <span class="mt" aria-hidden="true">&rarr;</span></a></p>
+pd_band = "".join(
+ '''<a class="pd-band hien" href="%s" target="_blank" rel="noopener" aria-label="Chuyên mục %s: %s">
+  <img src="%s" alt="" loading="lazy" style="object-position:%s">
+  <div class="bd">
+    <span class="pd-cham" aria-hidden="true"></span>
+    <div class="pd-chu">
+      <p class="pd-nhan">Chuyên mục %s</p>
+      <h3>%s</h3>
+      <p class="pd-mo">%s</p>
     </div>
-    <div class="hien"><div class="anh anh-khung ngang"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div></div>
+    <span class="pd-dem" aria-hidden="true"><b>%s</b><i></i>06</span>
   </div>
+</a>''' % (YOUTUBE, so, ten, anh, neo, so, ten, mo, so)
+ for so, ten, mo, anh, neo in PD_MUC)
+
+KENH = """<section class="pd-hero">
+  <div class="pd-nen" aria-hidden="true"><img src="img/dh-giua-doan.webp" alt="" width="1400" height="934" fetchpriority="high"></div>
+  <div class="bd pd-hero-in">
+    <p class="mono">Podcast Next Gen Founder</p>
+    <h1>Mỗi tập một vấn đề,<br>kể tới tận gốc.</h1>
+    <p class="pd-dan">Video podcast của Duy trên YouTube. Ngồi xuống cùng một câu hỏi thật của người sáng lập, đi qua ví dụ, điều kiện áp dụng, và cả chỗ phương pháp không hợp.</p>
+    <div class="pd-nut-hang">
+      <a class="nut nut-v" href="{YOUTUBE}" target="_blank" rel="noopener">Xem trên YouTube <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="lk-v" href="#chuyen-muc">6 chuyên mục <span class="mt" aria-hidden="true">&darr;</span></a>
+    </div>
+    <div class="pd-hieu">
+      <span><b>230.000</b> đăng ký YouTube</span>
+      <span><b>800.000+</b> theo dõi các nền tảng</span>
+      <span><b>6 năm</b> đăng đều, không nghỉ quãng nào</span>
+    </div>
+  </div>
+  <span class="pd-cuon" aria-hidden="true">Cuộn để xem</span>
 </section>
 
-<section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-dung-lop.webp" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien"><p class="mono">6 chủ đề</p><h2>Sáu chủ đề Duy quay đi quay lại</h2>
-    <p>Nội dung của Duy xoay quanh sáu chủ đề. Bốn chủ đề đầu là bốn năng lực của nhà sáng lập thế hệ mới, hai chủ đề còn lại là nền cho cả bốn.</p></div>
-    <div class="yt-hang tre hien">%s</div>
+<section class="pd-muc" id="chuyen-muc">
+  <div class="bd pd-muc-dau">
+    <p class="mono" style="margin:0">6 chuyên mục</p>
+    <p class="pd-ghi">Bấm một dải để mở kênh. Các tập mới xếp vào đúng chuyên mục của nó.</p>
   </div>
+  {BANDS}
 </section>
 
 <section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien"><p class="mono">Số công khai</p><h2>Bốn kênh, sáu năm đăng đều</h2>
-  <p>Duy để số ở đây để bạn kiểm được. Số nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn.</p></div>
-  <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
-  <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
-  <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
-    <b>Cách Duy chọn chủ đề để quay</b>
-    <p>Duy không quay theo xu hướng. Chủ đề đến từ ba nguồn: câu hỏi lặp lại trong các buổi tư vấn, tình huống thật vừa xử lý xong trong tuần, và chỗ Duy thấy nhiều người trong ngành đang nói sai. Nếu một chủ đề không thuộc ba nguồn đó, Duy để lại.</p>
+  <div class="pd-cuoi hien">
+    <a class="pd-xem" href="{YOUTUBE}" target="_blank" rel="noopener" aria-label="Mở kênh YouTube của Coach Duy Nguyễn">
+      <img src="img/cd-giang-slide.webp" alt="" loading="lazy">
+      <span class="pd-play" aria-hidden="true"></span>
+    </a>
+    <div>
+      <p class="mono" style="text-align:left">Vì sao có podcast này</p>
+      <h2>YouTube là nơi Duy nói dài và nói sâu nhất</h2>
+      <p>TikTok mở đầu câu chuyện, Facebook kể trải nghiệm, còn ở đây Duy trình bày hết một phương pháp. <span class="nhan">Mỗi tập đi trọn một vấn đề, xem xong là dùng được</span>, không phải đoạn cắt tạo tò mò.</p>
+      <p style="margin-top:14px">Chủ đề không lấy theo xu hướng. Nó đến từ ba nguồn: câu hỏi lặp lại trong các buổi tư vấn, tình huống thật trong cộng đồng, và chỗ chính Duy từng vấp.</p>
+      <p style="margin-top:26px"><a class="nut nut-v" href="{YOUTUBE}" target="_blank" rel="noopener">Xem kênh YouTube <span class="mt" aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </div>
+  <div class="khong hien" style="max-width:70ch;margin:44px auto 0">
+    <b>Số để bạn kiểm, không phải để khoe</b>
+    <p>Số ở trang này đọc từ trang công khai của từng kênh, tính tới tháng 8 năm 2026. Nó nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn. Xem một tập rồi hãy quyết.</p>
   </div>
 </section>
-""" % (YOUTUBE, yt_the, so_lieu_html)
+""".replace("{YOUTUBE}", YOUTUBE).replace("{BANDS}", pd_band)
 
-trang("kenh-youtube.html", "Kênh YouTube Coach Duy Nguyễn · Nội dung dài cho nhà sáng lập",
-      "Kênh YouTube của Coach Duy Nguyễn, nơi trình bày trọn phương pháp cho nhà sáng lập: điểm nghẽn, bán bằng chẩn đoán, thương hiệu cá nhân, hệ thống và cộng đồng.",
-      KENH, "kenh-youtube.html")
-print("  kenh-youtube.html")
+trang("podcast.html", "Podcast Next Gen Founder · Coach Duy Nguyễn",
+      "Video podcast của Coach Duy Nguyễn trên YouTube: mỗi tập đi trọn một vấn đề của người sáng lập, qua sáu chuyên mục từ điểm nghẽn tới AI.",
+      KENH, "podcast.html")
+print("  podcast.html")
 
-# trang cũ podcast.html chuyển hướng sang trang mới, giữ cho liên kết đã chia sẻ không chết
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "podcast.html"), "w", encoding="utf-8").write(
-"""<!doctype html>
-<html lang="vi"><head><meta charset="utf-8">
-<title>Kênh YouTube Coach Duy Nguyễn</title>
-<link rel="canonical" href="%s/kenh-youtube.html">
-<meta name="robots" content="noindex,follow">
-<meta http-equiv="refresh" content="0; url=kenh-youtube.html">
-<style>body{background:#17120F;color:#F9F5F0;font-family:system-ui,sans-serif;padding:60px 24px;text-align:center}
-a{color:#F2B14A}</style></head>
-<body><p>Trang này đã chuyển thành <a href="kenh-youtube.html">Kênh YouTube</a>.</p>
-<script>location.replace('kenh-youtube.html');</script></body></html>""" % BASE)
-print("  podcast.html (chuyen huong)")
+# trang cũ kenh-youtube.html chuyển hướng sang trang mới, giữ liên kết đã chia sẻ
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "kenh-youtube.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Podcast Next Gen Founder</title>
+<link rel="canonical" href="%s/podcast.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=podcast.html">
+</head>
+<body><p>Trang này đã chuyển thành <a href="podcast.html">Podcast Next Gen Founder</a>.</p>
+<script>location.replace('podcast.html');</script></body></html>""" % BASE)
+print("  kenh-youtube.html (chuyen huong)")
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
@@ -1009,7 +1043,7 @@ print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
-        "sach.html", "kenh-youtube.html", "lien-he.html"] \
+        "sach.html", "podcast.html", "lien-he.html"] \
      + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
@@ -1034,7 +1068,7 @@ llms = """# Coach Duy Nguyễn
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Kênh YouTube](%(b)s/kenh-youtube.html): nội dung dài, sáu chủ đề, 230 nghìn người đăng ký
+- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](%(b)s/lien-he.html)
 
 ## Chương trình
