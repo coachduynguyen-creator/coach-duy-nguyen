@@ -255,7 +255,7 @@ def _the(kieu, ten):
             'height="400" loading="lazy" decoding="async"></div>' % (kieu, ten))
 
 _GIUA = ('<div class="mn-t mn-cat">'
-         '<img src="img/cd-cat-soc.webp" alt="Coach Duy Nguyễn" width="542" height="1038" '
+         '<img src="img/cd-cat-nen.webp" alt="Coach Duy Nguyễn" width="779" height="1120" '
          'loading="lazy" decoding="async">'
          '<b class="mn-ten">Coach Duy Nguyễn<span>Sáng lập Cộng đồng Next Gen Founder</span></b>'
          '</div>')
