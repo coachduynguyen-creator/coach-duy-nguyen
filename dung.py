@@ -187,15 +187,15 @@ INDEX = """
 </section>
 <section class="phan bd hoa-van" id="cong-dong">
   <div class="phan-dau hien">
-    <p class="mono">Cộng đồng Next Gen Founder</p>
-    <h2>Nhà sáng lập thế hệ mới là người đã thôi lớn bằng sức mình</h2>
-    <p>Họ có nghề, có khách thật, và nhận ra tên mình đang là tài sản lớn nhất của doanh nghiệp. Điều họ cần không phải nổi tiếng hơn, mà là biến uy tín đó thành thương hiệu được tin, cách tư vấn có trách nhiệm, hệ thống đội ngũ cùng chạy được, và một mạng lưới cùng lớn.</p>
-    <p style="margin-top:14px">Nếu bạn đang ở đó, cộng đồng này là nơi đi con đường đó cùng những người có cùng tiêu chuẩn, và có một người đi trước giữ nhịp.</p>
+    <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
+    <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
+    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: người ta tin bạn trước khi tin công ty bạn.</p>
+    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực ở trên trong công việc thật, cùng những người có cùng tiêu chuẩn, và có một người đi trước giữ nhịp.</p>
   </div>
 
   <div class="cd-mat hien">
     {MAT_NGUOI}
-    <p class="cd-ghi">Ảnh minh hoạ. Cộng đồng đang nhận danh sách chờ cho đợt đầu, và mỗi người đều qua một buổi trao đổi trước khi vào.</p>
+    <p class="cd-ghi">Ảnh minh hoạ. Mỗi người đều qua một buổi trao đổi trước khi vào.</p>
   </div>
 
   <div class="blog-them">
