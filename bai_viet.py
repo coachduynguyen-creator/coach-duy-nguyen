@@ -88,28 +88,77 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
  ngay="2026-08-16", ngay_viet="16 tháng 8, 2026", doc="5 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
  than="""
-<p>Cái phễu bán hàng là một công cụ đo tốt. Bao nhiêu người biết tới, bao nhiêu người để lại thông tin, bao nhiêu người tham dự, bao nhiêu người mua. Với một chiến dịch có điểm bắt đầu và điểm kết thúc, phễu cho bạn con số để cải tiến.</p>
-<p>Vấn đề bắt đầu khi người ta dùng phễu để thiết kế cả quan hệ với khách, chứ không chỉ để đo.</p>
+<p>Cái phễu bán hàng là một công cụ đo tốt, và Duy không có ý bỏ nó. Bao nhiêu người biết tới, bao nhiêu người để lại thông tin, bao nhiêu người dự buổi giới thiệu, bao nhiêu người mua. Với một chiến dịch có ngày mở và ngày đóng, phễu cho bạn đúng thứ cần có để biết chỗ nào đang rò.</p>
+
+<p>Chuyện bắt đầu hỏng khi người ta dùng phễu để thiết kế cả quan hệ với khách, chứ không chỉ để đo một chiến dịch. <span class="nhan">Một công cụ đo dùng sai chỗ sẽ thành một cách nghĩ, và cách nghĩ đó quyết định bạn cư xử thế nào với người chưa mua.</span></p>
 
 <h2>Phễu giả định một chiều đi</h2>
-<p>Phễu giả định người ta đi từ trên xuống dưới, một chiều, không quay lại. Nhưng người mua một dịch vụ giá trị cao không đi như vậy.</p>
-<p>Họ có thể biết bạn từ một nội dung lan toả, theo dõi vài tháng mà không để lại thông tin, dự một hội thảo rồi im lặng nửa năm, và quay lại đúng lúc doanh nghiệp của họ gặp chuyện. Trên phễu, người này bị đánh dấu là đã rơi. Trong thực tế, họ chỉ chưa tới lúc.</p>
-<p>Khi bạn tin vào phễu, bạn xử lý người chưa mua như một thất bại cần cứu. Bạn gọi thêm, nhắn thêm, giảm giá. Và bạn tiêu đúng cái mình cần nhất: sự tin cậy.</p>
+
+<p>Phễu giả định người ta đi từ trên xuống dưới, một chiều, không quay lại, và ai dừng giữa chừng thì coi như đã rơi. Với hàng tiêu dùng giá vài trăm nghìn thì giả định đó gần đúng. Với một dịch vụ giá trị cao mà người mua phải đặt uy tín của họ vào, nó sai gần như hoàn toàn.</p>
+
+<p>Duy từng ngồi với một chị chủ doanh nghiệp đào tạo, chị kể lại đúng đường đi của mình trước khi quyết định làm việc với Duy. Chị biết Duy từ một bài viết ai đó chia sẻ lại, đọc thêm chừng hai chục bài trong ba tháng mà không tương tác gì, dự một buổi chia sẻ rồi im lặng gần một năm, và quay lại đúng tuần công ty chị mất hai người bán hàng giỏi nhất cùng lúc.</p>
+
+<p>Trên phễu, chị ấy bị đánh dấu là đã rơi ít nhất hai lần. Trong thực tế, chị chỉ chưa tới lúc. Điều đáng nói là nếu lúc đó có ai gọi điện chăm sóc theo đúng bài, chị nói thẳng rằng chị sẽ bỏ theo dõi luôn.</p>
+
+<p>Khi bạn tin vào phễu, bạn xử lý người chưa mua như một thất bại cần cứu. Bạn gọi thêm, nhắn thêm, gửi ưu đãi có hạn, rồi giảm giá. Và bạn tiêu đúng cái tài sản mình cần nhất, là sự tin cậy, để đổi lấy một chút nhanh hơn trong tháng này.</p>
 
 <h2>Quỹ đạo thay cho phễu</h2>
-<p>Duy thiết kế quan hệ bằng quỹ đạo. Khách đúng nằm ở giữa. Năm vòng quay quanh, và một người có thể tiến gần hoặc lùi ra bất cứ lúc nào mà vẫn còn trong hệ.</p>
-<p>Vòng ngoài cùng là lúc người ta gặp bạn lần đầu. Vòng thứ hai là lúc đúng người nhận ra vấn đề của họ. Vòng thứ ba là lúc họ đồng ý cho bạn giữ liên lạc. Vòng thứ tư là niềm tin lớn dần theo thời gian. Vòng trong cùng là lúc họ chọn bước tiếp theo, kể cả khi bước đúng là dừng lại.</p>
+
+<p>Duy thiết kế quan hệ bằng quỹ đạo. Khách đúng nằm ở giữa, năm vòng quay quanh, và một người có thể tiến gần hoặc lùi ra bất cứ lúc nào mà vẫn còn nằm trong hệ chứ không bị gạch tên.</p>
+
+<p><b>Vòng ngoài cùng:</b> người ta gặp bạn lần đầu, thường là qua một nội dung, một lời giới thiệu, hoặc một lần bạn nói ở đâu đó.</p>
+
+<p><b>Vòng thứ hai:</b> đúng người nhận ra vấn đề của họ trong thứ bạn nói, và đây là chỗ phần lớn người không phù hợp tự rời đi.</p>
+
+<p><b>Vòng thứ ba:</b> họ đồng ý cho bạn giữ liên lạc, tức là cho bạn một chỗ trong sự chú ý của họ, không phải một lời hứa mua.</p>
+
+<p><b>Vòng thứ tư:</b> niềm tin lớn dần theo thời gian, bằng chứng là họ bắt đầu chuyển nội dung của bạn cho người khác hoặc nhắc tên bạn trong một cuộc trao đổi không liên quan.</p>
+
+<p><b>Vòng trong cùng:</b> họ chọn bước tiếp theo, và bước đúng đôi khi là dừng lại chờ thêm một quý.</p>
 
 <div class="dan-manh">Dùng phễu để đo. Dùng quỹ đạo để thiết kế quan hệ.</div>
 
-<h2>Khác biệt thực tế của cách nghĩ này</h2>
-<p>Nó đổi cách bạn viết nội dung. Ở vòng ngoài, bạn chưa mời mua, chưa xin thông tin. Ở vòng giữa, bạn giúp họ tự đánh giá. Chỉ ở vòng trong cùng bạn mới nói tới chương trình, phạm vi và điều kiện.</p>
-<p>Nó cũng đổi cách bạn đọc tín hiệu. Người vừa để lại số điện thoại không phải người đã sẵn sàng, họ chỉ vừa cho phép bạn giữ liên lạc. Gọi bán ngay lúc đó là kéo họ nhảy ba vòng, và phần lớn sẽ bật ra.</p>
+<h2>Cách nghĩ này đổi bốn thứ trong việc hằng ngày</h2>
+
+<p><b>Nó đổi cách bạn viết nội dung:</b> ở vòng ngoài bạn chưa mời mua và chưa xin thông tin, ở vòng giữa bạn giúp họ tự đánh giá bối cảnh của mình, và chỉ ở vòng trong cùng bạn mới nói tới chương trình, phạm vi và điều kiện tham gia.</p>
+
+<p><b>Nó đổi cách bạn đọc tín hiệu:</b> người vừa để lại số điện thoại không phải người đã sẵn sàng mua, họ chỉ vừa cho phép bạn giữ liên lạc, nên gọi bán ngay lúc đó là kéo họ nhảy ba vòng và phần lớn sẽ bật ra.</p>
+
+<p><b>Nó đổi cách bạn tính hiệu quả:</b> một chiến dịch có thể không ra đơn nào trong tháng chạy mà vẫn tốt, nếu nó đưa được vài chục người đúng từ vòng ngoài vào vòng hai, còn phễu thì chấm chiến dịch đó là hỏng.</p>
+
+<p><b>Nó đổi cách bạn cư xử khi khách im lặng:</b> im lặng trên phễu là mất, im lặng trên quỹ đạo chỉ là chưa tới lúc, và cách bạn cư xử trong quãng im lặng đó quyết định họ có quay lại hay không.</p>
+
+<h2>Vậy còn con số thì sao</h2>
+
+<p>Câu hỏi Duy hay bị hỏi lại là bỏ phễu thì lấy gì để quản. Trả lời ngắn: vẫn dùng phễu để đo từng chiến dịch, chỉ đừng dùng nó để đo cả một mối quan hệ kéo dài nhiều năm.</p>
+
+<p>Có ba con số hợp với cách nghĩ quỹ đạo hơn. Thứ nhất là bao nhiêu người đúng bước từ vòng ngoài vào vòng hai mỗi tháng, đây là con số nói lên nội dung của bạn có sàng đúng người không. Thứ hai là bao lâu một người thường ở lại trước khi quyết, biết con số này thì bạn thôi sốt ruột ở tháng thứ hai. Thứ ba là bao nhiêu phần trăm khách mới đến từ người đã ở trong hệ từ trước, con số này đo sức khoẻ thật của quan hệ.</p>
+
+<p><span class="nhan dam">Con số thứ ba là con số Duy nhìn đầu tiên khi xem một doanh nghiệp dịch vụ.</span> Nếu gần như toàn bộ khách mới đến từ quảng cáo trong tháng, doanh nghiệp đó đang thuê sự chú ý chứ chưa sở hữu quan hệ nào, và chi phí sẽ tăng đều mỗi năm.</p>
+
+<h2>Chỗ dễ sai nhất là vòng thứ ba</h2>
+
+<p>Trong năm vòng thì vòng thứ ba là chỗ Duy thấy người ta làm hỏng nhiều nhất. Ai đó vừa để lại số điện thoại hoặc vừa đăng ký nhận tài liệu, và trong hệ thống của công ty người đó lập tức được xếp vào nhóm khách tiềm năng cần chăm sóc.</p>
+
+<p>Từ đó bắt đầu một chuỗi việc rất quen. Một cuộc gọi trong hai mươi bốn giờ đầu. Một tin nhắn hỏi anh chị đã xem tài liệu chưa. Vài ngày sau là một lời mời tham dự buổi tư vấn miễn phí. Nhìn từ bên trong thì đây là quy trình chăm sóc tốt.</p>
+
+<p>Nhìn từ phía người nhận thì khác hẳn. Họ vừa cho bạn một chút chú ý và ngay lập tức bị đòi nhiều hơn thế. Phần lớn sẽ không phản ứng gì, họ chỉ lặng lẽ thôi mở tin nhắn của bạn từ lần thứ ba trở đi.</p>
+
+<p>Việc đúng ở vòng ba đơn giản hơn nhiều: giữ đúng lời hứa lúc họ để lại thông tin, không hơn. Hứa gửi tài liệu thì gửi tài liệu. Sau đó gửi thêm thứ có ích mà không kèm lời mời nào, đủ vài lần để họ tự bước sang vòng bốn.</p>
 
 <h2>Mỗi lần xuất hiện, Duy phải để lại được gì</h2>
-<p>Mỗi lần xuất hiện trước một người, bạn nên đạt ít nhất một trong ba điều: giúp họ hiểu vấn đề rõ hơn, giúp họ tự đánh giá bối cảnh của mình, hoặc giúp họ tiến một bước nhỏ có ích.</p>
-<p>Nếu không đạt điều nào, đó là một lần bạn tiêu bớt niềm tin chứ không tích thêm. Một bản tin chỉ để nhắc khách nhớ bạn còn tồn tại là một lần tiêu.</p>
-<p>Cách kiểm nhanh: đọc lại năm nội dung gần nhất của bạn, và với từng nội dung, viết ra một câu người xem có được sau khi đọc. Nếu bạn phải nghĩ lâu, nội dung đó chưa làm việc gì cả.</p>
+
+<p>Mỗi lần xuất hiện trước một người, bạn nên đạt ít nhất một trong ba điều: giúp họ hiểu vấn đề rõ hơn, giúp họ tự đánh giá bối cảnh của mình, hoặc giúp họ tiến một bước nhỏ có ích ngay cả khi không mua gì.</p>
+
+<p>Không đạt điều nào thì đó là một lần bạn tiêu bớt niềm tin chứ không tích thêm. Một bản tin chỉ để nhắc khách nhớ rằng bạn còn tồn tại là một lần tiêu, và nhiều người gửi đều đặn hàng tuần mà không biết mình đang tiêu.</p>
+
+<p>Cách kiểm nhanh: đọc lại năm nội dung gần nhất của bạn, và với từng nội dung, viết ra một câu mà người xem có được sau khi đọc xong. Nếu bạn phải nghĩ lâu mới viết được câu đó, nội dung ấy chưa làm việc gì cả.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Đổi từ phễu sang quỹ đạo không làm doanh thu tháng sau tăng lên. Nó thường làm ngược lại trong ngắn hạn, vì bạn thôi ép những người chưa tới lúc, và một phần trong số đó lẽ ra đã mua nếu bị ép đủ mạnh.</p>
+
+<p>Thứ nó đổi là chất lượng của người ngồi trước mặt bạn sau khoảng hai quý, và số lần bạn phải giải thích giá. Duy nghĩ đó là cuộc đổi đáng, nhưng nó là một cuộc đổi thật, không phải một mẹo làm mọi thứ tốt hơn cùng lúc.</p>
 """),
 
 dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người sáng lập",
@@ -528,39 +577,85 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
  ngay="2026-07-06", ngay_viet="6 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-noi-3.webp", alt="Coach Duy Nguyễn ngồi nghĩ trước khi trả lời",
  than="""
-<p>Nói không với một khách sẵn sàng trả tiền là việc khó, nhất là trong tháng doanh thu chưa đạt. Nhưng đây là một trong vài quyết định phân biệt rõ nhất giữa người bán và người cố vấn.</p>
+<p>Nói không với một người đang sẵn sàng chuyển tiền là việc khó, và nó khó nhất vào đúng tuần cuối tháng khi doanh thu chưa đạt. Duy không nghĩ có ai làm việc này mà thấy nhẹ nhàng. Nhưng đây là một trong vài quyết định phân biệt rõ nhất giữa người bán và người cố vấn, vì người bán tính tháng này còn người cố vấn tính vài năm.</p>
 
 <h2>Cái giá thật của một khách sai</h2>
-<p>Người ta hay tính cái giá đó bằng tiền hoàn lại. Thực tế nó gồm bốn phần.</p>
-<p>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả. Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận. Phần thứ ba là năng lượng của đội ngũ, vì đội ngũ biết rất rõ khi nào đang làm một việc không dẫn tới đâu.</p>
-<p>Phần thứ tư đắt nhất: một người không đạt kết quả sẽ kể lại trải nghiệm đó. Và họ kể trung thực theo cách họ thấy, không theo cách bạn giải thích.</p>
+
+<p>Người ta hay tính cái giá đó bằng khoản tiền phải hoàn lại nếu mọi chuyện tệ. Thực tế nó gồm bốn phần, và phần tiền là phần rẻ nhất trong bốn phần.</p>
+
+<p><b>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả:</b> vẫn từng ấy buổi, từng ấy chuẩn bị, từng ấy sức, chỉ khác là cuối chặng không có gì để cả hai cùng nhìn lại.</p>
+
+<p><b>Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận:</b> khoản này không hiện trên sổ sách nên gần như không ai tính, mà nó thường lớn hơn khoản thu được từ ca sai.</p>
+
+<p><b>Phần thứ ba là năng lượng của đội ngũ:</b> đội ngũ biết rất rõ khi nào họ đang làm một việc không dẫn tới đâu, và họ mất niềm tin vào tiêu chuẩn của công ty nhanh hơn bạn tưởng.</p>
+
+<p><b>Phần thứ tư đắt nhất:</b> một người không đạt kết quả sẽ kể lại trải nghiệm đó, và họ kể trung thực theo cách họ thấy, không theo cách bạn giải thích.</p>
+
+<p><span class="nhan">Bạn không kiểm soát được câu chuyện đó, bạn chỉ kiểm soát được việc có nhận ca ấy hay không.</span></p>
 
 <h2>Bốn dấu hiệu Duy nói không</h2>
-<p><b>Chưa đủ điều kiện để bắt đầu.</b> Chương trình cần bạn đã có khách trả tiền, mà bạn chưa có. Nhận vào là hứa một kết quả Duy biết chưa thể xảy ra.</p>
-<p><b>Muốn Duy làm thay.</b> Nếu điều họ thật sự cần là một người làm hộ, Duy không phải người đó, và nói sớm thì cả hai đỡ mất thời gian.</p>
-<p><b>Đang tìm một lời bảo đảm.</b> Khi câu hỏi lặp đi lặp lại là có chắc chắn ra kết quả không, người đó chưa mua một phương pháp, họ đang mua sự an tâm. Sự an tâm đó Duy không bán được.</p>
-<p><b>Không có mặt để làm.</b> Một người quá bận để dự các buổi và làm bài sẽ không đạt kết quả, dù họ trả đủ tiền.</p>
+
+<p><b>Chưa đủ điều kiện để bắt đầu:</b> chương trình cần bạn đã có khách trả tiền để có chất liệu mà làm, mà bạn thì chưa có ai, nên nhận vào là hứa một kết quả Duy biết chưa thể xảy ra trong khung thời gian đó.</p>
+
+<p><b>Muốn Duy làm thay:</b> nếu điều họ thật sự cần là một người viết hộ, chạy hộ, quản hộ, thì Duy không phải người đó, và nói sớm thì cả hai bên đỡ mất vài tháng.</p>
+
+<p><b>Đang tìm một lời bảo đảm:</b> khi câu hỏi lặp đi lặp lại là có chắc chắn ra kết quả không, người đó chưa mua một phương pháp mà đang mua sự an tâm, và sự an tâm thì Duy không bán được cho ai.</p>
+
+<p><b>Không có mặt để làm:</b> một người quá bận để dự các buổi và làm bài sẽ không đạt kết quả dù họ trả đủ tiền, và điều tệ hơn là họ sẽ kết luận rằng phương pháp không hiệu quả.</p>
 
 <div class="dan-manh">Từ chối hứa kết quả khi thiếu điều kiện. Nói không sớm là một cách giữ chuẩn, không phải một cách mất khách.</div>
 
-<h2>Nói không thế nào để không mất quan hệ</h2>
-<p>Có ba phần trong một lời từ chối tử tế.</p>
-<p>Nói rõ lý do bằng điều kiện, không bằng đánh giá con người. Không nói bạn chưa nghiêm túc, mà nói chương trình này cần ba buổi mỗi tuần trong ba mươi ngày, và lịch của bạn tháng này chưa cho phép điều đó.</p>
-<p>Đưa một lối khác nếu có. Một tài liệu, một bước rẻ hơn, hoặc một thời điểm quay lại phù hợp hơn.</p>
-<p>Giữ cửa mở. Người bị từ chối đúng cách thường quay lại, và họ quay lại với sự tôn trọng. Duy đã nhận nhiều khách tốt nhất theo đúng con đường đó, sau khi từ chối họ một hoặc hai năm trước.</p>
+<h2>Dấu hiệu khó nhất là dấu hiệu thứ năm</h2>
 
-<h2>Thử một lần trong tháng này</h2>
-<p>Nhìn lại danh sách khách hàng đang có. Chọn ra một người mà nếu quay lại thời điểm ký, bạn sẽ không ký nữa. Viết ra dấu hiệu mà lúc đó bạn đã thấy nhưng bỏ qua.</p>
-<p>Dấu hiệu đó chính là tiêu chí sàng lọc đầu tiên của bạn. Nó đắt, bạn đã trả tiền để có, đừng bỏ phí.</p>
+<p>Có một dấu hiệu Duy để riêng ra vì nó khó nhìn nhất: người này hợp về mọi mặt, nhưng họ đang tìm người xác nhận rằng quyết định họ đã lỡ ra là đúng.</p>
+
+<p>Kiểu này rất dễ nhận vì họ trả lời tốt mọi câu hỏi sàng lọc, có ngân sách, có thời gian, có kết quả cần đạt rõ ràng. Chỉ có điều mỗi lần bạn nêu một cách nhìn khác thì họ giải thích lại vì sao cách của họ vẫn ổn. Họ không đến để đổi, họ đến để yên tâm.</p>
+
+<p>Duy học được dấu hiệu này bằng cách nhận sai vài lần. Cách kiểm nhanh là nêu một điều bạn thấy họ đang làm sai, nói thẳng nhưng tử tế, rồi im lặng nghe. Người đến để đổi sẽ hỏi thêm, người đến để yên tâm sẽ giải thích.</p>
+
+<h2>Nói không thế nào để không mất quan hệ</h2>
+
+<p>Có ba phần trong một lời từ chối tử tế, và thiếu phần nào thì lời từ chối cũng thành một cú đóng cửa.</p>
+
+<p><b>Nói rõ lý do bằng điều kiện, không bằng đánh giá con người:</b> không nói bạn chưa nghiêm túc, mà nói chương trình này cần ba buổi mỗi tuần trong ba mươi ngày, và lịch của bạn tháng này chưa cho phép điều đó.</p>
+
+<p><b>Đưa một lối khác nếu có:</b> một tài liệu họ đọc được ngay, một bước rẻ hơn để tự làm trước, hoặc một thời điểm quay lại phù hợp hơn với việc của họ.</p>
+
+<p><b>Giữ cửa mở:</b> người bị từ chối đúng cách thường quay lại, và họ quay lại với sự tôn trọng chứ không phải với sự dè chừng.</p>
+
+<p>Duy đã nhận nhiều khách tốt nhất của mình theo đúng con đường đó, sau khi từ chối họ một hoặc hai năm trước. Có anh quay lại còn nói rằng lần bị từ chối ấy là lý do anh tin, vì trước đó chưa ai từ chối tiền của anh cả.</p>
 
 <h2>Sàng lọc trước khi vào phòng, không phải trong phòng</h2>
-<p>Nói không trong buổi tư vấn là việc khó và tốn năng lượng cho cả hai bên. Cách nhẹ hơn là để phần lớn người không phù hợp tự nhận ra trước khi ngồi xuống.</p>
-<p>Ba công cụ làm việc đó: một trang nói rõ chương trình dành cho ai và không dành cho ai, một bộ câu hỏi ngắn trước buổi hẹn, và nội dung công khai đủ thẳng để người tìm giải pháp nhanh tự bỏ đi.</p>
-<p>Nội dung là công cụ sàng lọc mạnh nhất và rẻ nhất. Khi bạn viết rõ điều mình không làm, những người muốn điều đó sẽ không liên hệ, và bạn tiết kiệm được hàng chục giờ mỗi quý.</p>
+
+<p>Nói không ngay trong buổi tư vấn là việc khó và tốn năng lượng cho cả hai bên, nên cách nhẹ hơn là để phần lớn người không phù hợp tự nhận ra trước khi ngồi xuống.</p>
+
+<p>Ba công cụ làm việc đó: một trang nói rõ chương trình dành cho ai và không dành cho ai, một bộ câu hỏi ngắn gửi trước buổi hẹn, và nội dung công khai đủ thẳng để người đang tìm giải pháp nhanh tự bỏ đi.</p>
+
+<p>Nội dung là công cụ sàng lọc mạnh nhất và rẻ nhất trong ba cái. <span class="nhan dam">Khi bạn viết rõ điều mình không làm, những người muốn điều đó sẽ không liên hệ nữa</span>, và bạn tiết kiệm được hàng chục giờ mỗi quý mà không phải từ chối ai lần nào.</p>
+
+<h2>Nói không khi đang thiếu tiền thì làm sao</h2>
+
+<p>Đây là câu hỏi thật, và Duy không định trả lời bằng một câu khuyên nghe cho hay. Khi tháng này còn thiếu và trước mặt là một người sẵn sàng trả, mọi lý lẽ về tiêu chuẩn đều yếu đi rất nhanh.</p>
+
+<p>Duy đã ở trong tình huống đó và đã nhận vài ca lẽ ra không nên nhận. Điều học được không phải là hãy mạnh mẽ lên. Điều học được là chuyện này phải giải trước khi nó xảy ra, chứ không giải trong lúc nó đang xảy ra.</p>
+
+<p>Có hai cách chuẩn bị. Cách thứ nhất là viết tiêu chí loại trừ ra giấy vào lúc đầu óc tỉnh táo, tức là lúc không thiếu tiền, rồi đưa cho một người trong đội ngũ biết. Khi bạn phải giải thích với người khác vì sao lần này ngoại lệ, ngoại lệ sẽ khó xảy ra hơn nhiều.</p>
+
+<p>Cách thứ hai là có sẵn một sản phẩm nhỏ hơn để đưa ra thay vì đưa ra lời từ chối. Một buổi rà soát, một tài liệu có hướng dẫn, một khoá ngắn. Người chưa đủ điều kiện vẫn có chỗ để đi, bạn vẫn có doanh thu, và không ai phải hứa điều chưa thể xảy ra.</p>
+
+<p>Nếu cả hai cách trên chưa có thì vấn đề thật sự không nằm ở việc bạn thiếu dứt khoát. Nó nằm ở chỗ dòng tiền của bạn đang phụ thuộc vào từng ca một, và đó mới là thứ cần sửa.</p>
 
 <h2>Cái giá của việc không dám nói không</h2>
-<p>Có một chi phí ít ai tính: mỗi ca bạn biết sẽ không ra kết quả nhưng vẫn nhận sẽ làm bạn ngại hơn một chút trong lần từ chối tiếp theo. Vì bạn đã tạo tiền lệ với chính mình.</p>
-<p>Sau vài lần, tiêu chuẩn của bạn không còn là tiêu chuẩn nữa, nó thành mong muốn. Và một người cố vấn không giữ được tiêu chuẩn của mình thì không giúp được ai giữ tiêu chuẩn của họ.</p>
+
+<p>Có một chi phí ít ai tính. Mỗi ca bạn biết sẽ không ra kết quả nhưng vẫn nhận sẽ làm bạn ngại hơn một chút trong lần từ chối tiếp theo, vì bạn vừa tạo một tiền lệ với chính mình.</p>
+
+<p>Sau vài lần như vậy, tiêu chuẩn của bạn không còn là tiêu chuẩn nữa, nó thành mong muốn. Và một người cố vấn không giữ được tiêu chuẩn của mình thì không giúp được ai giữ tiêu chuẩn của họ, dù nói hay tới đâu.</p>
+
+<h2>Một việc làm được trong tháng này</h2>
+
+<p>Nhìn lại danh sách khách hàng đang có và chọn ra một người mà nếu quay lại đúng thời điểm ký, bạn sẽ không ký nữa. Viết ra dấu hiệu mà lúc đó bạn đã thấy nhưng bỏ qua.</p>
+
+<p>Dấu hiệu đó chính là tiêu chí sàng lọc đầu tiên của bạn, và nó đắt vì bạn đã trả tiền thật để có. Đưa nó thành một câu hỏi trong bộ câu hỏi trước buổi hẹn, ngay tuần này, trước khi bạn kịp quên cảm giác hiện giờ.</p>
 """),
 
 
@@ -692,41 +787,95 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
  ngay="2026-08-10", ngay_viet="10 tháng 8, 2026", doc="7 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
  than="""
-<p>Nếu bạn đi khám và bác sĩ kê đơn ngay khi bạn vừa ngồi xuống, bạn sẽ không tin cái đơn đó, dù nó có thể đúng. Trong bán dịch vụ giá trị cao, chuyện y hệt xảy ra mỗi ngày, và người bán không hiểu vì sao khách nói để tôi suy nghĩ thêm.</p>
+<p>Nếu bạn đi khám và bác sĩ kê đơn ngay khi bạn vừa ngồi xuống, bạn sẽ không tin cái đơn đó, dù nó hoàn toàn có thể đúng. Trong bán dịch vụ giá trị cao, chuyện y hệt xảy ra mỗi ngày, và người bán về nhà không hiểu vì sao khách nói để tôi suy nghĩ thêm.</p>
+
+<p><span class="nhan">Khách không từ chối giải pháp của bạn, họ từ chối cảm giác bị kê đơn khi chưa được khám.</span> Hai thứ đó khác nhau, và chữa nhầm thì càng chữa càng hỏng.</p>
 
 <h2>Bốn phần của một buổi tư vấn</h2>
-<p>Một buổi tư vấn tốt có bốn phần, đi đúng thứ tự. Đổi thứ tự là hỏng.</p>
+
+<p>Một buổi tư vấn tốt có bốn phần, đi đúng thứ tự. Đổi thứ tự là hỏng, kể cả khi nội dung từng phần đều tốt.</p>
 
 <h3>Phần một: mở đúng cách, khoảng năm phút</h3>
-<p>Phần này không phải để làm quen. Nó dùng để thống nhất hôm nay hai bên bàn chuyện gì và kết thúc ra sao.</p>
-<p>Một câu mở Duy hay dùng: hôm nay tôi muốn hiểu tình hình của anh chị đủ rõ để nói được một trong hai điều, hoặc tôi giúp được và giúp thế nào, hoặc tôi chưa giúp được và anh chị nên tìm ai. Anh chị thấy vậy hợp lý không.</p>
-<p>Câu này làm hai việc: cho phép bạn hỏi sâu, và báo trước rằng kết quả có thể là không, nên khách bớt phòng thủ.</p>
+
+<p>Phần này không phải để làm quen, và cũng không phải để bạn kể mình là ai. Nó dùng để thống nhất hôm nay hai bên bàn chuyện gì và buổi này kết thúc ra sao.</p>
+
+<p>Một câu mở Duy hay dùng: hôm nay tôi muốn hiểu tình hình của anh chị đủ rõ để nói được một trong hai điều, hoặc tôi giúp được và giúp thế nào, hoặc tôi chưa giúp được và anh chị nên tìm ai, anh chị thấy vậy hợp lý không.</p>
+
+<p>Câu này làm hai việc cùng lúc. Nó xin phép để bạn hỏi sâu mà không bị coi là tò mò, và nó báo trước rằng kết quả có thể là không, nên khách bớt phòng thủ ngay từ phút đầu.</p>
 
 <h3>Phần hai: chẩn đoán, khoảng hai mươi lăm phút</h3>
-<p>Phần này dài nhất và cũng quyết định nhất. Bạn cần ba lớp thông tin.</p>
-<p><b>Lớp một, hiện trạng quan sát được.</b> Con số, quy trình, nhân sự, việc đang diễn ra. Đây là lớp dễ hỏi nhất và cũng ít giá trị nhất.</p>
-<p><b>Lớp hai, điều họ đã thử và kết quả.</b> Lớp này cho bạn biết vấn đề đã ở đó bao lâu, họ đã tin cách nào, và vì sao cách đó chưa xong.</p>
-<p><b>Lớp ba, cái giá của việc không làm gì.</b> Nếu sáu tháng nữa mọi thứ y như hôm nay thì điều gì xảy ra. Lớp này cho biết vấn đề có thật sự đủ đau để họ hành động không.</p>
-<p>Thiếu lớp ba, bạn sẽ gặp khách khen phương án hay rồi biến mất.</p>
+
+<p>Phần này dài nhất và cũng quyết định nhất, vì mọi thứ sau đó chỉ chính xác bằng đúng chất lượng của phần này. Bạn cần ba lớp thông tin, và phần lớn người bán dừng ở lớp một.</p>
+
+<p><b>Lớp một, hiện trạng quan sát được:</b> con số, quy trình, nhân sự, việc đang diễn ra, đây là lớp dễ hỏi nhất và cũng ít giá trị nhất vì họ đã kể cho nhiều người nghe rồi.</p>
+
+<p><b>Lớp hai, điều họ đã thử và kết quả:</b> lớp này cho bạn biết vấn đề đã nằm đó bao lâu, họ đã tin vào cách nào, và vì sao cách đó chưa xong, mà biết được vì sao chưa xong thì bạn khỏi đề xuất lại đúng thứ họ vừa thất bại.</p>
+
+<p><b>Lớp ba, cái giá của việc không làm gì:</b> nếu sáu tháng nữa mọi thứ y như hôm nay thì điều gì xảy ra, câu này cho biết vấn đề có thật sự đủ đau để họ hành động hay chưa.</p>
+
+<p>Thiếu lớp ba, bạn sẽ gặp đúng kiểu khách khen phương án hay rồi biến mất. Họ không nói dối bạn, phương án hay thật, chỉ là nó chưa đủ cấp bách so với mười việc khác đang xếp hàng.</p>
 
 <h3>Phần ba: gọi tên vấn đề, khoảng mười phút</h3>
-<p>Nói lại bằng lời của bạn điều bạn nghe được, và nêu nguyên nhân sâu hơn mà họ chưa gọi tên. Chính lúc này niềm tin được quyết.</p>
-<p>Nếu bạn gọi đúng, khách sẽ im vài giây rồi nói đúng rồi. Nếu bạn gọi sai, họ sẽ sửa bạn, và điều đó cũng tốt, vì bạn học được và họ thấy bạn nghe thật.</p>
+
+<p>Nói lại bằng lời của bạn điều bạn vừa nghe được, rồi nêu nguyên nhân sâu hơn mà họ chưa gọi tên. Chính lúc này niềm tin được quyết, không phải lúc bạn báo giá.</p>
+
+<p>Nếu bạn gọi đúng, khách sẽ im vài giây rồi nói đúng rồi, và vài giây im lặng đó là tín hiệu tốt nhất trong cả buổi. Nếu bạn gọi sai, họ sẽ sửa bạn, và điều đó cũng tốt, vì bạn học được thêm còn họ thì thấy bạn nghe thật chứ không diễn.</p>
+
+<p>Có một cách nói Duy hay dùng ở phần này, mở đầu bằng câu tôi nghe được ba điều, rồi kể lại ba điều đó, rồi mới nói điều thứ tư mà anh chị chưa nhắc tới. Điều thứ tư ấy là chỗ giá trị của bạn nằm.</p>
 
 <h3>Phần bốn: chọn bước tiếp theo, khoảng mười phút</h3>
-<p>Chỉ đến đây mới nói về chương trình, phạm vi và điều kiện. Và nói cả điều kiện loại trừ, tức trường hợp nào thì không nên làm.</p>
-<p>Kết bằng một bước cụ thể có thời hạn, kể cả khi bước đó là dừng lại và gặp lại sau một quý.</p>
+
+<p>Chỉ đến đây mới nói về chương trình, phạm vi và điều kiện. Và phải nói cả điều kiện loại trừ, tức trường hợp nào thì không nên làm, vì đó là phần khiến những gì bạn nói trước đó trở nên đáng tin.</p>
+
+<p>Kết bằng một bước cụ thể có thời hạn, kể cả khi bước đúng là dừng lại và gặp lại sau một quý. Một buổi tư vấn kết thúc mở là một buổi chưa xong, và bên phải chịu chi phí của việc chưa xong đó luôn là bạn.</p>
 
 <div class="dan-manh">Bán bằng chẩn đoán và sự thật, kể cả khi sự thật là bạn nên nói không. Uy tín mở cánh cửa, chất lượng tư vấn mới giữ được quan hệ.</div>
 
 <h2>Ba lỗi làm hỏng buổi tư vấn</h2>
-<p><b>Trình bày quá sớm.</b> Người bán hào hứng vì nhận ra ngay vấn đề quen thuộc, rồi nhảy sang giải pháp ở phút thứ tám. Khách chưa kịp thấy vấn đề của mình được hiểu.</p>
-<p><b>Hỏi để dẫn dắt chứ không để hiểu.</b> Khách nhận ra rất nhanh khi câu hỏi của bạn chỉ là bẫy dẫn tới sản phẩm. Lúc đó buổi tư vấn thành buổi bán hàng, và họ dựng hàng rào lên.</p>
-<p><b>Không dám nói không hợp.</b> Người bán sợ mất cơ hội nên nhận cả ca mình biết sẽ không ra kết quả. Cái giá trả sau đó luôn lớn hơn khoản thu được.</p>
+
+<p><b>Trình bày quá sớm:</b> người bán hào hứng vì nhận ra ngay một vấn đề quen thuộc, rồi nhảy sang giải pháp ở phút thứ tám, trong khi khách chưa kịp thấy vấn đề của riêng mình được ai hiểu.</p>
+
+<p><b>Hỏi để dẫn dắt chứ không để hiểu:</b> khách nhận ra rất nhanh khi câu hỏi của bạn chỉ là bẫy dẫn tới sản phẩm, và từ giây phút đó buổi tư vấn thành buổi bán hàng, hàng rào dựng lên và không hạ xuống nữa.</p>
+
+<p><b>Không dám nói chưa hợp:</b> người bán sợ mất cơ hội nên nhận cả ca mình biết sẽ không ra kết quả, và cái giá trả sau đó luôn lớn hơn khoản thu được lúc ký.</p>
+
+<h2>Vì sao phần chẩn đoán hay bị rút ngắn</h2>
+
+<p>Duy để ý thấy phần hai gần như luôn là phần bị cắt đầu tiên khi buổi hẹn bị rút giờ. Lý do không phải người bán không biết nó quan trọng, mà vì hỏi sâu thì có lúc phải chịu đựng sự im lặng, còn trình bày thì lúc nào cũng có việc để làm.</p>
+
+<p>Im lặng trong buổi tư vấn làm người bán thấy bất an, nên họ lấp bằng cách nói tiếp. Nhưng khách cần đúng khoảng im lặng đó để nghĩ, và câu trả lời có giá trị nhất trong cả buổi thường đến sau một quãng lặng chừng năm giây.</p>
+
+<p><span class="nhan dam">Chịu được im lặng là kỹ năng bị đánh giá thấp nhất trong nghề tư vấn.</span> Nó không nằm trong kịch bản nào cả, mà nó quyết định bạn lấy được lớp hai và lớp ba hay chỉ dừng ở lớp một.</p>
+
+<h2>Bốn câu hỏi mở được lớp hai và lớp ba</h2>
+
+<p>Câu hỏi mở lớp một thì ai cũng biết hỏi. Bốn câu dưới đây là bốn câu Duy dùng nhiều nhất để đi xuống hai lớp sâu hơn.</p>
+
+<p><b>Anh chị đã thử cách nào rồi:</b> câu này nghe rất thường mà mở ra nhiều nhất. Nó cho biết vấn đề đã nằm đó bao lâu và họ từng tin vào ai.</p>
+
+<p><b>Lúc đó vì sao anh chị dừng lại:</b> hỏi tiếp câu này ngay sau câu trên. Chỗ họ dừng thường là chỗ vấn đề thật nằm.</p>
+
+<p><b>Nếu sáu tháng nữa mọi thứ y như hôm nay thì sao:</b> đây là câu đo mức cấp bách. Người trả lời gọn và cụ thể là người đã nghĩ về nó nhiều rồi.</p>
+
+<p><b>Ngoài anh chị ra thì ai còn thấy đây là vấn đề:</b> câu này ít người hỏi mà rất đáng hỏi. Nếu chỉ mình họ thấy, việc thay đổi sẽ khó hơn nhiều so với những gì họ đang hình dung.</p>
+
+<h2>Khách nói để tôi suy nghĩ thêm thì làm gì</h2>
+
+<p>Câu này gần như luôn có nghĩa là buổi vừa rồi thiếu một phần nào đó. Việc cần làm không phải là thuyết phục thêm, mà là tìm ra phần thiếu là phần nào.</p>
+
+<p>Thiếu lớp ba thì họ thấy hay nhưng chưa thấy gấp. Dấu hiệu là họ khen phương án và hỏi những câu chung chung về thời gian. Chỗ cần quay lại là câu hỏi về cái giá của việc không làm gì.</p>
+
+<p>Thiếu phần gọi tên vấn đề thì họ chưa cảm thấy được ai hiểu. Dấu hiệu là suốt buổi họ kể nhiều mà bạn nói lại rất ít. Lần sau phải dành đủ mười phút để nói lại điều mình nghe được.</p>
+
+<p>Thiếu người quyết trong phòng thì mọi thứ đều đúng mà vẫn không xong. Đây là lỗi phải phát hiện trước buổi hẹn chứ không phải sau. Một câu hỏi khi đặt lịch là đủ: ngoài anh chị ra thì còn ai cùng quyết việc này.</p>
+
+<p><span class="nhan">Sau mỗi buổi kết thúc mở, Duy ghi lại một dòng về phần nào bị thiếu.</span> Sau chừng mười buổi thì cái danh sách đó chỉ ra rất rõ thói quen nào của mình đang làm hỏng việc, và nó chính xác hơn mọi khoá đào tạo bán hàng.</p>
 
 <h2>Một việc làm được ngay tuần này</h2>
-<p>Ghi âm buổi tư vấn gần nhất, nghe lại và bấm giờ. Bạn bắt đầu nói về giải pháp ở phút thứ mấy.</p>
-<p>Nếu con số đó dưới mười lăm, bạn đã tìm ra chỗ cần sửa đầu tiên, và nó không nằm ở kỹ năng chốt.</p>
+
+<p>Ghi âm buổi tư vấn gần nhất, nghe lại và bấm giờ đúng một chỗ: bạn bắt đầu nói về giải pháp ở phút thứ mấy.</p>
+
+<p>Nếu con số đó dưới mười lăm, bạn đã tìm ra chỗ cần sửa đầu tiên, và nó không nằm ở kỹ năng chốt như phần lớn người vẫn nghĩ. Nghe thêm lần nữa và đếm số câu hỏi bạn đặt ra trước phút mười lăm, nếu dưới năm câu thì bạn chưa khám, bạn đang kê đơn.</p>
 """),
 
 dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
