@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260826j"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260826n"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -33,9 +33,6 @@ CT_MENU = [
 ]
 
 MENU = [
-    # Cộng đồng đứng đầu vì đó là thứ cả trang này dẫn tới. Đường dẫn là
-    # địa chỉ đầy đủ nên đúng ở cả trang gốc lẫn trang trong thư mục con.
-    (CONG_DONG, "Cộng đồng", None),
     ("ve-toi.html", "Về Duy", None),
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
@@ -97,7 +94,7 @@ def nav(active, p=""):
     menu_nho = "".join(nho)
 
     cta = ('<a class="nut nut-v nut-nho nav-cta" href="%s">'
-           'Danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>' % CONG_DONG)
+           'Cộng đồng NGF <span class="mt" aria-hidden="true">&rarr;</span></a>' % CONG_DONG)
     return """<nav id="nav">
   <div class="nav-in">
     <a class="logo" href="%s" aria-label="Coach Duy Nguyễn, trang chủ">%s<span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
@@ -105,7 +102,7 @@ def nav(active, p=""):
     %s
     <button id="mo-menu" type="button" aria-expanded="false" aria-controls="menu-nho" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </div>
-  <div id="menu-nho">%s<a class="nut nut-v" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+  <div id="menu-nho">%s<a class="nut nut-v" href="%s">Cộng đồng NGF <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   <div id="tien"></div>
 </nav>""" % (dd("index.html", p), dau_hieu(p), links, cta, menu_nho, CONG_DONG)
 

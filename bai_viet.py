@@ -10,7 +10,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
  than="""<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
 
-<p>Điều đáng nói không nằm ở bốn câu đó, mà nằm ở chỗ người nói ra chúng gần như luôn tin rằng mình đang gặp bốn vấn đề tách rời nhau. Tin như vậy thì đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua một khoá đào tạo bán hàng, tuyển thêm một quản lý, rồi lắp một phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ kết quả, và sau sáu tháng thì bốn câu ấy vẫn còn nguyên ở đó.</p>
+<p><span class="nhan">Điều đáng nói không nằm ở bốn câu đó, mà nằm ở chỗ người nói ra chúng gần như luôn tin rằng mình đang gặp bốn vấn đề tách rời nhau.</span> Tin như vậy thì đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua một khoá đào tạo bán hàng, tuyển thêm một quản lý, rồi lắp một phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ kết quả, và sau sáu tháng thì bốn câu ấy vẫn còn nguyên ở đó.</p>
 
 <h2>Bốn câu đó là gì</h2>
 
@@ -26,7 +26,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Chúng nghe khác nhau vì chúng xuất hiện ở bốn chỗ khác nhau trong công ty: một cái ở khâu nội dung, một cái ở khâu bán hàng, một cái ở khâu nhân sự, một cái ở khâu tài chính. Bốn khâu đó do bốn người phụ trách, họp ở bốn cuộc họp khác nhau, và được đo bằng bốn bộ chỉ số chẳng liên quan gì tới nhau.</p>
 
-<p>Cách chúng ta được dạy để xử lý vấn đề cũng cổ vũ chuyện chia nhỏ như vậy: hỏng ở đâu thì sửa ở đó. Cách nghĩ này rất tốt khi thứ đang hỏng là một cái máy, vì máy có các bộ phận tách rời thật. Nó không còn tốt khi thứ đang hỏng là cách một con người ra quyết định, bởi cách ra quyết định của người chủ không nằm gọn trong một khâu nào cả, nó chạy qua cả bốn khâu cùng một lúc.</p>
+<p>Cách chúng ta được dạy để xử lý vấn đề cũng cổ vũ chuyện chia nhỏ như vậy: hỏng ở đâu thì sửa ở đó. Cách nghĩ này rất tốt khi thứ đang hỏng là một cái máy, vì máy có các bộ phận tách rời thật. <span class="nhan">Nó không còn tốt khi thứ đang hỏng là cách một con người ra quyết định</span>, bởi cách ra quyết định của người chủ không nằm gọn trong một khâu nào cả, nó chạy qua cả bốn khâu cùng một lúc.</p>
 
 <h2>Hỏi ngược lại từng câu</h2>
 
@@ -42,7 +42,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <h2>Bốn câu, một nguyên nhân</h2>
 
-<p>Bốn câu trả lời ở trên đều dừng lại ở cùng một chỗ: uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ. Công ty chưa chuyển được chúng thành ba thứ có thể trao tay cho người khác, đó là một luận điểm nghề nghiệp mà cả đội ngũ nói giống nhau, một cách làm được viết ra đủ rõ để người khác làm theo mà không phải đoán, và một cách ghi lại xem điều gì đã thật sự tạo ra kết quả.</p>
+<p>Bốn câu trả lời ở trên đều dừng lại ở cùng một chỗ: <span class="nhan dam">uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ</span>. Công ty chưa chuyển được chúng thành ba thứ có thể trao tay cho người khác, đó là một luận điểm nghề nghiệp mà cả đội ngũ nói giống nhau, một cách làm được viết ra đủ rõ để người khác làm theo mà không phải đoán, và một cách ghi lại xem điều gì đã thật sự tạo ra kết quả.</p>
 
 <p>Duy gọi chỗ đó là điểm nghẽn người sáng lập, và muốn nói rõ ngay rằng nó không phải lỗi của ai cả. Nó là hệ quả rất tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất, nên gom hết vào mình là cách đi đúng. Đúng ở giai đoạn đó, và chính vì nó từng đúng nên người ta mới giữ nó lâu hơn mức cần thiết.</p>
 
@@ -50,7 +50,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Chỗ này mới là chỗ khó chịu nhất. Khi công ty bán tốt lên thì số việc cần một quyết định của người chủ cũng tăng theo, vì thêm khách nghĩa là thêm tình huống lạ, thêm người nghĩa là thêm câu hỏi, thêm dự án nghĩa là thêm ngoại lệ chưa có trong quy trình.</p>
 
-<p>Nếu cách nghĩ vẫn nằm trong đầu một người, thì mọi đường đi trong công ty đều dẫn về đúng cái đầu đó, và bán càng tốt thì đường về càng đông. Người chủ trở thành chỗ tắc của chính công ty mình dựng lên, tắc vì một lý do mà đáng lẽ phải mừng.</p>
+<p>Nếu cách nghĩ vẫn nằm trong đầu một người, thì mọi đường đi trong công ty đều dẫn về đúng cái đầu đó, và bán càng tốt thì đường về càng đông. <span class="nhan">Người chủ trở thành chỗ tắc của chính công ty mình dựng lên, tắc vì một lý do mà đáng lẽ phải mừng.</span></p>
 
 <p>Duy đã ở trong chỗ đó rồi nên không nói lý thuyết. Có một quãng Duy nhận nhiều việc hơn bao giờ hết, doanh thu tốt hơn bao giờ hết, và ngồi làm tới mười một giờ đêm gần như mọi ngày trong tuần. Lúc đó Duy tưởng mình thiếu kỷ luật nên tìm cách dậy sớm hơn và cắt bớt giải trí, nhưng sự thật không phải vậy: kỷ luật thì có, chỉ là có quá nhiều việc phải tự quyết. Hai chuyện đó nghe thì gần giống nhau, mà cách sửa lại khác hẳn nhau.</p>
 
@@ -70,7 +70,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Bước đầu tiên là chọn đúng một việc mà bạn đang làm ngon nhất và cũng bị gọi tên nhiều nhất, với phần lớn người sáng lập dịch vụ thì đó là buổi tư vấn đầu tiên với khách lớn. Trong ba lần tới, sau mỗi buổi bạn ngồi lại mười lăm phút và trả lời ba câu: mình đã hỏi những câu nào, mình nghe được gì từ câu trả lời của họ, và mình quyết định điều gì ở chỗ nào.</p>
 
-<p>Ba lần như vậy là ba trang giấy, và ba trang đó chính là bản nháp đầu tiên của cách nghĩ, thứ mà từ trước tới giờ chưa từng ra khỏi đầu bạn. Nó chưa phải quy trình và cũng chưa cần phải là quy trình, nhưng khi đã có nó rồi thì người kế tiếp học được nhanh hơn hẳn, đơn giản vì họ không còn phải ngồi đoán nữa.</p>
+<p><span class="nhan">Ba lần như vậy là ba trang giấy, và ba trang đó chính là bản nháp đầu tiên của cách nghĩ</span>, thứ mà từ trước tới giờ chưa từng ra khỏi đầu bạn. Nó chưa phải quy trình và cũng chưa cần phải là quy trình, nhưng khi đã có nó rồi thì người kế tiếp học được nhanh hơn hẳn, đơn giản vì họ không còn phải ngồi đoán nữa.</p>
 
 <p>Mười lăm phút sau mỗi buổi nghe ít tới mức rất dễ bỏ qua, và Duy vẫn đề nghị đúng chừng đó chứ không đề nghị nhiều hơn, vì chính chỗ ít ỏi ấy lại là chỗ khó giữ nhất. Ai giữ được ba lần liền thì thường sẽ giữ được tiếp, còn ai định làm hẳn một buổi hai tiếng cho ra tấm ra món thì thường không có buổi nào cả.</p>
 
@@ -78,7 +78,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Làm xong bước này thì bốn câu kia không biến mất trong một tháng, nói trước như vậy để bạn khỏi thất vọng. Chuyển thứ đang nằm trong đầu một người thành thứ cả đội ngũ dùng được là việc của nhiều quý chứ không phải nhiều tuần, và nó cần bạn quay lại đều đặn chứ không cần bạn cố sức một đợt.</p>
 
-<p>Nhưng có một thứ đổi được ngay từ tuần đầu: bạn thôi đi tìm bốn giải pháp cho bốn vấn đề, bạn nhìn thấy một chỗ nghẽn duy nhất và biết rõ mình đang gỡ chỗ nào. Riêng chuyện đó thôi cũng đã đủ tiết kiệm cho bạn vài trăm triệu và vài quý, so với cách đi cũ.</p>
+<p>Nhưng có một thứ đổi được ngay từ tuần đầu: <span class="nhan">bạn thôi đi tìm bốn giải pháp cho bốn vấn đề, bạn nhìn thấy một chỗ nghẽn duy nhất và biết rõ mình đang gỡ chỗ nào</span>. Riêng chuyện đó thôi cũng đã đủ tiết kiệm cho bạn vài trăm triệu và vài quý, so với cách đi cũ.</p>
 
 <p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì Duy muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>"""),
 
