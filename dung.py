@@ -138,10 +138,11 @@ INDEX = """
   <div class="vt">
     <div class="vt-chu hien">
       <p class="mono">Về Duy</p>
-      <h2>Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp</h2>
-      <p>Duy làm việc với người mà khách mua vì tin ở chính họ: chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi.</p>
-      <p>Điều Duy nghe nhiều nhất là bốn câu. Đăng nội dung nhiều nhưng không ra đúng khách. Đội ngũ bán hàng vẫn phải chờ mình xuất hiện mới chốt được. Tuyển thêm người mà mình lại bận hơn trước. Tháng tốt tháng kém mà không rõ vì sao.</p>
-      <p><span class="nhan">Uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ.</span> Doanh nghiệp chưa chuyển chúng thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.</p>
+      <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
+      <p>Đó là chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Điểm chung của họ: khách mua vì tin ở chính con người họ, trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
+      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một cái tên người ta nhớ, và dám tin.</p>
+      <p>Xa hơn nữa là di sản. Không phải một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật, bài học thật, cả những lần vấp. Mình gói lại cho rõ ràng, kể lại thật lòng, rồi trao cho đội ngũ của mình và cho những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
+      <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên trong lúc bạn tập cách làm mới.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
@@ -150,7 +151,7 @@ INDEX = """
       <div class="manh">
         <div class="anh m1"><img src="img/dh-giua-doan.webp" alt="Coach Duy Nguyễn đi giữa hàng ghế trong một hội trường đông người" loading="lazy"></div>
         <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
-        <div class="anh m3"><img src="img/bts-phong-thu.webp" alt="Coach Duy Nguyễn ngồi ghi hình trong phòng thu của mình" loading="lazy"></div>
+        <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
       </div>
     </div>
   </div>
