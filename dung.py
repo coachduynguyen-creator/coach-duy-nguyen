@@ -174,7 +174,7 @@ INDEX = """
   </div>
   <div class="hien">{VONG5}</div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
-    <b>Ba việc Duy không làm</b>
+    <b>3 việc Duy không làm</b>
     <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p>
   </div>
 </section>
@@ -390,7 +390,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
 
 <section class="phan bd hoa-van">
   <div class="phan-dau hien">
-    <p class="mono">Bốn điều Duy tin</p>
+    <p class="mono">4 điều Duy tin</p>
     <h2>Bốn điều Duy tin, để bạn biết mình có hợp với Duy không</h2>
     <p>Đọc bốn điều này, bạn biết ngay chúng ta có cùng cách nghĩ hay không, trước khi mất thời gian của cả hai.</p>
   </div>
@@ -399,7 +399,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
-    <p class="mono">Ba người Duy hay ngồi cùng</p>
+    <p class="mono">3 người Duy hay ngồi cùng</p>
     <h2>Ba người Duy hay ngồi cùng nhất, xem bạn có gần ai không</h2>
   </div>
   <div class="cd-hang tre hien">
@@ -550,7 +550,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
 
 <section class="phan bd hoa-van duoi" style="padding-top:0">
   <div class="phan-dau hien">
-    <p class="mono">Bốn năng lực</p>
+    <p class="mono">4 năng lực</p>
     <h2>Luyện từng năng lực khi bạn biết mình thiếu gì</h2>
     <p>Bốn chương trình tương ứng với bốn năng lực của nhà sáng lập thế hệ mới. Không chương trình nào hứa tạo ra toàn bộ nhân dạng, mỗi chương trình chịu trách nhiệm cho một kết quả rõ.</p>
   </div>
@@ -905,7 +905,7 @@ KENH = dau_trang("Kênh YouTube", "Nơi Duy nói dài và nói sâu nhất",
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-dung-lop.webp" alt="" loading="lazy"></div>
   <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Sáu chủ đề</p><h2>Sáu chủ đề Duy quay đi quay lại</h2>
+    <div class="phan-dau hien"><p class="mono">6 chủ đề</p><h2>Sáu chủ đề Duy quay đi quay lại</h2>
     <p>Nội dung của Duy xoay quanh sáu chủ đề. Bốn chủ đề đầu là bốn năng lực của nhà sáng lập thế hệ mới, hai chủ đề còn lại là nền cho cả bốn.</p></div>
     <div class="yt-hang tre hien">%s</div>
   </div>
