@@ -146,6 +146,92 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
 <p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm Duy. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, thử đếm xem họ làm được mấy việc.</p>
 """),
 
+# Chất liệu lấy từ hai bài kể chuyện trong NSG Content DB trên Notion, mục
+# "Con trai tôi không muốn tiếp quản công ty" và "Công ty doanh thu vài chục tỷ".
+# Tình huống và lời thoại giữ nguyên vì đó là chuyện thật. Định vị, xưng hô và
+# nhịp câu viết lại theo Voice DNA 3.3, bỏ phần ScaleOS và lời mời comment.
+dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn người sáng lập",
+ tieu="Cái giá của người làm được mọi việc",
+ mo="Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026",
+ anh="img/bl-noi-3.webp", alt="Coach Duy Nguyễn ngồi nghe trong một buổi trao đổi",
+ than="""<p>Trong một buổi giao lưu của cộng đồng doanh nghiệp, một người chủ ngoài sáu mươi ngồi cạnh Duy và nói một câu rất nhẹ, nhẹ tới mức phải mất vài giây cả bàn mới hiểu ra sức nặng của nó.</p>
+
+<p><span class="nhan dam">Con trai tôi không muốn tiếp quản công ty vì nhìn thấy tôi cả đời chỉ có công việc.</span></p>
+
+<p>Anh gây dựng công ty gần ba mươi năm, đi lên từ con số không, từng bước một. Công ty không thiếu doanh thu, không thiếu người, khách hàng vẫn đều. Anh chỉ thiếu đúng một người có thể giao lại mà mình yên tâm.</p>
+
+<p>Con trai anh đang làm cho một tập đoàn ở nước ngoài. Khi anh ngỏ ý muốn con về tiếp quản, cậu lắc đầu và nói một câu mà anh kể lại gần như nguyên văn: <b>sáng họp, chiều xử lý sự cố, tối vẫn còn điện thoại, con sợ doanh nghiệp không phải là một tương lai mà là cái lồng bố tự khoá mình vào đó.</b></p>
+
+<h2>Cùng một câu, ở một ngành khác hẳn</h2>
+
+<p>Vài tháng sau Duy ngồi với một người chủ khác, trẻ hơn, làm phân phối và lắp đặt hệ thống máy lạnh công nghiệp cho nhà máy và trường học. Gần hai mươi năm không nghỉ ngơi, doanh thu vài chục tỷ. Anh nói với Duy, không phải để than. Sự mệt đã tích lại theo năm tháng, tới lúc phải nói ra với ai đó.</p>
+
+<p><span class="nhan">Công ty doanh thu vài chục tỷ, nhưng tôi vẫn đang đi bán hàng mỗi ngày.</span></p>
+
+<p>Ngày nào anh cũng đi gặp khách, tư vấn kỹ thuật, ký hợp đồng, gọi vật tư, có hôm còn chạy tới hiện trường xử lý sự cố cho kịp tiến độ. Rồi anh nói thêm một câu mà Duy nghĩ nhiều người sẽ thấy mình trong đó: doanh thu thì có, khách hàng thì đông, nhưng công ty mà thiếu anh ba ngày là rối ngay.</p>
+
+<p>Hai người, hai ngành, cách nhau cả một thế hệ. Bỏ tên ngành đi thì hai câu chuyện gần như trùng khít lên nhau.</p>
+
+<h2>Vì sao chính người giỏi lại tạo ra chỗ nghẽn</h2>
+
+<p>Cả hai anh đều giỏi thật, không phải giỏi kiểu tự nhận. Người thứ nhất nắm cả bán hàng, nhân sự, tài chính và đối tác. Người thứ hai vừa giỏi kỹ thuật, vừa biết ngoại giao, vừa chốt được hợp đồng, vừa quản được đội thi công. <span class="nhan">Chính vì làm được mọi việc nên họ giữ mọi việc</span>, và ở giai đoạn đầu thì làm vậy hoàn toàn đúng.</p>
+
+<p>Khi công ty còn nhỏ, người chủ giỏi nhất và nhanh nhất, nên gom hết vào mình là cách đi hợp lý. Nhưng cách đi đó không có nút dừng. Công ty lớn lên, số việc cần một quyết định của người chủ tăng theo, mà không ai nhận ra thời điểm đáng lẽ phải đổi cách làm. Lý do rất đơn giản: không có ngày nào mọi việc hỏng hẳn để bắt người ta phải nhìn lại. Nó chỉ nặng dần lên, mỗi năm một chút, và người chủ quen với sức nặng đó nhanh hơn mình tưởng.</p>
+
+<p>Anh chủ ngành máy lạnh mô tả tình trạng đó bằng một hình ảnh rất đúng: anh đang xây một cỗ máy rất mạnh nhưng lại phải tự mình đạp từng vòng quay. Một mình anh chạy trước, nhân viên phía sau nhìn, làm theo, phụ thêm. Ngày anh vắng mặt thì tất cả chậm lại, lúng túng, có việc dừng hẳn.</p>
+
+<p>Không phải vì nhân sự kém. Mà vì <span class="nhan">ai làm gì và ai chịu trách nhiệm tới đâu chưa từng được viết ra</span>, quy trình xử lý sự cố chưa được chuẩn hoá, còn dữ liệu và chi phí thì nằm trong đầu người chủ, được quản lý bằng trí nhớ. Trong một công ty như vậy, mọi việc đều phải hỏi sếp, và sếp thì luôn bận.</p>
+
+<h2>Ba lớp khoá lẫn nhau</h2>
+
+<p>Nhìn kỹ thì cả hai công ty đang bị khoá bởi ba lớp, và ba lớp này nuôi lẫn nhau nên gỡ riêng từng lớp thường không ăn thua.</p>
+
+<p><b>Lớp thứ nhất là cách làm chưa ra khỏi đầu người chủ.</b> Anh biết gặp khách thì hỏi gì trước, biết nhìn hiện trường là đoán được sự cố nằm ở đâu. Nhưng đó là kinh nghiệm hai mươi năm, chưa bao giờ được viết thành cách làm cho người khác học theo. Người mới vào chỉ có thể học bằng cách đi theo anh, mà anh thì không đủ giờ để dẫn ai đi lâu.</p>
+
+<p><b>Lớp thứ hai là quyền quyết chưa được chia.</b> Nhân viên biết việc, nhưng tới chỗ phải quyết nhượng bộ tới đâu, có nhận đơn gấp không, có xuất vật tư trước khi thanh toán không, thì không ai dám tự quyết. Không phải họ ngại, mà vì chưa từng có ai nói cho họ biết ranh giới ở đâu.</p>
+
+<p><b>Lớp thứ ba là không có con số để nhìn.</b> Chi phí, tiến độ, lãi lỗ từng hợp đồng nằm rải trong đầu anh và trong vài tệp bảng tính. Người khác muốn giúp cũng không biết dựa vào đâu mà giúp, nên cuối cùng lại quay về hỏi anh.</p>
+
+<p>Ba lớp này giải thích vì sao tuyển thêm người thường không làm nhẹ đi. <span class="nhan">Người mới không thiếu năng lực, họ thiếu chỗ bám</span>, nên mỗi người mới lại thành thêm một nguồn câu hỏi đổ về cùng một chỗ.</p>
+
+<h2>Điều người con thật sự từ chối</h2>
+
+<p>Chỗ này mới là chỗ đáng nghĩ nhất trong câu chuyện thứ nhất. Người con không từ chối vì thiếu tình cảm với cha, và cũng không chê công ty làm ăn kém. Cậu từ chối vì nhìn vào công ty mà không thấy một hệ thống rõ ràng, không thấy một tương lai mình kiểm soát được.</p>
+
+<p>Nếu cái được trao lại là một cỗ máy chạy bằng cảm giác, trực giác và kinh nghiệm của một người, thì người nhận không phải đang kế nghiệp. <span class="nhan">Họ đang tiếp quản sự mệt mỏi của người trước.</span></p>
+
+<p>Duy nghĩ rất nhiều doanh nghiệp gia đình ở Việt Nam đang đứng đúng ở ngã rẽ đó: không muốn bán vì tiếc tâm huyết, không giao được vì người kế tục chưa sẵn sàng, và không dám nghỉ vì hệ thống chưa tự chạy. Ba cái không đó khoá lẫn nhau, càng để lâu càng khó gỡ, bởi người chủ mỗi năm một lớn tuổi còn công ty thì mỗi năm một phụ thuộc thêm.</p>
+
+<p>Có một chi tiết trong câu chuyện Duy nhớ mãi. Anh không kể chuyện này như một lời than về đứa con. Anh kể như một người vừa nhận ra mình đã dựng nên đúng cái mà con mình sợ, mà suốt ba mươi năm không hề biết.</p>
+
+<h2>Ba câu để tự nhìn lại</h2>
+
+<p>Duy không khuyên ai đổi cách điều hành ngay lập tức. Đổi gấp một cách làm đã chạy hai mươi năm là cách nhanh nhất để hỏng cả hai. Nhưng trước khi tính chuyện chuyển giao cho ai, có ba câu nên tự trả lời, và nên viết ra giấy chứ đừng chỉ nghĩ trong đầu.</p>
+
+<p><b>Một.</b> Trong một tuần làm việc bình thường, những việc nào chỉ mình bạn làm được, và trong số đó việc nào thật sự cần tới bạn, việc nào chỉ đơn giản là chưa ai được chỉ cách làm.</p>
+
+<p><b>Hai.</b> Nếu bạn vắng mặt ba ngày, việc gì dừng lại, và nó dừng vì thiếu quyền quyết hay vì thiếu thông tin. Hai nguyên nhân đó nghe giống nhau nhưng cách sửa khác hẳn: một bên là giao quyền, một bên là viết lại cách làm.</p>
+
+<p><b>Ba.</b> Câu khó nhất: vì sao tới giờ vẫn chưa có ai thay được bạn ở những việc đó. Trả lời thật lòng câu này thường lộ ra rằng chỗ nghẽn không nằm ở năng lực đội ngũ, mà nằm ở chỗ chưa ai từng được giao đủ lâu để học.</p>
+
+<p>Nếu ba câu trên khó trả lời, đó không phải dấu hiệu bạn quản lý kém. Nó chỉ cho thấy công ty đã lớn hơn cách vận hành mà bạn dựng lên hồi đầu, và điều đó xảy ra với gần như mọi người sáng lập làm ăn được.</p>
+
+<h2>Bước đầu tiên, đủ nhỏ để làm được</h2>
+
+<p>Đừng bắt đầu bằng việc viết quy trình cho cả công ty. Quy trình viết ra lúc chưa gọi đúng tên vấn đề thì viết xong cũng để đó.</p>
+
+<p>Bắt đầu bằng đúng một việc: chọn việc mà bạn bị gọi tên nhiều nhất trong tuần. Với anh ngành máy lạnh, đó là quyết định xử lý sự cố ở hiện trường. Trong ba lần tới, sau mỗi lần bạn ngồi lại mười lăm phút và viết ba dòng: tình huống là gì, mình quyết thế nào, và mình quyết như vậy vì căn cứ nào.</p>
+
+<p>Ba lần là ba trang giấy. <span class="nhan">Ba trang đó là bản nháp đầu tiên của cách nghĩ</span>, cái mà trước nay chưa từng ra khỏi đầu bạn. Nó chưa phải quy trình, và cũng chưa cần phải là quy trình. Nhưng người kế tiếp học được nhanh hơn hẳn, vì họ không còn phải ngồi đoán.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Làm xong ba trang đó thì công ty chưa tự chạy được. Chuyển cách nghĩ nằm trong đầu một người thành cái cả đội ngũ dùng được là việc của nhiều quý, không phải nhiều tuần, và nó cần bạn quay lại đều đặn hơn là cần bạn cố sức một đợt.</p>
+
+<p>Nhưng có một điều đổi ngay: bạn thôi nghĩ rằng mình đang thiếu người giỏi. <span class="nhan">Bạn nhìn thấy mình đang thiếu một cách làm viết ra được</span>, và cái đó sửa được, khác hẳn với việc ngồi chờ gặp đúng người.</p>
+
+<p>Anh chủ ngoài sáu mươi hôm đó không nói thêm gì nhiều. Nhưng có một câu Duy nghĩ đáng để bất kỳ người sáng lập nào giữ lại: cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.</p>"""),
 dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhân",
  tieu="Xây uy tín để được tin, không phải để được biết",
  mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần điều khác: được đúng người tin, đủ để họ chủ động tìm đến.",

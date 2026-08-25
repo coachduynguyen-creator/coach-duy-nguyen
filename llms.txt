@@ -6,7 +6,7 @@
 - [Về Duy](https://coachduynguyen.vn/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](https://coachduynguyen.vn/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen.vn/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
-- [Blog](https://coachduynguyen.vn/blog.html): 20 bài viết cho nhà sáng lập
+- [Blog](https://coachduynguyen.vn/blog.html): 21 bài viết cho nhà sáng lập
 - [Sách](https://coachduynguyen.vn/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](https://coachduynguyen.vn/lien-he.html)
@@ -24,6 +24,7 @@
 - [90 Ngày Xây Hệ thống Tăng&nbsp;trưởng](https://coachduynguyen.vn/chuong-trinh/giai-phap-doanh-nghiep.html): Chẩn đoán, thiết kế, xây, chạy thử và bàn giao một hệ thống tăng trưởng có người phụ trách, dữ liệu và nhịp điều hành.
 
 ## Bài viết
+- [Cái giá của người làm được mọi việc](https://coachduynguyen.vn/bai-viet/cai-gia-cua-nguoi-lam-duoc-moi-viec.html): Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.
 - [Chọn một vùng chuyên môn để đứng, và dám bỏ phần còn lại](https://coachduynguyen.vn/bai-viet/lanh-dia-chuyen-mon.html): Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.
 - [Bốn câu Duy nghe nhiều nhất từ người sáng lập](https://coachduynguyen.vn/bai-viet/bon-cau-toi-nghe-nhieu-nhat.html): Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.
 - [Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn cái mà viết](https://coachduynguyen.vn/bai-viet/kho-cau-chuyen.html): Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.
