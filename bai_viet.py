@@ -167,32 +167,87 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
  than="""
-<p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe không có cách nào kiểm. Nên Duy viết ra năm việc mà mình tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm Duy và kiểm bất kỳ ai khác.</p>
+<p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe thì không có cách nào kiểm lại. Nên Duy viết ra năm việc mà mình tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm Duy và kiểm bất kỳ ai khác.</p>
+
+<p><span class="nhan">Năm việc này không phải là năm phẩm chất, chúng là năm việc quan sát được.</span> Đó là chỗ khác nhau, vì phẩm chất thì ai cũng tự nhận, còn việc thì phải làm ra mới có.</p>
 
 <h2>Một: soi đúng</h2>
-<p>Việc đầu tiên là tách điều bạn đang thấy khỏi vấn đề thật phía sau. Người cố vấn bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác.</p>
-<p>Ví dụ. Bạn nói đội ngũ thiếu chủ động. Nhưng nếu mọi quyết định cuối cùng vẫn phải quay về bạn, vấn đề không chỉ nằm ở thái độ của đội ngũ. Cấu trúc trách nhiệm đang dạy họ chờ bạn.</p>
+
+<p>Việc đầu tiên là tách điều bạn đang thấy khỏi vấn đề thật nằm phía sau. Người cố vấn bắt đầu từ hành vi và kết quả quan sát được, không bắt đầu từ cảm giác của bạn về tình hình.</p>
+
+<p>Ví dụ. Bạn nói đội ngũ thiếu chủ động. Nhưng nếu mọi quyết định cuối cùng vẫn phải quay về bàn của bạn, vấn đề không chỉ nằm ở thái độ của đội ngũ, mà cấu trúc trách nhiệm đang dạy họ chờ bạn, và họ học rất nhanh.</p>
+
+<p>Soi đúng thường làm người nghe khó chịu vài phút, vì nó chuyển vấn đề từ chỗ người khác về chỗ mình. Một người cố vấn tránh cảm giác khó chịu đó thì cũng tránh luôn phần việc đáng tiền nhất của mình.</p>
 
 <h2>Hai: chỉ đường</h2>
-<p>Việc thứ hai là cho bạn thấy đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với mức trưởng thành hiện tại, không phải một danh sách mẹo.</p>
-<p>Một lời khuyên chỉ đường được thì phải có ba phần: thứ tự các bước, điều kiện đi tiếp, và dấu hiệu cho biết đã xong. Thiếu dấu hiệu hoàn thành thì đó chưa phải chỉ đường, mới chỉ là động viên.</p>
+
+<p>Việc thứ hai là cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Phần chưa cần làm lúc này thường có giá trị hơn phần nên làm, vì người sáng lập nào cũng đang có quá nhiều thứ muốn làm cùng lúc.</p>
+
+<p>Một lời khuyên chỉ đường được thì phải có ba phần: thứ tự các bước, điều kiện để đi tiếp, và dấu hiệu cho biết đã xong. Thiếu dấu hiệu hoàn thành thì đó chưa phải chỉ đường, mới chỉ là động viên nghe cho êm tai.</p>
 
 <h2>Ba: làm mẫu</h2>
-<p>Việc thứ ba là cho thấy mình đã áp dụng tiêu chuẩn đó thế nào, kể cả khi kết quả chưa đẹp. Quyết định thật, tài liệu thật, thử nghiệm thật, và sai lầm đã trả giá.</p>
-<p>Quan trọng là phải nêu cả điều kiện và giới hạn của bài học. Một cách làm hiệu quả trong bối cảnh này có thể sai hoàn toàn trong bối cảnh khác. Người cố vấn nói rõ chỗ đó. Người bán khoá học thì thường bỏ qua.</p>
+
+<p>Việc thứ ba là cho thấy mình đã áp dụng chính tiêu chuẩn đó thế nào, kể cả khi kết quả chưa đẹp. Quyết định thật, tài liệu thật, thử nghiệm thật, và cả những sai lầm đã trả giá bằng tiền của mình.</p>
+
+<p>Quan trọng là phải nêu cả điều kiện và giới hạn của bài học. Một cách làm hiệu quả trong bối cảnh này có thể sai hoàn toàn trong bối cảnh khác, và người cố vấn phải nói rõ chỗ đó, còn người bán khoá học thì thường bỏ qua vì nói ra làm câu chuyện bớt hay.</p>
 
 <h2>Bốn: giữ chuẩn</h2>
-<p>Việc thứ tư là nói rõ điều gì được chấp nhận, điều gì không, và cái giá của việc tiếp tục cách cũ. Không làm nhẹ sự thật để giữ lượt xem hoặc tránh mất lòng.</p>
-<p>Giữ chuẩn không phải quát mắng. Sức nặng nằm ở lý do, ở ranh giới, và ở sự nhất quán. Một người giữ chuẩn hôm nay rồi nới ra tuần sau thì không giữ chuẩn, chỉ đang có tâm trạng.</p>
+
+<p>Việc thứ tư là nói rõ điều gì được chấp nhận, điều gì không, và cái giá của việc tiếp tục cách cũ. Không làm nhẹ sự thật để giữ lượt xem hoặc để tránh mất lòng ai.</p>
+
+<p>Giữ chuẩn không phải là quát mắng, và cũng không phải là nói năng gay gắt cho ra vẻ thẳng thắn. Sức nặng nằm ở lý do, ở ranh giới rõ, và ở sự nhất quán. Một người giữ chuẩn hôm nay rồi nới ra tuần sau thì không phải đang giữ chuẩn, họ chỉ đang có tâm trạng.</p>
 
 <h2>Năm: trao lại quyền tự chủ</h2>
-<p>Việc thứ năm dễ bị bỏ nhất, vì nó đi ngược lợi ích ngắn hạn của người cố vấn. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá và một câu hỏi bạn còn dùng được sau khi rời khỏi họ.</p>
+
+<p>Việc thứ năm dễ bị bỏ nhất, vì nó đi ngược lợi ích ngắn hạn của chính người cố vấn. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá và một câu hỏi bạn còn dùng được sau khi đã rời khỏi họ.</p>
+
+<p>Có một cách kiểm rất gọn cho việc này. Sau ba tháng làm việc với ai đó, thử hỏi mình rằng nếu ngày mai không còn liên lạc được với họ nữa thì mình có tự đi tiếp được không. Trả lời được là họ đã làm việc thứ năm.</p>
 
 <div class="dan-manh">Nếu một nội dung khiến bạn nghĩ chỉ người đó mới giải quyết được vấn đề của bạn, họ đang xây sự lệ thuộc chứ không xây năng lực cho bạn.</div>
 
+<h2>Vì sao việc thứ năm khó tới vậy</h2>
+
+<p>Duy nói thẳng phần này vì nó liên quan tới chính mình. Một người cố vấn làm tốt việc thứ năm sẽ có ít khách quay lại hơn, hoặc chính xác hơn là khách quay lại vì việc mới chứ không vì vẫn chưa tự đi được.</p>
+
+<p>Mô hình kiếm tiền dựa vào việc khách phải gia hạn thì đi ngược việc thứ năm một cách âm thầm. Không ai cố ý làm cho khách lệ thuộc cả, nhưng khi doanh thu tháng phụ thuộc vào số người còn ở lại, các quyết định nhỏ sẽ nghiêng dần về phía giữ người.</p>
+
+<p>Cách Duy chọn để giải chuyện này là tách bạch từ đầu: nói rõ chương trình kết thúc ở đâu, kết quả cần đạt là gì, và sau đó thì hết. <span class="nhan dam">Một chương trình có ngày kết thúc rõ ràng là một cách bảo vệ việc thứ năm.</span></p>
+
+<h2>Năm việc này áp cho ai</h2>
+
+<p>Duy viết năm việc này cho hai người cùng lúc. Người thứ nhất là bạn, khi bạn đi chọn một người để học. Người thứ hai cũng là bạn, khi chính bạn ngồi ở ghế người cố vấn cho khách của mình.</p>
+
+<p>Phần lớn nhà sáng lập dịch vụ đều đang làm nghề cố vấn mà không gọi tên như vậy. Bạn tư vấn cho khách trước khi họ mua, bạn định hướng cho họ trong lúc làm, và người ta tin bạn vì bạn đi trước họ một số chặng trong đúng lĩnh vực đó.</p>
+
+<p>Nếu đúng thế thì năm việc trên là bảng tự chấm của bạn, không phải bảng chấm người khác. Thử lấy ba khách gần nhất và chấm từng người theo năm việc. Việc nào bạn thiếu ở cả ba ca là một thói quen, không phải một lần lỡ.</p>
+
+<p>Duy chấm mình theo cách đó mỗi quý. Việc hay thiếu nhất của Duy trong nhiều năm là việc thứ hai, phần dấu hiệu cho biết đã xong, vì nói bước tiếp theo thì dễ mà định nghĩa thế nào là xong thì phải nghĩ lâu và phải chịu trách nhiệm với định nghĩa đó.</p>
+
 <h2>Ba việc một người cố vấn không nên làm</h2>
-<p>Không làm thay phần việc của bạn. Không hứa một con số kết quả khi chưa đủ điều kiện. Và không giữ ai ở lại bằng cảm giác lệ thuộc.</p>
-<p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm Duy. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, thử đếm xem họ làm được mấy việc.</p>
+
+<p><b>Không làm thay phần việc của bạn:</b> làm thay thì nhanh hơn và người kia cũng thích hơn, nhưng sau đợt đó năng lực vẫn nằm ở chỗ cũ, tức là ở người cố vấn.</p>
+
+<p><b>Không hứa một con số kết quả khi chưa đủ điều kiện:</b> con số nghe hay thì bán dễ, và cũng chính con số đó biến quan hệ thành một cuộc đòi nợ khi mọi thứ không đúng như đã nói.</p>
+
+<p><b>Không giữ ai ở lại bằng cảm giác lệ thuộc:</b> giữ bằng giá trị thì người ta ở lại và vẫn tự do, còn giữ bằng lệ thuộc thì người ta ở lại và biết mình đang bị giữ.</p>
+
+<h2>Cố vấn khác huấn luyện viên và khác chuyên gia thế nào</h2>
+
+<p>Ba vai này hay bị gộp làm một, và gộp thì hỏng, vì người mua kỳ vọng một đằng còn người bán làm một nẻo.</p>
+
+<p><b>Chuyên gia bán câu trả lời:</b> bạn hỏi làm thế nào và họ nói cách làm, quan hệ kết thúc khi câu trả lời đã được đưa. Vai này hợp khi vấn đề rõ và bạn chỉ thiếu cách làm.</p>
+
+<p><b>Huấn luyện viên bán tiến trình:</b> họ không nói cách làm, họ hỏi để bạn tự tìm ra, và họ giữ nhịp cho bạn. Vai này hợp khi bạn đã biết phải làm gì mà không làm được đều.</p>
+
+<p><b>Cố vấn bán phán đoán:</b> họ nói cho bạn biết vấn đề thật nằm ở đâu và nên đi theo hướng nào, dựa trên việc họ đã đi qua chặng đó. Vai này hợp khi bạn chưa chắc mình đang giải đúng bài chưa.</p>
+
+<p><span class="nhan">Người sáng lập tìm sai vai thì không phải vì họ chọn nhầm người, mà vì họ chưa biết mình đang thiếu gì.</span> Đây cũng là lý do việc thứ nhất, soi đúng, phải đứng ở vị trí thứ nhất trong năm việc.</p>
+
+<h2>Dùng năm việc này để kiểm Duy</h2>
+
+<p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm Duy, và Duy nói vậy không phải để nghe cho hay. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, kể cả Duy, thử đếm xem trong một buổi họ làm được mấy việc.</p>
+
+<p>Có một dấu hiệu nhanh dùng được ngay trong buổi đầu tiên: đếm số lần họ hỏi so với số lần họ kể. Người làm việc một và việc hai sẽ hỏi nhiều hơn kể, ít nhất là trong nửa đầu buổi. Người chỉ có việc ba thì kể suốt, và câu chuyện nào cũng hay, chỉ là không câu nào nói về bạn.</p>
 """),
 
 # Chất liệu lấy từ hai bài kể chuyện trong NSG Content DB trên Notion, mục
@@ -884,19 +939,29 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
  ngay="2026-08-06", ngay_viet="6 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-noi-1.webp", alt="Coach Duy Nguyễn đang trao đổi với người đối diện",
  than="""
-<p>Đây là câu người bán dịch vụ nghe nhiều nhất, và cũng là câu bị hiểu sai nhiều nhất. Phần lớn người bán phản ứng bằng cách hẹn gọi lại sau ba ngày, rồi ba ngày sau gọi và không ai bắt máy.</p>
-<p>Vấn đề là câu đó gần như không bao giờ mang nghĩa đen.</p>
+<p>Đây là câu người bán dịch vụ nghe nhiều nhất, và cũng là câu bị hiểu sai nhiều nhất. Phần lớn người bán phản ứng bằng cách hẹn gọi lại sau ba ngày, rồi ba ngày sau gọi và không ai bắt máy, rồi kết luận rằng khách hôm ấy không nghiêm túc.</p>
+
+<p>Vấn đề là câu đó gần như không bao giờ mang nghĩa đen. <span class="nhan">Không ai về nhà ngồi suy nghĩ thêm về dịch vụ của bạn cả.</span> Họ đã nghĩ xong ngay trong phòng, chỉ là điều họ nghĩ thì họ chưa nói ra.</p>
 
 <h2>Bốn nghĩa thật</h2>
-<p><b>Nghĩa một: tôi chưa thấy vấn đề của mình đủ lớn.</b> Đây là nghĩa phổ biến nhất. Bạn đã trình bày giải pháp rất tốt cho một vấn đề mà trong lòng họ chưa thấy đủ đau. Lỗi nằm ở phần chẩn đoán, không nằm ở phần chốt.</p>
-<p><b>Nghĩa hai: tôi không phải người quyết.</b> Họ ngại nói ra vì sợ mất mặt, nên dùng câu này để có thời gian hỏi người khác. Bạn phát hiện được nếu hỏi sớm về cách họ ra quyết định.</p>
-<p><b>Nghĩa ba: tôi tin phương pháp nhưng chưa tin mình làm nổi.</b> Đây là nỗi sợ về bản thân, không phải nghi ngờ về bạn. Nếu bạn đáp bằng cách chứng minh phương pháp tốt hơn nữa, bạn đang trả lời sai câu hỏi.</p>
-<p><b>Nghĩa bốn: giá vượt mức tôi tự cho phép lúc này.</b> Không phải không đủ tiền, mà là chưa xếp khoản này vào loại đáng chi. Đây là vấn đề thứ tự ưu tiên, không phải vấn đề tài chính.</p>
+
+<p><b>Nghĩa một, tôi chưa thấy vấn đề của mình đủ lớn:</b> đây là nghĩa phổ biến nhất trong bốn nghĩa. Bạn đã trình bày một giải pháp rất tốt cho một vấn đề mà trong lòng họ chưa thấy đủ đau, nên lỗi nằm ở phần chẩn đoán chứ không nằm ở phần chốt.</p>
+
+<p><b>Nghĩa hai, tôi không phải người quyết:</b> họ ngại nói ra vì sợ mất mặt trước một người lạ, nên dùng câu này để có thời gian hỏi người khác. Bạn phát hiện được nghĩa này nếu hỏi sớm về cách công ty họ ra quyết định, và nên hỏi ngay lúc đặt lịch chứ đừng đợi tới cuối buổi.</p>
+
+<p><b>Nghĩa ba, tôi tin phương pháp nhưng chưa tin mình làm nổi:</b> đây là nỗi sợ về bản thân chứ không phải nghi ngờ về bạn. Nếu bạn đáp lại bằng cách chứng minh phương pháp tốt hơn nữa thì bạn đang trả lời sai câu hỏi, và càng nói càng làm họ thấy mình kém.</p>
+
+<p><b>Nghĩa bốn, giá vượt mức tôi tự cho phép lúc này:</b> không phải không đủ tiền, mà là chưa xếp khoản này vào loại đáng chi. Đây là vấn đề thứ tự ưu tiên chứ không phải vấn đề tài chính, và hai thứ đó chữa khác nhau hoàn toàn.</p>
 
 <h2>Một câu hỏi tách được bốn nghĩa</h2>
-<p>Thay vì hẹn gọi lại, hỏi một câu: <b>anh chị cứ nói thật, nếu bây giờ phải quyết thì điều gì làm anh chị lăn tăn nhất.</b></p>
-<p>Câu này hiệu quả vì ba lý do. Nó cho phép nói thật. Nó hỏi về một điều duy nhất nên dễ trả lời. Và nó không đẩy họ vào thế phải quyết ngay.</p>
-<p>Bảy trên mười lần bạn sẽ nhận được lý do thật. Ba lần còn lại thì bạn biết quan hệ chưa đủ, và đó cũng là thông tin.</p>
+
+<p>Thay vì hẹn gọi lại, hỏi đúng một câu: <b>anh chị cứ nói thật, nếu bây giờ phải quyết thì điều gì làm anh chị lăn tăn nhất.</b></p>
+
+<p>Câu này hiệu quả vì ba lý do. Nó cho phép người ta nói thật mà không phải lịch sự. Nó hỏi về một điều duy nhất nên dễ trả lời hơn câu hỏi anh chị còn băn khoăn gì. Và nó không đẩy họ vào thế phải quyết ngay, nên hàng rào không dựng lên.</p>
+
+<p>Bảy trên mười lần bạn sẽ nhận được lý do thật. Ba lần còn lại thì bạn biết quan hệ chưa đủ để họ nói thẳng, và đó cũng là một thông tin đáng giá, vì nó cho biết phần đầu buổi bạn chưa tạo được đủ an toàn.</p>
+
+<p>Điều quan trọng sau khi hỏi là im lặng. Duy thấy nhiều người hỏi câu này rất chuẩn rồi lấp ngay khoảng lặng bằng một câu gợi ý, và thế là khách bám luôn vào gợi ý đó thay vì nói ra điều thật của mình.</p>
 
 <div class="dan-manh">Từ chối là tín hiệu cần lắng nghe, không phải rào cản cần vượt. Người bán giỏi nghe được câu hỏi thật nằm dưới câu nói ra.</div>
 
@@ -909,13 +974,45 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
 <tr><td>Giá vượt mức tự cho phép</td><td>Làm rõ khoản này thay thế chi phí nào, hoặc đề nghị phạm vi nhỏ hơn</td><td>Giảm giá</td></tr>
 </table></div>
 
+<h2>Nghĩa ba là nghĩa khó nhất, và ít người xử đúng</h2>
+
+<p>Trong bốn nghĩa thì nghĩa ba làm người bán lúng túng nhất, vì nó không giống một lời phản đối. Khách khen bạn, khen phương pháp, gật đầu suốt buổi, rồi vẫn không quyết.</p>
+
+<p>Dấu hiệu nhận ra nghĩa ba: họ hỏi những câu bắt đầu bằng nếu tôi. Nếu tôi bận thì sao, nếu tôi làm không kịp thì sao, nếu đội ngũ tôi không theo được thì sao. Ba câu hỏi kiểu đó liên tiếp là họ đang đo mình chứ không đo bạn.</p>
+
+<p>Việc đúng lúc này là hạ độ cao của bước đầu tiên xuống mức họ chắc chắn làm được, rồi nói rõ điều kiện thành công. Duy hay nói một câu đại ý rằng tuần đầu chỉ cần anh chị làm đúng một việc này, nếu tuần đầu làm được thì phần còn lại là chuyện nhịp, còn nếu tuần đầu không làm được thì mình dừng và không mất gì thêm.</p>
+
+<p><span class="nhan dam">Người sợ mình không làm nổi cần một bước nhỏ chắc chắn, không cần một lời cam kết lớn hơn.</span></p>
+
+<h2>Nghĩa hai lộ ra sớm hơn bạn tưởng</h2>
+
+<p>Nghĩa hai là nghĩa duy nhất trong bốn nghĩa mà bạn phòng được hoàn toàn, chỉ cần hỏi đúng một câu trước khi buổi hẹn diễn ra.</p>
+
+<p>Câu đó là: ngoài anh chị ra thì còn ai cùng quyết việc này. Hỏi lúc đặt lịch thì rất tự nhiên, còn hỏi ở cuối buổi thì thành một câu tra xét, và người ta sẽ trả lời cho xong.</p>
+
+<p>Nếu câu trả lời là có thêm người, việc đúng không phải là thuyết phục người trước mặt mạnh hơn. Việc đúng là đề nghị một buổi có đủ mặt, hoặc chuẩn bị cho người này đủ chất liệu để nói lại. Duy chọn cách thứ nhất khi có thể, vì một câu chuyện đi qua hai lần kể sẽ mất đúng phần quan trọng nhất.</p>
+
+<p>Có một trường hợp hay gặp ở doanh nghiệp gia đình: người quyết thật không giữ chức danh nào cả. Có khi là vợ hoặc chồng, có khi là người anh cả trong nhà. Hỏi thẳng ai cùng quyết thì họ không nói ra, nhưng hỏi anh chị thường bàn việc lớn với ai thì họ nói ngay.</p>
+
 <h2>Vì sao giảm giá là phản ứng tệ nhất</h2>
-<p>Giảm giá trả lời cho nghĩa bốn, mà nghĩa bốn ít phổ biến nhất trong bốn nghĩa. Nên chín trên mười lần bạn giảm giá, bạn đang trả lời sai câu hỏi.</p>
-<p>Tệ hơn, nó dạy khách rằng giá của bạn không thật, và dạy chính bạn rằng cách gỡ một buổi tư vấn kém là hạ giá trị công việc của mình.</p>
+
+<p>Giảm giá trả lời cho nghĩa bốn, mà nghĩa bốn ít phổ biến nhất trong bốn nghĩa. Nên chín trên mười lần bạn giảm giá là chín trên mười lần bạn trả lời sai câu hỏi, và điều đáng nói là nó vẫn có tác dụng đủ thường xuyên để bạn tin rằng cách đó đúng.</p>
+
+<p>Tệ hơn, giảm giá dạy khách rằng giá của bạn không thật, và dạy chính bạn rằng cách gỡ một buổi tư vấn kém là hạ giá trị công việc của mình. Cái thứ hai mới là cái đắt, vì nó tích lại qua nhiều năm.</p>
 
 <h2>Khi nào thật sự nên để họ suy nghĩ</h2>
-<p>Có một trường hợp câu đó mang nghĩa đen: khi quyết định này ảnh hưởng tới người khác trong doanh nghiệp và họ cần trao đổi nội bộ. Lúc đó bạn đừng ngồi chờ. Hãy trang bị cho họ.</p>
-<p>Gửi một tài liệu ngắn ghi rõ phạm vi, kết quả, điều kiện và cái giá của việc không làm, để họ mang vào cuộc họp nội bộ. Bạn không có mặt trong cuộc họp đó, nên tài liệu chính là người đại diện cho bạn.</p>
+
+<p>Có một trường hợp câu đó mang đúng nghĩa đen: khi quyết định này ảnh hưởng tới người khác trong doanh nghiệp và họ cần trao đổi nội bộ thật. Lúc đó bạn đừng ngồi chờ, hãy trang bị cho họ.</p>
+
+<p>Gửi một tài liệu ngắn ghi rõ phạm vi, kết quả, điều kiện và cái giá của việc không làm, để họ mang vào cuộc họp nội bộ. Bạn không có mặt trong cuộc họp đó, nên tài liệu chính là người đại diện cho bạn, và nó phải trả lời được câu hỏi khó nhất mà đồng nghiệp của họ sẽ hỏi.</p>
+
+<p>Một chi tiết nhỏ mà hiệu quả: viết tài liệu đó theo hướng giúp người kia bảo vệ đề xuất, không phải theo hướng giới thiệu bạn. Người đang phải thuyết phục sếp cần đạn, không cần một tờ rơi.</p>
+
+<h2>Một việc làm được ngay tuần này</h2>
+
+<p>Lấy ba ca gần nhất kết thúc bằng câu để tôi suy nghĩ thêm, và với mỗi ca, tự chấm xem nó thuộc nghĩa nào trong bốn nghĩa. Nếu bạn không chấm được thì đó chính là câu trả lời, vì nó nghĩa là buổi hôm đó bạn chưa đủ thông tin để hiểu người ngồi trước mặt.</p>
+
+<p>Nếu cả ba ca rơi vào cùng một nghĩa thì bạn vừa tìm ra chỗ hổng cố định trong cách bán của mình, và sửa một chỗ đó sẽ đổi kết quả nhiều hơn mọi kỹ thuật chốt cộng lại.</p>
 """),
 
 dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách",
@@ -924,33 +1021,81 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
  ngay="2026-08-02", ngay_viet="2 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-noi-4.webp", alt="Coach Duy Nguyễn nói trong một buổi trao đổi",
  than="""
-<p>Người ta thường tính cái giá của việc giảm giá bằng phần trăm lợi nhuận mất đi. Cách tính đó bỏ qua phần đắt nhất: những gì diễn ra trong đầu khách sau khi bạn giảm.</p>
+<p>Người ta thường tính cái giá của việc giảm giá bằng phần trăm lợi nhuận mất đi. Cách tính đó bỏ qua phần đắt nhất, là những gì diễn ra trong đầu khách sau khi bạn giảm, và phần ấy thì không có dòng nào trên báo cáo.</p>
 
 <h2>Ba điều khách học được khi bạn giảm giá</h2>
-<p><b>Điều một: giá ban đầu không thật.</b> Nếu bạn hạ được hai mươi phần trăm chỉ vì họ ngần ngại, nghĩa là con số đầu tiên có phần đệm. Từ giây phút đó, mọi con số bạn đưa ra sau này đều bị họ trừ đi trong đầu.</p>
-<p><b>Điều hai: ngần ngại là một chiến thuật hiệu quả.</b> Bạn vừa dạy họ cách làm việc với mình. Lần sau, và trong mọi lần gia hạn, họ sẽ dùng lại đúng cách đó.</p>
-<p><b>Điều ba: bạn cần họ hơn họ cần bạn.</b> Điều này tệ nhất, vì nó đảo vị thế. Mà trong dịch vụ tư vấn, vị thế quyết định việc lời khuyên của bạn có được nghe hay không.</p>
+
+<p><b>Điều một, giá ban đầu không thật:</b> nếu bạn hạ được hai mươi phần trăm chỉ vì họ ngần ngại một chút, nghĩa là con số đầu tiên có phần đệm. Từ giây phút đó, mọi con số bạn đưa ra sau này đều bị họ trừ đi trong đầu trước khi nghe hết câu.</p>
+
+<p><b>Điều hai, ngần ngại là một chiến thuật hiệu quả:</b> bạn vừa dạy họ cách làm việc với mình, và lần sau, trong mọi lần gia hạn, họ sẽ dùng lại đúng cách đó vì nó đã có tác dụng một lần.</p>
+
+<p><b>Điều ba, bạn cần họ hơn họ cần bạn:</b> điều này tệ nhất vì nó đảo vị thế, mà trong dịch vụ tư vấn thì vị thế quyết định lời khuyên của bạn có được nghe hay không.</p>
+
+<p><span class="nhan">Điều ba là chỗ nhiều người không nhìn ra, vì nó không hiện ra ngay trong tháng ký.</span> Nó hiện ra ở buổi thứ tư, khi bạn nói một điều khó nghe và khách gạt đi rất nhẹ nhàng, nhẹ hơn hẳn cách họ gạt một người mà họ trả đủ giá.</p>
 
 <div class="dan-manh">Người bán giảm giá để cứu một giao dịch thường đánh đổi luôn chất lượng của giao dịch đó. Khách trả ít hơn sẽ nghe ít hơn, và làm ít hơn.</div>
 
 <h2>Điều ít ai nói: khách trả rẻ là khách khó nhất</h2>
-<p>Nghe ngược đời, nhưng gần như lần nào Duy cũng thấy đúng. Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng, nên họ có mặt, làm bài, và hỏi những câu sâu.</p>
-<p>Người được giảm mạnh thường vào với tâm thế thử xem sao. Họ vắng nhiều hơn, làm ít hơn, và cuối cùng không ra kết quả. Rồi họ kể lại trải nghiệm đó cho người khác.</p>
-<p>Tức là giảm giá không chỉ làm giảm doanh thu. Nó tăng khả năng bạn có một trường hợp thất bại để đời.</p>
+
+<p>Nghe ngược đời, nhưng gần như lần nào Duy cũng thấy đúng. Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng, nên họ có mặt, họ làm bài, và họ hỏi những câu sâu vì họ muốn lấy hết phần mình đã trả.</p>
+
+<p>Người được giảm mạnh thường vào với tâm thế thử xem sao. Họ vắng nhiều hơn, làm ít hơn, và tới buổi cuối thì chưa có gì để nhìn lại. Rồi họ kể lại trải nghiệm đó cho người khác nghe, bằng đúng những từ của người vừa thất vọng.</p>
+
+<p>Tức là giảm giá không chỉ làm giảm doanh thu, nó còn tăng khả năng bạn có một trường hợp thất bại để đời. Và một trường hợp như vậy tốn của bạn nhiều năm chứ không phải một quý.</p>
+
+<h2>Vì sao chuyện này lại xảy ra</h2>
+
+<p>Duy nghĩ nó không phải chuyện tính cách. Nó là chuyện đầu tư và cam kết, và con người ở đâu cũng vậy.</p>
+
+<p>Số tiền một người bỏ ra là mức họ tự công bố với chính mình rằng việc này quan trọng tới đâu. Trả đủ giá tức là tự đặt cho mình một lời hứa, nên khi bận việc khác thì họ vẫn thu xếp để có mặt, vì bỏ buổi nghĩa là tự thấy mình phí tiền.</p>
+
+<p>Được giảm mạnh thì không có lời hứa nào cả. Bỏ một buổi không thấy tiếc gì mấy, và khi đã bỏ một buổi thì bỏ buổi thứ hai dễ hơn rất nhiều. <span class="nhan dam">Bạn không giảm giá cho họ, bạn đang giảm mức cam kết của họ với chính việc của họ.</span></p>
 
 <h2>Ba cách thay cho giảm giá</h2>
-<p><b>Thu hẹp phạm vi.</b> Giữ đơn giá, giảm khối lượng. Thay vì sáu buổi giá thấp, làm ba buổi đúng giá cho đúng một vấn đề. Cách này giữ nguyên thông điệp về giá trị.</p>
-<p><b>Đổi lịch thanh toán.</b> Chia làm nhiều đợt không đổi tổng số. Phần lớn trường hợp lăn tăn về giá thật ra là lăn tăn về dòng tiền tháng này.</p>
-<p><b>Đề nghị một bước nhỏ hơn trước.</b> Một buổi chẩn đoán có phí, hoặc một phạm vi thử. Nếu bước nhỏ ra kết quả, bước lớn không còn phải bàn về giá nữa.</p>
+
+<p><b>Thu hẹp phạm vi:</b> giữ nguyên đơn giá và giảm khối lượng, thay vì sáu buổi giá thấp thì làm ba buổi đúng giá cho đúng một vấn đề, và cách này giữ nguyên thông điệp về giá trị của một buổi làm việc với bạn.</p>
+
+<p><b>Đổi lịch thanh toán:</b> chia làm nhiều đợt mà không đổi tổng số, vì phần lớn trường hợp lăn tăn về giá thật ra là lăn tăn về dòng tiền của tháng này.</p>
+
+<p><b>Đề nghị một bước nhỏ hơn trước:</b> một buổi chẩn đoán có phí, hoặc một phạm vi thử trong ba tuần, và nếu bước nhỏ ra kết quả thì bước lớn không còn phải bàn về giá nữa.</p>
+
+<p>Ba cách này có chung một điểm: chúng đổi thứ khách nhận được chứ không đổi giá trị của thứ bạn làm. Đó là khác biệt mà khách cảm nhận được rất rõ, kể cả khi họ không gọi tên ra được.</p>
+
+<h2>Xử lý khi khách đã được giảm một lần</h2>
+
+<p>Chuyện thường gặp hơn là bạn đã lỡ giảm rồi, và giờ tới lần gia hạn. Chỗ khó nằm ở chính lần gia hạn này. Quay về giá chuẩn thì nghe như tăng giá, còn giữ mức cũ thì cái vòng đó không bao giờ dứt.</p>
+
+<p>Cách Duy thấy êm nhất là gắn mức giá với một mốc chứ không gắn với con người. Nói rõ rằng mức lần trước là mức của giai đoạn đầu, giai đoạn đó đã xong, và từ đây trở đi bạn áp dụng một bảng chung cho tất cả.</p>
+
+<p>Nói kèm một thứ mới thì càng dễ nghe: phạm vi rộng hơn, thêm một phần hỗ trợ, hoặc một cách làm việc khác trước. Người ta chấp nhận giá mới cho một thứ mới dễ hơn nhiều so với giá mới cho đúng thứ cũ.</p>
+
+<p>Và nếu họ rời đi thì cứ để họ rời đi. Một khách chỉ ở lại vì mức giá riêng không phải là khách của bạn, họ là khách của mức giá đó, nên sớm muộn cũng có người khác đưa ra mức thấp hơn.</p>
 
 <h2>Khi nào giảm giá là đúng</h2>
-<p>Có hai trường hợp Duy thấy hợp lý, và cả hai đều phải công khai lý do.</p>
-<p><b>Giá ra mắt cho khoá đầu tiên</b>, khi chương trình chưa có bằng chứng người học. Lúc đó khách chịu một phần rủi ro và được trả ít hơn. Nhưng phải nói thẳng đây là giá riêng của đợt đầu và ghi rõ ngày quay về giá chuẩn.</p>
-<p><b>Giảm theo một quy tắc áp dụng cho tất cả</b>, ví dụ đăng ký sớm. Hỏng quan hệ không phải vì con số thấp hơn. Hỏng vì con số đó chỉ dành cho người biết mặc cả.</p>
+
+<p>Có hai trường hợp Duy thấy hợp lý, và cả hai đều phải công khai lý do cho tất cả cùng biết.</p>
+
+<p><b>Giá ra mắt cho khoá đầu tiên,</b> khi chương trình chưa có bằng chứng người học. Lúc đó khách chịu một phần rủi ro và được trả ít hơn, nhưng bạn phải nói thẳng đây là giá riêng của đợt đầu và ghi rõ ngày quay về giá chuẩn.</p>
+
+<p><b>Giảm theo một quy tắc áp dụng cho tất cả,</b> ví dụ đăng ký sớm hoặc đi theo nhóm. Quan hệ hỏng không phải vì con số thấp hơn, mà hỏng vì con số đó chỉ dành cho người biết mặc cả.</p>
+
+<p>Cách kiểm rất gọn: nếu bạn dám công bố mức giảm đó lên trang công khai cho mọi khách cũ cùng đọc thì nó lành, còn nếu bạn mong khách cũ đừng biết thì nó đang đục một lỗ trong uy tín của bạn.</p>
+
+<h2>Chuẩn bị trước để không phải quyết trong lúc bí</h2>
+
+<p>Gần như mọi lần giảm giá sai đều xảy ra trong một tình huống giống nhau: khách hỏi bất ngờ, bạn chưa nghĩ trước, và bạn phải trả lời trong vòng năm giây.</p>
+
+<p>Nên việc cần làm không nằm ở buổi tư vấn, nó nằm ở trước đó. Viết sẵn bảng giá kèm ba phương án phạm vi khác nhau, và viết sẵn câu trả lời cho đề nghị giảm. Có sẵn thì bạn không phải nghĩ, bạn chỉ việc đọc ra thứ mình đã quyết lúc đầu óc tỉnh táo.</p>
+
+<p>Duy khuyên thêm một việc nhỏ mà nhiều người bỏ qua: nói cho đội ngũ bán hàng biết chính xác họ được linh động tới đâu. Không nói rõ thì mỗi người sẽ tự đoán một mức, và trong vài tháng công ty bạn sẽ có năm bảng giá khác nhau mà không ai chủ ý làm ra chúng.</p>
 
 <h2>Câu Duy dùng khi khách hỏi giảm</h2>
-<p>Tôi không có mức khác cho người này người kia, vì như vậy không công bằng với người đã trả đủ. Nhưng Duy làm được hai việc: thu phạm vi lại cho vừa ngân sách, hoặc chia lịch thanh toán. Anh chị muốn xem hướng nào.</p>
-<p>Câu này giữ được ba điều cùng lúc: giá, sự tôn trọng với khách cũ, và cửa để đi tiếp.</p>
+
+<p>Tôi không có mức khác cho người này người kia, vì như vậy không công bằng với người đã trả đủ. Nhưng Duy làm được hai việc, là thu phạm vi lại cho vừa ngân sách, hoặc chia lịch thanh toán, anh chị muốn xem hướng nào.</p>
+
+<p>Câu này giữ được ba điều cùng lúc: giá, sự tôn trọng với khách cũ, và cửa để đi tiếp. Nó cũng nói cho người đối diện biết một điều về bạn mà không cần khoe, rằng bạn có nguyên tắc và bạn giữ nguyên tắc ngay cả lúc có tiền trước mặt.</p>
+
+<p>Duy để ý thấy khách nghe câu này thường không hỏi lại lần hai. Có người còn chọn phương án đầy đủ, vì thứ họ vừa thấy không phải là một con số, mà là cách bạn sẽ cư xử suốt quãng làm việc sắp tới.</p>
 """),
 
 dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ngũ",
