@@ -177,6 +177,36 @@ INDEX = """
     <b>3 việc Duy không làm</b>
     <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p>
   </div>
+  <div class="pp-pills hien">
+    <a class="pp-pill" href="phuong-phap.html#pp-1">Bốn nguyên tắc</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-2">Tam giác vàng</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-3">Công thức tin cậy</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-4">Ba Điểm Chạm</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-5">REFLECT</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-6">Ba lăng kính</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-7">Bốn cấp độ</a>
+    <a class="pp-pill" href="phuong-phap.html#pp-8">Năm tầng</a>
+  </div>
+</section>
+
+<section class="phan bd hoa-van duoi" id="bang-chung">
+  <div class="phan-dau hien">
+    <p class="mono">Chuyện có thật, số có nguồn</p>
+    <h2>Khách chọn người hiểu mình, không chọn người rẻ nhất</h2>
+  </div>
+  <div class="hien" style="max-width:74ch;margin-inline:auto">
+    <div class="ch-quote">
+      <p>Anh chọn em không phải vì em rẻ nhất. Anh chọn em vì em là người duy nhất hỏi anh về gia đình, về cuộc sống của anh.</p>
+      <span>Lời khách nói với anh Chiến, học viên bất động sản · giao dịch 10,6 tỷ, không giảm giá</span>
+    </div>
+    <div class="ch-so">
+      <div><b>10,6 tỷ</b><span>Bất động sản · đối thủ giảm 300 triệu vẫn không được chọn</span></div>
+      <div><b>2,3 tỷ / 30 ngày</b><span>Nội thất · quay lại sau nghỉ sinh</span></div>
+      <div><b>~700 triệu / 30 ngày</b><span>Nha khoa · chuyển đổi cả đội ngũ</span></div>
+    </div>
+    <p style="font-size:14px;color:var(--ink-3)">Đây là những kết quả nổi bật, không phải kết quả điển hình. Trang câu chuyện nói rõ giới hạn của từng chuyện.</p>
+    <p style="margin-top:18px"><a class="nut nut-vien" href="cau-chuyen-hoc-vien.html">Đọc các câu chuyện học viên <span class="mt" aria-hidden="true">&rarr;</span></a></p>
+  </div>
 </section>
 <section class="phan bd hoa-van" id="cong-dong">
   <div class="phan-dau hien">
@@ -218,6 +248,16 @@ INDEX = """
     <div class="ds-bai">{BAI_NHO}</div>
   </div>
   <div class="blog-them"><a class="nut nut-vien" href="blog.html">Xem tất cả bài viết <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+</section>
+
+<section class="phan bd">
+  <div class="cu-banner hien">
+    <div>
+      <b>Tự chấm buổi tư vấn gần nhất của bạn, trong ba phút</b>
+      <p>Mười hai câu theo phương pháp Ba Điểm Chạm, chạy ngay trên trang. Không cần để lại thông tin gì, kết quả chỉ mình bạn thấy.</p>
+    </div>
+    <a class="nut nut-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở bảng tự kiểm <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div>
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo nội bộ.
@@ -520,7 +560,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 
   <div class="pp-bo">
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-1">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 01</span></div>
         <h3 class="pp-ten">Bốn nguyên tắc bất biến</h3>
@@ -537,7 +577,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-2">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 02</span></div>
         <h3 class="pp-ten">Tam giác vàng</h3>
@@ -558,7 +598,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-3">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 03</span></div>
         <h3 class="pp-ten">Công thức tin cậy</h3>
@@ -588,7 +628,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-4">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 04</span></div>
         <h3 class="pp-ten">Ba Điểm Chạm</h3>
@@ -607,7 +647,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-5">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 05</span></div>
         <h3 class="pp-ten">REFLECT, khi gặp từ chối</h3>
@@ -633,7 +673,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-6">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 06</span></div>
         <h3 class="pp-ten">Hai tầng ba lăng kính</h3>
@@ -655,7 +695,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-7">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 07</span></div>
         <h3 class="pp-ten">Bốn cấp độ trưởng thành</h3>
@@ -675,7 +715,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
-    <article class="pp hien">
+    <article class="pp hien" id="pp-8">
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 08</span></div>
         <h3 class="pp-ten">Năm tầng của một doanh nghiệp tự chạy</h3>
