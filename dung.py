@@ -499,7 +499,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
         <div class="nt4">
           <div><b>01</b><span>Không thuyết phục. Dẫn để người ta tự nhìn ra.</span></div>
           <div><b>02</b><span>Đo bằng chất lượng quyết định của khách, không bằng doanh số.</span></div>
-          <div><b>03</b><span>Tin cậy là thứ người ta trao cho bạn, không phải thứ bạn tự nhận.</span></div>
+          <div><b>03</b><span>Tin cậy do người ta trao cho bạn, không phải do bạn tự nhận.</span></div>
           <div><b>04</b><span>Không hợp thì nói thẳng. Dám nói không là cách xây tin cậy nhanh nhất.</span></div>
         </div>
       </div>
@@ -626,8 +626,8 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 07</span></div>
         <h3 class="pp-ten">Bốn cấp độ trưởng thành</h3>
-        <p class="pp-mo">Cùng một sản phẩm, bốn người ở bốn cấp độ khác nhau sẽ nghe ra bốn thứ khác nhau. Hai cấp dưới quan tâm tới nỗi đau, tức là làm sao thôi mất và thôi sai. Hai cấp trên quan tâm tới thành công, tức là làm sao đi nhanh hơn và xa hơn. Nói ngôn ngữ của cấp này cho người ở cấp kia là cách hỏng buổi nhanh nhất.</p>
-        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi viết nội dung, khi soạn cẩm nang, và khi chọn xem mình sẽ phục vụ tệp nào. Đây không phải khung chia giàu nghèo, nó chia theo thứ người ta đang cần nghe.</p></div>
+        <p class="pp-mo">Cùng một sản phẩm, bốn người ở bốn cấp độ khác nhau sẽ nghe ra bốn điều khác nhau. Hai cấp dưới quan tâm tới nỗi đau, tức là làm sao thôi mất và thôi sai. Hai cấp trên quan tâm tới thành công, tức là làm sao đi nhanh hơn và xa hơn. Nói ngôn ngữ của cấp này cho người ở cấp kia là cách hỏng buổi nhanh nhất.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi viết nội dung, khi soạn cẩm nang, và khi chọn xem mình sẽ phục vụ tệp nào. Đây không phải khung chia giàu nghèo, nó chia theo điều người ta đang cần nghe.</p></div>
       </div>
       <div class="pp-hinh">
         <div>
