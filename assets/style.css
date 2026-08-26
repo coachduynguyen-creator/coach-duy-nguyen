@@ -1662,3 +1662,80 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .pp-nguon b{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:5px}
 .pp-nguon i{font-style:italic;color:var(--ink-2)}
+
+/* ===== Thư viện tài liệu trên trang Sách và tài liệu ===== */
+/* Học từ trang Tool Box của scaleos.vn: khung phương pháp trở thành cách sắp
+   xếp tài liệu. Khác chỗ này: lọc tại chỗ không tải lại trang, và bìa vẽ bằng
+   chữ theo bảng màu thương hiệu thay vì ảnh dựng sẵn. */
+.tl-loc{display:flex;gap:9px;flex-wrap:wrap;margin-top:34px}
+.tl-nut{padding:9px 16px;font-family:var(--f-mono);font-size:11.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:transparent;
+  border:1px solid var(--line);border-radius:999px;cursor:pointer;
+  transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}
+.tl-nut:hover{color:var(--vang);border-color:var(--vang)}
+.tl-nut.chon{color:var(--bg);background:var(--vang);border-color:var(--vang)}
+.tl-luoi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:26px}
+.tl{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--bg-2);overflow:hidden}
+.tl-bia{position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  gap:14px;min-height:118px;padding:16px 18px;border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(120% 140% at 85% -20%,rgba(242,177,74,.16),transparent 55%),
+    rgba(249,245,240,.02)}
+.tl-bia i{font-style:normal;font-family:var(--f-mono);font-size:10px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.tl-bia b{font-family:var(--f-tit);font-weight:800;font-size:20px;line-height:1.12;
+  color:var(--vang);max-width:16ch}
+.tl-than{display:flex;flex-direction:column;flex:1;gap:9px;padding:18px}
+.tl-than h3{font-family:var(--f-tit);font-weight:700;font-size:17.5px;line-height:1.28}
+.tl-mo{font-size:13.5px;line-height:1.6;color:var(--ink-2);flex:1}
+.tl-duoi{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-top:6px;flex-wrap:wrap}
+.tl-tt{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);padding:5px 10px;border:1px solid var(--line);
+  border-radius:999px;white-space:nowrap}
+.tl-tt.mo{color:var(--vang);border-color:rgba(242,177,74,.5);background:var(--vang-mo)}
+@media(max-width:900px){.tl-luoi{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:560px){.tl-luoi{grid-template-columns:1fr}}
+
+/* ===== Bảng mười điểm: người bán hàng và người cố vấn ===== */
+/* Học cách trình bày hai cột đối chiếu từ trang chủ scaleos.vn. Chất liệu là
+   bảng 10 điểm trong Brand Voice, tài sản có sẵn mà chưa từng lên trang. */
+.ss10{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:36px;
+  background:var(--bg-2)}
+.ss10-dau{display:grid;grid-template-columns:1fr 1fr}
+.ss10-dau span{padding:15px 20px;font-family:var(--f-mono);font-size:11px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.ss10-dau span+span{color:var(--vang);border-left:1px solid var(--line)}
+.ss10 .h{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.ss10 .h span{padding:13px 20px;font-size:14.5px;line-height:1.58;color:var(--ink-3)}
+.ss10 .h span+span{color:var(--ink);border-left:1px solid var(--line);position:relative;
+  padding-left:34px}
+.ss10 .h span+span::before{content:"";position:absolute;left:18px;top:21px;width:6px;
+  height:6px;border-radius:50%;background:var(--vang)}
+@media(max-width:560px){
+  .ss10-dau span{padding:11px 13px;font-size:9.5px}
+  .ss10 .h span{padding:10px 13px;font-size:12.5px}
+  .ss10 .h span+span{padding-left:26px}
+  .ss10 .h span+span::before{left:12px;top:17px}
+}
+
+/* ===== Trang công cụ tự kiểm ===== */
+.tk-nhom{margin-top:38px}
+.tk-nhom h2{font-size:clamp(19px,2vw,24px)}
+.tk-nhom .mono{margin-bottom:4px}
+.tk-cau{display:flex;gap:13px;align-items:flex-start;padding:14px 16px;margin-top:10px;
+  border:1px solid var(--line);border-radius:var(--r-s);cursor:pointer;
+  transition:border-color .25s var(--ease),background .25s var(--ease)}
+.tk-cau input{margin-top:3px;width:16px;height:16px;accent-color:var(--vang);flex:none;
+  cursor:pointer}
+.tk-cau span{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.tk-cau:has(input:checked){border-color:var(--vang);background:var(--vang-mo)}
+.tk-cau:has(input:checked) span{color:var(--ink)}
+#tk-kq{margin-top:30px;padding:22px 24px;border:1px solid var(--vang);
+  border-radius:var(--r);background:var(--vang-mo)}
+#tk-kq .diem{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--vang);margin-bottom:12px}
+#tk-kq h3{font-family:var(--f-tit);font-size:20px;margin-bottom:8px}
+#tk-kq p{font-size:15px;line-height:1.65;color:var(--ink-2)}
+#tk-kq p+p{margin-top:8px}

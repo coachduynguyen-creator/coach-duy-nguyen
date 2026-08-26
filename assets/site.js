@@ -315,3 +315,60 @@
   }
   ve();
 })();
+
+/* Lọc kho tài liệu trên trang Sách và tài liệu. Lọc tại chỗ, không tải lại
+   trang. Học ý tưởng từ Tool Box của scaleos.vn nhưng bỏ kiểu mỗi mục lọc là
+   một đường dẫn riêng. */
+(function () {
+  var loc = document.getElementById('tl-loc');
+  if (!loc) return;
+  var the = [].slice.call(document.querySelectorAll('.tl[data-loai]'));
+  loc.addEventListener('click', function (ev) {
+    var nut = ev.target.closest('.tl-nut');
+    if (!nut) return;
+    [].slice.call(loc.querySelectorAll('.tl-nut')).forEach(function (b) {
+      b.classList.toggle('chon', b === nut);
+    });
+    var chon = nut.dataset.loc;
+    the.forEach(function (t) {
+      t.style.display = (chon === 'all' || t.dataset.loai === chon) ? '' : 'none';
+    });
+  });
+})();
+
+/* Bảng tự kiểm Ba Điểm Chạm: cộng điểm từng chạm, chỉ ra chạm yếu nhất.
+   Chấm buổi tư vấn, không chấm con người. Mọi thứ chạy tại trình duyệt,
+   không gửi câu trả lời đi đâu. */
+(function () {
+  var nut = document.getElementById('tk-xem');
+  if (!nut) return;
+  var TEN = {1: 'Chạm Động Lực', 2: 'Chạm Điểm Nghẽn', 3: 'Chạm Con Đường'};
+  var SUA = {
+    1: 'Khách chưa rõ điều mình thật sự muốn, nên mọi giải pháp lúc này đều nghe hay mà chưa cần thiết. Buổi sau lùi lại hỏi về mong muốn thật, trước khi bàn bất cứ giải pháp nào.',
+    2: 'Khách chưa thấy thứ đang giữ họ đứng yên, nên chưa thấy gấp. Quay lại phần cái giá của việc để nguyên hiện trạng, và để chính khách gọi tên chỗ kẹt.',
+    3: 'Khách thấy vấn đề nhưng chưa thấy con đường của mình trong giải pháp. Đặt giải pháp vào bối cảnh riêng của họ, bớt phần trình bày chung.'
+  };
+  nut.addEventListener('click', function () {
+    var diem = {1: 0, 2: 0, 3: 0};
+    [].slice.call(document.querySelectorAll('.tk-cau input:checked')).forEach(function (o) {
+      diem[+o.dataset.cham]++;
+    });
+    var kq = document.getElementById('tk-kq');
+    var thap = Math.min(diem[1], diem[2], diem[3]);
+    var yeu = [1, 2, 3].filter(function (n) { return diem[n] === thap; });
+    var dong = 'Động Lực ' + diem[1] + '/4 &middot; Điểm Nghẽn ' + diem[2] + '/4 &middot; Con Đường ' + diem[3] + '/4';
+    var than;
+    if (thap >= 3) {
+      than = '<h3>Buổi này đi khá đủ cả ba chạm</h3><p>Không có chạm nào hụt rõ. Nếu khách vẫn chưa quyết, chỗ đáng xem tiếp thường không nằm trong buổi mà nằm ở người cùng quyết chưa có mặt.</p>';
+    } else if (yeu.length === 3) {
+      than = '<h3>Cả ba chạm đều còn mỏng</h3><p>Buổi này nhiều khả năng là một buổi trình bày chứ chưa phải một buổi dẫn quyết định. Đừng sửa cả ba cùng lúc, bắt đầu từ Chạm Động Lực vì hai chạm sau đứng trên nó.</p>';
+    } else {
+      than = yeu.map(function (n) {
+        return '<h3>Thiếu ' + TEN[n] + '</h3><p>' + SUA[n] + '</p>';
+      }).join('');
+    }
+    kq.innerHTML = '<p class="diem">' + dong + '</p>' + than;
+    kq.hidden = false;
+    kq.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  });
+})();

@@ -682,6 +682,27 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
+    <p class="mono">Một bảng để tự soi</p>
+    <h2>Người bán hàng và người cố vấn, mười điểm khác nhau</h2>
+    <p>Không cột nào xấu, chúng chỉ dành cho hai loại giao dịch khác nhau. Bán giá trị cao mà đứng nhầm cột thì mọi kỹ thuật phía sau đều chống lại mình. Đọc từng dòng và tự chấm xem buổi gần nhất bạn đứng bên nào.</p>
+  </div>
+  <div class="ss10 hien">
+    <div class="ss10-dau"><span>Người bán hàng</span><span>Cố vấn tin cậy</span></div>
+    <div class="h"><span>Mục đích là chốt được giao dịch</span><span>Mục đích là giúp khách nghĩ rõ</span></div>
+    <div class="h"><span>Nghe để tìm chỗ gắn sản phẩm vào</span><span>Nghe để hiểu, không tìm kẽ hở</span></div>
+    <div class="h"><span>Hỏi để dẫn khách về sản phẩm</span><span>Hỏi để dẫn khách về chính họ</span></div>
+    <div class="h"><span>Không hợp thì tìm cách xoay chuyển</span><span>Không hợp thì nói thẳng là chưa hợp</span></div>
+    <div class="h"><span>Trình bày như một bài thuyết trình</span><span>Trò chuyện như một cuộc đối thoại</span></div>
+    <div class="h"><span>Xem từ chối là rào cản cần vượt</span><span>Xem từ chối là tín hiệu cần nghe</span></div>
+    <div class="h"><span>Tạo cấp bách để chốt cho nhanh</span><span>Tôn trọng nhịp quyết định của khách</span></div>
+    <div class="h"><span>Đo mình bằng doanh số</span><span>Đo mình bằng chất lượng quyết định của khách</span></div>
+    <div class="h"><span>Giá trị nằm ở thành tích cá nhân</span><span>Giá trị nằm ở sự thay đổi của khách</span></div>
+    <div class="h"><span>Kết thúc khi giao dịch xong</span><span>Xem giao dịch là một điểm trên hành trình dài</span></div>
+  </div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
     <p class="mono">Cách làm việc</p>
     <h2>Năm điều bạn nhận được khi chúng ta đi cùng nhau</h2>
     <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
@@ -1269,13 +1290,74 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai):
   <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
 </div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
 
-SACH = dau_trang("Sách và tài liệu", "Sách Duy đang viết",
-  "Chưa có cuốn nào đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
+# Thư viện công cụ và tài liệu. Học từ trang Tool Box của scaleos.vn: mỗi tài
+# liệu gắn với một phương pháp, và tên phương pháp thành cách sắp xếp cả kho.
+# Phần lớn công cụ đang ở trạng thái sắp ra mắt theo lời CDN ngày 26/08/2026:
+# "tạo các công cụ demo để đưa vào cho đỡ trống cũng được". Trạng thái ghi thật
+# trên thẻ, không có nút tải giả.
+TAI_LIEU = [
+ dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm sau buổi tư vấn",
+  mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
+  tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html"),
+ dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
+  mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
+  tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
+ dict(loai="congcu", pp="Hai tầng ba lăng kính", ten="Phiếu sàng khách trước buổi hẹn",
+  mo="Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu, một bước nhỏ, hay một lời hẹn lại.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Công thức tin cậy", ten="Bảng tự đo bốn yếu tố tin cậy",
+  mo="Tự chấm lời nói, hành động, kết nối và mức đang nghĩ về mình sau một quan hệ khách cụ thể, để thấy chỗ đang rò.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Bốn cấp độ trưởng thành", ten="Bảng chọn ngôn ngữ theo cấp độ khách",
+  mo="Xếp khách vào đúng cấp độ rồi tra xem họ đang cần nghe điều gì, và lỗi ngôn ngữ nào hay làm hỏng buổi với cấp đó.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Tam giác vàng", ten="Bảng soát ba đỉnh trước buổi gặp quan trọng",
+  mo="Soát nhanh phong thái, sự chân thành và dấu hiệu chuyên môn trước một buổi gặp đáng tiền, vì thiếu một đỉnh là hai đỉnh kia không cứu được.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Năm tầng doanh nghiệp", ten="Phiếu rà năm tầng doanh nghiệp",
+  mo="Đi một vòng năm tầng từ văn hoá tới chiến lược để tìm tầng đang yếu nhất, trước khi đổ thêm công vào tầng bên trên nó.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+]
+_LOAI = {"congcu": "Công cụ tự kiểm", "ebook": "Ebook"}
+THU_VIEN = """
+<section class="phan bd hoa-van duoi" id="thu-vien">
+  <div class="phan-dau hien">
+    <p class="mono">Kho công cụ và tài liệu</p>
+    <h2>Mỗi tài liệu gắn với một phương pháp</h2>
+    <p>Các công cụ dưới đây rút từ đúng những khung trên <a class="lk-v" href="phuong-phap.html">trang Phương pháp</a>. Cái nào dùng được ngay thì ghi rõ, cái nào đang làm thì ghi đang làm, không có nút tải giả.</p>
+  </div>
+  <div class="tl-loc hien" id="tl-loc">
+    <button class="tl-nut chon" type="button" data-loc="all">Tất cả</button>
+    <button class="tl-nut" type="button" data-loc="congcu">Công cụ tự kiểm</button>
+    <button class="tl-nut" type="button" data-loc="ebook">Ebook</button>
+  </div>
+  <div class="tl-luoi hien">%s</div>
+</section>
+""" % "".join(
+ ('<article class="tl" data-loai="%s">'
+  '<div class="tl-bia" aria-hidden="true"><i>%s</i><b>%s</b></div>'
+  '<div class="tl-than"><h3>%s</h3>'
+  '<p class="tl-mo">%s</p>'
+  '<div class="tl-duoi"><span class="tl-tt%s">%s</span>'
+  '<a class="lk-v" href="%s">%s <span class="mt" aria-hidden="true">&rarr;</span></a></div>'
+  '</div></article>')
+ % (t["loai"], _LOAI[t["loai"]], t["pp"], t["ten"], t["mo"],
+    " mo" if t["tt_mo"] else "", t["tt"], t["href"], t["nut"])
+ for t in TAI_LIEU)
+
+SACH = dau_trang("Sách và tài liệu", "Sách đang viết, công cụ dùng được ngay",
+  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Cái nào ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>
 </section>
-
+""" % (
+ bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
+     "Gom lại cách bán dựa trên vị thế và niềm tin Duy đã dạy suốt sáu năm. Viết cho người chủ chứ không cho người bán: làm sao để khách tìm tới vì tin bạn, và làm sao để cách bán đó không chỉ nằm trong đầu bạn.",
+     "Đang viết · dự kiến quý 4 năm 2026"),
+ bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
+     "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
+     "Đang biên soạn")) + THU_VIEN + """
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
@@ -1287,17 +1369,57 @@ SACH = dau_trang("Sách và tài liệu", "Sách Duy đang viết",
     <div class="blog hien">%s<div class="ds-bai">%s</div></div>
   </div>
 </section>
-""" % (
- bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
-     "Gom lại cách bán dựa trên vị thế và niềm tin Duy đã dạy suốt sáu năm. Viết cho người chủ chứ không cho người bán: làm sao để khách tìm tới vì tin bạn, và làm sao để cách bán đó không chỉ nằm trong đầu bạn.",
-     "Đang viết · dự kiến quý 4 năm 2026"),
- bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
-     "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
-     "Đang biên soạn"),
- the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
+""" % (the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
 
-trang("sach.html", "Sách của Coach Duy Nguyễn · Bán Bằng Vị Thế",
-      "Sách Bán Bằng Vị Thế đang viết, dự kiến quý 4 năm 2026, và Bộ Sách Thực Chiến Bất Động Sản đang biên soạn.",
+# ------------------------------------------------- CÔNG CỤ TỰ KIỂM
+# Công cụ đầu tiên trong kho tài liệu, dùng ngay trên trang. Nội dung chỉ lấy
+# từ phần đã công khai của Ba Điểm Chạm (bài blog và trang phương pháp), không
+# đụng vào bộ câu hỏi trong tài liệu chương trình.
+TK_CAU = {
+ 1: ("Phần 1 · Chạm Động Lực", "Khách đã rõ điều họ thật sự muốn chưa?", [
+     "Khách tự nói ra được điều họ muốn bằng lời của chính họ, không phải bằng chữ của tôi.",
+     "Lý do khách tìm hiểu là cụ thể, không phải xã giao kiểu xem thử cho biết.",
+     "Khách nối được quyết định này với một việc lớn hơn họ đang muốn thay đổi.",
+     "Trong buổi, khách không bị phân tâm bởi chuyện ngoài lề."]),
+ 2: ("Phần 2 · Chạm Điểm Nghẽn", "Khách đã thấy thứ đang giữ họ đứng yên chưa?", [
+     "Khách gọi tên được thứ đang giữ họ đứng yên, không phải tôi gọi thay.",
+     "Buổi có nói tới cái giá của việc không làm gì trong sáu tháng tới.",
+     "Khi nhắc chuyện cũ chưa thành, khách nói được vì sao cách cũ chưa xong.",
+     "Có một khoảnh khắc khách nói đúng rồi, đây là chỗ mình kẹt, hoặc một câu tương đương."]),
+ 3: ("Phần 3 · Chạm Con Đường", "Khách đã thấy con đường của mình chưa?", [
+     "Khách hỏi nên đi phương án nào, thay vì chỉ hỏi giá.",
+     "Giải pháp được đặt trong bối cảnh riêng của khách, không phải bài trình bày chung.",
+     "Cuối buổi tôi không phải thuyết phục, khách tự thấy hướng đi hợp với họ.",
+     "Buổi kết thúc bằng một bước tiếp theo cụ thể, có thời hạn."]),
+}
+_tk_nhom = "".join(
+ '<div class="tk-nhom hien"><p class="mono">%s</p><h2>%s</h2>%s</div>' % (
+  ten, hoi, "".join('<label class="tk-cau"><input type="checkbox" data-cham="%d"><span>%s</span></label>'
+                    % (n, c) for c in cau))
+ for n, (ten, hoi, cau) in sorted(TK_CAU.items()))
+CONG_CU = dau_trang("Công cụ tự kiểm", "Bảng tự kiểm sau buổi tư vấn",
+  "Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.") + """
+<section class="phan bd hoa-van">
+  <div class="ghi-mau hien"><b>Trước khi chấm</b><p>Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p></div>
+""" + _tk_nhom + """
+  <div class="hien" style="margin-top:30px">
+    <button class="nut nut-v" id="tk-xem" type="button">Xem kết quả <span class="mt" aria-hidden="true">&rarr;</span></button>
+  </div>
+  <div id="tk-kq" hidden></div>
+  <div class="hien" style="margin-top:34px">
+    <p style="font-size:14.5px;color:var(--ink-3)">Công cụ dựa trên nguyên tắc đọc ngược của phương pháp Ba Điểm Chạm.
+    <a class="lk-v" href="../bai-viet/ba-diem-cham-va-thu-tu-khong-doi-duoc.html">Đọc bài đầy đủ</a> ·
+    <a class="lk-v" href="../phuong-phap.html">Xem các phương pháp khác</a></p>
+  </div>
+</section>
+"""
+trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm sau buổi tư vấn · Coach Duy Nguyễn",
+      "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
+      CONG_CU, "sach.html")
+print("  cong-cu/tu-kiem-ba-diem-cham.html")
+
+trang("sach.html", "Sách và tài liệu của Coach Duy Nguyễn",
+      "Hai cuốn sách đang viết, ebook kịch bản REFLECT, và kho công cụ tự kiểm gắn với từng phương pháp của Coach Duy Nguyễn.",
       SACH, "sach.html")
 print("  sach.html")
 
