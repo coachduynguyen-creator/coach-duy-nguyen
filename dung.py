@@ -521,7 +521,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="hv hien">%s</div>
 </section>
 
-<section class="phan bd hoa-van duoi">
+<section class="phan bd phan-sang" id="tam-nhin">
   <div class="phan-dau hien">
     <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
     <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
@@ -638,7 +638,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   <div class="hien" style="margin-top:40px">{BANG_NL}</div>
 </section>
 
-<section class="phan bd hoa-van duoi" id="phuong-phap-loi">
+<section class="phan bd phan-sang" id="phuong-phap-loi">
   <div class="phan-dau hien">
     <p class="mono">Phương pháp Duy dùng</p>
     <h2>Mỗi phương pháp có một hình dạng riêng</h2>
@@ -1116,7 +1116,7 @@ BLOG = dau_trang("Blog", "Chỗ nhà sáng lập hay vấp nhất, và cách g�
   </div>
 </section>
 
-<section class="phan bd hoa-van duoi" style="padding-top:0">
+<section class="phan bd phan-sang">
   <div class="phan-dau hien"><p class="mono">Tất cả %d bài</p><h2>Đọc theo chỗ bạn đang vướng</h2></div>
   <div class="chu-de hien">%s</div>
   <div class="luoi-bai tre hien">%s</div>
@@ -1486,7 +1486,7 @@ TAI_LIEU = [
 ]
 _LOAI = {"congcu": "Công cụ tự kiểm", "ebook": "Ebook"}
 THU_VIEN = """
-<section class="phan bd hoa-van duoi" id="thu-vien">
+<section class="phan bd phan-sang" id="thu-vien">
   <div class="phan-dau hien">
     <p class="mono">Kho công cụ và tài liệu</p>
     <h2>Mỗi tài liệu gắn với một phương pháp</h2>
@@ -1566,7 +1566,7 @@ _tk_nhom = "".join(
  for n, (ten, hoi, cau) in sorted(TK_CAU.items()))
 CONG_CU = dau_trang("Công cụ tự kiểm", "Bảng tự kiểm sau buổi tư vấn",
   "Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.") + """
-<section class="phan bd hoa-van">
+<section class="phan bd phan-sang">
   <div class="ghi-mau hien"><b>Trước khi chấm</b><p>Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p></div>
 """ + _tk_nhom + """
   <div class="hien" style="margin-top:30px">
@@ -1628,7 +1628,7 @@ CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Người thật, số thậ
   </div>
 </section>
 
-<section class="phan bd hoa-van duoi">
+<section class="phan bd phan-sang" id="bon-nganh">
   <div class="phan-dau hien">
     <p class="mono">Bốn ngành khác</p>
     <h2>Cùng một cách đổi, mỗi người một ngành</h2>

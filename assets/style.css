@@ -1991,3 +1991,16 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .phan-vang .phan-dau p .nhan{color:var(--on-vang);font-weight:700}
 .phan-vang .ht-mui{color:var(--on-vang);opacity:.55}
 .phan-vang .ht{box-shadow:0 3px 8px rgba(23,18,15,.18),0 26px 44px -22px rgba(23,18,15,.5)}
+
+/* Các thẻ nền tối cố định nằm trong dải giấy: ghim lại token của nền tối,
+   nếu không chữ trong thẻ ăn token sẫm của dải giấy và chìm vào nền thẻ.
+   Lỗi này máy quét tương phản bắt được trên trang blog ngày 27/08. */
+.phan-sang :is(.the-bai,.bai-lon,.bia3d,.ds-bai a){
+  color:var(--ink); /* đặt lại tại thẻ để con cháu kế thừa màu sáng, không lấy màu sẫm đã tính từ dải giấy */
+  --ink:#F9F5F0;--ink-2:#CDC2B6;--ink-3:#A2968A;--ink-4:#7E7062;
+  --vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E;
+  --vang-mo:rgba(242,177,74,.13);--line:#3D332C;--line-2:#514539;
+}
+.phan-sang .bia3d{background-color:#201812}
+/* nút lọc chủ đề đang chọn: nền hổ phách thì chữ phải kem, không dùng nâu đen */
+.phan-sang .chu-de button.on{color:#FBF6EB}
