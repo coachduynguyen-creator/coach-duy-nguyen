@@ -642,6 +642,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* mục lục */
 .muc-luc{margin:0 0 34px;padding:22px 26px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel)}
 .muc-luc b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.muc-luc summary{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px}
+.muc-luc summary::-webkit-details-marker{display:none}
+.muc-luc summary::after{content:"";width:7px;height:7px;border-right:1.5px solid var(--vang);border-bottom:1.5px solid var(--vang);transform:rotate(45deg);transition:transform .25s var(--ease)}
+.muc-luc[open] summary::after{transform:rotate(-135deg)}
+.muc-luc[open] summary{margin-bottom:12px}
 .muc-luc ol{margin:0;padding-left:20px}
 .muc-luc li{font-size:16px;margin-top:8px;color:var(--ink-2)}
 .muc-luc a{color:var(--ink-2);text-decoration:none}
@@ -1739,3 +1744,25 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 #tk-kq h3{font-family:var(--f-tit);font-size:20px;margin-bottom:8px}
 #tk-kq p{font-size:15px;line-height:1.65;color:var(--ink-2)}
 #tk-kq p+p{margin-top:8px}
+
+/* ===== Mục lục dính bên trái của bài viết ===== */
+/* Màn hẹp dùng hộp gấp .muc-luc đầu bài, màn rộng giấu hộp đó đi và hiện cột
+   này ở phần lề trái còn trống cạnh tờ giấy .doc. Mục đang đọc được site.js
+   đánh dấu bằng vạch vàng. */
+.ml-ben{display:none}
+.doc h2[id]{scroll-margin-top:92px}
+@media(min-width:1240px){
+  .muc-luc{display:none}
+  .bai-than{position:relative}
+  .ml-ben{display:block;position:absolute;left:0;top:8px;bottom:0;width:150px}
+  .ml-hop{position:sticky;top:96px}
+  .ml-hop b{display:block;font-family:var(--f-mono);font-size:10.5px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+  .ml-hop ol{list-style:none;margin:0;padding:0}
+  .ml-hop li{margin:0}
+  .ml-hop a{display:block;padding:6px 0 6px 11px;border-left:2px solid var(--line);
+    font-size:12.5px;line-height:1.45;color:var(--ink-3);text-decoration:none;
+    transition:color .25s var(--ease),border-color .25s var(--ease)}
+  .ml-hop a:hover{color:var(--ink)}
+  .ml-hop a.dang{color:var(--vang);border-left-color:var(--vang)}
+}

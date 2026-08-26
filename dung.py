@@ -977,12 +977,19 @@ def khoi_faq(faq):
     return '<div class="hoi-dap hien"><b>Câu hỏi thường gặp</b>%s</div>' % muc
 
 def muc_luc(than):
+    # Hai dạng từ cùng một danh sách mục: hộp gấp nằm đầu bài cho màn hẹp, và
+    # cột dính bên trái cho màn rộng, có đánh dấu đang đọc tới đâu (site.js).
+    # Học từ sidebar blog của scaleos.vn, nhưng làm mục lục theo bài thay vì
+    # danh sách bài nổi bật, vì bài ở đây dài 1500 chữ với 6 tới 9 mục.
     tieu = re.findall(r'<h2>(.*?)</h2>', than)
     if len(tieu) < 3: return "", than
     for i, t in enumerate(tieu):
         than = than.replace('<h2>%s</h2>' % t, '<h2 id="m%d">%s</h2>' % (i+1, t), 1)
     li = "".join('<li><a href="#m%d">%s</a></li>' % (i+1, t) for i, t in enumerate(tieu))
-    return '<div class="muc-luc"><b>Trong bài này</b><ol>%s</ol></div>' % li, than
+    gap = '<details class="muc-luc"><summary>Trong bài này</summary><ol>%s</ol></details>' % li
+    ben = ('<aside class="ml-ben" aria-label="Mục lục bài viết">'
+           '<div class="ml-hop"><b>Trong bài này</b><ol>%s</ol></div></aside>') % li
+    return gap + ben, than
 
 HOP_TAC_GIA = """<div class="tac-gia hien">
   <div class="anh-tg"><img src="../img/cd-avatar.webp" alt="Coach Duy Nguyễn" loading="lazy" width="256" height="256"></div>

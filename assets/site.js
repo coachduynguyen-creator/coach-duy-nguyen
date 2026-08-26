@@ -372,3 +372,23 @@
     kq.scrollIntoView({behavior: 'smooth', block: 'nearest'});
   });
 })();
+
+/* Mục lục bên của bài viết: đánh dấu mục đang đọc tới. */
+(function () {
+  var ben = document.querySelector('.ml-ben');
+  if (!ben) return;
+  var muc = [].slice.call(document.querySelectorAll('.doc h2[id]'));
+  if (!muc.length) return;
+  function to(id) {
+    [].slice.call(ben.querySelectorAll('a')).forEach(function (a) {
+      a.classList.toggle('dang', a.getAttribute('href') === '#' + id);
+    });
+  }
+  var thay = new IntersectionObserver(function () {
+    // mục đang đọc là tiêu đề cuối cùng đã đi qua mép trên màn hình
+    var qua = muc.filter(function (h) { return h.getBoundingClientRect().top < 120; });
+    to((qua.length ? qua[qua.length - 1] : muc[0]).id);
+  }, {rootMargin: '-110px 0px -60% 0px', threshold: [0, 1]});
+  muc.forEach(function (h) { thay.observe(h); });
+  to(muc[0].id);
+})();
