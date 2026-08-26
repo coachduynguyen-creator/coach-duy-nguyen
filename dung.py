@@ -1425,6 +1425,84 @@ trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm sau buổi tư v�
       CONG_CU, "sach.html")
 print("  cong-cu/tu-kiem-ba-diem-cham.html")
 
+# ------------------------------------------------- CÂU CHUYỆN HỌC VIÊN
+# Nguồn: thư viện case trong vault, con số được Coach Duy xác nhận trực tiếp
+# ngày 28/07/2026 và CDN đồng ý chia sẻ công khai ngày 26/08/2026. Nguyên tắc
+# biên tập lấy nguyên từ tài liệu nguồn: hành vi trước rồi mới tới con số,
+# kết quả nổi bật không kể thành kết quả điển hình, giới hạn nói ngay trên
+# trang. Câu nói của khách anh Thức chưa xác nhận nguyên văn nên kể gián tiếp.
+CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Người thật, số thật, và giới hạn được nói rõ",
+  "Những câu chuyện dưới đây do học viên kể lại và Duy xác nhận trực tiếp, có tài liệu gốc kèm theo. Mỗi chuyện là một trường hợp trong một bối cảnh cụ thể, không phải lời cam kết cho mọi người.") + """
+<section class="phan bd hoa-van">
+  <div class="phan-dau hien">
+    <p class="mono">Câu chuyện chính · Bất động sản</p>
+    <h2>Khách chọn người hỏi về gia đình mình, không chọn người rẻ nhất</h2>
+  </div>
+  <div class="bai-than hien" style="max-width:74ch;margin-inline:auto">
+    <p>Giao dịch 10,6 tỷ. Hai người bán khác sẵn sàng giảm khoảng 300 triệu. Nếu khách chỉ mua bằng giá, kết quả đã được quyết định từ trước khi anh Nguyễn Minh Chiến kịp nói câu nào.</p>
+    <p>Anh Chiến không lao vào sản phẩm, cũng không chạy theo mức giảm. Anh hỏi về gia đình, về đời sống, về bức tranh năm tới mười năm của khách, rồi mới làm rõ tiêu chí quyết định thật của họ.</p>
+    <p>Khoảng mười hai giờ sau, khách báo đặt cọc. Hoa hồng giữ nguyên.</p>
+    <div class="ch-so">
+      <div><b>10,6 tỷ</b><span>Giá trị giao dịch</span></div>
+      <div><b>~300 triệu</b><span>Mức hai đối thủ sẵn sàng giảm</span></div>
+      <div><b>12 giờ</b><span>Từ buổi nói chuyện tới lúc khách báo cọc</span></div>
+    </div>
+    <div class="ch-quote">
+      <p>Anh chọn em không phải vì em rẻ nhất. Anh chọn em vì em là người duy nhất hỏi anh về gia đình, về cuộc sống của anh.</p>
+      <span>Lời người khách, anh Chiến kể lại</span>
+    </div>
+    <div class="dut"><b>Giới hạn của câu chuyện</b><p>Đây là một trường hợp trong bối cảnh cụ thể, không phải cam kết rằng cứ hỏi đúng câu là khách sẽ mua. Thứ đáng mang về là chỗ anh Chiến chọn đứng: người giúp khách quyết, không phải người xin được chọn.</p></div>
+  </div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
+    <p class="mono">Ngoài bất động sản · Đồng hồ cao cấp</p>
+    <h2>Một ngày học, một hành vi đổi, và chiếc đồng hồ hơn 500 triệu</h2>
+  </div>
+  <div class="bai-than hien" style="max-width:74ch;margin-inline:auto">
+    <p>Anh Thức bán đồng hồ cao cấp nhiều năm, phần lớn bằng bản năng. Chốt được hay mất một deal đều khó giải thích vì sao, nên cũng khó dạy lại cho đội ngũ.</p>
+    <p>Sau một ngày thực hành, anh đổi đúng một chỗ: chuyển sự chú ý từ chiếc đồng hồ sang người đối diện, để ý hơn tới câu hỏi mình đặt và khoảng im lặng mình giữ.</p>
+    <p>Ngày hôm sau, anh chốt một chiếc hơn 500 triệu. Người khách nói rằng mình biết nhiều bên bán đồng hồ, nhưng quý và muốn ủng hộ anh.</p>
+    <div class="dut"><b>Giới hạn của câu chuyện</b><p>Giá trị không nằm ở việc một ngày học tạo ra một deal 500 triệu. Nó nằm ở chỗ một người bán giàu kinh nghiệm nhận ra và đổi được một hành vi cụ thể ngay trong cuộc tư vấn kế tiếp.</p></div>
+  </div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
+    <p class="mono">Bốn ngành khác</p>
+    <h2>Cùng một cách đổi, mỗi người một ngành</h2>
+    <p>Bốn kết quả dưới đây do học viên báo lại và Duy xác nhận, có tài liệu gốc. Con số chỉ có nghĩa khi đọc kèm hành vi đã đổi.</p>
+  </div>
+  <div class="ch-luoi tre hien">
+    <article class="ch-the"><i>Trang Minh Thuận · Ngành đệm</i><b>~200 triệu / 1 tuần</b><p>Đổi cách mở đầu: thôi báo giá và khuyến mãi, bắt đầu bằng hỏi và hiểu khách.</p></article>
+    <article class="ch-the"><i>Hồ Thảo · Tài chính</i><b>~40 triệu / 3 ngày</b><p>Thôi nói tính năng sản phẩm, bắt đầu hiểu bài toán tài chính của từng khách.</p></article>
+    <article class="ch-the"><i>Đội ngũ bác sĩ An Văn Sơn · Nha khoa</i><b>~700 triệu / 30 ngày</b><p>Chuyển đổi ở cấp đội ngũ, không chỉ một cá nhân làm giỏi lên.</p></article>
+    <article class="ch-the"><i>Hoa Kenli · Nội thất</i><b>2,3 tỷ / 30 ngày</b><p>Quay lại sau nghỉ sinh, lấy lại vị thế và giữ nhịp làm video đều.</p></article>
+  </div>
+  <div class="ch-quote hien" style="max-width:74ch;margin-inline:auto;margin-top:44px">
+    <p>Họ không mua khóa học. Họ mua phiên bản mới của chính họ.</p>
+    <span>Chị Vân Anh, cố vấn học tập</span>
+  </div>
+</section>
+
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
+    <p class="mono">Cách đọc những con số này</p>
+    <h2>Ba điều Duy giữ khi kể chuyện học viên</h2>
+  </div>
+  <div class="luoi c3 tre hien">
+    <article class="the"><h3>Số có nguồn</h3><p>Con số do học viên báo lại, Duy xác nhận trực tiếp và có tài liệu gốc kèm theo. Không có con số nào được làm tròn lên cho đẹp.</p></article>
+    <article class="the"><h3>Nổi bật không phải điển hình</h3><p>Đây là những kết quả tốt nhất, không phải kết quả trung bình. Kể chuyện tốt nhất mà nói như chuyện thường gặp là một kiểu nói dối.</p></article>
+    <article class="the"><h3>Chương trình không tạo ra doanh số</h3><p>Học viên áp dụng một hành vi từ chương trình, trong một bối cảnh cụ thể, và bối cảnh đó dẫn tới kết quả. Ba phần đó đều phải có mặt.</p></article>
+  </div>
+</section>
+"""
+trang("cau-chuyen-hoc-vien.html", "Câu chuyện học viên · Coach Duy Nguyễn",
+      "Chuyện thật của học viên với con số đã xác nhận: deal 10,6 tỷ không cần giảm giá, và bốn ngành khác cùng một cách đổi hành vi.",
+      CAU_CHUYEN, "chuong-trinh.html")
+print("  cau-chuyen-hoc-vien.html")
+
 trang("sach.html", "Sách và tài liệu của Coach Duy Nguyễn",
       "Hai cuốn sách đang viết, ebook kịch bản REFLECT, và kho công cụ tự kiểm gắn với từng phương pháp của Coach Duy Nguyễn.",
       SACH, "sach.html")
@@ -1625,7 +1703,8 @@ print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
-        "sach.html", "podcast.html", "lien-he.html"] \
+        "sach.html", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
+        "cong-cu/tu-kiem-ba-diem-cham.html"] \
      + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:

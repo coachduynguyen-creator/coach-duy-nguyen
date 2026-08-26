@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260828c"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260828d"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -163,7 +163,7 @@ def footer(p=""):
       </div>
       <div>
         <b>Nội dung</b>
-        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách và tài liệu</a><a href="%s">Podcast</a>
+        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách và tài liệu</a><a href="%s">Podcast</a><a href="%s">Câu chuyện học viên</a>
       </div>
       <div>
         <b>Đi tiếp</b>
@@ -179,7 +179,7 @@ def footer(p=""):
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>""" % (dd("index.html", p), dau_hieu(p), ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
-                dd("sach.html", p), dd("podcast.html", p), CONG_DONG, PHIEU, CO_MAY,
+                dd("sach.html", p), dd("podcast.html", p), dd("cau-chuyen-hoc-vien.html", p), CONG_DONG, PHIEU, CO_MAY,
                 dd("ve-toi.html", p), dd("lien-he.html", p), EMAIL, EMAIL)
 
 JSONLD_NGUOI = json.dumps({

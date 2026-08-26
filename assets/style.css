@@ -94,6 +94,9 @@ img{max-width:100%;display:block}
 #menu-nho a{display:block;padding:15px 20px;border-bottom:1px solid var(--line);text-decoration:none;font-size:16.5px;font-weight:600;color:var(--ink-2)}
 #menu-nho a.on{color:var(--vang)}
 #menu-nho .nut{margin:18px 20px 22px;width:calc(100% - 40px);justify-content:center}
+/* #menu-nho a có id nên thắng .nut-v, làm chữ trên nút vàng thành xám nhạt.
+   CDN bắt lỗi này ngày 26/08/2026. Ghi lại màu chữ với bộ chọn mạnh hơn. */
+#menu-nho a.nut-v{color:var(--on-vang);border-bottom:0}
 @media(min-width:1140px){#nav-links{display:flex}.nav-cta{margin-left:14px}#mo-menu,#menu-nho{display:none !important}}
 
 /* ---------- nút ---------- */
@@ -1765,4 +1768,35 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
     transition:color .25s var(--ease),border-color .25s var(--ease)}
   .ml-hop a:hover{color:var(--ink)}
   .ml-hop a.dang{color:var(--vang);border-left-color:var(--vang)}
+}
+
+/* ===== Trang câu chuyện học viên ===== */
+/* Học cấu trúc mục câu chuyện khách hàng của scaleos.vn nhưng làm bằng chuyện
+   thật đã được xác nhận, kể hành vi trước rồi mới tới con số, và nói rõ giới
+   hạn của từng câu chuyện ngay trên trang. */
+.ch-so{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}
+.ch-so div{padding:18px 20px;border:1px solid var(--line);border-radius:var(--r-s);
+  background:var(--bg-2)}
+.ch-so b{display:block;font-family:var(--f-tit);font-weight:800;
+  font-size:clamp(24px,2.6vw,32px);color:var(--vang);font-variant-numeric:tabular-nums}
+.ch-so span{display:block;margin-top:6px;font-family:var(--f-mono);font-size:10px;
+  font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
+  line-height:1.5}
+.ch-quote{margin:30px 0;padding:6px 0 6px 26px;border-left:3px solid var(--vang)}
+.ch-quote p{font-family:var(--f-tit);font-weight:700;font-size:clamp(19px,2.2vw,26px);
+  line-height:1.4;color:var(--ink)}
+.ch-quote span{display:block;margin-top:10px;font-family:var(--f-mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.ch-luoi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:30px}
+.ch-the{padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);
+  display:flex;flex-direction:column;gap:9px}
+.ch-the b{font-family:var(--f-tit);font-weight:800;font-size:clamp(21px,2vw,26px);
+  color:var(--vang);font-variant-numeric:tabular-nums}
+.ch-the i{font-style:normal;font-family:var(--f-mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);line-height:1.5}
+.ch-the p{font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+@media(max-width:900px){.ch-luoi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){
+  .ch-luoi{grid-template-columns:1fr}
+  .ch-so{grid-template-columns:1fr;gap:10px}
 }
