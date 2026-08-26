@@ -532,6 +532,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
         <h3 class="pp-ten">Công thức tin cậy</h3>
         <p class="pp-mo">Tin cậy không mơ hồ, nó có cấu trúc. Ba thứ xây nó lên, và một thứ chia nhỏ tất cả. Thứ chia nhỏ là mức bạn đang nghĩ về chính mình trong lúc nói chuyện với người khác. Bạn có thể rất giỏi ở tử số, mà mẫu số lớn thì mọi thứ đều bị kéo xuống.</p>
         <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi mọi thứ đều đúng mà người ta vẫn không tin bạn. Đo bốn ô dưới đây, gần như luôn hỏng ở mẫu số.</p></div>
+        <p class="pp-nguon"><b>Nguồn</b>Công thức gốc là Trust Equation của David Maister, Charles Green và Robert Galford, in trong sách <i>The Trusted Advisor</i> năm 2000. Duy dùng lại công thức này trong chương trình và đổi cách gọi bốn yếu tố cho hợp cách nói của người Việt.</p>
       </div>
       <div class="pp-hinh">
         <div>
@@ -638,6 +639,40 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
             <div><b>Người mới bắt đầu</b><i>An toàn</i></div>
           </div>
           <div class="cd4-truc"><span>Nỗi đau &darr;</span><span>&uarr; Thành công</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 08</span></div>
+        <h3 class="pp-ten">Năm tầng của một doanh nghiệp tự chạy</h3>
+        <p class="pp-mo">Đây là khung Duy dùng khi nhìn cả doanh nghiệp chứ không nhìn riêng một cuộc tư vấn. Năm tầng chồng lên nhau, tầng trên đặt lên tầng dưới. Nên khi tầng trên cùng lung lay, chỗ phải sửa gần như luôn nằm ở tầng thấp hơn, chứ không nằm ở chính chỗ đang lung lay.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi chiến lược viết rất hay mà không ai chạy theo được, hoặc khi công ty đông người lên mà mọi việc vẫn quay về bàn của bạn.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div class="nt5">
+          <div class="nt5-hinh">
+            <svg viewBox="0 0 128 130" aria-hidden="true">
+              <polygon points="64,6 122,124 6,124" fill="none" stroke="var(--vang)" stroke-width="1.1" opacity=".8"></polygon>
+              <line x1="52" y1="30" x2="76" y2="30" stroke="var(--vang)" stroke-width=".9" opacity=".45"></line>
+              <line x1="40" y1="54" x2="88" y2="54" stroke="var(--vang)" stroke-width=".9" opacity=".45"></line>
+              <line x1="29" y1="77" x2="99" y2="77" stroke="var(--vang)" stroke-width=".9" opacity=".45"></line>
+              <line x1="17" y1="101" x2="111" y2="101" stroke="var(--vang)" stroke-width=".9" opacity=".45"></line>
+            </svg>
+            <span class="nt5-so" style="top:11%">05</span>
+            <span class="nt5-so" style="top:29%">04</span>
+            <span class="nt5-so" style="top:47%">03</span>
+            <span class="nt5-so" style="top:65%">02</span>
+            <span class="nt5-so" style="top:84%">01</span>
+          </div>
+          <div class="nt5-ds">
+            <span><b>05</b>La bàn chiến lược</span>
+            <span><b>04</b>Quản trị hiệu suất</span>
+            <span><b>03</b>Cỗ máy tạo giá trị</span>
+            <span><b>02</b>Dữ liệu và công nghệ</span>
+            <span><b>01</b>Nền tảng văn hoá</span>
+          </div>
         </div>
       </div>
     </article>
