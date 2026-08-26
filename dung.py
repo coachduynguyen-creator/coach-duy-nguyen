@@ -479,6 +479,130 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   <div class="hien" style="margin-top:40px">{BANG_NL}</div>
 </section>
 
+<section class="phan bd hoa-van duoi" id="phuong-phap-loi">
+  <div class="phan-dau hien">
+    <p class="mono">Phương pháp Duy dùng</p>
+    <h2>Mỗi phương pháp có một hình dạng riêng</h2>
+    <p>Đây là những khung Duy dựng ra trong lúc làm nghề rồi dùng đi dùng lại. Trang này cho bạn thấy hình dạng của từng khung và lúc nào thì mở nó ra. Phần lời thoại và bộ câu hỏi chi tiết nằm trong chương trình, không nằm ở đây.</p>
+  </div>
+
+  <div class="pp-bo">
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 01</span></div>
+        <h3 class="pp-ten">Bốn nguyên tắc bất biến</h3>
+        <p class="pp-mo">Đây là nền của mọi thứ còn lại. Bốn nguyên tắc này quyết định bạn cư xử thế nào lúc khó, tức là lúc tháng chưa đạt và trước mặt là một người sẵn sàng trả tiền cho thứ chưa hợp với họ.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Trước khi bàn tới bất kỳ kỹ thuật nào. Bốn nguyên tắc sai thì kỹ thuật càng giỏi càng đi xa khỏi chỗ đúng.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div class="nt4">
+          <div><b>01</b><span>Không thuyết phục. Dẫn để người ta tự nhìn ra.</span></div>
+          <div><b>02</b><span>Đo bằng chất lượng quyết định của khách, không bằng doanh số.</span></div>
+          <div><b>03</b><span>Tin cậy là thứ người ta trao cho bạn, không phải thứ bạn tự nhận.</span></div>
+          <div><b>04</b><span>Không hợp thì nói thẳng. Dám nói không là cách xây tin cậy nhanh nhất.</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 02</span></div>
+        <h3 class="pp-ten">Tam giác vàng</h3>
+        <p class="pp-mo">Ba đỉnh tạo nên ấn tượng trong ba mươi giây đầu. Điều đáng nói là ba đỉnh không cộng vào nhau, chúng đỡ lẫn nhau. Thiếu một đỉnh thì hai đỉnh còn lại không cứu được, và người đối diện cảm nhận được chỗ thiếu đó trước khi họ kịp gọi tên.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi bạn muốn biết vì sao một người rất giỏi nghề mà vẫn không được tin, hoặc ngược lại.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div class="tg">
+          <svg viewBox="0 0 300 270" aria-hidden="true">
+            <polygon points="150,44 268,226 32,226" fill="none" stroke="var(--vang)"
+              stroke-width="1.2" opacity=".8"></polygon>
+          </svg>
+          <span class="tg-dinh" style="left:50%;top:0"><i></i>Phong thái</span>
+          <span class="tg-dinh" style="left:89%;top:87%"><i></i>Chân thành</span>
+          <span class="tg-dinh" style="left:11%;top:87%"><i></i>Có nghề</span>
+          <span class="tg-giua">Thiếu một đỉnh,<br>hai đỉnh kia không cứu được</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 03</span></div>
+        <h3 class="pp-ten">Công thức tin cậy</h3>
+        <p class="pp-mo">Tin cậy không mơ hồ, nó có cấu trúc. Ba thứ xây nó lên, và một thứ chia nhỏ tất cả. Thứ chia nhỏ là mức bạn đang nghĩ về chính mình trong lúc nói chuyện với người khác. Bạn có thể rất giỏi ở tử số, mà mẫu số lớn thì mọi thứ đều bị kéo xuống.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi mọi thứ đều đúng mà người ta vẫn không tin bạn. Đo bốn ô dưới đây, gần như luôn hỏng ở mẫu số.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div>
+          <div class="ct-ps">
+            <span class="ct-t">T</span>
+            <span class="ct-bang">=</span>
+            <span class="ct-chia">
+              <span class="ct-tren">
+                <span class="ct-o"><i>C</i><span>Lời nói</span></span>
+                <span class="ct-cong">+</span>
+                <span class="ct-o"><i>R</i><span>Hành động</span></span>
+                <span class="ct-cong">+</span>
+                <span class="ct-o"><i>E</i><span>Kết nối</span></span>
+              </span>
+              <span class="ct-vach"></span>
+              <span class="ct-o pha"><i>Sf</i><span>Nghĩ về mình</span></span>
+            </span>
+          </div>
+          <p class="ct-ghi">Mẫu số càng lớn, cả tử số càng mất giá</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 04</span></div>
+        <h3 class="pp-ten">Ba Điểm Chạm</h3>
+        <p class="pp-mo">Ba trạng thái nhận thức mà một người phải đi qua để tự ra quyết định. Đủ cả ba thì quyết định đến tự nhiên, không cần ép và không cần kỹ thuật chốt nào. Thứ tự không đảo được, vì mỗi bước là điều kiện để bước sau có nghĩa.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi một cuộc trao đổi tốt mà không đi tới đâu. Chấm xem thiếu chạm nào, đừng chữa ở bề mặt.</p></div>
+        <p style="margin-top:16px"><a class="lk-v" href="bai-viet/ba-diem-cham-va-thu-tu-khong-doi-duoc.html">Đọc bài đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a></p>
+      </div>
+      <div class="pp-hinh">
+        <div class="bc">
+          <span class="bc-o"><span class="bc-tron">1</span><b>Động lực</b><i>Điều họ thật sự muốn</i></span>
+          <span class="bc-mui" aria-hidden="true">&rarr;</span>
+          <span class="bc-o"><span class="bc-tron">2</span><b>Điểm nghẽn</b><i>Thứ đang giữ họ đứng yên</i></span>
+          <span class="bc-mui" aria-hidden="true">&rarr;</span>
+          <span class="bc-o"><span class="bc-tron">3</span><b>Con đường</b><i>Hướng đi hợp với họ</i></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 05</span></div>
+        <h3 class="pp-ten">REFLECT, khi gặp từ chối</h3>
+        <p class="pp-mo">Từ chối không phải rào cản cần vượt, nó là tín hiệu cần nghe. Nên việc đúng không phải là phản biện, mà là chẩn đoán xem Điểm Chạm nào chưa xong, rồi quay lại làm đầy đúng chỗ đó. Đây là chỗ khác nhau rõ nhất giữa người bán và người cố vấn.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Ngay khi nghe một câu từ chối, trước khi kịp mở miệng đáp lại.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div class="rf">
+          <div class="rf-hang">
+            <span class="rf-o">Câu từ chối</span>
+            <span class="rf-o vang">3 câu chẩn đoán</span>
+          </div>
+          <div class="rf-vong">
+            <svg viewBox="0 0 300 52" aria-hidden="true">
+              <path d="M250 4 L250 34 Q250 46 238 46 L62 46 Q50 46 50 34 L50 12"
+                fill="none" stroke="var(--vang)" stroke-width="1.2" opacity=".7"></path>
+              <path d="M44 20 L50 8 L56 20" fill="none" stroke="var(--vang)"
+                stroke-width="1.2" opacity=".7"></path>
+            </svg>
+          </div>
+          <p class="rf-ghi">Quay lại làm đầy Điểm Chạm còn thiếu</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
     <p class="mono">Cách làm việc</p>
