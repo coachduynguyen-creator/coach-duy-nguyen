@@ -1420,7 +1420,7 @@ for i, b in enumerate(BAI):
     <h1>%s</h1>
     <p class="tom">%s</p>
   </div>
-  <div class="bd hien"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
+  <div class="bd hien lo"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
   <div class="bd">
     <div class="bai-than">
       <div class="doc hien">%s%s%s</div>

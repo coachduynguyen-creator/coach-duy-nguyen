@@ -392,3 +392,38 @@
   muc.forEach(function (h) { thay.observe(h); });
   to(muc[0].id);
 })();
+
+/* Số đếm chạy khi cuộn tới, theo skill emil-design-eng. Chỉ áp cho số nguyên
+   thuần dạng 800.000 hoặc 230.000+, các số có chữ kèm như 2,3 tỷ để nguyên.
+   Trang xem không thường xuyên nên hiệu ứng một lần này hợp lệ theo khung
+   quyết định của skill; ai bật giảm chuyển động thì thấy số đứng yên. */
+(function () {
+  if (document.documentElement.classList.contains('noanim')) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var muc = [].slice.call(document.querySelectorAll('.so-tong b, .k-so b, .kenh-them b, .tn-so b'))
+    .filter(function (e) { return /^[\d.]+\+?$/.test(e.textContent.trim()); });
+  if (!muc.length || !('IntersectionObserver' in window)) return;
+  function chay(e) {
+    var goc = e.textContent.trim();
+    var duoi = goc.indexOf('+') > -1 ? '+' : '';
+    var dich = parseInt(goc.replace(/\./g, ''), 10);
+    if (!dich) return;
+    var t0 = null, DAI = 1100;
+    function buoc(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / DAI, 1);
+      p = 1 - Math.pow(1 - p, 3); /* ease-out bậc ba */
+      e.textContent = Math.round(dich * p).toLocaleString('vi-VN') + duoi;
+      if (p < 1) requestAnimationFrame(buoc);
+      else e.textContent = goc; /* trả đúng chuỗi gốc, kể cả dấu chấm */
+    }
+    requestAnimationFrame(buoc);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target); chay(en.target);
+    });
+  }, {threshold: .6});
+  muc.forEach(function (e) { io.observe(e); });
+})();
