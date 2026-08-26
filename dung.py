@@ -208,6 +208,36 @@ INDEX = """
     <p style="margin-top:18px"><a class="nut nut-vien" href="cau-chuyen-hoc-vien.html">Đọc các câu chuyện học viên <span class="mt" aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
+<section class="phan bd hoa-van duoi" id="chuyen-gia">
+  <div class="phan-dau hien">
+    <p class="mono">Chuyên gia nói về Duy</p>
+    <h2>Người trong nghề nói gì về cách Duy làm việc</h2>
+  </div>
+  <div class="kol-luoi tre hien">
+    <article class="kol">
+      <div class="anh"><img src="img/kol-1.webp" alt="Chân dung Mr. Minh Khôi" loading="lazy"></div>
+      <div class="kol-than">
+        <p>Làm việc cùng Coach Duy Nguyễn là một bước ngoặt trong sự nghiệp của tôi.</p>
+        <div class="kol-ten"><b>Mr. Minh Khôi</b><span>Founder DAS Bí Mật Học Viện Số</span></div>
+      </div>
+    </article>
+    <article class="kol">
+      <div class="anh"><img src="img/kol-2.webp" alt="Chân dung Mr. Vũ Quang Minh" loading="lazy"></div>
+      <div class="kol-than">
+        <p>Coach Duy không chỉ giúp tôi giải quyết vấn đề mà còn mở ra một góc nhìn mới về bản thân và con đường kinh doanh.</p>
+        <div class="kol-ten"><b>Mr. Vũ Quang Minh</b><span>Founder Hưng Đạo Vương Academy</span></div>
+      </div>
+    </article>
+    <article class="kol">
+      <div class="anh"><img src="img/kol-3.webp" alt="Chân dung ThS. Vũ Kim Khánh" loading="lazy"></div>
+      <div class="kol-than">
+        <p>Sau quá trình làm việc cùng Coach Duy Nguyễn, tôi không chỉ xây dựng được chiến lược vững chắc&hellip;</p>
+        <div class="kol-ten"><b>ThS. Vũ Kim Khánh</b><span>Founder/CEO Học viện Doanh nhân Ecom FOS</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section class="phan bd hoa-van" id="cong-dong">
   <div class="phan-dau hien">
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
@@ -228,6 +258,33 @@ INDEX = """
   <div class="blog-them">
     <a class="nut nut-v" href="{CONG_DONG}">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
     <a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình</a>
+  </div>
+</section>
+
+<section class="phan bd hoa-van" id="hanh-trinh">
+  <div class="phan-dau hien">
+    <p class="mono">Hành trình ba chặng</p>
+    <h2>Đi với Next Gen Founder theo thứ tự nào</h2>
+    <p>Không ai phải cam kết lớn ngay từ đầu. Mỗi chặng là một cánh cửa riêng, và bạn dừng ở chặng nào cũng được.</p>
+  </div>
+  <div class="ht-luoi tre hien">
+    <a class="ht" href="chuong-trinh/cong-dong-mo.html">
+      <em>Chặng 01</em><h3>Cộng đồng Mở</h3>
+      <p>Cửa vào rộng nhất, không mất phí nhưng có sàng lọc. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
+      <i>Không mất phí &middot; có sàng lọc</i>
+    </a>
+    <span class="ht-mui" aria-hidden="true">&rarr;</span>
+    <a class="ht" href="chuong-trinh/cong-dong-thanh-vien.html">
+      <em>Chặng 02</em><h3>Cộng đồng Thành viên</h3>
+      <p>Luyện đủ bốn năng lực suốt một năm trong công việc thật, có nhịp, có phản hồi, có người đi cùng chặng.</p>
+      <i>Bốn năng lực &middot; một năm</i>
+    </a>
+    <span class="ht-mui" aria-hidden="true">&rarr;</span>
+    <a class="ht" href="chuong-trinh/diamond-founder-club.html">
+      <em>Chặng 03</em><h3>Đi sâu hơn</h3>
+      <p>Diamond Founder Club theo lời mời, hoặc cố vấn riêng một kèm một cho số rất ít người mỗi năm.</p>
+      <i>Theo lời mời &middot; nhận giới hạn</i>
+    </a>
   </div>
 </section>
 
