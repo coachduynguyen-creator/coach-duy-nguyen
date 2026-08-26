@@ -1815,3 +1815,36 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .tc span{font-size:15px;line-height:1.55;color:var(--ink-2);font-style:italic}
 .tc:hover span{color:var(--ink)}
 @media(max-width:640px){.tc-luoi{grid-template-columns:1fr}}
+
+/* ===== Khối tầm nhìn, sứ mệnh, giá trị trên trang Về Duy ===== */
+/* Chữ lấy nguyên văn từ NGF-02, tài liệu chiến lược đã chốt 15/08/2026.
+   Học bố cục từ trang Giới thiệu của scaleos.vn nhưng nhãn viết tiếng Việt
+   và tầm nhìn dựng quanh con số 10.000 thay vì một đoạn văn dài. */
+.tn-khoi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:36px;
+  align-items:center;margin-top:36px;padding:34px 36px;border:1px solid var(--line);
+  border-radius:var(--r);background:var(--bg-2)}
+.tn-so{text-align:center}
+.tn-so b{display:block;font-family:var(--f-tit);font-weight:800;
+  font-size:clamp(52px,7vw,84px);line-height:1;color:var(--vang);
+  font-variant-numeric:tabular-nums}
+.tn-so span{display:block;margin-top:10px;font-family:var(--f-mono);font-size:11px;
+  font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.tn-loi p{font-size:16.5px;line-height:1.7;color:var(--ink)}
+.tn-loi p+p{margin-top:12px;font-size:14.5px;color:var(--ink-2)}
+.sm-khoi{margin-top:20px;padding:26px 30px;border-left:3px solid var(--vang);
+  background:var(--vang-mo);border-radius:0 var(--r) var(--r) 0}
+.sm-khoi b{display:block;font-family:var(--f-mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--vang);margin-bottom:10px}
+.sm-khoi p{font-family:var(--f-tit);font-weight:700;font-size:clamp(17px,1.9vw,21px);
+  line-height:1.5;color:var(--ink)}
+.gt-luoi{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:22px}
+.gt{padding:18px 16px;border:1px solid var(--line);border-radius:var(--r-s);
+  background:rgba(249,245,240,.025)}
+.gt em{font-style:normal;font-family:var(--f-mono);font-size:10px;font-weight:600;
+  letter-spacing:.12em;color:var(--vang)}
+.gt h3{font-family:var(--f-tit);font-weight:700;font-size:15.5px;margin:7px 0 7px}
+.gt p{font-size:12.5px;line-height:1.55;color:var(--ink-3)}
+@media(max-width:1000px){.gt-luoi{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gt:last-child{grid-column:1/-1}}
+@media(max-width:760px){.tn-khoi{grid-template-columns:1fr;gap:22px;padding:26px 22px}}
+@media(max-width:560px){.gt-luoi{grid-template-columns:1fr}.gt:last-child{grid-column:auto}}

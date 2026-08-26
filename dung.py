@@ -394,6 +394,32 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="hv hien">%s</div>
 </section>
 
+<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien">
+    <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
+    <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
+    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, để bạn đọc được đúng thứ đội ngũ NSG đang dùng để tự soi mỗi quý, không phải một bản viết riêng cho trang giới thiệu.</p>
+  </div>
+  <div class="tn-khoi hien">
+    <div class="tn-so"><b>10.000</b><span>Next Gen Founder · đến năm 2031</span></div>
+    <div class="tn-loi">
+      <p>Họ xây doanh nghiệp dựa trên niềm tin, hệ thống và con người, đồng thời tiếp tục chia sẻ kinh nghiệm, cơ hội và sự nâng đỡ cho những người đi sau.</p>
+      <p>Con số này vừa là mục tiêu kinh doanh, vừa là cam kết về tác động. NSG là phương tiện, đích đến là 10.000 người chủ thay đổi được cách họ xây doanh nghiệp.</p>
+    </div>
+  </div>
+  <div class="sm-khoi hien">
+    <b>Sứ mệnh</b>
+    <p>NSG là chỗ dựa và môi trường phát triển để nhà sáng lập Việt Nam trở thành phiên bản tốt hơn của chính mình, xây doanh nghiệp tốt hơn và tiếp tục nâng đỡ những người đi sau.</p>
+  </div>
+  <div class="gt-luoi tre hien">
+    <article class="gt"><em>Giá trị 01</em><h3>Chất lượng</h3><p>Đặt chất lượng tri thức, phương pháp và kết quả khách hàng lên trước việc làm nhiều hoặc mở rộng nhanh.</p></article>
+    <article class="gt"><em>Giá trị 02</em><h3>Tính cập nhật</h3><p>Liên tục học từ thị trường, khách hàng, công nghệ và dữ liệu thật để kiến thức không thành lý thuyết cũ.</p></article>
+    <article class="gt"><em>Giá trị 03</em><h3>Trách nhiệm xã hội</h3><p>Tạo giá trị kinh doanh mà không gây hại cho khách hàng, đội ngũ và cộng đồng.</p></article>
+    <article class="gt"><em>Giá trị 04</em><h3>Đổi mới sáng tạo</h3><p>Tìm cách tốt hơn để khách học, làm và nhận kết quả, không lặp lại máy móc cách cũ.</p></article>
+    <article class="gt"><em>Giá trị 05</em><h3>Tôn trọng con người</h3><p>Tôn trọng khách hàng, nhân sự và đối tác như những người có quyền lựa chọn và có khả năng trưởng thành.</p></article>
+  </div>
+</section>
+
 <section class="phan bd hoa-van">
   <div class="phan-dau hien">
     <p class="mono">4 điều Duy tin</p>
