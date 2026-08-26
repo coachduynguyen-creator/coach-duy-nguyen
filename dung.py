@@ -731,6 +731,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 </section>
 """.replace("{BANH_XE}", so_do.banh_xe()).replace("{BANG_NL}", so_do.bang_nang_luc()) \
    .replace("{VONG5}", so_do.vong_5()).replace("{QUY_DAO}", so_do.quy_dao()) \
+   .replace("{VIEC5}", khoi_viec5()) \
    .replace("{KHONG_LAM}", dsk(["Không làm thay phần việc của bạn. Duy chỉ đường và giữ chuẩn, bạn tự bước.",
                                 "Không hứa một con số doanh thu khi chưa đủ điều kiện. Điều Duy hứa là điểm nghẽn được gọi đúng tên và một năng lực được xây.",
                                 "Không giữ ai ở lại bằng cảm giác lệ thuộc. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá."], khong=True))
