@@ -177,6 +177,32 @@ INDEX = """
     <b>3 việc Duy không làm</b>
     <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p>
   </div>
+</section>
+
+<section class="phan bd hoa-van" id="khung">
+  <div class="phan-dau hien">
+    <p class="mono">Phương pháp Duy dùng</p>
+    <h2>Tám khung, mỗi khung một hình dạng riêng</h2>
+    <p>Duy không dạy mẹo rời. Mỗi khung dưới đây có tên, có hình, và có chỗ dùng rõ ràng. Bấm vào hình nào để xem khung đó.</p>
+  </div>
+  <div class="kh-luoi tre hien">
+    <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
+      <svg viewBox="0 0 84 74" aria-hidden="true"><polygon points="42,7 78,67 6,67" fill="none" stroke="var(--vang)" stroke-width="1.3" opacity=".85"></polygon><circle cx="42" cy="7" r="3" fill="var(--vang)"></circle><circle cx="78" cy="67" r="3" fill="var(--vang)"></circle><circle cx="6" cy="67" r="3" fill="var(--vang)"></circle></svg>
+      <b>Tam giác vàng</b><i>Vị thế 30 giây đầu</i>
+    </a>
+    <a class="kh-o" href="phuong-phap.html#pp-4" aria-label="Ba Điểm Chạm">
+      <svg viewBox="0 0 84 74" aria-hidden="true"><circle cx="14" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><circle cx="42" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><circle cx="70" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><line x1="23" y1="37" x2="33" y2="37" stroke="var(--vang)" stroke-width="1.2" opacity=".6"></line><line x1="51" y1="37" x2="61" y2="37" stroke="var(--vang)" stroke-width="1.2" opacity=".6"></line></svg>
+      <b>Ba Điểm Chạm</b><i>Dẫn quyết định</i>
+    </a>
+    <a class="kh-o" href="phuong-phap.html#pp-3" aria-label="Công thức tin cậy">
+      <svg viewBox="0 0 84 74" aria-hidden="true"><rect x="10" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><rect x="34" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><rect x="58" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><line x1="10" y1="38" x2="74" y2="38" stroke="var(--vang)" stroke-width="1.4"></line><rect x="34" y="48" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.6"></rect></svg>
+      <b>Công thức tin cậy</b><i>Mẫu số phá tất cả</i>
+    </a>
+    <a class="kh-o" href="phuong-phap.html#pp-8" aria-label="Năm tầng doanh nghiệp">
+      <svg viewBox="0 0 84 74" aria-hidden="true"><polygon points="42,6 76,68 8,68" fill="none" stroke="var(--vang)" stroke-width="1.3" opacity=".85"></polygon><line x1="34" y1="21" x2="50" y2="21" stroke="var(--vang)" stroke-width="1" opacity=".5"></line><line x1="27" y1="35" x2="57" y2="35" stroke="var(--vang)" stroke-width="1" opacity=".5"></line><line x1="20" y1="49" x2="64" y2="49" stroke="var(--vang)" stroke-width="1" opacity=".5"></line></svg>
+      <b>Năm tầng</b><i>Doanh nghiệp tự chạy</i>
+    </a>
+  </div>
   <div class="pp-pills hien">
     <a class="pp-pill" href="phuong-phap.html#pp-1">Bốn nguyên tắc</a>
     <a class="pp-pill" href="phuong-phap.html#pp-2">Tam giác vàng</a>
@@ -187,6 +213,7 @@ INDEX = """
     <a class="pp-pill" href="phuong-phap.html#pp-7">Bốn cấp độ</a>
     <a class="pp-pill" href="phuong-phap.html#pp-8">Năm tầng</a>
   </div>
+  <div class="blog-them"><a class="nut nut-vien" href="phuong-phap.html">Xem cả tám phương pháp <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="chuyen-gia">
@@ -288,14 +315,36 @@ INDEX = """
   <div class="blog-them"><a class="nut nut-vien" href="blog.html">Xem tất cả bài viết <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
-<section class="phan bd">
-  <div class="cu-banner hien">
-    <div>
-      <b>Tự chấm buổi tư vấn gần nhất của bạn, trong ba phút</b>
-      <p>Mười hai câu theo phương pháp Ba Điểm Chạm, chạy ngay trên trang. Không cần để lại thông tin gì, kết quả chỉ mình bạn thấy.</p>
-    </div>
-    <a class="nut nut-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở bảng tự kiểm <span class="mt" aria-hidden="true">&rarr;</span></a>
+<section class="phan bd hoa-van" id="kho-cong-cu">
+  <div class="phan-dau hien">
+    <p class="mono">Kho công cụ và tài liệu</p>
+    <h2>Mỗi công cụ gắn với một phương pháp</h2>
+    <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Cái nào đang làm thì ghi rõ đang làm.</p>
   </div>
+  <div class="tl-luoi tre hien">
+    <article class="tl">
+      <div class="tl-bia" aria-hidden="true"><i>Công cụ tự kiểm</i><b>Ba Điểm Chạm</b></div>
+      <div class="tl-than"><h3>Bảng tự kiểm sau buổi tư vấn</h3>
+      <p class="tl-mo">Mười hai câu chấm lại buổi tư vấn gần nhất, chỉ ra bạn đang thiếu chạm nào. Ba phút, kết quả chỉ mình bạn thấy.</p>
+      <div class="tl-duoi"><span class="tl-tt mo">Dùng ngay trên trang</span>
+      <a class="lk-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
+    </article>
+    <article class="tl">
+      <div class="tl-bia" aria-hidden="true"><i>Ebook</i><b>REFLECT</b></div>
+      <div class="tl-than"><h3>Kịch bản REFLECT theo 10 ngành</h3>
+      <p class="tl-mo">Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm lộ trình luyện ba mươi ngày.</p>
+      <div class="tl-duoi"><span class="tl-tt mo">Sắp mở bán</span>
+      <a class="lk-v" href="sach.html#thu-vien">Xem chi tiết <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
+    </article>
+    <article class="tl">
+      <div class="tl-bia" aria-hidden="true"><i>Công cụ tự kiểm</i><b>Hai tầng ba lăng kính</b></div>
+      <div class="tl-than"><h3>Phiếu sàng khách trước buổi hẹn</h3>
+      <p class="tl-mo">Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu hay một lời hẹn lại.</p>
+      <div class="tl-duoi"><span class="tl-tt">Sắp ra mắt</span>
+      <a class="lk-v" href="sach.html#thu-vien">Nhận tin khi có <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
+    </article>
+  </div>
+  <div class="blog-them"><a class="nut nut-vien" href="sach.html#thu-vien">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo nội bộ.
