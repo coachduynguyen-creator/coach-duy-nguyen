@@ -183,7 +183,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Phương pháp Duy dùng</p>
     <h2>Tám khung, mỗi khung một hình dạng riêng</h2>
-    <p>Duy không dạy mẹo rời. Mỗi khung dưới đây có tên, có hình, và có chỗ dùng rõ ràng. Bấm vào hình nào để xem khung đó.</p>
+    <p>Duy không dạy mẹo rời. Mỗi khung dưới đây có tên, có hình, và có chỗ dùng rõ ràng.</p>
   </div>
   <div class="kh-luoi tre hien">
     <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
@@ -1286,7 +1286,7 @@ PD_TAP = [
 
  # ---- Chuyên mục 03 · Thương hiệu của người sáng lập
  dict(yt="s1UF9mSxM0s", muc=3,
-  tieu="Nâng tầm vị thế chuyên gia trong mắt khách",
+  tieu="Nâng vị thế chuyên gia trong mắt khách",
   mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
   lydo="Bạn kiểm được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
   cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
