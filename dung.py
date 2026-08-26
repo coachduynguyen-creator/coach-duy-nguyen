@@ -205,7 +205,13 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
     <h2>Chỗ nhà sáng lập hay vấp nhất, và cách gỡ</h2>
-    <p><span class="nhan">Điểm nghẽn của người sáng lập</span>, cách thiết kế quan hệ với khách, và cách biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Đây là những chỗ Duy cũng đã đi qua, nên viết từ chỗ đã làm.</p>
+    <p>Bốn câu dưới đây Duy nghe đi nghe lại từ người sáng lập, tới mức nghe nửa câu đầu là biết nửa sau. Thấy mình trong câu nào, bấm vào câu đó.</p>
+  </div>
+  <div class="tc-luoi tre hien">
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>01</i><span>Tôi đăng nội dung nhiều nhưng không ra đúng khách.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>02</i><span>Đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>03</i><span>Tuyển thêm người mà tôi lại bận hơn trước.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>04</i><span>Tháng tốt tháng kém mà không rõ vì sao.</span></a>
   </div>
   <div class="blog hien">
     {BAI_LON}

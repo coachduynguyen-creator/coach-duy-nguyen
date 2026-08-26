@@ -1800,3 +1800,18 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   .ch-luoi{grid-template-columns:1fr}
   .ch-so{grid-template-columns:1fr;gap:10px}
 }
+
+/* ===== Chips triệu chứng trên trang chủ ===== */
+/* Học từ khối dấu hiệu của scaleos.vn: người đọc tự nhận ra mình trong một
+   câu, không cần ai thuyết phục. Bốn câu lấy nguyên văn từ bài blog bốn câu
+   nghe nhiều nhất, là câu thật của người sáng lập chứ không phải câu bịa. */
+.tc-luoi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0 6px}
+.tc{display:flex;gap:13px;align-items:flex-start;padding:16px 18px;
+  border:1px solid var(--line);border-radius:var(--r-s);background:rgba(249,245,240,.025);
+  text-decoration:none;transition:border-color .25s var(--ease),background .25s var(--ease)}
+.tc:hover{border-color:var(--vang);background:var(--vang-mo)}
+.tc i{font-style:normal;font-family:var(--f-mono);font-size:10px;font-weight:600;
+  letter-spacing:.1em;color:var(--vang);flex:none;margin-top:3px}
+.tc span{font-size:15px;line-height:1.55;color:var(--ink-2);font-style:italic}
+.tc:hover span{color:var(--ink)}
+@media(max-width:640px){.tc-luoi{grid-template-columns:1fr}}
