@@ -578,7 +578,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       <div>
         <div class="pp-dau"><span class="pp-so">Phương pháp 05</span></div>
         <h3 class="pp-ten">REFLECT, khi gặp từ chối</h3>
-        <p class="pp-mo">Từ chối không phải rào cản cần vượt, nó là tín hiệu cần nghe. Nên việc đúng không phải là phản biện, mà là chẩn đoán xem Điểm Chạm nào chưa xong, rồi quay lại làm đầy đúng chỗ đó. Đây là chỗ khác nhau rõ nhất giữa người bán và người cố vấn.</p>
+        <p class="pp-mo">Từ chối không phải rào cản cần vượt, nó là tín hiệu cần nghe. Nên việc đúng không phải là phản biện, mà là chẩn đoán xem Điểm Chạm nào chưa xong, rồi quay lại làm đầy đúng chỗ đó. Người bán và người cố vấn khác nhau rõ nhất đúng ở chỗ này.</p>
         <div class="pp-khi"><b>Mở ra lúc nào</b><p>Ngay khi nghe một câu từ chối, trước khi kịp mở miệng đáp lại.</p></div>
       </div>
       <div class="pp-hinh">
