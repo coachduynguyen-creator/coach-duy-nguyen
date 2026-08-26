@@ -600,6 +600,48 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
     </article>
 
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 06</span></div>
+        <h3 class="pp-ten">Hai tầng ba lăng kính</h3>
+        <p class="pp-mo">Khung sàng người, để biết ai đáng dành thời gian và ai thì chưa phải lúc. Tầng một loại nhanh những người chưa đủ điều kiện nền. Tầng hai chấm ba lăng kính: ý định và cam kết, nguồn lực và năng lực, độ phù hợp và giá trị. Ba vòng giao nhau tạo ra bảy nhóm, và mỗi nhóm cần một cách đi khác nhau.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Trước khi nhận một khách, và trước khi quyết định dồn công vào một tệp nào đó. Sàng sai tệp thì mọi việc phía sau đều tốn gấp đôi.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div class="lk">
+          <svg viewBox="0 0 270 248" aria-hidden="true">
+            <circle cx="102" cy="104" r="72" fill="rgba(242,177,74,.07)" stroke="var(--vang)" stroke-width="1" opacity=".8"></circle>
+            <circle cx="168" cy="104" r="72" fill="rgba(242,177,74,.07)" stroke="var(--vang)" stroke-width="1" opacity=".8"></circle>
+            <circle cx="135" cy="160" r="72" fill="rgba(242,177,74,.07)" stroke="var(--vang)" stroke-width="1" opacity=".8"></circle>
+          </svg>
+          <span class="lk-ten" style="left:20%;top:26%">Phù hợp<br>và giá trị</span>
+          <span class="lk-ten" style="left:80%;top:26%">Ý định<br>và cam kết</span>
+          <span class="lk-ten" style="left:50%;top:82%">Nguồn lực<br>và năng lực</span>
+          <span class="lk-giua">Khách<br>phù hợp</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pp hien">
+      <div>
+        <div class="pp-dau"><span class="pp-so">Phương pháp 07</span></div>
+        <h3 class="pp-ten">Bốn cấp độ trưởng thành</h3>
+        <p class="pp-mo">Cùng một sản phẩm, bốn người ở bốn cấp độ khác nhau sẽ nghe ra bốn thứ khác nhau. Hai cấp dưới quan tâm tới nỗi đau, tức là làm sao thôi mất và thôi sai. Hai cấp trên quan tâm tới thành công, tức là làm sao đi nhanh hơn và xa hơn. Nói ngôn ngữ của cấp này cho người ở cấp kia là cách hỏng buổi nhanh nhất.</p>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi viết nội dung, khi soạn cẩm nang, và khi chọn xem mình sẽ phục vụ tệp nào. Đây không phải khung chia giàu nghèo, nó chia theo thứ người ta đang cần nghe.</p></div>
+      </div>
+      <div class="pp-hinh">
+        <div>
+          <div class="cd4">
+            <div><b>Đang thắng hoặc dẫn đầu</b><i>Tăng tốc</i></div>
+            <div><b>Ổn nhưng đi ngang</b><i>Vượt ngưỡng</i></div>
+            <div><b>Bắt đầu rồi xuống dốc</b><i>Ổn định lại</i></div>
+            <div><b>Người mới bắt đầu</b><i>An toàn</i></div>
+          </div>
+          <div class="cd4-truc"><span>Nỗi đau &darr;</span><span>&uarr; Thành công</span></div>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
