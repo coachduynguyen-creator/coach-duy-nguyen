@@ -37,7 +37,7 @@ MENU = [
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
-    ("sach.html", "Sách", None),
+    ("sach.html", "Sách và tài liệu", None),
     ("podcast.html", "Podcast", None),
     ("lien-he.html", "Liên hệ", None),
 ]
@@ -163,7 +163,7 @@ def footer(p=""):
       </div>
       <div>
         <b>Nội dung</b>
-        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách</a><a href="%s">Podcast</a>
+        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách và tài liệu</a><a href="%s">Podcast</a>
       </div>
       <div>
         <b>Đi tiếp</b>

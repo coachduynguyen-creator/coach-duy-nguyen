@@ -1067,7 +1067,7 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai):
   <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
 </div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
 
-SACH = dau_trang("Sách", "Sách Duy đang viết",
+SACH = dau_trang("Sách và tài liệu", "Sách Duy đang viết",
   "Chưa có cuốn nào đã in. Trang này ghi rõ cuốn nào đang viết và dự kiến ra mắt khi nào, để bạn không phải đoán.") + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
@@ -1318,7 +1318,7 @@ llms = """# Coach Duy Nguyễn
 - [Phương pháp](%(b)s/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
-- [Sách](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
+- [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](%(b)s/lien-he.html)
 
