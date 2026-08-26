@@ -189,25 +189,6 @@ INDEX = """
   </div>
 </section>
 
-<section class="phan bd hoa-van duoi" id="bang-chung">
-  <div class="phan-dau hien">
-    <p class="mono">Chuyện có thật, số có nguồn</p>
-    <h2>Khách chọn người hiểu mình, không chọn người rẻ nhất</h2>
-  </div>
-  <div class="hien" style="max-width:74ch;margin-inline:auto">
-    <div class="ch-quote">
-      <p>Anh chọn em không phải vì em rẻ nhất. Anh chọn em vì em là người duy nhất hỏi anh về gia đình, về cuộc sống của anh.</p>
-      <span>Lời khách nói với anh Chiến, học viên bất động sản · giao dịch 10,6 tỷ, không giảm giá</span>
-    </div>
-    <div class="ch-so">
-      <div><b>10,6 tỷ</b><span>Bất động sản · đối thủ giảm 300 triệu vẫn không được chọn</span></div>
-      <div><b>2,3 tỷ / 30 ngày</b><span>Nội thất · quay lại sau nghỉ sinh</span></div>
-      <div><b>~700 triệu / 30 ngày</b><span>Nha khoa · chuyển đổi cả đội ngũ</span></div>
-    </div>
-    <p style="font-size:14px;color:var(--ink-3)">Đây là những kết quả nổi bật, không phải kết quả điển hình. Trang câu chuyện nói rõ giới hạn của từng chuyện.</p>
-    <p style="margin-top:18px"><a class="nut nut-vien" href="cau-chuyen-hoc-vien.html">Đọc các câu chuyện học viên <span class="mt" aria-hidden="true">&rarr;</span></a></p>
-  </div>
-</section>
 <section class="phan bd hoa-van duoi" id="chuyen-gia">
   <div class="phan-dau hien">
     <p class="mono">Chuyên gia nói về Duy</p>
