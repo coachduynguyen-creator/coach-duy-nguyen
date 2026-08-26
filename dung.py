@@ -179,7 +179,7 @@ INDEX = """
   </div>
 </section>
 
-<section class="phan bd hoa-van" id="khung">
+<section class="phan bd phan-sang" id="khung">
   <div class="phan-dau hien">
     <p class="mono">Phương pháp Duy dùng</p>
     <h2>Tám khung, mỗi khung một hình dạng riêng</h2>
@@ -269,7 +269,7 @@ INDEX = """
   </div>
 </section>
 
-<section class="phan bd hoa-van" id="hanh-trinh">
+<section class="phan bd phan-vang" id="hanh-trinh">
   <div class="phan-dau hien">
     <p class="mono">Hành trình ba chặng</p>
     <h2>Đi với Next Gen Founder theo thứ tự nào</h2>
@@ -315,7 +315,7 @@ INDEX = """
   <div class="blog-them"><a class="nut nut-vien" href="blog.html">Xem tất cả bài viết <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
-<section class="phan bd hoa-van" id="kho-cong-cu">
+<section class="phan bd phan-sang" id="kho-cong-cu">
   <div class="phan-dau hien">
     <p class="mono">Kho công cụ và tài liệu</p>
     <h2>Mỗi công cụ gắn với một phương pháp</h2>

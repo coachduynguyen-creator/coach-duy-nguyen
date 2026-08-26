@@ -1963,3 +1963,31 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
     box-shadow:22px 24px 34px -14px rgba(0,0,0,.7),inset 0 1px 0 rgba(249,245,240,.07)}
 }
 @media(prefers-reduced-motion:reduce){.tl:hover .bia3d{transform:none}}
+
+/* ===== Hai nhịp nền cho trang chủ, chữa bệnh một màu ===== */
+/* CDN chê trang chủ một màu trông chán. Nguyên tắc màu chỉ mang nghĩa nên
+   không thêm màu lạ: lật độ sáng của chính hai màu thương hiệu. Dải giấy kem
+   mang nghĩa tài liệu, đặt cho khối phương pháp và kho công cụ. Dải vàng
+   đồng mang nghĩa đường dẫn, đặt cho hành trình ba chặng. Trải hết bề ngang
+   bằng bóng đổ toả và cắt lớp, vì các section vốn bị giới hạn bề rộng .bd. */
+.phan-sang,.phan-vang{position:relative;clip-path:inset(0 -100vmax)}
+.phan-sang{
+  color:var(--ink); /* đặt lại tại đây để token kem được tính, không kế thừa màu sáng từ body */
+  background:#F2E9DA;box-shadow:0 0 0 100vmax #F2E9DA;
+  --ink:#241B14;--ink-2:#4E4034;--ink-3:#75634F;--ink-4:#99876F;
+  --line:#DFD2BE;--line-2:#C9B8A0;
+  --bg:#F2E9DA;--bg-2:#FBF6EB;--bg-3:#F7F0E2;
+  --panel:#FBF6EB;--panel-2:#F3EBDC;
+  --vang:#8F5808;--vang-2:#7A4B07;--vang-3:#684006;
+  --vang-mo:rgba(143,88,8,.09);
+  --shadow:0 2px 6px rgba(60,42,20,.08),0 24px 46px -26px rgba(60,42,20,.28);
+}
+.phan-vang{
+  background:var(--vang);box-shadow:0 0 0 100vmax var(--vang);
+}
+.phan-vang .phan-dau .mono{color:var(--on-vang);opacity:.72}
+.phan-vang .phan-dau h2{color:var(--on-vang)}
+.phan-vang .phan-dau p{color:rgba(23,18,15,.78)}
+.phan-vang .phan-dau p .nhan{color:var(--on-vang);font-weight:700}
+.phan-vang .ht-mui{color:var(--on-vang);opacity:.55}
+.phan-vang .ht{box-shadow:0 3px 8px rgba(23,18,15,.18),0 26px 44px -22px rgba(23,18,15,.5)}
