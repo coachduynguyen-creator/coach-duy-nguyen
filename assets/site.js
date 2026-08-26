@@ -190,10 +190,60 @@
   }
   function poster(yt) {
     man.innerHTML = '<button class="pd-poster" type="button" aria-label="Phát tập đang chọn">' +
-      '<img src="https://i.ytimg.com/vi/' + yt + '/maxresdefault.jpg" alt="">' +
+      '<img src="https://i.ytimg.com/vi/' + yt + '/maxresdefault.jpg" alt="" ' +
+      'onerror="this.onerror=null;this.src=this.src.replace(\'maxres\',\'hq\')">' +
       '<span class="pd-play" aria-hidden="true"></span></button>';
-    man.querySelector('.pd-poster').addEventListener('click', function () { phat(loc.yt); });
   }
+  // Bắt sự kiện ở khung ngoài chứ không gắn vào từng nút. Gắn vào nút thì ảnh bìa
+  // do máy chủ dựng sẵn lúc mới vào trang không có người nghe, bấm vào không chạy.
+  man.addEventListener('click', function (ev) {
+    if (ev.target.closest('.pd-poster')) { phat(loc.yt); }
+  });
+  // Mở rộng khung và toàn màn hình. CDN không muốn khung phát bị đóng cứng
+  // trong một ô nhỏ giữa trang, nên có hai mức nới ra.
+  var rap = document.querySelector('.pd-rap');
+  var nutRong = document.getElementById('pd-rong');
+  var chuRong = document.getElementById('pd-rong-chu');
+  var nutToan = document.getElementById('pd-toan');
+
+  function datRong(bat) {
+    rap.classList.toggle('rong', bat);
+    nutRong.setAttribute('aria-pressed', bat ? 'true' : 'false');
+    chuRong.textContent = bat ? 'Thu khung lại' : 'Mở rộng khung';
+  }
+  if (nutRong) {
+    nutRong.addEventListener('click', function () {
+      datRong(!rap.classList.contains('rong'));
+    });
+  }
+  if (nutToan) {
+    nutToan.addEventListener('click', function () {
+      var dang = document.fullscreenElement || document.webkitFullscreenElement;
+      if (dang) {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        return;
+      }
+      // Chưa bấm phát thì phát luôn, vì vào toàn màn hình để nhìn ảnh tĩnh thì vô nghĩa.
+      if (!man.querySelector('iframe')) { phat(loc.yt); }
+      var xin = man.requestFullscreen || man.webkitRequestFullscreen;
+      if (xin) { try { var xong = xin.call(man); if (xong && xong.catch) { xong.catch(function () {}); } }
+                 catch (e) {} }
+      // Vài nơi chặn toàn màn hình mà không báo lỗi gì, ví dụ trình duyệt nhúng
+      // trong ứng dụng. Chặn thì nở khung ra hết bề ngang cho đỡ, để bấm nút
+      // xong luôn thấy có gì đó đổi. Trình phát YouTube vẫn còn nút của riêng nó.
+      setTimeout(function () {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement) { datRong(true); }
+      }, 200);
+    });
+  }
+  // Thoát toàn màn hình bằng phím Esc thì trình duyệt tự lo. Phím Esc lúc đang
+  // mở rộng khung thì phải tự thu lại, nếu không người dùng kẹt ở chế độ đó.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') { return; }
+    if (document.fullscreenElement || document.webkitFullscreenElement) { return; }
+    if (rap && rap.classList.contains('rong')) { datRong(false); }
+  });
+
   function chonTap(a, tuPhat) {
     var d = a.dataset;
     loc.yt = d.yt;

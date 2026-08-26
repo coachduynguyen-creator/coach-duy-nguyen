@@ -1121,11 +1121,23 @@ def _rap_html():
         for i, x in enumerate(PD_TAP))
     return '''<section class="phan bd" id="xem">
   <div class="pd-rap hien">
-    <div class="pd-man" id="pd-man">
-      <button class="pd-poster" id="pd-poster" type="button" aria-label="Phát tập đang chọn">
-        <img id="pd-poster-anh" src="https://i.ytimg.com/vi/%s/maxresdefault.jpg" alt="">
-        <span class="pd-play" aria-hidden="true"></span>
-      </button>
+    <div class="pd-khung">
+      <div class="pd-man" id="pd-man">
+        <button class="pd-poster" id="pd-poster" type="button" aria-label="Phát tập đang chọn">
+          <img id="pd-poster-anh" src="https://i.ytimg.com/vi/%s/maxresdefault.jpg" alt="" onerror="this.onerror=null;this.src=this.src.replace('maxres','hq')">
+          <span class="pd-play" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="pd-dieu">
+        <button class="pd-nut-man" id="pd-rong" type="button" aria-pressed="false">
+          <span class="pd-bieu pd-bieu-rong" aria-hidden="true"></span>
+          <span id="pd-rong-chu">Mở rộng khung</span>
+        </button>
+        <button class="pd-nut-man" id="pd-toan" type="button">
+          <span class="pd-bieu pd-bieu-toan" aria-hidden="true"></span>
+          <span>Toàn màn hình</span>
+        </button>
+      </div>
     </div>
     <div class="pd-rap-chu">
       <p class="pd-nhan" id="pd-rap-muc">%s</p>

@@ -1447,3 +1447,46 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 @media(max-width:760px){
   .lq-tap{grid-template-columns:1fr;gap:16px;padding:16px}
 }
+
+/* ===== Mở rộng khung phát và toàn màn hình ===== */
+/* CDN muốn khung video không bị đóng cứng trong một ô nhỏ. Có hai mức: mở rộng
+   khung ra hết bề ngang trang, và toàn màn hình như trình phát thường thấy. */
+.pd-khung{display:flex;flex-direction:column;gap:0}
+.pd-dieu{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.pd-nut-man{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;
+  font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-2);background:transparent;
+  border:1px solid var(--line);border-radius:var(--r-s);cursor:pointer;
+  transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}
+.pd-nut-man:hover{color:var(--vang);border-color:var(--vang)}
+.pd-nut-man[aria-pressed="true"]{color:var(--vang);border-color:var(--vang);background:var(--vang-mo)}
+.pd-bieu{width:13px;height:11px;border:1.5px solid currentColor;border-radius:2px;flex:none}
+.pd-bieu-toan{border:0;position:relative}
+.pd-bieu-toan::before,.pd-bieu-toan::after{content:"";position:absolute;width:5px;height:5px;
+  border:1.5px solid currentColor}
+.pd-bieu-toan::before{left:0;top:0;border-right:0;border-bottom:0}
+.pd-bieu-toan::after{right:0;bottom:0;border-left:0;border-top:0}
+
+/* Mức một: khung chiếm hết bề ngang trang, phần chữ tụt xuống dưới. */
+.pd-rap.rong{grid-template-columns:1fr;gap:30px}
+.pd-rap.rong .pd-khung{width:100vw;margin-left:calc(50% - 50vw)}
+.pd-rap.rong .pd-man{border-radius:0;border-left:0;border-right:0;
+  max-height:calc(100vh - 190px)}
+.pd-rap.rong .pd-dieu{width:min(100% - 40px,var(--w));margin-left:auto;margin-right:auto}
+.pd-rap.rong .pd-rap-chu{max-width:72ch}
+@media(max-width:900px){
+  /* Dưới mức này khung đã chiếm hết bề ngang sẵn, nên nút mở rộng không còn việc
+     gì để làm. Để lại một nút bấm vào không thấy gì đổi thì tệ hơn là bỏ đi. */
+  #pd-rong{display:none}
+  .pd-rap.rong{gap:24px}
+  .pd-rap.rong .pd-khung{width:auto;margin-left:0}
+  .pd-rap.rong .pd-man{border-radius:var(--r);border-left:1px solid var(--line);
+    border-right:1px solid var(--line)}
+  .pd-rap.rong .pd-dieu{width:auto}
+}
+
+/* Mức hai: toàn màn hình. Trình duyệt tự phủ đen phần thừa, chỉ cần bỏ tỉ lệ cố
+   định để khung nở hết chiều cao. */
+.pd-man:fullscreen{aspect-ratio:auto;width:100%;height:100%;border:0;border-radius:0;
+  max-height:none}
+.pd-man:-webkit-full-screen{aspect-ratio:auto;width:100%;height:100%;border:0;border-radius:0}
