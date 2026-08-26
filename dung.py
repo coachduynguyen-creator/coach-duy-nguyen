@@ -323,21 +323,21 @@ INDEX = """
   </div>
   <div class="tl-luoi tre hien">
     <article class="tl">
-      <div class="tl-bia" aria-hidden="true"><i>Công cụ tự kiểm</i><b>Ba Điểm Chạm</b></div>
+      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Công cụ tự kiểm</i><b>Ba Điểm Chạm</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
       <div class="tl-than"><h3>Bảng tự kiểm sau buổi tư vấn</h3>
       <p class="tl-mo">Mười hai câu chấm lại buổi tư vấn gần nhất, chỉ ra bạn đang thiếu chạm nào. Ba phút, kết quả chỉ mình bạn thấy.</p>
       <div class="tl-duoi"><span class="tl-tt mo">Dùng ngay trên trang</span>
       <a class="lk-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
     </article>
     <article class="tl">
-      <div class="tl-bia" aria-hidden="true"><i>Ebook</i><b>REFLECT</b></div>
+      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Ebook</i><b>REFLECT</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
       <div class="tl-than"><h3>Kịch bản REFLECT theo 10 ngành</h3>
       <p class="tl-mo">Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm lộ trình luyện ba mươi ngày.</p>
       <div class="tl-duoi"><span class="tl-tt mo">Sắp mở bán</span>
       <a class="lk-v" href="sach.html#thu-vien">Xem chi tiết <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
     </article>
     <article class="tl">
-      <div class="tl-bia" aria-hidden="true"><i>Công cụ tự kiểm</i><b>Hai tầng ba lăng kính</b></div>
+      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Công cụ tự kiểm</i><b>Hai tầng ba lăng kính</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
       <div class="tl-than"><h3>Phiếu sàng khách trước buổi hẹn</h3>
       <p class="tl-mo">Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu hay một lời hẹn lại.</p>
       <div class="tl-duoi"><span class="tl-tt">Sắp ra mắt</span>
@@ -1501,7 +1501,8 @@ THU_VIEN = """
 </section>
 """ % "".join(
  ('<article class="tl" data-loai="%s">'
-  '<div class="tl-bia" aria-hidden="true"><i>%s</i><b>%s</b></div>'
+  '<div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>%s</i><b>%s</b>'
+  '<span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguy\u1ec5n</span></span></div></div>'
   '<div class="tl-than"><h3>%s</h3>'
   '<p class="tl-mo">%s</p>'
   '<div class="tl-duoi"><span class="tl-tt%s">%s</span>'

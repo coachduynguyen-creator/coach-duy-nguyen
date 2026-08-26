@@ -1928,3 +1928,38 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .hien.lo.in .bai-anh{clip-path:inset(0 0 0 0)}
 .noanim .hien.lo .bai-anh{clip-path:inset(0 0 0 0)}
 @media(prefers-reduced-motion:reduce){.hien.lo .bai-anh{clip-path:inset(0 0 0 0)}}
+
+/* ===== Bìa đứng kiểu sách cho thẻ tài liệu ===== */
+/* CDN hỏi vì sao không giống Tool Box của scaleos: bên đó mỗi thẻ có bìa
+   mockup dọc 3:4. Bản này dựng bìa dọc bằng mã theo bảng màu thương hiệu,
+   có gáy sách và bóng đổ, nghiêng nhẹ khi rê chuột. Khi có bìa thật do
+   hoạ sĩ làm thì thay ảnh vào đúng khối .bia3d. */
+.tl-bia3d{display:grid;place-items:center;padding:26px 18px 20px;
+  border-bottom:1px solid var(--line);perspective:900px;
+  background:
+    radial-gradient(120% 130% at 50% -25%,rgba(242,177,74,.1),transparent 60%),
+    rgba(249,245,240,.02)}
+.bia3d{position:relative;width:132px;aspect-ratio:3/4.2;border-radius:4px 8px 8px 4px;
+  background:linear-gradient(160deg,#2b211a 0%,#201812 55%,#191210 100%);
+  border:1px solid rgba(242,177,74,.35);
+  box-shadow:14px 18px 28px -14px rgba(0,0,0,.65),inset 0 1px 0 rgba(249,245,240,.07);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:14px 12px 12px 16px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.bia3d::before{content:"";position:absolute;left:4px;top:0;bottom:0;width:2px;
+  background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(249,245,240,.09));border-radius:2px}
+.bia3d::after{content:"";position:absolute;inset:7px;border:1px solid rgba(242,177,74,.22);
+  border-radius:3px 6px 6px 3px;pointer-events:none}
+.bia3d i{font-style:normal;font-family:var(--f-mono);font-size:7.5px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.bia3d b{font-family:var(--f-tit);font-weight:800;font-size:16.5px;line-height:1.15;
+  color:var(--vang);flex:1;display:flex;align-items:center}
+.bia3d .chan{display:flex;align-items:center;gap:6px}
+.bia3d .chan img{width:16px;height:auto;opacity:.85}
+.bia3d .chan span{font-family:var(--f-mono);font-size:6.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+@media(hover:hover){
+  .tl:hover .bia3d{transform:rotateY(-7deg) translateY(-4px);
+    box-shadow:22px 24px 34px -14px rgba(0,0,0,.7),inset 0 1px 0 rgba(249,245,240,.07)}
+}
+@media(prefers-reduced-motion:reduce){.tl:hover .bia3d{transform:none}}
