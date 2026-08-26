@@ -6,7 +6,7 @@
 - [Về Duy](https://coachduynguyen.vn/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](https://coachduynguyen.vn/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen.vn/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
-- [Blog](https://coachduynguyen.vn/blog.html): 21 bài viết cho nhà sáng lập
+- [Blog](https://coachduynguyen.vn/blog.html): 26 bài viết cho nhà sáng lập
 - [Sách](https://coachduynguyen.vn/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](https://coachduynguyen.vn/lien-he.html)
@@ -25,6 +25,11 @@
 
 ## Bài viết
 - [Cái giá của người làm được mọi việc](https://coachduynguyen.vn/bai-viet/cai-gia-cua-nguoi-lam-duoc-moi-viec.html): Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.
+- [Khách chỉ mặc cả với người bán](https://coachduynguyen.vn/bai-viet/khach-chi-mac-ca-voi-nguoi-ban.html): Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.
+- [Càng cố chứng minh, vị thế càng thấp](https://coachduynguyen.vn/bai-viet/cang-co-chung-minh-cang-mat-vi-the.html): Giải thích nhiều là hành vi của người cần được chấp nhận. Chuyên gia không chứng minh mình giỏi, họ dẫn để người kia tự thấy.
+- [Đội ngũ bán hàng của bạn đang đứng ở vai nào](https://coachduynguyen.vn/bai-viet/doi-ngu-ban-hang-dang-o-vai-nao.html): Vai trò không phải chuyện tính cách từng người. Nó thiết kế được, huấn luyện được, và đo được.
+- [Ba Điểm Chạm, và vì sao thứ tự không đảo được](https://coachduynguyen.vn/bai-viet/ba-diem-cham-va-thu-tu-khong-doi-duoc.html): Ba trạng thái nhận thức khách phải đi qua để tự quyết. Từng phần đều đúng, nhưng đảo thứ tự thì cả chuỗi hỏng.
+- [Giữ bình tĩnh khi khách mất bình tĩnh](https://coachduynguyen.vn/bai-viet/giu-binh-tinh-khi-khach-mat-binh-tinh.html): Nghề dịch vụ tiếp xúc nhiều kiểu người mỗi ngày. Bị cuốn theo cảm xúc của người đối diện là mất luôn khả năng dẫn dắt.
 - [Chọn một vùng chuyên môn để đứng, và dám bỏ phần còn lại](https://coachduynguyen.vn/bai-viet/lanh-dia-chuyen-mon.html): Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.
 - [Bốn câu Duy nghe nhiều nhất từ người sáng lập](https://coachduynguyen.vn/bai-viet/bon-cau-toi-nghe-nhieu-nhat.html): Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.
 - [Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn cái mà viết](https://coachduynguyen.vn/bai-viet/kho-cau-chuyen.html): Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.

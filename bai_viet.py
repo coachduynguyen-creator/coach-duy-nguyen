@@ -1694,4 +1694,456 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
 <p><span class="nhan dam">Sai lầm hay gặp là thấy con số nào cũng yếu rồi sửa cả bốn cùng lúc.</span> Bốn con số này xếp theo thứ tự, con số trước hỏng thì con số sau không thể tốt, nên sửa từ con số một và đi lần lượt.</p>
 """),
 
+
+dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Quan hệ với khách",
+ tieu="Khách chỉ mặc cả với người bán",
+ mo="Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/dh-giua-doan.webp", alt="Coach Duy Nguyễn đi giữa những người vỗ tay trong một buổi đào tạo",
+ than="""
+<p>Có một chuyện Duy gặp nhiều tới mức bây giờ nghe nửa câu là biết nửa sau. Người chủ hoặc người tư vấn ngồi xuống và nói rằng khách bên mình khó tính lắm. Hỏi giá rất sớm, so từng hạng mục, rồi cuối cùng vẫn đi chỗ khác.</p>
+
+<p><span class="nhan">Nhưng cũng chính người khách đó, khi ngồi với một người khác, lại không nhắc gì tới giá.</span> Họ hỏi nên chọn phương án nào, rủi ro nằm ở đâu, quyết thế nào thì hợp lý. Cùng một con người, hai cách cư xử khác hẳn nhau, trong cùng một tuần.</p>
+
+<p>Nếu khách khó tính thật thì họ phải khó tính với tất cả. Chuyện đó không xảy ra. Thứ thay đổi không phải khách, mà là vai trò của người ngồi đối diện họ.</p>
+
+<h2>Ba ca thật, cùng một cơ chế</h2>
+
+<p><b>Ca thứ nhất, một bạn tư vấn bất động sản:</b> bạn ấy rất giỏi tìm khách và dẫn khách đi xem nhà rất đều. Có khách đi xem tới lần thứ ba và lần nào cũng gật đầu khen đẹp khen hợp. Đến lúc đặt cọc thì không liên lạc được nữa. Phản xạ của bạn ấy giống hầu hết mọi người: giải thích thêm, thuyết phục thêm, nói kỹ hơn về căn nhà.</p>
+
+<p>Khi Duy nghe lại cả buổi tư vấn, vấn đề không nằm ở căn nhà. Nó nằm ở chỗ bạn ấy không xuất hiện như một người giúp khách ra quyết định, bạn ấy xuất hiện như một người đang mong khách mua.</p>
+
+<p><b>Ca thứ hai, một đội ngũ tư vấn thẩm mỹ:</b> chuyên môn tốt và phác đồ chỉn chu. Mỗi buổi đều giải thích cặn kẽ từng hạng mục. Khách ngồi nghe chăm chú, công nhận dịch vụ tốt. Đến lúc báo chi phí thì bắt đầu loạt câu quen thuộc. Giảm thêm được không. Bên kia báo thấp hơn thì sao. Bỏ bớt hạng mục này để rẻ hơn được không.</p>
+
+<p>Chi tiết đáng nói nhất của ca này: <span class="nhan dam">nơi khách chọn cuối cùng không rẻ hơn, có trường hợp còn đắt hơn.</span> Nếu vấn đề thật sự là giá thì điều đó không thể xảy ra.</p>
+
+<p><b>Ca thứ ba, một bạn cố vấn tài chính hai năm kinh nghiệm:</b> chuẩn bị rất kỹ. Mỗi buổi đều có phân tích lợi nhuận và rủi ro của nhiều kênh khác nhau. Khách ngồi nghe gần hai tiếng, liên tục gật đầu, đặt câu hỏi sâu, không khí rất cởi mở. Kết thúc, khách nói cần thêm thời gian suy nghĩ. Vài tuần sau khách chuyển tiền cho một người tư vấn khác, sau khi đã nhận đủ toàn bộ thông tin từ bạn ấy.</p>
+
+<h2>Vì sao khách cư xử khác nhau với hai người</h2>
+
+<p>Trong đầu mỗi người có một chỗ để xếp người đối diện vào. Chỗ đó chỉ có hai ngăn: người này đang bán cho tôi, hay người này đang giúp tôi quyết.</p>
+
+<p>Ngăn thứ nhất kích hoạt một bộ phản xạ có sẵn, và bộ đó ai cũng có từ nhỏ. Hỏi giá trước, so với chỗ khác, giữ khoảng cách, đừng để lộ mình thích. Không phải khách xấu tính, đó là cách tự bảo vệ trong một cuộc mua bán, và nó hợp lý.</p>
+
+<p>Ngăn thứ hai kích hoạt một bộ phản xạ hoàn toàn khác: kể ra tình hình thật, nói cả những chuyện chưa đẹp, hỏi ý kiến, và chấp nhận nghe một câu trả lời mình không thích. Đây là cách người ta cư xử với bác sĩ, với luật sư, với người mình tin.</p>
+
+<p>Bạn không chọn được ngăn nào. Khách xếp bạn vào, và họ xếp rất nhanh, thường trong mười phút đầu.</p>
+
+<div class="dan-manh">Giá chỉ trở thành thứ để thương lượng khi vai trò của bạn trong đầu khách chưa rõ. Rõ vai rồi thì giá là điều kiện, không phải điểm mặc cả.</div>
+
+<h2>Thứ quyết định bạn bị xếp vào ngăn nào</h2>
+
+<p>Không phải trang phục, không phải danh thiếp, cũng không phải bạn nói mình là cố vấn. Nó nằm ở việc bạn mở đầu bằng gì.</p>
+
+<p>Mở đầu bằng sản phẩm, bằng giải pháp, bằng chương trình của mình thì bạn vào ngăn một, không cách nào khác. Dù bạn nói hay tới đâu, mọi câu sau đó đều được nghe như lời của một người đang bán.</p>
+
+<p>Mở đầu bằng việc tìm hiểu tình hình của họ, và tìm hiểu thật chứ không phải hỏi cho có, thì bạn vào ngăn hai. Ba câu Duy hướng dẫn ba ca trên đều giống nhau: mục tiêu thật của anh chị trong việc này là gì, điều gì khiến anh chị do dự nhất, và nếu chọn sai thì hệ quả nào là hệ quả anh chị không chấp nhận được.</p>
+
+<p>Ba câu đó không có gì cao siêu. Cái khó là hỏi xong phải chịu nghe, và chịu không nhảy vào giải pháp ngay khi vừa nhận ra vấn đề quen thuộc.</p>
+
+<h2>Điều gì đổi sau khi vai trò đổi</h2>
+
+<p>Bạn tư vấn bất động sản bắt đầu bằng việc hỏi khách mua để ở hay để đầu tư, rủi ro lớn nhất trong quyết định này là gì, chọn sai thì mất gì. Cuộc trò chuyện không còn là bán nhà, nó thành một cuộc bàn về một quyết định sống. Khách thôi hỏi giảm giá và bắt đầu hỏi nên đi theo phương án nào.</p>
+
+<p>Đội ngũ thẩm mỹ đổi điểm bắt đầu, từ công nghệ và phác đồ sang việc hỏi khách sợ nhất điều gì khi làm thẩm mỹ, rủi ro nào là rủi ro không chấp nhận được, kết quả thế nào thì mới đáng. Số lần bị hỏi giảm giá gần như biến mất, mà giá thì không hạ đồng nào.</p>
+
+<p>Bạn cố vấn tài chính thôi mở đầu bằng các phương án đầu tư. Bạn ấy bắt đầu bằng việc dựng khung quyết định, rồi cùng khách xem hệ quả của từng lựa chọn. Tỉ lệ chốt tăng rõ, trong khi bạn ấy <span class="nhan">nói ít hơn trước</span>.</p>
+
+<h2>Chỗ dễ hiểu sai</h2>
+
+<p>Có người nghe tới đây rồi kết luận rằng vậy thì đừng bán, chỉ tư vấn thôi. Duy không nói thế, và hiểu như vậy là hỏng theo một kiểu khác.</p>
+
+<p>Bạn vẫn bán, vẫn báo giá, vẫn mời người ta bước tiếp. Thứ đổi là thứ tự và điểm bắt đầu. Nói về chương trình ở phút thứ năm thì đó là bán hàng. Nói đúng chương trình ấy ở phút thứ bốn mươi, sau khi đã hiểu tình hình và đã gọi tên đúng vấn đề, thì đó là đề xuất của một người cố vấn.</p>
+
+<p>Cũng đừng nhầm việc này với thái độ. Người xuất hiện như cố vấn không phải người lạnh lùng hay tỏ ra khó gần. Duy gặp nhiều người cố tạo vẻ bận rộn và khó hẹn để trông có giá, và khách nhận ra rất nhanh, vì thứ đó là diễn chứ không phải vai.</p>
+
+<h2>Vì sao vai này khó giữ</h2>
+
+<p>Phần khó không nằm ở kỹ thuật hỏi. Nó nằm ở chỗ vai người cố vấn đòi bạn dám nói một câu mà người bán không dám nói: cái này có thể chưa hợp với anh chị.</p>
+
+<p>Một người chưa dám nói câu đó thì mọi câu hỏi chẩn đoán đều thành hình thức, vì dù nghe được gì thì kết luận vẫn là nên mua. Khách cảm nhận được chỗ giả đó, và họ quay lại ngăn một.</p>
+
+<p>Nói cách khác, vai trò không phải một cách nói, nó là một cách làm việc có ràng buộc thật. Bạn được xếp vào ngăn hai vì bạn thật sự sẵn sàng để mất một giao dịch, chứ không vì bạn hỏi ba câu đúng bài.</p>
+
+<h2>Một việc làm được trong tuần này</h2>
+
+<p>Nghe lại buổi tư vấn gần nhất, hoặc nhớ lại nếu không ghi âm. Rồi trả lời đúng một câu: trong mười phút đầu bạn nói về mình bao nhiêu phần và hỏi về họ bao nhiêu phần.</p>
+
+<p>Nếu phần nói nhiều hơn phần hỏi thì bạn đang tự đưa mình vào ngăn một mỗi buổi, và mọi kỹ thuật xử lý từ chối sau đó chỉ là chữa phần ngọn. Đổi tỉ lệ đó trong ba buổi tới rồi xem khách hỏi bạn những câu gì. Câu hỏi của khách là thước đo chính xác nhất cho chuyện họ đang xếp bạn ở đâu.</p>
+"""),
+
+
+dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khách",
+ tieu="Càng cố chứng minh, vị thế càng thấp",
+ mo="Giải thích nhiều là hành vi của người cần được chấp nhận. Chuyên gia không chứng minh mình giỏi, họ dẫn để người kia tự thấy.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/v5-giu-chuan.webp", alt="Coach Duy Nguyễn trao đổi với hai người trong một sự kiện",
+ than="""
+<p>Duy làm việc nhiều với các đơn vị đào tạo và cố vấn giáo dục. Ở đó có một kịch bản lặp lại tới mức Duy đoán được trước khi nghe hết.</p>
+
+<p>Người dạy có chuyên môn rất tốt, nội dung sâu, lộ trình bài bản, học viên ra kết quả rõ ràng. Nhưng mỗi lần ngồi tư vấn thì họ nói rất nhiều: giải thích chương trình gồm những gì, học xong được gì, vì sao phương pháp này hơn phương pháp kia, và vì sao mức học phí là hợp lý.</p>
+
+<p>Khách lắng nghe, đặt nhiều câu hỏi, không khí tốt. Đến cuối buổi thì bắt đầu hỏi so sánh, hỏi giảm giá, hoặc xin thêm thời gian. Không ít trường hợp khách chọn một bên khác vì thấy bên kia <span class="nhan">phù hợp hơn</span>.</p>
+
+<p>Chữ phù hợp đó đáng để dừng lại một chút, vì nó không có nghĩa là chương trình kia tốt hơn. Nó có nghĩa là người kia làm cho khách thấy mình được hiểu, còn mình thì làm cho khách thấy mình được thuyết phục, và hai chuyện đó khác nhau xa.</p>
+
+<h2>Chương trình không phải chỗ hỏng</h2>
+
+<p>Hầu hết mọi người chẩn đoán sai đúng ở chỗ này. Thấy khách không chọn thì họ kết luận rằng mình chưa trình bày đủ rõ, nên lần sau chuẩn bị kỹ hơn nữa, thêm bằng chứng, thêm so sánh, thêm lời khen của học viên cũ.</p>
+
+<p>Chỗ hỏng nằm ở chính hành vi chứng minh. <span class="nhan dam">Khi bạn cố giải thích quá nhiều, bạn đang tự đặt mình vào vai người cần được chấp nhận</span>, mà đó là vai của người bán chứ không phải vai của chuyên gia.</p>
+
+<p>Chuyên gia không cần chứng minh họ giỏi, họ dẫn để người kia tự nhận ra điều gì là phù hợp. Khác biệt này người nghe cảm nhận được gần như ngay lập tức, dù không mấy ai gọi tên ra được.</p>
+
+<h2>Ba dấu hiệu bạn đang chứng minh mà không biết</h2>
+
+<p><b>Bạn trả lời mọi câu hỏi ngay lập tức:</b> câu hỏi nào cũng được đáp trong hai giây, đầy đủ và trơn tru, và bạn thấy tự hào về chuyện đó. Nhưng trả lời quá nhanh gửi đi một tín hiệu rằng bạn đang chờ được hỏi để có dịp nói.</p>
+
+<p><b>Bạn nói dài hơn khi thấy khách chưa xuôi:</b> đây là dấu hiệu rõ nhất. Để ý xem khi cảm giác bất an dâng lên thì phản xạ của bạn là hỏi thêm hay nói thêm. Người bán nói thêm, người cố vấn hỏi thêm.</p>
+
+<p><b>Bạn tự nêu ra điểm mạnh mà không ai hỏi:</b> kể số năm kinh nghiệm, số học viên, giải thưởng, khách hàng lớn từng làm. Không phải những thứ đó không đáng nói, mà nói lúc chưa ai hỏi thì nó thành lời tự bảo vệ.</p>
+
+<h2>Vì sao im lặng lại nâng vị thế</h2>
+
+<p>Nghe thì ngược, nhưng cơ chế phía sau khá dễ hiểu và bạn kiểm được ngay trong buổi tới.</p>
+
+<p>Khi bạn im sau một câu hỏi, người đối diện phải tự lấp khoảng trống, và thứ họ lấp vào là suy nghĩ thật của họ. Câu trả lời có giá trị nhất trong cả buổi gần như luôn đến sau một quãng lặng chừng năm giây.</p>
+
+<p>Còn khi bạn lấp khoảng trống đó, bạn vừa cướp mất câu trả lời của họ, vừa gửi đi tín hiệu rằng bạn không chịu được sự im lặng. Người không chịu được im lặng là người đang cần thứ gì đó từ cuộc trò chuyện này. Khách đọc được điều đó, không phải bằng lý trí, mà bằng cảm giác.</p>
+
+<p>Có một chi tiết nhỏ Duy hay dùng để giữ được im lặng. Sau khi hỏi một câu quan trọng, đừng nhìn thẳng vào mắt người ta chờ, mà nhìn xuống ghi chép. Người kia bớt bị ép, còn bạn có việc để làm trong lúc chờ, nên năm giây trôi qua dễ hơn nhiều.</p>
+
+<div class="dan-manh">Người bán cần chứng minh để được chọn. Chuyên gia chỉ cần dẫn. Chịu được im lặng là kỹ năng bị đánh giá thấp nhất trong nghề này.</div>
+
+<h2>Cách các coach đó đổi lại</h2>
+
+<p>Thay vì trả lời mọi câu hỏi ngay, họ học cách dừng lại đúng lúc. Thay vì giải thích vì sao chương trình tốt, họ đặt câu hỏi để khách tự nói ra mục tiêu học tập thật, nỗi sợ nếu học sai chương trình, và hệ quả nếu tiếp tục trì hoãn.</p>
+
+<p>Khi khách nói xong, người tư vấn không vội lấp bằng lời giải thích. Họ để câu trả lời của chính khách tạo trọng lượng. Lúc đó buổi trò chuyện không còn là chứng minh năng lực, nó thành dẫn dắt một quyết định.</p>
+
+<p>Có một câu chuyển rất gọn dùng được ngay sau khoảng lặng: <b>anh chị vừa nói ba điều, để tôi nói lại xem mình có hiểu đúng không.</b> Câu này làm hai việc. Nó chứng tỏ bạn nghe thật, và nó cho bạn quyền nói tiếp mà không rơi vào thế thuyết phục.</p>
+
+<h2>Khi nào thì nên nói dài</h2>
+
+<p>Phải nói rõ chỗ này, không thì bài viết thành một lời khuyên nửa vời kiểu cứ ít nói là hay.</p>
+
+<p>Có ba lúc nói dài là đúng. Lúc bạn giải thích cơ chế của một vấn đề mà người kia vừa hỏi thẳng. Lúc bạn kể một ca thật có cấu trúc, vì câu chuyện cần đủ chi tiết mới có sức. Và lúc bạn nêu điều kiện, giới hạn, phần bạn không làm được, vì phần này càng rõ càng tốt.</p>
+
+<p>Ba lúc đó có chung một điểm: bạn đang nói để người kia hiểu, không phải nói để người kia đồng ý. Đó là ranh giới, và tự hỏi mình đang ở phía nào thì thường biết ngay.</p>
+
+<h2>Vị thế không phải thứ tỏ ra được</h2>
+
+<p>Duy gặp nhiều người sau khi nghe chuyện này thì chuyển sang một sai lầm khác. Họ trả lời cộc lốc, tỏ ra bận, để khách chờ, nói kiểu úp mở cho có vẻ cao tay.</p>
+
+<p>Cái đó không phải vị thế, đó là diễn, và người mua dịch vụ giá cao thường tinh hơn ta tưởng. Họ nhận ra ngay, và phản ứng của họ là rời đi chứ không phải nể.</p>
+
+<p>Vị thế thật đến từ ba thứ rất chậm. Bạn đã thật sự giải qua bao nhiêu ca giống ca của họ. Bạn có dám nói một điều khó nghe khi cần không. Và bạn có sẵn sàng nói câu này chưa hợp với anh chị không, kể cả khi tháng đó chưa đạt doanh thu.</p>
+
+<p>Ba thứ ấy không giả được. Người có đủ thì không cần diễn, người chưa đủ thì diễn cũng không xong.</p>
+
+<h2>Một việc làm được ngay tuần này</h2>
+
+<p>Trong buổi tư vấn gần nhất sắp tới, đặt cho mình đúng một luật: sau mỗi câu hỏi quan trọng, đếm thầm tới năm trước khi nói tiếp.</p>
+
+<p>Năm giây nghe rất ngắn khi đọc và rất dài khi làm. Bạn sẽ thấy tay mình muốn lấp, miệng mình muốn nói thêm một câu cho đỡ ngượng. Chịu qua được ba lần trong một buổi thì bạn sẽ nghe được những điều mà trước giờ khách chưa từng kể cho bạn.</p>
+
+
+<h2>Ba loại câu hỏi khiến người ta rơi vào thế chứng minh</h2>
+
+<p>Có ba câu hỏi của khách gần như luôn kéo người tư vấn vào thế phải bảo vệ. Biết trước ba câu này thì bạn không bị bất ngờ, và không phản xạ theo cách cũ.</p>
+
+<p><b>Chương trình của anh khác gì bên kia:</b> phản xạ sai là kể một loạt điểm hơn. Cách đúng là hỏi ngược rằng anh chị đã xem bên nào và thấy điểm nào của họ hợp với mình, vì câu trả lời cho biết họ đang đo bằng thước gì, mà biết thước rồi thì mới nói đúng chỗ được.</p>
+
+<p><b>Sao học phí lại cao vậy:</b> phản xạ sai là liệt kê những gì có trong chương trình cho tương xứng con số. Cách đúng là hỏi anh chị đang so với cái gì, vì so với một khoá học khác và so với chi phí của việc để nguyên hiện trạng là hai câu chuyện khác hẳn nhau.</p>
+
+<p><b>Có chắc là ra kết quả không:</b> phản xạ sai là kể thêm ca thành công. Cách đúng là nói thẳng điều kiện để ra kết quả và trường hợp nào thì không ra, vì một câu bảo đảm nghe thì êm nhưng nó biến quan hệ thành một lời hứa phải đòi về sau.</p>
+
+<p>Ba câu trên có chung một điểm: chúng đều là câu hỏi bề mặt, và trả lời thẳng vào bề mặt thì bạn luôn thua. Hỏi ngược một lần trước khi đáp là cách chuyển từ thế bị kiểm tra sang thế cùng xem xét.</p>
+"""),
+
+
+dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống và đội ngũ",
+ tieu="Đội ngũ bán hàng của bạn đang đứng ở vai nào",
+ mo="Vai trò không phải chuyện tính cách từng người. Nó thiết kế được, huấn luyện được, và đo được.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/dh-phong-lon.webp", alt="Coach Duy Nguyễn nói trên sân khấu một đại hội bán hàng",
+ than="""
+<p>Người chủ nào đọc xong chuyện vai trò cũng hỏi Duy một câu giống nhau: hiểu rồi, nhưng làm sao để cả đội ngũ làm được chứ không chỉ mình tôi.</p>
+
+<p>Câu hỏi đó đúng chỗ. Người chủ tự chuyển vai thì dễ, vì bạn có sẵn uy tín, có sẵn hiểu biết, và khách vốn đã nể bạn từ trước khi ngồi xuống. Một bạn bán hàng hai năm kinh nghiệm thì chưa có cả ba.</p>
+
+<p><span class="nhan">Nên câu trả lời không nằm ở việc đào tạo cho họ tự tin hơn.</span> Nó nằm ở chỗ vai trò thiết kế được, và phần lớn công ty chưa từng thiết kế nó.</p>
+
+<h2>Vì sao đội ngũ mặc định rơi vào vai người bán</h2>
+
+<p>Không ai dạy họ làm người bán cả, họ rơi vào đó vì mọi thứ xung quanh đều đẩy về hướng ấy.</p>
+
+<p><b>Chỉ tiêu tính theo số hợp đồng:</b> khi công ty chỉ đếm số hợp đồng ký được, người ta sẽ dồn sức cho việc ký, mà cách nhanh nhất để ký là thuyết phục. Không ai làm sai cả, họ chỉ đang làm đúng thứ công ty đo.</p>
+
+<p><b>Tài liệu bán hàng toàn nói về sản phẩm:</b> bộ tài liệu mà đội ngũ được phát thường có ba mươi trang về sản phẩm và không trang nào về cách tìm hiểu tình hình khách. Cầm bộ đó trong tay thì không mở đầu bằng sản phẩm mới lạ.</p>
+
+<p><b>Người mới học nghề bằng cách ngồi nghe người cũ:</b> nếu người cũ đang bán thì người mới học đúng cách bán, và sau ba lứa thì cả công ty cùng đứng một vai mà không ai từng chọn vai đó.</p>
+
+<h2>Ca thật: nói ít hơn mà chốt nhiều hơn</h2>
+
+<p>Duy làm với một bạn cố vấn tài chính hai năm kinh nghiệm, chuyên môn rất tốt. Bạn ấy hiểu sản phẩm, nắm thị trường, mỗi buổi đều chuẩn bị rất kỹ các phương án đầu tư.</p>
+
+<p>Có một buổi kéo dài gần hai tiếng. Khách ngồi nghe chăm chú, gật đầu, đặt câu hỏi sâu, không khí rất cởi mở. Kết thúc, khách nói cần thêm thời gian và muốn tham khảo ý kiến. Vài tuần sau khách chuyển tiền cho một người tư vấn khác, sau khi đã nhận đủ toàn bộ thông tin từ bạn ấy.</p>
+
+<p>Bạn ấy đổi cách bắt đầu. Thay vì mở bằng các phương án, bạn ấy dựng khung quyết định trước đã: mục tiêu tài chính lớn nhất giai đoạn này là gì, điều gì khiến anh chị lo nhất nếu quyết sai, rủi ro nào là rủi ro không chấp nhận được.</p>
+
+<p>Khi khách nói ra nỗi lo, bạn ấy không đưa sản phẩm ngay mà cùng khách xem hệ quả của từng lựa chọn. Tỉ lệ chốt tăng rõ chỉ sau một thời gian ngắn, trong khi <span class="nhan dam">bạn ấy nói ít hơn hẳn trước đó</span>.</p>
+
+<div class="dan-manh">Đội ngũ không rơi vào vai người bán vì họ kém. Họ rơi vào đó vì chỉ tiêu, tài liệu và cách học nghề đều đẩy về hướng ấy.</div>
+
+<h2>Bốn thứ phải đổi, theo đúng thứ tự</h2>
+
+<p><b>Một, đổi cách đo:</b> thêm hai con số nữa bên cạnh số hợp đồng. Bao nhiêu phần trăm buổi tư vấn có ghi lại được mục tiêu thật của khách, và bao lâu thì người tư vấn bắt đầu nói về giải pháp. Con số thứ hai đo bằng phút, và nó đổi cách làm việc nhanh hơn mọi buổi đào tạo.</p>
+
+<p><b>Hai, đổi bộ tài liệu:</b> phần đầu không phải giới thiệu sản phẩm mà là bộ câu hỏi tìm hiểu tình hình, kèm ghi chú vì sao hỏi câu đó và nghe được gì thì nghĩa là sao. Sản phẩm chuyển xuống phần sau.</p>
+
+<p><b>Ba, đổi cách rà lại sau buổi:</b> thôi hỏi vì sao chưa chốt, chuyển sang hỏi em biết được gì về tình hình của khách. Câu thứ hai bắt người ta phải nghe trong buổi, còn câu thứ nhất chỉ tạo ra những lời giải thích.</p>
+
+<p><b>Bốn, đổi việc người chủ làm mẫu:</b> nếu bạn vẫn là người vào cứu mọi ca lớn thì đội ngũ học được đúng một điều, là ca lớn thì gọi sếp. Muốn họ đổi vai thì phải để họ đứng ở vai đó trong một ca thật, và bạn ngồi nghe chứ không nói.</p>
+
+<h2>Thứ tự này không đảo được</h2>
+
+<p>Duy nhấn mạnh chỗ này vì rất nhiều nơi bắt đầu từ bước bốn, tức là đi đào tạo trước, rồi thấy ba tuần sau mọi thứ quay về như cũ.</p>
+
+<p>Lý do đơn giản. Nếu chỉ tiêu vẫn tính theo số hợp đồng và họp cuối tuần vẫn chỉ hỏi vì sao chưa chốt, người vừa được đào tạo đứng trước một lựa chọn. Làm theo cách mới và bị nhắc trong họp, hay quay về cách cũ và yên thân. Ai cũng chọn phương án hai, và họ chọn đúng.</p>
+
+<p>Đổi cách đo là bước rẻ nhất và mạnh nhất. Nó không tốn tiền, làm xong trong một buổi, và nó cho phép ba bước còn lại có chỗ đứng.</p>
+
+<h2>Ba dấu hiệu đội ngũ đã đổi vai thật</h2>
+
+<p><b>Người tư vấn nói ít đi:</b> nghe lại vài bản ghi âm sẽ thấy ngay. Trước đó người tư vấn nói bảy phần khách nói ba phần, đổi vai rồi thì tỉ lệ đảo lại.</p>
+
+<p><b>Khách hỏi kiểu khác hẳn:</b> thôi hỏi giá bao nhiêu và bên kia thế nào, chuyển sang hỏi nên chọn phương án nào và rủi ro nằm ở đâu.</p>
+
+<p><b>Đội ngũ bắt đầu tự loại khách:</b> đây là dấu hiệu mạnh nhất và cũng làm nhiều người chủ khó chịu nhất. Khi một bạn bán hàng nói rằng ca này em nghĩ chưa hợp, đó là lúc bạn biết vai đã đổi thật, vì người ở vai bán không bao giờ tự bỏ một ca.</p>
+
+<h2>Điều Duy không hứa</h2>
+
+<p>Đổi vai không làm số tháng sau tăng. Tháng đầu thường giảm, vì đội ngũ đang tập một cách làm mới và họ làm chưa mượt, lại thêm việc bắt đầu loại bớt ca không hợp.</p>
+
+<p>Con số thường quay lại từ tháng thứ hai và vượt từ tháng thứ ba tới thứ tư. Nếu bạn không chịu được một tháng thấp thì đừng bắt đầu, vì bỏ dở giữa chừng còn tệ hơn không làm: đội ngũ sẽ học được rằng những thứ công ty phát động đều không đi tới đâu.</p>
+
+<h2>Một việc làm được trong tuần này</h2>
+
+<p>Lấy ba bản ghi âm buổi tư vấn gần nhất của ba người khác nhau trong đội ngũ. Bấm giờ đúng một chỗ: phút thứ mấy thì họ bắt đầu nói về sản phẩm.</p>
+
+<p>Ba con số đó cho bạn biết đội ngũ mình đang đứng ở vai nào, và nó chính xác hơn mọi bản đánh giá năng lực. Dưới mười phút cả ba thì bạn đã biết bắt đầu từ đâu.</p>
+
+
+<h2>Người chủ là chỗ nghẽn cuối cùng</h2>
+
+<p>Bốn bước trên làm xong mà vẫn không chuyển thì gần như luôn còn một chỗ nữa, và chỗ đó là chính người chủ.</p>
+
+<p>Duy hay hỏi một câu trong lúc rà lại: tháng vừa rồi anh chị vào cứu bao nhiêu ca. Câu trả lời thường là bốn tới sáu ca, và luôn là những ca lớn nhất trong tháng.</p>
+
+<p>Chuyện đó gửi đi một thông điệp mạnh hơn mọi lời huấn luyện. Đội ngũ hiểu ngay rằng ca thường thì các em xử lý, còn ca đáng tiền thì sếp làm. Hiểu như vậy thì không ai dốc sức tập vai mới, vì tập giỏi cũng không được giao ca lớn.</p>
+
+<p>Cách gỡ không phải là bạn thôi tham gia. Cách gỡ là đổi vai của bạn trong ca đó: bạn có mặt nhưng người dẫn là bạn nhân sự, còn bạn chỉ nói khi được hỏi. Khách vẫn thấy có bạn nên vẫn yên tâm, mà đội ngũ thì được đứng ở vai thật một lần.</p>
+
+<p><span class="nhan">Ba tới bốn ca như vậy đổi được nhiều hơn mười buổi đào tạo.</span> Nó tốn của bạn đúng số giờ bạn vẫn bỏ ra, chỉ khác cách ngồi.</p>
+
+<h2>Bao lâu thì thấy kết quả</h2>
+
+<p>Duy nói con số để bạn khỏi sốt ruột. Bước đổi cách đo có hiệu lực ngay trong tuần đầu, vì người ta luôn làm theo thứ được đếm.</p>
+
+<p>Cách làm việc trong buổi tư vấn thì mất khoảng sáu tới tám tuần mới đổi thật, vì đây là thói quen chứ không phải kiến thức. Riêng con số kinh doanh thì tháng thứ ba tới thứ tư mới nói lên điều gì, sớm hơn thì mẫu còn quá nhỏ để kết luận.</p>
+"""),
+
+
+dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn người sáng lập",
+ tieu="Ba Điểm Chạm, và vì sao thứ tự không đảo được",
+ mo="Ba trạng thái nhận thức khách phải đi qua để tự quyết. Từng phần đều đúng, nhưng đảo thứ tự thì cả chuỗi hỏng.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/v5-soi-dung.webp", alt="Coach Duy Nguyễn vẽ khung phương pháp trên bảng lật trước hội trường",
+ than="""
+<p>Duy dạy phương pháp này nhiều năm, và phần người ta nhớ nhanh nhất luôn là tên ba bước. Phần người ta làm sai nhiều nhất là thứ tự.</p>
+
+<p>Ba Điểm Chạm không phải kịch bản bán hàng. <span class="nhan">Nó là ba trạng thái nhận thức mà một người phải đi qua để tự ra quyết định.</span> Khi cả ba đủ rõ thì quyết định đến tự nhiên, không cần ép và cũng không cần kỹ thuật chốt nào.</p>
+
+<h2>Ba trạng thái đó là gì</h2>
+
+<p><b>Chạm Động Lực:</b> giúp người ta nhìn rõ điều họ thật sự muốn, chứ không phải điều họ nghĩ mình muốn. Hai thứ đó khác nhau nhiều hơn ta tưởng, và phần lớn người ta chưa từng nói ra thành lời điều thứ nhất. Dấu hiệu xong: họ tự diễn đạt được mong muốn của mình bằng ngôn ngữ của chính họ, không phải bằng chữ của bạn.</p>
+
+<p><b>Chạm Điểm Nghẽn:</b> giúp họ đối diện với nguyên nhân thật đang giữ họ đứng yên. Nỗi sợ, rào cản và cái giá của việc không thay đổi gì cả đều được gọi tên ở bước này. Dấu hiệu xong: họ tự nhận ra rằng đây chính là thứ đang giữ mình lại.</p>
+
+<p><b>Chạm Con Đường:</b> giúp họ nhìn thấy một hướng đi phù hợp với bối cảnh, khả năng và mức độ sẵn sàng của họ. Chỗ này không phải chỗ thuyết trình. Dấu hiệu xong: họ tự thấy đây là con đường của mình.</p>
+
+<p>Ba dấu hiệu trên có một điểm chung đáng để ý. Cả ba đều bắt đầu bằng chữ <b>họ tự</b>. Không có chỗ nào là bạn nói cho họ nghe rồi họ gật.</p>
+
+<h2>Vì sao thứ tự không đảo được</h2>
+
+<p>Mỗi bước là điều kiện để bước sau có nghĩa. Bỏ qua một bước thì bước tiếp theo vẫn diễn ra, chỉ là nó rơi vào khoảng không.</p>
+
+<p>Nói về con đường khi người ta chưa thấy điểm nghẽn thì giải pháp của bạn nghe hay mà không cấp bách. Họ khen phương án tốt, xin thêm thời gian, rồi thôi. Không phải họ nói dối, phương án tốt thật, chỉ là nó chưa đủ quan trọng so với mười việc khác đang xếp hàng.</p>
+
+<p>Nói về điểm nghẽn khi người ta chưa rõ động lực thì bạn đang chỉ ra một vấn đề mà chính họ chưa thấy cần giải. Phản ứng thường gặp là họ tự bào chữa, hoặc lịch sự công nhận rồi đổi chủ đề. Tệ hơn, họ thấy mình bị chê.</p>
+
+<p>Còn nếu bạn làm đủ ba bước nhưng đảo hai bước cuối, tức là đưa con đường trước rồi mới nói điểm nghẽn, thì phần điểm nghẽn nghe như một lời biện hộ cho giải pháp bạn vừa bán. Cùng một nội dung, đặt sau thì thành lý lẽ bán hàng.</p>
+
+<div class="dan-manh">Khi cả ba Điểm Chạm đủ rõ, quyết định đến tự nhiên. Không cần ép, không cần kỹ thuật chốt.</div>
+
+<h2>Đọc ngược: cách dùng khung này để chẩn đoán</h2>
+
+<p>Đây là phần Duy thấy có ích nhất cho người chủ, và nó dùng được cả khi bạn không trực tiếp ngồi tư vấn.</p>
+
+<p>Mọi tình huống khó đều truy ngược được về một Điểm Chạm chưa hoàn tất. Nguyên tắc: <span class="nhan dam">không bao giờ xử lý tình huống ở tầng bề mặt, luôn đọc ngược về Điểm Chạm còn thiếu.</span></p>
+
+<p>Ba câu tự hỏi khi gặp một ca khó:</p>
+
+<p><b>Khách đã rõ về động lực của mình chưa:</b> chưa rõ thì mọi giải pháp đều cảm thấy chưa cần thiết lắm. Biểu hiện hay gặp là mục tiêu mơ hồ, lý do tìm hiểu mang tính xã giao, và dễ bị phân tâm bởi chuyện bên ngoài.</p>
+
+<p><b>Khách đã nhìn thấy điểm nghẽn thật chưa:</b> chưa thấy thì họ sợ làm rồi cũng vậy, hoặc sợ đầu tư sai chỗ. Biểu hiện hay gặp là nhắc tới thất bại trong quá khứ, lo về hiệu quả, và so sánh mà không có tiêu chí rõ ràng.</p>
+
+<p><b>Khách đã cảm nhận được sự phù hợp của con đường chưa:</b> chưa thì họ thấy mình bị đẩy vào một hướng không phải của mình. Biểu hiện hay gặp là hỏi rất nhiều chi tiết kỹ thuật, so sánh với lựa chọn khác, và nói sợ không phù hợp.</p>
+
+<p>Ba câu này là la bàn. Có nó thì bạn thôi chữa phần ngọn, và cũng thôi đổ lỗi cho khách khó tính.</p>
+
+<h2>Chỗ người chủ dùng được ngay</h2>
+
+<p>Bạn không cần ngồi trong phòng tư vấn mới dùng được khung này. Duy hay đưa nó cho người chủ như một cách rà lại các ca thua trong tháng.</p>
+
+<p>Lấy năm ca không thành gần nhất, với mỗi ca chấm xem thiếu Điểm Chạm nào. Nếu cả năm ca đều thiếu cùng một chỗ thì bạn vừa tìm ra một lỗ hổng cố định trong cách bán của công ty, chứ không phải năm chuyện xui khác nhau.</p>
+
+<p>Duy thấy phần lớn công ty dịch vụ thiếu ở Điểm Chạm thứ hai. Đội ngũ được huấn luyện rất kỹ về sản phẩm, tức phần Con Đường, và cũng biết hỏi khách muốn gì, tức chạm được phần Động Lực ở mức bề mặt. Nhưng gần như không ai được dạy cách giúp người khác đối diện với nguyên nhân thật của mình, vì phần đó khó và dễ làm mất lòng.</p>
+
+<h2>Điều khung này không làm được</h2>
+
+<p>Ba Điểm Chạm không biến một người chưa đủ điều kiện thành người sẵn sàng. Nếu người ngồi trước mặt bạn chưa có gì để bắt đầu, thì đi hết ba bước cũng chỉ dẫn tới một kết luận rõ ràng hơn rằng chưa phải lúc. Đó là kết quả đúng, không phải một buổi thất bại.</p>
+
+<p>Nó cũng không rút ngắn được thời gian. Có ca đi hết ba Điểm Chạm trong một buổi, có ca mất ba lần gặp trong hai tháng. Ép cho xong trong một buổi vì mình đang cần số là quay lại đúng thói quen mà khung này sinh ra để chữa.</p>
+
+<p>Và nó không thay được chuyên môn. Bạn dẫn người ta tới chỗ nhìn rõ con đường, mà con đường bạn đưa ra lại dở, thì việc dẫn dắt kia chỉ làm họ thất vọng sâu hơn.</p>
+
+<h2>Một việc làm được trong tuần này</h2>
+
+<p>Chọn một ca gần đây kết thúc bằng câu để tôi suy nghĩ thêm, rồi chấm nó theo ba câu hỏi ở trên. Chấm thật, không chấm cho xong.</p>
+
+<p>Nếu bạn không chấm được vì không đủ thông tin về người đó, thì bạn vừa có câu trả lời rồi. Buổi hôm ấy chưa đi qua Điểm Chạm nào cả, dù nó kéo dài bao lâu và không khí dễ chịu tới đâu.</p>
+
+
+<h2>Ba dấu hiệu bạn đang ở sai Điểm Chạm</h2>
+
+<p>Trong lúc đang ngồi với khách thì khó tự nhận ra mình đang ở đâu. Có ba dấu hiệu nghe được ngay trong buổi.</p>
+
+<p><b>Khách trả lời ngắn dần:</b> câu đầu họ nói ba câu, tới giữa buổi chỉ còn gật và ừ. Đây gần như luôn là dấu hiệu bạn đã nhảy sang bước sau trong khi họ còn ở bước trước.</p>
+
+<p><b>Khách hỏi chi tiết kỹ thuật quá sớm:</b> mới mười lăm phút mà đã hỏi bao lâu, mấy buổi, gồm những gì. Nghe thì tưởng họ quan tâm, thật ra họ đang tìm cách đo bạn bằng thứ duy nhất họ đo được, vì hai bước đầu chưa xảy ra.</p>
+
+<p><b>Bạn thấy mình đang thuyết phục:</b> đây là dấu hiệu rõ nhất và cũng dễ tự kiểm nhất. Nếu bạn phải cố cho người ta thấy điều gì đó, tức là bạn đang làm thay phần việc lẽ ra họ tự làm, và cái đó chỉ xảy ra khi một Điểm Chạm bị bỏ qua.</p>
+
+<p>Gặp cả ba dấu hiệu thì đừng cố đi tiếp cho hết buổi. Quay lại một bước và hỏi lại, mất mười phút mà cứu được cả buổi.</p>
+
+<h2>Vì sao khung này khó làm theo</h2>
+
+<p>Nghe qua thì ba bước rất đơn giản, mà làm được thì rất ít người. Duy nghĩ lý do không nằm ở kỹ thuật.</p>
+
+<p>Hai bước đầu đều đòi bạn ngồi yên trong lúc chưa có gì tiến triển. Bạn hỏi, người ta nghĩ, có lúc im lặng, có lúc họ nói ra thứ chẳng liên quan. Trong khoảng đó không có việc gì cho bạn làm, và cảm giác bất an dâng lên.</p>
+
+<p>Bước thứ ba thì ngược lại, nó cho bạn việc để làm: trình bày, giải thích, kể ca thành công. Nên phản xạ tự nhiên là nhảy tới bước ba càng sớm càng tốt, vì ở đó bạn thấy mình đang làm việc.</p>
+
+<p>Thứ tự bị đảo không phải vì người ta quên, mà vì bước ba dễ chịu hơn hai bước đầu rất nhiều.</p>
+"""),
+
+
+dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn người sáng lập",
+ tieu="Giữ bình tĩnh khi khách mất bình tĩnh",
+ mo="Nghề dịch vụ tiếp xúc nhiều kiểu người mỗi ngày. Bị cuốn theo cảm xúc của người đối diện là mất luôn khả năng dẫn dắt.",
+ ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/v5-di-cung.webp", alt="Coach Duy Nguyễn trao đổi với hai nhà sáng lập bên bảng trắng",
+ than="""
+<p>Hai mươi mốt bài trên trang này đều nói về khách, về đội ngũ, về hệ thống. Bài này nói về người ngồi ở ghế còn lại, tức là bạn.</p>
+
+<p>Làm nghề dịch vụ nghĩa là mỗi ngày tiếp xúc với nhiều kiểu người, và trong số đó sẽ có người đến trong trạng thái không ổn. Họ đang lo, đang giận, đang thất vọng vì một chuyện chẳng liên quan gì tới bạn. Chuyện này không phải rủi ro hiếm gặp, nó là điều kiện của nghề.</p>
+
+<p><span class="nhan">Đừng để bất kỳ ai hay bất kỳ hoàn cảnh nào lấy đi sự bình tĩnh của bạn.</span> Nói thì dễ, nên phần còn lại của bài là cách làm.</p>
+
+<h2>Vì sao mất bình tĩnh là mất luôn nghề</h2>
+
+<p>Người ta trả tiền cho bạn vì bạn nhìn được tình huống của họ rõ hơn chính họ. Đó là toàn bộ giá trị của việc bạn có mặt trong phòng.</p>
+
+<p>Khi bạn bị cuốn theo cảm xúc của người đối diện, bạn không còn nhìn từ ngoài nữa, bạn đã ở trong đó cùng họ. Từ giây phút ấy bạn thành người thứ hai đang bối rối, và trong phòng không còn ai giữ được cái nhìn tỉnh táo.</p>
+
+<p>Hãy hình dung bạn đang đứng trên bờ, dưới nước có người đang chới với. Nếu bạn nhảy xuống theo sự hoảng loạn của họ thì cả hai cùng chìm. Chỉ khi giữ được bình tĩnh, không phòng thủ và không vội biện minh, bạn mới đủ tỉnh táo để giúp họ.</p>
+
+<h2>Khoảng dừng vài giây</h2>
+
+<p>Khi cảm xúc bắt đầu dâng lên, hãy hít thở sâu và tạo một khoảng dừng. Chỉ vài giây đó cũng đủ để chuyển từ phản ứng theo cảm xúc sang quan sát tình huống.</p>
+
+<p>Cơ chế phía sau đơn giản hơn ta tưởng. Phản ứng tự động cần chưa tới một giây, còn phần nghĩ được thì cần lâu hơn thế nhiều. Khoảng dừng chỉ làm đúng một việc, là cho phần sau kịp lên tiếng trước phần trước.</p>
+
+<p>Duy dùng một mẹo rất thô cho việc này. Khi thấy mình muốn đáp lại ngay, Duy uống một ngụm nước. Việc đó tốn khoảng ba giây, hoàn toàn tự nhiên trong mắt người đối diện, và ba giây ấy đủ.</p>
+
+<p>Đứng ở vị trí người quan sát thì bạn không còn bị cảm xúc của người khác điều khiển nữa. Bạn vẫn nghe đủ và vẫn thấy đủ, chỉ là không bị kéo vào trong đó.</p>
+
+<div class="dan-manh">Không phòng thủ, không vội biện minh. Đó là hai việc bạn phải không làm, trước khi nghĩ tới việc nên làm gì.</div>
+
+<h2>Ba tình huống hay gặp và cách đi qua</h2>
+
+<p><b>Khách giận vì một chuyện có thật bên mình sai:</b> phản xạ hỏng là giải thích quy trình. Việc đúng là nhận trước, gọn và không kèm chữ nhưng, rồi mới nói bước xử lý. Một câu nhận lỗi không có chữ nhưng đứng sau có sức nặng gấp nhiều lần một đoạn giải thích dài.</p>
+
+<p><b>Khách nói nặng lời mà bên mình không sai:</b> phản xạ hỏng là chứng minh mình đúng. Việc đúng là tách hai phần ra, phần cảm xúc thì ghi nhận, phần sự việc thì làm rõ, và làm rõ sau chứ không cùng lúc. Cãi đúng sai trong lúc người ta đang nóng thì thắng cũng thành thua.</p>
+
+<p><b>Khách mang sang một chuyện chẳng liên quan tới bạn:</b> đây là loại hay gặp nhất và cũng dễ xử nhất. Đừng nhận nó về mình, cũng đừng gạt đi. Hỏi một câu về chuyện đang làm họ nặng đầu, nghe hết, rồi mới quay lại việc chính. Mất năm phút, được lại cả buổi.</p>
+
+<h2>Chỗ Duy phải nói thật</h2>
+
+<p>Người viết bài kiểu này hay để lại cảm giác rằng cứ hít thở sâu là xong. Không phải vậy, và Duy nói thẳng vì chính mình từng mất bình tĩnh trong phòng.</p>
+
+<p>Có ba thứ làm bạn dễ vỡ hơn hẳn bình thường, và cả ba đều không nằm trong buổi hôm đó. Thứ nhất là mệt, ngủ ít hoặc chạy quá nhiều buổi trong ngày. Thứ hai là đang cần ca này, tháng chưa đạt hoặc dòng tiền đang căng. Thứ ba là bạn đang mang sẵn một chuyện chưa xong từ buổi trước.</p>
+
+<p><span class="nhan dam">Ba thứ đó không chữa bằng kỹ thuật giữ bình tĩnh, chúng chữa bằng cách sắp lịch và sắp lại việc kinh doanh.</span> Xếp năm buổi tư vấn trong một ngày thì buổi thứ tư và thứ năm chắc chắn kém, không phải vì bạn thiếu bản lĩnh.</p>
+
+<h2>Sau buổi khó thì làm gì</h2>
+
+<p>Phần này ít ai nói tới, mà nó quyết định buổi khó hôm nay có ảnh hưởng tới buổi ngày mai hay không.</p>
+
+<p>Đừng bước thẳng từ một buổi căng sang buổi tiếp theo. Dành mười phút, viết ra ba dòng: chuyện gì đã xảy ra, lúc nào mình thấy nóng lên, và lần sau tới chỗ đó thì làm gì khác.</p>
+
+<p>Ba dòng ấy làm hai việc. Nó đóng lại buổi vừa rồi để bạn không mang theo, và sau vài tháng nó cho bạn thấy chỗ nào là điểm yếu thật của mình. Duy để ý rằng mỗi người thường chỉ có một hai chỗ dễ nổi, và biết chỗ đó rồi thì phòng được.</p>
+
+<p>Có một việc nên tránh: kể lại ngay cho đội ngũ theo kiểu than phiền về khách. Nghe thì nhẹ người, nhưng nó dạy cả đội ngũ một cách nhìn mà sau này chính bạn phải đi sửa.</p>
+
+<h2>Bình tĩnh không phải lạnh lùng</h2>
+
+<p>Duy gặp nhiều người hiểu nhầm chỗ này, rồi chuyển sang một kiểu khác cũng hỏng: mặt không cảm xúc, giọng đều đều, nghe mà như đang chờ cho xong.</p>
+
+<p>Người đang bực nhận ra rất nhanh, và cảm giác của họ lúc đó là bị coi thường. Chuyện nhỏ thành chuyện lớn từ đúng chỗ này, chứ không phải vì bạn nói sai câu nào.</p>
+
+<p>Bình tĩnh thật là bạn vẫn có cảm xúc, vẫn thấy được chuyện này khó với họ, chỉ là bạn không bị cuốn đi. Nói ra một câu ghi nhận cảm xúc của họ thường là cách hạ nhiệt nhanh nhất, và câu đó chỉ có sức khi bạn thật sự thấy chứ không phải nói cho có.</p>
+
+<h2>Một việc làm được ngay tuần này</h2>
+
+<p>Nhớ lại lần gần nhất bạn thấy mình nóng lên trong lúc làm việc, rồi trả lời một câu: hôm đó bạn có mệt, có đang cần ca đó, hay đang mang theo chuyện gì từ trước không.</p>
+
+<p>Gần như lần nào cũng có ít nhất một trong ba. Biết được cái nào thì bạn có việc để sửa, và việc đó nằm trong lịch của bạn chứ không nằm ở người khách hôm ấy.</p>
+
+
+<h2>Người trong đội ngũ cũng cần thứ này</h2>
+
+<p>Nếu bạn có người khác trực tiếp gặp khách thì phần trên không chỉ dành cho bạn. Có điều đội ngũ khó giữ bình tĩnh hơn bạn nhiều, và lý do không phải bản lĩnh.</p>
+
+<p>Một bạn nhân sự bị khách nói nặng sẽ nghĩ tới hai chuyện cùng lúc. Chuyện thứ nhất là xử lý thế nào cho ổn. Chuyện thứ hai, và thường lớn hơn, là chốc nữa báo cáo lại thì mình có bị trách không. Nỗi lo thứ hai chính là thứ đẩy người ta vào thế phòng thủ với khách.</p>
+
+<p>Gỡ chuyện này nằm ở phía người chủ, không nằm ở người nhân sự. Nói rõ ngay từ đầu rằng gặp ca căng thì được phép dừng lại và xin hẹn lại buổi khác, và làm vậy không bị tính là hỏng việc. Có câu đó rồi thì người ta bớt sợ, mà bớt sợ thì tự khắc bình tĩnh hơn.</p>
+
+<p>Duy cũng khuyên đưa việc rà lại buổi khó vào nhịp chung, mỗi tháng một lần, kể một hai ca và cùng xem lẽ ra làm gì khác. Kể ca của chính người chủ trước thì buổi đó mới có người dám nói thật.</p>
+
+<h2>Khi nào thì nên dừng buổi lại</h2>
+
+<p>Có lúc cách đúng không phải là cố giữ bình tĩnh cho hết buổi, mà là dừng lại. Duy dùng ba mốc.</p>
+
+<p><b>Người đối diện không còn nghe được nữa:</b> họ nói liên tục, cắt ngang, và lặp lại một ý nhiều lần. Nói tiếp lúc này chỉ tốn lời, vì không câu nào vào được.</p>
+
+<p><b>Chính bạn thấy tim đập nhanh và tay hơi run:</b> đó là dấu hiệu cơ thể đã chuyển sang chế độ phòng vệ, và mọi câu bạn nói ra sau đó đều sẽ mang giọng phòng vệ dù bạn không muốn.</p>
+
+<p><b>Câu chuyện đã rời khỏi việc chính:</b> khi đã sang chuyện cũ, chuyện người khác, hoặc chuyện cá nhân, thì buổi này không giải quyết được gì nữa.</p>
+
+<p>Cách dừng cũng cần đúng. Đừng nói mình dừng vì không khí căng, hãy nói rằng chuyện này quan trọng nên anh chị cho tôi xem lại kỹ rồi mình bàn tiếp vào ngày cụ thể nào đó. Câu ấy giữ thể diện cho cả hai và giữ luôn cái hẹn.</p>
+"""),
+
 ]
