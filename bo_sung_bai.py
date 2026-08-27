@@ -4,6 +4,15 @@ Mỗi bài cần: tra_loi (40 tới 60 chữ, đứng một mình vẫn hiểu) 
 Máy tìm kiếm và trợ lý AI trích đúng hai khối này."""
 
 BO_SUNG = {
+"bon-nghe-hay-bi-goi-chung-la-coach.html": dict(
+ tra_loi="Đào tạo dạy một nội dung soạn sẵn cho nhiều người. Tư vấn nhận đề bài và trả lại lời giải, nhiều khi làm luôn. Huấn luyện không đưa lời giải mà hỏi để bạn tự tìm. Cố vấn là người đã đi qua chặng bạn đang đứng, họ làm mẫu rồi để bạn tự làm.",
+ faq=[("Cố vấn và tư vấn khác nhau thế nào?",
+       "Người tư vấn làm thay bạn, nên khi họ rời đi thì năng lực đi theo họ. Người cố vấn làm mẫu rồi để bạn tự làm, nên năng lực ở lại trong đội ngũ bạn. Chọn tư vấn khi cần xong việc đúng hạn, chọn cố vấn khi muốn tự đi được về lâu dài."),
+      ("Huấn luyện viên và người cố vấn khác nhau ở đâu?",
+       "Huấn luyện viên không đưa lời giải, họ đặt câu hỏi để bạn tự tìm, vì giả định là bạn đã có đủ chất liệu. Người cố vấn thì đã từng làm đúng việc bạn đang làm, nên họ nói được cách họ đã làm và cả những lần họ làm hỏng."),
+      ("Làm sao biết mình đang cần nghề nào?",
+       "Hỏi ba câu: sau khi việc xong thì ai còn giữ được năng lực đó, vấn đề của mình là không biết hay biết mà không làm, và người này đã từng làm việc mình đang làm chưa. Câu thứ ba lọc nhanh nhất, vì người đã làm sẽ kể được chi tiết bạn kiểm chứng được.")]),
+
 "bon-cau-toi-nghe-nhieu-nhat.html": dict(
  tra_loi="Bốn câu người sáng lập hay nói nhất đều dẫn về một nguyên nhân: uy tín, cách ra quyết định và cách tạo kết quả vẫn nằm trong đầu người chủ, chưa thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.",
  faq=[("Vì sao đăng nội dung nhiều mà không ra đúng khách?",

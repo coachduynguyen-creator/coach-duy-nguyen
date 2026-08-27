@@ -707,7 +707,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
         <h3 class="pp-ten">Công thức tin cậy</h3>
         <p class="pp-mo">Tin cậy không mơ hồ, nó có cấu trúc. Ba thứ xây nó lên, và một thứ chia nhỏ tất cả. Thứ chia nhỏ là mức bạn đang nghĩ về chính mình trong lúc nói chuyện với người khác. Bạn có thể rất giỏi ở tử số, mà mẫu số lớn thì mọi thứ đều bị kéo xuống.</p>
         <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi mọi thứ đều đúng mà khách vẫn không tin bạn. Đo bốn ô dưới đây, gần như luôn hỏng ở mẫu số.</p></div>
-        <p class="pp-nguon"><b>Nguồn</b>Công thức gốc là Trust Equation của David Maister, Charles Green và Robert Galford, in trong sách <i>The Trusted Advisor</i> năm 2000. Duy dùng lại công thức này trong chương trình và đổi cách gọi bốn yếu tố cho hợp cách nói của người Việt.</p>
+        <p class="pp-nguon"><b>Nguồn</b>Công thức gốc là Trust Equation của David Maister, Charles Green và Robert Galford, in trong sách <i>The Trusted Advisor</i> năm 2000 (<a href="https://trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation" rel="noopener" target="_blank">trang giải thích của chính nhóm tác giả</a>). Duy dùng lại công thức này trong chương trình và đổi cách gọi bốn yếu tố cho hợp cách nói của người Việt.</p>
       </div>
       <div class="pp-hinh">
         <div>
@@ -1420,6 +1420,23 @@ def khoi_podcast(b, p=""):
 </section>
 """ % (p, tap["yt"], tap["yt"], ten_muc, tap["tieu"], tap["lydo"])
 
+def khoi_nguon(nguon):
+    """Dựng khối Nguồn tham khảo ở cuối bài.
+
+    Chỉ bài nào dựa trên một khung của người khác mới có khối này. Không rắc
+    nguồn cho đủ số, vì phần lớn bài là chuyện thật Duy gặp, không phải dẫn lại
+    sách. Mỗi mục là (chữ dẫn, địa chỉ) và địa chỉ nào cũng đã mở ra xem thật.
+    """
+    if not nguon:
+        return ""
+    muc = "".join(
+        '<li>%s <a href="%s" rel="noopener" target="_blank">Xem nguồn</a></li>' % (t, u)
+        for t, u in nguon)
+    return ('<div class="nguon-bai"><b>Nguồn tham khảo</b><ul>%s</ul>'
+            '<p>Phần còn lại của bài là chuyện Duy gặp trong công việc, không dẫn lại từ đâu.</p>'
+            '</div>' % muc)
+
+
 def ngay_tieng_viet(ngay):
     """2026-08-27 thành 27 tháng 8, 2026. Viết ngày kiểu Việt, không kiểu Anh."""
     nam, thang, ngay_so = ngay.split("-")
@@ -1473,6 +1490,7 @@ for i, b in enumerate(BAI):
       <div class="doc hien">%s%s%s</div>
       %s
       %s
+      %s
       <div class="bai-cuoi" style="max-width:74ch;margin-inline:auto">
         <p>Viết bởi Coach Duy Nguyễn &nbsp;·&nbsp; Cập nhật <time datetime="%s">%s</time></p>
         <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -1487,7 +1505,8 @@ for i, b in enumerate(BAI):
 </section>
 """ % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["ngay"], b["ngay_viet"], b["tieu"], b["mo"],
        p, b["anh"], b["alt"], tra_loi, ml, than_bai,
-       khoi_faq(faq) if faq else "", HOP_TAC_GIA, ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
+       khoi_faq(faq) if faq else "", khoi_nguon(b.get("nguon")), HOP_TAC_GIA,
+       ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))
     trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
     print("  bai-viet/" + b["tep"])

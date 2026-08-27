@@ -2092,3 +2092,22 @@ body.giay .bai-dau .tom{color:var(--ink-2)}
 /* trên nền kem thì đảo lại: logo về màu mực tối */
 .phan-sang .kh-l{filter:brightness(0) opacity(.72)}
 .phan-sang .kh-l:hover{filter:none;opacity:1}
+
+/* ============ khối nguồn tham khảo cuối bài (27/08) ============
+   Chỉ hiện ở bài nào thật sự dựa trên khung của người khác. Đặt sau phần hỏi
+   đáp và trước hộp tác giả, để người đọc thấy ranh giới giữa chữ của Duy và
+   chữ đi mượn. */
+.nguon-bai{max-width:74ch;margin:34px auto 0;padding-top:18px;
+  border-top:1px solid rgba(249,245,240,.10)}
+.nguon-bai b{font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:10px}
+.nguon-bai ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.nguon-bai li{font-size:14.5px;line-height:1.65;color:var(--ink-2);padding-left:15px;position:relative}
+.nguon-bai li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;
+  border-radius:50%;background:var(--vang);opacity:.55}
+.nguon-bai li i{font-style:italic}
+.nguon-bai li a{color:var(--vang);text-decoration:none;border-bottom:1px solid rgba(224,168,74,.32);
+  white-space:nowrap}
+.nguon-bai li a:hover{border-bottom-color:var(--vang)}
+.nguon-bai>p{font-size:13.5px;color:var(--ink-3);margin-top:12px}
+body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}

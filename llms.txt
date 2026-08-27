@@ -6,7 +6,7 @@
 - [Về Duy](https://coachduynguyen.vn/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](https://coachduynguyen.vn/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen.vn/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
-- [Blog](https://coachduynguyen.vn/blog.html): 26 bài viết cho nhà sáng lập
+- [Blog](https://coachduynguyen.vn/blog.html): 27 bài viết cho nhà sáng lập
 - [Sách và tài liệu](https://coachduynguyen.vn/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](https://coachduynguyen.vn/lien-he.html)
@@ -24,6 +24,7 @@
 - [90 Ngày Xây Hệ thống Tăng&nbsp;trưởng](https://coachduynguyen.vn/chuong-trinh/giai-phap-doanh-nghiep.html): Chẩn đoán, thiết kế, xây, chạy thử và bàn giao một hệ thống tăng trưởng có người phụ trách, dữ liệu và nhịp điều hành.
 
 ## Bài viết
+- [Bốn nghề hay bị gọi chung là coach, và bạn đang cần nghề nào](https://coachduynguyen.vn/bai-viet/bon-nghe-hay-bi-goi-chung-la-coach.html): Đào tạo, tư vấn, huấn luyện và cố vấn là bốn nghề khác nhau. Chọn nhầm nghề thì tiền mất mà việc vẫn đứng yên.
 - [Cái giá của người làm được mọi việc](https://coachduynguyen.vn/bai-viet/cai-gia-cua-nguoi-lam-duoc-moi-viec.html): Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.
 - [Khách chỉ mặc cả với người bán](https://coachduynguyen.vn/bai-viet/khach-chi-mac-ca-voi-nguoi-ban.html): Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.
 - [Càng cố chứng minh, vị thế càng thấp](https://coachduynguyen.vn/bai-viet/cang-co-chung-minh-cang-mat-vi-the.html): Giải thích nhiều là hành vi của người cần được chấp nhận. Chuyên gia không chứng minh mình giỏi, họ dẫn để người kia tự thấy.

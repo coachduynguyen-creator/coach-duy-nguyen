@@ -166,6 +166,10 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
  mo="Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm.",
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
+ nguon=[
+  ('Chữ cố vấn tin cậy và cách phân biệt nó với người bán hàng đến từ sách <i>The Trusted Advisor</i> của David Maister, Charles Green và Robert Galford, năm 2000. Năm việc trong bài là cách Duy diễn lại cho công việc tư vấn ở Việt Nam, không phải nội dung gốc của sách.',
+   'https://trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation'),
+ ],
  than="""
 <p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe thì không có cách nào kiểm lại. Nên Duy viết ra năm việc mà mình tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm Duy và kiểm bất kỳ ai khác.</p>
 
@@ -428,6 +432,10 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
  mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Càng tăng, mọi việc càng dồn về đúng một người là bạn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
+ nguon=[
+  ('Ý một hệ thống chỉ chạy nhanh bằng đúng khâu chậm nhất là Lý thuyết điểm hạn chế của Eliyahu Goldratt, viết thành tiểu thuyết <i>The Goal</i> năm 1984. Duy mượn cách nhìn đó và đặt vào chỗ khác: trong doanh nghiệp dịch vụ, khâu chậm nhất thường là chính người chủ.',
+   'https://en.wikipedia.org/wiki/The_Goal_(novel)'),
+ ],
  than="""<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
 
 <p><span class="nhan dam">Con anh giỏi, nhưng mỗi lần cần số liệu lại phải hỏi kế toán, ngồi tổng hợp cả buổi.</span></p>
@@ -500,6 +508,10 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-viet-tay.webp", alt="Coach Duy Nguyễn ngồi ghi lại một quy trình bằng tay",
+ nguon=[
+  ('Chuyện kinh nghiệm nằm trong đầu người mà không viết ra được có tên trong nghiên cứu quản trị: Ikujiro Nonaka và Hirotaka Takeuchi gọi đó là tri thức ẩn, đối lại là tri thức hiện, tức thứ đã viết thành tài liệu. Sách <i>The Knowledge-Creating Company</i>, Oxford University Press, năm 1995.',
+   'https://global.oup.com/academic/product/the-knowledge-creating-company-9780195092691'),
+ ],
  than="""<p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và trong đầu vài người giỏi nhất của công ty.</p>
 
 <p>Đó là sức mạnh vì không đối thủ nào sao chép được, nhưng đồng thời cũng là rủi ro lớn nhất, vì <span class="nhan dam">nó đi ra khỏi công ty cùng lúc với người mang nó</span>, và thường đi vào đúng lúc bạn không lường trước.</p>
@@ -1119,6 +1131,10 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
  mo="Phần lớn buổi tư vấn hỏng ở mười phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.",
  ngay="2026-08-10", ngay_viet="10 tháng 8, 2026", doc="7 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
+ nguon=[
+  ('Nguyên tắc khám trước rồi mới kê đơn là cách nói quen thuộc trong nghề cố vấn, nêu rõ trong sách <i>The Trusted Advisor</i> của David Maister, Charles Green và Robert Galford, năm 2000.',
+   'https://trustedadvisor.com/why-trust-matters/understanding-trust/understanding-the-trust-equation'),
+ ],
  than="""
 <p>Nếu bạn đi khám và bác sĩ kê đơn ngay khi bạn vừa ngồi xuống, bạn sẽ không tin đơn thuốc đó, dù nó hoàn toàn có thể đúng. Trong bán dịch vụ giá trị cao, chuyện y hệt xảy ra mỗi ngày, và người bán về nhà không hiểu vì sao khách nói để tôi suy nghĩ thêm.</p>
 
@@ -1621,6 +1637,10 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
  mo="Số thành viên là chỉ số dễ đo nhất và dễ đánh lừa nhất. Có bốn con số khác nói đúng hơn về việc cộng đồng của bạn có sống hay không.",
  ngay="2026-07-10", ngay_viet="10 tháng 7, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
+ nguon=[
+  ('Con số 150 người quen thân mà một người giữ được cùng lúc là ước lượng của nhà nhân học Robin Dunbar, công bố năm 1992 từ tương quan giữa kích thước vỏ não và quy mô bầy ở loài linh trưởng. Cần nói rõ: nhiều nghiên cứu sau này phản bác con số đó, nên hãy coi nó là một mốc để nghĩ, không phải một luật.',
+   'https://en.wikipedia.org/wiki/Dunbar%27s_number'),
+ ],
  than="""
 <p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của Duy là bao nhiêu người trong số đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống một lúc.</p>
 <p><span class="nhan">Số thành viên là con số dễ tăng nhất và ít liên quan nhất tới việc cộng đồng có tạo ra giá trị hay không.</span> Nó dễ tăng vì mời một người vào nhóm gần như không tốn gì, mà thứ không tốn gì thì cũng không nói lên điều gì.</p>
@@ -2144,6 +2164,110 @@ dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn n
 <p><b>Câu chuyện đã rời khỏi việc chính:</b> khi đã sang chuyện cũ, chuyện người khác, hoặc chuyện cá nhân, thì buổi này không giải quyết được gì nữa.</p>
 
 <p>Cách dừng cũng cần đúng. Đừng nói mình dừng vì không khí căng, hãy nói rằng chuyện này quan trọng nên anh chị cho tôi xem lại kỹ rồi mình bàn tiếp vào ngày cụ thể nào đó. Câu ấy giữ thể diện cho cả hai và giữ luôn lịch hẹn.</p>
+"""),
+
+
+dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn người sáng lập",
+ tieu="Bốn nghề hay bị gọi chung là coach, và bạn đang cần nghề nào",
+ mo="Đào tạo, tư vấn, huấn luyện và cố vấn là bốn nghề khác nhau. Chọn nhầm nghề thì tiền mất mà việc vẫn đứng yên.",
+ ngay="2026-08-27", ngay_viet="27 tháng 8, 2026", doc="7 phút đọc",
+ anh="img/dh-trong-doan.webp", alt="Coach Duy Nguyễn đi giữa những người sáng lập đang vỗ tay trong một buổi đào tạo",
+ than="""
+<p>Có một câu Duy nhận gần như mỗi tuần, và lần nào nội dung phía sau cũng khác nhau. Câu đó là: anh coach cho em được không.</p>
+
+<p>Người hỏi đang cần gì thì phải nói chuyện thêm mười lăm phút mới rõ. Có bạn cần một người dạy hẳn một bộ kỹ năng từ đầu. Có bạn đã biết phải làm gì rồi, chỉ cần một người ngồi cạnh mỗi tháng để không bỏ dở. Có bạn thì thật ra đang muốn thuê người làm hộ, chỉ là không tiện nói thẳng.</p>
+
+<p><span class="nhan">Bốn nghề rất khác nhau đang bị gói chung vào một chữ, và chọn nhầm nghề thì tiền mất mà việc vẫn đứng yên.</span> Bài này tách bốn nghề đó ra, kèm cách bạn tự kiểm xem mình đang cần ai.</p>
+
+<h2>Bốn chữ, bốn nghề</h2>
+
+<p>Bốn chữ hay gặp là đào tạo, tư vấn, huấn luyện và cố vấn. Trong tiếng Anh chúng là trainer, consultant, coach và mentor. Người Việt mình quen gọi gộp tất cả là thầy hoặc là coach, nên khi đi tìm người giúp thì tìm sai chỗ mà không biết.</p>
+
+<p>Chỗ khác nhau không nằm ở bằng cấp hay giá tiền. Nó nằm ở hai câu hỏi rất đơn giản: lời giải nằm ở đâu, và ai là người đi làm.</p>
+
+<h2>Người đào tạo dạy một nội dung đã có sẵn</h2>
+
+<p>Người đào tạo chuẩn bị một nội dung và truyền lại cho nhiều người cùng lúc. Lời giải nằm ở nội dung, còn việc áp dụng thì bạn tự về làm.</p>
+
+<p>Nghề này rẻ nhất tính trên đầu người và cũng là nghề dễ đo nhất trong ngắn hạn. Sau một buổi đào tạo tốt, đội ngũ của bạn biết thêm một cách làm mà trước đó chưa biết.</p>
+
+<p>Nhưng biết thêm một cách làm không có nghĩa là làm được. Duy đã đứng lớp cho khoảng ba mươi doanh nghiệp và thấy đi thấy lại đúng một chuyện. Ba tuần sau buổi học, phần lớn đội ngũ quay về đúng thói quen cũ, trừ khi có người ở lại giữ nhịp.</p>
+
+<div class="dan-manh">Đào tạo giải quyết chuyện không biết. Nó không giải quyết chuyện biết rồi mà không làm.</div>
+
+<p><b>Chọn người đào tạo khi:</b> đội ngũ của bạn thiếu một bộ kỹ năng cụ thể, ai cũng thiếu giống nhau, và bạn có sẵn người giữ nhịp sau khi lớp kết thúc.</p>
+
+<h2>Người tư vấn nhận đề bài và trả lại lời giải</h2>
+
+<p>Người tư vấn đi sâu vào một bài toán của bạn, phân tích, rồi trả lại một phương án. Lời giải nằm ở họ, và nhiều khi chính họ hoặc đội ngũ của họ làm luôn phần triển khai.</p>
+
+<p>Nghề này hợp nhất khi bạn cần một kết quả trong một khung thời gian, và bạn không có nhu cầu tự học cách làm. Bạn thuê người sửa đường ống thì bạn không cần biết cách sửa đường ống.</p>
+
+<p>Chỗ hiểm của nghề này nằm ở đúng ưu điểm của nó. Người tư vấn đi rồi thì năng lực đi theo họ. Nếu bài toán còn quay lại năm sau, bạn lại thuê tiếp, và mỗi lần thuê tiếp là một lần bạn xác nhận rằng năng lực đó chưa bao giờ vào được đội ngũ mình.</p>
+
+<p><b>Chọn người tư vấn khi:</b> bài toán rõ, cần xong trong một khung thời gian, và bạn chấp nhận rằng đội ngũ mình sẽ không tự làm được việc đó sau khi họ rời đi.</p>
+
+<h2>Huấn luyện viên không đưa lời giải, họ hỏi để bạn tự tìm</h2>
+
+<p>Nghề này bị hiểu sai nhiều nhất ở Việt Nam. Huấn luyện viên đúng nghĩa, tức coach theo cách hiểu quốc tế, không đưa lời giải cho bạn. Họ đặt câu hỏi để bạn tự nhìn thấy điều mình đang tránh nhìn.</p>
+
+<p>Giả định của nghề này là bạn đã có đủ chất liệu để tự tìm ra đường đi, chỉ đang bị nhiễu bởi cảm xúc, bởi thói quen, hoặc bởi việc không ai hỏi bạn những câu khó. Lời giải nằm ở bạn, người kia chỉ giúp bạn lấy nó ra.</p>
+
+<p>Nghề này mạnh không ngờ khi bạn đang mắc kẹt ở tầng con người chứ không phải tầng chuyên môn. Nhưng nếu bạn thiếu chuyên môn thật, thiếu kinh nghiệm ở đúng việc đang làm, thì một trăm câu hỏi hay cũng không tạo ra được thứ bạn chưa từng có.</p>
+
+<p><b>Chọn huấn luyện viên khi:</b> bạn biết phải làm gì mà không làm, hoặc bạn đang đứng trước một quyết định mà phần khó nằm ở chính bạn, không nằm ở thông tin.</p>
+
+<h2>Người cố vấn đã đi qua chặng bạn đang đứng</h2>
+
+<p>Người cố vấn, hay mentor, khác ba nghề trên ở một chỗ rất cụ thể: họ đã từng đứng ở chỗ bạn đang đứng, trong một nghề đủ giống nghề của bạn.</p>
+
+<p>Vì đã đi qua nên họ nhận ra điều bạn đang mô tả trước khi bạn mô tả xong. Họ nói được câu này thì Duy làm hỏng rồi, và họ nói được cái giá của lần làm hỏng đó. Lời giải nằm ở kinh nghiệm của họ, nhưng người đi làm là bạn.</p>
+
+<p><span class="nhan dam">Cố vấn và tư vấn khác nhau rõ nhất ở chỗ này: người tư vấn làm thay bạn, còn người cố vấn làm mẫu rồi để bạn tự làm.</span></p>
+
+<p>Nghề này chỉ có giá trị khi kinh nghiệm của người cố vấn nằm đúng vùng bạn đang mắc. Một người cố vấn giỏi trong ngành sản xuất chưa chắc giúp được một phòng khám. Nên khi chọn, bạn đừng hỏi họ đã thành công thế nào, hãy hỏi họ đã giải bao nhiêu trường hợp giống trường hợp bạn đang gặp.</p>
+
+<p><b>Chọn người cố vấn khi:</b> bạn muốn tự làm được về lâu dài, và bạn cần rút ngắn quãng thử sai bằng kinh nghiệm của người đi trước.</p>
+
+<h2>Bốn nghề đặt cạnh nhau</h2>
+
+<div class="bang"><table>
+<tr><th>Nghề</th><th>Lời giải nằm ở đâu</th><th>Ai đi làm</th><th>Hợp khi</th><th>Hỏng khi</th></tr>
+<tr><td>Đào tạo</td><td>Nội dung soạn sẵn</td><td>Bạn, sau khi lớp xong</td><td>Đội ngũ thiếu một kỹ năng chung</td><td>Không ai giữ nhịp sau buổi học</td></tr>
+<tr><td>Tư vấn</td><td>Người tư vấn</td><td>Họ hoặc đội ngũ của họ</td><td>Bài toán rõ, cần xong đúng hạn</td><td>Bạn muốn đội ngũ mình tự làm được</td></tr>
+<tr><td>Huấn luyện</td><td>Chính bạn</td><td>Bạn</td><td>Biết phải làm gì mà không làm</td><td>Bạn thiếu chuyên môn thật</td></tr>
+<tr><td>Cố vấn</td><td>Kinh nghiệm người đi trước</td><td>Bạn</td><td>Muốn tự đi được về lâu dài</td><td>Kinh nghiệm của họ lệch nghề bạn</td></tr>
+</table></div>
+
+<h2>Vì sao trên tên Duy có chữ Coach mà Duy làm việc như một người cố vấn</h2>
+
+<p>Chỗ này Duy nợ bạn một câu nói thẳng. Chữ Coach nằm trong tên thương hiệu vì thị trường Việt Nam quen gọi như vậy, và vì sáu năm trước Duy chưa nghĩ kỹ về chuyện này.</p>
+
+<p>Nhưng cách Duy làm việc thì không phải huấn luyện thuần. Duy có đưa lời giải, có nói thẳng cách Duy đã làm và cả những lần Duy làm hỏng. Duy làm mẫu cho bạn xem một lần rồi để bạn làm lại. Theo đúng định nghĩa quốc tế thì đó là cố vấn, không phải huấn luyện.</p>
+
+<p>Duy nói ra chuyện này vì hai lý do. Thứ nhất, để bạn biết mình sắp mua thứ gì trước khi trả tiền. Thứ hai, vì trong nghề này có không ít người bán một chữ mà giao một thứ khác, và Duy không muốn nằm trong nhóm đó.</p>
+
+<p>Trên thực tế, một quãng đồng hành tử tế thường trộn nhiều nghề. Có tháng Duy phải đứng lớp cho cả đội ngũ, có tháng chỉ ngồi hỏi bạn năm câu rồi im. Điều quan trọng không phải gọi tên đúng, mà là người ngồi cùng bạn nói rõ họ đang làm gì, ở buổi nào, và vì sao.</p>
+
+<h2>Ba câu tự hỏi trước khi bỏ tiền</h2>
+
+<p><b>Sau khi việc này xong, ai là người còn giữ được năng lực đó:</b> nếu câu trả lời là người bên ngoài, bạn đang mua tư vấn, dù người bán gọi nó bằng chữ gì.</p>
+
+<p><b>Vấn đề của mình là không biết, hay biết mà không làm:</b> không biết thì cần đào tạo hoặc cố vấn. Biết mà không làm thì thêm một khoá học nữa cũng không đổi được gì, chỗ hỏng nằm ở nhịp và ở người giữ nhịp.</p>
+
+<p><b>Người này đã làm việc mình đang làm bao giờ chưa:</b> câu hỏi này lọc rất nhanh. Người đã làm sẽ kể được chi tiết bạn kiểm chứng được, còn người chưa làm sẽ chỉ nói được nguyên tắc chung.</p>
+
+<h2>Chuyện này nằm ở đâu trong bốn năng lực</h2>
+
+<p>Trong cách Duy làm việc với nhà sáng lập thế hệ mới, có bốn năng lực phải đi cùng nhau: uy tín nghề nghiệp, tư vấn có trách nhiệm, hệ thống tăng trưởng, và kiến tạo cộng đồng. Việc chọn đúng người để học cũng chính là một phép thử của năng lực thứ hai.</p>
+
+<p>Người tư vấn có trách nhiệm là người nói thẳng khi mình không phải lựa chọn phù hợp. Nên khi bạn đi tìm người giúp, hãy để ý xem họ có bao giờ từ chối bạn không. Một người nhận mọi khách là một người chưa có gì để mất.</p>
+
+<h2>Một việc làm được trong tuần này</h2>
+
+<p>Lấy ba khoản bạn đã chi cho việc học trong mười hai tháng qua, gồm cả khoá học, người tư vấn và người đồng hành. Với mỗi khoản, ghi ra bạn đã mua nghề nào trong bốn nghề trên, và hôm nay năng lực đó đang nằm ở đâu.</p>
+
+<p>Nếu cả ba khoản đều dẫn về cùng một chỗ là năng lực vẫn nằm ngoài công ty bạn, thì lần chi tiếp theo bạn đã biết phải hỏi câu gì trước khi ký.</p>
 """),
 
 ]
