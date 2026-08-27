@@ -2075,3 +2075,20 @@ body.giay .cuoi .loi.vang{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}
 /* Dòng dẫn dưới tiêu đề bài dùng token giấy sáng toàn cục, trên trang giấy
    thành kem trên kem. CDN bắt lỗi 27/08 kèm ảnh chụp. */
 body.giay .bai-dau .tom{color:var(--ink-2)}
+
+/* ============ dải logo doanh nghiệp (thay chữ bằng logo thật, 27/08) ============
+   Logo giữ tệp màu gốc nhưng hiện dạng một màu sáng cho hợp nền tối: đây là dải
+   bằng chứng, không phải dải trang trí, nên không đổ 26 màu lên trang. Rê chuột
+   vào logo nào thì logo đó hiện màu thật để nhìn rõ danh tính. */
+.kh-l{height:32px;width:auto;align-self:center;flex-shrink:0;margin:0 26px;
+  filter:brightness(0) invert(.88);opacity:.78;
+  transition:filter .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1)}
+.kh-l:hover{filter:none;opacity:1}
+.kh-day{align-items:center}
+/* chữ cho doanh nghiệp chưa có logo: cùng tông mờ với logo một màu */
+.kh-t{opacity:.85}
+.kh-t::after{margin:0 0 0 26px}
+@media (max-width:640px){.kh-l{height:24px;margin:0 16px}}
+/* trên nền kem thì đảo lại: logo về màu mực tối */
+.phan-sang .kh-l{filter:brightness(0) opacity(.72)}
+.phan-sang .kh-l:hover{filter:none;opacity:1}

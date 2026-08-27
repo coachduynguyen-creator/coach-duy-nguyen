@@ -139,7 +139,7 @@ INDEX = """
 </header>
 
 <section class="kh">
-  <div class="bd"><p class="kh-dan">Hơn hai mươi doanh nghiệp đã mời Duy đào tạo nội bộ</p></div>
+  <div class="bd"><p class="kh-dan">Ba mươi doanh nghiệp đã mời Duy đào tạo và tư vấn</p></div>
   {KHACH}
 </section>
 
@@ -347,20 +347,25 @@ INDEX = """
   <div class="blog-them"><a class="nut nut-vien" href="sach.html#thu-vien">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
-# Logo doanh nghiệp đã mời Coach Duy đào tạo nội bộ.
-# Nguồn: PROFILE COACH DUY NGUYỄN, trang 9. Đây là bằng chứng thật, dùng thay cho
-# dải "Featured in" của các trang tham chiếu vốn không dùng được.
-# Bốn logo không đọc rõ tên thì để mô tả chung, không đoán tên doanh nghiệp.
-KHACH = [("mobifone","MobiFone"),("aia","AIA"),("acb","ACB"),("prudential","Prudential"),
- ("bao-viet-life","Bảo Việt Nhân thọ"),("kb-securities","KB Securities"),("hsc","HSC"),
+# Logo doanh nghiệp đã mời Coach Duy đào tạo hoặc tư vấn.
+# Nguồn logo: dải đối tác trên scaleos.vn (trang do chính CDN dựng), đã cắt nền
+# trắng và cắt sát hình bằng canvas ngày 27/08/2026, lưu ở img/doi-tac/.
+# Bốn doanh nghiệp chưa có tệp logo sạch thì hiện bằng chữ, chờ CDN gửi logo:
+# ACB, Bảo Việt Nhân thọ, HSC, BigHomes Group.
+KHACH = [("mobifone","MobiFone"),("aia","AIA"),(None,"ACB"),("prudential","Prudential"),
+ (None,"Bảo Việt Nhân thọ"),("kb-securities","KB Securities"),(None,"HSC"),
  ("mascom","Mascom"),("hung-vuong","Hưng Vượng Holdings"),("john-partners","John & Partners"),
  ("gaia","GAIA"),("minh-minh","Minh Minh Group"),("an-thuong-yen","An Thượng Yến"),
  ("nhan-ai","Nhân Ái"),("vulcano","Vulcano"),("kenli","KENLI"),("micc","MICC Group"),
- ("bighomes","BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
- ("hac-viet","một doanh nghiệp khách hàng"),("w-group","một doanh nghiệp khách hàng"),
- ("bs-group","một doanh nghiệp khách hàng"),("phan-hang","một doanh nghiệp khách hàng")]
-_kh1 = "".join('<span class="kh-t">%s</span>' % n
-               for t, n in KHACH if not n.startswith("một"))
+ (None,"BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
+ ("phan-hang","Phan Hằng Group"),("w-group","W Group"),("bs-group","BS Group"),
+ ("fos","FOS"),("gia-tot","Gia Tốt Việt Nam"),("secrets","Digital Academy Secrets"),
+ ("vinh-tuong","Vĩnh Tường Saint-Gobain"),("x3-nang-suat","X3 Năng Suất"),
+ ("lya","LYA Group"),("legacy","Legacy")]
+_kh1 = "".join(
+    ('<img class="kh-l" src="img/doi-tac/%s.png" alt="%s" decoding="async">' % (t, n))
+    if t else ('<span class="kh-t">%s</span>' % n)
+    for t, n in KHACH)
 # Nhân đôi danh sách để dải chạy vòng liên tục, mắt không thấy chỗ nối.
 khach_html = ('<div class="kh-chay"><div class="kh-day">%s</div>'
               '<div class="kh-day" aria-hidden="true">%s</div></div>' % (_kh1, _kh1))
