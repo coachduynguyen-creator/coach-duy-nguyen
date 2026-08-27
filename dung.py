@@ -976,6 +976,22 @@ CHUONG_TRINH = dau_trang("Chương trình",
   <div class="luoi-ct tre hien">{RIENG}</div>
 </section>
 
+<section class="phan bd hoa-van phan-sang" id="cach-tham-gia">
+  <div class="phan-dau hien">
+    <p class="mono">Trước khi hỏi giá</p>
+    <h2>Vì sao trang này không có bảng giá</h2>
+    <p>Cùng một chương trình, phạm vi phù hợp với hai người có thể khác nhau khá xa, nên một con số dán sẵn trên trang thường dẫn tới quyết định sai cho cả hai bên. Duy chọn cách nói điều kiện trước, nói giá sau.</p>
+  </div>
+  <div class="hien" style="max-width:820px;margin-inline:auto">
+    <ul class="dk-ds">
+      <li>Mỗi trang chương trình có mục <b>Điều kiện tham gia</b> ghi rõ bạn cần có sẵn những gì. Đọc mục đó trước, bạn tự biết mình hợp hay chưa mà không cần hỏi ai.</li>
+      <li>Thiếu một điều kiện thường có nghĩa là chưa tới lúc, không phải là không bao giờ. Duy sẽ nói thẳng chỗ nào chưa hợp và chỉ bạn bước gần hơn.</li>
+      <li>Mức đầu tư nói trong buổi trao đổi, sau khi đã rõ điểm nghẽn và phạm vi. Nếu chưa phải lúc thì Duy nói rõ vì sao, không giữ bạn lại.</li>
+      <li>Cần bản gọn để đọc nhanh hoặc để đưa cho đội ngũ, xem <a href="dieu-kien-tham-gia.md">điều kiện của cả mười chương trình trên một trang</a>.</li>
+    </ul>
+  </div>
+</section>
+
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
     <p class="mono">Công cụ mở</p>
@@ -1016,6 +1032,21 @@ for c in CT:
                 '<div class="manh" style="min-height:300px"></div></div>' % (p, c["anh"], c["alt"]))
     else:
         hinh = '<div class="anh anh-khung ngang"><img src="%s%s" alt="%s" loading="lazy"></div>' % (p, c["anh"], c["alt"])
+
+    # Trang không đăng giá, nên phải đăng điều kiện. Khách tự kiểm được mình có hợp
+    # hay chưa trước khi mất công hỏi, và bộ trả lời của AI cũng trả lời được câu
+    # "tôi có tham gia được không" thay vì im lặng vì trang không có dữ liệu nào.
+    dk_html = ""
+    if c.get("dieu_kien"):
+        muc = "".join("<li>%s</li>" % x for x in c["dieu_kien"])
+        dk_html = """<section class="phan bd hoa-van" id="dieu-kien">
+  <div class="phan-dau hien"><p class="mono">Trước khi tham gia</p><h2>Điều kiện tham gia</h2>
+  <p>Duy ghi phần này ra để bạn tự kiểm trước, khỏi mất một buổi trao đổi mới biết chưa hợp. Thiếu một điều kiện thì thường là chưa tới lúc, không phải là không bao giờ.</p></div>
+  <div class="hien" style="max-width:800px;margin-inline:auto">
+    <ul class="dk-ds">%s</ul>
+    <div class="ghi-mau" style="margin-top:24px"><b>Chương trình này dành cho ai</b><p>%s</p></div>
+  </div>
+</section>""" % (muc, c["cho_ai"])
 
     gia_html = ""
     if c.get("gia"):
@@ -1108,13 +1139,21 @@ for c in CT:
   <div class="luoi-ct tre hien">%s</div>
 </section>
 """ % (c["ten_vi"], c["luan_diem"], bang_tt, hinh,
-       dsk(c["ket_qua"]), chang_html, gia_html, p, dsk(c["khong_gom"], khong=True),
+       dsk(c["ket_qua"]), chang_html, dk_html + gia_html, p, dsk(c["khong_gom"], khong=True),
        cta_ct, "".join(the_ct(x, p) for x in khac))
 
-    ld = json.dumps({"@context":"https://schema.org","@type":"Course","name":c["ten"],
-                     "description":c["tom"],"inLanguage":"vi",
-                     "provider":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html"}},
-                    ensure_ascii=False)
+    ld_ct = {"@context":"https://schema.org","@type":"Course","name":c["ten"],
+             "description":c["tom"],"inLanguage":"vi",
+             "url":BASE+"/chuong-trinh/"+c["tep"],
+             "provider":{"@type":"Organization","name":"Next Step Group","url":BASE+"/"},
+             "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html"},
+             "audience":{"@type":"Audience","audienceType":c["cho_ai"]},
+             "teaches":c["ket_qua"]}
+    # coursePrerequisites là trường chuẩn của schema.org. Khai ở đây để bộ trả lời
+    # của AI đáp được câu hỏi tham gia được hay chưa mà không cần trang có giá.
+    if c.get("dieu_kien"):
+        ld_ct["coursePrerequisites"] = c["dieu_kien"]
+    ld = json.dumps(ld_ct, ensure_ascii=False)
     trang("chuong-trinh/" + c["tep"], c["ten"] + " · Coach Duy Nguyễn", c["tom"], than, "chuong-trinh.html", jsonld=ld)
     print("  chuong-trinh/" + c["tep"])
 
@@ -1945,6 +1984,35 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml"), "w
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "robots.txt"), "w", encoding="utf-8").write(
     "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE)
 
+# Tệp điều kiện tham gia, viết cho máy đọc. Trang không đăng giá, nên nếu không có
+# tệp này thì trợ lý AI được hỏi "tôi tham gia được chương trình nào" sẽ không có
+# gì để trả lời. Đây là bản gọn của đúng những gì đã in trên từng trang chương
+# trình, không phải nội dung riêng viết cho máy.
+dk = ["# Điều kiện tham gia các chương trình của Coach Duy Nguyễn", "",
+      "> Cập nhật %s. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi "
+      "trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. "
+      "Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm xem mình có hợp hay chưa." % NGAY_SUA, ""]
+for c in CT:
+    ten = c["ten"].replace("&nbsp;", " ")
+    dk.append("## %s" % ten)
+    dk.append("")
+    dk.append("- Trang: %s/chuong-trinh/%s" % (BASE, c["tep"]))
+    dk.append("- Dành cho: %s" % c["cho_ai"])
+    dk.append("- Hình thức: %s" % c["hinh_thuc"])
+    if c.get("khai_giang"):
+        dk.append("- Thời điểm: %s" % c["khai_giang"])
+    dk.append("- Điều kiện tham gia:")
+    for x in c.get("dieu_kien", []):
+        dk.append("  - %s" % x)
+    dk.append("- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư")
+    dk.append("")
+dk += ["## Cách bắt đầu", "",
+       "- Chưa rõ mình kẹt ở đâu: làm Phiếu chẩn đoán 7 phút tại %s" % PHIEU,
+       "- Muốn tìm hiểu trước khi cam kết: đăng ký danh sách chờ Cộng đồng Next Gen Founder tại %s" % CONG_DONG,
+       "- Muốn trao đổi trực tiếp: %s/lien-he.html" % BASE, ""]
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dieu-kien-tham-gia.md"),
+     "w", encoding="utf-8").write("\n".join(dk))
+
 # GitHub Pages đọc tệp này để biết tên miền riêng. Sinh cùng lúc với robots.txt
 # nên không bao giờ bị mất khi dựng lại trang.
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w",
@@ -1958,6 +2026,7 @@ llms = """# Coach Duy Nguyễn
 - [Về Duy](%(b)s/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
 - [Phương pháp](%(b)s/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
+- [Điều kiện tham gia](%(b)s/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký

@@ -2111,3 +2111,14 @@ body.giay .bai-dau .tom{color:var(--ink-2)}
 .nguon-bai li a:hover{border-bottom-color:var(--vang)}
 .nguon-bai>p{font-size:13.5px;color:var(--ink-3);margin-top:12px}
 body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
+
+/* ============ danh sách điều kiện tham gia (27/08) ============
+   Trang không đăng giá thì phải đăng điều kiện, nên khối này cần đọc nhanh:
+   mỗi dòng một điều kiện, dấu tích ở đầu, không gạch đầu dòng tròn cho đỡ giống
+   danh sách tính năng. */
+.dk-ds{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+.dk-ds li{position:relative;padding-left:34px;font-size:16.5px;line-height:1.62;color:var(--ink-2)}
+.dk-ds li::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:9px;
+  border-left:2px solid var(--vang);border-bottom:2px solid var(--vang);
+  transform:rotate(-45deg);opacity:.9}
+@media (max-width:640px){.dk-ds li{font-size:15.5px;padding-left:29px}}
