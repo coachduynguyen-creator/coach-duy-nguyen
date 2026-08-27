@@ -181,9 +181,9 @@ INDEX = """
 
 <section class="phan bd phan-sang" id="khung">
   <div class="phan-dau hien">
-    <p class="mono">Phương pháp Duy dùng</p>
-    <h2>Mỗi phương pháp một hình dạng riêng</h2>
-    <p>Duy không dạy mẹo rời. Mỗi khung dưới đây có tên, có hình, và có chỗ dùng rõ ràng.</p>
+    <p class="mono">Triết lý làm nghề của Duy</p>
+    <h2>Những khung tư duy Duy đúc kết qua nhiều năm làm nghề</h2>
+    <p>Có khung Duy tự rút ra từ các ca tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không dạy mẹo rời: mỗi khung có tên, có hình, và có chỗ dùng rõ ràng.</p>
   </div>
   <div class="kh-luoi tre hien">
     <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
