@@ -128,7 +128,7 @@ BO_SUNG = {
       ("Làm sao biết mình đã gọi đúng tên vấn đề?",
        "Khách im vài giây rồi nói đúng rồi. Nếu bạn gọi sai, họ sẽ sửa bạn, và điều đó cũng tốt vì bạn học được và họ thấy bạn nghe thật."),
       ("Ba lỗi hay gặp trong buổi tư vấn là gì?",
-       "Trình bày giải pháp quá sớm, hỏi để dẫn dắt chứ không để hiểu, và không dám nói không hợp. Cái giá của lỗi thứ ba luôn lớn hơn khoản thu được từ ca đó.")]),
+       "Trình bày giải pháp quá sớm, hỏi để dẫn dắt chứ không để hiểu, và không dám nói không hợp. Cái giá của lỗi thứ ba luôn lớn hơn khoản thu được từ thương vụ đó.")]),
 
 "de-toi-suy-nghi-them.html": dict(
  tra_loi="Câu để tôi suy nghĩ thêm gần như không bao giờ mang nghĩa cần thêm thời gian. Nó có bốn nghĩa: chưa thấy vấn đề đủ lớn, không phải người quyết, chưa tin mình làm nổi, hoặc giá vượt mức tự cho phép. Mỗi nghĩa cần một cách xử lý khác nhau.",

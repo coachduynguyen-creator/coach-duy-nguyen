@@ -183,7 +183,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Triết lý làm nghề của Duy</p>
     <h2>Những khung tư duy Duy đúc kết qua nhiều năm làm nghề</h2>
-    <p>Có khung Duy tự rút ra từ các ca tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không muốn chia sẻ những mẹo ngắn hạn. Mọi thứ Duy làm đều dựa trên tư duy gốc, và bạn có thể tìm hiểu những phương pháp luận cùng khung tư duy cốt lõi trong công việc của Duy ở đây.</p>
+    <p>Có khung Duy tự rút ra từ những buổi tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không muốn chia sẻ những mẹo ngắn hạn. Mọi thứ Duy làm đều dựa trên tư duy gốc, và bạn có thể tìm hiểu những phương pháp luận cùng khung tư duy cốt lõi trong công việc của Duy ở đây.</p>
   </div>
   <div class="kh-luoi tre hien">
     <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
