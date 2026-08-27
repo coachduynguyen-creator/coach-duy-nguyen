@@ -26,8 +26,8 @@ def chu_so(n, hoa=False):
 
 
 # ---------------------------------------------------------------- khối dùng lại
-# Bốn kênh và hai con số khác loại. Tách riêng vì một cái là người theo dõi,
-# một cái là thành viên cộng đồng, một cái là số năm. Xếp chung một hàng thì
+# Bốn kênh và hai con số khác loại. Tách riêng vì một bên là người theo dõi,
+# một bên là thành viên cộng đồng, một bên là số năm. Xếp chung một hàng thì
 # sáu con số nhìn như nhau trong khi chúng không cùng nghĩa.
 # Dòng vai trò lấy đúng cách trang kenh-youtube.html đã mô tả, không thêm tuyên bố mới.
 # Viết đủ số. "334.000" đọc ra sức nặng thật, "334 nghìn" thì không.
@@ -149,7 +149,7 @@ INDEX = """
       <p class="mono">Về Duy</p>
       <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
       <p>Đó là chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Điểm chung của họ: khách mua vì tin ở chính con người họ, trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
-      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một cái tên người ta nhớ, và dám tin.</p>
+      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một tên tuổi khách nhớ, và dám tin.</p>
       <p>Xa hơn nữa là di sản. Không phải một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật, bài học thật, cả những lần vấp. Mình gói lại cho rõ ràng, kể lại thật lòng, rồi trao cho đội ngũ của mình và cho những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
       <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên trong lúc bạn tập cách làm mới.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -250,7 +250,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
-    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: <span class="nhan">người ta tin bạn trước khi tin công ty bạn.</span></p>
+    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: <span class="nhan">khách tin bạn trước khi tin công ty bạn.</span></p>
     <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng <span class="nhan">những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua.</span> Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
   </div>
   <div class="cd-nl hien">
@@ -319,7 +319,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Kho công cụ và tài liệu</p>
     <h2>Mỗi công cụ gắn với một phương pháp</h2>
-    <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Cái nào đang làm thì ghi rõ đang làm.</p>
+    <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Công cụ nào đang làm thì ghi rõ đang làm.</p>
   </div>
   <div class="tl-luoi tre hien">
     <article class="tl">
@@ -656,9 +656,9 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
       </div>
       <div class="pp-hinh">
         <div class="nt4">
-          <div><b>01</b><span>Không thuyết phục. Dẫn để người ta tự nhìn ra.</span></div>
+          <div><b>01</b><span>Không thuyết phục. Dẫn để khách tự nhìn ra.</span></div>
           <div><b>02</b><span>Đo bằng chất lượng quyết định của khách, không bằng doanh số.</span></div>
-          <div><b>03</b><span>Tin cậy do người ta trao cho bạn, không phải do bạn tự nhận.</span></div>
+          <div><b>03</b><span>Tin cậy do khách trao cho bạn, không phải do bạn tự nhận.</span></div>
           <div><b>04</b><span>Không hợp thì nói thẳng. Dám nói không là cách xây tin cậy nhanh nhất.</span></div>
         </div>
       </div>
@@ -690,7 +690,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
         <div class="pp-dau"><span class="pp-so">Phương pháp 03</span></div>
         <h3 class="pp-ten">Công thức tin cậy</h3>
         <p class="pp-mo">Tin cậy không mơ hồ, nó có cấu trúc. Ba thứ xây nó lên, và một thứ chia nhỏ tất cả. Thứ chia nhỏ là mức bạn đang nghĩ về chính mình trong lúc nói chuyện với người khác. Bạn có thể rất giỏi ở tử số, mà mẫu số lớn thì mọi thứ đều bị kéo xuống.</p>
-        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi mọi thứ đều đúng mà người ta vẫn không tin bạn. Đo bốn ô dưới đây, gần như luôn hỏng ở mẫu số.</p></div>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi mọi thứ đều đúng mà khách vẫn không tin bạn. Đo bốn ô dưới đây, gần như luôn hỏng ở mẫu số.</p></div>
         <p class="pp-nguon"><b>Nguồn</b>Công thức gốc là Trust Equation của David Maister, Charles Green và Robert Galford, in trong sách <i>The Trusted Advisor</i> năm 2000. Duy dùng lại công thức này trong chương trình và đổi cách gọi bốn yếu tố cho hợp cách nói của người Việt.</p>
       </div>
       <div class="pp-hinh">
@@ -787,7 +787,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
         <div class="pp-dau"><span class="pp-so">Phương pháp 07</span></div>
         <h3 class="pp-ten">Bốn cấp độ trưởng thành</h3>
         <p class="pp-mo">Cùng một sản phẩm, bốn người ở bốn cấp độ khác nhau sẽ nghe ra bốn điều khác nhau. Hai cấp dưới quan tâm tới nỗi đau, tức là làm sao thôi mất và thôi sai. Hai cấp trên quan tâm tới thành công, tức là làm sao đi nhanh hơn và xa hơn. Nói ngôn ngữ của cấp này cho người ở cấp kia là cách hỏng buổi nhanh nhất.</p>
-        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi viết nội dung, khi soạn cẩm nang, và khi chọn xem mình sẽ phục vụ tệp nào. Đây không phải khung chia giàu nghèo, nó chia theo điều người ta đang cần nghe.</p></div>
+        <div class="pp-khi"><b>Mở ra lúc nào</b><p>Khi viết nội dung, khi soạn cẩm nang, và khi chọn xem mình sẽ phục vụ tệp nào. Đây không phải khung chia giàu nghèo, nó chia theo điều khách đang cần nghe.</p></div>
       </div>
       <div class="pp-hinh">
         <div>
@@ -944,7 +944,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Đồng hành</p>
-      <h2>Ở lại đủ lâu để cái mới thành thói quen</h2>
+      <h2>Ở lại đủ lâu để nếp mới thành thói quen</h2>
       <p>Một khoá học tạo ra hiểu biết. Chỉ có nhịp và cộng đồng mới biến hiểu biết thành thói quen. Đó là lý do cộng đồng là chỗ Duy dồn phần lớn thời gian trong năm nay.</p>
     </div>
     <div class="luoi-ct tre hien">{DONGHANH}</div>
@@ -986,7 +986,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
    .replace("{PHIEU}", PHIEU).replace("{CO_MAY}", CO_MAY)
 
 trang("chuong-trinh.html", "Chương trình của Coach Duy Nguyễn · Hệ sinh thái Next Gen Founder",
-      "Bốn chương trình năng lực, Cộng đồng Thành viên, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một cái thang, là một hệ sinh thái theo mức sẵn sàng.",
+      "Bốn chương trình năng lực, Cộng đồng Thành viên, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một chiếc thang, mà là một hệ sinh thái theo mức sẵn sàng.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
 
@@ -1208,7 +1208,7 @@ PD_TAP = [
  # ---- Chuyên mục 01 · Điểm nghẽn của người sáng lập
  dict(yt="mNRObOgqONc", muc=1,
   tieu="80 phần trăm thất bại không đến từ kỹ năng chốt",
-  mo="Người ta hay đổ cho khâu chốt, rồi đi học thêm kỹ thuật chốt. Tập này chỉ ra chỗ hỏng thật nằm sớm hơn nhiều trong quan hệ với khách, và vì sao luyện chốt không cứu được nó.",
+  mo="Nhiều người hay đổ cho khâu chốt, rồi đi học thêm kỹ thuật chốt. Tập này chỉ ra chỗ hỏng thật nằm sớm hơn nhiều trong quan hệ với khách, và vì sao luyện chốt không cứu được nó.",
   lydo="Giúp bạn thôi tốn tiền vào sai chỗ, trước khi mua thêm một khoá kỹ năng nữa.",
   cta_nhan="Đăng ký nhận thư hằng tuần", cta="lien-he.html"),
  dict(yt="YnRjTGhwoQg", muc=1,
@@ -1490,7 +1490,7 @@ THU_VIEN = """
   <div class="phan-dau hien">
     <p class="mono">Kho công cụ và tài liệu</p>
     <h2>Mỗi tài liệu gắn với một phương pháp</h2>
-    <p>Các công cụ dưới đây rút từ đúng những khung trên <a class="lk-v" href="phuong-phap.html">trang Phương pháp</a>. Cái nào dùng được ngay thì ghi rõ, cái nào đang làm thì ghi đang làm, không có nút tải giả.</p>
+    <p>Các công cụ dưới đây rút từ đúng những khung trên <a class="lk-v" href="phuong-phap.html">trang Phương pháp</a>. Công cụ nào dùng được ngay thì ghi rõ, bản nào đang làm thì ghi đang làm, không có nút tải giả.</p>
   </div>
   <div class="tl-loc hien" id="tl-loc">
     <button class="tl-nut chon" type="button" data-loc="all">Tất cả</button>
@@ -1513,7 +1513,7 @@ THU_VIEN = """
  for t in TAI_LIEU)
 
 SACH = dau_trang("Sách và tài liệu", "Sách đang viết, công cụ dùng được ngay",
-  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Cái nào ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + """
+  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Từng mục ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>

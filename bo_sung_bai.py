@@ -14,11 +14,11 @@ BO_SUNG = {
        "Khi người phụ trách xử lý được tám trong mười tình huống mà không hỏi bạn, kể cả tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy. Trước lúc đó bạn vẫn đang thuê người thực hiện.")]),
 
 "vi-sao-toi-khong-dung-phieu.html": dict(
- tra_loi="Phễu bán hàng đo được một chiến dịch nhưng không mô tả đúng cách một người quyết định tin ai, vì nó giả định người ta đi một chiều và không quay lại. Quỹ đạo đặt khách ở giữa, năm vòng quay quanh, ai cũng có thể tiến gần hoặc lùi ra mà vẫn còn trong hệ.",
+ tra_loi="Phễu bán hàng đo được một chiến dịch nhưng không mô tả đúng cách một người quyết định tin ai, vì nó giả định khách đi một chiều và không quay lại. Quỹ đạo đặt khách ở giữa, năm vòng quay quanh, ai cũng có thể tiến gần hoặc lùi ra mà vẫn còn trong hệ.",
  faq=[("Vậy có nên bỏ hẳn phễu không?",
        "Không. Dùng phễu để đo một chiến dịch có điểm bắt đầu và điểm kết thúc, vì nó cho con số để cải tiến. Chỉ đừng dùng phễu để thiết kế cả quan hệ với khách, vì lúc đó người chưa mua bị coi là thất bại cần cứu."),
       ("Năm vòng quỹ đạo niềm tin gồm những gì?",
-       "Vòng một là lúc người ta gặp bạn lần đầu. Vòng hai là lúc đúng người nhận ra vấn đề của họ. Vòng ba là lúc họ đồng ý cho bạn giữ liên lạc. Vòng bốn là niềm tin lớn dần. Vòng năm là lúc họ chọn bước tiếp theo, kể cả khi bước đúng là dừng lại."),
+       "Vòng một là lúc khách gặp bạn lần đầu. Vòng hai là lúc đúng người nhận ra vấn đề của họ. Vòng ba là lúc họ đồng ý cho bạn giữ liên lạc. Vòng bốn là niềm tin lớn dần. Vòng năm là lúc họ chọn bước tiếp theo, kể cả khi bước đúng là dừng lại."),
       ("Mỗi lần xuất hiện, tôi phải để lại được gì?",
        "Ít nhất một trong ba điều: giúp họ hiểu vấn đề rõ hơn, giúp họ tự đánh giá bối cảnh của mình, hoặc giúp họ tiến một bước nhỏ có ích. Không đạt điều nào thì đó là một lần tiêu bớt niềm tin chứ không tích thêm.")]),
 
@@ -38,37 +38,37 @@ BO_SUNG = {
       ("Bài kiểm xoá tên là gì?",
        "Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành và hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ. Nếu là bốn hoặc năm, vấn đề của bạn là định vị chứ không phải tần suất."),
       ("Uy tín có đủ để giữ khách không?",
-       "Không. Uy tín chỉ khiến người ta chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó, cái quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cái cửa đẹp dẫn vào phòng trống.")]),
+       "Không. Uy tín chỉ khiến khách chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó, điều quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cánh cửa đẹp dẫn vào phòng trống.")]),
 
 "cai-nut-that-mang-ten-ban.html": dict(
  tra_loi="Nút thắt hình thành khi người chủ tự quyết nhiều việc mà không viết lại lý do quyết. Mỗi lần như vậy tạo thêm một điểm chỉ họ xử lý được. Nút này không đau khi công ty nhỏ, chỉ đau đúng lúc công ty lớn lên, tức lúc người chủ cần rảnh nhất.",
  faq=[("Ba dấu hiệu nút thắt đã siết là gì?",
        "Bạn đi vắng ba ngày là có việc bình thường phải chờ. Người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái vì họ sợ làm sai. Và bạn bắt đầu né tuyển thêm, vì trong lòng biết tuyển thêm là bận thêm."),
       ("Viết quy trình có gỡ được nút thắt không?",
-       "Không đủ. Quy trình mô tả các bước, còn cái đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và một nhịp rà soát cố định."),
+       "Không đủ. Quy trình mô tả các bước, còn phần đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và một nhịp rà soát cố định."),
       ("Nên bắt đầu từ đâu?",
-       "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà lại. Một luồng một quý, bốn luồng một năm. Sau hai năm cái nút ở chỗ bạn không còn nữa.")]),
+       "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà lại. Một luồng một quý, bốn luồng một năm. Sau hai năm nút thắt ở chỗ bạn không còn nữa.")]),
 
 "kinh-nghiem-phai-thanh-he-thong.html": dict(
- tra_loi="Trong doanh nghiệp dịch vụ, cái tạo ra kết quả tốt nhất thường nằm trong đầu người chủ và vài người giỏi nhất. Đó là sức mạnh vì khó bắt chước, nhưng cũng là rủi ro lớn nhất vì nó rời khỏi công ty cùng lúc với người mang nó.",
+ tra_loi="Trong doanh nghiệp dịch vụ, điều tạo ra kết quả tốt nhất thường nằm trong đầu người chủ và vài người giỏi nhất. Đó là sức mạnh vì khó bắt chước, nhưng cũng là rủi ro lớn nhất vì nó rời khỏi công ty cùng lúc với người mang nó.",
  faq=[("Đội ngũ có tự học được cách nghĩ của người chủ không?",
        "Học được một phần và rất chậm. Người giỏi học được cách bạn làm, nhưng không học được vì sao bạn quyết như vậy trong tình huống ngoại lệ. Mà nghề dịch vụ thì phần lớn giá trị nằm ở tình huống ngoại lệ."),
       ("Cách rẻ nhất để lấy kinh nghiệm ra khỏi đầu là gì?",
        "Ghi lại quyết định, không ghi lại thao tác. Mỗi tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. Dòng thứ ba là dòng có giá trị nhất và cũng hay bị bỏ nhất."),
       ("Năm phần làm nên một hệ thống là gì?",
-       "Kết quả rõ ràng, người chịu trách nhiệm là một cái tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
+       "Kết quả rõ ràng, người chịu trách nhiệm là một người có tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
 
 "cong-dong-khong-phai-nhom-dang-bai.html": dict(
  tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ người sáng lập. Bài kiểm nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
  faq=[("Bốn thứ quyết định cộng đồng sống hay chết là gì?",
-       "Lời hứa rõ về việc vào đây được gì và không được gì. Tiêu chuẩn thành viên để biết ai hợp ai chưa hợp. Trải nghiệm mười bốn ngày đầu để người mới có kết quả nhỏ sớm. Và một nhịp hoạt động cố định để người ta biết khi nào quay lại."),
+       "Lời hứa rõ về việc vào đây được gì và không được gì. Tiêu chuẩn thành viên để biết ai hợp ai chưa hợp. Trải nghiệm mười bốn ngày đầu để người mới có kết quả nhỏ sớm. Và một nhịp hoạt động cố định để mọi người biết khi nào quay lại."),
       ("Đo cộng đồng bằng gì?",
        "Không đo bằng số người trong nhóm. Đo bằng tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại theo nhịp, giá trị thành viên tạo cho nhau, và tỉ lệ gia hạn hoặc giới thiệu. Con số cuối cùng trung thực nhất."),
       ("Vì sao mở cửa cho tất cả lại là sai?",
        "Vì bạn sẽ mất người giỏi trước tiên, do họ nhạy nhất với chất lượng. Một cộng đồng giữ được chất lượng bằng cách chọn người, không bằng cách chọn giá.")]),
 
 "ai-lam-nhanh-phan-da-dung.html": dict(
- tra_loi="AI khuếch đại cái sẵn có. Đưa cho nó một luận điểm rõ và kho câu chuyện thật, nó tiết kiệm rất nhiều giờ. Đưa cho nó một sự mơ hồ, nó trả lại sự mơ hồ được viết trơn tru hơn. Trơn tru là chỗ nguy hiểm vì nó khiến bạn tưởng mình đã nghĩ xong.",
+ tra_loi="AI khuếch đại những gì sẵn có. Đưa cho nó một luận điểm rõ và kho câu chuyện thật, nó tiết kiệm rất nhiều giờ. Đưa cho nó một sự mơ hồ, nó trả lại sự mơ hồ được viết trơn tru hơn. Trơn tru là chỗ nguy hiểm vì nó khiến bạn tưởng mình đã nghĩ xong.",
  faq=[("Việc nào giao được cho AI, việc nào không?",
        "Giao được: tìm và tóm tắt tài liệu, sắp xếp ý đã có, chuyển một nội dung dài thành nhiều định dạng, gợi ý góc nhìn bạn chưa xét. Không giao được: quyết định bạn tin điều gì, chọn lập trường, đánh giá một con người, và chịu trách nhiệm cho câu bạn nói ra trước công chúng."),
       ("Dùng AI thế nào để không mất giọng riêng?",
@@ -81,7 +81,7 @@ BO_SUNG = {
  faq=[("Ba lớp phải rõ trước khi tăng sản lượng là gì?",
        "Lãnh địa, tức bạn nói về vùng nào và cố ý không nói về vùng nào. Luận điểm, tức bạn tin điều gì mà nhiều người trong ngành chưa tin và có bằng chứng gì. Và bằng chứng thật từ công việc của bạn, thứ không ai sao chép được."),
       ("Nên đăng bao nhiêu bài một tuần?",
-       "Khi ba lớp trên đã rõ thì câu trả lời thường thấp hơn người ta nghĩ: một nội dung dài mỗi tuần, cắt ra vài mẩu ngắn, cộng với việc trả lời thật kỹ câu hỏi người xem đặt ra. Nhịp đó một người giữ được nhiều năm."),
+       "Khi ba lớp trên đã rõ thì câu trả lời thường thấp hơn bạn nghĩ: một nội dung dài mỗi tuần, cắt ra vài mẩu ngắn, cộng với việc trả lời thật kỹ câu hỏi người xem đặt ra. Nhịp đó một người giữ được nhiều năm."),
       ("Người thắng trong làm nội dung là ai?",
        "Không phải người đăng nhiều nhất, mà là người còn đăng sau năm thứ ba.")]),
 
@@ -97,14 +97,14 @@ BO_SUNG = {
 "lanh-dia-chuyen-mon.html": dict(
  tra_loi="Lãnh địa chuyên môn là giao của ba thứ: một nhóm người cụ thể, một loại vấn đề cụ thể, và một cách nhìn mà bạn có còn người khác chưa có. Ngành và nghề chưa phải lãnh địa. Người không dám bỏ vùng nào sẽ không sở hữu vùng nào.",
  faq=[("Làm sao tìm ra lãnh địa của mình?",
-       "Chia giấy ba cột: những gì bạn biết làm, những gì người ta thật sự trả tiền cho bạn, và những gì bạn còn muốn làm sau năm năm nữa. Lãnh địa nằm ở chỗ giao của ba cột. Nếu chỗ giao rỗng, bạn có vấn đề lớn hơn vấn đề nội dung."),
+       "Chia giấy ba cột: những gì bạn biết làm, những gì khách thật sự trả tiền cho bạn, và những gì bạn còn muốn làm sau năm năm nữa. Lãnh địa nằm ở chỗ giao của ba cột. Nếu chỗ giao rỗng, bạn có vấn đề lớn hơn vấn đề nội dung."),
       ("Chọn lãnh địa hẹp có mất khách không?",
        "Mất loại khách lẻ tẻ, được khả năng được nhớ. Một lãnh địa tốt phải làm hai việc cùng lúc: khiến đúng người thấy đây là dành cho mình, và khiến người không phù hợp tự rời đi mà không thấy khó chịu."),
       ("Bao lâu thì biết mình chọn đúng?",
-       "Ba dấu hiệu theo thứ tự: người nghe hỏi tiếp thay vì chỉ gật đầu, có người tự loại mình, và người ta giới thiệu bạn bằng đúng câu bạn dùng. Dấu hiệu cuối thường đến sau sáu tới mười hai tháng nói nhất quán.")]),
+       "Ba dấu hiệu theo thứ tự: người nghe hỏi tiếp thay vì chỉ gật đầu, có người tự loại mình, và có người giới thiệu bạn bằng đúng câu bạn dùng. Dấu hiệu cuối thường đến sau sáu tới mười hai tháng nói nhất quán.")]),
 
 "kho-cau-chuyen.html": dict(
- tra_loi="Người sáng lập hiếm khi hết ý tưởng. Cái họ thiếu là một cái kho và thói quen bỏ đồ vào kho. Ý tưởng đến lúc đang làm việc chứ không đến lúc ngồi trước màn hình trắng, nên phải ghi lại ngay trong ngày, ba dòng một mẩu.",
+ tra_loi="Người sáng lập hiếm khi hết ý tưởng. Điều họ thiếu là một kho chứa và thói quen bỏ đồ vào kho. Ý tưởng đến lúc đang làm việc chứ không đến lúc ngồi trước màn hình trắng, nên phải ghi lại ngay trong ngày, ba dòng một mẩu.",
  faq=[("Nên ghi lại những loại chất liệu nào?",
        "Bốn loại: câu hỏi lặp lại từ ba người trở lên, quyết định có đánh đổi kèm lý do, sai lầm đã trả giá, và số liệu ngược với dự đoán. Loại thứ hai quý nhất vì không ai sao chép được cách bạn nghĩ."),
       ("Ghi thế nào cho dùng được về sau?",
@@ -146,10 +146,10 @@ BO_SUNG = {
       ("Vì sao khách được giảm mạnh lại khó hơn?",
        "Người trả đủ giá đã tự thuyết phục mình rằng việc này quan trọng nên họ có mặt và làm bài. Người được giảm mạnh thường vào với tâm thế thử xem sao, vắng nhiều hơn, và cuối cùng không ra kết quả."),
       ("Khi nào giảm giá là hợp lý?",
-       "Hai trường hợp, và cả hai phải công khai lý do: giá ra mắt cho khoá đầu tiên khi chưa có bằng chứng người học, và giảm theo một quy tắc áp dụng cho tất cả như đăng ký sớm. Cái làm hỏng quan hệ là mức riêng dành cho người biết mặc cả.")]),
+       "Hai trường hợp, và cả hai phải công khai lý do: giá ra mắt cho khoá đầu tiên khi chưa có bằng chứng người học, và giảm theo một quy tắc áp dụng cho tất cả như đăng ký sớm. Điều làm hỏng quan hệ là mức riêng dành cho người biết mặc cả.")]),
 
 "nam-thu-lam-nen-mot-he-thong.html": dict(
- tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một cái tên chịu trách nhiệm, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
+ tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một người đứng tên chịu trách nhiệm, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
  faq=[("Vì sao thư mục quy trình không ai mở?",
        "Vì quy trình chỉ là một phần năm của hệ thống, và thường là phần ít quan trọng nhất. Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo, thiếu nhịp rà soát thì hệ thống chết trong ba tháng."),
       ("Nên bắt đầu từ đâu?",
@@ -160,7 +160,7 @@ BO_SUNG = {
 "giao-quyen-ma-khong-mat-kiem-soat.html": dict(
  tra_loi="Giao quyền hiệu quả là giao theo vùng, không giao theo việc. Vẽ ba vùng cho người nhận: vùng xanh tự quyết không cần báo, vùng vàng tự quyết rồi báo lại, vùng đỏ hỏi trước khi quyết. Giữ vùng đỏ càng nhỏ càng tốt và viết ra rõ ràng.",
  faq=[("Hai kiểu giao quyền sai là gì?",
-       "Giao việc mà giữ quyết định, khiến người nhận thành cái máy và không giảm tải cho ai. Và giao hết mà không có ranh giới, khiến bạn phải nhảy vào sửa rồi cả hai mất niềm tin."),
+       "Giao việc mà giữ quyết định, khiến người nhận thành cỗ máy và không giảm tải cho ai. Và giao hết mà không có ranh giới, khiến bạn phải nhảy vào sửa rồi cả hai mất niềm tin."),
       ("Vì sao phải viết ranh giới ra?",
        "Khi ranh giới nằm trong đầu bạn, người kia phải đoán. Người thận trọng sẽ hỏi mọi thứ nên bạn không giảm tải, người mạnh dạn sẽ quyết cả chỗ bạn không muốn nên bạn phải sửa. Cả hai đều đang hành xử hợp lý với thông tin họ có."),
       ("Dấu hiệu giao quyền đã thành công?",

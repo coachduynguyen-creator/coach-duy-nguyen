@@ -2071,3 +2071,7 @@ body.giay .nut-vien{background-color:transparent;background-image:none}
 /* Thẻ lối màu vàng trên trang giấy: ghim lại tông vàng gốc, không ăn tông
    hổ phách sẫm của trang, vì chữ trên thẻ này vốn là nâu đen đậm. */
 body.giay .cuoi .loi.vang{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}
+
+/* Dòng dẫn dưới tiêu đề bài dùng token giấy sáng toàn cục, trên trang giấy
+   thành kem trên kem. CDN bắt lỗi 27/08 kèm ảnh chụp. */
+body.giay .bai-dau .tom{color:var(--ink-2)}
