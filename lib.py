@@ -13,7 +13,19 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260829g"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260829h"   # tăng số này mỗi lần sửa style.css hoặc site.js
+
+# Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
+# trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
+# không có thì rơi về ảnh này. Thiếu thẻ og:image thì mọi liên kết chia sẻ đều
+# hiện một ô trắng, đó là lỗi tốn người xem nhất trong nhóm thẻ chia sẻ.
+ANH_CHIA_SE = "img/cd-workshop.webp"
+
+# Ngày sửa gần nhất của phần nội dung tĩnh. Dùng cho thẻ lastmod trong sitemap.
+# Máy tìm kiếm và bộ trích của AI đều ưu tiên nội dung mới, nên phải khai thật.
+# Tăng ngày này khi sửa nội dung đáng kể, đừng để nó tự nhảy theo ngày dựng,
+# vì lastmod nhảy mỗi lần dựng lại là tín hiệu giả và bị bỏ qua.
+NGAY_SUA = "2026-08-27"
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -192,6 +204,21 @@ JSONLD_NGUOI = json.dumps({
                    "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
 }, ensure_ascii=False)
 
+# Next Step Group là pháp nhân đứng sau các chương trình. Khai riêng thành một
+# thực thể để máy tìm kiếm và bộ trả lời của AI nối được người với tổ chức, thay
+# vì chỉ thấy một cái tên người trôi nổi.
+TO_CHUC = {
+    "@type": "Organization", "@id": BASE + "/#to-chuc",
+    "name": "Next Step Group", "alternateName": "NSG",
+    "url": BASE + "/",
+    "description": "Đơn vị phát triển hệ sinh thái Next Gen Founder, đào tạo và cố vấn "
+                   "cho nhà sáng lập doanh nghiệp dịch vụ.",
+    "founder": {"@id": BASE + "/#duy"},
+    "email": EMAIL,
+    "areaServed": "VN",
+    "sameAs": [YOUTUBE, TIKTOK],
+}
+
 GOC = os.path.dirname(os.path.abspath(__file__))
 
 def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
@@ -206,13 +233,14 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
 <title>%s</title>
 <meta name="description" content="%s">
 <link rel="canonical" href="%s">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{OG_LOAI}">
 <meta property="og:site_name" content="Coach Duy Nguyễn">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:title" content="%s">
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
 <meta name="twitter:card" content="summary_large_image">
+{OG_ANH}
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -236,6 +264,21 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
     doc = doc.replace("{VER}", VER)
     m = re.search(r'<div class="(?:hero-nen|tran-nen)"[^>]*><img src="([^"]+)"', doc)
     doc = doc.replace("{PRELOAD}", ('<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)) if m else "")
+
+    # Bài viết là bài viết, còn lại là trang. Facebook và các bộ đọc dùng thẻ này
+    # để biết nên hiện ngày đăng và tên tác giả hay không.
+    doc = doc.replace("{OG_LOAI}", "article" if ten_tep.startswith("bai-viet/") else "website")
+
+    # Ảnh lớn của chính trang đó, không có thì lấy ảnh mặc định. Địa chỉ phải
+    # đầy đủ cả tên miền, vì bộ đọc của Facebook không hiểu đường dẫn tương đối.
+    ma = re.search(r'<div class="(?:hero-nen|tran-nen|bai-anh)"[^>]*>\s*<img src="([^"]+)"(?:[^>]*?alt="([^"]*)")?', doc)
+    nguon_anh = ma.group(1) if ma else (p + ANH_CHIA_SE)
+    mo_ta_anh = (ma.group(2) if (ma and ma.group(2)) else tieu_de)
+    dia_chi_anh = BASE + "/" + nguon_anh.replace("../", "")
+    doc = doc.replace("{OG_ANH}",
+        '<meta property="og:image" content="%s">\n'
+        '<meta property="og:image:alt" content="%s">\n'
+        '<meta name="twitter:image" content="%s">' % (dia_chi_anh, html.escape(mo_ta_anh), dia_chi_anh))
     duong = os.path.join(GOC, ten_tep)
     os.makedirs(os.path.dirname(duong), exist_ok=True) if sau else None
     open(duong, "w", encoding="utf-8").write(doc)

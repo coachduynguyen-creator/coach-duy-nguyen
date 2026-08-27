@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
-from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, trang, dau_trang, dd)
+from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
+                 NGAY_SUA, TO_CHUC, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
@@ -411,9 +412,29 @@ INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_ht
          .replace("{BAI_LON}", the_bai_lon(BAI[0]))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
+# Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
+# chính website. Trước đây chỉ khai mỗi Person, nên máy thấy một tên người mà
+# không biết Next Step Group là gì và ai là chủ trang.
+LD_CHU = json.dumps({"@context": "https://schema.org", "@graph": [
+    {"@type": "Person", "@id": BASE + "/#duy",
+     "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn",
+     "jobTitle": "Người cố vấn cho nhà sáng lập",
+     "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín "
+                    "cá nhân thành hệ thống mà đội ngũ cùng vận hành.",
+     "url": BASE + "/", "image": BASE + "/img/cd-chan-dung.webp",
+     "worksFor": {"@id": BASE + "/#to-chuc"},
+     "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",
+                    "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
+     "sameAs": [YOUTUBE, TIKTOK]},
+    TO_CHUC,
+    {"@type": "WebSite", "@id": BASE + "/#trang",
+     "url": BASE + "/", "name": "Coach Duy Nguyễn",
+     "inLanguage": "vi", "publisher": {"@id": BASE + "/#to-chuc"}},
+]}, ensure_ascii=False)
+
 trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
       "Coach Duy Nguyễn đi cùng nhà sáng lập biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành. Bốn năng lực, quỹ đạo niềm tin, và cộng đồng Next Gen Founder.",
-      INDEX, "index.html")
+      INDEX, "index.html", jsonld=LD_CHU)
 print("  index.html")
 
 # ---------------------------------------------------------------- VỀ TÔI
@@ -1119,9 +1140,31 @@ BLOG = dau_trang("Blog", "Chỗ nhà sáng lập hay vấp nhất, và cách g�
 """ % (BAI[0]["tieu"], the_bai_lon(BAI[0]), "".join(the_bai_nho(b) for b in BAI[1:5]),
        len(BAI), chu_de_html, "".join(the_bai_luoi(b) for b in BAI))
 
+# Trang blog khai đúng danh sách bài đang có, kèm ngày và mô tả từng bài. Bộ trả
+# lời của AI đọc khối này là biết ngay trang có gì mà không phải mò từng thẻ.
+LD_BLOG = json.dumps({"@context": "https://schema.org", "@graph": [
+    {"@type": "Blog", "@id": BASE + "/blog.html#blog",
+     "name": "Blog của Coach Duy Nguyễn", "inLanguage": "vi",
+     "description": "Bài viết cho nhà sáng lập doanh nghiệp dịch vụ, về uy tín, tư vấn, "
+                    "hệ thống và cộng đồng.",
+     "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/ve-toi.html"},
+     "publisher": {"@type": "Organization", "name": "Next Step Group", "url": BASE + "/"}},
+    {"@type": "ItemList", "name": "Bài viết trên blog Coach Duy Nguyễn",
+     "numberOfItems": len(BAI),
+     "itemListElement": [
+        {"@type": "ListItem", "position": n + 1,
+         "url": BASE + "/bai-viet/" + b["tep"],
+         "item": {"@type": "BlogPosting", "headline": b["tieu"], "description": b["mo"],
+                  "url": BASE + "/bai-viet/" + b["tep"],
+                  "datePublished": b["ngay"], "dateModified": b.get("sua", NGAY_SUA),
+                  "articleSection": b["chu_de"], "inLanguage": "vi",
+                  "author": {"@type": "Person", "name": "Coach Duy Nguyễn"}}}
+        for n, b in enumerate(BAI)]},
+]}, ensure_ascii=False)
+
 trang("blog.html", "Blog của Coach Duy Nguyễn · Bài viết cho nhà sáng lập",
       "Bài viết về điểm nghẽn của người sáng lập, quỹ đạo niềm tin, thương hiệu cá nhân và cách biến kinh nghiệm thành hệ thống. Viết bởi Coach Duy Nguyễn.",
-      BLOG, "blog.html")
+      BLOG, "blog.html", jsonld=LD_BLOG)
 print("  blog.html")
 
 CAP_NHAT = "24 tháng 8, 2026"
@@ -1377,6 +1420,12 @@ def khoi_podcast(b, p=""):
 </section>
 """ % (p, tap["yt"], tap["yt"], ten_muc, tap["tieu"], tap["lydo"])
 
+def ngay_tieng_viet(ngay):
+    """2026-08-27 thành 27 tháng 8, 2026. Viết ngày kiểu Việt, không kiểu Anh."""
+    nam, thang, ngay_so = ngay.split("-")
+    return "%d tháng %d, %s" % (int(ngay_so), int(thang), nam)
+
+
 for i, b in enumerate(BAI):
     p = "../"
     bs = BO_SUNG.get(b["tep"], {})
@@ -1393,11 +1442,12 @@ for i, b in enumerate(BAI):
 
     ld = {"@context":"https://schema.org","@graph":[
       {"@type":"BlogPosting","headline":b["tieu"],"description":b["mo"],
-       "datePublished":b["ngay"],"dateModified":"2026-08-24","articleSection":b["chu_de"],
+       "datePublished":b["ngay"],"dateModified":b.get("sua", NGAY_SUA),"articleSection":b["chu_de"],
        "inLanguage":"vi","wordCount":len(re.sub(r"<[^>]+>"," ",b["than"]).split()),
        "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html",
                  "jobTitle":"Người cố vấn cho nhà sáng lập","knowsAbout":[b["chu_de"]]},
-       "publisher":{"@type":"Person","name":"Coach Duy Nguyễn"},
+       "publisher":{"@type":"Organization","name":"Next Step Group","url":BASE+"/"},
+       "image":BASE+"/"+b["anh"],
        "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]},
       {"@type":"BreadcrumbList","itemListElement":[
        {"@type":"ListItem","position":1,"name":"Trang chủ","item":BASE+"/"},
@@ -1408,10 +1458,12 @@ for i, b in enumerate(BAI):
           {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faq]})
     ld = json.dumps(ld, ensure_ascii=False)
 
+    ngay_sua = b.get("sua", NGAY_SUA)
+    ngay_sua_viet = ngay_tieng_viet(ngay_sua)
     than = """<article>
   <div class="bd bai-dau hien">
     <nav class="vun" aria-label="Đường dẫn"><a href="%sindex.html">Trang chủ</a><span>&rsaquo;</span><a href="%sblog.html">Blog</a><span>&rsaquo;</span><span>%s</span></nav>
-    <p class="meta">%s &nbsp;·&nbsp; %s</p>
+    <p class="meta">%s &nbsp;·&nbsp; %s &nbsp;·&nbsp; <time datetime="%s">%s</time></p>
     <h1>%s</h1>
     <p class="tom">%s</p>
   </div>
@@ -1422,7 +1474,7 @@ for i, b in enumerate(BAI):
       %s
       %s
       <div class="bai-cuoi" style="max-width:74ch;margin-inline:auto">
-        <p>Viết bởi Coach Duy Nguyễn</p>
+        <p>Viết bởi Coach Duy Nguyễn &nbsp;·&nbsp; Cập nhật <time datetime="%s">%s</time></p>
         <a class="lk-v" href="%sblog.html">Về trang blog <span class="mt" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
@@ -1433,9 +1485,9 @@ for i, b in enumerate(BAI):
   <div class="phan-dau hien"><p class="mono">Đọc tiếp</p><h2>Ba bài cùng mạch</h2></div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
-""" % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["tieu"], b["mo"],
+""" % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["ngay"], b["ngay_viet"], b["tieu"], b["mo"],
        p, b["anh"], b["alt"], tra_loi, ml, than_bai,
-       khoi_faq(faq) if faq else "", HOP_TAC_GIA, p, khoi_podcast(b, p),
+       khoi_faq(faq) if faq else "", HOP_TAC_GIA, ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))
     trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
     print("  bai-viet/" + b["tep"])
@@ -1861,9 +1913,14 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
         "sach.html", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html"] \
      + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
+# Ngày sửa của từng địa chỉ. Bài viết khai đúng ngày sửa của bài, trang tĩnh
+# khai ngày sửa chung của trang. Không có lastmod thì máy phải tự đoán trang nào
+# mới, mà bộ trả lời của AI thì ưu tiên nội dung mới rất mạnh.
+NGAY_BAI = {"bai-viet/" + b["tep"]: b.get("sua", NGAY_SUA) for b in BAI}
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
-    sm.append("  <url><loc>%s/%s</loc></url>" % (BASE, t))
+    sm.append("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
+              % (BASE, t, NGAY_BAI.get(t, NGAY_SUA)))
 sm.append("</urlset>")
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "robots.txt"), "w", encoding="utf-8").write(
