@@ -182,7 +182,7 @@ INDEX = """
 <section class="phan bd phan-sang" id="khung">
   <div class="phan-dau hien">
     <p class="mono">Phương pháp Duy dùng</p>
-    <h2>Tám khung, mỗi khung một hình dạng riêng</h2>
+    <h2>Mỗi phương pháp một hình dạng riêng</h2>
     <p>Duy không dạy mẹo rời. Mỗi khung dưới đây có tên, có hình, và có chỗ dùng rõ ràng.</p>
   </div>
   <div class="kh-luoi tre hien">
@@ -203,17 +203,7 @@ INDEX = """
       <b>Năm tầng</b><i>Doanh nghiệp tự chạy</i>
     </a>
   </div>
-  <div class="pp-pills hien">
-    <a class="pp-pill" href="phuong-phap.html#pp-1">Bốn nguyên tắc</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-2">Tam giác vàng</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-3">Công thức tin cậy</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-4">Ba Điểm Chạm</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-5">REFLECT</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-6">Ba lăng kính</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-7">Bốn cấp độ</a>
-    <a class="pp-pill" href="phuong-phap.html#pp-8">Năm tầng</a>
-  </div>
-  <div class="blog-them"><a class="nut nut-vien" href="phuong-phap.html">Xem cả tám phương pháp <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+  <div class="blog-them"><a class="nut nut-vien" href="phuong-phap.html">Xem các triết lý và phương pháp <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="chuyen-gia">
