@@ -8,7 +8,11 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
  mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
+ than="""<p>Bài này Duy viết cho người chủ đang thấy công ty mình có bốn chỗ trục trặc cùng lúc: nội dung không ra đúng khách, đội ngũ chưa chốt được nếu bạn vắng mặt, tuyển thêm người mà càng bận, và doanh thu lên xuống không rõ vì sao. Bốn chuyện đó làm bạn mệt vì chúng không bao giờ hết cùng một lúc.</p>
+
+<p>Duy sẽ chỉ cho bạn thấy bốn chuyện ấy thật ra chỉ là bốn cách hiện ra của cùng một chỗ nghẽn. Rồi Duy đưa bốn câu hỏi ngược để bạn tự kiểm, cùng ba dấu hiệu bạn nhìn ra được trong một buổi chiều. Đọc hết chừng chín phút.</p>
+
+<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
 
 <p><span class="nhan">Điều đáng nói không nằm ở bốn câu đó, mà nằm ở chỗ người nói ra chúng gần như luôn tin rằng mình đang gặp bốn vấn đề tách rời nhau.</span> Tin như vậy thì đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua một khoá đào tạo bán hàng, tuyển thêm một quản lý, rồi lắp một phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ kết quả, và sau sáu tháng thì bốn câu ấy vẫn còn nguyên ở đó.</p>
 
@@ -80,14 +84,27 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Nhưng có một thứ đổi được ngay từ tuần đầu: <span class="nhan">bạn thôi đi tìm bốn giải pháp cho bốn vấn đề, bạn nhìn thấy một chỗ nghẽn duy nhất và biết rõ mình đang gỡ chỗ nào</span>. Riêng chuyện đó thôi cũng đã đủ tiết kiệm cho bạn vài trăm triệu và vài quý, so với cách đi cũ.</p>
 
-<p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì Duy muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>"""),
+<p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì Duy muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>
+
+<h2>Gỡ chỗ nghẽn này cần bốn năng lực</h2>
+
+<p>Nếu bạn đã nhìn ra chỗ nghẽn, câu hỏi kế tiếp là gỡ bằng gì. Duy không tin có một việc nào gỡ được cả bốn câu cùng lúc, và cũng không tin vào những khóa học hứa như vậy. Thứ gỡ được là bốn năng lực, học lần lượt, mỗi năng lực gỡ đúng một câu trong bốn câu bạn vừa đọc.</p>
+
+<p>Câu thứ nhất về nội dung thuộc năng lực thương hiệu nhà sáng lập được tin cậy. Câu thứ hai về đội ngũ chờ bạn chốt thuộc năng lực tư vấn được tin cậy, vì phần chưa chuyển giao được chính là cách bạn nghĩ trong phòng với khách. Câu thứ ba về tuyển người thuộc năng lực xây hệ thống. Câu thứ tư về doanh thu lên xuống thì nằm vắt qua cả ba, và thường sáng ra sau cùng.</p>
+
+<p>Người đi đủ bốn chặng đó, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới. Không ai đi hết trong một quý, và Duy cũng chưa gặp ai làm được như vậy.</p>
+"""),
 
 dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
  tieu="Vì sao Duy không nhìn khách qua phễu bán hàng",
  mo="Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.",
  ngay="2026-08-16", ngay_viet="16 tháng 8, 2026", doc="5 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
- than="""
+ than="""<p>Nếu bạn từng nhìn vào bảng số của phễu bán hàng, thấy mọi chỉ số đều đẹp, mà vẫn không giải thích được vì sao tháng này khách chốt còn tháng sau thì im, thì bài này viết cho bạn. Người làm dịch vụ dựa trên uy tín cá nhân hay gặp cảnh đó nhất.</p>
+
+<p>Duy sẽ chỉ ra chỗ phễu mô tả sai, rồi đưa bạn một cách nhìn khác mà Duy dùng hằng ngày, kèm bốn việc đổi ngay được trong tuần này. Đọc hết chừng tám phút.</p>
+
+
 <p>Phễu bán hàng là một công cụ đo tốt, và Duy không có ý bỏ nó. Bao nhiêu người biết tới, bao nhiêu người để lại thông tin, bao nhiêu người dự buổi giới thiệu, bao nhiêu người mua. Với một chiến dịch có ngày mở và ngày đóng, phễu cho bạn đúng thứ cần có để biết chỗ nào đang rò.</p>
 
 <p>Chuyện bắt đầu hỏng khi phễu được dùng để thiết kế cả quan hệ với khách, chứ không chỉ để đo một chiến dịch. <span class="nhan">Một công cụ đo dùng sai chỗ sẽ thành một cách nghĩ, và cách nghĩ đó quyết định bạn cư xử thế nào với người chưa mua.</span></p>
@@ -159,6 +176,12 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
 <p>Đổi từ phễu sang quỹ đạo không làm doanh thu tháng sau tăng lên. Nó thường làm ngược lại trong ngắn hạn, vì bạn thôi ép những người chưa tới lúc, và một phần trong số đó lẽ ra đã mua nếu bị ép đủ mạnh.</p>
 
 <p>Thứ nó đổi là chất lượng của người ngồi trước mặt bạn sau khoảng hai quý, và số lần bạn phải giải thích giá. Duy nghĩ đó là cuộc đổi đáng, nhưng nó là một cuộc đổi thật, không phải một mẹo làm mọi thứ tốt hơn cùng lúc.</p>
+
+<h2>Nhìn khách theo cách này là một năng lực nghề</h2>
+
+<p>Việc đọc đúng chỗ đứng của một người trước khi đề xuất bất cứ điều gì, Duy gọi đó là năng lực tư vấn được tin cậy. Nó gồm khai thác bối cảnh trước khi nói về giải pháp, tách được triệu chứng khỏi vấn đề gốc, và dám nói chưa phù hợp khi người trước mặt chưa sẵn sàng.</p>
+
+<p>Năng lực này là cây cầu nối từ niềm tin sang quyết định mua, nên thiếu nó thì mọi việc phía trước đều hụt. Nhưng nó cũng chỉ là một trong bốn năng lực. Trước nó là một thương hiệu đủ rõ để đúng người tìm tới. Sau nó là hệ thống để cả đội ngũ làm được chứ không chỉ mình bạn, và một cộng đồng để người đã tin bạn còn ở lại lâu. Người đi đủ bốn chặng ấy, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người sáng lập",
@@ -166,7 +189,11 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
  mo="Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm.",
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
- than="""
+ than="""<p>Đây là bài viết dành cho hai nhóm người. Nhóm thứ nhất đang tự gọi mình là cố vấn và muốn biết mình có xứng với chữ đó không. Nhóm thứ hai đang định thuê một người cố vấn và không biết dựa vào đâu mà chọn.</p>
+
+<p>Duy sẽ đưa ra năm việc mà Duy tin một người cố vấn phải làm được, viết đủ rõ để bạn cầm đi mà kiểm người khác, và cũng đủ rõ để tự kiểm chính mình. Đọc hết chừng bảy phút.</p>
+
+
 <p>Chữ cố vấn đang bị dùng quá dễ. Ai cũng có thể tự gọi mình là cố vấn, và người nghe thì không có cách nào kiểm lại. Nên Duy viết ra năm việc mà mình tin một người cố vấn phải làm được, để bạn có tiêu chí kiểm Duy và kiểm bất kỳ ai khác.</p>
 
 <p><span class="nhan">Năm việc này không phải là năm phẩm chất, chúng là năm việc quan sát được.</span> Đó là chỗ khác nhau, vì phẩm chất thì ai cũng tự nhận, còn việc thì phải làm ra mới có.</p>
@@ -248,6 +275,12 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
 <p>Bạn có quyền dùng đúng năm việc và ba ranh giới này để kiểm Duy, và Duy nói vậy không phải để nghe cho hay. Lần tới ngồi với bất kỳ ai tự gọi mình là cố vấn, kể cả Duy, thử đếm xem trong một buổi họ làm được mấy việc.</p>
 
 <p>Có một dấu hiệu nhanh dùng được ngay trong buổi đầu tiên: đếm số lần họ hỏi so với số lần họ kể. Người làm việc một và việc hai sẽ hỏi nhiều hơn kể, ít nhất là trong nửa đầu buổi. Người chỉ có việc ba thì kể suốt, và câu chuyện nào cũng hay, chỉ là không câu nào nói về bạn.</p>
+
+<h2>Năm việc này gộp lại thành một năng lực</h2>
+
+<p>Năm việc bạn vừa đọc không phải năm kỹ năng rời. Gộp lại chúng thành năng lực tư vấn được tin cậy, thứ giúp người trước mặt nhìn rõ vấn đề của họ, hiểu các lựa chọn, rồi tự ra quyết định mà không thấy mình bị dồn.</p>
+
+<p>Chỗ đáng nói là năng lực này không chỉ dùng với khách. Bạn cũng cần đúng năm việc đó khi ngồi với một người trong đội ngũ, và cả khi ngồi với chính mình lúc phải quyết một việc khó. Đó là lý do Duy xếp nó vào bốn năng lực của Next Gen Founder, tức nhà sáng lập thế hệ mới, bên cạnh thương hiệu được tin cậy, hệ thống chạy được, và cộng đồng quanh mình.</p>
 """),
 
 # Chất liệu lấy từ hai bài kể chuyện trong NSG Content DB trên Notion, mục
@@ -259,7 +292,11 @@ dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn ng�
  mo="Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026",
  anh="img/bl-noi-3.webp", alt="Coach Duy Nguyễn ngồi nghe trong một buổi trao đổi",
- than="""<p>Trong một buổi giao lưu của cộng đồng doanh nghiệp, một người chủ ngoài sáu mươi ngồi cạnh Duy và nói một câu rất nhẹ, nhẹ tới mức phải mất vài giây cả bàn mới hiểu ra sức nặng của nó.</p>
+ than="""<p>Bạn làm được mọi việc trong công ty, và làm việc nào cũng nhanh hơn người khác. Nghe qua là một lời khen, và suốt nhiều năm bạn cũng nhận nó như một lời khen. Bài này viết cho bạn, vào lúc bạn bắt đầu ngờ rằng khả năng đó đang lấy đi của mình thứ gì đó.</p>
+
+<p>Duy sẽ kể hai người chủ ở hai ngành khác hẳn nhau đã nói với Duy cùng một câu, rồi chỉ ra ba lớp khoá lẫn nhau khiến chuyện này không tự gỡ được. Cuối bài là ba câu để bạn tự nhìn lại mình. Đọc hết chừng tám phút.</p>
+
+<p>Trong một buổi giao lưu của cộng đồng doanh nghiệp, một người chủ ngoài sáu mươi ngồi cạnh Duy và nói một câu rất nhẹ, nhẹ tới mức phải mất vài giây cả bàn mới hiểu ra sức nặng của nó.</p>
 
 <p><span class="nhan dam">Con trai tôi không muốn tiếp quản công ty vì nhìn thấy tôi cả đời chỉ có công việc.</span></p>
 
@@ -335,13 +372,24 @@ dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn ng�
 
 <p>Nhưng có một điều đổi ngay: bạn thôi nghĩ rằng mình đang thiếu người giỏi. <span class="nhan">Bạn nhìn thấy mình đang thiếu một cách làm viết ra được</span>, và điều đó sửa được, khác hẳn với việc ngồi chờ gặp đúng người.</p>
 
-<p>Anh chủ ngoài sáu mươi hôm đó không nói thêm gì nhiều. Nhưng có một câu Duy nghĩ đáng để bất kỳ người sáng lập nào giữ lại: cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.</p>"""),
+<p>Anh chủ ngoài sáu mươi hôm đó không nói thêm gì nhiều. Nhưng có một câu Duy nghĩ đáng để bất kỳ người sáng lập nào giữ lại: cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.</p>
+
+<h2>Chỗ này gỡ được, và nó có tên</h2>
+
+<p>Điều bạn đang giữ trong đầu là những phán đoán tích lại qua hàng chục năm, và chúng có thật. Vấn đề chỉ là chúng chưa ra khỏi đầu bạn. Việc chuyển chúng thành một cách làm mà người khác hiểu được rồi làm được, Duy gọi là năng lực xây hệ thống, và đó là năng lực khó chịu nhất trong bốn năng lực vì nó đòi bạn chậm lại đúng lúc mình đang quen đi nhanh.</p>
+
+<p>Duy nói thẳng một điều để bạn khỏi kỳ vọng sai. Năng lực này không làm bạn nhàn ngay trong quý tới. Nó chỉ đổi hướng của việc: từ chỗ mỗi năm bạn giỏi thêm một chút mà vẫn phải có mặt, sang chỗ công ty giỏi thêm một chút kể cả khi bạn vắng. Người đi được hướng đó cùng ba năng lực còn lại, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+"""),
 dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhân",
  tieu="Xây uy tín để được tin, không phải để được biết",
  mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần điều khác: được đúng người tin, đủ để họ chủ động tìm đến.",
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
  anh="img/bl-nhin-thang.webp", alt="Coach Duy Nguyễn nhìn thẳng vào người đối diện trong một buổi trao đổi",
- than="""
+ than="""<p>Đây là bài viết dành cho người sáng lập doanh nghiệp dịch vụ và những chuyên gia sống bằng chính chuyên môn của mình, tức là những nghề mà khách chọn hay không chọn phần lớn vì tin hay chưa tin người đứng đầu. Bạn đã đăng bài đều đặn nhiều tháng, vậy mà đúng người vẫn chưa tìm tới, và chuyện đó làm bạn mệt mỗi lần ngồi xuống viết.</p>
+
+<p>Duy sẽ tách cho bạn thấy hai việc mà gần như ai cũng gộp làm một, là được nhiều người biết và được đúng người tin. Rồi Duy đưa ba câu hỏi bạn tự chấm mình được ngay chiều nay, trong đó có một câu cho biết bạn mới đang có phong độ hay đã thật sự có phương pháp. Đọc hết chừng sáu phút.</p>
+
+
 <p>Có một câu hỏi Duy hay hỏi ngược lại người nói muốn xây thương hiệu cá nhân: bạn muốn nhiều người biết bạn, hay muốn đúng người tin bạn. Hai việc đó cần hai cách làm khác hẳn nhau, và phần lớn người hỏi chưa phân biệt, nên họ làm cách thứ nhất trong khi cần kết quả của cách thứ hai.</p>
 
 <h2>Nổi tiếng và được tin cậy không cùng một việc</h2>
@@ -421,6 +469,12 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
 <p><b>Ba:</b> người vừa làm việc với bạn xong có kể lại được cách bạn làm việc cho người thứ ba không, vì nếu không thì bạn chưa có phương pháp, mới chỉ có phong độ.</p>
 
 <p>Ba câu này Duy tự hỏi mình mỗi quý, và câu thứ ba là câu khó nhất. Phong độ thì hôm nay có ngày mai mất, còn phương pháp thì gọi tên được, dạy lại được, và người khác nhắc lại được khi bạn không có mặt.</p>
+
+<h2>Việc này có tên, và nó là năng lực đầu tiên trong bốn năng lực</h2>
+
+<p>Thứ bạn vừa đọc không phải mẹo làm nội dung. Duy gọi nó là năng lực thương hiệu nhà sáng lập được tin cậy, nghĩa là bạn chọn rõ khách mình muốn ưu tiên và vấn đề mình muốn được tìm đến để giải quyết, rồi đưa cách giải quyết riêng ấy ra thị trường bằng một giọng nhất quán. Đích đến ở đây là khiến đúng người nhận ra bạn và muốn bắt đầu một cuộc trao đổi, chứ không phải khiến thật nhiều người biết tên bạn.</p>
+
+<p>Nhưng năng lực này đứng một mình thì chưa thành một mô hình kinh doanh. Uy tín kéo đúng người tới cửa, rồi tới lượt cuộc tư vấn phải giữ được họ. Hệ thống phải chạy được cả khi bạn không ngồi đó. Và những người quanh bạn phải bắt đầu tạo giá trị cho nhau thay vì chờ hết ở bạn. Người đi đủ bốn chặng ấy, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ",
@@ -428,7 +482,11 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
  mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Càng tăng, mọi việc càng dồn về đúng một người là bạn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
- than="""<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
+ than="""<p>Nếu doanh thu công ty bạn năm nay tốt hơn năm ngoái mà bạn lại bận hơn năm ngoái, thì bài này viết cho bạn. Đó là dấu hiệu quen thuộc ở người chủ doanh nghiệp dịch vụ đã qua giai đoạn khởi đầu và đang có một đội ngũ vài chục người.</p>
+
+<p>Duy sẽ chỉ ra vì sao bán càng tốt thì mọi việc càng dồn về đúng một người, kèm ba dấu hiệu bạn tự kiểm được ngay chiều nay. Rồi Duy nói về chỗ nhiều người làm sai, là tưởng viết quy trình ra thì xong. Đọc hết chừng tám phút.</p>
+
+<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
 
 <p><span class="nhan dam">Con anh giỏi, nhưng mỗi lần cần số liệu lại phải hỏi kế toán, ngồi tổng hợp cả buổi.</span></p>
 
@@ -492,7 +550,14 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
 
 <p>Nhưng có một điều đổi ngay từ luồng đầu: bạn biết nút thắt nằm ở đâu và đang gỡ chỗ nào. <span class="nhan">Trước đó bạn chỉ có cảm giác mệt, sau đó bạn có một bản đồ</span>. Riêng chuyện đó đã đáng làm, vì cảm giác mệt thì không sửa được, còn một chỗ nghẽn có tên thì sửa được.</p>
 
-<p>Bác chủ vật liệu xây dựng hôm đó cuối cùng không đổi cách điều hành ngay. Bác chỉ làm một việc: yêu cầu kế toán gửi đúng năm con số vào chiều thứ sáu hằng tuần, cho cả bác và con trai. Ba tháng sau, lần đầu tiên hai bố con ngồi bàn một quyết định mà không ai phải đi tổng hợp số liệu trước.</p>"""),
+<p>Bác chủ vật liệu xây dựng hôm đó cuối cùng không đổi cách điều hành ngay. Bác chỉ làm một việc: yêu cầu kế toán gửi đúng năm con số vào chiều thứ sáu hằng tuần, cho cả bác và con trai. Ba tháng sau, lần đầu tiên hai bố con ngồi bàn một quyết định mà không ai phải đi tổng hợp số liệu trước.</p>
+
+<h2>Gỡ nút này là một năng lực, không phải một quyết tâm</h2>
+
+<p>Duy muốn nói rõ chỗ này vì nhiều người hiểu nhầm. Gỡ nút thắt không phải chuyện bạn quyết tâm buông bớt, cũng không phải chuyện thuê được một người giỏi rồi giao hết. Nó là năng lực xây hệ thống, tức là biến cách bạn ra quyết định thành thứ người khác đọc được, làm theo được, và đo được kết quả.</p>
+
+<p>Và nút thắt gỡ xong thì bài toán vẫn chưa hết. Đội ngũ chạy được rồi thì tới lượt câu hỏi ai sẽ tìm tới công ty bạn, những người tìm tới ấy có tin đủ để mua không, và người đã mua rồi có ở lại đủ lâu để giới thiệu người khác không. Ba câu ấy ứng với ba năng lực còn lại. Người đi đủ cả bốn, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+"""),
 
 
 dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội ngũ",
@@ -500,7 +565,11 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-viet-tay.webp", alt="Coach Duy Nguyễn ngồi ghi lại một quy trình bằng tay",
- than="""<p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và trong đầu vài người giỏi nhất của công ty.</p>
+ than="""<p>Bài này Duy viết cho người chủ doanh nghiệp dịch vụ đang có vài người giỏi trong đội ngũ, và trong lòng vẫn thấp thỏm mỗi lần một trong số họ nói muốn gặp riêng để trao đổi. Bạn biết rõ thứ quý nhất công ty mình đang nằm trong đầu vài người, và biết rõ đó vừa là sức mạnh vừa là chỗ hở.</p>
+
+<p>Duy sẽ chỉ ra vì sao kinh nghiệm không tự chuyển thành hệ thống dù bạn có bảo họ viết lại. Rồi Duy đưa cách lấy kinh nghiệm ra khỏi đầu một người, ba mức chuyển giao, và dấu hiệu cho biết đã chuyển giao được thật. Đọc hết chừng chín phút.</p>
+
+<p>Trong một doanh nghiệp dịch vụ, thứ tạo ra kết quả tốt nhất thường không nằm ở phần mềm, không nằm ở tài liệu, cũng không nằm ở thương hiệu. Nó nằm trong đầu người chủ và trong đầu vài người giỏi nhất của công ty.</p>
 
 <p>Đó là sức mạnh vì không đối thủ nào sao chép được, nhưng đồng thời cũng là rủi ro lớn nhất, vì <span class="nhan dam">nó đi ra khỏi công ty cùng lúc với người mang nó</span>, và thường đi vào đúng lúc bạn không lường trước.</p>
 
@@ -586,14 +655,25 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 
 <p>Ghi hai mươi trường hợp không làm công ty tự chạy. Nó chỉ làm được một việc, nhưng là việc không có đường tắt: đưa phần lập luận ra khỏi đầu bạn, thành thứ người khác đọc được.</p>
 
-<p>Phần còn lại vẫn cần thời gian và cần bạn quay lại đều đặn. Nhưng từ lúc có hai mươi trường hợp đó, mỗi người mới vào công ty đều bắt đầu từ chỗ cao hơn người trước, thay vì ai cũng phải học lại từ đầu bằng cách đi theo bạn.</p>"""),
+<p>Phần còn lại vẫn cần thời gian và cần bạn quay lại đều đặn. Nhưng từ lúc có hai mươi trường hợp đó, mỗi người mới vào công ty đều bắt đầu từ chỗ cao hơn người trước, thay vì ai cũng phải học lại từ đầu bằng cách đi theo bạn.</p>
+
+<h2>Đây là năng lực quyết định công ty có lớn hơn một người hay không</h2>
+
+<p>Phần bạn vừa đọc là lõi của năng lực xây hệ thống. Duy hay nói với người chủ rằng công ty dịch vụ chỉ có đúng hai loại tài sản, một loại nằm trong đầu người và một loại nằm ngoài đầu người, và giá trị công ty gần như là tỉ lệ giữa hai loại đó.</p>
+
+<p>Nhưng chuyển hết kinh nghiệm ra ngoài đầu người vẫn chưa đủ. Một công ty có hệ thống tốt mà không ai biết tới thì vẫn đói khách, và có khách mà không giữ được người tin mình thì vẫn phải bán lại từ đầu mỗi năm. Đó là lý do Duy luôn đặt năng lực này cạnh ba năng lực còn lại là thương hiệu được tin cậy, tư vấn được tin cậy, và kiến tạo cộng đồng. Người đi đủ bốn chặng, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+"""),
 
 dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
  tieu="Một nhóm đăng bài chưa phải là cộng đồng",
  mo="Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó, và đó mới là cộng đồng.",
  ngay="2026-07-24", ngay_viet="24 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-vo-tay.webp", alt="Một hội trường đông người đứng vỗ tay",
- than="""
+ than="""<p>Đây là bài viết dành cho người chủ đã mở một nhóm cho khách hàng hoặc học viên của mình, nhóm ấy có vài trăm tới vài nghìn người, và giờ chỉ mình bạn đăng bài. Mỗi lần mở nhóm ra bạn thấy hơi ngại, vì nó giống một căn phòng sáng đèn mà không có ai.</p>
+
+<p>Duy sẽ đưa bạn một câu hỏi để biết nhóm của mình đã là cộng đồng hay chưa, và câu trả lời thường làm người hỏi hơi hụt. Rồi Duy nói về bốn điều quyết định một cộng đồng sống hay chết, cùng ba cơ chế tạo giá trị giữa các thành viên. Đọc hết chừng tám phút.</p>
+
+
 <p>Rất nhiều người chủ đã mở một nhóm, và nhóm đó có vài trăm tới vài nghìn người. Rồi sau ba tháng thì chỉ còn người chủ đăng bài, vài người thả biểu tượng cảm xúc, và không ai nhớ nhóm này lập ra để làm gì.</p>
 <p><span class="nhan">Đó không phải cộng đồng, đó là một kênh phát nội dung có phần bình luận.</span> Hai thứ này khác nhau ở một điểm duy nhất mà cũng là điểm quyết định: giá trị chảy một chiều hay chảy giữa các thành viên.</p>
 
@@ -657,6 +737,12 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
 <p>Một khoá học tạo ra hiểu biết. Người học kết thúc với một cuốn sổ đầy ý hay, rồi quay về công việc cũ và ba tuần sau mọi thứ như trước.</p>
 <p>Thay đổi thật cần ba điều mà khoá học không cho được: thời gian đủ dài để thói quen hình thành, phản hồi lặp lại trên việc thật của chính mình, và những người khác đang đi cùng chặng để so và để hỏi.</p>
 <p>Đó là lý do Duy dồn phần lớn thời gian vào cộng đồng chứ không vào việc mở thêm khoá.</p>
+
+<h2>Việc này là một năng lực, không phải một tính năng của phần mềm</h2>
+
+<p>Tập hợp đúng người quanh một vấn đề chung rồi tạo điều kiện để họ giúp nhau tiến bộ, Duy gọi đó là năng lực kiến tạo cộng đồng. Người có năng lực này biết chọn ai được vào, biết dựng quãng mở đầu cho người mới, và biết nối đúng nhu cầu của người này với đúng khả năng của người kia.</p>
+
+<p>Duy xếp năng lực này vào bốn năng lực của Next Gen Founder, tức nhà sáng lập thế hệ mới, và xếp nó sau cùng. Lý do là cộng đồng khuếch đại thứ bạn đã có chứ không tạo ra thứ bạn chưa có. Chưa rõ mình đại diện cho điều gì thì nhóm sẽ tụ nhầm người, chưa tư vấn được cho họ thì họ không tin đủ để ở lại, và chưa có hệ thống thì nhịp sinh hoạt sẽ tắt ngay tháng đầu bạn bận.</p>
 """),
 
 dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
@@ -664,7 +750,11 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
  mo="AI không cứu được một định vị mơ hồ. Nó chỉ làm sự mơ hồ đó lan nhanh hơn và đều hơn.",
  ngay="2026-07-18", ngay_viet="18 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-may-tinh.webp", alt="Coach Duy Nguyễn làm việc với máy tính và điện thoại",
- than="""
+ than="""<p>Bạn đang định dùng AI để làm nội dung nhanh hơn, và có thể đã thử vài tháng rồi. Bài này viết cho bạn, nhất là nếu bạn thấy máy viết ra thì trơn tru mà đọc lên vẫn thấy nhạt, không ra giọng của mình.</p>
+
+<p>Duy sẽ nói thẳng một điều làm nhiều người hụt hẫng, là AI không cứu được một định vị còn mơ hồ, nó chỉ làm sự mơ hồ đó lan nhanh hơn. Rồi Duy chia rõ việc nào giao cho máy và việc nào phải giữ lại, kèm cách chính Duy đang dùng AI trong công việc. Đọc hết chừng tám phút.</p>
+
+
 <p>Câu hỏi Duy nhận nhiều nhất trong năm nay là dùng AI thế nào để làm nội dung nhanh hơn. Câu trả lời thật lòng của Duy thường làm người hỏi hơi hụt hẫng: nếu nội dung của bạn đang chưa đúng, AI sẽ giúp bạn sai nhanh hơn.</p>
 
 <h2>AI khuếch đại những gì sẵn có</h2>
@@ -727,6 +817,12 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
 <p><b>Quyết trước bạn sẽ không nói gì:</b> phần này ít ai làm mà nó cứu bài viết nhiều nhất, vì máy có xu hướng nói thêm cho đầy đủ, mà đầy đủ thì thường là kẻ thù của sắc nét.</p>
 
 <p>Ba việc trên tốn chừng mười phút. Mười phút đó đổi lại một bản nháp mà bạn sửa được, thay vì một bản nháp trơn tru mà bạn không biết nên bắt đầu sửa từ đâu.</p>
+
+<h2>Vì sao Duy gọi AI là năng lực nền chứ không phải năng lực thứ năm</h2>
+
+<p>Trong bốn năng lực Duy hay nói tới, không có năng lực nào tên là AI. Đó là chủ ý. AI không đứng riêng thành một chặng, nó chạy xuyên qua cả bốn chặng và làm mỗi chặng nhanh hơn, với điều kiện chặng đó đã đúng từ trước.</p>
+
+<p>Cụ thể thì AI giúp bạn nhân bản một luận điểm đã rõ ra nhiều dạng nội dung, giúp bạn soạn nhanh phần chuẩn bị trước một buổi tư vấn, giúp bạn viết lại quy trình cho gọn, và giúp bạn theo dõi nhịp sinh hoạt của một cộng đồng. Bốn việc đó ứng với bốn năng lực của Next Gen Founder, tức nhà sáng lập thế hệ mới. Chỗ AI không làm được là quyết định bạn đại diện cho điều gì, và quyết định người trước mặt thật sự cần gì.</p>
 """),
 
 dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu cá nhân",
@@ -734,7 +830,11 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
  mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
- than="""
+ than="""<p>Nếu bạn đang định hỏi mình nên đăng mấy bài một tuần, thì bài này viết cho bạn, và Duy sẽ nói ngay rằng đó là câu hỏi sai được đặt ra trước câu hỏi đúng.</p>
+
+<p>Câu hỏi đúng là sau khi xem ba nội dung của bạn thì khách gọi tên được bạn làm nghề gì hay không. Duy sẽ đưa bạn ba lớp phải rõ trước khi tăng sản lượng, một bài kiểm tên gọi là bài kiểm xoá tên, và cách trí nhớ người khác thật sự hoạt động. Đọc hết chừng tám phút.</p>
+
+
 <p>Nhiều người hỏi Duy nên đăng mấy bài một tuần, và đó gần như luôn là câu hỏi sai được đặt ra trước câu hỏi đúng. Câu hỏi đúng là sau khi xem ba nội dung của bạn thì khách gọi tên bạn là ai.</p>
 
 <h2>Vì sao tần suất không cứu được</h2>
@@ -801,6 +901,12 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
 <p>Nếu bạn đang ở mức một thì thứ đáng bắt chước là cách họ làm hồi còn ở mức một, không phải cách họ làm bây giờ. Chuyện này khó ở chỗ cách làm cũ của họ thường không còn ai lưu lại, còn cách làm mới thì hiện ra trước mắt bạn mỗi ngày.</p>
 
 <p><span class="nhan">Cách gần đúng nhất là tìm nội dung đầu tiên của họ chứ đừng xem nội dung mới nhất.</span> Đọc mười bài đầu tiên của một người bạn ngưỡng mộ sẽ cho bạn nhiều thứ dùng được hơn là đọc mười bài gần nhất.</p>
+
+<h2>Chỗ này là năng lực đầu tiên trong bốn năng lực</h2>
+
+<p>Làm rõ mình ưu tiên khách nào, muốn được tìm đến để giải quyết vấn đề gì, và có cách giải quyết riêng ra sao, rồi đưa những điều đó ra thị trường bằng một giọng nhất quán, Duy gọi đó là năng lực thương hiệu nhà sáng lập được tin cậy.</p>
+
+<p>Duy nhấn mạnh chữ được tin cậy, vì đích đến không phải là được nhiều người biết. Đích đến là khiến đúng người nhận ra bạn, hiểu bạn hợp với ai, và tin đủ để mở lời trước. Sau chặng này còn ba chặng nữa, gồm tư vấn được tin cậy, xây hệ thống, và kiến tạo cộng đồng. Người đi đủ bốn chặng, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
@@ -808,7 +914,11 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
  mo="Nhận một khách sai không chỉ mất tiền. Nó chiếm chỗ của khách đúng, và làm hỏng thứ khó xây nhất là uy tín.",
  ngay="2026-07-06", ngay_viet="6 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-noi-3.webp", alt="Coach Duy Nguyễn ngồi nghĩ trước khi trả lời",
- than="""
+ than="""<p>Bài này Duy viết cho người đang cầm trên tay một khách sẵn sàng chuyển tiền, mà trong bụng thấy có gì đó không ổn. Nếu hôm nay lại là tuần cuối tháng và doanh thu chưa đạt, thì đây đúng là lúc khó nhất để đọc, và cũng đúng là lúc cần đọc.</p>
+
+<p>Duy sẽ tính cho bạn thấy một khách sai lấy đi những gì, phần lớn nằm ngoài khoản tiền. Rồi Duy đưa bốn dấu hiệu mình dùng để nói không, một dấu hiệu thứ năm khó nhất, và cách từ chối mà không mất quan hệ. Đọc hết chừng tám phút.</p>
+
+
 <p>Nói không với một người đang sẵn sàng chuyển tiền là việc khó, và nó khó nhất vào đúng tuần cuối tháng khi doanh thu chưa đạt. Duy không nghĩ có ai làm việc này mà thấy nhẹ nhàng. Nhưng đây là một trong vài quyết định phân biệt rõ nhất giữa người bán và người cố vấn, vì người bán tính tháng này còn người cố vấn tính vài năm.</p>
 
 <h2>Cái giá thật của một khách sai</h2>
@@ -888,6 +998,12 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 <p>Nhìn lại danh sách khách hàng đang có và chọn ra một người mà nếu quay lại đúng thời điểm ký, bạn sẽ không ký nữa. Viết ra dấu hiệu mà lúc đó bạn đã thấy nhưng bỏ qua.</p>
 
 <p>Dấu hiệu đó chính là tiêu chí sàng lọc đầu tiên của bạn, và nó đắt vì bạn đã trả tiền thật để có. Đưa nó thành một câu hỏi trong bộ câu hỏi trước buổi hẹn, ngay tuần này, trước khi bạn kịp quên cảm giác hiện giờ.</p>
+
+<h2>Dám nói chưa phù hợp là một phần của nghề, không phải sự xa xỉ</h2>
+
+<p>Nhiều người nghĩ chỉ khi nào đủ đông khách thì mới có quyền từ chối. Duy nghĩ ngược lại. Khả năng nói chưa phù hợp nằm ngay trong định nghĩa của năng lực tư vấn được tin cậy, cạnh việc khai thác bối cảnh trước khi đề xuất và việc tách triệu chứng khỏi vấn đề gốc.</p>
+
+<p>Người tư vấn nhận mọi khách thì thật ra đang bán chứ chưa tư vấn, và khách cũng cảm nhận được điều đó dù không nói ra. Đây là một trong bốn năng lực Duy thấy người đi xa đều phải có, cùng với thương hiệu được tin cậy, hệ thống chạy được, và cộng đồng quanh mình. Người đi đủ bốn chặng, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 
@@ -896,7 +1012,11 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
  mo="Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.",
  ngay="2026-08-22", ngay_viet="22 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-cam-but.webp", alt="Coach Duy Nguyễn cầm bút giải thích một ý",
- than="""
+ than="""<p>Đây là bài viết dành cho chuyên gia có nghề thật và làm được nhiều mảng, chẳng hạn một người vừa tư vấn tài chính vừa dạy quản trị vừa nhận huấn luyện đội ngũ. Bạn làm mảng nào cũng ổn, và chính điều đó đang giữ bạn lại.</p>
+
+<p>Duy sẽ chỉ ra vì sao nói về nhiều mảng lại là bất lợi, ba nỗi sợ khiến người giỏi không dám chọn, rồi đưa bạn một bài tập ba cột làm xong trong một buổi tối. Phần khó nhất nằm ở cuối, là viết ra vùng bạn quyết định bỏ. Đọc hết chừng tám phút.</p>
+
+
 <p>Câu hỏi Duy hay nhận nhất khi ai đó bắt đầu xây thương hiệu cá nhân là nên nói về chủ đề gì. Câu trả lời thật lòng làm nhiều người khó chịu: quan trọng hơn là bạn quyết định không nói về chủ đề gì.</p>
 
 <h2>Vì sao nói về nhiều mảng lại là bất lợi</h2>
@@ -967,6 +1087,12 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <h2>Chọn xong thì làm gì</h2>
 <p>Đừng đổi toàn bộ nội dung trong một tuần. Lấy lãnh địa mới làm bộ lọc: mọi nội dung mới phải nằm trong vùng đó, còn nội dung cũ để nguyên. Sau ba tháng, phần lớn những gì người mới thấy đã là vùng bạn chọn.</p>
 <p>Và giữ nguyên câu đó ít nhất một năm trước khi nghĩ tới việc sửa. Thương hiệu chết vì đổi hướng nhiều hơn là chết vì chọn sai hướng.</p>
+
+<h2>Chọn được lãnh địa là bước đầu của năng lực thứ nhất</h2>
+
+<p>Duy gọi chặng này là năng lực thương hiệu nhà sáng lập được tin cậy, và chọn lãnh địa chính là việc đầu tiên trong chặng đó. Chọn xong lãnh địa thì mới tới việc gọi tên vấn đề bạn muốn được tìm đến để giải quyết, rồi mới tới cách giải quyết riêng và bằng chứng đi kèm.</p>
+
+<p>Chuyện đáng nói là quyết định này ảnh hưởng ra ngoài phạm vi nội dung. Lãnh địa rõ thì buổi tư vấn dễ hơn hẳn vì khách tới đã biết bạn giải bài toán nào. Hệ thống cũng dễ xây hơn vì bạn chỉ phải viết quy trình cho một loại việc. Và cộng đồng quanh bạn tụ đúng người hơn. Bốn chặng ấy hợp lại thành chân dung mà Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
@@ -974,7 +1100,11 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
  mo="Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
- than="""
+ than="""<p>Bạn ngồi xuống định viết một bài, mở trang trắng ra, rồi mười lăm phút sau vẫn chưa gõ được câu nào. Bạn kết luận mình hết ý tưởng. Bài này viết cho bạn, và Duy cho rằng gần như không ai hết ý tưởng thật.</p>
+
+<p>Thứ bạn thiếu là một kho chứa và một thói quen bỏ đồ vào kho. Duy sẽ đưa bốn loại chất liệu đáng ghi, cách ghi để nhiều tháng sau vẫn dùng được, và ba thời điểm trong ngày dễ ghi nhất. Kho này không cần phần mềm đắt tiền. Đọc hết chừng bảy phút.</p>
+
+
 <p>Câu than phiền phổ biến nhất của người làm nội dung là hết ý tưởng. Duy cho rằng gần như không ai hết ý tưởng thật, điều họ thiếu là một kho chứa và một thói quen bỏ đồ vào kho.</p>
 <p><span class="nhan">Hết ý tưởng là một chẩn đoán sai, và vì chẩn đoán sai nên cách chữa cũng sai theo.</span> Họ đi tìm nguồn cảm hứng, đọc thêm sách, xem thêm người khác làm, trong khi thứ cần chữa là một thói quen mất ba mươi giây mỗi ngày.</p>
 
@@ -1040,6 +1170,12 @@ dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
 <p>Bạn sẽ có khoảng một trăm tới hai trăm mẩu, và lúc đó một điều thú vị xảy ra: các mẩu bắt đầu tự gom thành nhóm mà bạn không sắp xếp gì cả. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng thay vì bằng cách ngồi nghĩ xem mình nên đứng ở đâu.</p>
 <p><span class="nhan dam">Đây là cách tìm định vị đáng tin nhất Duy biết, vì nó dựa trên việc bạn thật sự quan tâm điều gì đủ để ghi lại.</span> Một câu định vị nghĩ ra trong hai giờ thì đẹp mà không có gốc, còn một câu rút ra từ hai trăm mẩu thì bạn bảo vệ được nó suốt nhiều năm.</p>
 <p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó thì Duy chỉ dạy lại được những gì mình đọc được của người khác, và người học sẽ nhận ra điều đó nhanh hơn bạn nghĩ.</p>
+
+<h2>Kho chuyện là thứ nuôi năng lực thứ nhất trong nhiều năm</h2>
+
+<p>Duy để bài này cạnh nhóm bài về thương hiệu nhà sáng lập được tin cậy, vì một lý do rất thực tế. Định vị thì bạn chọn xong trong một buổi, còn bằng chứng cho định vị ấy thì phải góp nhặt suốt nhiều năm, và kho chuyện chính là chỗ chứa bằng chứng.</p>
+
+<p>Có một điểm ít người để ý. Kho này còn nuôi cả ba năng lực còn lại. Chuyện thật trong nghề là chất liệu để bạn dạy lại cho đội ngũ cách nghĩ trong phòng với khách, là nguyên liệu để viết quy trình cho sát thực tế, và là thứ để kể trong cộng đồng cho người đi sau đỡ vấp. Người dùng được kho chuyện của mình cho cả bốn việc đó, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
@@ -1047,7 +1183,11 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
  mo="Đăng bảy bài một tuần rồi biến mất ba tháng thua đăng một bài một tuần trong ba năm. Bài này viết về cách thiết kế nhịp bạn giữ được.",
  ngay="2026-08-14", ngay_viet="14 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-ban-lam-viec.webp", alt="Coach Duy Nguyễn ngồi làm việc tại bàn",
- than="""
+ than="""<p>Tuần đầu bạn đăng bảy bài, tuần thứ tư còn hai bài, tới tuần thứ tám thì im hẳn. Sau đó là ba tháng thấy có lỗi với chính mình rồi lại bung sức một đợt nữa. Nếu vòng đó nghe quen, bài này viết cho bạn.</p>
+
+<p>Duy sẽ chỉ cách thiết kế một nhịp chịu được tuần tệ nhất của bạn, chứ không phải tuần hăng nhất. Rồi Duy đưa cách chia tuần thành ba khối, cách lấy một nội dung gốc ra thành nhiều mảnh, và ba việc phải bỏ để giữ được nhịp. Đọc hết chừng tám phút.</p>
+
+
 <p>Người sáng lập bắt đầu làm nội dung thường bung sức. Tuần đầu bảy bài, tuần hai năm bài, tuần bốn còn hai bài, tuần tám thì im lặng. Sau đó là ba tháng thấy có lỗi với chính mình, rồi lại bung sức thêm một đợt nữa và lặp lại đúng vòng cũ.</p>
 <p><span class="nhan">Chuyện này không nằm ở kỷ luật, nó nằm ở cách bạn sắp việc.</span> Duy nói vậy vì đã gặp quá nhiều người rất kỷ luật trong mọi việc khác mà vẫn hỏng đúng ở chỗ này.</p>
 
@@ -1112,6 +1252,12 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
 <h2>Khi lỡ nhịp</h2>
 <p>Sẽ có tuần bạn lỡ, và quy tắc duy nhất là không bù. Đừng đăng ba bài trong tuần sau để trả nợ, vì đó chính là cách bạn quay lại vòng bung sức rồi kiệt mà mình vừa mất công thoát ra.</p>
 <p>Lỡ một tuần thì tuần sau đi tiếp như chưa có chuyện gì, và không ai đếm ngoài bạn. <span class="nhan dam">Thứ giết nhịp không phải tuần bị lỡ, mà là cảm giác có lỗi sau tuần bị lỡ.</span></p>
+
+<h2>Giữ được nhịp là điều kiện để năng lực thứ nhất lớn lên</h2>
+
+<p>Duy nói thẳng chỗ này. Nhịp không phải một năng lực riêng, nó là điều kiện để năng lực thương hiệu nhà sáng lập được tin cậy tích lại theo thời gian. Định vị của bạn có rõ tới đâu mà chỉ xuất hiện ba tháng một lần thì thị trường vẫn không nhớ nổi.</p>
+
+<p>Điều đáng mừng là nhịp không đòi bạn giỏi thêm, nó chỉ đòi bạn thiết kế thật hơn về quỹ thời gian mình có. Và khi nhịp đã đứng, ba năng lực còn lại của Next Gen Founder đều dễ hơn: bạn có sẵn chất liệu để dạy đội ngũ, có sẵn chuyện để kể trong cộng đồng, và có sẵn thứ để người tìm hiểu bạn đọc trước khi gặp.</p>
 """),
 
 dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
@@ -1119,7 +1265,11 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
  mo="Phần lớn buổi tư vấn hỏng ở mười phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.",
  ngay="2026-08-10", ngay_viet="10 tháng 8, 2026", doc="7 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
- than="""
+ than="""<p>Đây là bài viết dành cho người trực tiếp ngồi với khách trong những thương vụ giá trị cao, dù bạn là người chủ hay người tư vấn trong đội ngũ. Nếu bạn từng có buổi tư vấn mà mình nói rất hay, khách gật liên tục, rồi sau đó im lặng, thì phần lớn chuyện hỏng đã xảy ra ở mười phút đầu.</p>
+
+<p>Duy sẽ chia một buổi tư vấn thành bốn phần theo đúng thứ tự phải đi, chỉ ra ba lỗi làm hỏng buổi, và đưa bốn câu hỏi mở được lớp hai và lớp ba của vấn đề. Đọc hết chừng chín phút.</p>
+
+
 <p>Nếu bạn đi khám và bác sĩ kê đơn ngay khi bạn vừa ngồi xuống, bạn sẽ không tin đơn thuốc đó, dù nó hoàn toàn có thể đúng. Trong bán dịch vụ giá trị cao, chuyện y hệt xảy ra mỗi ngày, và người bán về nhà không hiểu vì sao khách nói để tôi suy nghĩ thêm.</p>
 
 <p><span class="nhan">Khách không từ chối giải pháp của bạn, họ từ chối cảm giác bị kê đơn khi chưa được khám.</span> Hai thứ đó khác nhau, và chữa nhầm thì càng chữa càng hỏng.</p>
@@ -1209,6 +1359,12 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
 <p>Ghi âm buổi tư vấn gần nhất, nghe lại và bấm giờ đúng một chỗ: bạn bắt đầu nói về giải pháp ở phút thứ mấy.</p>
 
 <p>Nếu con số đó dưới mười lăm, bạn đã tìm ra chỗ cần sửa đầu tiên, và nó không nằm ở kỹ năng chốt như phần lớn người vẫn nghĩ. Nghe thêm lần nữa và đếm số câu hỏi bạn đặt ra trước phút mười lăm, nếu dưới năm câu thì bạn chưa khám, bạn đang kê đơn.</p>
+
+<h2>Khám trước khi kê đơn chính là định nghĩa của năng lực thứ hai</h2>
+
+<p>Trong bốn năng lực Duy hay nói tới, năng lực tư vấn được tin cậy được định nghĩa gọn bằng đúng việc bạn vừa đọc: khai thác bối cảnh trước khi đề xuất, phân biệt triệu chứng với vấn đề gốc, trình bày đề nghị gắn với nhu cầu thật, xử lý băn khoăn bằng sự rõ ràng thay vì áp lực.</p>
+
+<p>Duy gọi đây là cây cầu từ niềm tin sang quyết định mua, và nó là chặng thứ hai trong bốn chặng của Next Gen Founder, nhà sáng lập thế hệ mới. Thương hiệu tốt đưa khách tới cửa, nhưng chính cây cầu này quyết định họ có bước qua hay không. Và khi bạn làm được một mình rồi thì câu hỏi kế tiếp là làm sao để cả đội ngũ cùng làm được, đó là lúc năng lực xây hệ thống vào cuộc.</p>
 """),
 
 dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
@@ -1216,7 +1372,11 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
  mo="Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có bốn nghĩa khác, và cách xử lý mỗi nghĩa một khác.",
  ngay="2026-08-06", ngay_viet="6 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-noi-1.webp", alt="Coach Duy Nguyễn đang trao đổi với người đối diện",
- than="""
+ than="""<p>Khách nghe hết, gật đầu, rồi nói để tôi suy nghĩ thêm. Bạn hẹn ba ngày sau gọi lại, và ba ngày sau không ai bắt máy. Nếu chuyện đó vừa xảy ra tuần này thì bài này viết cho bạn.</p>
+
+<p>Duy sẽ chỉ ra câu ấy gần như không bao giờ mang nghĩa đen, và nó có bốn nghĩa khác nhau cần bốn cách xử lý khác nhau. Rồi Duy đưa đúng một câu hỏi tách được bốn nghĩa đó ngay trong phòng, trước khi khách đứng dậy. Đọc hết chừng tám phút.</p>
+
+
 <p>Đây là câu người bán dịch vụ nghe nhiều nhất, và cũng là câu bị hiểu sai nhiều nhất. Phần lớn người bán phản ứng bằng cách hẹn gọi lại sau ba ngày, rồi ba ngày sau gọi và không ai bắt máy, rồi kết luận rằng khách hôm ấy không nghiêm túc.</p>
 
 <p>Vấn đề là câu đó gần như không bao giờ mang nghĩa đen. <span class="nhan">Không ai về nhà ngồi suy nghĩ thêm về dịch vụ của bạn cả.</span> Họ đã nghĩ xong ngay trong phòng, chỉ là điều họ nghĩ thì họ chưa nói ra.</p>
@@ -1291,6 +1451,12 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
 <p>Lấy ba buổi tư vấn gần nhất kết thúc bằng câu để tôi suy nghĩ thêm, và với mỗi buổi, tự chấm xem nó thuộc nghĩa nào trong bốn nghĩa. Nếu bạn không chấm được thì đó chính là câu trả lời, vì nó nghĩa là buổi hôm đó bạn chưa đủ thông tin để hiểu người ngồi trước mặt.</p>
 
 <p>Nếu cả ba buổi rơi vào cùng một nghĩa thì bạn vừa tìm ra chỗ hổng cố định trong cách bán của mình, và sửa một chỗ đó sẽ đổi kết quả nhiều hơn mọi kỹ thuật chốt cộng lại.</p>
+
+<h2>Nghe ra được điều khách chưa nói là một năng lực nghề</h2>
+
+<p>Việc bạn vừa đọc không phải mẹo xử lý từ chối. Nó là một phần của năng lực tư vấn được tin cậy, thứ Duy xếp thứ hai trong bốn năng lực của Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+
+<p>Chỗ khác nhau giữa người bán và người tư vấn nằm đúng ở đây. Người bán nghe câu đó rồi tìm cách thuyết phục thêm. Người tư vấn nghe câu đó rồi tìm cách hiểu thêm. Hai phản ứng ấy dẫn tới hai kết cục khác hẳn nhau, và khách nhận ra khác biệt đó nhanh hơn nhiều so với điều chúng ta vẫn nghĩ.</p>
 """),
 
 dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách",
@@ -1298,7 +1464,11 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
  mo="Giảm giá không chỉ lấy đi phần chênh lệch. Nó đổi cách khách nhìn bạn, và điều đó không lấy lại được bằng cách tăng giá lần sau.",
  ngay="2026-08-02", ngay_viet="2 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-noi-4.webp", alt="Coach Duy Nguyễn nói trong một buổi trao đổi",
- than="""
+ than="""<p>Bài này Duy viết cho người vừa giảm giá cho một khách và đang tự trấn an rằng lần này là ngoại lệ. Bạn tính khoản mất bằng phần trăm lợi nhuận, và cách tính đó bỏ qua phần đắt nhất.</p>
+
+<p>Duy sẽ chỉ ra ba điều khách học được ngay khi bạn giảm giá, một điều ít ai nói về khách trả rẻ, rồi đưa ba cách thay cho việc giảm. Cuối bài là cách xử lý khi bạn đã lỡ giảm một lần rồi. Đọc hết chừng tám phút.</p>
+
+
 <p>Nhiều người tính cái giá của việc giảm giá bằng phần trăm lợi nhuận mất đi. Cách tính đó bỏ qua phần đắt nhất, là những gì diễn ra trong đầu khách sau khi bạn giảm, và phần ấy thì không có dòng nào trên báo cáo.</p>
 
 <h2>Ba điều khách học được khi bạn giảm giá</h2>
@@ -1374,6 +1544,12 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
 <p>Câu này giữ được ba điều cùng lúc: giá, sự tôn trọng với khách cũ, và cửa để đi tiếp. Nó cũng nói cho người đối diện biết một điều về bạn mà không cần khoe, rằng bạn có nguyên tắc và bạn giữ nguyên tắc ngay cả lúc có tiền trước mặt.</p>
 
 <p>Duy để ý thấy khách nghe câu này thường không hỏi lại lần hai. Có người còn chọn phương án đầy đủ, vì thứ họ vừa thấy không phải là một con số, mà là cách bạn sẽ cư xử suốt quãng làm việc sắp tới.</p>
+
+<h2>Giữ được giá là hệ quả của năng lực, không phải của sự cứng rắn</h2>
+
+<p>Duy muốn nói rõ để bạn khỏi hiểu nhầm thành lời khuyên hãy cứng rắn hơn. Người giữ được giá không phải người lì hơn, mà là người đã làm tốt phần trước đó, tức là đã giúp khách nhìn rõ vấn đề của họ trước khi bàn tới con số. Đó là năng lực tư vấn được tin cậy đang làm việc.</p>
+
+<p>Nhìn rộng hơn thì giá còn phụ thuộc vào ba chặng khác. Một thương hiệu đủ rõ khiến khách tới đã biết bạn thuộc hạng nào. Một hệ thống chạy được khiến bạn không phải nhận bừa cho đủ chỉ tiêu tháng. Và một cộng đồng quanh bạn khiến khách mới nghe về bạn từ người họ tin, chứ không phải từ một quảng cáo. Bốn chặng ấy hợp lại thành chân dung Next Gen Founder.</p>
 """),
 
 dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ngũ",
@@ -1381,7 +1557,11 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
  mo="Thư mục quy trình đầy tài liệu mà không ai mở là chuyện phổ biến. Nguyên nhân là quy trình chỉ là một trong năm thứ, và thường là thứ ít quan trọng nhất.",
  ngay="2026-07-28", ngay_viet="28 tháng 7, 2026", doc="7 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""<p>Người chủ nào cũng từng có một đợt hăng hái viết quy trình. Thường nó bắt đầu sau một sự cố, hoặc sau một khoá học, và trong hai tuần đầu thì khí thế rất tốt.</p>
+ than="""<p>Bài này Duy viết cho người chủ đang có một đội ngũ và một thư mục quy trình mà gần như không ai mở tới. Bạn đã bỏ công viết nó ra, có khi còn thuê hẳn người viết, vậy mà việc vẫn chạy theo cách cũ và mọi câu hỏi vẫn đổ về bàn của bạn.</p>
+
+<p>Duy sẽ chỉ ra vì sao quy trình chỉ là một trong năm phần, và thường là phần ít quan trọng nhất. Rồi Duy đưa bạn cách chọn đúng một luồng việc để làm trước trong quý này, kèm dấu hiệu cho biết luồng đó đã chạy được mà không cần tới bạn. Đọc hết chừng bảy phút.</p>
+
+<p>Người chủ nào cũng từng có một đợt hăng hái viết quy trình. Thường nó bắt đầu sau một sự cố, hoặc sau một khoá học, và trong hai tuần đầu thì khí thế rất tốt.</p>
 
 <p>Ba tháng sau, thư mục vẫn còn đó, đầy tài liệu, và không ai mở tới lần thứ hai. Việc vẫn chạy theo cách cũ, tức là hỏi người chủ. Điều đáng nói là gần như không ai nhắc lại chuyện đó nữa, cả người viết lẫn người đáng lẽ phải dùng, như thể cả hai bên ngầm hiểu rằng nó đã chết.</p>
 
@@ -1455,14 +1635,25 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
 
 <p>Có một mốc để biết luồng đã rời khỏi đầu bạn: người phụ trách xử lý được tám trong mười tình huống mà không cần hỏi, kể cả những tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy. Chưa tới mốc đó thì đừng vội sang luồng khác.</p>
 
-<p>Một luồng một quý, bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi. <span class="nhan">Đường nhanh thường chỉ nhanh ở phần viết ra, còn phần chạy được thì vẫn mất từng ấy thời gian.</span></p>"""),
+<p>Một luồng một quý, bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi. <span class="nhan">Đường nhanh thường chỉ nhanh ở phần viết ra, còn phần chạy được thì vẫn mất từng ấy thời gian.</span></p>
+
+<h2>Đây là một năng lực, không phải một đợt dọn dẹp</h2>
+
+<p>Việc chuyển kinh nghiệm đang nằm trong đầu mình thành một cách làm mà người khác hiểu được, làm được rồi cải tiến được, Duy gọi đó là năng lực xây hệ thống. Nó là cách bạn làm việc từ đây trở đi, và cũng là thứ quyết định công ty có lớn hơn một người hay không.</p>
+
+<p>Chỗ khó là hệ thống chạy được vẫn chưa gỡ hết bài toán. Bạn vẫn cần một thương hiệu đủ rõ để đúng người tìm tới trước cả cuộc gặp đầu tiên. Vẫn cần năng lực ngồi trước một khách hàng và giúp họ nhìn ra vấn đề thật của mình. Vẫn cần những người quanh mình tạo giá trị cho nhau chứ không dồn hết lên vai bạn. Người đi đủ bốn chặng đó, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+"""),
 
 dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đội ngũ",
  tieu="Giao quyền mà không mất kiểm soát",
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-giua-doan.webp", alt="Coach Duy Nguyễn đứng giữa những người tham dự",
- than="""<p>Duy từng ngồi với một anh chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề, và hỏi anh một câu rất đơn giản: trong tuần vừa rồi anh đã tự quyết bao nhiêu việc mà lẽ ra người khác quyết được. Anh nghĩ một lúc rồi cười, nói chắc khoảng ba mươi. Duy hỏi tiếp vì sao anh không giao, thì anh trả lời một câu mà rất nhiều người sẽ thấy quen:</p>
+ than="""<p>Đây là bài viết dành cho người chủ đang kẹt giữa hai thái cực, hoặc ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Cả hai đều mệt, và cả hai đều làm bạn tin rằng vấn đề nằm ở người mình tuyển.</p>
+
+<p>Duy sẽ chỉ ra một đường ở giữa, gọi là giao theo vùng thay vì giao theo việc, và nó có công thức chứ không phải cảm tính. Rồi Duy đưa ba việc phải làm cùng lúc với giao quyền, cùng dấu hiệu cho biết giao quyền đã thành thật. Đọc hết chừng tám phút.</p>
+
+<p>Duy từng ngồi với một anh chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề, và hỏi anh một câu rất đơn giản: trong tuần vừa rồi anh đã tự quyết bao nhiêu việc mà lẽ ra người khác quyết được. Anh nghĩ một lúc rồi cười, nói chắc khoảng ba mươi. Duy hỏi tiếp vì sao anh không giao, thì anh trả lời một câu mà rất nhiều người sẽ thấy quen:</p>
 
 <p><span class="nhan">Anh giao rồi, hai lần, cả hai lần đều phải nhảy vào sửa.</span></p>
 
@@ -1542,14 +1733,25 @@ dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đ�
 
 <p>Chọn một người và một mảng việc, rồi viết đúng ba dòng: vùng xanh gồm gì, vùng vàng gồm gì, vùng đỏ gồm gì. Gửi cho họ, và quan trọng nhất là hỏi lại xem họ thấy chỗ nào chưa rõ.</p>
 
-<p>Câu hỏi ngược đó thường lộ ra vài chỗ bạn tưởng đã rõ mà thật ra chưa. Ba dòng ấy tiết kiệm cho bạn nhiều giờ hơn cả một tháng họp hành, và nó mất chưa tới hai mươi phút để viết.</p>"""),
+<p>Câu hỏi ngược đó thường lộ ra vài chỗ bạn tưởng đã rõ mà thật ra chưa. Ba dòng ấy tiết kiệm cho bạn nhiều giờ hơn cả một tháng họp hành, và nó mất chưa tới hai mươi phút để viết.</p>
+
+<h2>Giao quyền nằm trong năng lực xây hệ thống</h2>
+
+<p>Nhiều người xếp giao quyền vào mảng quản lý con người, và Duy xếp nó vào năng lực xây hệ thống. Lý do là bạn chỉ giao được một vùng khi vùng ấy đã có kết quả rõ, có người chịu trách nhiệm cuối, có tiêu chuẩn để biết thế nào là đạt, và có dữ liệu để biết đang khỏe hay đang lệch.</p>
+
+<p>Giao quyền vì vậy không phải một cuộc trò chuyện đầy tin tưởng, nó là kết quả của việc bạn đã viết đủ rõ. Đây là chặng thứ ba trong bốn chặng của Next Gen Founder, nhà sáng lập thế hệ mới, và là chặng nhiều người bỏ qua nhất vì nó không có gì hào hứng để khoe.</p>
+"""),
 
 dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
  tieu="Hai tuần đầu quyết định gần như tất cả",
  mo="Người mới vào cộng đồng quyết định ở lại hay không trong hai tuần đầu, và họ quyết dựa trên việc có đạt được một kết quả nhỏ nhìn thấy được hay không.",
  ngay="2026-07-16", ngay_viet="16 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-noi-2.webp", alt="Coach Duy Nguyễn đang nói với người đối diện",
- than="""
+ than="""<p>Nếu bạn từng mở danh sách thành viên của nhóm mình ra rồi nhận ra mình không nhớ nổi nửa số tên trong đó, thì bài này viết cho bạn. Người dẫn một cộng đồng hay một nhóm học viên đều gặp cảnh này. Số người tham gia thì đông mà số người thật sự còn hoạt động thì mỗi tháng một ít đi.</p>
+
+<p>Duy sẽ chỉ ra vì sao chuyện một người đi hay ở đã được quyết trong mười bốn ngày đầu, sớm hơn nhiều so với điều bạn vẫn nghĩ. Rồi Duy đưa bốn việc phải xảy ra trong hai tuần đó cùng ba lỗi hay gặp, đủ để bạn dựng lại quãng mở đầu cho nhóm mình ngay tuần này. Đọc hết chừng bảy phút.</p>
+
+
 <p>Trong mọi cộng đồng Duy từng quan sát, tỉ lệ người còn hoạt động sau sáu tháng gần như đã được định đoạt ngay trong hai tuần đầu. Người có một kết quả nhỏ nhìn thấy được trong mười bốn ngày đầu thì ở lại, còn người không có thì âm thầm rời đi và thường không nói gì cả.</p>
 <p><span class="nhan">Họ không rời đi vì thất vọng, họ chỉ ngừng mở ứng dụng.</span> Người dựng cộng đồng khó sửa đúng ở chỗ này, vì không có phản hồi nào để đọc, chỉ có một con số lặng lẽ đi xuống sau vài tháng.</p>
 
@@ -1614,6 +1816,12 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
 <p>Việc này có ích cho cả hai đầu. Người mới có một khuôn mặt cụ thể để hỏi thay vì hỏi vào chỗ trống. Còn người cũ thì gắn bó hơn hẳn, vì được giao một vai trong cộng đồng chứ không chỉ là người tham dự.</p>
 
 <p>Duy thấy nhiều nơi làm việc này theo kiểu tự nguyện rồi để đó, và nó chết sau hai tháng. Muốn nó sống thì phải có danh sách, có người theo dõi, và ai làm tốt phải được cảm ơn công khai.</p>
+
+<h2>Giữ người ở lại là một năng lực, không phải một đợt phát động</h2>
+
+<p>Chọn đúng người rồi dựng quãng mở đầu để người mới sớm thấy mình thuộc về, sau đó giữ một nhịp đều để thành viên vừa học vừa giúp nhau tiến bộ. Duy gọi đó là năng lực kiến tạo cộng đồng. Dấu hiệu cho thấy nó đã thành thật là giá trị bắt đầu chạy giữa các thành viên với nhau, thay vì mọi thứ vẫn đi một chiều từ bạn xuống.</p>
+
+<p>Duy hay xếp năng lực này sau cùng trong bốn năng lực, và nó đứng sau là có lý do. Cộng đồng chỉ giữ được người khi bạn đã có một thương hiệu đủ rõ để hút đúng người vào, đã tư vấn được cho họ tới mức họ tin, và đã có hệ thống để nhịp sinh hoạt không còn phụ thuộc vào chuyện tuần này bạn có rảnh hay không. Người đi đủ bốn chặng đó, Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
@@ -1621,7 +1829,11 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
  mo="Số thành viên là chỉ số dễ đo nhất và dễ đánh lừa nhất. Có bốn con số khác nói đúng hơn về việc cộng đồng của bạn có sống hay không.",
  ngay="2026-07-10", ngay_viet="10 tháng 7, 2026", doc="6 phút đọc",
  anh="img/cd-san-khau.webp", alt="Coach Duy Nguyễn trên sân khấu",
- than="""
+ than="""<p>Nếu bạn đang tự hào vì cộng đồng của mình có năm nghìn người, thì bài này viết cho bạn, và câu hỏi đầu tiên của Duy sẽ là bao nhiêu người trong số đó có mặt tuần trước.</p>
+
+<p>Duy sẽ đưa bốn con số nói đúng hơn về sức khỏe một cộng đồng, cách đếm khi bạn chưa có công cụ gì trong tay, và một bài kiểm hai tuần. Cuối bài là chuyện khó chịu nhất, là khi bốn con số đều tốt mà cộng đồng vẫn nhạt. Đọc hết chừng tám phút.</p>
+
+
 <p>Khi ai đó khoe cộng đồng năm nghìn người, câu hỏi đầu tiên của Duy là bao nhiêu người trong số đó có mặt tuần trước. Câu trả lời thường làm không khí chùng xuống một lúc.</p>
 <p><span class="nhan">Số thành viên là con số dễ tăng nhất và ít liên quan nhất tới việc cộng đồng có tạo ra giá trị hay không.</span> Nó dễ tăng vì mời một người vào nhóm gần như không tốn gì, mà thứ không tốn gì thì cũng không nói lên điều gì.</p>
 
@@ -1692,6 +1904,12 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
 <p>Đo không phải để báo cáo cho ai, mà để biết mình nên sửa chỗ nào trước. Bốn con số ở trên gắn với bốn việc sửa khác nhau, nên biết con số nào yếu là biết luôn tuần này làm gì.</p>
 <p>Ít người bắt tay làm thật thì sửa mười bốn ngày đầu. Tỉ lệ quay lại thấp thì sửa nhịp. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì quay lại xem lời hứa ban đầu có được giữ không.</p>
 <p><span class="nhan dam">Sai lầm hay gặp là thấy con số nào cũng yếu rồi sửa cả bốn cùng lúc.</span> Bốn con số này xếp theo thứ tự, con số trước hỏng thì con số sau không thể tốt, nên sửa từ con số một và đi lần lượt.</p>
+
+<h2>Đo đúng là một phần của năng lực kiến tạo cộng đồng</h2>
+
+<p>Duy để bài này cạnh nhóm bài về năng lực kiến tạo cộng đồng, vì đo sai thì mọi việc phía sau đều lệch. Người đo bằng số thành viên sẽ dồn sức đi mời thêm người, còn người đo bằng số quan hệ hình thành giữa các thành viên sẽ dồn sức vào việc nối họ với nhau. Hai hướng đó dẫn tới hai cộng đồng khác hẳn nhau sau một năm.</p>
+
+<p>Đây là chặng thứ tư trong bốn chặng của Next Gen Founder, nhà sáng lập thế hệ mới. Nó đứng cuối vì cộng đồng khuếch đại thứ bạn đã có, nên ba chặng trước phải đứng được trước đã.</p>
 """),
 
 
@@ -1700,7 +1918,11 @@ dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Quan hệ với khách",
  mo="Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/dh-giua-doan.webp", alt="Coach Duy Nguyễn đi giữa những người vỗ tay trong một buổi đào tạo",
- than="""
+ than="""<p>Khách của bạn hỏi giá rất sớm, so từng hạng mục, rồi lấy báo giá của bạn đi hỏi chỗ khác. Bạn kết luận khách bên mình khó tính. Bài này viết cho bạn, và Duy sẽ đưa ra một cách giải thích khác.</p>
+
+<p>Cùng một khách ấy, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào. Duy sẽ kể ba chuyện thật cùng một cơ chế, chỉ ra thứ quyết định bạn bị xếp vào ngăn nào trong đầu khách, và điều gì đổi sau khi vai trò của bạn đổi. Đọc hết chừng tám phút.</p>
+
+
 <p>Có một chuyện Duy gặp nhiều tới mức bây giờ nghe nửa câu là biết nửa sau. Người chủ hoặc người tư vấn ngồi xuống và nói rằng khách bên mình khó tính lắm. Hỏi giá rất sớm, so từng hạng mục, rồi cuối cùng vẫn đi chỗ khác.</p>
 
 <p><span class="nhan">Nhưng cũng chính người khách đó, khi ngồi với một người khác, lại không nhắc gì tới giá.</span> Họ hỏi nên chọn phương án nào, rủi ro nằm ở đâu, quyết thế nào thì hợp lý. Cùng một con người, hai cách cư xử khác hẳn nhau, trong cùng một tuần.</p>
@@ -1770,6 +1992,12 @@ dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Quan hệ với khách",
 <p>Nghe lại buổi tư vấn gần nhất, hoặc nhớ lại nếu không ghi âm. Rồi trả lời đúng một câu: trong mười phút đầu bạn nói về mình bao nhiêu phần và hỏi về họ bao nhiêu phần.</p>
 
 <p>Nếu phần nói nhiều hơn phần hỏi thì bạn đang tự đưa mình vào ngăn một mỗi buổi, và mọi kỹ thuật xử lý từ chối sau đó chỉ là chữa phần ngọn. Đổi tỉ lệ đó trong ba buổi tới rồi xem khách hỏi bạn những câu gì. Câu hỏi của khách là thước đo chính xác nhất cho chuyện họ đang xếp bạn ở đâu.</p>
+
+<h2>Đổi được ngăn mình đứng là dấu hiệu của năng lực thứ hai</h2>
+
+<p>Chuyện bị mặc cả hay được hỏi ý kiến không do khách quyết, nó do vai trò bạn nhận lấy trong hai mươi phút đầu. Việc chủ động nhận đúng vai đó, Duy gọi là năng lực tư vấn được tin cậy, chặng thứ hai trong bốn chặng của Next Gen Founder.</p>
+
+<p>Có một điều Duy phải nói cho công bằng. Vai trò không chỉ dựng lên trong phòng. Người đã đọc bạn nhiều tháng trước khi gặp thì bước vào phòng đã xếp bạn vào ngăn cố vấn rồi, còn người mới biết bạn qua một báo giá thì mặc định xếp bạn vào ngăn người bán. Đó là chỗ chặng thứ nhất, tức thương hiệu được tin cậy, âm thầm làm việc giúp bạn.</p>
 """),
 
 
@@ -1778,7 +2006,11 @@ dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khá
  mo="Giải thích nhiều là hành vi của người cần được chấp nhận. Chuyên gia không chứng minh mình giỏi, họ dẫn để người kia tự thấy.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-giu-chuan.webp", alt="Coach Duy Nguyễn trao đổi với hai người trong một sự kiện",
- than="""
+ than="""<p>Bạn có chuyên môn tốt, nội dung sâu, và mỗi lần gặp khách bạn giải thích rất kỹ để họ thấy giá trị. Càng gặp người có vẻ nghi ngờ thì bạn càng nói nhiều hơn. Bài này viết cho bạn, vì chính chỗ đó đang hạ vị thế của bạn xuống.</p>
+
+<p>Duy sẽ đưa ba dấu hiệu cho biết bạn đang chứng minh mà không nhận ra, giải thích vì sao im lặng lại nâng vị thế, và kể cách vài người cố vấn Duy làm việc cùng đã đổi lại. Cuối bài là chỗ ngược lại, tức khi nào thì nên nói dài. Đọc hết chừng tám phút.</p>
+
+
 <p>Duy làm việc nhiều với các đơn vị đào tạo và cố vấn giáo dục. Ở đó có một kịch bản lặp lại tới mức Duy đoán được trước khi nghe hết.</p>
 
 <p>Người dạy có chuyên môn rất tốt, nội dung sâu, lộ trình bài bản, học viên ra kết quả rõ ràng. Nhưng mỗi lần ngồi tư vấn thì họ nói rất nhiều: giải thích chương trình gồm những gì, học xong được gì, vì sao phương pháp này hơn phương pháp kia, và vì sao mức học phí là hợp lý.</p>
@@ -1859,6 +2091,12 @@ dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khá
 <p><b>Có chắc là ra kết quả không:</b> phản xạ sai là kể thêm chuyện thành công. Cách đúng là nói thẳng điều kiện để ra kết quả và trường hợp nào thì không ra, vì một câu bảo đảm nghe thì êm nhưng nó biến quan hệ thành một lời hứa phải đòi về sau.</p>
 
 <p>Ba câu trên có chung một điểm: chúng đều là câu hỏi bề mặt, và trả lời thẳng vào bề mặt thì bạn luôn thua. Hỏi ngược một lần trước khi đáp là cách chuyển từ thế bị kiểm tra sang thế cùng xem xét.</p>
+
+<h2>Dẫn thay vì chứng minh là cốt lõi của năng lực thứ hai</h2>
+
+<p>Người tư vấn được tin cậy không chứng minh mình giỏi, họ đặt câu hỏi để người kia tự nhìn ra vấn đề của mình. Đó là lý do Duy xếp việc này vào năng lực tư vấn được tin cậy, một trong bốn năng lực của Next Gen Founder, nhà sáng lập thế hệ mới.</p>
+
+<p>Nhưng Duy cũng phải nói chỗ khó. Bạn chỉ đủ bình tĩnh để không giải thích thêm khi trong lòng biết rõ mình đứng ở đâu và mình hợp với ai. Người chưa chọn xong lãnh địa chuyên môn thì rất khó im lặng, vì mỗi câu hỏi của khách đều chạm vào chỗ chính mình còn chưa chắc. Chặng thứ nhất đỡ cho chặng thứ hai đúng ở điểm này.</p>
 """),
 
 
@@ -1867,7 +2105,11 @@ dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống và đội
  mo="Vai trò không phải chuyện tính cách từng người. Nó thiết kế được, huấn luyện được, và đo được.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/dh-phong-lon.webp", alt="Coach Duy Nguyễn nói trên sân khấu một đại hội bán hàng",
- than="""
+ than="""<p>Bài này Duy viết cho người chủ đã tự mình chuyển được từ vai người bán sang vai người cố vấn, và giờ đang bí ở câu hỏi làm sao để cả đội ngũ cùng làm được chứ không chỉ mình mình.</p>
+
+<p>Duy sẽ chỉ ra vì sao đội ngũ mặc định rơi vào vai người bán dù bạn đã dặn kỹ, kể một chuyện thật về việc nói ít hơn mà chốt nhiều hơn, rồi đưa bốn thứ phải đổi theo đúng thứ tự. Thứ tự này không đảo được. Đọc hết chừng tám phút.</p>
+
+
 <p>Người chủ nào đọc xong chuyện vai trò cũng hỏi Duy một câu giống nhau: hiểu rồi, nhưng làm sao để cả đội ngũ làm được chứ không chỉ mình tôi.</p>
 
 <p>Câu hỏi đó đúng chỗ. Người chủ tự chuyển vai thì dễ, vì bạn có sẵn uy tín, có sẵn hiểu biết, và khách vốn đã nể bạn từ trước khi ngồi xuống. Một bạn bán hàng hai năm kinh nghiệm thì chưa có cả ba.</p>
@@ -1952,6 +2194,12 @@ dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống và đội
 <p>Duy nói con số để bạn khỏi sốt ruột. Bước đổi cách đo có hiệu lực ngay trong tuần đầu, vì ai cũng làm theo con số được đếm.</p>
 
 <p>Cách làm việc trong buổi tư vấn thì mất khoảng sáu tới tám tuần mới đổi thật, vì đây là thói quen chứ không phải kiến thức. Riêng con số kinh doanh thì tháng thứ ba tới thứ tư mới nói lên điều gì, sớm hơn thì mẫu còn quá nhỏ để kết luận.</p>
+
+<h2>Hai năng lực gặp nhau đúng ở bài này</h2>
+
+<p>Bài này nằm ở giao điểm của hai trong bốn năng lực, và đó là lý do nó khó. Nội dung của việc cần dạy thuộc năng lực tư vấn được tin cậy. Nhưng cách làm cho cả đội ngũ cùng làm được lại thuộc năng lực xây hệ thống, tức là phải có tiêu chuẩn, có người chịu trách nhiệm, có nhịp rà soát và có dữ liệu để biết ai đang lệch.</p>
+
+<p>Người chủ nào chỉ mang chuyên môn đi dạy lại mà thiếu phần hệ thống thì đội ngũ nghe rất hay rồi tuần sau quay về nếp cũ. Đủ cả hai chặng ấy, cộng thêm thương hiệu ở phía trước và cộng đồng ở phía sau, là chân dung Duy gọi là Next Gen Founder, nhà sáng lập thế hệ mới.</p>
 """),
 
 
@@ -1960,7 +2208,11 @@ dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn n
  mo="Ba trạng thái nhận thức khách phải đi qua để tự quyết. Từng phần đều đúng, nhưng đảo thứ tự thì cả chuỗi hỏng.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-soi-dung.webp", alt="Coach Duy Nguyễn vẽ khung phương pháp trên bảng lật trước hội trường",
- than="""
+ than="""<p>Đây là bài viết dành cho người đang bán một dịch vụ mà khách phải tin mới mua, và đang thấy có buổi thì trôi rất mượt còn buổi thì tắc mà không rõ tắc ở đâu.</p>
+
+<p>Duy sẽ đưa ba trạng thái nhận thức mà khách phải đi qua để tự quyết, cùng lý do vì sao đảo thứ tự thì cả chuỗi hỏng. Rồi Duy chỉ cách đọc ngược khung này để chẩn đoán một buổi đã tắc ở đâu, và nói rõ điều khung này không làm được. Đọc hết chừng tám phút.</p>
+
+
 <p>Duy dạy phương pháp này nhiều năm, và phần khách nhớ nhanh nhất luôn là tên ba bước. Phần bị làm sai nhiều nhất là thứ tự.</p>
 
 <p>Ba Điểm Chạm không phải kịch bản bán hàng. <span class="nhan">Nó là ba trạng thái nhận thức mà một người phải đi qua để tự ra quyết định.</span> Khi cả ba đủ rõ thì quyết định đến tự nhiên, không cần ép và cũng không cần kỹ thuật chốt nào.</p>
@@ -2047,6 +2299,12 @@ dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn n
 <p>Bước thứ ba thì ngược lại, nó cho bạn việc để làm: trình bày, giải thích, kể chuyện thành công. Nên phản xạ tự nhiên là nhảy tới bước ba càng sớm càng tốt, vì ở đó bạn thấy mình đang làm việc.</p>
 
 <p>Thứ tự bị đảo không phải vì ai quên, mà vì bước ba dễ chịu hơn hai bước đầu rất nhiều.</p>
+
+<h2>Khung này là phần lõi của năng lực thứ hai</h2>
+
+<p>Ba Điểm Chạm là cách Duy diễn đạt phần lõi của năng lực tư vấn được tin cậy, chặng thứ hai trong bốn chặng của Next Gen Founder. Nó không phải kịch bản bán hàng, và Duy nhắc lại điều đó vì đây là chỗ hay bị dùng sai nhất.</p>
+
+<p>Duy cũng muốn nói thẳng về giới hạn. Khung này giúp bạn dẫn đúng một cuộc trò chuyện, nhưng không giúp bạn có nhiều cuộc trò chuyện hơn, cũng không giúp đội ngũ tự làm được khi bạn vắng. Hai việc đó thuộc chặng thứ nhất và chặng thứ ba. Ai học một khung rồi mong nó gỡ hết mọi chỗ nghẽn thì sẽ thất vọng, và thất vọng đó không phải lỗi của khung.</p>
 """),
 
 
@@ -2055,7 +2313,11 @@ dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn n
  mo="Nghề dịch vụ tiếp xúc nhiều kiểu người mỗi ngày. Bị cuốn theo cảm xúc của người đối diện là mất luôn khả năng dẫn dắt.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-di-cung.webp", alt="Coach Duy Nguyễn trao đổi với hai nhà sáng lập bên bảng trắng",
- than="""
+ than="""<p>Hai mươi lăm bài khác trên trang này nói về khách, về đội ngũ và về hệ thống. Bài này nói về người ngồi ở ghế còn lại, tức là bạn, người làm nghề dịch vụ và mỗi ngày phải tiếp nhiều kiểu người khác nhau.</p>
+
+<p>Duy sẽ chỉ ra vì sao mất bình tĩnh là mất luôn khả năng dẫn dắt, đưa bạn một khoảng dừng vài giây có thể tập được, và ba tình huống hay gặp cùng cách đi qua. Có một đoạn Duy phải nói thật về chính mình. Đọc hết chừng bảy phút.</p>
+
+
 <p>Hai mươi mốt bài trên trang này đều nói về khách, về đội ngũ, về hệ thống. Bài này nói về người ngồi ở ghế còn lại, tức là bạn.</p>
 
 <p>Làm nghề dịch vụ nghĩa là mỗi ngày tiếp xúc với nhiều kiểu người, và trong số đó sẽ có người đến trong trạng thái không ổn. Họ đang lo, đang giận, đang thất vọng vì một chuyện chẳng liên quan gì tới bạn. Chuyện này không phải rủi ro hiếm gặp, nó là điều kiện của nghề.</p>
@@ -2144,6 +2406,12 @@ dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn n
 <p><b>Câu chuyện đã rời khỏi việc chính:</b> khi đã sang chuyện cũ, chuyện người khác, hoặc chuyện cá nhân, thì buổi này không giải quyết được gì nữa.</p>
 
 <p>Cách dừng cũng cần đúng. Đừng nói mình dừng vì không khí căng, hãy nói rằng chuyện này quan trọng nên anh chị cho tôi xem lại kỹ rồi mình bàn tiếp vào ngày cụ thể nào đó. Câu ấy giữ thể diện cho cả hai và giữ luôn lịch hẹn.</p>
+
+<h2>Giữ được mình là điều kiện của cả bốn năng lực</h2>
+
+<p>Duy không xếp việc này vào một năng lực nào cả, vì nó nằm dưới cả bốn. Người mất bình tĩnh thì không tư vấn được cho khách, không giữ chuẩn được với đội ngũ, và cũng không dựng nổi một cộng đồng mà người khác thấy an toàn khi ở trong đó.</p>
+
+<p>Bốn năng lực của Next Gen Founder đều giả định một điều mà không tài liệu nào ghi ra, là người làm chủ đủ vững để không bị cuốn theo cảm xúc của người đối diện. Đó là phần ít được nói tới nhất, và cũng là phần Duy thấy quyết định nhất ở những người đi được đường dài.</p>
 """),
 
 ]
