@@ -623,7 +623,18 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* ============ ĐỌC BÀI: bề mặt sáng hơn, chữ dễ đọc hơn ============ */
 :root{ --ink-doc:#E8DFD5; --doc-bg:#221C18; --doc-bg-2:#2A231D; }
 .bai-than{max-width:none;margin:40px auto 0;padding:0}
-.doc{background-image:linear-gradient(180deg,var(--doc-bg-2) 0%,var(--doc-bg) 100%);background-color:var(--doc-bg);
+/* Tờ giấy bài viết chuyển sang kem sáng theo yêu cầu CDN 27/08: đọc dài
+   trên nền tối mỏi mắt. Token định nghĩa lại trong phạm vi .doc, token gốc
+   toàn trang giữ nguyên vì thẻ bài ở trang danh sách vẫn nền tối. */
+.doc{
+  color:var(--ink);
+  --doc-bg:#F5EDDE;--doc-bg-2:#FBF6EB;--ink-doc:#3A2F26;
+  --ink:#241B14;--ink-2:#4E4034;--ink-3:#75634F;--ink-4:#99876F;
+  --line:#DFD2BE;--line-2:#C9B8A0;
+  --bg-2:#FBF6EB;--panel:#F3EBDC;--panel-2:#EDE3D0;--panel-3:#E5D9C2;
+  --vang:#8F5808;--vang-2:#7A4B07;--vang-3:#684006;
+  --vang-mo:rgba(143,88,8,.09);
+  background-image:linear-gradient(180deg,var(--doc-bg-2) 0%,var(--doc-bg) 100%);background-color:var(--doc-bg);
   border:1px solid var(--line-2);border-radius:var(--r);box-shadow:var(--shadow);padding:44px 46px;max-width:74ch;margin-inline:auto}
 @media(max-width:700px){.doc{padding:30px 22px;border-radius:12px}}
 .doc p{font-size:18px;line-height:1.78;color:var(--ink-doc)}
@@ -2004,3 +2015,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .phan-sang .bia3d{background-color:#201812}
 /* nút lọc chủ đề đang chọn: nền hổ phách thì chữ phải kem, không dùng nâu đen */
 .phan-sang .chu-de button.on{color:#FBF6EB}
+
+
+/* Mục lục bên nằm trong DOM của .doc nhưng hiển thị trên nền tối của trang,
+   nên ghim lại token nền tối, không ăn token kem của tờ giấy. */
+.doc .ml-ben{--ink:#F9F5F0;--ink-2:#CDC2B6;--ink-3:#A2968A;
+  --line:#3D332C;--line-2:#514539;--vang:#F2B14A;--vang-2:#FFCB74}
