@@ -1442,7 +1442,7 @@ for i, b in enumerate(BAI):
        p, b["anh"], b["alt"], tra_loi, ml, than_bai,
        khoi_faq(faq) if faq else "", HOP_TAC_GIA, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))
-    trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld)
+    trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
     print("  bai-viet/" + b["tep"])
 
 # ---------------------------------------------------------------- SÁCH

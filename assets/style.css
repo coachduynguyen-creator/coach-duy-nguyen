@@ -2006,7 +2006,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 /* Các thẻ nền tối cố định nằm trong dải giấy: ghim lại token của nền tối,
    nếu không chữ trong thẻ ăn token sẫm của dải giấy và chìm vào nền thẻ.
    Lỗi này máy quét tương phản bắt được trên trang blog ngày 27/08. */
-.phan-sang :is(.the-bai,.bai-lon,.bia3d,.ds-bai a){
+.phan-sang :is(.the-bai,.bai-lon,.bia3d,.ds-bai a),
+body.giay :is(.the-bai,.bai-lon,.bia3d,.ds-bai a){
   color:var(--ink); /* đặt lại tại thẻ để con cháu kế thừa màu sáng, không lấy màu sẫm đã tính từ dải giấy */
   --ink:#F9F5F0;--ink-2:#CDC2B6;--ink-3:#A2968A;--ink-4:#7E7062;
   --vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E;
@@ -2021,3 +2022,52 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
    nên ghim lại token nền tối, không ăn token kem của tờ giấy. */
 .doc .ml-ben{--ink:#F9F5F0;--ink-2:#CDC2B6;--ink-3:#A2968A;
   --line:#3D332C;--line-2:#514539;--vang:#F2B14A;--vang-2:#FFCB74}
+
+
+/* ===== Trang bài viết nền kem toàn phần ===== */
+/* CDN muốn trang đọc sáng như trang cộng đồng, tờ giấy không tách biệt quá
+   với nền sau. Lớp giay đặt trên body của riêng các trang bài viết: nền kem,
+   token lật sang tông giấy, thanh menu và chân trang ghim tối làm dải nhận
+   diện đầu cuối, tờ giấy .doc chỉ còn sáng hơn nền một bậc nhẹ. */
+body.giay{
+  color-scheme:light;
+  background:#F2E9DA;color:var(--ink);
+  --ink:#241B14;--ink-2:#4E4034;--ink-3:#75634F;--ink-4:#99876F;
+  --line:#DFD2BE;--line-2:#C9B8A0;
+  --bg:#F2E9DA;--bg-2:#ECE1CE;--bg-3:#F7F0E2;
+  --panel:#FBF6EB;--panel-2:#F3EBDC;--panel-3:#EDE3D0;
+  --vang:#8F5808;--vang-2:#7A4B07;--vang-3:#684006;
+  --vang-mo:rgba(143,88,8,.09);
+  --paper:linear-gradient(180deg,#FDF9F0,#F7F0E2);
+  --shadow-s:0 1px 2px rgba(60,42,20,.08),0 14px 30px -18px rgba(60,42,20,.25);
+  --shadow:0 2px 6px rgba(60,42,20,.09),0 30px 56px -30px rgba(60,42,20,.3);
+  --shadow-h:0 3px 8px rgba(60,42,20,.1),0 24px 46px -22px rgba(60,42,20,.3);
+}
+/* thanh menu và chân trang ghim lại token tối, vì nền của chúng vốn tối */
+body.giay :is(#nav,#menu-nho,footer){
+  --ink:#F9F5F0;--ink-2:#CDC2B6;--ink-3:#A2968A;--ink-4:#7E7062;
+  --line:#3D332C;--line-2:#514539;
+  --bg:#17120F;--bg-2:#1E1815;--panel:#241D19;
+  --vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E;
+  --vang-mo:rgba(242,177,74,.13);
+  color:var(--ink-2);
+}
+body.giay #menu-nho{background:#17120F}
+body.giay footer{background:#1E1815}
+/* tờ giấy chỉ sáng hơn nền một bậc, viền mảnh, bóng nhẹ */
+body.giay .doc{--doc-bg:#FBF6EB;--doc-bg-2:#FDF9F0;border-color:#E5D9C2;
+  box-shadow:0 2px 6px rgba(60,42,20,.06),0 24px 48px -30px rgba(60,42,20,.22)}
+/* mục lục bên trên trang giấy dùng tông giấy, ghi đè ghim tối trước đó */
+body.giay .doc .ml-ben{--ink:#241B14;--ink-2:#4E4034;--ink-3:#75634F;
+  --line:#DFD2BE;--line-2:#C9B8A0;--vang:#8F5808;--vang-2:#7A4B07}
+/* nút viền vốn nền tối cố định: trả về dạng viền trong suốt trên nền sáng */
+body.giay .nut-vien{background-color:transparent;background-image:none}
+
+/* Nhãn hero theo hướng căn của khối cha: giữa ở khổ hẹp, trái ở khổ rộng.
+   CDN bắt lỗi 27/08: quy tắc nhóm căn trái cho .mono đè lên nhãn hero làm
+   nhãn dạt trái trong khi tên vẫn giữa. */
+#hero .hero-giua .mono-dai{text-align:inherit}
+
+/* Thẻ lối màu vàng trên trang giấy: ghim lại tông vàng gốc, không ăn tông
+   hổ phách sẫm của trang, vì chữ trên thẻ này vốn là nâu đen đậm. */
+body.giay .cuoi .loi.vang{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}

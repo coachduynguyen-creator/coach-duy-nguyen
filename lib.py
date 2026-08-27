@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260828w"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260828y"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -194,7 +194,7 @@ JSONLD_NGUOI = json.dumps({
 
 GOC = os.path.dirname(os.path.abspath(__file__))
 
-def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
+def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
     sau = "/" in ten_tep
     p = "../" if sau else ""
     url = BASE + "/" + ten_tep
@@ -223,7 +223,7 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
 <script>if(location.search.indexOf('static=1')>-1)document.documentElement.classList.add('noanim');</script>
 <script type="application/ld+json">%s</script>
 </head>
-<body>
+<body%s>
 %s
 %s
 %s
@@ -231,7 +231,8 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None):
 <script src="%sassets/site.js?v={VER}"></script>
 </body>
 </html>""" % (html.escape(tieu_de), html.escape(mo_ta), url, html.escape(tieu_de), html.escape(mo_ta), url,
-              p, jsonld or JSONLD_NGUOI, nav(active, p), than, khoi_cuoi(p), footer(p), p)
+              p, jsonld or JSONLD_NGUOI, (' class="%s"' % lop_body) if lop_body else "",
+              nav(active, p), than, khoi_cuoi(p), footer(p), p)
     doc = doc.replace("{VER}", VER)
     m = re.search(r'<div class="(?:hero-nen|tran-nen)"[^>]*><img src="([^"]+)"', doc)
     doc = doc.replace("{PRELOAD}", ('<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)) if m else "")
