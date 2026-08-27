@@ -815,7 +815,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 
 <p>Nhiều người hay tính cái giá đó bằng khoản tiền phải hoàn lại nếu mọi chuyện tệ. Thực tế nó gồm bốn phần, và phần tiền là phần rẻ nhất trong bốn phần.</p>
 
-<p><b>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả:</b> vẫn từng ấy buổi, từng ấy chuẩn bị, từng ấy sức, chỉ khác là cuối chặng không có gì để cả hai cùng nhìn lại.</p>
+<p><b>Phần thứ nhất là thời gian giao hàng cho một người không đạt kết quả:</b> vẫn từng ấy buổi làm việc, từng ấy công chuẩn bị, từng ấy sức lực bỏ ra, chỉ khác là cuối chặng không có gì để cả hai cùng nhìn lại.</p>
 
 <p><b>Phần thứ hai là chỗ của một khách đúng mà bạn không còn công suất để nhận:</b> khoản này không hiện trên sổ sách nên gần như không ai tính, mà nó thường lớn hơn khoản thu được từ ca sai.</p>
 
@@ -841,7 +841,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 
 <p>Có một dấu hiệu Duy để riêng ra vì nó khó nhìn nhất: người này hợp về mọi mặt, nhưng họ đang tìm người xác nhận rằng quyết định họ đã lỡ ra là đúng.</p>
 
-<p>Kiểu này rất dễ nhận vì họ trả lời tốt mọi câu hỏi sàng lọc, có ngân sách, có thời gian, có kết quả cần đạt rõ ràng. Chỉ có điều mỗi lần bạn nêu một cách nhìn khác thì họ giải thích lại vì sao cách của họ vẫn ổn. Họ không đến để đổi, họ đến để yên tâm.</p>
+<p>Kiểu này rất dễ nhận vì họ trả lời tốt mọi câu hỏi sàng lọc: có sẵn ngân sách, có thời gian rõ ràng, và biết rõ kết quả mình cần đạt. Chỉ có điều mỗi lần bạn nêu một cách nhìn khác thì họ giải thích lại vì sao cách của họ vẫn ổn. Họ không đến để đổi, họ đến để yên tâm.</p>
 
 <p>Duy học được dấu hiệu này bằng cách nhận sai vài lần. Cách kiểm nhanh là nêu một điều bạn thấy họ đang làm sai, nói thẳng nhưng tử tế, rồi im lặng nghe. Người đến để đổi sẽ hỏi thêm, người đến để yên tâm sẽ giải thích.</p>
 
@@ -1789,7 +1789,7 @@ dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khá
 
 <h2>Chương trình không phải chỗ hỏng</h2>
 
-<p>Hầu hết mọi người chẩn đoán sai đúng ở chỗ này. Thấy khách không chọn thì họ kết luận rằng mình chưa trình bày đủ rõ, nên lần sau chuẩn bị kỹ hơn nữa, thêm bằng chứng, thêm so sánh, thêm lời khen của học viên cũ.</p>
+<p>Hầu hết mọi người chẩn đoán sai đúng ở chỗ này. Thấy khách không chọn thì họ kết luận rằng mình chưa trình bày đủ rõ, nên lần sau chuẩn bị kỹ hơn nữa, thêm bằng chứng, thêm bảng so sánh, thêm lời khen của học viên cũ.</p>
 
 <p>Chỗ hỏng nằm ở chính hành vi chứng minh. <span class="nhan dam">Khi bạn cố giải thích quá nhiều, bạn đang tự đặt mình vào vai người cần được chấp nhận</span>, mà đó là vai của người bán chứ không phải vai của chuyên gia.</p>
 

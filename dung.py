@@ -1275,7 +1275,7 @@ PD_TAP = [
   cta_nhan="Xem các chương trình", cta="chuong-trinh.html"),
  dict(yt="iWGg9QfOXQg", muc=2,
   tieu="Ba bước dẫn một buổi bán cho bất kỳ khách nào",
-  mo="Một khung ba bước đơn giản để buổi tư vấn nào cũng có mở, có thân, có kết, thay vì trôi theo khách.",
+  mo="Một khung ba bước đơn giản để buổi tư vấn nào cũng có phần mở đầu, phần dẫn chuyện chính, và phần chốt lại rõ ràng, thay vì trôi theo khách.",
   lydo="Dễ áp nhất trong các tập, dùng được ngay buổi hẹn kế tiếp.",
   cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
 
@@ -1293,7 +1293,7 @@ PD_TAP = [
  dict(yt="Jgc233EB_H4", muc=3,
   tieu="Nói ít lại để được lắng nghe nhiều hơn",
   mo="Phần tiếp của chủ đề vị thế trong lời nói: cách đặt câu hỏi và giữ khoảng lặng để lời mình nói ra có trọng lượng.",
-  lydo="Xem cùng tập trên thành một cặp, một tập chỉ vấn đề, một tập chỉ cách sửa.",
+  lydo="Xem cùng tập trên thành một cặp: một tập chỉ ra vấn đề, một tập chỉ cách sửa.",
   cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
  dict(yt="CIyxENto-7Y", muc=3,
   tieu="Khách khó tính, hay mình chưa biết cách hiện diện?",
