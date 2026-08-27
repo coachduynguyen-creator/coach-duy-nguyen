@@ -274,7 +274,7 @@ INDEX = """
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="chuong-trinh/cong-dong-thanh-vien.html">
       <em>Chặng 02</em><h3>Cộng đồng Thành viên</h3>
-      <p>Luyện đủ bốn năng lực suốt một năm trong công việc thật, có nhịp, có phản hồi, có người đi cùng chặng.</p>
+      <p>Luyện đủ bốn năng lực suốt một năm ngay trong công việc thật, theo nhịp đều, có người phản hồi và đi cùng cả chặng.</p>
       <i>Bốn năng lực &middot; một năm</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
@@ -563,7 +563,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
     </article>
     <article>
       <div class="anh"><img src="img/ngf-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
-      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu, có đội ngũ. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
+      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu và một đội ngũ đang chạy. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
     <article>
       <div class="anh"><img src="img/ngf-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội ngũ" loading="lazy"></div>

@@ -13,7 +13,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = ""
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260829d"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260829e"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
@@ -119,7 +119,7 @@ def khoi_cuoi(p=""):
       <article class="loi vang">
         <span class="so">Lối 01 · Đi cùng nhau</span>
         <h3>Vào Cộng đồng Next Gen Founder</h3>
-        <p>Nơi nhà sáng lập luyện bốn năng lực trong công việc thật, có nhịp, có phản hồi, và có người hiểu chuyện mình đang gặp ở bên cạnh. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
+        <p>Nơi nhà sáng lập luyện bốn năng lực ngay trong công việc thật, theo nhịp đều, bên cạnh những người hiểu chuyện mình đang gặp. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
         <a class="nut nut-toi" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="loi">

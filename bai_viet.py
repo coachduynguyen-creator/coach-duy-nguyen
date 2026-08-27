@@ -16,7 +16,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p><b>Câu thứ nhất: tôi đăng nội dung nhiều nhưng không ra đúng khách.</b> Người nói câu này thường đã đăng đều đặn nhiều tháng, có lượt xem, có bình luận, thỉnh thoảng có một bài lên tới vài chục nghìn lượt và cả nhà mừng. Nhưng người nhắn tin lại hỏi những thứ rẻ tiền hơn hẳn thứ họ bán, hoặc hỏi xong rồi im luôn. Có người mở trang cá nhân của chính mình ra đọc lại trước mặt Duy, đọc chừng mười bài, rồi nói một câu mà tới giờ vẫn còn nhớ: bài nào cũng đúng, mà cả trang này không nói lên được tôi là ai.</p>
 
-<p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ có người, có kịch bản, có quy trình, thậm chí có phần mềm ghi lại từng cuộc gọi và chấm điểm từng bước. Nhưng cứ tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ, và người chủ vào nói chừng hai mươi phút thì khách gật. Ai cũng vui sau buổi đó, trừ người chủ, vì họ biết rõ tháng sau chuyện y hệt sẽ lặp lại thêm một lần nữa.</p>
+<p><b>Câu thứ hai: đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</b> Đội ngũ không thiếu người, kịch bản với quy trình đều đủ, thậm chí có phần mềm ghi lại từng cuộc gọi và chấm điểm từng bước. Nhưng cứ tới đúng giao dịch lớn thì khách vẫn hỏi gặp người chủ, và người chủ vào nói chừng hai mươi phút thì khách gật. Ai cũng vui sau buổi đó, trừ người chủ, vì họ biết rõ tháng sau chuyện y hệt sẽ lặp lại thêm một lần nữa.</p>
 
 <p><b>Câu thứ ba: tuyển thêm người mà tôi lại bận hơn trước.</b> Câu này làm người chủ hoang mang hơn cả ba câu kia, vì nó đi ngược hẳn điều họ mong đợi khi quyết định bỏ tiền ra tuyển người. Họ tuyển để nhẹ đi, kết quả là có thêm một người cần được hỏi, cần được duyệt, cần được sửa bài và cần được giải thích lại từ đầu. Có người nói với Duy rằng làm một mình còn nhanh hơn, và họ nói câu đó với vẻ mặt của người vừa thừa nhận một điều mà chính họ cũng không muốn thừa nhận.</p>
 
@@ -1053,7 +1053,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
 
 <h2>Nhịp phải chịu được tuần tệ nhất</h2>
 <p>Sai lầm gốc là thiết kế nhịp theo tuần rảnh nhất của mình. Bạn nhìn một tuần thảnh thơi, thấy mình làm được năm bài mà không thấy nặng, rồi lấy luôn con số đó làm chuẩn cho cả năm.</p>
-<p>Nhưng một năm có khoảng mười tuần như vậy, và bốn mươi tuần còn lại thì bạn có khách khó, có nhân sự nghỉ, có con ốm, có chuyến đi. Nhịp phải được thiết kế cho bốn mươi tuần kia.</p>
+<p>Nhưng một năm có khoảng mười tuần như vậy, và bốn mươi tuần còn lại thì khách khó, nhân sự nghỉ, con ốm, chuyến đi chen nhau tới. Nhịp phải được thiết kế cho bốn mươi tuần kia.</p>
 
 <div class="dan-manh">Người thắng trong làm nội dung không phải người đăng nhiều nhất. Là người còn đăng sau năm thứ ba.</div>
 
@@ -1613,7 +1613,7 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
 
 <p>Việc này có ích cho cả hai đầu. Người mới có một khuôn mặt cụ thể để hỏi thay vì hỏi vào chỗ trống. Còn người cũ thì gắn bó hơn hẳn, vì được giao một vai trong cộng đồng chứ không chỉ là người tham dự.</p>
 
-<p>Duy thấy nhiều nơi làm việc này theo kiểu tự nguyện rồi để đó, và nó chết sau hai tháng. Muốn nó sống thì phải có danh sách, có người theo dõi, và có lời cảm ơn công khai cho những người làm tốt.</p>
+<p>Duy thấy nhiều nơi làm việc này theo kiểu tự nguyện rồi để đó, và nó chết sau hai tháng. Muốn nó sống thì phải có danh sách, có người theo dõi, và ai làm tốt phải được cảm ơn công khai.</p>
 """),
 
 dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
