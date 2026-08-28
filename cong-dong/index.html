@@ -1366,8 +1366,10 @@ figure{margin:0}
   var nlEl=d.getElementById('nav-links');
   function moMep(){ if(!nlEl) return; var max=nlEl.scrollWidth-nlEl.clientWidth; nlEl.style.setProperty('--ml', nlEl.scrollLeft>4?'26px':'0px'); nlEl.style.setProperty('--mr', (max-nlEl.scrollLeft)>4?'26px':'0px'); }
   if(nlEl){ nlEl.addEventListener('scroll',moMep,{passive:true}); addEventListener('resize',moMep); moMep(); }
-  var links=[].slice.call(d.querySelectorAll('#nav-links a')), tien=d.getElementById('tien');
-  var secs=links.map(function(a){ return d.querySelector(a.getAttribute('href')); });
+  var links=[].slice.call(d.querySelectorAll('#nav-links a')).filter(function(a){
+    var h=a.getAttribute('href')||''; return h.charAt(0)==='#' && h.length>1;
+  }), tien=d.getElementById('tien');
+  var secs=links.map(function(a){ try{ return d.querySelector(a.getAttribute('href')); }catch(e){ return null; } });
   var cur=null;
   function setActive(i){ if(i===cur) return; cur=i; links.forEach(function(a,j){ a.classList.toggle('on',j===i); });
     if(i!=null && nlEl && nlEl.scrollWidth>nlEl.clientWidth+4){ var a=links[i]; var L=a.offsetLeft-nlEl.scrollLeft, R=L+a.offsetWidth, W=nlEl.clientWidth;
