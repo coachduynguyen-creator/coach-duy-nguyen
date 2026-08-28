@@ -1383,17 +1383,17 @@ PD_TAP = [
   tieu="Nâng vị thế chuyên gia trong mắt khách",
   mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
   lydo="Bạn kiểm được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
  dict(yt="sBaDKQOxRZw", muc=3,
   tieu="Vì sao nói nhiều làm mất vị thế",
   mo="Người bán hay lấp khoảng lặng bằng lời, và mỗi câu thừa là một lần tự hạ giá mình. Tập này nói về sức nặng của việc nói ít lại.",
   lydo="Nghe xong bạn sẽ để ý được chính mình trong buổi nói chuyện kế tiếp.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
  dict(yt="Jgc233EB_H4", muc=3,
   tieu="Nói ít lại để được lắng nghe nhiều hơn",
   mo="Phần tiếp của chủ đề vị thế trong lời nói: cách đặt câu hỏi và giữ khoảng lặng để lời mình nói ra có trọng lượng.",
   lydo="Xem cùng tập trên thành một cặp: một tập chỉ ra vấn đề, một tập chỉ cách sửa.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
  dict(yt="CIyxENto-7Y", muc=3,
   tieu="Khách khó tính, hay mình chưa biết cách hiện diện?",
   mo="Nhiều người than gặp toàn khách khó. Tập này lật lại: cách bạn xuất hiện đang mời kiểu khách nào tới, và đổi cách hiện diện thì tệp khách đổi theo.",
@@ -1403,7 +1403,7 @@ PD_TAP = [
   tieu="Gây ấn tượng với khách cao cấp ngay lần đầu",
   mo="Ấn tượng đầu với người có tiền không nằm ở bộ vest hay lời chào khéo, mà ở vài chi tiết chuẩn bị mà rất ít người làm.",
   lydo="Danh sách chi tiết đủ cụ thể để soát lại trước buổi gặp quan trọng.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
 
  # ---- Chuyên mục 04 · Xây hệ thống cùng đội ngũ
  dict(yt="IUNdDgUxGWM", muc=4,
@@ -1925,14 +1925,30 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                   "chuong-trinh", "the-trusted-creator.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">
 <title>Trusted Founder Brand Challenge</title>
-<link rel="canonical" href="%s/chuong-trinh/trusted-founder-brand.html">
+<link rel="canonical" href="%s/founder-brand/">
 <meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=trusted-founder-brand.html">
+<meta http-equiv="refresh" content="0; url=../founder-brand/">
 </head>
 <body><p>Chương trình này đã đổi tên thành
-<a href="trusted-founder-brand.html">Trusted Founder Brand Challenge</a>.</p>
-<script>location.replace('trusted-founder-brand.html');</script></body></html>""" % BASE)
+<a href="../founder-brand/">Trusted Founder Brand Challenge</a>.</p>
+<script>location.replace('../founder-brand/');</script></body></html>""" % BASE)
 print("  chuong-trinh/the-trusted-creator.html (chuyen huong)")
+
+# Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
+# mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm
+# kiếm dồn thứ hạng về một địa chỉ duy nhất.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "trusted-founder-brand.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Trusted Founder Brand Challenge</title>
+<link rel="canonical" href="%s/founder-brand/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=../founder-brand/">
+</head>
+<body><p>Trang chương trình đã chuyển sang
+<a href="../founder-brand/">Trusted Founder Brand Challenge</a>.</p>
+<script>location.replace('../founder-brand/');</script></body></html>""" % BASE)
+print("  chuong-trinh/trusted-founder-brand.html (chuyen huong ve /founder-brand/)")
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
@@ -2003,7 +2019,13 @@ print("  404.html")
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
         "sach.html", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html"] \
-     + ["chuong-trinh/" + c["tep"] for c in CT] + ["bai-viet/" + b["tep"] for b in BAI]
+     + ["founder-brand/"] \
+     + ["chuong-trinh/" + c["tep"] for c in CT
+        if c["tep"] != "trusted-founder-brand.html"] \
+     + ["bai-viet/" + b["tep"] for b in BAI]
+# Trang tạm chuong-trinh/trusted-founder-brand.html đã thành trang chuyển hướng
+# noindex, nên bỏ khỏi sơ đồ trang và khai founder-brand/ thay vào. Khai một địa
+# chỉ chuyển hướng trong sơ đồ trang là tự tay gửi máy tìm kiếm tới ngõ cụt.
 # Ngày sửa của từng địa chỉ. Bài viết khai đúng ngày sửa của bài, trang tĩnh
 # khai ngày sửa chung của trang. Không có lastmod thì máy phải tự đoán trang nào
 # mới, mà bộ trả lời của AI thì ưu tiên nội dung mới rất mạnh.

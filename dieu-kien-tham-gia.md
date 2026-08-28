@@ -13,7 +13,7 @@
   - Chuyên môn hoặc uy tín cá nhân của bạn ảnh hưởng trực tiếp tới việc khách tin và chọn doanh nghiệp
   - Dành được khoảng ba tới bốn giờ mỗi tuần trong ba tuần cho phần thực hành
   - Đăng ký được ngay, khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026
-- Giá: công bố đầy đủ trên trang chương trình https://coachduynguyen-creator.github.io/trusted-founder-brand/
+- Giá: công bố đầy đủ trên trang chương trình https://coachduynguyen.vn/founder-brand/
 
 ## The Trusted Advisor
 
