@@ -223,6 +223,19 @@ TO_CHUC = {
 
 GOC = os.path.dirname(os.path.abspath(__file__))
 
+HAU_TO = " · Coach Duy Nguyễn"
+
+def tieu_de_trang(ten):
+    """Ghép tên thương hiệu vào sau tiêu đề, trừ khi làm thẻ dài quá 60 ký tự.
+
+    Google cắt phần đuôi của thẻ tiêu đề ở khoảng 60 ký tự, và chỗ bị cắt
+    thường rơi đúng vào tên thương hiệu, để lại một cái đuôi cụt. Thà bỏ hẳn
+    tên còn hơn để nó hiện ra dở dang: tên vẫn nằm trong og:site_name và
+    trong dữ liệu có cấu trúc của từng trang.
+    """
+    return ten if len(ten + HAU_TO) > 60 else ten + HAU_TO
+
+
 def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
     sau = "/" in ten_tep
     p = "../" if sau else ""

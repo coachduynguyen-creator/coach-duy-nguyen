@@ -981,7 +981,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <p>Và giữ nguyên câu đó ít nhất một năm trước khi nghĩ tới việc sửa. Thương hiệu chết vì đổi hướng nhiều hơn là chết vì chọn sai hướng.</p>
 """),
 
-dict(tep="kho-cau-chuyen.html", chu_de="Thương hiệu cá nhân",
+dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, để sau này còn cái mà viết", chu_de="Thương hiệu cá nhân",
  tieu="Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết",
  mo="Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
@@ -2271,7 +2271,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn ngư
 """),
 
 
-dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", chu_de="Thương hiệu cá nhân",
+dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", tieu_seo="Thương hiệu cá nhân của chủ doanh nghiệp là gì", chu_de="Thương hiệu cá nhân",
  tieu="Thương hiệu cá nhân của chủ doanh nghiệp là gì, và khác thương hiệu doanh nghiệp ở đâu",
  mo="Hai việc khác nhau về bản chất, cần cách làm khác nhau. Nhầm chúng là lý do nhiều người chủ đổ tiền vào chỗ không giải quyết được vấn đề của mình.",
  ngay="2026-08-28", ngay_viet="28 tháng 8, 2026", doc="7 phút đọc",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
-from lib import (BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
+from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
                  NGAY_SUA, TO_CHUC, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
@@ -640,7 +640,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
             "Không giữ ai ở lại bằng cảm giác lệ thuộc."], khong=True),
        so_lieu_html)
 
-trang("ve-toi.html", "Về Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
+trang("ve-toi.html", "Về Coach Duy Nguyễn · Cố vấn cho nhà sáng lập",
       "Coach Duy Nguyễn là ai, đến chỗ này bằng con đường nào, tin điều gì, nói với ai, làm việc theo cách nào, và số liệu công khai kèm giới hạn của nó.",
       VE_TOI, "ve-toi.html")
 print("  ve-toi.html")
@@ -939,7 +939,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
                                 "Không hứa một con số doanh thu khi chưa đủ điều kiện. Điều Duy hứa là điểm nghẽn được gọi đúng tên và một năng lực được xây.",
                                 "Không giữ ai ở lại bằng cảm giác lệ thuộc. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá."], khong=True))
 
-trang("phuong-phap.html", "Phương pháp của Coach Duy Nguyễn · Bốn năng lực và quỹ đạo niềm tin",
+trang("phuong-phap.html", "Bốn năng lực và quỹ đạo niềm tin · Coach Duy Nguyễn",
       "Bốn năng lực của nhà sáng lập thế hệ mới, năm việc của một người cố vấn, và CDN Trust Orbit, cách thiết kế quan hệ với khách bằng quỹ đạo thay cho phễu.",
       PHUONG_PHAP, "phuong-phap.html")
 print("  phuong-phap.html")
@@ -1024,7 +1024,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
    .replace("{RIENG}", "".join(the_ct(c) for c in nhom_ct("Riêng"))) \
    .replace("{PHIEU}", PHIEU).replace("{CO_MAY}", CO_MAY)
 
-trang("chuong-trinh.html", "Chương trình của Coach Duy Nguyễn · Hệ sinh thái Next Gen Founder",
+trang("chuong-trinh.html", "Chương trình Next Gen Founder · Coach Duy Nguyễn",
       "Bốn chương trình năng lực, Cộng đồng Thành viên, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một chiếc thang, mà là một hệ sinh thái theo mức sẵn sàng.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
@@ -1171,7 +1171,7 @@ for c in CT:
     if c.get("dieu_kien"):
         ld_ct["coursePrerequisites"] = c["dieu_kien"]
     ld = json.dumps(ld_ct, ensure_ascii=False)
-    trang("chuong-trinh/" + c["tep"], c["ten"] + " · Coach Duy Nguyễn", c["tom"], than, "chuong-trinh.html", jsonld=ld)
+    trang("chuong-trinh/" + c["tep"], tieu_de_trang(c["ten"]), c["tom"], than, "chuong-trinh.html", jsonld=ld)
     print("  chuong-trinh/" + c["tep"])
 
 # ---------------------------------------------------------------- BLOG
@@ -1564,7 +1564,7 @@ for i, b in enumerate(BAI):
        khoi_faq(faq) if faq else "", khoi_nguon(b.get("nguon")), HOP_TAC_GIA,
        ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))
-    trang("bai-viet/" + b["tep"], b["tieu"] + " · Coach Duy Nguyễn", b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
+    trang("bai-viet/" + b["tep"], tieu_de_trang(b.get("tieu_seo") or b["tieu"]), b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
     print("  bai-viet/" + b["tep"])
 
 # ---------------------------------------------------------------- SÁCH
