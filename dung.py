@@ -2066,6 +2066,7 @@ llms = """# Coach Duy Nguyễn
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
+- [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang mở danh sách chờ
 - [Liên hệ](%(b)s/lien-he.html)
 
 ## Chương trình
@@ -2075,7 +2076,6 @@ llms = """# Coach Duy Nguyễn
 %(bv)s
 
 ## Trang liên quan cùng hệ sinh thái
-- [Cộng đồng Next Gen Founder](%(cd)s): trang đăng ký danh sách chờ
 - [Phiếu chẩn đoán 7 phút](%(ph)s): công cụ tự đánh giá điểm nghẽn
 - [Cỗ máy Nội dung Một người](%(cm)s): bản đồ hệ thống nội dung một người vận hành
 """ % dict(b=BASE, n=len(BAI), cd=CONG_DONG, ph=PHIEU, cm=CO_MAY,
