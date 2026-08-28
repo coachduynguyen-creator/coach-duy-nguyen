@@ -85,7 +85,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ============ THANH ĐIỀU HƯỚNG ============ */
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
-.nav .bao-rong{display:flex;align-items:center;gap:20px;height:64px;flex-wrap:nowrap}
+.nav .bao-rong{display:flex;align-items:center;gap:20px;height:64px;flex-wrap:nowrap;transition:height .26s var(--ease)}
+.nav.cuon .bao-rong{height:54px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap}
 .logo .dau-hieu{width:26px;height:auto;flex:none;display:block}
 .logo .ten-hieu{display:flex;flex-direction:column;line-height:1.05;font-family:var(--f-tit);font-weight:800;font-size:17.5px;letter-spacing:-.02em;font-variation-settings:'opsz' 40}
@@ -642,6 +643,7 @@ figure{margin:0}
 .noanim .vien i{animation:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .nav-phan-bao,.nav .bao-rong{transition:none}
   .js .hien,.js .hien.tre > *,.js .hero .the,.js .hero .hero-chu > *{transform:none!important;transition:opacity .4s!important}
   .the,.o,.nut,.vach li{transition:none!important}
   .vien i{animation:none}
@@ -656,7 +658,11 @@ figure{margin:0}
 /* Thanh menu hai tầng. Tầng trên là menu chung của cả trang coachduynguyen.vn,
    giống hệt các trang khác. Tầng dưới là các phần trong chính trang này, vì
    trang dài nên vẫn cần lối nhảy nhanh. Tầng dưới trượt ngang khi hẹp. */
-.nav-phan-bao{border-top:1px solid var(--line);background:rgba(255,255,255,.7)}
+/* Đầu trang chỉ cần một hàng: khách vừa vào chưa có gì để nhảy tới. Mục lục
+   xuất hiện khi đã cuộn qua phần mở, đúng lúc nó bắt đầu có ích, và lúc đó
+   hàng trên thu lại để hai hàng cộng lại vẫn thấp hơn một hàng rưỡi. */
+.nav-phan-bao{border-top:0 solid var(--line);background:rgba(255,255,255,.7);height:0;overflow:hidden;transition:height .26s var(--ease),border-top-width .26s var(--ease)}
+.nav.cuon .nav-phan-bao{height:42px;border-top-width:1px}
 .nav-phan{display:flex;gap:2px;max-width:1200px;margin-inline:auto;padding:0 24px;
   height:42px;align-items:center;overflow-x:auto;scrollbar-width:none}
 .nav-phan::-webkit-scrollbar{display:none}
@@ -665,6 +671,7 @@ figure{margin:0}
   transition:color .2s var(--ease),background .2s var(--ease)}
 .nav-phan a:hover{color:var(--ink);background:var(--bg-3)}
 @media(max-width:760px){
+  .nav.cuon .nav-phan-bao{height:38px}
   .nav-phan{padding:0 16px;height:38px}
   .nav-phan a{font-size:12.5px;padding:5px 9px}
 }
@@ -1403,7 +1410,8 @@ figure{margin:0}
     if(i!=null && nlEl && nlEl.scrollWidth>nlEl.clientWidth+4){ var a=links[i]; var L=a.offsetLeft-nlEl.scrollLeft, R=L+a.offsetWidth, W=nlEl.clientWidth;
       if(L<16||R>W-16) nlEl.scrollTo({left:a.offsetLeft-(W-a.offsetWidth)/2, behavior:reduce?'auto':'smooth'}); }
     moMep(); }
-  function onScroll(){ var y=scrollY, h=d.documentElement.scrollHeight-innerHeight; if(tien) tien.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')'; var mark=y+innerHeight*.38, best=null; for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].offsetTop<=mark) best=i; } setActive(best); }
+  var thanh=d.querySelector('.nav');
+  function onScroll(){ var y=scrollY, h=d.documentElement.scrollHeight-innerHeight; if(thanh) thanh.classList.toggle('cuon', y>220); if(tien) tien.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')'; var mark=y+innerHeight*.38, best=null; for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].offsetTop<=mark) best=i; } setActive(best); }
   addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',function(){cur=null;onScroll();}); onScroll();
   if(d.fonts&&d.fonts.ready) d.fonts.ready.then(function(){cur=null;onScroll();});
 
