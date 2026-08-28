@@ -7,7 +7,7 @@
 - [Phương pháp](https://coachduynguyen.vn/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](https://coachduynguyen.vn/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Điều kiện tham gia](https://coachduynguyen.vn/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
-- [Blog](https://coachduynguyen.vn/blog.html): 27 bài viết cho nhà sáng lập
+- [Blog](https://coachduynguyen.vn/blog.html): 28 bài viết cho nhà sáng lập
 - [Sách và tài liệu](https://coachduynguyen.vn/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Liên hệ](https://coachduynguyen.vn/lien-he.html)
@@ -25,6 +25,7 @@
 - [90 Ngày Xây Hệ thống Tăng&nbsp;trưởng](https://coachduynguyen.vn/chuong-trinh/giai-phap-doanh-nghiep.html): Chẩn đoán, thiết kế, xây, chạy thử và bàn giao một hệ thống tăng trưởng có người phụ trách, dữ liệu và nhịp điều hành.
 
 ## Bài viết
+- [Thương hiệu cá nhân của chủ doanh nghiệp là gì, và khác thương hiệu doanh nghiệp ở đâu](https://coachduynguyen.vn/bai-viet/thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html): Hai việc khác nhau về bản chất, cần cách làm khác nhau. Nhầm chúng là lý do nhiều người chủ đổ tiền vào chỗ không giải quyết được vấn đề của mình.
 - [Bốn nghề hay bị gọi chung là coach, và bạn đang cần nghề nào](https://coachduynguyen.vn/bai-viet/bon-nghe-hay-bi-goi-chung-la-coach.html): Đào tạo, tư vấn, huấn luyện và cố vấn là bốn nghề khác nhau. Chọn nhầm nghề thì tiền mất mà việc vẫn đứng yên.
 - [Cái giá của người làm được mọi việc](https://coachduynguyen.vn/bai-viet/cai-gia-cua-nguoi-lam-duoc-moi-viec.html): Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.
 - [Khách chỉ mặc cả với người bán](https://coachduynguyen.vn/bai-viet/khach-chi-mac-ca-voi-nguoi-ban.html): Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.

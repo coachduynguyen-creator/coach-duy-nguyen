@@ -14,7 +14,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = "https://coachduynguyen-creator.github.io/trusted-founder-brand/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260829n"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260829p"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào

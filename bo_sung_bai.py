@@ -4,6 +4,69 @@ Mỗi bài cần: tra_loi (40 tới 60 chữ, đứng một mình vẫn hiểu) 
 Máy tìm kiếm và trợ lý AI trích đúng hai khối này."""
 
 BO_SUNG = {
+"thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html": dict(
+ tra_loi="Thương hiệu cá nhân của người chủ là thứ hiện lên trong đầu khách khi nghe tên bạn: bạn giỏi mảng nào, giải được loại vấn đề gì, giữ tiêu chuẩn ra sao. Thương hiệu doanh nghiệp là thứ hiện lên khi nghe tên công ty. Cá nhân tạo niềm tin trước cuộc gặp, doanh nghiệp giữ niềm tin sau khi mua.",
+ faq=[("Thương hiệu cá nhân và thương hiệu doanh nghiệp khác nhau ở đâu?",
+       "Thương hiệu cá nhân gắn với một con người và tạo niềm tin trước cuộc gặp, chỉ người chủ làm được. Thương hiệu doanh nghiệp gắn với pháp nhân và giữ niềm tin sau khi mua, đội ngũ phải làm được. Cá nhân xây bằng quan điểm và câu chuyện nghề, doanh nghiệp xây bằng sản phẩm và trải nghiệm lặp lại đều."),
+      ("Chủ doanh nghiệp dịch vụ nên xây thương hiệu nào trước?",
+       "Nên bắt đầu từ thương hiệu cá nhân, vì trong dịch vụ khách chọn người trước rồi mới chọn công ty. Cách này cũng rẻ hơn và nhanh hơn, do phần lớn công việc là nói ra thành lời phần chuyên môn đang có sẵn chứ không phải tạo mới."),
+      ("Chỉ xây thương hiệu cá nhân thì có rủi ro gì?",
+       "Càng được tin thì khách càng muốn gặp đích thân bạn, nên càng khó giao việc. Thương hiệu cá nhân giải bài toán không ai biết mình rồi tạo ra bài toán mọi việc dồn về mình. Vì vậy phải chuyển tiêu chuẩn của bạn thành tiêu chuẩn của đội ngũ.")]),
+
+"ba-diem-cham-va-thu-tu-khong-doi-duoc.html": dict(
+ tra_loi="Ba Điểm Chạm không phải kịch bản bán hàng mà là ba trạng thái nhận thức khách phải đi qua để tự quyết: chạm động lực, chạm nhận thức, rồi mới chạm giải pháp. Đủ cả ba thì quyết định đến tự nhiên. Đảo thứ tự thì cả chuỗi hỏng, dù từng phần đều đúng.",
+ faq=[("Ba Điểm Chạm là gì?",
+       "Đó là ba trạng thái nhận thức một người phải đi qua trước khi tự ra quyết định. Chạm động lực giúp khách nhìn rõ điều họ thật sự muốn. Chạm nhận thức giúp họ thấy khoảng cách giữa chỗ đang đứng và chỗ muốn tới. Chạm giải pháp mới là lúc bàn tới cách làm."),
+      ("Vì sao không được đảo thứ tự Ba Điểm Chạm?",
+       "Vì giải pháp chỉ có nghĩa khi khách đã thấy vấn đề, và vấn đề chỉ đáng giải khi khách đã rõ mình muốn gì. Nói giải pháp trước thì khách nghe như một lời chào hàng, và phản xạ của họ là so giá."),
+      ("Vì sao người tư vấn hay nhảy thẳng vào giải pháp?",
+       "Vì hai bước đầu không cho họ việc gì để làm, chỉ có hỏi và nghe, nên cảm giác bất an dâng lên. Bước ba thì ngược lại, có trình bày, có giải thích, có chuyện thành công để kể. Thứ tự bị đảo không phải vì ai quên, mà vì bước ba dễ chịu hơn nhiều.")]),
+
+"cai-gia-cua-nguoi-lam-duoc-moi-viec.html": dict(
+ tra_loi="Người chủ càng giỏi mọi việc thì đội ngũ càng ít chỗ để giỏi lên, và cơ nghiệp càng khó chuyển giao. Chỗ hỏng không nằm ở việc thiếu người giỏi mà ở việc chưa có cách làm viết ra được. Cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.",
+ faq=[("Vì sao người chủ giỏi lại thành chỗ nghẽn của công ty?",
+       "Vì mỗi việc người chủ tự làm cho nhanh là một việc đội ngũ không được tập. Càng giỏi thì khoảng chênh càng lớn, và tới lúc muốn giao thì không ai đủ sức nhận, nên người chủ lại phải tự làm tiếp."),
+      ("Người kế nghiệp từ chối tiếp quản vì lý do gì?",
+       "Thường không phải vì chê công việc hay chê ngành. Họ nhìn thấy cái giá phải trả qua chính đời sống của cha mẹ, và điều họ từ chối là cách sống đó chứ không phải công ty."),
+      ("Bước đầu tiên để công ty bớt phụ thuộc người chủ là gì?",
+       "Không phải tuyển người giỏi hơn. Là viết lại một luồng công việc bạn đang giữ trong đầu, ghi rõ kết quả cần đạt và ai chịu trách nhiệm, rồi để người khác chạy thử trong khi bạn ngồi nghe.")]),
+
+"cang-co-chung-minh-cang-mat-vi-the.html": dict(
+ tra_loi="Giải thích nhiều là hành vi của người cần được chấp nhận, nên càng chứng minh thì vị thế càng thấp. Chuyên gia không chứng minh mình giỏi, họ đặt câu hỏi để người đối diện tự thấy. Chỗ hỏng nằm ở phản xạ trả lời thẳng vào câu hỏi bề mặt của khách.",
+ faq=[("Dấu hiệu nào cho thấy mình đang cố chứng minh?",
+       "Nói nhiều hơn hỏi trong buổi tư vấn, giải thích thêm khi khách im lặng, và kể thêm chuyện thành công mỗi lần khách tỏ ra băn khoăn. Ba việc đó đều là phản xạ của người đang cần được chấp nhận."),
+      ("Vì sao im lặng lại nâng vị thế?",
+       "Vì khoảng lặng chuyển việc suy nghĩ về phía khách. Người lấp đầy mọi khoảng lặng là người đang lo bị đánh giá. Người dám để yên vài giây là người tin vào điều mình vừa nói."),
+      ("Khách hỏi có bảo đảm ra kết quả không thì trả lời thế nào?",
+       "Đừng bảo đảm và cũng đừng kể thêm chuyện thành công. Nói thẳng điều kiện để ra kết quả và trường hợp nào thì không ra. Một câu bảo đảm nghe êm nhưng biến quan hệ thành lời hứa phải đòi về sau.")]),
+
+"doi-ngu-ban-hang-dang-o-vai-nao.html": dict(
+ tra_loi="Đội ngũ mặc định rơi vào vai người bán vì cách đo và cách huấn luyện đẩy họ về đó, không phải vì tính cách. Vai trò thiết kế được, huấn luyện được và đo được. Đổi cách đo có hiệu lực ngay trong tuần đầu, còn thói quen trong buổi tư vấn cần sáu tới tám tuần.",
+ faq=[("Vì sao đội ngũ bán hàng luôn rơi vào vai người bán?",
+       "Vì họ chưa có uy tín và hiểu biết như người chủ, lại bị đo bằng doanh số nên phải nói cho nhanh. Người chủ đổi vai thì dễ vì khách đã nể sẵn, còn một bạn hai năm kinh nghiệm thì không có lợi thế đó."),
+      ("Bao lâu thì đội ngũ đổi vai thật?",
+       "Cách đo đổi ngay trong tuần đầu vì ai cũng làm theo con số được đếm. Cách làm việc trong buổi tư vấn mất khoảng sáu tới tám tuần vì đây là thói quen chứ không phải kiến thức. Con số kinh doanh thì tháng thứ ba tới thứ tư mới nói lên điều gì."),
+      ("Người chủ cản trở việc đổi vai của đội ngũ ở chỗ nào?",
+       "Ở chỗ vẫn vào cứu mọi thương vụ lớn. Đội ngũ học được đúng một điều là thương vụ lớn thì gọi sếp, nên không ai dốc sức tập vai mới.")]),
+
+"giu-binh-tinh-khi-khach-mat-binh-tinh.html": dict(
+ tra_loi="Khách đến trong trạng thái không ổn là điều kiện của nghề dịch vụ, không phải rủi ro hiếm gặp. Bị cuốn theo cảm xúc của họ là mất luôn khả năng dẫn dắt buổi làm việc. Công cụ nhỏ nhất và hiệu quả nhất là một khoảng dừng vài giây trước khi đáp.",
+ faq=[("Làm sao giữ bình tĩnh khi khách nổi nóng?",
+       "Dừng vài giây trước khi đáp. Khoảng dừng đó đủ để bạn thôi phản xạ tự vệ và chọn được câu nói có ích. Người đáp ngay gần như luôn đáp bằng cảm xúc của người đối diện."),
+      ("Bình tĩnh có phải là lạnh lùng không?",
+       "Không. Lạnh lùng là không phản ứng gì, và khách cảm nhận được sự dửng dưng đó. Bình tĩnh là vẫn ghi nhận cảm xúc của họ nhưng không để nó quyết định câu tiếp theo của mình."),
+      ("Khi nào thì nên dừng buổi làm việc lại?",
+       "Khi câu chuyện đã chuyển sang chuyện cũ, chuyện người khác hoặc chuyện cá nhân. Đừng nói dừng vì không khí căng. Hãy nói chuyện này quan trọng nên cho tôi xem lại kỹ rồi mình bàn tiếp vào một ngày cụ thể.")]),
+
+"khach-chi-mac-ca-voi-nguoi-ban.html": dict(
+ tra_loi="Giá bị mặc cả không phải vì giá cao mà vì khách đang xếp bạn vào vai người bán. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào. Thứ quyết định bạn nằm ngăn nào là tỉ lệ giữa phần bạn nói và phần bạn hỏi.",
+ faq=[("Vì sao khách mặc cả với người này mà không mặc cả với người kia?",
+       "Vì khách không đổi, thứ đổi là vai trò của người ngồi đối diện. Nếu khách khó tính thật thì họ phải khó tính với tất cả, mà chuyện đó không xảy ra."),
+      ("Làm sao biết khách đang xếp mình vào ngăn nào?",
+       "Nghe câu hỏi của họ. Hỏi giá và hỏi so sánh từng hạng mục là ngăn người bán. Hỏi nên chọn phương án nào và rủi ro nằm ở đâu là ngăn người cố vấn. Câu hỏi của khách là thước đo chính xác nhất."),
+      ("Việc nhỏ nhất làm được ngay để đổi ngăn là gì?",
+       "Đếm trong ba buổi tới xem bạn nói bao nhiêu phần và hỏi về khách bao nhiêu phần. Nếu phần nói nhiều hơn phần hỏi thì mọi kỹ thuật xử lý từ chối sau đó chỉ là chữa phần ngọn.")]),
+
 "bon-nghe-hay-bi-goi-chung-la-coach.html": dict(
  tra_loi="Đào tạo dạy một nội dung soạn sẵn cho nhiều người. Tư vấn nhận đề bài và trả lại lời giải, nhiều khi làm luôn. Huấn luyện không đưa lời giải mà hỏi để bạn tự tìm. Cố vấn là người đã đi qua chặng bạn đang đứng, họ làm mẫu rồi để bạn tự làm.",
  faq=[("Cố vấn và tư vấn khác nhau thế nào?",
