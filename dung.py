@@ -353,8 +353,16 @@ KHACH = [("mobifone","MobiFone"),("aia","AIA"),(None,"ACB"),("prudential","Prude
  ("fos","FOS"),("gia-tot","Gia Tốt Việt Nam"),("secrets","Digital Academy Secrets"),
  ("vinh-tuong","Vĩnh Tường Saint-Gobain"),("x3-nang-suat","X3 Năng Suất"),
  ("lya","LYA Group"),("legacy","Legacy")]
+# Mỗi logo có hai bản. Bản một màu hiện thường trực, bản màu gốc hiện khi rê chuột.
+# Bản một màu KHÔNG dựng bằng phép lọc brightness(0) như trước, vì phép đó dồn mọi
+# điểm ảnh về một màu nên logo nào có chi tiết bên trong sẽ thành khối đặc. Bản
+# hiện tại tính độ sáng thật của từng điểm, đảo lại nếu logo vốn tối, rồi giữ
+# nguyên chênh lệch sáng tối. Xem img/doi-tac/mono/.
 _kh1 = "".join(
-    ('<img class="kh-l" src="img/doi-tac/%s.png" alt="%s" decoding="async">' % (t, n))
+    ('<span class="kh-l">'
+     '<img src="img/doi-tac/mono/%s.png" alt="%s" decoding="async">'
+     '<img class="kh-mau" src="img/doi-tac/%s.png" alt="" aria-hidden="true" decoding="async">'
+     '</span>' % (t, n, t))
     if t else ('<span class="kh-t">%s</span>' % n)
     for t, n in KHACH)
 # Nhân đôi danh sách để dải chạy vòng liên tục, mắt không thấy chỗ nối.
