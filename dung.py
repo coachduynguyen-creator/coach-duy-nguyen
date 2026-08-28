@@ -339,16 +339,15 @@ INDEX = """
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo hoặc tư vấn.
-# Nguồn logo: dải đối tác trên scaleos.vn (trang do chính CDN dựng), đã cắt nền
-# trắng và cắt sát hình bằng canvas ngày 27/08/2026, lưu ở img/doi-tac/.
-# Bốn doanh nghiệp chưa có tệp logo sạch thì hiện bằng chữ, chờ CDN gửi logo:
-# ACB, Bảo Việt Nhân thọ, HSC, BigHomes Group.
-KHACH = [("mobifone","MobiFone"),("aia","AIA"),(None,"ACB"),("prudential","Prudential"),
- (None,"Bảo Việt Nhân thọ"),("kb-securities","KB Securities"),(None,"HSC"),
+# Nguồn logo: dải đối tác trên scaleos.vn cho 26 đơn vị, bốn đơn vị còn lại do CDN
+# gửi ngày 28/08/2026. Tất cả đã cắt nền và cắt sát hình bằng canvas, lưu ở
+# img/doi-tac/. Từ 28/08/2026 không còn đơn vị nào phải hiện bằng chữ.
+KHACH = [("mobifone","MobiFone"),("aia","AIA"),("acb","ACB"),("prudential","Prudential"),
+ ("bao-viet","Bảo Việt Nhân thọ"),("kb-securities","KB Securities"),("hsc","HSC"),
  ("mascom","Mascom"),("hung-vuong","Hưng Vượng Holdings"),("john-partners","John & Partners"),
  ("gaia","GAIA"),("minh-minh","Minh Minh Group"),("an-thuong-yen","An Thượng Yến"),
  ("nhan-ai","Nhân Ái"),("vulcano","Vulcano"),("kenli","KENLI"),("micc","MICC Group"),
- (None,"BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
+ ("bighomes","BigHomes Group"),("trikhang-pharma","Trikhang Pharma"),("aiesec","AIESEC"),
  ("phan-hang","Phan Hằng Group"),("w-group","W Group"),("bs-group","BS Group"),
  ("fos","FOS"),("gia-tot","Gia Tốt Việt Nam"),("secrets","Digital Academy Secrets"),
  ("vinh-tuong","Vĩnh Tường Saint-Gobain"),("x3-nang-suat","X3 Năng Suất"),
