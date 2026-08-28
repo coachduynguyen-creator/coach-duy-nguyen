@@ -2,18 +2,18 @@
 
 > Cập nhật 2026-08-27. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm xem mình có hợp hay chưa.
 
-## The Trusted Creator 30 Days
+## Trusted Founder Brand Challenge
 
-- Trang: https://coachduynguyen.vn/chuong-trinh/the-trusted-creator.html
-- Dành cho: Nhà sáng lập, chuyên gia và người bán hàng cấp cao đã có chuyên môn, sản phẩm và khách hàng thật, đã bắt đầu xuất hiện nhưng nội dung còn rời rạc.
-- Hình thức: 30 ngày, học theo nhóm, có bài tập và phản hồi. Không gian nộp bài và bảng theo dõi chung, bộ mẫu và phiếu tự xem lại, một phiên tổng kết bằng chứng.
+- Trang: https://coachduynguyen.vn/chuong-trinh/trusted-founder-brand.html
+- Dành cho: Nhà sáng lập, chủ doanh nghiệp và chuyên gia đã có sản phẩm, khách hàng và kinh nghiệm thật, nhưng nội dung chưa cho thấy hết năng lực hoặc cứ dừng lại khi công việc bận lên. Người làm bán hàng chỉ nên tham gia khi đang đi lên vai trò chuyên gia, cố vấn hoặc người chủ.
+- Hình thức: Ba tuần, hoàn thành theo bài thực hành chứ không phải làm liên tục 21 ngày. Cần khoảng ba tới bốn giờ mỗi tuần. Trong ba tuần có 15 lần điểm danh thực hành, đi đủ 12 lần thì nhận quà.
 - Thời điểm: Khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026
 - Điều kiện tham gia:
-  - Đã có chuyên môn, sản phẩm và khách hàng thật, không phải đang trong giai đoạn tìm hướng
-  - Đã bắt đầu xuất hiện trên ít nhất một kênh, dù nội dung còn rời rạc
-  - Dành được thời gian làm bài tập và nhận phản hồi suốt 30 ngày
+  - Đã có sản phẩm, khách hàng và kinh nghiệm thật, không phải đang trong giai đoạn tìm hướng
+  - Chuyên môn hoặc uy tín cá nhân của bạn ảnh hưởng trực tiếp tới việc khách tin và chọn doanh nghiệp
+  - Dành được khoảng ba tới bốn giờ mỗi tuần trong ba tuần cho phần thực hành
   - Đăng ký được ngay, khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026
-- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
+- Giá: công bố đầy đủ trên trang chương trình https://coachduynguyen-creator.github.io/trusted-founder-brand/
 
 ## The Trusted Advisor
 

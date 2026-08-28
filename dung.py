@@ -1065,6 +1065,16 @@ for c in CT:
     <div class="ghi-mau" style="margin-top:26px"><b>Lưu ý</b><p>%s</p></div>
   </div>
 </section>""" % (hang, c["gia_ghi"])
+    elif c.get("mo_ban"):
+        # Chương trình đang mở bán có trang bán riêng. Giá chỉ công bố ở đó, một
+        # nguồn duy nhất, để không bao giờ có hai con số lệch nhau trên hai trang.
+        gia_html = """<section class="phan bd hoa-van duoi">
+  <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Giá và mốc đăng ký nằm ở trang chương trình</h2>
+  <p>Chương trình này đang mở bán nên có trang riêng, ở đó ghi đủ hai mức giá, số suất của mức sớm và hạn đăng ký. Duy để giá ở một chỗ duy nhất để bạn không bao giờ đọc phải hai con số khác nhau.</p></div>
+  <div class="moi-nut hien" style="justify-content:center">
+    <a class="nut" href="%s" target="_blank" rel="noopener">Xem mức đầu tư và mốc đăng ký <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>""" % TTC_LANDING
     else:
         gia_html = """<section class="phan bd hoa-van duoi">
   <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Trao đổi trước, nói giá sau</h2>
@@ -1072,9 +1082,9 @@ for c in CT:
 </section>"""
 
     chang_html = ""
-    if c["tep"] == "the-trusted-creator.html":
+    if c["tep"] == "trusted-founder-brand.html":
         chang_html = """<section class="phan bd hoa-van">
-  <div class="phan-dau hien"><p class="mono">Cơ chế</p><h2>Năm chặng trong ba mươi ngày</h2>
+  <div class="phan-dau hien"><p class="mono">Cơ chế</p><h2>Năm chặng trong ba tuần</h2>
   <p>Không phải năm bài giảng. Là năm chặng, mỗi chặng có kết quả riêng, và chặng sau chỉ chạy được khi chặng trước đã xong.</p></div>
   <div class="hien">%s</div>
 </section>""" % so_do.chang_5()
@@ -1373,17 +1383,17 @@ PD_TAP = [
   tieu="Nâng vị thế chuyên gia trong mắt khách",
   mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
   lydo="Bạn kiểm được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
-  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
  dict(yt="sBaDKQOxRZw", muc=3,
   tieu="Vì sao nói nhiều làm mất vị thế",
   mo="Người bán hay lấp khoảng lặng bằng lời, và mỗi câu thừa là một lần tự hạ giá mình. Tập này nói về sức nặng của việc nói ít lại.",
   lydo="Nghe xong bạn sẽ để ý được chính mình trong buổi nói chuyện kế tiếp.",
-  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
  dict(yt="Jgc233EB_H4", muc=3,
   tieu="Nói ít lại để được lắng nghe nhiều hơn",
   mo="Phần tiếp của chủ đề vị thế trong lời nói: cách đặt câu hỏi và giữ khoảng lặng để lời mình nói ra có trọng lượng.",
   lydo="Xem cùng tập trên thành một cặp: một tập chỉ ra vấn đề, một tập chỉ cách sửa.",
-  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
  dict(yt="CIyxENto-7Y", muc=3,
   tieu="Khách khó tính, hay mình chưa biết cách hiện diện?",
   mo="Nhiều người than gặp toàn khách khó. Tập này lật lại: cách bạn xuất hiện đang mời kiểu khách nào tới, và đổi cách hiện diện thì tệp khách đổi theo.",
@@ -1393,7 +1403,7 @@ PD_TAP = [
   tieu="Gây ấn tượng với khách cao cấp ngay lần đầu",
   mo="Ấn tượng đầu với người có tiền không nằm ở bộ vest hay lời chào khéo, mà ở vài chi tiết chuẩn bị mà rất ít người làm.",
   lydo="Danh sách chi tiết đủ cụ thể để soát lại trước buổi gặp quan trọng.",
-  cta_nhan="Xem The Trusted Creator 30 Days", cta="chuong-trinh/the-trusted-creator.html"),
+  cta_nhan="Xem Trusted Founder Brand Challenge", cta="chuong-trinh/trusted-founder-brand.html"),
 
  # ---- Chuyên mục 04 · Xây hệ thống cùng đội ngũ
  dict(yt="IUNdDgUxGWM", muc=4,
@@ -1908,6 +1918,22 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "kenh-youtube.html
 <script>location.replace('podcast.html');</script></body></html>""" % BASE)
 print("  kenh-youtube.html (chuyen huong)")
 
+# Chương trình đổi tên ngày 24/08/2026 nên trang đổi theo. Địa chỉ cũ đã được chia
+# sẻ ra ngoài, giữ lại một trang chuyển hướng để không gãy liên kết và không mất
+# thứ hạng đã có. Đặt noindex để máy tìm kiếm dồn về địa chỉ mới.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "the-trusted-creator.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Trusted Founder Brand Challenge</title>
+<link rel="canonical" href="%s/chuong-trinh/trusted-founder-brand.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=trusted-founder-brand.html">
+</head>
+<body><p>Chương trình này đã đổi tên thành
+<a href="trusted-founder-brand.html">Trusted Founder Brand Challenge</a>.</p>
+<script>location.replace('trusted-founder-brand.html');</script></body></html>""" % BASE)
+print("  chuong-trinh/the-trusted-creator.html (chuyen huong)")
+
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
   "Số lượng nhận rất giới hạn. Chọn đúng cửa dưới đây thì Duy trả lời nhanh hơn, và bạn cũng đỡ mất thời gian chờ.") + """
@@ -2011,7 +2037,10 @@ for c in CT:
     dk.append("- Điều kiện tham gia:")
     for x in c.get("dieu_kien", []):
         dk.append("  - %s" % x)
-    dk.append("- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư")
+    if c.get("mo_ban"):
+        dk.append("- Giá: công bố đầy đủ trên trang chương trình %s" % TTC_LANDING)
+    else:
+        dk.append("- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư")
     dk.append("")
 dk += ["## Cách bắt đầu", "",
        "- Chưa rõ mình kẹt ở đâu: làm Phiếu chẩn đoán 7 phút tại %s" % PHIEU,

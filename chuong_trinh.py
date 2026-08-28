@@ -1,36 +1,35 @@
 # -*- coding: utf-8 -*-
 """Tám chương trình trong hệ sinh thái Next Gen Founder.
-Nguồn: NGF-05 v1.2 và tài liệu The Trusted Creator v1.4. Không tự thêm chương trình mới."""
+Nguồn: NGF-05 v1.2, NGF-17 v2.2 và tài liệu TFB-01 v6.1. Không tự thêm chương trình mới."""
 
 CT = [
 
-dict(tep="the-trusted-creator.html", nhom="Bốn năng lực",
- ten="The Trusted Creator 30 Days", ten_vi="Người kiến tạo nội dung đáng tin trong 30 ngày",
+dict(tep="trusted-founder-brand.html", nhom="Bốn năng lực",
+ ten="Trusted Founder Brand Challenge",
+ ten_vi="Thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy",
  nang_luc="Năng lực 01 · Thương hiệu nhà sáng lập được tin cậy",
- tom="Biến những nội dung rời rạc thành một thương hiệu cá nhân được tin và một hệ thống nội dung dẫn đúng người đến gần hơn.",
+ tom="Làm rõ bạn phục vụ ai, giải vấn đề gì và có cách làm gì riêng, rồi đưa định vị đó ra thị trường bằng tiếng nói, câu chuyện và nội dung của chính bạn.",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
  mo_ban=True,
- dieu_kien=['Đã có chuyên môn, sản phẩm và khách hàng thật, không phải đang trong giai đoạn tìm hướng',
-            'Đã bắt đầu xuất hiện trên ít nhất một kênh, dù nội dung còn rời rạc',
-            'Dành được thời gian làm bài tập và nhận phản hồi suốt 30 ngày',
+ dieu_kien=['Đã có sản phẩm, khách hàng và kinh nghiệm thật, không phải đang trong giai đoạn tìm hướng',
+            'Chuyên môn hoặc uy tín cá nhân của bạn ảnh hưởng trực tiếp tới việc khách tin và chọn doanh nghiệp',
+            'Dành được khoảng ba tới bốn giờ mỗi tuần trong ba tuần cho phần thực hành',
             'Đăng ký được ngay, khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026'],
- cho_ai="Nhà sáng lập, chuyên gia và người bán hàng cấp cao đã có chuyên môn, sản phẩm và khách hàng thật, đã bắt đầu xuất hiện nhưng nội dung còn rời rạc.",
+ cho_ai="Nhà sáng lập, chủ doanh nghiệp và chuyên gia đã có sản phẩm, khách hàng và kinh nghiệm thật, nhưng nội dung chưa cho thấy hết năng lực hoặc cứ dừng lại khi công việc bận lên. Người làm bán hàng chỉ nên tham gia khi đang đi lên vai trò chuyên gia, cố vấn hoặc người chủ.",
  luan_diem="Không ai xây được thương hiệu cá nhân bằng số lượng bài đăng. Nó lớn dần khi đúng người liên tục nhận ra cùng một chuyên môn, cùng một tiêu chuẩn và cùng một cách nhìn qua những bằng chứng thật.",
- ket_qua=["Làm rõ vị thế và lãnh địa chuyên môn, để thị trường nhớ đúng bạn vì một giá trị rõ",
-          "Xây kho câu chuyện từ công việc thật, dùng được lâu dài thay vì cạn ý sau vài tuần",
-          "Luyện cách diễn đạt qua video và các định dạng phù hợp với con người bạn",
-          "Thiết lập nhịp sản xuất một người vận hành được, có AI hỗ trợ phần lặp lại",
-          "Tạo một tài sản thu thông tin và bắt đầu đo tín hiệu dẫn tới cuộc trao đổi với đúng người"],
- hinh_thuc="30 ngày, học theo nhóm, có bài tập và phản hồi. Không gian nộp bài và bảng theo dõi chung, bộ mẫu và phiếu tự xem lại, một phiên tổng kết bằng chứng.",
+ ket_qua=["Có một bản định vị phiên bản đầu: khách hàng trọng tâm, vấn đề ưu tiên, đề nghị chính, cách giải quyết riêng và bằng chứng đang có",
+          "Tìm ra tiếng nói và cách xuất hiện đáng tin theo điểm mạnh của chính bạn, không bắt chước ai",
+          "Gom được chất liệu và câu chuyện từ công việc thật, dùng được lâu dài thay vì cạn ý sau vài tuần",
+          "Làm ra những nội dung đầu tiên đúng với con người thật, đưa định vị ra cho khách nhìn thấy",
+          "Có nhịp làm việc để tiếp tục, không phải ngày nào cũng tự hỏi hôm nay đăng gì"],
+ hinh_thuc="Ba tuần, hoàn thành theo bài thực hành chứ không phải làm liên tục 21 ngày. Cần khoảng ba tới bốn giờ mỗi tuần. Trong ba tuần có 15 lần điểm danh thực hành, đi đủ 12 lần thì nhận quà.",
  khai_giang="Khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026",
- chuyen_tiep="Đây là phiên bản chuyển tiếp của năng lực Thương hiệu nhà sáng lập được tin cậy. Khi dữ liệu cho thấy nhà sáng lập là nhóm nhận kết quả tốt nhất, chương trình đổi hẳn tên thành Trusted Founder Brand.",
- gia=[("Đăng ký sớm", "10 triệu đồng chưa thuế, 10,8 triệu đồng đã gồm thuế giá trị gia tăng 8%", "Từ khi mở bán đến hết ngày 20 tháng 9 năm 2026"),
-      ("Tuần cuối", "14 triệu đồng chưa thuế, 15,12 triệu đồng đã gồm thuế giá trị gia tăng 8%", "Từ ngày 21 tháng 9 năm 2026 đến khi đóng đăng ký")],
- gia_ghi="Đây là giá riêng của khoá đầu tiên, thấp hơn vùng giá chuẩn của chương trình, vì khoá này chưa có bằng chứng người học. Từ khoá thứ hai, giá quay về vùng chuẩn.",
  khong_gom=["Không bảo đảm số lượt xem, người theo dõi, khách hàng hoặc doanh thu",
-            "Không bảo đảm bạn xây xong một thương hiệu trưởng thành trong 30 ngày",
-            "Không thay thế chất lượng sản phẩm và năng lực tư vấn của bạn",
+            "Không hứa sau ba tuần bạn nổi tiếng hoặc có ngay khách hàng tìm đến",
+            "Không tái cấu trúc toàn bộ thương hiệu doanh nghiệp, chỉ là bản định vị phiên bản đầu",
+            "Không gồm quà tặng thu thông tin, chuỗi chăm sóc và hệ thống bán hàng hoàn chỉnh",
             "Không làm nội dung thay bạn"]),
+
 
 dict(tep="the-trusted-advisor.html", nhom="Bốn năng lực",
  ten="The Trusted Advisor", ten_vi="Chuyên gia tư vấn được tin cậy",
@@ -224,7 +223,7 @@ dict(tep="founder-growth-system-lab.html", nhom="Riêng",
 ]
 
 # Thứ tự hiện trên trang. Trong mỗi nhóm, xếp từ cửa vào rộng nhất tới phạm vi hẹp nhất.
-THU_TU = ["the-trusted-creator.html", "the-trusted-advisor.html",
+THU_TU = ["trusted-founder-brand.html", "the-trusted-advisor.html",
           "founder-growth-system.html", "community-growth-system.html",
           "cong-dong-mo.html", "cong-dong-thanh-vien.html", "diamond-founder-club.html",
           "founder-growth-system-lab.html", "co-van-rieng.html", "giai-phap-doanh-nghiep.html"]

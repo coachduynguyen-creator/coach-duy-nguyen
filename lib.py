@@ -8,12 +8,13 @@ CONG_DONG = BASE + "/cong-dong/"
 CO_MAY = "https://coachduynguyen-creator.github.io/co-may-noi-dung/"
 PHIEU = "https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html"
 EMAIL = "nextstepacademyvietnam@gmail.com"
-# Trang bán The Trusted Creator đang dựng ở ~/Codex_Projects/trusted-creator, chưa đăng.
-# Khi đăng xong, điền địa chỉ vào đây, chạy lại dung.py là mọi nút tự trỏ đúng chỗ.
-TTC_LANDING = ""
+# Trang bán Trusted Founder Brand Challenge, nguồn ở ~/Codex_Projects/trusted-founder-brand.
+# Đây là nơi duy nhất công bố giá và mốc đăng ký của chương trình này. Trang chính
+# không nhắc lại con số, chỉ trỏ sang, để không bao giờ có hai mức giá lệch nhau.
+TTC_LANDING = "https://coachduynguyen-creator.github.io/trusted-founder-brand/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260829m"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260829n"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -29,7 +30,7 @@ NGAY_SUA = "2026-08-27"
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
-    ("chuong-trinh/the-trusted-creator.html", "The Trusted Creator 30 Days", "Xây thương hiệu cá nhân được tin trong 30 ngày"),
+    ("chuong-trinh/trusted-founder-brand.html", "Trusted Founder Brand Challenge", "Thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy"),
     ("chuong-trinh/the-trusted-advisor.html", "The Trusted Advisor", "Nâng chất lượng cuộc tư vấn, bán bằng chẩn đoán"),
     ("chuong-trinh/founder-growth-system.html", "Founder Growth System", "Hệ thống tăng trưởng cùng đội ngũ"),
     ("chuong-trinh/community-growth-system.html", "Community Growth System", "Hệ thống tăng trưởng từ cộng đồng"),
@@ -157,7 +158,7 @@ def khoi_cuoi(p=""):
 
 def footer(p=""):
     ct_links = "".join('<a href="%s">%s</a>' % (dd(h, p), t) for h, t, _ in
-                       [("chuong-trinh/the-trusted-creator.html", "The Trusted Creator", None),
+                       [("chuong-trinh/trusted-founder-brand.html", "Trusted Founder Brand", None),
                         ("chuong-trinh/the-trusted-advisor.html", "The Trusted Advisor", None),
                         ("chuong-trinh/founder-growth-system.html", "Founder Growth System", None),
                         ("chuong-trinh/community-growth-system.html", "Community Growth System", None),
