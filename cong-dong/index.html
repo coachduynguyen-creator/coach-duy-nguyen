@@ -377,16 +377,21 @@ figure{margin:0}
 @media (max-width:620px){.moc{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:8px}.moc::before{display:none}.dong{grid-template-columns:minmax(0,1fr)}}
 
 /* ============ NHỊP SỐNG CỘNG ĐỒNG: bốn ô ảnh so le ============ */
-.song-hd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
-.hd{display:flex;flex-direction:column;gap:16px}
-.hd.cao{padding-top:44px}
-.hd .anh-khung{aspect-ratio:4/5}
+/* Bốn ảnh cao thấp khác nhau cho có nhịp, nhưng phần chữ phải nằm cùng một
+   hàng, nếu không bốn đoạn chữ so le trông như lỗi dàn trang. Hai hàng của
+   lưới cha được dùng lại cho từng cột, ảnh đẩy xuống đáy hàng thứ nhất. */
+.song-hd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto;gap:20px;align-items:start}
+.hd{display:grid;grid-row:span 2;grid-template-rows:subgrid;gap:16px}
+.hd .anh-khung{aspect-ratio:4/5;align-self:end}
 .hd.cao .anh-khung{aspect-ratio:3/4}
 .hd .anh-khung img{object-position:50% 40%}
+/* Ảnh sân khấu rất ngang, cắt vào khung dọc thì rơi đúng giữa dòng chữ trên
+   màn hình. Dịch sang phải để lấy trọn người nói thay vì nửa chữ. */
+.hd .anh-khung img[src$="cd-dai-hoi.jpg"]{object-position:68% 42%}
 .hd-chu b{display:block;font-family:var(--f-tit);font-size:20px;letter-spacing:-.02em;color:var(--ink);line-height:1.2;margin-bottom:7px;text-wrap:balance}
 .hd-chu p{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
 .hd-ghi{margin-top:34px;font-size:14.5px;color:var(--ink-3);max-width:82ch}
-@media (max-width:1000px){.song-hd{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.hd.cao{padding-top:0}.hd .anh-khung,.hd.cao .anh-khung{aspect-ratio:4/3}}
+@media (max-width:1000px){.song-hd{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.hd .anh-khung,.hd.cao .anh-khung{aspect-ratio:4/3}}
 @media (max-width:600px){.song-hd{grid-template-columns:minmax(0,1fr)}.hd .anh-khung,.hd.cao .anh-khung{aspect-ratio:16/10}}
 
 /* ============ 05 BA CẤP: một nguồn, ba nhánh, hình mô phỏng ============ */
