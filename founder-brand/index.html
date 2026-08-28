@@ -29,11 +29,11 @@
   --bg:#FFFFFF; --bg-2:#F6F7F9; --bg-3:#EDEFF3;
   --line:#E3E6EB; --line-2:#CBD0D8;
   --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79; --on-ink:#FFFFFF;
-  --cam:#D97757;             /* cam thương hiệu: chấm logo, vạch nhãn, số nhấn */
-  --cam-dam:#B34E30;         /* cam đậm: nền nút và chữ cam trên nền sáng, đạt 4.5:1 */
-  --cam-mo:#F6E7E0;          /* cam rất nhạt: số mờ lớn làm nền trang trí */
+  --cam:#C98A28;             /* vàng đồng thương hiệu: chấm logo, vạch nhãn, số nhấn. Đồng bộ với trang Cộng đồng */
+  --cam-dam:#8A5A0F;         /* vàng đồng đậm: nền nút chữ trắng và chữ trên nền sáng, đạt 4.5:1 */
+  --cam-mo:#FBF1DC;          /* vàng đồng rất nhạt: nền ô nhấn và số mờ lớn trang trí */
   --vang-toi:#E9C46A;         /* vàng kim: chỉ dùng cho số trên khối tối, đạt 11.2:1 */
-  --cam-sau:#9E4229;         /* cam sâu: chữ cam đặt trên nền cam nhạt, đạt 5.3:1 */
+  --cam-sau:#7A4E0C;         /* vàng đồng sâu: chữ đặt trên nền vàng đồng nhạt */
   --nhan:var(--cam);
   --dung:#1F7A4D;
   --anh-bg:linear-gradient(180deg,#F3F5F8 0%,#DFE4EB 100%);
@@ -72,7 +72,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ============ NÚT VÀ ĐƯỜNG DẪN CHỮ ============ */
 .nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 22px;border-radius:999px;border:1px solid var(--cam-dam);background:var(--cam-dam);color:#fff;font-weight:600;font-size:15px;line-height:1.3;text-decoration:none;cursor:pointer;transition:transform .16s var(--ease),background .16s,box-shadow .16s;text-align:center}
-.nut:hover{background:#9E4229;border-color:#9E4229;box-shadow:0 6px 18px -8px rgba(179,78,48,.55)}
+.nut:hover{background:#7A4E0C;border-color:#7A4E0C;box-shadow:0 6px 18px -8px rgba(122,78,12,.55)}
 .nut:active{transform:scale(.97)}
 .nut svg{width:16px;height:16px;flex:none;transition:transform .16s var(--ease)}
 .nut:hover svg{transform:translateX(3px)}
@@ -608,7 +608,7 @@ figure{margin:0}
    mảnh trên đỉnh, chữ lớn trắng và một mệnh đề nhấn bằng vàng kim.
    Cảm giác cao cấp đến từ chiều sâu và khoảng thở, không từ viền và nền màu. */
 .nhan-dang{position:relative;margin:0;padding:clamp(40px,4.4vw,62px) clamp(26px,3.4vw,50px);border-radius:var(--r);overflow:hidden;text-align:center;background-color:var(--ink);background-image:linear-gradient(170deg,#1C222D 0%,#0F1218 64%);box-shadow:var(--shadow)}
-.nhan-dang::before{content:'';position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 0%,rgba(217,119,87,.20),transparent 62%);pointer-events:none}
+.nhan-dang::before{content:'';position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 0%,rgba(201,138,40,.22),transparent 62%);pointer-events:none}
 .nhan-dang::after{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;width:56px;height:3px;background:var(--vang-toi);border-radius:0 0 3px 3px}
 .nhan-dang b{position:relative;display:block;font-family:var(--f-tit);font-size:clamp(21px,2.5vw,31px);letter-spacing:-.025em;line-height:1.25;color:#fff;margin:0 auto 18px;text-wrap:balance;max-width:33ch}
 .nhan-dang b i{font-style:normal;color:var(--vang-toi)}
@@ -845,7 +845,7 @@ figure{margin:0}
 <!-- ================= THANH ĐIỀU HƯỚNG ================= -->
 <header class="nav" id="top">
   <div class="bao-rong">
-    <a class="logo" href="#top"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#D97757"/></svg><span class="ten-hieu">Trusted Founder Brand<small>Challenge ba tuần · by Coach Duy Nguyễn</small></span></a>
+    <a class="logo" href="#top"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#C98A28"/></svg><span class="ten-hieu">Trusted Founder Brand<small>Challenge ba tuần · by Coach Duy Nguyễn</small></span></a>
     <nav class="nav-links" id="nav-links" aria-label="Các trang"><a href="https://coachduynguyen.vn/cong-dong/">Cộng đồng</a><a href="https://coachduynguyen.vn/ve-toi.html">Về Duy</a><a class="on" aria-current="page" href="#top">Chương trình</a><a href="https://coachduynguyen.vn/phuong-phap.html">Phương pháp</a><a href="https://coachduynguyen.vn/blog.html">Blog</a><a href="https://coachduynguyen.vn/sach.html">Sách</a><a href="https://coachduynguyen.vn/kenh-youtube.html">YouTube</a><a href="https://coachduynguyen.vn/lien-he.html">Liên hệ</a></nav>
     <a class="nut nho" href="#dang-ky"><span class="nowrap">Đăng ký<span class="duoi">khóa 28/09</span></span></a>
     <span class="tien" id="tien" aria-hidden="true"></span>
@@ -1224,7 +1224,7 @@ figure{margin:0}
 
 <footer class="chan-trang">
   <div class="bao-rong">
-    <div class="chan-hieu"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#D97757"/></svg><span><b>Trusted Founder Brand Challenge</b> by Coach Duy Nguyễn<br>Một chương trình của Next Step Group · <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span></div>
+    <div class="chan-hieu"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#C98A28"/></svg><span><b>Trusted Founder Brand Challenge</b> by Coach Duy Nguyễn<br>Một chương trình của Next Step Group · <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span></div>
     <div class="lk">
       <a href="#dang-ky">Mức đầu tư và đăng ký</a>
       <a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html">Phiếu chẩn đoán 7 phút</a>
