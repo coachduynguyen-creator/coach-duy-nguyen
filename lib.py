@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Khung dựng website Coach Duy Nguyễn. Sửa BASE khi đổi sang tên miền riêng."""
-import os, html, json, re
+import os
+import struct, html, json, re
 
 BASE = "https://coachduynguyen.vn"
 # Trang Cộng đồng nay là trang con của chính tên miền này, không còn kho riêng.
@@ -280,6 +281,7 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
         '<meta property="og:image" content="%s">\n'
         '<meta property="og:image:alt" content="%s">\n'
         '<meta name="twitter:image" content="%s">' % (dia_chi_anh, html.escape(mo_ta_anh), dia_chi_anh))
+    doc = them_kich_thuoc_anh(doc, ten_tep)
     duong = os.path.join(GOC, ten_tep)
     os.makedirs(os.path.dirname(duong), exist_ok=True) if sau else None
     open(duong, "w", encoding="utf-8").write(doc)
@@ -300,3 +302,88 @@ def dau_trang(nhan, tieu, dan):
     <p class="dan">%s</p>
   </div>
 </header>""" % (lop_nhan(nhan), nhan, tieu, dan)
+
+# ---------------------------------------------------------------------------
+# Khai báo sẵn chiều rộng và chiều cao cho mọi thẻ ảnh.
+#
+# Trình duyệt không biết trước ảnh chiếm bao nhiêu chỗ, nên nó dựng trang với
+# ô ảnh cao bằng không rồi đẩy mọi thứ xuống khi ảnh tải xong. Người đọc thấy
+# chữ nhảy, và Google tính đây là điểm trừ. Khai báo kích thước thật là cách
+# duy nhất để chỗ đó được giữ sẵn từ đầu.
+#
+# Không dùng thư viện ngoài: đọc thẳng phần đầu tệp. Ảnh trong kho đều là WebP,
+# nhưng hàm đọc được cả PNG và JPEG để sau này thêm định dạng khác vẫn chạy.
+_BO_NHO_ANH = {}
+
+def do_anh(duong_tep):
+    if duong_tep in _BO_NHO_ANH:
+        return _BO_NHO_ANH[duong_tep]
+    kq = None
+    try:
+        with open(duong_tep, "rb") as f:
+            d = f.read(64)
+        if d[:4] == b"RIFF" and d[8:12] == b"WEBP":
+            loai = d[12:16]
+            if loai == b"VP8 ":
+                kq = (struct.unpack("<H", d[26:28])[0] & 0x3FFF,
+                      struct.unpack("<H", d[28:30])[0] & 0x3FFF)
+            elif loai == b"VP8L":
+                b = struct.unpack("<I", d[21:25])[0]
+                kq = ((b & 0x3FFF) + 1, ((b >> 14) & 0x3FFF) + 1)
+            elif loai == b"VP8X":
+                kq = (int.from_bytes(d[24:27], "little") + 1,
+                      int.from_bytes(d[27:30], "little") + 1)
+        elif d[:8] == b"\x89PNG\r\n\x1a\n":
+            kq = struct.unpack(">II", d[16:24])
+        elif d[:2] == b"\xff\xd8":
+            with open(duong_tep, "rb") as f:
+                f.read(2)
+                while True:
+                    while f.read(1) != b"\xff":
+                        pass
+                    m = f.read(1)
+                    while m == b"\xff":
+                        m = f.read(1)
+                    if m[0] in range(0xC0, 0xCF) and m[0] not in (0xC4, 0xC8, 0xCC):
+                        f.read(3)
+                        c, r = struct.unpack(">HH", f.read(4))
+                        kq = (r, c)
+                        break
+                    f.seek(struct.unpack(">H", f.read(2))[0] - 2, 1)
+    except Exception:
+        kq = None
+    _BO_NHO_ANH[duong_tep] = kq
+    return kq
+
+
+def them_kich_thuoc_anh(doc, ten_tep):
+    """Chèn width và height vào những thẻ ảnh chưa có."""
+    thu_muc = os.path.dirname(os.path.join(GOC, ten_tep))
+
+    def sua(m):
+        the = m.group(0)
+        if re.search(r'\bwidth=', the) and re.search(r'\bheight=', the):
+            return the
+        ms = re.search(r'\bsrc="([^"]+)"', the)
+        if not ms:
+            return the
+        u = ms.group(1)
+        wh = None
+        if u.startswith("http"):
+            # Ảnh lấy từ dịch vụ ngoài thường mang sẵn kích thước trong địa chỉ.
+            mw = re.search(r'[?&]w=(\d+)', u)
+            mh = re.search(r'[?&]h=(\d+)', u)
+            if mw and mh:
+                wh = (int(mw.group(1)), int(mh.group(1)))
+            elif "i.ytimg.com" in u:
+                # YouTube trả ảnh xem trước theo bốn khổ cố định.
+                wh = {"maxresdefault": (1280, 720), "sddefault": (640, 480),
+                      "hqdefault": (480, 360), "mqdefault": (320, 180),
+                      "default": (120, 90)}.get(u.rsplit("/", 1)[-1].split(".")[0])
+        elif not u.startswith("data:"):
+            wh = do_anh(os.path.normpath(os.path.join(thu_muc, u.split("?")[0])))
+        if not wh:
+            return the
+        return the[:-1].rstrip() + ' width="%d" height="%d">' % wh
+
+    return re.sub(r'<img\b[^>]*>', sua, doc)
