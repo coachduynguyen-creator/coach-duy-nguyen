@@ -298,8 +298,11 @@ figure{margin:0}
 
 
 /* ============ CÂU CHUYỆN: chọn một người kể, xem trước và sau ============ */
-.chuyen{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:32px;align-items:start}
-.ch-chon{display:flex;flex-direction:column;gap:8px}
+/* Ba nút chọn xếp dọc chỉ cao bằng một phần ba bảng bên cạnh, để lại hơn
+   300px trống ở cột trái. Xếp ngang phía trên thì hết chỗ trống, bảng được
+   nguyên chiều rộng, và ba câu chuyện đặt cạnh nhau cũng dễ so hơn. */
+.chuyen{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+.ch-chon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .ch-chon button{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line);background:#fff;cursor:pointer;transition:transform .18s var(--ease),border-color .18s,background .18s,box-shadow .18s}
 .ch-chon button:hover{border-color:var(--line-2);box-shadow:var(--shadow-s)}
 .ch-chon button:active{transform:scale(.99)}
@@ -341,10 +344,10 @@ figure{margin:0}
 .ch-chung p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
 .chuyen-ghi{margin-top:26px;font-size:14.5px;color:var(--ink-3);max-width:78ch}
 @media (max-width:980px){
-  .chuyen{grid-template-columns:minmax(0,1fr);gap:20px}
-  .ch-chon{flex-direction:row;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  /* Hẹp quá thì ba nút cạnh nhau chật, cho cuộn ngang một dải. */
+  .ch-chon{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(240px,1fr);overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
   .ch-chon::-webkit-scrollbar{display:none}
-  .ch-chon button{flex:none;max-width:74vw}
+  .ch-chon button{max-width:74vw}
 }
 @media (max-width:680px){.ch-khung{padding:20px}.ch-buoc{grid-template-columns:minmax(0,1fr);gap:16px}.ch-mui{padding:0;justify-items:start;transform:rotate(90deg);width:20px}.ch-chung{grid-template-columns:minmax(0,1fr);gap:16px}.ch-dinh b{font-size:20px}}
 
