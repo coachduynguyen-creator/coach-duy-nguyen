@@ -54,7 +54,9 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,h4{margin:0;color:var(--ink);font-family:var(--f-tit);font-variation-settings:'opsz' 72;letter-spacing:-.025em;line-height:1.08;font-weight:700;text-wrap:balance}
 h1 span,h2 span{text-wrap:balance}
-.quyet b,.nam5 b,.dk b,.moc b,.dong b,.nhan-duoc li,.vach li p,.khong-phai li,.nl .dat,.cap-the .mota{text-wrap:balance}
+.quyet b,.nam5 b,.dk b,.moc b,.dong b,.ket-cap b,.nhan-duoc li,.vach li p,.nl .dat,.cap-the .mota{text-wrap:balance}
+/* Đoạn ba dòng trở lên thì cân bằng làm lề phải răng cưa, dùng pretty. */
+.khong-phai li{text-wrap:pretty}
 p,li{text-wrap:pretty}
 p{margin:0}
 a{color:inherit}
@@ -272,7 +274,7 @@ figure{margin:0}
 .do .lon .so{font-family:var(--f-tit);font-size:clamp(64px,7vw,96px);line-height:.95;letter-spacing:-.04em;font-weight:700;color:var(--cam)}
 .do .lon .nhan{color:rgba(255,255,255,.72)}
 .do .lon p{font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.84)}
-.do .hai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.do .hai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
 .do .hai .o{display:flex;flex-direction:column;gap:6px}
 .do .hai .o .nhan{margin-bottom:6px}
 .do .hai ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
