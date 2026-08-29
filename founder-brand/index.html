@@ -607,6 +607,12 @@ figure{margin:0}
    nặng ký: nền than có chiều sâu, một quầng cam rất nhạt ở góc, vạch vàng kim
    mảnh trên đỉnh, chữ lớn trắng và một mệnh đề nhấn bằng vàng kim.
    Cảm giác cao cấp đến từ chiều sâu và khoảng thở, không từ viền và nền màu. */
+/* Cái giá của việc để nguyên. Bốn mục lấy từ cột "đang ảnh hưởng thế nào" trong
+   khảo sát, giữ đúng thứ tự người trả lời chọn nhiều nhất. */
+.cai-gia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:34px 0 0}
+.cai-gia > div{padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--cam);border-radius:var(--r-s);background-color:#fff;background-image:var(--paper);font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.cai-gia b{display:block;color:var(--ink);font-weight:600;margin-bottom:3px}
+@media (max-width:700px){.cai-gia{grid-template-columns:minmax(0,1fr)}}
 .nhan-dang{position:relative;margin:0;padding:clamp(40px,4.4vw,62px) clamp(26px,3.4vw,50px);border-radius:var(--r);overflow:hidden;text-align:center;background-color:var(--ink);background-image:linear-gradient(170deg,#1C222D 0%,#0F1218 64%);box-shadow:var(--shadow)}
 .nhan-dang::before{content:'';position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 0%,rgba(201,138,40,.22),transparent 62%);pointer-events:none}
 .nhan-dang::after{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;width:56px;height:3px;background:var(--vang-toi);border-radius:0 0 3px 3px}
@@ -898,9 +904,15 @@ figure{margin:0}
       <div><i>&ldquo;</i><p>Nội dung của tôi nhìn giống nhiều người khác quá.</p></div>
       <div><i>&ldquo;</i><p>Tôi làm được một hai tháng rồi dừng. Lần này là lần thứ ba.</p></div>
     </div>
+    <div class="cai-gia hien tre">
+      <div><b>Bạn vẫn phải tự đi tìm khách</b>Thay vì khách đọc bạn trước rồi mới nhắn.</div>
+      <div><b>Vẫn phụ thuộc quảng cáo để có người hỏi</b>Ngừng chi là ngừng có người liên hệ.</div>
+      <div><b>Khách chịu chi vẫn khó tiếp cận</b>Họ chọn người họ đã tin từ trước, không chọn người mới gặp.</div>
+      <div><b>Vẫn khó khác đối thủ bán cùng thứ</b>Cùng sản phẩm, cùng kiểu nói, khách không thấy lý do chọn bạn.</div>
+    </div>
     <div class="nhan-dang hien" style="margin-top:34px">
-      <b>Ai cũng ngại đứng ra khi mình chưa chắc, kể cả những người bạn thấy nói trơn tru trên mạng. <i>Khác nhau nằm ở chỗ họ có nơi để tập trước khi bị nhìn.</i></b>
-      <span>Ba tuần này bắt đầu từ đúng chỗ đó, không bắt đầu từ máy quay.</span>
+      <b>Bốn thứ trên không sửa được bằng cách đăng nhiều hơn. <i>Chúng chỉ đổi khi thị trường biết bạn đứng cho điều gì, trước lúc cần tới bạn.</i></b>
+      <span>Ba tuần này nhắm thẳng vào đó, không bắt đầu từ máy quay.</span>
     </div>
   </div>
 </section>
