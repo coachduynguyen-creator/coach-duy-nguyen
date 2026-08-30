@@ -13,6 +13,9 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 # Đây là nơi duy nhất công bố giá và mốc đăng ký của chương trình này. Trang chính
 # không nhắc lại con số, chỉ trỏ sang, để không bao giờ có hai mức giá lệch nhau.
 TTC_LANDING = "https://coachduynguyen.vn/founder-brand/"
+# Trang riêng của Trusted Sales Team System. Chương trình đang ở vòng chạy thử nên
+# trang này không có giá, chỉ mời trao đổi.
+TSTS_LANDING = "https://coachduynguyen.vn/sales-team/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
 VER = "20260830a"   # tăng số này mỗi lần sửa style.css hoặc site.js

@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trusted Sales Team System | Xây dựng Đội ngũ Tư vấn Bán hàng Chuyên nghiệp và Tin cậy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M25.53 10.5A11 11 0 1 0 25.53 21.5' fill='none' stroke='%230F1218' stroke-width='3.4' stroke-linecap='round'/%3E%3Ccircle cx='27' cy='16' r='3.6' fill='%23D97757'/%3E%3C/svg%3E">
+<meta name="description" content="Chương trình tám tuần giúp doanh nghiệp tạo chuẩn tư vấn chung, đưa chuẩn đó vào tình huống khách hàng thật, và giúp quản lý tự huấn luyện tiếp. Đang chạy thử với hai tới ba doanh nghiệp.">
+<!-- BẢN NHÁP: dòng dưới chặn công cụ tìm kiếm ghi nhận trang. XÓA DÒNG NÀY khi trang đã điền đủ và sẵn sàng công bố. -->
+<link rel="canonical" href="https://coachduynguyen.vn/sales-team/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coach Duy Nguyễn">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Trusted Sales Team System cho doanh nghiệp có đội ngũ tư vấn">
+<meta property="og:description" content="Tám tuần đưa một chuẩn tư vấn từ đầu người chủ vào tay đội ngũ, và để quản lý giữ được chuẩn đó.">
+<meta property="og:url" content="https://coachduynguyen.vn/sales-team/">
+<meta property="og:image" content="https://coachduynguyen.vn/img/cd-dung-lop.webp">
+<meta property="og:image:alt" content="Coach Duy Nguyễn đang quay video">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coachduynguyen.vn/img/cd-dung-lop.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script>(function(r){r.classList.add('js');if(location.search.indexOf('static')>-1)r.classList.add('noanim');})(document.documentElement);</script>
+<style>
+/* ============ BẢNG MÀU: kế thừa nguyên từ trang Cộng đồng Next Gen Founder ============ */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --bg-2:#F6F7F9; --bg-3:#EDEFF3;
+  --line:#E3E6EB; --line-2:#CBD0D8;
+  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79; --on-ink:#FFFFFF;
+  --cam:#C98A28;             /* vàng đồng thương hiệu: chấm logo, vạch nhãn, số nhấn. Đồng bộ với trang Cộng đồng */
+  --cam-dam:#8A5A0F;         /* vàng đồng đậm: nền nút chữ trắng và chữ trên nền sáng, đạt 4.5:1 */
+  --cam-mo:#FBF1DC;          /* vàng đồng rất nhạt: nền ô nhấn và số mờ lớn trang trí */
+  --vang-toi:#E9C46A;         /* vàng kim: chỉ dùng cho số trên khối tối, đạt 11.2:1 */
+  --cam-sau:#7A4E0C;         /* vàng đồng sâu: chữ đặt trên nền vàng đồng nhạt */
+  --nhan:var(--cam);
+  --dung:#1F7A4D;
+  --anh-bg:linear-gradient(180deg,#F3F5F8 0%,#DFE4EB 100%);
+  --paper:linear-gradient(180deg,#FFFFFF 0%,#FAFBFC 100%);
+  --shadow-s:0 1px 2px rgba(15,18,24,.05),0 12px 28px -16px rgba(15,18,24,.22);
+  --shadow:0 2px 4px rgba(15,18,24,.06),0 30px 60px -28px rgba(15,18,24,.34);
+  --shadow-h:0 3px 6px rgba(15,18,24,.07),0 22px 44px -20px rgba(15,18,24,.30);
+  --chip:linear-gradient(180deg,#2A303C 0%,#0F1218 100%);
+  --r:16px; --r-s:12px;
+  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
+  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+/* pretty chứ không phải balance: balance chia đều số chữ mỗi dòng nên tiêu đề dài
+   bị hụt một mảng ở giữa, Coach Duy bắt lỗi ngày 24/08/2026. pretty đổ đầy từng dòng
+   và chỉ để dòng cuối ngắn, đồng thời vẫn tránh chữ mồ côi. Nhãn đậm ngắn thì vẫn dùng
+   balance ở luật bên dưới, vì hai tới sáu chữ mà đổ đầy sẽ rớt một chữ xuống dòng hai. */
+h1,h2,h3,h4{margin:0;color:var(--ink);font-family:var(--f-tit);font-variation-settings:'opsz' 72;letter-spacing:-.025em;line-height:1.08;font-weight:700;text-wrap:pretty}
+h1 span,h2 span{text-wrap:pretty}
+.vach li p,.khong-phai li,.nl .dat,.nl h3,.dong b,.moc b,.dk b,.gia-the b,.the-anh figcaption b,.leo b,.leo em,.luu b,.ket-cap b{text-wrap:balance}
+p,li{text-wrap:pretty}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+.bao{max-width:1120px;margin:0 auto;padding:0 24px}
+.bao-rong{max-width:1400px;margin:0 auto;padding:0 24px}
+.xam{color:var(--ink-3)}
+.mono{font-family:var(--f-mono)}
+.nhan{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.nhan .mono{font-weight:600;letter-spacing:.04em}
+
+/* ============ NÚT VÀ ĐƯỜNG DẪN CHỮ ============ */
+.nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 22px;border-radius:999px;border:1px solid var(--cam-dam);background:var(--cam-dam);color:#fff;font-weight:600;font-size:15px;line-height:1.3;text-decoration:none;cursor:pointer;transition:transform .16s var(--ease),background .16s,box-shadow .16s;text-align:center}
+.nut:hover{background:#7A4E0C;border-color:#7A4E0C;box-shadow:0 6px 18px -8px rgba(122,78,12,.55)}
+.nut:active{transform:scale(.97)}
+.nut svg{width:16px;height:16px;flex:none;transition:transform .16s var(--ease)}
+.nut:hover svg{transform:translateX(3px)}
+.nut.nho{min-height:40px;padding:8px 16px;font-size:14px;gap:.28em;flex:none}
+.nut .nowrap{white-space:nowrap;display:inline-flex;gap:.28em}
+.lien{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.lien:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+/* hai lối hành động: nút đăng ký đứng trước, phiếu chẩn đoán là một dòng chữ ngay dưới */
+.loi2{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.loi2 .phu{font-size:14.5px;color:var(--ink-3);line-height:1.5;max-width:52ch}
+.loi2 .phu a{font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2)}
+.loi2 .phu a:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
+
+/* ============ THANH ĐIỀU HƯỚNG ============ */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+.nav .bao-rong{display:flex;align-items:center;gap:20px;height:64px;flex-wrap:nowrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.logo .dau-hieu{width:28px;height:28px;flex:none;color:var(--ink)}
+.logo .ten-hieu{display:flex;flex-direction:column;line-height:1.05;font-family:var(--f-tit);font-weight:800;font-size:17.5px;letter-spacing:-.02em;font-variation-settings:'opsz' 40}
+.logo .ten-hieu small{font-family:var(--f-than);font-weight:500;font-size:13px;letter-spacing:0;color:var(--ink-3);margin-top:3px}
+.nav-links{display:flex;gap:2px;margin-left:auto;position:relative;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--ml,0px),#000 calc(100% - var(--mr,0px)),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 var(--ml,0px),#000 calc(100% - var(--mr,0px)),transparent 100%)}
+.nav-links::-webkit-scrollbar{display:none}
+/* Tầng dưới của thanh menu: các phần trong trang. Lấy đúng mẫu trang Cộng đồng
+   để hai trang trên cùng tên miền đi cùng một kiểu. */
+.nav-phan-bao{border-top:1px solid var(--line);background:rgba(255,255,255,.7)}
+.nav-phan{display:flex;gap:2px;max-width:1200px;margin-inline:auto;padding:0 24px;height:42px;align-items:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav-phan::-webkit-scrollbar{display:none}
+.nav-phan a{flex:none;white-space:nowrap;font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:6px 10px;border-radius:999px;transition:color .2s var(--ease),background .2s var(--ease)}
+@media (hover:hover){.nav-phan a:hover{color:var(--ink);background:var(--bg-2)}}
+.nav-phan a.on{color:var(--on-ink);background:var(--ink)}
+@media (max-width:640px){.nav-phan{padding:0 18px;height:40px}}
+.nav-links a{flex:none;white-space:nowrap;font-size:14px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.on{color:var(--ink);background:var(--bg-3)}
+.nav .nut{margin-left:auto}
+.nav-links + .nut{margin-left:8px}
+.tien{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+@media (max-width:1080px){.nav-links{display:none}}
+@media (max-width:430px){.logo .ten-hieu small{display:none}.nav .duoi{display:none}.nav .bao-rong{padding:0 16px}}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:56px 0 88px;overflow:hidden}
+.hero-luoi{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:52px;align-items:center}
+.hero-chu{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.vien{display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:5px 12px 5px 10px;line-height:1.3;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:.01em}
+.vien i{width:7px;height:7px;border-radius:50%;background:var(--nhan);box-shadow:0 0 0 0 rgba(194,65,12,.35);animation:nhay 2s ease-out infinite;flex:none}
+@keyframes nhay{0%{box-shadow:0 0 0 0 rgba(194,65,12,.35)}70%{box-shadow:0 0 0 7px rgba(194,65,12,0)}100%{box-shadow:0 0 0 0 rgba(194,65,12,0)}}
+.hero h1{font-size:clamp(28px,2.6vw,36px);line-height:1.1;letter-spacing:-.03em}
+.hero h1 span{display:block;color:var(--ink-3)}
+.hero .dan{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:56ch}
+.hero .dan b{color:var(--ink);font-weight:600}
+.hero .gia-dong{font-size:14.5px;color:var(--ink-3);line-height:1.55;max-width:56ch;padding-top:14px;border-top:1px solid var(--line)}
+.hero .gia-dong b{color:var(--ink);font-weight:600}
+.hero-ket{list-style:none;margin:2px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;max-width:56ch}
+.hero-ket .tieu{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+.hero-ket li{position:relative;padding-left:26px;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.hero-ket li svg{position:absolute;left:0;top:4px;width:15px;height:15px;color:var(--cam-dam)}
+@media (max-width:640px){.hero-ket li{font-size:15px;padding-left:24px}}
+
+.hero-anh{position:relative;display:flex;flex-direction:column;gap:16px}
+.hero-anh .anh-khung{aspect-ratio:1/1}
+.hero-anh .anh-khung img{object-position:50% 45%}
+.so3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.so3 > div{padding:14px 12px 0 0}
+.so3 > div + div{padding-left:16px;border-left:1px solid var(--line)}
+.so3 b{display:block;font-family:var(--f-tit);font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.so3 b small{font-size:14px;letter-spacing:0;font-weight:600;margin-left:3px}
+.so3 span{display:block;font-size:13px;color:var(--ink-3);margin-top:6px;line-height:1.4}
+@media (max-width:1000px){.hero-luoi{grid-template-columns:minmax(0,1fr);gap:32px}.hero-anh{max-width:520px}}
+@media (max-width:640px){.hero{padding:32px 0 60px}.hero h1{font-size:26px;line-height:1.12}.hero .dan{font-size:16.5px}}
+
+/* ============ PHẦN ============ */
+.phan{padding:96px 0;border-top:1px solid var(--line)}
+.phan.nen{background:var(--bg-2)}
+.dau-phan{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;max-width:820px;margin-bottom:48px}
+.dau-phan .nhan{display:flex;align-items:center;gap:10px}
+.dau-phan .nhan::before{content:'';width:18px;height:2px;background:var(--cam);flex:none}
+.dau-phan h2{font-size:clamp(27px,3.1vw,41px)}
+.dau-phan h2 span{color:var(--ink-3)}
+.dau-phan .dan{font-size:17.5px;color:var(--ink-2);max-width:66ch}
+.dau-phan .dan b{color:var(--ink);font-weight:600}
+.ket{margin-top:40px;padding-top:18px;border-top:1px solid var(--ink);display:flex;gap:14px;align-items:baseline;max-width:860px;flex-wrap:wrap}
+.ket b{font-family:var(--f-mono);font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;flex:none}
+.ket p{font-size:16.5px;color:var(--ink);font-weight:500;flex:1;min-width:280px}
+@media (max-width:760px){.phan{padding:64px 0}.dau-phan{margin-bottom:32px}}
+
+/* lưới thẻ chung */
+.o3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.o2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.o3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.o3,.o2{grid-template-columns:minmax(0,1fr)}}
+.o{background:var(--paper);background-color:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.o:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.o .so{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:.06em}
+.o h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin:10px 0 8px}
+.o p{font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.o .ghi{font-size:14px;color:var(--ink-3);margin-top:10px}
+
+/* danh sách có vạch */
+.vach{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.vach li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .2s,transform .2s}
+.vach li b{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.04em}
+.vach li p{font-size:16px;color:var(--ink-2)}
+.vach li p strong{color:var(--ink);font-weight:600}
+@media (hover:hover){.vach li:hover{background:#fff;transform:translateX(2px)}}
+@media (max-width:520px){.vach li{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+/* ============ ẢNH ============ */
+figure{margin:0}
+.anh-khung{position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg-3);box-shadow:var(--shadow)}
+.anh-khung img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+@media (hover:hover){.anh-khung:hover img{transform:scale(1.03)}}
+
+/* ============ VẤN ĐỀ ============ */
+.chia{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start}
+.chia h2{font-size:clamp(27px,3.1vw,40px)}
+.chia h2 span{color:var(--ink-3)}
+.chia .dan{margin-top:16px;font-size:17px;color:var(--ink-2)}
+.khong-phai{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--line)}
+.khong-phai li{padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--ink-2);transition:transform .2s}
+.khong-phai li b{color:var(--ink);font-weight:700}
+@media (hover:hover){.khong-phai li:hover{transform:translateX(2px)}}
+@media (max-width:900px){.chia{grid-template-columns:minmax(0,1fr);gap:28px}}
+.ke-thu{border:1px dashed var(--line-2);border-radius:var(--r);background:rgba(255,255,255,.7);padding:24px}
+.ke-thu b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:10px}
+.ke-thu h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.35;margin-bottom:12px}
+.ke-thu ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ke-thu li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.ke-thu li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--cam-dam)}
+
+
+/* ============ SÁU CÂU HAY ĐƯỢC NÓI ============ */
+.noi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:44px;border-top:1px solid var(--line);margin-top:44px}
+.noi > div{display:grid;grid-template-columns:26px minmax(0,1fr);gap:12px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line);transition:transform .2s var(--ease)}
+@media (hover:hover){.noi > div:hover{transform:translateX(2px)}}
+.noi i{display:block;font-family:var(--f-tit);font-size:30px;line-height:.9;color:var(--cam);font-style:normal;font-weight:800;user-select:none}
+.noi p{font-size:18.5px;line-height:1.4;color:var(--ink);font-weight:500;letter-spacing:-.01em;text-wrap:pretty}
+@media (max-width:1040px){.noi{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
+@media (max-width:620px){.noi{grid-template-columns:minmax(0,1fr);column-gap:0}.noi p{font-size:17.5px}}
+@media (max-width:520px){.noi > div{grid-template-columns:22px minmax(0,1fr);gap:10px}.noi i{font-size:26px}.noi p{font-size:16.5px}}
+
+/* ============ BẠN ĐANG Ở ĐÂU ============ */
+.cap3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.cap-the{height:100%;display:flex;flex-direction:column;gap:12px;padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);background-color:#fff;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.cap-the:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.cap-the.chinh{border-color:var(--ink);box-shadow:var(--shadow)}
+.nhan-cap{display:flex;justify-content:space-between;align-items:center;gap:8px 10px;flex-wrap:wrap}
+.nhan-cap span{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);min-width:0;flex:1 1 auto}
+.nhan-cap em{font-style:normal;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--bg-3);color:var(--ink-2);white-space:nowrap;flex:0 0 auto}
+.cap-the.chinh .nhan-cap em{background:var(--cam-dam);color:#fff}
+.cap-the h3{font-family:var(--f-tit);font-size:22px;letter-spacing:-.02em;line-height:1.2}
+.cap-the .mota{font-size:15px;color:var(--ink-2);line-height:1.55}
+.cap-the .dinh{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-2);font-size:14px;color:var(--ink-2);line-height:1.5}
+.cap-the .dinh b{display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+@media (max-width:960px){.cap3{grid-template-columns:minmax(0,1fr)}}
+
+
+/* ============ BẢN VẼ CHUNG ============ */
+.ve{border:1px solid var(--line);border-radius:var(--r);background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow);overflow:hidden;display:none}
+.ve .thanh{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.ve .thanh .cham{display:flex;gap:5px}
+.ve .thanh .cham i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+.ve .thanh b{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:.04em}
+.ve .than-ve{padding:22px 20px 18px;background-image:radial-gradient(circle at 1px 1px,rgba(15,18,24,.06) 1px,transparent 0);background-size:22px 22px}
+.ve svg{width:100%;height:auto;display:block;font-family:var(--f-than)}
+.sv-node{fill:var(--ink)}
+.sv-num{fill:#fff;font-family:var(--f-mono);font-size:15px;font-weight:600}
+.sv-line{fill:none;stroke:var(--line-2);stroke-width:2}
+.sv-back{fill:none;stroke:var(--cam-dam);stroke-width:2;stroke-dasharray:7 7}
+.sv-name{fill:var(--ink);font-size:14.5px;font-weight:700}
+.sv-desc{fill:var(--ink-2);font-size:13.5px}
+.sv-chip{fill:#fff;stroke:var(--cam-dam);stroke-opacity:.45}
+.sv-chiptext{fill:var(--cam-sau);font-size:13.5px;font-weight:600}
+.sv-band{fill:var(--bg-3)}
+.sv-bandtext{fill:var(--ink-3);font-size:14.5px;font-weight:600;letter-spacing:.06em}
+@media (min-width:1100px){.ve{display:block}.nam5.the-ve-thay,.nl.the-ve-thay,.dong.the-ve-thay{display:none}}
+
+/* ============ NĂM CHẶNG ============ */
+.nam5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.nam5 > div{position:relative;padding-top:74px;border-top:1px solid var(--line);transition:transform .2s var(--ease)}
+.nam5 > div::before{content:attr(data-so);position:absolute;left:-3px;top:-6px;font-family:var(--f-tit);font-weight:800;font-size:104px;line-height:1;letter-spacing:-.05em;color:var(--cam-mo);pointer-events:none}
+.nam5 b{position:relative;display:block;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px;letter-spacing:-.01em}
+.nam5 p{position:relative;font-size:14px;line-height:1.5;color:var(--ink-2)}
+@media (hover:hover){.nam5 > div:hover{transform:translateY(-3px)}}
+@media (max-width:980px){.nam5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.nam5{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.nam5 > div{padding-top:60px}.nam5 > div::before{font-size:84px}}
+
+
+/* ============ XƯỞNG: một câu chuyện, bốn định dạng ============ */
+.xuong{margin-top:64px;padding-top:44px;border-top:1px solid var(--line-2)}
+.xuong .tieu{max-width:64ch;margin:0 auto 30px;text-align:center}
+.xuong .tieu h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:10px}
+.xuong .tieu p{font-size:15.5px;color:var(--ink-2)}
+.one{display:flex;flex-direction:column;align-items:center}
+.one span{display:inline-flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 10px;border:1px solid var(--cam-dam);border-radius:999px;background:var(--cam-mo);padding:9px 18px;box-shadow:var(--shadow-s);text-align:center}
+.one b{font-size:15.5px;font-weight:800;color:var(--cam-sau)}
+.one i{font-style:normal;font-size:13.5px;color:var(--ink-2)}
+.one::after{content:"";display:block;width:2px;height:26px;background:var(--ink)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative;padding-top:30px}
+.g4::before{content:"";position:absolute;left:calc(12.5% - 5.5px);right:calc(12.5% - 5.5px);top:0;height:2px;background:var(--ink);border-radius:2px}
+.fmt{position:relative;border:1px solid var(--line-2);border-top:2px solid var(--ink);border-radius:14px;background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow-s);padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+.fmt::before{content:"";position:absolute;left:50%;top:-31px;width:2px;height:30px;background:var(--ink);transform:translateX(-50%)}
+.fmt::after{content:"";position:absolute;left:50%;top:-5px;width:8px;height:8px;border-radius:50%;background:var(--ink);transform:translateX(-50%)}
+@media (hover:hover){.fmt:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.fmt b.n{display:block;font-family:var(--f-than);font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.015em;margin-top:4px}
+.fmt span.s{display:block;font-size:13.5px;color:var(--ink-3)}
+.fmt p.w{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.fmt p.w i{font-style:normal;font-weight:700}
+.fmt p.w i.m{color:var(--ink)}
+.fmt p.w i.y{color:var(--cam-dam)}
+.mv{height:176px;border-radius:12px;background:linear-gradient(180deg,var(--bg-2),var(--bg-3));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.mv i,.mv b,.mv s,.mv span{display:block;text-decoration:none}
+.ph{width:88px;height:152px;border-radius:14px;background-color:var(--ink);background-image:var(--chip);border:3px solid var(--ink);position:relative;box-shadow:0 12px 24px -12px rgba(15,18,24,.55)}
+.ph .tm{position:absolute;right:8px;top:8px;width:18px;height:5px;border-radius:3px;background:rgba(255,255,255,.45)}
+.ph .pl{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.6)}
+.ph .pl::after{content:"";position:absolute;left:11px;top:8px;border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.ph .ic{position:absolute;right:7px;bottom:44px;display:flex;flex-direction:column;gap:6px}
+.ph .ic i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5)}
+.ph .sb{position:absolute;left:8px;right:22px;bottom:14px;display:flex;flex-direction:column;gap:4px}
+.ph .sb i{height:5px;border-radius:3px;background:var(--cam)}
+.cs{position:relative;width:150px;height:128px}
+.cs>i{position:absolute;left:0;top:0;width:118px;height:118px;border-radius:10px;background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-s)}
+.cs>i:nth-child(1){transform:translate(30px,10px) rotate(3deg);opacity:.55}
+.cs>i:nth-child(2){transform:translate(15px,5px);opacity:.8}
+.cs>i:nth-child(3){padding:12px;display:flex;flex-direction:column;gap:7px}
+.cs>i:nth-child(3) b{width:64%;height:9px;border-radius:4px;background:var(--ink)}
+.cs>i:nth-child(3) s{height:5px;border-radius:3px;background:var(--line-2)}
+.cs .dots{position:absolute;left:0;bottom:-2px;width:118px;display:flex;justify-content:center;gap:4px}
+.cs .dots i{width:6px;height:6px;border-radius:50%;background:var(--line-2)}
+.cs .dots i.on{background:var(--ink)}
+.po{width:168px;border-radius:12px;background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-s);padding:12px}
+.po .hd{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.po .av{width:24px;height:24px;border-radius:50%;background-color:var(--ink);background-image:var(--chip)}
+.po .nm{flex:1}
+.po .nm i{height:6px;border-radius:3px;background:var(--ink);width:60%;margin-bottom:4px}
+.po .nm i+i{background:var(--line-2);width:40%;margin:0}
+.po .ln{display:flex;flex-direction:column;gap:6px}
+.po .ln i{height:5px;border-radius:3px;background:var(--line-2)}
+.po .ft{display:flex;gap:12px;margin-top:10px;padding-top:8px;border-top:1px solid var(--line)}
+.po .ft i{width:16px;height:5px;border-radius:3px;background:var(--line-2)}
+.lv{width:150px}
+.lv .sc{height:84px;border-radius:10px;background-color:var(--ink);background-image:var(--chip);position:relative;border:2px solid var(--ink)}
+.lv .bd{position:absolute;left:8px;top:8px;display:flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;background:var(--cam)}
+.lv .bd i{width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.lv .bd b{width:16px;height:5px;border-radius:3px;background:var(--ink)}
+.lv .pp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:rgba(255,255,255,.16)}
+.lv .cl{display:flex;gap:6px;margin-top:8px}
+.lv .cl i{flex:1;height:32px;border-radius:6px;background:#fff;border:1px solid var(--line-2)}
+.lv .cl i:nth-child(odd){background:var(--bg-3)}
+@media (max-width:1040px){.g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-top:0}.g4::before{display:none}.fmt::before,.fmt::after{display:none}.one::after{height:18px}}
+@media (max-width:560px){.g4{grid-template-columns:minmax(0,1fr)}.mv{height:150px}}
+@supports (grid-template-rows: subgrid){.g4{grid-template-rows:auto auto auto 1fr}.fmt{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:8px}}
+@media (max-width:1040px){@supports (grid-template-rows: subgrid){.fmt{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}}}
+
+
+/* ============ LEO DỐC 30 NGÀY: mỗi tuần một bậc cao hơn ============ */
+.leo{display:none;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:8px}
+.leo > div{display:flex;flex-direction:column}
+.leo .cot{height:250px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px}
+.leo .so{width:44px;height:44px;flex:none;border-radius:50%;background-color:var(--ink);background-image:var(--chip);color:#fff;font-family:var(--f-mono);font-size:16px;font-weight:600;display:grid;place-items:center;box-shadow:0 8px 18px -8px rgba(15,18,24,.5)}
+.leo .bac{width:100%;border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.leo > div:nth-child(1) .bac{height:52px;background:color-mix(in srgb,var(--cam) 16%,#fff)}
+.leo > div:nth-child(2) .bac{height:82px;background:color-mix(in srgb,var(--cam) 30%,#fff)}
+.leo > div:nth-child(3) .bac{height:112px;background:color-mix(in srgb,var(--cam) 46%,#fff)}
+.leo > div:nth-child(4) .bac{height:142px;background:color-mix(in srgb,var(--cam) 62%,#fff)}
+.leo > div:nth-child(5) .bac{height:172px;background:color-mix(in srgb,var(--cam) 80%,#fff)}
+.leo > div:nth-child(6) .bac{height:202px;background-color:var(--ink);background-image:var(--chip);border-color:var(--ink)}
+.leo .chan{padding-top:16px;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:6px}
+.leo b{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.25}
+.leo span{font-size:14px;line-height:1.45;color:var(--ink-2)}
+.leo em{font-style:normal;display:block;margin-top:7px;font-size:13.5px;line-height:1.4;color:var(--cam-sau);font-weight:600}
+.leo .cuoi b{color:var(--cam-sau)}
+.leo.nam{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tuan-dai{display:none;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.tuan-dai > div{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--cam-sau);white-space:nowrap}
+.tuan-dai > div::before,.tuan-dai > div::after{content:'';height:2px;background:var(--cam);flex:1;border-radius:1px}
+.tuan-dai > div:nth-child(1){grid-column:span 2}
+.tuan-dai > div:nth-child(3){grid-column:span 2}
+.leo.nam > div:nth-child(1) .bac{height:52px;background:color-mix(in srgb,var(--cam) 18%,#fff)}
+.leo.nam > div:nth-child(2) .bac{height:88px;background:color-mix(in srgb,var(--cam) 34%,#fff)}
+.leo.nam > div:nth-child(3) .bac{height:124px;background:color-mix(in srgb,var(--cam) 52%,#fff)}
+.leo.nam > div:nth-child(4) .bac{height:160px;background:color-mix(in srgb,var(--cam) 72%,#fff)}
+.leo.nam > div:nth-child(5) .bac{height:196px;background-color:var(--ink);background-image:var(--chip);border-color:var(--ink)}
+@media (min-width:820px){.leo{display:grid}.tuan-dai{display:grid}.nl.the-ve-thay,.dong.the-ve-thay,.vach.the-ve-thay{display:none}}
+@media (max-width:1100px){.leo.nam .cot{height:210px}.leo.nam > div:nth-child(5) .bac{height:156px}.leo.nam > div:nth-child(4) .bac{height:130px}.leo.nam > div:nth-child(3) .bac{height:104px}.leo.nam > div:nth-child(2) .bac{height:78px}.leo.nam > div:nth-child(1) .bac{height:52px}}
+@media (max-width:1100px){.leo .cot{height:210px}.leo > div:nth-child(6) .bac{height:168px}.leo > div:nth-child(5) .bac{height:145px}.leo > div:nth-child(4) .bac{height:122px}.leo > div:nth-child(3) .bac{height:99px}.leo > div:nth-child(2) .bac{height:76px}.leo > div:nth-child(1) .bac{height:53px}.leo b{font-size:15px}.leo span{font-size:13.5px}}
+
+/* ============ ĐIỀU THAY ĐỔI: ảnh lớn xen kẽ trái phải ============ */
+.doi{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:56px;align-items:center}
+.doi + .doi{margin-top:84px;padding-top:84px;border-top:1px solid var(--line)}
+.doi .anh-khung{aspect-ratio:4/3}
+.doi.nguoc .anh-khung{order:2}
+.doi-chu{min-width:0}
+/* Tên của chuyển đổi là dòng quan trọng nhất khối, nên không để nó ở cỡ nhãn
+   11,5px màu xám mờ. Coach Duy bắt lỗi ngày 25/08/2026: "những dòng quan trọng
+   nhất thì lại mờ và nhỏ nhất". Nay là 16,5px đậm màu cam, kèm ô số. */
+/* Ba định dạng nội dung, dùng thay ảnh ở khối 03. Tên lớp phải riêng: lần đầu
+   tôi đặt là .fmt và va vào lớp .fmt sẵn có của trang, lớp đó có
+   flex-direction:column cùng hai thẻ giả vẽ đường nối và chấm tròn, nên ba khối
+   xếp dọc và mọc thêm một chấm. Đây là lỗi va tên lớp thứ ba của dự án. */
+.anh-khung.mp{display:grid;place-items:center;background:var(--bg-2);border:1px solid var(--line)}
+.ba-dang{display:flex;align-items:flex-end;justify-content:center;gap:22px}
+.ba-dang i{display:block;background:#fff;border:1px solid var(--line-2);border-radius:12px;box-shadow:var(--shadow-s);position:relative}
+.ba-dang i::after{content:'';position:absolute;left:12px;right:12px;bottom:12px;height:4px;border-radius:2px;background:var(--line-2)}
+.ba-dang i:nth-child(1){width:78px;height:134px}
+.ba-dang i:nth-child(2){width:110px;height:110px}
+.ba-dang i:nth-child(3){width:94px;height:72px}
+.ba-dang i:nth-child(2)::after{background:var(--cam)}
+@media (max-width:520px){.ba-dang{gap:14px}.ba-dang i:nth-child(1){width:60px;height:104px}.ba-dang i:nth-child(2){width:84px;height:84px}.ba-dang i:nth-child(3){width:72px;height:56px}}
+.doi-ten{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.doi-ten b{flex:none;width:34px;height:34px;border-radius:50%;background-color:var(--ink);background-image:var(--chip);color:#fff;font-family:var(--f-mono);font-size:13px;font-weight:600;display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(15,18,24,.5)}
+.doi-ten span{font-size:16.5px;font-weight:700;letter-spacing:-.01em;color:var(--cam-sau);line-height:1.25;text-wrap:balance}
+.doi h3{font-size:clamp(23px,2.6vw,32px);line-height:1.14;margin-bottom:20px}
+.canh{position:relative;padding:2px 0 2px 18px;border-left:3px solid var(--line-2);font-size:16px;line-height:1.6;color:var(--ink-2)}
+.canh em{font-style:normal;display:block;font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.canh.sau{border-left-color:var(--cam);color:var(--ink);font-weight:500}
+.canh.sau em{color:var(--cam-sau)}
+.sau-do{margin:20px 0;font-size:16.5px;line-height:1.65;color:var(--ink-2)}
+.sau-do b{color:var(--ink);font-weight:600}
+@media (max-width:900px){.doi{grid-template-columns:minmax(0,1fr);gap:26px}.doi.nguoc .anh-khung{order:0}.doi + .doi{margin-top:56px;padding-top:56px}}
+
+/* ============ BỐN TUẦN ============ */
+.nl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+@media (min-width:981px){.nl.ba{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ket6{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px;border-top:1px solid var(--ink)}
+.ket6 li{position:relative;padding:16px 0 16px 28px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.ket6 li::before{content:'';position:absolute;left:0;top:23px;width:9px;height:9px;border-radius:2px;background:var(--cam-dam)}
+@media (max-width:820px){.ket6{grid-template-columns:minmax(0,1fr);column-gap:0}}
+.nl > div{padding:24px 22px 26px 0;display:flex;flex-direction:column;gap:8px;position:relative}
+.nl > div + div{padding-left:22px;border-left:1px solid var(--line)}
+.nl .so{font-family:var(--f-tit);font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--cam-dam);font-weight:700;margin-bottom:6px}
+.nl h3{font-family:var(--f-than);font-size:18px;font-weight:700;letter-spacing:-.015em;line-height:1.3}
+.nl p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.nl .dat{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line-2);font-size:14.5px;color:var(--ink);line-height:1.45}
+@media (max-width:980px){.nl{grid-template-columns:repeat(2,minmax(0,1fr))}.nl > div:nth-child(3){padding-left:0;border-left:0}.nl > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.nl{grid-template-columns:minmax(0,1fr)}.nl > div{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}.nl > div:last-child{border-bottom:0}}
+.dong{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+.dong > div{padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--bg-2)}
+.dong b{display:block;font-size:14.5px;color:var(--ink);font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
+.dong p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+@media (max-width:620px){.dong{grid-template-columns:minmax(0,1fr)}}
+
+
+/* ============ KỆ HIỆN VẬT: bạn cầm về gì ============ */
+.ke{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ke > div{display:flex;flex-direction:column;gap:12px;padding:16px 18px 18px;border:1px solid var(--line);border-radius:var(--r);background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.ke > div:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.ke h3{font-family:var(--f-than);font-size:17.5px;font-weight:700;letter-spacing:-.015em;line-height:1.3}
+.ke ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ke li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.ke li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--cam-dam)}
+.mk{height:118px;border-radius:12px;background:linear-gradient(180deg,var(--bg-2),var(--bg-3));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.mk i,.mk b,.mk s{display:block}
+.mk-trang{width:86px;height:94px;border-radius:8px;background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-s);padding:12px;display:flex;flex-direction:column;gap:7px}
+.mk-trang b{width:70%;height:9px;border-radius:4px;background:var(--ink)}
+.mk-trang i{height:5px;border-radius:3px;background:var(--line-2)}
+.mk-trang i:nth-of-type(1){width:100%}.mk-trang i:nth-of-type(2){width:88%}.mk-trang i:nth-of-type(3){width:94%}.mk-trang i:nth-of-type(4){width:60%}
+.mk-chong{position:relative;width:104px;height:94px}
+.mk-chong i{position:absolute;left:0;top:0;width:80px;height:80px;border-radius:8px;background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-s)}
+.mk-chong i:nth-child(1){transform:translate(22px,12px) rotate(4deg);opacity:.5}
+.mk-chong i:nth-child(2){transform:translate(11px,6px);opacity:.8}
+.mk-chong i:nth-child(3){padding:10px;display:flex;flex-direction:column;gap:6px}
+.mk-chong i:nth-child(3) s{height:5px;border-radius:3px;background:var(--line-2)}
+.mk-chong i:nth-child(3) s:first-child{background:var(--ink);width:60%}
+.mk-lich{width:104px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.mk-lich i{aspect-ratio:1;border-radius:3px;background:#fff;border:1px solid var(--line-2)}
+.mk-lich i.on{background:var(--ink);border-color:var(--ink)}
+.mk-lich i.y{background:var(--cam);border-color:var(--cam-dam)}
+.mk-pheu{width:104px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.mk-pheu i{height:15px;border-radius:4px;background:#fff;border:1px solid var(--line-2)}
+.mk-pheu i:nth-child(1){width:100%}
+.mk-pheu i:nth-child(2){width:74%}
+.mk-pheu i:nth-child(3){width:48%}
+.mk-pheu i:nth-child(4){width:26px;height:26px;border-radius:50%;background:var(--cam);border-color:var(--cam-dam)}
+/* Mô phỏng bằng khối CSS, chỉ dùng vạch và hình, không dùng chữ giả.
+   Đây là hình minh họa thứ học viên làm ra, không phải ảnh chụp màn hình.
+   CHỖ THAY: khi có ảnh chụp bản mẫu thật (bản định vị, bảng tín hiệu, bộ mẫu
+   đặt bài), thay từng khối .mk bằng <img> đúng tỉ lệ 1/1 và giữ nguyên phần chữ. */
+.mk-video{width:62px;height:94px;border-radius:10px;background-color:var(--ink);background-image:var(--chip);border:1px solid var(--ink);position:relative;box-shadow:var(--shadow-s)}
+.mk-video b{position:absolute;left:50%;top:50%;transform:translate(-40%,-50%);width:0;height:0;border-left:15px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;background:none;border-radius:0}
+.mk-video i{position:absolute;left:10px;right:10px;bottom:10px;height:4px;border-radius:2px;background:rgba(255,255,255,.34)}
+.mk-video i:nth-of-type(2){right:34px;background:var(--cam)}
+.mk-dang{display:flex;align-items:flex-end;gap:9px}
+.mk-dang i{background:#fff;border:1px solid var(--line-2);border-radius:7px;box-shadow:var(--shadow-s)}
+.mk-dang i:nth-child(1){width:38px;height:64px}
+.mk-dang i:nth-child(2){width:52px;height:52px}
+.mk-dang i:nth-child(3){width:44px;height:34px}
+.mk-bang{width:106px;height:94px;border-radius:8px;background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-s);padding:11px;display:flex;flex-direction:column;justify-content:space-between}
+.mk-bang b{height:5px;width:56%;border-radius:3px;background:var(--ink)}
+.mk-bang i{display:flex;align-items:flex-end;gap:5px;height:46px}
+.mk-bang i s{flex:1;border-radius:3px 3px 0 0;background:var(--cam)}
+.mk-bang i s:nth-child(1){height:34%}
+.mk-bang i s:nth-child(2){height:52%}
+.mk-bang i s:nth-child(3){height:44%}
+.mk-bang i s:nth-child(4){height:74%}
+.mk-bang i s:nth-child(5){height:96%;background:var(--cam-dam)}
+/* Luật ghi đè .a.b bắt buộc nằm trong câu truy vấn khổ màn hình, nếu không nó
+   thắng cả các luật thu cột của lớp gốc. Đã mắc lỗi này ngày 24/08/2026. */
+@media (min-width:1041px){.ke.sau{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1040px){.ke{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.ke{grid-template-columns:minmax(0,1fr)}.mk{height:100px}}
+@supports (grid-template-rows: subgrid){.ke{grid-template-rows:auto auto 1fr}.ke > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:12px}}
+@media (max-width:1040px){@supports (grid-template-rows: subgrid){.ke > div{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}}}
+
+/* ============ KẾT QUẢ ============ */
+.ket-cap{margin-top:32px;padding:4px 0 4px 18px;border-left:3px solid var(--cam);max-width:820px}
+.ket-cap b{display:block;font-size:17px;color:var(--ink);font-weight:700;letter-spacing:-.01em;line-height:1.45}
+.ket-cap span{display:block;font-size:14.5px;color:var(--ink-2);margin-top:4px;line-height:1.55}
+
+/* lời mời giữa trang */
+.moi-giua{margin-top:44px;padding-top:28px;border-top:1px solid var(--line-2);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.moi-giua > p{font-size:16.5px;color:var(--ink);font-weight:500;max-width:44ch;flex:1;min-width:260px}
+.moi-giua .loi2{flex:none}
+@media (max-width:760px){.moi-giua{flex-direction:column;align-items:flex-start;gap:18px}}
+
+/* danh sách mười kết quả xếp hai cột */
+.vach.hai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
+@media (max-width:820px){.vach.hai{grid-template-columns:minmax(0,1fr);column-gap:0}}
+
+
+
+
+
+
+/* ============ DẢI ẢNH LÒ RÈN: chữ nằm trên nền đặc, ảnh nằm cạnh ============ */
+.bang-anh{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background-color:var(--ink);margin-bottom:22px}
+.bang-anh .chu{background-color:var(--ink);background-image:linear-gradient(160deg,#1A202C 0%,#0F1218 100%);padding:38px 34px 34px;display:flex;flex-direction:column;justify-content:center}
+.bang-anh .nhan{color:var(--cam);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.bang-anh .nhan::before{content:'';width:18px;height:2px;background:var(--cam);flex:none}
+.bang-anh h3{color:#fff;font-size:clamp(25px,2.9vw,36px);line-height:1.1;margin-bottom:14px}
+.bang-anh p{color:#D7DBE2;font-size:16.5px;line-height:1.6}
+.bang-anh .nguon{display:block;margin-top:18px;font-size:13px;color:#9AA2AF}
+.bang-anh .anh{position:relative;min-height:330px;background:var(--bg-3)}
+.bang-anh .anh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+@media (max-width:860px){.bang-anh{grid-template-columns:minmax(0,1fr)}.bang-anh .anh{min-height:0;aspect-ratio:4/3;order:-1}}
+@media (max-width:640px){.bang-anh .chu{padding:26px 20px 24px}.bang-anh p{font-size:15.5px}}
+
+/* ba thẻ ảnh: ảnh lớn, chữ ít */
+.the-anh{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.the-anh > figure{margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow-s);display:flex;flex-direction:column;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.the-anh > figure:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.the-anh .khung{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-3)}
+.the-anh .khung img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+@media (hover:hover){.the-anh > figure:hover .khung img{transform:scale(1.04)}}
+.the-anh figcaption{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px}
+.the-anh b{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.015em;line-height:1.3}
+.the-anh ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.the-anh li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.the-anh li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--cam-dam)}
+@media (max-width:900px){.the-anh{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.the-anh{grid-template-columns:minmax(0,1fr)}}
+@supports (grid-template-rows: subgrid){.the-anh{grid-template-rows:auto auto 1fr}.the-anh > figure{display:grid;grid-template-rows:subgrid;grid-row:span 3}.the-anh figcaption{display:contents}.the-anh b{padding:18px 20px 0}.the-anh ul{padding:8px 20px 20px}}
+@media (max-width:900px){@supports (grid-template-rows: subgrid){.the-anh > figure{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}.the-anh figcaption{display:flex}.the-anh b{padding:0}.the-anh ul{padding:0}}}
+
+/* ============ THANH TIẾN ĐỘ NĂM MỐC ============ */
+.tien-do{margin-top:56px;padding-top:36px;border-top:1px solid var(--line-2)}
+.tien-do .tieu{max-width:68ch;margin-bottom:34px}
+.tien-do .tieu h3{font-size:clamp(21px,2.3vw,28px);margin-bottom:10px}
+.tien-do .tieu p{font-size:15.5px;color:var(--ink-2)}
+.thanh{position:relative;height:10px;border-radius:5px;background:var(--bg-3);border:1px solid var(--line);margin:0 0 14px}
+.thanh i{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.thanh i.dat{background:var(--cam-dam);border-color:var(--cam-dam)}
+@media (max-width:700px){.thanh i{width:12px;height:12px;margin:-6px 0 0 -6px;border-width:1.5px}}
+.moc5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.moc5 > div{padding-top:6px}
+.moc5 b{display:block;font-family:var(--f-tit);font-size:22px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.moc5 span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:7px;line-height:1.45}
+.tien-do .ghi{margin-top:22px;font-size:14.5px;color:var(--ink-2);line-height:1.6;max-width:78ch;padding-left:16px;border-left:3px solid var(--cam)}
+@media (max-width:760px){.thanh{display:none}.moc5{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.moc5 > div{padding:14px 0;border-top:1px solid var(--line)}}
+@media (max-width:420px){.moc5{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ KHỐI GẬP: chi tiết cho người muốn xem kỹ ============ */
+.gap{margin-top:44px;border:1px solid var(--line);border-radius:var(--r);background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow-s);overflow:hidden}
+.gap > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 22px;font-size:16.5px;font-weight:600;color:var(--ink);transition:background .2s}
+.gap > summary::-webkit-details-marker{display:none}
+.gap > summary:hover{background:var(--bg-2)}
+.gap > summary:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.gap > summary i{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;position:relative;transition:background .2s,border-color .2s}
+.gap > summary i::before,.gap > summary i::after{content:'';position:absolute;background:var(--ink);width:11px;height:1.5px;left:6px;top:11px;transition:transform .28s var(--ease)}
+.gap > summary i::after{transform:rotate(90deg)}
+.gap[open] > summary i{background:var(--ink);border-color:var(--ink)}
+.gap[open] > summary i::before,.gap[open] > summary i::after{background:#fff}
+.gap[open] > summary i::after{transform:rotate(0)}
+.gap > summary span{color:var(--ink-3);font-weight:400;font-size:15px}
+.gap .noi-gap{padding:4px 22px 24px;border-top:1px solid var(--line)}
+@media (max-width:560px){.gap > summary{padding:16px 18px;font-size:15.5px;flex-wrap:wrap}.gap .noi-gap{padding:4px 18px 20px}}
+
+/* ============ CƠ CHẾ GIỮ NHỊP ============ */
+.giu{margin-top:56px;padding-top:36px;border-top:1px solid var(--line-2)}
+.giu .tieu{max-width:66ch;margin-bottom:26px}
+.giu .tieu h3{font-size:clamp(21px,2.3vw,28px);margin-bottom:10px}
+.giu .tieu p{font-size:15.5px;color:var(--ink-2)}
+.giu-o{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.giu-o > div{padding:20px 20px 22px;border:1px solid var(--line);border-radius:var(--r);background-color:#fff;background-image:var(--paper);box-shadow:var(--shadow-s);display:flex;flex-direction:column;gap:8px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.giu-o > div:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.giu-o .so{width:30px;height:30px;border-radius:9px;background-color:var(--ink);background-image:var(--chip);color:#fff;font-family:var(--f-mono);font-size:14px;font-weight:600;display:grid;place-items:center}
+.giu-o b{font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.3}
+.giu-o p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:1040px){.giu-o{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.giu-o{grid-template-columns:minmax(0,1fr)}}
+@supports (grid-template-rows: subgrid){.giu-o{grid-template-rows:auto auto 1fr}.giu-o > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:8px}}
+@media (max-width:1040px){@supports (grid-template-rows: subgrid){.giu-o > div{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}}}
+
+/* ============ LỊCH MỘT TUẦN ============ */
+.tuan{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-bottom:26px}
+.tuan > div{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 8px 12px;text-align:center;display:flex;flex-direction:column;gap:8px;min-height:104px}
+.tuan .ngay{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.tuan .viec{font-size:13.5px;line-height:1.35;color:var(--ink-2);font-weight:500}
+.tuan .gio{font-size:13px;color:var(--ink-3);margin-top:auto}
+.tuan > div.buoi{background-color:var(--ink);background-image:var(--chip);border-color:var(--ink)}
+.tuan > div.buoi .ngay{color:rgba(255,255,255,.72)}
+.tuan > div.buoi .viec{color:#fff;font-weight:700}
+.tuan > div.buoi .gio{color:rgba(255,255,255,.72)}
+.tuan > div.thuchanh{background:var(--cam-mo);border-color:var(--cam-dam)}
+.tuan > div.thuchanh .ngay{color:var(--cam-sau)}
+.tuan > div.thuchanh .viec{color:var(--cam-sau);font-weight:700}
+.tuan > div.thuchanh .gio{color:var(--cam-sau)}
+.tuan > div.nghi{background:var(--bg-2);border-style:dashed;border-color:var(--line-2)}
+.tuan-ghi{font-size:14.5px;color:var(--ink-3);margin-bottom:26px;max-width:74ch}
+@media (max-width:900px){.tuan{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.tuan{grid-template-columns:repeat(2,minmax(0,1fr))}.tuan > div{min-height:92px}}
+@supports (grid-template-rows: subgrid){.tuan{grid-template-rows:auto auto 1fr}.tuan > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:8px}.tuan .gio{margin-top:0}}
+@media (max-width:900px){@supports (grid-template-rows: subgrid){.tuan > div{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}.tuan .gio{margin-top:auto}}}
+
+
+/* ============ DÒNG NHÂN DẠNG ============ */
+#ket-qua .dau-phan{margin-bottom:26px}
+/* Khối chốt của phần nỗi sợ. Trước đây là ô nền hồng nhạt viền mảnh, đọc ra
+   như hộp chú thích trong tài liệu văn phòng. Coach Duy gọi là quê, không cao
+   cấp, ngày 25/08/2026. Nay là khối tối duy nhất trên trang sáng, đúng chỗ cần
+   nặng ký: nền than có chiều sâu, một quầng cam rất nhạt ở góc, vạch vàng kim
+   mảnh trên đỉnh, chữ lớn trắng và một mệnh đề nhấn bằng vàng kim.
+   Cảm giác cao cấp đến từ chiều sâu và khoảng thở, không từ viền và nền màu. */
+/* Cái giá của việc để nguyên. Bốn mục lấy từ cột "đang ảnh hưởng thế nào" trong
+   khảo sát, giữ đúng thứ tự người trả lời chọn nhiều nhất. */
+.cai-gia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:34px 0 0}
+.cai-gia > div{padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--cam);border-radius:var(--r-s);background-color:#fff;background-image:var(--paper);font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.cai-gia b{display:block;color:var(--ink);font-weight:600;margin-bottom:3px}
+@media (max-width:700px){.cai-gia{grid-template-columns:minmax(0,1fr)}}
+.nhan-dang{position:relative;margin:0;padding:clamp(40px,4.4vw,62px) clamp(26px,3.4vw,50px);border-radius:var(--r);overflow:hidden;text-align:center;background-color:var(--ink);background-image:linear-gradient(170deg,#1C222D 0%,#0F1218 64%);box-shadow:var(--shadow)}
+.nhan-dang::before{content:'';position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 0%,rgba(201,138,40,.22),transparent 62%);pointer-events:none}
+.nhan-dang::after{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;width:56px;height:3px;background:var(--vang-toi);border-radius:0 0 3px 3px}
+.nhan-dang b{position:relative;display:block;font-family:var(--f-tit);font-size:clamp(21px,2.5vw,31px);letter-spacing:-.025em;line-height:1.25;color:#fff;margin:0 auto 18px;text-wrap:balance;max-width:33ch}
+.nhan-dang b i{font-style:normal;color:var(--vang-toi)}
+.nhan-dang span{position:relative;display:block;font-size:16px;line-height:1.6;color:#C4CBD6;max-width:58ch;margin:0 auto}
+
+/* ============ CÁCH HỌC ============ */
+.hoc{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:start}
+.dsach{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.dsach li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.dsach li i{flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--cam-dam);color:#fff;display:grid;place-items:center}
+.dsach li i svg{width:11px;height:11px}
+.dsach li b{color:var(--ink);font-weight:600}
+.luu{border:1px dashed var(--line-2);border-radius:var(--r);padding:20px 22px;background:rgba(255,255,255,.7);font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.luu b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cam-dam);font-weight:600;margin-bottom:8px}
+.khoi-luong{margin-top:56px}
+.khoi-luong .tieu{max-width:64ch;margin-bottom:24px}
+.khoi-luong .tieu h3{font-size:clamp(21px,2.3vw,28px);margin-bottom:8px}
+.khoi-luong .tieu p{font-size:15.5px;color:var(--ink-3)}
+.sl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.sl > div{padding:20px 20px 22px 0}
+.sl > div + div{padding-left:20px;border-left:1px solid var(--line)}
+.sl b{display:block;font-family:var(--f-tit);font-size:34px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.sl p{font-size:14.5px;color:var(--ink-2);margin-top:8px;line-height:1.5}
+@media (max-width:900px){.hoc{grid-template-columns:minmax(0,1fr);gap:28px}.sl{grid-template-columns:repeat(2,minmax(0,1fr))}.sl > div:nth-child(3){padding-left:0;border-left:0}.sl > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.sl{grid-template-columns:minmax(0,1fr)}.sl > div{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}.sl > div:last-child{border-bottom:0}}
+
+/* ============ RANH GIỚI: khối tối duy nhất giữa trang ============ */
+.toi{background:var(--ink);color:rgba(255,255,255,.84);border-radius:var(--r);padding:40px;box-shadow:var(--shadow)}
+.toi h3{color:#fff;font-size:clamp(22px,2.5vw,30px);margin-bottom:20px;max-width:26ch}
+.toi .cot2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.toi p{font-size:15.5px;line-height:1.65}
+.toi p + p{margin-top:12px}
+.toi b{color:#fff;font-weight:600}
+.toi .chot{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:16.5px;color:#fff;font-weight:500;max-width:72ch}
+@media (max-width:820px){.toi{padding:28px}.toi .cot2{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* ============ PHÙ HỢP VÀ CHƯA PHÙ HỢP ============ */
+.hop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.hop > div{padding:26px;border-radius:var(--r);border:1px solid var(--line);background:#fff}
+.hop > div.chua{background:var(--bg-2);border-style:dashed;border-color:var(--line-2)}
+.hop h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;margin-bottom:14px}
+.hop ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.hop li{position:relative;padding-left:26px;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
+.hop li::before{position:absolute;left:0;top:0;font-family:var(--f-mono);font-size:14px;font-weight:600}
+.hop .co li::before{content:'+';color:var(--cam-dam)}
+.hop .chua li::before{content:'–';color:var(--ink-3)}
+@media (max-width:820px){.hop{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ MỨC ĐẦU TƯ ============ */
+.gia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.gia-the{position:relative;padding:28px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);background-color:#fff;box-shadow:var(--shadow-s);display:flex;flex-direction:column;gap:10px}
+.gia-the.dang{border-color:var(--ink);box-shadow:var(--shadow)}
+.gia-the .khi{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.gia-the.dang .khi{color:var(--cam-dam)}
+.gia-the .so-lon{font-family:var(--f-tit);font-size:clamp(38px,4.6vw,54px);line-height:1;letter-spacing:-.04em;color:var(--ink);font-weight:700}
+.gia-the .so-lon small{font-size:17px;font-weight:600;letter-spacing:0;color:var(--ink-3);margin-left:6px}
+.gia-the .thue{font-size:15.5px;color:var(--ink-2)}
+.gia-the .thue b{color:var(--ink);font-weight:600}
+.gia-the .khi-ap{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line-2);font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.gia-ghi{margin-top:26px;display:flex;flex-direction:column;gap:12px;max-width:80ch}
+.gia-ghi p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.gia-ghi p b{color:var(--ink);font-weight:600}
+@media (max-width:760px){.gia{grid-template-columns:minmax(0,1fr)}}
+.khong-bd{margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.khong-bd .tieu{grid-column:1/-1;font-size:15.5px;font-weight:600;color:var(--ink)}
+.khong-bd > div{padding:16px 18px;border:1px dashed var(--line-2);border-radius:var(--r-s);background:rgba(255,255,255,.6);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+@media (max-width:700px){.khong-bd{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ BẰNG CHỨNG VÀ NGƯỜI DẠY ============ */
+.ai2{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;align-items:stretch}
+.ai2 .anh-khung{height:100%;min-height:440px}
+.ai2 .gioi h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:6px}
+.ai2 .gioi .vai{font-size:15px;color:var(--ink-3);margin-bottom:20px}
+.ai2 .gioi p.doan{font-size:16.5px;line-height:1.65;color:var(--ink-2)}
+.ai2 .gioi p.doan + p.doan{margin-top:12px}
+.nguon{margin-top:12px;font-size:13px;line-height:1.5;color:var(--ink-3)}
+.xem-mau{margin-top:24px;padding:18px 0 0;border-top:1px solid var(--ink)}
+.xem-mau b{display:block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:7px;text-wrap:balance}
+.xem-mau p{font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.ai2 .gioi p.doan b{color:var(--ink);font-weight:600}
+.so-day{margin:28px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.so-day > div{padding:16px 14px 0 0}
+.so-day > div + div{padding-left:16px;border-left:1px solid var(--line)}
+.so-day b{display:block;font-family:var(--f-tit);font-size:28px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.so-day span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:7px;line-height:1.4}
+.so-day span em{font-style:normal;display:block;color:var(--ink-2);font-weight:600;margin-bottom:2px}
+@media (max-width:600px){.so-day{grid-template-columns:minmax(0,1fr)}.so-day > div{padding:14px 0;border-left:0!important;border-bottom:1px solid var(--line)}.so-day > div + div{padding-left:0}.so-day > div:last-child{border-bottom:0}}
+@supports (grid-template-rows: subgrid){.so-day{grid-template-rows:auto 1fr}.so-day > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}}
+@media (max-width:600px){@supports (grid-template-rows: subgrid){.so-day > div{grid-row:auto;grid-template-rows:none;display:block}}}
+
+@media (max-width:1100px){.ai2{grid-template-columns:minmax(0,1fr);gap:26px}.ai2 .anh-khung{max-width:340px;height:auto;min-height:0;aspect-ratio:3/4}}
+
+
+/* ============ HỎI ĐÁP ============ */
+.faq{border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow-s);overflow:hidden}
+.faq .muc{border-bottom:1px solid var(--line)}
+.faq .muc:last-child{border-bottom:0}
+.faq button{all:unset;display:grid;grid-template-columns:40px minmax(0,1fr) 28px;gap:14px;align-items:baseline;width:100%;box-sizing:border-box;padding:20px 24px;cursor:pointer;transition:background .2s}
+.faq button:hover{background:var(--bg-2)}
+.faq button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.faq button b{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.04em}
+.faq button span{font-size:18.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.35}
+.faq button i{justify-self:end;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;position:relative;transition:transform .28s var(--ease),background .2s;align-self:center}
+.faq button i::before,.faq button i::after{content:'';position:absolute;background:var(--ink);width:10px;height:1.5px;left:5px;top:9.5px;transition:transform .28s var(--ease)}
+.faq button i::after{transform:rotate(90deg)}
+.faq .muc.mo button i{background:var(--ink);border-color:var(--ink)}
+.faq .muc.mo button i::before,.faq .muc.mo button i::after{background:#fff}
+.faq .muc.mo button i::after{transform:rotate(0)}
+.faq .than{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s var(--ease)}
+.faq .muc.mo .than{grid-template-rows:1fr}
+.faq .than > div{overflow:hidden}
+.faq .than p{padding:0 24px 22px 78px;font-size:16px;line-height:1.65;color:var(--ink-2)}
+.faq .than p + p{padding-top:0;margin-top:-8px}
+@media (max-width:620px){.faq button{grid-template-columns:30px minmax(0,1fr) 24px;padding:16px 18px}.faq .than p{padding:0 18px 18px 18px}.faq button span{font-size:17px}}
+
+/* ============ ĐĂNG KÝ ============ */
+.dang-ky{padding:96px 0 104px;border-top:1px solid var(--line)}
+.dk-khung{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:48px;align-items:start}
+.dk-khung h2{font-size:clamp(28px,3.3vw,42px)}
+.dk-khung h2 span{color:var(--ink-3)}
+.dk-khung .dan{font-size:17px;color:var(--ink-2);margin-top:16px;max-width:50ch}
+.dk-buoc{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--line)}
+.dk-buoc li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--ink-2);align-items:baseline}
+.dk-buoc li b{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--cam-dam)}
+.dk-buoc li strong{color:var(--ink);font-weight:600}
+.form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.form .nhom{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:4px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.form .nhom + .nhom{margin-top:0}
+.form .nhom.sau{margin-top:22px}
+.form .gia-form{margin:0 0 18px;padding:14px 16px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.form .gia-form b{color:var(--ink);font-weight:600}
+.form .hang{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.form label small{font-weight:500;color:var(--ink-3);font-size:13px}
+.form input,.form select,.form textarea{height:46px;padding:0 14px;border:1px solid var(--line-2);border-radius:12px;background:#fff;font-size:15.5px;font-weight:400;color:var(--ink);width:100%;transition:border-color .16s,box-shadow .16s}
+.form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%233D4451' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form textarea{height:auto;min-height:88px;padding:12px 14px;resize:vertical;line-height:1.5}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--cam-dam);box-shadow:0 0 0 3px rgba(179,78,48,.14)}
+.form input::placeholder,.form textarea::placeholder{color:#8A919D}
+.form .chon{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;font-size:14px;font-weight:500;color:var(--ink-2);line-height:1.5}
+.form .chon input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--cam-dam)}
+.form .chan{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.form .chan .nut{width:100%;min-height:52px;font-size:16px}
+.form .chan p{font-size:13.5px;color:var(--ink-3);line-height:1.5}
+.form .xong{display:none;padding:20px;border-radius:12px;background:#EEF7F1;border:1px solid #CFE6D7;color:#17543A;font-size:15px;line-height:1.6}
+.form .xong b{display:block;color:var(--dung);font-weight:700;margin-bottom:6px;font-size:16px}
+.form.da-gui .xong{display:block}
+.form.da-gui .an-khi-xong{display:none}
+.form .loi{display:none;font-size:13.5px;color:#9A2A1A;margin-top:-6px;margin-bottom:12px}
+.form.co-loi .loi{display:block}
+.ck{margin-top:16px;padding:18px;border-radius:12px;border:1px dashed var(--line-2);background:var(--bg-2);font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.ck b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:8px}
+.ck .dong-ck{display:flex;justify-content:space-between;gap:14px;padding:4px 0;border-bottom:1px solid var(--line)}
+.ck .dong-ck:last-of-type{border-bottom:0}
+.ck .dong-ck span:first-child{color:var(--ink-3);flex:none}
+.ck .dong-ck span:last-child{color:var(--ink);font-weight:600;text-align:right;font-family:var(--f-mono);font-size:14px}
+@media (max-width:900px){.dk-khung{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media (max-width:560px){.form{padding:20px}.form .hang{grid-template-columns:minmax(0,1fr);gap:0}}
+
+/* ============ CHÂN TRANG ============ */
+.chan-trang{border-top:1px solid var(--line);padding:36px 0 44px;font-size:14px;color:var(--ink-3)}
+.chan-trang .bao-rong{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.chan-trang a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.chan-trang a:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
+.chan-trang .lk{display:flex;gap:20px;flex-wrap:wrap}
+.chan-hieu{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.chan-hieu .dau-hieu{width:30px;height:30px;flex:none;color:var(--ink);margin-top:2px}
+.chan-hieu b{font-family:var(--f-tit);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.02em}
+
+/* ============ KHOÁ HÀNG THẲNG NHAU ============ */
+@supports (grid-template-rows: subgrid){
+  .nl{grid-template-rows:auto auto 1fr auto}
+  .nl > div{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:8px}
+  .nl .dat{margin-top:0}
+  .nam5{grid-template-rows:auto 1fr}
+  .nam5 > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .nam5 b{margin-bottom:0}
+  .dong{grid-template-rows:auto 1fr}
+  .dong > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .dong b{margin-bottom:0}
+  .cap3{grid-template-rows:auto auto 1fr auto}
+  .cap-the{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:12px}
+  .cap-the .dinh{margin-top:0}
+  .gia{grid-template-rows:auto auto auto 1fr}
+  .gia-the{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:10px}
+  .gia-the .khi-ap{margin-top:0}
+}
+@media (max-width:980px){
+  @supports (grid-template-rows: subgrid){
+    .nl > div,.nam5 > div,.dong > div,.cap-the,.gia-the{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}
+    .nl .dat,.cap-the .dinh,.gia-the .khi-ap{margin-top:auto}
+    .nam5 b,.dong b{margin-bottom:6px}
+  }
+}
+
+/* ============ CHUYỂN ĐỘNG ============ */
+.js .hien{opacity:0;transform:translateY(14px);transition:opacity .56s var(--ease),transform .56s var(--ease)}
+.js .hien.in{opacity:1;transform:none}
+.js .hien.tre > *{opacity:0;transform:translateY(12px);transition:opacity .56s var(--ease),transform .56s var(--ease)}
+.js .hien.tre.in > *{opacity:1;transform:none}
+.js .hero .hero-chu > *,.js .hero .hero-anh > *{opacity:0;transform:translateY(16px)}
+.js .hero.len .hero-chu > *,.js .hero.len .hero-anh > *{opacity:1;transform:none;transition:opacity .72s var(--ease),transform .72s var(--ease)}
+.noanim .hien,.noanim .hien.tre > *,.noanim .hero .hero-chu > *,.noanim .hero .hero-anh > *{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+.noanim .vien i{animation:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hien,.js .hien.tre > *,.js .hero .hero-chu > *,.js .hero .hero-anh > *{transform:none!important;transition:opacity .4s!important}
+  .o,.nut,.vach li,.cap-the{transition:none!important}
+  .vien i{animation:none}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course",
+ "name":"Trusted Sales Team System",
+ "alternateName":"Xây dựng Đội ngũ Tư vấn Bán hàng Chuyên nghiệp và Tin cậy",
+ "description":"Chương trình tám tuần giúp doanh nghiệp tạo một chuẩn tư vấn chung, đưa chuẩn đó vào tình huống khách hàng thật, và giúp quản lý biết tự huấn luyện tiếp sau khi chương trình kết thúc.",
+ "inLanguage":"vi","url":"https://coachduynguyen.vn/sales-team/",
+ "provider":{"@type":"Person","name":"Coach Duy Nguyễn","url":"https://coachduynguyen.vn/"},
+ "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":"https://coachduynguyen.vn/ve-toi.html"},
+ "audience":{"@type":"Audience","audienceType":"Doanh nghiệp có đội ngũ đang trực tiếp tư vấn và bán hàng"},
+ "coursePrerequisites":[
+   "Sản phẩm hoặc dịch vụ cần tư vấn trước khi khách quyết định",
+   "Đã có đội ngũ và một người sở hữu được việc triển khai",
+   "Có tình huống khách hàng thật trong suốt tám tuần",
+   "Cho phép ghi nhận và xem lại một số tình huống theo thỏa thuận bảo mật"],
+ "teaches":["Chuẩn tư vấn chung cho đội ngũ","Chẩn đoán trước khi đề xuất",
+            "Xử lý băn khoăn không gây áp lực","Cách quản lý xem tình huống và góp ý"],
+ "hasCourseInstance":{"@type":"CourseInstance","courseMode":"blended",
+   "courseWorkload":"P8W","inLanguage":"vi",
+   "instructor":{"@type":"Person","name":"Coach Duy Nguyễn"}}}
+</script>
+</head>
+<body>
+
+<!-- ================= THANH ĐIỀU HƯỚNG ================= -->
+<header class="nav" id="top">
+  <div class="bao-rong">
+    <a class="logo" href="#top"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#C98A28"/></svg><span class="ten-hieu">Trusted Sales Team System<small>Tám tuần &middot; Coach Duy Nguyễn</small></span></a>
+    <nav class="nav-links" id="nav-links" aria-label="Các trang"><a href="https://coachduynguyen.vn/cong-dong/">Cộng đồng</a><a href="https://coachduynguyen.vn/ve-toi.html">Về Duy</a><a class="on" aria-current="page" href="#top">Chương trình</a><a href="https://coachduynguyen.vn/phuong-phap.html">Phương pháp</a><a href="https://coachduynguyen.vn/blog.html">Blog</a><a href="https://coachduynguyen.vn/sach.html">Sách</a><a href="https://coachduynguyen.vn/kenh-youtube.html">YouTube</a><a href="https://coachduynguyen.vn/lien-he.html">Liên hệ</a></nav>
+    <a class="nut nho" href="#trao-doi"><span class="nowrap">Trao đổi</span></a>
+    <span class="tien" id="tien" aria-hidden="true"></span>
+  </div>
+  <div class="nav-phan-bao">
+    <nav class="nav-phan" id="nav-phan" aria-label="Các phần của trang"><a href="#van-de">Chỗ nghẽn</a> <a href="#ai-tham-gia">Ai tham gia</a> <a href="#tam-tuan">Tám tuần</a> <a href="#cam-ve">Cầm về gì</a> <a href="#ranh-gioi">Ranh giới</a> <a href="#trao-doi">Trao đổi</a> <a href="#hoi-dap">Hỏi đáp</a></nav>
+  </div>
+</header>
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" aria-label="Giới thiệu chương trình">
+  <div class="bao">
+    <div class="hero-luoi">
+      <div class="hero-chu">
+        <span class="vien"><i></i>Cho doanh nghiệp có đội ngũ đang trực tiếp tư vấn và bán hàng</span>
+        <h1>Khách tin bạn. <span>Nhưng họ chưa tin đội ngũ của bạn ở cùng một mức.</span></h1>
+        <p class="dan"><b>Trusted Sales Team System</b> là chương trình tám tuần giúp doanh nghiệp tạo một chuẩn tư vấn chung, đưa chuẩn đó vào tình huống khách hàng thật, và giúp quản lý biết tự huấn luyện tiếp sau khi chương trình kết thúc.</p>
+        <ul class="hero-ket">
+          <li class="tieu" style="padding-left:0">Sau tám tuần, doanh nghiệp có</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Một chuẩn tư vấn chung mà cả đội ngũ hiểu giống nhau.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Đội ngũ biết chẩn đoán trước khi đề xuất, không giới thiệu sản phẩm quá sớm.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quản lý biết xem tình huống và góp ý theo chuẩn, để duy trì khi Duy đã rời đi.</li>
+        </ul>
+        <div style="margin-top:30px"><a class="nut" href="#trao-doi">Trao đổi về đội ngũ của bạn</a></div>
+      </div>
+      <div class="hero-anh">
+        <img src="/img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng lớp trước một đội ngũ" width="560" height="700" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VẤN ĐỀ ================= -->
+<section class="phan nen" id="van-de">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Chỗ nghẽn thật</span>
+      <h2>Người chủ vẫn phải có mặt ở những cuộc quan trọng. <span>Không phải vì đội ngũ lười, mà vì mỗi người tư vấn một kiểu.</span></h2>
+      <p class="dan">Sáu dấu hiệu dưới đây lặp lại ở gần như mọi doanh nghiệp Duy ngồi cùng. Nếu bạn nhận ra bốn trong sáu, chỗ nghẽn của bạn nằm ở chất lượng cuộc tư vấn, không nằm ở số khách.</p>
+    </div>
+    <div class="noi hien tre">
+      <div><i>&ldquo;</i><p>Đội ngũ hỏi chưa tới nên chưa hiểu đúng nhu cầu của khách.</p></div>
+      <div><i>&ldquo;</i><p>Cứ giới thiệu sản phẩm quá sớm, khách chưa kịp thấy vấn đề của mình.</p></div>
+      <div><i>&ldquo;</i><p>Gặp băn khoăn là giải thích dài, hoặc gây áp lực cho xong.</p></div>
+      <div><i>&ldquo;</i><p>Mỗi người tư vấn một kiểu, không ai giống ai.</p></div>
+      <div><i>&ldquo;</i><p>Quản lý nghe lại cuộc gọi nhưng chưa có chuẩn rõ để góp ý.</p></div>
+      <div><i>&ldquo;</i><p>Thông tin sau tư vấn không được ghi đủ để chăm sóc tiếp.</p></div>
+    </div>
+    <div class="cai-gia hien tre">
+      <div><b>Giao dịch lớn vẫn chờ bạn</b>Càng nhiều khách, bạn càng phải quay lại bán hàng.</div>
+      <div><b>Đội ngũ không giỏi lên được</b>Mỗi lần bạn vào cứu là một lần họ mất dịp tập.</div>
+      <div><b>Không biết hỏng ở đâu</b>Thua một khách mà không ai chỉ ra được lệch chuẩn ở bước nào.</div>
+      <div><b>Người giỏi nghỉ là mất luôn cách làm</b>Kinh nghiệm nằm trong đầu vài người, không nằm trong chuẩn chung.</div>
+    </div>
+    <div class="nhan-dang hien" style="margin-top:34px">
+      <b>Khách có thể tin người sáng lập mà chưa tin đội ngũ ở cùng một mức. <i>Chừng nào khoảng chênh đó còn, doanh nghiệp càng đông khách thì người chủ càng bận.</i></b>
+      <span>Tám tuần này nhắm thẳng vào khoảng chênh đó, không bắt đầu từ việc tuyển thêm người.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AI THAM GIA ================= -->
+<section class="phan" id="ai-tham-gia">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Bốn vai</span>
+      <h2>Đây là chương trình cho doanh nghiệp, <span>không phải khóa kỹ năng cho cá nhân.</span></h2>
+      <p class="dan">Thiếu một trong bốn vai dưới đây thì kết quả không giữ được sau khi chương trình kết thúc. Vai thứ hai là vai hay bị bỏ qua nhất, và cũng là vai quyết định.</p>
+    </div>
+    <div class="doi-chu hien tre">
+      <div class="doi-ten"><b>01</b><span>Người mua và bảo trợ</span></div>
+      <h3>Nhà sáng lập hoặc chủ doanh nghiệp</h3>
+      <p class="sau-do">Bạn xác định bài toán kinh doanh, bảo trợ thời gian thực hành cho đội ngũ, và phê duyệt bộ chuẩn cuối cùng. Bạn không cần dự hết mọi buổi, nhưng phải có mặt ở buổi khởi động, buổi rà soát giữa kỳ và buổi đánh giá cuối.</p>
+    </div>
+    <div class="doi-chu hien tre">
+      <div class="doi-ten"><b>02</b><span>Người sở hữu việc triển khai</span></div>
+      <h3>Trưởng nhóm hoặc quản lý bán hàng</h3>
+      <p class="sau-do">Đây là vai bắt buộc. Người này tham gia đầy đủ các phần cốt lõi, xem tình huống thật, góp ý hằng tuần, và tiếp quản nhịp huấn luyện khi chương trình kết thúc. Không có vai này thì sau tám tuần mọi thứ quay về chỗ cũ.</p>
+    </div>
+    <div class="doi-chu hien tre">
+      <div class="doi-ten"><b>03</b><span>Người thực hành</span></div>
+      <h3>Nhân sự tư vấn, bán hàng hoặc chăm sóc</h3>
+      <p class="sau-do">Những người có mặt trong cuộc trao đổi dẫn tới quyết định mua. Họ học phương pháp, thực hành trên tình huống thật của chính doanh nghiệp, tự xem lại và sửa từng hành vi một.</p>
+    </div>
+    <div class="doi-chu hien tre">
+      <div class="doi-ten"><b>04</b><span>Duy và đội ngũ</span></div>
+      <h3>Dạy phương pháp và huấn luyện người quản lý</h3>
+      <p class="sau-do">Duy dạy phương pháp, làm rõ tiêu chuẩn, hiệu chỉnh cách hiểu giữa người chủ, quản lý và đội ngũ, xem các tình huống đại diện, rồi huấn luyện người quản lý biết quan sát và góp ý. Duy không xem thay toàn bộ tình huống của doanh nghiệp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TÁM TUẦN ================= -->
+<section class="phan nen" id="tam-tuan">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Cách chương trình chạy</span>
+      <h2>Hai ngày học, sáu tuần làm thật, <span>một tuần bàn giao.</span></h2>
+      <p class="dan">Hai ngày đầu không nhằm nhồi hết mọi kịch bản. Mục tiêu là cả đội ngũ hiểu cùng một ngôn ngữ, thực hành bản đầu, và biết tuần sau phải sửa hành vi nào.</p>
+    </div>
+    <div class="ke sau hien tre">
+      <div>
+        <h3>Trước khi bắt đầu: chẩn đoán</h3>
+        <ul>
+          <li>Phỏng vấn người chủ và quản lý bán hàng.</li>
+          <li>Thu một số tình huống tư vấn đại diện và dữ liệu đang có.</li>
+          <li>Xác định hành vi cần đổi và cách đo trước sau.</li>
+          <li>Chọn nhóm tham gia, người sở hữu và lịch thực hành.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tuần 1: hai ngày học tập trung</h3>
+        <ul>
+          <li>Từ người bán hàng thành người cố vấn được tin cậy.</li>
+          <li>Tâm lý khách trong quyết định có mức cân nhắc cao.</li>
+          <li>Nghe, hỏi và tìm đúng vấn đề trước khi đề xuất.</li>
+          <li>Tạo bản đầu của tiêu chuẩn tư vấn và bảng đánh giá.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tuần 2 tới 7: làm trên tình huống thật</h3>
+        <ul>
+          <li>Nhân sự tư vấn thật và ghi lại theo cách đã thống nhất.</li>
+          <li>Tự xem lại theo bảng tiêu chí, rồi quản lý chọn tình huống đại diện.</li>
+          <li>Duy hiệu chỉnh một số tình huống và huấn luyện quản lý ở điểm lệch chuẩn.</li>
+          <li>Mỗi người chọn một hành vi để sửa trong tuần kế tiếp.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tuần 8: đánh giá và bàn giao</h3>
+        <ul>
+          <li>Đánh giá lại hành vi cốt lõi trên tình huống thật.</li>
+          <li>So sánh trước sau ở cấp cá nhân và cấp đội ngũ.</li>
+          <li>Hoàn thiện bộ tiêu chuẩn tư vấn của doanh nghiệp.</li>
+          <li>Chốt kế hoạch duy trì 90 ngày và người phụ trách.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gia-ghi hien" style="margin-top:34px">
+      <p><b>Sáu tuần giữa không mở thêm buổi dạy lý thuyết nếu đội ngũ chưa dùng được phần đã học.</b> Kiến thức bổ sung chỉ xuất hiện khi một tình huống thật cho thấy có khoảng trống chung. Học thêm trong lúc chưa làm được phần cũ là cách chắc chắn nhất để không đổi được gì.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CẦM VỀ GÌ ================= -->
+<section class="phan" id="cam-ve">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Bảy thứ ở lại</span>
+      <h2>Doanh nghiệp giữ được gì sau khi Duy rời đi</h2>
+      <p class="dan">Bảy thứ này phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai dùng thì không tính là hoàn thành.</p>
+    </div>
+    <div class="ke sau hien tre">
+      <div><h3>Bộ tiêu chuẩn tư vấn</h3><ul><li>Phiên bản đầu, viết theo bối cảnh doanh nghiệp bạn.</li></ul></div>
+      <div><h3>Quy trình tư vấn đã hiệu chỉnh</h3><ul><li>Điều chỉnh theo sản phẩm và cách khách của bạn quyết định.</li></ul></div>
+      <div><h3>Bảng đánh giá chất lượng</h3><ul><li>Dùng để chấm một cuộc tư vấn, không chấm cảm tính.</li></ul></div>
+      <div><h3>Bộ tình huống đại diện</h3><ul><li>Kèm nhận xét và bài học, dùng để huấn luyện người mới.</li></ul></div>
+      <div><h3>Hướng dẫn cho quản lý</h3><ul><li>Cách xem tình huống và góp ý mà không làm người kia thủ thế.</li></ul></div>
+      <div><h3>Chuẩn ghi nhận và bàn giao</h3><ul><li>Thông tin sau tư vấn đủ để người sau chăm sóc tiếp.</li></ul></div>
+      <div><h3>Báo cáo trước sau</h3><ul><li>Kèm kế hoạch duy trì 90 ngày và người chịu trách nhiệm.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RANH GIỚI ================= -->
+<section class="phan nen" id="ranh-gioi">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Ranh giới</span>
+      <h2>Chương trình này không nhận thay sáu việc dưới đây</h2>
+      <p class="dan">Duy ghi phần này rõ ngang phần kết quả. Một chương trình nhận mọi thứ là một chương trình không giao được thứ gì cho ra hồn.</p>
+    </div>
+    <div class="hop hien tre">
+      <div class="co">
+        <h3>Chương trình phù hợp nếu</h3>
+        <ul>
+          <li>Sản phẩm hoặc dịch vụ của bạn cần tư vấn trước khi khách quyết định.</li>
+          <li>Đã có đội ngũ và một quản lý, hoặc ít nhất một người sở hữu được việc triển khai.</li>
+          <li>Có tình huống khách hàng thật trong suốt tám tuần để mang vào thực hành.</li>
+          <li>Cho phép ghi nhận và xem lại một số tình huống theo thỏa thuận bảo mật.</li>
+          <li>Người chủ dành thời gian cho buổi khởi động, rà soát giữa kỳ và đánh giá cuối kỳ.</li>
+          <li>Đội ngũ sẵn sàng thực hành, nhận góp ý và sửa cách làm.</li>
+        </ul>
+      </div>
+      <div class="chua">
+        <h3>Chương trình không nhận</h3>
+        <ul>
+          <li>Thiết kế cơ cấu phòng kinh doanh.</li>
+          <li>Tuyển dụng và phân vai toàn bộ đội ngũ.</li>
+          <li>Xây cơ chế lương, thưởng và chỉ tiêu.</li>
+          <li>Cài đặt đầy đủ hệ thống quản lý khách hàng.</li>
+          <li>Tái cấu trúc kênh thu hút hoặc hệ thống vận hành.</li>
+          <li>Cam kết doanh số.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gia-ghi hien" style="margin-top:34px">
+      <p><b>Sáu việc bên phải thuộc phạm vi Founder Growth System hoặc một hợp đồng doanh nghiệp riêng.</b> Chương trình này chịu trách nhiệm cho chất lượng cuộc tư vấn và khả năng huấn luyện đội ngũ. Giữ đúng ranh giới đó là cách để nó giao được thứ đã hứa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ĐANG CHẠY THỬ ================= -->
+<section class="phan" id="trao-doi">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Tình trạng hiện tại</span>
+      <h2>Chương trình đang ở giai đoạn chạy thử, <span>và Duy nói thẳng điều đó.</span></h2>
+      <p class="dan">Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trong vòng này, phạm vi và cách giao hàng được thiết kế riêng theo từng doanh nghiệp, nên chưa có bảng giá chung.</p>
+    </div>
+    <div class="hop hien tre">
+      <div class="co">
+        <h3>Vì sao chưa có giá niêm yết</h3>
+        <ul>
+          <li>Số người tham gia mỗi doanh nghiệp khác nhau.</li>
+          <li>Số tình huống Duy xem trực tiếp khác nhau theo quy mô đội ngũ.</li>
+          <li>Hình thức có thể riêng cho một doanh nghiệp, hoặc chung vài doanh nghiệp.</li>
+          <li>Duy chỉ báo giá sau khi đã tính được công suất thật, không báo trước rồi co kéo sau.</li>
+        </ul>
+      </div>
+      <div class="chua">
+        <h3>Buổi trao đổi đầu đi thế nào</h3>
+        <ul>
+          <li>Bạn kể chỗ đang kẹt trong cuộc tư vấn của đội ngũ.</li>
+          <li>Duy hỏi về quy mô đội ngũ, người quản lý, và loại tình huống hay gặp.</li>
+          <li>Hai bên xem cùng nhau xem có đủ sáu điều kiện phía trên không.</li>
+          <li>Nếu chưa phải lúc, Duy nói rõ vì sao và chỉ bạn bước hợp hơn.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hien" style="margin-top:34px;text-align:center">
+      <a class="nut" href="https://coachduynguyen.vn/lien-he.html">Đặt một buổi trao đổi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NGƯỜI DẪN ================= -->
+<section class="phan nen" id="nguoi-dan">
+  <div class="bao">
+    <div class="gioi hien tre">
+      <span class="nhan" style="display:block;margin-bottom:12px">Người thiết kế và dẫn chương trình</span>
+      <h3>Coach Duy Nguyễn</h3>
+      <p class="vai">Nhà sáng lập Cộng đồng Next Gen Founder. Tác giả phương pháp The Trusted Advisor và CDN Trust Orbit.</p>
+      <p class="doan">Năm năm đào tạo bán hàng cho hàng nghìn người, và khoảng ba mươi doanh nghiệp mời đào tạo nội bộ. Trong suốt quãng đó, Duy thấy đi thấy lại một chuyện: người chủ học xong thì đổi được cách mình tư vấn, nhưng đội ngũ thì không, vì không ai ở lại đủ lâu để giữ chuẩn.</p>
+      <p class="doan">Chương trình này ra đời từ chỗ đó. Nó không phải khóa kỹ năng bán hàng rút gọn. Nó là tám tuần để một chuẩn tư vấn đi từ đầu người chủ vào tay đội ngũ, và để người quản lý giữ được chuẩn đó khi Duy đã rời đi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HỎI ĐÁP ================= -->
+<section class="phan" id="hoi-dap">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Hỏi đáp</span>
+      <h2>Bảy câu người chủ hay hỏi thẳng</h2>
+    </div>
+    <div class="faq hien" id="faq">
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>01</b><span>&ldquo;Đội ngũ tôi học nhiều khóa bán hàng rồi, chương trình này khác gì?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Khác ở chỗ sáu trong tám tuần là làm trên tình huống thật của chính doanh nghiệp bạn, không phải tình huống giả định. Và khác ở chỗ người quản lý được huấn luyện để tự giữ chuẩn, nên kết quả không đi theo Duy khi chương trình kết thúc.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>02</b><span>&ldquo;Tôi bận, có nhất thiết phải tham gia không?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Bạn không cần dự hết mọi buổi, nhưng phải có mặt ở buổi khởi động, buổi rà soát giữa kỳ và buổi đánh giá cuối. Bộ chuẩn tư vấn là chuẩn của doanh nghiệp bạn, nên người duyệt cuối phải là bạn. Nếu bạn giao hẳn cho cấp dưới, chuẩn đó sẽ thiếu phần khó nhất là quyết định đánh đổi.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>03</b><span>&ldquo;Không có quản lý bán hàng thì sao?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Cần ít nhất một người sở hữu được việc triển khai, dù chức danh là gì. Người đó xem tình huống, góp ý hằng tuần và tiếp quản nhịp huấn luyện. Nếu chưa có ai làm được việc đó thì chương trình chưa phải lúc, vì sau tám tuần không ai giữ chuẩn.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>04</b><span>&ldquo;Ghi lại cuộc tư vấn của khách có sao không?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Cách ghi nhận, ẩn danh và lưu dữ liệu được thỏa thuận trước bằng văn bản, và làm theo đúng mức doanh nghiệp bạn cho phép. Duy chỉ xem các tình huống đại diện, không xem toàn bộ. Nếu doanh nghiệp không cho ghi âm thì dùng cách ghi khác, nhưng phải có bằng chứng nào đó để góp ý dựa trên sự thật.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>05</b><span>&ldquo;Chương trình có bảo đảm tăng doanh số không?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Không. Duy theo dõi thêm vài tín hiệu kinh doanh như tỷ lệ khách đồng ý bước tiếp theo và tỷ lệ theo sát đúng hạn, nhưng không dùng chúng để cam kết doanh thu, vì còn quá nhiều biến khác nằm ngoài cuộc tư vấn. Thứ chương trình chịu trách nhiệm là chất lượng cuộc tư vấn và năng lực huấn luyện của quản lý.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>06</b><span>&ldquo;Khác gì Founder Growth System?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Chương trình này lo chất lượng cuộc tư vấn và khả năng huấn luyện đội ngũ tư vấn. Founder Growth System lo cấu trúc tăng trưởng rộng hơn: vai trò, người phụ trách, quy trình liên phòng ban, dữ liệu và nhịp điều hành. Nếu bạn cần dựng lại cả bộ máy kinh doanh thì bắt đầu ở Founder Growth System, không phải ở đây.</p></div></div>
+      </div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>07</b><span>&ldquo;Bao giờ mở và giá bao nhiêu?&rdquo;</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Chương trình đang ở vòng chạy thử với hai tới ba doanh nghiệp, nên chưa có lịch mở chung và chưa có bảng giá. Phạm vi được thiết kế riêng theo quy mô đội ngũ và số tình huống cần xem, và mức đầu tư chỉ nói sau khi đã rõ phạm vi đó. Bạn để lại vài dòng thì đội ngũ sẽ trao đổi để xem có hợp không.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="bao">
+    <div class="chan-hieu">
+      <b>Trusted Sales Team System</b>
+      <span>Xây dựng Đội ngũ Tư vấn Bán hàng Chuyên nghiệp và Tin cậy</span>
+    </div>
+    <p class="chan-trang">Một chương trình của Coach Duy Nguyễn &middot; <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></p>
+    <nav aria-label="Liên kết chân trang">
+      <a href="https://coachduynguyen.vn/">Trang chính</a>
+      <a href="https://coachduynguyen.vn/chuong-trinh/trusted-sales-team-system.html">Chương trình trên trang chính</a>
+      <a href="https://coachduynguyen.vn/chuong-trinh/founder-growth-system.html">Founder Growth System</a>
+      <a href="https://coachduynguyen.vn/lien-he.html">Liên hệ</a>
+    </nav>
+  </div>
+</footer>
+<script>
+(function(){
+  var d=document, r=d.documentElement;
+  var noanim=r.classList.contains('noanim');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero hiện dần, mỗi phần lệch nhau một chút */
+  var hero=d.getElementById('hero');
+  function lenHero(){ if(!hero) return;
+    var items=[].slice.call(hero.querySelectorAll('.hero-chu > *, .hero-anh > *'));
+    items.forEach(function(e,i){ e.style.transitionDelay=(noanim||reduce?0:i*70)+'ms'; });
+    hero.classList.add('len'); }
+  if(noanim){ hero.classList.add('len'); [].forEach.call(d.querySelectorAll('details.gap'),function(e){e.open=true}); } else { setTimeout(lenHero,40); }
+
+  /* hiện khi cuộn tới, có lưới an toàn 2,5 giây */
+  var hien=[].slice.call(d.querySelectorAll('.hien'));
+  var moTatCa=function(){ hien.forEach(function(e){ e.classList.add('in'); }); };
+  setTimeout(moTatCa,2500);
+  if(noanim||!('IntersectionObserver' in window)){ moTatCa(); }
+  else{
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var el=en.target; if(el.classList.contains('tre')){ [].slice.call(el.children).forEach(function(c,i){ c.style.transitionDelay=(reduce?0:i*55)+'ms'; }); } el.classList.add('in'); io.unobserve(el); } }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    hien.forEach(function(e){io.observe(e)});
+  }
+
+  /* thanh điều hướng: ô đang đọc và vạch tiến độ */
+  var nlEl=d.getElementById('nav-phan');
+  function moMep(){ if(!nlEl) return; var max=nlEl.scrollWidth-nlEl.clientWidth; nlEl.style.setProperty('--ml', nlEl.scrollLeft>4?'26px':'0px'); nlEl.style.setProperty('--mr', (max-nlEl.scrollLeft)>4?'26px':'0px'); }
+  if(nlEl){ nlEl.addEventListener('scroll',moMep,{passive:true}); addEventListener('resize',moMep); moMep(); }
+  var links=[].slice.call(d.querySelectorAll('#nav-phan a')), tien=d.getElementById('tien');
+  var secs=links.map(function(a){ return d.querySelector(a.getAttribute('href')); });
+  var cur=null;
+  function setActive(i){ if(i===cur) return; cur=i; links.forEach(function(a,j){ a.classList.toggle('on',j===i); });
+    if(i!=null && nlEl && nlEl.scrollWidth>nlEl.clientWidth+4){ var a=links[i]; var L=a.offsetLeft-nlEl.scrollLeft, R=L+a.offsetWidth, W=nlEl.clientWidth;
+      if(L<16||R>W-16) nlEl.scrollTo({left:a.offsetLeft-(W-a.offsetWidth)/2, behavior:reduce?'auto':'smooth'}); }
+    moMep(); }
+  function onScroll(){ var y=scrollY, h=d.documentElement.scrollHeight-innerHeight; if(tien) tien.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')'; var mark=y+innerHeight*.38, best=null; for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].offsetTop<=mark) best=i; } setActive(best); }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',function(){cur=null;onScroll();}); onScroll();
+  if(d.fonts&&d.fonts.ready) d.fonts.ready.then(function(){cur=null;onScroll();});
+
+  /* hỏi đáp */
+  var faq=d.getElementById('faq');
+  if(faq){ [].slice.call(faq.querySelectorAll('.muc button')).forEach(function(b){ b.addEventListener('click',function(){ var m=b.parentElement, mo=m.classList.toggle('mo'); b.setAttribute('aria-expanded',mo?'true':'false'); }); }); }
+
+  </script>
+</body>
+</html>

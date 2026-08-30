@@ -2,7 +2,7 @@
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
 from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
-                 NGAY_SUA, trang, dau_trang, dd)
+                 NGAY_SUA, TSTS_LANDING, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
@@ -1083,7 +1083,12 @@ for c in CT:
   <div class="hien">%s</div>
 </section>""" % so_do.chang_5()
 
-    if c.get("mo_ban"):
+    if c["tep"] == "trusted-sales-team-system.html":
+        # chương trình có trang riêng nhưng đang chạy thử, nên mời trao đổi chứ không mời đăng ký
+        dich = TSTS_LANDING
+        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang ở vòng chạy thử",
+            "Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trang riêng của chương trình ghi đủ cách chạy tám tuần, bốn vai tham gia và ranh giới phạm vi.")
+    elif c.get("mo_ban"):
         dich = TTC_LANDING or dd("lien-he.html", p)
         nhan_nut, tieu_cta, dan_cta = ("Đăng ký khoá đầu tiên", "Khoá đầu tiên khai giảng 28 tháng 9 năm 2026",
             "Đăng ký sớm áp dụng tới hết ngày 20 tháng 9. Nếu bạn còn phân vân mình có hợp không, làm phiếu chẩn đoán bảy phút trước, rồi quyết.")
@@ -2039,6 +2044,8 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
 # khai ngày sửa chung của trang. Không có lastmod thì máy phải tự đoán trang nào
 # mới, mà bộ trả lời của AI thì ưu tiên nội dung mới rất mạnh.
 NGAY_BAI = {"bai-viet/" + b["tep"]: b.get("sua", NGAY_SUA) for b in BAI}
+# Hai trang riêng của chương trình nằm ngoài bộ dựng, thêm tay vào sitemap.
+URLS += ["founder-brand/", "sales-team/"]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
     sm.append("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
@@ -2094,6 +2101,8 @@ llms = """# Coach Duy Nguyễn
 - [Phương pháp](%(b)s/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Điều kiện tham gia](%(b)s/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
+- [Trusted Founder Brand Challenge, trang chương trình](%(b)s/founder-brand/): thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy, có giá và mốc đăng ký
+- [Trusted Sales Team System, trang chương trình](%(b)s/sales-team/): chương trình tám tuần xây đội ngũ tư vấn bán hàng cho doanh nghiệp, đang ở vòng chạy thử
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
