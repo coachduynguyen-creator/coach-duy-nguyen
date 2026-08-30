@@ -214,7 +214,7 @@ TO_CHUC = {
     "name": "Next Step Group", "alternateName": "NSG",
     "url": BASE + "/",
     "description": "Đơn vị phát triển hệ sinh thái Next Gen Founder, đào tạo và cố vấn "
-                   "cho nhà sáng lập doanh nghiệp dịch vụ.",
+                   "cho nhà sáng lập.",
     "founder": {"@id": BASE + "/#duy"},
     "email": EMAIL,
     "areaServed": "VN",

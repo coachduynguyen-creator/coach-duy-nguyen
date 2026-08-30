@@ -55,10 +55,10 @@
 ## Cộng đồng Mở Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-mo.html
-- Dành cho: Founder hoặc chủ doanh nghiệp dịch vụ đang tìm hiểu nhân dạng Next Gen Founder nhưng chưa đủ dữ liệu hoặc chưa sẵn sàng cam kết để tham gia sâu; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
+- Dành cho: Founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đang tìm hiểu nhân dạng Next Gen Founder nhưng chưa đủ dữ liệu hoặc chưa sẵn sàng cam kết để tham gia sâu; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
 - Hình thức: Không mất phí, có sàng lọc theo đối tượng và hành vi.
 - Điều kiện tham gia:
-  - Là founder hoặc chủ doanh nghiệp dịch vụ; nếu là chuyên gia, đã có hoạt động kinh doanh thật và đang xây doanh nghiệp từ chuyên môn
+  - Là founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn; nếu là chuyên gia, đã có hoạt động kinh doanh thật và đang xây doanh nghiệp từ chuyên môn
   - Đang tìm hiểu, chưa cần sẵn sàng cam kết đi sâu
   - Không mất phí, nhưng có sàng lọc theo đối tượng và hành vi
   - Vào bằng cách đăng ký danh sách chờ Cộng đồng Next Gen Founder
@@ -67,10 +67,10 @@
 ## Cộng đồng Thành viên Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-thanh-vien.html
-- Dành cho: Founder hoặc chủ doanh nghiệp dịch vụ đúng ICP, muốn phát triển bốn năng lực trong công việc thật; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
+- Dành cho: Founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, muốn phát triển bốn năng lực trong công việc thật; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
 - Hình thức: Thành viên theo năm, có nhịp hoạt động cố định hằng tháng và trải nghiệm mười bốn ngày đầu để bắt đầu đúng.
 - Điều kiện tham gia:
-  - Là founder hoặc chủ doanh nghiệp dịch vụ; nếu là chuyên gia, đã có sản phẩm, khách hàng, doanh thu và ý định xây hệ thống vượt khỏi số giờ cá nhân
+  - Là founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn; nếu là chuyên gia, đã có sản phẩm, khách hàng, doanh thu và ý định xây hệ thống vượt khỏi số giờ cá nhân
   - Muốn luyện đủ bốn năng lực trong công việc thật, không tìm một kho nội dung để xem
   - Cam kết theo năm và đi được nhịp hoạt động cố định hằng tháng
   - Bắt đầu bằng trải nghiệm mười bốn ngày đầu

@@ -149,7 +149,7 @@ INDEX = """
     <div class="vt-chu hien">
       <p class="mono">Về Duy</p>
       <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
-      <p>Đó là founder của doanh nghiệp dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
+      <p>Đó là founder mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đông nhất ở ngành dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
       <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một tên tuổi khách nhớ, và dám tin.</p>
       <p>Xa hơn nữa là di sản. Không phải một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật, bài học thật, cả những lần vấp. Mình gói lại cho rõ ràng, kể lại thật lòng, rồi trao cho đội ngũ của mình và cho những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
       <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên trong lúc bạn tập cách làm mới.</p>
@@ -591,7 +591,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
     </article>
     <article>
       <div class="anh"><img src="img/ngf-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
-      <div><h3>Chủ doanh nghiệp dịch vụ đã có đội ngũ</h3><p>Đã có khách, có doanh thu và một đội ngũ đang chạy. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
+      <div><h3>Chủ doanh nghiệp đã có đội ngũ</h3><p>Đã có khách, có doanh thu và một đội ngũ đang chạy. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
   </div>
   <div class="dut hien">
@@ -1197,7 +1197,7 @@ BLOG = dau_trang("Blog", "Chỗ nhà sáng lập hay vấp nhất, và cách g�
 LD_BLOG = json.dumps({"@context": "https://schema.org", "@graph": [
     {"@type": "Blog", "@id": BASE + "/blog.html#blog",
      "name": "Blog của Coach Duy Nguyễn", "inLanguage": "vi",
-     "description": "Bài viết cho nhà sáng lập doanh nghiệp dịch vụ, về uy tín, tư vấn, "
+     "description": "Bài viết cho nhà sáng lập, về uy tín, tư vấn, "
                     "hệ thống và cộng đồng.",
      "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/ve-toi.html"},
      "publisher": {"@type": "Organization", "name": "Next Step Group", "url": BASE + "/"}},
