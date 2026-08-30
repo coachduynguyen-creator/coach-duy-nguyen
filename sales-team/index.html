@@ -845,6 +845,14 @@ figure{margin:0}
 /* Khoảng cách này trước đây gắn thẳng vào thẻ, làm dinh_tu_ghep.py không
    nhận ra khối và bỏ sót phần nối từ ghép. */
 .phan .nhan-dang, .phan .gia-ghi{margin-top:34px}
+
+/* Khối tiêu đề mục nới ra bằng lưới nội dung bên dưới. Trước đây khối này dừng ở
+   820px trong khi lưới thẻ chạy hết 1120px, nên mỗi mục có một mảng trống lớn ở
+   góc trên bên phải, Coach Duy chỉ ra ngày 30/08/2026. Đo lại sau khi nới: khoảng
+   trống trung bình từ 498 còn 392px, chỗ tệ nhất từ 670 còn 569px, và vẫn không
+   có dòng cụt nào.
+   Câu dẫn giữ nguyên 66 ký tự một dòng, vì đó là chữ để đọc, không phải tiêu đề. */
+.phan .dau-phan{max-width:none}
 </style>
 
 <script type="application/ld+json">
@@ -939,7 +947,7 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Bốn vai</span>
-      <h2>Đây là chương trình cho doanh nghiệp, <span>không phải khóa kỹ năng cho cá nhân.</span></h2>
+      <h2>Chương trình cho doanh nghiệp, <span>không phải khóa cá nhân.</span></h2>
       <p class="dan">Thiếu một trong bốn vai dưới đây thì kết quả không giữ được sau khi chương trình kết thúc. Vai thứ hai là vai hay bị bỏ qua nhất, và cũng là vai quyết định.</p>
     </div>
     <div class="doi-chu hien tre">
@@ -1080,7 +1088,7 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
-      <h2>Chương trình đang ở giai đoạn chạy thử, <span>và Duy nói thẳng điều đó.</span></h2>
+      <h2>Chương trình đang ở vòng chạy thử, <span>Duy nói thẳng.</span></h2>
       <p class="dan">Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trong vòng này, phạm vi và cách giao hàng được thiết kế riêng theo từng doanh nghiệp, nên chưa có bảng giá chung.</p>
     </div>
     <div class="hop hien tre">

@@ -143,7 +143,7 @@ def than_trang(d):
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
-      <h2>Chương trình đang được thiết kế chi tiết, <span>nên trang này chưa có lịch và chưa có giá.</span></h2>
+      <h2>Chương trình đang được thiết kế, <span>chưa có lịch và chưa có giá.</span></h2>
       <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
     </div>
     <div class="hop hien tre">
