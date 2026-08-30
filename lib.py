@@ -16,6 +16,11 @@ TTC_LANDING = "https://coachduynguyen.vn/founder-brand/"
 # Trang riêng của Trusted Sales Team System. Chương trình đang ở vòng chạy thử nên
 # trang này không có giá, chỉ mời trao đổi.
 TSTS_LANDING = "https://coachduynguyen.vn/sales-team/"
+# Hai trang dưới đây là BẢN MẪU, dựng ngày 30/08/2026 từ tài liệu đã có. Chương
+# trình chưa triển khai chi tiết nên trang không có giá, không có lịch và không có
+# lộ trình theo buổi. Sinh bằng landing_du_lieu.py, đừng sửa tay tệp index.html.
+FGS_LANDING = "https://coachduynguyen.vn/founder-growth/"
+CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
 VER = "20260830a"   # tăng số này mỗi lần sửa style.css hoặc site.js

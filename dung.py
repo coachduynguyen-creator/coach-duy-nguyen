@@ -2,7 +2,7 @@
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
 from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
-                 NGAY_SUA, TSTS_LANDING, trang, dau_trang, dd)
+                 NGAY_SUA, TSTS_LANDING, FGS_LANDING, CGS_LANDING, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
@@ -1083,7 +1083,13 @@ for c in CT:
   <div class="hien">%s</div>
 </section>""" % so_do.chang_5()
 
-    if c["tep"] == "trusted-sales-team-system.html":
+    if c["tep"] in ("founder-growth-system.html", "community-growth-system.html"):
+        # hai chương trình này có trang riêng nhưng đang thiết kế chi tiết, nên trang
+        # riêng chỉ ghi phần đã chốt và mời trao đổi, không có giá và không có lịch
+        dich = FGS_LANDING if c["tep"].startswith("founder") else CGS_LANDING
+        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang được thiết kế chi tiết",
+            "Hướng đi, đối tượng và kết quả nhắm tới đã rõ, còn lộ trình theo buổi và mức đầu tư thì chưa. Trang riêng ghi đủ phần đã chốt, phần chưa chốt và những việc chương trình không nhận.")
+    elif c["tep"] == "trusted-sales-team-system.html":
         # chương trình có trang riêng nhưng đang chạy thử, nên mời trao đổi chứ không mời đăng ký
         dich = TSTS_LANDING
         nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang ở vòng chạy thử",
@@ -2045,7 +2051,7 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
 # mới, mà bộ trả lời của AI thì ưu tiên nội dung mới rất mạnh.
 NGAY_BAI = {"bai-viet/" + b["tep"]: b.get("sua", NGAY_SUA) for b in BAI}
 # Hai trang riêng của chương trình nằm ngoài bộ dựng, thêm tay vào sitemap.
-URLS += ["founder-brand/", "sales-team/"]
+URLS += ["founder-brand/", "sales-team/", "founder-growth/", "community-growth/"]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
     sm.append("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
@@ -2103,6 +2109,8 @@ llms = """# Coach Duy Nguyễn
 - [Điều kiện tham gia](%(b)s/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
 - [Trusted Founder Brand Challenge, trang chương trình](%(b)s/founder-brand/): thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy, có giá và mốc đăng ký
 - [Trusted Sales Team System, trang chương trình](%(b)s/sales-team/): chương trình tám tuần xây đội ngũ tư vấn bán hàng cho doanh nghiệp, đang ở vòng chạy thử
+- [Founder Growth System, trang chương trình](%(b)s/founder-growth/): đưa một luồng công việc ra khỏi đầu người chủ, bản mẫu, chưa có lịch và chưa có giá
+- [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
