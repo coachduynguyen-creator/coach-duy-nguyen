@@ -149,7 +149,7 @@ INDEX = """
     <div class="vt-chu hien">
       <p class="mono">Về Duy</p>
       <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
-      <p>Đó là chuyên gia có nghề, chủ doanh nghiệp dịch vụ, và người đang dẫn một đội ngũ. Điểm chung của họ: khách mua vì tin ở chính con người họ, trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
+      <p>Đó là founder của doanh nghiệp dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
       <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một tên tuổi khách nhớ, và dám tin.</p>
       <p>Xa hơn nữa là di sản. Không phải một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật, bài học thật, cả những lần vấp. Mình gói lại cho rõ ràng, kể lại thật lòng, rồi trao cho đội ngũ của mình và cho những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
       <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên trong lúc bạn tập cách làm mới.</p>
@@ -241,7 +241,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận danh sách chờ</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
-    <p>Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: <span class="nhan">khách tin bạn trước khi tin công ty bạn.</span></p>
+    <p>Người chủ đã có đội ngũ, hoặc chuyên gia đang xây doanh nghiệp từ chuyên môn. Cùng một điểm chung: <span class="nhan">khách tin bạn trước khi tin công ty bạn.</span></p>
     <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng <span class="nhan">những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua.</span> Duy giữ nhịp và ở bên trong suốt chặng đó.</p>
   </div>
   <div class="cd-nl hien">
@@ -581,21 +581,17 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
-    <p class="mono">3 người Duy hay ngồi cùng</p>
-    <h2>Ba người Duy hay ngồi cùng nhất, xem bạn có gần ai không</h2>
+    <p class="mono">Hai điểm xuất phát</p>
+    <h2>Hai kiểu founder Duy đang tập trung đi cùng</h2>
   </div>
   <div class="cd-hang tre hien">
     <article>
       <div class="anh"><img src="img/ngf-chuyen-gia.webp" alt="Ảnh minh hoạ một chuyên gia có nghề" loading="lazy"></div>
-      <div><h3>Chuyên gia có nghề</h3><p>Bạn giỏi việc của mình và khách tìm tới vì tên bạn. Nhưng thu nhập vẫn buộc chặt vào số giờ bạn ngồi xuống làm.</p></div>
+      <div><h3>Chuyên gia đang xây doanh nghiệp</h3><p>Bạn đã có sản phẩm, khách hàng và doanh thu thật. Khách tìm tới vì tên bạn, nhưng việc kinh doanh vẫn buộc chặt vào số giờ bạn trực tiếp làm.</p></div>
     </article>
     <article>
       <div class="anh"><img src="img/ngf-chu-dn.webp" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" loading="lazy"></div>
-      <div><h3>Chủ doanh nghiệp dịch vụ</h3><p>Đã có khách, có doanh thu và một đội ngũ đang chạy. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
-    </article>
-    <article>
-      <div class="anh"><img src="img/ngf-dan-doi.webp" alt="Ảnh minh hoạ một người đang dẫn một đội ngũ" loading="lazy"></div>
-      <div><h3>Người đang dẫn một đội ngũ</h3><p>Bạn chịu trách nhiệm cho kết quả của người khác. Bạn cần uy tín đủ để người giỏi tin và ở lại đủ lâu.</p></div>
+      <div><h3>Chủ doanh nghiệp dịch vụ đã có đội ngũ</h3><p>Đã có khách, có doanh thu và một đội ngũ đang chạy. Nhưng giao dịch lớn, ngoại lệ và quyết định quan trọng vẫn quay về bàn của bạn.</p></div>
     </article>
   </div>
   <div class="dut hien">
@@ -1324,14 +1320,14 @@ PD_TAP = [
   tieu="Bỏ một thói quen này trước khi mong bứt doanh số",
   mo="Một thói quen tư vấn rất phổ biến đang âm thầm phá buổi bán hàng, và cách thay nó bằng một việc làm được ngay.",
   lydo="Soi được ngay trong buổi tư vấn gần nhất của bạn, không cần chờ.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
 
  # ---- Chuyên mục 02 · Bán bằng chẩn đoán
  dict(yt="eGQbItur-co", muc=2,
   tieu="Càng bán nhiều thứ, khách càng khó mua",
   mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
   lydo="Nếu bạn đang nghĩ thêm gói, thêm dịch vụ là thêm doanh thu, tập này cho bạn thấy chiều ngược lại trước khi bạn tốn tiền vào nó.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
  dict(yt="7aCWr74vWkI", muc=2,
   tieu="Không phải do giá. Đây là lý do khách rời bỏ bạn",
   mo="Khách nói đắt rồi đi, nhưng phần lớn không đi vì giá. Tập này lần ngược về chỗ niềm tin bị hụt trong buổi tư vấn, trước cả khi con số được nói ra.",
@@ -1346,17 +1342,17 @@ PD_TAP = [
   tieu="Giá có thật là điều khách quan tâm nhất?",
   mo="Khách nói đắt, nhưng hành vi mua lại nói một điều khác. Tập này tách hai chuyện đó ra để bạn nhìn cho rõ.",
   lydo="Giúp bạn thôi sửa giá trong khi chỗ hỏng nằm ở niềm tin.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
  dict(yt="r_Hj2t1mS8M", muc=2,
   tieu="Ba yếu tố quyết định việc khách xuống tiền",
   mo="Ba thứ chạy trong đầu khách trước khi quyết, và thứ tự chúng xuất hiện trong buổi tư vấn.",
   lydo="Nắm được thứ tự này thì buổi tư vấn đi đúng nhịp, không đốt cháy giai đoạn.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
  dict(yt="bANYQ5imP3Y", muc=2,
   tieu="Tâm lý mua của khách hàng cao cấp",
   mo="Người trả tiền lớn quyết định theo cách khác hẳn người mua phổ thông, mà phần lớn người bán chưa từng được dạy điều đó.",
   lydo="Cần cho ai đang nâng phân khúc và thấy cách bán cũ không còn chạy.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
  dict(yt="2VRKnLdYFuU", muc=2,
   tieu="Làm chủ cuộc trò chuyện với khách cao cấp",
   mo="Cách giữ nhịp buổi nói chuyện mà không lấn át, để khách thấy mình được dẫn chứ không bị ép.",
@@ -1366,7 +1362,7 @@ PD_TAP = [
   tieu="Bán giá cao giữa thị trường biến động",
   mo="Ghi từ giai đoạn thị trường khó, nói về việc chọn khách và giữ chuẩn khi xung quanh ai cũng vội hạ giá.",
   lydo="Ví dụ lấy từ bất động sản, nhưng cách nghĩ dùng được cho mọi ngành bán giá cao.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
  dict(yt="iej3kmn7l1Q", muc=2,
   tieu="Vượt qua giai đoạn thị trường trầm lắng",
   mo="Khi thị trường chậm lại, việc gì đáng làm và việc gì chỉ đốt sức. Tập này xếp lại danh sách việc của người bán trong mùa khó.",
@@ -1376,7 +1372,7 @@ PD_TAP = [
   tieu="Ba bước dẫn một buổi bán cho bất kỳ khách nào",
   mo="Một khung ba bước đơn giản để buổi tư vấn nào cũng có phần mở đầu, phần dẫn chuyện chính, và phần chốt lại rõ ràng, thay vì trôi theo khách.",
   lydo="Dễ áp nhất trong các tập, dùng được ngay buổi hẹn kế tiếp.",
-  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/the-trusted-advisor.html"),
+  cta_nhan="Xem The Trusted Advisor", cta="chuong-trinh/trusted-sales-team-system.html"),
 
  # ---- Chuyên mục 03 · Thương hiệu của người sáng lập
  dict(yt="s1UF9mSxM0s", muc=3,
@@ -1933,6 +1929,21 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 <a href="../founder-brand/">Trusted Founder Brand Challenge</a>.</p>
 <script>location.replace('../founder-brand/');</script></body></html>""" % BASE)
 print("  chuong-trinh/the-trusted-creator.html (chuyen huong)")
+
+# Chương trình đổi tên ngày 30/08/2026 theo quyết định D31. Giữ trang chuyển hướng
+# ở địa chỉ cũ để không gãy liên kết đã chia sẻ.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "the-trusted-advisor.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Trusted Sales Team System</title>
+<link rel="canonical" href="%s/chuong-trinh/trusted-sales-team-system.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=trusted-sales-team-system.html">
+</head>
+<body><p>Chương trình này đã đổi tên thành
+<a href="trusted-sales-team-system.html">Trusted Sales Team System</a>.</p>
+<script>location.replace('trusted-sales-team-system.html');</script></body></html>""" % BASE)
+print("  chuong-trinh/the-trusted-advisor.html (chuyen huong)")
 
 # Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
 # mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm

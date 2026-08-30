@@ -705,7 +705,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 
 /* ---------- ba chân dung: thẻ ngang, ảnh nhỏ ---------- */
 .cd-hang{display:grid;gap:16px}
-@media(min-width:900px){.cd-hang{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:900px){.cd-hang{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}}
 .cd-hang article{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:start;
   background-image:var(--paper);background-color:var(--panel);border:1px solid var(--line);border-radius:var(--r);
   padding:22px;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)}

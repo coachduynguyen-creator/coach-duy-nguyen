@@ -236,7 +236,7 @@ figure{margin:0}
 @media (max-width:980px){.nl{grid-template-columns:repeat(2,minmax(0,1fr))}.nl > div:nth-child(3){padding-left:0;border-left:0}.nl > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media (max-width:560px){.nl{grid-template-columns:minmax(0,1fr)}.nl > div{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}.nl > div:last-child{border-bottom:0}}
 
-/* ============ 02 DÀNH CHO AI: ba điều uy tín quyết định, dải ảnh, ba chân dung ============ */
+/* ============ 02 DÀNH CHO AI: ba điều uy tín quyết định, hai điểm xuất phát ============ */
 .quyet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 56px;border-top:1px solid var(--ink)}
 .quyet > div{padding:20px 26px 22px 0;position:relative;transition:transform .2s var(--ease)}
 .quyet > div + div{padding-left:26px;border-left:1px solid var(--line)}
@@ -245,7 +245,7 @@ figure{margin:0}
 @media (hover:hover){.quyet > div:hover{transform:translateY(-3px)}}
 @media (max-width:760px){.quyet{grid-template-columns:minmax(0,1fr)}.quyet > div{padding:16px 0;border-left:0!important;border-bottom:1px solid var(--line)}.quyet > div + div{padding-left:0}.quyet > div:last-child{border-bottom:0}.quyet b{font-size:22px}}
 
-.nganh3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.nganh3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:900px}
 .nganh3 > div{display:flex;flex-direction:column;gap:0}
 .nganh3 .anh-khung{aspect-ratio:4/5;margin-bottom:18px}
 .nganh3 .anh-khung img{object-position:50% 12%}
@@ -578,7 +578,7 @@ figure{margin:0}
   .nl{grid-template-rows:auto auto 1fr auto auto}
   .nl > div{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:8px}
   .nl .lam-duoc{margin-top:0}
-  /* ba chân dung: ảnh, tên, mô tả */
+  /* hai điểm xuất phát: ảnh, tên, mô tả */
   .nganh3{grid-template-rows:auto auto 1fr}
   .nganh3 > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:0}
   .nganh3 .anh-khung{margin-bottom:0}
@@ -752,7 +752,7 @@ figure{margin:0}
       <div class="hero-chu">
         <span class="vien"><i aria-hidden="true"></i>Cộng đồng Next Gen Founder · đang nhận danh sách chờ</span>
         <h1>Cộng đồng của người sáng lập thế hệ mới <span>nơi uy tín cá nhân trở thành điểm tựa</span></h1>
-        <p class="dan">Chuyên gia, chủ doanh nghiệp, người đang dẫn một đội ngũ. Điểm chung: khách tin bạn trước khi tin công ty bạn. Cộng đồng giúp bạn biến niềm tin đó thành thương hiệu, hệ thống và một mạng lưới cùng lớn.</p>
+        <p class="dan">Cộng đồng dành cho founder doanh nghiệp dịch vụ. Bạn có thể đã là người chủ của một đội ngũ, hoặc là chuyên gia đang xây doanh nghiệp từ chuyên môn. Điểm chung: khách tin bạn trước khi tin công ty bạn, và bạn muốn biến niềm tin đó thành thương hiệu, hệ thống cùng một mạng lưới cùng lớn.</p>
         <div class="nutnhom">
           <a class="nut" href="#dang-ky">Đăng ký danh sách chờ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="nut phu" href="#la-gi">Cộng đồng này là gì</a>
@@ -767,7 +767,7 @@ figure{margin:0}
 <section class="phan la-gi" id="la-gi">
   <div class="bao">
     <div class="chia">
-      <figure class="anh-khung anh-lo"><img src="img/cd-ca-phong.jpg" alt="Coach Duy Nguyễn đứng giữa một phòng đầy người sáng lập và quản lý" width="1800" height="1182" loading="eager" decoding="async"></figure>
+      <figure class="anh-khung anh-lo"><img src="img/cd-ca-phong.jpg" alt="Coach Duy Nguyễn đứng giữa một phòng các nhà sáng lập" width="1800" height="1182" loading="eager" decoding="async"></figure>
       <div class="hien">
         <h2>Một cộng đồng phát triển cho nhà sáng lập, <span>không phải thêm một nhóm trò chuyện</span></h2>
         <p class="dan">Next Gen Founder, nhà sáng lập thế hệ mới, là người đã nhận ra doanh nghiệp không thể lớn thêm chỉ bằng năng lực cá nhân mình, và biết biến những gì đang nằm trong đầu thành niềm tin trên thị trường, cách tư vấn, hệ thống làm việc và một mạng lưới cùng phát triển. Cộng đồng là nơi bạn đi con đường đó cùng những người có cùng tiêu chuẩn, và được một người đi trước giữ nhịp.</p>
@@ -850,8 +850,8 @@ figure{margin:0}
 <section class="phan nen" id="danh-cho-ai">
   <div class="bao">
     <div class="dau-phan hien">
-      <h2>Dành cho người muốn uy tín cá nhân <span>trở thành điểm tựa cho khách, đối tác và người giỏi</span></h2>
-      <p class="dan">Next Gen Founder không giới hạn ở một chức danh. Đó là người đã có nghề, có kết quả thật, và nhận ra tên mình đang là tài sản lớn nhất của doanh nghiệp. Điều bạn cần không phải nổi tiếng hơn, mà là biến uy tín đó thành thứ dẫn được đúng người và không còn phụ thuộc vào một mình bạn.</p>
+      <h2>Một tệp founder, <span>hai điểm xuất phát</span></h2>
+      <p class="dan">Bạn đã có nghề, có khách hàng và một hoạt động kinh doanh thật. Có thể bạn đang vận hành một doanh nghiệp dịch vụ; cũng có thể bạn là chuyên gia đang biến chuyên môn thành một doanh nghiệp. Điều bạn cần không phải nổi tiếng hơn, mà là biến uy tín thành thứ dẫn được đúng người và không còn phụ thuộc vào số giờ của chính mình.</p>
     </div>
 
     <div class="quyet hien tre">
@@ -863,18 +863,13 @@ figure{margin:0}
     <div class="nganh3 hien tre">
       <div>
         <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một chuyên gia" width="560" height="700" loading="lazy"></figure>
-        <h3>Chuyên gia có nghề, muốn tên mình dẫn được khách</h3>
-        <p>Đào tạo, tư vấn, luật, tài chính, sức khoẻ, thiết kế, bất động sản. Bạn bán thứ mình biết, và tên bạn là lý do khách gọi.</p>
+        <h3>Chuyên gia đang xây doanh nghiệp từ chuyên môn</h3>
+        <p>Bạn đã có sản phẩm, khách hàng và doanh thu thật. Tên bạn là lý do người ta gọi, nhưng bạn không muốn việc kinh doanh tiếp tục bị khóa vào số giờ mình trực tiếp làm.</p>
       </div>
       <div>
         <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/26425558/pexels-photo-26425558.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một chủ doanh nghiệp dịch vụ" width="560" height="700" loading="lazy"></figure>
-        <h3>Chủ doanh nghiệp dịch vụ dựa trên niềm tin</h3>
-        <p>Thẩm mỹ, spa, phòng khám, nha khoa, giáo dục, dịch vụ giá trị cao. Khách cần tư vấn và bằng chứng trước khi quyết, và họ nhìn vào người sáng lập.</p>
-      </div>
-      <div>
-        <figure class="anh-khung anh-lo"><img src="https://images.pexels.com/photos/31268614/pexels-photo-31268614.jpeg?auto=compress&cs=tinysrgb&w=560&h=700&fit=crop" alt="Ảnh minh hoạ một người đang dẫn đội ngũ" width="560" height="700" loading="lazy"></figure>
-        <h3>Người đang dẫn một đội ngũ và muốn thôi gánh một mình</h3>
-        <p>Bạn muốn chuyển cách nghĩ, cách tư vấn và tiêu chuẩn của mình sang đội ngũ, để công việc chạy được cả khi bạn không có mặt.</p>
+        <h3>Chủ doanh nghiệp dịch vụ đã có đội ngũ</h3>
+        <p>Khách cần tư vấn và bằng chứng trước khi quyết, rồi nhìn vào người sáng lập. Bạn muốn chuyển cách nghĩ, cách tư vấn và tiêu chuẩn của mình sang đội ngũ để công việc bớt chờ mình.</p>
       </div>
     </div>
 
@@ -1154,7 +1149,7 @@ figure{margin:0}
               <div class="nhan-cap"><span>Cấp 1</span><em>Miễn phí, đúng người</em></div>
               <h3>Cộng đồng Mở</h3>
               <p class="mota">Nơi đúng người nhận ra vấn đề của mình và trải nghiệm cách cộng đồng này dẫn dắt.</p>
-              <p class="cho"><b>Dành cho</b> người sáng lập, chuyên gia, quản lý chủ chốt muốn xem cách cộng đồng này dẫn dắt trước khi đi sâu.</p>
+              <p class="cho"><b>Dành cho</b> founder hoặc chủ doanh nghiệp dịch vụ muốn xem cách cộng đồng này dẫn dắt trước khi đi sâu; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.</p>
               <ul class="nhan-duoc">
                 <li>Nội dung chọn lọc, podcast, livestream</li>
                 <li>Bài đánh giá và công cụ khởi động</li>
@@ -1177,7 +1172,7 @@ figure{margin:0}
               <div class="nhan-cap"><span>Cấp 2</span><em>Đồng hành cả năm</em></div>
               <h3>Cộng đồng Thành viên</h3>
               <p class="mota">Nơi cộng đồng chịu trách nhiệm cho sự tiến bộ liên tục của bạn.</p>
-              <p class="cho"><b>Dành cho</b> người sáng lập hoặc chuyên gia đang vận hành kinh doanh thật, có khách, muốn tiến bộ có hệ thống ở ít nhất một năng lực.</p>
+              <p class="cho"><b>Dành cho</b> founder hoặc chủ doanh nghiệp dịch vụ đang vận hành kinh doanh thật, có khách, muốn tiến bộ có hệ thống ở ít nhất một năng lực. Chuyên gia chỉ thuộc nhóm này khi đang xây doanh nghiệp từ chuyên môn.</p>
               <ul class="nhan-duoc">
                 <li>Lộ trình bốn năng lực, kèm mẫu và công cụ dùng ngay</li>
                 <li>Phiên hỏi đáp, phân tích tình huống, thực hành</li>

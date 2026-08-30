@@ -15,16 +15,17 @@
   - Đăng ký được ngay, khoá đầu tiên khai giảng ngày 28 tháng 9 năm 2026
 - Giá: công bố đầy đủ trên trang chương trình https://coachduynguyen.vn/founder-brand/
 
-## The Trusted Advisor
+## Trusted Sales Team System
 
-- Trang: https://coachduynguyen.vn/chuong-trinh/the-trusted-advisor.html
-- Dành cho: Nhà sáng lập, chuyên gia, quản lý và người bán hàng cấp cao cần nâng chất lượng cuộc tư vấn.
-- Hình thức: 4 đến 6 buổi trực tuyến, thực hành tình huống thật và phản hồi trực tiếp.
+- Trang: https://coachduynguyen.vn/chuong-trinh/trusted-sales-team-system.html
+- Dành cho: Doanh nghiệp có đội ngũ đang trực tiếp tư vấn và bán hàng. Người chủ là người mua và bảo trợ, quản lý bán hàng sở hữu việc triển khai, đội ngũ tư vấn là người thực hành. Chưa hợp khi doanh nghiệp chưa có đội ngũ, chưa có tình huống thật, hoặc bán hoàn toàn theo giao dịch ngắn.
+- Hình thức: Tám tuần. Tuần đầu chẩn đoán và học tập trung hai ngày. Sáu tuần thực hành trên tình huống thật, xem lại tình huống và huấn luyện quản lý. Tuần cuối đánh giá, hoàn thiện chuẩn và bàn giao kế hoạch duy trì 90 ngày.
 - Điều kiện tham gia:
-  - Đang trực tiếp tư vấn hoặc bán cho khách, không chỉ quản lý từ xa
-  - Có tình huống thật mang vào lớp để thực hành, không dùng tình huống giả định
-  - Đi được đủ 4 tới 6 buổi trực tuyến
-  - Mở khi phạm vi phù hợp, bắt đầu bằng một buổi trao đổi ngắn
+  - Sản phẩm hoặc dịch vụ của bạn cần tư vấn trước khi khách quyết định
+  - Đã có đội ngũ và một quản lý, hoặc ít nhất một người sở hữu được việc triển khai
+  - Có tình huống khách hàng thật trong suốt tám tuần để mang vào thực hành
+  - Cho phép ghi nhận và xem lại một số tình huống theo thỏa thuận bảo mật
+  - Người chủ dành thời gian cho buổi khởi động, rà soát giữa kỳ và đánh giá cuối kỳ
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
 ## Founder Growth System
@@ -54,10 +55,10 @@
 ## Cộng đồng Mở Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-mo.html
-- Dành cho: Nhà sáng lập, chuyên gia và quản lý chủ chốt đang tìm hiểu nhân dạng Next Gen Founder nhưng chưa đủ dữ liệu hoặc chưa sẵn sàng cam kết để tham gia sâu.
+- Dành cho: Founder hoặc chủ doanh nghiệp dịch vụ đang tìm hiểu nhân dạng Next Gen Founder nhưng chưa đủ dữ liệu hoặc chưa sẵn sàng cam kết để tham gia sâu; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
 - Hình thức: Không mất phí, có sàng lọc theo đối tượng và hành vi.
 - Điều kiện tham gia:
-  - Là nhà sáng lập, chuyên gia hoặc quản lý chủ chốt
+  - Là founder hoặc chủ doanh nghiệp dịch vụ; nếu là chuyên gia, đã có hoạt động kinh doanh thật và đang xây doanh nghiệp từ chuyên môn
   - Đang tìm hiểu, chưa cần sẵn sàng cam kết đi sâu
   - Không mất phí, nhưng có sàng lọc theo đối tượng và hành vi
   - Vào bằng cách đăng ký danh sách chờ Cộng đồng Next Gen Founder
@@ -66,10 +67,10 @@
 ## Cộng đồng Thành viên Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-thanh-vien.html
-- Dành cho: Nhà sáng lập, chuyên gia và người đang dẫn một đội ngũ, muốn luyện đủ bốn năng lực trong công việc thật thay vì học rời từng khoá.
+- Dành cho: Founder hoặc chủ doanh nghiệp dịch vụ đúng ICP, muốn phát triển bốn năng lực trong công việc thật; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
 - Hình thức: Thành viên theo năm, có nhịp hoạt động cố định hằng tháng và trải nghiệm mười bốn ngày đầu để bắt đầu đúng.
 - Điều kiện tham gia:
-  - Là nhà sáng lập, chuyên gia hoặc người đang dẫn một đội ngũ
+  - Là founder hoặc chủ doanh nghiệp dịch vụ; nếu là chuyên gia, đã có sản phẩm, khách hàng, doanh thu và ý định xây hệ thống vượt khỏi số giờ cá nhân
   - Muốn luyện đủ bốn năng lực trong công việc thật, không tìm một kho nội dung để xem
   - Cam kết theo năm và đi được nhịp hoạt động cố định hằng tháng
   - Bắt đầu bằng trải nghiệm mười bốn ngày đầu

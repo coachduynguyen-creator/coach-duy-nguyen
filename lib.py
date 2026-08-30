@@ -15,7 +15,7 @@ EMAIL = "nextstepacademyvietnam@gmail.com"
 TTC_LANDING = "https://coachduynguyen.vn/founder-brand/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260829p"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20260830a"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -32,7 +32,7 @@ NGAY_SUA = "2026-08-27"
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
     ("founder-brand/", "Trusted Founder Brand Challenge", "Thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy"),
-    ("chuong-trinh/the-trusted-advisor.html", "The Trusted Advisor", "Nâng chất lượng cuộc tư vấn, bán bằng chẩn đoán"),
+    ("chuong-trinh/trusted-sales-team-system.html", "Trusted Sales Team System", "Nâng chất lượng cuộc tư vấn, bán bằng chẩn đoán"),
     ("chuong-trinh/founder-growth-system.html", "Founder Growth System", "Hệ thống tăng trưởng cùng đội ngũ"),
     ("chuong-trinh/community-growth-system.html", "Community Growth System", "Hệ thống tăng trưởng từ cộng đồng"),
     ("SEP", "", ""),
@@ -160,7 +160,7 @@ def khoi_cuoi(p=""):
 def footer(p=""):
     ct_links = "".join('<a href="%s">%s</a>' % (dd(h, p), t) for h, t, _ in
                        [("founder-brand/", "Trusted Founder Brand", None),
-                        ("chuong-trinh/the-trusted-advisor.html", "The Trusted Advisor", None),
+                        ("chuong-trinh/trusted-sales-team-system.html", "Trusted Sales Team System", None),
                         ("chuong-trinh/founder-growth-system.html", "Founder Growth System", None),
                         ("chuong-trinh/community-growth-system.html", "Community Growth System", None),
                         ("chuong-trinh.html", "Xem tất cả", None)])
