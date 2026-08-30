@@ -24,6 +24,26 @@ GOC = os.path.dirname(os.path.abspath(__file__))
 KHUNG = os.path.join(GOC, "sales-team", "index.html")
 
 
+def co_anh(ten):
+    """Đọc chiều ngang và chiều cao thật của tệp webp.
+
+    Ngày 30/08/2026 tôi gõ tay 560x700 cho một ảnh ngang 1400x932. Thẻ ảnh lại
+    không nằm trong khung .anh-khung, là chỗ duy nhất có object-fit, nên trình
+    duyệt kéo ép ảnh cho vừa hai số tôi gõ và mặt người bị méo. Từ đây máy tự
+    đọc, không ai gõ nữa.
+    """
+    d = io.open(os.path.join(GOC, "img", ten), "rb").read()
+    i = d.find(b"VP8")
+    loai = d[i:i + 4]
+    if loai == b"VP8X":
+        return int.from_bytes(d[i + 8:i + 11], "little") + 1, int.from_bytes(d[i + 11:i + 14], "little") + 1
+    if loai == b"VP8L":
+        n = int.from_bytes(d[i + 9:i + 14], "little")
+        return (n & 0x3FFF) + 1, ((n >> 14) & 0x3FFF) + 1
+    return (int.from_bytes(d[i + 14:i + 16], "little") & 0x3FFF,
+            int.from_bytes(d[i + 16:i + 18], "little") & 0x3FFF)
+
+
 def _o(tieu, muc):
     return ('<div>\n        <h3>%s</h3>\n        <ul>%s</ul>\n      </div>'
             % (tieu, "".join("<li>%s</li>" % x for x in muc)))
@@ -32,6 +52,9 @@ def _o(tieu, muc):
 def than_trang(d):
     """Thân trang, dựng từ dữ liệu. Mọi câu đều lấy từ tài liệu đã ghi."""
     p = []
+    d = dict(d)
+    d["anh_r"], d["anh_c"] = co_anh(d["anh"])
+    d["anh_vi"] = ' style="object-position:%s"' % d["anh_vi"] if d.get("anh_vi") else ""
     # mở đầu
     p.append('''<section class="hero" id="hero" aria-label="Giới thiệu chương trình">
   <div class="bao">
@@ -47,7 +70,7 @@ def than_trang(d):
         <div style="margin-top:30px"><a class="nut" href="#trao-doi">Trao đổi trước khi quyết</a></div>
       </div>
       <div class="hero-anh">
-        <img src="/img/%(anh)s" alt="%(alt)s" width="560" height="700" loading="eager">
+        <figure class="anh-khung"><img src="/img/%(anh)s" alt="%(alt)s" width="%(anh_r)s" height="%(anh_c)s"%(anh_vi)s loading="eager" decoding="async"></figure>
       </div>
     </div>
   </div>

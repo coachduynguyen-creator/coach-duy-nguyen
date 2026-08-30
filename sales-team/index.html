@@ -824,6 +824,13 @@ figure{margin:0}
   .o,.nut,.vach li,.cap-the{transition:none!important}
   .vien i{animation:none}
 }
+
+/* ============ SỬA NGÀY 30/08/2026 ============ */
+/* Đầu trang hiện ngay khi trình duyệt vẽ xong, không chờ JavaScript. Lý do: đây
+   là phần mọi người thấy ở mỗi lần vào, hiệu ứng ở đó không thêm gì mà chỉ thêm
+   rủi ro. Khi cửa sổ bị che hoặc máy yếu, trình duyệt hãm việc vẽ và hiệu ứng
+   0,72 giây kéo dài thành vài giây, người xem chỉ thấy một trang trắng. */
+.js .hero .hero-chu > *, .js .hero .hero-anh > *{opacity:1;transform:none}
 </style>
 
 <script type="application/ld+json">
@@ -878,7 +885,7 @@ figure{margin:0}
         <div style="margin-top:30px"><a class="nut" href="#trao-doi">Trao đổi về đội ngũ của bạn</a></div>
       </div>
       <div class="hero-anh">
-        <img src="/img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng lớp trước một đội ngũ" width="560" height="700" loading="eager">
+        <figure class="anh-khung"><img src="/img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng lớp trước một đội ngũ" width="1400" height="932" loading="eager" decoding="async"></figure>
       </div>
     </div>
   </div>

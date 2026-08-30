@@ -23,8 +23,9 @@ FGS = {
     "ten_vi": "Hệ thống tăng trưởng cùng đội ngũ",
     "nhan_nho": "Năng lực xây hệ thống &middot; Coach Duy Nguyễn",
     "mo_ta": "Đưa một luồng công việc quan trọng ra khỏi đầu người chủ, để nó có kết quả rõ, có người chịu trách nhiệm và có dữ liệu để biết đang chạy tốt hay đang lệch.",
-    "anh": "cd-giang-slide.webp",
-    "alt": "Coach Duy Nguyễn đang trình bày bên màn hình chiếu",
+    "anh": "cd-workshop.webp",
+    "alt": "Coach Duy Nguyễn đưa micro cho một người trong buổi làm việc cùng nhóm",
+    "anh_vi": "86% 42%",
     "cho_ai": "Nhà sáng lập đã có sản phẩm, khách hàng và đội ngũ nòng cốt, nhưng tăng trưởng và vận hành còn phụ thuộc vào mình.",
 
     "vien": "Cho nhà sáng lập đã có đội ngũ nhưng tăng trưởng vẫn chờ mình",
@@ -125,8 +126,8 @@ CGS = {
     "ten_vi": "Hệ thống tăng trưởng từ cộng đồng",
     "nhan_nho": "Năng lực kiến tạo cộng đồng &middot; Coach Duy Nguyễn",
     "mo_ta": "Thiết kế một cộng đồng mà giá trị do thành viên tạo cho nhau: có lời hứa, tiêu chuẩn thành viên, nhịp hoạt động và một vòng sinh hoạt được chạy thử thật.",
-    "anh": "dh-phong-lon.webp",
-    "alt": "Một buổi gặp mặt đông người trong hội trường lớn",
+    "anh": "dh-trong-doan.webp",
+    "alt": "Coach Duy Nguyễn đi giữa một nhóm người đang vỗ tay",
     "cho_ai": "Nhà sáng lập đã có khách hàng, học viên hoặc người theo dõi, nhưng quan hệ thường kết thúc sau giao dịch và mọi giá trị vẫn phụ thuộc vào mình.",
 
     "vien": "Cho nhà sáng lập đã có khách hàng, học viên hoặc người theo dõi",
