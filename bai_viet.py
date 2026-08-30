@@ -3,7 +3,7 @@
 
 BAI = [
 
-dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Bốn câu Duy nghe nhiều nhất từ người sáng lập",
  mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
@@ -82,7 +82,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn người s�
 
 <p>Còn nếu bạn đọc tới đây và thấy mình trong ít nhất hai trong bốn câu, thì Duy muốn nói với bạn rằng bạn không lạc chỗ đâu. Đó là chỗ gần như người sáng lập nào cũng đi qua, kể cả những người mà hôm nay bạn nhìn vào và nghĩ rằng họ chưa từng vất vả. Khác nhau chỉ ở chỗ có ai gọi đúng tên nó ra hay không, và gọi ra sớm được bao nhiêu.</p>"""),
 
-dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
+dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Vì sao Duy không nhìn khách qua phễu bán hàng",
  mo="Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.",
  ngay="2026-08-16", ngay_viet="16 tháng 8, 2026", doc="5 phút đọc",
@@ -161,7 +161,7 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Quan hệ với khách",
 <p>Thứ nó đổi là chất lượng của người ngồi trước mặt bạn sau khoảng hai quý, và số lần bạn phải giải thích giá. Duy nghĩ đó là cuộc đổi đáng, nhưng nó là một cuộc đổi thật, không phải một mẹo làm mọi thứ tốt hơn cùng lúc.</p>
 """),
 
-dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Năm việc của một người cố vấn",
  mo="Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm.",
  ngay="2026-08-12", ngay_viet="12 tháng 8, 2026", doc="6 phút đọc",
@@ -258,7 +258,7 @@ dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn người 
 # "Con trai tôi không muốn tiếp quản công ty" và "Công ty doanh thu vài chục tỷ".
 # Tình huống và lời thoại giữ nguyên vì đó là chuyện thật. Định vị, xưng hô và
 # nhịp câu viết lại theo Voice DNA 3.3, bỏ phần ScaleOS và lời mời comment.
-dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Cái giá của người làm được mọi việc",
  mo="Hai người chủ, hai ngành khác nhau, cùng một câu nói. Điều họ mất không nằm ở doanh thu.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026",
@@ -340,7 +340,7 @@ dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn ng�
 <p>Nhưng có một điều đổi ngay: bạn thôi nghĩ rằng mình đang thiếu người giỏi. <span class="nhan">Bạn nhìn thấy mình đang thiếu một cách làm viết ra được</span>, và điều đó sửa được, khác hẳn với việc ngồi chờ gặp đúng người.</p>
 
 <p>Anh chủ ngoài sáu mươi hôm đó không nói thêm gì nhiều. Nhưng có một câu Duy nghĩ đáng để bất kỳ người sáng lập nào giữ lại: cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.</p>"""),
-dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhân",
+dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Xây uy tín để được tin, không phải để được biết",
  mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Người sáng lập cần điều khác: được đúng người tin, đủ để họ chủ động tìm đến.",
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
@@ -427,7 +427,7 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu cá nhâ
 <p>Ba câu này Duy tự hỏi mình mỗi quý, và câu thứ ba là câu khó nhất. Phong độ thì hôm nay có ngày mai mất, còn phương pháp thì gọi tên được, dạy lại được, và người khác nhắc lại được khi bạn không có mặt.</p>
 """),
 
-dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ",
+dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống tăng trưởng",
  tieu="Nút thắt nằm ở chính bạn",
  mo="Doanh thu tăng không tự làm người chủ nhẹ đi. Càng tăng, mọi việc càng dồn về đúng một người là bạn.",
  ngay="2026-08-04", ngay_viet="4 tháng 8, 2026", doc="6 phút đọc",
@@ -503,7 +503,7 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống và đội ngũ"
 <p>Bác chủ vật liệu xây dựng hôm đó cuối cùng không đổi cách điều hành ngay. Bác chỉ làm một việc: yêu cầu kế toán gửi đúng năm con số vào chiều thứ sáu hằng tuần, cho cả bác và con trai. Ba tháng sau, lần đầu tiên hai bố con ngồi bàn một quyết định mà không ai phải đi tổng hợp số liệu trước.</p>"""),
 
 
-dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội ngũ",
+dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống tăng trưởng",
  tieu="Đừng để kinh nghiệm chỉ nằm trong trí nhớ vài người",
  mo="Thứ quý nhất trong một doanh nghiệp dịch vụ thường không nằm trong tài sản. Nó nằm trong đầu vài người. Đó vừa là sức mạnh vừa là rủi ro.",
  ngay="2026-07-30", ngay_viet="30 tháng 7, 2026", doc="6 phút đọc",
@@ -600,7 +600,7 @@ dict(tep="kinh-nghiem-phai-thanh-he-thong.html", chu_de="Hệ thống và đội
 
 <p>Phần còn lại vẫn cần thời gian và cần bạn quay lại đều đặn. Nhưng từ lúc có hai mươi trường hợp đó, mỗi người mới vào công ty đều bắt đầu từ chỗ cao hơn người trước, thay vì ai cũng phải học lại từ đầu bằng cách đi theo bạn.</p>"""),
 
-dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
+dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Kiến tạo cộng đồng",
  tieu="Một nhóm đăng bài chưa phải là cộng đồng",
  mo="Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó, và đó mới là cộng đồng.",
  ngay="2026-07-24", ngay_viet="24 tháng 7, 2026", doc="6 phút đọc",
@@ -671,7 +671,7 @@ dict(tep="cong-dong-khong-phai-nhom-dang-bai.html", chu_de="Cộng đồng",
 <p>Đó là lý do Duy dồn phần lớn thời gian vào cộng đồng chứ không vào việc mở thêm khoá.</p>
 """),
 
-dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
+dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI cho người chủ",
  tieu="AI làm nhanh phần bạn đã nghĩ đúng, không nghĩ hộ bạn",
  mo="AI không cứu được một định vị mơ hồ. Nó chỉ làm sự mơ hồ đó lan nhanh hơn và đều hơn.",
  ngay="2026-07-18", ngay_viet="18 tháng 7, 2026", doc="5 phút đọc",
@@ -741,7 +741,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI",
 <p>Ba việc trên tốn chừng mười phút. Mười phút đó đổi lại một bản nháp mà bạn sửa được, thay vì một bản nháp trơn tru mà bạn không biết nên bắt đầu sửa từ đâu.</p>
 """),
 
-dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu cá nhân",
+dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Đăng nhiều không làm nên thương hiệu cá nhân",
  mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
@@ -815,7 +815,7 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
 <p><span class="nhan">Cách gần đúng nhất là tìm nội dung đầu tiên của họ chứ đừng xem nội dung mới nhất.</span> Đọc mười bài đầu tiên của một người bạn ngưỡng mộ sẽ cho bạn nhiều thứ dùng được hơn là đọc mười bài gần nhất.</p>
 """),
 
-dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
+dict(tep="khi-nao-nen-noi-khong.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khi nào nên nói không với một khách hàng",
  mo="Nhận một khách sai không chỉ mất tiền. Nó chiếm chỗ của khách đúng, và làm hỏng thứ khó xây nhất là uy tín.",
  ngay="2026-07-06", ngay_viet="6 tháng 7, 2026", doc="5 phút đọc",
@@ -903,7 +903,7 @@ dict(tep="khi-nao-nen-noi-khong.html", chu_de="Quan hệ với khách",
 """),
 
 
-dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
+dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Chọn một vùng chuyên môn để đứng, và dám bỏ phần còn lại",
  mo="Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.",
  ngay="2026-08-22", ngay_viet="22 tháng 8, 2026", doc="6 phút đọc",
@@ -981,7 +981,7 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu cá nhân",
 <p>Và giữ nguyên câu đó ít nhất một năm trước khi nghĩ tới việc sửa. Thương hiệu chết vì đổi hướng nhiều hơn là chết vì chọn sai hướng.</p>
 """),
 
-dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, để sau này còn cái mà viết", chu_de="Thương hiệu cá nhân",
+dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, để sau này còn cái mà viết", chu_de="Thương hiệu của người sáng lập",
  tieu="Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết",
  mo="Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
@@ -1054,7 +1054,7 @@ dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, đ�
 <p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó thì Duy chỉ dạy lại được những gì mình đọc được của người khác, và người học sẽ nhận ra điều đó nhanh hơn bạn nghĩ.</p>
 """),
 
-dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
+dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Làm nội dung một mình mà vẫn giữ được lâu",
  mo="Đăng bảy bài một tuần rồi biến mất ba tháng thua đăng một bài một tuần trong ba năm. Bài này viết về cách thiết kế nhịp bạn giữ được.",
  ngay="2026-08-14", ngay_viet="14 tháng 8, 2026", doc="6 phút đọc",
@@ -1126,7 +1126,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu cá nhân",
 <p>Lỡ một tuần thì tuần sau đi tiếp như chưa có chuyện gì, và không ai đếm ngoài bạn. <span class="nhan dam">Thứ giết nhịp không phải tuần bị lỡ, mà là cảm giác có lỗi sau tuần bị lỡ.</span></p>
 """),
 
-dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
+dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khám trước rồi mới kê đơn: một buổi tư vấn nên đi thế nào",
  mo="Phần lớn buổi tư vấn hỏng ở mười phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.",
  ngay="2026-08-10", ngay_viet="10 tháng 8, 2026", doc="7 phút đọc",
@@ -1227,7 +1227,7 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Quan hệ với khách",
 <p>Nếu con số đó dưới mười lăm, bạn đã tìm ra chỗ cần sửa đầu tiên, và nó không nằm ở kỹ năng chốt như phần lớn người vẫn nghĩ. Nghe thêm lần nữa và đếm số câu hỏi bạn đặt ra trước phút mười lăm, nếu dưới năm câu thì bạn chưa khám, bạn đang kê đơn.</p>
 """),
 
-dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
+dict(tep="de-toi-suy-nghi-them.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khách nói để tôi suy nghĩ thêm, thật ra họ đang nói gì",
  mo="Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có bốn nghĩa khác, và cách xử lý mỗi nghĩa một khác.",
  ngay="2026-08-06", ngay_viet="6 tháng 8, 2026", doc="6 phút đọc",
@@ -1309,7 +1309,7 @@ dict(tep="de-toi-suy-nghi-them.html", chu_de="Quan hệ với khách",
 <p>Nếu cả ba buổi rơi vào cùng một nghĩa thì bạn vừa tìm ra chỗ hổng cố định trong cách bán của mình, và sửa một chỗ đó sẽ đổi kết quả nhiều hơn mọi kỹ thuật chốt cộng lại.</p>
 """),
 
-dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách",
+dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Giảm giá không chỉ mất tiền, còn mất cả vị thế",
  mo="Giảm giá không chỉ lấy đi phần chênh lệch. Nó đổi cách khách nhìn bạn, và điều đó không lấy lại được bằng cách tăng giá lần sau.",
  ngay="2026-08-02", ngay_viet="2 tháng 8, 2026", doc="6 phút đọc",
@@ -1392,7 +1392,7 @@ dict(tep="vi-sao-giam-gia-lam-hong-quan-he.html", chu_de="Quan hệ với khách
 <p>Duy để ý thấy khách nghe câu này thường không hỏi lại lần hai. Có người còn chọn phương án đầy đủ, vì thứ họ vừa thấy không phải là một con số, mà là cách bạn sẽ cư xử suốt quãng làm việc sắp tới.</p>
 """),
 
-dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ngũ",
+dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống tăng trưởng",
  tieu="Năm phần làm nên một hệ thống chạy được",
  mo="Thư mục quy trình đầy tài liệu mà không ai mở là chuyện phổ biến. Nguyên nhân là quy trình chỉ là một trong năm thứ, và thường là thứ ít quan trọng nhất.",
  ngay="2026-07-28", ngay_viet="28 tháng 7, 2026", doc="7 phút đọc",
@@ -1473,7 +1473,7 @@ dict(tep="nam-thu-lam-nen-mot-he-thong.html", chu_de="Hệ thống và đội ng
 
 <p>Một luồng một quý, bốn luồng một năm. Đây là con đường chậm, và Duy chưa thấy con đường nhanh nào thật sự đi tới nơi. <span class="nhan">Đường nhanh thường chỉ nhanh ở phần viết ra, còn phần chạy được thì vẫn mất từng ấy thời gian.</span></p>"""),
 
-dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đội ngũ",
+dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống tăng trưởng",
  tieu="Giao quyền mà không mất kiểm soát",
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
@@ -1560,7 +1560,7 @@ dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống và đ�
 
 <p>Câu hỏi ngược đó thường lộ ra vài chỗ bạn tưởng đã rõ mà thật ra chưa. Ba dòng ấy tiết kiệm cho bạn nhiều giờ hơn cả một tháng họp hành, và nó mất chưa tới hai mươi phút để viết.</p>"""),
 
-dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
+dict(tep="muoi-bon-ngay-dau.html", chu_de="Kiến tạo cộng đồng",
  tieu="Hai tuần đầu quyết định gần như tất cả",
  mo="Người mới vào cộng đồng quyết định ở lại hay không trong hai tuần đầu, và họ quyết dựa trên việc có đạt được một kết quả nhỏ nhìn thấy được hay không.",
  ngay="2026-07-16", ngay_viet="16 tháng 7, 2026", doc="6 phút đọc",
@@ -1632,7 +1632,7 @@ dict(tep="muoi-bon-ngay-dau.html", chu_de="Cộng đồng",
 <p>Duy thấy nhiều nơi làm việc này theo kiểu tự nguyện rồi để đó, và nó chết sau hai tháng. Muốn nó sống thì phải có danh sách, có người theo dõi, và ai làm tốt phải được cảm ơn công khai.</p>
 """),
 
-dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
+dict(tep="do-cong-dong-bang-gi.html", chu_de="Kiến tạo cộng đồng",
  tieu="Ngoài số người, còn đo cộng đồng bằng gì",
  mo="Số thành viên là chỉ số dễ đo nhất và dễ đánh lừa nhất. Có bốn con số khác nói đúng hơn về việc cộng đồng của bạn có sống hay không.",
  ngay="2026-07-10", ngay_viet="10 tháng 7, 2026", doc="6 phút đọc",
@@ -1715,7 +1715,7 @@ dict(tep="do-cong-dong-bang-gi.html", chu_de="Cộng đồng",
 """),
 
 
-dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Quan hệ với khách",
+dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khách chỉ mặc cả với người bán",
  mo="Giá bị mặc cả không phải vì giá cao. Cùng một khách, gặp người này thì hỏi giá, gặp người kia thì hỏi nên chọn phương án nào.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
@@ -1793,7 +1793,7 @@ dict(tep="khach-chi-mac-ca-voi-nguoi-ban.html", chu_de="Quan hệ với khách",
 """),
 
 
-dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khách",
+dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Càng cố chứng minh, vị thế càng thấp",
  mo="Giải thích nhiều là hành vi của người cần được chấp nhận. Chuyên gia không chứng minh mình giỏi, họ dẫn để người kia tự thấy.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
@@ -1882,7 +1882,7 @@ dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Quan hệ với khá
 """),
 
 
-dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống và đội ngũ",
+dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống tăng trưởng",
  tieu="Đội ngũ bán hàng của bạn đang đứng ở vai nào",
  mo="Vai trò không phải chuyện tính cách từng người. Nó thiết kế được, huấn luyện được, và đo được.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
@@ -1975,7 +1975,7 @@ dict(tep="doi-ngu-ban-hang-dang-o-vai-nao.html", chu_de="Hệ thống và đội
 """),
 
 
-dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Ba Điểm Chạm, và vì sao thứ tự không đảo được",
  mo="Ba trạng thái nhận thức khách phải đi qua để tự quyết. Từng phần đều đúng, nhưng đảo thứ tự thì cả chuỗi hỏng.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
@@ -2070,7 +2070,7 @@ dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn n
 """),
 
 
-dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Giữ bình tĩnh khi khách mất bình tĩnh",
  mo="Nghề dịch vụ tiếp xúc nhiều kiểu người mỗi ngày. Bị cuốn theo cảm xúc của người đối diện là mất luôn khả năng dẫn dắt.",
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
@@ -2167,7 +2167,7 @@ dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn n
 """),
 
 
-dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn người sáng lập",
+dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn của người sáng lập",
  tieu="Bốn nghề hay bị gọi chung là coach, và bạn đang cần nghề nào",
  mo="Đào tạo, tư vấn, huấn luyện và cố vấn là bốn nghề khác nhau. Chọn nhầm nghề thì tiền mất mà việc vẫn đứng yên.",
  ngay="2026-08-27", ngay_viet="27 tháng 8, 2026", doc="7 phút đọc",
@@ -2271,7 +2271,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn ngư
 """),
 
 
-dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", tieu_seo="Thương hiệu cá nhân của chủ doanh nghiệp là gì", chu_de="Thương hiệu cá nhân",
+dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", tieu_seo="Thương hiệu cá nhân của chủ doanh nghiệp là gì", chu_de="Thương hiệu của người sáng lập",
  tieu="Thương hiệu cá nhân của chủ doanh nghiệp là gì, và khác thương hiệu doanh nghiệp ở đâu",
  mo="Hai việc khác nhau về bản chất, cần cách làm khác nhau. Nhầm chúng là lý do nhiều người chủ đổ tiền vào chỗ không giải quyết được vấn đề của mình.",
  ngay="2026-08-28", ngay_viet="28 tháng 8, 2026", doc="7 phút đọc",

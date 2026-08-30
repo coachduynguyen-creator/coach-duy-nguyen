@@ -1267,20 +1267,20 @@ PD_MUC = [
  ("01","Điểm nghẽn của người sáng lập",
   "Vì sao càng bán tốt càng bận, vì sao tuyển thêm người lại bận hơn, và cách gỡ từng lớp một.",
   "img/bl-ban-lam-viec.webp","50% 34%"),
- ("02","Bán bằng chẩn đoán",
-  "Dẫn một buổi tư vấn để khách tự nhìn ra vấn đề, thay vì bị thuyết phục.",
+ ("02","Bán hàng và phòng kinh doanh",
+  "Dẫn một buổi tư vấn để khách tự nhìn ra vấn đề, và dựng chuẩn đó thành cách làm chung của cả phòng kinh doanh.",
   "img/v5-di-cung.webp","50% 38%"),
  ("03","Thương hiệu của người sáng lập",
   "Làm rõ lãnh địa và luận điểm, biến công việc thật thành kho câu chuyện.",
   "img/bl-phong-thu.webp","50% 45%"),
- ("04","Xây hệ thống cùng đội ngũ",
+ ("04","Hệ thống tăng trưởng",
   "Năm phần làm nên một hệ thống chạy được, và cách giao quyền mà không mất kiểm soát.",
   "img/dh-trong-doan.webp","50% 30%"),
  ("05","Kiến tạo cộng đồng",
   "Vì sao một nhóm đăng bài chưa phải cộng đồng, và bốn thứ quyết định cộng đồng sống hay chết.",
   "img/dh-phong-lon.webp","50% 40%"),
- ("06","AI trong công việc của người chủ",
-  "Việc nào giao được cho máy, việc nào phải giữ, và cách dùng AI mà không mất tiếng nói riêng.",
+ ("06","AI cho người chủ",
+  "AI dùng vào đâu trong bốn việc phía trên. Việc nào giao được cho máy, việc nào phải giữ, và cách dùng mà không mất tiếng nói riêng.",
   "img/bl-may-tinh.webp","50% 30%"),
 ]
 pd_band = "".join(
@@ -1331,7 +1331,7 @@ PD_TAP = [
   lydo="Soi được ngay trong buổi tư vấn gần nhất của bạn, không cần chờ.",
   cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
 
- # ---- Chuyên mục 02 · Bán bằng chẩn đoán
+ # ---- Chuyên mục 02 · Bán hàng và phòng kinh doanh
  dict(yt="eGQbItur-co", muc=2,
   tieu="Càng bán nhiều thứ, khách càng khó mua",
   mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
@@ -1410,7 +1410,7 @@ PD_TAP = [
   lydo="Danh sách chi tiết đủ cụ thể để soát lại trước buổi gặp quan trọng.",
   cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
 
- # ---- Chuyên mục 04 · Xây hệ thống cùng đội ngũ
+ # ---- Chuyên mục 04 · Hệ thống tăng trưởng
  dict(yt="IUNdDgUxGWM", muc=4,
   tieu="Mười bước biến doanh nghiệp thành cỗ máy bán hàng",
   mo="Bức tranh đầy đủ nhất Duy từng trình bày về một hệ thống bán hàng chạy được mà không cần người chủ đứng cạnh từng bước.",
@@ -1459,9 +1459,42 @@ PD_TAP = [
   cta_nhan="Đọc bài: AI làm nhanh phần đã rõ", cta="bai-viet/ai-lam-nhanh-phan-da-dung.html"),
 ]
 
-CHU_DE_MUC = {"Điểm nghẽn người sáng lập": 1, "Quan hệ với khách": 2,
-              "Thương hiệu cá nhân": 3, "Hệ thống và đội ngũ": 4,
-              "Cộng đồng": 5, "AI": 6}
+# Tên nhóm dùng chung cho blog và podcast, chốt ngày 30/08/2026. Sáu nhóm là bốn
+# trụ cột năng lực, cộng một cửa vào cho người chưa biết mình kẹt ở đâu, cộng AI.
+# AI tách thành nhóm riêng theo quyết định của Coach Duy, kèm ràng buộc: mỗi bài
+# trong nhóm này phải gắn vào một trong bốn trụ cột, không viết về công cụ chung.
+CHU_DE_MUC = {"Điểm nghẽn của người sáng lập": 1, "Bán hàng và phòng kinh doanh": 2,
+              "Thương hiệu của người sáng lập": 3, "Hệ thống tăng trưởng": 4,
+              "Kiến tạo cộng đồng": 5, "AI cho người chủ": 6}
+
+# Mỗi nhóm nội dung dẫn sang đúng một chương trình. Trước đây người đọc hết một
+# bài thì không có lối đi tiếp nào ngoài trang liên hệ chung. Nhóm cửa vào dẫn sang
+# phiếu chẩn đoán vì người ở đó chưa biết mình kẹt chỗ nào. Nhóm AI không có chương
+# trình riêng nên dẫn sang trang phương pháp, nơi có đủ bốn năng lực.
+CHU_DE_CT = {
+ "Điểm nghẽn của người sáng lập": ("Chưa rõ mình đang kẹt ở đâu",
+   "Làm phiếu chẩn đoán bảy phút", PHIEU),
+ "Thương hiệu của người sáng lập": ("Chương trình của trụ cột này",
+   "Trusted Founder Brand Challenge", TTC_LANDING),
+ "Bán hàng và phòng kinh doanh": ("Chương trình của trụ cột này",
+   "Trusted Sales Team System", TSTS_LANDING),
+ "Hệ thống tăng trưởng": ("Chương trình của trụ cột này",
+   "Founder Growth System", FGS_LANDING),
+ "Kiến tạo cộng đồng": ("Chương trình của trụ cột này",
+   "Community Growth System", CGS_LANDING),
+}
+
+def khoi_chuong_trinh(b, p=""):
+    """Một dòng dẫn từ nhóm nội dung sang chương trình tương ứng."""
+    m = CHU_DE_CT.get(b["chu_de"])
+    if not m:
+        return ('<div class="di-ct hien"><span>Chuyên mục này áp dụng vào cả bốn năng lực</span>'
+                '<a href="%sphuong-phap.html">Xem bốn năng lực <span class="mt" aria-hidden="true">&rarr;</span></a></div>' % p)
+    nhan, ten, dich = m
+    ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
+    return ('<div class="di-ct hien"><span>%s</span>'
+            '<a href="%s"%s>%s <span class="mt" aria-hidden="true">&rarr;</span></a></div>'
+            % (nhan, dich, ngoai, ten))
 
 def khoi_podcast(b, p=""):
     muc = CHU_DE_MUC.get(b["chu_de"], 1)
@@ -1478,8 +1511,9 @@ def khoi_podcast(b, p=""):
       <span class="lq-di">Xem tập này <span class="mt" aria-hidden="true">&rarr;</span></span>
     </span>
   </a>
+  %s
 </section>
-""" % (p, tap["yt"], tap["yt"], ten_muc, tap["tieu"], tap["lydo"])
+""" % (p, tap["yt"], tap["yt"], ten_muc, tap["tieu"], tap["lydo"], khoi_chuong_trinh(b, p))
 
 def khoi_nguon(nguon):
     """Dựng khối Nguồn tham khảo ở cuối bài.
