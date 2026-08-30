@@ -206,9 +206,10 @@ JSONLD_NGUOI = json.dumps({
                    "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
 }, ensure_ascii=False)
 
-# Trang này là trang thương hiệu cá nhân. Coach Duy chốt ngày 30/08/2026: không
-# nhắc tên pháp nhân ở bất kỳ đâu, kể cả trong dữ liệu có cấu trúc. Mọi vai trò
-# nhà xuất bản và đơn vị tổ chức đều khai là Person, không khai Organization.
+# Trang này là trang thương hiệu cá nhân. Coach Duy chốt ngày 30/08/2026: pháp nhân
+# không đứng ở vai trò tạo ra giá trị, con người mới đứng ở vai trò đó. Đây không
+# phải xoá pháp nhân, công ty vẫn có trong hồ sơ và đăng ký kinh doanh. Nên trong
+# dữ liệu có cấu trúc của trang, nhà xuất bản và đơn vị tổ chức khai là Person.
 
 GOC = os.path.dirname(os.path.abspath(__file__))
 
