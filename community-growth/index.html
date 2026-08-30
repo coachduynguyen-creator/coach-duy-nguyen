@@ -831,6 +831,20 @@ figure{margin:0}
    rủi ro. Khi cửa sổ bị che hoặc máy yếu, trình duyệt hãm việc vẽ và hiệu ứng
    0,72 giây kéo dài thành vài giây, người xem chỉ thấy một trang trắng. */
 .js .hero .hero-chu > *, .js .hero .hero-anh > *{opacity:1;transform:none}
+
+/* Tiêu đề chia đều chữ cho các dòng. Trước đây tiêu đề dùng text-wrap:pretty,
+   luật đó đổ đầy dòng trên rồi để dòng cuối còn một mẩu: đo ở khổ 1280 thì ba
+   dòng dài 791, 804 rồi 334 pixel, nhìn ra ngay là xuống dòng tuỳ tiện. Với
+   balance ba dòng thành 647, 661, 622, khối chữ gọn lại và cân.
+   Phải kể cả thẻ span bên trong, vì span trong tiêu đề là khối riêng và có luật
+   pretty của chính nó, chỉnh mỗi thẻ ngoài thì span không đổi.
+   Chỉ áp cho tiêu đề. Đoạn văn dài vẫn giữ pretty, vì chia đều cho một đoạn
+   nhiều dòng làm dòng nào cũng ngắn và đọc mệt hơn. */
+.hero-chu h1, .hero-chu h1 span,
+.dau-phan h2, .dau-phan h2 span{text-wrap:balance}
+/* Khoảng cách này trước đây gắn thẳng vào thẻ, làm dinh_tu_ghep.py không
+   nhận ra khối và bỏ sót phần nối từ ghép. */
+.phan .nhan-dang, .phan .gia-ghi{margin-top:34px}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Community Growth System", "alternateName": "Hệ thống tăng trưởng từ cộng đồng", "description": "Thiết kế một cộng đồng mà giá trị do thành viên tạo cho nhau: có lời hứa, tiêu chuẩn thành viên, nhịp hoạt động và một vòng sinh hoạt được chạy thử thật.", "inLanguage": "vi", "url": "https://coachduynguyen.vn/community-growth/", "provider": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/"}, "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/ve-toi.html"}, "audience": {"@type": "Audience", "audienceType": "Nhà sáng lập đã có khách hàng, học viên hoặc người theo dõi, nhưng quan hệ thường kết thúc sau giao dịch và mọi giá trị vẫn phụ thuộc vào mình."}, "coursePrerequisites": ["Bạn đã có khách hàng, học viên hoặc người theo dõi, tức là đã có người để tập hợp.", "Quan hệ hiện nay thường kết thúc sau giao dịch, và mọi giá trị vẫn phụ thuộc vào bạn.", "Có người phụ trách cộng đồng tham gia cùng, không giao lại cho một người làm nội dung.", "Sẵn sàng chạy thử một vòng sinh hoạt thật ngay trong thời gian học."], "teaches": ["Lời hứa và tiêu chuẩn thành viên", "Trải nghiệm mười bốn ngày đầu", "Nghi thức và nhịp hoạt động", "Cơ chế tạo quan hệ và giới thiệu", "Một vòng sinh hoạt đã chạy thử"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Tôi đã có nhóm mấy nghìn người rồi, còn cần chương trình này không?", "acceptedAnswer": {"@type": "Answer", "text": "Số thành viên và một cộng đồng sống là hai chuyện khác nhau. Nếu bạn ngừng đăng bài mà nhóm im, nhóm đó vẫn là một kênh của riêng bạn. Chương trình nhắm vào phần giá trị được tạo giữa các thành viên, không nhắm vào việc tăng số người."}}, {"@type": "Question", "name": "Cộng đồng của tôi lập ra để bán hàng, có hợp không?", "acceptedAnswer": {"@type": "Answer", "text": "Không hợp. Phần không nhận ghi rõ là chương trình không làm cùng người chỉ muốn có thêm một nhóm để bán hàng. Lời giới thiệu và cơ hội kinh doanh vẫn xuất hiện, nhưng đến sau khi thành viên tạo được giá trị cho nhau, không đi theo chiều ngược lại."}}, {"@type": "Question", "name": "Tôi có nhất thiết cần một người phụ trách cộng đồng không?", "acceptedAnswer": {"@type": "Answer", "text": "Có, và đó là điều kiện tham gia. Người phụ trách học cùng bạn, chứ không phải bạn giao lại cho một người làm nội dung. Lịch sinh hoạt cần có người giữ hằng tuần, việc đó khác hẳn việc sản xuất bài đăng."}}, {"@type": "Question", "name": "Chương trình có vận hành cộng đồng giúp tôi không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Duy thiết kế cùng bạn và ngồi cùng khi bạn chạy thử một vòng sinh hoạt thật, nhưng người vận hành vẫn là đội ngũ của bạn. Cộng đồng giao cho người ngoài vận hành thì mất đúng phần làm nên nó."}}, {"@type": "Question", "name": "Bao giờ mở, học bao lâu và mức đầu tư thế nào?", "acceptedAnswer": {"@type": "Answer", "text": "Chưa chốt. Hình thức dự kiến là bốn tới sáu buổi trực tuyến, kết hợp thiết kế và chạy thử một vòng sinh hoạt thật, gồm một số phiên cho người phụ trách cộng đồng. Lịch, thời lượng cuối cùng và mức đầu tư chỉ chốt sau khi chạy thử với vài cộng đồng thật, và trang này sẽ cập nhật khi có."}}, {"@type": "Question", "name": "Duy có bảo đảm số thành viên không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Phần không nhận ghi rõ chương trình không bảo đảm số thành viên. Phần chương trình chịu trách nhiệm là lời hứa, tiêu chuẩn thành viên, trải nghiệm mười bốn ngày đầu, nhịp hoạt động và một vòng sinh hoạt đã chạy thử được."}}]}</script>
@@ -851,8 +865,8 @@ figure{margin:0}
     <div class="hero-luoi">
       <div class="hero-chu">
         <span class="vien"><i></i>Cho nhà sáng lập đã có khách hàng, học viên hoặc người theo dõi</span>
-        <h1>Bạn có rất nhiều mối quan hệ tốt. <span>Nhưng chúng rời rạc, và giá trị nào cũng phải do bạn tạo ra.</span></h1>
-        <p class="dan"><b>Community Growth System</b> là chương trình thiết kế một cộng đồng mà giá trị được tạo giữa các thành viên với nhau, không chỉ chảy một chiều từ người sáng lập xuống.</p>
+        <h1>Bạn có rất nhiều mối quan hệ tốt. <span>Nhưng chúng rời rạc, và giá trị nào cũng phải do bạn tạo ra.</span></h1>
+        <p class="dan"><b>Community Growth System</b> là chương trình thiết kế một cộng đồng mà giá trị được tạo giữa các thành viên với nhau, không chỉ chảy một chiều từ người sáng lập xuống.</p>
         <ul class="hero-ket">
           <li class="tieu" style="padding-left:0">Chương trình nhắm tới</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lời hứa cộng đồng rõ ràng, cùng tiêu chuẩn để biết ai nên vào và ai chưa hợp.</li>
@@ -874,11 +888,11 @@ figure{margin:0}
     <div class="dau-phan hien">
       <span class="nhan">Chỗ nghẽn</span>
       <h2>Khách quý bạn, học viên biết ơn bạn. <span>Nhưng xong việc là quan hệ đứng lại, và lần sau vẫn phải bắt đầu từ bạn.</span></h2>
-      <p class="dan">Sáu câu dưới đây hay đi cùng nhau ở những người đã có tệp quan hệ tốt nhưng chưa có cộng đồng. Nếu bạn nhận ra bốn trong sáu, nhóm bạn đang có mới là một kênh của riêng bạn, chưa phải một cộng đồng.</p>
+      <p class="dan">Sáu câu dưới đây hay đi cùng nhau ở những người đã có tệp quan hệ tốt nhưng chưa có cộng đồng. Nếu bạn nhận ra bốn trong sáu, nhóm bạn đang có mới là một kênh của riêng bạn, chưa phải một cộng đồng.</p>
     </div>
-    <div class="noi hien tre"><div><i>&ldquo;</i><p>Tôi có nhóm mấy nghìn người, nhưng tôi không đăng bài thì nhóm im.</p></div><div><i>&ldquo;</i><p>Thành viên vào rồi ở đó, ít khi nói chuyện với nhau.</p></div><div><i>&ldquo;</i><p>Mọi câu hỏi đều chờ tôi trả lời, tôi bận vài hôm là nhóm nguội.</p></div><div><i>&ldquo;</i><p>Người mới vào được một tuần rồi lặng mất, tôi không biết vì sao.</p></div><div><i>&ldquo;</i><p>Học viên cũ quý tôi lắm, nhưng hết khoá là hết liên lạc.</p></div><div><i>&ldquo;</i><p>Tôi không biết cộng đồng đang khoẻ hay yếu, chỉ nhìn được số thành viên.</p></div></div>
-    <div class="nhan-dang hien" style="margin-top:34px">
-      <b>Cộng đồng không phải nhóm đăng bài, cũng không phải chỗ để chào hàng. <i>Chừng nào giá trị còn chỉ chảy một chiều từ bạn xuống, nhóm của bạn vẫn là một kênh của riêng bạn.</i></b>
+    <div class="noi hien tre"><div><i>&ldquo;</i><p>Tôi có nhóm mấy nghìn người, nhưng tôi không đăng bài thì nhóm im.</p></div><div><i>&ldquo;</i><p>Thành viên vào rồi ở đó, ít khi nói chuyện với nhau.</p></div><div><i>&ldquo;</i><p>Mọi câu hỏi đều chờ tôi trả lời, tôi bận vài hôm là nhóm nguội.</p></div><div><i>&ldquo;</i><p>Người mới vào được một tuần rồi lặng mất, tôi không biết vì sao.</p></div><div><i>&ldquo;</i><p>Học viên cũ quý tôi lắm, nhưng hết khoá là hết liên lạc.</p></div><div><i>&ldquo;</i><p>Tôi không biết cộng đồng đang khoẻ hay yếu, chỉ nhìn được số thành viên.</p></div></div>
+    <div class="nhan-dang hien">
+      <b>Cộng đồng không phải nhóm đăng bài, cũng không phải chỗ để chào hàng. <i>Chừng nào giá trị còn chỉ chảy một chiều từ bạn xuống, nhóm của bạn vẫn là một kênh của riêng bạn.</i></b>
       <span>Chương trình nhắm vào việc tạo giá trị giữa các thành viên, và bắt đầu bằng một vòng sinh hoạt thật được chạy thử ngay khi bạn còn đang học.</span>
     </div>
   </div>
@@ -888,15 +902,15 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Cơ chế</span>
-      <h2>Sáu việc một người kiến tạo cộng đồng phải biết làm</h2>
-      <p class="dan">Lập nhóm, đăng bài và tổ chức sự kiện mới là phần nhìn thấy được. Sáu việc dưới đây mới quyết định cộng đồng có sống hay không, và chương trình đi theo đúng thứ tự này.</p>
+      <h2>Sáu việc của một người kiến tạo cộng đồng</h2>
+      <p class="dan">Lập nhóm, đăng bài và tổ chức sự kiện mới là phần nhìn thấy được. Sáu việc dưới đây mới quyết định cộng đồng có sống hay không, và chương trình đi theo đúng thứ tự này.</p>
     </div>
     <div class="ke sau hien tre"><div>
         <h3>Chọn đúng người</h3>
         <ul><li>Chọn đúng người và giữ chất lượng thành viên. Ai cũng vào được thì không ai thấy mình thuộc về.</li></ul>
       </div>
       <div>
-        <h3>Thiết kế lúc bắt đầu</h3>
+        <h3>Thiết kế lúc bắt đầu</h3>
         <ul><li>Người mới cần sớm cảm thấy mình thuộc về nơi này, và cảm giác đó được thiết kế chứ không tự nhiên mà có.</li></ul>
       </div>
       <div>
@@ -908,11 +922,11 @@ figure{margin:0}
         <ul><li>Trong cộng đồng luôn có người đang cần và người làm được. Bạn phải nhìn ra và để hai bên gặp nhau.</li></ul>
       </div>
       <div>
-        <h3>Giá trị tạo giữa các thành viên</h3>
+        <h3>Giá trị tạo giữa các thành viên</h3>
         <ul><li>Không dồn mọi kỳ vọng vào người sáng lập, vì đó chính là chỗ khác nhau giữa một cộng đồng và một kênh.</li></ul>
       </div>
       <div>
-        <h3>Chuyển kết quả thành cơ hội</h3>
+        <h3>Chuyển kết quả thành cơ hội</h3>
         <ul><li>Kết quả của thành viên trở thành câu chuyện, lời giới thiệu và cơ hội hợp tác, luôn có sự đồng ý của người trong cuộc.</li></ul>
       </div></div>
   </div>
@@ -922,15 +936,15 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Kết quả</span>
-      <h2>Bạn giữ lại được gì sau chương trình</h2>
-      <p class="dan">Năm phần dưới đây phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai mở ra dùng thì không tính là hoàn thành.</p>
+      <h2>Bạn giữ lại được gì sau chương trình</h2>
+      <p class="dan">Năm phần dưới đây phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai mở ra dùng thì không tính là hoàn thành.</p>
     </div>
     <div class="ke sau hien tre"><div>
-        <h3>Lời hứa và tiêu chuẩn thành viên</h3>
+        <h3>Lời hứa và tiêu chuẩn thành viên</h3>
         <ul><li>Cộng đồng của bạn hứa điều gì, và ai thì nên có mặt trong đó.</li></ul>
       </div>
       <div>
-        <h3>Trải nghiệm mười bốn ngày đầu</h3>
+        <h3>Trải nghiệm mười bốn ngày đầu</h3>
         <ul><li>Chuỗi việc giúp người mới có một kết quả nhỏ nhìn thấy được ngay trong hai tuần.</li></ul>
       </div>
       <div>
@@ -952,12 +966,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Ranh giới</span>
-      <h2>Ai hợp, và chương trình không nhận việc gì</h2>
-      <p class="dan">Duy ghi phần không nhận rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
+      <h2>Ai hợp, và chương trình không nhận việc gì</h2>
+      <p class="dan">Duy ghi phần không nhận rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
     </div>
     <div class="hop hien tre">
-      <div class="co"><h3>Phù hợp nếu</h3><ul><li>Bạn đã có khách hàng, học viên hoặc người theo dõi, tức là đã có người để tập hợp.</li><li>Quan hệ hiện nay thường kết thúc sau giao dịch, và mọi giá trị vẫn phụ thuộc vào bạn.</li><li>Có người phụ trách cộng đồng tham gia cùng, không giao lại cho một người làm nội dung.</li><li>Sẵn sàng chạy thử một vòng sinh hoạt thật ngay trong thời gian học.</li></ul></div>
-      <div class="chua"><h3>Chương trình không nhận</h3><ul><li>Vận hành cộng đồng thay bạn, kể cả trong giai đoạn chạy thử.</li><li>Bảo đảm số thành viên, dù cộng đồng của bạn đang có sẵn bao nhiêu người.</li><li>Làm cùng người chỉ muốn có thêm một nhóm để bán hàng.</li></ul></div>
+      <div class="co"><h3>Phù hợp nếu</h3><ul><li>Bạn đã có khách hàng, học viên hoặc người theo dõi, tức là đã có người để tập hợp.</li><li>Quan hệ hiện nay thường kết thúc sau giao dịch, và mọi giá trị vẫn phụ thuộc vào bạn.</li><li>Có người phụ trách cộng đồng tham gia cùng, không giao lại cho một người làm nội dung.</li><li>Sẵn sàng chạy thử một vòng sinh hoạt thật ngay trong thời gian học.</li></ul></div>
+      <div class="chua"><h3>Chương trình không nhận</h3><ul><li>Vận hành cộng đồng thay bạn, kể cả trong giai đoạn chạy thử.</li><li>Bảo đảm số thành viên, dù cộng đồng của bạn đang có sẵn bao nhiêu người.</li><li>Làm cùng người chỉ muốn có thêm một nhóm để bán hàng.</li></ul></div>
     </div>
   </div>
 </section>
@@ -966,8 +980,8 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
-      <h2>Chương trình đang được thiết kế chi tiết, <span>nên trang này chưa có lịch và chưa có giá.</span></h2>
-      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
+      <h2>Chương trình đang được thiết kế chi tiết, <span>nên trang này chưa có lịch và chưa có giá.</span></h2>
+      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
     </div>
     <div class="hop hien tre">
       <div class="co">
@@ -984,7 +998,7 @@ figure{margin:0}
         </ul>
       </div>
     </div>
-    <div class="gia-ghi hien" style="margin-top:34px">
+    <div class="gia-ghi hien">
       <p><b>Nếu bạn đang gặp đúng chỗ nghẽn phía trên, cứ để lại vài dòng.</b> Duy sẽ trao đổi để xem có hợp không, và nếu chương trình này chưa phải thứ bạn cần lúc này thì Duy nói rõ vì sao và chỉ bạn bước hợp hơn.</p>
     </div>
     <div class="hien" style="margin-top:30px;text-align:center">
@@ -998,18 +1012,18 @@ figure{margin:0}
     <div class="dau-phan hien">
       <span class="nhan">Đọc trước khi quyết</span>
       <h2>Cách Duy nghĩ về việc này, viết sẵn trên blog</h2>
-      <p class="dan">Ba bài dưới đây nói đúng chỗ nghẽn mà chương trình này nhắm tới. Đọc xong bạn biết mình có cùng cách nhìn với Duy hay không, trước khi mất thời gian cho một buổi trao đổi.</p>
+      <p class="dan">Ba bài dưới đây nói đúng chỗ nghẽn mà chương trình này nhắm tới. Đọc xong bạn biết mình có cùng cách nhìn với Duy hay không, trước khi mất thời gian cho một buổi trao đổi.</p>
     </div>
     <div class="ke sau hien tre"><div>
-        <h3><a href="https://coachduynguyen.vn/bai-viet/cong-dong-khong-phai-nhom-dang-bai.html">Một nhóm đăng bài chưa phải là cộng đồng</a></h3>
+        <h3><a href="https://coachduynguyen.vn/bai-viet/cong-dong-khong-phai-nhom-dang-bai.html">Một nhóm đăng bài chưa phải là cộng đồng</a></h3>
         <ul><li>Mở một nhóm rất dễ. Tạo được giá trị giữa các thành viên với nhau mới là việc khó.</li></ul>
       </div>
       <div>
-        <h3><a href="https://coachduynguyen.vn/bai-viet/muoi-bon-ngay-dau.html">Hai tuần đầu quyết định gần như tất cả</a></h3>
+        <h3><a href="https://coachduynguyen.vn/bai-viet/muoi-bon-ngay-dau.html">Hai tuần đầu quyết định gần như tất cả</a></h3>
         <ul><li>Người mới quyết định ở lại hay không trong hai tuần đầu, và họ quyết dựa trên một kết quả nhỏ nhìn thấy được.</li></ul>
       </div>
       <div>
-        <h3><a href="https://coachduynguyen.vn/bai-viet/do-cong-dong-bang-gi.html">Ngoài số người, còn đo cộng đồng bằng gì</a></h3>
+        <h3><a href="https://coachduynguyen.vn/bai-viet/do-cong-dong-bang-gi.html">Ngoài số người, còn đo cộng đồng bằng gì</a></h3>
         <ul><li>Số thành viên là chỉ số dễ đo nhất và dễ đánh lừa nhất. Có bốn con số khác nói đúng hơn.</li></ul>
       </div></div>
   </div>

@@ -155,7 +155,7 @@ CGS = {
     "luan_diem": "Cộng đồng không phải nhóm đăng bài, cũng không phải chỗ để chào hàng. <i>Chừng nào giá trị còn chỉ chảy một chiều từ bạn xuống, nhóm của bạn vẫn là một kênh của riêng bạn.</i>",
     "luan_them": "Chương trình nhắm vào việc tạo giá trị giữa các thành viên, và bắt đầu bằng một vòng sinh hoạt thật được chạy thử ngay khi bạn còn đang học.",
 
-    "cc_h2": "Sáu việc một người kiến tạo cộng đồng phải biết làm",
+    "cc_h2": "Sáu việc của một người kiến tạo cộng đồng",
     "cc_dan": "Lập nhóm, đăng bài và tổ chức sự kiện mới là phần nhìn thấy được. Sáu việc dưới đây mới quyết định cộng đồng có sống hay không, và chương trình đi theo đúng thứ tự này.",
     "co_che": [
         ("Chọn đúng người", ["Chọn đúng người và giữ chất lượng thành viên. Ai cũng vào được thì không ai thấy mình thuộc về."]),

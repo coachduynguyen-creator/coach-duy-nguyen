@@ -831,6 +831,20 @@ figure{margin:0}
    rủi ro. Khi cửa sổ bị che hoặc máy yếu, trình duyệt hãm việc vẽ và hiệu ứng
    0,72 giây kéo dài thành vài giây, người xem chỉ thấy một trang trắng. */
 .js .hero .hero-chu > *, .js .hero .hero-anh > *{opacity:1;transform:none}
+
+/* Tiêu đề chia đều chữ cho các dòng. Trước đây tiêu đề dùng text-wrap:pretty,
+   luật đó đổ đầy dòng trên rồi để dòng cuối còn một mẩu: đo ở khổ 1280 thì ba
+   dòng dài 791, 804 rồi 334 pixel, nhìn ra ngay là xuống dòng tuỳ tiện. Với
+   balance ba dòng thành 647, 661, 622, khối chữ gọn lại và cân.
+   Phải kể cả thẻ span bên trong, vì span trong tiêu đề là khối riêng và có luật
+   pretty của chính nó, chỉnh mỗi thẻ ngoài thì span không đổi.
+   Chỉ áp cho tiêu đề. Đoạn văn dài vẫn giữ pretty, vì chia đều cho một đoạn
+   nhiều dòng làm dòng nào cũng ngắn và đọc mệt hơn. */
+.hero-chu h1, .hero-chu h1 span,
+.dau-phan h2, .dau-phan h2 span{text-wrap:balance}
+/* Khoảng cách này trước đây gắn thẳng vào thẻ, làm dinh_tu_ghep.py không
+   nhận ra khối và bỏ sót phần nối từ ghép. */
+.phan .nhan-dang, .phan .gia-ghi{margin-top:34px}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Founder Growth System", "alternateName": "Hệ thống tăng trưởng cùng đội ngũ", "description": "Đưa một luồng công việc quan trọng ra khỏi đầu người chủ, để nó có kết quả rõ, có người chịu trách nhiệm và có dữ liệu để biết đang chạy tốt hay đang lệch.", "inLanguage": "vi", "url": "https://coachduynguyen.vn/founder-growth/", "provider": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/"}, "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/ve-toi.html"}, "audience": {"@type": "Audience", "audienceType": "Nhà sáng lập đã có sản phẩm, khách hàng và đội ngũ nòng cốt, nhưng tăng trưởng và vận hành còn phụ thuộc vào mình."}, "coursePrerequisites": ["Bạn đã có sản phẩm, có khách hàng và một đội ngũ nòng cốt đang chạy.", "Tăng trưởng và vận hành vẫn phụ thuộc vào việc bạn có mặt.", "Có quản lý chủ chốt tham gia được một số phiên, để bạn không đi học một mình.", "Chấp nhận đưa số liệu vận hành thật ra bàn, kể cả phần chưa đẹp."], "teaches": ["Một luồng chạy được", "Người chịu trách nhiệm", "Số liệu và nhịp rà soát", "Bản đồ CDN Trust Orbit", "Kế hoạch chín mươi ngày"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Chương trình này khác gì một khoá quản trị hoặc một hợp đồng tư vấn quy trình?", "acceptedAnswer": {"@type": "Answer", "text": "Chương trình không viết hộ quy trình cho cả doanh nghiệp. Duy làm cùng bạn đúng một luồng, đưa luồng đó đạt sáu điểm chuẩn phía trên, rồi bàn giao cách làm để bạn nhân sang chỗ khác. Quy trình chỉ là một trong sáu điểm, và thường không phải điểm khó nhất."}}, {"@type": "Question", "name": "Tôi nên chọn luồng nào để làm trước?", "acceptedAnswer": {"@type": "Answer", "text": "Luồng đang ngốn nhiều thời gian của bạn nhất và ảnh hưởng thẳng tới doanh thu. Việc chọn được bàn ngay ở buổi trao đổi đầu, vì chọn sai luồng thì chương trình vẫn chạy nhưng bạn không thấy nhẹ đi."}}, {"@type": "Question", "name": "Tôi bận, giao cho quản lý đi học thay được không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Điều kiện tham gia là quản lý chủ chốt học cùng bạn, chứ không học thay bạn. Người quyết định đánh đổi trong một luồng vẫn là bạn, nên bạn vắng thì phần khó nhất bị bỏ trống."}}, {"@type": "Question", "name": "Doanh nghiệp tôi chưa có số liệu gì nhiều thì sao?", "acceptedAnswer": {"@type": "Answer", "text": "Không cần có sẵn hệ thống báo cáo. Cần bạn chấp nhận đưa số thật đang có ra bàn, kể cả phần chưa đẹp. Một trong năm thứ giữ lại chính là bộ số tối thiểu để theo dõi luồng, nên phần đó được dựng trong chương trình."}}, {"@type": "Question", "name": "Bao giờ mở, học bao lâu và mức đầu tư thế nào?", "acceptedAnswer": {"@type": "Answer", "text": "Chưa chốt. Hình thức dự kiến là bốn tới sáu buổi trực tuyến, gồm một số phiên riêng cho quản lý chủ chốt. Lịch, thời lượng cuối cùng và mức đầu tư chỉ chốt sau khi chạy thử với vài doanh nghiệp thật, và trang này sẽ cập nhật khi có."}}, {"@type": "Question", "name": "Duy có cam kết doanh thu tăng bao nhiêu không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Chương trình không cam kết một con số doanh thu, và cũng không nhận vai điều hành thay bạn. Phần chương trình chịu trách nhiệm là một luồng chạy được, có người phụ trách và có số để theo dõi."}}]}</script>
@@ -851,8 +865,8 @@ figure{margin:0}
     <div class="hero-luoi">
       <div class="hero-chu">
         <span class="vien"><i></i>Cho nhà sáng lập đã có đội ngũ nhưng tăng trưởng vẫn chờ mình</span>
-        <h1>Đội ngũ đông thêm mà bạn không nhẹ đi. <span>Vì kết quả vẫn nằm trong trí nhớ và sự đôn đốc của bạn.</span></h1>
-        <p class="dan"><b>Founder Growth System</b> là chương trình đưa một luồng công việc quan trọng ra khỏi đầu người chủ, để luồng đó có kết quả rõ, có người chịu trách nhiệm và có dữ liệu để biết đang chạy tốt hay đang lệch.</p>
+        <h1>Đội ngũ đông thêm mà bạn không nhẹ đi. <span>Vì kết quả vẫn nằm trong trí nhớ và sự đôn đốc của bạn.</span></h1>
+        <p class="dan"><b>Founder Growth System</b> là chương trình đưa một luồng công việc quan trọng ra khỏi đầu người chủ, để luồng đó có kết quả rõ, có người chịu trách nhiệm và có dữ liệu để biết đang chạy tốt hay đang lệch.</p>
         <ul class="hero-ket">
           <li class="tieu" style="padding-left:0">Chương trình nhắm tới</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Một luồng thu hút, tư vấn, bán hàng hoặc vận hành chạy được mà không cần bạn đứng giữa.</li>
@@ -873,12 +887,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Chỗ nghẽn</span>
-      <h2>Bạn giao việc rồi vẫn phải nhắc. <span>Không nhắc thì việc đứng lại, và bạn thành chỗ nghẽn của chính doanh nghiệp mình.</span></h2>
-      <p class="dan">Sáu câu dưới đây Duy nghe đi nghe lại ở những người chủ đã có đội ngũ. Nếu bạn nhận ra bốn trong sáu, chỗ nghẽn của bạn không nằm ở số người, mà nằm ở chỗ chưa có luồng nào chạy được khi bạn không nhìn tới.</p>
+      <h2>Bạn giao việc rồi vẫn phải nhắc. <span>Không nhắc thì việc đứng lại, và bạn thành chỗ nghẽn của chính doanh nghiệp mình.</span></h2>
+      <p class="dan">Sáu câu dưới đây Duy nghe đi nghe lại ở những người chủ đã có đội ngũ. Nếu bạn nhận ra bốn trong sáu, chỗ nghẽn của bạn không nằm ở số người, mà nằm ở chỗ chưa có luồng nào chạy được khi bạn không nhìn tới.</p>
     </div>
-    <div class="noi hien tre"><div><i>&ldquo;</i><p>Việc gì quan trọng cũng phải qua tôi mới yên tâm.</p></div><div><i>&ldquo;</i><p>Đội ngũ làm được, nhưng mỗi người một kiểu nên kết quả lúc được lúc không.</p></div><div><i>&ldquo;</i><p>Tôi giao rồi nhưng vẫn phải nhắc, không nhắc là việc đứng lại.</p></div><div><i>&ldquo;</i><p>Hỏi số thì mỗi người đưa một bảng, không biết con số nào mới đúng.</p></div><div><i>&ldquo;</i><p>Có thư mục quy trình khá đầy nhưng gần như không ai mở ra xem.</p></div><div><i>&ldquo;</i><p>Tháng nào tốt tháng nào xấu thì tôi biết, còn vì sao thì tôi đoán.</p></div></div>
-    <div class="nhan-dang hien" style="margin-top:34px">
-      <b>Kết quả không thể chỉ nằm trong trí nhớ và sự đôn đốc của người chủ. <i>Chừng nào một luồng còn cần bạn nhớ hộ và nhắc hộ, nó chưa phải hệ thống, nó vẫn là thói quen của riêng bạn.</i></b>
+    <div class="noi hien tre"><div><i>&ldquo;</i><p>Việc gì quan trọng cũng phải qua tôi mới yên tâm.</p></div><div><i>&ldquo;</i><p>Đội ngũ làm được, nhưng mỗi người một kiểu nên kết quả lúc được lúc không.</p></div><div><i>&ldquo;</i><p>Tôi giao rồi nhưng vẫn phải nhắc, không nhắc là việc đứng lại.</p></div><div><i>&ldquo;</i><p>Hỏi số thì mỗi người đưa một bảng, không biết con số nào mới đúng.</p></div><div><i>&ldquo;</i><p>Có thư mục quy trình khá đầy nhưng gần như không ai mở ra xem.</p></div><div><i>&ldquo;</i><p>Tháng nào tốt tháng nào xấu thì tôi biết, còn vì sao thì tôi đoán.</p></div></div>
+    <div class="nhan-dang hien">
+      <b>Kết quả không thể chỉ nằm trong trí nhớ và sự đôn đốc của người chủ. <i>Chừng nào một luồng còn cần bạn nhớ hộ và nhắc hộ, nó chưa phải hệ thống, nó vẫn là thói quen của riêng bạn.</i></b>
       <span>Chương trình nhắm vào một luồng thôi, làm cho luồng đó chạy được, rồi lấy chính cách làm ấy nhân sang chỗ khác.</span>
     </div>
   </div>
@@ -889,10 +903,10 @@ figure{margin:0}
     <div class="dau-phan hien">
       <span class="nhan">Cơ chế</span>
       <h2>Sáu điểm làm nên một hệ thống chạy được</h2>
-      <p class="dan">Duy dùng đúng sáu điểm này để xem một luồng công việc đã đủ chuẩn hay chưa. Thiếu một điểm thì luồng vẫn chạy được một thời gian, rồi quay về phụ thuộc người chủ.</p>
+      <p class="dan">Duy dùng đúng sáu điểm này để xem một luồng công việc đã đủ chuẩn hay chưa. Thiếu một điểm thì luồng vẫn chạy được một thời gian, rồi quay về phụ thuộc người chủ.</p>
     </div>
     <div class="ke sau hien tre"><div>
-        <h3>Kết quả rõ</h3>
+        <h3>Kết quả rõ</h3>
         <ul><li>Luồng này sinh ra kết quả gì, và đo bằng con số nào. Không nói được kết quả thì không có gì để cải tiến.</li></ul>
       </div>
       <div>
@@ -900,7 +914,7 @@ figure{margin:0}
         <ul><li>Một người, không phải một phòng ban. Khi luồng lệch, có đúng một người phải trả lời vì sao.</li></ul>
       </div>
       <div>
-        <h3>Các bước và tiêu chuẩn cần thiết</h3>
+        <h3>Các bước và tiêu chuẩn cần thiết</h3>
         <ul><li>Đủ để người mới làm được việc, chứ không phải một bộ tài liệu dày mà không ai mở ra.</li></ul>
       </div>
       <div>
@@ -922,8 +936,8 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Kết quả</span>
-      <h2>Doanh nghiệp giữ lại được gì sau chương trình</h2>
-      <p class="dan">Năm phần dưới đây phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai mở ra dùng thì không tính là hoàn thành.</p>
+      <h2>Doanh nghiệp giữ lại được gì sau chương trình</h2>
+      <p class="dan">Năm phần dưới đây phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai mở ra dùng thì không tính là hoàn thành.</p>
     </div>
     <div class="ke sau hien tre"><div>
         <h3>Một luồng chạy được</h3>
@@ -942,7 +956,7 @@ figure{margin:0}
         <ul><li>Bản đồ quan hệ khách hàng của riêng doanh nghiệp bạn, vẽ theo cách Duy vẫn dùng, kèm những sản phẩm hợp với từng vòng quan hệ.</li></ul>
       </div>
       <div>
-        <h3>Kế hoạch chín mươi ngày</h3>
+        <h3>Kế hoạch chín mươi ngày</h3>
         <ul><li>Việc phải làm sau khi chương trình kết thúc, chia theo tuần và có người nhận.</li></ul>
       </div></div>
   </div>
@@ -952,12 +966,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Ranh giới</span>
-      <h2>Ai hợp, và chương trình không nhận việc gì</h2>
-      <p class="dan">Duy ghi phần không nhận rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
+      <h2>Ai hợp, và chương trình không nhận việc gì</h2>
+      <p class="dan">Duy ghi phần không nhận rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
     </div>
     <div class="hop hien tre">
-      <div class="co"><h3>Phù hợp nếu</h3><ul><li>Bạn đã có sản phẩm, có khách hàng và một đội ngũ nòng cốt đang chạy.</li><li>Tăng trưởng và vận hành vẫn phụ thuộc vào việc bạn có mặt.</li><li>Có quản lý chủ chốt tham gia được một số phiên, để bạn không đi học một mình.</li><li>Chấp nhận đưa số liệu vận hành thật ra bàn, kể cả phần chưa đẹp.</li><li>Chọn được một luồng cụ thể để làm trước, thay vì muốn sửa cả doanh nghiệp cùng lúc.</li></ul></div>
-      <div class="chua"><h3>Chương trình không nhận</h3><ul><li>Viết hộ quy trình cho toàn bộ doanh nghiệp.</li><li>Nhận vai điều hành thay người chủ.</li><li>Cam kết một con số doanh thu.</li></ul></div>
+      <div class="co"><h3>Phù hợp nếu</h3><ul><li>Bạn đã có sản phẩm, có khách hàng và một đội ngũ nòng cốt đang chạy.</li><li>Tăng trưởng và vận hành vẫn phụ thuộc vào việc bạn có mặt.</li><li>Có quản lý chủ chốt tham gia được một số phiên, để bạn không đi học một mình.</li><li>Chấp nhận đưa số liệu vận hành thật ra bàn, kể cả phần chưa đẹp.</li><li>Chọn được một luồng cụ thể để làm trước, thay vì muốn sửa cả doanh nghiệp cùng lúc.</li></ul></div>
+      <div class="chua"><h3>Chương trình không nhận</h3><ul><li>Viết hộ quy trình cho toàn bộ doanh nghiệp.</li><li>Nhận vai điều hành thay người chủ.</li><li>Cam kết một con số doanh thu.</li></ul></div>
     </div>
   </div>
 </section>
@@ -966,8 +980,8 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
-      <h2>Chương trình đang được thiết kế chi tiết, <span>nên trang này chưa có lịch và chưa có giá.</span></h2>
-      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
+      <h2>Chương trình đang được thiết kế chi tiết, <span>nên trang này chưa có lịch và chưa có giá.</span></h2>
+      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
     </div>
     <div class="hop hien tre">
       <div class="co">
@@ -984,7 +998,7 @@ figure{margin:0}
         </ul>
       </div>
     </div>
-    <div class="gia-ghi hien" style="margin-top:34px">
+    <div class="gia-ghi hien">
       <p><b>Nếu bạn đang gặp đúng chỗ nghẽn phía trên, cứ để lại vài dòng.</b> Duy sẽ trao đổi để xem có hợp không, và nếu chương trình này chưa phải thứ bạn cần lúc này thì Duy nói rõ vì sao và chỉ bạn bước hợp hơn.</p>
     </div>
     <div class="hien" style="margin-top:30px;text-align:center">
@@ -998,10 +1012,10 @@ figure{margin:0}
     <div class="dau-phan hien">
       <span class="nhan">Đọc trước khi quyết</span>
       <h2>Cách Duy nghĩ về việc này, viết sẵn trên blog</h2>
-      <p class="dan">Ba bài dưới đây nói đúng chỗ nghẽn mà chương trình này nhắm tới. Đọc xong bạn biết mình có cùng cách nhìn với Duy hay không, trước khi mất thời gian cho một buổi trao đổi.</p>
+      <p class="dan">Ba bài dưới đây nói đúng chỗ nghẽn mà chương trình này nhắm tới. Đọc xong bạn biết mình có cùng cách nhìn với Duy hay không, trước khi mất thời gian cho một buổi trao đổi.</p>
     </div>
     <div class="ke sau hien tre"><div>
-        <h3><a href="https://coachduynguyen.vn/bai-viet/kinh-nghiem-phai-thanh-he-thong.html">Đừng để kinh nghiệm chỉ nằm trong trí nhớ vài người</a></h3>
+        <h3><a href="https://coachduynguyen.vn/bai-viet/kinh-nghiem-phai-thanh-he-thong.html">Đừng để kinh nghiệm chỉ nằm trong trí nhớ vài người</a></h3>
         <ul><li>Thứ quý nhất trong một doanh nghiệp dịch vụ thường nằm trong đầu vài người. Vừa là sức mạnh, vừa là rủi ro.</li></ul>
       </div>
       <div>

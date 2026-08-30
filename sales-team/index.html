@@ -831,6 +831,20 @@ figure{margin:0}
    rủi ro. Khi cửa sổ bị che hoặc máy yếu, trình duyệt hãm việc vẽ và hiệu ứng
    0,72 giây kéo dài thành vài giây, người xem chỉ thấy một trang trắng. */
 .js .hero .hero-chu > *, .js .hero .hero-anh > *{opacity:1;transform:none}
+
+/* Tiêu đề chia đều chữ cho các dòng. Trước đây tiêu đề dùng text-wrap:pretty,
+   luật đó đổ đầy dòng trên rồi để dòng cuối còn một mẩu: đo ở khổ 1280 thì ba
+   dòng dài 791, 804 rồi 334 pixel, nhìn ra ngay là xuống dòng tuỳ tiện. Với
+   balance ba dòng thành 647, 661, 622, khối chữ gọn lại và cân.
+   Phải kể cả thẻ span bên trong, vì span trong tiêu đề là khối riêng và có luật
+   pretty của chính nó, chỉnh mỗi thẻ ngoài thì span không đổi.
+   Chỉ áp cho tiêu đề. Đoạn văn dài vẫn giữ pretty, vì chia đều cho một đoạn
+   nhiều dòng làm dòng nào cũng ngắn và đọc mệt hơn. */
+.hero-chu h1, .hero-chu h1 span,
+.dau-phan h2, .dau-phan h2 span{text-wrap:balance}
+/* Khoảng cách này trước đây gắn thẳng vào thẻ, làm dinh_tu_ghep.py không
+   nhận ra khối và bỏ sót phần nối từ ghép. */
+.phan .nhan-dang, .phan .gia-ghi{margin-top:34px}
 </style>
 
 <script type="application/ld+json">
@@ -874,8 +888,8 @@ figure{margin:0}
     <div class="hero-luoi">
       <div class="hero-chu">
         <span class="vien"><i></i>Cho doanh nghiệp có đội ngũ đang trực tiếp tư vấn và bán hàng</span>
-        <h1>Khách tin bạn. <span>Nhưng họ chưa tin đội ngũ của bạn ở cùng một mức.</span></h1>
-        <p class="dan"><b>Trusted Sales Team System</b> là chương trình tám tuần giúp doanh nghiệp tạo một chuẩn tư vấn chung, đưa chuẩn đó vào tình huống khách hàng thật, và giúp quản lý biết tự huấn luyện tiếp sau khi chương trình kết thúc.</p>
+        <h1>Khách tin bạn. <span>Nhưng họ chưa tin đội ngũ của bạn ở cùng một mức.</span></h1>
+        <p class="dan"><b>Trusted Sales Team System</b> là chương trình tám tuần giúp doanh nghiệp tạo một chuẩn tư vấn chung, đưa chuẩn đó vào tình huống khách hàng thật, và giúp quản lý biết tự huấn luyện tiếp sau khi chương trình kết thúc.</p>
         <ul class="hero-ket">
           <li class="tieu" style="padding-left:0">Sau tám tuần, doanh nghiệp có</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Một chuẩn tư vấn chung mà cả đội ngũ hiểu giống nhau.</li>
@@ -896,12 +910,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Chỗ nghẽn thật</span>
-      <h2>Người chủ vẫn phải có mặt ở những cuộc quan trọng. <span>Không phải vì đội ngũ lười, mà vì mỗi người tư vấn một kiểu.</span></h2>
-      <p class="dan">Sáu dấu hiệu dưới đây lặp lại ở gần như mọi doanh nghiệp Duy ngồi cùng. Nếu bạn nhận ra bốn trong sáu, chỗ nghẽn của bạn nằm ở chất lượng cuộc tư vấn, không nằm ở số khách.</p>
+      <h2>Người chủ vẫn phải có mặt ở những cuộc quan trọng. <span>Không phải vì đội ngũ lười, mà vì mỗi người tư vấn một kiểu.</span></h2>
+      <p class="dan">Sáu dấu hiệu dưới đây lặp lại ở gần như mọi doanh nghiệp Duy ngồi cùng. Nếu bạn nhận ra bốn trong sáu, chỗ nghẽn của bạn nằm ở chất lượng cuộc tư vấn, không nằm ở số khách.</p>
     </div>
     <div class="noi hien tre">
-      <div><i>&ldquo;</i><p>Đội ngũ hỏi chưa tới nên chưa hiểu đúng nhu cầu của khách.</p></div>
-      <div><i>&ldquo;</i><p>Cứ giới thiệu sản phẩm quá sớm, khách chưa kịp thấy vấn đề của mình.</p></div>
+      <div><i>&ldquo;</i><p>Đội ngũ hỏi chưa tới nên chưa hiểu đúng nhu cầu của khách.</p></div>
+      <div><i>&ldquo;</i><p>Cứ giới thiệu sản phẩm quá sớm, khách chưa kịp thấy vấn đề của mình.</p></div>
       <div><i>&ldquo;</i><p>Gặp băn khoăn là giải thích dài, hoặc gây áp lực cho xong.</p></div>
       <div><i>&ldquo;</i><p>Mỗi người tư vấn một kiểu, không ai giống ai.</p></div>
       <div><i>&ldquo;</i><p>Quản lý nghe lại cuộc gọi nhưng chưa có chuẩn rõ để góp ý.</p></div>
@@ -913,8 +927,8 @@ figure{margin:0}
       <div><b>Không biết hỏng ở đâu</b>Thua một khách mà không ai chỉ ra được lệch chuẩn ở bước nào.</div>
       <div><b>Người giỏi nghỉ là mất luôn cách làm</b>Kinh nghiệm nằm trong đầu vài người, không nằm trong chuẩn chung.</div>
     </div>
-    <div class="nhan-dang hien" style="margin-top:34px">
-      <b>Khách có thể tin người sáng lập mà chưa tin đội ngũ ở cùng một mức. <i>Chừng nào khoảng chênh đó còn, doanh nghiệp càng đông khách thì người chủ càng bận.</i></b>
+    <div class="nhan-dang hien">
+      <b>Khách có thể tin người sáng lập mà chưa tin đội ngũ ở cùng một mức. <i>Chừng nào khoảng chênh đó còn, doanh nghiệp càng đông khách thì người chủ càng bận.</i></b>
       <span>Tám tuần này nhắm thẳng vào khoảng chênh đó, không bắt đầu từ việc tuyển thêm người.</span>
     </div>
   </div>
@@ -925,12 +939,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Bốn vai</span>
-      <h2>Đây là chương trình cho doanh nghiệp, <span>không phải khóa kỹ năng cho cá nhân.</span></h2>
-      <p class="dan">Thiếu một trong bốn vai dưới đây thì kết quả không giữ được sau khi chương trình kết thúc. Vai thứ hai là vai hay bị bỏ qua nhất, và cũng là vai quyết định.</p>
+      <h2>Đây là chương trình cho doanh nghiệp, <span>không phải khóa kỹ năng cho cá nhân.</span></h2>
+      <p class="dan">Thiếu một trong bốn vai dưới đây thì kết quả không giữ được sau khi chương trình kết thúc. Vai thứ hai là vai hay bị bỏ qua nhất, và cũng là vai quyết định.</p>
     </div>
     <div class="doi-chu hien tre">
       <div class="doi-ten"><b>01</b><span>Người mua và bảo trợ</span></div>
-      <h3>Nhà sáng lập hoặc chủ doanh nghiệp</h3>
+      <h3>Nhà sáng lập hoặc chủ doanh nghiệp</h3>
       <p class="sau-do">Bạn xác định bài toán kinh doanh, bảo trợ thời gian thực hành cho đội ngũ, và phê duyệt bộ chuẩn cuối cùng. Bạn không cần dự hết mọi buổi, nhưng phải có mặt ở buổi khởi động, buổi rà soát giữa kỳ và buổi đánh giá cuối.</p>
     </div>
     <div class="doi-chu hien tre">
@@ -957,7 +971,7 @@ figure{margin:0}
     <div class="dau-phan hien">
       <span class="nhan">Cách chương trình chạy</span>
       <h2>Hai ngày học, sáu tuần làm thật, <span>một tuần bàn giao.</span></h2>
-      <p class="dan">Hai ngày đầu không nhằm nhồi hết mọi kịch bản. Mục tiêu là cả đội ngũ hiểu cùng một ngôn ngữ, thực hành bản đầu, và biết tuần sau phải sửa hành vi nào.</p>
+      <p class="dan">Hai ngày đầu không nhằm nhồi hết mọi kịch bản. Mục tiêu là cả đội ngũ hiểu cùng một ngôn ngữ, thực hành bản đầu, và biết tuần sau phải sửa hành vi nào.</p>
     </div>
     <div class="ke sau hien tre">
       <div>
@@ -979,7 +993,7 @@ figure{margin:0}
         </ul>
       </div>
       <div>
-        <h3>Tuần 2 tới 7: làm trên tình huống thật</h3>
+        <h3>Tuần 2 tới 7: làm trên tình huống thật</h3>
         <ul>
           <li>Nhân sự tư vấn thật và ghi lại theo cách đã thống nhất.</li>
           <li>Tự xem lại theo bảng tiêu chí, rồi quản lý chọn tình huống đại diện.</li>
@@ -997,7 +1011,7 @@ figure{margin:0}
         </ul>
       </div>
     </div>
-    <div class="gia-ghi hien" style="margin-top:34px">
+    <div class="gia-ghi hien">
       <p><b>Sáu tuần giữa không mở thêm buổi dạy lý thuyết nếu đội ngũ chưa dùng được phần đã học.</b> Kiến thức bổ sung chỉ xuất hiện khi một tình huống thật cho thấy có khoảng trống chung. Học thêm trong lúc chưa làm được phần cũ là cách chắc chắn nhất để không đổi được gì.</p>
     </div>
   </div>
@@ -1008,14 +1022,14 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Bảy thứ ở lại</span>
-      <h2>Doanh nghiệp giữ được gì sau khi Duy rời đi</h2>
-      <p class="dan">Bảy thứ này phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai dùng thì không tính là hoàn thành.</p>
+      <h2>Doanh nghiệp giữ được gì sau khi Duy rời đi</h2>
+      <p class="dan">Bảy thứ này phải được dùng trong công việc thật. Nhận đủ tài liệu mà không ai dùng thì không tính là hoàn thành.</p>
     </div>
     <div class="ke sau hien tre">
-      <div><h3>Bộ tiêu chuẩn tư vấn</h3><ul><li>Phiên bản đầu, viết theo bối cảnh doanh nghiệp bạn.</li></ul></div>
-      <div><h3>Quy trình tư vấn đã hiệu chỉnh</h3><ul><li>Điều chỉnh theo sản phẩm và cách khách của bạn quyết định.</li></ul></div>
+      <div><h3>Bộ tiêu chuẩn tư vấn</h3><ul><li>Phiên bản đầu, viết theo bối cảnh doanh nghiệp bạn.</li></ul></div>
+      <div><h3>Quy trình tư vấn đã hiệu chỉnh</h3><ul><li>Điều chỉnh theo sản phẩm và cách khách của bạn quyết định.</li></ul></div>
       <div><h3>Bảng đánh giá chất lượng</h3><ul><li>Dùng để chấm một cuộc tư vấn, không chấm cảm tính.</li></ul></div>
-      <div><h3>Bộ tình huống đại diện</h3><ul><li>Kèm nhận xét và bài học, dùng để huấn luyện người mới.</li></ul></div>
+      <div><h3>Bộ tình huống đại diện</h3><ul><li>Kèm nhận xét và bài học, dùng để huấn luyện người mới.</li></ul></div>
       <div><h3>Hướng dẫn cho quản lý</h3><ul><li>Cách xem tình huống và góp ý mà không làm người kia thủ thế.</li></ul></div>
       <div><h3>Chuẩn ghi nhận và bàn giao</h3><ul><li>Thông tin sau tư vấn đủ để người sau chăm sóc tiếp.</li></ul></div>
       <div><h3>Báo cáo trước sau</h3><ul><li>Kèm kế hoạch duy trì 90 ngày và người chịu trách nhiệm.</li></ul></div>
@@ -1028,12 +1042,12 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Ranh giới</span>
-      <h2>Chương trình này không nhận thay sáu việc dưới đây</h2>
-      <p class="dan">Duy ghi phần này rõ ngang phần kết quả. Một chương trình nhận mọi thứ là một chương trình không giao được thứ gì cho ra hồn.</p>
+      <h2>Sáu việc chương trình không nhận thay bạn</h2>
+      <p class="dan">Duy ghi phần này rõ ngang phần kết quả. Một chương trình nhận mọi thứ là một chương trình không giao được thứ gì cho ra hồn.</p>
     </div>
     <div class="hop hien tre">
       <div class="co">
-        <h3>Chương trình phù hợp nếu</h3>
+        <h3>Chương trình phù hợp nếu</h3>
         <ul>
           <li>Sản phẩm hoặc dịch vụ của bạn cần tư vấn trước khi khách quyết định.</li>
           <li>Đã có đội ngũ và một quản lý, hoặc ít nhất một người sở hữu được việc triển khai.</li>
@@ -1044,7 +1058,7 @@ figure{margin:0}
         </ul>
       </div>
       <div class="chua">
-        <h3>Chương trình không nhận</h3>
+        <h3>Chương trình không nhận</h3>
         <ul>
           <li>Thiết kế cơ cấu phòng kinh doanh.</li>
           <li>Tuyển dụng và phân vai toàn bộ đội ngũ.</li>
@@ -1055,7 +1069,7 @@ figure{margin:0}
         </ul>
       </div>
     </div>
-    <div class="gia-ghi hien" style="margin-top:34px">
+    <div class="gia-ghi hien">
       <p><b>Sáu việc bên phải thuộc phạm vi Founder Growth System hoặc một hợp đồng doanh nghiệp riêng.</b> Chương trình này chịu trách nhiệm cho chất lượng cuộc tư vấn và khả năng huấn luyện đội ngũ. Giữ đúng ranh giới đó là cách để nó giao được thứ đã hứa.</p>
     </div>
   </div>
@@ -1066,8 +1080,8 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
-      <h2>Chương trình đang ở giai đoạn chạy thử, <span>và Duy nói thẳng điều đó.</span></h2>
-      <p class="dan">Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trong vòng này, phạm vi và cách giao hàng được thiết kế riêng theo từng doanh nghiệp, nên chưa có bảng giá chung.</p>
+      <h2>Chương trình đang ở giai đoạn chạy thử, <span>và Duy nói thẳng điều đó.</span></h2>
+      <p class="dan">Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trong vòng này, phạm vi và cách giao hàng được thiết kế riêng theo từng doanh nghiệp, nên chưa có bảng giá chung.</p>
     </div>
     <div class="hop hien tre">
       <div class="co">
@@ -1113,7 +1127,7 @@ figure{margin:0}
   <div class="bao">
     <div class="dau-phan hien">
       <span class="nhan">Hỏi đáp</span>
-      <h2>Bảy câu người chủ hay hỏi thẳng</h2>
+      <h2>Bảy câu người chủ hay hỏi thẳng</h2>
     </div>
     <div class="faq hien" id="faq">
       <div class="muc">

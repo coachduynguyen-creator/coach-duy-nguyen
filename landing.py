@@ -18,6 +18,7 @@ có giá, không có lịch, không có lộ trình theo buổi. Mọi câu trê
 được về NGF-17 hoặc chuong_trinh.py, không tự thêm.
 """
 import io, os, re, json
+import dinh_tu_ghep
 from lib import BASE
 
 GOC = os.path.dirname(os.path.abspath(__file__))
@@ -88,7 +89,7 @@ def than_trang(d):
       <p class="dan">%s</p>
     </div>
     <div class="noi hien tre">%s</div>
-    <div class="nhan-dang hien" style="margin-top:34px">
+    <div class="nhan-dang hien">
       <b>%s</b>
       <span>%s</span>
     </div>
@@ -160,7 +161,7 @@ def than_trang(d):
         </ul>
       </div>
     </div>
-    <div class="gia-ghi hien" style="margin-top:34px">
+    <div class="gia-ghi hien">
       <p><b>Nếu bạn đang gặp đúng chỗ nghẽn phía trên, cứ để lại vài dòng.</b> Duy sẽ trao đổi để xem có hợp không, và nếu chương trình này chưa phải thứ bạn cần lúc này thì Duy nói rõ vì sao và chỉ bạn bước hợp hơn.</p>
     </div>
     <div class="hien" style="margin-top:30px;text-align:center">
@@ -256,6 +257,8 @@ def dung_landing(d):
 
     ra = os.path.join(GOC, d["thu_muc"])
     os.makedirs(ra, exist_ok=True)
-    io.open(os.path.join(ra, "index.html"), "w", encoding="utf-8").write(
+    tep = os.path.join(ra, "index.html")
+    io.open(tep, "w", encoding="utf-8").write(
         dau + "\n" + head + "\n" + than_trang(d) + "\n" + chan)
+    dinh_tu_ghep.chay(tep)
     return d["thu_muc"]
