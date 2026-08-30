@@ -1090,10 +1090,10 @@ for c in CT:
         nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang được thiết kế chi tiết",
             "Hướng đi, đối tượng và kết quả nhắm tới đã rõ, còn lộ trình theo buổi và mức đầu tư thì chưa. Trang riêng ghi đủ phần đã chốt, phần chưa chốt và những việc chương trình không nhận.")
     elif c["tep"] == "trusted-sales-team-system.html":
-        # chương trình có trang riêng nhưng đang chạy thử, nên mời trao đổi chứ không mời đăng ký
+        # chương trình có trang riêng nhưng chưa chốt giá và lịch, nên mời trao đổi chứ không mời đăng ký
         dich = TSTS_LANDING
-        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang ở vòng chạy thử",
-            "Duy đang chọn hai tới ba doanh nghiệp có đội ngũ và tình huống thật để chạy vòng đầu. Trang riêng của chương trình ghi đủ cách chạy tám tuần, bốn vai tham gia và ranh giới phạm vi.")
+        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang chuẩn bị khoá đầu",
+            "Lời hứa, phạm vi và cách chấm đã chốt, còn giá, lịch tổ chức và số ghế nhân sự thì chưa. Trang riêng ghi đủ bảy cấu phần của bản thiết kế, ba giai đoạn, bốn vai tham gia và ranh giới phạm vi.")
     elif c.get("mo_ban"):
         dich = TTC_LANDING or dd("lien-he.html", p)
         nhan_nut, tieu_cta, dan_cta = ("Đăng ký khoá đầu tiên", "Khoá đầu tiên khai giảng 28 tháng 9 năm 2026",
@@ -2108,7 +2108,7 @@ llms = """# Coach Duy Nguyễn
 - [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
 - [Điều kiện tham gia](%(b)s/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
 - [Trusted Founder Brand Challenge, trang chương trình](%(b)s/founder-brand/): thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy, có giá và mốc đăng ký
-- [Trusted Sales Team System, trang chương trình](%(b)s/sales-team/): chương trình tám tuần xây đội ngũ tư vấn bán hàng cho doanh nghiệp, đang ở vòng chạy thử
+- [Trusted Sales Team System, trang chương trình](%(b)s/sales-team/): nhà sáng lập xây Bản thiết kế Hệ thống Phòng Kinh doanh phiên bản 1 trong hai ngày tập trung và khoảng ba mươi ngày hoàn thiện, đang chuẩn bị khoá đầu, chưa có giá và chưa có lịch
 - [Founder Growth System, trang chương trình](%(b)s/founder-growth/): đưa một luồng công việc ra khỏi đầu người chủ, bản mẫu, chưa có lịch và chưa có giá
 - [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập

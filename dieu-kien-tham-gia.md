@@ -18,14 +18,14 @@
 ## Trusted Sales Team System
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/trusted-sales-team-system.html
-- Dành cho: Doanh nghiệp có đội ngũ đang trực tiếp tư vấn và bán hàng. Người chủ là người mua và bảo trợ, quản lý bán hàng sở hữu việc triển khai, đội ngũ tư vấn là người thực hành. Chưa hợp khi doanh nghiệp chưa có đội ngũ, chưa có tình huống thật, hoặc bán hoàn toàn theo giao dịch ngắn.
-- Hình thức: Tám tuần. Tuần đầu chẩn đoán và học tập trung hai ngày. Sáu tuần thực hành trên tình huống thật, xem lại tình huống và huấn luyện quản lý. Tuần cuối đánh giá, hoàn thiện chuẩn và bàn giao kế hoạch duy trì 90 ngày.
+- Dành cho: Nhà sáng lập đang xây hoặc đang sửa phòng kinh doanh. Nhà sáng lập là người mua và người phê duyệt, quản lý bán hàng được khuyến nghị mạnh nhưng không bắt buộc, nhân sự tham gia theo gói quyền lợi của doanh nghiệp. Người chưa có đội ngũ vẫn tham gia được, nhưng chỉ cầm về một bản thiết kế để chuẩn bị chứ chưa phải hệ thống đã kiểm chứng. Chưa hợp với thương mại điện tử và bán lẻ giao dịch nhanh.
+- Hình thức: Ba giai đoạn. Phần học nền về The Trusted Advisor cùng bản tự đánh giá tình trạng phòng kinh doanh. Hai ngày học tập trung để tạo bản đầu của cả bảy cấu phần. Khoảng ba mươi ngày hoàn thiện bằng Canvas, biểu mẫu và AI, rồi nộp một bản thiết kế cuối để được chấm theo bốn mức.
 - Điều kiện tham gia:
-  - Sản phẩm hoặc dịch vụ của bạn cần tư vấn trước khi khách quyết định
-  - Đã có đội ngũ và một quản lý, hoặc ít nhất một người sở hữu được việc triển khai
-  - Có tình huống khách hàng thật trong suốt tám tuần để mang vào thực hành
-  - Cho phép ghi nhận và xem lại một số tình huống theo thỏa thuận bảo mật
-  - Người chủ dành thời gian cho buổi khởi động, rà soát giữa kỳ và đánh giá cuối kỳ
+  - Đội ngũ bán hàng từ ba người trở lên
+  - Sản phẩm hoặc dịch vụ của bạn cần tư vấn và cân nhắc trước khi khách quyết định
+  - Nhà sáng lập tham gia đủ hai ngày học tập trung và phiên chốt bản thiết kế
+  - Doanh nghiệp đang thiếu quy trình, tiêu chuẩn, cách đánh giá hoặc cách rà soát
+  - Sẵn sàng dành thời gian xây bản thiết kế và chịu trách nhiệm triển khai sau đó
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
 ## Founder Growth System
