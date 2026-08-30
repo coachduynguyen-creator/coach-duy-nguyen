@@ -2,7 +2,7 @@
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
 from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
-                 NGAY_SUA, TO_CHUC, trang, dau_trang, dd)
+                 NGAY_SUA, trang, dau_trang, dd)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
@@ -421,7 +421,7 @@ INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_ht
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
 # chính website. Trước đây chỉ khai mỗi Person, nên máy thấy một tên người mà
-# không biết Next Step Group là gì và ai là chủ trang.
+# không biết ai là chủ trang.
 LD_CHU = json.dumps({"@context": "https://schema.org", "@graph": [
     {"@type": "Person", "@id": BASE + "/#duy",
      "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn",
@@ -429,14 +429,12 @@ LD_CHU = json.dumps({"@context": "https://schema.org", "@graph": [
      "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín "
                     "cá nhân thành hệ thống mà đội ngũ cùng vận hành.",
      "url": BASE + "/", "image": BASE + "/img/cd-chan-dung.webp",
-     "worksFor": {"@id": BASE + "/#to-chuc"},
      "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",
                     "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
      "sameAs": [YOUTUBE, TIKTOK]},
-    TO_CHUC,
     {"@type": "WebSite", "@id": BASE + "/#trang",
      "url": BASE + "/", "name": "Coach Duy Nguyễn",
-     "inLanguage": "vi", "publisher": {"@id": BASE + "/#to-chuc"}},
+     "inLanguage": "vi", "publisher": {"@id": BASE + "/#duy"}},
 ]}, ensure_ascii=False)
 
 trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
@@ -548,18 +546,18 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
     <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
-    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, để bạn đọc được đúng thứ đội ngũ NSG đang dùng để tự soi mỗi quý, không phải một bản viết riêng cho trang giới thiệu.</p>
+    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, để bạn đọc được đúng thứ Duy và đội ngũ dùng để tự soi mỗi quý, không phải một bản viết riêng cho trang giới thiệu.</p>
   </div>
   <div class="tn-khoi hien">
     <div class="tn-so"><b>10.000</b><span>Next Gen Founder · đến năm 2031</span></div>
     <div class="tn-loi">
       <p>Họ xây doanh nghiệp dựa trên niềm tin, hệ thống và con người, đồng thời tiếp tục chia sẻ kinh nghiệm, cơ hội và sự nâng đỡ cho những người đi sau.</p>
-      <p>Con số này vừa là mục tiêu kinh doanh, vừa là cam kết về tác động. NSG là phương tiện, đích đến là 10.000 người chủ thay đổi được cách họ xây doanh nghiệp.</p>
+      <p>Con số này vừa là mục tiêu kinh doanh, vừa là cam kết về tác động. Chương trình và cộng đồng chỉ là phương tiện, đích đến là 10.000 người chủ thay đổi được cách họ xây doanh nghiệp.</p>
     </div>
   </div>
   <div class="sm-khoi hien">
     <b>Sứ mệnh</b>
-    <p>NSG là chỗ dựa và môi trường phát triển để nhà sáng lập Việt Nam trở thành phiên bản tốt hơn của chính mình, xây doanh nghiệp tốt hơn và tiếp tục nâng đỡ những người đi sau.</p>
+    <p>Trở thành chỗ dựa và môi trường phát triển để nhà sáng lập Việt Nam trở thành phiên bản tốt hơn của chính mình, xây doanh nghiệp tốt hơn và tiếp tục nâng đỡ những người đi sau.</p>
   </div>
   <div class="gt-luoi tre hien">
     <article class="gt"><em>Giá trị 01</em><h3>Chất lượng</h3><p>Đặt chất lượng tri thức, phương pháp và kết quả khách hàng lên trước việc làm nhiều hoặc mở rộng nhanh.</p></article>
@@ -1158,7 +1156,7 @@ for c in CT:
     ld_ct = {"@context":"https://schema.org","@type":"Course","name":c["ten"],
              "description":c["tom"],"inLanguage":"vi",
              "url":BASE+"/chuong-trinh/"+c["tep"],
-             "provider":{"@type":"Organization","name":"Next Step Group","url":BASE+"/"},
+             "provider":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/"},
              "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html"},
              "audience":{"@type":"Audience","audienceType":c["cho_ai"]},
              "teaches":c["ket_qua"]}
@@ -1200,7 +1198,7 @@ LD_BLOG = json.dumps({"@context": "https://schema.org", "@graph": [
      "description": "Bài viết cho nhà sáng lập, về uy tín, tư vấn, "
                     "hệ thống và cộng đồng.",
      "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/ve-toi.html"},
-     "publisher": {"@type": "Organization", "name": "Next Step Group", "url": BASE + "/"}},
+     "publisher": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/"}},
     {"@type": "ItemList", "name": "Bài viết trên blog Coach Duy Nguyễn",
      "numberOfItems": len(BAI),
      "itemListElement": [
@@ -1515,7 +1513,7 @@ for i, b in enumerate(BAI):
        "inLanguage":"vi","wordCount":len(re.sub(r"<[^>]+>"," ",b["than"]).split()),
        "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html",
                  "jobTitle":"Người cố vấn cho nhà sáng lập","knowsAbout":[b["chu_de"]]},
-       "publisher":{"@type":"Organization","name":"Next Step Group","url":BASE+"/"},
+       "publisher":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/"},
        "image":BASE+"/"+b["anh"],
        "mainEntityOfPage":BASE+"/bai-viet/"+b["tep"]},
       {"@type":"BreadcrumbList","itemListElement":[

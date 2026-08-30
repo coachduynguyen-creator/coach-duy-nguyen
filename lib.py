@@ -206,20 +206,9 @@ JSONLD_NGUOI = json.dumps({
                    "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
 }, ensure_ascii=False)
 
-# Next Step Group là pháp nhân đứng sau các chương trình. Khai riêng thành một
-# thực thể để máy tìm kiếm và bộ trả lời của AI nối được người với tổ chức, thay
-# vì chỉ thấy một cái tên người trôi nổi.
-TO_CHUC = {
-    "@type": "Organization", "@id": BASE + "/#to-chuc",
-    "name": "Next Step Group", "alternateName": "NSG",
-    "url": BASE + "/",
-    "description": "Đơn vị phát triển hệ sinh thái Next Gen Founder, đào tạo và cố vấn "
-                   "cho nhà sáng lập.",
-    "founder": {"@id": BASE + "/#duy"},
-    "email": EMAIL,
-    "areaServed": "VN",
-    "sameAs": [YOUTUBE, TIKTOK],
-}
+# Trang này là trang thương hiệu cá nhân. Coach Duy chốt ngày 30/08/2026: không
+# nhắc tên pháp nhân ở bất kỳ đâu, kể cả trong dữ liệu có cấu trúc. Mọi vai trò
+# nhà xuất bản và đơn vị tổ chức đều khai là Person, không khai Organization.
 
 GOC = os.path.dirname(os.path.abspath(__file__))
 
