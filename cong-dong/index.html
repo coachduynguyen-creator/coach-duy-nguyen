@@ -1326,10 +1326,32 @@ figure{margin:0}
           <li><b>03</b><p><strong>Nhận lời mời</strong> khi mở đợt phù hợp với bạn.</p></li>
         </ol>
       </div>
-      <div class="form hien" id="form-nhung">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0" title="Biểu mẫu đăng ký danh sách chờ Cộng đồng Next Gen Founder" loading="lazy" style="border:0;display:block;border-radius:14px;background:#fff">Đang tải biểu mẫu</iframe>
-        <p id="form-ghi">Thông tin chỉ dùng để đội ngũ Next Gen Founder liên hệ trao đổi, không chuyển cho bên thứ ba. Bạn sẽ nhận một bản sao nội dung vừa gửi qua email. Biểu mẫu không hiện thì mở trực tiếp tại <a class="lien" href="https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/viewform" target="_blank" rel="noopener">đường dẫn này</a>.</p>
-      </div>
+      <form class="form hien" id="form" novalidate>
+        <div class="hang">
+          <label>Họ và tên<input type="text" name="ten" placeholder="Nguyễn Văn A" required autocomplete="name"></label>
+          <label>Số điện thoại hoặc Zalo<input type="tel" name="dienthoai" placeholder="09xx xxx xxx" required autocomplete="tel"></label>
+        </div>
+        <label>Doanh nghiệp và ngành<input type="text" name="nganh" placeholder="Ví dụ: phòng khám nha khoa, trung tâm đào tạo, công ty tư vấn" required autocomplete="organization"></label>
+        <label>Giai đoạn hiện tại
+          <select name="giaidoan" required>
+            <option value="" selected disabled>Chọn giai đoạn gần đúng nhất</option>
+            <option>Đã có khách nhưng doanh thu chưa lặp lại</option>
+            <option>Doanh thu lặp lại, đội ngũ dưới 5 người</option>
+            <option>Doanh thu lặp lại, đội ngũ 5 đến 15 người</option>
+            <option>Đội ngũ trên 15 người</option>
+            <option>Chưa có khách trả tiền</option>
+          </select>
+        </label>
+        <label>Điều đang kẹt nhất lúc này <small>Một hai câu là đủ</small><textarea name="ket" placeholder="Ví dụ: đội ngũ bán hàng vẫn chờ tôi xuất hiện mới chốt được" required></textarea></label>
+        <label>Email <small>bắt buộc, để bạn nhận thư xác nhận</small><input type="email" name="email" placeholder="ban@congty.vn" required autocomplete="email"></label>
+        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Đừng điền ô này<input type="text" name="bay" tabindex="-1" autocomplete="off"></label></div>
+        <p class="loi" id="form-loi">Bạn còn thiếu một vài ô bắt buộc.</p>
+        <div class="chan">
+          <button class="nut" type="submit" id="form-nut">Gửi đăng ký danh sách chờ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <div class="xong" id="form-xong"><b>Đã nhận đăng ký của bạn.</b>Đội ngũ Next Gen Founder sẽ liên hệ theo số bạn để lại để hẹn một buổi trao đổi ngắn. Bạn vừa nhận một thư xác nhận, không thấy thì xem hộp thư rác.</div>
+          <p id="form-ghi">Thông tin chỉ dùng để đội ngũ Next Gen Founder liên hệ trao đổi, không chuyển cho bên thứ ba. Bấm gửi là xong, bạn sẽ nhận một thư xác nhận ngay sau đó.</p>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1346,27 +1368,22 @@ figure{margin:0}
   var d=document, noanim=d.documentElement.classList.contains('noanim');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- CẤU HÌNH NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi đổi nơi nhận ----
-     loai: 'gform' → gửi thẳng vào Google Form, câu trả lời rơi vào Google Sheet (đang dùng)
-     loai: 'form'  → gửi tới địa chỉ nhận biểu mẫu khác bằng POST JSON
-     loai: 'thu'   → mở ứng dụng thư với nội dung soạn sẵn (bản cũ, giữ làm phương án dự phòng)
+  /* ---- NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi đổi nơi nhận ----
+     Đăng ký gửi bằng POST tới một Web app của Google Apps Script. Mã nguồn nơi
+     nhận nằm trong kho này, tệp `apps-script/nhan-dang-ky.gs`, chạy trong tài
+     khoản nextstepacademyvietnam@gmail.com. Nó ghi vào bảng tính, gửi thư xác
+     nhận cho người đăng ký và thư báo cho đội ngũ.
 
-     Google Form nhận đăng ký, tạo ngày 17/09/2026:
-     xem câu trả lời ở Sheet "NGF - Đăng ký danh sách chờ Cộng đồng Next Gen Founder (Responses)".
-     Mã ô lấy từ chính biểu mẫu đó. Đổi câu hỏi trong Google Form thì phải lấy lại mã ô ở đây,
-     nếu không đăng ký sẽ bị Google từ chối mà trang không biết. */
+     Gửi bằng Content-Type: text/plain là cố ý, đừng đổi sang application/json.
+     Apps Script không trả header cho phép gọi chéo miền với yêu cầu phức tạp,
+     đổi đi là trình duyệt chặn và trang mất khả năng biết gửi được hay không.
+
+     Đổi địa chỉ thì đổi cả trang `founder-brand/index.html` vì hai trang dùng
+     chung một nơi nhận. */
   var DANG_KY={
-    loai:'gform',
+    nguon:'cong-dong',
     thu:'nextstepacademyvietnam@gmail.com',
-    form:'',
-    gform:'https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/formResponse',
-    o:{
-      ten:'entry.2036578380',
-      dienthoai:'entry.2123288845',
-      nganh:'entry.1465548121',
-      giaidoan:'entry.1116533285',
-      ket:'entry.951820979'
-    }
+    form:'https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec'
   };
 
   /* phần chờ liệu: chỉ mở khi địa chỉ có ?nhap */
@@ -1445,43 +1462,28 @@ figure{margin:0}
       form.classList.toggle('co-loi',thieu);
       if(thieu){ var first=form.querySelector('[aria-invalid]'); if(first) first.focus(); return; }
       var nut=d.getElementById('form-nut');
-      if(DANG_KY.loai==='gform'&&DANG_KY.gform){
-        nut.disabled=true; nut.textContent='Đang gửi...';
-        var fd=new FormData();
-        fd.append('emailAddress',data.email);
-        Object.keys(DANG_KY.o).forEach(function(k){ fd.append(DANG_KY.o[k],data[k]||''); });
-        fetch(DANG_KY.gform,{method:'POST',mode:'no-cors',body:fd})
-          .then(function(){
-            form.classList.add('da-gui');
-            d.getElementById('form-xong').innerHTML='<b>Đã nhận đăng ký của bạn.</b>Một bản sao nội dung bạn vừa gửi đã được gửi vào email của bạn. Đội ngũ Next Gen Founder sẽ liên hệ theo số bạn để lại để hẹn một buổi trao đổi ngắn.';
-            d.getElementById('form-ghi').style.display='none';
-            nut.style.display='none';
-          })
-          .catch(function(){
-            nut.disabled=false; nut.textContent='Gửi lại';
-            form.classList.add('co-loi');
-            d.getElementById('form-loi').textContent='Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.';
-          });
-        return;
+      data.bay=(form.elements['bay']&&form.elements['bay'].value||'').trim();
+      data.nguon=DANG_KY.nguon;
+      data.trang_nguon=location.pathname;
+      data.nguon_chien_dich=(new URLSearchParams(location.search).get('utm_source')||'').slice(0,80);
+
+      function loiGui(loiNhan){
+        nut.disabled=false; nut.textContent='Gửi lại';
+        form.classList.add('co-loi');
+        d.getElementById('form-loi').textContent=loiNhan||('Chưa gửi được. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.');
       }
-      if(DANG_KY.loai==='form'&&DANG_KY.form){
-        nut.disabled=true; nut.textContent='Đang gửi...';
-        fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-          .then(function(r){ if(!r.ok) throw new Error('loi'); form.classList.add('da-gui'); d.getElementById('form-xong').innerHTML='<b>Đã nhận đăng ký của bạn.</b>Đội ngũ Next Gen Founder sẽ liên hệ theo số bạn để lại để hẹn một buổi trao đổi ngắn.'; nut.style.display='none'; })
-          .catch(function(){ nut.disabled=false; nut.textContent='Gửi lại'; form.classList.add('co-loi'); d.getElementById('form-loi').textContent='Chưa gửi được. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.'; });
-        return;
+      function xongGui(){
+        form.classList.add('da-gui');
+        d.getElementById('form-ghi').style.display='none';
+        nut.style.display='none';
       }
-      var body='ĐĂNG KÝ DANH SÁCH CHỜ · CỘNG ĐỒNG NEXT GEN FOUNDER\n\n'
-        +'Họ và tên: '+data.ten+'\n'
-        +'Điện thoại hoặc Zalo: '+data.dienthoai+'\n'
-        +'Doanh nghiệp và ngành: '+data.nganh+'\n'
-        +'Giai đoạn: '+data.giaidoan+'\n'
-        +'Điều đang kẹt nhất: '+data.ket+'\n'
-        +(data.email?'Email: '+data.email+'\n':'')
-        +'\nGửi từ trang Cộng đồng Next Gen Founder.';
-      var href='mailto:'+DANG_KY.thu+'?subject='+encodeURIComponent('Đăng ký danh sách chờ: '+data.ten)+'&body='+encodeURIComponent(body);
-      location.href=href;
-      form.classList.add('da-gui'); d.getElementById('form-ghi').style.display='none';
+
+      nut.disabled=true; nut.textContent='Đang gửi...';
+      /* text/plain là cố ý, xem ghi chú ở khối NƠI NHẬN ĐĂNG KÝ phía trên. */
+      fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+        .then(function(r){ return r.json(); })
+        .then(function(kq){ if(kq&&kq.ok){ xongGui(); } else { loiGui(kq&&kq.loi); } })
+        .catch(function(){ loiGui('Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.'); });
     });
   }
 })();

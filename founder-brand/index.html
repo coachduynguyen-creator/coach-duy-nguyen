@@ -1116,6 +1116,7 @@ figure{margin:0}
           </div>
           <label>Email <small>bắt buộc, để gửi điều khoản, hóa đơn và thông tin trước ngày khai giảng</small><input name="email" type="email" autocomplete="email" placeholder="ten@congty.vn"></label>
           <div class="chon"><input type="checkbox" name="dongy" id="dongy"><label for="dongy" style="margin:0;font-weight:500;font-size:14px">Tôi đồng ý để Next Step Group liên hệ và gửi thông tin về chương trình này.</label></div>
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Đừng điền ô này<input type="text" name="bay" tabindex="-1" autocomplete="off"></label></div>
           <p class="loi" id="form-loi">Bạn còn thiếu một vài mục bắt buộc.</p>
           <div class="chan">
             <button class="nut" id="form-nut" type="submit">Gửi phiếu đăng ký và xem thông tin chuyển khoản</button>
@@ -1255,10 +1256,23 @@ figure{margin:0}
   var noanim=r.classList.contains('noanim');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- CẤU HÌNH NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi có biểu mẫu thật ----
-     loai: 'thu'  → mở ứng dụng thư với nội dung soạn sẵn (tạm thời)
-     loai: 'form' → gửi tới địa chỉ nhận biểu mẫu bằng POST JSON */
-  var DANG_KY={ loai:'thu', thu:'nextstepacademyvietnam@gmail.com', form:'' };
+  /* ---- NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi đổi nơi nhận ----
+     Phiếu đăng ký gửi bằng POST tới một Web app của Google Apps Script. Mã nguồn
+     nơi nhận nằm trong kho này, tệp `apps-script/nhan-dang-ky.gs`, chạy trong
+     tài khoản nextstepacademyvietnam@gmail.com. Nó ghi vào bảng tính, gửi thư
+     xác nhận cho người đăng ký và thư báo cho đội ngũ.
+
+     Gửi bằng Content-Type: text/plain là cố ý, đừng đổi sang application/json.
+     Apps Script không trả header cho phép gọi chéo miền với yêu cầu phức tạp,
+     đổi đi là trình duyệt chặn và trang mất khả năng biết gửi được hay không.
+
+     Dùng chung nơi nhận với trang `cong-dong/index.html`, đổi địa chỉ thì đổi
+     cả hai. */
+  var DANG_KY={
+    nguon:'founder-brand',
+    thu:'nextstepacademyvietnam@gmail.com',
+    form:'https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec'
+  };
 
   /* ---- MỐC GIÁ ----
      Mức sớm 14,9 triệu đóng khi tới một trong hai mốc, tùy mốc nào tới trước:
@@ -1326,13 +1340,20 @@ figure{margin:0}
       ev.preventDefault();
       var batBuoc=['ten','dienthoai','email'];
       var thieu=false, data={};
-      batBuoc.concat(['khach','muctieu','thoigian','vidu']).forEach(function(n){ var el=form.elements[n]; data[n]=(el.value||'').trim(); });
+      /* Chỉ đọc những ô thật sự có trong biểu mẫu. Bản trước đọc thêm chín ô đã
+         bị xoá khỏi trang, nên hàm này lỗi ngay dòng đầu và nút Gửi không làm gì
+         cả, âm thầm, từ lúc biểu mẫu bị gọn lại. Thêm ô mới thì thêm tên vào đây. */
+      batBuoc.forEach(function(n){ var el=form.elements[n]; data[n]=(el&&el.value||'').trim(); });
       batBuoc.forEach(function(n){ var el=form.elements[n]; if(!data[n]){ thieu=true; el.setAttribute('aria-invalid','true'); el.style.borderColor='#9A2A1A'; } else { el.removeAttribute('aria-invalid'); el.style.borderColor=''; } });
-      ['quyen','dongy'].forEach(function(n){ var el=form.elements[n]; data[n]=el.checked?'có':'chưa'; });
-      var dy=form.elements['dongy']; if(!dy.checked){ thieu=true; dy.setAttribute('aria-invalid','true'); } else { dy.removeAttribute('aria-invalid'); }
+      if(data.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ thieu=true; form.elements['email'].setAttribute('aria-invalid','true'); }
+      var dy=form.elements['dongy'];
+      data.dongy=dy.checked?'có':'chưa';
+      if(!dy.checked){ thieu=true; dy.setAttribute('aria-invalid','true'); } else { dy.removeAttribute('aria-invalid'); }
       form.classList.toggle('co-loi',thieu);
       if(thieu){ var first=form.querySelector('[aria-invalid]'); if(first) first.focus(); return; }
 
+      data.bay=(form.elements['bay']&&form.elements['bay'].value||'').trim();
+      data.nguon=DANG_KY.nguon;
       data.trang_nguon=meta.trang_nguon; data.phien_ban_trang=meta.phien_ban_trang; data.nguon_chien_dich=meta.nguon_chien_dich;
       data.muc_gia=qua?'18,9 triệu chưa thuế, 20.412.000 đồng đã thuế':'14,9 triệu chưa thuế, 16.092.000 đồng đã thuế';
 
@@ -1344,32 +1365,24 @@ figure{margin:0}
       }
 
       var nut=d.getElementById('form-nut');
-      if(DANG_KY.loai==='form'&&DANG_KY.form){
-        nut.disabled=true; nut.textContent='Đang gửi...';
-        fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-          .then(function(res){ if(!res.ok) throw new Error('loi'); xong('Bước tiếp theo là chuyển khoản theo thông tin bên dưới. Đội Next Step Group sẽ liên hệ trong 24 giờ làm việc để xác nhận và gửi điều khoản đầy đủ.'); })
-          .catch(function(){ nut.disabled=false; nut.textContent='Gửi lại'; form.classList.add('co-loi'); d.getElementById('form-loi').textContent='Chưa gửi được. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.'; });
-        return;
+      function loiGui(loiNhan){
+        nut.disabled=false; nut.textContent='Gửi lại';
+        form.classList.add('co-loi');
+        d.getElementById('form-loi').textContent=loiNhan||('Chưa gửi được. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.');
       }
 
-      var body='ĐĂNG KÝ THE TRUSTED CREATOR 30 DAYS, KHÓA KHAI GIẢNG 28/09/2026\n\n'
-        +'Họ và tên: '+data.ten+'\n'
-        +'Điện thoại hoặc Zalo: '+data.dienthoai+'\n'
-        +'Email: '+data.email+'\n'
-        +'Vai trò: '+data.vaitro+'\n'
-        +'Doanh nghiệp và ngành: '+data.nganh+'\n'
-        +'Khách hàng hiện tại: '+data.khach+'\n'
-        +'Tình trạng nội dung: '+data.captrinh+'\n'
-        +'Điểm nghẽn lớn nhất: '+data.diemgay+'\n'
-        +'Mục tiêu 90 ngày: '+data.muctieu+'\n'
-        +(data.vidu?'Ví dụ nội dung: '+data.vidu+'\n':'')
-        +'Thời gian thực hành: '+data.thoigian+'\n'
-        +'Có quyền xuất hiện và xử lý người quan tâm: '+data.quyen+'\n'
-        +'Đồng ý được liên hệ: '+data.dongy+'\n'
-        +'Mức giá áp dụng: '+data.muc_gia+'\n'
-        +'Trang nguồn: '+data.trang_nguon+' · Phiên bản trang: '+data.phien_ban_trang+' · Nguồn chiến dịch: '+data.nguon_chien_dich+'\n';
-      location.href='mailto:'+DANG_KY.thu+'?subject='+encodeURIComponent('Đăng ký Trusted Founder Brand Challenge: '+data.ten)+'&body='+encodeURIComponent(body);
-      xong('Ứng dụng thư của bạn vừa mở với nội dung đăng ký soạn sẵn. Bấm Gửi trong ứng dụng thư, rồi chuyển khoản theo thông tin bên dưới. Nếu thư không mở, gửi trực tiếp tới <a href="mailto:'+DANG_KY.thu+'">'+DANG_KY.thu+'</a>.');
+      nut.disabled=true; nut.textContent='Đang gửi...';
+      /* text/plain là cố ý, xem ghi chú ở khối NƠI NHẬN ĐĂNG KÝ phía trên. */
+      fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+        .then(function(r){ return r.json(); })
+        .then(function(kq){
+          if(kq&&kq.ok){
+            xong('Bạn vừa nhận một thư xác nhận. Bước tiếp theo là chuyển khoản theo thông tin bên dưới. Đội ngũ sẽ liên hệ trong 24 giờ làm việc để xác nhận và gửi điều khoản đầy đủ.');
+          } else {
+            loiGui(kq&&kq.loi);
+          }
+        })
+        .catch(function(){ loiGui('Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.'); });
     });
   }
 })();
