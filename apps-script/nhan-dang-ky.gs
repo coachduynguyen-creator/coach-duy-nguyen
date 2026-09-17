@@ -17,6 +17,13 @@
  * 4. Triển khai dạng Web app: Execute as = Me, Who has access = Anyone.
  * 5. Chép địa chỉ /exec vào `DANG_KY.form` của hai trang HTML.
  *
+ * SỬA MÃ SAU NÀY
+ * Tệp này là bản chuẩn. Sửa xong thì dán lại vào trình biên tập, lưu, RỒI phải
+ * Triển khai một phiên bản mới. Chỉ lưu thôi là địa chỉ /exec vẫn chạy mã của
+ * phiên bản cũ, nên trang không nhận được thay đổi mà không ai biết. Bản đang
+ * chạy ngoài mạng là Phiên bản 1 lúc 23:36 ngày 17/09/2026, chưa có hàm
+ * `xoaDongKiemThu` vì hàm đó thêm sau. Không sao, đó là hàm chạy tay.
+ *
  * LƯU Ý CHO THỢ SAU
  * Trang gửi bằng Content-Type: text/plain, KHÔNG phải application/json. Đây là
  * cố ý. Apps Script không trả về header cho phép gọi chéo miền đối với yêu cầu
@@ -83,6 +90,21 @@ function khoiTao() {
 
   Logger.log('Bảng đăng ký: ' + bang.getUrl());
   return bang.getUrl();
+}
+
+/** Dọn dòng kiểm thử, chạy tay. Xoá mọi dòng có chữ KIỂM THỬ trong cột Họ và tên. */
+function xoaDongKiemThu() {
+  var bang = layBang(), da = 0;
+  Object.keys(NGUON).forEach(function (k) {
+    var t = bang.getSheetByName(NGUON[k].tab);
+    if (!t || t.getLastRow() < 2) return;
+    var o = t.getRange(2, 2, t.getLastRow() - 1, 1).getValues();
+    for (var i = o.length - 1; i >= 0; i--) {
+      if (String(o[i][0]).toUpperCase().indexOf('KIỂM THỬ') > -1) { t.deleteRow(i + 2); da++; }
+    }
+  });
+  Logger.log('Đã xoá ' + da + ' dòng kiểm thử.');
+  return da;
 }
 
 function layBang() {
