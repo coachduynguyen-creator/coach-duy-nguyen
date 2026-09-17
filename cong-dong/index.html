@@ -1326,31 +1326,10 @@ figure{margin:0}
           <li><b>03</b><p><strong>Nhận lời mời</strong> khi mở đợt phù hợp với bạn.</p></li>
         </ol>
       </div>
-      <form class="form hien" id="form" novalidate>
-        <div class="hang">
-          <label>Họ và tên<input type="text" name="ten" placeholder="Nguyễn Văn A" required autocomplete="name"></label>
-          <label>Số điện thoại hoặc Zalo<input type="tel" name="dienthoai" placeholder="09xx xxx xxx" required autocomplete="tel"></label>
-        </div>
-        <label>Doanh nghiệp và ngành<input type="text" name="nganh" placeholder="Ví dụ: phòng khám nha khoa, trung tâm đào tạo, công ty tư vấn" required autocomplete="organization"></label>
-        <label>Giai đoạn hiện tại
-          <select name="giaidoan" required>
-            <option value="" selected disabled>Chọn giai đoạn gần đúng nhất</option>
-            <option>Đã có khách nhưng doanh thu chưa lặp lại</option>
-            <option>Doanh thu lặp lại, đội ngũ dưới 5 người</option>
-            <option>Doanh thu lặp lại, đội ngũ 5 đến 15 người</option>
-            <option>Đội ngũ trên 15 người</option>
-            <option>Chưa có khách trả tiền</option>
-          </select>
-        </label>
-        <label>Điều đang kẹt nhất lúc này <small>Một hai câu là đủ</small><textarea name="ket" placeholder="Ví dụ: đội ngũ bán hàng vẫn chờ tôi xuất hiện mới chốt được" required></textarea></label>
-        <label>Email <small>Không bắt buộc</small><input type="email" name="email" placeholder="ban@congty.vn" autocomplete="email"></label>
-        <p class="loi" id="form-loi">Bạn còn thiếu một vài ô bắt buộc.</p>
-        <div class="chan">
-          <button class="nut" type="submit" id="form-nut">Gửi đăng ký danh sách chờ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <div class="xong" id="form-xong"><b>Thư đăng ký đã được soạn sẵn.</b>Ứng dụng thư của bạn vừa mở với nội dung đăng ký gửi tới đội ngũ Next Gen Founder. Bấm Gửi trong ứng dụng thư là xong. Nếu thư không mở, gửi trực tiếp tới <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a>.</div>
-          <p id="form-ghi">Thông tin chỉ dùng để đội ngũ Next Gen Founder liên hệ trao đổi, không chuyển cho bên thứ ba. Khi bấm gửi, ứng dụng thư của bạn sẽ mở với nội dung soạn sẵn.</p>
-        </div>
-      </form>
+      <div class="form hien" id="form-nhung">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0" title="Biểu mẫu đăng ký danh sách chờ Cộng đồng Next Gen Founder" loading="lazy" style="border:0;display:block;border-radius:14px;background:#fff">Đang tải biểu mẫu</iframe>
+        <p id="form-ghi">Thông tin chỉ dùng để đội ngũ Next Gen Founder liên hệ trao đổi, không chuyển cho bên thứ ba. Bạn sẽ nhận một bản sao nội dung vừa gửi qua email. Biểu mẫu không hiện thì mở trực tiếp tại <a class="lien" href="https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/viewform" target="_blank" rel="noopener">đường dẫn này</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1367,10 +1346,28 @@ figure{margin:0}
   var d=document, noanim=d.documentElement.classList.contains('noanim');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- CẤU HÌNH NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi có biểu mẫu thật ----
-     loai: 'thu'  → mở ứng dụng thư với nội dung soạn sẵn (tạm thời)
-     loai: 'form' → gửi tới địa chỉ nhận biểu mẫu (Formspree, Google Apps Script...) bằng POST JSON */
-  var DANG_KY={ loai:'thu', thu:'nextstepacademyvietnam@gmail.com', form:'' };
+  /* ---- CẤU HÌNH NƠI NHẬN ĐĂNG KÝ: sửa một chỗ này khi đổi nơi nhận ----
+     loai: 'gform' → gửi thẳng vào Google Form, câu trả lời rơi vào Google Sheet (đang dùng)
+     loai: 'form'  → gửi tới địa chỉ nhận biểu mẫu khác bằng POST JSON
+     loai: 'thu'   → mở ứng dụng thư với nội dung soạn sẵn (bản cũ, giữ làm phương án dự phòng)
+
+     Google Form nhận đăng ký, tạo ngày 17/09/2026:
+     xem câu trả lời ở Sheet "NGF - Đăng ký danh sách chờ Cộng đồng Next Gen Founder (Responses)".
+     Mã ô lấy từ chính biểu mẫu đó. Đổi câu hỏi trong Google Form thì phải lấy lại mã ô ở đây,
+     nếu không đăng ký sẽ bị Google từ chối mà trang không biết. */
+  var DANG_KY={
+    loai:'gform',
+    thu:'nextstepacademyvietnam@gmail.com',
+    form:'',
+    gform:'https://docs.google.com/forms/d/e/1FAIpQLSfKwNF7fCO8h0Ao8flHC5h6Wgb3EPG3xKeVmYg1MXmKLSIcZA/formResponse',
+    o:{
+      ten:'entry.2036578380',
+      dienthoai:'entry.2123288845',
+      nganh:'entry.1465548121',
+      giaidoan:'entry.1116533285',
+      ket:'entry.951820979'
+    }
+  };
 
   /* phần chờ liệu: chỉ mở khi địa chỉ có ?nhap */
   /* hero hiện theo nhịp */
@@ -1438,12 +1435,35 @@ figure{margin:0}
   if(form){
     form.addEventListener('submit',function(ev){
       ev.preventDefault();
-      var fields=['ten','dienthoai','nganh','giaidoan','ket'], thieu=false, data={};
-      fields.concat(['email']).forEach(function(n){ var el=form.elements[n]; data[n]=(el.value||'').trim(); });
-      fields.forEach(function(n){ var el=form.elements[n]; if(!data[n]){ thieu=true; el.setAttribute('aria-invalid','true'); el.style.borderColor='#9A2A1A'; } else { el.removeAttribute('aria-invalid'); el.style.borderColor=''; } });
+      var fields=['ten','dienthoai','nganh','giaidoan','ket','email'], thieu=false, data={};
+      fields.forEach(function(n){ var el=form.elements[n]; data[n]=(el.value||'').trim(); });
+      fields.forEach(function(n){
+        var el=form.elements[n], trong=!data[n];
+        if(n==='email'&&!trong&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data[n])) trong=true;
+        if(trong){ thieu=true; el.setAttribute('aria-invalid','true'); el.style.borderColor='#9A2A1A'; } else { el.removeAttribute('aria-invalid'); el.style.borderColor=''; }
+      });
       form.classList.toggle('co-loi',thieu);
       if(thieu){ var first=form.querySelector('[aria-invalid]'); if(first) first.focus(); return; }
       var nut=d.getElementById('form-nut');
+      if(DANG_KY.loai==='gform'&&DANG_KY.gform){
+        nut.disabled=true; nut.textContent='Đang gửi...';
+        var fd=new FormData();
+        fd.append('emailAddress',data.email);
+        Object.keys(DANG_KY.o).forEach(function(k){ fd.append(DANG_KY.o[k],data[k]||''); });
+        fetch(DANG_KY.gform,{method:'POST',mode:'no-cors',body:fd})
+          .then(function(){
+            form.classList.add('da-gui');
+            d.getElementById('form-xong').innerHTML='<b>Đã nhận đăng ký của bạn.</b>Một bản sao nội dung bạn vừa gửi đã được gửi vào email của bạn. Đội ngũ Next Gen Founder sẽ liên hệ theo số bạn để lại để hẹn một buổi trao đổi ngắn.';
+            d.getElementById('form-ghi').style.display='none';
+            nut.style.display='none';
+          })
+          .catch(function(){
+            nut.disabled=false; nut.textContent='Gửi lại';
+            form.classList.add('co-loi');
+            d.getElementById('form-loi').textContent='Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới '+DANG_KY.thu+'.';
+          });
+        return;
+      }
       if(DANG_KY.loai==='form'&&DANG_KY.form){
         nut.disabled=true; nut.textContent='Đang gửi...';
         fetch(DANG_KY.form,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
