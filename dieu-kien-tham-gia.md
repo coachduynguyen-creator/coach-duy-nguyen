@@ -52,21 +52,21 @@
   - Mở khi phạm vi phù hợp, bắt đầu bằng một buổi trao đổi ngắn
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
-## Cộng đồng Mở Next Gen Founder
-
-- Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-mo.html
-- Dành cho: Founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đang tìm hiểu nhân dạng Next Gen Founder nhưng chưa đủ dữ liệu hoặc chưa sẵn sàng cam kết để tham gia sâu; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
-- Hình thức: Không mất phí, có sàng lọc theo đối tượng và hành vi.
-- Điều kiện tham gia:
-  - Là founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn; nếu là chuyên gia, đã có hoạt động kinh doanh thật và đang xây doanh nghiệp từ chuyên môn
-  - Đang tìm hiểu, chưa cần sẵn sàng cam kết đi sâu
-  - Không mất phí, nhưng có sàng lọc theo đối tượng và hành vi
-  - Vào bằng cách đăng ký danh sách chờ Cộng đồng Next Gen Founder
-- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
-
 ## Cộng đồng Thành viên Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-thanh-vien.html
+- Dành cho: Người đang ấp ủ khởi nghiệp, người mới bắt đầu hoặc đang kinh doanh một mình, chuyên gia và chủ doanh nghiệp muốn tìm hiểu Next Gen Founder trước khi quyết định đi sâu.
+- Hình thức: Miễn phí, có đăng ký tham gia.
+- Điều kiện tham gia:
+  - Đang ấp ủ khởi nghiệp, mới bắt đầu kinh doanh, là chuyên gia muốn có con đường riêng, hoặc là chủ doanh nghiệp đã có đội ngũ
+  - Muốn học từ những người đã đi trước và gỡ điểm nghẽn trong công việc thật
+  - Miễn phí, có đăng ký tham gia và trả lời vài câu hỏi ngắn
+  - Đăng ký ở trang coachduynguyen.vn/tham-gia
+- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
+
+## Cộng đồng Pro Next Gen Founder
+
+- Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-pro.html
 - Dành cho: Founder hoặc chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, muốn phát triển bốn năng lực trong công việc thật; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
 - Hình thức: Thành viên theo năm, có nhịp hoạt động cố định hằng tháng và trải nghiệm mười bốn ngày đầu để bắt đầu đúng.
 - Điều kiện tham gia:

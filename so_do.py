@@ -107,7 +107,7 @@ KET_HST = {
    "Việc quan trọng nào cũng phải qua tay tôi thì mới chạy.",
  "community-growth-system.html":
    "Khách mua xong là quan hệ dừng lại. Mỗi lần bán là mỗi lần bắt đầu từ đầu.",
- "cong-dong-thanh-vien.html":
+ "cong-dong-pro.html":
    "Tôi học nhiều khoá rời rạc mà chưa cái nào thành thói quen trong công việc thật.",
  "diamond-founder-club.html":
    "Tôi cần ngồi cùng những người đã đi xa hơn, không cần thêm một lớp học nữa.",
@@ -115,7 +115,7 @@ KET_HST = {
    "Tôi đang có một quyết định lớn, cần đưa ra bàn với một người ngoài cuộc.",
  "giai-phap-doanh-nghiep.html":
    "Cả đội ngũ tôi cần cùng xây một hệ thống, không phải mình tôi đi học rồi về kể lại.",
- "cong-dong-mo.html":
+ "cong-dong-thanh-vien.html":
    "Tôi mới nghe tới Next Gen Founder, muốn xem thử xem có hợp mình không đã.",
  "founder-growth-system-lab.html":
    "Tôi học xong hệ thống rồi, mà về công ty vẫn chưa chạy thật được lần nào.",

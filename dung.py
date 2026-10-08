@@ -267,14 +267,14 @@ INDEX = """
     <p>Không ai phải cam kết lớn ngay từ đầu. Mỗi chặng là một cánh cửa riêng, và bạn dừng ở chặng nào cũng được.</p>
   </div>
   <div class="ht-luoi tre hien">
-    <a class="ht" href="chuong-trinh/cong-dong-mo.html">
-      <em>Chặng 01</em><h3>Cộng đồng Mở</h3>
-      <p>Cửa vào rộng nhất, không mất phí nhưng có sàng lọc. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
-      <i>Không mất phí &middot; có sàng lọc</i>
+    <a class="ht" href="chuong-trinh/cong-dong-thanh-vien.html">
+      <em>Chặng 01</em><h3>Cộng đồng Thành viên</h3>
+      <p>Cửa vào rộng nhất, miễn phí, có đăng ký tham gia. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
+      <i>Miễn phí &middot; có đăng ký tham gia</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="chuong-trinh/cong-dong-thanh-vien.html">
-      <em>Chặng 02</em><h3>Cộng đồng Thành viên</h3>
+    <a class="ht" href="chuong-trinh/cong-dong-pro.html">
+      <em>Chặng 02</em><h3>Cộng đồng Pro</h3>
       <p>Luyện đủ bốn năng lực suốt một năm ngay trong công việc thật, theo nhịp đều, có người phản hồi và đi cùng cả chặng.</p>
       <i>Bốn năng lực &middot; một năm</i>
     </a>
@@ -1019,7 +1019,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
    .replace("{PHIEU}", PHIEU).replace("{CO_MAY}", CO_MAY)
 
 trang("chuong-trinh.html", "Chương trình Next Gen Founder · Coach Duy Nguyễn",
-      "Bốn chương trình năng lực, Cộng đồng Thành viên, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một chiếc thang, mà là một hệ sinh thái theo mức sẵn sàng.",
+      "Bốn chương trình năng lực, Cộng đồng Thành viên, Cộng đồng Pro, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một chiếc thang, mà là một hệ sinh thái theo mức sẵn sàng.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
 
@@ -1987,6 +1987,21 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 <a href="trusted-sales-team-system.html">Trusted Sales Team System</a>.</p>
 <script>location.replace('trusted-sales-team-system.html');</script></body></html>""" % BASE)
 print("  chuong-trinh/the-trusted-advisor.html (chuyen huong)")
+
+# Ba mức cộng đồng đổi tên ngày 08/10/2026 theo DEC-C03: Thành viên, Pro, Diamond.
+# Cộng đồng Mở cũ nay là Cộng đồng Thành viên. Giữ địa chỉ cũ chuyển hướng sang trang mới.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "cong-dong-mo.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Cộng đồng Thành viên Next Gen Founder</title>
+<link rel="canonical" href="%s/chuong-trinh/cong-dong-thanh-vien.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=cong-dong-thanh-vien.html">
+</head>
+<body><p>Cộng đồng Mở nay là
+<a href="cong-dong-thanh-vien.html">Cộng đồng Thành viên Next Gen Founder</a>.</p>
+<script>location.replace('cong-dong-thanh-vien.html');</script></body></html>""" % BASE)
+print("  chuong-trinh/cong-dong-mo.html (chuyen huong)")
 
 # Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
 # mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm
