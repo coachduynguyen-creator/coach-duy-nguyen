@@ -269,6 +269,18 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
   .tam-nhin .khung > p{text-align:center}
   .muc-tieu{align-items:center;text-align:center}
 }
+
+/* câu hỏi thường gặp: bấm để mở, không cần script */
+.hoi-dap{padding:64px 0 80px;position:relative;background:var(--bg-2,#F6F7F9)}
+.hoi-dap h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(27px,3.2vw,34px);text-align:center}
+.ds-hoi{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.ds-hoi details{background:#fff;border:1px solid var(--vien);border-radius:14px;padding:0 20px}
+.ds-hoi summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-weight:600;font-size:17px;line-height:1.45;color:var(--muc)}
+.ds-hoi summary::-webkit-details-marker{display:none}
+.ds-hoi summary::after{content:'';flex:none;width:10px;height:10px;border-right:2px solid var(--vang-3);border-bottom:2px solid var(--vang-3);transform:rotate(45deg) translateY(-3px);transition:transform .2s}
+.ds-hoi details[open] summary::after{transform:rotate(-135deg) translateX(-3px)}
+.ds-hoi details p{padding:0 0 18px;font-size:16.5px;line-height:1.65;color:var(--muc-2)}
+@media(max-width:600px){.ds-hoi details{padding:0 16px}.ds-hoi summary{font-size:16px}}
 </style>
 </head>
 <body>
@@ -276,7 +288,7 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
 <header class="nav" id="top">
   <div class="bao-rong">
     <a class="logo" href="#top" aria-label="Cộng đồng Next Gen Founder, lên đầu trang"><img src="img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="583" height="208" decoding="async"></a>
-    <nav class="nav-links" id="nav-links" aria-label="Các phần của trang"><a href="#video">Video</a><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#vi-sao">Vì sao nên tham gia</a><a href="#tam-nhin">Tầm nhìn</a></nav>
+    <nav class="nav-links" id="nav-links" aria-label="Các phần của trang"><a href="#video">Video</a><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#vi-sao">Vì sao nên tham gia</a><a href="#tam-nhin">Tầm nhìn</a><a href="#hoi-dap">Hỏi đáp</a></nav>
     <a class="nut nho nut-dk" href="#dang-ky"><span class="nowrap">Đăng ký<span class="duoi">tham gia</span></span></a>
     <span class="tien" id="tien" aria-hidden="true"></span>
   </div>
@@ -398,6 +410,20 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
       <div><i>2</i><b>Tư vấn được tin cậy</b><span>Giúp khách nhìn rõ vấn đề và tự ra quyết định</span></div>
       <div><i>3</i><b>Xây hệ thống</b><span>Công việc vẫn chạy mà không phụ thuộc hết vào mình</span></div>
       <div><i>4</i><b>Kiến tạo cộng đồng</b><span>Tập hợp đúng người quanh mình để cùng nhau lớn lên</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="hoi-dap" id="hoi-dap">
+  <div class="khung">
+    <h2>Câu hỏi thường gặp</h2>
+    <div class="ds-hoi">
+      <details open><summary>Cộng đồng đã mở chưa? Đăng ký xong thì bao giờ được tham gia?</summary><p>Cộng đồng mở theo từng đợt. Sau khi bạn đăng ký, đội ngũ của Duy sẽ liên hệ. Nếu phù hợp, bạn sẽ nhận thư mời vào những buổi sinh hoạt đầu tiên.</p></details>
+      <details><summary>Tôi mới có ý định khởi nghiệp, chưa kinh doanh, có tham gia được không?</summary><p>Được. Cộng đồng dành cả cho người đang ấp ủ khởi nghiệp. Bạn học từ kinh nghiệm của những người đã đi trước để làm đúng ngay từ đầu.</p></details>
+      <details><summary>Vì sao phải trả lời câu hỏi khi đăng ký?</summary><p>Cộng đồng có sàng lọc để những người tham gia thật sự muốn đi cùng nhau. Câu trả lời của bạn giúp Duy hiểu bạn trước, và xem cộng đồng có giúp được bạn không.</p></details>
+      <details><summary>Tôi có được trao đổi trực tiếp với Duy không?</summary><p>Duy tham gia các buổi sinh hoạt của cộng đồng. Nhưng giá trị lớn nhất đến từ việc các thành viên giúp nhau, chứ không dồn hết vào một người.</p></details>
+      <details><summary>Tôi làm bán hàng hoặc quản lý, chưa phải người sáng lập, có hợp không?</summary><p>Bạn cứ đăng ký. Đội ngũ của Duy sẽ trao đổi với bạn và chỉ đúng hoạt động hoặc chương trình hợp với bạn.</p></details>
+      <details><summary>Cộng đồng có cam kết doanh thu không?</summary><p>Không. Cộng đồng giúp bạn gỡ điểm nghẽn bằng kinh nghiệm thật và những người cùng đi. Kết quả đến từ việc chính bạn làm.</p></details>
     </div>
   </div>
 </section>
