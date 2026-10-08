@@ -242,13 +242,27 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
 
 @media (max-width:860px){.than section{display:block;padding:36px 0}.than figure{margin:16px 0 4px}.than figure img{aspect-ratio:16/9;max-height:200px}}
 @media (max-width:600px){.khung{padding:0 16px}.than,.tam-nhin{font-size:17px}.vsl-khung{border-radius:14px}.vsl-mo i{width:64px;height:64px}.nang-luc{grid-template-columns:1fr}.muc-tieu{flex-direction:column;align-items:flex-start;gap:8px}.muc-tieu img{width:56px}.nut.lon{width:100%}}
+
+/* thanh trên cùng của trang đích: không vạch tiến độ, logo có khoảng thở trên dưới */
+.tien{display:none}
+.nav .bao-rong{height:72px}
+.nav.cuon .bao-rong{height:64px}
+.nav .logo img{height:40px;width:auto;display:block}
+.chan{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+.chan .khung{flex-wrap:nowrap}
+.chan span{line-height:1.5}
+@media(max-width:900px){
+  .nav .bao-rong,.nav.cuon .bao-rong{height:64px;padding-block:0;flex-wrap:nowrap}
+  .nav .logo img{height:34px}
+  .chan{font-size:13px}
+}
 </style>
 </head>
 <body>
 
 <header class="nav" id="top">
   <div class="bao-rong">
-    <a class="logo" href="#top" aria-label="Cộng đồng Next Gen Founder, lên đầu trang"><img src="img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="583" height="208" style="height:46px;width:auto" decoding="async"></a>
+    <a class="logo" href="#top" aria-label="Cộng đồng Next Gen Founder, lên đầu trang"><img src="img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="583" height="208" decoding="async"></a>
     <nav class="nav-links" id="nav-links" aria-label="Các phần của trang"><a href="#video">Video</a><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#vi-sao">Vì sao nên tham gia</a><a href="#tam-nhin">Tầm nhìn</a></nav>
     <a class="nut nho nut-dk" href="#dang-ky"><span class="nowrap">Đăng ký<span class="duoi">tham gia</span></span></a>
     <span class="tien" id="tien" aria-hidden="true"></span>
@@ -385,7 +399,7 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
 </section>
 
 <footer class="chan">
-  <div class="khung"><img src="img/ngf-khien.webp" alt="" width="205" height="256"><span>Next Gen Founder by Coach Duy Nguyễn · nextstepacademyvietnam@gmail.com</span></div>
+  <div class="khung"><img src="img/ngf-khien.webp" alt="" width="205" height="256"><span>Next Gen Founder by Coach Duy Nguyễn<br>nextstepacademyvietnam@gmail.com</span></div>
 </footer>
 
 <script>
