@@ -202,7 +202,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ba câu hỏi */
 .than{padding:16px 0 24px}
-.than section{display:grid;grid-template-columns:minmax(0,1fr) 280px;column-gap:40px;align-items:start;padding:44px 0;border-top:1px solid var(--vien)}
+.than section{display:grid;grid-template-columns:minmax(0,1fr) 280px;column-gap:40px;align-items:start;padding:64px 0 44px;position:relative}
 .than section > *{grid-column:1}
 .than h2{grid-column:1/-1;font-size:clamp(27px,3.2vw,34px)}
 .than figure{grid-column:2;grid-row:2/span 4;margin:14px 0 0}
@@ -216,7 +216,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%,#F6E3B4 58%);padding:0 2px}
 
 /* tầm nhìn */
-.tam-nhin{padding:44px 0 72px;border-top:1px solid var(--vien)}
+.tam-nhin{padding:64px 0 72px;position:relative}
 .muc-tieu{margin-top:20px;display:flex;align-items:center;gap:22px;padding:24px 28px;border-radius:18px;background:var(--den);color:#E9E6DF}
 .muc-tieu img{width:74px;height:auto;flex:none}
 .muc-tieu b{font:800 clamp(48px,7vw,72px)/1 var(--f-tit);background:linear-gradient(180deg,#FBE9B7,var(--vang-2) 55%,var(--vang-3));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -236,7 +236,7 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
 .dang-ky .nut{margin-top:28px}
 
 /* chân trang */
-.chan{padding:22px 0;border-top:1px solid #222;background:var(--den);color:#9A958B;font-size:14px}
+.chan{padding:22px 0;background:var(--den);color:#9A958B;font-size:14px}
 .chan .khung{max-width:1120px;display:flex;align-items:center;gap:12px}
 .chan img{height:34px;width:auto}
 
@@ -255,6 +255,19 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
   .nav .bao-rong,.nav.cuon .bao-rong{height:64px;padding-block:0;flex-wrap:nowrap}
   .nav .logo img{height:34px}
   .chan{font-size:13px}
+}
+
+/* đường ngăn giữa các phần: kẻ vàng có hình thoi ở giữa, lấy từ đường kẻ trong logo */
+.than section::before,.tam-nhin::before{content:'';position:absolute;top:14px;left:50%;width:180px;height:12px;transform:translateX(-50%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='12' viewBox='0 0 180 12'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23D4A64A' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23D4A64A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23D4A64A'/%3E%3Cstop offset='1' stop-color='%23D4A64A' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='5.5' width='78' height='1' fill='url(%23a)'/%3E%3Crect x='102' y='5.5' width='78' height='1' fill='url(%23b)'/%3E%3Cpath d='M90 1l5 5-5 5-5-5z' fill='%23C9973B'/%3E%3C/svg%3E") center/contain no-repeat}
+.tam-nhin::before{top:6px}
+/* chân trang căn giữa */
+.chan .khung,.chan .khung{flex-direction:column;justify-content:center;text-align:center;gap:10px}
+.chan .khung{flex-wrap:nowrap}
+@media(max-width:860px){
+  .than h2,.tam-nhin h2{text-align:center}
+  .than figcaption{text-align:center}
+  .tam-nhin .khung > p{text-align:center}
+  .muc-tieu{align-items:center;text-align:center}
 }
 </style>
 </head>
