@@ -23,7 +23,7 @@ FGS_LANDING = "https://coachduynguyen.vn/founder-growth/"
 CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20261010d"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20261010e"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -60,7 +60,7 @@ MENU = [
     # ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
-    ("sach.html", "Sách và tài liệu", None),
+    ("sach.html", "Công cụ", None),
     ("podcast.html", "Podcast", None),
     ("lien-he.html", "Liên hệ", None),
 ]
@@ -188,7 +188,7 @@ def footer(p=""):
       -->
       <div>
         <b>Nội dung</b>
-        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách và tài liệu</a><a href="%s">Podcast</a><a href="%s">Câu chuyện học viên</a>
+        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Công cụ</a><a href="%s">Podcast</a><a href="%s">Câu chuyện học viên</a>
       </div>
       <div>
         <b>Đi tiếp</b>

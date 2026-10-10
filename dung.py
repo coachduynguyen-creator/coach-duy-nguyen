@@ -1677,8 +1677,8 @@ THU_VIEN = """
        "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
        "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
-SACH = dau_trang("Sách và tài liệu", "Sách đang viết, công cụ dùng được ngay",
-  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Từng mục ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + """
+SACH = dau_trang("Công cụ và tài liệu", "Sách đang viết, công cụ dùng được ngay",
+  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Từng mục ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + THU_VIEN + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>
@@ -1689,7 +1689,7 @@ SACH = dau_trang("Sách và tài liệu", "Sách đang viết, công cụ dùng 
      "Đang viết · dự kiến quý 4 năm 2026"),
  bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
      "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
-     "Đang biên soạn")) + THU_VIEN + """
+     "Đang biên soạn")) + """
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
@@ -1835,7 +1835,7 @@ trang("cau-chuyen-hoc-vien.html", "Câu chuyện học viên · Coach Duy Nguy�
       CAU_CHUYEN, "chuong-trinh.html")
 print("  cau-chuyen-hoc-vien.html")
 
-trang("sach.html", "Sách và tài liệu của Coach Duy Nguyễn",
+trang("sach.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
       "Hai cuốn sách đang viết, ebook kịch bản REFLECT, và kho công cụ tự kiểm gắn với từng phương pháp của Coach Duy Nguyễn.",
       SACH, "sach.html")
 print("  sach.html")
