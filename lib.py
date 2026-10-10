@@ -56,7 +56,8 @@ CT_MENU = [
 
 MENU = [
     ("ve-toi.html", "Về Duy", None),
-    ("chuong-trinh.html", "Chương trình", CT_MENU),
+    # Tạm ẩn từ 10/10/2026 theo ý Coach Duy, dồn người xem vào Cộng đồng. Mở lại thì bỏ dấu #.
+    # ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
     ("sach.html", "Sách và tài liệu", None),
