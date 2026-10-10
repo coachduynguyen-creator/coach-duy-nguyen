@@ -119,7 +119,7 @@ def dsk(muc, khong=False):
 # "tạo các công cụ demo để đưa vào cho đỡ trống cũng được". Trạng thái ghi thật
 # trên thẻ, không có nút tải giả.
 TAI_LIEU = [
- dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm sau buổi tư vấn",
+ dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm tra sau buổi tư vấn",
   mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
   tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html",
   meta=["12 câu", "Khoảng 3 phút"]),
@@ -141,11 +141,11 @@ TAI_LIEU = [
  dict(loai="congcu", pp="Tam giác vàng", ten="Bảng soát ba đỉnh trước buổi gặp quan trọng",
   mo="Soát nhanh phong thái, sự chân thành và dấu hiệu chuyên môn trước một buổi gặp đáng tiền, vì thiếu một đỉnh là hai đỉnh kia không cứu được.",
   tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
- dict(loai="congcu", pp="Năm tầng doanh nghiệp", ten="Phiếu rà năm tầng doanh nghiệp",
+ dict(loai="congcu", pp="Năm tầng doanh nghiệp", ten="Phiếu rà soát năm tầng doanh nghiệp",
   mo="Đi một vòng năm tầng từ văn hoá tới chiến lược để tìm tầng đang yếu nhất, trước khi đổ thêm công vào tầng bên trên nó.",
   tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
 ]
-_LOAI = {"congcu": "Công cụ tự kiểm", "ai": "Bộ câu lệnh AI", "ebook": "Ebook"}
+_LOAI = {"congcu": "Công cụ tự kiểm tra", "ai": "Bộ câu lệnh AI", "ebook": "Ebook"}
 
 # Biểu tượng nét mảnh theo loại, vẽ bằng SVG, ăn màu vàng của site qua currentColor.
 _IC = {
@@ -213,7 +213,7 @@ INDEX = """
       <p class="mono">Về Duy</p>
       <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
       <p>Đó là founder mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đông nhất ở ngành dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
-      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so giá, người giỏi tìm tới xin một chỗ ngồi. Một tên tuổi khách nhớ, và dám tin.</p>
+      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so sánh giá, người giỏi tìm tới xin một chỗ ngồi. Một tên tuổi khách nhớ, và dám tin.</p>
       <p>Xa hơn nữa là di sản. Không phải một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật, bài học thật, cả những lần vấp. Mình gói lại cho rõ ràng, kể lại thật lòng, rồi trao cho đội ngũ của mình và cho những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
       <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên trong lúc bạn tập cách làm mới.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -234,7 +234,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Cách Duy làm việc</p>
     <h2>Năm điều bạn nhận được mỗi lần chúng ta làm việc</h2>
-    <p>Người cố vấn không phải là chức danh tự đặt. <span class="nhan">Nó là năm việc phải làm được.</span> Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
+    <p>Người cố vấn không phải là chức danh tự đặt. <span class="nhan">Nó là năm việc phải làm được.</span> Bạn có quyền lấy năm điều này ra kiểm tra Duy.</p>
   </div>
   <div class="hien">{VONG5}</div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
@@ -372,7 +372,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Công cụ và tài liệu</p>
     <h2>Công cụ dùng được ngay</h2>
-    <p>Bảng tự kiểm dùng ngay trên trang. Các bộ câu lệnh AI thì bạn chép sang ChatGPT, chạy với chính số liệu doanh nghiệp mình.</p>
+    <p>Bảng tự kiểm tra dùng ngay trên trang. Các bộ câu lệnh AI thì bạn chép sang ChatGPT, chạy với chính số liệu doanh nghiệp mình.</p>
   </div>
   <div class="tv-luoi tre hien">{KHO}</div>
   <div class="blog-them"><a class="nut nut-vien" href="cong-cu/">Xem tất cả công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
@@ -642,7 +642,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Cách Duy làm việc</p>
     <h2>Năm điều bạn nhận được, và ba điều Duy không làm thay bạn</h2>
-    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
+    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm tra Duy.</p>
   </div>
   <div class="clv">
     <div class="hop hien"><h3>Năm việc Duy làm</h3><p class="dan-hop">Mỗi lần làm việc phải đi đủ năm bước, không bỏ bước nào.</p>%s</div>
@@ -921,7 +921,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   <div class="phan-dau hien">
     <p class="mono">Cách làm việc</p>
     <h2>Năm điều bạn nhận được khi chúng ta đi cùng nhau</h2>
-    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm Duy.</p>
+    <p>Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được. Bạn có quyền lấy năm điều này ra kiểm tra Duy.</p>
   </div>
   <div class="clv">
     <div class="hop hien">
@@ -1074,7 +1074,7 @@ for c in CT:
     else:
         hinh = '<div class="anh anh-khung ngang"><img src="%s%s" alt="%s" loading="lazy"></div>' % (p, c["anh"], c["alt"])
 
-    # Trang không đăng giá, nên phải đăng điều kiện. Khách tự kiểm được mình có hợp
+    # Trang không đăng giá, nên phải đăng điều kiện. Khách tự kiểm tra được mình có hợp
     # hay chưa trước khi mất công hỏi, và bộ trả lời của AI cũng trả lời được câu
     # "tôi có tham gia được không" thay vì im lặng vì trang không có dữ liệu nào.
     dk_html = ""
@@ -1082,7 +1082,7 @@ for c in CT:
         muc = "".join("<li>%s</li>" % x for x in c["dieu_kien"])
         dk_html = """<section class="phan bd hoa-van" id="dieu-kien">
   <div class="phan-dau hien"><p class="mono">Trước khi tham gia</p><h2>Điều kiện tham gia</h2>
-  <p>Duy ghi phần này ra để bạn tự kiểm trước, khỏi mất một buổi trao đổi mới biết chưa hợp. Thiếu một điều kiện thì thường là chưa tới lúc, không phải là không bao giờ.</p></div>
+  <p>Duy ghi phần này ra để bạn tự kiểm tra trước, khỏi mất một buổi trao đổi mới biết chưa hợp. Thiếu một điều kiện thì thường là chưa tới lúc, không phải là không bao giờ.</p></div>
   <div class="hien" style="max-width:800px;margin-inline:auto">
     <ul class="dk-ds">%s</ul>
     <div class="ghi-mau" style="margin-top:24px"><b>Chương trình này dành cho ai</b><p>%s</p></div>
@@ -1668,12 +1668,12 @@ THU_VIEN = """
 </section>
 """ % ("".join('<button class="tl-nut%s" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
                % (" chon" if l == "all" else "", l, ten, _dem(l))
-               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")]),
+               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm tra"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")]),
        "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
        "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
 SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
-  "Bảng tự kiểm và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
+  "Bảng tự kiểm tra và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
 <section class="phan bd hoa-van">
   <div class="hang-bia hai tre hien">%s%s</div>
 </section>
@@ -1723,7 +1723,7 @@ _tk_nhom = "".join(
   ten, hoi, "".join('<label class="tk-cau"><input type="checkbox" data-cham="%d"><span>%s</span></label>'
                     % (n, c) for c in cau))
  for n, (ten, hoi, cau) in sorted(TK_CAU.items()))
-CONG_CU = dau_trang("Công cụ tự kiểm", "Bảng tự kiểm sau buổi tư vấn",
+CONG_CU = dau_trang("Công cụ tự kiểm tra", "Bảng tự kiểm tra sau buổi tư vấn",
   "Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.") + """
 <section class="phan bd phan-sang">
   <div class="ghi-mau hien"><b>Trước khi chấm</b><p>Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p></div>
@@ -1739,7 +1739,7 @@ CONG_CU = dau_trang("Công cụ tự kiểm", "Bảng tự kiểm sau buổi tư
   </div>
 </section>
 """
-trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm sau buổi tư vấn · Coach Duy Nguyễn",
+trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm tra sau buổi tư vấn · Coach Duy Nguyễn",
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
       CONG_CU, "cong-cu/")
 print("  cong-cu/tu-kiem-ba-diem-cham.html")
@@ -1842,7 +1842,7 @@ print("  cau-chuyen-hoc-vien.html")
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
-      "Bảng tự kiểm và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
+      "Bảng tự kiểm tra và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
 
@@ -1963,7 +1963,7 @@ KENH = """<section class="pd-hero">
     </div>
   </div>
   <div class="khong hien" style="max-width:70ch;margin:44px auto 0">
-    <b>Số để bạn kiểm, không phải để khoe</b>
+    <b>Số để bạn kiểm tra, không phải để khoe</b>
     <p>Số ở trang này đọc từ trang công khai của từng kênh, tính tới tháng 8 năm 2026. Nó nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn. Xem một tập rồi hãy quyết.</p>
   </div>
 </section>
@@ -2147,7 +2147,7 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "robots.txt"), "w"
 dk = ["# Điều kiện tham gia các chương trình của Coach Duy Nguyễn", "",
       "> Cập nhật %s. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi "
       "trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. "
-      "Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm xem mình có hợp hay chưa." % NGAY_SUA, ""]
+      "Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm tra xem mình có hợp hay chưa." % NGAY_SUA, ""]
 for c in CT:
     ten = c["ten"].replace("&nbsp;", " ")
     dk.append("## %s" % ten)
