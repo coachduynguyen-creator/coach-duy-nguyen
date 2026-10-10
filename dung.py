@@ -130,7 +130,6 @@ INDEX = """
       <h1>Duy đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 nhà sáng lập</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
-        <a class="nut nut-vien" href="chuong-trinh.html">Xem chương trình</a>
         <a class="nut nut-vien" href="blog.html">Đọc blog</a>
       </div>
     </div>
@@ -256,7 +255,6 @@ INDEX = """
 
   <div class="blog-them">
     <a class="nut nut-v" href="{CONG_DONG}">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
-    <a class="nut nut-vien" href="chuong-trinh.html">Xem tất cả chương trình</a>
   </div>
 </section>
 

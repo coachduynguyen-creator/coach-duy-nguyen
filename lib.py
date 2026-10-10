@@ -180,10 +180,12 @@ def footer(p=""):
       <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng, soi đúng, chỉ đường, giữ chuẩn, rồi trả lại quyền tự chủ.</p></p>
     </div>
     <div class="ct-cot">
+      <!-- Tạm ẩn từ 10/10/2026, dồn người xem vào Cộng đồng. Mở lại thì bỏ thẻ chú thích.
       <div>
         <b>Chương trình</b>
         %s
       </div>
+      -->
       <div>
         <b>Nội dung</b>
         <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Sách và tài liệu</a><a href="%s">Podcast</a><a href="%s">Câu chuyện học viên</a>
