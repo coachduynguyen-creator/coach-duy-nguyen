@@ -1660,12 +1660,7 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai):
 _dem = lambda l: sum(1 for t in TAI_LIEU if l == "all" or t["loai"] == l)
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
-  <div class="phan-dau hien">
-    <p class="mono">Kho công cụ và tài liệu</p>
-    <h2>Mỗi tài liệu gắn với một phương pháp</h2>
-    <p>Các công cụ dưới đây rút từ đúng những khung trên <a class="lk-v" href="phuong-phap.html">trang Phương pháp</a>. Công cụ nào dùng được ngay thì ghi rõ, bản nào đang làm thì ghi đang làm, không có nút tải giả.</p>
-  </div>
-  <div class="tl-loc hien" id="tl-loc">%s</div>
+  <div class="tl-loc hien" id="tl-loc" style="margin-top:0">%s</div>
   <p class="tv-nhom hien"><span>Dùng được ngay</span></p>
   <div class="tv-luoi hien">%s</div>
   <p class="tv-nhom hien"><span>Đang làm</span></p>
@@ -1677,8 +1672,8 @@ THU_VIEN = """
        "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
        "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
-SACH = dau_trang("Công cụ và tài liệu", "Sách đang viết, công cụ dùng được ngay",
-  "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Từng mục ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + THU_VIEN + """
+SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
+  "Bảng tự kiểm và các bộ câu lệnh AI để bạn soi kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
 <section class="phan bd hoa-van">
   <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>
@@ -1839,7 +1834,7 @@ print("  cau-chuyen-hoc-vien.html")
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
-      "Hai cuốn sách đang viết, ebook kịch bản REFLECT, và kho công cụ tự kiểm gắn với từng phương pháp của Coach Duy Nguyễn.",
+      "Bảng tự kiểm và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp soi kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
 
