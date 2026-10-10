@@ -1,6 +1,6 @@
 # Điều kiện tham gia các chương trình của Coach Duy Nguyễn
 
-> Cập nhật 2026-08-27. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm xem mình có hợp hay chưa.
+> Cập nhật 2026-08-27. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm tra xem mình có hợp hay chưa.
 
 ## Trusted Founder Brand Challenge
 

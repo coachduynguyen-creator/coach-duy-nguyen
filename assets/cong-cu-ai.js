@@ -45,7 +45,7 @@
   function canGoi(n) { return +n.vai_tro === 0 && +n.doanh_thu >= 2 && +n.doi_ngu >= 1; }
   function gui(n, moThem) {
     var f = d.getElementById('cc-form');
-    function chu(ten, i) { var o = f ? f.querySelector('[name="' + ten + '"] option[value="' + i + '"]') : null; return o ? o.textContent : n[ten + '_chu']; }
+    function chu(ten, i) { var o = f ? f.querySelector('[name="' + ten + '"] option[value="' + i + '"]') : null; return o ? o.textContent : (n[ten + '_chu'] || 'chưa trả lời'); }
     var goi = canGoi(n);
     var ghiChu = (moThem ? 'Mở thêm công cụ AI: ' : 'Công cụ AI: ') + MA + ' · Nguồn: ' + nguon +
       ' · Vai trò: ' + chu('vai_tro', n.vai_tro) + ' · Doanh thu mỗi tháng: ' + chu('doanh_thu', n.doanh_thu) +
@@ -90,18 +90,34 @@
       o.addEventListener('input', function () { gt[o.dataset.o] = o.value; ghi(KEY, gt); capNhat(); });
     });
     capNhat();
-    // Câu lệnh dài thì thu gọn, bấm "Xem đầy đủ" để mở. Nút Chép luôn chép đủ.
-    [].forEach.call(kin.querySelectorAll('.cc-chu'), function (c) {
+    ganNut(kin);
+    // Hai câu hỏi thêm, không bắt buộc: đã trả lời thì ẩn, gửi thì ghi lại vào Pancake.
+    var th = d.getElementById('cc-them'), n0 = doc('ngf-lead') || {};
+    if (th && n0.doanh_thu !== undefined && n0.doanh_thu !== '') th.hidden = true;
+    if (th) th.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var n = doc('ngf-lead') || {};
+      ['doanh_thu', 'doi_ngu'].forEach(function (k) { n[k] = th[k].value; n[k + '_chu'] = th[k].value === '' ? '' : th[k].options[th[k].selectedIndex].textContent; });
+      ghi('ngf-lead', n);
+      th.innerHTML = '<p class="cc-them-dau">Duy đã nhận. Cảm ơn bạn.</p>';
+      if (n.ten) gui(n, true).then(function () {}, function () {});
+    });
+  }
+  // Câu lệnh dài thì thu gọn, bấm "Xem đầy đủ" để mở. Nút Chép luôn chép đủ.
+  function ganNut(goc) {
+    [].forEach.call(goc.querySelectorAll('.cc-chu'), function (c) {
       if (c.textContent.length < 600) return;
       c.classList.add('gon');
       var b = d.createElement('button'); b.type = 'button'; b.className = 'cc-mo-het'; b.textContent = 'Xem đầy đủ';
       b.addEventListener('click', function () { var g = c.classList.toggle('gon'); b.textContent = g ? 'Xem đầy đủ' : 'Thu gọn'; });
       c.insertAdjacentElement('afterend', b);
     });
-    [].forEach.call(kin.querySelectorAll('.cc-chep'), function (nut) {
+    [].forEach.call(goc.querySelectorAll('.cc-chep'), function (nut) {
       nut.addEventListener('click', function () { chep(nut.closest('.cc-lenh').querySelector('.cc-chu').textContent, nut); });
     });
   }
+  var mo = d.getElementById('mo-cong-cu');
+  if (mo) [].forEach.call(mo.querySelectorAll('.cc-doc > .cc-lenh'), function (l) { ganNut(l); });
 
   // Ghi tên công cụ này để trang da-dang-ky.html (Pancake chuyển tới sau khi gửi) đưa về đúng chỗ.
   try { localStorage.setItem('ngf-cho', MA); } catch (e) {}
@@ -116,12 +132,12 @@
   if (f) f.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var n = {ten: f.ten.value.trim(), zalo: f.zalo.value.replace(/[^\d+]/g, ''),
-             vai_tro: f.vai_tro.value, doanh_thu: f.doanh_thu.value, doi_ngu: f.doi_ngu.value};
+             vai_tro: f.vai_tro.value, doanh_thu: '', doi_ngu: ''};
     var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !/^\+?\d{9,12}$/.test(n.zalo) ? 'Số Zalo chưa đúng, bạn kiểm lại giúp Duy.' :
-      (n.vai_tro === '' || n.doanh_thu === '' || n.doi_ngu === '') ? 'Bạn chọn đủ ba ô vai trò, doanh thu và đội ngũ giúp Duy.' : '';
+      n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : '';
     if (thieu) { loi.textContent = thieu; loi.hidden = false; return; }
     loi.hidden = true;
-    ['vai_tro', 'doanh_thu', 'doi_ngu'].forEach(function (k) { n[k + '_chu'] = f[k].options[f[k].selectedIndex].textContent; });
+    n.vai_tro_chu = f.vai_tro.options[f.vai_tro.selectedIndex].textContent;
     ghi('ngf-lead', n);
     // Mở ngay, không chờ Pancake trả lời. Gửi chưa được thì lần sau mở trang sẽ gửi lại.
     gui(n, false).then(function () { daGhi(n); }, function () {});

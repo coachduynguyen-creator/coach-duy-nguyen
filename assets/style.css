@@ -2419,3 +2419,8 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .hh-so-luoi b{display:block;font-family:var(--f-tit);font-size:clamp(44px,6vw,64px);font-weight:800;line-height:1;color:var(--vang)}
 .hh-so-luoi span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:var(--ink-2)}
 .hh .hh-ket,.hh figcaption,.hh-so-luoi span{text-align:left!important;hyphens:none}
+/* Biểu mẫu 3 ô và khối hỏi thêm sau khi mở (10/10/2026) */
+.cc-cua-dan{margin:.2rem 0 1rem;color:var(--muted,inherit);opacity:.85}
+.cc-them{margin:0 0 2rem}
+.cc-them-dau{margin:0 0 .8rem}
+.cc-them .nut{margin-top:.6rem}

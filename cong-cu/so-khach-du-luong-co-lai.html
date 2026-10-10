@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261010q">
+<link rel="stylesheet" href="../assets/style.css?v=20261010r">
 <link rel="preload" as="image" href="../img/cd-san-khau.webp" fetchpriority="high">
 <script>if(location.search.indexOf('static=1')>-1)document.documentElement.classList.add('noanim');</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn", "jobTitle": "Người cố vấn cho nhà sáng lập", "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành.", "url": "https://coachduynguyen.vn/", "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"]}</script>
@@ -67,25 +67,31 @@
 
 <section class="phan bd cc cc-toi" id="mo-cong-cu">
   <div class="cc-doc">
+    <h2>Bộ câu lệnh</h2>
+    <div class="cc-lenh" data-so="1"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 1</span><h3>Đặt vai cho AI</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Bạn là một cố vấn tài chính cho chủ doanh nghiệp nhỏ và vừa ở Việt Nam, nói thẳng và tính kỹ. Tôi cần bạn tính ngược từ chi phí và mức lãi tôi muốn ra số khách tôi phải có mỗi tháng. Khi làm việc với tôi, bạn giữ năm luật. Một, số liệu thiếu thì nói rõ bạn đang giả định con số nào, chỉ hỏi lại khi giả định đó làm đổi hẳn kết luận. Hai, mỗi phép tính ghi ngắn cách tính, và làm tròn lên thành số nguyên ở mỗi bước. Ba, gọi số liệu bằng tên của nó, ví dụ &quot;tỷ lệ chốt&quot;, không gọi theo số ô. Bốn, nói thẳng, ngắn, bằng tiếng Việt đời thường. Năm, không đưa lời khuyên chung chung kiểu &quot;hãy tập trung vào khách hàng&quot;. Đọc xong, bạn chỉ trả lời &quot;Tôi đã sẵn sàng&quot; và chờ tôi gửi số liệu.</div><div class="cc-kq"><p><b>AI sẽ trả về.</b> AI trả lời đúng một câu "Tôi đã sẵn sàng" và chờ bạn.</p></div></div>
     <div class="hop cc-cua" id="cc-cua">
-      <h2>Điền thông tin để mở bộ câu lệnh</h2>
+      <h2>Còn 7 câu lệnh và phiếu tự ghép số liệu của bạn</h2>
+      <p class="cc-cua-dan">Điền 3 ô để mở ngay.</p>
       <form id="cc-form" novalidate>
         <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
         <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
         <label class="cc-o"><span>Vai trò</span><select name="vai_tro" required><option value="">Chọn</option><option value="0">Chủ doanh nghiệp hoặc đồng sáng lập</option><option value="1">Quản lý</option><option value="2">Nhân viên</option><option value="3">Kinh doanh một mình</option><option value="4">Đang chuẩn bị kinh doanh</option></select></label>
-        <div class="cc-hai"><label class="cc-o"><span>Doanh thu mỗi tháng</span><select name="doanh_thu" required><option value="">Chọn</option><option value="0">Chưa có doanh thu</option><option value="1">Dưới 100 triệu</option><option value="2">100 tới 500 triệu</option><option value="3">500 triệu tới 2 tỷ</option><option value="4">Trên 2 tỷ</option></select></label>
-        <label class="cc-o"><span>Số người trong đội ngũ</span><select name="doi_ngu" required><option value="">Chọn</option><option value="0">Chỉ mình tôi</option><option value="1">2 tới 5</option><option value="2">6 tới 30</option><option value="3">Trên 30</option></select></label></div>
         <p class="cc-loi" id="cc-loi" hidden></p>
         <button class="nut nut-v" type="submit">Mở bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></button>
       </form>
     </div>
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
-      <h2>Phiếu điền số</h2>
+      <form class="hop cc-them" id="cc-them" novalidate>
+        <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
+        <div class="cc-hai"><label class="cc-o"><span>Doanh thu mỗi tháng</span><select name="doanh_thu" required><option value="">Chọn</option><option value="0">Chưa có doanh thu</option><option value="1">Dưới 100 triệu</option><option value="2">100 tới 500 triệu</option><option value="3">500 triệu tới 2 tỷ</option><option value="4">Trên 2 tỷ</option></select></label>
+        <label class="cc-o"><span>Số người trong đội ngũ</span><select name="doi_ngu" required><option value="">Chọn</option><option value="0">Chỉ mình tôi</option><option value="1">2 tới 5</option><option value="2">6 tới 30</option><option value="3">Trên 30</option></select></label></div>
+        <button class="nut nut-vien" type="submit">Gửi</button>
+      </form>
+      <h2 class="cc-h-lenh">Phiếu điền số</h2>
       <p>Phiếu có mười sáu ô, điền xong thì trang tự ghép vào câu lệnh số 2.</p>
       <div class="cc-phieu"><label class="cc-o"><span><b>1.</b> Ngành và mô hình kinh doanh. Ví dụ: nhà hàng hai cơ sở, bán tiệc và bàn đoàn đặt trước.</span><textarea rows="2" data-o="1"></textarea></label><label class="cc-o"><span><b>2.</b> Tổng lương cả đội ngũ mỗi tháng, chưa tính phần bạn tự rút.</span><textarea rows="2" data-o="2"></textarea></label><label class="cc-o"><span><b>3.</b> Phần bạn tự rút làm lương mỗi tháng. Chưa rút thì ghi 0.</span><textarea rows="2" data-o="3"></textarea></label><label class="cc-o"><span><b>4.</b> Chi phí cố định khác mỗi tháng: mặt bằng, quảng cáo, phần mềm, tiền trả góp.</span><textarea rows="2" data-o="4"></textarea></label><label class="cc-o"><span><b>5.</b> Mức lãi bạn muốn còn lại mỗi tháng, sau khi đã trả hết các khoản ở ô 2, 3, 4 và giá vốn.</span><textarea rows="2" data-o="5"></textarea></label><label class="cc-o"><span><b>6.</b> Giá vốn và chi phí đi theo từng đơn, khoảng bao nhiêu phần trăm doanh thu.</span><textarea rows="2" data-o="6"></textarea></label><label class="cc-o"><span><b>7.</b> Giá trị trung bình mỗi lượt mua.</span><textarea rows="2" data-o="7"></textarea></label><label class="cc-o"><span><b>8.</b> Số lượt mua mỗi tháng hiện nay, cả khách cũ lẫn khách mới.</span><textarea rows="2" data-o="8"></textarea></label><label class="cc-o"><span><b>9.</b> Phần trăm số lượt mua đến từ khách cũ quay lại.</span><textarea rows="2" data-o="9"></textarea></label><label class="cc-o"><span><b>10.</b> Số khách cũ trong danh sách bạn có thể liên hệ lại, tính những người đã mua trong 12 tháng qua.</span><textarea rows="2" data-o="10"></textarea></label><label class="cc-o"><span><b>11.</b> Mỗi tháng có bao nhiêu người mới được tiếp cận: người hỏi, người nhắn, người để lại số, người bạn hoặc nhân viên gặp.</span><textarea rows="2" data-o="11"></textarea></label><label class="cc-o"><span><b>12.</b> Trong số người mới tiếp cận, bao nhiêu phần trăm thành một cuộc tư vấn.</span><textarea rows="2" data-o="12"></textarea></label><label class="cc-o"><span><b>13.</b> Trong số cuộc tư vấn, bao nhiêu phần trăm mua.</span><textarea rows="2" data-o="13"></textarea></label><label class="cc-o"><span><b>14.</b> Ai đang tư vấn và chốt khách mới, mỗi người khoảng bao nhiêu phần trăm số cuộc. Ví dụ: tôi 40%, hai quản lý sảnh mỗi người 30%.</span><textarea rows="2" data-o="14"></textarea></label><label class="cc-o"><span><b>15.</b> Mỗi người trong số đó làm được tối đa bao nhiêu cuộc tư vấn mỗi tháng, tính cả việc khác họ phải làm. Ví dụ: tôi 60 cuộc, mỗi quản lý 60 cuộc.</span><textarea rows="2" data-o="15"></textarea></label><label class="cc-o"><span><b>16.</b> Doanh thu của tháng thấp nhất trong 12 tháng qua.</span><textarea rows="2" data-o="16"></textarea></label></div>
-      <h2 class="cc-h-lenh">Bộ câu lệnh</h2>
-      <div class="cc-lenh" data-so="1"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 1</span><h3>Đặt vai cho AI</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Bạn là một cố vấn tài chính cho chủ doanh nghiệp nhỏ và vừa ở Việt Nam, nói thẳng và tính kỹ. Tôi cần bạn tính ngược từ chi phí và mức lãi tôi muốn ra số khách tôi phải có mỗi tháng. Khi làm việc với tôi, bạn giữ năm luật. Một, số liệu thiếu thì nói rõ bạn đang giả định con số nào, chỉ hỏi lại khi giả định đó làm đổi hẳn kết luận. Hai, mỗi phép tính ghi ngắn cách tính, và làm tròn lên thành số nguyên ở mỗi bước. Ba, gọi số liệu bằng tên của nó, ví dụ &quot;tỷ lệ chốt&quot;, không gọi theo số ô. Bốn, nói thẳng, ngắn, bằng tiếng Việt đời thường. Năm, không đưa lời khuyên chung chung kiểu &quot;hãy tập trung vào khách hàng&quot;. Đọc xong, bạn chỉ trả lời &quot;Tôi đã sẵn sàng&quot; và chờ tôi gửi số liệu.</div><div class="cc-kq"><p><b>AI sẽ trả về.</b> AI trả lời đúng một câu "Tôi đã sẵn sàng" và chờ bạn.</p></div></div><div class="cc-lenh" data-so="2"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 2</span><h3>Đưa số liệu và kiểm tra</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Đây là số liệu doanh nghiệp của tôi.
+      <div class="cc-lenh" data-so="2"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 2</span><h3>Đưa số liệu và kiểm tra</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Đây là số liệu doanh nghiệp của tôi.
 
 Ngành và mô hình: [ô 1]. Tổng lương cả đội ngũ mỗi tháng: [ô 2]. Phần tôi tự rút làm lương: [ô 3]. Chi phí cố định khác mỗi tháng: [ô 4]. Mức lãi tôi muốn còn lại mỗi tháng: [ô 5]. Giá vốn và chi phí theo đơn: [ô 6] doanh thu. Giá trị trung bình mỗi lượt mua: [ô 7]. Số lượt mua mỗi tháng hiện nay: [ô 8]. Phần trăm lượt mua từ khách cũ: [ô 9]. Số khách cũ trong danh sách có thể liên hệ lại: [ô 10]. Số người mới tiếp cận mỗi tháng: [ô 11]. Tỷ lệ người tiếp cận thành cuộc tư vấn: [ô 12]. Tỷ lệ cuộc tư vấn thành mua, gọi là tỷ lệ chốt: [ô 13]. Người tư vấn và chốt khách mới, phần trăm số cuộc của mỗi người: [ô 14]. Số cuộc tư vấn tối đa mỗi tháng của mỗi người: [ô 15]. Doanh thu tháng thấp nhất trong 12 tháng qua: [ô 16].
 
@@ -119,7 +125,7 @@ Bạn làm hai việc. Một, tính doanh thu và lãi hoặc lỗ của tháng 
   </div>
 </section>
 <script type="application/json" id="cc-du-lieu">{"ma": "so-khach-du-luong-co-lai", "trong": ["[ô 1]", "[ô 2]", "[ô 3]", "[ô 4]", "[ô 5]", "[ô 6]", "[ô 7]", "[ô 8]", "[ô 9]", "[ô 10]", "[ô 11]", "[ô 12]", "[ô 13]", "[ô 14]", "[ô 15]", "[ô 16]"], "mau2": "Đây là số liệu doanh nghiệp của tôi.\n\nNgành và mô hình: [ô 1]. Tổng lương cả đội ngũ mỗi tháng: [ô 2]. Phần tôi tự rút làm lương: [ô 3]. Chi phí cố định khác mỗi tháng: [ô 4]. Mức lãi tôi muốn còn lại mỗi tháng: [ô 5]. Giá vốn và chi phí theo đơn: [ô 6] doanh thu. Giá trị trung bình mỗi lượt mua: [ô 7]. Số lượt mua mỗi tháng hiện nay: [ô 8]. Phần trăm lượt mua từ khách cũ: [ô 9]. Số khách cũ trong danh sách có thể liên hệ lại: [ô 10]. Số người mới tiếp cận mỗi tháng: [ô 11]. Tỷ lệ người tiếp cận thành cuộc tư vấn: [ô 12]. Tỷ lệ cuộc tư vấn thành mua, gọi là tỷ lệ chốt: [ô 13]. Người tư vấn và chốt khách mới, phần trăm số cuộc của mỗi người: [ô 14]. Số cuộc tư vấn tối đa mỗi tháng của mỗi người: [ô 15]. Doanh thu tháng thấp nhất trong 12 tháng qua: [ô 16].\n\nTừ đây trở đi, \"hòa vốn\" nghĩa là doanh thu vừa đủ trả giá vốn, lương cả đội ngũ, phần tôi tự rút và chi phí cố định khác. \"Mốc có lãi\" là hòa vốn cộng mức lãi tôi muốn.\n\nBạn làm hai việc. Một, tính doanh thu và lãi hoặc lỗ của tháng hiện nay. Nếu phần tôi tự rút bằng 0 thì nói rõ con số lãi đó chưa tính công của tôi. Hai, kiểm tra số liệu có khớp nhau không: số khách mới tính từ số người tiếp cận nhân hai tỷ lệ, so với số khách mới tính từ số lượt mua và phần trăm khách cũ. Lệch quá 15% thì nói rõ lệch bao nhiêu, hỏi tôi đúng một câu để sửa, rồi dừng lại chờ. Khớp thì nói \"số liệu khớp\" và chưa kết luận gì thêm."}</script>
-<script src="../assets/cong-cu-ai.js?v=20261010q"></script>
+<script src="../assets/cong-cu-ai.js?v=20261010r"></script>
 
 <footer>
   <div class="bd ct">
@@ -152,6 +158,6 @@ Bạn làm hai việc. Một, tính doanh thu và lãi hoặc lỗ của tháng 
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>
-<script src="../assets/site.js?v=20261010q"></script>
+<script src="../assets/site.js?v=20261010r"></script>
 </body>
 </html>

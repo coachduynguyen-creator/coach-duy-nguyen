@@ -278,13 +278,15 @@ def than_trang(cc):
                 % (i + 1, _dong(x), 3 if (i + 1) in cc["goi_y"] else 2, i + 1,
                    (' placeholder="%s"' % html.escape(cc["goi_y"][i + 1])) if (i + 1) in cc["goi_y"] else "")
                 for i, x in enumerate(cc["o"]))
-    lenh = ""
+    lenh, lenh_mo = "", ""
     for l in cc["lenh"]:
         ghi = l["dan"] or cc["nhan"].get(l["so"], "")
         lenh += ('<div class="cc-lenh" data-so="%d"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh %d</span><h3>%s</h3></div>'
                  '<button class="nut nut-vien cc-chep" type="button">Chép</button></div>%s<div class="cc-chu">%s</div>%s</div>'
                  % (l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"]),
                     _kq(cc["kq"].get(l["so"]))))
+        if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
+            lenh_mo, lenh = lenh, ""
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"]), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
@@ -318,24 +320,30 @@ def than_trang(cc):
 
 <section class="phan bd cc cc-toi" id="mo-cong-cu">
   <div class="cc-doc">
+    <h2>Bộ câu lệnh</h2>
+    %(lenh_mo)s
     <div class="hop cc-cua" id="cc-cua">
-      <h2>Điền thông tin để mở bộ câu lệnh</h2>
+      <h2>Còn %(con)d câu lệnh và phiếu tự ghép số liệu của bạn</h2>
+      <p class="cc-cua-dan">Điền 3 ô để mở ngay.</p>
       <form id="cc-form" novalidate>
         <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
         <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
         %(vai_tro)s
-        <div class="cc-hai">%(doanh_thu)s
-        %(doi_ngu)s</div>
         <p class="cc-loi" id="cc-loi" hidden></p>
         <button class="nut nut-v" type="submit">Mở bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></button>
       </form>
     </div>
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
-      <h2>Phiếu điền số</h2>
+      <form class="hop cc-them" id="cc-them" novalidate>
+        <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
+        <div class="cc-hai">%(doanh_thu)s
+        %(doi_ngu)s</div>
+        <button class="nut nut-vien" type="submit">Gửi</button>
+      </form>
+      <h2 class="cc-h-lenh">Phiếu điền số</h2>
       <p>%(phieu_dan)s</p>
       <div class="cc-phieu">%(o)s</div>
-      <h2 class="cc-h-lenh">Bộ câu lệnh</h2>
       %(lenh)s
     </template>
   </div>
@@ -367,7 +375,7 @@ def than_trang(cc):
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
         tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, hinh=hinh(ma), video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
-        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
+        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
         moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, du_lieu=du_lieu)
 

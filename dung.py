@@ -2294,3 +2294,19 @@ llms = """# Coach Duy Nguyễn
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "llms.txt"), "w", encoding="utf-8").write(llms)
 print("  sitemap.xml, robots.txt, llms.txt")
 print("XONG: %d trang" % (len(URLS) + 1))
+
+# Link ngắn cho mô tả YouTube và tin nhắn Botcake, giữ nguyên ?nguon= khi chuyển.
+_GOC = os.path.dirname(os.path.abspath(__file__))
+for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-luong-co-lai"),
+                   ("quytrinh", "quy-trinh-tu-cach-lam"), ("khachkho", "khach-kho-tinh"),
+                   ("quyetdinh", "phan-bien-quyet-dinh")]:
+    os.makedirs(os.path.join(_GOC, _ngan), exist_ok=True)
+    open(os.path.join(_GOC, _ngan, "index.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Công cụ AI cho người chủ doanh nghiệp</title>
+<link rel="canonical" href="%(b)s/cong-cu/%(m)s.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=../cong-cu/%(m)s.html">
+</head><body><p><a href="../cong-cu/%(m)s.html">Mở trang</a></p>
+<script>location.replace('../cong-cu/%(m)s.html' + location.search + location.hash);</script></body></html>""" % {"b": BASE, "m": _ma})
+    print("  %s/ -> cong-cu/%s.html" % (_ngan, _ma))

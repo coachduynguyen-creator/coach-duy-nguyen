@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261010q">
+<link rel="stylesheet" href="../assets/style.css?v=20261010r">
 <link rel="preload" as="image" href="../img/cd-san-khau.webp" fetchpriority="high">
 <script>if(location.search.indexOf('static=1')>-1)document.documentElement.classList.add('noanim');</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn", "jobTitle": "Người cố vấn cho nhà sáng lập", "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành.", "url": "https://coachduynguyen.vn/", "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"]}</script>
@@ -67,25 +67,31 @@
 
 <section class="phan bd cc cc-toi" id="mo-cong-cu">
   <div class="cc-doc">
+    <h2>Bộ câu lệnh</h2>
+    <div class="cc-lenh" data-so="1"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 1</span><h3>Đặt vai cho AI</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Bạn là một cố vấn vận hành khó tính, đã giúp nhiều chủ doanh nghiệp nhỏ và vừa ở Việt Nam chuyển cách làm của người chủ thành việc nhân viên làm được. Hôm nay tôi cần bạn phỏng vấn tôi về một việc cụ thể, rồi viết ra quy trình để nhân viên làm thay tôi. Bạn giữ bốn luật. Một, số liệu thiếu thì nói rõ bạn đang giả định con số nào, chỉ hỏi lại khi giả định đó làm đổi hẳn kết luận. Hai, mỗi nhận xét dựa trên con số hoặc lời kể của tôi, không dựa trên kinh nghiệm chung chung. Ba, viết bằng tiếng Việt đời thường, dùng chính những từ tôi và nhân viên của tôi hay nói. Bốn, khi một câu lệnh bảo bạn dừng lại chờ tôi, bạn chỉ hỏi đúng phần được giao rồi dừng, không tự trả lời thay tôi. Đọc xong, bạn chỉ trả lời &quot;Tôi đã sẵn sàng&quot; và chờ tôi gửi số liệu.</div><div class="cc-kq"><p><b>AI sẽ trả về.</b> AI trả lời đúng một câu "Tôi đã sẵn sàng" và chờ bạn.</p></div></div>
     <div class="hop cc-cua" id="cc-cua">
-      <h2>Điền thông tin để mở bộ câu lệnh</h2>
+      <h2>Còn 9 câu lệnh và phiếu tự ghép số liệu của bạn</h2>
+      <p class="cc-cua-dan">Điền 3 ô để mở ngay.</p>
       <form id="cc-form" novalidate>
         <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
         <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
         <label class="cc-o"><span>Vai trò</span><select name="vai_tro" required><option value="">Chọn</option><option value="0">Chủ doanh nghiệp hoặc đồng sáng lập</option><option value="1">Quản lý</option><option value="2">Nhân viên</option><option value="3">Kinh doanh một mình</option><option value="4">Đang chuẩn bị kinh doanh</option></select></label>
-        <div class="cc-hai"><label class="cc-o"><span>Doanh thu mỗi tháng</span><select name="doanh_thu" required><option value="">Chọn</option><option value="0">Chưa có doanh thu</option><option value="1">Dưới 100 triệu</option><option value="2">100 tới 500 triệu</option><option value="3">500 triệu tới 2 tỷ</option><option value="4">Trên 2 tỷ</option></select></label>
-        <label class="cc-o"><span>Số người trong đội ngũ</span><select name="doi_ngu" required><option value="">Chọn</option><option value="0">Chỉ mình tôi</option><option value="1">2 tới 5</option><option value="2">6 tới 30</option><option value="3">Trên 30</option></select></label></div>
         <p class="cc-loi" id="cc-loi" hidden></p>
         <button class="nut nut-v" type="submit">Mở bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></button>
       </form>
     </div>
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
-      <h2>Phiếu điền số</h2>
+      <form class="hop cc-them" id="cc-them" novalidate>
+        <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
+        <div class="cc-hai"><label class="cc-o"><span>Doanh thu mỗi tháng</span><select name="doanh_thu" required><option value="">Chọn</option><option value="0">Chưa có doanh thu</option><option value="1">Dưới 100 triệu</option><option value="2">100 tới 500 triệu</option><option value="3">500 triệu tới 2 tỷ</option><option value="4">Trên 2 tỷ</option></select></label>
+        <label class="cc-o"><span>Số người trong đội ngũ</span><select name="doi_ngu" required><option value="">Chọn</option><option value="0">Chỉ mình tôi</option><option value="1">2 tới 5</option><option value="2">6 tới 30</option><option value="3">Trên 30</option></select></label></div>
+        <button class="nut nut-vien" type="submit">Gửi</button>
+      </form>
+      <h2 class="cc-h-lenh">Phiếu điền số</h2>
       <p>Phiếu có mười bốn ô, điền xong thì trang tự ghép vào câu lệnh số 2.</p>
       <div class="cc-phieu"><label class="cc-o"><span><b>1.</b> Ngành và mô hình kinh doanh. Ví dụ: công ty làm phần mềm theo yêu cầu.</span><textarea rows="2" data-o="1"></textarea></label><label class="cc-o"><span><b>2.</b> Doanh thu trung bình mỗi tháng.</span><textarea rows="2" data-o="2"></textarea></label><label class="cc-o"><span><b>3.</b> Giá trị trung bình mỗi đơn.</span><textarea rows="2" data-o="3"></textarea></label><label class="cc-o"><span><b>4.</b> Số đơn mỗi tháng.</span><textarea rows="2" data-o="4"></textarea></label><label class="cc-o"><span><b>5.</b> Số người trong đội ngũ, chia theo vai trò.</span><textarea rows="2" data-o="5"></textarea></label><label class="cc-o"><span><b>6.</b> Số giờ bạn làm mỗi tuần.</span><textarea rows="2" data-o="6"></textarea></label><label class="cc-o"><span><b>7.</b> Ba tới năm việc đang tốn giờ của bạn nhất, mỗi việc kèm số giờ mỗi tuần.</span><textarea rows="2" data-o="7"></textarea></label><label class="cc-o"><span><b>8.</b> Việc nào trong số đó nhân viên đã từng thử làm, và kết quả ra sao.</span><textarea rows="2" data-o="8"></textarea></label><label class="cc-o"><span><b>9.</b> Những người có thể nhận việc: vai trò, số năm kinh nghiệm, số giờ rảnh mỗi tuần của từng người.</span><textarea rows="2" data-o="9"></textarea></label><label class="cc-o"><span><b>10.</b> Chi phí lương trung bình mỗi giờ của những người đó.</span><textarea rows="2" data-o="10"></textarea></label><label class="cc-o"><span><b>11.</b> Sai sót đắt nhất từng xảy ra: chuyện gì, mất khoảng bao nhiêu tiền.</span><textarea rows="2" data-o="11"></textarea></label><label class="cc-o"><span><b>12.</b> Khi nhân viên làm những việc loại này, khoảng bao nhiêu phần trăm phải làm lại hoặc sửa.</span><textarea rows="2" data-o="12"></textarea></label><label class="cc-o"><span><b>13.</b> Nếu bạn nghỉ hẳn 30 ngày, việc gì trong doanh nghiệp sẽ dừng lại.</span><textarea rows="2" data-o="13"></textarea></label><label class="cc-o"><span><b>14.</b> Số giờ mỗi tuần bạn muốn lấy lại.</span><textarea rows="2" data-o="14"></textarea></label></div>
-      <h2 class="cc-h-lenh">Bộ câu lệnh</h2>
-      <div class="cc-lenh" data-so="1"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 1</span><h3>Đặt vai cho AI</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Bạn là một cố vấn vận hành khó tính, đã giúp nhiều chủ doanh nghiệp nhỏ và vừa ở Việt Nam chuyển cách làm của người chủ thành việc nhân viên làm được. Hôm nay tôi cần bạn phỏng vấn tôi về một việc cụ thể, rồi viết ra quy trình để nhân viên làm thay tôi. Bạn giữ bốn luật. Một, số liệu thiếu thì nói rõ bạn đang giả định con số nào, chỉ hỏi lại khi giả định đó làm đổi hẳn kết luận. Hai, mỗi nhận xét dựa trên con số hoặc lời kể của tôi, không dựa trên kinh nghiệm chung chung. Ba, viết bằng tiếng Việt đời thường, dùng chính những từ tôi và nhân viên của tôi hay nói. Bốn, khi một câu lệnh bảo bạn dừng lại chờ tôi, bạn chỉ hỏi đúng phần được giao rồi dừng, không tự trả lời thay tôi. Đọc xong, bạn chỉ trả lời &quot;Tôi đã sẵn sàng&quot; và chờ tôi gửi số liệu.</div><div class="cc-kq"><p><b>AI sẽ trả về.</b> AI trả lời đúng một câu "Tôi đã sẵn sàng" và chờ bạn.</p></div></div><div class="cc-lenh" data-so="2"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 2</span><h3>Đưa số liệu</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Đây là số liệu doanh nghiệp của tôi.
+      <div class="cc-lenh" data-so="2"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh 2</span><h3>Đưa số liệu</h3></div><button class="nut nut-vien cc-chep" type="button">Chép</button></div><div class="cc-chu">Đây là số liệu doanh nghiệp của tôi.
 
 Ngành và mô hình: [ô 1]. Doanh thu mỗi tháng: [ô 2]. Giá trị trung bình mỗi đơn: [ô 3]. Số đơn mỗi tháng: [ô 4]. Đội ngũ: [ô 5]. Giờ làm mỗi tuần của tôi: [ô 6]. Các việc tốn giờ nhất của tôi: [ô 7]. Việc nhân viên đã từng thử làm: [ô 8]. Những người có thể nhận việc và giờ rảnh mỗi tuần: [ô 9]. Chi phí lương mỗi giờ của những người đó: [ô 10]. Sai sót đắt nhất từng xảy ra: [ô 11]. Phần trăm việc phải làm lại khi nhân viên làm: [ô 12]. Nếu tôi nghỉ 30 ngày thì việc sẽ dừng: [ô 13]. Số giờ mỗi tuần tôi muốn lấy lại: [ô 14].
 
@@ -119,7 +125,7 @@ Sau đó tính. Giờ tôi đang bỏ cho việc này mỗi tuần, trừ giờ 
   </div>
 </section>
 <script type="application/json" id="cc-du-lieu">{"ma": "quy-trinh-tu-cach-lam", "trong": ["[ô 1]", "[ô 2]", "[ô 3]", "[ô 4]", "[ô 5]", "[ô 6]", "[ô 7]", "[ô 8]", "[ô 9]", "[ô 10]", "[ô 11]", "[ô 12]", "[ô 13]", "[ô 14]"], "mau2": "Đây là số liệu doanh nghiệp của tôi.\n\nNgành và mô hình: [ô 1]. Doanh thu mỗi tháng: [ô 2]. Giá trị trung bình mỗi đơn: [ô 3]. Số đơn mỗi tháng: [ô 4]. Đội ngũ: [ô 5]. Giờ làm mỗi tuần của tôi: [ô 6]. Các việc tốn giờ nhất của tôi: [ô 7]. Việc nhân viên đã từng thử làm: [ô 8]. Những người có thể nhận việc và giờ rảnh mỗi tuần: [ô 9]. Chi phí lương mỗi giờ của những người đó: [ô 10]. Sai sót đắt nhất từng xảy ra: [ô 11]. Phần trăm việc phải làm lại khi nhân viên làm: [ô 12]. Nếu tôi nghỉ 30 ngày thì việc sẽ dừng: [ô 13]. Số giờ mỗi tuần tôi muốn lấy lại: [ô 14].\n\nBạn đọc kỹ, rồi nói cho tôi ba con số bạn muốn hỏi kỹ nhất và vì sao. Chưa kết luận, chưa đưa giải pháp."}</script>
-<script src="../assets/cong-cu-ai.js?v=20261010q"></script>
+<script src="../assets/cong-cu-ai.js?v=20261010r"></script>
 
 <footer>
   <div class="bd ct">
@@ -152,6 +158,6 @@ Sau đó tính. Giờ tôi đang bỏ cho việc này mỗi tuần, trừ giờ 
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>
-<script src="../assets/site.js?v=20261010q"></script>
+<script src="../assets/site.js?v=20261010r"></script>
 </body>
 </html>
