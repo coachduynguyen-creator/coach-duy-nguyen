@@ -1730,26 +1730,41 @@ TK_CAU = {
      "Buổi kết thúc bằng một bước tiếp theo cụ thể, có thời hạn."]),
 }
 _tk_nhom = "".join(
- '<div class="tk-nhom hien"><p class="mono">%s</p><h2>%s</h2>%s</div>' % (
+ '<div class="tk-nhom cc-the"><p class="mono">%s</p><h2>%s</h2>%s</div>' % (
   ten, hoi, "".join('<label class="tk-cau"><input type="checkbox" data-cham="%d"><span>%s</span></label>'
                     % (n, c) for c in cau))
  for n, (ten, hoi, cau) in sorted(TK_CAU.items()))
-CONG_CU = dau_trang("Công cụ tự kiểm tra", "Bảng tự kiểm tra sau buổi tư vấn",
-  "Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.") + """
-<section class="phan bd phan-sang">
-  <div class="ghi-mau hien"><b>Trước khi chấm</b><p>Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p></div>
-""" + _tk_nhom + """
-  <div class="hien" style="margin-top:30px">
-    <button class="nut nut-v" id="tk-xem" type="button">Xem kết quả <span class="mt" aria-hidden="true">&rarr;</span></button>
+# Cùng khuôn với bốn trang công cụ AI (cong_cu_ai.py): đầu trang có hình, thân trên dải kem.
+_tk_hinh = ('<figure class="hh hh--gio"><figcaption><span class="hh-vd">Phương pháp Ba Điểm Chạm</span>'
+  'Khách đi qua ba chạm theo đúng thứ tự này</figcaption><div class="hh-gio">%s</div>'
+  '<p class="hh-ket">Thiếu chạm trước thì chạm sau không đứng được</p></figure>') % \
+  '<span class="hh-mui" aria-hidden="true">&rarr;</span>'.join(
+   '<div><b>%02d</b><span>%s</span></div>' % (n, ten.split(" · ")[1]) for n, (ten, _, _) in sorted(TK_CAU.items()))
+CONG_CU = """<header class="dau-trang hoa-van cc-dau">
+  <div class="bd cc-dau-luoi">
+    <div>
+      <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
+      <h1>Bảng tự kiểm tra sau buổi tư vấn</h1>
+      <p class="dan">Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.</p>
+      <ul class="cc-chip"><li><b>12</b> câu</li><li>Khoảng <b>3</b> phút</li><li>Kết quả chỉ mình bạn thấy</li></ul>
+    </div>
+    %s
   </div>
-  <div id="tk-kq" hidden></div>
-  <div class="hien" style="margin-top:34px">
-    <p style="font-size:14.5px;color:var(--ink-3)">Công cụ dựa trên nguyên tắc đọc ngược của phương pháp Ba Điểm Chạm.
+</header>
+<section class="phan bd phan-sang cc">
+  <div class="cc-doc">
+    <p class="cc-gia-dinh"><b>Trước khi chấm.</b> Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p>
+    %s
+    <div style="margin-top:26px">
+      <button class="nut nut-v" id="tk-xem" type="button">Xem kết quả <span class="mt" aria-hidden="true">&rarr;</span></button>
+    </div>
+    <div id="tk-kq" hidden></div>
+    <p style="margin-top:30px;font-size:14.5px;color:var(--ink-3)">Công cụ dựa trên nguyên tắc đọc ngược của phương pháp Ba Điểm Chạm.
     <a class="lk-v" href="../bai-viet/ba-diem-cham-va-thu-tu-khong-doi-duoc.html">Đọc bài đầy đủ</a> ·
     <a class="lk-v" href="../phuong-phap.html">Xem các phương pháp khác</a></p>
   </div>
 </section>
-"""
+""" % (_tk_hinh, _tk_nhom)
 trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm tra sau buổi tư vấn · Coach Duy Nguyễn",
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
       CONG_CU, "cong-cu/")

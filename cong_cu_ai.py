@@ -21,6 +21,49 @@ CONG_CU = [
     ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md"),
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
 ]
+# Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
+# nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
+HINH = {
+ "danh-gia-ke-hoach-2027": dict(kieu="cot", tieu="Tháng thấp nhất năm 2027, khi mở thêm cơ sở thứ ba",
+   cot=[("Doanh thu tháng 7", 260, "260 triệu"), ("Chi phí cố định mới", 400, "400 triệu")],
+   ket="Lỗ khoảng 179 triệu trong tháng đó, tính cả giá vốn", vd="Chuỗi spa hai cơ sở"),
+ "so-khach-du-luong-co-lai": dict(kieu="pheu", tieu="Muốn có lãi 40 triệu mỗi tháng, phải có bao nhiêu khách",
+   tang=[("Người mới tiếp cận", "400", "576"), ("Cuộc tư vấn", "100", "144"), ("Khách mới", "30", "43")],
+   ket="Thêm 13 khách mới mỗi tháng, tức 176 người tiếp cận nữa", vd="Nhà hàng hai cơ sở"),
+ "quy-trinh-tu-cach-lam": dict(kieu="gio", tieu="Việc báo giá: chủ lấy lại được bao nhiêu giờ mỗi tuần",
+   buoc=[("12 giờ", "chủ đang tự làm"), ("9 giờ", "chuyển được cho nhân viên"), ("5,7 giờ", "chủ lấy lại mỗi tuần")],
+   ket="Chưa tới 10 giờ chủ muốn, vì người nhận việc chưa đủ giờ rảnh", vd="Công ty phần mềm 12 người"),
+ "khach-kho-tinh": dict(kieu="bang", tieu="Điểm luyện của bốn nhân viên với bốn kiểu khách khó",
+   cot=["So sánh giá", "Hỏi người khác", "Từng bị làm hỏng", "Im lặng"],
+   hang=[("An", [4, 6, 8, 3]), ("Bình", [5, 5, 7, 4]), ("Chi", [7, 6, 8, 6]), ("Dũng", [3, 4, 6, 2])],
+   ket="Cả đội ngũ yếu nhất với khách im lặng và khách so sánh giá", vd="Công ty dịch vụ kế toán"),
+}
+
+def hinh(ma):
+    h = HINH.get(ma)
+    if not h:
+        return ""
+    if h["kieu"] == "cot":
+        lon = max(v for _, v, _ in h["cot"])
+        than = '<div class="hh-cot">%s</div>' % "".join(
+            '<div class="hh-c"><span class="hh-so">%s</span><i style="--h:%.2f"></i><span class="hh-nhan">%s</span></div>'
+            % (chu, v / lon, ten) for ten, v, chu in h["cot"])
+    elif h["kieu"] == "pheu":
+        than = '<div class="hh-pheu">%s</div>' % "".join(
+            '<div class="hh-t" style="--w:%d%%"><span>%s</span><b>%s <em>&rarr;</em> %s</b></div>'
+            % (100 - i * 18, ten, cu, moi) for i, (ten, cu, moi) in enumerate(h["tang"]))
+        than += '<p class="hh-chu">Hiện nay &rarr; mốc có lãi</p>'
+    elif h["kieu"] == "gio":
+        than = '<div class="hh-gio">%s</div>' % '<span class="hh-mui" aria-hidden="true">&rarr;</span>'.join(
+            '<div><b>%s</b><span>%s</span></div>' % b for b in h["buoc"])
+    else:
+        than = '<table class="hh-bang"><thead><tr><th></th>%s</tr></thead><tbody>%s</tbody></table>' % (
+            "".join("<th>%s</th>" % c for c in h["cot"]),
+            "".join('<tr><th>%s</th>%s</tr>' % (ten, "".join('<td style="--p:%.2f">%d</td>' % (d / 10, d) for d in ds))
+                    for ten, ds in h["hang"]))
+    return ('<figure class="hh hh--%s"><figcaption><span class="hh-vd">Doanh nghiệp giả định · %s</span>%s</figcaption>%s'
+            '<p class="hh-ket">%s</p></figure>' % (h["kieu"], h["vd"], h["tieu"], than, h["ket"]))
+
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
 VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": ""}
 
@@ -222,28 +265,16 @@ def than_trang(cc):
 
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
     return """<header class="dau-trang hoa-van cc-dau">
-  <div class="bd">
-    <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
-    <h1>%(tieu)s</h1>
-    <p class="dan">%(duoi)s</p>
-    <ul class="cc-chip"><li><b>%(n_lenh)d</b> câu lệnh</li><li>Điền <b>%(n_o)d</b> thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
+  <div class="bd cc-dau-luoi">
+    <div>
+      <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
+      <h1>%(tieu)s</h1>
+      <p class="dan">%(duoi)s</p>
+      <ul class="cc-chip"><li><b>%(n_lenh)d</b> câu lệnh</li><li>Điền <b>%(n_o)d</b> thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
+    </div>
+    %(hinh)s
   </div>
 </header>
-
-<section class="phan bd phan-sang cc">
-  <div class="cc-dan-luoi">
-    <figure class="cc-duy"><img src="../img/cd-cat-vest.webp" alt="Coach Duy Nguyễn" loading="lazy"><figcaption><b>Coach Duy Nguyễn</b><span>Người sáng lập Cộng đồng Next Gen Founder</span></figcaption></figure>
-    <div class="cc-dan">%(dan)s</div>
-  </div>
-  %(video)s
-</section>
-
-<section class="phan bd cc cc-toi" id="cach-dung">
-  <div class="cc-doc cc-rong">
-    <h2>Cách dùng</h2>
-    %(buoc)s
-  </div>
-</section>
 
 <section class="phan bd phan-sang cc" id="bai-mau">
   <div class="cc-doc">
@@ -251,6 +282,13 @@ def than_trang(cc):
     <p class="cc-gia-dinh">%(mien_tru)s</p>
     <div class="cc-tabs" role="tablist">%(tab)s</div>
     %(mau)s
+  </div>
+</section>
+
+<section class="phan bd cc cc-toi" id="cach-dung">
+  <div class="cc-doc cc-rong">
+    <h2>Cách dùng</h2>
+    %(buoc)s
   </div>
 </section>
 
@@ -279,6 +317,14 @@ def than_trang(cc):
   </div>
 </section>
 
+<section class="phan bd phan-sang cc" id="vi-sao">
+  <div class="cc-doc cc-dan">
+    <h2>Vì sao có bộ câu lệnh này</h2>
+    %(dan)s
+  </div>
+  %(video)s
+</section>
+
 <section class="phan tran cc-moi" id="cong-dong">
   <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd"><div class="cc-doc">
@@ -295,7 +341,7 @@ def than_trang(cc):
 </section>
 <script type="application/json" id="cc-du-lieu">%(du_lieu)s</script>
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
-        tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, video=video, buoc=buoc,
+        tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, hinh=hinh(ma), video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
         vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
