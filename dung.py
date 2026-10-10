@@ -1647,15 +1647,22 @@ for i, b in enumerate(BAI):
     print("  bai-viet/" + b["tep"])
 
 # ---------------------------------------------------------------- SÁCH
-def bia(nhan, ten, tieu_duoi, mo, trang_thai):
-    return """<div class="bia">
+def bia(nhan, ten, tieu_duoi, mo, trang_thai, anh=""):
+    """Bìa sách. Có tệp img/<anh>.webp thì dùng làm nền bìa (ảnh không chữ, tạo
+    bằng câu lệnh ghi trong sổ tay); chữ tiêu đề luôn in bằng HTML để dấu tiếng
+    Việt đúng. Chưa có ảnh thì hiện bìa dựng bằng khiên logo và khung vàng."""
+    co_anh = anh and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "img", anh + ".webp"))
+    nen = ('<img class="nen-bia" src="img/%s.webp" alt="" loading="lazy">' % anh) if co_anh else \
+          '<img class="khien-bia" src="img/logo-dn.webp" alt="" loading="lazy">'
+    return """<div class="bia%s">
   <div class="mat">
+    %s
     <span class="nhan-bia">%s</span>
     <span class="ten-bia">%s</span>
     <span class="tac">Coach Duy Nguyễn</span>
   </div>
   <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
-</div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
+</div>""" % (" co-anh" if co_anh else "", nen, nhan, ten, tieu_duoi, mo, trang_thai)
 
 _dem = lambda l: sum(1 for t in TAI_LIEU if l == "all" or t["loai"] == l)
 THU_VIEN = """
@@ -1674,16 +1681,20 @@ THU_VIEN = """
 
 SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
   "Bảng tự kiểm tra và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
-<section class="phan bd hoa-van">
+<section class="phan bd hoa-van" id="sach">
+  <div class="phan-dau hien">
+    <p class="mono">Sách</p>
+    <h2>Sách Duy đang viết</h2>
+  </div>
   <div class="hang-bia hai tre hien">%s%s</div>
 </section>
 """ % (
  bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
-     "Gom lại cách bán dựa trên vị thế và niềm tin Duy đã dạy suốt sáu năm. Viết cho người chủ chứ không cho người bán: làm sao để khách tìm tới vì tin bạn, và làm sao để cách bán đó không chỉ nằm trong đầu bạn.",
-     "Đang viết · dự kiến quý 4 năm 2026"),
+     "Khách tốt nhất thường không đến vì bạn chào hàng hay nhất. Họ đến vì đã tin bạn từ trước khi gặp. Cuốn sách gom lại sáu năm Duy dạy cách bán từ vị thế: làm sao để khách tự tìm tới, hỏi bạn nên làm gì thay vì chỉ hỏi giá, và làm sao để cả đội ngũ bán được theo cách đó chứ không chỉ một mình bạn.",
+     "Đang viết · dự kiến quý 4 năm 2026", anh="sach-ban-bang-vi-the"),
  bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
-     "Bộ tài liệu thực chiến cho người làm bất động sản, rút từ các chương trình đào tạo đã chạy. Đây là phần chuyên ngành, tách khỏi dòng nội dung dành cho nhà sáng lập.",
-     "Đang biên soạn")) + """
+     "Dành riêng cho người làm môi giới và kinh doanh bất động sản. Bộ sách viết lại từ những chương trình đào tạo Duy đã đứng lớp, nên mỗi phần bắt đầu từ một tình huống người làm nghề gặp hằng ngày, rồi mới tới cách xử lý.",
+     "Đang biên soạn", anh="sach-thuc-chien-bat-dong-san")) + """
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">

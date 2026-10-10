@@ -2331,3 +2331,14 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
   .cc-ho{grid-template-columns:40px 1fr;gap:12px;padding:16px}
   .cc-ho-so{font-size:24px}
 }
+/* Bìa sách (10/10/2026): khiên logo mờ và khung vàng khi chưa có ảnh bìa,
+   ảnh nền phủ kín khi đã có tệp img/sach-*.webp. Chữ luôn in bằng HTML. */
+.bia .mat{isolation:isolate}
+.bia .mat::after{content:"";position:absolute;inset:12px;border:1px solid rgba(242,177,74,.35);border-radius:4px 8px 8px 4px;pointer-events:none;z-index:1}
+.bia .mat>span{position:relative;z-index:2}
+.bia .khien-bia{position:absolute;left:50%;top:50%;width:46%;height:auto;transform:translate(-50%,-62%);opacity:.16;z-index:0;filter:saturate(1.2)}
+.bia .nen-bia{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.bia.co-anh .mat{background-image:none}
+.bia.co-anh .mat .ten-bia{text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.bia .mat .ten-bia{font-size:clamp(24px,2.6vw,32px)}
+.bia .mat .ten-bia::after{content:"";display:block;width:48px;height:2px;margin-top:14px;background:var(--vang)}
