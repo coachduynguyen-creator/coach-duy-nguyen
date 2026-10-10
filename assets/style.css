@@ -2427,3 +2427,9 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .hh-boi{text-align:left!important;hyphens:none;margin:0 0 16px;font-size:17px;line-height:1.6}
 #bai-mau .hh{margin-bottom:22px;background-image:none;background-color:var(--panel)}
 .cc-dau .dan{text-align:left!important}
+/* Phần "Công cụ này giúp bạn việc gì", ngay dưới tiêu đề (11/10/2026) */
+.cc-vi{display:grid;gap:14px}
+@media(min-width:760px){.cc-vi{grid-template-columns:1fr 1fr}}
+.cc-vi-o{padding:20px 22px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel)}
+.cc-vi-o h3{margin:0 0 8px;font-size:15px;letter-spacing:.02em;color:var(--vang)}
+.cc-vi-o p{margin:0;font-size:16.5px;line-height:1.6;text-align:left!important;hyphens:none}
