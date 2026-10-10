@@ -2413,3 +2413,9 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .db-ket{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:15px;font-weight:600;color:var(--vang)}
 @media(max-width:600px){.dau-bai{padding:22px}.db-buoc{flex-direction:column}.db-buoc .hh-mui{transform:rotate(90deg)}.db-so{flex-direction:column;align-items:flex-start;gap:8px}}
 .dau-bai,.dau-bai *{text-align:left!important;hyphens:none}.dau-bai .db-buoc>div,.dau-bai .db-buoc *{text-align:center!important}
+/* khung số liệu đầu trang Công cụ */
+.hh-so-luoi{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hh-so-luoi>div{padding:18px;border-radius:12px;background:rgba(242,177,74,.1);border:1px solid rgba(242,177,74,.3)}
+.hh-so-luoi b{display:block;font-family:var(--f-tit);font-size:clamp(44px,6vw,64px);font-weight:800;line-height:1;color:var(--vang)}
+.hh-so-luoi span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:var(--ink-2)}
+.hh .hh-ket,.hh figcaption,.hh-so-luoi span{text-align:left!important;hyphens:none}

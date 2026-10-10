@@ -170,6 +170,12 @@ def doc(ma, tep):
     k = _khoi(p1["Phiếu điền số"])
     cc["phieu_dan"], cc["o"] = k[0], _ds(k[1])
     cc["moi"] = [x for x in _khoi(p1["Lời mời cuối trang"]) if not x.startswith("Nút:")]
+    # Điều người đọc nhận được, lấy từ câu đầu của lời mời cuối trang đã duyệt:
+    # "Làm xong bộ câu lệnh, bạn đang có trong tay X." Dùng làm mô tả trên thẻ.
+    m = re.search(r"bạn đang có trong tay (.+?)\.", cc["moi"][0])
+    cc["nhan_duoc"] = m.group(1) if m else cc["duoi"]
+    m = re.search(r"(\d+(?: tới \d+)?) phút", " ".join(cc["buoc_sau"]))
+    cc["phut"] = m.group(1) if m else ""
 
     # Câu lệnh: đoạn mở "Câu này chép vào ..." là lời dặn người chủ, không chép sang AI.
     cc["lenh"] = []

@@ -164,12 +164,12 @@ def dsk(muc, khong=False):
 # trên thẻ, không có nút tải giả.
 TAI_LIEU = [
  dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm tra sau buổi tư vấn",
-  mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
+  mo="Làm xong, bạn biết buổi tư vấn gần nhất đang thiếu Điểm Chạm nào và nên sửa từ đâu.",
   tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html",
   meta=["12 câu", "Khoảng 3 phút"]),
- *[dict(loai="ai", ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
+ *[dict(loai="ai", ten=c["tieu"], mo="Làm xong, bạn có " + c["nhan_duoc"] + ".", tt="Dùng với ChatGPT", tt_mo=True,
         nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"], moi=True,
-        meta=["%d câu lệnh" % len(c["lenh"]), "Điền %d thông tin" % len(c["o"])]) for c in cong_cu_ai.DS],
+        meta=["%d câu lệnh" % len(c["lenh"])] + (["Khoảng %s phút" % c["phut"]] if c["phut"] else [])) for c in cong_cu_ai.DS],
  dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
   mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
   tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
@@ -1723,8 +1723,21 @@ THU_VIEN = """
        "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
        "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
-SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
-  "Bảng tự kiểm tra và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
+_so_cc = sum(1 for t in TAI_LIEU if dung_ngay(t))
+_so_lenh = sum(len(c["lenh"]) for c in cong_cu_ai.DS) + 12   # 12 câu của Bảng tự kiểm tra (TK_CAU khai báo phía dưới)
+SACH = """<header class="dau-trang hoa-van cc-dau">
+  <div class="bd cc-dau-luoi">
+    <div>
+      <p class="mono">Công cụ và tài liệu</p>
+      <h1>Công cụ dùng được ngay</h1>
+      <p class="dan">Bảng tự kiểm tra và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.</p>
+    </div>
+    <figure class="hh hh--so"><div class="hh-so-luoi">
+      <div><b>%d</b><span>công cụ dùng được ngay</span></div>
+      <div><b>%d</b><span>câu lệnh và câu hỏi soạn sẵn</span></div>
+    </div><p class="hh-ket">Các bộ câu lệnh AI chạy được với ChatGPT bản miễn phí</p></figure>
+  </div>
+</header>""" % (_so_cc, _so_lenh) + THU_VIEN + """
 <section class="phan bd hoa-van" id="sach">
   <div class="phan-dau hien">
     <p class="mono">Sách</p>
