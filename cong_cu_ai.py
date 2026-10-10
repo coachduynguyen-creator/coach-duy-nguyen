@@ -180,7 +180,7 @@ def than_trang(cc):
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
     return """<header class="dau-trang cc-dau">
   <div class="bd">
-    <a class="cc-ve" href="../sach.html#thu-vien">&larr; Kho công cụ và tài liệu</a>
+    <a class="cc-ve" href="./">&larr; Kho công cụ và tài liệu</a>
     <p class="mono">Bộ câu lệnh AI cho chủ doanh nghiệp</p>
     <h1>%(tieu)s</h1>
     <p class="dan">%(duoi)s</p>
@@ -260,10 +260,10 @@ DA_DANG_KY = """<!doctype html>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F2E9DA;color:#241B14;font:16px/1.6 system-ui,sans-serif;text-align:center;padding:24px}a{color:#8F5808;font-weight:600}</style>
 </head>
 <body>
-<p>Đang mở bộ câu lệnh cho bạn.<br><a id="ve" href="../sach.html#thu-vien">Bấm vào đây nếu trang chưa tự chuyển</a></p>
+<p>Đang mở bộ câu lệnh cho bạn.<br><a id="ve" href="./">Bấm vào đây nếu trang chưa tự chuyển</a></p>
 <script>
 (function(){
-  var ma = null, dich = '../sach.html#thu-vien';
+  var ma = null, dich = './';
   try { ma = localStorage.getItem('ngf-cho'); } catch (e) {}
   if (ma && /^[a-z0-9-]+$/.test(ma)) {
     dich = ma + '.html#mo-cong-cu';

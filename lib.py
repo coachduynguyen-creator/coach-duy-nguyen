@@ -60,7 +60,7 @@ MENU = [
     # ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
     ("blog.html", "Blog", None),
-    ("sach.html", "Công cụ", None),
+    ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
     ("lien-he.html", "Liên hệ", None),
 ]
@@ -204,7 +204,7 @@ def footer(p=""):
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>""" % (dd("index.html", p), dau_hieu(p), ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
-                dd("sach.html", p), dd("podcast.html", p), dd("cau-chuyen-hoc-vien.html", p), CONG_DONG, PHIEU, CO_MAY,
+                dd("cong-cu/", p), dd("podcast.html", p), dd("cau-chuyen-hoc-vien.html", p), CONG_DONG, PHIEU, CO_MAY,
                 dd("ve-toi.html", p), dd("lien-he.html", p), EMAIL, EMAIL)
 
 JSONLD_NGUOI = json.dumps({
@@ -240,7 +240,8 @@ def tieu_de_trang(ten):
 def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=True):
     sau = "/" in ten_tep
     p = "../" if sau else ""
-    url = BASE + "/" + ten_tep
+    # Trang index.html trong thư mục con khai địa chỉ gọn, không kèm tên tệp.
+    url = BASE + "/" + (ten_tep[:-len("index.html")] if ten_tep.endswith("/index.html") else ten_tep)
     doc = """<!doctype html>
 <html lang="vi">
 <head>

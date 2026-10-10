@@ -375,7 +375,7 @@ INDEX = """
     <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Công cụ nào đang làm thì ghi rõ đang làm.</p>
   </div>
   <div class="tv-luoi tre hien">{KHO}</div>
-  <div class="blog-them"><a class="nut nut-vien" href="sach.html#thu-vien">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+  <div class="blog-them"><a class="nut nut-vien" href="cong-cu/">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo hoặc tư vấn.
@@ -1747,12 +1747,12 @@ CONG_CU = dau_trang("Công cụ tự kiểm", "Bảng tự kiểm sau buổi tư
 """
 trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm sau buổi tư vấn · Coach Duy Nguyễn",
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
-      CONG_CU, "sach.html")
+      CONG_CU, "cong-cu/")
 print("  cong-cu/tu-kiem-ba-diem-cham.html")
 
 for _c in cong_cu_ai.DS:
     trang("cong-cu/%s.html" % _c["ma"], tieu_de_trang(_c["tieu"]), _c["duoi"],
-          cong_cu_ai.than_trang(_c), "sach.html", cuoi=False)
+          cong_cu_ai.than_trang(_c), "cong-cu/", cuoi=False)
     print("  cong-cu/%s.html" % _c["ma"])
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/da-dang-ky.html"), "w", encoding="utf-8").write(cong_cu_ai.DA_DANG_KY)
 print("  cong-cu/da-dang-ky.html")
@@ -1835,10 +1835,25 @@ trang("cau-chuyen-hoc-vien.html", "Câu chuyện học viên · Coach Duy Nguy�
       CAU_CHUYEN, "chuong-trinh.html")
 print("  cau-chuyen-hoc-vien.html")
 
-trang("sach.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
+# Trang thư viện ở /cong-cu/ từ 10/10/2026, cùng thư mục với các công cụ. Thân
+# trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
+SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
+trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
       "Hai cuốn sách đang viết, ebook kịch bản REFLECT, và kho công cụ tự kiểm gắn với từng phương pháp của Coach Duy Nguyễn.",
-      SACH, "sach.html")
-print("  sach.html")
+      SACH, "cong-cu/")
+print("  cong-cu/index.html")
+
+# Địa chỉ cũ sach.html đã chia sẻ ra ngoài: chuyển sang /cong-cu/, giữ phần neo.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sach.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Công cụ và tài liệu của Coach Duy Nguyễn</title>
+<link rel="canonical" href="%s/cong-cu/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=cong-cu/">
+</head>
+<body><p>Trang này đã chuyển sang <a href="cong-cu/">Công cụ và tài liệu</a>.</p>
+<script>location.replace('cong-cu/' + location.hash);</script></body></html>""" % BASE)
+print("  sach.html (chuyen huong)")
 
 # ---------------------------------------------------------------- PODCAST
 
@@ -2097,7 +2112,7 @@ print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
-        "sach.html", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
+        "cong-cu/", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
      + ["founder-brand/"] \
@@ -2173,7 +2188,7 @@ llms = """# Coach Duy Nguyễn
 - [Founder Growth System, trang chương trình](%(b)s/founder-growth/): đưa một luồng công việc ra khỏi đầu người chủ, bản mẫu, chưa có lịch và chưa có giá
 - [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
-- [Sách và tài liệu](%(b)s/sach.html): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
+- [Công cụ và tài liệu](%(b)s/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
 - [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang mở danh sách chờ
 - [Liên hệ](%(b)s/lien-he.html)
