@@ -20,6 +20,7 @@ CONG_CU = [
     ("so-khach-du-luong-co-lai", "NGF - Tài liệu thu lead 2, tính số khách để đủ lương và có lãi bằng AI.md"),
     ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md"),
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
+    ("phan-bien-quyet-dinh", "NGF - Tài liệu thu lead 5, để AI hỏi khó một quyết định lớn trước khi chốt.md"),
 ]
 # Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
@@ -33,6 +34,9 @@ HINH = {
  "quy-trinh-tu-cach-lam": dict(kieu="gio", tieu="Việc báo giá: chủ lấy lại được bao nhiêu giờ mỗi tuần",
    buoc=[("12 giờ", "chủ đang tự làm"), ("9 giờ", "chuyển được cho nhân viên"), ("5,7 giờ", "chủ lấy lại mỗi tuần")],
    ket="Chưa tới 10 giờ chủ muốn, vì người nhận việc chưa đủ giờ rảnh", vd="Công ty phần mềm 12 người"),
+ "phan-bien-quyet-dinh": dict(kieu="cot", tieu="Nhận hợp đồng 9 tỷ: tiền cần có trước khi đợt thanh toán đầu tiên về",
+   cot=[("Tiền dự phòng đang có", 1.2, "1,2 tỷ"), ("Tiền cần có trong 3 tháng đầu", 2.77, "2,77 tỷ")],
+   ket="Thiếu khoảng 1,57 tỷ nếu chủ đầu tư không tạm ứng", vd="Công ty xây dựng nhà phố"),
  "khach-kho-tinh": dict(kieu="bang", tieu="Điểm luyện của bốn nhân viên với bốn kiểu khách khó",
    cot=["So sánh giá", "Hỏi người khác", "Từng bị làm hỏng", "Im lặng"],
    hang=[("An", [4, 6, 8, 3]), ("Bình", [5, 5, 7, 4]), ("Chi", [7, 6, 8, 6]), ("Dũng", [3, 4, 6, 2])],
@@ -65,7 +69,7 @@ def hinh(ma):
             '<p class="hh-ket">%s</p></figure>' % (h["kieu"], h["vd"], h["tieu"], than, h["ket"]))
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md
