@@ -15,11 +15,11 @@ import html, json, os, re
 
 NGUON = "/Users/coachduynguyen/Codex_Projects/Next Gen Founder/deliverables/"
 CONG_CU = [
-    # (tên tệp trang, tệp nội dung, chữ ngắn trên bìa thẻ ở trang chủ)
-    ("soi-ke-hoach-2027", "NGF - Tài liệu thu lead 1, soi kế hoạch kinh doanh 2027 bằng AI.md", "Kế hoạch 2027"),
-    ("so-khach-du-luong-co-lai", "NGF - Tài liệu thu lead 2, tính số khách để đủ lương và có lãi bằng AI.md", "Số khách cần có"),
-    ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md", "Quy trình từ cách làm"),
-    ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md", "Khách khó tính"),
+    # (tên tệp trang, tệp nội dung)
+    ("soi-ke-hoach-2027", "NGF - Tài liệu thu lead 1, soi kế hoạch kinh doanh 2027 bằng AI.md"),
+    ("so-khach-du-luong-co-lai", "NGF - Tài liệu thu lead 2, tính số khách để đủ lương và có lãi bằng AI.md"),
+    ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md"),
+    ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
 ]
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
 VIDEO = {"soi-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": ""}
@@ -136,7 +136,7 @@ def doc(ma, tep):
     cc["goi_y"] = {int(m.group(1)): m.group(3), int(m.group(2)): m.group(3)} if m else {}
     return cc
 
-DS = [dict(doc(ma, tep), bia=bia) for ma, tep, bia in CONG_CU]
+DS = [doc(ma, tep) for ma, tep in CONG_CU]
 
 
 # ------------------------------------------------------------ dựng trang
@@ -144,7 +144,7 @@ def _p(ds):
     return "".join("<p>%s</p>" % _dong(x) for x in ds)
 
 def _the_lien_quan(c):
-    return ('<a class="cc-khac" href="%s.html"><span class="mono">Bộ câu lệnh AI</span>'
+    return ('<a class="cc-khac" href="%s.html">'
             '<b>%s</b><span class="lk-v">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></span></a>'
             % (c["ma"], html.escape(c["tieu"])))
 
@@ -180,15 +180,13 @@ def than_trang(cc):
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
     return """<header class="dau-trang cc-dau">
   <div class="bd">
-    <a class="cc-ve" href="./">&larr; Kho công cụ và tài liệu</a>
-    <p class="mono">Bộ câu lệnh AI cho chủ doanh nghiệp</p>
+    <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
     <h1>%(tieu)s</h1>
     <p class="dan">%(duoi)s</p>
-    <ul class="cc-chip"><li>%(n_lenh)d câu lệnh</li><li>Phiếu %(n_o)d ô</li><li>Dùng với ChatGPT</li><li>Hai bài mẫu</li></ul>
+    <ul class="cc-chip"><li>%(n_lenh)d câu lệnh</li><li>Điền %(n_o)d thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
   </div>
 </header>
 <section class="phan bd phan-sang cc">
-  <nav class="cc-ml" aria-label="Mục lục"><a href="#cach-dung">Cách dùng</a><a href="#bai-mau">Hai bài mẫu</a><a href="#mo-cong-cu">Phiếu và câu lệnh</a><a href="#cong-dong">Cộng đồng</a></nav>
   <div class="cc-doc cc-dan">
     %(dan)s
   </div>
@@ -199,7 +197,7 @@ def than_trang(cc):
   </div>
 
   <div class="cc-doc" id="bai-mau">
-    <h2>Hai bài mẫu</h2>
+    <h2>Ví dụ trên hai doanh nghiệp</h2>
     <p class="cc-gia-dinh">%(mien_tru)s</p>
     <div class="cc-tabs" role="tablist">%(tab)s</div>
     %(mau)s
@@ -207,7 +205,7 @@ def than_trang(cc):
 
   <div class="cc-doc" id="mo-cong-cu">
     <div class="hop cc-cua" id="cc-cua">
-      <h2>Mở phiếu điền số và bộ câu lệnh</h2>
+      <h2>Điền thông tin để mở bộ câu lệnh</h2>
       <form id="cc-form" novalidate>
         <label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
         <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label>
@@ -233,7 +231,7 @@ def than_trang(cc):
     <a class="nut nut-v" id="cc-dang-ky" href="../tham-gia/?cong-cu=%(ma)s">Đăng ký tham gia cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
   <div class="cc-doc">
-    <p class="mono">Ba công cụ còn lại</p>
+    <p class="mono">Công cụ khác</p>
     <div class="cc-khac-luoi">%(khac)s</div>
   </div>
 </section>

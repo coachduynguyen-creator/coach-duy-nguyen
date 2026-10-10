@@ -123,9 +123,9 @@ TAI_LIEU = [
   mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
   tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html",
   meta=["12 câu", "Khoảng 3 phút"]),
- *[dict(loai="ai", pp=c["bia"], ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
+ *[dict(loai="ai", ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
         nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"], moi=True,
-        meta=["%d câu lệnh" % len(c["lenh"]), "Phiếu %d ô" % len(c["o"])]) for c in cong_cu_ai.DS],
+        meta=["%d câu lệnh" % len(c["lenh"]), "Điền %d thông tin" % len(c["o"])]) for c in cong_cu_ai.DS],
  dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
   mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
   tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
@@ -370,12 +370,12 @@ INDEX = """
 
 <section class="phan bd phan-sang" id="kho-cong-cu">
   <div class="phan-dau hien">
-    <p class="mono">Kho công cụ và tài liệu</p>
-    <h2>Mỗi công cụ gắn với một phương pháp</h2>
-    <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Công cụ nào đang làm thì ghi rõ đang làm.</p>
+    <p class="mono">Công cụ và tài liệu</p>
+    <h2>Công cụ dùng được ngay</h2>
+    <p>Bảng tự kiểm dùng ngay trên trang. Các bộ câu lệnh AI thì bạn chép sang ChatGPT, chạy với chính số liệu doanh nghiệp mình.</p>
   </div>
   <div class="tv-luoi tre hien">{KHO}</div>
-  <div class="blog-them"><a class="nut nut-vien" href="cong-cu/">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+  <div class="blog-them"><a class="nut nut-vien" href="cong-cu/">Xem tất cả công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo hoặc tư vấn.
@@ -1663,7 +1663,7 @@ THU_VIEN = """
   <div class="tl-loc hien" id="tl-loc" style="margin-top:0">%s</div>
   <p class="tv-nhom hien"><span>Dùng được ngay</span></p>
   <div class="tv-luoi hien">%s</div>
-  <p class="tv-nhom hien"><span>Đang làm</span></p>
+  <p class="tv-nhom hien"><span>Sắp có</span></p>
   <ul class="tv-sap hien">%s</ul>
 </section>
 """ % ("".join('<button class="tl-nut%s" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
@@ -1675,7 +1675,6 @@ THU_VIEN = """
 SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
   "Bảng tự kiểm và các bộ câu lệnh AI để bạn soi kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
 <section class="phan bd hoa-van">
-  <div class="ghi-mau hien"><b>Bản thiết kế</b><p>Bìa dưới đây là bản dựng tạm bằng chữ, chưa phải bìa thật. Khi có bìa do hoạ sĩ làm, Duy thay ảnh vào đúng chỗ này.</p></div>
   <div class="hang-bia hai tre hien">%s%s</div>
 </section>
 """ % (

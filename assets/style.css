@@ -2152,9 +2152,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-chip{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .cc-chip li{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2);background:var(--panel)}
 .cc{padding-top:30px}
-.cc-ml{max-width:760px;margin:0 auto 10px;display:flex;flex-wrap:wrap;gap:6px 18px;padding:12px 0;border-bottom:1px solid var(--line)}
-.cc-ml a{font-size:14px;font-weight:600;color:var(--ink-3);text-decoration:none}
-.cc-ml a:hover{color:var(--vang)}
 .cc-doc{max-width:760px;margin:0 auto;padding-top:46px}
 .cc-doc h2{font-family:var(--f-tit);font-size:clamp(22px,2.6vw,28px);line-height:1.25;margin-bottom:14px}
 .cc-doc h4{font-family:var(--f-tit);font-size:18px;margin:26px 0 8px}
@@ -2198,7 +2195,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-moi .nut{margin-top:22px}
 .cc-khac-luoi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .cc-khac{display:flex;flex-direction:column;gap:8px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);text-decoration:none}
-.cc-khac .mono{margin:0}
 .cc-khac b{font-size:16px;line-height:1.45;color:var(--ink)}
 .cc-khac .lk-v{font-size:14.5px;margin-top:auto}
 .cc-video{max-width:760px;margin:30px auto 0;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
@@ -2269,3 +2265,4 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .phan-sang.cc .nut-v{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}
 .phan-sang.cc .nut-vien{background-color:transparent;background-image:none}
 .phan-sang.cc .cc-loi{color:#A3361F!important}
+.phan-sang.cc .hop{background-image:none;background-color:var(--panel)}
