@@ -586,7 +586,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
     <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
-    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, để bạn đọc được đúng thứ Duy và đội ngũ dùng để tự soi mỗi quý, không phải một bản viết riêng cho trang giới thiệu.</p>
+    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, để bạn đọc được đúng thứ Duy và đội ngũ dùng để tự đánh giá mỗi quý, không phải một bản viết riêng cho trang giới thiệu.</p>
   </div>
   <div class="tn-khoi hien">
     <div class="tn-so"><b>10.000</b><span>Next Gen Founder · đến năm 2031</span></div>
@@ -898,7 +898,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
 
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
-    <p class="mono">Một bảng để tự soi</p>
+    <p class="mono">Một bảng để tự đánh giá</p>
     <h2>Người bán hàng và người cố vấn, mười điểm khác nhau</h2>
     <p>Không cột nào xấu, chúng chỉ dành cho hai loại giao dịch khác nhau. Bán giá trị cao mà đứng nhầm cột thì mọi kỹ thuật phía sau đều chống lại mình. Đọc từng dòng và tự chấm xem buổi gần nhất bạn đứng bên nào.</p>
   </div>
@@ -960,7 +960,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
   </div>
   <div class="dx tre hien">
     <article><div><span class="trang-thai"><i aria-hidden="true"></i>Một</span><h3>Hiểu vấn đề rõ hơn</h3><p>Sau khi đọc hoặc nghe, họ gọi đúng tên điều đang kẹt hơn lúc trước.</p></div></article>
-    <article><div><span class="trang-thai"><i aria-hidden="true"></i>Hai</span><h3>Tự đánh giá được</h3><p>Họ có một tiêu chí để soi vào bối cảnh của chính mình, không cần hỏi Duy.</p></div></article>
+    <article><div><span class="trang-thai"><i aria-hidden="true"></i>Hai</span><h3>Tự đánh giá được</h3><p>Họ có một tiêu chí để đối chiếu với bối cảnh của chính mình, không cần hỏi Duy.</p></div></article>
     <article><div><span class="trang-thai"><i aria-hidden="true"></i>Ba</span><h3>Tiến một bước nhỏ</h3><p>Có một việc vừa sức họ làm được ngay trong tuần này.</p></div></article>
     <article><div><span class="trang-thai im"><i aria-hidden="true"></i>Ranh giới</span><h3>Bước tiếp theo đủ nhỏ</h3><p>Không yêu cầu cam kết lớn trước khi họ có đủ thông tin và niềm tin.</p></div></article>
   </div>
@@ -984,7 +984,7 @@ def nhom_ct(ten):
 
 CHUONG_TRINH = dau_trang("Chương trình",
   "%s chương trình, nhưng lúc này bạn chỉ cần đúng một" % chu_so(len(CT), True),
-  "Không ai đi hết cả %s. Mỗi người chỉ kẹt ở một chỗ tại một thời điểm, và gỡ đúng chỗ đó rồi thì phần còn lại nhẹ đi nhiều. Chưa rõ mình đang kẹt ở đâu thì quay về trang chủ, ở đó có một danh sách để bạn tự soi." % chu_so(len(CT))) + """
+  "Không ai đi hết cả %s. Mỗi người chỉ kẹt ở một chỗ tại một thời điểm, và gỡ đúng chỗ đó rồi thì phần còn lại nhẹ đi nhiều. Chưa rõ mình đang kẹt ở đâu thì quay về trang chủ, ở đó có một danh sách để bạn tự đánh giá." % chu_so(len(CT))) + """
 
 
 <section class="phan bd hoa-van duoi" style="padding-top:0">
@@ -1353,7 +1353,7 @@ PD_TAP = [
  dict(yt="YnRjTGhwoQg", muc=1,
   tieu="Nếu phải khởi nghiệp lại, Duy sẽ làm gì trước",
   mo="Câu trả lời thẳng cho câu hỏi Duy hay được hỏi: bắt đầu lại từ đầu vào lúc này thì đi đường nào trước, và bỏ hẳn bước nào.",
-  lydo="Nghe để soi lại thứ tự ưu tiên của chính mình, nhất là khi bạn đang tính làm lại một mảng.",
+  lydo="Nghe để xem lại thứ tự ưu tiên của chính mình, nhất là khi bạn đang tính làm lại một mảng.",
   cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
  dict(yt="yFz8MHt20vQ", muc=1,
   tieu="Hai chữ giữ việc kinh doanh vững trong năm khó",
@@ -1368,7 +1368,7 @@ PD_TAP = [
  dict(yt="tr38f_RNwwU", muc=1,
   tieu="Bỏ một thói quen này trước khi mong bứt doanh số",
   mo="Một thói quen tư vấn rất phổ biến đang âm thầm phá buổi bán hàng, và cách thay nó bằng một việc làm được ngay.",
-  lydo="Soi được ngay trong buổi tư vấn gần nhất của bạn, không cần chờ.",
+  lydo="Đối chiếu được ngay với buổi tư vấn gần nhất của bạn, không cần chờ.",
   cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
 
  # ---- Chuyên mục 02 · Bán hàng và phòng kinh doanh
@@ -1427,7 +1427,7 @@ PD_TAP = [
  dict(yt="s1UF9mSxM0s", muc=3,
   tieu="Nâng vị thế chuyên gia trong mắt khách",
   mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
-  lydo="Bạn kiểm được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
+  lydo="Bạn kiểm tra được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
   cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
  dict(yt="sBaDKQOxRZw", muc=3,
   tieu="Vì sao nói nhiều làm mất vị thế",

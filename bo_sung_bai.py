@@ -18,7 +18,7 @@ BO_SUNG = {
  faq=[("Ba Điểm Chạm là gì?",
        "Đó là ba trạng thái nhận thức một người phải đi qua trước khi tự ra quyết định. Chạm động lực giúp khách nhìn rõ điều họ thật sự muốn. Chạm nhận thức giúp họ thấy khoảng cách giữa chỗ đang đứng và chỗ muốn tới. Chạm giải pháp mới là lúc bàn tới cách làm."),
       ("Vì sao không được đảo thứ tự Ba Điểm Chạm?",
-       "Vì giải pháp chỉ có nghĩa khi khách đã thấy vấn đề, và vấn đề chỉ đáng giải khi khách đã rõ mình muốn gì. Nói giải pháp trước thì khách nghe như một lời chào hàng, và phản xạ của họ là so giá."),
+       "Vì giải pháp chỉ có nghĩa khi khách đã thấy vấn đề, và vấn đề chỉ đáng giải khi khách đã rõ mình muốn gì. Nói giải pháp trước thì khách nghe như một lời chào hàng, và phản xạ của họ là so sánh giá."),
       ("Vì sao người tư vấn hay nhảy thẳng vào giải pháp?",
        "Vì hai bước đầu không cho họ việc gì để làm, chỉ có hỏi và nghe, nên cảm giác bất an dâng lên. Bước ba thì ngược lại, có trình bày, có giải thích, có chuyện thành công để kể. Thứ tự bị đảo không phải vì ai quên, mà vì bước ba dễ chịu hơn nhiều.")]),
 
@@ -81,7 +81,7 @@ BO_SUNG = {
  faq=[("Vì sao đăng nội dung nhiều mà không ra đúng khách?",
        "Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì. Tăng tần suất không sửa được chỗ này."),
       ("Tuyển thêm người mà tôi lại bận hơn, gỡ từ đâu?",
-       "Bắt đầu bằng một luồng công việc, không phải cả công ty. Viết ra kết quả rõ ràng của luồng đó, ai chịu trách nhiệm, đo bằng chỉ số nào, và bao lâu rà lại một lần. Chỗ nào bạn ấp úng khi trả lời, chỗ đó là điểm nghẽn thật."),
+       "Bắt đầu bằng một luồng công việc, không phải cả công ty. Viết ra kết quả rõ ràng của luồng đó, ai chịu trách nhiệm, đo bằng chỉ số nào, và bao lâu rà soát lại một lần. Chỗ nào bạn ấp úng khi trả lời, chỗ đó là điểm nghẽn thật."),
       ("Làm sao biết luồng đã ra khỏi đầu tôi?",
        "Khi người phụ trách xử lý được tám trong mười tình huống mà không hỏi bạn, kể cả tình huống chưa có trong tài liệu, và giải thích được vì sao họ làm vậy. Trước lúc đó bạn vẫn đang thuê người thực hiện.")]),
 
@@ -107,7 +107,7 @@ BO_SUNG = {
  tra_loi="Nổi tiếng là nhiều người biết tên bạn, đo bằng lượt xem và người theo dõi. Được tin cậy là đúng người hiểu bạn làm gì, tin bạn làm được và chủ động tìm tới. Một người rất nổi tiếng vẫn có thể không ai thuê, còn người chỉ vài nghìn người theo dõi vẫn kín lịch cả năm.",
  faq=[("Làm sao biết mình đang nổi tiếng hay đang được tin cậy?",
        "Đếm trong ba tháng qua có bao nhiêu người chủ động tìm tới bạn mà không qua giới thiệu. Con số đó nói về uy tín thật hơn mọi chỉ số nền tảng. Nếu lượt xem cao mà con số này gần bằng không, bạn đang có sự chú ý chứ chưa có niềm tin."),
-      ("Bài kiểm xoá tên là gì?",
+      ("Bài kiểm tra xoá tên là gì?",
        "Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành và hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ. Nếu là bốn hoặc năm, vấn đề của bạn là định vị chứ không phải tần suất."),
       ("Uy tín có đủ để giữ khách không?",
        "Không. Uy tín chỉ khiến khách chịu ngồi xuống nghe bạn lần đầu. Từ giây phút đó, điều quyết định là chất lượng tư vấn và chất lượng giao hàng. Xây thương hiệu mà không nâng hai phần kia là xây một cánh cửa đẹp dẫn vào phòng trống.")]),
@@ -119,7 +119,7 @@ BO_SUNG = {
       ("Viết quy trình có gỡ được nút thắt không?",
        "Không đủ. Quy trình mô tả các bước, còn phần đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và một nhịp rà soát cố định."),
       ("Nên bắt đầu từ đâu?",
-       "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà lại. Một luồng một quý, bốn luồng một năm. Sau hai năm nút thắt ở chỗ bạn không còn nữa.")]),
+       "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà soát lại. Một luồng một quý, bốn luồng một năm. Sau hai năm nút thắt ở chỗ bạn không còn nữa.")]),
 
 "kinh-nghiem-phai-thanh-he-thong.html": dict(
  tra_loi="Trong doanh nghiệp dịch vụ, điều tạo ra kết quả tốt nhất thường nằm trong đầu người chủ và vài người giỏi nhất. Đó là sức mạnh vì khó bắt chước, nhưng cũng là rủi ro lớn nhất vì nó rời khỏi công ty cùng lúc với người mang nó.",
@@ -131,7 +131,7 @@ BO_SUNG = {
        "Kết quả rõ ràng, người chịu trách nhiệm là một người có tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
 
 "cong-dong-khong-phai-nhom-dang-bai.html": dict(
- tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ người sáng lập. Bài kiểm nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
+ tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ người sáng lập. Bài kiểm tra nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
  faq=[("Bốn thứ quyết định cộng đồng sống hay chết là gì?",
        "Lời hứa rõ về việc vào đây được gì và không được gì. Tiêu chuẩn thành viên để biết ai hợp ai chưa hợp. Trải nghiệm mười bốn ngày đầu để người mới có kết quả nhỏ sớm. Và một nhịp hoạt động cố định để mọi người biết khi nào quay lại."),
       ("Đo cộng đồng bằng gì?",
@@ -249,8 +249,8 @@ BO_SUNG = {
 
 "do-cong-dong-bang-gi.html": dict(
  tra_loi="Số thành viên là chỉ số dễ tăng nhất và ít liên quan nhất tới giá trị. Bốn con số nói đúng hơn: tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại theo nhịp, giá trị tạo ra giữa các thành viên, và tỉ lệ gia hạn hoặc giới thiệu.",
- faq=[("Bài kiểm nào cho biết cộng đồng có sống thật không?",
-       "Ngừng đăng trong hai tuần và xem chuyện gì xảy ra. Nếu vẫn có hoạt động thì giá trị đang được tạo giữa các thành viên. Nếu im lặng hoàn toàn thì bạn đang gánh toàn bộ. Đừng làm bài kiểm này khi cộng đồng còn dưới ba tháng tuổi."),
+ faq=[("Bài kiểm tra nào cho biết cộng đồng có sống thật không?",
+       "Ngừng đăng trong hai tuần và xem chuyện gì xảy ra. Nếu vẫn có hoạt động thì giá trị đang được tạo giữa các thành viên. Nếu im lặng hoàn toàn thì bạn đang gánh toàn bộ. Đừng làm bài kiểm tra này khi cộng đồng còn dưới ba tháng tuổi."),
       ("Hai chỉ số nào nên bỏ?",
        "Tổng số bài đăng, vì nhiều bài chào hàng tệ hơn ít bài đáng đọc. Và số người theo dõi trang, vì theo dõi là hành vi gần như không tốn gì nên không nói lên mức độ cam kết."),
       ("Đo xong thì làm gì?",
