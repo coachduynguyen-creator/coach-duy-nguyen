@@ -2264,3 +2264,8 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
   .tv-sap-dong .lk-v{grid-column:2;grid-row:2/4;align-self:center}
 }
 @media(prefers-reduced-motion:reduce){.tv,.tv .lk-v .mt{transition:none}.tv:hover{transform:none}}
+/* Thân trang công cụ nằm trên dải kem của site (CDN 10/10: toàn trang tối đọc
+   nặng mắt). Nút vàng giữ tông vàng gốc, không ăn tông hổ phách sẫm của dải kem. */
+.phan-sang.cc .nut-v{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}
+.phan-sang.cc .nut-vien{background-color:transparent;background-image:none}
+.phan-sang.cc .cc-loi{color:#A3361F!important}

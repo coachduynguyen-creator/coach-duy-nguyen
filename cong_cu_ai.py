@@ -187,7 +187,7 @@ def than_trang(cc):
     <ul class="cc-chip"><li>%(n_lenh)d câu lệnh</li><li>Phiếu %(n_o)d ô</li><li>Dùng với ChatGPT</li><li>Hai bài mẫu</li></ul>
   </div>
 </header>
-<section class="phan bd cc">
+<section class="phan bd phan-sang cc">
   <nav class="cc-ml" aria-label="Mục lục"><a href="#cach-dung">Cách dùng</a><a href="#bai-mau">Hai bài mẫu</a><a href="#mo-cong-cu">Phiếu và câu lệnh</a><a href="#cong-dong">Cộng đồng</a></nav>
   <div class="cc-doc cc-dan">
     %(dan)s
