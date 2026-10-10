@@ -1673,7 +1673,7 @@ THU_VIEN = """
        "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
 SACH = dau_trang("Công cụ và tài liệu", "Công cụ dùng được ngay",
-  "Bảng tự kiểm và các bộ câu lệnh AI để bạn soi kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
+  "Bảng tự kiểm và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.") + THU_VIEN + """
 <section class="phan bd hoa-van">
   <div class="hang-bia hai tre hien">%s%s</div>
 </section>
@@ -1750,6 +1750,15 @@ for _c in cong_cu_ai.DS:
     print("  cong-cu/%s.html" % _c["ma"])
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/da-dang-ky.html"), "w", encoding="utf-8").write(cong_cu_ai.DA_DANG_KY)
 print("  cong-cu/da-dang-ky.html")
+# Địa chỉ cũ của công cụ 1, đổi ngày 10/10/2026 vì chữ "soi" không phải lời người chủ dùng.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/soi-ke-hoach-2027.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Đánh giá kế hoạch kinh doanh 2027 bằng AI</title>
+<link rel="canonical" href="%s/cong-cu/danh-gia-ke-hoach-2027.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=danh-gia-ke-hoach-2027.html">
+</head><body><p><a href="danh-gia-ke-hoach-2027.html">Mở trang</a></p>
+<script>location.replace('danh-gia-ke-hoach-2027.html' + location.search + location.hash);</script></body></html>""" % BASE)
 
 # ------------------------------------------------- CÂU CHUYỆN HỌC VIÊN
 # Nguồn: thư viện case trong vault, con số được Coach Duy xác nhận trực tiếp
@@ -1833,7 +1842,7 @@ print("  cau-chuyen-hoc-vien.html")
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
-      "Bảng tự kiểm và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp soi kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
+      "Bảng tự kiểm và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
 

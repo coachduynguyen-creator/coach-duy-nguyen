@@ -2151,7 +2151,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-ve{display:inline-block;margin-bottom:22px;font-size:14.5px;font-weight:600;color:var(--vang);text-decoration:none}
 .cc-chip{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .cc-chip li{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2);background:var(--panel)}
-.cc{padding-top:30px}
 .cc-doc{max-width:760px;margin:0 auto;padding-top:46px}
 .cc-doc h2{font-family:var(--f-tit);font-size:clamp(22px,2.6vw,28px);line-height:1.25;margin-bottom:14px}
 .cc-doc h4{font-family:var(--f-tit);font-size:18px;margin:26px 0 8px}
@@ -2159,8 +2158,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-doc p+p{margin-top:14px}
 .cc-doc .mono{margin-bottom:10px;display:block}
 .cc-doc b{color:var(--ink)}
-.cc-buoc{padding-left:22px;margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
-.cc-buoc li::marker{color:var(--vang);font-weight:700}
 .cc-gia-dinh{padding:14px 16px;border-left:3px solid var(--vang);background:var(--vang-mo);border-radius:0 var(--r-s) var(--r-s) 0;font-size:15px!important}
 .cc-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px}
 .cc-tab{font:600 14.5px var(--f-than);padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--ink-2);cursor:pointer}
@@ -2191,8 +2188,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-chu{white-space:pre-wrap;padding:14px 16px;font-size:15px;line-height:1.7;color:var(--ink-2)}
 .cc-chu.gon{max-height:9.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
 .cc-mo-het{display:block;margin:0 16px 14px;padding:0;border:0;background:none;font:600 14px var(--f-than);color:var(--vang);cursor:pointer}
-.cc-moi{margin-top:30px;padding:30px 0 0;border-top:1px solid var(--line)}
-.cc-moi .nut{margin-top:22px}
 .cc-khac-luoi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .cc-khac{display:flex;flex-direction:column;gap:8px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);text-decoration:none}
 .cc-khac b{font-size:16px;line-height:1.45;color:var(--ink)}
@@ -2200,7 +2195,6 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-video{max-width:760px;margin:30px auto 0;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
 .cc-video iframe{width:100%;height:100%;border:0}
 @media (max-width:600px){.cc-doc{padding-top:36px}.cc-doc p,.cc-doc li{font-size:16px}.cc-lenh-dau{padding:12px 14px}}
-.cc-doc p,.cc-doc li,.cc-dau .dan{text-align:left;hyphens:none}
 
 /* ============ thẻ thư viện công cụ (10/10/2026) ============
    Thay bìa sách giả bằng thẻ gọn: biểu tượng nét mảnh, nhãn loại kiểu máy chữ,
@@ -2266,3 +2260,74 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .phan-sang.cc .nut-vien{background-color:transparent;background-image:none}
 .phan-sang.cc .cc-loi{color:#A3361F!important}
 .phan-sang.cc .hop{background-image:none;background-color:var(--panel)}
+
+/* ===== trang công cụ, bản trình bày 10/10/2026 tối =====
+   CDN: "toàn chữ là chữ". Tách dải tối và dải kem xen kẽ như cả site, có ảnh
+   thật của Duy, các bước thành thẻ có số, chỗ hở thành thẻ đánh số, con số
+   tô vàng, bảng điểm tô đậm nhạt theo điểm, chữ căn đều hai bên. */
+.cc{padding:64px 0}
+.cc-doc p,.cc-doc li,.cc-dan p{text-align:justify;text-justify:inter-word;hyphens:manual}
+.cc-rong{max-width:1000px}
+.cc-dan-luoi{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:46px;align-items:start}
+.cc-duy{margin:0;position:sticky;top:96px;text-align:center}
+.cc-duy img{width:100%;height:auto;display:block;border-radius:var(--r) var(--r) 0 0;
+  background:radial-gradient(ellipse at 50% 85%,rgba(143,88,8,.18),transparent 70%),var(--panel-2)}
+.cc-duy figcaption{padding:14px 12px;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--r) var(--r);background:var(--panel)}
+.cc-duy b{display:block;font-family:var(--f-tit);font-size:16px;color:var(--ink)}
+.cc-duy span{display:block;font-size:13px;color:var(--ink-3);margin-top:3px}
+.cc-dan p{font-size:17px;line-height:1.8;color:var(--ink-2)}
+.cc-dan p+p{margin-top:16px}
+.cc-mo-dau{font-size:20px!important;line-height:1.65!important;color:var(--ink)!important;font-weight:500}
+.cc-trich{display:inline;font-style:italic;font-weight:600;color:var(--vang);background:var(--vang-mo);padding:1px 4px;border-radius:4px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cc-toi h2,.cc-moi h2{color:var(--ink)}
+.cc-doc>h2,.cc-rong>h2{margin-bottom:22px}
+.cc-buoc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cc-b{position:relative;padding:22px;border:1px solid var(--line);border-radius:var(--r);background-image:var(--paper);background-color:var(--panel);overflow:hidden}
+.cc-b::before{content:"";position:absolute;left:0;top:0;right:0;height:2px;background:linear-gradient(90deg,var(--vang),transparent)}
+.cc-b-dau{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cc-b-so{font-family:var(--f-tit);font-size:38px;font-weight:800;line-height:1;color:var(--vang)}
+.cc-b-ic{width:40px;height:40px;display:grid;place-items:center;border-radius:10px;color:var(--vang);background:var(--vang-mo);border:1px solid rgba(242,177,74,.28)}
+.cc-b-ic svg{width:20px;height:20px}
+.cc-b p{font-size:15px!important;line-height:1.65!important;color:var(--ink-2)}
+.cc-gio{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border:1px dashed var(--line-2);border-radius:var(--r)}
+.cc-gio span{flex:none;width:22px;height:22px;color:var(--vang)}
+.cc-gio p{font-size:15px!important;color:var(--ink-2)}
+.cc-h4{font-family:var(--f-mono)!important;font-size:12px!important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:30px 0 12px!important}
+.cc-lieu{padding:16px 18px;border-radius:var(--r);background:var(--panel-2);border:1px solid var(--line)}
+.cc-lieu p{font-size:15px!important;line-height:1.7!important}
+.cc-mau>.cc-lieu:first-child,.cc-mau>h4+.cc-lieu{margin-top:0}
+.cc-ho{display:grid;grid-template-columns:56px 1fr;gap:16px;margin-top:14px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.cc-ho-so{font-family:var(--f-tit);font-size:30px;font-weight:800;line-height:1;color:var(--vang)}
+.cc-ho h5{font-family:var(--f-tit);font-size:17px;line-height:1.35;color:var(--ink);margin-bottom:6px}
+.cc-ho p{font-size:15.5px!important;line-height:1.7!important}
+.cc-so{font-weight:700;color:var(--vang);white-space:nowrap}
+.cc-ai-noi{margin-top:16px;padding-left:14px;border-left:3px solid var(--line-2);font-style:italic}
+.cc-de-xuat{margin-top:18px;padding:18px 20px;border-radius:var(--r);background:var(--vang-mo);border:1px solid rgba(143,88,8,.25);position:relative}
+.cc-de-xuat p{color:var(--ink)!important}
+.cc-bang td.cc-diem{font-weight:700;text-align:center;color:var(--ink);
+  background:color-mix(in srgb,var(--vang) calc(var(--p)*55%),transparent)}
+.cc-bang th{text-align:center}
+.cc-bang td:first-child,.cc-bang th:first-child{text-align:left}
+.cc-hai{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.cc-phieu{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.cc-toi .cc-o input,.cc-toi .cc-o select,.cc-toi .cc-o textarea{background:var(--bg-2)}
+.cc-moi{padding:84px 0;text-align:center}
+.cc-moi .cc-doc p{color:var(--ink-2);font-size:17px;line-height:1.8}
+.cc-moi .cc-doc p:first-of-type{font-size:20px;color:var(--ink);font-weight:500}
+.cc-moi .nut{margin-top:26px}
+@media(max-width:860px){
+  .cc-dan-luoi{grid-template-columns:1fr;gap:22px}
+  .cc-duy{position:static;display:grid;grid-template-columns:96px 1fr;align-items:center;text-align:left;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
+  .cc-duy img{border-radius:0;height:110px;object-fit:cover;object-position:top}
+  .cc-duy figcaption{border:0;background:none}
+  .cc-buoc{grid-template-columns:1fr}
+  .cc-phieu{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .cc{padding:48px 0}
+  .cc-mo-dau{font-size:18px!important}
+  .cc-hai{grid-template-columns:1fr}
+  .cc-ho{grid-template-columns:40px 1fr;gap:12px;padding:16px}
+  .cc-ho-so{font-size:24px}
+}

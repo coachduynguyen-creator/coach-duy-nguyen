@@ -16,13 +16,13 @@ import html, json, os, re
 NGUON = "/Users/coachduynguyen/Codex_Projects/Next Gen Founder/deliverables/"
 CONG_CU = [
     # (tên tệp trang, tệp nội dung)
-    ("soi-ke-hoach-2027", "NGF - Tài liệu thu lead 1, soi kế hoạch kinh doanh 2027 bằng AI.md"),
+    ("danh-gia-ke-hoach-2027", "NGF - Tài liệu thu lead 1, soi kế hoạch kinh doanh 2027 bằng AI.md"),
     ("so-khach-du-luong-co-lai", "NGF - Tài liệu thu lead 2, tính số khách để đủ lương và có lãi bằng AI.md"),
     ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md"),
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
 ]
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"soi-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md
@@ -50,33 +50,63 @@ def _dong(s):
     """Chữ trong một dòng: thoát ký tự HTML rồi đổi **đậm**."""
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", html.escape(s, quote=False))
 
+# Con số kèm đơn vị trong bài mẫu được tô vàng, để mắt bắt được ngay số nào đáng lo.
+_SO = re.compile(r"(?<![\w])(\d[\d.,]*\s?(?:%|tỷ|triệu|lượt|giờ|cuộc|người|đơn|vụ|tuần|ngày|tháng|điểm|gói|hợp đồng|đồng)(?![\w]))")
+def _dong_so(s):
+    return _SO.sub(r'<span class="cc-so">\1</span>', _dong(s))
+
+def _so(o):
+    try: return float(o.replace(",", "."))
+    except ValueError: return None
+
 def _bang(khoi):
+    """Bảng điểm: ô điểm trên 10 tô đậm nhạt theo điểm, nhìn là thấy chỗ yếu."""
     hang = [[o.strip() for o in d.strip().strip("|").split("|")] for d in khoi.split("\n")]
     hang = [h for h in hang if not all(re.fullmatch(r":?-+:?", o) for o in h)]
     dau = "".join("<th>%s</th>" % _dong(o) for o in hang[0])
-    than = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % _dong(o) for o in h) for h in hang[1:])
+    def o_bang(o, j):
+        v = _so(o)
+        if v is not None and 0 < j < len(hang[0]) - 1 and v <= 10:
+            return '<td class="cc-diem" style="--p:%.2f">%s</td>' % (v / 10, _dong(o))
+        return "<td>%s</td>" % _dong(o)
+    than = "".join("<tr>%s</tr>" % "".join(o_bang(o, j) for j, o in enumerate(h)) for h in hang[1:])
     return '<div class="cc-bang"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (dau, than)
 
-def _html(than, bo_trich=True):
-    """Khối thân Markdown thành HTML: đoạn, danh sách, bảng, tiêu đề ###."""
-    ra = []
+def _html(than):
+    """Bài mẫu thành HTML. Đoạn "Số liệu" vào hộp xám, mỗi chỗ hở thành một thẻ
+    đánh số, việc AI đề xuất thành khung nhấn. Chữ giữ nguyên, chỉ đổi cách bày."""
+    ra, nhan_sau, so_ho = [], "", 0
     for k in _khoi(than):
         if k.startswith("> "):
-            if not bo_trich:
-                ra.append('<p class="cc-gia-dinh">%s</p>' % _dong(k[2:]))
-        elif k.startswith("|"):
-            ra.append(_bang(k))
-        elif k.startswith("### Bài mẫu thứ"):
-            # Tên thẻ đã nói là bài mẫu nào. Chỉ giữ phần nói việc gì, nếu có.
+            continue
+        if k.startswith("|"):
+            ra.append(_bang(k)); continue
+        if k.startswith("### Bài mẫu thứ"):
             viec = k[4:].split(": ", 1)[-1].split(", ", 1)
             if len(viec) == 2:
                 ra.append("<h4>%s</h4>" % _dong(viec[1][0].upper() + viec[1][1:]))
-        elif k.startswith("### "):
-            ra.append("<h4>%s</h4>" % _dong(k[4:]))
-        elif re.match(r"^\d+\.\s", k):
-            ra.append("<ol>%s</ol>" % "".join("<li>%s</li>" % _dong(x) for x in _ds(k)))
+            continue
+        if k.startswith("### "):
+            t = k[4:]
+            nhan_sau = "lieu" if t.startswith("Số liệu") else "de-xuat" if t.startswith("Việc AI đề xuất") else ""
+            ra.append('<h4 class="cc-h4">%s</h4>' % _dong(t)); continue
+        if re.match(r"^\d+\.\s", k):
+            ra.append("<ol>%s</ol>" % "".join("<li>%s</li>" % _dong_so(x) for x in _ds(k))); continue
+        m = re.match(r"^\*\*(Chỗ hở thứ \w+): (.+?)\*\*\s*(.*)$", k, re.S)
+        if m:
+            so_ho += 1
+            ra.append('<div class="cc-ho"><span class="cc-ho-so">%02d</span><div><h5>%s</h5><p>%s</p></div></div>'
+                      % (so_ho, _dong(m.group(2)[0].upper() + m.group(2)[1:]), _dong_so(m.group(3))))
+            continue
+        if k.startswith("**Số liệu.**") or nhan_sau == "lieu":
+            ra.append('<div class="cc-lieu"><p>%s</p></div>' % _dong(k.replace("**Số liệu.** ", "", 1)))
+        elif k.startswith("**Việc AI đề xuất") or nhan_sau == "de-xuat":
+            ra.append('<div class="cc-de-xuat"><p>%s</p></div>' % _dong_so(k))
+        elif k.startswith("AI đề xuất"):
+            ra.append('<p class="cc-ai-noi">%s</p>' % _dong_so(k))
         else:
-            ra.append("<p>%s</p>" % _dong(k))
+            ra.append("<p>%s</p>" % _dong_so(k))
+        nhan_sau = ""
     return "".join(ra)
 
 def doc(ma, tep):
@@ -159,7 +189,20 @@ def than_trang(cc):
         video = ('<div class="cc-video hien"><iframe src="https://www.youtube-nocookie.com/embed/%s?rel=0" '
                  'title="Video: %s" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>'
                  % (VIDEO[ma], html.escape(cc["tieu"])))
-    buoc = "<ol class=\"cc-buoc\">%s</ol>%s" % ("".join("<li>%s</li>" % _dong(x) for x in cc["buoc"]), _p(cc["buoc_sau"]))
+    # Ba bước thành ba thẻ có số và biểu tượng: điền số, chép sang ChatGPT, nhận kết quả.
+    IC = ['<path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/>',
+          '<path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8"/>',
+          '<path d="M5 12l4 4 10-10"/>']
+    buoc = '<div class="cc-buoc">%s</div>' % "".join(
+        '<div class="cc-b"><div class="cc-b-dau"><span class="cc-b-so">%02d</span><span class="cc-b-ic" aria-hidden="true">'
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">%s</svg>'
+        '</span></div><p>%s</p></div>' % (i + 1, IC[i % 3], _dong(x)) for i, x in enumerate(cc["buoc"]))
+    buoc += "".join('<div class="cc-gio"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">'
+                    '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p>%s</p></div>' % _dong(x) for x in cc["buoc_sau"])
+    # Lời dẫn: câu Duy tự nói với mình trong ngoặc kép được tô nổi lên.
+    def nhan_trich(x):
+        return re.sub(r'"([^"]+)"', r'<span class="cc-trich">"\1"</span>', _dong(x))
+    dan = "".join('<p%s>%s</p>' % (' class="cc-mo-dau"' if i == 0 else "", nhan_trich(x)) for i, x in enumerate(cc["dan"]))
     tab = "".join('<button class="cc-tab%s" type="button" role="tab" aria-selected="%s" data-the="%d">%s</button>'
                   % (" chon" if i == 0 else "", "true" if i == 0 else "false", i, html.escape(t)) for i, (t, _) in enumerate(cc["mau"]))
     mau = "".join('<div class="cc-mau" role="tabpanel" data-the="%d">%s</div>' % (i, h) for i, (_, h) in enumerate(cc["mau"]))
@@ -178,40 +221,49 @@ def than_trang(cc):
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"]), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
-    return """<header class="dau-trang cc-dau">
+    return """<header class="dau-trang hoa-van cc-dau">
   <div class="bd">
     <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
     <h1>%(tieu)s</h1>
     <p class="dan">%(duoi)s</p>
-    <ul class="cc-chip"><li>%(n_lenh)d câu lệnh</li><li>Điền %(n_o)d thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
+    <ul class="cc-chip"><li><b>%(n_lenh)d</b> câu lệnh</li><li>Điền <b>%(n_o)d</b> thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
   </div>
 </header>
+
 <section class="phan bd phan-sang cc">
-  <div class="cc-doc cc-dan">
-    %(dan)s
+  <div class="cc-dan-luoi">
+    <figure class="cc-duy"><img src="../img/cd-cat-vest.webp" alt="Coach Duy Nguyễn" loading="lazy"><figcaption><b>Coach Duy Nguyễn</b><span>Người sáng lập Cộng đồng Next Gen Founder</span></figcaption></figure>
+    <div class="cc-dan">%(dan)s</div>
   </div>
   %(video)s
-  <div class="cc-doc" id="cach-dung">
+</section>
+
+<section class="phan bd cc cc-toi" id="cach-dung">
+  <div class="cc-doc cc-rong">
     <h2>Cách dùng</h2>
     %(buoc)s
   </div>
+</section>
 
-  <div class="cc-doc" id="bai-mau">
-    <h2>Ví dụ trên hai doanh nghiệp</h2>
+<section class="phan bd phan-sang cc" id="bai-mau">
+  <div class="cc-doc">
+    <h2>AI tìm ra gì ở hai doanh nghiệp mẫu</h2>
     <p class="cc-gia-dinh">%(mien_tru)s</p>
     <div class="cc-tabs" role="tablist">%(tab)s</div>
     %(mau)s
   </div>
+</section>
 
-  <div class="cc-doc" id="mo-cong-cu">
+<section class="phan bd cc cc-toi" id="mo-cong-cu">
+  <div class="cc-doc">
     <div class="hop cc-cua" id="cc-cua">
       <h2>Điền thông tin để mở bộ câu lệnh</h2>
       <form id="cc-form" novalidate>
-        <label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
-        <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
+        <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
         %(vai_tro)s
-        %(doanh_thu)s
-        %(doi_ngu)s
+        <div class="cc-hai">%(doanh_thu)s
+        %(doi_ngu)s</div>
         <p class="cc-loi" id="cc-loi" hidden></p>
         <button class="nut nut-v" type="submit">Mở bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></button>
       </form>
@@ -225,19 +277,25 @@ def than_trang(cc):
       %(lenh)s
     </template>
   </div>
+</section>
 
-  <div class="cc-doc cc-moi" id="cong-dong">
+<section class="phan tran cc-moi" id="cong-dong">
+  <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
+  <div class="bd"><div class="cc-doc">
     %(moi)s
     <a class="nut nut-v" id="cc-dang-ky" href="../tham-gia/?cong-cu=%(ma)s">Đăng ký tham gia cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>
-  </div>
-  <div class="cc-doc">
+  </div></div>
+</section>
+
+<section class="phan bd phan-sang cc">
+  <div class="cc-doc cc-rong">
     <p class="mono">Công cụ khác</p>
     <div class="cc-khac-luoi">%(khac)s</div>
   </div>
 </section>
 <script type="application/json" id="cc-du-lieu">%(du_lieu)s</script>
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
-        tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=_p(cc["dan"]), video=video, buoc=buoc,
+        tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
         vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
