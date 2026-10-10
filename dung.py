@@ -1753,6 +1753,8 @@ for _c in cong_cu_ai.DS:
     trang("cong-cu/%s.html" % _c["ma"], tieu_de_trang(_c["tieu"]), _c["duoi"],
           cong_cu_ai.than_trang(_c), "sach.html", lop_body="giay", cuoi=False)
     print("  cong-cu/%s.html" % _c["ma"])
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/da-dang-ky.html"), "w", encoding="utf-8").write(cong_cu_ai.DA_DANG_KY)
+print("  cong-cu/da-dang-ky.html")
 
 # ------------------------------------------------- CÂU CHUYỆN HỌC VIÊN
 # Nguồn: thư viện case trong vault, con số được Coach Duy xác nhận trực tiếp

@@ -255,3 +255,40 @@ def the_tl(cc, p=""):
             '<div class="tl-duoi"><span class="tl-tt mo">Dùng với ChatGPT</span>'
             '<a class="lk-v" href="%scong-cu/%s.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div></article>'
             % (html.escape(cc["bia"]), p, _dong(cc["tieu"]), _dong(cc["duoi"]), p, cc["ma"]))
+
+
+# Trang Pancake chuyển tới sau khi người đọc gửi biểu mẫu "NGF Công cụ AI".
+# Không cho Google đọc. Nó ghi nhận đã điền rồi đưa người đọc về đúng công cụ
+# vừa mở (trang công cụ ghi tên mình vào máy trước khi hiện biểu mẫu). Biểu
+# mẫu nằm trong khung con nên chuyển cả trang cha, không chỉ khung con.
+DA_DANG_KY = """<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Đang mở bộ câu lệnh</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F2E9DA;color:#241B14;font:16px/1.6 system-ui,sans-serif;text-align:center;padding:24px}a{color:#8F5808;font-weight:600}</style>
+</head>
+<body>
+<p>Đang mở bộ câu lệnh cho bạn.<br><a id="ve" href="../sach.html#thu-vien">Bấm vào đây nếu trang chưa tự chuyển</a></p>
+<script>
+(function(){
+  var ma = null, dich = '../sach.html#thu-vien';
+  try { ma = localStorage.getItem('ngf-cho'); } catch (e) {}
+  if (ma && /^[a-z0-9-]+$/.test(ma)) {
+    dich = ma + '.html#mo-cong-cu';
+    try {
+      var n = JSON.parse(localStorage.getItem('ngf-lead') || '{}');
+      n.qua_pancake = true; n.da = n.da || []; if (n.da.indexOf(ma) < 0) n.da.push(ma);
+      localStorage.setItem('ngf-lead', JSON.stringify(n));
+    } catch (e) {}
+  }
+  document.getElementById('ve').href = dich;
+  try { (window.top || window).location.href = new URL(dich, location.href).href; }
+  catch (e) { location.href = dich; }
+})();
+</script>
+</body>
+</html>
+"""

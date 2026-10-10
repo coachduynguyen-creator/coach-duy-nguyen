@@ -103,11 +103,13 @@
     });
   }
 
+  // Ghi tên công cụ này để trang da-dang-ky.html (Pancake chuyển tới sau khi gửi) đưa về đúng chỗ.
+  try { localStorage.setItem('ngf-cho', MA); } catch (e) {}
   var nguoi = doc('ngf-lead');
-  if (nguoi && nguoi.ten && nguoi.zalo) {
+  if (nguoi && ((nguoi.ten && nguoi.zalo) || nguoi.qua_pancake)) {
     // Đã điền ở một công cụ khác: mở luôn, vẫn ghi vào Pancake là đã mở thêm công cụ này.
     moKhoa();
-    if ((nguoi.da || []).indexOf(MA) < 0) gui(nguoi, true).then(function () { daGhi(nguoi); }, function () {});
+    if (nguoi.ten && (nguoi.da || []).indexOf(MA) < 0) gui(nguoi, true).then(function () { daGhi(nguoi); }, function () {});
   }
 
   var f = d.getElementById('cc-form'), loi = d.getElementById('cc-loi');
