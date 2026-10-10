@@ -20,6 +20,50 @@ from chuong_trinh import CT
 import cong_cu_ai
 import so_do
 
+# Khung đầu bài thay cho ảnh chân dung (CDN 10/10/2026: không bài nào cũng đưa ảnh
+# của Duy lên đầu). Mỗi bài một kiểu theo nội dung, chữ lấy từ chính bài.
+# Bài chưa có trong bảng thì vẫn dùng ảnh cũ, sửa dần theo từng đợt.
+HINH_BAI = {
+ "bon-cau-toi-nghe-nhieu-nhat.html": dict(kieu="cau", tieu="Bốn câu người sáng lập hay nói nhất", cau=[
+   "Tôi đăng nội dung nhiều nhưng không ra đúng khách.", "Đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.",
+   "Tuyển thêm người mà tôi lại bận hơn trước.", "Tháng tốt tháng kém mà không rõ vì sao."],
+   ket="Bốn câu nghe như bốn vấn đề, nhưng thường chỉ về một chỗ"),
+ "cai-nut-that-mang-ten-ban.html": dict(kieu="trich",
+   cau="Con anh giỏi, nhưng mỗi lần cần số liệu lại phải hỏi kế toán, ngồi tổng hợp cả buổi.",
+   ai="Một chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề",
+   ket="Bức tranh toàn cảnh chưa bao giờ tồn tại ở đâu ngoài đầu người chủ"),
+ "cang-co-chung-minh-cang-mat-vi-the.html": dict(kieu="doi",
+   trai=("Làm khách thấy mình được thuyết phục", ["Giải thích chương trình gồm những gì", "Chứng minh phương pháp này hơn phương pháp kia", "Bảo vệ mức học phí"]),
+   phai=("Làm khách thấy mình được hiểu", ["Khách chọn bên này vì thấy phù hợp hơn"]),
+   ket="Hai chuyện đó khác nhau xa"),
+ "ba-diem-cham-va-thu-tu-khong-doi-duoc.html": dict(kieu="buoc", tieu="Ba trạng thái khách phải đi qua để tự quyết",
+   buoc=["Chạm Động Lực", "Chạm Điểm Nghẽn", "Chạm Con Đường"], ket="Đảo thứ tự thì cả chuỗi hỏng"),
+ "giao-quyen-ma-khong-mat-kiem-soat.html": dict(kieu="so", so="30",
+   nhan="quyết định trong một tuần người chủ tự làm, dù người khác quyết được",
+   ai="Một chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề", ket="Giao hai lần, hỏng cả hai, nên thôi không giao nữa"),
+}
+
+def dau_bai(b, p=""):
+    h = HINH_BAI.get(b["tep"])
+    if not h:
+        return '<div class="bai-anh"><img src="%s%s" alt="%s"></div>' % (p, b["anh"], b["alt"])
+    k = h["kieu"]
+    if k == "cau":
+        than = '<p class="db-tieu">%s</p><ol class="db-cau">%s</ol>' % (h["tieu"], "".join('<li>"%s"</li>' % c for c in h["cau"]))
+    elif k == "trich":
+        than = '<blockquote class="db-trich">"%s"</blockquote><p class="db-ai">%s</p>' % (h["cau"], h["ai"])
+    elif k == "doi":
+        cot = lambda c, lop: '<div class="db-cot %s"><b>%s</b><ul>%s</ul></div>' % (lop, c[0], "".join("<li>%s</li>" % x for x in c[1]))
+        than = '<div class="db-doi">%s<span class="db-vs" aria-hidden="true">&ne;</span>%s</div>' % (cot(h["trai"], "sai"), cot(h["phai"], "dung"))
+    elif k == "buoc":
+        than = '<p class="db-tieu">%s</p><div class="db-buoc">%s</div>' % (h["tieu"], '<span class="hh-mui" aria-hidden="true">&rarr;</span>'.join(
+            '<div><b>%02d</b><span>%s</span></div>' % (i + 1, x) for i, x in enumerate(h["buoc"])))
+    else:
+        than = '<div class="db-so"><b>%s</b><span>%s</span></div><p class="db-ai">%s</p>' % (h["so"], h["nhan"], h["ai"])
+    return '<figure class="dau-bai db-%s">%s<p class="db-ket">%s</p></figure>' % (k, than, h["ket"])
+
+
+
 # Số chương trình tự đếm, khỏi phải nhớ sửa tay mỗi lần thêm bớt.
 CHU_SO = {8: "Tám", 9: "Chín", 10: "Mười", 11: "Mười một", 12: "Mười hai"}
 def chu_so(n, hoa=False):
@@ -1619,7 +1663,7 @@ for i, b in enumerate(BAI):
     <h1>%s</h1>
     <p class="tom">%s</p>
   </div>
-  <div class="bd hien lo"><div class="bai-anh"><img src="%s%s" alt="%s"></div></div>
+  <div class="bd hien lo">%s</div>
   <div class="bd">
     <div class="bai-than">
       <div class="doc hien">%s%s%s</div>
@@ -1639,7 +1683,7 @@ for i, b in enumerate(BAI):
   <div class="luoi-bai tre hien">%s</div>
 </section>
 """ % (p, p, b["chu_de"], b["chu_de"], b["doc"], b["ngay"], b["ngay_viet"], b["tieu"], b["mo"],
-       p, b["anh"], b["alt"], tra_loi, ml, than_bai,
+       dau_bai(b, p), tra_loi, ml, than_bai,
        khoi_faq(faq) if faq else "", khoi_nguon(b.get("nguon")), HOP_TAC_GIA,
        ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))

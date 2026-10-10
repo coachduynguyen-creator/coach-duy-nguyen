@@ -8,7 +8,9 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn của ngư�
  mo="Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.",
  ngay="2026-08-20", ngay_viet="20 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-dung-lop.webp", alt="Coach Duy Nguyễn nói trước một phòng người sáng lập",
- than="""<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
+ than="""<p>Nếu bạn đang gặp ít nhất một trong bốn chuyện này: đăng nội dung đều mà người tìm tới không đúng khách, đội ngũ bán hàng vẫn phải chờ bạn xuất hiện mới chốt được giao dịch lớn, tuyển thêm người mà mình lại bận hơn trước, hoặc tháng tốt tháng kém mà không rõ vì sao, thì bài này viết cho bạn.</p>
+
+<p>Duy ngồi với người sáng lập gần như mỗi tuần, có buổi ở phòng họp công ty họ, có buổi ở quán cà phê lúc bảy giờ sáng vì đó là khoảng trống duy nhất còn lại trong ngày của họ. Chuyện mỗi người mỗi khác, ngành mỗi người mỗi khác, quy mô cũng khác nhau xa. Nhưng có bốn câu Duy nghe đi nghe lại tới mức bây giờ nghe nửa câu đầu là đã biết nửa sau.</p>
 
 <p><span class="nhan">Điều đáng nói không nằm ở bốn câu đó, mà nằm ở chỗ người nói ra chúng gần như luôn tin rằng mình đang gặp bốn vấn đề tách rời nhau.</span> Tin như vậy thì đi tìm bốn giải pháp khác nhau: thuê người làm nội dung, mua một khoá đào tạo bán hàng, tuyển thêm một quản lý, rồi lắp một phần mềm quản trị. Bốn khoản chi, bốn quãng thời gian chờ kết quả, và sau sáu tháng thì bốn câu ấy vẫn còn nguyên ở đó.</p>
 
@@ -436,13 +438,15 @@ dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống tăng trưởng"
   ('Ý một hệ thống chỉ chạy nhanh bằng đúng khâu chậm nhất là Lý thuyết điểm hạn chế của Eliyahu Goldratt, viết thành tiểu thuyết <i>The Goal</i> năm 1984. Duy mượn cách nhìn đó và đặt vào chỗ khác: trong doanh nghiệp dịch vụ, khâu chậm nhất thường là chính người chủ.',
    'https://en.wikipedia.org/wiki/The_Goal_(novel)'),
  ],
- than="""<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
+ than="""<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội ngũ đông hơn năm ngoái, nhưng người chủ thì mệt hơn, ngủ ít hơn, và bắt đầu sợ những ngày mình đi vắng. Đó không phải dấu hiệu bạn làm sai, mà <span class="nhan">là dấu hiệu bạn đã chạm giới hạn của cách làm hiện tại</span>, cách vốn rất đúng ở giai đoạn trước.</p>
+
+<p>Duy từng ngồi với một bác chủ doanh nghiệp vật liệu xây dựng, hai mươi năm trong nghề. Con trai bác giỏi, học hành đàng hoàng, đã về công ty làm được vài năm. Bác muốn rút bớt ra nhưng cứ lần lữa mãi, và khi Duy hỏi vì sao thì bác nói một câu rất gọn:</p>
 
 <p><span class="nhan dam">Con anh giỏi, nhưng mỗi lần cần số liệu lại phải hỏi kế toán, ngồi tổng hợp cả buổi.</span></p>
 
 <p>Bác không nói con mình kém, bác nói một điều khác hẳn: người kế nhiệm không nhìn thấy bức tranh toàn cảnh, vì bức tranh đó chưa bao giờ tồn tại ở đâu ngoài đầu bác.</p>
 
-<p>Có một giai đoạn trong đời một doanh nghiệp dịch vụ mà mọi thứ nhìn từ ngoài đều đẹp. Doanh thu tăng đều, khách khen, đội ngũ đông hơn năm ngoái, nhưng người chủ thì mệt hơn, ngủ ít hơn, và bắt đầu sợ những ngày mình đi vắng. Đó không phải dấu hiệu bạn làm sai, mà <span class="nhan">là dấu hiệu bạn đã chạm giới hạn của cách làm hiện tại</span>, cách vốn rất đúng ở giai đoạn trước.</p>
+
 
 <h2>Nút thắt hình thành thế nào</h2>
 
@@ -1478,11 +1482,13 @@ dict(tep="giao-quyen-ma-khong-mat-kiem-soat.html", chu_de="Hệ thống tăng tr
  mo="Người chủ thường kẹt giữa hai thái cực: ôm hết vì sợ hỏng, hoặc buông hết rồi phải nhảy vào cứu. Có một đường ở giữa, và nó có công thức.",
  ngay="2026-07-22", ngay_viet="22 tháng 7, 2026", doc="6 phút đọc",
  anh="img/bl-giua-doan.webp", alt="Coach Duy Nguyễn đứng giữa những người tham dự",
- than="""<p>Duy từng ngồi với một anh chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề, và hỏi anh một câu rất đơn giản: trong tuần vừa rồi anh đã tự quyết bao nhiêu việc mà lẽ ra người khác quyết được. Anh nghĩ một lúc rồi cười, nói chắc khoảng ba mươi. Duy hỏi tiếp vì sao anh không giao, thì anh trả lời một câu mà rất nhiều người sẽ thấy quen:</p>
+ than="""<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm việc, mà là hai lần thử đầu tiên đều hỏng, và sau lần thứ hai họ lặng lẽ kết luận rằng đội ngũ mình chưa đủ giỏi.</p>
+
+<p>Duy từng ngồi với một anh chủ doanh nghiệp dịch vụ, gần hai mươi năm trong nghề, và hỏi anh một câu rất đơn giản: trong tuần vừa rồi anh đã tự quyết bao nhiêu việc mà lẽ ra người khác quyết được. Anh nghĩ một lúc rồi cười, nói chắc khoảng ba mươi. Duy hỏi tiếp vì sao anh không giao, thì anh trả lời một câu mà rất nhiều người sẽ thấy quen:</p>
 
 <p><span class="nhan">Anh giao rồi, hai lần, cả hai lần đều phải nhảy vào sửa.</span></p>
 
-<p>Giao quyền là việc ai cũng biết nên làm và rất ít người làm được. Lý do không phải người chủ thích ôm việc, mà là hai lần thử đầu tiên đều hỏng, và sau lần thứ hai họ lặng lẽ kết luận rằng đội ngũ mình chưa đủ giỏi.</p>
+
 
 <p>Duy nghe kết luận đó nhiều tới mức gần như đoán được lúc nào nó sẽ được nói ra. Và gần như lần nào ngồi kỹ lại từng lần hỏng cũng thấy <span class="nhan dam">không phải đội ngũ chưa đủ giỏi, mà là việc giao được làm sai cách</span>.</p>
 
@@ -1799,11 +1805,13 @@ dict(tep="cang-co-chung-minh-cang-mat-vi-the.html", chu_de="Bán hàng và phòn
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-giu-chuan.webp", alt="Coach Duy Nguyễn trao đổi với hai người trong một sự kiện",
  than="""
-<p>Duy làm việc nhiều với các đơn vị đào tạo và cố vấn giáo dục. Ở đó có một kịch bản lặp lại tới mức Duy đoán được trước khi nghe hết.</p>
+<p>Bạn đã bao giờ tư vấn rất kỹ, khách nghe chăm chú, hỏi nhiều, không khí rất tốt, rồi cuối buổi khách lại hỏi so sánh, hỏi giảm giá hoặc xin thêm thời gian chưa?</p>
+
+<p>Duy gặp kịch bản này nhiều nhất ở các đơn vị đào tạo và cố vấn giáo dục, nơi Duy làm việc khá nhiều, và nó lặp lại tới mức Duy đoán được trước khi nghe hết.</p>
 
 <p>Người dạy có chuyên môn rất tốt, nội dung sâu, lộ trình bài bản, học viên ra kết quả rõ ràng. Nhưng mỗi lần ngồi tư vấn thì họ nói rất nhiều: giải thích chương trình gồm những gì, học xong được gì, vì sao phương pháp này hơn phương pháp kia, và vì sao mức học phí là hợp lý.</p>
 
-<p>Khách lắng nghe, đặt nhiều câu hỏi, không khí tốt. Đến cuối buổi thì bắt đầu hỏi so sánh, hỏi giảm giá, hoặc xin thêm thời gian. Không ít trường hợp khách chọn một bên khác vì thấy bên kia <span class="nhan">phù hợp hơn</span>.</p>
+<p>Không ít trường hợp khách chọn một bên khác vì thấy bên kia <span class="nhan">phù hợp hơn</span>.</p>
 
 <p>Chữ phù hợp đó đáng để dừng lại một chút, vì nó không có nghĩa là chương trình kia tốt hơn. Nó có nghĩa là người kia làm cho khách thấy mình được hiểu, còn mình thì làm cho khách thấy mình được thuyết phục, và hai chuyện đó khác nhau xa.</p>
 
@@ -1981,7 +1989,7 @@ dict(tep="ba-diem-cham-va-thu-tu-khong-doi-duoc.html", chu_de="Điểm nghẽn c
  ngay="2026-08-26", ngay_viet="26 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-soi-dung.webp", alt="Coach Duy Nguyễn vẽ khung phương pháp trên bảng lật trước hội trường",
  than="""
-<p>Duy dạy phương pháp này nhiều năm, và phần khách nhớ nhanh nhất luôn là tên ba bước. Phần bị làm sai nhiều nhất là thứ tự.</p>
+<p>Nếu bạn từng dùng Ba Điểm Chạm trong buổi tư vấn, nhiều khả năng bạn nhớ rất rõ tên ba bước nhưng đã có lúc đi sai thứ tự. Đó cũng là điều Duy thấy suốt nhiều năm dạy phương pháp này: phần người học nhớ nhanh nhất luôn là tên ba bước, phần bị làm sai nhiều nhất là thứ tự.</p>
 
 <p>Ba Điểm Chạm không phải kịch bản bán hàng. <span class="nhan">Nó là ba trạng thái nhận thức mà một người phải đi qua để tự ra quyết định.</span> Khi cả ba đủ rõ thì quyết định đến tự nhiên, không cần ép và cũng không cần kỹ thuật chốt nào.</p>
 
