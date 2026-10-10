@@ -322,7 +322,7 @@
 (function () {
   var loc = document.getElementById('tl-loc');
   if (!loc) return;
-  var the = [].slice.call(document.querySelectorAll('.tl[data-loai]'));
+  var the = [].slice.call(document.querySelectorAll('.tv[data-loai],.tv-sap-dong[data-loai]'));
   loc.addEventListener('click', function (ev) {
     var nut = ev.target.closest('.tl-nut');
     if (!nut) return;

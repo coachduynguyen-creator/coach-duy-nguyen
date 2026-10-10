@@ -113,6 +113,69 @@ def dsk(muc, khong=False):
     return '<div class="dsk%s">%s</div>' % (" khong" if khong else "",
         "".join('<div><i aria-hidden="true"></i><p>%s</p></div>' % m for m in muc))
 
+# Thư viện công cụ và tài liệu. Học từ trang Tool Box của scaleos.vn: mỗi tài
+# liệu gắn với một phương pháp, và tên phương pháp thành cách sắp xếp cả kho.
+# Phần lớn công cụ đang ở trạng thái sắp ra mắt theo lời CDN ngày 26/08/2026:
+# "tạo các công cụ demo để đưa vào cho đỡ trống cũng được". Trạng thái ghi thật
+# trên thẻ, không có nút tải giả.
+TAI_LIEU = [
+ dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm sau buổi tư vấn",
+  mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
+  tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html",
+  meta=["12 câu", "Khoảng 3 phút"]),
+ *[dict(loai="ai", pp=c["bia"], ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
+        nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"], moi=True,
+        meta=["%d câu lệnh" % len(c["lenh"]), "Phiếu %d ô" % len(c["o"])]) for c in cong_cu_ai.DS],
+ dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
+  mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
+  tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
+ dict(loai="congcu", pp="Hai tầng ba lăng kính", ten="Phiếu sàng khách trước buổi hẹn",
+  mo="Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu, một bước nhỏ, hay một lời hẹn lại.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Công thức tin cậy", ten="Bảng tự đo bốn yếu tố tin cậy",
+  mo="Tự chấm lời nói, hành động, kết nối và mức đang nghĩ về mình sau một quan hệ khách cụ thể, để thấy chỗ đang rò.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Bốn cấp độ trưởng thành", ten="Bảng chọn ngôn ngữ theo cấp độ khách",
+  mo="Xếp khách vào đúng cấp độ rồi tra xem họ đang cần nghe điều gì, và lỗi ngôn ngữ nào hay làm hỏng buổi với cấp đó.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Tam giác vàng", ten="Bảng soát ba đỉnh trước buổi gặp quan trọng",
+  mo="Soát nhanh phong thái, sự chân thành và dấu hiệu chuyên môn trước một buổi gặp đáng tiền, vì thiếu một đỉnh là hai đỉnh kia không cứu được.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+ dict(loai="congcu", pp="Năm tầng doanh nghiệp", ten="Phiếu rà năm tầng doanh nghiệp",
+  mo="Đi một vòng năm tầng từ văn hoá tới chiến lược để tìm tầng đang yếu nhất, trước khi đổ thêm công vào tầng bên trên nó.",
+  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
+]
+_LOAI = {"congcu": "Công cụ tự kiểm", "ai": "Bộ câu lệnh AI", "ebook": "Ebook"}
+
+# Biểu tượng nét mảnh theo loại, vẽ bằng SVG, ăn màu vàng của site qua currentColor.
+_IC = {
+ "congcu": '<path d="M9 5h10M9 12h10M9 19h10"/><path d="M4 5l1 1 2-2M4 12l1 1 2-2M4 19l1 1 2-2"/>',
+ "ai": '<path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/>',
+ "ebook": '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/>',
+}
+def dung_ngay(t):
+    return t["href"].startswith("cong-cu/")
+
+def the_tv(t, p=""):
+    """Thẻ một công cụ dùng được ngay. Cả thẻ bấm được, nhờ liên kết phủ trên tên."""
+    meta = "".join("<li>%s</li>" % m for m in t.get("meta", []))
+    return ('<article class="tv" data-loai="%s">'
+            '<div class="tv-dau"><span class="tv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">%s</svg></span>'
+            '<span class="tv-loai">%s</span>%s</div>'
+            '<h3><a href="%s%s">%s</a></h3>%s<p>%s</p>'
+            '<div class="tv-duoi"><span class="tv-tt">%s</span><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div>'
+            '</article>') % (
+        t["loai"], _IC[t["loai"]], _LOAI[t["loai"]], '<span class="tv-moi">Mới</span>' if t.get("moi") else "",
+        p, t["href"], t["ten"], ('<ul class="tv-meta">%s</ul>' % meta) if meta else "", t["mo"], t["tt"], t["nut"])
+
+def dong_sap(t, p=""):
+    """Một dòng cho mục đang làm: không có nút mở giả."""
+    return ('<li class="tv-sap-dong" data-loai="%s"><span class="tv-loai">%s</span><b>%s</b>'
+            '<span class="tv-tt">%s</span><a class="lk-v" href="%s%s">%s <span class="mt" aria-hidden="true">&rarr;</span></a></li>') % (
+        t["loai"], _LOAI[t["loai"]], t["ten"], t["tt"], p, t["href"], t["nut"])
+
+KHO_TRANG_CHU = "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t))
+
 # ---------------------------------------------------------------- TRANG CHỦ
 INDEX = """
 <header id="hero">
@@ -311,30 +374,7 @@ INDEX = """
     <h2>Mỗi công cụ gắn với một phương pháp</h2>
     <p>Dùng được ngay trên trang, không cần để lại thông tin gì. Công cụ nào đang làm thì ghi rõ đang làm.</p>
   </div>
-  <div class="tl-luoi tre hien">
-    <article class="tl">
-      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Công cụ tự kiểm</i><b>Ba Điểm Chạm</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
-      <div class="tl-than"><h3>Bảng tự kiểm sau buổi tư vấn</h3>
-      <p class="tl-mo">Mười hai câu chấm lại buổi tư vấn gần nhất, chỉ ra bạn đang thiếu chạm nào. Ba phút, kết quả chỉ mình bạn thấy.</p>
-      <div class="tl-duoi"><span class="tl-tt mo">Dùng ngay trên trang</span>
-      <a class="lk-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
-    </article>
-    {CC_AI}
-    <article class="tl">
-      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Ebook</i><b>REFLECT</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
-      <div class="tl-than"><h3>Kịch bản REFLECT theo 10 ngành</h3>
-      <p class="tl-mo">Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm lộ trình luyện ba mươi ngày.</p>
-      <div class="tl-duoi"><span class="tl-tt mo">Sắp mở bán</span>
-      <a class="lk-v" href="sach.html#thu-vien">Xem chi tiết <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
-    </article>
-    <article class="tl">
-      <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Công cụ tự kiểm</i><b>Hai tầng ba lăng kính</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
-      <div class="tl-than"><h3>Phiếu sàng khách trước buổi hẹn</h3>
-      <p class="tl-mo">Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu hay một lời hẹn lại.</p>
-      <div class="tl-duoi"><span class="tl-tt">Sắp ra mắt</span>
-      <a class="lk-v" href="sach.html#thu-vien">Nhận tin khi có <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
-    </article>
-  </div>
+  <div class="tv-luoi tre hien">{KHO}</div>
   <div class="blog-them"><a class="nut nut-vien" href="sach.html#thu-vien">Xem cả kho công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 """
@@ -416,7 +456,7 @@ MAT_NGUOI = _mn()
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
-         .replace("{BAI_LON}", the_bai_lon(BAI[0])).replace("{CC_AI}", "".join(cong_cu_ai.the_tl(c) for c in cong_cu_ai.DS))
+         .replace("{BAI_LON}", the_bai_lon(BAI[0])).replace("{KHO}", KHO_TRANG_CHU)
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
@@ -1617,37 +1657,7 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai):
   <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
 </div>""" % (nhan, ten, tieu_duoi, mo, trang_thai)
 
-# Thư viện công cụ và tài liệu. Học từ trang Tool Box của scaleos.vn: mỗi tài
-# liệu gắn với một phương pháp, và tên phương pháp thành cách sắp xếp cả kho.
-# Phần lớn công cụ đang ở trạng thái sắp ra mắt theo lời CDN ngày 26/08/2026:
-# "tạo các công cụ demo để đưa vào cho đỡ trống cũng được". Trạng thái ghi thật
-# trên thẻ, không có nút tải giả.
-TAI_LIEU = [
- dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm sau buổi tư vấn",
-  mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
-  tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html"),
- *[dict(loai="ai", pp=c["bia"], ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
-        nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"]) for c in cong_cu_ai.DS],
- dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
-  mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
-  tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
- dict(loai="congcu", pp="Hai tầng ba lăng kính", ten="Phiếu sàng khách trước buổi hẹn",
-  mo="Chấm nhanh một người qua ba lăng kính để biết nên dành cho họ một buổi sâu, một bước nhỏ, hay một lời hẹn lại.",
-  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
- dict(loai="congcu", pp="Công thức tin cậy", ten="Bảng tự đo bốn yếu tố tin cậy",
-  mo="Tự chấm lời nói, hành động, kết nối và mức đang nghĩ về mình sau một quan hệ khách cụ thể, để thấy chỗ đang rò.",
-  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
- dict(loai="congcu", pp="Bốn cấp độ trưởng thành", ten="Bảng chọn ngôn ngữ theo cấp độ khách",
-  mo="Xếp khách vào đúng cấp độ rồi tra xem họ đang cần nghe điều gì, và lỗi ngôn ngữ nào hay làm hỏng buổi với cấp đó.",
-  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
- dict(loai="congcu", pp="Tam giác vàng", ten="Bảng soát ba đỉnh trước buổi gặp quan trọng",
-  mo="Soát nhanh phong thái, sự chân thành và dấu hiệu chuyên môn trước một buổi gặp đáng tiền, vì thiếu một đỉnh là hai đỉnh kia không cứu được.",
-  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
- dict(loai="congcu", pp="Năm tầng doanh nghiệp", ten="Phiếu rà năm tầng doanh nghiệp",
-  mo="Đi một vòng năm tầng từ văn hoá tới chiến lược để tìm tầng đang yếu nhất, trước khi đổ thêm công vào tầng bên trên nó.",
-  tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
-]
-_LOAI = {"congcu": "Công cụ tự kiểm", "ai": "Bộ câu lệnh AI", "ebook": "Ebook"}
+_dem = lambda l: sum(1 for t in TAI_LIEU if l == "all" or t["loai"] == l)
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
   <div class="phan-dau hien">
@@ -1655,26 +1665,17 @@ THU_VIEN = """
     <h2>Mỗi tài liệu gắn với một phương pháp</h2>
     <p>Các công cụ dưới đây rút từ đúng những khung trên <a class="lk-v" href="phuong-phap.html">trang Phương pháp</a>. Công cụ nào dùng được ngay thì ghi rõ, bản nào đang làm thì ghi đang làm, không có nút tải giả.</p>
   </div>
-  <div class="tl-loc hien" id="tl-loc">
-    <button class="tl-nut chon" type="button" data-loc="all">Tất cả</button>
-    <button class="tl-nut" type="button" data-loc="congcu">Công cụ tự kiểm</button>
-    <button class="tl-nut" type="button" data-loc="ai">Bộ câu lệnh AI</button>
-    <button class="tl-nut" type="button" data-loc="ebook">Ebook</button>
-  </div>
-  <div class="tl-luoi hien">%s</div>
+  <div class="tl-loc hien" id="tl-loc">%s</div>
+  <p class="tv-nhom hien"><span>Dùng được ngay</span></p>
+  <div class="tv-luoi hien">%s</div>
+  <p class="tv-nhom hien"><span>Đang làm</span></p>
+  <ul class="tv-sap hien">%s</ul>
 </section>
-""" % "".join(
- ('<article class="tl" data-loai="%s">'
-  '<div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>%s</i><b>%s</b>'
-  '<span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguy\u1ec5n</span></span></div></div>'
-  '<div class="tl-than"><h3>%s</h3>'
-  '<p class="tl-mo">%s</p>'
-  '<div class="tl-duoi"><span class="tl-tt%s">%s</span>'
-  '<a class="lk-v" href="%s">%s <span class="mt" aria-hidden="true">&rarr;</span></a></div>'
-  '</div></article>')
- % (t["loai"], _LOAI[t["loai"]], t["pp"], t["ten"], t["mo"],
-    " mo" if t["tt_mo"] else "", t["tt"], t["href"], t["nut"])
- for t in TAI_LIEU)
+""" % ("".join('<button class="tl-nut%s" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
+               % (" chon" if l == "all" else "", l, ten, _dem(l))
+               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")]),
+       "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
+       "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
 
 SACH = dau_trang("Sách và tài liệu", "Sách đang viết, công cụ dùng được ngay",
   "Hai cuốn sách đang viết, một ebook sắp mở bán, và kho công cụ tự kiểm gắn với từng phương pháp. Từng mục ở trạng thái nào, trang này ghi rõ để bạn không phải đoán.") + """
@@ -1751,7 +1752,7 @@ print("  cong-cu/tu-kiem-ba-diem-cham.html")
 
 for _c in cong_cu_ai.DS:
     trang("cong-cu/%s.html" % _c["ma"], tieu_de_trang(_c["tieu"]), _c["duoi"],
-          cong_cu_ai.than_trang(_c), "sach.html", lop_body="giay", cuoi=False)
+          cong_cu_ai.than_trang(_c), "sach.html", cuoi=False)
     print("  cong-cu/%s.html" % _c["ma"])
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/da-dang-ky.html"), "w", encoding="utf-8").write(cong_cu_ai.DA_DANG_KY)
 print("  cong-cu/da-dang-ky.html")

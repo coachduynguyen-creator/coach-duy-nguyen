@@ -246,17 +246,6 @@ def than_trang(cc):
         moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, du_lieu=du_lieu)
 
 
-def the_tl(cc, p=""):
-    """Thẻ trong khối kho công cụ, cùng khuôn với thẻ Bảng tự kiểm."""
-    return ('<article class="tl" data-loai="ai">'
-            '<div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Bộ câu lệnh AI</i><b>%s</b>'
-            '<span class="chan"><img src="%simg/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>'
-            '<div class="tl-than"><h3>%s</h3><p class="tl-mo">%s</p>'
-            '<div class="tl-duoi"><span class="tl-tt mo">Dùng với ChatGPT</span>'
-            '<a class="lk-v" href="%scong-cu/%s.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div></article>'
-            % (html.escape(cc["bia"]), p, _dong(cc["tieu"]), _dong(cc["duoi"]), p, cc["ma"]))
-
-
 # Trang Pancake chuyển tới sau khi người đọc gửi biểu mẫu "NGF Công cụ AI".
 # Không cho Google đọc. Nó ghi nhận đã điền rồi đưa người đọc về đúng công cụ
 # vừa mở (trang công cụ ghi tên mình vào máy trước khi hiện biểu mẫu). Biểu

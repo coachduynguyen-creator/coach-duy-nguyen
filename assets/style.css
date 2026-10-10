@@ -2144,9 +2144,9 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 @media (max-width:640px){.di-ct{padding:12px 16px}}
 
 /* ============ bốn trang công cụ AI (10/10/2026, D62) ============
-   Nền giấy như bài blog để đọc dài. Học từ trang tài liệu của cuongmeai.com:
-   dòng thông tin nhanh dưới tiêu đề, mục lục ngắn, câu lệnh đặt trong khối
-   có nút Chép và thu gọn được. */
+   Giữ tông tối và vàng của cả site (CDN dặn 10/10: không đổi màu theo trang
+   mẫu). Học từ trang tài liệu của cuongmeai.com phần cấu trúc: dòng thông tin
+   nhanh dưới tiêu đề, mục lục ngắn, câu lệnh trong khối có nút Chép. */
 .cc-dau .bd{max-width:860px}
 .cc-ve{display:inline-block;margin-bottom:22px;font-size:14.5px;font-weight:600;color:var(--vang);text-decoration:none}
 .cc-chip{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
@@ -2182,7 +2182,7 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-o textarea{resize:vertical}
 .cc-o :is(input,select,textarea):focus{border-color:var(--vang)}
 #cc-form .nut{margin-top:22px;width:100%;justify-content:center}
-.cc-loi{margin-top:14px;color:#A3361F!important;font-weight:600}
+.cc-loi{margin-top:14px;color:#F08A6B!important;font-weight:600}
 .cc-phieu{margin:6px 0 10px}
 .cc-h-lenh{margin-top:44px}
 .cc-lenh{margin-top:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden}
@@ -2204,6 +2204,63 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-video{max-width:760px;margin:30px auto 0;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
 .cc-video iframe{width:100%;height:100%;border:0}
 @media (max-width:600px){.cc-doc{padding-top:36px}.cc-doc p,.cc-doc li{font-size:16px}.cc-lenh-dau{padding:12px 14px}}
-/* nút vàng trên nền giấy: ghim lại tông vàng gốc, không ăn tông hổ phách sẫm */
-body.giay .cc .nut-v{--vang:#F2B14A;--vang-2:#FFCB74;--vang-3:#D98F2E}
 .cc-doc p,.cc-doc li,.cc-dau .dan{text-align:left;hyphens:none}
+
+/* ============ thẻ thư viện công cụ (10/10/2026) ============
+   Thay bìa sách giả bằng thẻ gọn: biểu tượng nét mảnh, nhãn loại kiểu máy chữ,
+   dòng thông số, vạch sáng chạy dọc mép trên khi rê chuột. Chỉ dùng biến màu
+   sẵn có của site. */
+.tv-luoi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.tv{position:relative;display:flex;flex-direction:column;gap:12px;padding:22px 22px 18px;
+  border:1px solid var(--line);border-radius:var(--r);background-color:var(--panel);
+  box-shadow:var(--shadow-s);overflow:hidden;transition:border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
+.tv::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--vang),transparent);opacity:0;transition:opacity .25s var(--ease)}
+.tv::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(242,177,74,.10) 1px,transparent 1px);background-size:14px 14px;
+  -webkit-mask-image:linear-gradient(200deg,#000,transparent 45%);mask-image:linear-gradient(200deg,#000,transparent 45%)}
+.tv-dau{display:flex;align-items:center;gap:10px}
+.tv-ic{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:10px;
+  color:var(--vang);background:var(--vang-mo);border:1px solid rgba(242,177,74,.28)}
+.tv-ic svg{width:19px;height:19px}
+.tv-loai{font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.tv-moi{margin-left:auto;font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--on-vang);background:var(--vang);border-radius:999px;padding:3px 9px}
+.tv h3{font-family:var(--f-tit);font-weight:700;font-size:17.5px;line-height:1.32}
+.tv h3 a{color:var(--ink);text-decoration:none}
+.tv h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.tv-meta{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.tv-meta li{font-family:var(--f-mono);font-size:11px;font-weight:500;color:var(--ink-2);
+  padding:3px 9px;border:1px solid var(--line-2);border-radius:6px}
+.tv p{font-size:14px;line-height:1.6;color:var(--ink-2);flex:1;text-align:left;hyphens:none}
+.tv-duoi{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px dashed var(--line-2)}
+.tv-tt{font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--vang)}
+.tv .lk-v{font-size:14.5px}
+.tv .lk-v .mt{transition:transform .25s var(--ease)}
+@media (hover:hover){
+  .tv:hover{border-color:rgba(242,177,74,.45);transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(242,177,74,.35)}
+  .tv:hover::before{opacity:1}
+  .tv:hover .lk-v .mt{transform:translateX(4px)}
+}
+.tv h3 a:focus-visible{outline:none}
+.tv:has(h3 a:focus-visible){border-color:var(--vang);box-shadow:0 0 0 3px var(--vang-mo)}
+.tv-nhom{display:flex;align-items:center;gap:14px;margin-top:38px;font-family:var(--f-mono);font-size:11.5px;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.tv-nhom::after{content:"";flex:1;height:1px;background:var(--line)}
+.tv-so{margin-left:8px;font-size:10.5px;opacity:.7}
+.tv-sap{list-style:none;padding:0;margin:14px 0 0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background-color:var(--panel)}
+.tv-sap-dong{display:grid;grid-template-columns:150px 1fr auto auto;align-items:center;gap:18px;padding:14px 20px}
+.tv-sap-dong+.tv-sap-dong{border-top:1px solid var(--line)}
+.tv-sap-dong b{font-size:15px;font-weight:600;color:var(--ink)}
+.tv-sap-dong .tv-tt{color:var(--ink-3)}
+.tv-sap-dong .lk-v{font-size:14px}
+@media(max-width:900px){.tv-luoi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+  .tv-luoi{grid-template-columns:1fr;gap:12px}
+  .tv{padding:18px 18px 16px}
+  .tv-sap-dong{grid-template-columns:1fr auto;gap:4px 12px;padding:14px 16px}
+  .tv-sap-dong .tv-loai{grid-column:1/-1}
+  .tv-sap-dong .tv-tt{grid-column:1;grid-row:3}
+  .tv-sap-dong .lk-v{grid-column:2;grid-row:2/4;align-self:center}
+}
+@media(prefers-reduced-motion:reduce){.tv,.tv .lk-v .mt{transition:none}.tv:hover{transform:none}}
