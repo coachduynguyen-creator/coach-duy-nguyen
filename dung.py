@@ -17,6 +17,7 @@ def _phut_doc(than):
 for _b in BAI:
     _b["doc"] = "%d phút đọc" % _phut_doc(_b["than"])
 from chuong_trinh import CT
+import cong_cu_ai
 import so_do
 
 # Số chương trình tự đếm, khỏi phải nhớ sửa tay mỗi lần thêm bớt.
@@ -318,6 +319,7 @@ INDEX = """
       <div class="tl-duoi"><span class="tl-tt mo">Dùng ngay trên trang</span>
       <a class="lk-v" href="cong-cu/tu-kiem-ba-diem-cham.html">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div></div>
     </article>
+    {CC_AI}
     <article class="tl">
       <div class="tl-bia3d" aria-hidden="true"><div class="bia3d"><i>Ebook</i><b>REFLECT</b><span class="chan"><img src="img/logo-dn.webp" alt="" loading="lazy"><span>Coach Duy Nguyễn</span></span></div></div>
       <div class="tl-than"><h3>Kịch bản REFLECT theo 10 ngành</h3>
@@ -414,7 +416,7 @@ MAT_NGUOI = _mn()
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
-         .replace("{BAI_LON}", the_bai_lon(BAI[0]))
+         .replace("{BAI_LON}", the_bai_lon(BAI[0])).replace("{CC_AI}", "".join(cong_cu_ai.the_tl(c) for c in cong_cu_ai.DS))
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
@@ -1624,6 +1626,8 @@ TAI_LIEU = [
  dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm sau buổi tư vấn",
   mo="Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào và nên sửa từ đâu.",
   tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html"),
+ *[dict(loai="ai", pp=c["bia"], ten=c["tieu"], mo=c["duoi"], tt="Dùng với ChatGPT", tt_mo=True,
+        nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"]) for c in cong_cu_ai.DS],
  dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
   mo="Trọn bộ kịch bản phản chiếu lời từ chối cho mười ngành dịch vụ, kèm bản rút gọn và lộ trình luyện ba mươi ngày.",
   tt="Sắp mở bán", tt_mo=True, nut="Nhận tin khi mở bán", href="lien-he.html"),
@@ -1643,7 +1647,7 @@ TAI_LIEU = [
   mo="Đi một vòng năm tầng từ văn hoá tới chiến lược để tìm tầng đang yếu nhất, trước khi đổ thêm công vào tầng bên trên nó.",
   tt="Sắp ra mắt", tt_mo=False, nut="Nhận tin khi có", href="lien-he.html"),
 ]
-_LOAI = {"congcu": "Công cụ tự kiểm", "ebook": "Ebook"}
+_LOAI = {"congcu": "Công cụ tự kiểm", "ai": "Bộ câu lệnh AI", "ebook": "Ebook"}
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
   <div class="phan-dau hien">
@@ -1654,6 +1658,7 @@ THU_VIEN = """
   <div class="tl-loc hien" id="tl-loc">
     <button class="tl-nut chon" type="button" data-loc="all">Tất cả</button>
     <button class="tl-nut" type="button" data-loc="congcu">Công cụ tự kiểm</button>
+    <button class="tl-nut" type="button" data-loc="ai">Bộ câu lệnh AI</button>
     <button class="tl-nut" type="button" data-loc="ebook">Ebook</button>
   </div>
   <div class="tl-luoi hien">%s</div>
@@ -1743,6 +1748,11 @@ trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm sau buổi tư v�
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
       CONG_CU, "sach.html")
 print("  cong-cu/tu-kiem-ba-diem-cham.html")
+
+for _c in cong_cu_ai.DS:
+    trang("cong-cu/%s.html" % _c["ma"], tieu_de_trang(_c["tieu"]), _c["duoi"],
+          cong_cu_ai.than_trang(_c), "sach.html", lop_body="giay", cuoi=False)
+    print("  cong-cu/%s.html" % _c["ma"])
 
 # ------------------------------------------------- CÂU CHUYỆN HỌC VIÊN
 # Nguồn: thư viện case trong vault, con số được Coach Duy xác nhận trực tiếp
@@ -2086,6 +2096,7 @@ print("  404.html")
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
         "sach.html", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html"] \
+     + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
      + ["founder-brand/"] \
      + ["chuong-trinh/" + c["tep"] for c in CT
         if c["tep"] != "trusted-founder-brand.html"] \

@@ -23,7 +23,7 @@ FGS_LANDING = "https://coachduynguyen.vn/founder-growth/"
 CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
-VER = "20260830b"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20261010a"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -237,7 +237,7 @@ def tieu_de_trang(ten):
     return ten if len(ten + HAU_TO) > 60 else ten + HAU_TO
 
 
-def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
+def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=True):
     sau = "/" in ten_tep
     p = "../" if sau else ""
     url = BASE + "/" + ten_tep
@@ -276,7 +276,7 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body=""):
 </body>
 </html>""" % (html.escape(tieu_de), html.escape(mo_ta), url, html.escape(tieu_de), html.escape(mo_ta), url,
               p, jsonld or JSONLD_NGUOI, (' class="%s"' % lop_body) if lop_body else "",
-              nav(active, p), than, khoi_cuoi(p), footer(p), p)
+              nav(active, p), than, khoi_cuoi(p) if cuoi else "", footer(p), p)
     doc = doc.replace("{VER}", VER)
     m = re.search(r'<div class="(?:hero-nen|tran-nen)"[^>]*><img src="([^"]+)"', doc)
     doc = doc.replace("{PRELOAD}", ('<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)) if m else "")
