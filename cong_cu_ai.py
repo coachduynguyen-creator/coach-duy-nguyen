@@ -26,21 +26,26 @@ CONG_CU = [
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
 HINH = {
  "danh-gia-ke-hoach-2027": dict(kieu="cot", tieu="Tháng thấp nhất năm 2027, khi mở thêm cơ sở thứ ba",
-   cot=[("Doanh thu tháng 7", 260, "260 triệu"), ("Chi phí cố định mới", 400, "400 triệu")],
-   ket="Lỗ khoảng 179 triệu trong tháng đó, tính cả giá vốn", vd="Chuỗi spa hai cơ sở"),
+   cot=[("Doanh thu tháng 7", 260, "260 triệu"), ("Tổng chi tháng 7, khi có cơ sở thứ ba", 439, "439 triệu")],
+   ket="Tháng đó lỗ khoảng 179 triệu. Muốn qua hai tháng xấu liên tiếp, chủ cần để dành khoảng 360 triệu.", vd="Chuỗi spa hai cơ sở",
+   boi="Chủ một chuỗi spa hai cơ sở muốn năm 2027 tăng doanh thu từ 4,2 tỷ lên 6 tỷ và mở thêm cơ sở thứ ba vào quý 2. Đưa kế hoạch cho AI, một điều AI tìm ra nằm ở tháng 7, tháng doanh thu thấp nhất năm nay."),
  "so-khach-du-luong-co-lai": dict(kieu="pheu", tieu="Muốn có lãi 40 triệu mỗi tháng, phải có bao nhiêu khách",
    tang=[("Người mới tiếp cận", "400", "576"), ("Cuộc tư vấn", "100", "144"), ("Khách mới", "30", "43")],
-   ket="Thêm 13 khách mới mỗi tháng, tức 176 người tiếp cận nữa", vd="Nhà hàng hai cơ sở"),
+   ket="Thêm 13 khách mới mỗi tháng, tức 176 người tiếp cận nữa", vd="Nhà hàng hai cơ sở",
+   boi="Chủ một nhà hàng hai cơ sở, khách chủ yếu đặt tiệc trước, đang lỗ khoảng 20 triệu mỗi tháng và muốn còn lại 40 triệu lãi. AI tính ngược từ mốc đó ra số người phải có ở từng bước."),
  "quy-trinh-tu-cach-lam": dict(kieu="gio", tieu="Việc báo giá: chủ lấy lại được bao nhiêu giờ mỗi tuần",
    buoc=[("12 giờ", "chủ đang tự làm"), ("9 giờ", "chuyển được cho nhân viên"), ("5,7 giờ", "chủ lấy lại mỗi tuần")],
-   ket="Chưa tới 10 giờ chủ muốn, vì người nhận việc chưa đủ giờ rảnh", vd="Công ty phần mềm 12 người"),
+   ket="Chưa tới 10 giờ chủ muốn, vì người nhận việc chưa đủ giờ rảnh", vd="Công ty phần mềm 12 người",
+   boi="Chủ một công ty phần mềm 12 người làm 55 giờ mỗi tuần, riêng việc báo giá và chốt yêu cầu với khách đã mất 12 giờ. AI giúp chủ viết cách làm đó thành quy trình để giao cho người khác."),
  "phan-bien-quyet-dinh": dict(kieu="cot", tieu="Nhận hợp đồng 9 tỷ: tiền cần có trước khi đợt thanh toán đầu tiên về",
    cot=[("Tiền dự phòng đang có", 1.2, "1,2 tỷ"), ("Tiền cần có trong 3 tháng đầu", 2.77, "2,77 tỷ")],
-   ket="Thiếu khoảng 1,57 tỷ nếu chủ đầu tư không tạm ứng", vd="Công ty xây dựng nhà phố"),
+   ket="Thiếu khoảng 1,57 tỷ nếu chủ đầu tư không tạm ứng", vd="Công ty xây dựng nhà phố",
+   boi="Chủ một công ty xây dựng nhà phố đang cân nhắc nhận hợp đồng 9 tỷ, gấp ba hợp đồng lớn nhất từng làm. Trước khi ký, AI tính số tiền phải ứng ra trước khi chủ đầu tư trả đợt đầu."),
  "khach-kho-tinh": dict(kieu="bang", tieu="Điểm luyện của bốn nhân viên với bốn kiểu khách khó",
    cot=["So sánh giá", "Hỏi người khác", "Từng bị làm hỏng", "Im lặng"],
    hang=[("An", [4, 6, 8, 3]), ("Bình", [5, 5, 7, 4]), ("Chi", [7, 6, 8, 6]), ("Dũng", [3, 4, 6, 2])],
-   ket="Cả đội ngũ yếu nhất với khách im lặng và khách so sánh giá", vd="Công ty dịch vụ kế toán"),
+   ket="Cả đội ngũ yếu nhất với khách im lặng và khách so sánh giá", vd="Công ty dịch vụ kế toán",
+   boi="Một công ty dịch vụ kế toán có bốn nhân viên tư vấn, tỷ lệ chốt khoảng 22%. AI đóng vai bốn kiểu khách khó, từng nhân viên tập trả lời, rồi AI chấm điểm trên thang 10."),
 }
 
 def hinh(ma):
@@ -65,8 +70,8 @@ def hinh(ma):
             "".join("<th>%s</th>" % c for c in h["cot"]),
             "".join('<tr><th>%s</th>%s</tr>' % (ten, "".join('<td style="--p:%.2f">%d</td>' % (d / 10, d) for d in ds))
                     for ten, ds in h["hang"]))
-    return ('<figure class="hh hh--%s"><figcaption><span class="hh-vd">Doanh nghiệp giả định · %s</span>%s</figcaption>%s'
-            '<p class="hh-ket">%s</p></figure>' % (h["kieu"], h["vd"], h["tieu"], than, h["ket"]))
+    return ('<p class="hh-boi">%s</p><figure class="hh hh--%s"><figcaption><span class="hh-vd">Ví dụ · %s</span>%s</figcaption>%s'
+            '<p class="hh-ket">%s</p></figure>' % (h["boi"], h["kieu"], h["vd"], h["tieu"], than, h["ket"]))
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
 VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": ""}
@@ -298,13 +303,13 @@ def than_trang(cc):
       <p class="dan">%(duoi)s</p>
       <ul class="cc-chip"><li><b>%(n_lenh)d</b> câu lệnh</li><li>Điền <b>%(n_o)d</b> thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
     </div>
-    %(hinh)s
   </div>
 </header>
 
 <section class="phan bd phan-sang cc" id="bai-mau">
   <div class="cc-doc">
     <h2>AI tìm ra gì ở hai doanh nghiệp mẫu</h2>
+    %(hinh)s
     <p class="cc-gia-dinh">%(mien_tru)s</p>
     <div class="cc-tabs" role="tablist">%(tab)s</div>
     %(mau)s
