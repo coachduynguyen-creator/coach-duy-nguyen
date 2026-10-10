@@ -2380,3 +2380,8 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc .cc-the h2{font-size:clamp(19px,2vw,23px);margin-bottom:6px}
 .phan-sang .tk-cau{background:var(--bg-2);border-color:var(--line)}
 .phan-sang #tk-kq{background:var(--panel)}
+/* Kết quả AI trả về và mẹo dưới mỗi câu lệnh */
+.cc-kq{margin:0 16px 16px;padding:14px 16px;border-radius:var(--r-s);background:var(--vang-mo);border:1px solid rgba(242,177,74,.22)}
+.cc-kq p{font-size:14.5px!important;line-height:1.65!important;color:var(--ink-2)!important;text-align:left!important}
+.cc-kq b{color:var(--ink)}
+.cc-meo{margin-top:8px!important;padding-top:8px;border-top:1px dashed var(--line-2)}

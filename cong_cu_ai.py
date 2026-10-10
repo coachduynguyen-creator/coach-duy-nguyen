@@ -175,6 +175,13 @@ def doc(ma, tep):
         dan = doan.pop(0) if doan[0].startswith("Câu này chép") else ""
         cc["lenh"].append(dict(so=int(so), ten=ten, dan=dan, chu="\n\n".join(doan)))
 
+    # Kết quả AI trả về và mẹo cho từng câu lệnh (Phần 2b), hiện dưới khối câu lệnh.
+    cc["kq"] = {}
+    for t, bk in _chia(phan.get("Phần 2b", ""), "###")[1:]:
+        so = int(re.search(r"\d+", t).group())
+        kq = re.search(r"^Kết quả: (.+)$", bk, re.M); meo = re.search(r"^Mẹo: (.+)$", bk, re.M)
+        cc["kq"][so] = (kq.group(1) if kq else "", meo.group(1) if meo else "")
+
     # Câu lệnh 2 có các chỗ trống trong ngoặc vuông, theo đúng thứ tự ô trong phiếu.
     l2 = cc["lenh"][1]
     trong = re.findall(r"\[[^\]]+\]", l2["chu"])
@@ -221,6 +228,12 @@ def _the_lien_quan(c):
             '<b>%s</b><span class="lk-v">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></span></a>'
             % (c["ma"], html.escape(c["tieu"])))
 
+def _kq(v):
+    if not v or not v[0]:
+        return ""
+    return ('<div class="cc-kq"><p><b>AI sẽ trả về.</b> %s</p>%s</div>'
+            % (_dong_so(v[0]), ('<p class="cc-meo"><b>Mẹo.</b> %s</p>' % _dong(v[1])) if v[1] else ""))
+
 def _chon(ten, nhan, ds):
     return ('<label class="cc-o"><span>%s</span><select name="%s" required><option value="">Chọn</option>%s</select></label>'
             % (nhan, ten, "".join('<option value="%d">%s</option>' % (i, html.escape(x[0].upper() + x[1:])) for i, x in enumerate(ds))))
@@ -259,8 +272,9 @@ def than_trang(cc):
     for l in cc["lenh"]:
         ghi = l["dan"] or cc["nhan"].get(l["so"], "")
         lenh += ('<div class="cc-lenh" data-so="%d"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh %d</span><h3>%s</h3></div>'
-                 '<button class="nut nut-vien cc-chep" type="button">Chép</button></div>%s<div class="cc-chu">%s</div></div>'
-                 % (l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"])))
+                 '<button class="nut nut-vien cc-chep" type="button">Chép</button></div>%s<div class="cc-chu">%s</div>%s</div>'
+                 % (l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"]),
+                    _kq(cc["kq"].get(l["so"]))))
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"]), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)

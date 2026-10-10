@@ -96,7 +96,7 @@
       c.classList.add('gon');
       var b = d.createElement('button'); b.type = 'button'; b.className = 'cc-mo-het'; b.textContent = 'Xem đầy đủ';
       b.addEventListener('click', function () { var g = c.classList.toggle('gon'); b.textContent = g ? 'Xem đầy đủ' : 'Thu gọn'; });
-      c.parentNode.appendChild(b);
+      c.insertAdjacentElement('afterend', b);
     });
     [].forEach.call(kin.querySelectorAll('.cc-chep'), function (nut) {
       nut.addEventListener('click', function () { chep(nut.closest('.cc-lenh').querySelector('.cc-chu').textContent, nut); });
