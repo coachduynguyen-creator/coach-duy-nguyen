@@ -2508,3 +2508,13 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .tk-mau .diem{margin:0 0 10px;font-weight:700;font-variant-numeric:tabular-nums}
 .tk-mau h3{margin:0 0 6px;font-size:18px}
 .tk-mau p{text-align:left!important}
+/* Phần E-book trên trang Công cụ, thay phần Sách (11/10/2026) */
+.eb-luoi{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.eb-the{padding:20px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel);display:grid;gap:8px;align-content:start;min-width:0}
+.eb-dau{display:flex;align-items:center;justify-content:space-between}
+.eb-ic{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;color:var(--vang);background:var(--vang-mo)}
+.eb-ic svg{width:20px;height:20px}
+.eb-tt{font:600 12px var(--f-mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.eb-tt.mo{color:var(--vang)}
+.eb-the h3{margin:0;font-size:17px;line-height:1.35}
+.eb-the p{margin:0;font-size:15px;line-height:1.6;color:var(--ink-2);text-align:left!important}

@@ -1725,12 +1725,23 @@ THU_VIEN = """
 
 _so_cc = sum(1 for t in TAI_LIEU if dung_ngay(t))
 _so_lenh = sum(len(c["lenh"]) for c in cong_cu_ai.DS) + 12   # 12 câu của Bảng tự kiểm tra (TK_CAU khai báo phía dưới)
+# Danh mục e-book đọc từ tệp tên Coach Duy duyệt qua phiếu ngày 11/10/2026 (ban-chot/phieu-ten).
+# E-book chưa có tệp để tải thì hiện "Đang soạn". Có tệp rồi thì thêm vào EBOOK_CO_TEP.
+TEN_MD = os.path.expanduser("~/Codex_Projects/Next Gen Founder/deliverables/NGF - Tên công cụ và e-book theo nỗi đau người chủ ngày 11-10-2026.md")
+_ten = open(TEN_MD, encoding="utf-8").read()
+EBOOK = [(m, t, g) for m, t, g in re.findall(r"^### ([EF]\d+)\. (.+?)\n\n\*\*Câu giới thiệu\.\*\* (.+?)\n", _ten, re.M)]
+EBOOK_CO_TEP = {}   # mã: đường dẫn tải, khi tệp đã sẵn sàng
+_ic_eb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/></svg>'
+_the_eb = "".join(
+ '<article class="eb-the"><div class="eb-dau"><span class="eb-ic" aria-hidden="true">%s</span><span class="eb-tt%s">%s</span></div>'
+ '<h3>%s</h3><p>%s</p></article>' % (_ic_eb, " mo" if m in EBOOK_CO_TEP else "", "Tải về" if m in EBOOK_CO_TEP else "Đang soạn",
+                                    html.escape(t), html.escape(g).replace("E-book", "E&#8209;book")) for m, t, g in EBOOK)
 SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
     <div>
       <p class="mono">Công cụ và tài liệu</p>
-      <h1>Công cụ dùng được ngay</h1>
-      <p class="dan">Bảng tự kiểm tra và các bộ câu lệnh AI để bạn đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ, bằng chính số liệu doanh nghiệp mình. Công cụ nào còn đang làm thì trang này ghi rõ.</p>
+      <h1>Những việc người chủ thường phải nghĩ một mình</h1>
+      <p class="dan">Kế hoạch năm sau, số khách cần có mỗi tháng, cách làm đang nằm trong đầu bạn, điều nhân viên nói với khách khi bạn vắng mặt. Đây là những việc người chủ thường phải tự nghĩ một mình, vì chỉ bạn nắm đủ số và hiếm khi có ai hỏi khó bạn. Mỗi công cụ ở đây giúp bạn làm một việc như vậy với chính số liệu doanh nghiệp mình, phần lớn xong trong khoảng 30 phút. Quyết định cuối cùng vẫn là của bạn.</p>
     </div>
     <figure class="hh hh--so"><div class="hh-so-luoi">
       <div><b>%d</b><span>công cụ dùng được ngay</span></div>
@@ -1738,32 +1749,15 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
     </div><p class="hh-ket">Các bộ câu lệnh AI chạy được với ChatGPT bản miễn phí</p></figure>
   </div>
 </header>""" % (_so_cc, _so_lenh) + THU_VIEN + """
-<section class="phan bd hoa-van" id="sach">
+<section class="phan bd" id="e-book">
   <div class="phan-dau hien">
-    <p class="mono">Sách</p>
-    <h2>Sách Duy đang viết</h2>
+    <p class="mono">E-book</p>
+    <h2>E-book cho người chủ doanh nghiệp</h2>
+    <p>Mỗi cuốn đi kèm một vài công cụ ở trên, để đọc xong bạn có việc làm ngay.</p>
   </div>
-  <div class="hang-bia hai tre hien">%s%s</div>
+  <div class="eb-luoi hien">%s</div>
 </section>
-""" % (
- bia("Sắp ra mắt", "Bán Bằng Vị Thế", "Bán Bằng Vị Thế",
-     "Khách tốt nhất thường không đến vì bạn chào hàng hay nhất. Họ đến vì đã tin bạn từ trước khi gặp. Cuốn sách gom lại sáu năm Duy dạy cách bán từ vị thế: làm sao để khách tự tìm tới, hỏi bạn nên làm gì thay vì chỉ hỏi giá, và làm sao để cả đội ngũ bán được theo cách đó chứ không chỉ một mình bạn.",
-     "Đang viết · dự kiến quý 4 năm 2026", anh="sach-ban-bang-vi-the"),
- bia("Bộ tài liệu", "Thực Chiến Bất Động Sản", "Bộ Sách Thực Chiến Bất Động Sản",
-     "Dành riêng cho người làm môi giới và kinh doanh bất động sản. Bộ sách viết lại từ những chương trình đào tạo Duy đã đứng lớp, nên mỗi phần bắt đầu từ một tình huống người làm nghề gặp hằng ngày, rồi mới tới cách xử lý.",
-     "Đang biên soạn", anh="sach-thuc-chien-bat-dong-san")) + """
-<section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien">
-      <p class="mono">Trong lúc chờ sách</p>
-      <h2>Phần lớn nội dung Duy đã viết dần trên blog</h2>
-      <p>Bạn đọc trước ở đó, và nói cho Duy biết chỗ nào cần đào sâu. Những chỗ được hỏi nhiều nhất sẽ thành chương dày nhất.</p>
-    </div>
-    <div class="blog hien">%s<div class="ds-bai">%s</div></div>
-  </div>
-</section>
-""" % (the_bai_lon(BAI[3], i=2), "".join(the_bai_nho(b) for b in [BAI[8], BAI[0], BAI[4], BAI[6]]))
+""" % _the_eb
 
 # ------------------------------------------------- CÔNG CỤ TỰ KIỂM
 # Công cụ đầu tiên trong kho tài liệu, dùng ngay trên trang. Nội dung chỉ lấy
@@ -2003,7 +1997,7 @@ print("  cau-chuyen-hoc-vien.html")
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
-      "Bảng tự kiểm tra và các bộ câu lệnh AI của Coach Duy Nguyễn để chủ doanh nghiệp đánh giá kế hoạch, số khách, quy trình và cách tư vấn của đội ngũ.",
+      "Công cụ và e-book của Coach Duy Nguyễn cho những việc người chủ doanh nghiệp thường phải tự nghĩ một mình: kế hoạch, số khách, quy trình và đội ngũ.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
 
