@@ -221,7 +221,11 @@ def dong_sap(t, p=""):
             '<span class="tv-tt">%s</span><a class="lk-v" href="%s%s">%s <span class="mt" aria-hidden="true">&rarr;</span></a></li>') % (
         t["loai"], _LOAI[t["loai"]], t["ten"], t["tt"], p, t["href"], t["nut"])
 
-KHO_TRANG_CHU = "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t))
+# Trang chủ chỉ hiện 6 công cụ tiêu biểu, mỗi công cụ một nỗi lo lớn của người chủ (11/10/2026), phần còn lại ở /cong-cu/.
+TIEU_BIEU = ["du-bao-dong-tien-13-tuan", "so-khach-du-luong-co-lai", "chi-phi-quang-cao-moi-khach",
+             "danh-gia-ke-hoach-2027", "giao-viec-cho-quan-ly", "ket-qua-tung-vi-tri"]
+_tv_theo_ma = {t["href"][len("cong-cu/"):-len(".html")]: t for t in TAI_LIEU if dung_ngay(t)}
+KHO_TRANG_CHU = "".join(the_tv(_tv_theo_ma[m]) for m in TIEU_BIEU)
 
 # ---------------------------------------------------------------- TRANG CHỦ
 INDEX = """
