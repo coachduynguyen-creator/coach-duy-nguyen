@@ -1,0 +1,96 @@
+/* Khuôn e-book chung của Coach Duy Nguyễn và Next Gen Founder (Coach Duy chốt 11/10/2026).
+   Mọi e-book dùng tệp này, khổ A4, xuất PDF bằng Chrome. Đổi khuôn thì sửa ở đây, mọi cuốn đổi theo. */
+:root{
+  --toi:#17120F; --toi-2:#211B16; --vang:#D9A441; --vang-dam:#9A6510; --vang-nhat:#F6E7C4;
+  --kem:#F6F1E8; --kem-2:#EFE6D6; --chu:#241B14; --chu-2:#5C4E40; --vien:#DCCFBB;
+  --f-tit:"Bricolage Grotesque","Be Vietnam Pro",sans-serif; --f-than:"Be Vietnam Pro",system-ui,sans-serif; --f-ma:"IBM Plex Mono",ui-monospace,monospace;
+}
+@page{size:A4;margin:20mm 18mm 22mm 18mm;
+  @bottom-left{content:var(--ten-ebook, "");font:500 8.5pt "Be Vietnam Pro",sans-serif;color:#8a7a68}
+  @bottom-right{content:"Coach Duy Nguyễn · Next Gen Founder   " counter(page);font:500 8.5pt "Be Vietnam Pro",sans-serif;color:#8a7a68}}
+@page bia{margin:0;@bottom-left{content:none}@bottom-right{content:none}}
+@page toi{margin:0;@bottom-left{content:none}@bottom-right{content:none}}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font:10.5pt/1.62 var(--f-than);color:var(--chu);background:#fff}
+p{margin:0 0 9pt;text-align:left;hyphens:none}
+b,strong{font-weight:700}
+
+/* Bìa */
+.bia{page:bia;break-after:page;height:297mm;background:var(--toi);color:var(--kem);padding:22mm 20mm 18mm;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.bia::before{content:"";position:absolute;inset:9mm;border:0.6pt solid rgba(217,164,65,.45);border-radius:3mm;pointer-events:none}
+.bia-ngf{width:78mm}
+.bia-cd{margin-top:34mm;font:600 9pt var(--f-ma);letter-spacing:.16em;text-transform:uppercase;color:var(--vang)}
+.bia h1{margin:6mm 0 8mm;font:800 34pt/1.08 var(--f-tit);letter-spacing:-.02em;color:#FBF3E4}
+.bia-gt{max-width:140mm;font-size:12.5pt;line-height:1.55;color:#E9DFCF}
+.bia-chan{margin-top:auto;display:flex;align-items:center;gap:5mm;padding-top:8mm;border-top:0.6pt solid rgba(217,164,65,.35)}
+.bia-chan img{width:13mm}
+.bia-chan b{display:block;font:800 13pt var(--f-tit);color:#FBF3E4}
+.bia-chan span{font-size:9pt;color:#CDBFA9}
+.bia-web{margin-left:auto;font:600 9pt var(--f-ma);color:var(--vang);letter-spacing:.06em}
+
+/* Trang giới thiệu cuốn sách */
+.mo{break-after:page}
+.nhan{font:600 8.5pt var(--f-ma);letter-spacing:.14em;text-transform:uppercase;color:var(--vang-dam);margin:0 0 3mm}
+.mo h2{font:800 22pt/1.15 var(--f-tit);margin:0 0 6mm}
+.mo-mt{font-size:12pt;line-height:1.6;padding:6mm 7mm;background:var(--kem);border-left:2.2pt solid var(--vang);border-radius:0 2mm 2mm 0;margin:0 0 10mm}
+.muc-luc{list-style:none;margin:0;padding:0;counter-reset:ml}
+.muc-luc li{display:flex;gap:4mm;padding:3.2mm 0;border-bottom:0.5pt dashed var(--vien);font-size:11pt}
+.muc-luc li span{font:600 9pt var(--f-ma);color:var(--vang-dam);min-width:16mm}
+
+/* Thân sách */
+h2.phan{font:800 18pt/1.18 var(--f-tit);margin:10mm 0 5mm;break-after:avoid;break-inside:avoid;padding-top:3mm;border-top:1.2pt solid var(--vang)}
+h2.phan .so{display:block;font:600 8.5pt var(--f-ma);letter-spacing:.14em;color:var(--vang-dam);margin-bottom:1.5mm;text-transform:uppercase}
+.phan-moi{break-before:page;margin-top:0}
+.mo-dau{font-size:12.5pt;line-height:1.6;margin:0 0 8mm}
+blockquote{margin:6mm 0;padding:5mm 6mm;background:var(--toi);color:#F1E7D6;border-radius:2mm;font-size:11pt;line-height:1.6;break-inside:avoid}
+blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;margin:3mm 0 7mm;font-size:9.2pt;break-inside:avoid}
+th{background:var(--toi);color:#F6E7C4;font-weight:600;text-align:left;padding:2.6mm 3mm}
+td{padding:2.6mm 3mm;border-bottom:0.5pt solid var(--vien);vertical-align:top}
+tr:nth-child(even) td{background:var(--kem)}
+td:empty{background:#fff!important;border:0.5pt solid var(--vien)}
+ol.ds{margin:0 0 7mm;padding-left:6mm}
+ol.ds li{margin-bottom:2mm}
+.o-viet{margin:2mm 0 7mm}
+.o-viet div{height:9mm;border-bottom:0.6pt solid var(--vien)}
+
+/* Thẻ một câu hỏi */
+.cau{break-inside:avoid;border:0.6pt solid var(--vien);border-radius:2.5mm;margin:0 0 6mm;overflow:hidden}
+.cau-dau{display:flex;gap:5mm;align-items:flex-start;padding:5mm 6mm 4mm;background:var(--kem)}
+.cau-so{flex:none;width:11mm;height:11mm;border-radius:50%;background:var(--toi);color:var(--vang);display:grid;place-items:center;font:800 14pt var(--f-tit)}
+.cau-dau .nhan{margin:0 0 1mm}
+.cau-dau h3{margin:0;font:800 13pt/1.3 var(--f-tit)}
+.cau-than{padding:4mm 6mm 5mm}
+.cau-ba{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3.5mm;margin-top:2mm}
+.cau-ba div{font-size:9.2pt;line-height:1.5;padding:3mm;border-radius:1.5mm;background:#FBF8F2;border-top:1.6pt solid var(--vien)}
+.cau-ba div.dat{border-top-color:#2F6B4A}
+.cau-ba div.sai{border-top-color:#9A3B2E}
+.cau-ba b{display:block;font:600 7.8pt var(--f-ma);letter-spacing:.1em;text-transform:uppercase;color:var(--chu-2);margin-bottom:1mm}
+
+/* Việc theo câu đang hổng */
+.viec{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin:2mm 0 7mm}
+.viec div{break-inside:avoid;padding:4mm 5mm;border:0.6pt solid var(--vien);border-radius:2mm;font-size:9.6pt}
+.viec b{display:block;font:800 10.5pt var(--f-tit);color:var(--vang-dam);margin-bottom:1.5mm}
+
+/* Câu lệnh chép sang ChatGPT */
+.lenh{break-inside:avoid;border:0.6pt solid var(--vien);border-radius:2.5mm;margin:0 0 5mm;overflow:hidden}
+.lenh-dau{display:flex;justify-content:space-between;align-items:center;padding:3mm 5mm;background:var(--toi);color:#F6E7C4;font:700 10pt var(--f-tit)}
+.lenh-dau span{font:600 7.8pt var(--f-ma);letter-spacing:.12em;color:var(--vang)}
+.lenh pre{margin:0;padding:4mm 5mm;white-space:pre-wrap;font:9.4pt/1.6 var(--f-than);background:#FBF8F2}
+
+/* Trang người soạn và trang mời cộng đồng */
+.ngs{break-before:page;display:flex;gap:8mm;align-items:flex-start;margin-top:10mm}
+.ngs-anh{width:34mm;height:34mm;border-radius:50%;object-fit:cover;flex:none;border:1.2pt solid var(--vang)}
+.ngs h2{font:800 20pt var(--f-tit);margin:0 0 4mm}
+.ngs-khien{display:flex;align-items:center;gap:3mm;margin-top:6mm;font-size:9pt;color:var(--chu-2)}
+.ngs-khien img{width:9mm}
+.moi{page:toi;break-before:page;height:297mm;background:var(--toi);color:var(--kem);padding:30mm 24mm 22mm;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.moi::before{content:"";position:absolute;inset:9mm;border:0.6pt solid rgba(217,164,65,.45);border-radius:3mm}
+.moi img{width:62mm;margin-bottom:12mm}
+.moi h2{font:800 22pt/1.2 var(--f-tit);color:#FBF3E4;margin:0 0 6mm}
+.moi p{max-width:140mm;font-size:12pt;line-height:1.65;color:#E9DFCF;text-align:center}
+.moi-link{margin-top:8mm;display:inline-block;padding:4mm 9mm;border-radius:20mm;background:var(--vang);color:var(--toi);font:800 12pt var(--f-tit);text-decoration:none}
+.moi-web{margin-top:auto;font:600 9pt var(--f-ma);color:var(--vang);letter-spacing:.08em}
+.moi-cdn{display:flex;align-items:center;gap:3mm;margin-top:4mm;font-size:9pt;color:#CDBFA9}
+.moi-cdn img{width:8mm}

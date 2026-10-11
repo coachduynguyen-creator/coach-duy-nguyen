@@ -2588,3 +2588,5 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 #tl-loc{margin:0 0 18px}
 .cc-nhay{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .cc-dau .dan+.dan{margin-top:12px}
+.eb-tai{display:inline-block;text-decoration:none;padding:8px 14px;border:1px solid var(--vang);border-radius:999px}
+.eb-tai:hover{background:var(--vang);color:var(--ink,#17120F)}
