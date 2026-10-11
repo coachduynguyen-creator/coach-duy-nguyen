@@ -1720,7 +1720,12 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai, anh=""):
 _dem = lambda l: sum(1 for t in TAI_LIEU if dung_ngay(t) and (l == "all" or t["loai"] == l))   # chỉ đếm công cụ dùng được ngay
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
-  <div class="tl-loc hien" id="tl-loc" style="margin-top:0">%s</div>
+  <div class="phan-dau hien">
+    <p class="mono">Công cụ</p>
+    <h2>Công cụ cho những việc người chủ làm hằng ngày</h2>
+    <p>Mỗi công cụ giúp bạn làm một việc cụ thể với chính số liệu doanh nghiệp mình: tính dòng tiền, tính số khách, giao việc, đánh giá kết quả của đội ngũ. Chọn chủ đề bạn đang cần để lọc.</p>
+  </div>
+  <div class="tl-loc hien" id="tl-loc">%s</div>
   <div class="tv-luoi hien">%s</div>
 </section>
 """
