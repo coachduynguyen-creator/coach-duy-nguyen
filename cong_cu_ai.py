@@ -22,6 +22,10 @@ CONG_CU = [
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
     ("phan-bien-quyet-dinh", "NGF - Tài liệu thu lead 5, để AI hỏi khó một quyết định lớn trước khi chốt.md"),
     ("du-bao-dong-tien-13-tuan", "NGF - Tài liệu thu lead 6, dự báo dòng tiền 13 tuần trong kinh doanh.md"),
+    ("lai-that-tung-goi", "NGF - Tài liệu thu lead 7, tính lãi thật của từng gói sản phẩm, dịch vụ.md"),
+    ("chi-phi-quang-cao-moi-khach", "NGF - Tài liệu thu lead 8, tính chi phí quảng cáo cho mỗi khách mua hàng.md"),
+    ("khach-den-khong-deu", "NGF - Tài liệu thu lead 9, tìm nguyên nhân khách hàng đến không đều.md"),
+    ("khach-cu-quay-lai", "NGF - Tài liệu thu lead 10, kế hoạch chăm sóc để khách cũ quay lại mua.md"),
     ("khach-gioi-thieu-khach", "NGF - Tài liệu thu lead 11, cách đề nghị khách hàng giới thiệu khách mới.md"),
     ("loi-gioi-thieu-doanh-nghiep", "NGF - Tài liệu thu lead 12, viết lời giới thiệu doanh nghiệp theo nỗi lo của khách.md"),
     ("tu-van-khach-chua-mua", "NGF - Tài liệu thu lead 21, rà soát những buổi tư vấn khách chưa mua.md"),
@@ -89,6 +93,22 @@ HINH = {
    cot=[("Số dư cuối tháng 3", 34, "34 triệu"), ("Mức chủ muốn luôn giữ", 50, "50 triệu")],
    ket="Thiếu 16 triệu so với mức muốn giữ, dù cả năm 2027 vẫn lãi khoảng 381 triệu", vd="Quán cà phê hai cơ sở",
    boi="Chủ một quán cà phê hai cơ sở muốn doanh thu năm 2027 đạt 4,5 tỷ, tăng 25%, và chưa có kế hoạch nào viết ra. Trả lời từng phần AI hỏi, chủ thấy tháng 3, tháng mua máy pha mới 180 triệu, là lúc tiền xuống thấp nhất."),
+ "lai-that-tung-goi": dict(kieu="cot", tieu="Một học viên gói luyện thi cam kết: lãi gộp và tiền công",
+   cot=[("Lãi gộp của một học viên", 5.55, "5,55 triệu"), ("Tiền công nhân viên và chủ", 5.9, "5,9 triệu")],
+   ket="Mỗi học viên làm trung tâm lỗ 0,35 triệu, cả tháng lỗ 7 triệu, dù lãi gộp trên sổ là 61,7% giá bán.", vd="Trung tâm ngoại ngữ 14 người",
+   boi="Chủ một trung tâm ngoại ngữ 14 người bán bốn gói, cuối tháng chỉ còn 71,6 triệu, thấp hơn mức muốn 35,5 triệu. Cộng đủ tiền công nhân viên và thời gian của chủ vào từng gói, AI chỉ ra gói luyện thi cam kết đang lỗ."),
+ "chi-phi-quang-cao-moi-khach": dict(kieu="cot", tieu="Một khách mua qua Facebook: tiền quảng cáo và lãi đơn đầu",
+   cot=[("Tiền quảng cáo cho mỗi khách mua", 2.90, "2,90 triệu"), ("Lãi gộp của đơn đầu", 2.40, "2,40 triệu")],
+   ket="Mỗi khách mua qua Facebook làm cửa hàng lỗ 0,50 triệu ở đơn đầu, dù kênh này nhận 53,6% tin nhắn.", vd="Cửa hàng nội thất",
+   boi="Chủ một cửa hàng nội thất chạy ba kênh quảng cáo, tháng nào cũng đầy tin nhắn. Tách số liệu theo từng kênh, AI chỉ ra kênh nhiều tin nhắn nhất không phải kênh nhiều người mua nhất."),
+ "khach-den-khong-deu": dict(kieu="cot", tieu="Số khách tháng 6 so với số khách chủ muốn có",
+   cot=[("Số khách tháng 6", 74, "74 khách"), ("Số khách chủ muốn có", 110, "110 khách")],
+   ket="Hụt 36 khách, trong đó khách từ quảng cáo thấp hơn mức trung bình của chính nó khoảng 24 khách.", vd="Thẩm mỹ viện 12 người",
+   boi="Chủ một thẩm mỹ viện có 4 trong 6 tháng gần nhất hụt so với mục tiêu 110 khách. Tách riêng từng nguồn khách, AI chỉ ra tháng 6 hụt đúng tháng tiền quảng cáo xuống 5 triệu."),
+ "khach-cu-quay-lai": dict(kieu="cot", tieu="Danh sách 1.200 khách cũ: bao nhiêu người đã quá thời gian mua lại",
+   cot=[("Đã quá 2 tháng chưa mua lại", 1020, "1.020 khách"), ("Mới mua trong 3 tháng qua", 180, "180 khách")],
+   ket="85% danh sách đã quá thời gian thông thường giữa hai lần mua, mà cả danh sách chỉ nhận một tin chung mỗi tháng.", vd="Cửa hàng mẹ và bé",
+   boi="Chủ một cửa hàng mẹ và bé có 1.200 khách cũ, mỗi tháng gửi một tin Zalo chung. Chia danh sách theo lần mua gần nhất, AI chỉ ra phần lớn khách đã quá thời gian họ thường mua lại."),
  "khach-gioi-thieu-khach": dict(kieu="cot", tieu="Khách đã khen và đủ điều kiện để hỏi giới thiệu, so với số đã được hỏi",
    cot=[("Khách đã khen, đủ điều kiện để hỏi", 27, "27 khách"), ("Trong số đó đã được hỏi", 5, "5 khách")],
    ket="Còn 22 khách đủ điều kiện mà chưa ai hỏi giới thiệu", vd="Công ty nội thất 14 người",
@@ -157,6 +177,8 @@ def hinh(ma):
 CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập", "so-khach-du-luong-co-lai": "Bán hàng và phòng kinh doanh",
           "quy-trinh-tu-cach-lam": "Hệ thống tăng trưởng", "khach-kho-tinh": "Bán hàng và phòng kinh doanh",
           "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập", "du-bao-dong-tien-13-tuan": "Hệ thống tăng trưởng",
+          "lai-that-tung-goi": "Hệ thống tăng trưởng", "chi-phi-quang-cao-moi-khach": "Bán hàng và phòng kinh doanh",
+          "khach-den-khong-deu": "Bán hàng và phòng kinh doanh", "khach-cu-quay-lai": "Bán hàng và phòng kinh doanh",
           "khach-gioi-thieu-khach": "Bán hàng và phòng kinh doanh", "loi-gioi-thieu-doanh-nghiep": "Thương hiệu của người sáng lập",
           "tu-van-khach-chua-mua": "Bán hàng và phòng kinh doanh", "khach-noi-gia-cao": "Bán hàng và phòng kinh doanh",
           "giao-viec-cho-quan-ly": "Điểm nghẽn của người sáng lập", "lich-lam-viec-nguoi-chu": "Điểm nghẽn của người sáng lập",
@@ -167,7 +189,7 @@ CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập"
           "ke-hoach-kinh-doanh-mot-trang": "Điểm nghẽn của người sáng lập"}
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "ket-qua-tung-vi-tri": "", "khach-gioi-thieu-khach": "", "loi-gioi-thieu-doanh-nghiep": "", "tu-van-khach-chua-mua": "", "khach-noi-gia-cao": "", "giao-viec-cho-quan-ly": "", "lich-lam-viec-nguoi-chu": "", "chu-vang-hai-tuan": "", "diem-nghen-khi-chung-lai": "", "dao-tao-nhan-vien-moi": "", "trao-doi-kho-voi-nhan-vien": "", "phong-van-tuyen-dung": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "ket-qua-tung-vi-tri": "", "khach-gioi-thieu-khach": "", "lai-that-tung-goi": "", "chi-phi-quang-cao-moi-khach": "", "khach-den-khong-deu": "", "khach-cu-quay-lai": "", "loi-gioi-thieu-doanh-nghiep": "", "tu-van-khach-chua-mua": "", "khach-noi-gia-cao": "", "giao-viec-cho-quan-ly": "", "lich-lam-viec-nguoi-chu": "", "chu-vang-hai-tuan": "", "diem-nghen-khi-chung-lai": "", "dao-tao-nhan-vien-moi": "", "trao-doi-kho-voi-nhan-vien": "", "phong-van-tuyen-dung": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md
