@@ -316,26 +316,19 @@
   ve();
 })();
 
-/* Lọc kho tài liệu trên trang Sách và tài liệu. Lọc tại chỗ, không tải lại
-   trang. Học ý tưởng từ Tool Box của scaleos.vn nhưng bỏ kiểu mỗi mục lọc là
-   một đường dẫn riêng. */
+/* Lọc theo chủ đề trên trang Công cụ: mỗi thanh lọc chỉ lọc thẻ trong phần của nó
+   (thư viện công cụ và phần E-book có hai bộ lọc riêng, 11/10/2026). Lọc tại chỗ, không tải lại trang. */
 (function () {
-  var loc = document.getElementById('tl-loc');
-  if (!loc) return;
-  // Lọc theo chủ đề, chung cho thẻ công cụ và thẻ e-book (11/10/2026).
-  var the = [].slice.call(document.querySelectorAll('.tv[data-chude],.eb-the[data-chude]'));
-  var eb = document.getElementById('e-book');
-  loc.addEventListener('click', function (ev) {
-    var nut = ev.target.closest('.tl-nut');
-    if (!nut) return;
-    [].slice.call(loc.querySelectorAll('.tl-nut')).forEach(function (b) {
-      b.classList.toggle('chon', b === nut);
+  [].slice.call(document.querySelectorAll('.tl-loc')).forEach(function (loc) {
+    var phan = loc.closest('section') || document;
+    var the = [].slice.call(phan.querySelectorAll('[data-chude]'));
+    loc.addEventListener('click', function (ev) {
+      var nut = ev.target.closest('.tl-nut');
+      if (!nut) return;
+      [].slice.call(loc.querySelectorAll('.tl-nut')).forEach(function (b) { b.classList.toggle('chon', b === nut); });
+      var chon = nut.dataset.loc;
+      the.forEach(function (t) { t.hidden = !(chon === 'all' || t.dataset.chude === chon); });
     });
-    var chon = nut.dataset.loc;
-    the.forEach(function (t) {
-      t.hidden = !(chon === 'all' || t.dataset.chude === chon);
-    });
-    if (eb) eb.hidden = !eb.querySelector('.eb-the:not([hidden])');
   });
 })();
 

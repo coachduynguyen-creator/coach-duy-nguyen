@@ -1762,15 +1762,20 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
     <h2>E-book cho người chủ doanh nghiệp</h2>
     <p>Mỗi cuốn đi kèm một vài công cụ ở trên, để đọc xong bạn có việc làm ngay.</p>
   </div>
+  <div class="tl-loc hien" id="eb-loc">{LOC_EB}</div>
   <div class="eb-luoi hien">%s</div>
 </section>
 """ % _the_eb
-# Bộ lọc theo chủ đề như blog, đếm cả công cụ lẫn e-book; chủ đề chưa có mục nào thì không hiện nút.
-_cd_tv = [t["chu_de"] for t in TAI_LIEU if dung_ngay(t)] + [CHU_DE_EB[m] for m, _, _ in EBOOK]
-_cd_ds = [c for c in ["AI cho người chủ", "Bán hàng và phòng kinh doanh", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng",
-                      "Thương hiệu của người sáng lập", "Điểm nghẽn của người sáng lập"] if c in _cd_tv]
-SACH = SACH.replace("{LOC}", '<button class="tl-nut chon" type="button" data-loc="all">Tất cả<span class="tv-so">%d</span></button>' % len(_cd_tv)
-    + "".join('<button class="tl-nut" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>' % (html.escape(c), c, _cd_tv.count(c)) for c in _cd_ds))
+# Hai bộ lọc chủ đề riêng: một cho công cụ, một cho e-book (Coach Duy chốt 11/10/2026).
+_THU_TU_CD = ["AI cho người chủ", "Bán hàng và phòng kinh doanh", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng",
+              "Thương hiệu của người sáng lập", "Điểm nghẽn của người sáng lập"]
+def bo_loc(ds_cd):
+    """Nút lọc theo chủ đề cho một nhóm thẻ; chủ đề không có mục nào thì không hiện nút."""
+    return ('<button class="tl-nut chon" type="button" data-loc="all">Tất cả<span class="tv-so">%d</span></button>' % len(ds_cd)
+            + "".join('<button class="tl-nut" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
+                      % (html.escape(c), c, ds_cd.count(c)) for c in _THU_TU_CD if c in ds_cd))
+SACH = SACH.replace("{LOC}", bo_loc([t["chu_de"] for t in TAI_LIEU if dung_ngay(t)]))
+SACH = SACH.replace("{LOC_EB}", bo_loc([CHU_DE_EB[m] for m, _, _ in EBOOK]))
 
 # ------------------------------------------------- CÔNG CỤ TỰ KIỂM
 # Công cụ đầu tiên trong kho tài liệu, dùng ngay trên trang. Nội dung chỉ lấy
