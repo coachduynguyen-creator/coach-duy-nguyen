@@ -22,6 +22,9 @@ CONG_CU = [
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
     ("phan-bien-quyet-dinh", "NGF - Tài liệu thu lead 5, để AI hỏi khó một quyết định lớn trước khi chốt.md"),
     ("du-bao-dong-tien-13-tuan", "NGF - Tài liệu thu lead 6, dự báo dòng tiền 13 tuần trong kinh doanh.md"),
+    ("cau-chuyen-thuong-hieu", "NGF - Tài liệu thu lead 23, tìm câu chuyện thật để xây dựng thương hiệu cá nhân.md"),
+    ("hoso-doanh-nghiep-chatgpt", "NGF - Tài liệu thu lead 24, hồ sơ doanh nghiệp dùng cho ChatGPT.md"),
+    ("ke-hoach-kinh-doanh-mot-trang", "NGF - Tài liệu thu lead 25, lập kế hoạch kinh doanh năm 2027 trong một trang.md"),
 ]
 # Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
@@ -46,6 +49,18 @@ HINH = {
    cot=[("Số dư cuối tuần", 104, "104 triệu"), ("Mức chủ muốn luôn giữ", 150, "150 triệu")],
    ket="Thiếu 46 triệu so với mức muốn giữ, dù trên sổ mỗi tháng vẫn lãi khoảng 67 triệu.", vd="Công ty tổ chức sự kiện 18 người",
    boi="Chủ một công ty tổ chức sự kiện 18 người, trên sổ mỗi tháng lãi khoảng 67 triệu. Đưa thu chi 13 tuần tới cho AI, AI chỉ ra tuần giữa tháng 1, khi lương tháng 1 và thưởng tháng lương thứ 13 rơi vào hai tuần liền nhau."),
+ "cau-chuyen-thuong-hieu": dict(kieu="cot", tieu="Mười câu chuyện đã chọn: chủ hiện lên như thế nào",
+   cot=[("Chuyện chủ cứu tình thế", 8, "8 chuyện"), ("Chuyện chủ làm sai rồi sửa", 2, "2 chuyện")],
+   ket="8 trên 10 chuyện chủ hiện lên như người cứu tình thế, chỉ 2 chuyện là chủ làm sai và sửa", vd="Công ty nội thất 14 người",
+   boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI gom 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
+ "hoso-doanh-nghiep-chatgpt": dict(kieu="cot", tieu="Số chỗ ChatGPT phải tự giả định khi thử ba việc thật",
+   cot=[("Với bản hồ sơ nháp", 7, "7 chỗ"), ("Mục tiêu sau khi sửa", 2, "2 chỗ")],
+   ket="Sửa ba chỗ hở trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",
+   boi="Chủ một công ty phân phối thực phẩm đông lạnh 25 người có 5 người dùng ChatGPT, mỗi lần đều phải giới thiệu lại công ty. AI hỏi mười câu, soạn hồ sơ rồi thử ba việc thật, và thấy với bản nháp đầu, ChatGPT phải tự giả định ở 7 chỗ."),
+ "ke-hoach-kinh-doanh-mot-trang": dict(kieu="cot", tieu="Số dư tiền cuối tháng 3 năm 2027, tháng mua máy pha mới",
+   cot=[("Số dư cuối tháng 3", 34, "34 triệu"), ("Mức chủ muốn luôn giữ", 50, "50 triệu")],
+   ket="Thiếu 16 triệu so với mức muốn giữ, dù cả năm 2027 vẫn lãi khoảng 381 triệu", vd="Quán cà phê hai cơ sở",
+   boi="Chủ một quán cà phê hai cơ sở muốn doanh thu năm 2027 đạt 4,5 tỷ, tăng 25%, và chưa có kế hoạch nào viết ra. Trả lời từng phần AI hỏi, chủ thấy tháng 3, tháng mua máy pha mới 180 triệu, là lúc tiền xuống thấp nhất."),
  "khach-kho-tinh": dict(kieu="bang", tieu="Điểm luyện của bốn nhân viên với bốn kiểu khách khó",
    cot=["So sánh giá", "Hỏi người khác", "Từng bị làm hỏng", "Im lặng"],
    hang=[("An", [4, 6, 8, 3]), ("Bình", [5, 5, 7, 4]), ("Chi", [7, 6, 8, 6]), ("Dũng", [3, 4, 6, 2])],
@@ -81,10 +96,12 @@ def hinh(ma):
 # Chủ đề của từng công cụ, dùng chung tên chủ đề với blog để cả website chỉ có một cách chia.
 CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập", "so-khach-du-luong-co-lai": "Bán hàng và phòng kinh doanh",
           "quy-trinh-tu-cach-lam": "Hệ thống tăng trưởng", "khach-kho-tinh": "Bán hàng và phòng kinh doanh",
-          "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập", "du-bao-dong-tien-13-tuan": "Hệ thống tăng trưởng"}
+          "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập", "du-bao-dong-tien-13-tuan": "Hệ thống tăng trưởng",
+          "cau-chuyen-thuong-hieu": "Thương hiệu của người sáng lập", "hoso-doanh-nghiep-chatgpt": "AI cho người chủ",
+          "ke-hoach-kinh-doanh-mot-trang": "Điểm nghẽn của người sáng lập"}
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md
