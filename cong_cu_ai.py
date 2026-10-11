@@ -21,6 +21,7 @@ CONG_CU = [
     ("quy-trinh-tu-cach-lam", "NGF - Tài liệu thu lead 3, biến cách làm trong đầu người chủ thành quy trình bằng AI.md"),
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
     ("phan-bien-quyet-dinh", "NGF - Tài liệu thu lead 5, để AI hỏi khó một quyết định lớn trước khi chốt.md"),
+    ("du-bao-dong-tien-13-tuan", "NGF - Tài liệu thu lead 6, dự báo dòng tiền 13 tuần trong kinh doanh.md"),
 ]
 # Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
@@ -41,6 +42,10 @@ HINH = {
    cot=[("Tiền dự phòng đang có", 1.2, "1,2 tỷ"), ("Tiền cần có trong 3 tháng đầu", 2.77, "2,77 tỷ")],
    ket="Thiếu khoảng 1,57 tỷ nếu chủ đầu tư không tạm ứng", vd="Công ty xây dựng nhà phố",
    boi="Chủ một công ty xây dựng nhà phố đang cân nhắc nhận hợp đồng 9 tỷ, gấp ba hợp đồng lớn nhất từng làm. Trước khi ký, AI tính số tiền phải ứng ra trước khi chủ đầu tư trả đợt đầu."),
+ "du-bao-dong-tien-13-tuan": dict(kieu="cot", tieu="Số dư tài khoản tuần 11/01 tới 17/01/2027",
+   cot=[("Số dư cuối tuần", 104, "104 triệu"), ("Mức chủ muốn luôn giữ", 150, "150 triệu")],
+   ket="Thiếu 46 triệu so với mức muốn giữ, dù trên sổ mỗi tháng vẫn lãi khoảng 67 triệu.", vd="Công ty tổ chức sự kiện 18 người",
+   boi="Chủ một công ty tổ chức sự kiện 18 người, trên sổ mỗi tháng lãi khoảng 67 triệu. Đưa thu chi 13 tuần tới cho AI, AI chỉ ra tuần giữa tháng 1, khi lương tháng 1 và thưởng tháng lương thứ 13 rơi vào hai tuần liền nhau."),
  "khach-kho-tinh": dict(kieu="bang", tieu="Điểm luyện của bốn nhân viên với bốn kiểu khách khó",
    cot=["So sánh giá", "Hỏi người khác", "Từng bị làm hỏng", "Im lặng"],
    hang=[("An", [4, 6, 8, 3]), ("Bình", [5, 5, 7, 4]), ("Chi", [7, 6, 8, 6]), ("Dũng", [3, 4, 6, 2])],
@@ -76,10 +81,10 @@ def hinh(ma):
 # Chủ đề của từng công cụ, dùng chung tên chủ đề với blog để cả website chỉ có một cách chia.
 CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập", "so-khach-du-luong-co-lai": "Bán hàng và phòng kinh doanh",
           "quy-trinh-tu-cach-lam": "Hệ thống tăng trưởng", "khach-kho-tinh": "Bán hàng và phòng kinh doanh",
-          "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập"}
+          "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập", "du-bao-dong-tien-13-tuan": "Hệ thống tăng trưởng"}
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md

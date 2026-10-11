@@ -2380,7 +2380,7 @@ print("XONG: %d trang" % (len(URLS) + 1))
 _GOC = os.path.dirname(os.path.abspath(__file__))
 for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-luong-co-lai"),
                    ("quytrinh", "quy-trinh-tu-cach-lam"), ("khachkho", "khach-kho-tinh"),
-                   ("quyetdinh", "phan-bien-quyet-dinh")]:
+                   ("quyetdinh", "phan-bien-quyet-dinh"), ("dongtien", "du-bao-dong-tien-13-tuan")]:
     os.makedirs(os.path.join(_GOC, _ngan), exist_ok=True)
     open(os.path.join(_GOC, _ngan, "index.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">
