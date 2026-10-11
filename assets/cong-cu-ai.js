@@ -64,11 +64,16 @@
   function daGhi(n) { n.da = n.da || []; if (n.da.indexOf(MA) < 0) n.da.push(MA); ghi('ngf-lead', n); }
 
   /* Phiếu điền số và bộ câu lệnh. */
-  function ghep(gt) {
-    var phan = DL.mau2.split(/\[[^\]]+\]/), ra = phan[0];
-    for (var i = 1; i < phan.length; i++) ra += ((gt[i] || '').trim() || DL.trong[i - 1]) + phan[i];
+  function ghep(gt, html) {
+    var phan = DL.mau2.split(/\[[^\]]+\]/), ra = esc(phan[0], html);
+    for (var i = 1; i < phan.length; i++) {
+      var v = (gt[i] || '').trim();
+      ra += (v ? (html ? '<mark class="cc-da">' + esc(v, 1) + '</mark>' : v)
+               : (html ? '<span class="cc-chua">' + esc(DL.trong[i - 1], 1) + '</span>' : DL.trong[i - 1])) + esc(phan[i], html);
+    }
     return ra;
   }
+  function esc(t, html) { return html ? t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') : t; }
   function chep(chu, nut) {
     function xong() { var c = nut.textContent; nut.textContent = 'Đã chép'; setTimeout(function () { nut.textContent = c; }, 1600); }
     if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(chu).then(xong, du); } else du();
@@ -84,7 +89,7 @@
     kin.appendChild(d.getElementById('cc-mau-kin').content.cloneNode(true));
     var KEY = 'ngf-phieu-' + MA, gt = doc(KEY) || {};
     var l2 = kin.querySelector('.cc-lenh[data-so="2"] .cc-chu');
-    function capNhat() { l2.textContent = ghep(gt); }
+    function capNhat() { l2.innerHTML = ghep(gt, true); }
     [].forEach.call(kin.querySelectorAll('[data-o]'), function (o) {
       o.value = gt[o.dataset.o] || '';
       o.addEventListener('input', function () { gt[o.dataset.o] = o.value; ghi(KEY, gt); capNhat(); });
@@ -106,7 +111,7 @@
   // Câu lệnh dài thì thu gọn, bấm "Xem đầy đủ" để mở. Nút Chép luôn chép đủ.
   function ganNut(goc) {
     [].forEach.call(goc.querySelectorAll('.cc-chu'), function (c) {
-      if (c.textContent.length < 600) return;
+      if (c.textContent.length < 600 || c.closest('[data-so="2"]')) return;
       c.classList.add('gon');
       var b = d.createElement('button'); b.type = 'button'; b.className = 'cc-mo-het'; b.textContent = 'Xem đầy đủ';
       b.addEventListener('click', function () { var g = c.classList.toggle('gon'); b.textContent = g ? 'Xem đầy đủ' : 'Thu gọn'; });

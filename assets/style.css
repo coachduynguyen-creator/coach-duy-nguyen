@@ -2468,3 +2468,15 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-lam .cc-chep{background:#FFFDF9;color:#241B14;border:1px solid #CDBDA3}
 .cc-lam .cc-hoi-lai,.cc-lam [class*="hoi-lai"]{color:#9A6510}
 .cc-lam .cc-them{margin-top:28px}
+/* Ô điền số nằm trong khung câu lệnh 2 (11/10/2026) */
+.cc-dien{padding:16px 16px 4px;border-bottom:1px solid var(--line)}
+.cc-dien-dan{margin:0 0 4px;font-size:15.5px;line-height:1.6;font-weight:600;text-align:left!important}
+.cc-dien-xem{margin:18px 0 0;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.cc-dien .cc-phieu{margin:0}
+mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font-weight:600}
+.cc-chua{color:var(--ink-4);font-style:italic}
+.cc-chep-duoi{padding:0 16px 16px}
+.cc-chep-duoi .nut{width:100%;justify-content:center}
+@media(max-width:600px){.cc-dien .cc-phieu{grid-template-columns:1fr}}
+.cc-lam .cc-dien{border-bottom-color:#E3D6C1}
+.cc-lam .cc-chep-duoi .cc-chep{background:#F2B14A;border-color:#E0A13C;color:#17120F;font-weight:700}

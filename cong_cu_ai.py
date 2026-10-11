@@ -291,6 +291,11 @@ def than_trang(cc):
                  '<button class="nut nut-vien cc-chep" type="button">Chép</button></div>%s<div class="cc-chu">%s</div>%s</div>'
                  % (l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"]),
                     _kq(cc["kq"].get(l["so"]))))
+        if l["so"] == 2:   # các ô điền số nằm ngay trong khung câu lệnh 2, gõ tới đâu câu lệnh điền tới đó
+            lenh = lenh.replace('<div class="cc-chu">',
+                '<div class="cc-dien"><p class="cc-dien-dan">Gõ thông tin của bạn vào từng ô dưới đây. Câu lệnh bên dưới tự điền theo, chỗ đã điền hiện màu vàng. Xong thì bấm Chép.</p>'
+                '<div class="cc-phieu">%s</div><p class="cc-dien-xem">Câu lệnh của bạn</p></div><div class="cc-chu">' % o, 1)
+            lenh = lenh[:-len("</div>")] + '<div class="cc-chep-duoi"><button class="nut nut-v cc-chep" type="button">Chép câu lệnh 2</button></div></div>'
         if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
             lenh_mo, lenh = lenh, ""
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"]), ensure_ascii=False).replace("</", "<\\/")
@@ -356,9 +361,6 @@ def than_trang(cc):
     </div>
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
-      <h2 class="cc-h-lenh">Phiếu điền số</h2>
-      <p>%(phieu_dan)s</p>
-      <div class="cc-phieu">%(o)s</div>
       %(lenh)s
       <form class="hop cc-them" id="cc-them" novalidate>
         <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
