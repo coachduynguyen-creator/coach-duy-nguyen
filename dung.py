@@ -1754,8 +1754,10 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
     <div>
       <p class="mono">Công cụ và tài liệu</p>
-      <h1>Những việc người chủ thường phải nghĩ một mình</h1>
-      <p class="dan">Kế hoạch năm sau, số khách cần có mỗi tháng, cách làm đang nằm trong đầu bạn, điều nhân viên nói với khách khi bạn vắng mặt. Đây là những việc người chủ thường phải tự nghĩ một mình, vì chỉ bạn nắm đủ số và hiếm khi có ai hỏi khó bạn. Mỗi công cụ ở đây giúp bạn làm một việc như vậy với chính số liệu doanh nghiệp mình, phần lớn xong trong khoảng 30 phút. Quyết định cuối cùng vẫn là của bạn.</p>
+      <h1>Công cụ và tài liệu Duy soạn cho founder và chủ doanh nghiệp</h1>
+      <p class="dan">Duy gom ở đây những công cụ và tài liệu Duy đã thiết kế cho các founder và chủ doanh nghiệp. Công cụ và tài liệu nào cũng bắt đầu từ một việc người chủ thường phải tự nghĩ một mình: kế hoạch năm sau, số khách cần có mỗi tháng, dòng tiền từng tuần, cách giao việc và đánh giá đội ngũ.</p>
+      <p class="dan">Duy làm khu vực này vì những việc đó thường chỉ người chủ nắm đủ số để làm, và hiếm khi có ai ngồi cùng hỏi khó. Bạn cứ dùng hết những gì có ở đây: chọn đúng việc mình đang vướng, làm theo từng bước với chính số liệu doanh nghiệp mình, rồi quay lại bất cứ khi nào cần. Quyết định cuối cùng vẫn là của bạn.</p>
+      <div class="cc-nhay"><a class="nut nut-v" href="#thu-vien">Xem công cụ <span class="mt" aria-hidden="true">&darr;</span></a><a class="nut nut-vien" href="#e-book">Xem e-book <span class="mt" aria-hidden="true">&darr;</span></a></div>
     </div>
     <figure class="hh hh--so"><div class="hh-so-luoi">
       <div><b>%d</b><span>công cụ dùng được ngay</span></div>
@@ -2024,7 +2026,7 @@ print("  cau-chuyen-hoc-vien.html")
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
-      "Công cụ và e-book của Coach Duy Nguyễn cho những việc người chủ doanh nghiệp thường phải tự nghĩ một mình: kế hoạch, số khách, quy trình và đội ngũ.",
+      "Công cụ và tài liệu Coach Duy Nguyễn soạn cho founder và chủ doanh nghiệp: kế hoạch, số khách, dòng tiền, giao việc và đội ngũ, dùng với chính số liệu doanh nghiệp mình.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
 

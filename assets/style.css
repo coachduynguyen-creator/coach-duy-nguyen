@@ -2586,3 +2586,5 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 /* Tiêu đề thư viện công cụ cùng kiểu phần E-book; bộ lọc căn giữa theo tiêu đề trên màn hình rộng */
 @media(min-width:601px){.tl-loc{justify-content:center}}
 #tl-loc{margin:0 0 18px}
+.cc-nhay{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cc-dau .dan+.dan{margin-top:12px}
