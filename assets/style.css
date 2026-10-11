@@ -2560,3 +2560,18 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .tv-than{padding:18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .tv-co-bia .tv-duoi{border-top:1px dashed var(--line-2);padding-top:12px;margin-top:auto}
 #eb-loc{margin:0 0 18px}
+/* Tên công cụ và tên e-book là phần nổi nhất trên bìa; số câu lệnh, thời gian thành dòng nhỏ (11/10/2026) */
+.tv-bia{min-height:150px}
+.tv-bia h3,.eb-bia h3{margin:auto 0 0;font-family:var(--f-tit);font-size:20px;font-weight:800;line-height:1.25;color:#FBF3E4;text-wrap:balance}
+.eb-bia h3{margin-top:auto}
+.tv-bia h3 a{color:inherit;text-decoration:none}
+.tv-bia h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.tv-co-bia{position:relative}
+.tv-bia .tv-bia-dau,.tv-bia .eb-bia-cd{opacity:.8}
+.tv-bia-loai{font-size:10.5px}
+.tv-co-bia .tv-duoi{flex-wrap:nowrap;align-items:center}
+.tv-co-bia .tv-tt{flex:1 1 auto;font-size:12.5px;color:var(--ink-3)}
+.tv-co-bia .lk-v{flex:none}
+.tv-co-bia .tv-than p{font-size:15px;color:var(--ink-2)}
+@media(max-width:600px){.tv-bia h3,.eb-bia h3{font-size:19px}}
+.eb-than .tv-tt{font-family:var(--f-than);font-size:12.5px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink-3);margin:0}

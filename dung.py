@@ -204,16 +204,18 @@ def dung_ngay(t):
 _MAU_CD = {"AI cho người chủ": 1, "Bán hàng và phòng kinh doanh": 2, "Hệ thống tăng trưởng": 3, "Kiến tạo cộng đồng": 4,
            "Thương hiệu của người sáng lập": 5, "Điểm nghẽn của người sáng lập": 6}
 def the_tv(t, p=""):
-    """Thẻ một công cụ dùng được ngay: bìa màu theo chủ đề (biểu tượng loại, chủ đề, số câu và thời gian),
-    rồi tên, câu giới thiệu, nút mở. Cả thẻ bấm được, nhờ liên kết phủ trên tên. Làm lại ngày 11/10/2026."""
+    """Thẻ một công cụ: bìa màu theo chủ đề mang tên công cụ (chữ to, phần nổi nhất),
+    dưới bìa là câu giới thiệu, rồi dòng nhỏ số câu và thời gian cạnh nút mở.
+    Coach Duy chốt 11/10/2026: tên phải nổi hơn số câu lệnh. Cả thẻ bấm được nhờ liên kết phủ trên tên."""
     cd = t.get("chu_de", "")
     return ('<article class="tv tv-co-bia" data-chude="%s">'
-            '<div class="tv-bia eb-bia--%d" aria-hidden="true"><div class="tv-bia-dau"><span class="tv-bia-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">%s</svg></span>'
-            '<span class="tv-bia-loai">%s</span></div><span class="eb-bia-cd">%s</span><b>%s</b></div>'
-            '<div class="tv-than"><h3><a href="%s%s">%s</a></h3><p>%s</p>'
-            '<div class="tv-duoi"><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div></div>'
+            '<div class="tv-bia eb-bia--%d"><div class="tv-bia-dau" aria-hidden="true"><span class="tv-bia-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">%s</svg></span>'
+            '<span class="tv-bia-loai">%s</span></div><span class="eb-bia-cd" aria-hidden="true">%s</span>'
+            '<h3><a href="%s%s">%s</a></h3></div>'
+            '<div class="tv-than"><p>%s</p>'
+            '<div class="tv-duoi"><span class="tv-tt">%s</span><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div></div>'
             '</article>') % (html.escape(cd), _MAU_CD.get(cd, 1), _IC[t["loai"]], _LOAI[t["loai"]], html.escape(cd),
-                             " · ".join(t.get("meta", [])), p, t["href"], t["ten"], t["mo"], t["nut"])
+                             p, t["href"], t["ten"], t["mo"], " · ".join(t.get("meta", [])), t["nut"])
 
 def dong_sap(t, p=""):
     """Một dòng cho mục đang làm: không có nút mở giả."""
@@ -1737,11 +1739,11 @@ CHU_DE_EB = {"E1": "Thương hiệu của người sáng lập", "E2": "Hệ th�
              "F7": "Bán hàng và phòng kinh doanh", "F8": "Điểm nghẽn của người sáng lập"}
 _ic_eb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/></svg>'
 _the_eb = "".join(
- '<article class="eb-the" data-chude="%s"><div class="eb-bia eb-bia--%d" aria-hidden="true">'
- '<img src="img/logo-dn.webp" alt="" loading="lazy"><span class="eb-bia-cd">%s</span><b>%s</b><span class="eb-bia-tg">Coach Duy Nguyễn</span></div>'
- '<div class="eb-than"><h3>%s</h3><p>%s</p><p class="tv-tt">%s</p></div></article>'
+ '<article class="eb-the" data-chude="%s"><div class="eb-bia eb-bia--%d">'
+ '<img src="img/logo-dn.webp" alt="" loading="lazy"><span class="eb-bia-cd">%s</span><h3>%s</h3><span class="eb-bia-tg">Coach Duy Nguyễn</span></div>'
+ '<div class="eb-than"><p>%s</p><p class="tv-tt">%s</p></div></article>'
  % (html.escape(CHU_DE_EB[m]), _MAU_CD[CHU_DE_EB[m]], html.escape(CHU_DE_EB[m]), html.escape(t),
-    html.escape(t), html.escape(g).replace("E-book", "E&#8209;book"), "Tải về" if m in EBOOK_CO_TEP else "Đang soạn")
+    html.escape(g).replace("E-book", "E&#8209;book"), "Tải về" if m in EBOOK_CO_TEP else "Đang soạn")
  for m, t, g in EBOOK)
 SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
