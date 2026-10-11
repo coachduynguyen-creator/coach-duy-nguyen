@@ -30,7 +30,20 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FONT = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800'
         '&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500;600&display=swap">')
 # Tên tệp PDF trên website, theo mã e-book. Thêm dòng khi có cuốn mới.
-TEP_PDF = {"E1": "sau-cau-hoi-dinh-vi-thuong-hieu-nguoi-sang-lap.pdf"}
+TEP_PDF = {"E1": "sau-cau-hoi-dinh-vi-thuong-hieu-nguoi-sang-lap.pdf",
+           "E2": "dat-muc-tieu-giao-viec-van-hanh-doanh-nghiep.pdf",
+           "E3": "viet-noi-dung-mang-giong-rieng-khi-dung-ai.pdf",
+           "E4": "sang-loc-khach-hang-truoc-buoi-tu-van.pdf",
+           "E5": "ke-chuyen-trong-noi-dung-ban-hang.pdf",
+           "E6": "dung-ai-de-hieu-khach-hang-truoc-khi-viet.pdf",
+           "F1": "quan-ly-dong-tien-cho-chu-doanh-nghiep.pdf",
+           "F2": "dao-tao-nhan-vien-lam-duoc-viec-nhu-nguoi-chu.pdf",
+           "F3": "lam-cho-khach-hang-den-deu-moi-thang.pdf",
+           "F4": "bo-cau-lenh-chatgpt-cho-chu-doanh-nghiep.pdf",
+           "F5": "giao-viec-ma-van-nam-duoc-tinh-hinh.pdf",
+           "F6": "ke-hoach-kinh-doanh-mot-trang.pdf",
+           "F7": "vi-sao-khach-nghe-tu-van-xong-van-chua-mua.pdf",
+           "F8": "tim-nguyen-nhan-khi-doanh-nghiep-chung-lai.pdf"}
 MUC_LUC_BO = {"Mở đầu"}
 e = html.escape
 
@@ -75,8 +88,7 @@ def than_sach(chu):
             if t == "Mở đầu":
                 ra.append('<div class="mo-dau-dau"></div>'); continue
             muc.append(t)
-            moi = ' phan-moi' if m and m.group(1) in ("Phần 4",) else ""
-            ra.append('<h2 class="phan%s"><span class="so">%s</span>%s</h2>' % (moi, e(m.group(1)) if m else "", dong(m.group(2) if m else t)))
+            ra.append('<h2 class="phan"><span class="so">%s</span>%s</h2>' % (e(m.group(1)) if m else "", dong(m.group(2) if m else t)))
         elif b.startswith("#### "):
             m = re.match(r"Câu (\d+)\. (.+)", b[5:])
             the, nhan, ba = [], "", {}

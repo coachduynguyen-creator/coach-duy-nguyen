@@ -1736,7 +1736,8 @@ _so_lenh = sum(len(c["lenh"]) for c in cong_cu_ai.DS) + 12   # 12 câu của B�
 TEN_MD = os.path.expanduser("~/Codex_Projects/Next Gen Founder/deliverables/NGF - Tên công cụ và e-book theo nỗi đau người chủ ngày 11-10-2026.md")
 _ten = open(TEN_MD, encoding="utf-8").read()
 EBOOK = [(m, t, g) for m, t, g in re.findall(r"^### ([EF]\d+)\. (.+?)\n\n\*\*Câu giới thiệu\.\*\* (.+?)\n", _ten, re.M)]
-EBOOK_CO_TEP = {"E1": "tai-lieu/sau-cau-hoi-dinh-vi-thuong-hieu-nguoi-sang-lap.pdf"}   # mã: đường dẫn tải; PDF dựng bằng ebook/dung_ebook.py
+from ebook.dung_ebook import TEP_PDF   # tên PDF của mọi e-book đã duyệt (Coach Duy chốt phiếu ebook 11/10/2026)
+EBOOK_CO_TEP = {m: "tai-lieu/" + t for m, t in TEP_PDF.items()}   # mã: đường dẫn tải; PDF dựng bằng ebook/dung_ebook.py
 CHU_DE_EB = {"E1": "Thương hiệu của người sáng lập", "E2": "Hệ thống tăng trưởng", "E3": "Thương hiệu của người sáng lập",
              "E4": "Bán hàng và phòng kinh doanh", "E5": "Thương hiệu của người sáng lập", "E6": "AI cho người chủ",
              "F1": "Hệ thống tăng trưởng", "F2": "Hệ thống tăng trưởng", "F3": "Bán hàng và phòng kinh doanh",

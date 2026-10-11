@@ -14,9 +14,9 @@ BO_SUNG = {
        "Càng được tin thì khách càng muốn gặp đích thân bạn, nên càng khó giao việc. Thương hiệu cá nhân giải bài toán không ai biết mình rồi tạo ra bài toán mọi việc dồn về mình. Vì vậy phải chuyển tiêu chuẩn của bạn thành tiêu chuẩn của đội ngũ.")]),
 
 "ba-diem-cham-va-thu-tu-khong-doi-duoc.html": dict(
- tra_loi="Ba Điểm Chạm không phải kịch bản bán hàng mà là ba trạng thái nhận thức khách phải đi qua để tự quyết: chạm động lực, chạm nhận thức, rồi mới chạm giải pháp. Đủ cả ba thì quyết định đến tự nhiên. Đảo thứ tự thì cả chuỗi hỏng, dù từng phần đều đúng.",
+ tra_loi="Ba Điểm Chạm không phải kịch bản bán hàng mà là ba trạng thái nhận thức khách phải đi qua để tự quyết: chạm động lực, chạm điểm nghẽn, rồi mới chạm con đường. Đủ cả ba thì quyết định đến tự nhiên. Đảo thứ tự thì cả chuỗi hỏng, dù từng phần đều đúng.",
  faq=[("Ba Điểm Chạm là gì?",
-       "Đó là ba trạng thái nhận thức một người phải đi qua trước khi tự ra quyết định. Chạm động lực giúp khách nhìn rõ điều họ thật sự muốn. Chạm nhận thức giúp họ thấy khoảng cách giữa chỗ đang đứng và chỗ muốn tới. Chạm giải pháp mới là lúc bàn tới cách làm."),
+       "Đó là ba trạng thái nhận thức một người phải đi qua trước khi tự ra quyết định. Chạm động lực giúp khách nhìn rõ điều họ thật sự muốn. Chạm điểm nghẽn giúp họ gọi tên điều đang giữ họ đứng yên. Chạm con đường mới là lúc bàn tới hướng đi hợp với họ."),
       ("Vì sao không được đảo thứ tự Ba Điểm Chạm?",
        "Vì giải pháp chỉ có nghĩa khi khách đã thấy vấn đề, và vấn đề chỉ đáng giải khi khách đã rõ mình muốn gì. Nói giải pháp trước thì khách nghe như một lời chào hàng, và phản xạ của họ là so sánh giá."),
       ("Vì sao người tư vấn hay nhảy thẳng vào giải pháp?",
