@@ -332,14 +332,14 @@ def than_trang(cc):
   </div>
 </section>
 
-<section class="phan bd cc cc-toi" id="cach-dung">
+<section class="phan bd phan-sang cc cc-lam" id="cach-dung">
   <div class="cc-doc cc-rong">
     <h2>Cách dùng</h2>
     %(buoc)s
   </div>
 </section>
 
-<section class="phan bd cc cc-toi" id="mo-cong-cu">
+<section class="phan bd phan-sang cc cc-lam" id="mo-cong-cu">
   <div class="cc-doc">
     <h2>Bộ câu lệnh</h2>
     %(lenh_mo)s
@@ -356,16 +356,16 @@ def than_trang(cc):
     </div>
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
+      <h2 class="cc-h-lenh">Phiếu điền số</h2>
+      <p>%(phieu_dan)s</p>
+      <div class="cc-phieu">%(o)s</div>
+      %(lenh)s
       <form class="hop cc-them" id="cc-them" novalidate>
         <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
         <div class="cc-hai">%(doanh_thu)s
         %(doi_ngu)s</div>
         <button class="nut nut-vien" type="submit">Gửi</button>
       </form>
-      <h2 class="cc-h-lenh">Phiếu điền số</h2>
-      <p>%(phieu_dan)s</p>
-      <div class="cc-phieu">%(o)s</div>
-      %(lenh)s
     </template>
   </div>
 </section>

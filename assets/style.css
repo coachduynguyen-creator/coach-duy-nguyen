@@ -2450,3 +2450,21 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 #gioi-thieu .cc-doc{padding-top:0}
 @media(min-width:900px){#gioi-thieu .cc-vi{grid-template-columns:repeat(3,1fr)}}
 .cc-lo li b,.cc-lo li span{text-align:left!important;hyphens:none}
+/* Phần làm việc trên nền sáng: cách dùng, phiếu điền số, bộ câu lệnh (11/10/2026) */
+.cc-lam .cc-lenh{background:#FFFDF9;border:1px solid #D9CBB4;box-shadow:0 1px 2px rgba(36,27,20,.06)}
+.cc-lam .cc-lenh-dau{background:#F7F0E4;border-bottom:1px solid #E3D6C1}
+.cc-lam .cc-lenh-dau .mono{color:#9A6510}
+.cc-lam .cc-chu{color:#2E241C;font-size:15.5px;background:#FFFDF9}
+.cc-lam .cc-kq{background:#FBF1DE;border:1px solid #EBD3A6}
+.cc-lam .cc-kq p{color:#4E4034!important}
+.cc-lam .cc-kq b,.cc-lam .cc-kq .cc-so{color:#241B14}
+.cc-lam .cc-o input,.cc-lam .cc-o select,.cc-lam .cc-o textarea{background:#FFFDF9;border:1px solid #CDBDA3;color:#241B14}
+.cc-lam .cc-o :is(input,select,textarea):focus{border-color:#C98A1E;box-shadow:0 0 0 3px rgba(242,177,74,.25)}
+.cc-lam .cc-o span{color:#241B14}
+.cc-lam .hop{background-image:none;background-color:#FFFDF9;border:1px solid #D9CBB4;box-shadow:0 1px 2px rgba(36,27,20,.06)}
+.cc-lam .cc-mo-het{color:#9A6510}
+.cc-lam .nut-vien{background:#FFFDF9;color:#241B14;border-color:#CDBDA3}
+.cc-lam .nut-vien:hover{border-color:#C98A1E;color:#9A6510}
+.cc-lam .cc-chep{background:#FFFDF9;color:#241B14;border:1px solid #CDBDA3}
+.cc-lam .cc-hoi-lai,.cc-lam [class*="hoi-lai"]{color:#9A6510}
+.cc-lam .cc-them{margin-top:28px}
