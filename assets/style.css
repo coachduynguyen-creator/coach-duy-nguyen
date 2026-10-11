@@ -2502,3 +2502,9 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .cc-mo-gpt-ghi{margin:10px 0 0;font-size:14px;line-height:1.55;color:var(--ink-3);text-align:left!important}
 .cc-lenh-nut{display:flex;align-items:center;gap:6px;flex:none}
 @media(max-width:600px){.cc-lenh-nut{width:100%;justify-content:space-between}}
+/* Lần chấm mẫu trên trang Bảng tự kiểm tra (11/10/2026) */
+.tk-mau{margin:0 0 22px;padding:18px 20px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel)}
+.tk-mau .mono{margin:0 0 6px;color:var(--ink-3)}
+.tk-mau .diem{margin:0 0 10px;font-weight:700;font-variant-numeric:tabular-nums}
+.tk-mau h3{margin:0 0 6px;font-size:18px}
+.tk-mau p{text-align:left!important}

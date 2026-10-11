@@ -1797,21 +1797,81 @@ _tk_hinh = ('<figure class="hh hh--gio"><figcaption><span class="hh-vd">Phương
   '<p class="hh-ket">Thiếu chạm trước thì chạm sau không đứng được</p></figure>') % \
   '<span class="hh-mui" aria-hidden="true">&rarr;</span>'.join(
    '<div><b>%02d</b><span>%s</span></div>' % (n, ten.split(" · ")[1]) for n, (ten, _, _) in sorted(TK_CAU.items()))
+# Chữ của trang đọc từ tệp nội dung Coach Duy duyệt ngày 11/10/2026 (phiếu ban-chot/phieu-ten),
+# theo Tiêu chuẩn trang công cụ. Sửa chữ thì sửa tệp đó rồi chạy lại dung.py.
+TK_MD = os.path.expanduser("~/Codex_Projects/Next Gen Founder/deliverables/NGF - Nội dung trang Bảng tự kiểm tra sau buổi tư vấn.md")
+def _tk_muc(ten):
+    t = open(TK_MD, encoding="utf-8").read()
+    m = re.search(r"### %s\n\n(.*?)(?=\n### |\n## )" % re.escape(ten), t, re.S)
+    k = [x.strip() for x in re.split(r"\n\s*\n", m.group(1)) if x.strip()]
+    return [x for x in k if not re.match(r"(Mới, cần duyệt|Giữ nguyên)", x)]
+def _tk_dong(x):
+    return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", html.escape(x, quote=False))
+_lo = dict(re.findall(r"^- ([^:]+): (.+)$", _tk_muc("Thẻ ba bước ở đầu trang")[0], re.M))
+def _lo_buoc(k):
+    chinh, _, phu = _lo[k].partition(" Dòng phụ: ")
+    return "<li><b>%s</b><span>%s</span></li>" % (_tk_dong(chinh.rstrip(".")), _tk_dong(phu))
+_tk_vi = re.findall(r"^- \*\*(.+?)\.\*\* (.+)$", _tk_muc("Công cụ này dành cho bạn")[0], re.M)
+_tk_vi_d = dict(_tk_vi)
+_tk_dan = _tk_muc("Lời dẫn của Duy")
+_tk_vd = dict(re.findall(r"^- ([^:]+): (.+)$", _tk_muc("Ví dụ một lần chấm")[0], re.M))
+_tk_kq_ten, _, _tk_kq_than = _tk_vd["Kết quả"].partition(". ")
+_tk_cd = _tk_muc("Cách dùng, ba bước")
+_tk_moi = _tk_muc("Lời mời cuối trang")
+_tk_nut = _tk_moi[-1].replace("Nút: ", "")
+_IC3 = ['<path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/>', '<path d="M5 12l4 4 10-10"/>', '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>']
 CONG_CU = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
     <div>
       <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
       <h1>Bảng tự kiểm tra sau buổi tư vấn</h1>
-      <p class="dan">Chọn một buổi tư vấn gần nhất bạn còn nhớ rõ. Đánh dấu những câu đúng với buổi đó, công cụ sẽ chỉ ra Điểm Chạm nào đang thiếu.</p>
-      <ul class="cc-chip"><li><b>12</b> câu</li><li>Khoảng <b>3</b> phút</li><li>Kết quả chỉ mình bạn thấy</li></ul>
+      <p class="dan">%(duoi)s</p>
     </div>
-    %s
+    <aside class="cc-lo" aria-label="Các bước dùng công cụ">
+      <p class="cc-lo-dau">%(lo_tieu)s</p>
+      <ol>%(b1)s%(b2)s<li class="cc-lo-xong"><b>Bạn nhận được</b><span>%(nhan)s</span></li></ol>
+      <a class="nut nut-v" href="#mo-cong-cu">%(lo_nut)s <span class="mt" aria-hidden="true">&rarr;</span></a>
+    </aside>
   </div>
 </header>
-<section class="phan bd phan-sang cc">
+
+<section class="phan bd cc cc-toi" id="gioi-thieu">
+  <div class="cc-doc cc-rong">
+    <h2>Công cụ này giúp bạn việc gì</h2>
+    <div class="cc-vi">%(vi)s</div>
+  </div>
+</section>
+
+<section class="phan bd phan-sang cc" id="vi-sao">
+  <div class="cc-doc cc-dan">
+    <h2>Vì sao có bảng tự kiểm tra này</h2>
+    %(dan)s
+  </div>
+</section>
+
+<section class="phan bd phan-sang cc" id="bai-mau">
   <div class="cc-doc">
+    <h2>Kết quả trông như thế nào</h2>
+    <p class="cc-mau-dan">%(mau_dan)s</p>
+    <p class="hh-boi">%(boi)s</p>
+    <div class="tk-mau"><p class="mono">Ví dụ giả định</p><p class="diem">%(diem)s</p><h3>%(kq_ten)s</h3><p>%(kq_than)s</p></div>
+    %(hinh)s
+  </div>
+</section>
+
+<section class="phan bd phan-sang cc cc-lam" id="cach-dung">
+  <div class="cc-doc cc-rong">
+    <h2>Cách dùng</h2>
+    <div class="cc-buoc">%(buoc)s</div>
+    <div class="cc-gio"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p>%(gio)s</p></div>
+  </div>
+</section>
+
+<section class="phan bd phan-sang cc cc-lam" id="mo-cong-cu">
+  <div class="cc-doc">
+    <h2>Chấm buổi tư vấn của bạn</h2>
     <p class="cc-gia-dinh"><b>Trước khi chấm.</b> Công cụ này chấm nhận thức của khách sau một buổi, không chấm con người, và cũng không chấm bạn. Kết quả chỉ có nghĩa khi bạn đánh dấu thật, kể cả khi nó làm mình khó chịu.</p>
-    %s
+    %(nhom)s
     <div style="margin-top:26px">
       <button class="nut nut-v" id="tk-xem" type="button">Xem kết quả <span class="mt" aria-hidden="true">&rarr;</span></button>
     </div>
@@ -1821,7 +1881,25 @@ CONG_CU = """<header class="dau-trang hoa-van cc-dau">
     <a class="lk-v" href="../phuong-phap.html">Xem các phương pháp khác</a></p>
   </div>
 </section>
-""" % (_tk_hinh, _tk_nhom)
+
+<section class="phan tran cc-moi" id="cong-dong">
+  <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
+  <div class="bd"><div class="cc-doc">
+    %(moi)s
+    <a class="nut nut-v" href="../tham-gia/?cong-cu=tu-kiem-ba-diem-cham">%(nut)s <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div></div>
+</section>
+""" % dict(
+    duoi=_tk_dong(_tk_muc("Câu dưới tiêu đề")[0]), lo_tieu=_tk_dong(_lo["Tiêu đề thẻ"]), lo_nut=_tk_dong(_lo["Nút"]),
+    b1=_lo_buoc("Bước 1"), b2=_lo_buoc("Bước 2"), nhan=_tk_dong(_lo["Bạn nhận được"]),
+    vi="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_tk_dong(t), _tk_dong(v)) for t, v in _tk_vi if t != "Bạn nhận được gì"),
+    dan="".join('<p%s>%s</p>' % (' class="cc-mo-dau"' if n == 0 else "", re.sub(r'"([^"]+)"', r'<span class="cc-trich">"\1"</span>', _tk_dong(x))) for n, x in enumerate(_tk_dan)),
+    mau_dan=_tk_dong(_tk_muc("Câu mở phần ví dụ")[0]), boi=_tk_dong(_tk_vd["Bối cảnh"]), diem=_tk_dong(_tk_vd["Điểm chấm"]),
+    kq_ten=_tk_dong(_tk_kq_ten), kq_than=_tk_dong(_tk_kq_than), hinh=_tk_hinh,
+    buoc="".join('<div class="cc-b"><div class="cc-b-dau"><span class="cc-b-so">%02d</span><span class="cc-b-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">%s</svg></span></div><p>%s</p></div>'
+                 % (n + 1, _IC3[n], _tk_dong(re.sub(r"^\d+\.\s+", "", x))) for n, x in enumerate(_tk_cd[0].split("\n"))),
+    gio=_tk_dong(_tk_cd[1]), nhom=_tk_nhom,
+    moi="".join("<p>%s</p>" % _tk_dong(x) for x in _tk_moi[:-1]), nut=_tk_dong(_tk_nut))
 trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm tra sau buổi tư vấn · Coach Duy Nguyễn",
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
       CONG_CU, "cong-cu/")
