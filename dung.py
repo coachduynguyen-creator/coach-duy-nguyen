@@ -1708,20 +1708,17 @@ def bia(nhan, ten, tieu_duoi, mo, trang_thai, anh=""):
   <div class="duoi"><b>%s</b><p>%s</p><span class="tt im">%s</span></div>
 </div>""" % (" co-anh" if co_anh else "", nen, nhan, ten, tieu_duoi, mo, trang_thai)
 
-_dem = lambda l: sum(1 for t in TAI_LIEU if l == "all" or t["loai"] == l)
+_dem = lambda l: sum(1 for t in TAI_LIEU if dung_ngay(t) and (l == "all" or t["loai"] == l))   # chỉ đếm công cụ dùng được ngay
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
   <div class="tl-loc hien" id="tl-loc" style="margin-top:0">%s</div>
   <p class="tv-nhom hien"><span>Dùng được ngay</span></p>
   <div class="tv-luoi hien">%s</div>
-  <p class="tv-nhom hien"><span>Sắp có</span></p>
-  <ul class="tv-sap hien">%s</ul>
 </section>
 """ % ("".join('<button class="tl-nut%s" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
                % (" chon" if l == "all" else "", l, ten, _dem(l))
-               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm tra"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")]),
-       "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)),
-       "".join(dong_sap(t) for t in TAI_LIEU if not dung_ngay(t)))
+               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm tra"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")] if _dem(l)),
+       "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)))
 
 _so_cc = sum(1 for t in TAI_LIEU if dung_ngay(t))
 _so_lenh = sum(len(c["lenh"]) for c in cong_cu_ai.DS) + 12   # 12 câu của Bảng tự kiểm tra (TK_CAU khai báo phía dưới)
@@ -1749,7 +1746,7 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
     </div><p class="hh-ket">Các bộ câu lệnh AI chạy được với ChatGPT bản miễn phí</p></figure>
   </div>
 </header>""" % (_so_cc, _so_lenh) + THU_VIEN + """
-<section class="phan bd" id="e-book">
+<section class="phan bd phan-sang" id="e-book">
   <div class="phan-dau hien">
     <p class="mono">E-book</p>
     <h2>E-book cho người chủ doanh nghiệp</h2>
