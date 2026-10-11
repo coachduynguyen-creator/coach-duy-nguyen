@@ -1992,6 +1992,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   --vang:#8F5808;--vang-2:#7A4B07;--vang-3:#684006;
   --vang-mo:rgba(143,88,8,.09);
   --shadow:0 2px 6px rgba(60,42,20,.08),0 24px 46px -26px rgba(60,42,20,.28);
+  --paper:linear-gradient(180deg,#FDF9F0,#F7F0E2);
 }
 .phan-vang{
   background:var(--vang);box-shadow:0 0 0 100vmax var(--vang);
@@ -2480,3 +2481,7 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 @media(max-width:600px){.cc-dien .cc-phieu{grid-template-columns:1fr}}
 .cc-lam .cc-dien{border-bottom-color:#E3D6C1}
 .cc-lam .cc-chep-duoi .cc-chep{background:#F2B14A;border-color:#E0A13C;color:#17120F;font-weight:700}
+.cc-mau-dan{font-size:17px;line-height:1.6;margin:-6px 0 22px;text-align:left!important}
+.cc-dan p{text-align:left!important;hyphens:none}
+#vi-sao{border-bottom:1px solid #DFD2BE}
+.cc-b p{text-align:left!important;hyphens:none}

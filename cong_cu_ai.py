@@ -327,9 +327,18 @@ def than_trang(cc):
   </div>
 </section>
 
+<section class="phan bd phan-sang cc" id="vi-sao">
+  <div class="cc-doc cc-dan">
+    <h2>Vì sao có bộ câu lệnh này</h2>
+    %(dan)s
+  </div>
+  %(video)s
+</section>
+
 <section class="phan bd phan-sang cc" id="bai-mau">
   <div class="cc-doc">
     <h2>AI tìm ra gì ở hai doanh nghiệp mẫu</h2>
+    <p class="cc-mau-dan">Trước khi bạn bỏ công điền số của mình, hãy xem bộ câu lệnh này đã tìm ra gì ở hai doanh nghiệp giả định. Chọn doanh nghiệp gần với ngành của bạn để xem.</p>
     %(hinh)s
     <p class="cc-gia-dinh">%(mien_tru)s</p>
     <div class="cc-tabs" role="tablist">%(tab)s</div>
@@ -370,14 +379,6 @@ def than_trang(cc):
       </form>
     </template>
   </div>
-</section>
-
-<section class="phan bd phan-sang cc" id="vi-sao">
-  <div class="cc-doc cc-dan">
-    <h2>Vì sao có bộ câu lệnh này</h2>
-    %(dan)s
-  </div>
-  %(video)s
 </section>
 
 <section class="phan tran cc-moi" id="cong-dong">
