@@ -2544,3 +2544,18 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 #tl-loc .tl-nut{font-family:var(--f-than);text-transform:none;letter-spacing:0;font-size:14px;font-weight:600}
 @media(max-width:600px){#tl-loc{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}
 #tl-loc::-webkit-scrollbar{display:none}#tl-loc .tl-nut{flex:none}}
+/* Sửa bìa e-book bị cắt viền khi tên dài ba dòng: bìa tự cao theo chữ (11/10/2026) */
+.eb-bia{aspect-ratio:auto;min-height:200px}
+.eb-bia b{font-size:18px}
+/* Bìa trên thẻ công cụ: cùng kiểu với bìa e-book, thấp hơn, biểu tượng theo loại */
+.tv.tv-co-bia{padding:0;gap:0;overflow:hidden}
+.tv-bia{position:relative;min-height:132px;padding:18px;display:flex;flex-direction:column;gap:8px;color:#F7EFE2;background:var(--eb-m)}
+.tv-bia::after{content:"";position:absolute;inset:10px;border:1px solid rgba(247,239,226,.28);border-radius:6px;pointer-events:none}
+.tv-bia-dau{display:flex;align-items:center;gap:10px}
+.tv-bia-ic{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:rgba(247,239,226,.14);color:#F2C77A}
+.tv-bia-ic svg{width:19px;height:19px}
+.tv-bia-loai{font:600 11px var(--f-mono,monospace);letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.tv-bia b{margin-top:auto;font-family:var(--f-tit);font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
+.tv-bia .eb-bia-cd{opacity:.75}
+.tv-than{padding:18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tv-co-bia .tv-duoi{border-top:1px dashed var(--line-2);padding-top:12px;margin-top:auto}

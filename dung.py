@@ -200,15 +200,20 @@ _IC = {
 def dung_ngay(t):
     return t["href"].startswith("cong-cu/")
 
+# Màu bìa theo chủ đề, dùng chung cho thẻ công cụ và bìa e-book.
+_MAU_CD = {"AI cho người chủ": 1, "Bán hàng và phòng kinh doanh": 2, "Hệ thống tăng trưởng": 3, "Kiến tạo cộng đồng": 4,
+           "Thương hiệu của người sáng lập": 5, "Điểm nghẽn của người sáng lập": 6}
 def the_tv(t, p=""):
-    """Thẻ một công cụ dùng được ngay: tên, câu giới thiệu, thời gian và chủ đề, nút mở.
-    Cả thẻ bấm được, nhờ liên kết phủ trên tên. Rút gọn ngày 11/10/2026 vì thẻ cũ nhiều chữ."""
-    gio = [m for m in t.get("meta", []) if m.startswith("Khoảng")]
-    duoi = " · ".join(gio + [t.get("chu_de", "")]).strip(" ·")
-    return ('<article class="tv" data-chude="%s">'
-            '<h3><a href="%s%s">%s</a></h3><p>%s</p>'
-            '<div class="tv-duoi"><span class="tv-tt">%s</span><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div>'
-            '</article>') % (html.escape(t.get("chu_de", "")), p, t["href"], t["ten"], t["mo"], duoi, t["nut"])
+    """Thẻ một công cụ dùng được ngay: bìa màu theo chủ đề (biểu tượng loại, chủ đề, số câu và thời gian),
+    rồi tên, câu giới thiệu, nút mở. Cả thẻ bấm được, nhờ liên kết phủ trên tên. Làm lại ngày 11/10/2026."""
+    cd = t.get("chu_de", "")
+    return ('<article class="tv tv-co-bia" data-chude="%s">'
+            '<div class="tv-bia eb-bia--%d" aria-hidden="true"><div class="tv-bia-dau"><span class="tv-bia-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">%s</svg></span>'
+            '<span class="tv-bia-loai">%s</span></div><span class="eb-bia-cd">%s</span><b>%s</b></div>'
+            '<div class="tv-than"><h3><a href="%s%s">%s</a></h3><p>%s</p>'
+            '<div class="tv-duoi"><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div></div>'
+            '</article>') % (html.escape(cd), _MAU_CD.get(cd, 1), _IC[t["loai"]], _LOAI[t["loai"]], html.escape(cd),
+                             " · ".join(t.get("meta", [])), p, t["href"], t["ten"], t["mo"], t["nut"])
 
 def dong_sap(t, p=""):
     """Một dòng cho mục đang làm: không có nút mở giả."""
@@ -1726,8 +1731,6 @@ CHU_DE_EB = {"E1": "Thương hiệu của người sáng lập", "E2": "Hệ th�
              "F1": "Hệ thống tăng trưởng", "F2": "Hệ thống tăng trưởng", "F3": "Bán hàng và phòng kinh doanh",
              "F4": "AI cho người chủ", "F5": "Điểm nghẽn của người sáng lập", "F6": "Hệ thống tăng trưởng",
              "F7": "Bán hàng và phòng kinh doanh", "F8": "Điểm nghẽn của người sáng lập"}
-_MAU_CD = {"AI cho người chủ": 1, "Bán hàng và phòng kinh doanh": 2, "Hệ thống tăng trưởng": 3, "Kiến tạo cộng đồng": 4,
-           "Thương hiệu của người sáng lập": 5, "Điểm nghẽn của người sáng lập": 6}
 _ic_eb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/></svg>'
 _the_eb = "".join(
  '<article class="eb-the" data-chude="%s"><div class="eb-bia eb-bia--%d" aria-hidden="true">'
