@@ -73,6 +73,11 @@ def hinh(ma):
     return ('<p class="hh-boi">%s</p><figure class="hh hh--%s"><figcaption><span class="hh-vd">Ví dụ · %s</span>%s</figcaption>%s'
             '<p class="hh-ket">%s</p></figure>' % (h["boi"], h["kieu"], h["vd"], h["tieu"], than, h["ket"]))
 
+# Chủ đề của từng công cụ, dùng chung tên chủ đề với blog để cả website chỉ có một cách chia.
+CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập", "so-khach-du-luong-co-lai": "Bán hàng và phòng kinh doanh",
+          "quy-trinh-tu-cach-lam": "Hệ thống tăng trưởng", "khach-kho-tinh": "Bán hàng và phòng kinh doanh",
+          "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập"}
+
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
 VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": ""}
 
@@ -170,6 +175,8 @@ def doc(ma, tep):
     cc["tieu"] = _khoi(p1["Tiêu đề trang"])[0]
     cc["duoi"] = _khoi(p1["Câu dưới tiêu đề"])[0]
     cc["dan"] = _khoi(p1["Lời dẫn của Duy"])
+    cc["gioi_thieu"] = _khoi(p1["Câu giới thiệu trên thẻ"])[-1]
+    cc["chu_de"] = CHU_DE[ma]
     cc["mau_dan"] = _khoi(p1["Câu mở phần ví dụ"])[-1]
     cc["vi_ai"] = re.findall(r"^- \*\*(.+?)\.\*\* (.+)$", p1.get("Công cụ này dành cho bạn", ""), re.M)
     k = _khoi(p1["Cách dùng, ba bước"])

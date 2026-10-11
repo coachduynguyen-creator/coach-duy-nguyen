@@ -322,7 +322,9 @@
 (function () {
   var loc = document.getElementById('tl-loc');
   if (!loc) return;
-  var the = [].slice.call(document.querySelectorAll('.tv[data-loai],.tv-sap-dong[data-loai]'));
+  // Lọc theo chủ đề, chung cho thẻ công cụ và thẻ e-book (11/10/2026).
+  var the = [].slice.call(document.querySelectorAll('.tv[data-chude],.eb-the[data-chude]'));
+  var eb = document.getElementById('e-book');
   loc.addEventListener('click', function (ev) {
     var nut = ev.target.closest('.tl-nut');
     if (!nut) return;
@@ -331,8 +333,9 @@
     });
     var chon = nut.dataset.loc;
     the.forEach(function (t) {
-      t.style.display = (chon === 'all' || t.dataset.loai === chon) ? '' : 'none';
+      t.hidden = !(chon === 'all' || t.dataset.chude === chon);
     });
+    if (eb) eb.hidden = !eb.querySelector('.eb-the:not([hidden])');
   });
 })();
 

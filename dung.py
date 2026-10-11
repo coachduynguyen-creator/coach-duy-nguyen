@@ -163,11 +163,11 @@ def dsk(muc, khong=False):
 # "tạo các công cụ demo để đưa vào cho đỡ trống cũng được". Trạng thái ghi thật
 # trên thẻ, không có nút tải giả.
 TAI_LIEU = [
- dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm tra sau buổi tư vấn",
-  mo="Làm xong, bạn biết buổi tư vấn gần nhất đang thiếu Điểm Chạm nào và nên sửa từ đâu.",
+ dict(loai="congcu", pp="Ba Điểm Chạm", ten="Bảng tự kiểm tra sau buổi tư vấn", chu_de="Bán hàng và phòng kinh doanh",
+  mo=re.search(r"### Câu giới thiệu trên thẻ\n\n.*?\n\n(.+?)\n", open(os.path.expanduser("~/Codex_Projects/Next Gen Founder/deliverables/NGF - Nội dung trang Bảng tự kiểm tra sau buổi tư vấn.md"), encoding="utf-8").read(), re.S).group(1),
   tt="Dùng ngay trên trang", tt_mo=True, nut="Mở công cụ", href="cong-cu/tu-kiem-ba-diem-cham.html",
   meta=["12 câu", "Khoảng 3 phút"]),
- *[dict(loai="ai", ten=c["tieu"], mo="Làm xong, bạn có " + c["nhan_duoc"] + ".", tt="Dùng với ChatGPT", tt_mo=True,
+ *[dict(loai="ai", ten=c["tieu"], mo=c["gioi_thieu"], chu_de=c["chu_de"], tt="Dùng với ChatGPT", tt_mo=True,
         nut="Mở công cụ", href="cong-cu/%s.html" % c["ma"], moi=True,
         meta=["%d câu lệnh" % len(c["lenh"])] + (["Khoảng %s phút" % c["phut"]] if c["phut"] else [])) for c in cong_cu_ai.DS],
  dict(loai="ebook", pp="REFLECT", ten="Kịch bản REFLECT theo 10 ngành",
@@ -201,16 +201,14 @@ def dung_ngay(t):
     return t["href"].startswith("cong-cu/")
 
 def the_tv(t, p=""):
-    """Thẻ một công cụ dùng được ngay. Cả thẻ bấm được, nhờ liên kết phủ trên tên."""
-    meta = "".join("<li>%s</li>" % m for m in t.get("meta", []))
-    return ('<article class="tv" data-loai="%s">'
-            '<div class="tv-dau"><span class="tv-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">%s</svg></span>'
-            '<span class="tv-loai">%s</span>%s</div>'
-            '<h3><a href="%s%s">%s</a></h3>%s<p>%s</p>'
+    """Thẻ một công cụ dùng được ngay: tên, câu giới thiệu, thời gian và chủ đề, nút mở.
+    Cả thẻ bấm được, nhờ liên kết phủ trên tên. Rút gọn ngày 11/10/2026 vì thẻ cũ nhiều chữ."""
+    gio = [m for m in t.get("meta", []) if m.startswith("Khoảng")]
+    duoi = " · ".join(gio + [t.get("chu_de", "")]).strip(" ·")
+    return ('<article class="tv" data-chude="%s">'
+            '<h3><a href="%s%s">%s</a></h3><p>%s</p>'
             '<div class="tv-duoi"><span class="tv-tt">%s</span><span class="lk-v" aria-hidden="true">%s <span class="mt">&rarr;</span></span></div>'
-            '</article>') % (
-        t["loai"], _IC[t["loai"]], _LOAI[t["loai"]], '<span class="tv-moi">Mới</span>' if t.get("moi") else "",
-        p, t["href"], t["ten"], ('<ul class="tv-meta">%s</ul>' % meta) if meta else "", t["mo"], t["tt"], t["nut"])
+            '</article>') % (html.escape(t.get("chu_de", "")), p, t["href"], t["ten"], t["mo"], duoi, t["nut"])
 
 def dong_sap(t, p=""):
     """Một dòng cho mục đang làm: không có nút mở giả."""
@@ -1712,14 +1710,9 @@ _dem = lambda l: sum(1 for t in TAI_LIEU if dung_ngay(t) and (l == "all" or t["l
 THU_VIEN = """
 <section class="phan bd phan-sang" id="thu-vien">
   <div class="tl-loc hien" id="tl-loc" style="margin-top:0">%s</div>
-  <p class="tv-nhom hien"><span>Dùng được ngay</span></p>
   <div class="tv-luoi hien">%s</div>
 </section>
-""" % ("".join('<button class="tl-nut%s" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>'
-               % (" chon" if l == "all" else "", l, ten, _dem(l))
-               for l, ten in [("all", "Tất cả"), ("congcu", "Công cụ tự kiểm tra"), ("ai", "Bộ câu lệnh AI"), ("ebook", "Ebook")] if _dem(l)),
-       "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t)))
-
+"""
 _so_cc = sum(1 for t in TAI_LIEU if dung_ngay(t))
 _so_lenh = sum(len(c["lenh"]) for c in cong_cu_ai.DS) + 12   # 12 câu của Bảng tự kiểm tra (TK_CAU khai báo phía dưới)
 # Danh mục e-book đọc từ tệp tên Coach Duy duyệt qua phiếu ngày 11/10/2026 (ban-chot/phieu-ten).
@@ -1728,11 +1721,21 @@ TEN_MD = os.path.expanduser("~/Codex_Projects/Next Gen Founder/deliverables/NGF 
 _ten = open(TEN_MD, encoding="utf-8").read()
 EBOOK = [(m, t, g) for m, t, g in re.findall(r"^### ([EF]\d+)\. (.+?)\n\n\*\*Câu giới thiệu\.\*\* (.+?)\n", _ten, re.M)]
 EBOOK_CO_TEP = {}   # mã: đường dẫn tải, khi tệp đã sẵn sàng
+CHU_DE_EB = {"E1": "Thương hiệu của người sáng lập", "E2": "Hệ thống tăng trưởng", "E3": "Thương hiệu của người sáng lập",
+             "E4": "Bán hàng và phòng kinh doanh", "E5": "Thương hiệu của người sáng lập", "E6": "AI cho người chủ",
+             "F1": "Hệ thống tăng trưởng", "F2": "Hệ thống tăng trưởng", "F3": "Bán hàng và phòng kinh doanh",
+             "F4": "AI cho người chủ", "F5": "Điểm nghẽn của người sáng lập", "F6": "Hệ thống tăng trưởng",
+             "F7": "Bán hàng và phòng kinh doanh", "F8": "Điểm nghẽn của người sáng lập"}
+_MAU_CD = {"AI cho người chủ": 1, "Bán hàng và phòng kinh doanh": 2, "Hệ thống tăng trưởng": 3, "Kiến tạo cộng đồng": 4,
+           "Thương hiệu của người sáng lập": 5, "Điểm nghẽn của người sáng lập": 6}
 _ic_eb = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/></svg>'
 _the_eb = "".join(
- '<article class="eb-the"><div class="eb-dau"><span class="eb-ic" aria-hidden="true">%s</span><span class="eb-tt%s">%s</span></div>'
- '<h3>%s</h3><p>%s</p></article>' % (_ic_eb, " mo" if m in EBOOK_CO_TEP else "", "Tải về" if m in EBOOK_CO_TEP else "Đang soạn",
-                                    html.escape(t), html.escape(g).replace("E-book", "E&#8209;book")) for m, t, g in EBOOK)
+ '<article class="eb-the" data-chude="%s"><div class="eb-bia eb-bia--%d" aria-hidden="true">'
+ '<img src="img/logo-dn.webp" alt="" loading="lazy"><span class="eb-bia-cd">%s</span><b>%s</b><span class="eb-bia-tg">Coach Duy Nguyễn</span></div>'
+ '<div class="eb-than"><h3>%s</h3><p>%s</p><p class="tv-tt">%s</p></div></article>'
+ % (html.escape(CHU_DE_EB[m]), _MAU_CD[CHU_DE_EB[m]], html.escape(CHU_DE_EB[m]), html.escape(t),
+    html.escape(t), html.escape(g).replace("E-book", "E&#8209;book"), "Tải về" if m in EBOOK_CO_TEP else "Đang soạn")
+ for m, t, g in EBOOK)
 SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
     <div>
@@ -1745,7 +1748,7 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
       <div><b>%d</b><span>câu lệnh và câu hỏi soạn sẵn</span></div>
     </div><p class="hh-ket">Các bộ câu lệnh AI chạy được với ChatGPT bản miễn phí</p></figure>
   </div>
-</header>""" % (_so_cc, _so_lenh) + THU_VIEN + """
+</header>""" % (_so_cc, _so_lenh) + THU_VIEN % ("{LOC}", "".join(the_tv(t) for t in TAI_LIEU if dung_ngay(t))) + """
 <section class="phan bd phan-sang" id="e-book">
   <div class="phan-dau hien">
     <p class="mono">E-book</p>
@@ -1755,6 +1758,12 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="eb-luoi hien">%s</div>
 </section>
 """ % _the_eb
+# Bộ lọc theo chủ đề như blog, đếm cả công cụ lẫn e-book; chủ đề chưa có mục nào thì không hiện nút.
+_cd_tv = [t["chu_de"] for t in TAI_LIEU if dung_ngay(t)] + [CHU_DE_EB[m] for m, _, _ in EBOOK]
+_cd_ds = [c for c in ["AI cho người chủ", "Bán hàng và phòng kinh doanh", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng",
+                      "Thương hiệu của người sáng lập", "Điểm nghẽn của người sáng lập"] if c in _cd_tv]
+SACH = SACH.replace("{LOC}", '<button class="tl-nut chon" type="button" data-loc="all">Tất cả<span class="tv-so">%d</span></button>' % len(_cd_tv)
+    + "".join('<button class="tl-nut" type="button" data-loc="%s">%s<span class="tv-so">%d</span></button>' % (html.escape(c), c, _cd_tv.count(c)) for c in _cd_ds))
 
 # ------------------------------------------------- CÔNG CỤ TỰ KIỂM
 # Công cụ đầu tiên trong kho tài liệu, dùng ngay trên trang. Nội dung chỉ lấy
