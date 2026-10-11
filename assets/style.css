@@ -2433,3 +2433,20 @@ body.giay .nguon-bai{border-top-color:rgba(58,47,38,.14)}
 .cc-vi-o{padding:20px 22px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel)}
 .cc-vi-o h3{margin:0 0 8px;font-size:15px;letter-spacing:.02em;color:var(--vang)}
 .cc-vi-o p{margin:0;font-size:16.5px;line-height:1.6;text-align:left!important;hyphens:none}
+/* Thẻ ba bước ở cột phải đầu trang công cụ (11/10/2026) */
+.cc-lo{padding:26px 26px 24px;border:1px solid var(--line-2);border-radius:var(--r);background-image:var(--paper);background-color:var(--panel);box-shadow:var(--shadow)}
+.cc-lo-dau{margin:0 0 18px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
+.cc-lo ol{list-style:none;margin:0 0 22px;padding:0;counter-reset:lo}
+.cc-lo li{position:relative;padding:0 0 18px 46px;counter-increment:lo}
+.cc-lo li::before{content:counter(lo);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--ink)}
+.cc-lo li:not(:last-child)::after{content:"";position:absolute;left:15px;top:34px;bottom:4px;border-left:1px dashed var(--line-2)}
+.cc-lo li b{display:block;font-size:16.5px;line-height:1.4;color:var(--ink)}
+.cc-lo li span{display:block;margin-top:4px;font-size:15px;line-height:1.55;color:var(--ink-3);text-align:left;hyphens:none}
+.cc-lo li.cc-lo-xong{padding-bottom:0}
+.cc-lo li.cc-lo-xong::before{content:"✓";background:var(--vang);border-color:var(--vang);color:#17120F}
+.cc-lo li.cc-lo-xong span{color:var(--ink-2)}
+.cc-lo .nut{width:100%;justify-content:center}
+#gioi-thieu .cc-rong{max-width:1100px}
+#gioi-thieu .cc-doc{padding-top:0}
+@media(min-width:900px){#gioi-thieu .cc-vi{grid-template-columns:repeat(3,1fr)}}
+.cc-lo li b,.cc-lo li span{text-align:left!important;hyphens:none}

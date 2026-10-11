@@ -302,8 +302,16 @@ def than_trang(cc):
       <a class="cc-ve" href="./">&larr; Tất cả công cụ</a>
       <h1>%(tieu)s</h1>
       <p class="dan">%(duoi)s</p>
-      <ul class="cc-chip"><li><b>%(n_lenh)d</b> câu lệnh</li><li>Điền <b>%(n_o)d</b> thông tin</li><li>Dùng được với ChatGPT bản miễn phí</li></ul>
     </div>
+    <aside class="cc-lo" aria-label="Các bước dùng công cụ">
+      <p class="cc-lo-dau">Sau khoảng %(phut)s phút</p>
+      <ol>
+        <li><b>Điền %(n_o)d thông tin của doanh nghiệp bạn</b><span>Số ước lượng gần đúng là đủ.</span></li>
+        <li><b>Chép lần lượt %(n_lenh)d câu lệnh vào ChatGPT</b><span>Bản miễn phí cũng được.</span></li>
+        <li class="cc-lo-xong"><b>Bạn nhận được</b><span>%(nhan)s</span></li>
+      </ol>
+      <a class="nut nut-v" href="#mo-cong-cu">Xem bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></a>
+    </aside>
   </div>
 </header>
 
@@ -388,7 +396,8 @@ def than_trang(cc):
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
         tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, hinh=hinh(ma), video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
-        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"]), con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
+        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"] if t != "Bạn nhận được gì"),
+        phut=cc["phut"], nhan=_dong(dict(cc["vi_ai"]).get("Bạn nhận được gì", cc["nhan_duoc"])), con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
         moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, du_lieu=du_lieu)
 
