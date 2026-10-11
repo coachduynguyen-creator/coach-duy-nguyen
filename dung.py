@@ -2381,7 +2381,8 @@ _GOC = os.path.dirname(os.path.abspath(__file__))
 for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-luong-co-lai"),
                    ("quytrinh", "quy-trinh-tu-cach-lam"), ("khachkho", "khach-kho-tinh"),
                    ("quyetdinh", "phan-bien-quyet-dinh"), ("dongtien", "du-bao-dong-tien-13-tuan"),
-                   ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang")]:
+                   ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang"),
+                   ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"), ("phongvan", "phong-van-tuyen-dung")]:
     os.makedirs(os.path.join(_GOC, _ngan), exist_ok=True)
     open(os.path.join(_GOC, _ngan, "index.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">

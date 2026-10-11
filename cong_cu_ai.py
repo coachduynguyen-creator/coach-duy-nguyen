@@ -22,6 +22,10 @@ CONG_CU = [
     ("khach-kho-tinh", "NGF - Tài liệu thu lead 4, để AI đóng vai khách khó tính kiểm cách tư vấn của nhân viên.md"),
     ("phan-bien-quyet-dinh", "NGF - Tài liệu thu lead 5, để AI hỏi khó một quyết định lớn trước khi chốt.md"),
     ("du-bao-dong-tien-13-tuan", "NGF - Tài liệu thu lead 6, dự báo dòng tiền 13 tuần trong kinh doanh.md"),
+    ("ket-qua-tung-vi-tri", "NGF - Tài liệu thu lead 13, mô tả kết quả công việc cho từng vị trí.md"),
+    ("dao-tao-nhan-vien-moi", "NGF - Tài liệu thu lead 14, kế hoạch đào tạo nhân viên mới trong 30 ngày đầu.md"),
+    ("trao-doi-kho-voi-nhan-vien", "NGF - Tài liệu thu lead 15, chuẩn bị buổi trao đổi khó với nhân viên.md"),
+    ("phong-van-tuyen-dung", "NGF - Tài liệu thu lead 16, bộ câu hỏi phỏng vấn để tuyển đúng người.md"),
     ("cau-chuyen-thuong-hieu", "NGF - Tài liệu thu lead 23, tìm câu chuyện thật để xây dựng thương hiệu cá nhân.md"),
     ("hoso-doanh-nghiep-chatgpt", "NGF - Tài liệu thu lead 24, hồ sơ doanh nghiệp dùng cho ChatGPT.md"),
     ("ke-hoach-kinh-doanh-mot-trang", "NGF - Tài liệu thu lead 25, lập kế hoạch kinh doanh năm 2027 trong một trang.md"),
@@ -49,6 +53,22 @@ HINH = {
    cot=[("Số dư cuối tuần", 104, "104 triệu"), ("Mức chủ muốn luôn giữ", 150, "150 triệu")],
    ket="Thiếu 46 triệu so với mức muốn giữ, dù trên sổ mỗi tháng vẫn lãi khoảng 67 triệu.", vd="Công ty tổ chức sự kiện 18 người",
    boi="Chủ một công ty tổ chức sự kiện 18 người, trên sổ mỗi tháng lãi khoảng 67 triệu. Đưa thu chi 13 tuần tới cho AI, AI chỉ ra tuần giữa tháng 1, khi lương tháng 1 và thưởng tháng lương thứ 13 rơi vào hai tuần liền nhau."),
+ "ket-qua-tung-vi-tri": dict(kieu="cot", tieu="Đăng ký khóa học của hai tư vấn viên trong một tháng",
+   cot=[("Đăng ký của An", 21, "21 đăng ký"), ("Đăng ký của Bình", 9, "9 đăng ký")],
+   ket="Bình ít hơn An 80 liên hệ, tức 13%, nhưng ít hơn 12 đăng ký, tức 57%.", vd="Trung tâm tiếng Anh trẻ em",
+   boi="Một trung tâm tiếng Anh trẻ em 14 người có ba tư vấn viên tuyển sinh, chủ đang đánh giá bằng số liên hệ ghi trong sổ. Đưa số tháng vừa rồi cho AI, AI tách từng người theo lượt hẹn học thử, lượt đến học thử và số đăng ký."),
+ "dao-tao-nhan-vien-moi": dict(kieu="cot", tieu="Nhân viên bán hàng mới trong 12 tháng: số người nhận và số còn sau 90 ngày",
+   cot=[("Người mới nhận trong 12 tháng", 24, "24 người"), ("Còn lại sau 90 ngày", 13, "13 người")],
+   ket="11 người nghỉ trong 90 ngày, 7 người trong số đó nghỉ ở tuần 2 và tuần 3.", vd="Chuỗi cửa hàng thời trang",
+   boi="Một chuỗi 6 cửa hàng thời trang nhận 24 nhân viên bán hàng mới trong 12 tháng, chỉ 13 người còn sau 90 ngày. Đưa số cho AI, AI chỉ ra người mới hay nghỉ ở tuần nào và soạn lịch 30 ngày."),
+ "trao-doi-kho-voi-nhan-vien": dict(kieu="cot", tieu="Báo cáo công nợ của nhân viên bán giỏi nhất trong 12 tuần",
+   cot=[("Số tuần nộp trễ", 9, "9 tuần"), ("Số tuần nộp đúng hạn", 3, "3 tuần")],
+   ket="Ba khách quá hạn thanh toán, tổng 186 triệu. Trong 5 lượt tập với AI, 3 câu của chủ dễ làm người nghe tự ái.", vd="Công ty phân phối thực phẩm khô",
+   boi="Một công ty phân phối thực phẩm khô 31 người có nhân viên bán giỏi nhất, doanh số 410 triệu mỗi tháng, nhưng nộp báo cáo công nợ trễ. Chủ ngại nói thẳng vì sợ người này nghỉ, nên tập trước với AI đóng vai chính nhân viên."),
+ "phong-van-tuyen-dung": dict(kieu="cot", tieu="Giáo viên mới trong ba lần tuyển gần nhất: số người nhận và số còn sau 90 ngày",
+   cot=[("Người nhận việc", 9, "9 người"), ("Còn lại sau 90 ngày", 5, "5 người")],
+   ket="4 người nghỉ trong 90 ngày, tốn khoảng 56 triệu tuyển và đào tạo lại.", vd="Trường mầm non tư thục",
+   boi="Một trường mầm non tư thục hai cơ sở, 46 người, nhận 9 giáo viên trong ba lần tuyển gần nhất, chỉ 5 người còn sau 90 ngày. Đưa số cho AI, AI chỉ ra bộ câu hỏi hiện nay mới hỏi quan điểm và dựng lại bộ câu hỏi về việc đã làm."),
  "cau-chuyen-thuong-hieu": dict(kieu="cot", tieu="Mười câu chuyện đã chọn: chủ hiện lên như thế nào",
    cot=[("Chuyện chủ cứu tình thế", 8, "8 chuyện"), ("Chuyện chủ làm sai rồi sửa", 2, "2 chuyện")],
    ket="8 trên 10 chuyện chủ hiện lên như người cứu tình thế, chỉ 2 chuyện là chủ làm sai và sửa", vd="Công ty nội thất 14 người",
@@ -97,11 +117,13 @@ def hinh(ma):
 CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập", "so-khach-du-luong-co-lai": "Bán hàng và phòng kinh doanh",
           "quy-trinh-tu-cach-lam": "Hệ thống tăng trưởng", "khach-kho-tinh": "Bán hàng và phòng kinh doanh",
           "phan-bien-quyet-dinh": "Điểm nghẽn của người sáng lập", "du-bao-dong-tien-13-tuan": "Hệ thống tăng trưởng",
+          "ket-qua-tung-vi-tri": "Hệ thống tăng trưởng", "dao-tao-nhan-vien-moi": "Hệ thống tăng trưởng",
+          "trao-doi-kho-voi-nhan-vien": "Điểm nghẽn của người sáng lập", "phong-van-tuyen-dung": "Hệ thống tăng trưởng",
           "cau-chuyen-thuong-hieu": "Thương hiệu của người sáng lập", "hoso-doanh-nghiep-chatgpt": "AI cho người chủ",
           "ke-hoach-kinh-doanh-mot-trang": "Điểm nghẽn của người sáng lập"}
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "ket-qua-tung-vi-tri": "", "dao-tao-nhan-vien-moi": "", "trao-doi-kho-voi-nhan-vien": "", "phong-van-tuyen-dung": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md
