@@ -2310,3 +2310,9 @@ for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-
 </head><body><p><a href="../cong-cu/%(m)s.html">Mở trang</a></p>
 <script>location.replace('../cong-cu/%(m)s.html' + location.search + location.hash);</script></body></html>""" % {"b": BASE, "m": _ma})
     print("  %s/ -> cong-cu/%s.html" % (_ngan, _ma))
+
+# Soát trang công cụ theo Tiêu chuẩn trang công cụ (11/10/2026). Thiếu điểm nào thì báo to.
+import kiem_cong_cu
+print("\nSoát tiêu chuẩn trang công cụ:")
+if kiem_cong_cu.main():
+    print("!!! CÓ TRANG CÔNG CỤ CHƯA ĐẠT TIÊU CHUẨN, xem danh sách trên trước khi đẩy lên mạng.")
