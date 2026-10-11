@@ -1767,7 +1767,7 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="tl-loc hien" id="eb-loc">{LOC_EB}</div>
   <div class="eb-luoi hien">%s</div>
 </section>
-""" % _the_eb
+""" % _the_eb + cong_cu_ai.khoi_gioi_thieu(2, goc="")
 # Hai bộ lọc chủ đề riêng: một cho công cụ, một cho e-book (Coach Duy chốt 11/10/2026).
 _THU_TU_CD = ["AI cho người chủ", "Bán hàng và phòng kinh doanh", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng",
               "Thương hiệu của người sáng lập", "Điểm nghẽn của người sáng lập"]
@@ -1896,6 +1896,8 @@ CONG_CU = """<header class="dau-trang hoa-van cc-dau">
   </div>
 </section>
 
+%(gioi_thieu)s
+
 <section class="phan tran cc-moi" id="cong-dong">
   <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd"><div class="cc-doc">
@@ -1913,7 +1915,7 @@ CONG_CU = """<header class="dau-trang hoa-van cc-dau">
     buoc="".join('<div class="cc-b"><div class="cc-b-dau"><span class="cc-b-so">%02d</span><span class="cc-b-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">%s</svg></span></div><p>%s</p></div>'
                  % (n + 1, _IC3[n], _tk_dong(re.sub(r"^\d+\.\s+", "", x))) for n, x in enumerate(_tk_cd[0].split("\n"))),
     gio=_tk_dong(_tk_cd[1]), nhom=_tk_nhom,
-    moi="".join("<p>%s</p>" % _tk_dong(x) for x in _tk_moi[:-1]), nut=_tk_dong(_tk_nut))
+    moi="".join("<p>%s</p>" % _tk_dong(x) for x in _tk_moi[:-1]), nut=_tk_dong(_tk_nut), gioi_thieu=cong_cu_ai.khoi_gioi_thieu(1))
 trang("cong-cu/tu-kiem-ba-diem-cham.html", "Bảng tự kiểm tra sau buổi tư vấn · Coach Duy Nguyễn",
       "Mười hai câu chấm lại buổi tư vấn gần nhất theo ba Điểm Chạm, chỉ ra bạn đang thiếu chạm nào.",
       CONG_CU, "cong-cu/")

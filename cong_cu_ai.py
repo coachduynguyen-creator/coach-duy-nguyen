@@ -353,6 +353,25 @@ def doc(ma, tep):
 DS = [doc(ma, tep) for ma, tep in CONG_CU]
 
 
+# Khối giới thiệu Coach Duy trước lời mời cộng đồng, Coach Duy duyệt qua phiếu ngày 11/10/2026.
+# Chữ đọc từ tệp nội dung, sửa chữ thì sửa tệp đó.
+def khoi_gioi_thieu(ban=1, goc="../"):
+    t = open(os.path.join(NGUON, "NGF - Khối giới thiệu Coach Duy trên trang công cụ.md"), encoding="utf-8").read()
+    b1 = t[t.index("## Bản 1."):t.index("## Bản 2.")]
+    k = [x.strip() for x in b1.split("\n\n") if x.strip()]
+    nho = [x for x in k if x.startswith("Dòng nhỏ phía trên:")][0].split(": ", 1)[1]
+    doan = [x for x in k if x.startswith("Duy học") or x.startswith("Bây giờ Duy")]
+    if ban == 2:
+        b2 = t[t.index("## Bản 2."):t.index("## Ảnh")]
+        nho = re.search(r"Dòng nhỏ phía trên: (.+)", b2).group(1)
+        cuoi = re.search(r"câu cuối đổi thành: (.+)", b2).group(1)
+        doan[-1] = doan[-1][:doan[-1].rindex("Mỗi công cụ")] + cuoi
+    return ('<section class="phan bd phan-sang cc" id="nguoi-soan"><div class="cc-doc"><div class="ngs">'
+            '<img class="ngs-anh" src="%simg/cd-chan-dung-vuong.webp" alt="Coach Duy Nguyễn" loading="lazy" width="96" height="96">'
+            '<div><p class="mono">%s</p><h2>Coach Duy Nguyễn</h2>%s'
+            '<a class="lk-v" href="%sve-toi.html">Tìm hiểu thêm về Duy <span class="mt" aria-hidden="true">&rarr;</span></a></div></div></div></section>'
+            % (goc, html.escape(nho), "".join("<p>%s</p>" % _dong(x) for x in doan), goc))
+
 # ------------------------------------------------------------ dựng trang
 def _p(ds):
     return "".join("<p>%s</p>" % _dong(x) for x in ds)
@@ -505,6 +524,8 @@ def than_trang(cc):
   </div>
 </section>
 
+%(gioi_thieu)s
+
 <section class="phan tran cc-moi" id="cong-dong">
   <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd"><div class="cc-doc">
@@ -523,7 +544,7 @@ def than_trang(cc):
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
         tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, hinh=hinh(ma), video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
-        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, mau_dan=_dong(cc["mau_dan"]), vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"] if t != "Bạn nhận được gì"),
+        vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, gioi_thieu=khoi_gioi_thieu(1), mau_dan=_dong(cc["mau_dan"]), vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"] if t != "Bạn nhận được gì"),
         phut=cc["phut"], nhan=_dong(dict(cc["vi_ai"]).get("Bạn nhận được gì", cc["nhan_duoc"])), con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
         moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, du_lieu=du_lieu)

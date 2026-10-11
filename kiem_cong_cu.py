@@ -13,7 +13,7 @@ import os, re, sys
 import cong_cu_ai as c
 
 GOC = os.path.dirname(os.path.abspath(__file__))
-THU_TU = ["dau-trang", "gioi-thieu", "vi-sao", "bai-mau", "cach-dung", "mo-cong-cu", "cong-dong"]
+THU_TU = ["dau-trang", "gioi-thieu", "vi-sao", "bai-mau", "cach-dung", "mo-cong-cu", "nguoi-soan", "cong-dong"]
 Y_GIOI_THIEU = ["Giải quyết việc gì", "Bạn nhận được gì", "Dành cho ai", "Nên dùng khi nào"]
 
 
@@ -65,6 +65,7 @@ def kiem_trang(ma):
         "phần cách dùng và bộ câu lệnh nền sáng": all('phan-sang cc cc-lam" id="%s"' % k in s for k in ("cach-dung", "mo-cong-cu")),
         "không còn khối phiếu điền số riêng": "Phiếu điền số</h2>" not in s,
         "có lời mời cộng đồng": 'id="cong-dong"' in s,
+        "khối giới thiệu Coach Duy trước lời mời": 'id="nguoi-soan"' in s and s.index('id="nguoi-soan"') < s.index('id="cong-dong"'),
     }
     return [k for k, v in diem.items() if not v]
 
