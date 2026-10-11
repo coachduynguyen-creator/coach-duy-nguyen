@@ -2382,7 +2382,9 @@ for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-
                    ("quytrinh", "quy-trinh-tu-cach-lam"), ("khachkho", "khach-kho-tinh"),
                    ("quyetdinh", "phan-bien-quyet-dinh"), ("dongtien", "du-bao-dong-tien-13-tuan"),
                    ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang"),
-                   ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"), ("phongvan", "phong-van-tuyen-dung")]:
+                   ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"), ("phongvan", "phong-van-tuyen-dung"),
+                   ("gioithieukhach", "khach-gioi-thieu-khach"), ("loigioithieu", "loi-gioi-thieu-doanh-nghiep"), ("tuvan", "tu-van-khach-chua-mua"), ("giacao", "khach-noi-gia-cao"),
+                   ("giaoviec", "giao-viec-cho-quan-ly"), ("lichtuan", "lich-lam-viec-nguoi-chu"), ("vangmat", "chu-vang-hai-tuan"), ("diemnghen", "diem-nghen-khi-chung-lai")]:
     os.makedirs(os.path.join(_GOC, _ngan), exist_ok=True)
     open(os.path.join(_GOC, _ngan, "index.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">
