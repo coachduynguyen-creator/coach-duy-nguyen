@@ -72,31 +72,24 @@ def chu_so(n, hoa=False):
 
 
 # ---------------------------------------------------------------- khối dùng lại
-# Bốn kênh và hai con số khác loại. Tách riêng vì một bên là người theo dõi,
-# một bên là thành viên cộng đồng, một bên là số năm. Xếp chung một hàng thì
-# sáu con số nhìn như nhau trong khi chúng không cùng nghĩa.
-# Dòng vai trò lấy đúng cách trang kenh-youtube.html đã mô tả, không thêm tuyên bố mới.
-# Viết đủ số. "334.000" đọc ra sức nặng thật, "334 nghìn" thì không.
-# Bỏ dòng vai trò của từng kênh, vì nó làm loãng chính con số. Vai trò các
-# kênh đã nói kỹ ở trang kenh-youtube.html.
-KENH = [("Facebook", "334.000", "theo dõi"),
-        ("YouTube",  "230.000", "đăng ký"),
-        ("TikTok",   "231.000", "theo dõi"),
-        ("Zalo",      "22.000", "theo dõi")]
-THEM = [("26.600", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
-
-# Con số tổng làm đầu, bốn kênh làm phần chia nhỏ bên dưới.
-# Coach Duy chốt ngày 25/08/2026 dùng con số tổng 800.000+, theo slide của mình.
-TONG = ("800.000", "người theo dõi trên các nền tảng")
+# Bốn kênh, không ghi số người theo dõi. Coach Duy chốt ngày 20/09/2026 không nêu
+# số người theo dõi, học viên, thành viên vì các nguồn lệch nhau (NGF 10, mục Không
+# dùng số 2), duyệt câu thay ở phiếu ngày 11/10/2026. Người xem tự mở kênh để xem.
+# Kênh chưa có địa chỉ trong lib.py thì ô không bấm được.
+KENH = [("YouTube", "nội dung dài", YOUTUBE),
+        ("Facebook", "nội dung ngắn", ""),
+        ("TikTok", "nội dung ngắn", TIKTOK),
+        ("Zalo", "nơi Duy trả lời câu hỏi cụ thể", "")]
+TONG = ("Từ tháng 5 năm 2021", "làm nội dung đều đặn, bắt đầu từ con số không")
+def o_kenh(ten, vai, url):
+    trong = '<p class="k-ten">%s</p><p class="k-vai">%s</p>' % (ten, vai)
+    if url:
+        return '<a class="k" href="%s" target="_blank" rel="noopener">%s</a>' % (url, trong)
+    return '<div class="k">%s</div>' % trong
 so_lieu_html = (
-    '<div class="so-tong"><b>%s+</b><span>%s</span></div>'
+    '<div class="so-tong so-chu"><b>%s</b><span>%s</span></div>'
     '<div class="kenh4">%s</div>'
-    '<div class="kenh-them">%s</div>'
-    % (TONG[0], TONG[1],
-       "".join('<div class="k"><p class="k-ten">%s</p>'
-               '<p class="k-so"><b>%s</b><span>%s</span></p></div>' % (t, n, dv)
-               for t, n, dv in KENH),
-       "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
+    % (TONG[0], TONG[1], "".join(o_kenh(*k) for k in KENH)))
 
 VIEC5 = [("Soi đúng","Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
          ("Chỉ đường","Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
@@ -251,7 +244,6 @@ INDEX = """
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
-    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
   </div>
 </header>
 
@@ -551,9 +543,9 @@ MOC = [
  ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người", "img/mc/mc-sankhau.webp",
   "Facebook 120.000 · YouTube 130.000 · TikTok 21.000",
   "Hơn 500 học viên. Duy bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của Duy."),
- ("Năm năm sau", "Hơn ba nghìn học viên và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
-  "Hơn 3.000 học viên",
-  "Dạy hàng nghìn người bán hàng, Duy thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ."),
+ ("Năm năm sau", "Một cách nghĩ khác về người chủ", "img/mc/mc-hoitruong.webp",
+  "",
+  "Dạy bán hàng suốt những năm đó, Duy thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ."),
  ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder", "img/mc/mc-banlam.webp",
   "Đích tới năm 2031: 10.000 nhà sáng lập",
   "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính."),
@@ -572,7 +564,7 @@ moc_html = '<div class="mc-doc">%s</div>' % "".join(the_moc(m, i) for i, m in en
 
 HOC_VAN = [
  ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
- ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với hơn mười lăm ngân hàng và tổ chức tài chính"),
+ ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với khoảng mười tám ngân hàng và tổ chức tài chính"),
  ("2012", "Deloitte UK", "Anh", "Chuyên viên tư vấn chiến lược doanh nghiệp"),
  ("2011", "University of Birmingham", "Anh", "Thạc sĩ Quản trị Kinh doanh, khoá xếp hạng 60 thế giới"),
  ("2008", "Đại học Ngoại Thương Hà Nội", "Việt Nam", "Cử nhân Kinh tế Đối ngoại"),
@@ -601,7 +593,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
       <p class="mono">Duy làm gì</p>
       <h2>Doanh nghiệp của bạn bớt phụ thuộc vào chính bạn</h2>
       <p>Duy làm việc với người mà khách mua vì tin ở chính họ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua, trước một hợp đồng hợp tác, và trước lời đồng ý của một nhân sự giỏi. Đó vừa là lợi thế lớn nhất, vừa là giới hạn lớn nhất.</p>
-      <p>Duy bắt đầu nghề bằng việc dạy bán hàng. Suốt năm năm, Duy làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy Duy chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
+      <p>Duy bắt đầu nghề bằng việc dạy bán hàng. Suốt năm năm làm việc với người bán hàng, Duy nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy Duy chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
       <p>Duy không rời bỏ phần bán hàng. Duy dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn: làm sao để cách bán, cách tư vấn và cách ra quyết định của người chủ trở thành năng lực của cả đội ngũ.</p>
       <a class="lk-v" href="phuong-phap.html">Xem phương pháp Duy dùng <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
@@ -709,15 +701,14 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
-      <p class="mono">Số công khai</p>
+      <p class="mono">Kênh công khai</p>
       <h2>Bạn có quyền kiểm tra người mình sắp nghe</h2>
-      <p>Duy để số ở đây, và nói luôn giới hạn của nó.</p>
+      <p>Duy không đưa số người theo dõi lên đây. Bạn mở thẳng từng kênh để tự xem Duy đã nói gì.</p>
     </div>
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
-    <p class="hero-ghi" style="margin-top:18px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
     <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
-      <b>Điều số này không nói</b>
-      <p>Nó nói Duy có mặt đủ lâu và đủ đều để bạn kiểm chứng, không nói Duy giúp được bạn. Câu đó chỉ có bằng chứng trong chính doanh nghiệp của bạn mới trả lời được, và đó là điều Duy cùng bạn đi tìm.</p>
+      <b>Điều các kênh này không nói</b>
+      <p>Chúng cho thấy Duy có mặt đủ lâu và đủ đều để bạn kiểm chứng, không cho thấy Duy giúp được bạn. Câu đó chỉ có bằng chứng trong chính doanh nghiệp của bạn mới trả lời được, và đó là điều Duy cùng bạn đi tìm.</p>
     </div>
   </div>
 </section>
@@ -1346,7 +1337,7 @@ HOP_TAC_GIA = """<div class="tac-gia hien">
   <div class="anh-tg"><img src="../img/cd-avatar.webp" alt="Coach Duy Nguyễn" loading="lazy" width="256" height="256"></div>
   <div>
     <b>Coach Duy Nguyễn</b>
-    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Sáu năm làm nội dung đều đặn trên bốn kênh, làm việc với hàng nghìn người bán hàng và người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
+    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Hơn năm năm làm nội dung đều đặn trên bốn kênh, làm việc với người bán hàng và người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
     <a class="lk-v" href="../ve-toi.html">Xem hồ sơ đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
 </div>"""
@@ -2117,9 +2108,8 @@ KENH = """<section class="pd-hero">
       <a class="lk-v" href="#xem">Xem một tập ngay <span class="mt" aria-hidden="true">&darr;</span></a>
     </div>
     <div class="pd-hieu">
-      <span><b>230.000</b> đăng ký YouTube</span>
-      <span><b>800.000+</b> theo dõi các nền tảng</span>
-      <span><b>6 năm</b> đăng đều, không nghỉ quãng nào</span>
+      <span><b>6</b> chuyên mục</span>
+      <span><b>Hơn 5 năm</b> làm nội dung đều đặn</span>
     </div>
   </div>
   <span class="pd-cuon" aria-hidden="true">Cuộn để xem</span>
@@ -2268,10 +2258,9 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/dh-phong-lon.webp" alt="" loading="lazy"></div>
   <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Nơi Duy xuất hiện</p><h2>Bốn kênh Duy đăng đều suốt sáu năm</h2>
+    <div class="phan-dau hien"><p class="mono">Nơi Duy xuất hiện</p><h2>Bốn kênh Duy đăng đều hơn năm năm nay</h2>
     <p>Nội dung dài nhất nằm ở YouTube. Nội dung ngắn ở TikTok và Facebook. Zalo là nơi Duy trả lời câu hỏi cụ thể.</p></div>
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">{SO_LIEU}</div>
-    <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
   </div>
 </section>
 """.replace("{CONG_DONG}", CONG_DONG).replace("{PHIEU}", PHIEU).replace("{EMAIL}", EMAIL).replace("{SO_LIEU}", so_lieu_html)
@@ -2377,7 +2366,7 @@ llms = """# Coach Duy Nguyễn
 - [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Công cụ và tài liệu](%(b)s/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
+- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục
 - [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang mở danh sách chờ
 - [Liên hệ](%(b)s/lien-he.html)
 
