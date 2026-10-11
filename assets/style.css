@@ -2485,3 +2485,20 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .cc-dan p{text-align:left!important;hyphens:none}
 #vi-sao{border-bottom:1px solid #DFD2BE}
 .cc-b p{text-align:left!important;hyphens:none}
+/* Bài mẫu thu gọn, tiến độ, nút mở ChatGPT (11/10/2026) */
+.cc-mau.gon .cc-lieu,.cc-mau.gon .cc-ho p,.cc-mau.gon .cc-ai-noi,.cc-mau.gon .cc-de-xuat,.cc-mau.gon .cc-h4{display:none}
+.cc-mau.gon .cc-ho{padding-top:14px;padding-bottom:14px}
+.cc-mau-mo{margin-top:14px;padding:10px 0;background:none;border:0;font:inherit;font-size:15.5px;font-weight:700;color:var(--vang);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.cc-tien{margin:0 0 16px;padding:12px 14px;border-radius:var(--r-s);background:var(--vang-mo);border:1px solid rgba(242,177,74,.35);font-size:15px;line-height:1.5;text-align:left!important}
+.cc-tien a{font-weight:700;color:var(--vang);white-space:nowrap}
+.cc-lo .cc-tien{margin:-4px 0 14px}
+.cc-xong{display:inline-flex;align-items:center;gap:6px;margin-right:8px;font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.cc-xong input{width:18px;height:18px;accent-color:#C98A1E}
+.cc-lenh-dau{flex-wrap:wrap}
+.cc-lenh-dau>div:first-child{flex:1 1 auto}
+.cc-lenh.da-chay{opacity:.72}
+.cc-lenh.da-chay .cc-lenh-dau h3::after{content:"  ✓";color:#2F7D4F}
+.cc-mo-gpt{width:100%;justify-content:center}
+.cc-mo-gpt-ghi{margin:10px 0 0;font-size:14px;line-height:1.55;color:var(--ink-3);text-align:left!important}
+.cc-lenh-nut{display:flex;align-items:center;gap:6px;flex:none}
+@media(max-width:600px){.cc-lenh-nut{width:100%;justify-content:space-between}}

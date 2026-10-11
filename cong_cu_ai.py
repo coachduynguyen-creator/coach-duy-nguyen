@@ -288,18 +288,22 @@ def than_trang(cc):
     lenh, lenh_mo = "", ""
     for l in cc["lenh"]:
         ghi = l["dan"] or cc["nhan"].get(l["so"], "")
-        lenh += ('<div class="cc-lenh" data-so="%d"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh %d</span><h3>%s</h3></div>'
+        lenh += ('<div class="cc-lenh" id="lenh-%d" data-so="%d"><div class="cc-lenh-dau"><div><span class="mono">Câu lệnh %d</span><h3>%s</h3></div>'
                  '<button class="nut nut-vien cc-chep" type="button">Chép</button></div>%s<div class="cc-chu">%s</div>%s</div>'
-                 % (l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"]),
+                 % (l["so"], l["so"], l["so"], _dong(l["ten"]), ('<p class="cc-ghi">%s</p>' % _dong(ghi)) if ghi else "", html.escape(l["chu"]),
                     _kq(cc["kq"].get(l["so"]))))
         if l["so"] == 2:   # các ô điền số nằm ngay trong khung câu lệnh 2, gõ tới đâu câu lệnh điền tới đó
             lenh = lenh.replace('<div class="cc-chu">',
                 '<div class="cc-dien"><p class="cc-dien-dan">Gõ thông tin của bạn vào từng ô dưới đây. Câu lệnh bên dưới tự điền theo, chỗ đã điền hiện màu vàng. Xong thì bấm Chép.</p>'
                 '<div class="cc-phieu">%s</div><p class="cc-dien-xem">Câu lệnh của bạn</p></div><div class="cc-chu">' % o, 1)
             lenh = lenh[:-len("</div>")] + '<div class="cc-chep-duoi"><button class="nut nut-v cc-chep" type="button">Chép câu lệnh 2</button></div></div>'
+        if l["so"] == 1:   # mở ChatGPT kèm sẵn câu lệnh; chỉ câu 1, vì câu sau phải dán vào cùng cuộc trò chuyện
+            lenh = lenh[:-len("</div>")] + ('<div class="cc-chep-duoi"><a class="nut nut-v cc-mo-gpt" href="https://chatgpt.com/" target="_blank" rel="noopener">'
+                'Mở ChatGPT với câu lệnh này <span class="mt" aria-hidden="true">&rarr;</span></a>'
+                '<p class="cc-mo-gpt-ghi">Trang chép sẵn câu lệnh cho bạn. Nếu ChatGPT chưa điền sẵn, bạn dán vào ô chat. Các câu lệnh sau, bạn chép rồi dán tiếp vào đúng cuộc trò chuyện này.</p></div></div>')
         if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
             lenh_mo, lenh = lenh, ""
-    du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"]), ensure_ascii=False).replace("</", "<\\/")
+    du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"])), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
     return """<header class="dau-trang hoa-van cc-dau">
@@ -316,6 +320,7 @@ def than_trang(cc):
         <li><b>Chép lần lượt %(n_lenh)d câu lệnh vào ChatGPT</b><span>Bản miễn phí cũng được.</span></li>
         <li class="cc-lo-xong"><b>Bạn nhận được</b><span>%(nhan)s</span></li>
       </ol>
+      <p class="cc-tien" hidden></p>
       <a class="nut nut-v" href="#mo-cong-cu">Xem bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></a>
     </aside>
   </div>
@@ -357,6 +362,7 @@ def than_trang(cc):
 <section class="phan bd phan-sang cc cc-lam" id="mo-cong-cu">
   <div class="cc-doc">
     <h2>Bộ câu lệnh</h2>
+    <p class="cc-tien" hidden></p>
     %(lenh_mo)s
     <div class="hop cc-cua" id="cc-cua">
       <h2>Còn %(con)d câu lệnh và phiếu tự ghép số liệu của bạn</h2>

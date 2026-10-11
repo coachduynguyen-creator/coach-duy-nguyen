@@ -40,6 +40,25 @@
     t.addEventListener('click', function () { moThe(t.classList.contains('chon') ? -1 : i); });
   });
   moThe(0);
+  // Bài mẫu thu gọn còn tên các chỗ hở, bấm mới mở số liệu và cách AI tính.
+  pan.forEach(function (p) {
+    p.classList.add('gon');
+    var b = d.createElement('button'); b.type = 'button'; b.className = 'cc-mau-mo'; b.textContent = 'Xem số liệu và cách AI tính';
+    b.addEventListener('click', function () { var g = p.classList.toggle('gon'); b.textContent = g ? 'Xem số liệu và cách AI tính' : 'Thu gọn'; });
+    p.appendChild(b);
+  });
+
+  /* Tiến độ: câu lệnh nào người dùng đã chạy, lưu trên máy để lần sau mở lại chạy tiếp. */
+  var KEY_XONG = 'ngf-xong-' + MA, xong = doc(KEY_XONG) || [];
+  function tienDo() {
+    var n = xong.length, tiep = 0;
+    for (var i = 1; i <= DL.n; i++) if (xong.indexOf(i) < 0) { tiep = i; break; }
+    [].forEach.call(d.querySelectorAll('.cc-tien'), function (el) {
+      el.hidden = n === 0;
+      el.innerHTML = !tiep ? 'Bạn đã chạy đủ ' + DL.n + ' câu lệnh.' :
+        'Bạn đã chạy ' + n + ' trên ' + DL.n + ' câu lệnh. <a href="#' + (d.getElementById('lenh-' + tiep) ? 'lenh-' + tiep : 'cc-cua') + '">Chạy tiếp câu lệnh ' + tiep + ' &rarr;</a>';
+    });
+  }
 
   /* Gửi một bản ghi vào Pancake. */
   function canGoi(n) { return +n.vai_tro === 0 && +n.doanh_thu >= 2 && +n.doi_ngu >= 1; }
@@ -96,6 +115,7 @@
     });
     capNhat();
     ganNut(kin);
+    tienDo();
     // Hai câu hỏi thêm, không bắt buộc: đã trả lời thì ẩn, gửi thì ghi lại vào Pancake.
     var th = d.getElementById('cc-them'), n0 = doc('ngf-lead') || {};
     if (th && n0.doanh_thu !== undefined && n0.doanh_thu !== '') th.hidden = true;
@@ -110,6 +130,26 @@
   }
   // Câu lệnh dài thì thu gọn, bấm "Xem đầy đủ" để mở. Nút Chép luôn chép đủ.
   function ganNut(goc) {
+    [].forEach.call(goc.classList.contains('cc-lenh') ? [goc] : goc.querySelectorAll('.cc-lenh'), function (l) {
+      var so = +l.dataset.so, nut = l.querySelector('.cc-lenh-dau .cc-chep');
+      var nhan = d.createElement('label'); nhan.className = 'cc-xong';
+      nhan.innerHTML = '<input type="checkbox"> Đã chạy';
+      var o = nhan.firstChild; o.checked = xong.indexOf(so) > -1; l.classList.toggle('da-chay', o.checked);
+      o.addEventListener('change', function () {
+        xong = xong.filter(function (x) { return x !== so; }); if (o.checked) xong.push(so);
+        ghi(KEY_XONG, xong); l.classList.toggle('da-chay', o.checked); tienDo();
+      });
+      var cum = d.createElement('div'); cum.className = 'cc-lenh-nut';
+      nut.parentNode.insertBefore(cum, nut); cum.appendChild(nhan); cum.appendChild(nut);
+    });
+    [].forEach.call(goc.querySelectorAll('.cc-mo-gpt'), function (a) {
+      a.addEventListener('click', function () {
+        var chu = a.closest('.cc-lenh').querySelector('.cc-chu').textContent;
+        chep(chu, {textContent: ''});
+        var u = 'https://chatgpt.com/?q=' + encodeURIComponent(chu);
+        a.href = u.length < 7500 ? u : 'https://chatgpt.com/';
+      });
+    });
     [].forEach.call(goc.querySelectorAll('.cc-chu'), function (c) {
       if (c.textContent.length < 600 || c.closest('[data-so="2"]')) return;
       c.classList.add('gon');
@@ -123,6 +163,7 @@
   }
   var mo = d.getElementById('mo-cong-cu');
   if (mo) [].forEach.call(mo.querySelectorAll('.cc-doc > .cc-lenh'), function (l) { ganNut(l); });
+  tienDo();
 
   // Ghi tên công cụ này để trang da-dang-ky.html (Pancake chuyển tới sau khi gửi) đưa về đúng chỗ.
   try { localStorage.setItem('ngf-cho', MA); } catch (e) {}
