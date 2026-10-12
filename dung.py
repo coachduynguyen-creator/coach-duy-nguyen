@@ -98,6 +98,24 @@ so_lieu_html = (
                for t, n, dv in KENH),
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
 
+# Khối số trên là NGUỒN CHUNG cho cả website, Coach Duy chốt ngày 12/10/2026.
+# Cập nhật số thì chỉ sửa KENH, THEM, TONG và NGAY_SO ở trên đây rồi chạy dung.py:
+# trang chủ, Về Duy, Liên hệ, Podcast, llms.txt và trang Cộng đồng (viết tay,
+# dung.py tự thay khối số) đều đổi theo. Đừng gõ số người theo dõi vào chỗ khác.
+NGAY_SO = "tháng 8 năm 2026"
+SO_KENH = list(KENH)   # tên KENH bị dùng lại cho phần Podcast bên dưới
+SO_CHUNG = {"{SO_TONG}": TONG[0] + "+",
+            "{SO_YT}": dict((k[0], k[1]) for k in KENH)["YouTube"],
+            "{SO_NAM}": THEM[1][0],
+            "{NGAY_SO}": NGAY_SO}
+def so_chung(s):
+    for k, v in SO_CHUNG.items():
+        s = s.replace(k, v)
+    return s
+_trang_goc = trang
+def trang(ten_tep, tieu_de, mo_ta, than, *a, **k):
+    return _trang_goc(ten_tep, tieu_de, mo_ta, so_chung(than), *a, **k)
+
 VIEC5 = [("Soi đúng","Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
          ("Chỉ đường","Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
          ("Làm mẫu","Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
@@ -251,7 +269,7 @@ INDEX = """
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
-    <p class="hero-ghi">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
+    <p class="hero-ghi">Tính tới {NGAY_SO}, đọc từ trang công khai của từng kênh.</p>
   </div>
 </header>
 
@@ -572,7 +590,7 @@ moc_html = '<div class="mc-doc">%s</div>' % "".join(the_moc(m, i) for i, m in en
 
 HOC_VAN = [
  ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
- ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với hơn mười lăm ngân hàng và tổ chức tài chính"),
+ ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với khoảng mười tám ngân hàng và tổ chức tài chính"),
  ("2012", "Deloitte UK", "Anh", "Chuyên viên tư vấn chiến lược doanh nghiệp"),
  ("2011", "University of Birmingham", "Anh", "Thạc sĩ Quản trị Kinh doanh, khoá xếp hạng 60 thế giới"),
  ("2008", "Đại học Ngoại Thương Hà Nội", "Việt Nam", "Cử nhân Kinh tế Đối ngoại"),
@@ -714,7 +732,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
       <p>Duy để số ở đây, và nói luôn giới hạn của nó.</p>
     </div>
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">%s</div>
-    <p class="hero-ghi" style="margin-top:18px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
+    <p class="hero-ghi" style="margin-top:18px">Tính tới {NGAY_SO}, đọc từ trang công khai của từng kênh.</p>
     <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
       <b>Điều số này không nói</b>
       <p>Nó nói Duy có mặt đủ lâu và đủ đều để bạn kiểm chứng, không nói Duy giúp được bạn. Câu đó chỉ có bằng chứng trong chính doanh nghiệp của bạn mới trả lời được, và đó là điều Duy cùng bạn đi tìm.</p>
@@ -2117,9 +2135,9 @@ KENH = """<section class="pd-hero">
       <a class="lk-v" href="#xem">Xem một tập ngay <span class="mt" aria-hidden="true">&darr;</span></a>
     </div>
     <div class="pd-hieu">
-      <span><b>230.000</b> đăng ký YouTube</span>
-      <span><b>800.000+</b> theo dõi các nền tảng</span>
-      <span><b>6 năm</b> đăng đều, không nghỉ quãng nào</span>
+      <span><b>{SO_YT}</b> đăng ký YouTube</span>
+      <span><b>{SO_TONG}</b> theo dõi các nền tảng</span>
+      <span><b>{SO_NAM}</b> đăng đều, không nghỉ quãng nào</span>
     </div>
   </div>
   <span class="pd-cuon" aria-hidden="true">Cuộn để xem</span>
@@ -2149,7 +2167,7 @@ KENH = """<section class="pd-hero">
   </div>
   <div class="khong hien" style="max-width:70ch;margin:44px auto 0">
     <b>Số để bạn kiểm tra, không phải để khoe</b>
-    <p>Số ở trang này đọc từ trang công khai của từng kênh, tính tới tháng 8 năm 2026. Nó nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn. Xem một tập rồi hãy quyết.</p>
+    <p>Số ở trang này đọc từ trang công khai của từng kênh, tính tới {NGAY_SO}. Nó nói Duy có mặt đủ lâu và đủ đều, không nói Duy giúp được bạn. Xem một tập rồi hãy quyết.</p>
   </div>
 </section>
 """.replace("{RAP}", _rap_html()).replace("{YOUTUBE}", YOUTUBE).replace("{BANDS}", pd_band)
@@ -2271,7 +2289,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
     <div class="phan-dau hien"><p class="mono">Nơi Duy xuất hiện</p><h2>Bốn kênh Duy đăng đều suốt sáu năm</h2>
     <p>Nội dung dài nhất nằm ở YouTube. Nội dung ngắn ở TikTok và Facebook. Zalo là nơi Duy trả lời câu hỏi cụ thể.</p></div>
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">{SO_LIEU}</div>
-    <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
+    <p class="hero-ghi" style="margin-top:20px">Tính tới {NGAY_SO}, đọc từ trang công khai của từng kênh.</p>
   </div>
 </section>
 """.replace("{CONG_DONG}", CONG_DONG).replace("{PHIEU}", PHIEU).replace("{EMAIL}", EMAIL).replace("{SO_LIEU}", so_lieu_html)
@@ -2377,7 +2395,7 @@ llms = """# Coach Duy Nguyễn
 - [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](%(b)s/blog.html): %(n)d bài viết cho nhà sáng lập
 - [Công cụ và tài liệu](%(b)s/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
+- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, {SO_YT} người đăng ký
 - [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang mở danh sách chờ
 - [Liên hệ](%(b)s/lien-he.html)
 
@@ -2393,7 +2411,25 @@ llms = """# Coach Duy Nguyễn
 """ % dict(b=BASE, n=len(BAI), cd=CONG_DONG, ph=PHIEU, cm=CO_MAY,
            ct="\n".join("- [%s](%s/chuong-trinh/%s): %s" % (c["ten"], BASE, c["tep"], c["tom"]) for c in CT),
            bv="\n".join("- [%s](%s/bai-viet/%s): %s" % (b["tieu"], BASE, b["tep"], b["mo"]) for b in BAI))
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "llms.txt"), "w", encoding="utf-8").write(llms)
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "llms.txt"), "w", encoding="utf-8").write(so_chung(llms))
+
+# Trang Cộng đồng viết tay, nhưng khối sáu ô số lấy từ nguồn chung ở đầu tệp này.
+def _nghin(so):
+    n = int(so.replace(".", "")) / 1000
+    return ("%g" % round(n, 1)).replace(".", ",")
+_CD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-dong", "index.html")
+_cd = open(_CD, encoding="utf-8").read()
+_o = "".join('\n          <div><b>%s<small>nghìn</small></b><span>%s %s%s</span></div>'
+             % (_nghin(n), dv, ten, ", hai kênh" if ten == "TikTok" else "") for ten, n, dv in SO_KENH)
+_o += '\n          <div><b>%s<small>nghìn</small></b><span>%s</span></div>' % (_nghin(THEM[0][0]), THEM[0][1])
+_so, _dv = THEM[1][0].split(" ", 1)
+_o += '\n          <div><b>%s<small>%s</small></b><span>làm nội dung đều đặn</span></div>\n        ' % (_so, _dv)
+_cd2 = re.sub(r'(<div class="so-lieu">).*?(</div>\s*<p class="so-ghi">Số liệu tính tới )[^,]*,',
+              lambda m: m.group(1) + _o + m.group(2) + NGAY_SO + ",", _cd, count=1, flags=re.S)
+assert _cd2.count("so-lieu") == _cd.count("so-lieu"), "không tìm thấy khối số trang Cộng đồng"
+if _cd2 != _cd:
+    open(_CD, "w", encoding="utf-8").write(_cd2)
+print("  cong-dong/index.html (khối số)")
 print("  sitemap.xml, robots.txt, llms.txt")
 print("XONG: %d trang" % (len(URLS) + 1))
 
