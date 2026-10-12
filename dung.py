@@ -1769,8 +1769,9 @@ _the_eb = "".join(
  '<article class="eb-the" data-chude="%s"><div class="eb-bia eb-bia--%d">'
  '<img src="img/logo-dn.webp" alt="" loading="lazy"><span class="eb-bia-cd">%s</span><h3>%s</h3><span class="eb-bia-tg">Coach Duy Nguyễn</span></div>'
  '<div class="eb-than"><p>%s</p>%s</div></article>'
- % (html.escape(CHU_DE_EB[m]), _MAU_CD[CHU_DE_EB[m]], html.escape(CHU_DE_EB[m]), html.escape(t),
-    html.escape(g).replace("E-book", "E&#8209;book"), ('<a class="tv-tt eb-tai" href="%s" data-ma="%s" data-ten="%s" download>Tải e&#8209;book PDF &darr;</a>' % (EBOOK_CO_TEP[m], m, html.escape(t))) if m in EBOOK_CO_TEP else '<p class="tv-tt">Đang soạn</p>')
+ % (html.escape(CHU_DE_EB[m]), _MAU_CD[CHU_DE_EB[m]], html.escape(CHU_DE_EB[m]),
+    ('<a href="e-book/%s.html">%s</a>' % (EBOOK_CO_TEP[m][len("tai-lieu/"):-4], html.escape(t))) if m in EBOOK_CO_TEP else html.escape(t),
+    html.escape(g).replace("E-book", "E&#8209;book"), ('<a class="tv-tt eb-tai" href="e-book/%s.html">Xem e&#8209;book &rarr;</a>' % EBOOK_CO_TEP[m][len("tai-lieu/"):-4]) if m in EBOOK_CO_TEP else '<p class="tv-tt">Đang soạn</p>')
  for m, t, g in EBOOK)
 SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
@@ -2046,27 +2047,106 @@ print("  cau-chuyen-hoc-vien.html")
 
 # Trang thư viện ở /cong-cu/ từ 10/10/2026, cùng thư mục với các công cụ. Thân
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
-# Hộp ba ô trước khi tải e-book (assets/ebook-tai.js gửi qua trạm /api/dang-ky vào Pancake).
-SACH += """<dialog class="eb-hop" id="eb-hop" aria-labelledby="eb-hop-tieu">
-  <form id="eb-form" novalidate>
-    <p class="mono">Tải e-book</p>
-    <h2 id="eb-hop-tieu">Điền 3 ô để tải ngay</h2>
-    <p class="eb-hop-dan" id="eb-ten-sach"></p>
-    <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
-    <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
-    <label class="cc-o"><span>Vai trò</span><select name="vai_tro" required><option value="">Chọn</option><option value="0">Chủ doanh nghiệp hoặc đồng sáng lập</option><option value="1">Quản lý</option><option value="2">Nhân viên</option><option value="3">Kinh doanh một mình</option><option value="4">Đang chuẩn bị kinh doanh</option></select></label>
-    <p class="cc-loi" id="eb-loi" hidden></p>
-    <div class="eb-hop-nut"><button class="nut nut-v" type="submit">Tải e&#8209;book <span class="mt" aria-hidden="true">&darr;</span></button><button class="nut nut-vien" type="button" id="eb-dong">Để sau</button></div>
-    <p class="eb-hop-ghi">Lần sau tải cuốn khác hay mở công cụ, bạn không phải điền lại.</p>
-  </form>
-</dialog>
-<script src="assets/ebook-tai.js?v=%s" defer></script>
-""" % VER
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
       "Công cụ và tài liệu Coach Duy Nguyễn soạn cho các chủ doanh nghiệp: kế hoạch, số khách, dòng tiền, giao việc và đội ngũ, dùng với chính số liệu doanh nghiệp mình.",
       SACH, "cong-cu/")
 print("  cong-cu/index.html")
+
+# ---------------------------------------------------------------- TRANG E-BOOK
+# Coach Duy chốt 12/10/2026: mỗi e-book có trang riêng nói cuốn này về gì, ai cần đọc, vì sao nên tải;
+# điền thông tin (ba ô và năm câu phân loại) xong mới hiện nút tải, thông tin vào Pancake qua trạm /api/dang-ky.
+# Chữ lấy từ tên đã duyệt và chính nội dung cuốn sách (ebook/dung_ebook.py thong_tin), ảnh cắt từ bản PDF.
+from ebook.dung_ebook import thong_tin as _tt_eb
+from ebook.dung_ebook import TEP_PDF as _TEP_EB
+_CONG_CU_EB = {"F1": ["dongtien", "laithat", "sokhach"], "F2": ["ketqua", "nhanvienmoi", "traodoi"], "F3": ["khachdeu", "quangcao", "khachcu"],
+               "F4": ["2027", "sokhach", "quytrinh"], "F5": ["giaoviec", "lichtuan", "vangmat"], "F6": ["kehoach", "2027"],
+               "F7": ["tuvan", "giacao"], "F8": ["diemnghen", "lichtuan"], "E1": ["cauchuyen"], "E2": ["giaoviec", "ketqua"],
+               "E3": ["cauchuyen", "hoso"], "E4": ["tuvan", "khachkho"], "E5": ["cauchuyen", "loigioithieu"], "E6": ["hoso", "loigioithieu"]}
+_ngan_ma = {n: m for n, m in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-luong-co-lai"), ("quytrinh", "quy-trinh-tu-cach-lam"),
+            ("khachkho", "khach-kho-tinh"), ("dongtien", "du-bao-dong-tien-13-tuan"), ("laithat", "lai-that-tung-goi"), ("quangcao", "chi-phi-quang-cao-moi-khach"),
+            ("khachdeu", "khach-den-khong-deu"), ("khachcu", "khach-cu-quay-lai"), ("loigioithieu", "loi-gioi-thieu-doanh-nghiep"), ("tuvan", "tu-van-khach-chua-mua"),
+            ("giacao", "khach-noi-gia-cao"), ("giaoviec", "giao-viec-cho-quan-ly"), ("lichtuan", "lich-lam-viec-nguoi-chu"), ("vangmat", "chu-vang-hai-tuan"),
+            ("diemnghen", "diem-nghen-khi-chung-lai"), ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"),
+            ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang")]}
+_ten_cc = {c["ma"]: c["tieu"] for c in cong_cu_ai.DS}
+def trang_ebook(ma):
+    x = _tt_eb(ma); m = ma.lower(); pdf = _TEP_EB[ma]; e = html.escape
+    lo = x["gt"].split(". ")[0].rstrip(".") + "."
+    muc = "".join('<li><span>%s</span>%s</li>' % tuple(e(v) for v in t.split(". ", 1)) for t in x["muc"])
+    cc = "".join('<a class="lk-v" href="../cong-cu/%s.html">%s <span class="mt" aria-hidden="true">&rarr;</span></a>' % (_ngan_ma[n], e(_ten_cc[_ngan_ma[n]]))
+                 for n in _CONG_CU_EB.get(ma, []))
+    meta = "%d trang" % x["so_trang"] + (" · %d câu lệnh ChatGPT" % x["so_lenh"] if x["so_lenh"] else "") + " · Bài tự làm có chỗ điền"
+    than = """<header class="dau-trang hoa-van cc-dau eb-dau">
+  <div class="bd eb-dau-luoi">
+    <div>
+      <a class="cc-ve" href="../cong-cu/#e-book">&larr; Tất cả e&#8209;book</a>
+      <p class="mono">E&#8209;book · %(cd)s</p>
+      <h1>%(ten)s</h1>
+      <p class="dan">%(gt)s</p>
+      <p class="eb-meta">%(meta)s</p>
+      <a class="nut nut-v" href="#tai">Nhận e&#8209;book <span class="mt" aria-hidden="true">&darr;</span></a>
+    </div>
+    <div class="eb-dau-bia"><img src="../img/ebook/%(m)s-bia.webp" alt="Bìa e-book %(ten)s" width="640" height="905"></div>
+  </div>
+</header>
+
+<section class="phan bd phan-sang cc">
+  <div class="cc-doc cc-rong eb-hai">
+    <div>
+      <p class="mono">Cuốn này dành cho bạn nếu</p>
+      <h2>%(lo)s</h2>
+      <p class="cc-mo-dau">%(mo)s</p>
+      <p class="mono eb-nhan">Bạn nhận được gì</p>
+      <p>%(mt)s</p>
+    </div>
+    <div class="hop eb-muc"><p class="mono">Trong cuốn này</p><ol>%(muc)s</ol></div>
+  </div>
+</section>
+
+<section class="phan bd cc cc-toi">
+  <div class="cc-doc cc-rong">
+    <p class="mono">Xem trước</p>
+    <h2>Mỗi phần đều có ví dụ, chỗ để bạn tự điền và câu lệnh dùng ngay</h2>
+    <div class="eb-xem"><img src="../img/ebook/%(m)s-xem1.webp" alt="Một trang bên trong e-book" loading="lazy" width="560" height="792"><img src="../img/ebook/%(m)s-xem2.webp" alt="Một trang khác bên trong e-book" loading="lazy" width="560" height="792"></div>
+  </div>
+</section>
+
+<section class="phan bd phan-sang cc cc-lam" id="tai">
+  <div class="cc-doc">
+    <div class="hop cc-cua" id="eb-cua">
+      <h2>Nhận e&#8209;book %(ten)s</h2>
+      <p class="cc-cua-dan">Điền tên, Zalo và bấm chọn năm câu ngắn. Nút tải hiện ngay sau đó, bạn không phải chờ email.</p>
+      <form id="eb-form" novalidate data-ma="%(ma)s" data-ten="%(ten)s" data-noidau="%(nd)s">
+        <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
+        <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
+        <label class="cc-o"><span>Vai trò</span><select name="vai_tro" required><option value="">Chọn</option><option value="0">Chủ doanh nghiệp hoặc đồng sáng lập</option><option value="1">Quản lý</option><option value="2">Nhân viên</option><option value="3">Kinh doanh một mình</option><option value="4">Đang chuẩn bị kinh doanh</option></select></label>
+        %(pl)s
+        <p class="cc-loi" id="eb-loi" hidden></p>
+        <button class="nut nut-v" type="submit">Mở nút tải e&#8209;book <span class="mt" aria-hidden="true">&rarr;</span></button>
+      </form>
+      <div class="eb-xong" id="eb-xong" hidden>
+        <p class="mono">Đã sẵn sàng</p>
+        <h2>E&#8209;book của bạn</h2>
+        <a class="nut nut-v" id="eb-nut-tai" href="../tai-lieu/%(pdf)s" download>Tải e&#8209;book PDF, %(st)d trang <span class="mt" aria-hidden="true">&darr;</span></a>
+        %(cc_khoi)s
+      </div>
+    </div>
+  </div>
+</section>
+
+%(gioi)s
+<script src="../assets/dang-ky.js?v=%(ver)s"></script>
+<script src="../assets/ebook-tai.js?v=%(ver)s"></script>
+""" % dict(cd=e(x["chu_de"]), ten=e(x["ten"]), gt=e(x["gt"]), meta=meta, m=m, lo=e(lo), mo=e(x["mo_dau"]), mt=e(x["mt"]), muc=muc,
+           ma=ma, nd=e(cong_cu_ai.noi_dau("", x["chu_de"])), pl=cong_cu_ai.khoi_phan_loai(), pdf=pdf, st=x["so_trang"],
+           cc_khoi=('<p class="eb-cc-dan">Làm cùng các công cụ đi kèm, với chính số liệu doanh nghiệp bạn:</p><div class="eb-cc">%s</div>' % cc) if cc else "",
+           gioi=cong_cu_ai.khoi_gioi_thieu(2), ver=VER)
+    tep = "e-book/%s.html" % pdf[:-4]
+    trang(tep, "%s · E-book của Coach Duy Nguyễn" % x["ten"], x["gt"], than, "cong-cu/")
+    return tep
+EBOOK_TRANG = {m: trang_ebook(m) for m in _TEP_EB}
+print("  %d trang e-book" % len(EBOOK_TRANG))
 
 # Địa chỉ cũ sach.html đã chia sẻ ra ngoài: chuyển sang /cong-cu/, giữ phần neo.
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sach.html"), "w", encoding="utf-8").write(

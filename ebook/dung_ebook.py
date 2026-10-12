@@ -139,6 +139,37 @@ def muc_luc(x):
     return "<li><span>%s</span>%s</li>" % ((m.group(1), e(m.group(2))) if m else ("", e(x)))
 
 
+def tep_noi_dung(ma):
+    tep = [f for f in os.listdir(NGF) if f.startswith("NGF - E-book %s," % ma) and f.endswith(".md")]
+    return os.path.join(NGF, tep[0]) if tep else None
+
+
+def thong_tin(ma):
+    """Chữ cho trang giới thiệu e-book trên website (dung.py), lấy từ tên đã duyệt và chính nội dung cuốn sách."""
+    t = open(tep_noi_dung(ma), encoding="utf-8").read()
+    noi = t[t.index("## Nội dung e-book"):]
+    ten, gt, mt = ten_da_duyet(ma)
+    mo = re.search(r"### Mở đầu\n\n(.+?)\n\n###", noi, re.S)
+    muc = [m for m in re.findall(r"^### (Phần \d+\. .+)$", noi, re.M)]
+    cd = re.search(r"^chủ đề: (.+)$", t, re.M)
+    pdf = os.path.join(WEB, "tai-lieu", TEP_PDF[ma])
+    trang = int(re.search(r"Pages:\s+(\d+)", subprocess.run(["pdfinfo", pdf], capture_output=True, text=True).stdout).group(1))
+    return dict(ten=ten, gt=gt, mt=mt, mo_dau=mo.group(1).strip() if mo else "", muc=muc, chu_de=cd.group(1).strip() if cd else "",
+                so_lenh=len(re.findall(r"^\*\*Câu lệnh \d+\.", noi, re.M)), so_trang=trang)
+
+
+def anh_xem_truoc(ma):
+    """Bìa và hai trang xem trước cho trang giới thiệu, cắt từ chính bản PDF: img/ebook/<mã>-bia.webp, -xem1, -xem2."""
+    from PIL import Image
+    ra = os.path.join(WEB, "img", "ebook"); os.makedirs(ra, exist_ok=True)
+    pdf = os.path.join(WEB, "tai-lieu", TEP_PDF[ma]); tam = os.path.join(GOC, "ra", "anh")
+    os.makedirs(tam, exist_ok=True)
+    for ten, trang, rong in (("bia", 1, 640), ("xem1", 3, 560), ("xem2", 5, 560)):
+        subprocess.run(["pdftoppm", "-png", "-r", "110", "-f", str(trang), "-l", str(trang), "-singlefile", pdf, os.path.join(tam, ten)], check=True)
+        im = Image.open(os.path.join(tam, ten + ".png")).convert("RGB")
+        im.thumbnail((rong, rong * 2)); im.save(os.path.join(ra, "%s-%s.webp" % (ma.lower(), ten)), quality=82)
+
+
 def dung(ma):
     tep = [f for f in os.listdir(NGF) if f.startswith("NGF - E-book %s," % ma) and f.endswith(".md")]
     if not tep:
@@ -193,6 +224,7 @@ def dung(ma):
                     "--print-to-pdf=%s" % pdf, "file://" + tep_html], capture_output=True, text=True, timeout=90)
     if "written to file" not in r.stdout + r.stderr:
         sys.exit("Chrome không in được %s:\n%s" % (ma, r.stderr[-800:]))
+    anh_xem_truoc(ma)
     print("đã dựng", ma, "->", os.path.relpath(pdf, WEB))
 
 

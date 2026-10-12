@@ -3,7 +3,9 @@
 // Thử ngày 12/10/2026: POST các ô ở ngoài cùng tới /crm/Contact/records?api_key=... thì Pancake ghi đúng.
 const PANCAKE = "https://pos.pages.fm/api/v1/shops/430111447/crm/Contact/records";
 const NGUON = ["https://coachduynguyen.vn", "https://www.coachduynguyen.vn"];
-const O_CHO_PHEP = ["Name", "Phone", "Note", "chuc_danh", "uu_tien", "utm_source", "utm_medium", "utm_campaign", "utm_content", "url_page"];
+const O_CHO_PHEP = ["Name", "Phone", "Note", "chuc_danh", "uu_tien", "utm_source", "utm_medium", "utm_campaign", "utm_content", "url_page",
+  // năm câu phân loại (cong_cu_ai.py PHAN_LOAI) và cột KH quan tâm ghi theo chủ đề
+  "nganh_nghe", "cap_do", "tuoi_nghe", "day_co_phai_van_de_anh_chi_muon_uu_tien_giai_quyet_khong", "noi_dau_kh"];
 
 function tra(origin, status, body) {
   return new Response(JSON.stringify(body), { status, headers: {
@@ -24,7 +26,8 @@ export default {
     const d = (vao && vao.data) || vao || {};
     const data = {};
     for (const k of O_CHO_PHEP) if (typeof d[k] === "string" && d[k].length <= 2000) data[k] = d[k];
-    if (!data.Name || !/^\+?\d{9,12}$/.test(data.Phone || "")) return tra(origin, 400, { success: false });
+    if (!data.Name || !/^(0\d{9}|\+?84\d{9})$/.test(data.Phone || "")) return tra(origin, 400, { success: false });
+    if (data.noi_dau_kh) data.noi_dau_kh = [data.noi_dau_kh];   // cột chọn nhiều của Pancake nhận danh sách
     const url = PANCAKE + "?api_key=" + env.PANCAKE_KEY, dau = { "Content-Type": "application/json" };
     // Người đã đăng ký (trình duyệt giữ mã khách) thì cập nhật đúng khách cũ, không tạo khách trùng.
     // Mã không còn (Sales đã xoá) thì tạo mới như lần đầu.

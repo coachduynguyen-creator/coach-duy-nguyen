@@ -7,14 +7,8 @@
   if (!dl) return;
   var DL = JSON.parse(dl.textContent), MA = DL.ma;
 
-  // Trạm Cloudflare (tram-pancake/worker.js) ghi vào phần Liên hệ của Pancake CRM bằng khóa API.
-  // Pancake không nhận bản ghi gửi thẳng từ trang khác, nên mọi đăng ký đi qua trạm này.
-  var TRAM = '/api/dang-ky';
-  // Mã lựa chọn trong ô "Chức danh" và "Ưu tiên" của Pancake.
-  var CHUC_DANH = {0: 'Chủ doanh nghiệp-4421-8240-f9b1-4edf-3105-9677-c312',
-                   1: 'Quản lý-0268-27d9-11a8-cdfd-599c-b34f-b1c3',
-                   3: 'Kinh doanh tự do-70b4-5a43-b7ab-7da5-672e-08d7-067e'};
-  var RAT_UU_TIEN = 'Rất ưu tiên-c949-4aae-d952-afdb-0e9e-c95c-a801';
+  // Gửi qua trạm Cloudflare /api/dang-ky vào Pancake; câu phân loại, cột Pancake, Rất ưu tiên ở dang-ky.js.
+  var DK = window.NGF_DK;
   var NGUON_HOP_LE = ['facebook', 'youtube', 'tiktok', 'zalo', 'gioi-thieu'];
 
   function doc(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
@@ -60,28 +54,14 @@
     });
   }
 
-  /* Gửi một bản ghi vào Pancake. */
-  function canGoi(n) { return +n.vai_tro === 0 && +n.doanh_thu >= 2 && +n.doi_ngu >= 1; }
-  function gui(n, moThem) {
-    var f = d.getElementById('cc-form');
-    function chu(ten, i) { var o = f ? f.querySelector('[name="' + ten + '"] option[value="' + i + '"]') : null; return o ? o.textContent : (n[ten + '_chu'] || 'chưa trả lời'); }
-    var goi = canGoi(n);
+  /* Gửi một bản ghi vào Pancake: lần đầu tạo khách, lần sau cập nhật đúng khách đó (mã khách nhớ trong ngf-lead). */
+  function gui(n) {
     var da = (n.da || []).slice(); if (da.indexOf(MA) < 0) da.push(MA);
-    var ghiChu = 'Công cụ đã mở: ' + da.join(', ') + ((n.eb || []).length ? ' · E-book đã tải: ' + n.eb.join(', ') : '') + ' · Nguồn: ' + nguon +
-      ' · Vai trò: ' + chu('vai_tro', n.vai_tro) + ' · Doanh thu mỗi tháng: ' + chu('doanh_thu', n.doanh_thu) +
-      ' · Đội ngũ: ' + chu('doi_ngu', n.doi_ngu) + ' · Cần gọi lại: ' + (goi ? 'CÓ' : 'không');
-    var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo, Note: ghiChu,
+    var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo,
+      Note: 'Công cụ đã mở: ' + da.join(', ') + ((n.eb || []).length ? ' · E-book đã tải: ' + n.eb.join(', ') : '') + ' · Nguồn: ' + nguon + DK.ghiChu(n),
       utm_source: nguon, utm_medium: 'cong-cu-ai', utm_campaign: 'ngf-thu-lead', utm_content: MA, url_page: location.href};
-    if (CHUC_DANH[n.vai_tro]) data.chuc_danh = CHUC_DANH[n.vai_tro];
-    if (goi) data.uu_tien = RAT_UU_TIEN;
-    return fetch(TRAM, {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
-      body: JSON.stringify({data: data, id: n.pid || null})})
-      .then(function (r) { return r.json(); })
-      .then(function (j) {
-        if (!j || !j.success) throw new Error((j && j.message) || 'Pancake chưa nhận');
-        if (j.id) { n.pid = j.id; ghi('ngf-lead', n); }   // lần sau cập nhật đúng khách này, không tạo khách trùng
-        return j;
-      });
+    var t = DK.truong(n, DL.noi_dau); for (var k in t) data[k] = t[k];
+    return DK.gui(n, data);
   }
   function daGhi(n) { n.da = n.da || []; if (n.da.indexOf(MA) < 0) n.da.push(MA); ghi('ngf-lead', n); }
 
@@ -119,17 +99,6 @@
     capNhat();
     ganNut(kin);
     tienDo();
-    // Hai câu hỏi thêm, không bắt buộc: đã trả lời thì ẩn, gửi thì ghi lại vào Pancake.
-    var th = d.getElementById('cc-them'), n0 = doc('ngf-lead') || {};
-    if (th && n0.doanh_thu !== undefined && n0.doanh_thu !== '') th.hidden = true;
-    if (th) th.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var n = doc('ngf-lead') || {};
-      ['doanh_thu', 'doi_ngu'].forEach(function (k) { n[k] = th[k].value; n[k + '_chu'] = th[k].value === '' ? '' : th[k].options[th[k].selectedIndex].textContent; });
-      ghi('ngf-lead', n);
-      th.innerHTML = '<p class="cc-them-dau">Duy đã nhận. Cảm ơn bạn.</p>';
-      if (n.ten) gui(n, true).then(function () {}, function () {});
-    });
   }
   // Câu lệnh dài thì thu gọn, bấm "Xem đầy đủ" để mở. Nút Chép luôn chép đủ.
   function ganNut(goc) {
@@ -171,25 +140,29 @@
   // Ghi tên công cụ này để trang da-dang-ky.html (Pancake chuyển tới sau khi gửi) đưa về đúng chỗ.
   try { localStorage.setItem('ngf-cho', MA); } catch (e) {}
   var nguoi = doc('ngf-lead');
-  if (nguoi && ((nguoi.ten && nguoi.zalo) || nguoi.qua_pancake)) {
-    // Đã điền ở một công cụ khác: mở luôn, vẫn ghi vào Pancake là đã mở thêm công cụ này.
+  var f = d.getElementById('cc-form'), loi = d.getElementById('cc-loi');
+  if (nguoi && nguoi.ten && nguoi.zalo && nguoi.pl) {
+    // Đã điền đủ ở một công cụ hay e-book khác: mở luôn, vẫn ghi vào Pancake là đã mở thêm công cụ này.
     moKhoa();
-    if (nguoi.ten && (nguoi.da || []).indexOf(MA) < 0) gui(nguoi, true).then(function () { daGhi(nguoi); }, function () {});
+    if ((nguoi.da || []).indexOf(MA) < 0) gui(nguoi).then(function () { daGhi(nguoi); }, function () {});
+  } else if (nguoi && f) {
+    // Từng điền ba ô trước khi có câu phân loại: điền sẵn phần đã có, chỉ cần chọn thêm.
+    f.ten.value = nguoi.ten || ''; f.zalo.value = nguoi.zalo || ''; f.vai_tro.value = nguoi.vai_tro || '';
   }
 
-  var f = d.getElementById('cc-form'), loi = d.getElementById('cc-loi');
   if (f) f.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var n = {ten: f.ten.value.trim(), zalo: f.zalo.value.replace(/[^\d+]/g, ''),
-             vai_tro: f.vai_tro.value, doanh_thu: '', doi_ngu: ''};
-    var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !/^\+?\d{9,12}$/.test(n.zalo) ? 'Số Zalo chưa đúng, bạn kiểm lại giúp Duy.' :
-      n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : '';
+    var cu = doc('ngf-lead') || {}, pl = DK.docPL(f);
+    var n = {ten: f.ten.value.trim(), zalo: DK.zalo(f.zalo.value), vai_tro: f.vai_tro.value, pl: pl.pl,
+             pid: cu.pid, da: cu.da, eb: cu.eb};
+    var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !n.zalo ? 'Số Zalo chưa đúng, bạn kiểm tra lại giúp Duy. Số bắt đầu bằng 0 và có 10 chữ số.' :
+      n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : pl.thieu;
     if (thieu) { loi.textContent = thieu; loi.hidden = false; return; }
     loi.hidden = true;
     n.vai_tro_chu = f.vai_tro.options[f.vai_tro.selectedIndex].textContent;
     ghi('ngf-lead', n);
     // Mở ngay, không chờ Pancake trả lời. Gửi chưa được thì lần sau mở trang sẽ gửi lại.
-    gui(n, false).then(function () { daGhi(n); }, function () {});
+    gui(n).then(function () { daGhi(n); }, function () {});
     moKhoa();
     d.getElementById('cc-kin').scrollIntoView({behavior: 'smooth', block: 'start'});
   });

@@ -24,7 +24,7 @@ CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
 FACEBOOK = "https://www.facebook.com/coachduynguyen"
-VER = "20261013b"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20261013c"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào

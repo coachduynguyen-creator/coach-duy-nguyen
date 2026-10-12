@@ -1,52 +1,44 @@
-/* Tải e-book trên trang Công cụ: lần đầu điền tên, Zalo, vai trò rồi tải ngay, thông tin đi qua
-   trạm /api/dang-ky vào phần Liên hệ của Pancake. Người đã điền ở một công cụ hay e-book khác thì
-   tải luôn, trạm vẫn ghi thêm một dòng là đã tải cuốn này. Dùng chung khóa ngf-lead với cong-cu-ai.js. */
+/* Trang giới thiệu e-book (e-book/*.html): điền tên, Zalo, vai trò và năm câu phân loại thì hiện nút tải.
+   Thông tin đi qua trạm /api/dang-ky vào Pancake (dang-ky.js). Người đã điền đủ ở công cụ hay e-book khác
+   thì thấy nút tải ngay, Pancake vẫn ghi thêm là đã nhận cuốn này. Dùng chung khóa ngf-lead với cong-cu-ai.js. */
 (function () {
-  var d = document, hop = d.getElementById('eb-hop'), f = d.getElementById('eb-form'), loi = d.getElementById('eb-loi');
-  if (!hop || !f) return;
-  var CHUC_DANH = {0: 'Chủ doanh nghiệp-4421-8240-f9b1-4edf-3105-9677-c312',
-                   1: 'Quản lý-0268-27d9-11a8-cdfd-599c-b34f-b1c3',
-                   3: 'Kinh doanh tự do-70b4-5a43-b7ab-7da5-672e-08d7-067e'};
+  var d = document, f = d.getElementById('eb-form'), loi = d.getElementById('eb-loi'), xong = d.getElementById('eb-xong'), DK = window.NGF_DK;
+  if (!f || !DK) return;
+  var MA = f.dataset.ma, TEN = f.dataset.ten, NOI_DAU = f.dataset.noidau;
   function doc(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   function ghi(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  var nguon = doc('ngf-nguon') || 'khong-ro', dang = null;
+  var q = new URLSearchParams(location.search), nguon = (q.get('nguon') || '').toLowerCase();
+  if (['facebook', 'youtube', 'tiktok', 'zalo', 'gioi-thieu'].indexOf(nguon) > -1) ghi('ngf-nguon', nguon); else nguon = doc('ngf-nguon') || 'khong-ro';
+  var THU = q.get('thu') === '1';
 
-  function gui(n, a) {
-    n.eb = n.eb || []; if (n.eb.indexOf(a.dataset.ma) < 0) n.eb.push(a.dataset.ma); ghi('ngf-lead', n);
-    var note = ((n.da || []).length ? 'Công cụ đã mở: ' + n.da.join(', ') + ' · ' : '') + 'E-book đã tải: ' + n.eb.join(', ') +
-      ' · Nguồn: ' + nguon + ' · Vai trò: ' + (n.vai_tro_chu || '') +
-      (n.doanh_thu_chu ? ' · Doanh thu mỗi tháng: ' + n.doanh_thu_chu : '') + (n.doi_ngu_chu ? ' · Đội ngũ: ' + n.doi_ngu_chu : '');
-    var data = {Name: n.ten, Phone: n.zalo, Note: note,
-      utm_source: nguon, utm_medium: 'ebook', utm_campaign: 'ngf-thu-lead', utm_content: a.dataset.ma, url_page: location.href};
-    if (CHUC_DANH[n.vai_tro]) data.chuc_danh = CHUC_DANH[n.vai_tro];
-    return fetch('/api/dang-ky', {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
-      body: JSON.stringify({data: data, id: n.pid || null})})
-      .then(function (r) { return r.json(); })
-      .then(function (j) { if (j && j.id) { n.pid = j.id; ghi('ngf-lead', n); } })
-      .catch(function () {});
+  function gui(n) {
+    n.eb = n.eb || []; if (n.eb.indexOf(MA) < 0) n.eb.push(MA); ghi('ngf-lead', n);
+    var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo,
+      Note: ((n.da || []).length ? 'Công cụ đã mở: ' + n.da.join(', ') + ' · ' : '') + 'E-book đã nhận: ' + n.eb.join(', ') + ' · Nguồn: ' + nguon + DK.ghiChu(n),
+      utm_source: nguon, utm_medium: 'ebook', utm_campaign: 'ngf-thu-lead', utm_content: MA, url_page: location.href};
+    var t = DK.truong(n, NOI_DAU); for (var k in t) data[k] = t[k];
+    return DK.gui(n, data).catch(function () {});
   }
-  function tai(a) { var l = d.createElement('a'); l.href = a.href; l.download = ''; d.body.appendChild(l); l.click(); l.remove(); }
+  function moNut() { f.hidden = true; d.querySelector('#eb-cua > .cc-cua-dan').hidden = true; d.querySelector('#eb-cua > h2').hidden = true; xong.hidden = false; }
 
-  [].forEach.call(d.querySelectorAll('.eb-tai'), function (a) {
-    a.addEventListener('click', function (ev) {
-      var n = doc('ngf-lead');
-      if (n && n.ten && n.zalo) { gui(n, a); return; }   // đã điền: để trình duyệt tải như thường
-      ev.preventDefault(); dang = a;
-      d.getElementById('eb-ten-sach').textContent = a.dataset.ten;
-      loi.hidden = true; hop.showModal ? hop.showModal() : hop.setAttribute('open', '');
-      f.ten.focus();
-    });
-  });
-  d.getElementById('eb-dong').addEventListener('click', function () { hop.close ? hop.close() : hop.removeAttribute('open'); });
+  var n0 = doc('ngf-lead');
+  if (n0 && n0.ten && n0.zalo && n0.pl) {
+    moNut();
+    if ((n0.eb || []).indexOf(MA) < 0) gui(n0);
+  } else if (n0) { f.ten.value = n0.ten || ''; f.zalo.value = n0.zalo || ''; f.vai_tro.value = n0.vai_tro || ''; }
+
   f.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var n = {ten: f.ten.value.trim(), zalo: f.zalo.value.replace(/[^\d+]/g, ''), vai_tro: f.vai_tro.value, doanh_thu: '', doi_ngu: ''};
-    var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !/^\+?\d{9,12}$/.test(n.zalo) ? 'Số Zalo chưa đúng, bạn kiểm tra lại giúp Duy.' :
-      n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : '';
+    var cu = doc('ngf-lead') || {}, pl = DK.docPL(f);
+    var n = {ten: f.ten.value.trim(), zalo: DK.zalo(f.zalo.value), vai_tro: f.vai_tro.value, pl: pl.pl, pid: cu.pid, da: cu.da, eb: cu.eb};
+    var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !n.zalo ? 'Số Zalo chưa đúng, bạn kiểm tra lại giúp Duy. Số bắt đầu bằng 0 và có 10 chữ số.' :
+      n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : pl.thieu;
     if (thieu) { loi.textContent = thieu; loi.hidden = false; return; }
+    loi.hidden = true;
     n.vai_tro_chu = f.vai_tro.options[f.vai_tro.selectedIndex].textContent;
     ghi('ngf-lead', n);
-    gui(n, dang); tai(dang);
-    hop.close ? hop.close() : hop.removeAttribute('open');
+    gui(n);
+    moNut();
+    d.getElementById('eb-cua').scrollIntoView({behavior: 'smooth', block: 'center'});
   });
 })();

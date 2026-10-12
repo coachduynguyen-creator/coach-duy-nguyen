@@ -407,6 +407,51 @@ def _kq(v):
     return ('<div class="cc-kq"><p><b>AI sẽ trả về.</b> %s</p>%s</div>'
             % (_dong_so(v[0]), ('<p class="cc-meo"><b>Lưu ý.</b> %s</p>' % _dong(v[1])) if v[1] else ""))
 
+# Năm câu phân loại, bắt buộc trả lời trước khi mở (Coach Duy chốt phiếu ban-chot/phieu-cau-hoi-phan-loai 12/10/2026).
+# Mỗi câu ghi vào một cột Pancake (mã lựa chọn lấy từ biểu mẫu NGF Free); cột rỗng thì chỉ ghi vào phần ghi chú.
+PHAN_LOAI = [
+    ("nganh_nghe", "nganh_nghe", "Bạn kinh doanh trong lĩnh vực nào?", [
+        ("Bất động sản", "Bất động sản-dd65-63aa-c17f-2540-0d1c-07a5-b4ac"), ("Ô tô", "Ô tô-19b6-be1e-7f17-dd9f-b96e-a63e-44bf"),
+        ("Tài chính, chứng khoán", "Tài chính -5516-b454-54be-210a-f8af-08e2-340e"), ("Giáo dục, đào tạo", "Giáo dục-a3f5-bbfd-fbba-6d3e-980f-2783-4f1c"),
+        ("Du học, định cư", "Du học / định cư-80ea-2ec9-2b1d-f8e2-1558-f00f-bffe"), ("Dịch vụ", "Bảo hiểm-7bb8-51a2-fb01-50a4-bdf9-0862-0d8c"),
+        ("Nội ngoại thất", "Nội, ngoại thất-240d-6077-d9b9-b196-c1fb-c697-0f98"), ("Sản xuất", "Sản xuất-a423-71a2-2421-1c37-dc41-2692-26da"),
+        ("Sức khỏe, sắc đẹp", "Sức khỏe-81d9-4a83-9c22-b19c-cf04-ab69-f9ea"), ("Nhà hàng, ăn uống", "F&B-c58e-b743-30cf-2f3a-4091-d0b9-840a"),
+        ("Bán lẻ", "Bán lẻ-b0cd-a8e2-09a3-5b73-3937-b242-bb92"), ("Bán hàng online", "Bán hàng online-9e5b-a1a7-5cd2-d2a9-c4f3-f62e-1b49"),
+        ("Bán cho doanh nghiệp", "B2B-ca0f-d5c3-13b3-86ae-1fce-c102-7802"), ("Lĩnh vực khác", "Khác-43dd-87bf-4603-2c80-98d0-122a-267e")]),
+    ("cap_do", "cap_do", "Doanh nghiệp của bạn đang ở giai đoạn nào?", [
+        ("Mới bắt đầu", "Cấp 1: Mới bắt đầu-0406-07a4-d539-da01-cff0-9e05-c303"),
+        ("Từng tốt nhưng đang đi xuống", "Cấp 2: Đã bắt đầu nhưng xuống dốc-45d3-3cd9-29ad-b238-a546-8210-9caa"),
+        ("Đang ổn nhưng đi ngang", "Cấp 3: Đang ổn nhưng đi ngang-dee1-b1b6-cadc-4bc4-4ae6-877f-d49e"),
+        ("Đang tăng trưởng tốt", "Cấp 4: Đang thắng hoặc dẫn đầu-b58d-c06c-10c2-9c94-cf40-f268-a40a")]),
+    ("tuoi_nghe", "tuoi_nghe", "Bạn kinh doanh được bao lâu rồi?", [
+        ("Dưới 6 tháng", "Dưới 6 tháng-01a5-80d7-2ca6-680a-3441-e6b0-0c1b"), ("6 đến 12 tháng", "6-12 tháng-ab5b-e54c-ac95-b593-5658-322b-6ccb"),
+        ("1 đến 3 năm", "1-3 năm-7891-f9b1-2d14-fb94-c2a7-67c0-9905"), ("Trên 3 năm", "Trên 3 năm-bd55-ce6a-bf4e-82d7-8fe2-dc44-8f30")]),
+    ("doi_ngu", "", "Đội ngũ của bạn có bao nhiêu người?", [("Chỉ mình tôi", ""), ("2 đến 5 người", ""), ("6 đến 30 người", ""), ("Trên 30 người", "")]),
+    ("giai_quyet", "day_co_phai_van_de_anh_chi_muon_uu_tien_giai_quyet_khong", "Đây có phải việc bạn muốn giải quyết sớm không?", [
+        ("Có, mình muốn giải quyết sớm", "8e08-207b-bc31-cd4e-a9e8-3978-4e82"),
+        ("Có, nhưng chưa biết đâu là vấn đề gốc", "6c30-0d40-0e9e-1458-1e00-143a-b3d3"), ("Chưa phải lúc này", "")]),
+]
+
+# Cột "KH quan tâm" của Pancake ghi tự động theo chủ đề công cụ, không hỏi (phiếu mục R1).
+NOI_DAU = {"Bán hàng và phòng kinh doanh": "Quy trình bán hàng -2f92-cf3f-96b3-8c0a-f8a1-5f27-c445",
+           "Thương hiệu của người sáng lập": "Chăm sóc KH-3f10-a621-497b-ae85-defa-a583-4864",
+           "Hệ thống tăng trưởng": "Xây dựng business-19fc-65e3-76ef-9f88-7bcb-0a57-cd96",
+           "Điểm nghẽn của người sáng lập": "Xây dựng business-19fc-65e3-76ef-9f88-7bcb-0a57-cd96",
+           "AI cho người chủ": "Xây dựng business-19fc-65e3-76ef-9f88-7bcb-0a57-cd96"}
+NOI_DAU_DOI_NGU = "Đội ngũ yếu kém-1d14-4698-122f-76f5-0937-8f03-1c30"
+CONG_CU_DOI_NGU = {"ket-qua-tung-vi-tri", "dao-tao-nhan-vien-moi", "trao-doi-kho-voi-nhan-vien", "phong-van-tuyen-dung", "giao-viec-cho-quan-ly"}
+
+def noi_dau(ma, chu_de):
+    return NOI_DAU_DOI_NGU if ma in CONG_CU_DOI_NGU else NOI_DAU.get(chu_de, "")
+
+def khoi_phan_loai():
+    """Năm câu phân loại dạng nút bấm chọn, dùng chung cho biểu mẫu công cụ và hộp tải e-book (assets/dang-ky.js đọc)."""
+    return "".join(
+        '<fieldset class="cc-pl" data-ten="%s" data-o="%s"><legend>%s</legend><div class="cc-chip">%s</div></fieldset>'
+        % (ten, o, html.escape(cau), "".join('<label><input type="radio" name="pl_%s" value="%d" data-pk="%s"><span>%s</span></label>'
+                                          % (ten, i, html.escape(pk), html.escape(nh)) for i, (nh, pk) in enumerate(ds)))
+        for ten, o, cau, ds in PHAN_LOAI)
+
 def _chon(ten, nhan, ds):
     return ('<label class="cc-o"><span>%s</span><select name="%s" required><option value="">Chọn</option>%s</select></label>'
             % (nhan, ten, "".join('<option value="%d">%s</option>' % (i, html.escape(x[0].upper() + x[1:])) for i, x in enumerate(ds))))
@@ -459,7 +504,7 @@ def than_trang(cc):
                 '<p class="cc-mo-gpt-ghi">Trang chép sẵn câu lệnh cho bạn. Nếu ChatGPT chưa điền sẵn, bạn dán vào ô chat. Các câu lệnh sau, bạn chép rồi dán tiếp vào đúng cuộc trò chuyện này.</p></div></div>')
         if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
             lenh_mo, lenh = lenh, ""
-    du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"])), ensure_ascii=False).replace("</", "<\\/")
+    du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"]), noi_dau=noi_dau(ma, CHU_DE.get(ma, ""))), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in lien_quan(ma))
     return """<header class="dau-trang hoa-van cc-dau">
@@ -522,11 +567,12 @@ def than_trang(cc):
     %(lenh_mo)s
     <div class="hop cc-cua" id="cc-cua">
       <h2>Còn %(con)d câu lệnh và phiếu tự ghép số liệu của bạn</h2>
-      <p class="cc-cua-dan">Điền 3 ô để mở ngay.</p>
+      <p class="cc-cua-dan">Điền tên, Zalo và bấm chọn năm câu ngắn để mở ngay.</p>
       <form id="cc-form" novalidate>
         <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
         <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
         %(vai_tro)s
+        %(phan_loai)s
         <p class="cc-loi" id="cc-loi" hidden></p>
         <button class="nut nut-v" type="submit">Mở bộ câu lệnh <span class="mt" aria-hidden="true">&rarr;</span></button>
       </form>
@@ -534,12 +580,6 @@ def than_trang(cc):
     <div id="cc-kin"></div>
     <template id="cc-mau-kin">
       %(lenh)s
-      <form class="hop cc-them" id="cc-them" novalidate>
-        <p class="cc-them-dau">Để đội ngũ ưu tiên hỗ trợ bạn khi chạy thử, bạn cho Duy biết thêm hai điều. Không bắt buộc.</p>
-        <div class="cc-hai">%(doanh_thu)s
-        %(doi_ngu)s</div>
-        <button class="nut nut-vien" type="submit">Gửi</button>
-      </form>
     </template>
   </div>
 </section>
@@ -563,13 +603,14 @@ def than_trang(cc):
   </div>
 </section>
 <script type="application/json" id="cc-du-lieu">%(du_lieu)s</script>
+<script src="../assets/dang-ky.js?v={VER}"></script>
 <script src="../assets/cong-cu-ai.js?v={VER}"></script>""" % dict(
         tieu=_dong(cc["tieu"]), duoi=_dong(cc["duoi"]), dan=dan, hinh=hinh(ma), video=video, buoc=buoc,
         mien_tru=cc["mien_tru"], tab=tab, mau=mau, phieu_dan=_dong(cc["phieu_dan"]), o=o, lenh=lenh,
         vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, gioi_thieu=khoi_gioi_thieu(1), mau_dan=_dong(cc["mau_dan"]), vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"] if t != "Bạn nhận được gì"),
         phut=cc["phut"], nhan=_dong(dict(cc["vi_ai"]).get("Bạn nhận được gì", cc["nhan_duoc"])), con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
-        moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, tong=len(DS), du_lieu=du_lieu)
+        moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, tong=len(DS), du_lieu=du_lieu, phan_loai=khoi_phan_loai())
 
 
 # Trang Pancake chuyển tới sau khi người đọc gửi biểu mẫu "NGF Công cụ AI".
