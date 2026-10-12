@@ -116,7 +116,10 @@ def ten_day_du(t):
     return (t["danh"] + " " if t["danh"] else "") + t["ten"]
 
 def anh(t, lop="cg-anh"):
-    # ponytail: chưa có ảnh thật nên dùng chữ cái đầu, có ảnh thì thay bằng <img>.
+    # Có ảnh trong img/chuyen-gia/<ma>.webp thì dùng ảnh, chưa có thì dùng chữ viết tắt.
+    tep = "img/chuyen-gia/%s.webp" % t["ma"]
+    if os.path.exists(os.path.join(GOC, tep)):
+        return '<div class="%s co-anh"><img src="%s" alt="Chân dung %s" loading="lazy" width="720" height="900"></div>' % (lop, tep, ten_day_du(t))
     return '<div class="%s" aria-hidden="true"><b>%s</b><i>Ảnh chân dung</i></div>' % (lop, chu_dau(t))
 
 def the(t, p=""):
@@ -166,7 +169,7 @@ def ho_so(t):
 CSS = '<link rel="stylesheet" href="assets/chuyen-gia.css">'
 
 def mau(ve, chu):
-    return """<div class="cg-mau"><div class="bd"><b>Bản thiết kế mẫu</b><span>Tên, chữ viết tắt thay cho ảnh và mọi thông tin chuyên gia trên trang là ví dụ minh họa, để anh chị hình dung cách Duy trình bày về đội ngũ. Phần trong ngoặc vuông là chỗ anh chị gửi thông tin thật.</span><a href="%s">%s <span aria-hidden="true">&rarr;</span></a></div></div>""" % (ve, chu)
+    return """<div class="cg-mau"><div class="bd"><b>Bản thiết kế mẫu</b><span>Tên, ảnh và mọi thông tin chuyên gia trên trang là ví dụ minh họa, để anh chị hình dung cách Duy trình bày về đội ngũ. Phần trong ngoặc vuông là chỗ anh chị gửi thông tin thật.</span><a href="%s">%s <span aria-hidden="true">&rarr;</span></a></div></div>""" % (ve, chu)
 
 # ------------------------------------------------------------ KHỐI TRÊN TRANG CHỦ
 KHOI_TRANG_CHU = """

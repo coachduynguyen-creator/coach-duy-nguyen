@@ -13,6 +13,8 @@
   background:radial-gradient(90% 80% at 50% 30%,rgba(242,177,74,.2),transparent 70%),linear-gradient(180deg,var(--panel-2),var(--panel));border-bottom:1px solid var(--line)}
 .cg-anh b{font-family:var(--f-tit);font-size:64px;font-weight:800;letter-spacing:-.03em;color:var(--vang)}
 .cg-anh i{position:absolute;bottom:10px;font-style:normal;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4)}
+.cg-anh.co-anh{overflow:hidden}
+.cg-anh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .cg-than{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .cg-than p,.cg-hs p,.cg-hs li{text-align:left !important}
 .cg-lv{align-self:flex-start;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);background:var(--vang-mo);border-radius:999px;padding:5px 11px}
