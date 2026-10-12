@@ -19,6 +19,7 @@ for _b in BAI:
 from chuong_trinh import CT
 import cong_cu_ai
 import so_do
+import chuyen_gia   # dựng luôn trang doi-ngu-chuyen-gia.html
 
 # Khung đầu bài thay cho ảnh chân dung (CDN 10/10/2026: không bài nào cũng đưa ảnh
 # của Duy lên đầu). Mỗi bài một kiểu theo nội dung, chữ lấy từ chính bài.
@@ -396,7 +397,7 @@ INDEX = """
   </div>
 </section>
 
-<section class="phan bd phan-vang" id="hanh-trinh">
+{CHUYEN_GIA}<section class="phan bd phan-vang" id="hanh-trinh">
   <div class="phan-dau hien">
     <p class="mono">Hành trình ba chặng</p>
     <h2>Đi với Next Gen Founder theo thứ tự nào</h2>
@@ -531,7 +532,8 @@ INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_ht
          .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
          .replace("{BAI_LON}", the_bai_lon(BAI[0])).replace("{KHO}", KHO_TRANG_CHU)
-         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5])))
+         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5]))
+         .replace("{CHUYEN_GIA}", chuyen_gia.KHOI_TRANG_CHU))
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
 # chính website. Trước đây chỉ khai mỗi Person, nên máy thấy một tên người mà
@@ -2418,7 +2420,7 @@ print("  404.html")
 # ---------------------------------------------------------------- sitemap, robots, llms
 URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
         "cong-cu/", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
-        "cong-cu/tu-kiem-ba-diem-cham.html"] \
+        "cong-cu/tu-kiem-ba-diem-cham.html", "doi-ngu-chuyen-gia.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
      + ["founder-brand/"] \
      + ["chuong-trinh/" + c["tep"] for c in CT

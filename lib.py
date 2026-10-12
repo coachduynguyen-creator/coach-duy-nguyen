@@ -24,7 +24,7 @@ CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
 FACEBOOK = "https://www.facebook.com/coachduynguyen"
-VER = "20261013c"   # tăng số này mỗi lần sửa style.css hoặc site.js
+VER = "20261013d"   # tăng số này mỗi lần sửa style.css hoặc site.js
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -60,6 +60,7 @@ MENU = [
     # Tạm ẩn từ 10/10/2026 theo ý Coach Duy, dồn người xem vào Cộng đồng. Mở lại thì bỏ dấu #.
     # ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("phuong-phap.html", "Phương pháp", None),
+    ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
