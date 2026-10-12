@@ -498,10 +498,9 @@ def than_trang(cc):
                 '<div class="cc-dien"><p class="cc-dien-dan">Gõ thông tin của bạn vào từng ô dưới đây. Câu lệnh bên dưới tự điền theo, chỗ đã điền hiện màu vàng. Xong thì bấm Chép.</p>'
                 '<div class="cc-phieu">%s</div><p class="cc-dien-xem">Câu lệnh của bạn</p></div><div class="cc-chu">' % o, 1)
             lenh = lenh[:-len("</div>")] + '<div class="cc-chep-duoi"><button class="nut nut-v cc-chep" type="button">Chép câu lệnh 2</button></div></div>'
-        if l["so"] == 1:   # mở ChatGPT kèm sẵn câu lệnh; chỉ câu 1, vì câu sau phải dán vào cùng cuộc trò chuyện
-            lenh = lenh[:-len("</div>")] + ('<div class="cc-chep-duoi"><a class="nut nut-v cc-mo-gpt" href="https://chatgpt.com/" target="_blank" rel="noopener">'
-                'Mở ChatGPT với câu lệnh này <span class="mt" aria-hidden="true">&rarr;</span></a>'
-                '<p class="cc-mo-gpt-ghi">Trang chép sẵn câu lệnh cho bạn. Nếu ChatGPT chưa điền sẵn, bạn dán vào ô chat. Các câu lệnh sau, bạn chép rồi dán tiếp vào đúng cuộc trò chuyện này.</p></div></div>')
+        if l["so"] == 1:   # chỉ đưa câu lệnh và nút chép; Coach Duy bỏ nút tự mở ChatGPT ngày 12/10/2026 vì nhân sự thấy khó dùng
+            lenh = lenh[:-len("</div>")] + ('<div class="cc-chep-duoi"><button class="nut nut-v cc-chep" type="button">Chép câu lệnh 1</button>'
+                '<p class="cc-mo-gpt-ghi">Mở ChatGPT, dán câu lệnh vào ô chat. Các câu lệnh sau, bạn chép rồi dán tiếp vào đúng cuộc trò chuyện này.</p></div></div>')
         if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
             lenh_mo, lenh = lenh, ""
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"]), noi_dau=noi_dau(ma, CHU_DE.get(ma, ""))), ensure_ascii=False).replace("</", "<\\/")

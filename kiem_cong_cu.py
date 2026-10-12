@@ -56,7 +56,7 @@ def kiem_trang(ma):
         "câu mở phần ví dụ": 'class="cc-mau-dan"' in s,
         "dòng ghi doanh nghiệp giả định": 'class="cc-gia-dinh"' in s,
         "câu lệnh 1 mở sẵn": 'id="lenh-1"' in mo,
-        "nút mở ChatGPT ở câu lệnh 1": "cc-mo-gpt" in mo,
+        "nút chép ở cuối câu lệnh 1, không tự mở ChatGPT": "Chép câu lệnh 1" in mo and "chatgpt.com/?q" not in s,
         "biểu mẫu có tên, Zalo, vai trò, không hỏi doanh thu": all('name="%s"' % k in form for k in ("ten", "zalo", "vai_tro")) and 'name="doanh_thu"' not in form,
         "ô điền số nằm trong câu lệnh 2": 'class="cc-dien"' in s,
         "nút chép ở cuối câu lệnh 2": "Chép câu lệnh 2" in s,

@@ -114,14 +114,6 @@
       var cum = d.createElement('div'); cum.className = 'cc-lenh-nut';
       nut.parentNode.insertBefore(cum, nut); cum.appendChild(nhan); cum.appendChild(nut);
     });
-    [].forEach.call(goc.querySelectorAll('.cc-mo-gpt'), function (a) {
-      a.addEventListener('click', function () {
-        var chu = a.closest('.cc-lenh').querySelector('.cc-chu').textContent;
-        chep(chu, {textContent: ''});
-        var u = 'https://chatgpt.com/?q=' + encodeURIComponent(chu);
-        a.href = u.length < 7500 ? u : 'https://chatgpt.com/';
-      });
-    });
     [].forEach.call(goc.querySelectorAll('.cc-chu'), function (c) {
       if (c.textContent.length < 600 || c.closest('[data-so="2"]')) return;
       c.classList.add('gon');
