@@ -376,10 +376,30 @@ def khoi_gioi_thieu(ban=1, goc="../"):
 def _p(ds):
     return "".join("<p>%s</p>" % _dong(x) for x in ds)
 
+# Màu theo chủ đề, khớp _MAU_CD trong dung.py (lớp eb-bia--N trong style.css).
+MAU_CD = {"AI cho người chủ": 1, "Bán hàng và phòng kinh doanh": 2, "Hệ thống tăng trưởng": 3, "Kiến tạo cộng đồng": 4,
+          "Thương hiệu của người sáng lập": 5, "Điểm nghẽn của người sáng lập": 6}
+
 def _the_lien_quan(c):
-    return ('<a class="cc-khac" href="%s.html">'
-            '<b>%s</b><span class="lk-v">Mở công cụ <span class="mt" aria-hidden="true">&rarr;</span></span></a>'
-            % (c["ma"], html.escape(c["tieu"])))
+    """Thẻ công cụ liên quan cuối trang: dải màu chủ đề, tên, câu nói nỗi lo (câu đầu của câu giới thiệu), số câu và thời gian."""
+    cd = CHU_DE.get(c["ma"], "")
+    lo = c["gioi_thieu"].split(". ")[0].rstrip(".") + "."
+    return ('<a class="cc-khac eb-bia--%d" href="%s.html"><span class="cc-khac-cd">%s</span>'
+            '<b>%s</b><span class="cc-khac-lo">%s</span>'
+            '<span class="cc-khac-duoi"><span>%d câu lệnh · %s phút</span><span class="mt" aria-hidden="true">&rarr;</span></span></a>'
+            % (MAU_CD.get(cd, 1), c["ma"], html.escape(cd), html.escape(c["tieu"]), _dong(lo), len(c["lenh"]), c["phut"]))
+
+def lien_quan(ma, n=6):
+    """Sáu công cụ cho cuối trang: ba công cụ cùng chủ đề, rồi mỗi chủ đề khác một công cụ cho đủ sáu."""
+    cd = CHU_DE.get(ma)
+    khac = [c for c in DS if c["ma"] != ma]
+    ra = [c for c in khac if CHU_DE.get(c["ma"]) == cd][:n // 2]
+    da_co = {cd}
+    for c in khac:
+        if len(ra) >= n: break
+        if CHU_DE.get(c["ma"]) not in da_co: ra.append(c); da_co.add(CHU_DE.get(c["ma"]))
+    ra += [c for c in khac if c not in ra][:n - len(ra)]
+    return ra
 
 def _kq(v):
     if not v or not v[0]:
@@ -441,7 +461,7 @@ def than_trang(cc):
             lenh_mo, lenh = lenh, ""
     du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"])), ensure_ascii=False).replace("</", "<\\/")
 
-    khac = "".join(_the_lien_quan(c) for c in DS if c["ma"] != ma)
+    khac = "".join(_the_lien_quan(c) for c in lien_quan(ma))
     return """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
     <div>
@@ -537,7 +557,9 @@ def than_trang(cc):
 <section class="phan bd phan-sang cc">
   <div class="cc-doc cc-rong">
     <p class="mono">Công cụ khác</p>
+    <h2 class="cc-khac-tieu">Những việc người chủ thường làm tiếp theo</h2>
     <div class="cc-khac-luoi">%(khac)s</div>
+    <a class="nut nut-vien cc-khac-het" href="index.html#thu-vien">Xem cả %(tong)d công cụ <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 <script type="application/json" id="cc-du-lieu">%(du_lieu)s</script>
@@ -547,7 +569,7 @@ def than_trang(cc):
         vai_tro=_chon("vai_tro", "Vai trò", cc["vai_tro"]), lenh_mo=lenh_mo, gioi_thieu=khoi_gioi_thieu(1), mau_dan=_dong(cc["mau_dan"]), vi_ai="".join('<div class="cc-vi-o"><h3>%s</h3><p>%s</p></div>' % (_dong(t), _dong(v)) for t, v in cc["vi_ai"] if t != "Bạn nhận được gì"),
         phut=cc["phut"], nhan=_dong(dict(cc["vi_ai"]).get("Bạn nhận được gì", cc["nhan_duoc"])), con=len(cc["lenh"]) - 1, doanh_thu=_chon("doanh_thu", "Doanh thu mỗi tháng", cc["doanh_thu"]),
         doi_ngu=_chon("doi_ngu", "Số người trong đội ngũ", cc["doi_ngu"]),
-        moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, du_lieu=du_lieu)
+        moi=_p(cc["moi"]), ma=ma, n_lenh=len(cc["lenh"]), n_o=len(cc["o"]), khac=khac, tong=len(DS), du_lieu=du_lieu)
 
 
 # Trang Pancake chuyển tới sau khi người đọc gửi biểu mẫu "NGF Công cụ AI".
