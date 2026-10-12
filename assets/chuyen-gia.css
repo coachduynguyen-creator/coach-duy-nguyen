@@ -57,12 +57,6 @@
 .cg-hs li::marker{color:var(--vang)}
 .cg-gh{margin:22px 0 24px !important;padding:14px 16px;border-radius:var(--r-s);background:var(--panel);border:1px solid var(--line);font-size:14.5px;color:var(--ink-3)}
 
-/* Ba điều Duy hỏi */
-.cg-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.cg-ba > div{padding:26px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper)}
-.cg-ba h3{font-size:21px;margin:10px 0}
-.cg-ba p{color:var(--ink-2);font-size:15.5px;text-align:left !important}
-
 .cg-moi{display:flex;gap:28px;align-items:center;justify-content:space-between;padding:34px 36px;border-radius:18px;border:1px solid rgba(242,177,74,.4);background:linear-gradient(135deg,rgba(242,177,74,.12),transparent 60%),var(--panel)}
 .cg-moi h2{font-size:clamp(24px,3vw,34px);margin:10px 0 12px}
 .cg-moi p{color:var(--ink-2);max-width:62ch;text-align:left !important}
@@ -73,7 +67,6 @@
 }
 @media (max-width:760px){
   .cg-luoi{grid-template-columns:1fr}
-  .cg-ba{grid-template-columns:1fr}
   .cg-moi{flex-direction:column;align-items:flex-start;padding:26px 22px}
   .cg-hs{width:100%;max-width:100%;max-height:100dvh;height:100dvh;margin:0;border-radius:0;border:0}
   .cg-hs-in{grid-template-columns:1fr}
