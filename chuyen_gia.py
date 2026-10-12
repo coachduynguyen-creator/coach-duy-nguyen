@@ -225,11 +225,17 @@ THAN = mau("trang-chu-mau.html#doi-ngu-co-van", "Xem khối giới thiệu trên
 </script>
 """ % ("".join(the(t) for t in CG), "".join(ho_so(t) for t in CG))
 
+# ponytail: mục menu chỉ chèn vào hai trang mẫu. Khi có đủ chuyên gia thật thì thêm
+# ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None) vào MENU trong lib.py rồi chạy dung.py.
+PP = '<a href="phuong-phap.html">Phương pháp</a>'
+def them_menu(s, on=False):
+    return s.replace(PP, PP + '<a href="doi-ngu-chuyen-gia.html"%s>Đội ngũ cố vấn</a>' % (' class="on"' if on else ""))
+
 NOINDEX = '<meta name="robots" content="noindex">\n'
 
-def chen_noindex(tep):
+def chen_noindex(tep, on=False):
     duong = os.path.join(GOC, tep)
-    s = open(duong, encoding="utf-8").read()
+    s = them_menu(open(duong, encoding="utf-8").read(), on)
     if NOINDEX not in s:
         s = s.replace('<link rel="canonical"', NOINDEX + '<link rel="canonical"', 1)
     open(duong, "w", encoding="utf-8").write(s)
@@ -237,7 +243,7 @@ def chen_noindex(tep):
 trang("doi-ngu-chuyen-gia.html", "Đội ngũ chuyên gia cố vấn · Coach Duy Nguyễn",
       "Những chuyên gia tài chính, pháp lý, kế toán và nhân sự đồng hành cùng Cộng đồng Next Gen Founder.",
       THAN, "")
-chen_noindex("doi-ngu-chuyen-gia.html")
+chen_noindex("doi-ngu-chuyen-gia.html", on=True)
 
 # Trang chủ mẫu: chép index.html vừa dựng, chèn khối chuyên gia sau khối Cộng đồng.
 s = open(os.path.join(GOC, "index.html"), encoding="utf-8").read()
