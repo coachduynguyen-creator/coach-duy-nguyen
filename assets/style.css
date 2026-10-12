@@ -856,6 +856,9 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   background:rgba(23,18,15,.34);backdrop-filter:blur(3px)}
 .kenh4 .k{padding:17px 20px 16px;border-left:1px solid rgba(249,245,240,.09);text-align:left}
 .kenh4 .k:first-child{border-left:0}
+a.k{display:block;color:inherit;text-decoration:none;transition:background .2s}
+a.k:hover,a.k:focus-visible{background:rgba(249,245,240,.06)}
+a.k .k-ten::after{content:" \2197";letter-spacing:0}
 .k-ten{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:var(--vang);margin-bottom:9px}
 .k-so{display:flex;align-items:baseline;gap:7px;margin-bottom:0}

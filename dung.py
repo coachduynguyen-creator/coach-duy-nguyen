@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
-from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
+from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, FACEBOOK,
                  NGAY_SUA, TSTS_LANDING, FGS_LANDING, CGS_LANDING, trang, dau_trang, dd, VER)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
@@ -88,13 +88,17 @@ THEM = [("26.600", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, 
 # Con số tổng làm đầu, bốn kênh làm phần chia nhỏ bên dưới.
 # Coach Duy chốt ngày 25/08/2026 dùng con số tổng 800.000+, theo slide của mình.
 TONG = ("800.000", "người theo dõi trên các nền tảng")
+# Ô kênh nào có địa chỉ thì bấm vào mở kênh. Zalo chưa có địa chỉ.
+LINK_KENH = {"Facebook": FACEBOOK, "YouTube": YOUTUBE, "TikTok": TIKTOK}
 so_lieu_html = (
     '<div class="so-tong"><b>%s+</b><span>%s</span></div>'
     '<div class="kenh4">%s</div>'
     '<div class="kenh-them">%s</div>'
     % (TONG[0], TONG[1],
-       "".join('<div class="k"><p class="k-ten">%s</p>'
-               '<p class="k-so"><b>%s</b><span>%s</span></p></div>' % (t, n, dv)
+       "".join(('<a class="k" href="%s" target="_blank" rel="noopener">' % LINK_KENH[t]
+                if t in LINK_KENH else '<div class="k">')
+               + '<p class="k-ten">%s</p><p class="k-so"><b>%s</b><span>%s</span></p>' % (t, n, dv)
+               + ('</a>' if t in LINK_KENH else '</div>')
                for t, n, dv in KENH),
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
 
@@ -542,7 +546,7 @@ LD_CHU = json.dumps({"@context": "https://schema.org", "@graph": [
      "url": BASE + "/", "image": BASE + "/img/cd-chan-dung.webp",
      "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",
                     "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
-     "sameAs": [YOUTUBE, TIKTOK]},
+     "sameAs": [YOUTUBE, TIKTOK, FACEBOOK]},
     {"@type": "WebSite", "@id": BASE + "/#trang",
      "url": BASE + "/", "name": "Coach Duy Nguyễn",
      "inLanguage": "vi", "publisher": {"@id": BASE + "/#duy"}},
