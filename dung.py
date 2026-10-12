@@ -404,21 +404,21 @@ INDEX = """
     <p>Không ai phải cam kết lớn ngay từ đầu. Mỗi chặng là một cánh cửa riêng, và bạn dừng ở chặng nào cũng được.</p>
   </div>
   <div class="ht-luoi tre hien">
-    <a class="ht" href="chuong-trinh/cong-dong-thanh-vien.html">
+    <a class="ht" href="cong-dong/#ba-cap">
       <em>Chặng 01</em><h3>Cộng đồng Thành viên</h3>
       <p>Cửa vào rộng nhất, miễn phí, có đăng ký tham gia. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
       <i>Miễn phí &middot; có đăng ký tham gia</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="chuong-trinh/cong-dong-pro.html">
+    <a class="ht" href="cong-dong/#ba-cap">
       <em>Chặng 02</em><h3>Cộng đồng Pro</h3>
       <p>Luyện đủ bốn năng lực suốt một năm ngay trong công việc thật, làm đều đặn, có người phản hồi và đi cùng cả chặng.</p>
       <i>Bốn năng lực &middot; một năm</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="chuong-trinh/diamond-founder-club.html">
+    <a class="ht" href="cong-dong/#ba-cap">
       <em>Chặng 03</em><h3>Đi sâu hơn</h3>
-      <p>Diamond Founder Club theo lời mời, hoặc cố vấn riêng một kèm một cho số rất ít người mỗi năm.</p>
+      <p>Diamond Founder Club, nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.</p>
       <i>Theo lời mời &middot; nhận giới hạn</i>
     </a>
   </div>
@@ -2390,7 +2390,6 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
         "cong-cu/", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html", "doi-ngu-chuyen-gia.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
-     + ["founder-brand/"] \
      + ["nguoi-dan-duong/"] \
      + ["bai-viet/" + b["tep"] for b in BAI]
 # Trang tạm chuong-trinh/trusted-founder-brand.html đã thành trang chuyển hướng
@@ -2401,7 +2400,8 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
 # mới, mà bộ trả lời của AI thì ưu tiên nội dung mới rất mạnh.
 NGAY_BAI = {"bai-viet/" + b["tep"]: b.get("sua", NGAY_SUA) for b in BAI}
 # Hai trang riêng của chương trình nằm ngoài bộ dựng, thêm tay vào sitemap.
-URLS += ["founder-brand/", "sales-team/", "founder-growth/", "community-growth/"]
+# Coach Duy chốt 12/10/2026: bốn trang đích chương trình cũ (founder-brand, sales-team,
+# founder-growth, community-growth) giữ trang nhưng ẩn khỏi Google, không đưa vào sitemap.
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for t in URLS:
     sm.append("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
