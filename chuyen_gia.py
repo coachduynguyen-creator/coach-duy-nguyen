@@ -17,18 +17,18 @@ from lib import trang, dau_trang, GOC
 
 CG = [
     {"ma": "tai-chinh-ca-nhan", "linh_vuc": "Tài chính cá nhân", "danh": "",
-     "ten": "Lê Minh Châu", "chuc": "Chuyên gia hoạch định tài chính cá nhân và gia đình",
-     "don_vi": "[Tên đơn vị đang công tác]", "nam": 12,
+     "ten": "Cherry Nguyen", "chuc": "Cố vấn tài chính tại FIDT, tư vấn đầu tư và quản lý tài sản",
+     "don_vi": "FIDT", "nam": "[số]",
      "mot_cau": "Tách tiền gia đình khỏi tiền doanh nghiệp, để những tháng kinh doanh đi xuống không kéo cả nhà đi theo.",
-     "loi_nhan": "Nhiều người chủ giữ sổ sách công ty rất kỹ nhưng chưa có nổi một bảng thu chi cho gia đình. Tôi thường bắt đầu từ chính bảng đó.",
+     "loi_nhan": "[Lời nhắn của chị Cherry gửi người chủ doanh nghiệp]",
      "giup": ["Tách bạch tài khoản cá nhân và tài khoản công ty",
               "Tự trả lương đều đặn cho chính mình khi doanh thu còn lên xuống",
               "Quỹ dự phòng cho gia đình và bảo hiểm cho người trụ cột",
-              "Kế hoạch tài sản dài hạn: nhà, học phí cho con, lúc nghỉ hưu"],
+              "Kế hoạch đầu tư và tài sản dài hạn: nhà, học phí cho con, lúc nghỉ hưu"],
      "hoi": ["Doanh thu chưa đều thì tôi nên tự trả lương cho mình bao nhiêu?",
              "Lúc công ty khó, có nên lấy tiền của gia đình ra bù không?",
-             "Quỹ dự phòng bao nhiêu tháng chi tiêu là đủ?"],
-     "kinh_nghiem": ["12 năm tư vấn tài chính cho gia đình chủ doanh nghiệp",
+             "Tiền nhàn rỗi của gia đình nên để ở đâu cho an toàn?"],
+     "kinh_nghiem": ["[Số năm hành nghề tư vấn tài chính]",
                      "[Chứng chỉ hành nghề hoặc chứng chỉ chuyên môn]",
                      "[Một kết quả tiêu biểu đã làm cho khách hàng]"]},
     {"ma": "tai-chinh-doanh-nghiep", "linh_vuc": "Tài chính doanh nghiệp", "danh": "",
@@ -106,6 +106,22 @@ CG = [
      "kinh_nghiem": ["16 năm làm nhân sự, 7 năm ở vị trí giám đốc nhân sự",
                      "[Chứng chỉ chuyên môn]",
                      "[Quy mô doanh nghiệp đã xây hệ thống nhân sự]"]},
+    {"ma": "phong-thuy", "linh_vuc": "Phong thủy và tử vi", "danh": "Coach",
+     "ten": "Lê Phương", "chuc": "Chuyên gia phong thủy và tử vi cho doanh nghiệp",
+     "don_vi": "[Đơn vị, chứng nhận đào tạo]", "nam": "[số]",
+     "mot_cau": "Xem phong thủy văn phòng, cửa hàng và chọn thời điểm cho những việc lớn của doanh nghiệp.",
+     "loi_nhan": "[Lời nhắn của Coach Lê Phương gửi người chủ doanh nghiệp]",
+     "giup": ["Bố trí văn phòng, cửa hàng và chỗ ngồi của người chủ",
+              "Chọn ngày khai trương, ký kết, chuyển trụ sở",
+              "Chọn màu sắc, tên gọi cho thương hiệu mới",
+              "Đọc lá số tử vi để người chủ hiểu thêm về mình trước một quyết định lớn"],
+     "hoi": ["Văn phòng mới nên đặt bàn của người chủ ở hướng nào?",
+             "Tháng nào hợp để khai trương chi nhánh?",
+             "Năm nay tôi nên giữ quy mô hay mở rộng?"],
+     "kinh_nghiem": ["[Số năm hành nghề]",
+                     "[Chứng nhận hoặc nơi đã theo học]",
+                     "[Doanh nghiệp tiêu biểu đã đồng hành]"],
+     "ghi": "Phong thủy và tử vi là góc nhìn tham khảo để người chủ cân nhắc thêm, không thay cho tư vấn pháp lý, tài chính hay số liệu kinh doanh."},
 ]
 
 def chu_dau(t):
@@ -147,7 +163,7 @@ def ho_so(t):
       <h2 id="%s-ten">%s</h2>
       <p class="cg-chuc">%s</p>
       <p class="cg-dv">%s</p>
-      <div class="cg-so"><b>%d năm</b><span>hành nghề</span></div>
+      <div class="cg-so"><b>%s năm</b><span>hành nghề</span></div>
     </aside>
     <div class="cg-hs-phai">
       <blockquote>%s</blockquote>
@@ -158,18 +174,19 @@ def ho_so(t):
       <ul><li>Một buổi hỏi đáp trực tuyến mỗi tháng với thành viên Cộng đồng Next Gen Founder</li>
           <li>Bài viết và tài liệu chuyên đề về %s, đăng trên website</li>
           <li>Buổi trao đổi riêng khi thành viên cần đi sâu vào trường hợp của mình</li></ul>
-      <p class="cg-gh">Buổi hỏi đáp trong cộng đồng giúp bạn nhìn rõ vấn đề và biết nên làm gì trước. Việc cần xem hồ sơ, chứng từ của riêng doanh nghiệp thì làm theo thỏa thuận riêng giữa bạn và chuyên gia.</p>
+      %s<p class="cg-gh">Buổi hỏi đáp trong cộng đồng giúp bạn nhìn rõ vấn đề và biết nên làm gì trước. Việc cần xem hồ sơ, chứng từ của riêng doanh nghiệp thì làm theo thỏa thuận riêng giữa bạn và chuyên gia.</p>
       <a class="nut nut-v" href="tham-gia/">Đăng ký tham gia Cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </dialog>""" % (t["ma"], t["ma"], anh(t, "cg-anh cg-anh-lon"), t["linh_vuc"], t["ma"], ten_day_du(t),
                 t["chuc"], t["don_vi"], t["nam"], html.escape(t["loi_nhan"]),
-                ds(t["giup"]), ds(t["hoi"]), ds(t["kinh_nghiem"]), t["linh_vuc"].lower())
+                ds(t["giup"]), ds(t["hoi"]), ds(t["kinh_nghiem"]), t["linh_vuc"].lower(),
+                ('<p class="cg-gh">%s</p>' % t["ghi"]) if t.get("ghi") else "")
 
 CSS = '<link rel="stylesheet" href="assets/chuyen-gia.css">'
 
 def mau(ve, chu):
-    return """<div class="cg-mau"><div class="bd"><b>Bản thiết kế mẫu</b><span>Tên, ảnh và mọi thông tin chuyên gia trên trang là ví dụ minh họa, để anh chị hình dung cách Duy trình bày về đội ngũ. Phần trong ngoặc vuông là chỗ anh chị gửi thông tin thật.</span><a href="%s">%s <span aria-hidden="true">&rarr;</span></a></div></div>""" % (ve, chu)
+    return """<div class="cg-mau"><div class="bd"><b>Bản thiết kế mẫu</b><span>Trừ chị Cherry Nguyen và Coach Lê Phương, tên, ảnh và thông tin các chuyên gia khác trên trang là ví dụ minh họa, để anh chị hình dung cách Duy trình bày về đội ngũ. Phần trong ngoặc vuông là chỗ anh chị gửi thông tin thật.</span><a href="%s">%s <span aria-hidden="true">&rarr;</span></a></div></div>""" % (ve, chu)
 
 # ------------------------------------------------------------ KHỐI TRÊN TRANG CHỦ
 KHOI_TRANG_CHU = """
