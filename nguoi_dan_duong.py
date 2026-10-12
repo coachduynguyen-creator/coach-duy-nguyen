@@ -40,7 +40,7 @@ BON = [
 # nêu lĩnh vực hiện tại, không nêu phần trăm tăng trưởng, không nói doanh thu.
 CA = [
     ("img/chuyen-gia/phong-thuy.webp", "Coach Lê Phương", "Năm 2022, kèm riêng",
-     "Chị đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm chị xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
+     "Lê Phương đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm Lê Phương xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
      [("160.700", "người theo dõi TikTok"), ("5 triệu → 500 triệu", "giá trị sản phẩm sau khi thiết kế lại")]),
     (None, "Kris Trần", "Sáu tháng, kèm riêng",
      "Kris làm đầu tư tài chính ở Mỹ, hướng nội, ngại máy quay, muốn về Việt Nam lập nghiệp. Duy chỉ ra điểm Kris tưởng là yếu chính là chỗ khác biệt, rồi cùng Kris dựng một khung phương pháp mang tên riêng.",
@@ -67,13 +67,14 @@ TEN_NAC = {1: "Ngồi dự", 2: "Đồng dẫn", 3: "Tự dẫn, có Duy dự", 
 
 CSS = """<style>
 .ndd{--ke:clamp(18px,3vw,28px)}
+.ndd img{height:auto}
 .ndd p,.ndd li,.ndd h3{text-align:left !important}
-.ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 .ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
 .ndd-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,18,15,.96) 0%,rgba(23,18,15,.75) 55%,rgba(23,18,15,.35) 100%),linear-gradient(180deg,transparent 60%,rgba(23,18,15,.98) 100%)}
-.ndd-hero .bd{width:100%;padding-top:110px;padding-bottom:clamp(36px,6vw,64px)}
+.ndd-hero .bd{padding-top:110px;padding-bottom:clamp(36px,6vw,64px)}
 .ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:end}
-.ndd-hero .tren > img{width:100%;max-height:560px;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+.ndd-hero .tren > img{width:100%;height:540px !important;max-height:62vh;object-fit:cover;object-position:50% 20%;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line)}
 .ndd-hero h1{font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.03em;margin:10px 0 16px}
 .ndd-hero .dan{max-width:60ch;font-size:clamp(17px,2vw,20px);color:var(--ink-2)}
 .ndd-so{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
@@ -83,7 +84,7 @@ CSS = """<style>
 .ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
 .ndd-thue{margin-top:14px;font-size:13.5px;color:var(--ink-4)}
 .ndd-logo{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;align-items:center;margin-top:30px}
-.ndd-logo img{width:100%;height:34px;object-fit:contain;opacity:.75}
+.ndd-logo img{width:100%;height:34px !important;object-fit:contain;opacity:.75}
 .ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
 .ndd-dt h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 14px}
@@ -97,7 +98,7 @@ CSS = """<style>
 .ndd-bon span{font-size:15px;color:var(--ink-2);line-height:1.5}
 .ndd-ca{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .ndd-ca article{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.ndd-ca .anh{width:150px;height:190px;border-radius:var(--r-s);object-fit:cover;object-position:50% 20%;background:var(--panel-2);display:grid;place-items:center;font-family:var(--f-tit);font-size:48px;font-weight:800;color:var(--vang)}
+.ndd-ca .anh{width:150px;height:190px !important;border-radius:var(--r-s);object-fit:cover;object-position:50% 20%;background:var(--panel-2);display:grid;place-items:center;font-family:var(--f-tit);font-size:48px;font-weight:800;color:var(--vang)}
 .ndd-ca h3{font-size:22px;margin:0}
 .ndd-ca .khi{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin:4px 0 10px}
 .ndd-ca p{font-size:15px;color:var(--ink-2)}
@@ -118,7 +119,7 @@ CSS = """<style>
 .ndd-thanh span{flex:1;height:6px;border-radius:3px;background:var(--line-2)}
 .ndd-thanh span.on{background:var(--vang)}
 .ndd-canh{display:grid;grid-template-columns:1fr 1fr;gap:var(--ke);align-items:center}
-.ndd-canh > img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.ndd-canh > img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:85% 40%;border-radius:var(--r);box-shadow:var(--shadow)}
 .ndd-canh ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;color:var(--ink-2);font-size:16px}
 .ndd-hai{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .ndd-o{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
@@ -155,7 +156,7 @@ CSS = """<style>
   .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon{grid-template-columns:1fr}
   .ndd-dt > img,.ndd-canh > img{order:-1}
   .ndd-ca article{grid-template-columns:96px 1fr}
-  .ndd-ca .anh{width:96px;height:124px;font-size:34px}
+  .ndd-ca .anh{width:96px;height:124px !important;font-size:34px}
   .ndd-moi{grid-template-columns:1fr;padding:22px 22px 0}
   .ndd-moi > img{width:150px;justify-self:center;order:3}
   .ndd-moi > a{margin-bottom:8px}
