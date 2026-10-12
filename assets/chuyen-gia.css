@@ -1,0 +1,85 @@
+/* Đội ngũ chuyên gia cố vấn · bản mẫu. Khi lên thật thì chép vào style.css. */
+.cg-mau{background:var(--vang-mo);border-bottom:1px solid rgba(242,177,74,.35);font-size:14px;color:var(--ink-2)}
+.cg-mau .bd{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;padding:12px 0}
+.cg-mau b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
+.cg-mau span{flex:1 1 380px;text-align:left !important}
+.cg-mau a{color:var(--vang);font-weight:700;text-decoration:none;white-space:nowrap}
+
+.cg-luoi{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cg-the{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.cg-the:hover{transform:translateY(-4px);border-color:rgba(242,177,74,.55);box-shadow:var(--shadow-h)}
+.cg-the:focus-visible{outline:2px solid var(--vang);outline-offset:3px}
+.cg-anh{position:relative;aspect-ratio:5/4;display:grid;place-items:center;
+  background:radial-gradient(90% 80% at 50% 30%,rgba(242,177,74,.2),transparent 70%),linear-gradient(180deg,var(--panel-2),var(--panel));border-bottom:1px solid var(--line)}
+.cg-anh b{font-family:var(--f-tit);font-size:64px;font-weight:800;letter-spacing:-.03em;color:var(--vang)}
+.cg-anh i{position:absolute;bottom:10px;font-style:normal;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4)}
+.cg-than{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cg-than p,.cg-hs p,.cg-hs li{text-align:left !important}
+.cg-lv{align-self:flex-start;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);background:var(--vang-mo);border-radius:999px;padding:5px 11px}
+.cg-than h3{font-size:22px;margin-top:4px}
+.cg-chuc{font-size:14.5px;color:var(--ink-3);line-height:1.45}
+.cg-cau{font-size:15.5px;color:var(--ink-2);margin-top:4px}
+.cg-xem{margin-top:auto;padding-top:10px;font-weight:700;font-size:14.5px;color:var(--vang)}
+.cg-the:hover .mt{display:inline-block;transform:translateX(3px)}
+
+/* Trên trang chủ: thẻ ngang gọn, ảnh nhỏ bên trái. */
+.cg-luoi-gon{gap:16px}
+.cg-luoi-gon .cg-the{flex-direction:row;align-items:center}
+.cg-luoi-gon .cg-anh{flex:0 0 104px;aspect-ratio:1/1;align-self:stretch;border-bottom:0;border-right:1px solid var(--line)}
+.cg-luoi-gon .cg-anh b{font-size:34px}
+.cg-luoi-gon .cg-anh i{display:none}
+.cg-luoi-gon .cg-than{padding:16px 18px;gap:6px}
+.cg-luoi-gon .cg-than h3{font-size:18px;margin-top:2px}
+.cg-luoi-gon .cg-lv{font-size:10px;padding:4px 9px}
+.cg-luoi-gon .cg-chuc,.cg-luoi-gon .cg-cau,.cg-luoi-gon .cg-xem{display:none}
+
+/* Hồ sơ chi tiết */
+.cg-hs{width:min(980px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding:0;border:1px solid var(--line-2);border-radius:18px;background:var(--bg-2);color:var(--ink);box-shadow:var(--shadow);overflow:hidden}
+.cg-hs[open]{display:flex;flex-direction:column}
+.cg-hs::backdrop{background:rgba(10,8,6,.72);backdrop-filter:blur(4px)}
+.cg-hs[open]{animation:cg-vao .32s var(--ease)}
+@keyframes cg-vao{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.cg-dong{position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:var(--panel);color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
+.cg-dong:hover{border-color:var(--vang);color:var(--vang)}
+.cg-hs-in{display:grid;grid-template-columns:300px 1fr;overflow:auto;flex:1}
+.cg-hs-trai{padding:32px 28px;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.cg-anh-lon{aspect-ratio:4/5;border:1px solid var(--line);border-radius:var(--r);margin-bottom:8px}
+.cg-anh-lon b{font-size:88px}
+.cg-hs-trai h2{font-size:28px}
+.cg-dv{font-size:14px;color:var(--ink-3)}
+.cg-so{margin-top:10px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:8px}
+.cg-so b{font-family:var(--f-tit);font-size:30px;color:var(--vang)}
+.cg-so span{color:var(--ink-3);font-size:14px}
+.cg-hs-phai{padding:36px 64px 34px 36px}
+.cg-hs blockquote{margin:0 0 8px;padding:4px 0 4px 20px;border-left:3px solid var(--vang);font-size:18.5px;line-height:1.55;color:var(--ink)}
+.cg-hs h4{font-size:18px;margin:26px 0 10px}
+.cg-hs ul{margin:0;padding-left:20px;color:var(--ink-2);display:grid;gap:6px}
+.cg-hs li::marker{color:var(--vang)}
+.cg-gh{margin:22px 0 24px !important;padding:14px 16px;border-radius:var(--r-s);background:var(--panel);border:1px solid var(--line);font-size:14.5px;color:var(--ink-3)}
+
+/* Ba điều Duy hỏi */
+.cg-ba{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cg-ba > div{padding:26px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper)}
+.cg-ba h3{font-size:21px;margin:10px 0}
+.cg-ba p{color:var(--ink-2);font-size:15.5px;text-align:left !important}
+
+.cg-moi{display:flex;gap:28px;align-items:center;justify-content:space-between;padding:34px 36px;border-radius:18px;border:1px solid rgba(242,177,74,.4);background:linear-gradient(135deg,rgba(242,177,74,.12),transparent 60%),var(--panel)}
+.cg-moi h2{font-size:clamp(24px,3vw,34px);margin:10px 0 12px}
+.cg-moi p{color:var(--ink-2);max-width:62ch;text-align:left !important}
+.cg-moi .nut{flex:0 0 auto}
+
+@media (max-width:1000px){
+  .cg-luoi{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .cg-luoi{grid-template-columns:1fr}
+  .cg-ba{grid-template-columns:1fr}
+  .cg-moi{flex-direction:column;align-items:flex-start;padding:26px 22px}
+  .cg-hs{width:100%;max-width:100%;max-height:100dvh;height:100dvh;margin:0;border-radius:0;border:0}
+  .cg-hs-in{grid-template-columns:1fr}
+  .cg-hs-trai{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px}
+  .cg-anh-lon{aspect-ratio:1/1;max-width:180px}
+  .cg-anh-lon b{font-size:64px}
+  .cg-hs-phai{padding:24px 20px 30px}
+  .cg-hs-in{align-content:start}
+}
