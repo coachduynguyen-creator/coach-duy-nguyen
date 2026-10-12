@@ -188,6 +188,15 @@ CSS = """<style>
   .ndd-ca{grid-template-columns:1fr}
 }
 @media (max-width:700px){
+  /* Coach Duy chốt 12/10/2026: trên điện thoại, tiêu đề căn giữa, chữ nội dung căn đều hai bên. */
+  .ndd h1,.ndd h2,.ndd h3,.ndd .mono,.ndd .ndd-nho,.ndd .ndd-phu,.ndd .khi,.ndd-ai3 b,.ndd-bon b,.ndd-hd b,.ndd-ai b,.ndd-ai q,.ndd-vao b,.ndd-so i,.ndd-so b,.ndd-so span,.ndd-ca dd,.ndd-ca dt{text-align:center !important}
+  .ndd-hero .tren > div{text-align:center}
+  .ndd-so div,.ndd-nhan{text-align:center !important}
+  .ndd-ca dl{justify-content:center}
+  .ndd-ca dl > div{text-align:center}
+  .ndd-vao li:before{display:block;text-align:center}
+  .ndd p:not(.mono):not(.ndd-nho):not(.ndd-phu):not(.khi):not(.ndd-nhan),.ndd li,.ndd-bon span,.ndd-ai span,.ndd-ai3 span,.ndd-vao span{text-align:justify !important;text-justify:inter-word}
+  .ndd-trich{border-left:0 !important;padding-left:0 !important;border-top:2px solid var(--vang);padding-top:12px}
   .ndd-hero .tren{grid-template-columns:1fr}
   .ndd-hero h1 span{display:inline}
   .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
