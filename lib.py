@@ -239,7 +239,7 @@ def tieu_de_trang(ten):
     return ten if len(ten + HAU_TO) > 60 else ten + HAU_TO
 
 
-def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=True):
+def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=True, anh_chia_se=None):
     sau = "/" in ten_tep
     p = "../" if sau else ""
     # Trang index.html trong thư mục con khai địa chỉ gọn, không kèm tên tệp.
@@ -291,7 +291,8 @@ def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=
     # Ảnh lớn của chính trang đó, không có thì lấy ảnh mặc định. Địa chỉ phải
     # đầy đủ cả tên miền, vì bộ đọc của Facebook không hiểu đường dẫn tương đối.
     ma = re.search(r'<div class="(?:hero-nen|tran-nen|bai-anh)"[^>]*>\s*<img src="([^"]+)"(?:[^>]*?alt="([^"]*)")?', doc)
-    nguon_anh = ma.group(1) if ma else (p + ANH_CHIA_SE)
+    # anh_chia_se: ảnh riêng khi chia link, đường dẫn tính từ gốc website.
+    nguon_anh = anh_chia_se or (ma.group(1) if ma else (p + ANH_CHIA_SE))
     mo_ta_anh = (ma.group(2) if (ma and ma.group(2)) else tieu_de)
     dia_chi_anh = BASE + "/" + nguon_anh.replace("../", "")
     doc = doc.replace("{OG_ANH}",

@@ -193,5 +193,6 @@ THAN = dau_trang(
 
 trang("doi-ngu-chuyen-gia.html", "Đội ngũ chuyên gia cố vấn · Coach Duy Nguyễn",
       "Chuyên gia marketing, bán hàng, mô hình kinh doanh, tài chính cá nhân, phong thủy và tử vi đồng hành cùng Cộng đồng Next Gen Founder của Coach Duy Nguyễn.",
-      THAN, "doi-ngu-chuyen-gia.html")
+      THAN, "doi-ngu-chuyen-gia.html", anh_chia_se="img/chuyen-gia/chia-se.jpg")
+# ponytail: ảnh chia-se.jpg dựng tay một lần (Be Vietnam Pro, tám ảnh đầu của CG). Thêm hay đổi chuyên gia thì dựng lại ảnh.
 print("  doi-ngu-chuyen-gia.html")
