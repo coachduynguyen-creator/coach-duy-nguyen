@@ -854,6 +854,14 @@ figure{margin:0}
    có dòng cụt nào.
    Câu dẫn giữ nguyên 66 ký tự một dòng, vì đó là chữ để đọc, không phải tiêu đề. */
 .phan .dau-phan{max-width:none}
+
+/* Điện thoại: Coach Duy chốt 12/10/2026 lúc 23:00, cùng luật với assets/style.css.
+   Tiêu đề căn giữa, chữ nội dung căn đều hai lề. */
+@media (max-width:760px){
+  :is(p,li):not(#_):not(:where(header,footer,nav,form,table,.hero-chu,figcaption) *):not(:where(.mono,.meta,.ten-dt,.chu-nho,.nut)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+  :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form) *){text-align:center!important}
+  .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form) *){text-align:center!important}
+}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Trusted Sales Team System", "alternateName": "Xây dựng Đội ngũ Tư vấn Bán hàng Chuyên nghiệp và Tin cậy", "description": "Chương trình chuyên sâu giúp chủ doanh nghiệp xây Bản thiết kế Hệ thống Phòng Kinh doanh phiên bản 1 theo chuẩn tư vấn The Trusted Advisor. Học nền, hai ngày tập trung, khoảng ba mươi ngày hoàn thiện. Giá và lịch chưa chốt.", "inLanguage": "vi", "url": "https://coachduynguyen.vn/sales-team/", "provider": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/"}, "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/ve-toi.html"}, "audience": {"@type": "Audience", "audienceType": "Nhà sáng lập và chủ doanh nghiệp đang xây hoặc đang sửa phòng kinh doanh"}, "coursePrerequisites": ["Đội ngũ bán hàng từ ba người trở lên", "Sản phẩm hoặc dịch vụ cần tư vấn và cân nhắc trước khi khách quyết định", "Nhà sáng lập tham gia đủ hai ngày học tập trung", "Sẵn sàng dành thời gian xây bản thiết kế và chịu trách nhiệm triển khai"], "teaches": ["Mục tiêu và định hướng của phòng kinh doanh", "Quy trình bán hàng từ tiếp nhận cơ hội đến bàn giao", "Chuẩn tư vấn The Trusted Advisor", "Vai trò và trách nhiệm trong phòng kinh doanh", "Công cụ, biểu mẫu và dữ liệu", "Chỉ số và cách rà soát", "Đào tạo, thực hành và cải tiến"]}</script>

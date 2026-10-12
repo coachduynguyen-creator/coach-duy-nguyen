@@ -826,6 +826,14 @@ figure{margin:0}
   .o,.nut,.vach li,.cap-the{transition:none!important}
   .vien i{animation:none}
 }
+
+/* Điện thoại: Coach Duy chốt 12/10/2026 lúc 23:00, cùng luật với assets/style.css.
+   Tiêu đề căn giữa, chữ nội dung căn đều hai lề. */
+@media (max-width:760px){
+  :is(p,li):not(#_):not(:where(header,footer,nav,form,table,.hero-chu,figcaption) *):not(:where(.mono,.meta,.ten-dt,.chu-nho,.nut)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+  :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form) *){text-align:center!important}
+  .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form) *){text-align:center!important}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Course",
