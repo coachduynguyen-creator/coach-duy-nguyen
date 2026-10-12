@@ -94,7 +94,7 @@ KHOANH_KHAC = [
 HOAT_DONG = [
     ("mc/mc-thuyettrinh", "Học tập và chuyển nghề", ["Phương pháp Next Gen Founder: Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder", "The Trusted Advisor, bán hàng tư vấn bằng niềm tin", "Từ người giỏi nghề thành người dẫn nghề"]),
     ("v5-soi-dung", "Tư duy và kỹ năng", ["Tư duy của người dẫn đường: nhìn đúng chỗ kẹt, chỉ đường, giữ chuẩn", "Hỏi, lắng nghe và dẫn một nhóm", "Đứng trước đám đông và nói cho người ta nhớ"]),
-    ("mc/mc-banlamviec", "Hệ thống, phương pháp, công cụ", ["Mẫu, kịch bản, bảng chấm điểm Duy đang dùng", "Bộ công cụ AI cho nội dung, tư vấn và vận hành", "Cách đóng gói chuyên môn thành sản phẩm có giá"]),
+    ("bl-may-tinh", "Hệ thống, phương pháp, công cụ", ["Mẫu, kịch bản, bảng chấm điểm Duy đang dùng", "Bộ công cụ AI cho nội dung, tư vấn và vận hành", "Cách đóng gói chuyên môn thành sản phẩm có giá"]),
     ("mc/mc-sankhau", "Đồng hành trực tiếp", ["Dự, đồng dẫn, rồi tự dẫn buổi coaching có Duy ngồi cùng", "Làm việc với khách hàng thật", "Đi gặp đối tác, đứng trên sân khấu cùng Duy"]),
     ("bl-noi-2", "Thương hiệu cá nhân", ["Câu chuyện gốc và lời hứa của bạn", "Một kênh chạy đều theo cách Duy đang làm", "Những lần cùng xuất hiện với Duy"]),
     ("mc/mc-daotao", "Cộng đồng", ["Sinh hoạt cùng Cộng đồng Pro và Diamond Founder Club", "Một nhóm của riêng bạn trong cộng đồng", "Những người cùng khóa đi tiếp với nhau sau chương trình"]),
