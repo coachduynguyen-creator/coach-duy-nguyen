@@ -20,12 +20,12 @@ P = "../"
 # Coach Duy xác nhận 12/10/2026, đồng ý công bố: dịch vụ thật, có hóa đơn, đóng thuế.
 SO = [
     ("1 tỷ đồng", "một năm", "Mức cao nhất khách trả cho gói coaching kèm riêng với Duy"),
-    ("120 triệu đồng", "một giờ", "Mức ACB trả để mời Duy đào tạo"),
+    ("120 triệu đồng", "một giờ", "Mức một ngân hàng thương mại lớn trả để mời Duy đào tạo"),
     ("50 tới 80 triệu đồng", "một buổi", "Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy"),
 ]
-LOGO = [("acb", "ACB"), ("mobifone", "MobiFone"), ("aia", "AIA"), ("prudential", "Prudential"),
-        ("bao-viet", "Bảo Việt Nhân thọ"), ("kb-securities", "KB Securities"), ("hsc", "HSC"),
-        ("gia-tot", "Gia Tốt Việt Nam")]
+# Không đặt logo ACB cạnh mức phí ngân hàng (Coach Duy chốt 12/10/2026, phiếu 40 mục C1).
+LOGO = [("mobifone", "MobiFone"), ("aia", "AIA"), ("prudential", "Prudential"),
+        ("bao-viet", "Bảo Việt Nhân thọ"), ("kb-securities", "KB Securities"), ("hsc", "HSC")]
 
 # ------------------------------------------------------------ BỐN THỨ MANG VỀ
 BON = [
@@ -40,9 +40,9 @@ BON = [
 # nêu lĩnh vực hiện tại, không nêu phần trăm tăng trưởng, không nói doanh thu.
 CA = [
     ("img/chuyen-gia/phong-thuy.webp", "Coach Lê Phương", "Năm 2022, kèm riêng",
-     "Lê Phương đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm Lê Phương xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
+     "Anh đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm anh xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
      [("160.700", "người theo dõi TikTok"), ("5 triệu → 500 triệu", "giá trị sản phẩm sau khi thiết kế lại")]),
-    (None, "Kris Trần", "Sáu tháng, kèm riêng",
+    ("img/kris-tran.webp", "Kris Trần", "Sáu tháng, kèm riêng",
      "Kris làm đầu tư tài chính ở Mỹ, hướng nội, ngại máy quay, muốn về Việt Nam lập nghiệp. Duy chỉ ra điểm Kris tưởng là yếu chính là chỗ khác biệt, rồi cùng Kris dựng một khung phương pháp mang tên riêng.",
      [("59.000", "người theo dõi Facebook"), ("153", "bài đăng trong sáu tháng")]),
 ]
@@ -68,7 +68,10 @@ TEN_NAC = {1: "Ngồi dự", 2: "Đồng dẫn", 3: "Tự dẫn, có Duy dự", 
 CSS = """<style>
 .ndd{--ke:clamp(18px,3vw,28px)}
 .ndd img{height:auto}
-.ndd p,.ndd li,.ndd h3{text-align:left !important}
+/* Trang chung canh đều hai bên (.bd p). Trong thẻ và cột hẹp thì canh trái, đầu mục giữ canh giữa của .phan-dau. */
+.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
+.ndd .mono{color:var(--vang)}
+.ndd-moi h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:8px 0 10px}
 .ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 .ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
 .ndd-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,18,15,.96) 0%,rgba(23,18,15,.75) 55%,rgba(23,18,15,.35) 100%),linear-gradient(180deg,transparent 60%,rgba(23,18,15,.98) 100%)}
@@ -83,7 +86,7 @@ CSS = """<style>
 .ndd-so i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang)}
 .ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
 .ndd-thue{margin-top:14px;font-size:13.5px;color:var(--ink-4)}
-.ndd-logo{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;align-items:center;margin-top:30px}
+.ndd-logo{display:grid;grid-template-columns:repeat(7,1fr);gap:18px;align-items:center;margin-top:30px}
 .ndd-logo img{width:100%;height:34px !important;object-fit:contain;opacity:.75}
 .ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
@@ -108,9 +111,10 @@ CSS = """<style>
 .ndd-chang{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang);margin:30px 0 12px}
 .ndd-chang b{display:block;font-family:var(--f-tit);font-size:clamp(24px,3vw,32px);letter-spacing:-.01em;text-transform:none;color:var(--ink);margin-top:4px}
 .ndd-luoi12{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.ndd-t{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 20px}
+.ndd-t{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 20px}
 .ndd-t .s{font-family:var(--f-tit);font-size:44px;font-weight:800;line-height:1;color:var(--vang)}
-.ndd-t .n{position:absolute;top:18px;right:16px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line-2);border-radius:999px;padding:4px 9px}
+.ndd-t .dau{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ndd-t .n{display:inline-block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line-2);border-radius:999px;padding:4px 9px}
 .ndd-t h3{font-size:19px;margin:10px 0 6px}
 .ndd-t p{font-size:14.5px;color:var(--ink-2)}
 .ndd-t .ra{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:13.5px;color:var(--ink-3)}
@@ -120,6 +124,7 @@ CSS = """<style>
 .ndd-thanh span.on{background:var(--vang)}
 .ndd-canh{display:grid;grid-template-columns:1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-canh > img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:85% 40%;border-radius:var(--r);box-shadow:var(--shadow)}
+.ndd-canh h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 6px}
 .ndd-canh ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;color:var(--ink-2);font-size:16px}
 .ndd-hai{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .ndd-o{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
@@ -155,8 +160,9 @@ CSS = """<style>
   .ndd-hero .tren > img{max-height:320px;order:-1}
   .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon{grid-template-columns:1fr}
   .ndd-dt > img,.ndd-canh > img{order:-1}
-  .ndd-ca article{grid-template-columns:96px 1fr}
-  .ndd-ca .anh{width:96px;height:124px !important;font-size:34px}
+  .ndd-ca article{grid-template-columns:1fr}
+  .ndd-ca .anh{width:100%;height:240px !important;object-position:50% 25%}
+  .ndd-ca dt{font-size:21px}
   .ndd-moi{grid-template-columns:1fr;padding:22px 22px 0}
   .ndd-moi > img{width:150px;justify-self:center;order:3}
   .ndd-moi > a{margin-bottom:8px}
@@ -178,9 +184,9 @@ def the_ca(c):
 def the_thang(t):
     so, nac, ten, viec, ra = t
     thanh = "".join('<span class="on"></span>' if i <= nac else "<span></span>" for i in range(1, 5))
-    return ('<div class="ndd-t hien"><span class="n">Nấc %d · %s</span><div class="s">%02d</div>'
+    return ('<div class="ndd-t hien"><div class="dau"><div class="s">%02d</div><span class="n">Nấc %d · %s</span></div>'
             '<div class="ndd-thanh" aria-hidden="true">%s</div><h3>%s</h3><p>%s</p>'
-            '<p class="ra"><b>Bạn mang ra:</b> %s</p></div>' % (nac, TEN_NAC[nac], so, thanh, ten, viec, ra))
+            '<p class="ra"><b>Bạn mang ra:</b> %s</p></div>' % (so, nac, TEN_NAC[nac], thanh, ten, viec, ra))
 
 THAN = CSS + """<div class="ndd">
 <section class="ndd-hero">
