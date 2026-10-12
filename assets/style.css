@@ -2636,8 +2636,8 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 
 /* ---------- đội ngũ chuyên gia cố vấn (chuyen_gia.py) ---------- */
 
-/* Xếp thẻ bằng flex để hàng cuối thiếu thẻ thì tự vào giữa: bảy thẻ thành 4 + 3 khi đặt --cot:4. */
-.cg-luoi{--cot:3;--ke:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--ke)}
+/* Xếp thẻ bằng flex để hàng cuối thiếu thẻ thì tự vào giữa: bảy thẻ thành 4 + 3. */
+.cg-luoi{--cot:4;--ke:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--ke)}
 .cg-luoi > .cg-the{flex:0 0 calc((100% - (var(--cot) - 1) * var(--ke)) / var(--cot))}
 .cg-the{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
 .cg-the:hover{transform:translateY(-4px);border-color:rgba(242,177,74,.55);box-shadow:var(--shadow-h)}
@@ -2711,3 +2711,5 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
   .cg-hs-phai{padding:24px 20px 30px}
   .cg-hs-in{align-content:start}
 }
+/* Màn hình hẹp: canh trái thay vì dàn đều, tránh khoảng trắng to giữa các chữ (12/10/2026, kiểm tra trên điện thoại) */
+@media (max-width:600px){.bd p,.bd li,.bai-than p,.bai-than li,.cc-doc p,.cc-doc li,.cc-dan p{text-align:left}}

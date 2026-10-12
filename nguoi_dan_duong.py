@@ -1,53 +1,254 @@
 # -*- coding: utf-8 -*-
-"""Trang chương trình Người Dẫn Đường (D75 trong NGF-00B, phiếu chốt 38 và 39).
+"""Trang chương trình Người Dẫn Đường (D75 trong NGF-00B, phiếu chốt 38, 39, 40).
 
 Dựng nguoi-dan-duong/index.html, noindex, không có trong sitemap và menu cho tới
 khi Coach Duy duyệt. Chạy sau dung.py:
   python3 nguoi_dan_duong.py
 
-ponytail: khi Coach Duy duyệt thì bỏ dòng chen_noindex, thêm trang vào URLS và
+Nội dung 12 tháng (THANG) là bản đề xuất bước 2, chờ Coach Duy chốt ở phiếu 40.
+Bản chuẩn sau khi chốt nằm ở xưởng Next Gen Founder; sửa ở đó rồi chép sang đây.
+
+ponytail: khi Coach Duy duyệt thì bỏ đoạn chèn noindex, thêm trang vào URLS và
 sitemap trong dung.py.
 """
 import os
-from lib import trang, dau_trang, GOC
+from lib import trang, GOC
+
+P = "../"
+
+# ------------------------------------------------------------ BẰNG CHỨNG
+# Coach Duy xác nhận 12/10/2026, đồng ý công bố: dịch vụ thật, có hóa đơn, đóng thuế.
+SO = [
+    ("1 tỷ đồng", "một năm", "Mức cao nhất khách trả cho gói coaching kèm riêng với Duy"),
+    ("120 triệu đồng", "một giờ", "Mức ACB trả để mời Duy đào tạo"),
+    ("50 tới 80 triệu đồng", "một buổi", "Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy"),
+]
+LOGO = [("acb", "ACB"), ("mobifone", "MobiFone"), ("aia", "AIA"), ("prudential", "Prudential"),
+        ("bao-viet", "Bảo Việt Nhân thọ"), ("kb-securities", "KB Securities"), ("hsc", "HSC"),
+        ("gia-tot", "Gia Tốt Việt Nam")]
+
+# ------------------------------------------------------------ BỐN THỨ MANG VỀ
+BON = [
+    ("mc/mc-banlam", "Nghề dẫn đường", "Bạn ngồi cùng một bàn với ba người chủ, hỏi đúng câu, và nhìn họ tự đi tới quyết định của mình."),
+    ("bl-phong-thu", "Thương hiệu cá nhân", "Kinh nghiệm của bạn thành câu chuyện, thành kênh, thành lý do để người lạ tin bạn trước khi gặp."),
+    ("bl-viet-tay", "Mô hình kinh doanh từ chuyên môn", "Thứ bạn biết được đóng gói thành sản phẩm có tên, có giá, có người mua, không còn là bán giờ công."),
+    ("mc/mc-hoitruong", "Cộng đồng của riêng bạn", "Một nhóm người đi theo bạn vì cách bạn dẫn họ, giống cách Duy đang xây Cộng đồng Next Gen Founder."),
+]
+
+# ------------------------------------------------------------ NGƯỜI DUY ĐÃ ĐẦU TƯ
+# Theo hồ sơ case trong vault (Trusted Founder Brand): luôn ghi là kèm riêng, không
+# nêu lĩnh vực hiện tại, không nêu phần trăm tăng trưởng, không nói doanh thu.
+CA = [
+    ("img/chuyen-gia/phong-thuy.webp", "Coach Lê Phương", "Năm 2022, kèm riêng",
+     "Chị đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm chị xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
+     [("160.700", "người theo dõi TikTok"), ("5 triệu → 500 triệu", "giá trị sản phẩm sau khi thiết kế lại")]),
+    (None, "Kris Trần", "Sáu tháng, kèm riêng",
+     "Kris làm đầu tư tài chính ở Mỹ, hướng nội, ngại máy quay, muốn về Việt Nam lập nghiệp. Duy chỉ ra điểm Kris tưởng là yếu chính là chỗ khác biệt, rồi cùng Kris dựng một khung phương pháp mang tên riêng.",
+     [("59.000", "người theo dõi Facebook"), ("153", "bài đăng trong sáu tháng")]),
+]
+
+# ------------------------------------------------------------ 12 THÁNG (đề xuất bước 2)
+THANG = [
+    # (tháng, nấc, tên, việc trong tháng, bạn mang ra)
+    (1, 1, "Ngồi cạnh Duy", "Dự bốn buổi coaching Duy dẫn. Học năm vai của người dẫn đường: nhìn đúng chỗ kẹt, chỉ đường, làm mẫu, giữ chuẩn, đi cùng.", "Sổ ghi bốn buổi: Duy hỏi gì, dừng ở đâu, vì sao"),
+    (2, 1, "Hỏi thay vì nói", "Tập nghe hết câu, hỏi câu thứ hai, nhận ra lúc mình đang muốn trả lời thay người chủ.", "Bản chẩn đoán điểm nghẽn của một người chủ thật"),
+    (3, 2, "Câu chuyện của chính bạn", "Đồng dẫn với Duy. Tìm trong trải nghiệm của bạn những chuyện người khác cần nghe, theo Founder Heart Brand OS.", "Câu chuyện gốc và lời hứa của bạn"),
+    (4, 2, "Thương hiệu lên kênh", "Đồng dẫn. Đi Hệ thống 7 bước xây thương hiệu Founder, chọn một kênh và đăng đều bốn tuần.", "Một kênh chạy đều, có người đầu tiên nhắn tới"),
+    (5, 3, "Đóng gói chuyên môn", "Tự dẫn có Duy dự. Biến thứ bạn biết thành một sản phẩm đặt được tên và định được giá.", "Sản phẩm đầu tiên và bảng giá"),
+    (6, 3, "Bán bằng niềm tin", "Tự dẫn có Duy dự. Học The Trusted Advisor, ngồi buổi tư vấn đầu tiên với khách thật. Duy đánh giá giữa chương trình.", "Khách đầu tiên, và quyết định lên chặng hai"),
+    (7, 3, "Dẫn trọn một buổi", "Dẫn trọn buổi group coaching của Cộng đồng Pro, Duy ngồi cuối bàn và nhận xét sau buổi.", "Ba lần dẫn trọn buổi có nhận xét"),
+    (8, 3, "Thiết kế cộng đồng", "Thiết kế nhóm đầu tiên của bạn: ai vào, gặp nhau thế nào, giữ cảm xúc chung ra sao.", "Bản thiết kế nhóm và mười người đầu tiên"),
+    (9, 4, "Nhóm đầu tiên của bạn", "Tự dẫn một nhóm thật trong cộng đồng, không có Duy ngồi bên cạnh.", "Nhóm gặp đều bốn tuần, có ghi chép từng buổi"),
+    (10, 4, "Nhóm chạy khi bạn vắng", "Đặt người điều phối, lịch gặp và chuẩn của nhóm, dùng AI để ghi chép và nhắc việc.", "Một buổi nhóm tự chạy khi bạn vắng"),
+    (11, 4, "Kết quả của người khác", "Ghi lại kết quả của những người bạn coaching: trước khi gặp bạn thế nào, bây giờ thế nào.", "Hồ sơ kết quả của thành viên"),
+    (12, 4, "Nhận chứng nhận, chọn đường", "Duy duyệt chứng nhận. Bạn chọn làm mentor trong cộng đồng hay coach độc lập, và chia sẻ hành trình trước cộng đồng.", "Chứng nhận Người Dẫn Đường"),
+]
+TEN_NAC = {1: "Ngồi dự", 2: "Đồng dẫn", 3: "Tự dẫn, có Duy dự", 4: "Tự dẫn nhóm thật"}
 
 CSS = """<style>
-.ndd-luoi{--cot:4;display:grid;grid-template-columns:repeat(var(--cot),1fr);gap:18px}
-.ndd-luoi.ba{--cot:3}
-@media (max-width:1000px){.ndd-luoi,.ndd-luoi.ba{--cot:2}}
-@media (max-width:600px){.ndd-luoi,.ndd-luoi.ba{--cot:1}}
-.ndd-o{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow-s)}
-.ndd-o p,.ndd-o li,.ndd-ds li{text-align:left !important}
-.ndd-so{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
-.ndd-o h3{font-size:21px;margin:8px 0 8px}
-.ndd-o p{color:var(--ink-2);font-size:15.5px}
-.ndd-ds{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
-.ndd-ds li{position:relative;padding-left:26px;color:var(--ink-2)}
-.ndd-ds li:before{content:"";position:absolute;left:4px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--vang)}
-.ndd-khong li:before{background:var(--ink-4)}
+.ndd{--ke:clamp(18px,3vw,28px)}
+.ndd p,.ndd li,.ndd h3{text-align:left !important}
+.ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
+.ndd-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,18,15,.96) 0%,rgba(23,18,15,.75) 55%,rgba(23,18,15,.35) 100%),linear-gradient(180deg,transparent 60%,rgba(23,18,15,.98) 100%)}
+.ndd-hero .bd{width:100%;padding-top:110px;padding-bottom:clamp(36px,6vw,64px)}
+.ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:end}
+.ndd-hero .tren > img{width:100%;max-height:560px;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+.ndd-hero h1{font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.03em;margin:10px 0 16px}
+.ndd-hero .dan{max-width:60ch;font-size:clamp(17px,2vw,20px);color:var(--ink-2)}
+.ndd-so{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.ndd-so div{border-top:2px solid var(--vang);padding-top:12px}
+.ndd-so b{display:block;font-family:var(--f-tit);font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--ink)}
+.ndd-so i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang)}
+.ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
+.ndd-thue{margin-top:14px;font-size:13.5px;color:var(--ink-4)}
+.ndd-logo{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;align-items:center;margin-top:30px}
+.ndd-logo img{width:100%;height:34px;object-fit:contain;opacity:.75}
+.ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
+.ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.ndd-dt h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 14px}
+.ndd-dt p{color:var(--ink-2);font-size:17px}
+.ndd-trich{margin-top:18px;padding-left:16px;border-left:3px solid var(--vang);font-family:var(--f-tit);font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--ink) !important}
+.ndd-bon{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ndd-bon figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ndd-bon img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.ndd-bon figcaption{padding:16px 18px 20px}
+.ndd-bon b{display:block;font-family:var(--f-tit);font-size:21px;line-height:1.2;margin-bottom:6px}
+.ndd-bon span{font-size:15px;color:var(--ink-2);line-height:1.5}
+.ndd-ca{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ndd-ca article{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.ndd-ca .anh{width:150px;height:190px;border-radius:var(--r-s);object-fit:cover;object-position:50% 20%;background:var(--panel-2);display:grid;place-items:center;font-family:var(--f-tit);font-size:48px;font-weight:800;color:var(--vang)}
+.ndd-ca h3{font-size:22px;margin:0}
+.ndd-ca .khi{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin:4px 0 10px}
+.ndd-ca p{font-size:15px;color:var(--ink-2)}
+.ndd-ca dl{display:flex;flex-wrap:wrap;gap:10px 22px;margin:12px 0 0}
+.ndd-ca dt{font-family:var(--f-tit);font-size:24px;font-weight:700;color:var(--ink)}
+.ndd-ca dd{margin:0;font-size:13px;color:var(--ink-3)}
+.ndd-chang{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang);margin:30px 0 12px}
+.ndd-chang b{display:block;font-family:var(--f-tit);font-size:clamp(24px,3vw,32px);letter-spacing:-.01em;text-transform:none;color:var(--ink);margin-top:4px}
+.ndd-luoi12{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ndd-t{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 20px}
+.ndd-t .s{font-family:var(--f-tit);font-size:44px;font-weight:800;line-height:1;color:var(--vang)}
+.ndd-t .n{position:absolute;top:18px;right:16px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line-2);border-radius:999px;padding:4px 9px}
+.ndd-t h3{font-size:19px;margin:10px 0 6px}
+.ndd-t p{font-size:14.5px;color:var(--ink-2)}
+.ndd-t .ra{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:13.5px;color:var(--ink-3)}
+.ndd-t .ra b{color:var(--vang);font-weight:600}
+.ndd-thanh{display:flex;gap:4px;margin:16px 0 4px}
+.ndd-thanh span{flex:1;height:6px;border-radius:3px;background:var(--line-2)}
+.ndd-thanh span.on{background:var(--vang)}
+.ndd-canh{display:grid;grid-template-columns:1fr 1fr;gap:var(--ke);align-items:center}
+.ndd-canh > img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.ndd-canh ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;color:var(--ink-2);font-size:16px}
 .ndd-hai{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media (max-width:700px){.ndd-hai{grid-template-columns:1fr}}
-.ndd-moi{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid rgba(242,177,74,.4);border-radius:var(--r);padding:28px}
-.ndd-moi > div{flex:1 1 420px}
-.ndd-moi p{text-align:left !important;color:var(--ink-2)}
+.ndd-o{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.ndd-o h3{font-size:21px;margin:6px 0 8px}
+.ndd-o p,.ndd-o li{color:var(--ink-2);font-size:15.5px}
+.ndd-nho{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang) !important}
+.ndd-ds{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
+.ndd-ds li{position:relative;padding-left:24px;color:var(--ink-2)}
+.ndd-ds li:before{content:"";position:absolute;left:3px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--vang)}
+.ndd-khong li:before{background:var(--ink-4)}
+.ndd-vao{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:b;padding:0;margin:0}
+.ndd-vao li{list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;counter-increment:b}
+.ndd-vao li:before{content:"Bước " counter(b);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
+.ndd-vao b{display:block;font-family:var(--f-tit);font-size:19px;margin:8px 0 6px}
+.ndd-vao span{font-size:14.5px;color:var(--ink-2)}
+.ndd-moi{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;background:var(--paper);border:1px solid rgba(242,177,74,.4);border-radius:var(--r);padding:24px 28px 0 24px;overflow:hidden}
+.ndd-moi > img{width:200px;align-self:end;display:block}
+.ndd-moi > div{padding-bottom:24px}
+.ndd-moi > a{margin-bottom:24px}
+.ndd-moi p{color:var(--ink-2)}
+@media (max-width:1000px){
+  .ndd-bon{grid-template-columns:repeat(2,1fr)}
+  .ndd-luoi12{grid-template-columns:repeat(2,1fr)}
+  .ndd-vao{grid-template-columns:repeat(2,1fr)}
+  .ndd-ca{grid-template-columns:1fr}
+  .ndd-logo{grid-template-columns:repeat(4,1fr)}
+  .ndd-moi{grid-template-columns:160px 1fr}
+  .ndd-moi > img{width:160px}
+  .ndd-moi > a{grid-column:1/-1;justify-self:start}
+}
+@media (max-width:700px){
+  .ndd-hero .tren{grid-template-columns:1fr}
+  .ndd-hero .tren > img{max-height:320px;order:-1}
+  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon{grid-template-columns:1fr}
+  .ndd-dt > img,.ndd-canh > img{order:-1}
+  .ndd-ca article{grid-template-columns:96px 1fr}
+  .ndd-ca .anh{width:96px;height:124px;font-size:34px}
+  .ndd-moi{grid-template-columns:1fr;padding:22px 22px 0}
+  .ndd-moi > img{width:150px;justify-self:center;order:3}
+  .ndd-moi > a{margin-bottom:8px}
+}
 </style>"""
 
-def o(so, tieu, chu):
-    return '<div class="ndd-o hien"><p class="ndd-so">%s</p><h3>%s</h3><p>%s</p></div>' % (so, tieu, chu)
+def anh(ten, alt=""):
+    return '<img src="%simg/%s.webp" alt="%s" loading="lazy">' % (P, ten, alt)
 
 def ds(xs, lop="ndd-ds"):
     return '<ul class="%s">%s</ul>' % (lop, "".join("<li>%s</li>" % x for x in xs))
 
-THAN = CSS + dau_trang(
-    "Người Dẫn Đường",
-    "Chương trình đào tạo người dẫn đường cho nhà sáng lập",
-    "Mười hai tháng Duy kèm trực tiếp một nhóm nhỏ những người đã có kết quả thật trong kinh doanh hoặc chuyên môn. Bạn cùng Duy ngồi vào những buổi coaching thật với người chủ thật, cho tới khi bạn tự dẫn được một nhóm mà không cần Duy ngồi bên cạnh.") + """
+def the_ca(c):
+    a, ten, khi, chu, so = c
+    hinh = ('<img class="anh" src="%s%s" alt="%s" loading="lazy">' % (P, a, ten)) if a else ('<div class="anh" aria-hidden="true">%s</div>' % ten.split()[-1][0])
+    return ('<article class="hien">%s<div><h3>%s</h3><p class="khi">%s</p><p>%s</p><dl>%s</dl></div></article>'
+            % (hinh, ten, khi, chu, "".join("<div><dt>%s</dt><dd>%s</dd></div>" % s for s in so)))
+
+def the_thang(t):
+    so, nac, ten, viec, ra = t
+    thanh = "".join('<span class="on"></span>' if i <= nac else "<span></span>" for i in range(1, 5))
+    return ('<div class="ndd-t hien"><span class="n">Nấc %d · %s</span><div class="s">%02d</div>'
+            '<div class="ndd-thanh" aria-hidden="true">%s</div><h3>%s</h3><p>%s</p>'
+            '<p class="ra"><b>Bạn mang ra:</b> %s</p></div>' % (nac, TEN_NAC[nac], so, thanh, ten, viec, ra))
+
+THAN = CSS + """<div class="ndd">
+<section class="ndd-hero">
+  <img src="%simg/dh-phong-lon.webp" alt="" aria-hidden="true">
+  <div class="bd">
+    <div class="tren"><div>
+    <p class="mono">Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
+    <h1>Người Dẫn Đường</h1>
+    <p class="dan">Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, với người chủ thật. Tới tháng thứ mười hai, bạn tự dẫn một nhóm của riêng mình, có thương hiệu, có sản phẩm và có cộng đồng đi theo bạn.</p>
+    </div><img src="%simg/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high"></div>
+    <div class="ndd-so">%s</div>
+    <p class="ndd-thue">Đây là những dịch vụ Duy đang cung cấp, có hóa đơn và đóng thuế đầy đủ.</p>
+  </div>
+</section>
+""" % (P, P, "".join('<div><i>%s</i><b>%s</b><span>%s</span></div>' % (d, s, m) for s, d, m in SO)) + """
+<section class="phan bd">
+  <div class="ndd-dt">
+    <div class="hien">
+      <p class="mono">Vì sao có chương trình này</p>
+      <h2>Đây là những người Duy đầu tư nhiều nhất</h2>
+      <p>Thời gian, mạng lưới quan hệ, cách làm mà khách đã trả tới một tỷ đồng một năm. Duy dồn những thứ đó vào một nhóm nhỏ, để đưa từng người trở lại làm bằng chứng cho Cộng đồng Next Gen Founder.</p>
+      <p class="ndd-trich">Duy không cần thêm học viên. Duy cần những người đi cùng một con đường.</p>
+    </div>
+    """ + anh("mc/mc-chungnhan", "Một lớp học viên nhận chứng nhận cùng Coach Duy") + """
+  </div>
+  <div class="ndd-logo hien">""" + "".join('<img src="%simg/doi-tac/mono/%s.png" alt="%s" loading="lazy">' % (P, t, n) for t, n in LOGO) + """</div>
+</section>
 
 <section class="phan bd">
   <div class="phan-dau hien">
-    <p class="mono">Vì sao có chương trình này</p>
-    <h2>Một người không đi cùng hết được mười nghìn người</h2>
-    <p>Duy đặt mục tiêu góp phần tạo nên 10.000 Next Gen Founder tại Việt Nam. Đi được tới con số đó thì không thể chỉ có một mình Duy ngồi trong mọi buổi coaching. Duy cần những người hiểu cách Duy nghĩ, làm việc theo cùng một chuẩn, và muốn đi cùng một con đường. Người Dẫn Đường là nơi Duy truyền lại nghề cho những người đó.</p>
+    <p class="mono">Sau mười hai tháng</p>
+    <h2>Bạn mang về bốn thứ, không phải một tấm giấy</h2>
+  </div>
+  <div class="ndd-bon">""" + "".join('<figure class="hien">%s<figcaption><b>%s</b><span>%s</span></figcaption></figure>' % (anh(a, t), t, c) for a, t, c in BON) + """</div>
+</section>
+
+<section class="phan bd">
+  <div class="phan-dau hien">
+    <p class="mono">Những người Duy đã đầu tư</p>
+    <h2>Trước khi có tên chương trình, Duy đã làm việc này</h2>
+  </div>
+  <div class="ndd-ca">""" + "".join(the_ca(c) for c in CA) + """</div>
+</section>
+
+<section class="phan bd" id="muoi-hai-thang">
+  <div class="phan-dau hien">
+    <p class="mono">Mười hai tháng, bốn nấc</p>
+    <h2>Mỗi tháng một việc thật, mỗi việc một thứ bạn mang ra</h2>
+    <p>Hai nấc giữa diễn ra ngay trong những buổi coaching của Cộng đồng Pro và Diamond Founder Club. Mỗi tháng có thêm một buổi chung cho cả khóa. Thanh vàng trên mỗi tháng cho biết bạn đang ở nấc nào.</p>
+  </div>
+  <p class="ndd-chang hien">Tháng 1 tới 6<b>Học nghề bên cạnh Duy</b></p>
+  <div class="ndd-luoi12">""" + "".join(the_thang(t) for t in THANG[:6]) + """</div>
+  <p class="ndd-chang hien">Tháng 7 tới 12<b>Tự dẫn, và dựng con đường của riêng bạn</b></p>
+  <div class="ndd-luoi12">""" + "".join(the_thang(t) for t in THANG[6:]) + """</div>
+</section>
+
+<section class="phan bd">
+  <div class="ndd-canh">
+    """ + anh("cd-workshop", "Coach Duy ngồi cùng bàn với học viên trong một buổi làm việc nhóm") + """
+    <div class="hien">
+      <p class="mono">Một buổi ở nấc ba</p>
+      <h2>Bạn dẫn, Duy ngồi cuối bàn</h2>
+      <ol>
+        <li>Chín mươi phút, ba người chủ, mỗi người mang một chuyện đang kẹt.</li>
+        <li>Bạn hỏi, họ trả lời. Duy không chen vào, chỉ ghi.</li>
+        <li>Có lúc bạn muốn trả lời thay họ. Duy đánh dấu đúng khoảnh khắc đó.</li>
+        <li>Hết buổi, hai người ngồi lại mười lăm phút: chỗ nào bạn đã nói thay vì hỏi, chỗ nào người chủ tự nhìn ra.</li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -58,7 +259,7 @@ THAN = CSS + dau_trang(
   </div>
   <div class="ndd-hai">
     <div class="ndd-o hien"><h3>Chương trình dành cho bạn nếu</h3>""" + ds([
-        "Bạn đã có kết quả thật trong kinh doanh hoặc trong chuyên môn của mình, nói ra được và người khác kiểm chứng được",
+        "Bạn đã có kết quả thật trong kinh doanh hoặc chuyên môn, nói ra được và người khác kiểm chứng được",
         "Bạn tin giá trị đi trước, tiền bạc đến sau",
         "Bạn dành được ít nhất tám giờ mỗi tuần trong mười hai tháng",
         "Bạn sẵn sàng để Duy nhận xét thẳng sau mỗi buổi mình dẫn",
@@ -72,71 +273,41 @@ THAN = CSS + dau_trang(
 </section>
 
 <section class="phan bd">
-  <div class="phan-dau hien">
-    <p class="mono">Mười hai tháng, bốn nấc</p>
-    <h2>Học bằng cách làm cùng Duy, mỗi nấc chỉ lên khi đã vững</h2>
-    <p>Chương trình chia hai chặng, mỗi chặng sáu tháng. Bạn đi qua bốn nấc, ngay trong những buổi coaching thật của Cộng đồng Next Gen Founder, cộng thêm một buổi chung mỗi tháng cho cả khóa.</p>
-  </div>
-  <div class="ndd-luoi">""" + "".join([
-        o("Nấc 1", "Ngồi dự", "Bạn ngồi trong buổi coaching Duy dẫn, xem Duy hỏi gì, dừng ở đâu, và vì sao không trả lời thay người chủ."),
-        o("Nấc 2", "Đồng dẫn", "Bạn dẫn một phần buổi cùng Duy. Sau buổi, hai người ngồi lại xem chỗ nào bạn đã nói thay vì hỏi."),
-        o("Nấc 3", "Tự dẫn, có Duy dự", "Bạn dẫn trọn buổi, Duy ngồi nghe và nhận xét. Đây là nấc dài nhất của chương trình."),
-        o("Nấc 4", "Tự dẫn một nhóm thật", "Bạn tự dẫn một nhóm thành viên trong cộng đồng, và ghi lại kết quả của những người bạn coaching."),
-    ]) + """</div>
-</section>
-
-<section class="phan bd">
-  <div class="phan-dau hien">
-    <p class="mono">Bạn học những gì</p>
-    <h2>Ba phần, phần nào cũng gắn với người chủ thật</h2>
-  </div>
-  <div class="ndd-luoi ba">""" + "".join([
-        o("Phần 1", "Phương pháp Next Gen Founder", "Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder và The Trusted Advisor, phương pháp bán hàng tư vấn bằng niềm tin."),
-        o("Phần 2", "Kỹ năng coaching và dẫn nhóm", "Người giỏi kinh doanh hay nói thay người chủ. Phần này tập cách hỏi, cách để cả nhóm cùng nói và cùng nghe, và cách để người chủ tự đi tới quyết định."),
-        o("Phần 3", "Vận hành một nhóm trong cộng đồng", "Mời người, giữ cho nhóm gặp nhau đều đặn, ghi lại kết quả, và giữ chuẩn của cộng đồng khi không có Duy ở đó."),
-    ]) + """</div>
-</section>
-
-<section class="phan bd">
-  <div class="phan-dau hien">
-    <p class="mono">Chứng nhận</p>
-    <h2>Chứng nhận đo bằng kết quả của người bạn coaching</h2>
-  </div>
-  <div class="ndd-o hien">""" + ds([
+  <div class="ndd-dt">
+    <div class="hien">
+      <p class="mono">Chứng nhận</p>
+      <h2>Đo bằng kết quả của người bạn coaching</h2>""" + ds([
         "Bạn đã tự dẫn đủ số buổi có Duy dự và nhận xét",
-        "Có thành viên do bạn coaching đạt kết quả và kết quả đó được ghi lại",
+        "Có thành viên do bạn coaching đạt kết quả, và kết quả đó được ghi lại",
         "Duy là người duyệt cuối",
         "Chứng nhận có hạn một năm, gia hạn khi bạn vẫn dẫn nhóm và vẫn giữ chuẩn",
-    ]) + """</div>
-</section>
-
-<section class="phan bd">
-  <div class="phan-dau hien">
-    <p class="mono">Sau chứng nhận</p>
-    <h2>Hai con đường, bạn tự chọn</h2>
+    ]) + """
+    </div>
+    """ + anh("v5-giu-chuan", "Coach Duy Nguyễn") + """
   </div>
-  <div class="ndd-hai">""" + "".join([
-        o("Con đường 1", "Mentor trong Cộng đồng Next Gen Founder", "Bạn dẫn nhóm thành viên, cùng dẫn các buổi coaching của cộng đồng, nhận khách kèm riêng do cộng đồng giới thiệu và được chia doanh thu từ nhóm mình dẫn."),
-        o("Con đường 2", "Coach độc lập mang chứng nhận", "Bạn làm dịch vụ của riêng mình và ghi chứng nhận Người Dẫn Đường khi chứng nhận còn hạn. Tên dịch vụ là tên của bạn, không mang tên Next Gen Founder hay tên chương trình."),
-    ]) + """</div>
+  <div class="ndd-hai" style="margin-top:28px">
+    <div class="ndd-o hien"><p class="ndd-nho">Con đường 1</p><h3>Mentor trong Cộng đồng Next Gen Founder</h3><p>Bạn dẫn nhóm thành viên, cùng dẫn các buổi coaching của cộng đồng, nhận khách kèm riêng do cộng đồng giới thiệu và được chia doanh thu từ nhóm mình dẫn.</p></div>
+    <div class="ndd-o hien"><p class="ndd-nho">Con đường 2</p><h3>Coach độc lập mang chứng nhận</h3><p>Bạn làm dịch vụ của riêng mình và ghi chứng nhận Người Dẫn Đường khi chứng nhận còn hạn. Tên dịch vụ là tên của bạn, không mang tên Next Gen Founder hay tên chương trình.</p></div>
+  </div>
 </section>
 
 <section class="phan bd">
   <div class="phan-dau hien">
     <p class="mono">Cách vào</p>
-    <h2>Chương trình chỉ nhận theo thư mời</h2>
-    <p>Khóa đầu nhận từ sáu tới mười người. Duy mời trước những thành viên Cộng đồng Pro và Diamond Founder Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
+    <h2>Chỉ nhận theo thư mời, khóa đầu sáu tới mười người</h2>
+    <p>Duy mời trước thành viên Cộng đồng Pro và Diamond Founder Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
   </div>
-  <div class="ndd-luoi">""" + "".join([
-        o("Bước 1", "Thư mời", "Duy gửi thư mời tới những người Duy thấy phù hợp."),
-        o("Bước 2", "Phiếu khảo sát", "Bạn kể kết quả mình đã làm ra, và lý do bạn muốn dẫn người khác."),
-        o("Bước 3", "Gặp riêng Duy", "Một buổi nói chuyện thẳng về mong muốn của bạn và yêu cầu của chương trình."),
-        o("Bước 4", "Dẫn thử một buổi", "Bạn dẫn thử một buổi nhóm, có Duy ngồi dự. Nói chuyện giỏi chưa chắc đã dẫn nhóm giỏi, nên bước này không bỏ."),
-    ]) + """</div>
+  <ol class="ndd-vao hien">
+    <li><b>Thư mời</b><span>Duy gửi tới những người Duy thấy phù hợp.</span></li>
+    <li><b>Phiếu khảo sát</b><span>Bạn kể kết quả mình đã làm ra, và người bạn muốn dẫn dắt.</span></li>
+    <li><b>Gặp riêng Duy</b><span>Một buổi nói thẳng về mong muốn của bạn và yêu cầu của chương trình.</span></li>
+    <li><b>Dẫn thử một buổi</b><span>Có Duy ngồi dự. Nói chuyện giỏi chưa chắc đã dẫn nhóm giỏi, nên bước này không bỏ.</span></li>
+  </ol>
 </section>
 
 <section class="phan bd">
   <div class="ndd-moi hien">
+    """ + anh("cd-cat-vest", "Coach Duy Nguyễn") + """
     <div>
       <p class="mono">Muốn được cân nhắc cho khóa đầu</p>
       <h2>Để lại lời nhắn cho Duy</h2>
@@ -145,11 +316,12 @@ THAN = CSS + dau_trang(
     <a class="nut nut-v" href="../lien-he.html">Nhắn cho Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
+</div>
 """
 
 TEP = "nguoi-dan-duong/index.html"
 trang(TEP, "Người Dẫn Đường · Chương trình đào tạo người dẫn đường cho nhà sáng lập",
-      "Mười hai tháng Coach Duy Nguyễn kèm trực tiếp một nhóm nhỏ người đã có kết quả thật, để họ dẫn dắt và coaching những người chủ đi sau.",
+      "Mười hai tháng ngồi cạnh Coach Duy Nguyễn trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu, sản phẩm và cộng đồng.",
       THAN, "")
 
 # Ẩn khỏi Google cho tới khi Coach Duy duyệt (phiếu chốt 39, mục C1).

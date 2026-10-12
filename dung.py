@@ -2075,6 +2075,7 @@ _ten_cc = {c["ma"]: c["tieu"] for c in cong_cu_ai.DS}
 def trang_ebook(ma):
     x = _tt_eb(ma); m = ma.lower(); pdf = _TEP_EB[ma]; e = html.escape
     lo = x["gt"].split(". ")[0].rstrip(".") + "."
+    nb = lambda v: e(v).replace("E-book", "E&#8209;book").replace("e-book", "e&#8209;book")   # không ngắt dòng giữa chữ E-book
     muc = "".join('<li><span>%s</span>%s</li>' % tuple(e(v) for v in t.split(". ", 1)) for t in x["muc"])
     cc = "".join('<a class="lk-v" href="../cong-cu/%s.html">%s <span class="mt" aria-hidden="true">&rarr;</span></a>' % (_ngan_ma[n], e(_ten_cc[_ngan_ma[n]]))
                  for n in _CONG_CU_EB.get(ma, []))
@@ -2140,7 +2141,7 @@ def trang_ebook(ma):
 %(gioi)s
 <script src="../assets/dang-ky.js?v=%(ver)s"></script>
 <script src="../assets/ebook-tai.js?v=%(ver)s"></script>
-""" % dict(cd=e(x["chu_de"]), ten=e(x["ten"]), gt=e(x["gt"]), meta=meta, m=m, lo=e(lo), mo=e(x["mo_dau"]), mt=e(x["mt"]), muc=muc,
+""" % dict(cd=e(x["chu_de"]), ten=e(x["ten"]), gt=nb(x["gt"]), meta=meta, m=m, lo=nb(lo), mo=nb(x["mo_dau"]), mt=nb(x["mt"]), muc=muc,
            ma=ma, nd=e(cong_cu_ai.noi_dau("", x["chu_de"])), pl=cong_cu_ai.khoi_phan_loai(), pdf=pdf, st=x["so_trang"],
            cc_khoi=('<p class="eb-cc-dan">Làm cùng các công cụ đi kèm, với chính số liệu doanh nghiệp bạn:</p><div class="eb-cc">%s</div>' % cc) if cc else "",
            gioi=cong_cu_ai.khoi_gioi_thieu(2), ver=VER)
