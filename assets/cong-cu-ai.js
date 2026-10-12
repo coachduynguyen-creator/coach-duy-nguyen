@@ -1,5 +1,5 @@
 /* Bốn trang công cụ AI (cong-cu/*.html, dựng từ cong_cu_ai.py).
-   Biểu mẫu năm ô gửi vào đúng biểu mẫu Pancake của trang /tham-gia, kèm mã
+   Biểu mẫu gửi qua trạm /api/dang-ky vào phần Liên hệ của Pancake, kèm mã
    công cụ và mã nguồn. Phiếu điền số chỉ lưu trên máy người dùng, không gửi
    số liệu doanh nghiệp đi đâu. */
 (function () {
@@ -7,9 +7,9 @@
   if (!dl) return;
   var DL = JSON.parse(dl.textContent), MA = DL.ma;
 
-  // Biểu mẫu Pancake "NGF Free", chính là biểu mẫu nút đăng ký của /tham-gia mở ra.
-  var PANCAKE = 'https://pos.pancake.vn/api/v1/shops/430111447/crm/Contact/form_record';
-  var FORM_ID = '5ab7145a-0632-4575-837b-966204ccf51b';
+  // Trạm Cloudflare (tram-pancake/worker.js) ghi vào phần Liên hệ của Pancake CRM bằng khóa API.
+  // Pancake không nhận bản ghi gửi thẳng từ trang khác, nên mọi đăng ký đi qua trạm này.
+  var TRAM = '/api/dang-ky';
   // Mã lựa chọn trong ô "Chức danh" và "Ưu tiên" của Pancake.
   var CHUC_DANH = {0: 'Chủ doanh nghiệp-4421-8240-f9b1-4edf-3105-9677-c312',
                    1: 'Quản lý-0268-27d9-11a8-cdfd-599c-b34f-b1c3',
@@ -70,13 +70,11 @@
       ' · Vai trò: ' + chu('vai_tro', n.vai_tro) + ' · Doanh thu mỗi tháng: ' + chu('doanh_thu', n.doanh_thu) +
       ' · Đội ngũ: ' + chu('doi_ngu', n.doi_ngu) + ' · Cần gọi lại: ' + (goi ? 'CÓ' : 'không');
     var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo, Note: ghiChu,
-      utm_source: nguon, utm_medium: 'cong-cu-ai', utm_campaign: 'ngf-thu-lead', utm_content: MA, url_page: location.href,
-      // ba ô kỹ thuật biểu mẫu Pancake luôn gửi kèm, thiếu là Pancake báo lỗi
-      for_import: false, extra_infor: {}, FullAddress: {country_name: null}};
+      utm_source: nguon, utm_medium: 'cong-cu-ai', utm_campaign: 'ngf-thu-lead', utm_content: MA, url_page: location.href};
     if (CHUC_DANH[n.vai_tro]) data.chuc_danh = CHUC_DANH[n.vai_tro];
     if (goi) data.uu_tien = RAT_UU_TIEN;
-    return fetch(PANCAKE, {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
-      body: JSON.stringify({data: data, form_id: FORM_ID})})
+    return fetch(TRAM, {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
+      body: JSON.stringify({data: data})})
       .then(function (r) { return r.json(); })
       .then(function (j) { if (!j || !j.success) throw new Error((j && j.message) || 'Pancake chưa nhận'); return j; });
   }

@@ -2,7 +2,7 @@
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
 import html, json, os, re
 from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK,
-                 NGAY_SUA, TSTS_LANDING, FGS_LANDING, CGS_LANDING, trang, dau_trang, dd)
+                 NGAY_SUA, TSTS_LANDING, FGS_LANDING, CGS_LANDING, trang, dau_trang, dd, VER)
 from bai_viet import BAI
 from bo_sung_bai import BO_SUNG
 # bài mới nhất đứng đầu
@@ -1749,7 +1749,7 @@ _the_eb = "".join(
  '<img src="img/logo-dn.webp" alt="" loading="lazy"><span class="eb-bia-cd">%s</span><h3>%s</h3><span class="eb-bia-tg">Coach Duy Nguyễn</span></div>'
  '<div class="eb-than"><p>%s</p>%s</div></article>'
  % (html.escape(CHU_DE_EB[m]), _MAU_CD[CHU_DE_EB[m]], html.escape(CHU_DE_EB[m]), html.escape(t),
-    html.escape(g).replace("E-book", "E&#8209;book"), ('<a class="tv-tt eb-tai" href="%s" download>Tải e&#8209;book PDF &darr;</a>' % EBOOK_CO_TEP[m]) if m in EBOOK_CO_TEP else '<p class="tv-tt">Đang soạn</p>')
+    html.escape(g).replace("E-book", "E&#8209;book"), ('<a class="tv-tt eb-tai" href="%s" data-ma="%s" data-ten="%s" download>Tải e&#8209;book PDF &darr;</a>' % (EBOOK_CO_TEP[m], m, html.escape(t))) if m in EBOOK_CO_TEP else '<p class="tv-tt">Đang soạn</p>')
  for m, t, g in EBOOK)
 SACH = """<header class="dau-trang hoa-van cc-dau">
   <div class="bd cc-dau-luoi">
@@ -2025,6 +2025,22 @@ print("  cau-chuyen-hoc-vien.html")
 
 # Trang thư viện ở /cong-cu/ từ 10/10/2026, cùng thư mục với các công cụ. Thân
 # trang viết cho gốc site nên thêm ../ vào mọi đường dẫn tương đối.
+# Hộp ba ô trước khi tải e-book (assets/ebook-tai.js gửi qua trạm /api/dang-ky vào Pancake).
+SACH += """<dialog class="eb-hop" id="eb-hop" aria-labelledby="eb-hop-tieu">
+  <form id="eb-form" novalidate>
+    <p class="mono">Tải e-book</p>
+    <h2 id="eb-hop-tieu">Điền 3 ô để tải ngay</h2>
+    <p class="eb-hop-dan" id="eb-ten-sach"></p>
+    <div class="cc-hai"><label class="cc-o"><span>Tên</span><input name="ten" autocomplete="name" required></label>
+    <label class="cc-o"><span>Zalo</span><input name="zalo" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
+    <label class="cc-o"><span>Vai trò</span><select name="vai_tro" required><option value="">Chọn</option><option value="0">Chủ doanh nghiệp hoặc đồng sáng lập</option><option value="1">Quản lý</option><option value="2">Nhân viên</option><option value="3">Kinh doanh một mình</option><option value="4">Đang chuẩn bị kinh doanh</option></select></label>
+    <p class="cc-loi" id="eb-loi" hidden></p>
+    <div class="eb-hop-nut"><button class="nut nut-v" type="submit">Tải e&#8209;book <span class="mt" aria-hidden="true">&darr;</span></button><button class="nut nut-vien" type="button" id="eb-dong">Để sau</button></div>
+    <p class="eb-hop-ghi">Lần sau tải cuốn khác hay mở công cụ, bạn không phải điền lại.</p>
+  </form>
+</dialog>
+<script src="assets/ebook-tai.js?v=%s" defer></script>
+""" % VER
 SACH = re.sub(r'(href|src)="(?!https?:|#|/|mailto:|data:|\.\./)', r'\1="../', SACH)
 trang("cong-cu/index.html", "Công cụ và tài liệu của Coach Duy Nguyễn",
       "Công cụ và tài liệu Coach Duy Nguyễn soạn cho founder và chủ doanh nghiệp: kế hoạch, số khách, dòng tiền, giao việc và đội ngũ, dùng với chính số liệu doanh nghiệp mình.",

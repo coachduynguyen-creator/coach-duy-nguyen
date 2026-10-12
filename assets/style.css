@@ -2590,3 +2590,11 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .cc-dau .dan+.dan{margin-top:12px}
 .eb-tai{display:inline-block;text-decoration:none;padding:8px 14px;border:1px solid var(--vang);border-radius:999px}
 .eb-tai:hover{background:var(--vang);color:var(--ink,#17120F)}
+/* Hộp ba ô trước khi tải e-book (assets/ebook-tai.js) */
+.eb-hop{width:min(520px,calc(100vw - 32px));background-image:var(--paper);background-color:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:28px}
+.eb-hop::backdrop{background:rgba(10,8,6,.62)}
+.eb-hop h2{margin:6px 0 4px;font-size:24px}
+.eb-hop-dan{margin:0;color:var(--vang);font-weight:600}
+.eb-hop-nut{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.eb-hop-ghi{margin:14px 0 0;font-size:14px;color:var(--ink-3)}
+@media (max-width:520px){.eb-hop .cc-hai{grid-template-columns:1fr}}
