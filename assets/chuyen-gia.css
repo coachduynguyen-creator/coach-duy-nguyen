@@ -5,7 +5,9 @@
 .cg-mau span{flex:1 1 380px;text-align:left !important}
 .cg-mau a{color:var(--vang);font-weight:700;text-decoration:none;white-space:nowrap}
 
-.cg-luoi{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+/* Xếp thẻ bằng flex để hàng cuối thiếu thẻ thì tự vào giữa: bảy thẻ thành 4 + 3. */
+.cg-luoi{--cot:4;--ke:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--ke)}
+.cg-luoi > .cg-the{flex:0 0 calc((100% - (var(--cot) - 1) * var(--ke)) / var(--cot))}
 .cg-the{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
 .cg-the:hover{transform:translateY(-4px);border-color:rgba(242,177,74,.55);box-shadow:var(--shadow-h)}
 .cg-the:focus-visible{outline:2px solid var(--vang);outline-offset:3px}
@@ -25,7 +27,7 @@
 .cg-the:hover .mt{display:inline-block;transform:translateX(3px)}
 
 /* Trên trang chủ: thẻ ngang gọn, ảnh nhỏ bên trái. */
-.cg-luoi-gon{gap:16px}
+.cg-luoi-gon{--ke:16px}
 .cg-luoi-gon .cg-the{flex-direction:row;align-items:center}
 .cg-luoi-gon .cg-anh{flex:0 0 104px;aspect-ratio:1/1;align-self:stretch;border-bottom:0;border-right:1px solid var(--line)}
 .cg-luoi-gon .cg-anh b{font-size:34px}
@@ -65,10 +67,10 @@
 .cg-moi .nut{flex:0 0 auto}
 
 @media (max-width:1000px){
-  .cg-luoi{grid-template-columns:repeat(2,1fr)}
+  .cg-luoi{--cot:2}
 }
 @media (max-width:760px){
-  .cg-luoi{grid-template-columns:1fr}
+  .cg-luoi{--cot:1}
   .cg-moi{flex-direction:column;align-items:flex-start;padding:26px 22px}
   .cg-hs{width:100%;max-width:100%;max-height:100dvh;height:100dvh;margin:0;border-radius:0;border:0}
   .cg-hs-in{grid-template-columns:1fr}
