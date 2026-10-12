@@ -51,8 +51,9 @@
 .ndd-nhan i{width:7px;height:7px;border-radius:50%;background:var(--vang);display:inline-block;margin-right:10px;vertical-align:middle}
 .ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,48px);align-items:center}
 .ndd-hero .tren > img{width:100%;height:540px !important;max-height:62vh;object-fit:cover;object-position:50% 20%;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line)}
-.ndd-hero h1{font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.03em;margin:10px 0 16px}
-.ndd-phu{font-family:var(--f-tit);font-size:clamp(21px,2.6vw,30px);line-height:1.25;color:var(--vang-2);margin:-6px 0 16px}
+.ndd-hero h1{font-size:clamp(30px,3.7vw,47px);line-height:1.08;letter-spacing:-.02em;margin:6px 0 16px}
+.ndd-hero h1 span{display:block}
+.ndd-phu{font-family:var(--f-tit);font-size:clamp(18px,2vw,23px);line-height:1.25;color:var(--vang-2);margin:-6px 0 16px}
 .ndd-hero .dan{max-width:60ch;font-size:clamp(17px,2vw,20px);color:var(--ink-2)}
 .ndd-so{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
 .ndd-so div{border-top:2px solid var(--vang);padding-top:12px}
@@ -60,7 +61,6 @@
 .ndd-so i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang)}
 .ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
 .ndd-trich{margin-top:18px;padding-left:16px;border-left:3px solid var(--vang);font-family:var(--f-tit);font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--ink) !important}
-.ndd-thue{margin-top:16px;font-size:13.5px !important;color:var(--ink-3) !important}
 .ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
 .ndd-dt h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 14px}
@@ -122,6 +122,7 @@
 }
 @media (max-width:700px){
   .ndd-hero .tren{grid-template-columns:1fr}
+  .ndd-hero h1 span{display:inline}
   .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
   .ndd-hero .tren > img{max-height:320px;order:-1}
   .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai,.ndd-hd,.ndd-kk{grid-template-columns:1fr}
@@ -137,12 +138,11 @@
   <div class="bd">
     <div class="tren"><div>
     <p class="ndd-nhan"><i aria-hidden="true"></i>Theo thư mời · Khóa đầu sáu tới mười người</p>
-    <h1>Người Dẫn Đường</h1>
-    <p class="ndd-phu">Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
+    <h1><span>Những gì bạn đã trả giá để biết,</span> <span>đừng để nó dừng lại ở bạn.</span></h1>
+    <p class="ndd-phu">Người Dẫn Đường · Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
     <p class="dan">Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, với người chủ thật. Tới tháng thứ mười hai, bạn tự dẫn một nhóm của riêng mình, có thương hiệu, có sản phẩm và có cộng đồng đi theo bạn.</p>
     </div><img src="../img/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high" width="853" height="1280"></div>
     <div class="ndd-so"><div><i>một năm</i><b>1 tỷ đồng</b><span>Mức cao nhất khách trả cho gói coaching kèm riêng với Duy</span></div><div><i>một giờ</i><b>120 triệu đồng</b><span>Mức một ngân hàng thương mại lớn trả để mời Duy đào tạo</span></div><div><i>một buổi</i><b>50 tới 80 triệu đồng</b><span>Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy</span></div></div>
-    <p class="ndd-thue">Đây là những dịch vụ Duy đang cung cấp, có hóa đơn và đóng thuế đầy đủ.</p>
   </div>
 </section>
 <section class="kh">
