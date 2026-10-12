@@ -25,10 +25,17 @@ export default {
     const data = {};
     for (const k of O_CHO_PHEP) if (typeof d[k] === "string" && d[k].length <= 2000) data[k] = d[k];
     if (!data.Name || !/^\+?\d{9,12}$/.test(data.Phone || "")) return tra(origin, 400, { success: false });
-    const r = await fetch(PANCAKE + "?api_key=" + env.PANCAKE_KEY, {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
-    });
+    const url = PANCAKE + "?api_key=" + env.PANCAKE_KEY, dau = { "Content-Type": "application/json" };
+    // Người đã đăng ký (trình duyệt giữ mã khách) thì cập nhật đúng khách cũ, không tạo khách trùng.
+    // Mã không còn (Sales đã xoá) thì tạo mới như lần đầu.
+    if (typeof vao.id === "string" && /^[0-9a-f-]{36}$/.test(vao.id)) {
+      const r = await fetch(url, { method: "PUT", headers: dau, body: JSON.stringify({ record: { id: vao.id, ...data } }) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.record && j.record.id === vao.id) return tra(origin, 200, { success: true, id: vao.id });
+    }
+    const r = await fetch(url, { method: "POST", headers: dau, body: JSON.stringify(data) });
     const j = await r.json().catch(() => ({}));
-    return tra(origin, j.success ? 200 : 502, { success: j.success === true });
+    const id = (j.record && j.record.id) || (j.data && j.data.record && j.data.record.id);
+    return tra(origin, j.success ? 200 : 502, { success: j.success === true, id: id || null });
   },
 };

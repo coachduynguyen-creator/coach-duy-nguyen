@@ -12,11 +12,18 @@
   var nguon = doc('ngf-nguon') || 'khong-ro', dang = null;
 
   function gui(n, a) {
-    var data = {Name: n.ten, Phone: n.zalo, Note: 'E-book: ' + a.dataset.ten + ' · Vai trò: ' + (n.vai_tro_chu || ''),
+    n.eb = n.eb || []; if (n.eb.indexOf(a.dataset.ma) < 0) n.eb.push(a.dataset.ma); ghi('ngf-lead', n);
+    var note = ((n.da || []).length ? 'Công cụ đã mở: ' + n.da.join(', ') + ' · ' : '') + 'E-book đã tải: ' + n.eb.join(', ') +
+      ' · Nguồn: ' + nguon + ' · Vai trò: ' + (n.vai_tro_chu || '') +
+      (n.doanh_thu_chu ? ' · Doanh thu mỗi tháng: ' + n.doanh_thu_chu : '') + (n.doi_ngu_chu ? ' · Đội ngũ: ' + n.doi_ngu_chu : '');
+    var data = {Name: n.ten, Phone: n.zalo, Note: note,
       utm_source: nguon, utm_medium: 'ebook', utm_campaign: 'ngf-thu-lead', utm_content: a.dataset.ma, url_page: location.href};
     if (CHUC_DANH[n.vai_tro]) data.chuc_danh = CHUC_DANH[n.vai_tro];
     return fetch('/api/dang-ky', {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
-      body: JSON.stringify({data: data})}).catch(function () {});
+      body: JSON.stringify({data: data, id: n.pid || null})})
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.id) { n.pid = j.id; ghi('ngf-lead', n); } })
+      .catch(function () {});
   }
   function tai(a) { var l = d.createElement('a'); l.href = a.href; l.download = ''; d.body.appendChild(l); l.click(); l.remove(); }
 

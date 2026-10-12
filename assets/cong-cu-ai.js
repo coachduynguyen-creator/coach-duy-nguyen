@@ -66,7 +66,8 @@
     var f = d.getElementById('cc-form');
     function chu(ten, i) { var o = f ? f.querySelector('[name="' + ten + '"] option[value="' + i + '"]') : null; return o ? o.textContent : (n[ten + '_chu'] || 'chưa trả lời'); }
     var goi = canGoi(n);
-    var ghiChu = (moThem ? 'Mở thêm công cụ AI: ' : 'Công cụ AI: ') + MA + ' · Nguồn: ' + nguon +
+    var da = (n.da || []).slice(); if (da.indexOf(MA) < 0) da.push(MA);
+    var ghiChu = 'Công cụ đã mở: ' + da.join(', ') + ((n.eb || []).length ? ' · E-book đã tải: ' + n.eb.join(', ') : '') + ' · Nguồn: ' + nguon +
       ' · Vai trò: ' + chu('vai_tro', n.vai_tro) + ' · Doanh thu mỗi tháng: ' + chu('doanh_thu', n.doanh_thu) +
       ' · Đội ngũ: ' + chu('doi_ngu', n.doi_ngu) + ' · Cần gọi lại: ' + (goi ? 'CÓ' : 'không');
     var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo, Note: ghiChu,
@@ -74,9 +75,13 @@
     if (CHUC_DANH[n.vai_tro]) data.chuc_danh = CHUC_DANH[n.vai_tro];
     if (goi) data.uu_tien = RAT_UU_TIEN;
     return fetch(TRAM, {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
-      body: JSON.stringify({data: data})})
+      body: JSON.stringify({data: data, id: n.pid || null})})
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j || !j.success) throw new Error((j && j.message) || 'Pancake chưa nhận'); return j; });
+      .then(function (j) {
+        if (!j || !j.success) throw new Error((j && j.message) || 'Pancake chưa nhận');
+        if (j.id) { n.pid = j.id; ghi('ngf-lead', n); }   // lần sau cập nhật đúng khách này, không tạo khách trùng
+        return j;
+      });
   }
   function daGhi(n) { n.da = n.da || []; if (n.da.indexOf(MA) < 0) n.da.push(MA); ghi('ngf-lead', n); }
 
