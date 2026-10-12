@@ -128,7 +128,7 @@ def than_trang(d):
     <div class="dau-phan hien">
       <span class="nhan">Ranh giới</span>
       <h2>Ai hợp, và chương trình không nhận việc gì</h2>
-      <p class="dan">Duy ghi phần không nhận rõ ngang phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
+      <p class="dan">Duy ghi phần không nhận rõ như phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p>
     </div>
     <div class="hop hien tre">
       <div class="co"><h3>Phù hợp nếu</h3><ul>%s</ul></div>
@@ -144,7 +144,7 @@ def than_trang(d):
     <div class="dau-phan hien">
       <span class="nhan">Tình trạng hiện tại</span>
       <h2>Chương trình đang được thiết kế, <span>chưa có lịch và chưa có giá.</span></h2>
-      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi, công suất và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
+      <p class="dan">Duy công bố phần đã chốt và không công bố phần chưa chốt. Hướng đi, đối tượng và kết quả nhắm tới đã rõ. Lộ trình theo buổi và mức đầu tư thì chưa, vì chúng chỉ chốt được sau khi chạy thử với vài doanh nghiệp thật.</p>
     </div>
     <div class="hop hien tre">
       <div class="co">
@@ -162,7 +162,7 @@ def than_trang(d):
       </div>
     </div>
     <div class="gia-ghi hien">
-      <p><b>Nếu bạn đang gặp đúng chỗ nghẽn phía trên, cứ để lại vài dòng.</b> Duy sẽ trao đổi để xem có hợp không, và nếu chương trình này chưa phải thứ bạn cần lúc này thì Duy nói rõ vì sao và chỉ bạn bước hợp hơn.</p>
+      <p><b>Nếu bạn đang gặp đúng chỗ nghẽn phía trên, cứ để lại vài dòng.</b> Duy sẽ trao đổi để xem có hợp không. Nếu chương trình này chưa phải thứ bạn cần lúc này, Duy sẽ nói rõ vì sao và chỉ bạn bước hợp hơn.</p>
     </div>
     <div class="hien" style="margin-top:30px;text-align:center">
       <a class="nut" href="%s/lien-he.html">Đặt một buổi trao đổi</a>

@@ -87,12 +87,12 @@ HINH = {
    boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI thu thập 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
  "hoso-doanh-nghiep-chatgpt": dict(kieu="cot", tieu="Số chỗ ChatGPT phải tự giả định khi thử ba việc thật",
    cot=[("Với bản hồ sơ nháp", 7, "7 chỗ"), ("Mục tiêu sau khi sửa", 2, "2 chỗ")],
-   ket="Sửa ba chỗ hở trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",
-   boi="Chủ một công ty phân phối thực phẩm đông lạnh 25 người có 5 người dùng ChatGPT, mỗi lần đều phải giới thiệu lại công ty. AI hỏi mười câu, soạn hồ sơ rồi thử ba việc thật, và thấy với bản nháp đầu, ChatGPT phải tự giả định ở 7 chỗ."),
+   ket="Sửa ba lỗ hổng trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",
+   boi="Chủ một công ty phân phối thực phẩm đông lạnh 25 người có 5 người dùng ChatGPT, mỗi lần đều phải giới thiệu lại công ty. AI hỏi mười câu, soạn hồ sơ rồi thử ba việc thật. Với bản nháp đầu, ChatGPT phải tự giả định ở 7 chỗ."),
  "ke-hoach-kinh-doanh-mot-trang": dict(kieu="cot", tieu="Số dư tiền cuối tháng 3 năm 2027, tháng mua máy pha mới",
    cot=[("Số dư cuối tháng 3", 34, "34 triệu"), ("Mức chủ muốn luôn giữ", 50, "50 triệu")],
    ket="Thiếu 16 triệu so với mức muốn giữ, dù cả năm 2027 vẫn lãi khoảng 381 triệu", vd="Quán cà phê hai cơ sở",
-   boi="Chủ một quán cà phê hai cơ sở muốn doanh thu năm 2027 đạt 4,5 tỷ, tăng 25%, và chưa có kế hoạch nào viết ra. Trả lời từng phần AI hỏi, chủ thấy tháng 3, tháng mua máy pha mới 180 triệu, là lúc tiền xuống thấp nhất."),
+   boi="Chủ một quán cà phê hai cơ sở muốn doanh thu năm 2027 đạt 4,5 tỷ, tăng 25%, nhưng chưa có kế hoạch nào viết ra. Trả lời từng phần AI hỏi, chủ thấy tháng 3, tháng mua máy pha mới 180 triệu, là lúc tiền xuống thấp nhất."),
  "lai-that-tung-goi": dict(kieu="cot", tieu="Một học viên gói luyện thi cam kết: lãi gộp và tiền công",
    cot=[("Lãi gộp của một học viên", 5.55, "5,55 triệu"), ("Tiền công nhân viên và chủ", 5.9, "5,9 triệu")],
    ket="Mỗi học viên làm trung tâm lỗ 0,35 triệu, cả tháng lỗ 7 triệu, dù lãi gộp trên sổ là 61,7% giá bán.", vd="Trung tâm ngoại ngữ 14 người",
@@ -115,15 +115,15 @@ HINH = {
    boi="Chủ một công ty thiết kế và thi công nội thất 14 người ký khoảng 46 hợp đồng mới mỗi năm, trong đó chỉ 6 hợp đồng đến từ khách giới thiệu. Đưa lời khen của khách cho AI, AI chỉ ra trong 27 khách đủ điều kiện để hỏi, mới có 5 người từng được hỏi."),
  "loi-gioi-thieu-doanh-nghiep": dict(kieu="cot", tieu="Số chữ của lời giới thiệu cũ và bản mới viết từ nỗi lo của khách",
    cot=[("Lời giới thiệu cũ", 37, "37 chữ"), ("Bản mới", 26, "26 chữ")],
-   ket="Ngắn hơn 11 chữ, và nói đúng hai nỗi lo mà 2 trên 3 khách đã nhắc tới", vd="Công ty dịch vụ kế toán 12 người",
+   ket="Ngắn hơn 11 chữ. Bản mới nói đúng hai nỗi lo mà 2 trên 3 khách đã nhắc tới", vd="Công ty dịch vụ kế toán 12 người",
    boi="Chủ một công ty dịch vụ kế toán thuế 12 người đang giới thiệu công ty bằng một câu 37 chữ, trong đó có 6 cụm doanh nghiệp nào cũng nói được. Đưa lời của ba khách gần nhất cho AI, AI viết lại một bản ngắn hơn, đi từ nỗi lo có hai khách nhắc tới."),
  "tu-van-khach-chua-mua": dict(kieu="gio", tieu="Năm buổi tư vấn khách chưa đồng ý, đối chiếu với ba bước khách cần đi qua",
    buoc=[("3 trên 5", "buổi đủ Chạm Động Lực"), ("0 trên 5", "buổi đủ Chạm Điểm Nghẽn"), ("5 trên 5", "buổi đủ Chạm Con Đường")],
-   ket="Cả năm buổi cùng thiếu Chạm Điểm Nghẽn, nên đây là chỗ hở cố định trong cách tư vấn", vd="Phòng khám nha khoa 12 người",
+   ket="Cả năm buổi cùng thiếu Chạm Điểm Nghẽn, nên đây là lỗ hổng cố định trong cách tư vấn", vd="Phòng khám nha khoa 12 người",
    boi="Chủ một phòng khám nha khoa 3 bác sĩ có khoảng 40 buổi tư vấn mỗi tháng và khách đồng ý 14 buổi. Đưa năm buổi gần nhất mà khách xin suy nghĩ thêm cho AI, AI đối chiếu từng buổi với ba bước khách cần đi qua trước khi tự quyết định."),
  "khach-noi-gia-cao": dict(kieu="cot", tieu="Lãi gộp mỗi tháng của công ty cửa nhôm kính, khi không giảm giá và khi giảm 8% cho 15 đơn",
    cot=[("Nếu không giảm giá", 368.64, "368,64 triệu"), ("Thực tế khi giảm 8% cho 15 đơn", 311.04, "311,04 triệu")],
-   ket="Nhường lại 57,6 triệu lãi gộp mỗi tháng, và giá sau giảm vẫn cao hơn đối thủ 3,36 triệu", vd="Công ty cửa nhôm kính 12 người",
+   ket="Nhường lại 57,6 triệu lãi gộp mỗi tháng, mà giá sau giảm vẫn cao hơn đối thủ 3,36 triệu", vd="Công ty cửa nhôm kính 12 người",
    boi="Chủ một công ty bán và lắp cửa nhôm kính 12 người chốt 24 đơn mỗi tháng, trong đó 15 đơn được nhân viên giảm 8% khi khách nói đắt. Đưa số liệu cho AI, AI tính ra mỗi tháng công ty nhường lại bao nhiêu lãi gộp."),
  "giao-viec-cho-quan-ly": dict(kieu="cot", tieu="Giờ chủ duyệt đơn đặt hàng mỗi tuần",
    cot=[("Hiện nay, duyệt cả 52 đơn", 6.1, "6,1 giờ"), ("Sau khi chia ba mức, duyệt 4 đơn trên 80 triệu", 0.8, "0,8 giờ")],
@@ -240,7 +240,7 @@ def _bang(khoi):
     return '<div class="cc-bang"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (dau, than)
 
 def _html(than):
-    """Bài mẫu thành HTML. Đoạn "Số liệu" vào hộp xám, mỗi chỗ hở thành một thẻ
+    """Bài mẫu thành HTML. Đoạn "Số liệu" vào hộp xám, mỗi lỗ hổng thành một thẻ
     đánh số, việc AI đề xuất thành khung nhấn. Chữ giữ nguyên, chỉ đổi cách bày."""
     ra, nhan_sau, so_ho = [], "", 0
     for k in _khoi(than):
@@ -259,7 +259,7 @@ def _html(than):
             ra.append('<h4 class="cc-h4">%s</h4>' % _dong(t)); continue
         if re.match(r"^\d+\.\s", k):
             ra.append("<ol>%s</ol>" % "".join("<li>%s</li>" % _dong_so(x) for x in _ds(k))); continue
-        m = re.match(r"^\*\*(Chỗ hở thứ \w+): (.+?)\*\*\s*(.*)$", k, re.S)
+        m = re.match(r"^\*\*(Lỗ hổng thứ \w+): (.+?)\*\*\s*(.*)$", k, re.S)
         if m:
             so_ho += 1
             ra.append('<div class="cc-ho"><span class="cc-ho-so">%02d</span><div><h5>%s</h5><p>%s</p></div></div>'

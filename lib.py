@@ -143,19 +143,19 @@ def khoi_cuoi(p=""):
       <article class="loi vang">
         <span class="so">Lối 01 · Đi cùng nhau</span>
         <h3>Vào Cộng đồng Next Gen Founder</h3>
-        <p>Nơi nhà sáng lập luyện bốn năng lực ngay trong công việc thật, theo nhịp đều, bên cạnh những người hiểu chuyện mình đang gặp. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
-        <a class="nut nut-toi" href="%s">Đăng ký danh sách chờ <span class="mt" aria-hidden="true">&rarr;</span></a>
+        <p>Nơi bạn luyện bốn năng lực ngay trong công việc thật, đều đặn, bên cạnh những người hiểu chuyện bạn đang gặp. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
+        <a class="nut nut-toi" href="%s">Đăng ký tham gia <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="loi">
         <span class="so">Lối 02 · Đọc trước đã</span>
         <h3>Nhận Thư Next Gen Founder</h3>
-        <p>Mỗi tuần một lá thư ngắn: một điểm nghẽn thật của người sáng lập, cách Duy nhìn nó, và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
+        <p>Mỗi tuần một lá thư ngắn về một điểm nghẽn thật của người chủ doanh nghiệp, kèm cách Duy nhìn nó và một bước bạn làm được ngay trong tuần. Không quảng cáo, không bán hàng trong thư.</p>
         <form class="bt-form" novalidate>
           <input type="email" name="email" placeholder="Thư điện tử của bạn" aria-label="Thư điện tử của bạn" required>
           <button class="nut nut-v" type="submit">Đăng ký nhận thư</button>
         </form>
         <p class="bt-xong">Cảm ơn bạn. Ứng dụng thư vừa mở với nội dung soạn sẵn, bấm Gửi là xong.</p>
-        <p class="bt-loi">Địa chỉ thư chưa đúng. Bạn kiểm lại giúp Duy.</p>
+        <p class="bt-loi">Địa chỉ thư chưa đúng. Bạn kiểm tra lại giúp Duy.</p>
       </article>
       <article class="loi">
         <span class="so">Lối 03 · Hỏi thẳng</span>
@@ -165,7 +165,7 @@ def khoi_cuoi(p=""):
       </article>
     </div>
   </div>
-</section>""" % (CONG_DONG, dd("lien-he.html", p))
+</section>""" % (BASE + "/tham-gia/", dd("lien-he.html", p))
 
 def footer(p=""):
     ct_links = "".join('<a href="%s">%s</a>' % (dd(h, p), t) for h, t, _ in
@@ -178,7 +178,7 @@ def footer(p=""):
   <div class="bd ct">
     <div class="ct-gioi">
       <a class="logo" href="%s" aria-label="Coach Duy Nguyễn">%s<span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
-      <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng, soi đúng, chỉ đường, giữ chuẩn, rồi trả lại quyền tự chủ.</p></p>
+      <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng để nhìn đúng vấn đề và giữ chuẩn, rồi trả lại quyền tự chủ.</p></p>
     </div>
     <div class="ct-cot">
       <!-- Tạm ẩn từ 10/10/2026, dồn người xem vào Cộng đồng. Mở lại thì bỏ thẻ chú thích.
@@ -211,7 +211,7 @@ def footer(p=""):
 JSONLD_NGUOI = json.dumps({
     "@context": "https://schema.org", "@type": "Person",
     "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn",
-    "jobTitle": "Người cố vấn cho nhà sáng lập",
+    "jobTitle": "Người cố vấn cho chủ doanh nghiệp",
     "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành.",
     "url": BASE + "/",
     "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",

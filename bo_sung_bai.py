@@ -20,16 +20,16 @@ BO_SUNG = {
       ("Vì sao không được đảo thứ tự Ba Điểm Chạm?",
        "Vì giải pháp chỉ có nghĩa khi khách đã thấy vấn đề, và vấn đề chỉ đáng giải khi khách đã rõ mình muốn gì. Nói giải pháp trước thì khách nghe như một lời chào hàng, và phản xạ của họ là so sánh giá."),
       ("Vì sao người tư vấn hay nhảy thẳng vào giải pháp?",
-       "Vì hai bước đầu không cho họ việc gì để làm, chỉ có hỏi và nghe, nên cảm giác bất an dâng lên. Bước ba thì ngược lại, có trình bày, có giải thích, có chuyện thành công để kể. Thứ tự bị đảo không phải vì ai quên, mà vì bước ba dễ chịu hơn nhiều.")]),
+       "Vì hai bước đầu không cho họ việc gì để làm, chỉ có hỏi và nghe, nên cảm giác bất an dâng lên. Bước ba thì ngược lại, có trình bày, có giải thích, có chuyện thành công để kể. Thứ tự bị đảo vì bước ba dễ chịu hơn nhiều.")]),
 
 "cai-gia-cua-nguoi-lam-duoc-moi-viec.html": dict(
  tra_loi="Người chủ càng giỏi mọi việc thì đội ngũ càng ít chỗ để giỏi lên, và cơ nghiệp càng khó chuyển giao. Chỗ hỏng không nằm ở việc thiếu người giỏi mà ở việc chưa có cách làm viết ra được. Cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.",
  faq=[("Vì sao người chủ giỏi lại thành chỗ nghẽn của công ty?",
-       "Vì mỗi việc người chủ tự làm cho nhanh là một việc đội ngũ không được tập. Càng giỏi thì khoảng chênh càng lớn, và tới lúc muốn giao thì không ai đủ sức nhận, nên người chủ lại phải tự làm tiếp."),
+       "Vì mỗi việc người chủ tự làm cho nhanh là một việc đội ngũ không được tập. Càng giỏi thì khoảng chênh càng lớn. Tới lúc muốn giao thì không ai đủ sức nhận, nên người chủ lại phải tự làm tiếp."),
       ("Người kế nghiệp từ chối tiếp quản vì lý do gì?",
-       "Thường không phải vì chê công việc hay chê ngành. Họ nhìn thấy cái giá phải trả qua chính đời sống của cha mẹ, và điều họ từ chối là cách sống đó chứ không phải công ty."),
+       "Họ nhìn thấy cái giá phải trả qua chính đời sống của cha mẹ, và điều họ từ chối là cách sống đó."),
       ("Bước đầu tiên để công ty bớt phụ thuộc người chủ là gì?",
-       "Không phải tuyển người giỏi hơn. Là viết lại một luồng công việc bạn đang giữ trong đầu, ghi rõ kết quả cần đạt và ai chịu trách nhiệm, rồi để người khác chạy thử trong khi bạn ngồi nghe.")]),
+       "Hãy viết lại một luồng công việc bạn đang giữ trong đầu, ghi rõ kết quả cần đạt và ai chịu trách nhiệm, rồi để người khác chạy thử trong khi bạn ngồi nghe.")]),
 
 "cang-co-chung-minh-cang-mat-vi-the.html": dict(
  tra_loi="Giải thích nhiều là hành vi của người cần được chấp nhận, nên càng chứng minh thì vị thế càng thấp. Chuyên gia không chứng minh mình giỏi, họ đặt câu hỏi để người đối diện tự thấy. Chỗ hỏng nằm ở phản xạ trả lời thẳng vào câu hỏi bề mặt của khách.",
@@ -77,7 +77,7 @@ BO_SUNG = {
        "Hỏi ba câu: sau khi việc xong thì ai còn giữ được năng lực đó, vấn đề của mình là không biết hay biết mà không làm, và người này đã từng làm việc mình đang làm chưa. Câu thứ ba lọc nhanh nhất, vì người đã làm sẽ kể được chi tiết bạn kiểm chứng được.")]),
 
 "bon-cau-toi-nghe-nhieu-nhat.html": dict(
- tra_loi="Bốn câu người sáng lập hay nói nhất đều dẫn về một nguyên nhân: uy tín, cách ra quyết định và cách tạo kết quả vẫn nằm trong đầu người chủ, chưa thành tài sản, quy trình, dữ liệu và năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.",
+ tra_loi="Bốn câu chủ doanh nghiệp hay nói nhất đều dẫn về một nguyên nhân: uy tín, cách ra quyết định và cách tạo kết quả vẫn nằm trong đầu người chủ, chưa thành năng lực của đội ngũ. Vì vậy càng bán tốt, người chủ càng bận.",
  faq=[("Vì sao đăng nội dung nhiều mà không ra đúng khách?",
        "Vì luận điểm nghề nghiệp còn nằm trong đầu người chủ, chưa thành một câu mà cả đội ngũ nói giống nhau. Nội dung vì thế mỗi bài một hướng, và người xem không nhớ được bạn đại diện cho điều gì. Tăng tần suất không sửa được chỗ này."),
       ("Tuyển thêm người mà tôi lại bận hơn, gỡ từ đâu?",
@@ -95,9 +95,9 @@ BO_SUNG = {
        "Ít nhất một trong ba điều: giúp họ hiểu vấn đề rõ hơn, giúp họ tự đánh giá bối cảnh của mình, hoặc giúp họ tiến một bước nhỏ có ích. Không đạt điều nào thì đó là một lần tiêu bớt niềm tin chứ không tích thêm.")]),
 
 "nam-viec-cua-mot-nguoi-co-van.html": dict(
- tra_loi="Người cố vấn phải làm được năm việc: soi đúng vấn đề thật phía sau, chỉ bước tiếp theo kèm dấu hiệu hoàn thành, làm mẫu bằng quyết định và sai lầm thật, giữ chuẩn kể cả khi mất lòng, và trao lại quyền tự chủ để người học tự đi được.",
+ tra_loi="Người cố vấn phải làm được năm việc: nhìn đúng vấn đề thật phía sau, chỉ bước tiếp theo kèm dấu hiệu hoàn thành, làm mẫu bằng quyết định và sai lầm thật, giữ chuẩn kể cả khi mất lòng, và trao lại quyền tự chủ để người học tự đi được.",
  faq=[("Làm sao phân biệt người cố vấn thật và người tự gọi mình là cố vấn?",
-       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa thủ thuật thiếu việc soi đúng. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
+       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa thủ thuật thiếu việc nhìn đúng vấn đề. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
       ("Chỉ đường khác lời khuyên ở chỗ nào?",
        "Một lời khuyên chỉ đường được thì có ba thứ: thứ tự các bước, điều kiện để đi tiếp, và dấu hiệu cho biết đã xong. Thiếu dấu hiệu hoàn thành thì đó chưa phải chỉ đường, mới chỉ là động viên."),
       ("Ba việc một người cố vấn không nên làm là gì?",
@@ -117,7 +117,7 @@ BO_SUNG = {
  faq=[("Ba dấu hiệu nút thắt đã siết là gì?",
        "Bạn đi vắng ba ngày là có việc bình thường phải chờ. Người giỏi trong đội ngũ hỏi bạn nhiều hơn năm ngoái vì họ sợ làm sai. Và bạn bắt đầu né tuyển thêm, vì trong lòng biết tuyển thêm là bận thêm."),
       ("Viết quy trình có gỡ được nút thắt không?",
-       "Không đủ. Quy trình mô tả các bước, còn phần đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và một nhịp rà soát cố định."),
+       "Không đủ. Quy trình mô tả các bước, còn phần đang thiếu là cách nghĩ đằng sau các bước. Một hệ thống chạy được cần năm thứ: kết quả rõ, người chịu trách nhiệm, mốc thế nào là xong, dữ liệu, và lịch rà soát cố định."),
       ("Nên bắt đầu từ đâu?",
        "Chọn đúng một luồng đang tốn nhiều thời gian của bạn nhất, viết ra năm thứ ở trên, chạy sáu tuần rồi rà soát lại. Một luồng một quý, bốn luồng một năm. Sau hai năm nút thắt ở chỗ bạn không còn nữa.")]),
 
@@ -128,14 +128,14 @@ BO_SUNG = {
       ("Cách rẻ nhất để lấy kinh nghiệm ra khỏi đầu là gì?",
        "Ghi lại quyết định, không ghi lại thao tác. Mỗi tình huống khó, dành mười phút viết ba dòng: tình huống là gì, tôi quyết thế nào, và tôi quyết như vậy vì điều gì. Dòng thứ ba là dòng có giá trị nhất và cũng hay bị bỏ nhất."),
       ("Năm phần làm nên một hệ thống là gì?",
-       "Kết quả rõ ràng, người chịu trách nhiệm là một người có tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và nhịp rà soát cố định.")]),
+       "Kết quả rõ ràng, người chịu trách nhiệm là một người có tên chứ không phải một phòng ban, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và lịch rà soát cố định.")]),
 
 "cong-dong-khong-phai-nhom-dang-bai.html": dict(
- tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ người sáng lập. Bài kiểm tra nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
+ tra_loi="Một nhóm chỉ thành cộng đồng khi thành viên nhận được thứ có ích từ thành viên khác, không chỉ từ chủ cộng đồng. Bài kiểm tra nhanh: nếu bạn ngừng đăng hai tuần mà nhóm ngừng hoạt động, giá trị vẫn đang chảy một chiều và mô hình đó không lớn được.",
  faq=[("Bốn thứ quyết định cộng đồng sống hay chết là gì?",
-       "Lời hứa rõ về việc vào đây được gì và không được gì. Tiêu chuẩn thành viên để biết ai hợp ai chưa hợp. Trải nghiệm mười bốn ngày đầu để người mới có kết quả nhỏ sớm. Và một nhịp hoạt động cố định để mọi người biết khi nào quay lại."),
+       "Lời hứa rõ về việc vào đây được gì và không được gì. Tiêu chuẩn thành viên để biết ai hợp ai chưa hợp. Trải nghiệm mười bốn ngày đầu để người mới có kết quả nhỏ sớm. Và lịch hoạt động cố định để mọi người biết khi nào quay lại."),
       ("Đo cộng đồng bằng gì?",
-       "Không đo bằng số người trong nhóm. Đo bằng tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại theo nhịp, giá trị thành viên tạo cho nhau, và tỉ lệ gia hạn hoặc giới thiệu. Con số cuối cùng trung thực nhất."),
+       "Không đo bằng số người trong nhóm. Đo bằng tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại đều đặn, giá trị thành viên tạo cho nhau, và tỉ lệ gia hạn hoặc giới thiệu. Con số cuối cùng trung thực nhất."),
       ("Vì sao mở cửa cho tất cả lại là sai?",
        "Vì bạn sẽ mất người giỏi trước tiên, do họ nhạy nhất với chất lượng. Một cộng đồng giữ được chất lượng bằng cách chọn người, không bằng cách chọn giá.")]),
 
@@ -153,7 +153,7 @@ BO_SUNG = {
  faq=[("Ba lớp phải rõ trước khi tăng sản lượng là gì?",
        "Lãnh địa, tức bạn nói về vùng nào và cố ý không nói về vùng nào. Luận điểm, tức bạn tin điều gì mà nhiều người trong ngành chưa tin và có bằng chứng gì. Và bằng chứng thật từ công việc của bạn, thứ không ai sao chép được."),
       ("Nên đăng bao nhiêu bài một tuần?",
-       "Khi ba lớp trên đã rõ thì câu trả lời thường thấp hơn bạn nghĩ: một nội dung dài mỗi tuần, cắt ra vài mẩu ngắn, cộng với việc trả lời thật kỹ câu hỏi người xem đặt ra. Nhịp đó một người giữ được nhiều năm."),
+       "Khi ba lớp trên đã rõ thì câu trả lời thường thấp hơn bạn nghĩ: một nội dung dài mỗi tuần, cắt ra vài mẩu ngắn, cộng với việc trả lời thật kỹ câu hỏi người xem đặt ra. Lịch làm việc đó một người giữ được nhiều năm."),
       ("Người thắng trong làm nội dung là ai?",
        "Không phải người đăng nhiều nhất, mà là người còn đăng sau năm thứ ba.")]),
 
@@ -176,7 +176,7 @@ BO_SUNG = {
        "Ba dấu hiệu theo thứ tự: người nghe hỏi tiếp thay vì chỉ gật đầu, có người tự loại mình, và có người giới thiệu bạn bằng đúng câu bạn dùng. Dấu hiệu cuối thường đến sau sáu tới mười hai tháng nói nhất quán.")]),
 
 "kho-cau-chuyen.html": dict(
- tra_loi="Người sáng lập hiếm khi hết ý tưởng. Điều họ thiếu là một kho chứa và thói quen bỏ đồ vào kho. Ý tưởng đến lúc đang làm việc chứ không đến lúc ngồi trước màn hình trắng, nên phải ghi lại ngay trong ngày, ba dòng một mẩu.",
+ tra_loi="Người chủ doanh nghiệp hiếm khi hết ý tưởng. Điều họ thiếu là một kho chứa và thói quen bỏ đồ vào kho. Ý tưởng đến lúc đang làm việc chứ không đến lúc ngồi trước màn hình trắng, nên phải ghi lại ngay trong ngày, ba dòng một mẩu.",
  faq=[("Nên ghi lại những loại chất liệu nào?",
        "Bốn loại: câu hỏi lặp lại từ ba người trở lên, quyết định có đánh đổi kèm lý do, sai lầm đã trả giá, và số liệu ngược với dự đoán. Loại thứ hai quý nhất vì không ai sao chép được cách bạn nghĩ."),
       ("Ghi thế nào cho dùng được về sau?",
@@ -185,9 +185,9 @@ BO_SUNG = {
        "Một tệp duy nhất, ghi theo ngày, không phân loại. Phân loại làm chậm việc ghi, mà việc ghi mới là việc khó. Nếu nói dễ hơn viết thì ghi âm hai phút rồi để máy chuyển thành chữ.")]),
 
 "nhip-lam-noi-dung.html": dict(
- tra_loi="Nhịp làm nội dung phải được thiết kế cho tuần tệ nhất, không phải tuần rảnh nhất. Cách bền nhất là mỗi tuần làm một nội dung gốc đủ sâu rồi cắt ra thành nhiều mảnh ngắn, tổng cộng khoảng năm giờ một tuần.",
+ tra_loi="Lịch làm nội dung phải được thiết kế cho tuần tệ nhất, chứ không dựa vào tuần rảnh nhất. Cách bền nhất là mỗi tuần làm một nội dung gốc đủ sâu rồi cắt ra thành nhiều mảnh ngắn, tổng cộng khoảng năm giờ một tuần.",
  faq=[("Nên đăng bao nhiêu bài một tuần?",
-       "Câu hỏi đúng không phải bao nhiêu bài mà là nhịp nào bạn giữ được ba năm. Một nội dung gốc mỗi tuần cắt thành ba tới năm mảnh ngắn là nhịp một người vận hành được và giữ được lâu."),
+       "Câu hỏi đúng là bạn giữ được lịch đăng nào suốt ba năm. Một nội dung gốc mỗi tuần cắt thành ba tới năm mảnh ngắn là lịch một người vận hành được và giữ được lâu."),
       ("Chia thời gian trong tuần thế nào?",
        "Ba khối: khối thu thập chất liệu ba mươi phút mỗi ngày, khối làm nội dung gốc chín mươi phút một lần mỗi tuần, và khối cắt mảnh sáu mươi phút một lần mỗi tuần. Chỉ khối làm cần đầu óc tỉnh táo."),
       ("Lỡ một tuần thì có nên đăng bù không?",
@@ -221,9 +221,9 @@ BO_SUNG = {
        "Hai trường hợp, và cả hai phải công khai lý do: giá ra mắt cho khoá đầu tiên khi chưa có bằng chứng người học, và giảm theo một quy tắc áp dụng cho tất cả như đăng ký sớm. Điều làm hỏng quan hệ là mức riêng dành cho người biết mặc cả.")]),
 
 "nam-thu-lam-nen-mot-he-thong.html": dict(
- tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một người đứng tên chịu trách nhiệm, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và một nhịp rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
+ tra_loi="Một hệ thống chạy được cần năm thứ: kết quả rõ ràng đo được, một người đứng tên chịu trách nhiệm, mốc thế nào là xong, dữ liệu đủ để biết luồng khoẻ hay yếu, và lịch rà soát cố định. Quy trình chỉ là cách ghi lại bốn phần kia.",
  faq=[("Vì sao thư mục quy trình không ai mở?",
-       "Vì quy trình chỉ là một phần năm của hệ thống, và thường là phần ít quan trọng nhất. Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo, thiếu nhịp rà soát thì hệ thống chết trong ba tháng."),
+       "Vì quy trình chỉ là một phần năm của hệ thống, và thường là phần ít quan trọng nhất. Thiếu người chịu trách nhiệm thì quy trình thành tài liệu tham khảo, thiếu lịch rà soát thì hệ thống chết trong ba tháng."),
       ("Nên bắt đầu từ đâu?",
        "Từ kết quả, rồi tới người chịu trách nhiệm, rồi mới tới cách làm. Khi đã có kết quả rõ và người chịu trách nhiệm, thường chính người đó viết ra quy trình tốt hơn bạn viết hộ, và tài liệu do họ viết thì họ dùng."),
       ("Làm sao biết luồng đã rời khỏi đầu người chủ?",
@@ -241,18 +241,18 @@ BO_SUNG = {
 "muoi-bon-ngay-dau.html": dict(
  tra_loi="Tỉ lệ người còn hoạt động sau sáu tháng gần như được định đoạt trong mười bốn ngày đầu. Người có một kết quả nhỏ nhìn thấy được trong hai tuần đầu thì ở lại, người không có thì âm thầm rời đi. Một kết quả như vậy là bằng chứng rằng chỗ này làm được việc, và chính họ làm được việc.",
  faq=[("Bốn việc phải xảy ra trong mười bốn ngày đầu là gì?",
-       "Ngày một tới ba biết mình đang ở đâu qua một cách tự đánh giá. Ngày ba tới bảy làm được một việc nhỏ và thấy kết quả. Ngày bảy tới mười được một người thật nhìn thấy. Ngày mười tới mười bốn biết nhịp tiếp theo là gì."),
+       "Ngày một tới ba biết mình đang ở đâu qua một cách tự đánh giá. Ngày ba tới bảy làm được một việc nhỏ và thấy kết quả. Ngày bảy tới mười được một người thật nhìn thấy. Ngày mười tới mười bốn biết việc đều đặn tiếp theo là gì."),
       ("Ba lỗi hay gặp với người mới là gì?",
-       "Đổ hết tài nguyên vào ngày đầu khiến họ choáng, để người mới tự tìm đường, và không ai chào. Một câu chào của người thật có sức nặng hơn mười thông báo tự động."),
+       "Đổ hết tài nguyên vào ngày đầu khiến họ choáng, rồi để người mới tự tìm đường mà không ai chào. Một câu chào của người thật có sức nặng hơn mười thông báo tự động."),
       ("Đo mười bốn ngày đầu bằng gì?",
        "Tỉ lệ hoàn tất bước tự đánh giá, tỉ lệ có ít nhất một lần đóng góp, tỉ lệ quay lại trong tuần thứ hai, và số người mới được thành viên cũ tương tác.")]),
 
 "do-cong-dong-bang-gi.html": dict(
- tra_loi="Số thành viên là chỉ số dễ tăng nhất và ít liên quan nhất tới giá trị. Bốn con số nói đúng hơn: tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại theo nhịp, giá trị tạo ra giữa các thành viên, và tỉ lệ gia hạn hoặc giới thiệu.",
+ tra_loi="Số thành viên là chỉ số dễ tăng nhất và ít liên quan nhất tới giá trị. Bốn con số nói đúng hơn: tỉ lệ người mới bắt tay làm thật trong mười bốn ngày đầu, tỉ lệ quay lại đều đặn, giá trị tạo ra giữa các thành viên, và tỉ lệ gia hạn hoặc giới thiệu.",
  faq=[("Bài kiểm tra nào cho biết cộng đồng có sống thật không?",
        "Ngừng đăng trong hai tuần và xem chuyện gì xảy ra. Nếu vẫn có hoạt động thì giá trị đang được tạo giữa các thành viên. Nếu im lặng hoàn toàn thì bạn đang gánh toàn bộ. Đừng làm bài kiểm tra này khi cộng đồng còn dưới ba tháng tuổi."),
       ("Hai chỉ số nào nên bỏ?",
        "Tổng số bài đăng, vì nhiều bài chào hàng tệ hơn ít bài đáng đọc. Và số người theo dõi trang, vì theo dõi là hành vi gần như không tốn gì nên không nói lên mức độ cam kết."),
       ("Đo xong thì làm gì?",
-       "Ít người bắt tay làm thật thì sửa mười bốn ngày đầu. Quay lại thấp thì sửa nhịp. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì xem lại lời hứa ban đầu có được giữ không.")]),
+       "Ít người bắt tay làm thật thì sửa mười bốn ngày đầu. Quay lại thấp thì sửa lịch hoạt động. Giá trị giữa thành viên thấp thì sửa cơ chế kết nối. Gia hạn thấp thì xem lại lời hứa ban đầu có được giữ không.")]),
 }

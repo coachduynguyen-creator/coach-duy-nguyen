@@ -4,10 +4,10 @@
 import math
 
 NANG_LUC_4 = [
-    ("01", "Thương hiệu", "được tin cậy", "Đúng khách hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới."),
-    ("02", "Tư vấn", "có trách nhiệm", "Bán bằng chẩn đoán và sự thật, kể cả khi sự thật là bạn nên nói không."),
-    ("03", "Hệ thống", "cùng đội ngũ", "Kinh nghiệm trong đầu bạn thành kết quả rõ, người chịu trách nhiệm và một nhịp cải tiến."),
-    ("04", "Kiến tạo", "cộng đồng", "Thành viên tạo giá trị cho nhau với nhau, không chỉ chảy một chiều từ bạn xuống."),
+    ("01", "Thương hiệu nhà sáng lập", "được tin cậy", "Đúng khách hiểu bạn làm gì, tin bạn làm được, và chủ động tìm tới."),
+    ("02", "Chuyên gia tư vấn", "được tin cậy", "Bán bằng chẩn đoán và sự thật, kể cả khi sự thật là bạn nên nói không."),
+    ("03", "Người xây", "hệ thống", "Kinh nghiệm trong đầu bạn thành một cách làm có người chịu trách nhiệm, có kết quả rõ và được rà soát định kỳ."),
+    ("04", "Người kiến tạo", "cộng đồng", "Thành viên tạo giá trị cho nhau, không chỉ chảy một chiều từ bạn xuống."),
 ]
 
 def _cung(cx, cy, ri, ro, a1, a2):
@@ -100,7 +100,7 @@ def he_sinh_thai(p=""):
 # Câu mô tả chỗ đang kẹt, viết từ phía người đọc, bằng lời họ nói ra miệng.
 KET_HST = {
  "the-trusted-creator.html":
-   "Tôi làm nghề giỏi, nhưng đăng bài mãi mà người ta vẫn không biết tôi giỏi cái gì.",
+   "Tôi làm nghề giỏi, nhưng đăng bài mãi mà người ta vẫn không biết tôi giỏi mảng nào.",
  "the-trusted-advisor.html":
    "Khách nghe tôi tư vấn xong vẫn do dự, và tôi không biết mình bỏ sót chỗ nào.",
  "founder-growth-system.html":
@@ -108,7 +108,7 @@ KET_HST = {
  "community-growth-system.html":
    "Khách mua xong là quan hệ dừng lại. Mỗi lần bán là mỗi lần bắt đầu từ đầu.",
  "cong-dong-pro.html":
-   "Tôi học nhiều khoá rời rạc mà chưa cái nào thành thói quen trong công việc thật.",
+   "Tôi học nhiều khoá rời rạc mà chưa khoá nào thành thói quen trong công việc thật.",
  "diamond-founder-club.html":
    "Tôi cần ngồi cùng những người đã đi xa hơn, không cần thêm một lớp học nữa.",
  "co-van-rieng.html":
@@ -173,7 +173,7 @@ CHANG_TTC = [
     ("Chặng 1", "Định vị", "Làm rõ lãnh địa chuyên môn và luận điểm, để thị trường nhớ đúng bạn vì một giá trị."),
     ("Chặng 2", "Chất liệu", "Biến công việc thật thành kho câu chuyện dùng được lâu dài, thay vì chờ cảm hứng."),
     ("Chặng 3", "Hiện diện", "Luyện cách diễn đạt qua video và các định dạng hợp với con người bạn."),
-    ("Chặng 4", "Nhịp", "Thiết lập nhịp sản xuất một người vận hành được, có AI làm phần lặp lại."),
+    ("Chặng 4", "Nhịp", "Dựng lịch sản xuất đều đặn mà một người vận hành được, có AI làm phần lặp lại."),
     ("Chặng 5", "Đường về khách", "Tạo tài sản thu thông tin và đo tín hiệu dẫn tới cuộc trao đổi với đúng người."),
 ]
 
@@ -228,16 +228,16 @@ def quy_dao():
 # Năm việc của người cố vấn, vẽ thành vòng tròn năm phần bấm được.
 # Mỗi phần một ảnh thật, để phần nói về triết lý không còn là một cột chữ.
 VIEC5_VONG = [
- ("Soi đúng", "img/v5-soi-dung.webp",
-  "Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
+ ("Nhìn đúng vấn đề", "img/v5-soi-dung.webp",
+  "Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
  ("Chỉ đường", "img/v5-chi-duong.webp",
-  "Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách thủ thuật."),
+  "Duy cho bạn thấy mình đang ở đâu và bước tiếp theo là gì, kể cả điều chưa cần làm lúc này. Đó là một bước vừa sức với chỗ bạn đang đứng."),
  ("Làm mẫu", "img/v5-lam-mau.webp",
-  "Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
+  "Duy đưa ra quyết định thật và tài liệu thật, kể cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
  ("Giữ chuẩn", "img/v5-giu-chuan.webp",
-  "Duy nói rõ điều gì đủ, điều gì chưa, và cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới, không nằm ở giọng nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
+  "Duy nói rõ điều gì đủ, điều gì chưa, kèm cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới của lời nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
  ("Đi cùng và trao lại", "img/v5-di-cung.webp",
-  "Duy ở bên trong lúc bạn tập cách làm mới, rồi để lại một tiêu chí bạn tự đánh giá được và một câu hỏi còn dùng được lâu sau đó. Đích đến là bạn tự đi được, không phải bạn cần Duy mãi."),
+  "Duy ở bên cạnh lúc bạn tập cách làm mới, rồi để lại một tiêu chí bạn tự đánh giá được và một câu hỏi còn dùng được lâu sau đó. Đích đến là bạn tự đi được, không phải bạn cần Duy mãi."),
 ]
 
 
