@@ -84,7 +84,7 @@ HINH = {
  "cau-chuyen-thuong-hieu": dict(kieu="cot", tieu="Mười câu chuyện đã chọn: chủ hiện lên như thế nào",
    cot=[("Chuyện chủ cứu tình thế", 8, "8 chuyện"), ("Chuyện chủ làm sai rồi sửa", 2, "2 chuyện")],
    ket="8 trên 10 chuyện chủ hiện lên như người cứu tình thế, chỉ 2 chuyện là chủ làm sai và sửa", vd="Công ty nội thất 14 người",
-   boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI gom 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
+   boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI thu thập 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
  "hoso-doanh-nghiep-chatgpt": dict(kieu="cot", tieu="Số chỗ ChatGPT phải tự giả định khi thử ba việc thật",
    cot=[("Với bản hồ sơ nháp", 7, "7 chỗ"), ("Mục tiêu sau khi sửa", 2, "2 chỗ")],
    ket="Sửa ba chỗ hở trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",

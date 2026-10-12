@@ -46,7 +46,7 @@ dict(tep="bon-cau-toi-nghe-nhieu-nhat.html", chu_de="Điểm nghẽn của ngư�
 
 <p>Bốn câu trả lời ở trên đều dừng lại ở cùng một chỗ: <span class="nhan dam">uy tín, cách ra quyết định và cách tạo ra kết quả vẫn nằm chủ yếu trong đầu người chủ</span>. Công ty chưa chuyển được chúng thành ba thứ có thể trao tay cho người khác, đó là một luận điểm nghề nghiệp mà cả đội ngũ nói giống nhau, một cách làm được viết ra đủ rõ để người khác làm theo mà không phải đoán, và một cách ghi lại xem điều gì đã thật sự tạo ra kết quả.</p>
 
-<p>Duy gọi chỗ đó là điểm nghẽn người sáng lập, và muốn nói rõ ngay rằng nó không phải lỗi của ai cả. Nó là hệ quả rất tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất, nên gom hết vào mình là cách đi đúng. Đúng ở giai đoạn đó, và chính vì nó từng đúng nên nó được giữ lâu hơn mức cần thiết.</p>
+<p>Duy gọi chỗ đó là điểm nghẽn người sáng lập, và muốn nói rõ ngay rằng nó không phải lỗi của ai cả. Nó là hệ quả rất tự nhiên của giai đoạn đầu, giai đoạn mà người chủ giỏi nhất công ty và làm mọi việc nhanh nhất, nên giữ hết việc trong tay mình là cách đi đúng. Đúng ở giai đoạn đó, và chính vì nó từng đúng nên nó được giữ lâu hơn mức cần thiết.</p>
 
 <h2>Vì sao càng bán tốt lại càng bận</h2>
 
@@ -287,7 +287,7 @@ dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn c�
 
 <p>Cả hai anh đều giỏi thật, không phải giỏi kiểu tự nhận. Người thứ nhất nắm cả bán hàng, nhân sự, tài chính và đối tác. Người thứ hai vừa giỏi kỹ thuật, vừa biết ngoại giao, vừa chốt được hợp đồng, vừa quản được đội thi công. <span class="nhan">Chính vì làm được mọi việc nên họ giữ mọi việc</span>, và ở giai đoạn đầu thì làm vậy hoàn toàn đúng.</p>
 
-<p>Khi công ty còn nhỏ, người chủ giỏi nhất và nhanh nhất, nên gom hết vào mình là cách đi hợp lý. Nhưng cách đi đó không có nút dừng. Công ty lớn lên, số việc cần một quyết định của người chủ tăng theo, mà không ai nhận ra thời điểm đáng lẽ phải đổi cách làm. Lý do rất đơn giản: không có ngày nào mọi việc hỏng hẳn để buộc mình phải nhìn lại. Nó chỉ nặng dần lên, mỗi năm một chút, và người chủ quen với sức nặng đó nhanh hơn mình tưởng.</p>
+<p>Khi công ty còn nhỏ, người chủ giỏi nhất và nhanh nhất, nên giữ hết việc trong tay mình là cách đi hợp lý. Nhưng cách đi đó không có nút dừng. Công ty lớn lên, số việc cần một quyết định của người chủ tăng theo, mà không ai nhận ra thời điểm đáng lẽ phải đổi cách làm. Lý do rất đơn giản: không có ngày nào mọi việc hỏng hẳn để buộc mình phải nhìn lại. Nó chỉ nặng dần lên, mỗi năm một chút, và người chủ quen với sức nặng đó nhanh hơn mình tưởng.</p>
 
 <p>Anh chủ ngành máy lạnh mô tả tình trạng đó bằng một hình ảnh rất đúng: anh đang xây một cỗ máy rất mạnh nhưng lại phải tự mình đạp từng vòng quay. Một mình anh chạy trước, nhân viên phía sau nhìn, làm theo, phụ thêm. Ngày anh vắng mặt thì tất cả chậm lại, lúng túng, có việc dừng hẳn.</p>
 
@@ -703,7 +703,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI cho người chủ",
 
 <h2>Cách Duy dùng AI trong công việc của mình</h2>
 <p>Duy không dùng AI để viết bài từ số không, mà dùng nó ở ba chỗ khác.</p>
-<p><b>Chỗ thứ nhất là gom chất liệu:</b> sau một buổi làm việc thì Duy ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời, tức là chất liệu vẫn của Duy còn việc sắp xếp thì của máy.</p>
+<p><b>Chỗ thứ nhất là thu thập chất liệu:</b> sau một buổi làm việc thì Duy ghi âm hoặc viết nhanh những gì vừa xảy ra, rồi nhờ máy sắp lại thành các ý rời, tức là chất liệu vẫn của Duy còn việc sắp xếp thì của máy.</p>
 <p><b>Chỗ thứ hai là phản biện:</b> Duy đưa một lập luận rồi yêu cầu nó chỉ ra chỗ yếu nhất, và tuy nó không thay được một người hiểu ngành, nó vẫn bắt được những chỗ Duy lười nghĩ.</p>
 <p><b>Chỗ thứ ba là chuyển định dạng:</b> một bài dài thành dàn ý video rồi thành mấy đoạn ngắn, việc này lặp đi lặp lại nên đúng là chỗ máy làm giỏi hơn người.</p>
 
@@ -985,8 +985,8 @@ dict(tep="lanh-dia-chuyen-mon.html", chu_de="Thương hiệu của người sán
 <p>Và giữ nguyên câu đó ít nhất một năm trước khi nghĩ tới việc sửa. Thương hiệu chết vì đổi hướng nhiều hơn là chết vì chọn sai hướng.</p>
 """),
 
-dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, để sau này còn chuyện mà viết", chu_de="Thương hiệu của người sáng lập",
- tieu="Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết",
+dict(tep="kho-cau-chuyen.html", tieu_seo="Ghi lại chuyện thật trong nghề, để sau này còn chuyện mà viết", chu_de="Thương hiệu của người sáng lập",
+ tieu="Ghi lại chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết",
  mo="Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.",
  ngay="2026-08-18", ngay_viet="18 tháng 8, 2026", doc="6 phút đọc",
  anh="img/cd-workshop.webp", alt="Coach Duy Nguyễn đưa micro cho một học viên",
@@ -1053,7 +1053,7 @@ dict(tep="kho-cau-chuyen.html", tieu_seo="Gom chuyện thật trong nghề, đ�
 <p>Bốn mẩu này đều được ghi trong chưa tới một phút mỗi mẩu, và cả bốn về sau đều thành nội dung. <span class="nhan">Điều quý không nằm ở cách viết, nó nằm ở chỗ chúng có thật.</span></p>
 
 <h2>Sau sáu tháng</h2>
-<p>Bạn sẽ có khoảng một trăm tới hai trăm mẩu, và lúc đó một điều thú vị xảy ra: các mẩu bắt đầu tự gom thành nhóm mà bạn không sắp xếp gì cả. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng thay vì bằng cách ngồi nghĩ xem mình nên đứng ở đâu.</p>
+<p>Bạn sẽ có khoảng một trăm tới hai trăm mẩu, và lúc đó một điều thú vị xảy ra: các mẩu bắt đầu tự kết thành nhóm mà bạn không sắp xếp gì cả. Những nhóm đó chính là luận điểm nghề nghiệp của bạn, và bạn tìm ra chúng bằng bằng chứng thay vì bằng cách ngồi nghĩ xem mình nên đứng ở đâu.</p>
 <p><span class="nhan dam">Đây là cách tìm định vị đáng tin nhất Duy biết, vì nó dựa trên việc bạn thật sự quan tâm điều gì đủ để ghi lại.</span> Một câu định vị nghĩ ra trong hai giờ thì đẹp mà không có gốc, còn một câu rút ra từ hai trăm mẩu thì bạn bảo vệ được nó suốt nhiều năm.</p>
 <p>Với Duy, kho ghi chép sáu năm là nền của mọi chương trình đang dạy hôm nay. Không có nó thì Duy chỉ dạy lại được những gì mình đọc được của người khác, và người học sẽ nhận ra điều đó nhanh hơn bạn nghĩ.</p>
 """),
@@ -1079,13 +1079,13 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu của người sáng 
 <p>Cách này khác hẳn việc nghĩ ra năm ý riêng biệt cho năm bài. Nó chỉ đòi bạn nghĩ sâu một lần trong tuần, phần còn lại là thao tác.</p>
 
 <h2>Chia tuần thành ba khối</h2>
-<p><b>Khối gom, ba mươi phút mỗi ngày:</b> ghi lại chất liệu từ công việc thật theo kiểu ba dòng một mẩu, và vì việc này không cần tập trung cao nên bạn làm được cả lúc đang mệt.</p>
+<p><b>Khối thu thập, ba mươi phút mỗi ngày:</b> ghi lại chất liệu từ công việc thật theo kiểu ba dòng một mẩu, và vì việc này không cần tập trung cao nên bạn làm được cả lúc đang mệt.</p>
 <p><b>Khối làm, chín mươi phút một lần mỗi tuần:</b> chỉ khối này mới cần đầu óc tỉnh táo, bạn chọn một mẩu và làm thành nội dung gốc, đặt lịch cố định rồi bảo vệ nó đúng như bảo vệ một cuộc hẹn với khách.</p>
 <p><b>Khối cắt, sáu mươi phút một lần mỗi tuần:</b> cắt nội dung gốc thành các mảnh và hẹn giờ đăng, khối này giao được cho người khác hoặc để AI làm phần lặp lại.</p>
 <p>Tổng cộng khoảng năm giờ một tuần, và đây là con số bạn giữ được nhiều năm. Mười lăm giờ một tuần thì không, dù trong ba tháng đầu bạn sẽ thấy mình làm được.</p>
 
 <h2>Vai trò của AI ở đây</h2>
-<p>AI làm tốt khối cắt và làm khá ở khâu sắp xếp ý trong khối làm. Nó không làm được khối gom, vì chất liệu nằm trong công việc thật của bạn và nó không có mặt ở đó.</p>
+<p>AI làm tốt khối cắt và làm khá ở khâu sắp xếp ý trong khối làm. Nó không làm được khối thu thập, vì chất liệu nằm trong công việc thật của bạn và nó không có mặt ở đó.</p>
 <p>Đừng để AI viết nội dung gốc từ số không. Bạn tiết kiệm được chín mươi phút và mất đúng phần duy nhất không ai sao chép được, đó là một cuộc đổi rất tệ nếu tính bằng vài năm.</p>
 <p>Cách dùng Duy thấy hợp lý nhất là nói cho AI nghe thay vì bảo nó viết. Bạn kể lại tình huống, nó ghi thành dàn ý, bạn sửa lại chỗ nó hiểu sai, rồi bạn viết. Phần suy nghĩ vẫn của bạn, phần sắp xếp thì để máy làm.</p>
 
@@ -1105,7 +1105,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu của người sáng 
 
 <p>Đừng bắt đầu bằng việc đăng. Bắt đầu bằng việc đặt hai cuộc hẹn cố định vào lịch của bạn cho khối làm và khối cắt, cho ba tháng tới, và đặt tên chúng như tên một cuộc họp thật.</p>
 
-<p>Sau đó dành tuần đầu chỉ để gom, không đăng gì cả. Cuối tuần bạn sẽ có chừng năm tới bảy mẩu, và lúc đó khối làm của tuần thứ hai mới có nguyên liệu để chạy.</p>
+<p>Sau đó dành tuần đầu chỉ để thu thập, không đăng gì cả. Cuối tuần bạn sẽ có chừng năm tới bảy mẩu, và lúc đó khối làm của tuần thứ hai mới có nguyên liệu để chạy.</p>
 
 <p>Duy hay khuyên đừng công bố với ai rằng mình sắp làm nội dung đều. Công bố xong thì áp lực xuất hiện trước khi nhịp kịp hình thành, và áp lực đó đẩy bạn về đúng kiểu bung sức mà bài này đang tìm cách tránh.</p>
 

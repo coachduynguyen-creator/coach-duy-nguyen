@@ -1756,7 +1756,7 @@ SACH = """<header class="dau-trang hoa-van cc-dau">
     <div>
       <p class="mono">Công cụ và tài liệu</p>
       <h1>Công cụ và tài liệu Duy soạn cho founder và chủ doanh nghiệp</h1>
-      <p class="dan">Duy gom ở đây những công cụ và tài liệu Duy đã thiết kế cho các founder và chủ doanh nghiệp. Công cụ và tài liệu nào cũng bắt đầu từ một việc người chủ thường phải tự nghĩ một mình: kế hoạch năm sau, số khách cần có mỗi tháng, dòng tiền từng tuần, cách giao việc và đánh giá đội ngũ.</p>
+      <p class="dan">Đây là những công cụ và tài liệu Duy đã thiết kế và tổng hợp cho các founder và chủ doanh nghiệp. Công cụ và tài liệu nào cũng bắt đầu từ một việc người chủ thường phải tự nghĩ một mình: kế hoạch năm sau, số khách cần có mỗi tháng, dòng tiền từng tuần, cách giao việc và đánh giá đội ngũ.</p>
       <p class="dan">Duy làm khu vực này vì những việc đó thường chỉ người chủ nắm đủ số để làm, và hiếm khi có ai ngồi cùng hỏi khó. Bạn cứ dùng hết những gì có ở đây: chọn đúng việc mình đang vướng, làm theo từng bước với chính số liệu doanh nghiệp mình, rồi quay lại bất cứ khi nào cần. Quyết định cuối cùng vẫn là của bạn.</p>
       <div class="cc-nhay"><a class="nut nut-v" href="#thu-vien">Xem công cụ <span class="mt" aria-hidden="true">&darr;</span></a><a class="nut nut-vien" href="#e-book">Xem e-book <span class="mt" aria-hidden="true">&darr;</span></a></div>
     </div>
