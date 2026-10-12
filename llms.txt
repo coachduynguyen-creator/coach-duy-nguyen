@@ -13,7 +13,7 @@
 - [Community Growth System, trang chương trình](https://coachduynguyen.vn/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
 - [Blog](https://coachduynguyen.vn/blog.html): 28 bài viết cho nhà sáng lập
 - [Công cụ và tài liệu](https://coachduynguyen.vn/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230 nghìn người đăng ký
+- [Podcast Next Gen Founder](https://coachduynguyen.vn/podcast.html): video podcast trên YouTube, sáu chuyên mục, 230.000 người đăng ký
 - [Cộng đồng Next Gen Founder](https://coachduynguyen.vn/cong-dong/): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang mở danh sách chờ
 - [Liên hệ](https://coachduynguyen.vn/lien-he.html)
 
@@ -40,7 +40,7 @@
 - [Giữ bình tĩnh khi khách mất bình tĩnh](https://coachduynguyen.vn/bai-viet/giu-binh-tinh-khi-khach-mat-binh-tinh.html): Nghề dịch vụ tiếp xúc nhiều kiểu người mỗi ngày. Bị cuốn theo cảm xúc của người đối diện là mất luôn khả năng dẫn dắt.
 - [Chọn một vùng chuyên môn để đứng, và dám bỏ phần còn lại](https://coachduynguyen.vn/bai-viet/lanh-dia-chuyen-mon.html): Người không dám bỏ vùng nào sẽ không sở hữu vùng nào. Chọn lãnh địa là quyết định khó nhất và cũng là quyết định trả lãi lâu nhất.
 - [Bốn câu Duy nghe nhiều nhất từ người sáng lập](https://coachduynguyen.vn/bai-viet/bon-cau-toi-nghe-nhieu-nhat.html): Bốn câu nghe như bốn vấn đề khác nhau. Sau rất nhiều buổi trao đổi, Duy thấy chúng thường chỉ về một chỗ.
-- [Gom chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết](https://coachduynguyen.vn/bai-viet/kho-cau-chuyen.html): Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.
+- [Ghi lại chuyện thật trong nghề, để nhiều năm sau vẫn còn chuyện để viết](https://coachduynguyen.vn/bai-viet/kho-cau-chuyen.html): Người sáng lập không thiếu ý tưởng. Họ thiếu một cách ghi lại những gì vừa xảy ra, nên mỗi lần ngồi xuống viết là một lần bắt đầu từ số không.
 - [Vì sao Duy không nhìn khách qua phễu bán hàng](https://coachduynguyen.vn/bai-viet/vi-sao-toi-khong-dung-phieu.html): Phễu đo được một chiến dịch. Nhưng nó không mô tả đúng cách một người quyết định tin ai.
 - [Làm nội dung một mình mà vẫn giữ được lâu](https://coachduynguyen.vn/bai-viet/nhip-lam-noi-dung.html): Đăng bảy bài một tuần rồi biến mất ba tháng thua đăng một bài một tuần trong ba năm. Bài này viết về cách thiết kế nhịp bạn giữ được.
 - [Năm việc của một người cố vấn](https://coachduynguyen.vn/bai-viet/nam-viec-cua-mot-nguoi-co-van.html): Người cố vấn không phải là chức danh tự đặt. Nó là năm việc phải làm được, và bạn có quyền kiểm tra.
