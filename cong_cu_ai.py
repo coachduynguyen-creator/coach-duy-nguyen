@@ -84,7 +84,7 @@ HINH = {
  "cau-chuyen-thuong-hieu": dict(kieu="cot", tieu="Mười câu chuyện đã chọn: chủ hiện lên như thế nào",
    cot=[("Chuyện chủ cứu tình thế", 8, "8 chuyện"), ("Chuyện chủ làm sai rồi sửa", 2, "2 chuyện")],
    ket="8 trên 10 chuyện chủ hiện lên như người cứu tình thế, chỉ 2 chuyện là chủ làm sai và sửa", vd="Công ty nội thất 14 người",
-   boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI gom 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
+   boi="Chủ một công ty thiết kế và thi công nội thất 14 người muốn bắt đầu đăng bài trên Facebook nhưng không biết kể gì. Để AI phỏng vấn, AI thu thập 22 chuyện thô, chọn ra mười chuyện rồi chỉ ra chỗ lệch trong bộ mười chuyện đó."),
  "hoso-doanh-nghiep-chatgpt": dict(kieu="cot", tieu="Số chỗ ChatGPT phải tự giả định khi thử ba việc thật",
    cot=[("Với bản hồ sơ nháp", 7, "7 chỗ"), ("Mục tiêu sau khi sửa", 2, "2 chỗ")],
    ket="Sửa ba chỗ hở trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",
@@ -309,11 +309,11 @@ def doc(ma, tep):
         dan = doan.pop(0) if doan[0].startswith("Câu này chép") else ""
         cc["lenh"].append(dict(so=int(so), ten=ten, dan=dan, chu="\n\n".join(doan)))
 
-    # Kết quả AI trả về và mẹo cho từng câu lệnh (Phần 2b), hiện dưới khối câu lệnh.
+    # Kết quả AI trả về và lưu ý cho từng câu lệnh (Phần 2b), hiện dưới khối câu lệnh.
     cc["kq"] = {}
     for t, bk in _chia(phan.get("Phần 2b", ""), "###")[1:]:
         so = int(re.search(r"\d+", t).group())
-        kq = re.search(r"^Kết quả: (.+)$", bk, re.M); meo = re.search(r"^Mẹo: (.+)$", bk, re.M)
+        kq = re.search(r"^Kết quả: (.+)$", bk, re.M); meo = re.search(r"^(?:Lưu ý|Mẹo): (.+)$", bk, re.M)
         cc["kq"][so] = (kq.group(1) if kq else "", meo.group(1) if meo else "")
 
     # Câu lệnh 2 có các chỗ trống trong ngoặc vuông, theo đúng thứ tự ô trong phiếu.
@@ -385,7 +385,7 @@ def _kq(v):
     if not v or not v[0]:
         return ""
     return ('<div class="cc-kq"><p><b>AI sẽ trả về.</b> %s</p>%s</div>'
-            % (_dong_so(v[0]), ('<p class="cc-meo"><b>Mẹo.</b> %s</p>' % _dong(v[1])) if v[1] else ""))
+            % (_dong_so(v[0]), ('<p class="cc-meo"><b>Lưu ý.</b> %s</p>' % _dong(v[1])) if v[1] else ""))
 
 def _chon(ten, nhan, ds):
     return ('<label class="cc-o"><span>%s</span><select name="%s" required><option value="">Chọn</option>%s</select></label>'

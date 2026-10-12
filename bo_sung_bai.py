@@ -97,7 +97,7 @@ BO_SUNG = {
 "nam-viec-cua-mot-nguoi-co-van.html": dict(
  tra_loi="Người cố vấn phải làm được năm việc: soi đúng vấn đề thật phía sau, chỉ bước tiếp theo kèm dấu hiệu hoàn thành, làm mẫu bằng quyết định và sai lầm thật, giữ chuẩn kể cả khi mất lòng, và trao lại quyền tự chủ để người học tự đi được.",
  faq=[("Làm sao phân biệt người cố vấn thật và người tự gọi mình là cố vấn?",
-       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa mẹo thiếu việc soi đúng. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
+       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa thủ thuật thiếu việc soi đúng. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
       ("Chỉ đường khác lời khuyên ở chỗ nào?",
        "Một lời khuyên chỉ đường được thì có ba thứ: thứ tự các bước, điều kiện để đi tiếp, và dấu hiệu cho biết đã xong. Thiếu dấu hiệu hoàn thành thì đó chưa phải chỉ đường, mới chỉ là động viên."),
       ("Ba việc một người cố vấn không nên làm là gì?",
@@ -144,7 +144,7 @@ BO_SUNG = {
  faq=[("Việc nào giao được cho AI, việc nào không?",
        "Giao được: tìm và tóm tắt tài liệu, sắp xếp ý đã có, chuyển một nội dung dài thành nhiều định dạng, gợi ý góc nhìn bạn chưa xét. Không giao được: quyết định bạn tin điều gì, chọn lập trường, đánh giá một con người, và chịu trách nhiệm cho câu bạn nói ra trước công chúng."),
       ("Dùng AI thế nào để không mất giọng riêng?",
-       "Đừng để AI viết từ số không. Dùng nó ở ba chỗ: gom chất liệu sau một buổi làm việc thật, phản biện một lập luận, và chuyển định dạng. Câu nào bạn không tự nói được trước một phòng người thì đừng đăng, kể cả khi nó nghe hay."),
+       "Đừng để AI viết từ số không. Dùng nó ở ba chỗ: thu thập chất liệu sau một buổi làm việc thật, phản biện một lập luận, và chuyển định dạng. Câu nào bạn không tự nói được trước một phòng người thì đừng đăng, kể cả khi nó nghe hay."),
       ("Làm sao nhận ra nội dung do AI viết hộ?",
        "Đọc một bài của họ rồi nghe họ nói mười phút. Nếu đọc và nghe ra hai người khác nhau, bạn biết ai đang viết.")]),
 
@@ -189,7 +189,7 @@ BO_SUNG = {
  faq=[("Nên đăng bao nhiêu bài một tuần?",
        "Câu hỏi đúng không phải bao nhiêu bài mà là nhịp nào bạn giữ được ba năm. Một nội dung gốc mỗi tuần cắt thành ba tới năm mảnh ngắn là nhịp một người vận hành được và giữ được lâu."),
       ("Chia thời gian trong tuần thế nào?",
-       "Ba khối: khối gom chất liệu ba mươi phút mỗi ngày, khối làm nội dung gốc chín mươi phút một lần mỗi tuần, và khối cắt mảnh sáu mươi phút một lần mỗi tuần. Chỉ khối làm cần đầu óc tỉnh táo."),
+       "Ba khối: khối thu thập chất liệu ba mươi phút mỗi ngày, khối làm nội dung gốc chín mươi phút một lần mỗi tuần, và khối cắt mảnh sáu mươi phút một lần mỗi tuần. Chỉ khối làm cần đầu óc tỉnh táo."),
       ("Lỡ một tuần thì có nên đăng bù không?",
        "Không. Đăng bù là cách quay lại vòng bung sức rồi kiệt. Lỡ một tuần thì tuần sau đi tiếp như chưa có gì, vì không ai đếm ngoài bạn.")]),
 
