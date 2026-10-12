@@ -564,7 +564,7 @@ print("  index.html")
 # Không nhắc tên Next Step Group theo yêu cầu của Coach Duy.
 MOC = [
  ("Trước 2021", "Làm nghề, chưa dạy nghề", "", "",
-  "Chuyên gia marketing khối ô tô tại Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
+  "Phân tích và phát triển thị trường khối ô tô, phòng marketing Honda Việt Nam. Sang Úc, đồng sáng lập một tập đoàn nhà hàng và tiệc cưới gồm bốn công ty, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
  ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "img/mc/mc-banlamviec.webp",
   "Facebook 0 · YouTube 0",
   "Duy bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
@@ -594,10 +594,10 @@ def the_moc(m, i):
 moc_html = '<div class="mc-doc">%s</div>' % "".join(the_moc(m, i) for i, m in enumerate(MOC))
 
 HOC_VAN = [
- ("2021", "Harvard University", "Hoa Kỳ", "Chuyên viên tư vấn triển khai chiến lược kinh doanh"),
- ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với khoảng mười tám ngân hàng và tổ chức tài chính"),
- ("2012", "Deloitte UK", "Anh", "Chuyên viên tư vấn chiến lược doanh nghiệp"),
- ("2011", "University of Birmingham", "Anh", "Thạc sĩ Quản trị Kinh doanh, khoá xếp hạng 60 thế giới"),
+ ("2021", "Harvard University", "Hoa Kỳ", "Chứng chỉ chương trình Business Strategy and Implementation"),
+ ("2019", "Certificate in Finance and Mortgage Broking", "Úc", "Cố vấn tài chính tín dụng, làm việc với mười tám ngân hàng và tổ chức tài chính"),
+ ("2012", "Deloitte UK", "Anh", "Làm việc tại Deloitte UK"),
+ ("2011", "University of Birmingham", "Anh", "Thạc sĩ Quản trị Kinh doanh 2011 đến 2013, chương trình MBA top 70 thế giới theo bảng Financial Times năm 2011"),
  ("2008", "Đại học Ngoại Thương Hà Nội", "Việt Nam", "Cử nhân Kinh tế Đối ngoại"),
 ]
 hoc_van_html = "".join(
@@ -1336,7 +1336,7 @@ HOP_TAC_GIA = """<div class="tac-gia hien">
   <div class="anh-tg"><img src="../img/cd-avatar.webp" alt="Coach Duy Nguyễn" loading="lazy" width="256" height="256"></div>
   <div>
     <b>Coach Duy Nguyễn</b>
-    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Sáu năm làm nội dung đều đặn trên bốn kênh, làm việc với hàng nghìn người bán hàng và người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
+    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Sáu năm làm nội dung, hơn 20 năm bán hàng và kinh doanh, đồng hành cùng người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
     <a class="lk-v" href="../ve-toi.html">Xem hồ sơ đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
 </div>"""
