@@ -14,16 +14,16 @@
 <meta property="og:description" content="Mười hai tháng ngồi cạnh Coach Duy Nguyễn trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu, sản phẩm và cộng đồng.">
 <meta property="og:url" content="https://coachduynguyen.vn/nguoi-dan-duong/">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://coachduynguyen.vn/img/cd-workshop.webp">
+<meta property="og:image" content="https://coachduynguyen.vn/img/dh-phong-lon.webp">
 <meta property="og:image:alt" content="Người Dẫn Đường · Chương trình đào tạo người dẫn đường cho nhà sáng lập">
-<meta name="twitter:image" content="https://coachduynguyen.vn/img/cd-workshop.webp">
+<meta name="twitter:image" content="https://coachduynguyen.vn/img/dh-phong-lon.webp">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css?v=20261013g">
-
+<link rel="preload" as="image" href="../img/dh-phong-lon.webp" fetchpriority="high">
 <script>if(location.search.indexOf('static=1')>-1)document.documentElement.classList.add('noanim');</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn", "jobTitle": "Người cố vấn cho chủ doanh nghiệp", "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành.", "url": "https://coachduynguyen.vn/", "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng", "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"]}</script>
 </head>
@@ -40,9 +40,9 @@
 </nav>
 <style>
 .ndd{--ke:clamp(18px,3vw,28px)}
-.ndd img{height:auto}
+.ndd section:not(.kh) img{height:auto}
 /* Trang chung canh đều hai bên (.bd p). Trong thẻ và cột hẹp thì canh trái, đầu mục giữ canh giữa của .phan-dau. */
-.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
+.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-ai span,.ndd-ai q,.ndd-ai b,.ndd-ai p,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
 .ndd .mono{color:var(--vang)}
 .ndd-moi h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:8px 0 10px}
 .ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
@@ -52,6 +52,7 @@
 .ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:end}
 .ndd-hero .tren > img{width:100%;height:540px !important;max-height:62vh;object-fit:cover;object-position:50% 20%;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line)}
 .ndd-hero h1{font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.03em;margin:10px 0 16px}
+.ndd-phu{font-family:var(--f-tit);font-size:clamp(21px,2.6vw,30px);line-height:1.25;color:var(--vang-2);margin:-6px 0 16px}
 .ndd-hero .dan{max-width:60ch;font-size:clamp(17px,2vw,20px);color:var(--ink-2)}
 .ndd-so{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
 .ndd-so div{border-top:2px solid var(--vang);padding-top:12px}
@@ -72,6 +73,13 @@
 .ndd-bon figcaption{padding:16px 18px 20px}
 .ndd-bon b{display:block;font-family:var(--f-tit);font-size:21px;line-height:1.2;margin-bottom:6px}
 .ndd-bon span{font-size:15px;color:var(--ink-2);line-height:1.5}
+.ndd-ai{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ndd-ai figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.ndd-ai img{width:100%;aspect-ratio:4/4;object-fit:cover;object-position:50% 18%;display:block}
+.ndd-ai figcaption{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.ndd-ai b{font-family:var(--f-tit);font-size:22px;line-height:1.2}
+.ndd-ai q{font-family:var(--f-tit);font-size:18px;line-height:1.35;color:var(--vang-2);quotes:"“" "”"}
+.ndd-ai span{font-size:15px;color:var(--ink-2);line-height:1.55}
 .ndd-ca{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .ndd-ca article{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .ndd-ca .anh{width:150px;height:190px !important;border-radius:var(--r-s);object-fit:cover;object-position:50% 20%;background:var(--panel-2);display:grid;place-items:center;font-family:var(--f-tit);font-size:48px;font-weight:800;color:var(--vang)}
@@ -113,6 +121,7 @@
 .ndd-vao li:before{content:"Bước " counter(b);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
 .ndd-vao b{display:block;font-family:var(--f-tit);font-size:19px;margin:8px 0 6px}
 .ndd-vao span{font-size:14.5px;color:var(--ink-2)}
+.ndd-nut{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .ndd-moi{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;background:var(--paper);border:1px solid rgba(242,177,74,.4);border-radius:var(--r);padding:24px 28px 0 24px;overflow:hidden}
 .ndd-moi > img{width:200px;align-self:end;display:block}
 .ndd-moi > div{padding-bottom:24px}
@@ -120,6 +129,7 @@
 .ndd-moi p{color:var(--ink-2)}
 @media (max-width:1000px){
   .ndd-bon{grid-template-columns:repeat(2,1fr)}
+  .ndd-ai{grid-template-columns:1fr 1fr}
   .ndd-luoi12{grid-template-columns:repeat(2,1fr)}
   .ndd-vao{grid-template-columns:repeat(2,1fr)}
   .ndd-ca{grid-template-columns:1fr}
@@ -131,7 +141,7 @@
 @media (max-width:700px){
   .ndd-hero .tren{grid-template-columns:1fr}
   .ndd-hero .tren > img{max-height:320px;order:-1}
-  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon{grid-template-columns:1fr}
+  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai{grid-template-columns:1fr}
   .ndd-dt > img,.ndd-canh > img{order:-1}
   .ndd-ca article{grid-template-columns:1fr}
   .ndd-ca .anh{width:100%;height:240px !important;object-position:50% 25%}
@@ -145,13 +155,18 @@
   <img src="../img/dh-phong-lon.webp" alt="" aria-hidden="true" width="1500" height="1000">
   <div class="bd">
     <div class="tren"><div>
-    <p class="mono">Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
     <h1>Người Dẫn Đường</h1>
+    <p class="ndd-phu">Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
     <p class="dan">Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, với người chủ thật. Tới tháng thứ mười hai, bạn tự dẫn một nhóm của riêng mình, có thương hiệu, có sản phẩm và có cộng đồng đi theo bạn.</p>
     </div><img src="../img/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high" width="853" height="1280"></div>
     <div class="ndd-so"><div><i>một năm</i><b>1 tỷ đồng</b><span>Mức cao nhất khách trả cho gói coaching kèm riêng với Duy</span></div><div><i>một giờ</i><b>120 triệu đồng</b><span>Mức một ngân hàng thương mại lớn trả để mời Duy đào tạo</span></div><div><i>một buổi</i><b>50 tới 80 triệu đồng</b><span>Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy</span></div></div>
     <p class="ndd-thue">Đây là những dịch vụ Duy đang cung cấp, có hóa đơn và đóng thuế đầy đủ.</p>
   </div>
+</section>
+<section class="kh">
+  <div class="bd"><p class="kh-dan">Các doanh nghiệp đã mời Duy đào tạo và tư vấn</p></div>
+  <div class="kh-chay"><div class="kh-day"><span class="kh-l"><img src="../img/doi-tac/mono/mobifone.png" alt="MobiFone" decoding="async" width="410" height="96"><img class="kh-mau" src="../img/doi-tac/mobifone.png" alt="" aria-hidden="true" decoding="async" width="410" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/aia.png" alt="AIA" decoding="async" width="89" height="96"><img class="kh-mau" src="../img/doi-tac/aia.png" alt="" aria-hidden="true" decoding="async" width="89" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/prudential.png" alt="Prudential" decoding="async" width="208" height="96"><img class="kh-mau" src="../img/doi-tac/prudential.png" alt="" aria-hidden="true" decoding="async" width="208" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bao-viet.png" alt="Bảo Việt Nhân thọ" decoding="async" width="342" height="96"><img class="kh-mau" src="../img/doi-tac/bao-viet.png" alt="" aria-hidden="true" decoding="async" width="342" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/kb-securities.png" alt="KB Securities" decoding="async" width="152" height="96"><img class="kh-mau" src="../img/doi-tac/kb-securities.png" alt="" aria-hidden="true" decoding="async" width="152" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/hsc.png" alt="HSC" decoding="async" width="252" height="96"><img class="kh-mau" src="../img/doi-tac/hsc.png" alt="" aria-hidden="true" decoding="async" width="252" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/mascom.png" alt="Mascom" decoding="async" width="206" height="96"><img class="kh-mau" src="../img/doi-tac/mascom.png" alt="" aria-hidden="true" decoding="async" width="206" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/hung-vuong.png" alt="Hưng Vượng Holdings" decoding="async" width="116" height="96"><img class="kh-mau" src="../img/doi-tac/hung-vuong.png" alt="" aria-hidden="true" decoding="async" width="116" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/john-partners.png" alt="John & Partners" decoding="async" width="367" height="96"><img class="kh-mau" src="../img/doi-tac/john-partners.png" alt="" aria-hidden="true" decoding="async" width="367" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/gaia.png" alt="GAIA" decoding="async" width="119" height="96"><img class="kh-mau" src="../img/doi-tac/gaia.png" alt="" aria-hidden="true" decoding="async" width="119" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/minh-minh.png" alt="Minh Minh Group" decoding="async" width="69" height="96"><img class="kh-mau" src="../img/doi-tac/minh-minh.png" alt="" aria-hidden="true" decoding="async" width="69" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/an-thuong-yen.png" alt="An Thượng Yến" decoding="async" width="146" height="96"><img class="kh-mau" src="../img/doi-tac/an-thuong-yen.png" alt="" aria-hidden="true" decoding="async" width="146" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/nhan-ai.png" alt="Nhân Ái" decoding="async" width="396" height="96"><img class="kh-mau" src="../img/doi-tac/nhan-ai.png" alt="" aria-hidden="true" decoding="async" width="396" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/vulcano.png" alt="Vulcano" decoding="async" width="234" height="96"><img class="kh-mau" src="../img/doi-tac/vulcano.png" alt="" aria-hidden="true" decoding="async" width="234" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/kenli.png" alt="KENLI" decoding="async" width="243" height="96"><img class="kh-mau" src="../img/doi-tac/kenli.png" alt="" aria-hidden="true" decoding="async" width="243" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/micc.png" alt="MICC Group" decoding="async" width="202" height="96"><img class="kh-mau" src="../img/doi-tac/micc.png" alt="" aria-hidden="true" decoding="async" width="202" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bighomes.png" alt="BigHomes Group" decoding="async" width="407" height="96"><img class="kh-mau" src="../img/doi-tac/bighomes.png" alt="" aria-hidden="true" decoding="async" width="407" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/trikhang-pharma.png" alt="Trikhang Pharma" decoding="async" width="424" height="96"><img class="kh-mau" src="../img/doi-tac/trikhang-pharma.png" alt="" aria-hidden="true" decoding="async" width="424" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/aiesec.png" alt="AIESEC" decoding="async" width="423" height="96"><img class="kh-mau" src="../img/doi-tac/aiesec.png" alt="" aria-hidden="true" decoding="async" width="423" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/phan-hang.png" alt="Phan Hằng Group" decoding="async" width="97" height="96"><img class="kh-mau" src="../img/doi-tac/phan-hang.png" alt="" aria-hidden="true" decoding="async" width="97" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/w-group.png" alt="W Group" decoding="async" width="163" height="96"><img class="kh-mau" src="../img/doi-tac/w-group.png" alt="" aria-hidden="true" decoding="async" width="163" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bs-group.png" alt="BS Group" decoding="async" width="77" height="96"><img class="kh-mau" src="../img/doi-tac/bs-group.png" alt="" aria-hidden="true" decoding="async" width="77" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/fos.png" alt="FOS" decoding="async" width="152" height="96"><img class="kh-mau" src="../img/doi-tac/fos.png" alt="" aria-hidden="true" decoding="async" width="152" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/gia-tot.png" alt="Gia Tốt Việt Nam" decoding="async" width="96" height="96"><img class="kh-mau" src="../img/doi-tac/gia-tot.png" alt="" aria-hidden="true" decoding="async" width="96" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/secrets.png" alt="Digital Academy Secrets" decoding="async" width="259" height="96"><img class="kh-mau" src="../img/doi-tac/secrets.png" alt="" aria-hidden="true" decoding="async" width="259" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/vinh-tuong.png" alt="Vĩnh Tường Saint-Gobain" decoding="async" width="391" height="96"><img class="kh-mau" src="../img/doi-tac/vinh-tuong.png" alt="" aria-hidden="true" decoding="async" width="391" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/x3-nang-suat.png" alt="X3 Năng Suất" decoding="async" width="99" height="96"><img class="kh-mau" src="../img/doi-tac/x3-nang-suat.png" alt="" aria-hidden="true" decoding="async" width="99" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/lya.png" alt="LYA Group" decoding="async" width="143" height="96"><img class="kh-mau" src="../img/doi-tac/lya.png" alt="" aria-hidden="true" decoding="async" width="143" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/legacy.png" alt="Legacy" decoding="async" width="70" height="96"><img class="kh-mau" src="../img/doi-tac/legacy.png" alt="" aria-hidden="true" decoding="async" width="70" height="96"></span></div><div class="kh-day" aria-hidden="true"><span class="kh-l"><img src="../img/doi-tac/mono/mobifone.png" alt="MobiFone" decoding="async" width="410" height="96"><img class="kh-mau" src="../img/doi-tac/mobifone.png" alt="" aria-hidden="true" decoding="async" width="410" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/aia.png" alt="AIA" decoding="async" width="89" height="96"><img class="kh-mau" src="../img/doi-tac/aia.png" alt="" aria-hidden="true" decoding="async" width="89" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/prudential.png" alt="Prudential" decoding="async" width="208" height="96"><img class="kh-mau" src="../img/doi-tac/prudential.png" alt="" aria-hidden="true" decoding="async" width="208" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bao-viet.png" alt="Bảo Việt Nhân thọ" decoding="async" width="342" height="96"><img class="kh-mau" src="../img/doi-tac/bao-viet.png" alt="" aria-hidden="true" decoding="async" width="342" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/kb-securities.png" alt="KB Securities" decoding="async" width="152" height="96"><img class="kh-mau" src="../img/doi-tac/kb-securities.png" alt="" aria-hidden="true" decoding="async" width="152" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/hsc.png" alt="HSC" decoding="async" width="252" height="96"><img class="kh-mau" src="../img/doi-tac/hsc.png" alt="" aria-hidden="true" decoding="async" width="252" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/mascom.png" alt="Mascom" decoding="async" width="206" height="96"><img class="kh-mau" src="../img/doi-tac/mascom.png" alt="" aria-hidden="true" decoding="async" width="206" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/hung-vuong.png" alt="Hưng Vượng Holdings" decoding="async" width="116" height="96"><img class="kh-mau" src="../img/doi-tac/hung-vuong.png" alt="" aria-hidden="true" decoding="async" width="116" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/john-partners.png" alt="John & Partners" decoding="async" width="367" height="96"><img class="kh-mau" src="../img/doi-tac/john-partners.png" alt="" aria-hidden="true" decoding="async" width="367" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/gaia.png" alt="GAIA" decoding="async" width="119" height="96"><img class="kh-mau" src="../img/doi-tac/gaia.png" alt="" aria-hidden="true" decoding="async" width="119" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/minh-minh.png" alt="Minh Minh Group" decoding="async" width="69" height="96"><img class="kh-mau" src="../img/doi-tac/minh-minh.png" alt="" aria-hidden="true" decoding="async" width="69" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/an-thuong-yen.png" alt="An Thượng Yến" decoding="async" width="146" height="96"><img class="kh-mau" src="../img/doi-tac/an-thuong-yen.png" alt="" aria-hidden="true" decoding="async" width="146" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/nhan-ai.png" alt="Nhân Ái" decoding="async" width="396" height="96"><img class="kh-mau" src="../img/doi-tac/nhan-ai.png" alt="" aria-hidden="true" decoding="async" width="396" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/vulcano.png" alt="Vulcano" decoding="async" width="234" height="96"><img class="kh-mau" src="../img/doi-tac/vulcano.png" alt="" aria-hidden="true" decoding="async" width="234" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/kenli.png" alt="KENLI" decoding="async" width="243" height="96"><img class="kh-mau" src="../img/doi-tac/kenli.png" alt="" aria-hidden="true" decoding="async" width="243" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/micc.png" alt="MICC Group" decoding="async" width="202" height="96"><img class="kh-mau" src="../img/doi-tac/micc.png" alt="" aria-hidden="true" decoding="async" width="202" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bighomes.png" alt="BigHomes Group" decoding="async" width="407" height="96"><img class="kh-mau" src="../img/doi-tac/bighomes.png" alt="" aria-hidden="true" decoding="async" width="407" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/trikhang-pharma.png" alt="Trikhang Pharma" decoding="async" width="424" height="96"><img class="kh-mau" src="../img/doi-tac/trikhang-pharma.png" alt="" aria-hidden="true" decoding="async" width="424" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/aiesec.png" alt="AIESEC" decoding="async" width="423" height="96"><img class="kh-mau" src="../img/doi-tac/aiesec.png" alt="" aria-hidden="true" decoding="async" width="423" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/phan-hang.png" alt="Phan Hằng Group" decoding="async" width="97" height="96"><img class="kh-mau" src="../img/doi-tac/phan-hang.png" alt="" aria-hidden="true" decoding="async" width="97" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/w-group.png" alt="W Group" decoding="async" width="163" height="96"><img class="kh-mau" src="../img/doi-tac/w-group.png" alt="" aria-hidden="true" decoding="async" width="163" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/bs-group.png" alt="BS Group" decoding="async" width="77" height="96"><img class="kh-mau" src="../img/doi-tac/bs-group.png" alt="" aria-hidden="true" decoding="async" width="77" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/fos.png" alt="FOS" decoding="async" width="152" height="96"><img class="kh-mau" src="../img/doi-tac/fos.png" alt="" aria-hidden="true" decoding="async" width="152" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/gia-tot.png" alt="Gia Tốt Việt Nam" decoding="async" width="96" height="96"><img class="kh-mau" src="../img/doi-tac/gia-tot.png" alt="" aria-hidden="true" decoding="async" width="96" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/secrets.png" alt="Digital Academy Secrets" decoding="async" width="259" height="96"><img class="kh-mau" src="../img/doi-tac/secrets.png" alt="" aria-hidden="true" decoding="async" width="259" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/vinh-tuong.png" alt="Vĩnh Tường Saint-Gobain" decoding="async" width="391" height="96"><img class="kh-mau" src="../img/doi-tac/vinh-tuong.png" alt="" aria-hidden="true" decoding="async" width="391" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/x3-nang-suat.png" alt="X3 Năng Suất" decoding="async" width="99" height="96"><img class="kh-mau" src="../img/doi-tac/x3-nang-suat.png" alt="" aria-hidden="true" decoding="async" width="99" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/lya.png" alt="LYA Group" decoding="async" width="143" height="96"><img class="kh-mau" src="../img/doi-tac/lya.png" alt="" aria-hidden="true" decoding="async" width="143" height="96"></span><span class="kh-l"><img src="../img/doi-tac/mono/legacy.png" alt="Legacy" decoding="async" width="70" height="96"><img class="kh-mau" src="../img/doi-tac/legacy.png" alt="" aria-hidden="true" decoding="async" width="70" height="96"></span></div></div>
+
 </section>
 
 <section class="phan bd">
@@ -164,7 +179,6 @@
     </div>
     <img src="../img/mc/mc-chungnhan.webp" alt="Một lớp học viên nhận chứng nhận cùng Coach Duy" loading="lazy" width="900" height="587">
   </div>
-  <div class="ndd-logo hien"><img src="../img/doi-tac/mono/mobifone.png" alt="MobiFone" loading="lazy" width="410" height="96"><img src="../img/doi-tac/mono/aia.png" alt="AIA" loading="lazy" width="89" height="96"><img src="../img/doi-tac/mono/prudential.png" alt="Prudential" loading="lazy" width="208" height="96"><img src="../img/doi-tac/mono/bao-viet.png" alt="Bảo Việt Nhân thọ" loading="lazy" width="342" height="96"><img src="../img/doi-tac/mono/kb-securities.png" alt="KB Securities" loading="lazy" width="152" height="96"><img src="../img/doi-tac/mono/hsc.png" alt="HSC" loading="lazy" width="252" height="96"></div>
 </section>
 
 <section class="phan bd">
@@ -175,6 +189,16 @@
   <div class="ndd-bon"><figure class="hien"><img src="../img/mc/mc-banlam.webp" alt="Nghề dẫn đường" loading="lazy" width="900" height="356"><figcaption><b>Nghề dẫn đường</b><span>Bạn ngồi cùng một bàn với ba người chủ, hỏi đúng câu, và nhìn họ tự đi tới quyết định của mình.</span></figcaption></figure><figure class="hien"><img src="../img/bl-phong-thu.webp" alt="Thương hiệu cá nhân" loading="lazy" width="1400" height="933"><figcaption><b>Thương hiệu cá nhân</b><span>Kinh nghiệm của bạn thành câu chuyện, thành kênh, thành lý do để người lạ tin bạn trước khi gặp.</span></figcaption></figure><figure class="hien"><img src="../img/bl-viet-tay.webp" alt="Mô hình kinh doanh từ chuyên môn" loading="lazy" width="1400" height="934"><figcaption><b>Mô hình kinh doanh từ chuyên môn</b><span>Thứ bạn biết được đóng gói thành sản phẩm có tên, có giá, có người mua, không còn là bán giờ công.</span></figcaption></figure><figure class="hien"><img src="../img/mc/mc-hoitruong.webp" alt="Cộng đồng của riêng bạn" loading="lazy" width="900" height="615"><figcaption><b>Cộng đồng của riêng bạn</b><span>Một nhóm người đi theo bạn vì cách bạn dẫn họ, giống cách Duy đang xây Cộng đồng Next Gen Founder.</span></figcaption></figure></div>
 </section>
 
+<section class="phan tran">
+  <div class="tran-nen" aria-hidden="true"><img src="../img/dh-phong-lon.webp" alt="" loading="lazy" width="1500" height="1000"></div>
+  <div class="bd">
+    <div class="phan-dau hien"><p class="mono">Thương hiệu bạn sẽ học cách xây</p><h2>Duy đã tự xây đúng thứ bạn sẽ học</h2>
+    <p>Tháng 5 năm 2021, trang Facebook của Duy chưa có một người theo dõi, kênh YouTube chưa có một người đăng ký. Đây là con số hôm nay.</p></div>
+    <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0"><div class="so-tong"><b>800.000+</b><span>người theo dõi trên các nền tảng</span></div><div class="kenh4"><a class="k" href="https://www.facebook.com/coachduynguyen" target="_blank" rel="noopener"><p class="k-ten">Facebook</p><p class="k-so"><b>334.000</b><span>theo dõi</span></p></a><a class="k" href="https://www.youtube.com/@coachduynguyen" target="_blank" rel="noopener"><p class="k-ten">YouTube</p><p class="k-so"><b>230.000</b><span>đăng ký</span></p></a><a class="k" href="https://www.tiktok.com/@coachduynguyenofficial" target="_blank" rel="noopener"><p class="k-ten">TikTok</p><p class="k-so"><b>231.000</b><span>theo dõi</span></p></a><div class="k"><p class="k-ten">Zalo</p><p class="k-so"><b>22.000</b><span>theo dõi</span></p></div></div><div class="kenh-them"><div><b>26.600</b><span>thành viên Sales Bứt Phá</span></div><div><b>6 năm</b><span>đăng đều, không nghỉ quãng nào</span></div></div></div>
+    <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
+  </div>
+</section>
+
 <section class="phan bd">
   <div class="phan-dau hien">
     <p class="mono">Những người Duy đã đầu tư</p>
@@ -183,7 +207,7 @@
   <div class="ndd-ca"><article class="hien"><img class="anh" src="../img/chuyen-gia/phong-thuy.webp" alt="Coach Lê Phương" loading="lazy" width="720" height="720"><div><h3>Coach Lê Phương</h3><p class="khi">Năm 2022, kèm riêng</p><p>Anh đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm anh xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.</p><dl><div><dt>160.700</dt><dd>người theo dõi TikTok</dd></div><div><dt>5 triệu → 500 triệu</dt><dd>giá trị sản phẩm sau khi thiết kế lại</dd></div></dl></div></article><article class="hien"><img class="anh" src="../img/kris-tran.webp" alt="Kris Trần" loading="lazy" width="460" height="590"><div><h3>Kris Trần</h3><p class="khi">Sáu tháng, kèm riêng</p><p>Kris làm đầu tư tài chính ở Mỹ, hướng nội, ngại máy quay, muốn về Việt Nam lập nghiệp. Duy chỉ ra điểm Kris tưởng là yếu chính là chỗ khác biệt, rồi cùng Kris dựng một khung phương pháp mang tên riêng.</p><dl><div><dt>59.000</dt><dd>người theo dõi Facebook</dd></div><div><dt>153</dt><dd>bài đăng trong sáu tháng</dd></div></dl></div></article></div>
 </section>
 
-<section class="phan bd" id="muoi-hai-thang">
+<section class="phan bd phan-sang" id="muoi-hai-thang">
   <div class="phan-dau hien">
     <p class="mono">Mười hai tháng, bốn nấc</p>
     <h2>Mỗi tháng một việc thật, mỗi việc một thứ bạn mang ra</h2>
@@ -214,10 +238,12 @@
 <section class="phan bd">
   <div class="phan-dau hien">
     <p class="mono">Dành cho ai</p>
-    <h2>Bạn đã tự làm ra kết quả, giờ muốn dẫn người khác đi</h2>
+    <h2>Bạn có nhận ra mình trong một trong ba người này?</h2>
+    <p>Điểm chung của cả ba: đã tự làm ra kết quả thật, và bắt đầu thấy việc dẫn người khác đi quan trọng không kém việc tự mình đi tiếp.</p>
   </div>
-  <div class="ndd-hai">
-    <div class="ndd-o hien"><h3>Chương trình dành cho bạn nếu</h3><ul class="ndd-ds"><li>Bạn đã có kết quả thật trong kinh doanh hoặc chuyên môn, nói ra được và người khác kiểm chứng được</li><li>Bạn tin giá trị đi trước, tiền bạc đến sau</li><li>Bạn dành được ít nhất tám giờ mỗi tuần trong mười hai tháng</li><li>Bạn sẵn sàng để Duy nhận xét thẳng sau mỗi buổi mình dẫn</li></ul></div>
+  <div class="ndd-ai"><figure class="hien"><img src="../img/ngf-chu-dn.webp" alt="Người chủ doanh nghiệp đã đi qua một chặng" loading="lazy" width="560" height="723"><figcaption><p class="ndd-nho">Người chủ đi trước</p><b>Người chủ doanh nghiệp đã đi qua một chặng</b><q>Lại có người hẹn cà phê hỏi mình làm thế nào.</q><span>Doanh nghiệp đã chạy được. Bạn trả lời mãi cùng một câu hỏi trong những buổi gặp không tên, và muốn biến những gì mình đã trả giá để biết thành một con đường cho người đi sau.</span></figcaption></figure><figure class="hien"><img src="../img/ngf-chuyen-gia.webp" alt="Luật, tài chính, y, giáo dục, kỹ thuật" loading="lazy" width="560" height="723"><figcaption><p class="ndd-nho">Chuyên gia hành nghề lâu năm</p><b>Luật, tài chính, y, giáo dục, kỹ thuật</b><q>Nghỉ một tuần là thu nhập đứng lại.</q><span>Bạn giỏi nghề, khách quý bạn, nhưng mọi đồng thu nhập đều đổi bằng giờ của chính bạn. Bạn muốn đóng gói chuyên môn thành chương trình mang tên mình, có người theo, có người học.</span></figcaption></figure><figure class="hien"><img src="../img/ngf-dan-doi.webp" alt="Quản lý, người đào tạo nội bộ ở doanh nghiệp lớn" loading="lazy" width="560" height="723"><figcaption><p class="ndd-nho">Người dẫn đội ngũ</p><b>Quản lý, người đào tạo nội bộ ở doanh nghiệp lớn</b><q>Mình đã dẫn hàng trăm người, nhưng ngoài công ty chưa ai biết tên mình.</q><span>Bạn đã dẫn đội ngũ, đào tạo người mới, gỡ chuyện khó cho người khác suốt nhiều năm. Bạn muốn làm việc đó cho chính mình, dưới tên của chính mình.</span></figcaption></figure></div>
+  <div class="ndd-hai" style="margin-top:22px">
+    <div class="ndd-o hien"><h3>Bạn cần có</h3><ul class="ndd-ds"><li>Kết quả thật trong kinh doanh hoặc chuyên môn, nói ra được và người khác kiểm chứng được</li><li>Tin giá trị đi trước, tiền bạc đến sau</li><li>Ít nhất tám giờ mỗi tuần trong mười hai tháng</li><li>Sẵn sàng để Duy nhận xét thẳng sau mỗi buổi mình dẫn</li></ul></div>
     <div class="ndd-o hien"><h3>Chương trình chưa hợp với bạn nếu</h3><ul class="ndd-ds ndd-khong"><li>Bạn đang tìm một tấm chứng nhận để treo lên tường</li><li>Bạn muốn có ngay kịch bản để mở một khóa học</li><li>Bạn chưa có chuyện thật nào của chính mình để kể cho người học</li></ul></div>
   </div>
 </section>
@@ -250,15 +276,18 @@
   </ol>
 </section>
 
-<section class="phan bd">
-  <div class="ndd-moi hien">
-    <img src="../img/cd-cat-vest.webp" alt="Coach Duy Nguyễn" loading="lazy" width="548" height="908">
-    <div>
-      <p class="mono">Muốn được cân nhắc cho khóa đầu</p>
-      <h2>Để lại lời nhắn cho Duy</h2>
-      <p>Nếu bạn đã là thành viên cộng đồng, hoặc có người trong cộng đồng giới thiệu, hãy nhắn cho Duy vài dòng về kết quả bạn đã làm ra và người bạn muốn dẫn dắt.</p>
+<section class="phan tran ndd-cuoi">
+  <div class="tran-nen" aria-hidden="true"><img src="../img/v5-di-cung.webp" alt="" loading="lazy" width="1500" height="1125"></div>
+  <div class="bd">
+    <div class="phan-dau hien">
+      <p class="mono">Khóa đầu, sáu tới mười người</p>
+      <h2>Bạn muốn là một trong những người Duy đầu tư nhiều nhất?</h2>
+      <p>Nhắn cho Duy vài dòng: kết quả bạn đã làm ra, và người bạn muốn dẫn dắt. Nếu bạn chưa là thành viên, hãy vào Cộng đồng Next Gen Founder trước, đó là nơi Duy gặp và mời những người đầu tiên.</p>
     </div>
-    <a class="nut nut-v" href="../lien-he.html">Nhắn cho Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <div class="ndd-nut hien">
+      <a class="nut nut-v" href="../lien-he.html">Nhắn cho Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="nut nut-vien" href="../tham-gia/">Vào Cộng đồng Next Gen Founder</a>
+    </div>
   </div>
 </section>
 </div>
