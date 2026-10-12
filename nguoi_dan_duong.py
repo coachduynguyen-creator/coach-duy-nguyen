@@ -98,11 +98,13 @@ CSS = """<style>
 /* Trang chung canh đều hai bên (.bd p). Trong thẻ và cột hẹp thì canh trái, đầu mục giữ canh giữa của .phan-dau. */
 .ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-kk p,.ndd-kk h3,.ndd-hd b,.ndd-ai span,.ndd-ai q,.ndd-ai b,.ndd-ai p,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
 .ndd .mono{color:var(--vang)}
-.ndd-hero{position:relative;min-height:min(92vh,820px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.ndd-hero{position:relative;overflow:hidden;isolation:isolate}
 .ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
 .ndd-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,18,15,.96) 0%,rgba(23,18,15,.75) 55%,rgba(23,18,15,.35) 100%),linear-gradient(180deg,transparent 60%,rgba(23,18,15,.98) 100%)}
-.ndd-hero .bd{padding-top:110px;padding-bottom:clamp(36px,6vw,64px)}
-.ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:end}
+.ndd-hero .bd{padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(36px,6vw,64px)}
+.ndd-nhan{display:inline-block;font-family:var(--f-mono);font-size:12px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;color:var(--vang) !important;border:1px solid rgba(242,177,74,.45);background:var(--vang-mo);border-radius:999px;padding:7px 16px;margin-bottom:22px}
+.ndd-nhan i{width:7px;height:7px;border-radius:50%;background:var(--vang);display:inline-block;margin-right:10px;vertical-align:middle}
+.ndd-hero .tren{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,48px);align-items:center}
 .ndd-hero .tren > img{width:100%;height:540px !important;max-height:62vh;object-fit:cover;object-position:50% 20%;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line)}
 .ndd-hero h1{font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.03em;margin:10px 0 16px}
 .ndd-phu{font-family:var(--f-tit);font-size:clamp(21px,2.6vw,30px);line-height:1.25;color:var(--vang-2);margin:-6px 0 16px}
@@ -112,6 +114,8 @@ CSS = """<style>
 .ndd-so b{display:block;font-family:var(--f-tit);font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--ink)}
 .ndd-so i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang)}
 .ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
+.ndd-trich{margin-top:18px;padding-left:16px;border-left:3px solid var(--vang);font-family:var(--f-tit);font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--ink) !important}
+.ndd-thue{margin-top:16px;font-size:13.5px !important;color:var(--ink-3) !important}
 .ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
 .ndd-dt h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 14px}
@@ -173,6 +177,7 @@ CSS = """<style>
 }
 @media (max-width:700px){
   .ndd-hero .tren{grid-template-columns:1fr}
+  .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
   .ndd-hero .tren > img{max-height:320px;order:-1}
   .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai,.ndd-hd,.ndd-kk{grid-template-columns:1fr}
   .ndd-kk > img,.ndd-kk.dao > img{order:-1}
@@ -209,6 +214,7 @@ THAN = CSS + """<div class="ndd">
   <img src="%simg/dh-phong-lon.webp" alt="" aria-hidden="true">
   <div class="bd">
     <div class="tren"><div>
+    <p class="ndd-nhan"><i aria-hidden="true"></i>Theo thư mời · Khóa đầu sáu tới mười người</p>
     <h1>Người Dẫn Đường</h1>
     <p class="ndd-phu">Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
     <p class="dan">Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, với người chủ thật. Tới tháng thứ mười hai, bạn tự dẫn một nhóm của riêng mình, có thương hiệu, có sản phẩm và có cộng đồng đi theo bạn.</p>
