@@ -1118,12 +1118,6 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .so-tong span{font-size:clamp(14px,1.5vw,17px);color:var(--ink-2);line-height:1.4}
 
 @media(max-width:560px){ .so-tong{margin-bottom:20px} }
-/* Từ 11/10/2026 dải này không ghi số người theo dõi: ô lớn là một mốc bằng chữ,
-   bốn ô kênh là lối mở kênh, nên chữ nhỏ hơn số cũ và ô có trạng thái rê chuột. */
-.so-tong.so-chu b{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.03em}
-a.k{display:block;color:inherit;text-decoration:none;transition:background .2s}
-a.k:hover,a.k:focus-visible{background:rgba(249,245,240,.06)}
-a.k .k-ten::after{content:" \2197";letter-spacing:0}
 
 /* Ảnh tròn chỉ dùng ở khổ hẹp, nơi ảnh tách nền không đủ chỗ đứng.
    Từ 1000px trở lên đã có ảnh tách nền lớn bên phải nên ẩn ảnh tròn đi. */
