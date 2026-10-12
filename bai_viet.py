@@ -160,7 +160,7 @@ dict(tep="vi-sao-toi-khong-dung-phieu.html", chu_de="Bán hàng và phòng kinh 
 
 <p>Đổi từ phễu sang quỹ đạo không làm doanh thu tháng sau tăng lên. Nó thường làm ngược lại trong ngắn hạn, vì bạn thôi ép những người chưa tới lúc, và một phần trong số đó lẽ ra đã mua nếu bị ép đủ mạnh.</p>
 
-<p>Thứ nó đổi là chất lượng của người ngồi trước mặt bạn sau khoảng hai quý, và số lần bạn phải giải thích giá. Duy nghĩ đó là cuộc đổi đáng, nhưng nó là một cuộc đổi thật, không phải một mẹo làm mọi thứ tốt hơn cùng lúc.</p>
+<p>Thứ nó đổi là chất lượng của người ngồi trước mặt bạn sau khoảng hai quý, và số lần bạn phải giải thích giá. Duy nghĩ đó là cuộc đổi đáng, nhưng nó là một cuộc đổi thật, không phải một thủ thuật làm mọi thứ tốt hơn cùng lúc.</p>
 """),
 
 dict(tep="nam-viec-cua-mot-nguoi-co-van.html", chu_de="Điểm nghẽn của người sáng lập",
@@ -763,7 +763,7 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
 <p><b>Luận điểm:</b> bạn tin điều gì mà nhiều người trong ngành chưa tin, và bạn có bằng chứng gì cho niềm tin đó ngoài việc mình thấy vậy.</p>
 <p><b>Bằng chứng thật:</b> câu chuyện, quyết định, số liệu và sai lầm từ công việc thật của bạn, phần duy nhất không ai sao chép được mà cũng là phần hay bị thay bằng lý thuyết chung nhất.</p>
 
-<div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải mẹo viết bài.</div>
+<div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải thủ thuật viết bài.</div>
 
 <h2>Bài kiểm tra xoá tên</h2>
 <p>Duy đã nói ở một bài khác nhưng nhắc lại vì nó rẻ và tàn nhẫn. Lấy năm nội dung gần nhất, xoá tên và ảnh, đưa cho một người cùng ngành. Hỏi họ đăng nguyên văn được bao nhiêu bài lên trang của họ mà không ai thấy lạ.</p>
@@ -998,7 +998,7 @@ dict(tep="kho-cau-chuyen.html", tieu_seo="Ghi lại chuyện thật trong nghề
 <p>Ý tưởng đến lúc bạn đang làm việc chứ không đến lúc bạn ngồi trước màn hình. Nó đến lúc một khách hỏi một câu lạ, lúc bạn quyết định điều gì đó trái với thói quen của mình, lúc một nhân sự làm sai và bạn nhận ra lý do sâu xa phía sau, hoặc lúc bạn đọc một con số và thấy nó ngược hẳn với điều mình vẫn tưởng.</p>
 <p>Vấn đề là những khoảnh khắc đó xảy ra khi bạn đang bận, và ba ngày sau bạn không nhớ nổi. Đến lúc ngồi xuống trước màn hình trắng, bạn cố nghĩ ra ý tưởng từ trí nhớ rỗng, rồi kết luận mình hết ý.</p>
 
-<div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải mẹo viết bài.</div>
+<div class="dan-manh">Chất liệu thật đến trước công cụ. Câu hỏi, quyết định, trải nghiệm và bằng chứng trong công việc là nguyên liệu chính, không phải thủ thuật viết bài.</div>
 
 <h2>Bốn loại chất liệu đáng ghi</h2>
 <p><b>Câu hỏi lặp lại:</b> câu nào bạn nghe từ ba người trở lên là một bài viết, vì nó lặp lại nghĩa là nó là điểm nghẽn chung chứ không phải thắc mắc riêng của một người.</p>
@@ -2104,7 +2104,7 @@ dict(tep="giu-binh-tinh-khi-khach-mat-binh-tinh.html", chu_de="Điểm nghẽn c
 
 <p>Cơ chế phía sau đơn giản hơn ta tưởng. Phản ứng tự động cần chưa tới một giây, còn phần nghĩ được thì cần lâu hơn thế nhiều. Khoảng dừng chỉ làm đúng một việc, là cho phần sau kịp lên tiếng trước phần trước.</p>
 
-<p>Duy dùng một mẹo rất thô cho việc này. Khi thấy mình muốn đáp lại ngay, Duy uống một ngụm nước. Việc đó tốn khoảng ba giây, hoàn toàn tự nhiên trong mắt người đối diện, và ba giây ấy đủ.</p>
+<p>Duy dùng một cách rất đơn giản cho việc này. Khi thấy mình muốn đáp lại ngay, Duy uống một ngụm nước. Việc đó tốn khoảng ba giây, hoàn toàn tự nhiên trong mắt người đối diện, và ba giây ấy đủ.</p>
 
 <p>Đứng ở vị trí người quan sát thì bạn không còn bị cảm xúc của người khác điều khiển nữa. Bạn vẫn nghe đủ và vẫn thấy đủ, chỉ là không bị kéo vào trong đó.</p>
 

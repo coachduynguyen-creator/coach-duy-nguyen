@@ -231,7 +231,7 @@ VIEC5_VONG = [
  ("Soi đúng", "img/v5-soi-dung.webp",
   "Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
  ("Chỉ đường", "img/v5-chi-duong.webp",
-  "Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
+  "Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách thủ thuật."),
  ("Làm mẫu", "img/v5-lam-mau.webp",
   "Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
  ("Giữ chuẩn", "img/v5-giu-chuan.webp",

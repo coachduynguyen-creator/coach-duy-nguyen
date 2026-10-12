@@ -97,7 +97,7 @@ BO_SUNG = {
 "nam-viec-cua-mot-nguoi-co-van.html": dict(
  tra_loi="Người cố vấn phải làm được năm việc: soi đúng vấn đề thật phía sau, chỉ bước tiếp theo kèm dấu hiệu hoàn thành, làm mẫu bằng quyết định và sai lầm thật, giữ chuẩn kể cả khi mất lòng, và trao lại quyền tự chủ để người học tự đi được.",
  faq=[("Làm sao phân biệt người cố vấn thật và người tự gọi mình là cố vấn?",
-       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa mẹo thiếu việc soi đúng. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
+       "Đếm xem họ làm được mấy trong năm việc. Người chỉ khen và động viên thiếu việc chỉ đường. Người chỉ đưa thủ thuật thiếu việc soi đúng. Người khiến bạn nghĩ chỉ họ mới giải quyết được vấn đề của bạn thì đang xây sự lệ thuộc."),
       ("Chỉ đường khác lời khuyên ở chỗ nào?",
        "Một lời khuyên chỉ đường được thì có ba thứ: thứ tự các bước, điều kiện để đi tiếp, và dấu hiệu cho biết đã xong. Thiếu dấu hiệu hoàn thành thì đó chưa phải chỉ đường, mới chỉ là động viên."),
       ("Ba việc một người cố vấn không nên làm là gì?",

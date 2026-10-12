@@ -99,7 +99,7 @@ so_lieu_html = (
        "".join('<div><b>%s</b><span>%s</span></div>' % (a, b) for a, b in THEM)))
 
 VIEC5 = [("Soi đúng","Duy giúp bạn tách điều đang thấy khỏi vấn đề thật phía sau, bắt đầu từ những gì quan sát được chứ không từ cảm giác. Chưa gọi đúng tên vấn đề thì Duy chưa vội đưa công cụ."),
-         ("Chỉ đường","Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách mẹo."),
+         ("Chỉ đường","Duy cho bạn thấy mình đang ở đâu, bước tiếp theo là gì, và điều gì chưa cần làm lúc này. Một bước vừa sức với chỗ bạn đang đứng, không phải một danh sách thủ thuật."),
          ("Làm mẫu","Duy đưa ra quyết định thật, tài liệu thật, và cả những sai lầm đã trả giá của chính mình, kèm điều kiện áp dụng. Có việc Duy vẫn đang làm dở, và sẽ nói với bạn đúng như vậy."),
          ("Giữ chuẩn","Duy nói rõ điều gì đủ, điều gì chưa, và cái giá của việc tiếp tục cách cũ. Sức nặng nằm ở lý do và ranh giới, không nằm ở giọng nói. Duy không làm nhẹ sự thật để bạn dễ chịu, nhưng cũng không để bạn một mình sau khi nghe."),
          ("Đi cùng và trao lại","Duy ở bên trong lúc bạn tập cách làm mới, rồi để lại một tiêu chí bạn tự đánh giá được và một câu hỏi còn dùng được lâu sau đó. Đích đến là bạn tự đi được, không phải bạn cần Duy mãi.")]
@@ -300,7 +300,7 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Triết lý làm nghề của Duy</p>
     <h2>Những khung tư duy Duy đúc kết qua nhiều năm làm nghề</h2>
-    <p>Có khung Duy tự rút ra từ những buổi tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không muốn chia sẻ những mẹo ngắn hạn. Mọi thứ Duy làm đều dựa trên tư duy gốc, và bạn có thể tìm hiểu những phương pháp luận cùng khung tư duy cốt lõi trong công việc của Duy ở đây.</p>
+    <p>Có khung Duy tự rút ra từ những buổi tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không muốn chia sẻ những thủ thuật ngắn hạn. Mọi thứ Duy làm đều dựa trên tư duy gốc, và bạn có thể tìm hiểu những phương pháp luận cùng khung tư duy cốt lõi trong công việc của Duy ở đây.</p>
   </div>
   <div class="kh-luoi tre hien">
     <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
@@ -1540,7 +1540,7 @@ PD_TAP = [
  # các tập podcast quay mới về cộng đồng sẽ thay dần.
  dict(yt="TDQj-qAswCc", muc=5,
   tieu="10 năm làm nghề, và cú chuyển mình chỉ sau 30 ngày",
-  mo="Một học viên làm sales 10 năm ngồi kể lại điều gì thật sự đổi trong 30 ngày làm việc cùng Duy. Không phải mẹo mới, mà là đổi cách nhìn về chính vị thế của mình.",
+  mo="Một học viên làm sales 10 năm ngồi kể lại điều gì thật sự đổi trong 30 ngày làm việc cùng Duy. Không phải thủ thuật mới, mà là đổi cách nhìn về chính vị thế của mình.",
   lydo="Nghe một người thật kể bằng lời của họ, bạn tự đối chiếu được với chỗ mình đang đứng.",
   cta_nhan="Vào Cộng đồng NGF", cta=CONG_DONG),
 
