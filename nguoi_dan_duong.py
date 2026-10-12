@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """Trang chương trình Người Dẫn Đường (D75 trong NGF-00B, phiếu chốt 38, 39, 40).
 
-Dựng nguoi-dan-duong/index.html, noindex, không có trong sitemap và menu cho tới
-khi Coach Duy duyệt. Chạy sau dung.py:
+Dựng nguoi-dan-duong/index.html. Chạy sau dung.py:
   python3 nguoi_dan_duong.py
 
 Nội dung 12 tháng (THANG) là bản đề xuất bước 2, chờ Coach Duy chốt ở phiếu 40.
 Bản chuẩn sau khi chốt nằm ở xưởng Next Gen Founder; sửa ở đó rồi chép sang đây.
 
-ponytail: khi Coach Duy duyệt thì bỏ đoạn chèn noindex, thêm trang vào URLS và
-sitemap trong dung.py.
+Trang có trong menu Chương trình và trong sitemap (URLS của dung.py).
 """
 import os, re
 from lib import trang, GOC
@@ -382,9 +380,5 @@ trang(TEP, "Người Dẫn Đường · Chương trình đào tạo người d�
       "Mười hai tháng ngồi cạnh Coach Duy Nguyễn trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu, sản phẩm và cộng đồng.",
       THAN, "")
 
-# Ẩn khỏi Google cho tới khi Coach Duy duyệt (phiếu chốt 39, mục C1).
-duong = os.path.join(GOC, TEP)
-s = open(duong, encoding="utf-8").read()
-s = s.replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"', 1)
-open(duong, "w", encoding="utf-8").write(s)
+# Coach Duy chốt 12/10/2026: đưa vào menu Chương trình, mở cho Google (bỏ noindex), có trong sitemap.
 print("  " + TEP)

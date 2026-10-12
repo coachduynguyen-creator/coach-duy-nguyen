@@ -40,26 +40,19 @@ NGAY_SUA = "2026-08-27"
 
 # (tệp, tên hiện trên menu, mô tả ngắn trong menu con)
 CT_MENU = [
-    ("founder-brand/", "Trusted Founder Brand Challenge", "Thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy"),
-    ("chuong-trinh/trusted-sales-team-system.html", "Trusted Sales Team System", "Nâng chất lượng cuộc tư vấn, bán bằng chẩn đoán"),
-    ("chuong-trinh/founder-growth-system.html", "Founder Growth System", "Hệ thống tăng trưởng cùng đội ngũ"),
-    ("chuong-trinh/community-growth-system.html", "Community Growth System", "Hệ thống tăng trưởng từ cộng đồng"),
-    ("SEP", "", ""),
-    ("chuong-trinh/cong-dong-thanh-vien.html", "Cộng đồng Thành viên", "Cửa vào, miễn phí, có đăng ký tham gia"),
-    ("chuong-trinh/cong-dong-pro.html", "Cộng đồng Pro", "Luyện đủ bốn năng lực suốt một năm"),
-    ("chuong-trinh/diamond-founder-club.html", "Diamond Founder Club", "Cộng đồng cao cấp, theo lời mời"),
-    ("chuong-trinh/founder-growth-system-lab.html", "Founder Growth System Lab", "Chạy thử một luồng thật, 8 tới 12 tuần"),
-    ("chuong-trinh/co-van-rieng.html", "Cố vấn riêng", "Bốn tháng một kèm một, nhận rất giới hạn"),
-    ("chuong-trinh/giai-phap-doanh-nghiep.html", "Giải pháp doanh nghiệp", "90 ngày xây hệ thống tăng trưởng"),
+    # Coach Duy chốt 12/10/2026: trang Chương trình chỉ có Cộng đồng ba mức và Người Dẫn Đường.
+    # Mười trang chương trình cũ trong chuong-trinh/ vẫn giữ nhưng ẩn khỏi Google.
+    ("cong-dong/", "Cộng đồng Next Gen Founder", "Ba mức: Thành viên, Pro, Diamond Founder Club"),
+    ("nguoi-dan-duong/", "Người Dẫn Đường", "Đào tạo người dẫn đường cho nhà sáng lập, theo thư mời"),
     ("SEP", "", ""),
     ("chuong-trinh.html", "Xem tất cả chương trình", ""),
 ]
 
 MENU = [
     ("ve-toi.html", "Về Duy", None),
-    # Tạm ẩn từ 10/10/2026 theo ý Coach Duy, dồn người xem vào Cộng đồng. Mở lại thì bỏ dấu #.
-    # ("chuong-trinh.html", "Chương trình", CT_MENU),
-    ("phuong-phap.html", "Phương pháp", None),
+    # Coach Duy chốt 12/10/2026: mục Chương trình thay chỗ Phương pháp trên menu. Trang
+    # Phương pháp giữ nguyên, dẫn tới từ trang Về Duy, trang chủ và chân trang.
+    ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
@@ -170,10 +163,9 @@ def khoi_cuoi(p=""):
 
 def footer(p=""):
     ct_links = "".join('<a href="%s">%s</a>' % (dd(h, p), t) for h, t, _ in
-                       [("founder-brand/", "Trusted Founder Brand", None),
-                        ("chuong-trinh/trusted-sales-team-system.html", "Trusted Sales Team System", None),
-                        ("chuong-trinh/founder-growth-system.html", "Founder Growth System", None),
-                        ("chuong-trinh/community-growth-system.html", "Community Growth System", None),
+                       [("cong-dong/", "Cộng đồng Next Gen Founder", None),
+                        ("nguoi-dan-duong/", "Người Dẫn Đường", None),
+                        ("phuong-phap.html", "Phương pháp", None),
                         ("chuong-trinh.html", "Xem tất cả", None)])
     return """<footer>
   <div class="bd ct">

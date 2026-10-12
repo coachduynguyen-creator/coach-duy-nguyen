@@ -1058,84 +1058,47 @@ print("  phuong-phap.html")
 def nhom_ct(ten):
     return [c for c in CT if c["nhom"] == ten]
 
+# Coach Duy chốt 12/10/2026: trang tổng chỉ còn Cộng đồng ba mức và Người Dẫn Đường.
+# Mô tả ba mức chép từ khối "ba cấp" của trang cong-dong/index.html, sửa ở đó thì sửa cả đây.
+CAP = [
+    ("Cấp 1 · Miễn phí, có đăng ký", "Cộng đồng Thành viên", "Nơi bạn nhìn rõ vấn đề của mình và trải nghiệm cách cộng đồng làm việc.",
+     "Người đang ấp ủ khởi nghiệp, người mới bắt đầu kinh doanh, chuyên gia và chủ doanh nghiệp muốn xem cách cộng đồng dẫn dắt trước khi đi sâu."),
+    ("Cấp 2 · Đồng hành cả năm", "Cộng đồng Pro", "Nơi cộng đồng đi cùng bạn để tiến bộ đều đặn trong cả năm.",
+     "Chủ doanh nghiệp đang vận hành kinh doanh thật, có khách, muốn tiến bộ bài bản ở ít nhất một năng lực."),
+    ("Cấp 3 · Theo lời mời", "Diamond Founder Club", "Nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.",
+     "Người đã có ít nhất một thay đổi thật trong doanh nghiệp và một vấn đề cụ thể cần giải trong mười hai tháng."),
+]
 CHUONG_TRINH = dau_trang("Chương trình",
-  "%s chương trình, nhưng lúc này bạn chỉ cần đúng một" % chu_so(len(CT), True),
-  "Không ai đi hết cả %s. Mỗi người chỉ kẹt ở một chỗ tại một thời điểm, và gỡ đúng chỗ đó rồi thì phần còn lại nhẹ đi nhiều. Chưa rõ mình đang kẹt ở đâu thì quay về trang chủ, ở đó có một danh sách để bạn tự đánh giá." % chu_so(len(CT))) + """
+  "Hai con đường đi cùng Duy",
+  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành người dẫn đường cho nhà sáng lập.") + """
 
-
-<section class="phan bd hoa-van duoi" style="padding-top:0">
+<section class="phan bd" style="padding-top:0">
   <div class="phan-dau hien">
-    <p class="mono">4 năng lực</p>
-    <h2>Luyện từng năng lực khi bạn biết mình thiếu gì</h2>
-    <p>Bốn chương trình tương ứng với bốn năng lực của nhà sáng lập thế hệ mới. Không chương trình nào hứa tạo ra toàn bộ nhân dạng, mỗi chương trình chịu trách nhiệm cho một kết quả rõ.</p>
+    <p class="mono">Con đường 1 · Mọi người bắt đầu ở đây</p>
+    <h2>Cộng đồng Next Gen Founder, ba mức</h2>
+    <p>Bạn bắt đầu ở mức hợp với vấn đề và sự sẵn sàng của mình. Diamond Founder Club luôn theo lời mời.</p>
   </div>
-  <div class="luoi-ct tre hien">{NL4}</div>
+  <div class="luoi c3 tre hien">{CAP}</div>
+  <div class="blog-them"><a class="nut nut-v" href="cong-dong/">Xem Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
-      <p class="mono">Đồng hành</p>
-      <h2>Ở lại đủ lâu để nếp mới thành thói quen</h2>
-      <p>Một khoá học tạo ra hiểu biết. Chỉ có việc làm đều đặn cùng cộng đồng mới biến hiểu biết thành thói quen. Đó là lý do cộng đồng là chỗ Duy dồn phần lớn thời gian trong năm nay.</p>
+      <p class="mono">Con đường 2 · Theo thư mời</p>
+      <h2>Người Dẫn Đường</h2>
+      <p>Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Cộng đồng Pro và Diamond Founder Club.</p>
     </div>
-    <div class="luoi-ct tre hien">{DONGHANH}</div>
+    <div class="blog-them"><a class="nut nut-v" href="nguoi-dan-duong/">Xem chương trình Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   </div>
 </section>
+""".replace("{CAP}", "".join(
+    '<article class="the"><span class="trang-thai"><i aria-hidden="true"></i>%s</span><h3>%s</h3><p style="text-align:left">%s</p><p style="margin-top:12px;color:var(--ink-3);text-align:left"><b style="color:var(--ink-2)">Dành cho:</b> %s</p></article>'
+    % c for c in CAP))
 
-<section class="phan bd hoa-van">
-  <div class="phan-dau hien">
-    <p class="mono">Phạm vi riêng</p>
-    <h2>Khi việc đủ lớn để cần một phạm vi riêng</h2>
-    <p>Hai phạm vi này nhận rất giới hạn và không mở đăng ký đại trà. Chúng chỉ mở sau khi đã trao đổi đủ và cả hai bên thấy đúng thời điểm.</p>
-  </div>
-  <div class="luoi-ct tre hien">{RIENG}</div>
-</section>
-
-<section class="phan bd hoa-van phan-sang" id="cach-tham-gia">
-  <div class="phan-dau hien">
-    <p class="mono">Trước khi hỏi giá</p>
-    <h2>Vì sao trang này không có bảng giá</h2>
-    <p>Cùng một chương trình, phạm vi phù hợp với hai người có thể khác nhau khá xa, nên một con số dán sẵn trên trang thường dẫn tới quyết định sai cho cả hai bên. Duy chọn cách nói điều kiện trước, nói giá sau.</p>
-  </div>
-  <div class="hien" style="max-width:820px;margin-inline:auto">
-    <ul class="dk-ds">
-      <li>Mỗi trang chương trình có mục <b>Điều kiện tham gia</b> ghi rõ bạn cần có sẵn những gì. Đọc mục đó trước, bạn tự biết mình hợp hay chưa mà không cần hỏi ai.</li>
-      <li>Thiếu một điều kiện thường chỉ có nghĩa là chưa tới lúc. Duy sẽ nói thẳng chỗ nào chưa hợp và chỉ bạn bước gần hơn.</li>
-      <li>Mức đầu tư nói trong buổi trao đổi, sau khi đã rõ điểm nghẽn và phạm vi. Nếu chưa phải lúc thì Duy nói rõ vì sao, không giữ bạn lại.</li>
-      <li>Cần bản gọn để đọc nhanh hoặc để đưa cho đội ngũ, xem <a href="dieu-kien-tham-gia.md">điều kiện của cả mười chương trình trên một trang</a>.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien">
-    <p class="mono">Công cụ mở</p>
-    <h2>Hai công cụ Duy làm cho mình dùng trước, rồi mở cho bạn</h2>
-  </div>
-  <div class="luoi c2 tre hien">
-    <article class="the">
-      <span class="trang-thai"><i aria-hidden="true"></i>Đang mở, 7 phút</span>
-      <h3>Phiếu chẩn đoán</h3>
-      <p>Bảy phút để bạn tự nhìn ra điểm nghẽn đang chặn mình nhiều nhất, trước khi nói chuyện với bất kỳ ai, kể cả Duy.</p>
-      <p style="margin-top:16px"><a class="lk-v" href="{PHIEU}" target="_blank" rel="noopener">Làm phiếu chẩn đoán <span class="mt" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-    <article class="the">
-      <span class="trang-thai"><i aria-hidden="true"></i>Đang mở</span>
-      <h3>Cỗ máy Nội dung Một người</h3>
-      <p>Bản đồ đầy đủ của một hệ thống nội dung mà một người vận hành được, có AI làm phần lặp lại. Xem trước khi quyết học gì.</p>
-      <p style="margin-top:16px"><a class="lk-v" href="{CO_MAY}" target="_blank" rel="noopener">Xem cỗ máy nội dung <span class="mt" aria-hidden="true">&rarr;</span></a></p>
-    </article>
-  </div>
-</section>
-"""   .replace("{NL4}", "".join(the_ct(c) for c in nhom_ct("Bốn năng lực"))) \
-   .replace("{DONGHANH}", "".join(the_ct(c) for c in nhom_ct("Đồng hành"))) \
-   .replace("{RIENG}", "".join(the_ct(c) for c in nhom_ct("Riêng"))) \
-   .replace("{PHIEU}", PHIEU).replace("{CO_MAY}", CO_MAY)
-
-trang("chuong-trinh.html", "Chương trình Next Gen Founder · Coach Duy Nguyễn",
-      "Bốn chương trình năng lực, Cộng đồng Thành viên, Cộng đồng Pro, Diamond Founder Club, cố vấn riêng và giải pháp doanh nghiệp. Không phải một chiếc thang, mà là một hệ sinh thái theo mức sẵn sàng.",
+trang("chuong-trinh.html", "Chương trình · Coach Duy Nguyễn",
+      "Hai con đường đi cùng Coach Duy Nguyễn: Cộng đồng Next Gen Founder ba mức, và Người Dẫn Đường, chương trình đào tạo người dẫn đường cho nhà sáng lập theo thư mời.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
 
@@ -1293,6 +1256,10 @@ for c in CT:
         ld_ct["coursePrerequisites"] = c["dieu_kien"]
     ld = json.dumps(ld_ct, ensure_ascii=False)
     trang("chuong-trinh/" + c["tep"], tieu_de_trang(c["ten"]), c["tom"], than, "chuong-trinh.html", jsonld=ld)
+    # Coach Duy chốt 12/10/2026: giữ trang để link cũ vẫn mở được, nhưng ẩn khỏi Google.
+    _d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chuong-trinh", c["tep"]); _s = open(_d, encoding="utf-8").read()
+    if 'name="robots"' not in _s:
+        open(_d, "w", encoding="utf-8").write(_s.replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"', 1))
     print("  chuong-trinh/" + c["tep"])
 
 # ---------------------------------------------------------------- BLOG
@@ -2424,8 +2391,7 @@ URLS = ["", "cong-dong/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html"
         "cong-cu/tu-kiem-ba-diem-cham.html", "doi-ngu-chuyen-gia.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
      + ["founder-brand/"] \
-     + ["chuong-trinh/" + c["tep"] for c in CT
-        if c["tep"] != "trusted-founder-brand.html"] \
+     + ["nguoi-dan-duong/"] \
      + ["bai-viet/" + b["tep"] for b in BAI]
 # Trang tạm chuong-trinh/trusted-founder-brand.html đã thành trang chuyển hướng
 # noindex, nên bỏ khỏi sơ đồ trang và khai founder-brand/ thay vào. Khai một địa
