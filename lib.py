@@ -43,7 +43,7 @@ CT_MENU = [
     # Coach Duy chốt 12/10/2026: trang Chương trình chỉ có Cộng đồng ba mức và Người Dẫn Đường.
     # Mười trang chương trình cũ trong chuong-trinh/ vẫn giữ nhưng ẩn khỏi Google.
     ("cong-dong/", "Cộng đồng Next Gen Founder", "Ba mức: Thành viên, Pro, Diamond Founder Club"),
-    ("nguoi-dan-duong/", "Người Dẫn Đường", "Đào tạo người dẫn đường cho nhà sáng lập, theo thư mời"),
+    ("nguoi-dan-duong/", "Người Dẫn Đường", "Đào tạo huấn luyện viên kinh doanh, theo thư mời"),
     ("SEP", "", ""),
     ("chuong-trinh.html", "Xem tất cả chương trình", ""),
 ]

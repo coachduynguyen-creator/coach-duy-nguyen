@@ -32,6 +32,14 @@ SO = [
     ("50 tới 80 triệu đồng", "một buổi", "Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy"),
 ]
 
+# ------------------------------------------------------------ BẠN LÀ AI
+# Coach Duy nhắc 12/10/2026: "người dẫn đường" trừu tượng, phải nói rõ đầu ra là huấn luyện viên kinh doanh.
+BAN_LA_AI = [
+    ("Nghề của bạn", "Huấn luyện viên kinh doanh", "Business coach cho chủ doanh nghiệp và chuyên gia: người hỏi đúng câu để họ tự nhìn ra chỗ kẹt, rồi đi cùng họ tới khi có kết quả."),
+    ("Cách bạn làm", "Coaching một kèm một và dẫn nhóm", "Theo phương pháp Next Gen Founder mà Duy đang dùng với khách hàng của mình: thương hiệu cá nhân, bán hàng bằng niềm tin, hệ thống cho doanh nghiệp."),
+    ("Nơi bạn làm", "Trong cộng đồng hoặc dịch vụ riêng", "Làm mentor trong Cộng đồng Next Gen Founder và được chia doanh thu, hoặc mở dịch vụ coaching mang tên của chính bạn, với chứng nhận của chương trình."),
+]
+
 # ------------------------------------------------------------ BỐN THỨ MANG VỀ
 BON = [
     ("mc/mc-banlam", "Nghề dẫn đường", "Bạn ngồi cùng một bàn với ba người chủ, hỏi đúng câu, và nhìn họ tự đi tới quyết định của mình."),
@@ -96,7 +104,7 @@ CSS = """<style>
 .ndd{--ke:clamp(18px,3vw,28px)}
 .ndd section:not(.kh) img{height:auto}
 /* Trang chung canh đều hai bên (.bd p). Trong thẻ và cột hẹp thì canh trái, đầu mục giữ canh giữa của .phan-dau. */
-.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-kk p,.ndd-kk h3,.ndd-hd b,.ndd-ai span,.ndd-ai q,.ndd-ai b,.ndd-ai p,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
+.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-ai3 span,.ndd-ai3 b,.ndd-ai3 p,.ndd-kk p,.ndd-kk h3,.ndd-hd b,.ndd-ai span,.ndd-ai q,.ndd-ai b,.ndd-ai p,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
 .ndd .mono{color:var(--vang)}
 .ndd-hero{position:relative;overflow:hidden;isolation:isolate}
 .ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
@@ -126,6 +134,10 @@ CSS = """<style>
 .ndd-bon figcaption{padding:16px 18px 20px}
 .ndd-bon b{display:block;font-family:var(--f-tit);font-size:21px;line-height:1.2;margin-bottom:6px}
 .ndd-bon span{font-size:15px;color:var(--ink-2);line-height:1.5}
+.ndd-ai3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ndd-ai3 > div{border-top:2px solid var(--vang);padding-top:16px}
+.ndd-ai3 b{display:block;font-family:var(--f-tit);font-size:clamp(22px,2.4vw,28px);line-height:1.2;margin:6px 0 8px}
+.ndd-ai3 span{display:block;font-size:16px;color:var(--ink-2);line-height:1.6}
 .ndd-ai{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .ndd-ai figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .ndd-ai img{width:100%;aspect-ratio:4/4;object-fit:cover;object-position:50% 18%;display:block}
@@ -180,7 +192,7 @@ CSS = """<style>
   .ndd-hero h1 span{display:inline}
   .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
   .ndd-hero .tren > img{max-height:320px;order:-1}
-  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai,.ndd-hd,.ndd-kk{grid-template-columns:1fr}
+  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai,.ndd-ai3,.ndd-hd,.ndd-kk{grid-template-columns:1fr}
   .ndd-kk > img,.ndd-kk.dao > img{order:-1}
   .ndd-dt > img,.ndd-canh > img{order:-1}
   .ndd-ca article{grid-template-columns:1fr}
@@ -217,13 +229,21 @@ THAN = CSS + """<div class="ndd">
     <div class="tren"><div>
     <p class="ndd-nhan"><i aria-hidden="true"></i>Theo thư mời · Khóa đầu sáu tới mười người</p>
     <h1><span>Những gì bạn đã trả giá để biết,</span> <span>đừng để nó dừng lại ở bạn.</span></h1>
-    <p class="ndd-phu">Người Dẫn Đường · Chương trình đào tạo người dẫn đường cho nhà sáng lập</p>
-    <p class="dan">Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, với người chủ thật. Tới tháng thứ mười hai, bạn tự dẫn một nhóm của riêng mình, có thương hiệu, có sản phẩm và có cộng đồng đi theo bạn.</p>
+    <p class="ndd-phu">Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh (business coach)</p>
+    <p class="dan">Mười hai tháng Duy kèm bạn trở thành một huấn luyện viên kinh doanh: người ngồi cùng chủ doanh nghiệp, giúp họ nhìn ra chỗ đang kẹt và tự đi tiếp. Bạn học bằng cách ngồi cạnh Duy trong những buổi coaching thật, với khách hàng thật.</p>
     </div><img src="%simg/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high"></div>
     <div class="ndd-so">%s</div>
   </div>
 </section>
 """ % (P, P, "".join('<div><i>%s</i><b>%s</b><span>%s</span></div>' % (d, s, m) for s, d, m in SO)) + KHACH_SEC + """
+<section class="phan bd" id="ban-la-ai">
+  <div class="phan-dau hien">
+    <p class="mono">Sau chương trình, bạn là ai</p>
+    <h2>Một huấn luyện viên kinh doanh, làm nghề theo cách của Duy</h2>
+  </div>
+  <div class="ndd-ai3">""" + "".join('<div class="hien"><p class="ndd-nho">%s</p><b>%s</b><span>%s</span></div>' % x for x in BAN_LA_AI) + """</div>
+</section>
+
 <section class="phan bd">
   <div class="ndd-dt">
     <div class="hien">
@@ -355,8 +375,8 @@ THAN = CSS + """<div class="ndd">
 """
 
 TEP = "nguoi-dan-duong/index.html"
-trang(TEP, "Người Dẫn Đường · Chương trình đào tạo người dẫn đường cho nhà sáng lập",
-      "Mười hai tháng ngồi cạnh Coach Duy Nguyễn trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu, sản phẩm và cộng đồng.",
+trang(TEP, "Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh",
+      "Mười hai tháng Coach Duy Nguyễn kèm bạn trở thành huấn luyện viên kinh doanh (business coach): ngồi cạnh Duy trong những buổi coaching thật, rồi làm mentor trong Cộng đồng Next Gen Founder hoặc mở dịch vụ coaching của riêng bạn.",
       THAN, "")
 
 # Coach Duy chốt 12/10/2026: đưa vào menu Chương trình, mở cho Google (bỏ noindex), có trong sitemap.

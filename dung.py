@@ -1070,7 +1070,7 @@ CAP = [
 ]
 CHUONG_TRINH = dau_trang("Chương trình",
   "Hai con đường đi cùng Duy",
-  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành người dẫn đường cho nhà sáng lập.") + """
+  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành huấn luyện viên kinh doanh.") + """
 
 <section class="phan bd" style="padding-top:0">
   <div class="phan-dau hien">
@@ -1088,7 +1088,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
     <div class="phan-dau hien">
       <p class="mono">Con đường 2 · Theo thư mời</p>
       <h2>Người Dẫn Đường</h2>
-      <p>Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Cộng đồng Pro và Diamond Founder Club.</p>
+      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Cộng đồng Pro và Diamond Founder Club.</p>
     </div>
     <div class="blog-them"><a class="nut nut-v" href="nguoi-dan-duong/">Xem chương trình Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   </div>
@@ -1098,7 +1098,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
     % c for c in CAP))
 
 trang("chuong-trinh.html", "Chương trình · Coach Duy Nguyễn",
-      "Hai con đường đi cùng Coach Duy Nguyễn: Cộng đồng Next Gen Founder ba mức, và Người Dẫn Đường, chương trình đào tạo người dẫn đường cho nhà sáng lập theo thư mời.",
+      "Hai con đường đi cùng Coach Duy Nguyễn: Cộng đồng Next Gen Founder ba mức, và Người Dẫn Đường, chương trình đào tạo huấn luyện viên kinh doanh theo thư mời.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
 
