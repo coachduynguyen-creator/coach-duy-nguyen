@@ -2724,3 +2724,5 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
   /* nhãn nhỏ đứng ngay trên tiêu đề thì căn giữa theo tiêu đề */
   .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form,.ndd) *){text-align:center!important}
 }
+/* Khối nền sáng: ô đánh dấu và ô chọn gốc của trình duyệt theo bảng màu sáng, không hiện ô đen đặc như đã tích (13/10/2026) */
+.phan-sang{color-scheme:light}
