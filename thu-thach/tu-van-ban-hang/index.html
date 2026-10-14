@@ -423,11 +423,11 @@ function dungNgay(n) {
   h += '<div class="ngay-dau"><div class="nhan">' + nhanNgay(n) + '</div><h2>' + esc(d.ten) + '</h2></div>';
   var tt = trangThai(n);
   if (tt && !XEM_TRUOC) { $('bai').innerHTML = h + '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '.</div>'; return; }
-  if (tt) h += '<div class="khoa-bao"><b>Đang xem trước.</b> Học viên chưa thấy bài này: ' + esc(tt) + '.</div>';
+  if (XEM_TRUOC) h += '<div class="khoa-bao"><b>Chế độ xem của nhân sự.</b> Mở hết các bước của mọi ngày, không nộp được bài.' + (tt ? ' Học viên lúc này thấy: ' + esc(tt) + '.' : '') + '</div>';
   dangMo = n;
   if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
   /* Ngày 1 tới 7 chia ba bước: Bước 2 và 3 khóa tới khi xem đủ video và trả lời ba câu ở Bước 1. */
-  var coBuoc = n >= 1 && n <= 7, khoa = coBuoc && !daMo(n);
+  var coBuoc = n >= 1 && n <= 7, khoa = coBuoc && !daMo(n) && !XEM_TRUOC;
   function buoc(so, tieu, khoaChu) {
     if (!coBuoc) return;
     h += '<section class="buoc buoc-' + so + (so > 1 && khoa ? ' khoa' : '') + '" id="buoc-' + so + '"><div class="buoc-dau"><b>' + so + '</b><div><small>Bước ' + so + '</small><h3>' + tieu + '</h3></div></div>' +
@@ -479,7 +479,7 @@ function dungNgay(n) {
   h += '<section class="phan"><h3>Nộp bài</h3>' + d.nopSau.map(function (c) { return '<p>' + esc(c) + '</p>'; }).join('') + '</section>';
   var daNop = doc('da-nop-' + n);
   h += '<div class="nop"><input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-       '<div class="hang"><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
+       '<div class="hang"><button type="button" class="nut chinh" id="nop"' + (XEM_TRUOC ? ' disabled>Chế độ xem của nhân sự, không nộp bài' : '>Nộp bài') + '</button></div>' +
        '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp ' + tenBai(n) + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
        '<div class="tu-luu" id="tu-luu"></div></div>';
   hetBuoc();
@@ -544,12 +544,12 @@ function veXem(n) {
   var b1 = $('buoc-1');
   if (b1) b1.classList.toggle('xong', du && traLoi);
   if (!daMo(n) && du && traLoi) ghi('mo-' + n, VIDEO[n] || '-');
-  if (daMo(n) && $('buoc-2')) $('buoc-2').classList.remove('khoa');
+  if ((daMo(n) || XEM_TRUOC) && $('buoc-2')) $('buoc-2').classList.remove('khoa');
   /* Bước 3 mở khi đã điền ít nhất một ô của Bước 2 và tích ô xác nhận; xóa hết chữ thì khóa lại. */
   var coChu = tatCaO(n).some(function (o) { return !o.sv && !o.rieng && doc(o.id).trim(); });
   var xn = !!doc('kiem-' + n + '-xn'), xong2 = daMo(n) && coChu && xn;
   if ($('buoc-2')) $('buoc-2').classList.toggle('xong', xong2);
-  if ($('buoc-3')) $('buoc-3').classList.toggle('khoa', !xong2);
+  if ($('buoc-3')) $('buoc-3').classList.toggle('khoa', !xong2 && !XEM_TRUOC);
   if ($('xn-bao')) $('xn-bao').textContent = xn && !coChu ? 'Bạn chưa điền ô nào ở Bước 2, điền bài rồi Bước 3 mới mở.' : '';
 }
 function napYT(xong) {
@@ -658,6 +658,7 @@ function hoiTienDo() {
 function nop(n) {
   var bao = $('bao'), nut = $('nop'), nguoi = layNguoi();
   function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
+  if (XEM_TRUOC) return baoLoi('Chế độ xem của nhân sự không nộp được bài.');
   if (!nguoi || !nguoi.dongy || !nguoi.sdt) { baoLoi('Bạn ghi họ tên, email, số điện thoại và tích ô đồng ý ở đầu trang trước khi nộp.'); $('sua-nguoi').click(); return; }
   if (CAN_THOA_THUAN && !doc('thoa-thuan')) { baoLoi('Bạn đọc và bấm Tôi đồng ý ở trang thỏa thuận sử dụng tư liệu trước khi nộp. Trang đó ở địa chỉ coachduynguyen.vn/thu-thach/tu-van-ban-hang/thoa-thuan/'); return; }
   var o = tatCaO(n).filter(function (x) { return !x.rieng; });
