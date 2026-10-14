@@ -1,5 +1,6 @@
 /**
- * NƠI NHẬN BÀI NỘP THỬ THÁCH 7 NGÀY, TRANG coachduynguyen.vn/thu-thach-7-ngay/
+ * NƠI NHẬN BÀI NỘP THỬ THÁCH 7 NGÀY NÂNG CẤP QUY TRÌNH TƯ VẤN BÁN HÀNG,
+ * TRANG coachduynguyen.vn/thu-thach/tu-van-ban-hang/
  * Dựng ngày 14/10/2026. Chạy bằng Google Apps Script, triển khai dạng Web app.
  *
  * VÌ SAO TÁCH RIÊNG
@@ -12,13 +13,13 @@
  * 3. Ghi email người được giao xem bài vào NGUOI_DUOC_GIAO bên dưới (để trống
  *    cũng được, chỉ tài khoản chủ xem được).
  * 4. Chọn hàm `khoiTao` trên thanh công cụ, bấm Chạy, cho phép quyền truy cập
- *    Drive, Sheets, Docs. Hàm tạo bảng tính "NGF - Bài nộp thử thách 7 ngày"
+ *    Drive, Sheets, Docs. Hàm tạo bảng tính "NGF - Bài nộp thử thách 7 ngày Tư vấn bán hàng"
  *    với bảy trang tính, một thư mục Drive cho bản Quy trình, rồi ghi hai địa
  *    chỉ vào Nhật ký thực thi.
  * 5. Triển khai > Triển khai mới > Loại: Ứng dụng web.
  *    Thực thi với tư cách: Tôi. Người có quyền truy cập: Bất kỳ ai.
  * 6. Chép địa chỉ kết thúc bằng /exec gửi cho thợ, thợ dán vào NOI_NHAN của
- *    thu-thach-7-ngay/index.html.
+ *    thu-thach/tu-van-ban-hang/index.html.
  *
  * CỘT TỰ MỌC
  * Trang gửi lên danh sách [tên câu hỏi, chữ đã điền]. Câu hỏi nào chưa có cột
@@ -35,8 +36,8 @@
  * với yêu cầu phức tạp. Dữ liệu bên trong vẫn là JSON.
  */
 
-var TEN_BANG = 'NGF - Bài nộp thử thách 7 ngày';
-var TEN_THU_MUC = 'NGF - Quy trình của thành viên thử thách 7 ngày';
+var TEN_BANG = 'NGF - Bài nộp thử thách 7 ngày Tư vấn bán hàng';   // chỉ dùng lúc tạo, đổi tên tay trong Drive không hỏng gì
+var TEN_THU_MUC = 'NGF - Quy trình của thành viên thử thách 7 ngày Tư vấn bán hàng';
 var NGUOI_DUOC_GIAO = [];   // ví dụ ['ten@gmail.com'], chạy lại khoiTao sau khi sửa
 var COT_GOC = ['Thời gian', 'Họ và tên', 'Email', 'Đồng ý dùng bài', 'Google Doc'];
 var DAI_TOI_DA = 20000;     // ô Google Sheet nhận tối đa 50.000 ký tự

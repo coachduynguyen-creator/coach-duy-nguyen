@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sổ làm bài · Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng</title>
+<meta name="description" content="Sổ làm bài Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng của Next Gen Founder: điền bài trên điện thoại, bấm Nộp để gửi bài.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../../cong-dong/img/ngf-khien-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap">
+<!-- Trang sổ làm bài Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng, dựng 14/10/2026. Đề bài và nguồn chữ ở
+     ~/Codex_Projects/Next Gen Founder/outputs/ngf_thu_thach_7_ngay_20261014/.
+     Bài nộp gửi về apps-script/nhan-bai-thu-thach.gs; dán địa chỉ /exec vào NOI_NHAN.
+     Thêm một ngày: thêm mục vào NGAY trong thẻ script, không phải sửa Apps Script. -->
+<style>
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --bg-2:#F6F7F9; --line:#E3E6EB; --line-2:#CBD0D8;
+  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79;
+  --cam:#C98A28; --cam-dam:#8A5A0F; --cam-mo:#FBF1DC;
+  --dung:#1F7A4D; --loi:#B42318;
+  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
+  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;color:var(--ink);font-family:var(--f-tit);letter-spacing:-.02em;line-height:1.15;font-weight:700;text-wrap:balance}
+button,input,textarea{font:inherit;color:inherit}
+.khung{max-width:720px;margin:0 auto;padding:0 16px}
+header.dau{border-bottom:1px solid var(--line);padding:14px 0}
+header.dau img{height:34px;width:auto;display:block}
+.mo{padding-top:28px;padding-bottom:8px}
+.mo h1{font-size:clamp(28px,7vw,40px)}
+.mo .ten-tt{margin:6px 0 0;font-family:var(--f-tit);font-weight:600;font-size:19px;color:var(--cam-dam);line-height:1.3}
+.mo p{margin:10px 0 0}
+.nho{font-size:14.5px;color:var(--ink-3)}
+.the{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
+.the h2{font-size:21px;margin-bottom:6px}
+label.o{display:block;margin:14px 0 0}
+label.o > span{display:block;font-weight:600;color:var(--ink);font-size:15.5px;line-height:1.4;margin-bottom:6px}
+label.o > small{display:block;color:var(--ink-3);font-size:14px;margin:-2px 0 6px}
+input[type=text],input[type=email],textarea{width:100%;border:1px solid var(--line-2);border-radius:10px;background:#fff;padding:11px 12px;font-size:16px;line-height:1.5}
+textarea{min-height:76px;resize:vertical;overflow:hidden}
+input:focus,textarea:focus{outline:2px solid var(--cam);outline-offset:1px;border-color:var(--cam)}
+.dongy{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15.5px}
+.dongy input{width:22px;height:22px;margin:2px 0 0;flex:none;accent-color:var(--cam-dam)}
+.nguoi-gon{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+nav.ngay{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+nav.ngay .khung{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav.ngay a{flex:none;text-decoration:none;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
+nav.ngay a[aria-current=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.ngay a.khoa{color:var(--ink-3);border-style:dashed}
+.ngay-dau{padding:26px 0 4px}
+.ngay-dau .nhan{color:var(--cam-dam);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.ngay-dau h2{font-size:clamp(24px,6vw,32px);margin-top:4px}
+blockquote{margin:14px 0 0;padding:12px 16px;border-left:3px solid var(--cam);background:var(--cam-mo);border-radius:0 10px 10px 0;color:var(--ink)}
+ol.viec{padding-left:22px;margin:10px 0 0}
+ol.viec li{margin:6px 0}
+section.phan{margin-top:30px}
+section.phan > h3{font-size:22px}
+section.phan > p{margin:8px 0 0}
+.nhom{border:1px solid var(--line);border-radius:14px;padding:4px 16px 16px;margin-top:14px;background:#fff}
+.nhom > h4{margin:14px 0 0;font-size:17px;color:var(--ink);font-family:var(--f-tit)}
+details.nhom > summary{cursor:pointer;font-weight:700;color:var(--ink);font-family:var(--f-tit);padding:14px 0 2px;font-size:17px}
+details.nhom > summary small{font-family:var(--f-than);font-weight:500;color:var(--ink-3);font-size:14px}
+.nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 20px;font-weight:700;cursor:pointer;min-height:48px;text-decoration:none}
+.nut.chinh{background:var(--cam-dam);color:#fff}
+.nut.phu{background:#fff;color:var(--ink);border:1px solid var(--line-2)}
+.nut.nho-gon{min-height:38px;padding:7px 14px;font-size:14.5px;border-radius:10px}
+.nut[disabled]{opacity:.6;cursor:wait}
+.lay-tu{margin-top:12px}
+ul.kiem{list-style:none;padding:0;margin:10px 0 0}
+ul.kiem li{margin:8px 0}
+ul.kiem label{display:flex;gap:10px;align-items:flex-start}
+ul.kiem input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(--cam-dam)}
+.nop{position:sticky;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);margin-top:30px;padding:12px 0 calc(12px + env(safe-area-inset-bottom))}
+.nop .hang{display:flex;gap:10px}
+.nop .hang .nut{flex:1}
+.bao{margin:10px 0 0;font-size:15px;font-weight:600}
+.bao.dung{color:var(--dung)}
+.bao.loi{color:var(--loi)}
+.bao:empty{display:none}
+.tu-luu{font-size:13.5px;color:var(--ink-3);text-align:right;margin-top:6px}
+.bay{position:absolute;left:-9999px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color:var(--ink-3)}
+@media(max-width:759px){
+  header.dau img{margin:0 auto}
+  .mo h1,.mo .ten-tt,.ngay-dau h2,.ngay-dau .nhan{text-align:center}
+  .mo p,section.phan > p,blockquote,.the > p{text-align:justify}
+}
+</style>
+</head>
+<body>
+<header class="dau"><div class="khung"><img src="../../cong-dong/img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="190" height="34"></div></header>
+
+<main>
+  <div class="khung mo">
+    <h1>Sổ làm bài Thử thách 7 ngày</h1>
+    <p class="ten-tt">Nâng cấp Quy trình Tư vấn Bán hàng</p>
+    <p>Bạn điền bài ngay trên điện thoại. Chữ tự lưu trên máy sau mỗi lần gõ, bấm Nộp thì bài được gửi về Next Gen Founder.</p>
+    <p class="nho">Chữ chỉ lưu trong trình duyệt bạn đang mở. Mở trang bằng trình duyệt khác, hoặc mở từ Facebook rồi sau đó mở bằng Safari hay Chrome, thì sẽ không thấy chữ cũ. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại bao nhiêu lần cũng được, bài nào cũng được giữ.</p>
+  </div>
+
+  <div class="khung">
+    <div class="the" id="nguoi">
+      <h2>Trước khi làm bài</h2>
+      <p>Bạn ghi họ tên và email một lần, trang sẽ nhớ cho những lần sau.</p>
+      <label class="o"><span>Họ và tên</span><input type="text" id="ten" autocomplete="name"></label>
+      <label class="o"><span>Email bạn dùng khi đăng ký thử thách</span><input type="email" id="email" autocomplete="email" inputmode="email"></label>
+      <label class="dongy"><input type="checkbox" id="dongy"><span>Tôi đồng ý để Next Gen Founder lưu và sử dụng bài điền, video và những chia sẻ tôi đã gửi trong thử thách, để làm tài liệu và chương trình tốt hơn cho những người đi sau.</span></label>
+      <p class="nho">Bài nộp không ghi tên, số điện thoại hay ảnh chụp tin nhắn thật của khách. Bạn gọi là "khách A" hoặc "chị khách ở quận 3" là đủ.</p>
+      <p><button type="button" class="nut chinh" id="luu-nguoi">Lưu và bắt đầu làm bài</button></p>
+      <p class="bao loi" id="bao-nguoi" role="alert"></p>
+    </div>
+    <div class="the nguoi-gon" id="nguoi-gon" hidden>
+      <span>Đang làm bài với tên <b id="ten-gon"></b></span>
+      <button type="button" class="nut phu nho-gon" id="sua-nguoi">Sửa tên, email</button>
+    </div>
+  </div>
+
+  <nav class="ngay" aria-label="Chọn ngày"><div class="khung" id="the-ngay"></div></nav>
+  <div class="khung" id="bai"></div>
+</main>
+
+<footer><div class="khung">Next Gen Founder · Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng · coachduynguyen.vn</div></footer>
+
+<script>
+/* Địa chỉ /exec của apps-script/nhan-bai-thu-thach.gs. Để trống thì nút Nộp báo chưa nối. */
+var NOI_NHAN = 'https://script.google.com/macros/s/AKfycbxCLolz16hYvDoaNCHf7aW__E2kI-dF31mbERGxl0mwRbnXprZRJpuKgQSbMhPe1mA9nA/exec';
+
+var NAM_CHANG = ['Chuẩn bị và hiểu khách', 'Mở đầu', 'Khai thác và chẩn đoán', 'Đề xuất', 'Giúp khách quyết định và theo sát'];
+
+/* Mỗi ngày: tên, câu hứa, việc cần làm, các phần bài, danh sách tự kiểm.
+   Mỗi phần có nhóm ô; mỗi ô có id (khóa lưu trên máy) và nhãn (tên cột trên bảng tính).
+   Ô có "tu" thì nút "Lấy chữ từ Mẫu 1" chép chữ của ô đó sang khi ô này còn trống. */
+var NGAY = {
+  1: {
+    ten: 'Nhìn lại quy trình tư vấn bạn đang dùng',
+    hua: 'Sau hôm nay, bạn có hai điều trong tay: một bản đồ cho thấy cuộc tư vấn của bạn đang đi qua những chặng nào, và một điểm nghẽn đủ hẹp để sửa trong sáu ngày tới.',
+    viec: [
+      'Bạn <b>chọn một sản phẩm và một nhóm khách</b> để làm trong cả bảy ngày, nên là sản phẩm bạn đang bán nhiều nhất hoặc đang muốn bán tốt hơn.',
+      '<b>Xem lại tối đa ba cuộc tư vấn gần đây</b>, dựa vào tin nhắn còn lưu, ghi chú hoặc trí nhớ của bạn, rồi ghi vào Mẫu 2. Chưa có đủ ba cuộc thì một cuộc cũng được. Chưa có cuộc nào thì tự dựng một tình huống và ghi rõ <b>MÔ PHỎNG</b>.',
+      '<b>Điền Mẫu 1</b>, bản đồ quy trình tư vấn hiện tại, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
+      'Từ bản đồ đó, bạn <b>chọn một điểm nghẽn</b>, rồi viết ở cuối Mẫu 1 điều bạn muốn khác đi sau bảy ngày.',
+      '<b>Điền phần Quy trình</b> của hôm nay ở cuối trang này.',
+      '<b>Quay video</b> từ một tới ba phút theo đề bài trong tài liệu Ngày 1, rồi nộp bài.'
+    ],
+    phan: [
+      { tieu: 'Mẫu 1. Bản đồ quy trình tư vấn hiện tại', cot: 'Mẫu 1',
+        nhom: [
+          { o: [
+            { id: 'm1-sp', nhan: 'Sản phẩm hoặc dịch vụ', dong: 1 },
+            { id: 'm1-khach', nhan: 'Nhóm khách thường mua', dong: 1 },
+            { id: 'm1-cach', nhan: 'Cuộc tư vấn diễn ra thế nào', goi: 'Gặp trực tiếp, gọi điện, hay nhắn tin', dong: 1 },
+            { id: 'm1-lau', nhan: 'Một cuộc thường kéo dài bao lâu', dong: 1 }
+          ] }
+        ].concat(NAM_CHANG.map(function (c, i) {
+          return { tieu: (i + 1) + '. ' + c, o: [
+            { id: 'm1-c' + i + '-lam', nhan: 'Bạn đang làm gì' },
+            { id: 'm1-c' + i + '-kho', nhan: 'Khó khăn bạn thấy được' },
+            { id: 'm1-c' + i + '-bc', nhan: 'Bằng chứng: khách nói hoặc làm gì' },
+            { id: 'm1-c' + i + '-chua', nhan: 'Điều bạn chưa chắc' }
+          ] };
+        })).concat([
+          { tieu: 'Điểm nghẽn bạn chọn', o: [
+            { id: 'm1-nghen', nhan: 'Điểm nghẽn ưu tiên, viết bằng hành vi', goi: 'Ví dụ: Tôi gửi báo giá trước khi hiểu khách cần giải quyết chuyện gì' },
+            { id: 'm1-khac', nhan: 'Sau bảy ngày, bạn muốn điều gì khác đi', goi: 'Viết sao cho tới Ngày 7 biết chắc đã làm được hay chưa' }
+          ] }
+        ]),
+        sau: 'Chặng nào bạn đang bỏ qua thì ghi "chưa làm", vì đó cũng là một thông tin đáng giá.'
+      },
+      { tieu: 'Mẫu 2. Phiếu nhìn lại tối đa ba cuộc tư vấn', cot: 'Mẫu 2',
+        mo: 'Năm ô đầu ghi điều thấy được, còn ô giả thuyết ghi điều đang đoán, nên hai phần này phải nằm ở hai chỗ riêng.',
+        nhom: [1, 2, 3].map(function (n) {
+          return { tieu: 'Cuộc ' + n, gap: n > 1, o: [
+            { id: 'm2-' + n + '-th', nhan: 'Tình huống, viết ẩn danh' },
+            { id: 'm2-' + n + '-chang', nhan: 'Khi có chuyện xảy ra, cuộc trao đổi đang ở chặng nào' },
+            { id: 'm2-' + n + '-khach', nhan: 'Khách đã nói gì hoặc làm gì' },
+            { id: 'm2-' + n + '-ban', nhan: 'Bạn đã làm gì ngay lúc đó' },
+            { id: 'm2-' + n + '-buoc', nhan: 'Cuối buổi, hai bên có thống nhất được bước tiếp theo không' },
+            { id: 'm2-' + n + '-gt', nhan: 'Giả thuyết của bạn, chưa cần đúng' }
+          ] };
+        })
+      },
+      { tieu: 'Quy trình tư vấn bán hàng tiêu chuẩn của bạn: phần hoàn thành hôm nay', cot: 'Quy trình',
+        mo: 'Đây là trang đầu của bộ quy trình bạn sẽ ghép lại ở Ngày 7. Bạn chép từ Mẫu 1 sang và viết gọn lại bằng lời của chính bạn.',
+        layTu: true,
+        nhom: [
+          { tieu: 'Phần 1. Phạm vi', o: [
+            { id: 'qt1-sp', nhan: 'Sản phẩm hoặc dịch vụ', dong: 1, tu: 'm1-sp' },
+            { id: 'qt1-khach', nhan: 'Nhóm khách', dong: 1, tu: 'm1-khach' },
+            { id: 'qt1-cach', nhan: 'Cuộc tư vấn diễn ra thế nào', dong: 1, tu: 'm1-cach' },
+            { id: 'qt1-lau', nhan: 'Một cuộc thường kéo dài bao lâu', dong: 1, tu: 'm1-lau' },
+            { id: 'qt1-ai', nhan: 'Ai dùng bộ quy trình này: bạn, hoặc người bạn sẽ giao', dong: 1 },
+            { id: 'qt1-nghen', nhan: 'Điểm nghẽn bạn chọn cải thiện', tu: 'm1-nghen' }
+          ] },
+          { tieu: 'Phần 3. Đường đi của một cuộc tư vấn, bản đầu',
+            mo: 'Hôm nay bạn ghi lại cách đang làm, còn tới Ngày 7 bạn sẽ sửa theo những gì đã học và chia thời gian cho từng chặng.',
+            o: [].concat.apply([], NAM_CHANG.map(function (c, i) {
+              return [
+                { id: 'qt3-c' + i + '-lam', nhan: c + ': việc bạn đang làm ở chặng này', tu: 'm1-c' + i + '-lam' },
+                { id: 'qt3-c' + i + '-tg', nhan: c + ': thời gian hiện nay', dong: 1 }
+              ];
+            }))
+          }
+        ],
+        sau: 'Phần 2 bạn làm ở Ngày 2, các phần sau làm ở những ngày tiếp theo.'
+      }
+    ],
+    kiem: [
+      'Mẫu 1 đã điền đủ năm chặng. Chặng nào bỏ qua thì đã ghi "chưa làm".',
+      'Có ít nhất một khó khăn cụ thể, kèm điều khách đã nói hoặc làm.',
+      'Phần đoán nguyên nhân nằm ở ô giả thuyết, không lẫn vào phần bằng chứng.',
+      'Điểm nghẽn là một chỗ, viết bằng hành vi, không phải "tăng doanh số".',
+      'Điều muốn khác đi đủ rõ để tới Ngày 7 biết chắc đã làm được hay chưa.',
+      'Không có tên, số điện thoại, ảnh chụp tin nhắn thật của khách.',
+      'Nếu dùng tình huống tự nghĩ ra, đã ghi MÔ PHỎNG.',
+      'Video trả lời đủ ba câu, dài từ một tới ba phút.'
+    ],
+    nopFb: 'Video Ngày 1 bạn vẫn đăng trong nhóm Facebook của thử thách. Bấm Chép bài rồi dán vào cùng bài đăng đó.'
+  }
+};
+
+/* ---------- lưu trên máy, bọc try vì trình duyệt ẩn danh có thể chặn ---------- */
+var TIEN_TO = 'tt-tvbh:';   // mỗi thử thách một tiền tố riêng, kẻo bài thử thách sau đè bài thử thách trước
+function doc(k) { try { return localStorage.getItem(TIEN_TO + k) || ''; } catch (e) { return ''; } }
+function ghi(k, v) { try { localStorage.setItem(TIEN_TO + k, v); return true; } catch (e) { return false; } }
+
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+/* ---------- người làm bài ---------- */
+function layNguoi() { try { return JSON.parse(doc('nguoi')) || null; } catch (e) { return null; } }
+function hienNguoi() {
+  var n = layNguoi();
+  $('nguoi').hidden = !!n;
+  $('nguoi-gon').hidden = !n;
+  if (n) { $('ten-gon').textContent = n.ten; }
+}
+$('luu-nguoi').onclick = function () {
+  var ten = $('ten').value.trim(), email = $('email').value.trim();
+  var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !$('dongy').checked ? 'Bạn cần tích ô đồng ý thì bài nộp mới được nhận.' : '';
+  $('bao-nguoi').textContent = loi;
+  if (loi) return;
+  ghi('nguoi', JSON.stringify({ ten: ten, email: email, dongy: true }));
+  hienNguoi();
+};
+$('sua-nguoi').onclick = function () {
+  var n = layNguoi() || {};
+  $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('dongy').checked = !!n.dongy;
+  $('nguoi').hidden = false; $('nguoi-gon').hidden = true; $('ten').focus();
+};
+
+/* ---------- dựng trang một ngày ---------- */
+function oHtml(o) {
+  var v = esc(doc(o.id));
+  var goi = o.goi ? '<small>' + esc(o.goi) + '</small>' : '';
+  var nhap = o.dong === 1
+    ? '<textarea id="' + o.id + '" rows="1" style="min-height:48px">' + v + '</textarea>'
+    : '<textarea id="' + o.id + '" rows="3">' + v + '</textarea>';
+  return '<label class="o"><span>' + esc(o.nhan) + '</span>' + goi + nhap + '</label>';
+}
+
+function dungNgay(n) {
+  var d = NGAY[n], h = '';
+  if (!d) {
+    $('bai').innerHTML = '<div class="ngay-dau"><div class="nhan">Ngày ' + n + '</div><h2>Bài của ngày này chưa mở</h2></div><p>Bài Ngày ' + n + ' sẽ có trên trang này vào đúng ngày học. Bạn làm tiếp các ngày đã mở ở thanh trên.</p>';
+    return;
+  }
+  h += '<div class="ngay-dau"><div class="nhan">Ngày ' + n + '</div><h2>' + esc(d.ten) + '</h2></div>';
+  h += '<blockquote>' + esc(d.hua) + '</blockquote>';
+  h += '<section class="phan"><h3>Việc cần làm hôm nay</h3><ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol></section>';
+  d.phan.forEach(function (p) {
+    h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '');
+    p.nhom.forEach(function (g) {
+      var trong = (g.mo ? '<p class="nho">' + esc(g.mo) + '</p>' : '') + g.o.map(oHtml).join('');
+      if (g.gap) {
+        var co = g.o.some(function (o) { return doc(o.id); });
+        h += '<details class="nhom"' + (co ? ' open' : '') + '><summary>' + esc(g.tieu) + ' <small>(không bắt buộc)</small></summary>' + trong + '</details>';
+      } else {
+        h += '<div class="nhom">' + (g.tieu ? '<h4>' + esc(g.tieu) + '</h4>' : '') + trong + '</div>';
+      }
+    });
+    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>Lấy chữ từ Mẫu 1 vào các ô còn trống</button></p>';
+    if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
+    h += '</section>';
+  });
+  h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
+    var id = 'kiem-' + n + '-' + i;
+    return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
+  }).join('') + '</ul></section>';
+  h += '<p class="nho" style="margin-top:20px">' + esc(d.nopFb) + '</p>';
+  var daNop = doc('da-nop-' + n);
+  h += '<div class="nop"><input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+       '<div class="hang"><button type="button" class="nut phu" id="chep">Chép bài</button><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
+       '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp bài Ngày ' + n + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
+       '<div class="tu-luu" id="tu-luu"></div></div>';
+  $('bai').innerHTML = h;
+  if (daNop) $('bao').className = 'bao dung';
+
+  $('bai').querySelectorAll('textarea').forEach(gian);
+  $('chep').onclick = function () { chep(n); };
+  $('nop').onclick = function () { nop(n); };
+  var nut = $('bai').querySelector('[data-lay-tu]');
+  if (nut) nut.onclick = function () {
+    var so = 0;
+    tatCaO(n).forEach(function (o) {
+      var dich = $(o.id), nguon = o.tu && $(o.tu);
+      if (nguon && !dich.value.trim() && nguon.value.trim()) { dich.value = nguon.value; ghi(o.id, dich.value); gian(dich); so++; }
+    });
+    nut.textContent = so ? 'Đã chép ' + so + ' ô từ Mẫu 1' : 'Không có ô trống nào lấy được chữ từ Mẫu 1';
+  };
+}
+
+function gian(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 2 + 'px'; }
+
+$('bai').addEventListener('input', function (e) {
+  var t = e.target;
+  if (t.tagName === 'TEXTAREA') {
+    gian(t);
+    $('tu-luu').textContent = ghi(t.id, t.value) ? 'Đã lưu trên máy này' : 'Trình duyệt này không cho lưu chữ, bạn nộp bài trước khi đóng trang';
+  }
+});
+$('bai').addEventListener('change', function (e) {
+  if (e.target.type === 'checkbox' && e.target.id.indexOf('kiem-') === 0) ghi(e.target.id, e.target.checked ? '1' : '');
+});
+
+/* ---------- gom bài ---------- */
+function tatCaO(n) {
+  var r = [];
+  NGAY[n].phan.forEach(function (p) {
+    p.nhom.forEach(function (g) { g.o.forEach(function (o) { r.push({ id: o.id, tu: o.tu, nhan: o.nhan, phan: p.tieu, cot: p.cot, nhom: g.tieu }); }); });
+  });
+  return r;
+}
+function tenCot(o) { return [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
+
+function banChu(n) {
+  var nguoi = layNguoi() || {}, dong = ['Bài nộp Ngày ' + n + ': ' + NGAY[n].ten + (nguoi.ten ? ' · ' + nguoi.ten : '')];
+  var phanTruoc = '', nhomTruoc = '';
+  tatCaO(n).forEach(function (o) {
+    var v = doc(o.id).trim();
+    if (!v) return;
+    if (o.phan !== phanTruoc) { dong.push('', o.phan.toUpperCase()); phanTruoc = o.phan; nhomTruoc = ''; }
+    if (o.nhom && o.nhom !== nhomTruoc) { dong.push('', o.nhom); nhomTruoc = o.nhom; }
+    dong.push('- ' + o.nhan + ': ' + v);
+  });
+  return dong.join('\n');
+}
+
+function chep(n) {
+  var chu = banChu(n), bao = $('bao');
+  function xong(ok) {
+    bao.className = 'bao ' + (ok ? 'dung' : 'loi');
+    bao.textContent = ok ? 'Đã chép bài. Bạn mở nhóm Facebook và dán vào bài đăng.' : 'Máy chưa cho chép tự động. Bạn giữ ngón tay trên khung chữ vừa hiện ra, chọn tất cả rồi chép.';
+  }
+  if (chu.split('\n').length < 2) { bao.className = 'bao loi'; bao.textContent = 'Bài còn trống, chưa có gì để chép.'; return; }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(chu).then(function () { xong(true); }, function () { hienKhungChep(chu); xong(false); });
+  } else { hienKhungChep(chu); xong(false); }
+}
+function hienKhungChep(chu) {
+  var t = $('khung-chep') || document.createElement('textarea');
+  t.id = 'khung-chep'; t.readOnly = true; t.value = chu; t.style.marginTop = '10px';
+  $('bao').after(t); gian(t); t.focus(); t.select();
+}
+
+/* ---------- nộp ---------- */
+function nop(n) {
+  var bao = $('bao'), nut = $('nop'), nguoi = layNguoi();
+  function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
+  if (!nguoi || !nguoi.dongy) { baoLoi('Bạn ghi họ tên, email và tích ô đồng ý ở đầu trang trước khi nộp.'); $('sua-nguoi').click(); return; }
+  var cot = tatCaO(n).map(function (o) { return [tenCot(o), doc(o.id).trim()]; });
+  if (!cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
+  if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
+
+  nut.disabled = true; nut.textContent = 'Đang gửi...';
+  bao.className = 'bao'; bao.textContent = '';
+  var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 30000);
+  fetch(NOI_NHAN, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ ngay: n, ten: nguoi.ten, email: nguoi.email, dongy: true, bay: $('bay').value, cot: cot }),
+    signal: huy.signal
+  }).then(function (r) { return r.json(); }).then(function (k) {
+    if (!k.ok) { var l = new Error(k.loi || 'Nơi nhận bài báo lỗi.'); l.tuNoiNhan = true; throw l; }
+    var gio = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
+    ghi('da-nop-' + n, gio);
+    bao.className = 'bao dung';
+    bao.textContent = 'Đã lưu bài Ngày ' + n + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.';
+  }).catch(function (e) {
+    var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn hoặc nơi nhận bài chưa trả lời';
+    baoLoi('Chưa gửi được' + vi + '. Chữ của bạn vẫn còn nguyên trên trang, bạn bấm Nộp lại.');
+  }).then(function () {
+    clearTimeout(hen); nut.disabled = false; nut.textContent = 'Nộp bài';
+  });
+}
+
+/* ---------- chọn ngày theo #ngay-N ---------- */
+function ngayHienTai() { var m = location.hash.match(/^#ngay-([1-7])$/); return m ? +m[1] : 1; }
+function chonNgay() {
+  var n = ngayHienTai(), h = '';
+  for (var i = 1; i <= 7; i++) {
+    h += '<a href="#ngay-' + i + '"' + (i === n ? ' aria-current="true"' : '') + (NGAY[i] ? '' : ' class="khoa"') + '>Ngày ' + i + '</a>';
+  }
+  $('the-ngay').innerHTML = h;
+  dungNgay(n);
+}
+window.addEventListener('hashchange', function () { chonNgay(); $('the-ngay').parentNode.scrollIntoView(); });
+hienNguoi();
+chonNgay();
+</script>
+</body>
+</html>
