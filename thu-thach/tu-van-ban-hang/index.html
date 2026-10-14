@@ -30,14 +30,16 @@ body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var
 h1,h2,h3{margin:0;color:var(--ink);font-family:var(--f-tit);letter-spacing:-.02em;line-height:1.15;font-weight:700;text-wrap:balance}
 button,input,textarea{font:inherit;color:inherit}
 .khung{max-width:720px;margin:0 auto;padding:0 16px}
-header.dau{border-bottom:1px solid var(--line);padding:12px 0}
-header.dau .khung{display:flex;align-items:center;justify-content:center;gap:14px}
+:root{--cao-dau:56px}
+header.dau{position:sticky;top:0;z-index:6;height:var(--cao-dau);background:var(--bg);border-bottom:1px solid var(--line)}
+header.dau .khung{height:100%}
+.hieu{display:flex;align-items:center;justify-content:center;gap:14px}
 .cdn{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
 .cdn img{width:28px;height:auto}
 .cdn b{font-family:var(--f-tit);font-weight:800;font-size:16px;letter-spacing:-.015em;line-height:1.15;white-space:nowrap}
 .gach-doc{width:1px;height:28px;background:var(--line-2)}
 .ngf{height:28px;width:auto;display:block}
-.dan{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
+.dan{display:flex;flex-direction:column;align-items:center;gap:8px;margin:18px 0 6px;text-align:center}
 .dan img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:2px solid var(--cam-mo)}
 .dan span{display:block;line-height:1.35}
 .dan .nhan{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--cam-dam)}
@@ -60,7 +62,7 @@ input:focus,textarea:focus{outline:2px solid var(--cam);outline-offset:1px;borde
 .dongy input{width:22px;height:22px;margin:2px 0 0;flex:none;accent-color:var(--cam-dam)}
 [hidden]{display:none !important}
 .nguoi-gon{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-nav.ngay{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+nav.ngay{position:sticky;top:var(--cao-dau);scroll-margin-top:var(--cao-dau);z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
 nav.ngay .khung{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
 nav.ngay a{flex:none;text-decoration:none;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
 nav.ngay a[aria-current=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -147,7 +149,8 @@ label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
   .in-duoc > :not(#ban-qt){display:none}
   #ban-qt{border:0;padding:0}
 }
-footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color:var(--ink-3)}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color:var(--ink-3);text-align:center}
+footer p{margin:12px 0 0}
 @media(max-width:759px){
   .mo h1,.mo .ten-tt,.ngay-dau h2,.ngay-dau .nhan{text-align:center}
   .mo p,section.phan > p,blockquote,.the > p,.chu p,.tai-lieu p,aside.goi{text-align:justify}
@@ -155,7 +158,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
 </style>
 </head>
 <body>
-<header class="dau"><div class="khung"><a class="cdn" href="../../" aria-label="Coach Duy Nguyễn, trang chủ"><img src="../../img/logo-dn.webp" alt="" width="260" height="301"><b>Coach Duy Nguyễn</b></a><span class="gach-doc" aria-hidden="true"></span><img class="ngf" src="../../cong-dong/img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="583" height="208"></div></header>
+<header class="dau"><div class="khung hieu"><a class="cdn" href="../../" aria-label="Coach Duy Nguyễn, trang chủ"><img src="../../img/logo-dn.webp" alt="" width="260" height="301"><b>Coach Duy Nguyễn</b></a><span class="gach-doc" aria-hidden="true"></span><img class="ngf" src="../../cong-dong/img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" width="583" height="208"></div></header>
 
 <main>
   <div class="khung mo">
@@ -198,7 +201,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
   <div class="khung" id="bai"></div>
 </main>
 
-<footer><div class="khung">Coach Duy Nguyễn · Next Gen Founder · Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng · coachduynguyen.vn</div></footer>
+<footer><div class="khung"><div class="hieu"><a class="cdn" href="../../" aria-label="Coach Duy Nguyễn, trang chủ"><img src="../../img/logo-dn.webp" loading="lazy" alt="" width="260" height="301"><b>Coach Duy Nguyễn</b></a><span class="gach-doc" aria-hidden="true"></span><img class="ngf" src="../../cong-dong/img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" loading="lazy" width="583" height="208"></div><p>Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng · coachduynguyen.vn</p></div></footer>
 
 <script src="tai-lieu.js"></script>
 <script>
