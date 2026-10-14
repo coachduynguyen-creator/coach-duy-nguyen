@@ -14,7 +14,7 @@
  *    cũng được, chỉ tài khoản chủ xem được).
  * 4. Chọn hàm `khoiTao` trên thanh công cụ, bấm Chạy, cho phép quyền truy cập
  *    Drive, Sheets, Docs. Hàm tạo bảng tính "NGF - Bài nộp thử thách 7 ngày Tư vấn bán hàng"
- *    với bảy trang tính, một thư mục Drive cho bản Quy trình, rồi ghi hai địa
+ *    với trang tính Cam kết và bảy trang tính Ngày 1 tới 7, một thư mục Drive cho bản Quy trình, rồi ghi hai địa
  *    chỉ vào Nhật ký thực thi.
  * 5. Triển khai > Triển khai mới > Loại: Ứng dụng web.
  *    Thực thi với tư cách: Tôi. Người có quyền truy cập: Bất kỳ ai.
@@ -26,6 +26,10 @@
  * thì mã tự thêm cột ở cuối. Nhờ vậy thêm Ngày 2 tới 7 hay sửa câu hỏi trên
  * trang không phải sửa hay triển khai lại tệp này. Đổi tên một câu hỏi thì
  * cột cũ vẫn nằm đó, cột mới mọc thêm.
+ *
+ * TRANG TÍNH CAM KẾT
+ * Trang gửi ngay = 0 cho video cam kết. Trang tính nào chưa có thì doPost tự tạo,
+ * nên thêm trang tính mới không phải chạy lại khoiTao.
  *
  * SỬA MÃ SAU NÀY
  * Sửa xong thì dán lại, lưu, RỒI Triển khai > Quản lý triển khai > sửa > Phiên
@@ -39,7 +43,7 @@
 var TEN_BANG = 'NGF - Bài nộp thử thách 7 ngày Tư vấn bán hàng';   // chỉ dùng lúc tạo, đổi tên tay trong Drive không hỏng gì
 var TEN_THU_MUC = 'NGF - Quy trình của thành viên thử thách 7 ngày Tư vấn bán hàng';
 var NGUOI_DUOC_GIAO = [];   // ví dụ ['ten@gmail.com'], chạy lại khoiTao sau khi sửa
-var COT_GOC = ['Thời gian', 'Họ và tên', 'Email', 'Đồng ý dùng bài', 'Google Doc'];
+var COT_GOC = ['Thời gian', 'Họ và tên', 'Email', 'Số điện thoại', 'Đồng ý dùng bài', 'Google Doc'];
 var DAI_TOI_DA = 20000;     // ô Google Sheet nhận tối đa 50.000 ký tự
 
 function khoiTao() {
@@ -48,14 +52,7 @@ function khoiTao() {
   var bang = maBang ? SpreadsheetApp.openById(maBang) : SpreadsheetApp.create(TEN_BANG);
   kho.setProperty('ma_bang', bang.getId());
 
-  for (var n = 1; n <= 7; n++) {
-    var t = bang.getSheetByName('Ngày ' + n) || bang.insertSheet('Ngày ' + n);
-    if (t.getLastRow() === 0) {
-      t.appendRow(COT_GOC);
-      t.getRange(1, 1, 1, COT_GOC.length).setFontWeight('bold');
-      t.setFrozenRows(1);
-    }
-  }
+  for (var n = 0; n <= 7; n++) layTrang(bang, n);
   var loi = bang.getSheetByName('Lỗi') || bang.insertSheet('Lỗi');
   if (loi.getLastRow() === 0) loi.appendRow(['Thời gian', 'Lỗi', 'Dữ liệu nhận được']);
   var macDinh = bang.getSheetByName('Sheet1') || bang.getSheetByName('Trang tính1');
@@ -74,8 +71,8 @@ function khoiTao() {
 /** Dọn bài thử, chạy tay. Xoá mọi dòng có chữ KIỂM THỬ trong cột Họ và tên. */
 function xoaDongKiemThu() {
   var bang = layBang(), da = 0;
-  for (var n = 1; n <= 7; n++) {
-    var t = bang.getSheetByName('Ngày ' + n);
+  for (var n = 0; n <= 7; n++) {
+    var t = bang.getSheetByName(tenTrang(n));
     if (!t || t.getLastRow() < 2) continue;
     var o = t.getRange(2, 2, t.getLastRow() - 1, 1).getValues();
     for (var i = o.length - 1; i >= 0; i--) {
@@ -83,6 +80,20 @@ function xoaDongKiemThu() {
     }
   }
   Logger.log('Đã xoá ' + da + ' dòng kiểm thử.');
+}
+
+function tenTrang(n) { return n === 0 ? 'Cam kết' : 'Ngày ' + n; }
+
+/** Lấy trang tính của một ngày, chưa có thì tạo kèm dòng tiêu đề. */
+function layTrang(bang, n) {
+  var t = bang.getSheetByName(tenTrang(n));
+  if (!t) t = bang.insertSheet(tenTrang(n), Math.min(n, bang.getNumSheets()));
+  if (t.getLastRow() === 0) {
+    t.appendRow(COT_GOC);
+    t.getRange(1, 1, 1, COT_GOC.length).setFontWeight('bold');
+    t.setFrozenRows(1);
+  }
+  return t;
 }
 
 function layBang() {
@@ -103,17 +114,18 @@ function doPost(e) {
   if (d.bay) return tra({ ok: true });   // ô bẫy máy rác, người thật để trống
 
   var ngay = parseInt(d.ngay, 10);
-  if (!(ngay >= 1 && ngay <= 7)) return tra({ ok: false, loi: 'Không rõ bài của ngày nào.' });
+  if (!(ngay >= 0 && ngay <= 7)) return tra({ ok: false, loi: 'Không rõ bài của ngày nào.' });
   if (!chuoi(d.ten)) return tra({ ok: false, loi: 'Còn thiếu họ tên.' });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chuoi(d.email))) return tra({ ok: false, loi: 'Email chưa đúng dạng.' });
+  var sdt = chuoi(d.dien_thoai).replace(/[\s.\-()]/g, '');
+  if (!/^\+?\d{9,12}$/.test(sdt)) return tra({ ok: false, loi: 'Số điện thoại chưa đúng.' });
   if (d.dongy !== true) return tra({ ok: false, loi: 'Bạn cần tích ô đồng ý trước khi nộp.' });
   if (!Array.isArray(d.cot) || !d.cot.length || d.cot.length > 300) return tra({ ok: false, loi: 'Bài nộp chưa có chữ nào.' });
 
   var khoa = LockService.getScriptLock();
   try {
     khoa.waitLock(20000);
-    var t = layBang().getSheetByName('Ngày ' + ngay);
-    if (!t) throw new Error('Không thấy trang tính Ngày ' + ngay + ', chạy lại khoiTao.');
+    var t = layTrang(layBang(), ngay);
 
     var docUrl = '';
     if (ngay === 7 && chuoi(d.ban_quy_trinh)) docUrl = taoDoc(chuoi(d.ten), String(d.ban_quy_trinh));
@@ -121,6 +133,7 @@ function doPost(e) {
     var giaTri = {};
     giaTri['Họ và tên'] = chuoi(d.ten);
     giaTri['Email'] = chuoi(d.email);
+    giaTri['Số điện thoại'] = sdt;
     giaTri['Đồng ý dùng bài'] = 'Có';
     giaTri['Google Doc'] = docUrl;
     d.cot.forEach(function (c) {
