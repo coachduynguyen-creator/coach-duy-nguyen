@@ -41,7 +41,7 @@ header.dau img{height:34px;width:auto;display:block;margin:0 auto}
 label.o{display:block;margin:14px 0 0}
 label.o > span{display:block;font-weight:600;color:var(--ink);font-size:15.5px;line-height:1.4;margin-bottom:6px}
 label.o > small{display:block;color:var(--ink-3);font-size:14px;margin:-2px 0 6px}
-input[type=text],input[type=email],textarea{width:100%;border:1px solid var(--line-2);border-radius:10px;background:#fff;padding:11px 12px;font-size:16px;line-height:1.5}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:1px solid var(--line-2);border-radius:10px;background:#fff;padding:11px 12px;font-size:16px;line-height:1.5}
 textarea{min-height:76px;resize:vertical;overflow:hidden}
 input:focus,textarea:focus{outline:2px solid var(--cam);outline-offset:1px;border-color:var(--cam)}
 .dongy{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15.5px}
@@ -58,6 +58,8 @@ nav.ngay a.khoa{color:var(--ink-3);border-style:dashed}
 blockquote{margin:14px 0 0;padding:12px 16px;border-left:3px solid var(--cam);background:var(--cam-mo);border-radius:0 10px 10px 0;color:var(--ink)}
 ol.viec{padding-left:22px;margin:10px 0 0}
 ol.viec li{margin:6px 0}
+ul.dk{padding-left:20px;margin:8px 0}
+ul.dk li{margin:5px 0}
 section.phan{margin-top:30px}
 section.phan > h3{font-size:22px}
 section.phan > p{margin:8px 0 0}
@@ -105,17 +107,28 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
   <div class="khung">
     <div class="the" id="nguoi">
       <h2>Trước khi làm bài</h2>
-      <p>Bạn ghi họ tên và email một lần, trang sẽ nhớ cho những lần sau.</p>
+      <p>Bạn ghi họ tên, email và số điện thoại một lần, trang sẽ nhớ cho những lần sau.</p>
       <label class="o"><span>Họ và tên</span><input type="text" id="ten" autocomplete="name"></label>
       <label class="o"><span>Email bạn dùng khi đăng ký thử thách</span><input type="email" id="email" autocomplete="email" inputmode="email"></label>
-      <label class="dongy"><input type="checkbox" id="dongy"><span>Tôi đồng ý để Next Gen Founder lưu và sử dụng bài điền, video và những chia sẻ tôi đã gửi trong thử thách, để làm tài liệu và chương trình tốt hơn cho những người đi sau.</span></label>
+      <label class="o"><span>Số điện thoại</span><input type="tel" id="sdt" autocomplete="tel" inputmode="tel"></label>
+      <p>Khi tham gia thử thách, bạn đồng ý để Next Gen Founder:</p>
+      <ul class="dk">
+        <li>lưu và sử dụng bài điền, video, hình ảnh và những chia sẻ bạn đã gửi trong thử thách;</li>
+        <li>dùng công khai những tư liệu đó để lan tỏa và truyền thông cho cộng đồng, trong đó có kể lại câu chuyện của thành viên đã đi qua thử thách;</li>
+        <li>lưu họ tên và số điện thoại bạn nhập khi nộp bài, để theo dõi bạn đã làm tới ngày nào;</li>
+        <li>dùng công cụ AI để đọc và tổng hợp bài nộp;</li>
+        <li>liên hệ với bạn sau thử thách về các chương trình tiếp theo của cộng đồng;</li>
+        <li>nêu tên bạn khi vinh danh người hoàn thành trên nhóm Facebook và nhóm Zalo Cộng đồng Thành viên.</li>
+      </ul>
+      <p class="nho">Bài và video của bạn được lưu tới khi bạn xin xóa. Muốn xóa, bạn nhắn riêng cho người hỗ trợ trong nhóm Facebook của thử thách.</p>
+      <label class="dongy"><input type="checkbox" id="dongy"><span>Tôi đã đọc và đồng ý với những điều trên.</span></label>
       <p class="nho">Bài nộp không ghi tên, số điện thoại hay ảnh chụp tin nhắn thật của khách. Bạn gọi là "khách A" hoặc "chị khách ở quận 3" là đủ.</p>
       <p><button type="button" class="nut chinh" id="luu-nguoi">Lưu và bắt đầu làm bài</button></p>
       <p class="bao loi" id="bao-nguoi" role="alert"></p>
     </div>
     <div class="the nguoi-gon" id="nguoi-gon" hidden>
       <span>Đang làm bài với tên <b id="ten-gon"></b></span>
-      <button type="button" class="nut phu nho-gon" id="sua-nguoi">Sửa tên, email</button>
+      <button type="button" class="nut phu nho-gon" id="sua-nguoi">Sửa thông tin</button>
     </div>
   </div>
 
@@ -134,7 +147,21 @@ var NAM_CHANG = ['Chuẩn bị và hiểu khách', 'Mở đầu', 'Khai thác v�
 /* Mỗi ngày: tên, câu hứa, việc cần làm, các phần bài, danh sách tự kiểm.
    Mỗi phần có nhóm ô; mỗi ô có id (khóa lưu trên máy) và nhãn (tên cột trên bảng tính).
    Ô có "tu" thì nút "Lấy chữ từ Mẫu 1" chép chữ của ô đó sang khi ô này còn trống. */
+var GOI_VIDEO = 'Bạn đưa video lên chỗ lưu bạn quen dùng, để chế độ ai có đường dẫn cũng xem được, rồi dán đường dẫn vào đây.';
+
 var NGAY = {
+  0: {
+    nhan: 'Trước Ngày 1', ten: 'Video cam kết', bai: 'video cam kết',
+    phan: [
+      { tieu: 'Quay video cam kết', cot: 'Cam kết',
+        mo: 'Việc đầu tiên của thử thách là quay một video cam kết. Trong video, bạn nói bốn điều:',
+        ds: ['Bạn là ai, đang làm doanh nghiệp gì.', 'Sản phẩm và nhóm khách bạn vừa chọn cho bảy ngày.', 'Vì sao bạn tham gia thử thách này.', 'Bạn cam kết đi hết bảy ngày.'],
+        nhom: [{ o: [{ id: 'ck-video', nhan: 'Đường dẫn video cam kết', goi: GOI_VIDEO, dong: 1, lk: true }] }],
+        sau: 'Video cam kết không giới hạn độ dài.'
+      }
+    ],
+    nopSau: ['Nộp xong, bạn nhận email Ngày 1, và ngày nhận email đó là Ngày 1 của bạn.']
+  },
   1: {
     ten: 'Nhìn lại quy trình tư vấn bạn đang dùng',
     hua: 'Sau hôm nay, bạn có hai điều trong tay: một bản đồ cho thấy cuộc tư vấn của bạn đang đi qua những chặng nào, và một điểm nghẽn đủ hẹp để sửa trong sáu ngày tới.',
@@ -143,8 +170,8 @@ var NGAY = {
       '<b>Xem lại tối đa ba cuộc tư vấn gần đây</b>, dựa vào tin nhắn còn lưu, ghi chú hoặc trí nhớ của bạn, rồi ghi vào Mẫu 2. Chưa có đủ ba cuộc thì một cuộc cũng được. Chưa có cuộc nào thì tự dựng một tình huống và ghi rõ <b>MÔ PHỎNG</b>.',
       '<b>Điền Mẫu 1</b>, bản đồ quy trình tư vấn hiện tại, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
       'Từ bản đồ đó, bạn <b>chọn một điểm nghẽn</b>, rồi viết ở cuối Mẫu 1 điều bạn muốn khác đi sau bảy ngày.',
-      '<b>Điền phần Quy trình</b> của hôm nay ở cuối trang này.',
-      '<b>Quay video</b> từ một tới ba phút theo đề bài trong tài liệu Ngày 1, rồi nộp bài.'
+      '<b>Điền phần Quy trình</b> của hôm nay, ngay dưới Mẫu 2.',
+      '<b>Quay video</b> từ một tới ba phút theo đề bài ở cuối trang, dán đường dẫn video rồi nộp bài.'
     ],
     phan: [
       { tieu: 'Mẫu 1. Bản đồ quy trình tư vấn hiện tại', cot: 'Mẫu 1',
@@ -206,6 +233,12 @@ var NGAY = {
           }
         ],
         sau: 'Phần 2 bạn làm ở Ngày 2, các phần sau làm ở những ngày tiếp theo.'
+      },
+      { tieu: 'Video Ngày 1', cot: 'Video',
+        mo: 'Quay một video dài một tới ba phút, trả lời ba câu sau:',
+        ds: ['Bạn đang bán gì, và một cuộc tư vấn của bạn đang diễn ra thế nào?', 'Vấn đề lớn nhất bạn thấy là gì, và quan sát nào khiến bạn nói vậy?', 'Bạn muốn thay đổi điều gì trước tiên trong cách tư vấn của bạn?'],
+        nhom: [{ o: [{ id: 'v1-video', nhan: 'Đường dẫn video Ngày 1', goi: GOI_VIDEO, dong: 1, lk: true }] }],
+        sau: 'Video không cần dựng, quay bằng điện thoại là đủ. Bạn không đưa tên, số điện thoại hay tin nhắn thật của khách vào video. Hãy nói đúng tình trạng hiện tại, vì video này là mốc để tới Ngày 7 bạn nhìn lại.'
       }
     ],
     kiem: [
@@ -218,7 +251,10 @@ var NGAY = {
       'Nếu dùng tình huống tự nghĩ ra, đã ghi MÔ PHỎNG.',
       'Video trả lời đủ ba câu, dài từ một tới ba phút.'
     ],
-    nopFb: 'Video Ngày 1 bạn vẫn đăng trong nhóm Facebook của thử thách. Bấm Chép bài rồi dán vào cùng bài đăng đó.'
+    nopSau: [
+      'Nộp Mẫu 1, Mẫu 2 nếu có, và video Ngày 1, ngay trong ngày học. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.',
+      'Nộp xong, bạn có thể đăng một bài ngắn trong nhóm Facebook của thử thách, kể hôm nay bạn làm được gì và vướng ở đâu. Bài đăng trong nhóm thì các thành viên khác cùng đọc, nên bạn đừng đưa thông tin thật của khách vào đó.'
+    ]
   }
 };
 
@@ -234,21 +270,22 @@ function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&
 function layNguoi() { try { return JSON.parse(doc('nguoi')) || null; } catch (e) { return null; } }
 function hienNguoi() {
   var n = layNguoi();
+  if (n && !n.sdt) n = null;   // người lưu trước khi trang hỏi số điện thoại
   $('nguoi').hidden = !!n;
   $('nguoi-gon').hidden = !n;
   if (n) { $('ten-gon').textContent = n.ten; }
 }
 $('luu-nguoi').onclick = function () {
-  var ten = $('ten').value.trim(), email = $('email').value.trim();
-  var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !$('dongy').checked ? 'Bạn cần tích ô đồng ý thì bài nộp mới được nhận.' : '';
+  var ten = $('ten').value.trim(), email = $('email').value.trim(), sdt = $('sdt').value.replace(/[\s.\-()]/g, '');
+  var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !/^\+?\d{9,12}$/.test(sdt) ? 'Số điện thoại chưa đúng, bạn xem lại giúp.' : !$('dongy').checked ? 'Bạn cần tích ô đồng ý thì bài nộp mới được nhận.' : '';
   $('bao-nguoi').textContent = loi;
   if (loi) return;
-  ghi('nguoi', JSON.stringify({ ten: ten, email: email, dongy: true }));
+  ghi('nguoi', JSON.stringify({ ten: ten, email: email, sdt: sdt, dongy: true }));
   hienNguoi();
 };
 $('sua-nguoi').onclick = function () {
   var n = layNguoi() || {};
-  $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('dongy').checked = !!n.dongy;
+  $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('sdt').value = n.sdt || ''; $('dongy').checked = !!n.dongy;
   $('nguoi').hidden = false; $('nguoi-gon').hidden = true; $('ten').focus();
 };
 
@@ -268,11 +305,12 @@ function dungNgay(n) {
     $('bai').innerHTML = '<div class="ngay-dau"><div class="nhan">Ngày ' + n + '</div><h2>Bài của ngày này chưa mở</h2></div><p>Bài Ngày ' + n + ' sẽ có trên trang này vào đúng ngày học. Bạn làm tiếp các ngày đã mở ở thanh trên.</p>';
     return;
   }
-  h += '<div class="ngay-dau"><div class="nhan">Ngày ' + n + '</div><h2>' + esc(d.ten) + '</h2></div>';
-  h += '<blockquote>' + esc(d.hua) + '</blockquote>';
-  h += '<section class="phan"><h3>Việc cần làm hôm nay</h3><ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol></section>';
+  h += '<div class="ngay-dau"><div class="nhan">' + nhanNgay(n) + '</div><h2>' + esc(d.ten) + '</h2></div>';
+  if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
+  if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3><ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol></section>';
   d.phan.forEach(function (p) {
-    h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '');
+    h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '') +
+         (p.ds ? '<ol class="viec">' + p.ds.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' : '');
     p.nhom.forEach(function (g) {
       var trong = (g.mo ? '<p class="nho">' + esc(g.mo) + '</p>' : '') + g.o.map(oHtml).join('');
       if (g.gap) {
@@ -286,15 +324,15 @@ function dungNgay(n) {
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
   });
-  h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
+  if (d.kiem) h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
     var id = 'kiem-' + n + '-' + i;
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
   }).join('') + '</ul></section>';
-  h += '<p class="nho" style="margin-top:20px">' + esc(d.nopFb) + '</p>';
+  h += '<section class="phan"><h3>Nộp bài</h3>' + d.nopSau.map(function (c) { return '<p>' + esc(c) + '</p>'; }).join('') + '</section>';
   var daNop = doc('da-nop-' + n);
   h += '<div class="nop"><input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">' +
        '<div class="hang"><button type="button" class="nut phu" id="chep">Chép bài</button><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
-       '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp bài Ngày ' + n + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
+       '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp ' + tenBai(n) + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
        '<div class="tu-luu" id="tu-luu"></div></div>';
   $('bai').innerHTML = h;
   if (daNop) $('bao').className = 'bao dung';
@@ -330,14 +368,14 @@ $('bai').addEventListener('change', function (e) {
 function tatCaO(n) {
   var r = [];
   NGAY[n].phan.forEach(function (p) {
-    p.nhom.forEach(function (g) { g.o.forEach(function (o) { r.push({ id: o.id, tu: o.tu, nhan: o.nhan, phan: p.tieu, cot: p.cot, nhom: g.tieu }); }); });
+    p.nhom.forEach(function (g) { g.o.forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, nhan: o.nhan, phan: p.tieu, cot: p.cot, nhom: g.tieu }); }); });
   });
   return r;
 }
 function tenCot(o) { return [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
 
 function banChu(n) {
-  var nguoi = layNguoi() || {}, dong = ['Bài nộp Ngày ' + n + ': ' + NGAY[n].ten + (nguoi.ten ? ' · ' + nguoi.ten : '')];
+  var nguoi = layNguoi() || {}, dong = [nhanNgay(n) + ': ' + NGAY[n].ten + (nguoi.ten ? ' · ' + nguoi.ten : '')];
   var phanTruoc = '', nhomTruoc = '';
   tatCaO(n).forEach(function (o) {
     var v = doc(o.id).trim();
@@ -353,7 +391,7 @@ function chep(n) {
   var chu = banChu(n), bao = $('bao');
   function xong(ok) {
     bao.className = 'bao ' + (ok ? 'dung' : 'loi');
-    bao.textContent = ok ? 'Đã chép bài. Bạn mở nhóm Facebook và dán vào bài đăng.' : 'Máy chưa cho chép tự động. Bạn giữ ngón tay trên khung chữ vừa hiện ra, chọn tất cả rồi chép.';
+    bao.textContent = ok ? 'Đã chép bài, bạn dán vào chỗ cần dùng.' : 'Máy chưa cho chép tự động. Bạn giữ ngón tay trên khung chữ vừa hiện ra, chọn tất cả rồi chép.';
   }
   if (chu.split('\n').length < 2) { bao.className = 'bao loi'; bao.textContent = 'Bài còn trống, chưa có gì để chép.'; return; }
   if (navigator.clipboard && window.isSecureContext) {
@@ -370,9 +408,11 @@ function hienKhungChep(chu) {
 function nop(n) {
   var bao = $('bao'), nut = $('nop'), nguoi = layNguoi();
   function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
-  if (!nguoi || !nguoi.dongy) { baoLoi('Bạn ghi họ tên, email và tích ô đồng ý ở đầu trang trước khi nộp.'); $('sua-nguoi').click(); return; }
+  if (!nguoi || !nguoi.dongy || !nguoi.sdt) { baoLoi('Bạn ghi họ tên, email, số điện thoại và tích ô đồng ý ở đầu trang trước khi nộp.'); $('sua-nguoi').click(); return; }
   var cot = tatCaO(n).map(function (o) { return [tenCot(o), doc(o.id).trim()]; });
   if (!cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
+  var saiLk = tatCaO(n).filter(function (o) { var v = doc(o.id).trim(); return o.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
+  if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chép lại đường dẫn video, chỉ một dòng, không kèm chữ khác.'); $(saiLk.id).focus(); return; }
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
 
   nut.disabled = true; nut.textContent = 'Đang gửi...';
@@ -381,14 +421,14 @@ function nop(n) {
   fetch(NOI_NHAN, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ ngay: n, ten: nguoi.ten, email: nguoi.email, dongy: true, bay: $('bay').value, cot: cot }),
+    body: JSON.stringify({ ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot }),
     signal: huy.signal
   }).then(function (r) { return r.json(); }).then(function (k) {
     if (!k.ok) { var l = new Error(k.loi || 'Nơi nhận bài báo lỗi.'); l.tuNoiNhan = true; throw l; }
     var gio = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
     ghi('da-nop-' + n, gio);
     bao.className = 'bao dung';
-    bao.textContent = 'Đã lưu bài Ngày ' + n + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.';
+    bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.';
   }).catch(function (e) {
     var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn hoặc nơi nhận bài chưa trả lời';
     baoLoi('Chưa gửi được' + vi + '. Chữ của bạn vẫn còn nguyên trên trang, bạn bấm Nộp lại.');
@@ -398,9 +438,11 @@ function nop(n) {
 }
 
 /* ---------- chọn ngày theo #ngay-N ---------- */
-function ngayHienTai() { var m = location.hash.match(/^#ngay-([1-7])$/); return m ? +m[1] : 1; }
+function ngayHienTai() { if (location.hash === '#cam-ket') return 0; var m = location.hash.match(/^#ngay-([1-7])$/); return m ? +m[1] : 1; }
+function nhanNgay(n) { return NGAY[n] && NGAY[n].nhan || 'Ngày ' + n; }
+function tenBai(n) { return NGAY[n] && NGAY[n].bai || 'bài Ngày ' + n; }
 function chonNgay() {
-  var n = ngayHienTai(), h = '';
+  var n = ngayHienTai(), h = '<a href="#cam-ket"' + (n === 0 ? ' aria-current="true"' : '') + '>Cam kết</a>';
   for (var i = 1; i <= 7; i++) {
     h += '<a href="#ngay-' + i + '"' + (i === n ? ' aria-current="true"' : '') + (NGAY[i] ? '' : ' class="khoa"') + '>Ngày ' + i + '</a>';
   }
