@@ -44,7 +44,8 @@
  * mỗi người một dòng, ngày nộp từng bài, đang ở ngày nào, chậm lịch mấy ngày,
  * và hai dòng đếm số người nộp, tỷ lệ so với số người cam kết. Muốn xem số mới
  * ngay thì chọn hàm dungTienDo, bấm Chạy. Đừng gõ tay vào trang Tiến độ, mỗi
- * tiếng trang đó bị xoá trắng và ghi lại.
+ * tiếng trang đó bị xoá trắng và ghi lại. Sửa riêng phần Tiến độ thì chỉ cần dán
+ * và Lưu, giờ chạy mỗi tiếng tự dùng mã mới, không phải triển khai lại.
  *
  * CỘT TỰ MỌC
  * Trang gửi lên danh sách [tên câu hỏi, chữ đã điền]. Câu hỏi nào chưa có cột
@@ -281,7 +282,7 @@ function dungTienDo() {
     var p = ds[k], kq = lichTuNop(p.da_nop), ke = -1;
     N.forEach(function (n) { if (p.da_nop[n]) dem[n]++; else if (ke < 0) ke = n; });
     var cham = ke >= 1 && ke <= 7 && hom > kq.lich[ke] ? (Date.parse(hom) - Date.parse(kq.lich[ke])) / 864e5 : '';
-    return [p.ten, p.email, "'" + p.sdt, hien(kq.bat_dau), hien(kq.han), ke < 0 ? 'Xong' : tenTrang(ke), cham,
+    return [p.ten, p.email, "'0" + soCuoi(p.sdt), hien(kq.bat_dau), hien(kq.han), ke < 0 ? 'Xong' : tenTrang(ke), cham,
       Object.keys(p.da_nop).length].concat(N.map(function (n) { return hien(p.da_nop[n]); }))
       .concat([kq.bat_dau || '9999']);
   });
@@ -302,6 +303,8 @@ function dungTienDo() {
   t.getRange(2, 1, 2, tieuDe.length).setFontWeight('bold');
   t.getRange(3, 9, 1, N.length).setNumberFormat('0%');
   t.getRange(4, 1).setFontStyle('italic');
+  t.autoResizeColumns(2, tieuDe.length - 1);
+  t.setColumnWidth(1, 230);
   t.setFrozenRows(4);
   t.setFrozenColumns(1);
 }
