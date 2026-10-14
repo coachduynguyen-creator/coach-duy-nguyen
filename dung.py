@@ -1954,62 +1954,49 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-cu/soi-ke-ho
 # Mỗi mục trong HOC_VIEN:
 #   ten, nhom ("founder" hoặc "ban-hang"), chuyen_mon, nganh, nam, trich (câu trích),
 #   ket_qua, yt (mã video YouTube, 11 ký tự), anh (đường dẫn ảnh feedback).
-#   Câu chuyện dài thêm: tieu_de, than (các đoạn), so (ô số), nguon_trich, gioi_han.
+#   Câu chuyện dài thêm: tieu_de, than (các đoạn), so (ô số), nguon_trich.
 #   Thẻ ngắn thêm: doi (hành vi đã đổi).
-#   mau=True: mục mẫu, chỉ hiện khi mở trang với ?xem-truoc.
+# Câu chữ theo bản chốt 15/10/2026 trong vault ([C] Bản chốt câu chữ trang Câu chuyện học viên).
 # Mục có yt thì vào tường video, mục có anh thì vào khu ảnh. Trống thì không hiện ô.
 # Chuyên môn để trống thì lấy mặc định theo nhóm, xem _chuyen_mon.
 HOC_VIEN = [
-  dict(ten="Học viên mẫu", nhom="founder", chuyen_mon="Chuyên môn mẫu", nganh="Ngành mẫu", nam="2026", mau=True,
-       tieu_de="Ô mẫu: câu chuyện của một Founder đặt ở đây",
-       than=["Ô này chỉ để xem bố cục. Chưa có tên, lời trích hay con số thật nào được đưa vào.",
-             "Khi có câu chuyện đã được học viên đồng ý, đoạn này kể việc người đó đã đổi, theo đúng trình tự đã xảy ra."],
-       so=[("Số mẫu", "Kết quả đã xác nhận"), ("Số mẫu", "Thời gian"), ("Số mẫu", "Bối cảnh")],
-       trich="Câu trích mẫu, sẽ thay bằng lời học viên nói trong video.", nguon_trich="Học viên mẫu",
-       ket_qua="Kết quả mẫu", yt="", anh="",
-       gioi_han="Ô mẫu cho phần giới hạn của câu chuyện: trường hợp này đúng trong bối cảnh nào, và chưa chắc lặp lại ở đâu."),
   # Ba câu chuyện Founder dưới đây lấy từ phụ đề tự sinh của video trên kênh Next Step Group,
   # danh sách phát PLD1qZtUJq-8g. Câu trích chép theo phụ đề, cần nghe lại trước khi coi là nguyên văn.
   dict(ten="Coach Lê Phương", nhom="founder", chuyen_mon="", nganh="Tư vấn tử vi, phong thủy", nam="2022",
        yt="dC0Fv8otjRI", anh="",
-       tieu_de="Coach Lê Phương bắt đầu từ một chiếc điện thoại, rồi tự thiết kế được sản phẩm đào tạo của mình",
-       than=["Trước năm 2022, Lê Phương đi lên từ số 0. Phương tự tìm trên TikTok và YouTube, đọc và nghe rất nhiều, nhưng ghép kiến thức của nhiều người lại thì vẫn không ra cách làm của riêng mình. Quãng đó tốn nhiều thời gian và tiền.",
-             "Điều đổi đầu tiên, theo lời Phương, là cách nghĩ về truyền thông. Không dùng chiêu trò, mà làm từ sự chân thành, trong cách nghĩ, cách tổ chức công việc và cách nói với cộng đồng. Duy đi cùng Phương từ chiến lược truyền thông dài hạn tới cách làm từng video.",
-             "Thiết bị lúc đầu chỉ là một chiếc điện thoại. Qua những câu hỏi trong các buổi làm việc, Phương còn tự thiết kế được các sản phẩm đào tạo của mình, điều mà Phương nói trước đó chưa chắc đã nghĩ ra."],
+       tieu_de="Coach Lê Phương bắt đầu chỉ với một chiếc điện thoại, rồi tự thiết kế được sản phẩm đào tạo của mình",
+       than=["Trước năm 2022, Lê Phương bắt đầu từ con số 0. Phương tự học trên TikTok và YouTube, đọc và nghe rất nhiều. Nhưng ghép kiến thức của nhiều người lại thì Phương vẫn chưa tìm ra cách làm của riêng mình, và quãng đó tốn khá nhiều thời gian lẫn tiền bạc.",
+             "Theo lời Phương, điều đổi đầu tiên là cách nghĩ về truyền thông. Phương thôi tìm chiêu trò, chuyển sang làm bằng sự chân thành, từ cách sắp xếp công việc tới cách nói chuyện với cộng đồng. Duy đi cùng Phương từ kế hoạch truyền thông dài hạn tới cách làm từng video.",
+             "Lúc đầu Phương chỉ có một chiếc điện thoại để quay. Qua những câu hỏi trong các buổi làm việc, Phương tự thiết kế được các sản phẩm đào tạo của mình. Phương nói trước đó mình chưa từng nghĩ tới những sản phẩm này."],
        trich="",  # chờ nghe lại (B4): "Tôi không biết gì về kinh doanh cả, không biết gì về marketing, không biết gì về sale, không biết gì về chiến lược hay là mô hình gì hết.",
-       nguon_trich="Coach Lê Phương", ket_qua="",
-       gioi_han="Video không nêu con số doanh thu, nên trang này cũng không nêu. Kết quả Phương nhắc tới là kênh TikTok và các sản phẩm đào tạo đang bán, bạn có thể tự xem trên kênh của Phương. Video cũng không nói mất bao lâu từ năm 2022 tới lúc có kết quả đó."),
+       nguon_trich="Coach Lê Phương", ket_qua=""),
   dict(ten="Master Kris Tran", nhom="founder", chuyen_mon="", nganh="Đầu tư và kinh doanh", nam="",
        yt="IUFV6HX3xZw", anh="",
-       tieu_de="Master Kris Tran từng sợ máy quay, giờ ngồi nói trước ống kính được",
-       than=["Kris từ nước ngoài trở về, chưa quen cách làm việc ở Việt Nam, và rất sợ mạng xã hội, sợ máy quay. Trước khi tìm tới Duy, Kris đã tìm hiểu rất nhiều người. Kris nói kiến thức thì nhiều người cũng có, điều làm Kris chọn là cách nghĩ và chuẩn làm việc.",
-             "Có một chuyện Kris nhắc lại. Điều Kris coi là điểm yếu của mình, Duy chỉ ra đó lại là điểm khác biệt nên khai thác. Lúc khó sắp xếp ý và câu chữ, Kris viết ra giấy trước, rồi thấy mọi thứ dễ sắp xếp hơn hẳn.",
-             "Duy cũng giới thiệu Kris với những người cần gặp ở Việt Nam. Kris kể nhờ vậy tiết kiệm được nhiều thời gian và chi phí so với tự dò đường."],
+       tieu_de="Master Kris Tran từng rất sợ máy quay, giờ đã tự tin ngồi nói trước ống kính",
+       than=["Kris từ nước ngoài trở về, chưa quen cách làm việc ở Việt Nam, và rất sợ mạng xã hội, sợ máy quay. Trước khi tìm tới Duy, Kris đã tìm hiểu nhiều người. Theo Kris, kiến thức thì nhiều người cũng có, còn điều khiến Kris chọn Duy là cách Duy suy nghĩ và cách Duy làm việc.",
+             "Có một chuyện Kris nhắc lại. Điều Kris vẫn coi là điểm yếu của mình thì Duy chỉ ra đó lại là điểm khác biệt, đáng để khai thác. Lúc khó sắp xếp ý và câu chữ, Kris viết ra giấy trước, và thấy mọi thứ dễ sắp xếp hơn hẳn.",
+             "Duy cũng giới thiệu Kris với những người Kris cần gặp ở Việt Nam. Kris kể nhờ vậy tiết kiệm được nhiều thời gian và tiền bạc so với tự dò đường."],
        trich="",  # chờ nghe lại (B4): "…sợ social media, sợ ống kính, sợ máy quay thì bây giờ mình đã bớt sợ hơn rồi và mình có thể tự tin ngồi nói chuyện trước ống kính.",
-       nguon_trich="Master Kris Tran", ket_qua="",
-       gioi_han="Kris nói vượt nỗi sợ máy quay chỉ là một việc nhỏ trong những việc đã làm cùng Duy. Video không nêu con số kinh doanh, nên trang này cũng không nêu."),
+       nguon_trich="Master Kris Tran", ket_qua=""),
   dict(ten="Hoa hậu Kayla Dinh", nhom="founder", chuyen_mon="", nganh="", nam="",
        yt="tQGCCakjdps", anh="", trich="", nguon_trich="", ket_qua="",
-       tieu_de="Hoa hậu Kayla Dinh về Việt Nam và cần người hiểu cách làm ăn ở đây",
-       than=["Kayla đang ở Mỹ thì tình cờ thấy Duy trên mạng xã hội. Kayla còn mới với cách làm việc ở Việt Nam, nên muốn tìm một người đi cùng trên đoạn đường đầu.",
-             "Về Việt Nam gặp nói chuyện trực tiếp, Kayla thấy hướng đi của mình được giúp khá nhiều, nhất là những điều chưa biết về cách làm kinh doanh ở đây và những mối quen biết cần có. Kayla nói chọn đi cùng lâu dài vì nhóm khách hai bên hướng tới giống nhau."],
-       gioi_han="Video ngắn. Kayla kể lý do chọn làm việc cùng Duy, chưa kể kết quả kinh doanh."),
+       tieu_de="Hoa hậu Kayla Dinh về Việt Nam và cần một người hiểu cách làm kinh doanh ở đây",
+       than=["Kayla đang ở Mỹ thì tình cờ thấy Duy trên mạng xã hội. Kayla chưa quen cách làm kinh doanh ở Việt Nam, nên muốn có một người đi cùng ở chặng đầu.",
+             "Khi về Việt Nam gặp Duy nói chuyện trực tiếp, Kayla thấy rõ hơn hướng đi của mình, nhất là những điều Kayla chưa biết về cách làm kinh doanh ở đây và những mối quan hệ cần có. Kayla chọn làm việc lâu dài cùng Duy vì cả hai cùng hướng tới một nhóm khách hàng."]),
   # Chiến và Thức: chữ viết lại theo lời trong video (phụ đề tự sinh), không lấy số từ bảng kê (A3).
   dict(ten="Nguyễn Minh Chiến", nhom="ban-hang", chuyen_mon="", nganh="Bất động sản", nam="", yt="DjYUBV6QyIs", anh="",
        tieu_de="Hai người bán khác chào giảm 3%, khách vẫn chọn anh Chiến",
-       than=["Người khách của anh Nguyễn Minh Chiến đã đi xem dự án cùng những người bán khác. Họ cũng tư vấn, cũng giới thiệu, nhưng khách không ưng kiểu bán hàng cứ dồn ép liên tục, nên tự tìm và gọi cho anh Chiến để nghe một cách tư vấn khác.",
-             "Khách mua để ở, và lúc đó mới biết sơ qua về dự án. Anh Chiến không dồn khách. Anh tìm hiểu khách trước, rồi cho khách thấy khi về đây sinh sống thì mình sẽ có được những gì.",
-             "Khách xem xong lúc 7 giờ tối. 7 giờ sáng hôm sau, khách báo đặt cọc. Lúc làm thủ tục, khách mới kể hai người bán kia đã chào giảm 3% cho khách, nhưng khách vẫn chọn làm việc với anh Chiến."],
-       so=[("12 giờ", "Từ lúc khách xem xong tới lúc báo cọc"), ("3%", "Mức hai người bán khác chào giảm cho khách")],
-       trich="", nguon_trich="", ket_qua="",
-       gioi_han="Chuyện này xảy ra với một người khách đã không ưng kiểu bán hàng dồn ép, trong một hoàn cảnh cụ thể. Video không nêu giá trị căn nhà, nên trang này cũng không nêu. Điều bạn nên để ý là cách anh Chiến đặt mình: anh giúp khách tự đưa ra quyết định, chứ không đua giảm giá với người khác."),
+       than=["Người khách của anh Nguyễn Minh Chiến đã đi xem dự án cùng vài người bán khác. Họ cũng tư vấn, cũng giới thiệu, nhưng khách không thích bị dồn ép liên tục, nên tự tìm và gọi cho anh Chiến để nghe một cách tư vấn khác.",
+             "Khách mua nhà để ở, và lúc đó mới biết sơ qua về dự án. Anh Chiến không dồn khách. Anh hỏi để hiểu khách trước, rồi giúp khách hình dung khi về đây sống thì khách sẽ có được những gì.",
+             "Khách xem dự án xong lúc 7 giờ tối. 7 giờ sáng hôm sau, khách báo đặt cọc. Đến lúc làm thủ tục, khách mới kể hai người bán kia đã chào giảm 3%, nhưng khách vẫn chọn làm việc với anh Chiến."],
+       so=[("12 giờ", "Từ lúc khách xem dự án xong tới lúc báo đặt cọc"), ("3%", "Mức giảm giá hai người bán khác đã chào khách")],
+       trich="", nguon_trich="", ket_qua=""),
   dict(ten="Thức", nhom="ban-hang", chuyen_mon="", nganh="Đồng hồ cao cấp", nam="", yt="4eeGx5Tbcw8", het=40, anh="", trich="",
-       tieu_de="Anh Thức áp dụng ngay sau một ngày thực hành, và hôm sau bán được chiếc đồng hồ hơn 500 triệu",
-       than=["Anh Thức kể trước đây anh tư vấn theo bản năng. Có lúc bán được khách mà chính anh cũng không hiểu vì sao mình làm được, nên cũng khó làm lại lần sau.",
-             "Thứ bảy, anh thực hành cùng Duy nguyên một ngày, và áp dụng ngay vào buổi tư vấn ngay hôm đó. Chủ nhật, người khách qua cửa hàng lấy chiếc đồng hồ giá hơn 500 triệu.",
-             "Người khách nói với anh rằng họ biết nhiều nơi bán đồng hồ, nhưng quý anh nên ủng hộ anh."],
-       ket_qua="Hơn 500 triệu",
-       gioi_han="Anh Thức đã bán hàng từ trước, theo lời anh là bán theo bản năng. Con số 500 triệu là kết quả của hôm đó, với người khách đó, không phải mức ai thực hành một ngày cũng đạt."),
+       tieu_de="Thứ bảy anh Thức đổi cách tư vấn, chủ nhật khách ghé lấy chiếc đồng hồ hơn 500 triệu",
+       than=["Anh Thức kể trước đây anh tư vấn theo bản năng. Có lần bán được hàng mà chính anh cũng không hiểu vì sao mình làm được, nên lần sau rất khó làm lại.",
+             "Thứ bảy, anh dành nguyên một ngày cùng Duy luyện cách tư vấn, rồi áp dụng luôn với người khách anh gặp ngay hôm đó. Chủ nhật, người khách ghé cửa hàng lấy chiếc đồng hồ giá hơn 500 triệu.",
+             "Người khách nói với anh: họ biết nhiều nơi bán đồng hồ, nhưng vì quý anh nên muốn mua ở chỗ anh."],
+       ket_qua="Hơn 500 triệu"),
   # Video học viên kể việc làm cùng Duy (B2). het là giây dừng video, cắt đoạn quảng cáo cuối.
   dict(ten="Trân", nhom="ban-hang", chuyen_mon="", nganh="Bất động sản", nam="", yt="AOJlozLn584", het=448, anh="", bia="bia-tran",
        trich="", ket_qua=""),  # C4: câu trích tạm cất, chờ người bên Coach nghe lại
@@ -2019,21 +2006,16 @@ HOC_VIEN = [
        trich="", ket_qua=""),  # C4: câu trích tạm cất, chờ nghe lại
   # vwHHk2M_jIk (Hoàng Yến) không dùng: ảnh bìa mang logo REX.
   dict(ten="Lạc và Ngọc", nhom="ban-hang", chuyen_mon="", nganh="Bất động sản", nam="", yt="f87xoqFpXeY", anh="", bia="bia-lac-ngoc", trich="", ket_qua=""),
-  dict(ten="Trang Minh Thuận", nhom="ban-hang", chuyen_mon="", nganh="Ngành đệm", nam="", trich="", yt="", anh="",
-       ket_qua="~200 triệu / 1 tuần", doi="Thôi mở đầu bằng báo giá và khuyến mãi, chuyển sang hỏi để hiểu khách cần gì trước."),
-  dict(ten="Hồ Thảo", nhom="ban-hang", chuyen_mon="", nganh="Tài chính", nam="", trich="", yt="", anh="",
-       ket_qua="~40 triệu / 3 ngày", doi="Thôi giới thiệu tính năng sản phẩm, chuyển sang tìm hiểu hoàn cảnh tài chính của từng khách."),
+  dict(ten="Trang Minh Thuận", nhom="ban-hang", chuyen_mon="", nganh="Kinh doanh đệm", nam="", trich="", yt="", anh="",
+       ket_qua="Khoảng 200 triệu trong một tuần", doi="Thuận không còn mở đầu bằng báo giá và khuyến mãi. Thuận hỏi trước để hiểu khách cần gì."),
+  dict(ten="Hồ Thảo", nhom="ban-hang", chuyen_mon="", nganh="Tư vấn tài chính", nam="", trich="", yt="", anh="",
+       ket_qua="Khoảng 40 triệu trong ba ngày", doi="Thảo không còn mở đầu bằng tính năng sản phẩm. Thảo tìm hiểu hoàn cảnh tài chính của từng khách trước."),
   dict(ten="Hoa Kenli", nhom="ban-hang", chuyen_mon="", nganh="Nội thất", nam="", trich="", yt="", anh="",
-       ket_qua="2,3 tỷ / 30 ngày", doi="Quay lại làm việc sau thời gian nghỉ sinh, lấy lại chỗ đứng trong công việc và làm video đều đặn."),
+       ket_qua="2,3 tỷ trong 30 ngày", doi="Kenli quay lại làm việc sau thời gian nghỉ sinh con, lấy lại chỗ đứng trong công việc và quay video đều đặn."),
 ]
 
-def _xt(h):
-    """Mục mẫu chỉ hiện khi mở trang với ?xem-truoc."""
-    return " hidden data-mau" if h.get("mau") else ""
-
 def _chuyen_mon(h):
-    return h["chuyen_mon"] or ("Kỹ năng tư vấn của người cố vấn tin cậy" if h["nhom"] == "ban-hang"
-                               else "Thương hiệu cá nhân của người chủ")
+    return h["chuyen_mon"] or ("Tư vấn bán hàng" if h["nhom"] == "ban-hang" else "Thương hiệu cá nhân")
 
 def _nhan_hv(h):
     return " · ".join(x for x in (_chuyen_mon(h), h["nganh"], h["nam"]) if x)
@@ -2041,13 +2023,13 @@ def _nhan_hv(h):
 def _video(h):
     """Video nhúng nhẹ: chỉ ảnh bìa và nút phát, bấm mới tải khung youtube-nocookie."""
     e = html.escape
-    if h["yt"]:
-        return ('<button class="vd-nut" type="button" data-yt="%s"%s aria-label="Phát video của %s">'
-                '<img src="%s" alt="" width="480" height="360" loading="lazy">'
-                '<span class="vd-phat" aria-hidden="true"></span></button>' % (e(h["yt"]), ' data-end="%d"' % h["het"] if h.get("het") else "", e(h["ten"]),
-                   # bia: ảnh bìa tự cắt khi ảnh YouTube mang chữ tên lớp hoặc con số chưa kiểm
-                   "img/cau-chuyen/%s.webp" % h["bia"] if h.get("bia") else "https://i.ytimg.com/vi/%s/hqdefault.jpg" % e(h["yt"])))
-    return '<div class="vd-nut vd-trong"><span>Ô mẫu: video đặt ở đây</span></div>' if h.get("mau") else ""
+    if not h["yt"]:
+        return ""
+    return ('<button class="vd-nut" type="button" data-yt="%s"%s aria-label="Phát video của %s">'
+            '<img src="%s" alt="" width="480" height="360" loading="lazy">'
+            '<span class="vd-phat" aria-hidden="true"></span></button>' % (e(h["yt"]), ' data-end="%d"' % h["het"] if h.get("het") else "", e(h["ten"]),
+               # bia: ảnh bìa tự cắt khi ảnh YouTube mang chữ tên lớp hoặc con số chưa kiểm
+               "img/cau-chuyen/%s.webp" % h["bia"] if h.get("bia") else "https://i.ytimg.com/vi/%s/hqdefault.jpg" % e(h["yt"])))
 
 def _than_dai(h):
     e = html.escape
@@ -2056,50 +2038,45 @@ def _than_dai(h):
         s += '<div class="ch-so">%s</div>' % "".join("<div><b>%s</b><span>%s</span></div>" % c for c in h["so"])
     if h["trich"]:
         s += '<div class="ch-quote"><p>%s</p><span>%s</span></div>' % (e(h["trich"]), e(h["nguon_trich"]))
-    return s + '<div class="dut"><b>Giới hạn của câu chuyện</b><p>%s</p></div>' % h["gioi_han"]
+    return s
 
 _FOUNDER = [h for h in HOC_VIEN if h["nhom"] == "founder"]
 _BH_DAI = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("than")]
 _BH_THE = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("doi")]
-_CO_VIDEO = [h for h in HOC_VIEN if (h["yt"] and not h.get("than")) or h.get("mau")]  # mục có bài dài đã hiện video trong bài
-
-def _ca_mau(ds):
-    """Khu nào chỉ có mục mẫu thì cả khu ẩn trên trang công khai."""
-    return " hidden data-mau" if all(h.get("mau") for h in ds) else ""
+_CO_VIDEO = [h for h in HOC_VIEN if h["yt"] and not h.get("than")]  # mục có bài dài đã hiện video trong bài
 
 KHU_FOUNDER = """
-<section class="phan bd hoa-van"%s>
+<section class="phan bd hoa-van">
   <div class="phan-dau hien">
     <p class="mono">Người chủ doanh nghiệp</p>
-    <h2>Người chủ kể lại họ đã đổi cách làm ra sao</h2>
-    <p>Duy chỉ đăng chuyện của người chủ đã đồng ý nêu tên và có video hoặc tài liệu gốc đi kèm. Vì vậy phần này sẽ có ít chuyện, và Duy muốn giữ như thế.</p>
+    <h2>Người chủ doanh nghiệp kể lại chặng đường làm thương hiệu cá nhân</h2>
+    <p>Ba người dưới đây bắt đầu từ ba chỗ rất khác nhau. Một người chỉ có chiếc điện thoại, một người sợ máy quay, một người mới từ Mỹ về và chưa quen cách làm kinh doanh ở Việt Nam.</p>
   </div>
   %s
 </section>
-""" % (_ca_mau(_FOUNDER), "".join(
-    '<article class="bai-than hien ch-founder"%s style="max-width:74ch;margin-inline:auto">'
+""" % "".join(
+    '<article class="bai-than hien ch-founder" style="max-width:74ch;margin-inline:auto">'
     '<p class="mono">%s</p><h3>%s</h3>%s%s</article>'
-    % (_xt(h), html.escape(_nhan_hv(h)), h["tieu_de"], _video(h), _than_dai(h)) for h in _FOUNDER))
+    % (html.escape(_nhan_hv(h)), h["tieu_de"], _video(h), _than_dai(h)) for h in _FOUNDER)
 
 _ds_cm = []
 for h in _CO_VIDEO:
-    if _chuyen_mon(h) not in [k for k, _ in _ds_cm]:
-        _ds_cm.append((_chuyen_mon(h), all(x.get("mau") for x in _CO_VIDEO if _chuyen_mon(x) == _chuyen_mon(h))))
+    if _chuyen_mon(h) not in _ds_cm:
+        _ds_cm.append(_chuyen_mon(h))
 TUONG_VIDEO = """
-<section class="phan bd phan-sang" id="tuong-video"%s>
+<section class="phan bd phan-sang" id="tuong-video">
   <div class="phan-dau hien">
     <p class="mono">Video học viên</p>
-    <h2>Nghe học viên tự nói, không qua lời kể của Duy</h2>
-    <p>Dưới mỗi video có ghi người đó đã nâng chuyên môn nào. Video chỉ tải về khi bạn bấm vào ảnh.</p>
+    <h2>Nghe chính học viên kể lại</h2>
+    <p>Bấm vào ảnh để xem video.</p>
   </div>
   <div class="tl-loc" role="group" aria-label="Lọc video theo chuyên môn"><button class="tl-nut chon" type="button" data-cm="all">Tất cả</button>%s</div>
   <div class="vd-luoi">%s</div>
 </section>
-""" % (_ca_mau(_CO_VIDEO),
-       "".join('<button class="tl-nut" type="button"%s data-cm="%s">%s</button>'
-               % (" hidden data-mau" if m else "", html.escape(k), html.escape(k)) for k, m in _ds_cm),
-       "".join('<figure class="vd-o"%s data-cm="%s">%s<figcaption><b>%s</b><span>%s</span>%s</figcaption></figure>'
-               % (_xt(h), html.escape(_chuyen_mon(h)), _video(h), html.escape(h["ten"]), html.escape(_nhan_hv(h)),
+""" % ("".join('<button class="tl-nut" type="button" data-cm="%s">%s</button>'
+               % (html.escape(k), html.escape(k)) for k in _ds_cm),
+       "".join('<figure class="vd-o" data-cm="%s">%s<figcaption><b>%s</b><span>%s</span>%s</figcaption></figure>'
+               % (html.escape(_chuyen_mon(h)), _video(h), html.escape(h["ten"]), html.escape(_nhan_hv(h)),
                   "<p>%s</p>" % html.escape(h["trich"]) if h["trich"] else "") for h in _CO_VIDEO))
 
 # Ảnh tin nhắn: (tệp, tên, ngành, rộng, cao). Ngành chưa rõ thì để trống, không đoán.
@@ -2133,8 +2110,8 @@ KHU_BAN_HANG = """
 <section class="phan bd duoi" id="ky-nang-tu-van" style="padding-bottom:0">
   <div class="phan-dau hien">
     <p class="mono">Kỹ năng tư vấn</p>
-    <h2>Từ người bán hàng thành người cố vấn khách tin cậy</h2>
-    <p>Những người dưới đây làm tư vấn và bán hàng ở nhiều ngành khác nhau. Điểm chung là họ thôi mở đầu bằng giá và sản phẩm, chuyển sang hỏi để hiểu hoàn cảnh của khách trước khi tư vấn.</p>
+    <h2>Từ người chào hàng thành người khách tin để hỏi ý kiến</h2>
+    <p>Những người dưới đây làm tư vấn bán hàng ở nhiều ngành khác nhau. Điểm chung là họ không còn mở đầu bằng giá và sản phẩm. Họ hỏi để hiểu hoàn cảnh của khách trước, rồi mới tư vấn.</p>
   </div>
 </section>
 """ + "".join("""
@@ -2149,32 +2126,19 @@ KHU_BAN_HANG = """
 <section class="phan bd phan-sang" id="bon-nganh">
   <div class="phan-dau hien">
     <p class="mono">Ba ngành khác</p>
-    <h2>Ở ba ngành khác, người tư vấn cũng bắt đầu bằng việc hiểu khách</h2>
-    <p>Các con số dưới đây do học viên báo lại và Duy đã đối chiếu với tài liệu gốc. Bạn hãy đọc con số cùng với việc họ đã làm khác đi, vì con số đứng một mình không nói lên được điều gì.</p>
+    <h2>Ba người ở ba ngành khác</h2>
+    <p>Mỗi thẻ ghi việc người đó đã làm khác đi, và kết quả họ báo lại sau đó.</p>
   </div>
   <div class="ch-luoi tre hien">%s</div>
 </section>
 """ % "".join('<article class="ch-the"><i>%s · %s</i><b>%s</b><p>%s</p></article>'
               % (html.escape(h["ten"]), html.escape(h["nganh"]), h["ket_qua"], h["doi"]) for h in _BH_THE)
 
-CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Học viên đã làm khác đi điều gì, và kết quả ra sao",
-  "Mỗi câu chuyện dưới đây do học viên kể lại, Duy hỏi lại trực tiếp và đối chiếu với tài liệu gốc trước khi đăng. Đó là chuyện của một người trong một hoàn cảnh cụ thể, nên bạn đọc để xem họ đã đổi điều gì, đừng đọc như lời hứa rằng ai làm cũng ra con số đó.") \
+CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Họ đã đổi cách làm thế nào, và chuyện gì xảy ra sau đó",
+  "Đây là chuyện của những người chủ doanh nghiệp và những người làm tư vấn bán hàng đã làm việc cùng Duy. Họ tự kể bằng video hoặc tin nhắn: trước đây họ làm thế nào, đã đổi điều gì, và sau đó ra sao.") \
   + KHU_FOUNDER + TUONG_VIDEO + KHU_ANH + KHU_BAN_HANG + """
-<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien">
-    <p class="mono">Cách đọc những con số này</p>
-    <h2>Ba điều Duy giữ khi kể chuyện học viên</h2>
-  </div>
-  <div class="luoi c3 tre hien">
-    <article class="the"><h3>Con số nào cũng có nguồn</h3><p>Mỗi con số do học viên báo lại, Duy hỏi lại trực tiếp và có tài liệu gốc đi kèm. Duy không làm tròn số nào lên cho đẹp.</p></article>
-    <article class="the"><h3>Kết quả tốt nhất, không phải kết quả thường gặp</h3><p>Duy chọn những câu chuyện có kết quả tốt nhất để kể. Nếu kể chúng như chuyện ai cũng đạt được thì Duy đang nói sai sự thật với bạn.</p></article>
-    <article class="the"><h3>Doanh số đến từ việc học viên làm</h3><p>Học viên đổi một cách làm, rồi áp dụng vào đúng hoàn cảnh của mình. Kết quả là công của họ. Phần của Duy là giúp họ thấy chỗ cần đổi.</p></article>
-  </div>
-</section>
 <script>
 (function(){
-  if(/[?&]xem-truoc(=|&|$)/.test(location.search))
-    document.querySelectorAll('[data-mau]').forEach(function(e){e.hidden=false});
   document.addEventListener('click',function(ev){
     var b=ev.target.closest('.vd-nut[data-yt]');
     if(b){
@@ -2195,7 +2159,7 @@ CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Học viên đã làm khác
 </script>
 """
 trang("cau-chuyen-hoc-vien.html", "Câu chuyện học viên · Coach Duy Nguyễn",
-      "Học viên của Coach Duy Nguyễn kể lại họ đã đổi cách tư vấn ra sao: khách vẫn chọn anh Chiến dù hai người bán khác chào giảm 3%, chiếc đồng hồ hơn 500 triệu, và ba người ở ba ngành khác.",
+      "Người chủ doanh nghiệp và người làm tư vấn bán hàng kể lại họ đã đổi cách làm ra sao khi làm việc cùng Coach Duy Nguyễn: Coach Lê Phương, Master Kris Tran, Hoa hậu Kayla Dinh, anh Chiến được khách chọn dù người bán khác chào giảm 3%, anh Thức bán chiếc đồng hồ hơn 500 triệu.",
       CAU_CHUYEN, "chuong-trinh.html")
 print("  cau-chuyen-hoc-vien.html")
 
