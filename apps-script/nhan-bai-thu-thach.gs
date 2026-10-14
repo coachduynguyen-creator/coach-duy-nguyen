@@ -37,6 +37,15 @@
  *   điện thoại, giờ bấm và nguyên văn thỏa thuận vào thư mục
  *   TEN_THU_MUC_DONG_Y, kèm một dòng ở trang tính Thỏa thuận.
  *
+ * CẬP NHẬT LẦN HAI 14/10/2026: TRANG TÍNH TIẾN ĐỘ
+ * Làm y ba bước ở trên (dán, chạy khoiTao, triển khai phiên bản mới). Lần này
+ * Google hỏi thêm quyền "chạy khi bạn vắng mặt", bấm cho phép. khoiTao tạo
+ * trang tính Tiến độ đứng đầu bảng và cài giờ dựng lại trang đó mỗi tiếng:
+ * mỗi người một dòng, ngày nộp từng bài, đang ở ngày nào, chậm lịch mấy ngày,
+ * và hai dòng đếm số người nộp, tỷ lệ so với số người cam kết. Muốn xem số mới
+ * ngay thì chọn hàm dungTienDo, bấm Chạy. Đừng gõ tay vào trang Tiến độ, mỗi
+ * tiếng trang đó bị xoá trắng và ghi lại.
+ *
  * CỘT TỰ MỌC
  * Trang gửi lên danh sách [tên câu hỏi, chữ đã điền]. Câu hỏi nào chưa có cột
  * thì mã tự thêm cột ở cuối. Nhờ vậy thêm Ngày 2 tới 7 hay sửa câu hỏi trên
@@ -86,6 +95,7 @@ function khoiTao() {
 
   Logger.log('Bảng bài nộp: ' + bang.getUrl());
   Logger.log('Thư mục bản Quy trình: ' + thuMuc.getUrl());
+  caiGioTienDo();
 }
 
 /** Dọn bài thử, chạy tay. Xoá mọi dòng có chữ KIỂM THỬ trong cột Họ và tên. */
@@ -215,30 +225,94 @@ function hoiTienDo(d) {
  * Tổng kết mở khi đã nộp Ngày 7.
  */
 function tinhTienDo(email, sdt) {
-  var bang = layBang(), em = email.toLowerCase(), so = soCuoi(sdt), daNop = {};
+  var p = docBaiNop(layBang())[email.toLowerCase() + '|' + soCuoi(sdt)];
+  return lichTuNop(p ? p.da_nop : {});
+}
+
+/** Đọc chín trang tính một lượt. Mỗi người là một cặp email + chín số cuối điện thoại, giữ ngày nộp sớm nhất của từng bài. */
+function docBaiNop(bang) {
+  var ds = {};
   for (var n = 0; n <= 8; n++) {
     var t = bang.getSheetByName(tenTrang(n));
     if (!t || t.getLastRow() < 2) continue;
     var v = t.getDataRange().getValues(), td = v[0].map(String);
-    var cGio = td.indexOf('Thời gian'), cEm = td.indexOf('Email'), cSo = td.indexOf('Số điện thoại');
+    var cGio = td.indexOf('Thời gian'), cTen = td.indexOf('Họ và tên'), cEm = td.indexOf('Email'), cSo = td.indexOf('Số điện thoại');
     for (var i = 1; i < v.length; i++) {
-      if (String(v[i][cEm]).trim().toLowerCase() !== em || soCuoi(v[i][cSo]) !== so) continue;
+      var em = String(v[i][cEm]).trim().toLowerCase(), so = soCuoi(v[i][cSo]);
+      if (!em || !so) continue;
+      var p = ds[em + '|' + so] || (ds[em + '|' + so] = { ten: '', email: em, sdt: String(v[i][cSo]), da_nop: {} });
+      if (chuoi(v[i][cTen])) p.ten = chuoi(v[i][cTen]);
       var ngay = v[i][cGio] instanceof Date ? Utilities.formatDate(v[i][cGio], GIO, 'yyyy-MM-dd') : '';
-      if (ngay && (!daNop[n] || ngay < daNop[n])) daNop[n] = ngay;
+      if (ngay && (!p.da_nop[n] || ngay < p.da_nop[n])) p.da_nop[n] = ngay;
     }
   }
+  return ds;
+}
+
+function lichTuNop(daNop) {
   var hom = homNay(), kq = { hom_nay: hom, da_nop: daNop, mo: [0], lich: {}, bat_dau: null, han: null };
   if (!daNop[0]) return kq;
   var bd = daNop[0] > NGAY_KHAI_MAC ? daNop[0] : NGAY_KHAI_MAC;
   kq.bat_dau = bd;
   kq.han = congNgay(bd, SO_NGAY_HAN);
-  for (n = 1; n <= 7; n++) {
+  for (var n = 1; n <= 7; n++) {
     kq.lich[n] = congNgay(bd, n - 1);
     if (n > 1 && daNop[n - 1] && congNgay(daNop[n - 1], 1) > kq.lich[n]) kq.lich[n] = congNgay(daNop[n - 1], 1);
     if (daNop[n - 1] && hom >= kq.lich[n]) kq.mo.push(n);
   }
   if (daNop[7]) kq.mo.push(8);
   return kq;
+}
+
+/* ---------- trang tính Tiến độ: mỗi người một dòng, tự dựng lại mỗi giờ ---------- */
+
+/**
+ * Xoá trắng rồi ghi lại trang tính Tiến độ, nên đừng gõ tay vào trang này.
+ * Dòng 2 và 3 đếm số người đã nộp từng bài và tỷ lệ so với số người nộp cam kết.
+ * "Chậm lịch" là số ngày bài kế tiếp đã quá ngày theo lịch mà chưa nộp.
+ */
+function dungTienDo() {
+  var bang = layBang(), ds = docBaiNop(bang), hom = homNay(), N = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  var hien = function (s) { return s ? "'" + s.slice(8, 10) + '/' + s.slice(5, 7) : ''; };
+  var tieuDe = ['Họ và tên', 'Email', 'Số điện thoại', 'Ngày bắt đầu', 'Hạn cuối', 'Đang ở', 'Chậm lịch (ngày)', 'Số bài đã nộp']
+    .concat(N.map(tenTrang));
+  var dem = N.map(function () { return 0; });
+  var nguoi = Object.keys(ds).map(function (k) {
+    var p = ds[k], kq = lichTuNop(p.da_nop), ke = -1;
+    N.forEach(function (n) { if (p.da_nop[n]) dem[n]++; else if (ke < 0) ke = n; });
+    var cham = ke >= 1 && ke <= 7 && hom > kq.lich[ke] ? (Date.parse(hom) - Date.parse(kq.lich[ke])) / 864e5 : '';
+    return [p.ten, p.email, "'" + p.sdt, hien(kq.bat_dau), hien(kq.han), ke < 0 ? 'Xong' : tenTrang(ke), cham,
+      Object.keys(p.da_nop).length].concat(N.map(function (n) { return hien(p.da_nop[n]); }))
+      .concat([kq.bat_dau || '9999']);
+  });
+  nguoi.sort(function (a, b) { return a[a.length - 1] < b[b.length - 1] ? -1 : a[a.length - 1] > b[b.length - 1] ? 1 : a[0] < b[0] ? -1 : 1; });
+  nguoi = nguoi.map(function (r) { return r.slice(0, -1); });
+
+  var rong = function (chu) { return [chu, '', '', '', '', '', '', '']; };
+  var bangGhi = [tieuDe,
+    rong('Số người đã nộp').concat(dem),
+    rong('Tỷ lệ so với số người cam kết').concat(dem.map(function (c) { return dem[0] ? c / dem[0] : ''; })),
+    rong('Cập nhật lúc ' + Utilities.formatDate(new Date(), GIO, 'HH:mm dd/MM/yyyy')).concat(N.map(function () { return ''; }))
+  ].concat(nguoi);
+
+  var t = bang.getSheetByName('Tiến độ') || bang.insertSheet('Tiến độ', 0);
+  t.clear();
+  t.getRange(1, 1, bangGhi.length, tieuDe.length).setValues(bangGhi);
+  t.getRange(1, 1, 1, tieuDe.length).setFontWeight('bold');
+  t.getRange(2, 1, 2, tieuDe.length).setFontWeight('bold');
+  t.getRange(3, 9, 1, N.length).setNumberFormat('0%');
+  t.getRange(4, 1).setFontStyle('italic');
+  t.setFrozenRows(4);
+  t.setFrozenColumns(1);
+}
+
+/** Cài giờ chạy dungTienDo mỗi tiếng. Chạy lại không sinh giờ trùng. */
+function caiGioTienDo() {
+  ScriptApp.getProjectTriggers().forEach(function (g) {
+    if (g.getHandlerFunction() === 'dungTienDo') ScriptApp.deleteTrigger(g);
+  });
+  ScriptApp.newTrigger('dungTienDo').timeBased().everyHours(1).create();
+  dungTienDo();
 }
 
 /* ---------- thỏa thuận: lưu bản PDF người đã bấm Tôi đồng ý ---------- */
