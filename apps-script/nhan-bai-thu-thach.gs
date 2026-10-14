@@ -299,7 +299,7 @@ function dungTienDo() {
   var t = bang.getSheetByName('Tiến độ') || bang.insertSheet('Tiến độ', 0);
   t.clear();
   t.getRange(1, 1, bangGhi.length, tieuDe.length).setValues(bangGhi);
-  t.getRange(1, 1, 1, tieuDe.length).setFontWeight('bold');
+  t.getRange(1, 1, 1, tieuDe.length).setFontWeight('bold').setWrap(true).setVerticalAlignment('top');
   t.getRange(2, 1, 2, tieuDe.length).setFontWeight('bold');
   t.getRange(3, 9, 1, N.length).setNumberFormat('0%');
   t.getRange(4, 1).setFontStyle('italic');
