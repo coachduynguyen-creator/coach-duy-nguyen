@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thỏa thuận sử dụng tư liệu · Thử thách 7 ngày</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="../../../cong-dong/img/ngf-khien-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap">
+<!-- Trang thỏa thuận sử dụng tư liệu Thử thách 7 ngày, dựng 14/10/2026.
+     Nguồn chữ: ~/Codex_Projects/Next Gen Founder/outputs/ngf_thu_thach_7_ngay_20261014/NGF - Thỏa thuận sử dụng tư liệu thử thách 7 ngày.md,
+     phần dưới dấu BẢN THÀNH VIÊN. Sửa chữ thì sửa tệp nguồn trước, rồi chép lại vào khối id="ban" bên dưới.
+     CHƯA MỞ CHO THÀNH VIÊN: chờ người làm pháp lý đọc và tên pháp lý đầy đủ của công ty. Trang để noindex, không có liên kết nào trỏ tới.
+     Khi đã soát xong: đặt NHAP = false ở đây, đặt CAN_THOA_THUAN = true trong ../index.html, rồi thêm liên kết từ sổ làm bài.
+     Bấm Tôi đồng ý thì gửi { hoi: 'dong_y', ten, email, dien_thoai, ban } về apps-script/nhan-bai-thu-thach.gs, máy lưu PDF vào Drive. -->
+<style>
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --bg-2:#F6F7F9; --line:#E3E6EB; --line-2:#CBD0D8;
+  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79;
+  --cam:#C98A28; --cam-dam:#8A5A0F; --cam-mo:#FBF1DC;
+  --dung:#1F7A4D; --loi:#B42318;
+  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
+  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2{margin:0;color:var(--ink);font-family:var(--f-tit);letter-spacing:-.02em;line-height:1.2;font-weight:700;text-wrap:balance}
+h1{font-size:30px;margin-bottom:14px}
+h2{font-size:21px;margin:30px 0 8px}
+main{max-width:720px;margin:0 auto;padding:32px 16px 64px}
+ul{padding-left:22px;margin:8px 0}
+li{margin:4px 0}
+.nhap{background:var(--cam-mo);border:1px solid var(--cam);color:var(--cam-dam);border-radius:10px;padding:12px 14px;font-size:15px;margin-bottom:22px}
+form{margin-top:30px;border-top:1px solid var(--line);padding-top:22px}
+label{display:block;margin:0 0 14px}
+label span{display:block;font-weight:600;color:var(--ink);font-size:15.5px;margin-bottom:6px}
+input{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus{outline:2px solid var(--cam);outline-offset:1px}
+button{width:100%;font:inherit;font-weight:700;font-size:17px;padding:14px;border:0;border-radius:12px;background:var(--cam-dam);color:#fff;cursor:pointer;margin-top:6px}
+button:disabled{opacity:.6;cursor:default}
+.bao{margin-top:14px;font-size:15.5px}
+.bao.dung{color:var(--dung)} .bao.loi{color:var(--loi)}
+.bay{position:absolute;left:-9999px}
+@media (max-width:760px){
+  h1,h2{text-align:center}
+  main p,main li{text-align:justify}
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="nhap" id="nhap" hidden>Bản nháp đang chờ soát pháp lý. Trang này chưa dùng chính thức.</p>
+  <div id="chu"></div>
+  <form id="form" novalidate>
+    <label><span>Họ và tên</span><input id="ten" autocomplete="name" required></label>
+    <label><span>Email</span><input id="email" type="email" autocomplete="email" required></label>
+    <label><span>Số điện thoại</span><input id="sdt" type="tel" autocomplete="tel" inputmode="tel" required></label>
+    <input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" id="nut">Tôi đồng ý</button>
+    <p class="bao" id="bao" role="status"></p>
+  </form>
+</main>
+
+<script type="text/plain" id="ban"># Thỏa thuận sử dụng tư liệu trong Thử thách 7 ngày
+
+Bạn đọc hết trang này trước lần nộp bài đầu tiên. Đồng ý thì bấm nút cuối trang.
+
+## 1. Tư liệu nào được dùng
+
+Mọi thứ bạn gửi hoặc chia sẻ trong thử thách:
+
+- bài điền trong sổ làm bài của bảy ngày;
+- video cam kết, bảy video của bảy ngày và video tổng kết;
+- hình ảnh, giọng nói, lời kể có trong các video đó;
+- bài và bình luận bạn đăng trong nhóm Facebook của thử thách;
+- họ tên, email và số điện thoại bạn nhập ở sổ làm bài.
+
+## 2. Dùng vào việc gì
+
+Bạn cho phép Coach Duy Nguyễn và Next Step Group, công ty vận hành Next Gen Founder (dưới đây gọi chung là Next Gen Founder):
+
+- lưu tư liệu để theo dõi tiến độ của bạn, dùng công cụ AI để đọc và tổng hợp bài nộp;
+- dùng tư liệu để làm tài liệu và chương trình tốt hơn cho người đi sau;
+- dùng công khai tư liệu để lan tỏa và truyền thông cho cộng đồng, trên trang web, mạng xã hội, video, bài viết và tài liệu của Next Gen Founder;
+- kể lại câu chuyện của bạn như một câu chuyện thành viên, kèm lời bạn nói trong video tổng kết;
+- nêu tên bạn khi vinh danh người hoàn thành;
+- liên hệ với bạn sau thử thách về các chương trình tiếp theo của cộng đồng;
+- và các việc khác phục vụ truyền thông, đào tạo và phát triển cộng đồng Next Gen Founder.
+
+## 3. Thù lao
+
+Việc sử dụng ở mục 2 không kèm thù lao.
+
+## 4. Thông tin của khách
+
+Bài và video của bạn không nêu tên, số điện thoại, địa chỉ hay chuyện riêng của khách, và không đưa ảnh chụp tin nhắn thật của khách. Cần kể về một khách thì gọi bằng tên chung, như "một khách ngành nội thất".
+
+## 5. Lưu bao lâu và xin xóa thế nào
+
+Tư liệu được lưu tới khi bạn xin xóa. Muốn xóa hoặc rút lại đồng ý, bạn nhắn riêng cho người hỗ trợ trong nhóm Facebook của thử thách. Sau khi nhận, Next Gen Founder xóa tư liệu đang lưu và ngừng dùng tư liệu đó cho việc mới. Tư liệu đã đăng công khai thì được gỡ khỏi các kênh Next Gen Founder đang quản lý; bản người khác đã tự chia sẻ lại thì nằm ngoài tầm Next Gen Founder.
+
+## 6. Bản đồng ý được lưu
+
+Khi bạn bấm "Tôi đồng ý", họ tên, email, giờ bấm và nguyên văn thỏa thuận này được lưu thành một tệp PDF. Cần bản đó, bạn nhắn người hỗ trợ.
+
+## Xác nhận
+
+Tôi đã đọc hết thỏa thuận này. Tôi đồng ý cho phép Coach Duy Nguyễn và Next Step Group, công ty vận hành Next Gen Founder, lưu và sử dụng bài điền, video, hình ảnh, thông tin và những chia sẻ tôi gửi trong Thử thách 7 ngày, theo đúng các mục ở trên.</script>
+
+<script>
+var NHAP = true;   // còn chờ soát pháp lý
+var NOI_NHAN = 'https://script.google.com/macros/s/AKfycbxCLolz16hYvDoaNCHf7aW__E2kI-dF31mbERGxl0mwRbnXprZRJpuKgQSbMhPe1mA9nA/exec';   // cùng địa chỉ với ../index.html
+var TIEN_TO = 'tt-tvbh:';   // cùng tiền tố với sổ làm bài, để sổ làm bài biết bạn đã đồng ý
+
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function doc(k) { try { return localStorage.getItem(TIEN_TO + k) || ''; } catch (e) { return ''; } }
+function ghi(k, v) { try { localStorage.setItem(TIEN_TO + k, v); } catch (e) { } }
+
+/* Bản chữ trong khối id="ban" vừa hiện trên trang vừa gửi đi nguyên văn, nên chữ đọc và chữ lưu PDF là một. */
+var BAN = $('ban').textContent.trim();
+$('chu').innerHTML = BAN.split(/\n\n+/).map(function (k) {
+  if (k.indexOf('## ') === 0) return '<h2>' + esc(k.slice(3)) + '</h2>';
+  if (k.indexOf('# ') === 0) return '<h1>' + esc(k.slice(2)) + '</h1>';
+  if (k.indexOf('- ') === 0) return '<ul>' + k.split('\n').map(function (d) { return '<li>' + esc(d.replace(/^- /, '')) + '</li>'; }).join('') + '</ul>';
+  return '<p>' + esc(k) + '</p>';
+}).join('');
+$('nhap').hidden = !NHAP;
+
+try { var n = JSON.parse(doc('nguoi')); if (n) { $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('sdt').value = n.sdt || ''; } } catch (e) { }
+
+var bao = $('bao'), nut = $('nut');
+if (doc('thoa-thuan')) { bao.className = 'bao dung'; bao.textContent = 'Bạn đã đồng ý lúc ' + doc('thoa-thuan') + '. Bấm lại thì lưu thêm một bản mới.'; }
+
+$('form').onsubmit = function (e) {
+  e.preventDefault();
+  function loi(s) { bao.className = 'bao loi'; bao.textContent = s; }
+  var ten = $('ten').value.trim(), email = $('email').value.trim(), sdt = $('sdt').value.replace(/[\s.\-()]/g, '');
+  if (!ten) return loi('Bạn ghi họ và tên.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return loi('Email chưa đúng dạng.');
+  if (!/^\+?\d{9,12}$/.test(sdt)) return loi('Số điện thoại chưa đúng.');
+  nut.disabled = true; nut.textContent = 'Đang lưu...'; bao.className = 'bao'; bao.textContent = '';
+  var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 45000);
+  fetch(NOI_NHAN, {
+    method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, signal: huy.signal,
+    body: JSON.stringify({ hoi: 'dong_y', ten: ten, email: email, dien_thoai: sdt, ban: BAN, bay: $('bay').value })
+  }).then(function (r) { return r.json(); }).then(function (k) {
+    if (!k.ok) throw new Error(k.loi || 'Nơi nhận báo lỗi.');
+    var gio = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
+    ghi('thoa-thuan', gio);
+    bao.className = 'bao dung';
+    bao.textContent = 'Đã lưu bản đồng ý của bạn lúc ' + gio + '. Bạn quay lại sổ làm bài để nộp bài.';
+  }).catch(function (e) {
+    loi('Chưa lưu được' + (e.name === 'AbortError' ? ' vì mạng chậm quá' : ': ' + e.message.replace(/\.$/, '')) + '. Bạn bấm lại sau ít phút.');
+  }).then(function () { clearTimeout(hen); nut.disabled = false; nut.textContent = 'Tôi đồng ý'; });
+};
+</script>
+</body>
+</html>

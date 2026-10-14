@@ -13,7 +13,8 @@
 <!-- Trang sổ làm bài Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng, dựng 14/10/2026. Đề bài và nguồn chữ ở
      ~/Codex_Projects/Next Gen Founder/outputs/ngf_thu_thach_7_ngay_20261014/.
      Bài nộp gửi về apps-script/nhan-bai-thu-thach.gs; dán địa chỉ /exec vào NOI_NHAN.
-     Thêm một ngày: thêm mục vào NGAY trong thẻ script, không phải sửa Apps Script. -->
+     Ngày 0 và 1 viết tay trong NGAY. Ngày 2 tới 7 và Tổng kết nằm ở tai-lieu.js, sinh bằng
+     python3 dung_tai_lieu_thu_thach.py ở gốc kho; sửa chữ thì sửa tệp nguồn .md rồi chạy lại, đừng sửa tai-lieu.js. -->
 <style>
 :root{
   color-scheme:light;
@@ -86,10 +87,40 @@ ul.kiem input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(-
 .bao:empty{display:none}
 .tu-luu{font-size:13.5px;color:var(--ink-3);text-align:right;margin-top:6px}
 .bay{position:absolute;left:-9999px}
+.chu p,.chu li{margin:8px 0}
+.chu ol,.chu ul{padding-left:22px}
+.chu h4,.tai-lieu h4,.tai-lieu h3{margin:16px 0 4px;font-size:17px;color:var(--ink);font-family:var(--f-tit)}
+.tai-lieu{border:1px solid var(--line);border-radius:14px;padding:4px 16px 12px;margin-top:14px}
+.tai-lieu > summary{cursor:pointer;font-weight:700;color:var(--ink);font-family:var(--f-tit);padding:12px 0;font-size:17px}
+.bang{overflow-x:auto;margin:10px 0}
+.bang table{border-collapse:collapse;width:100%;font-size:15px}
+.bang th,.bang td{border:1px solid var(--line-2);padding:6px 8px;text-align:left;vertical-align:top}
+.bang th{background:var(--bg-2)}
+td.trong{height:28px}
+aside.goi{margin:14px 0;padding:12px 16px;border-left:3px solid var(--cam);background:var(--cam-mo);border-radius:0 10px 10px 0;color:var(--ink)}
+span.cho{color:var(--ink-3)}
+ul.tich{list-style:none;padding-left:0}
+.ngat{display:none}
+.video{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:var(--bg-2);margin-top:14px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-cho{border:1px dashed var(--line-2);border-radius:14px;padding:22px 16px;text-align:center;color:var(--ink-3);margin-top:14px}
+fieldset.o{border:0;padding:0;margin:14px 0 0}
+fieldset.o legend{font-weight:600;color:var(--ink);font-size:15.5px;line-height:1.4;margin-bottom:6px;padding:0}
+fieldset.o > small{display:block;color:var(--ink-3);font-size:14px;margin:-2px 0 6px}
+label.chon{display:inline-flex;gap:8px;align-items:center;margin:4px 16px 4px 0;font-size:15.5px}
+label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
+.rieng{background:var(--cam-mo);border-radius:10px;padding:10px 14px}
+.khoa-bao{border:1px solid var(--cam);background:var(--cam-mo);border-radius:14px;padding:14px 16px;margin-top:18px;color:var(--ink)}
+#ban-qt{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;font-size:15.5px}
+@media print{
+  header.dau,.mo,#nguoi,#nguoi-gon,nav.ngay,footer,.nop,#bai > :not(.in-duoc){display:none !important}
+  #bai > .in-duoc > :not(#ban-qt){display:none}
+  #ban-qt{border:0;padding:0}
+}
 footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color:var(--ink-3)}
 @media(max-width:759px){
   .mo h1,.mo .ten-tt,.ngay-dau h2,.ngay-dau .nhan{text-align:center}
-  .mo p,section.phan > p,blockquote,.the > p{text-align:justify}
+  .mo p,section.phan > p,blockquote,.the > p,.chu p,.tai-lieu p,aside.goi{text-align:justify}
 }
 </style>
 </head>
@@ -138,6 +169,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color
 
 <footer><div class="khung">Next Gen Founder · Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng · coachduynguyen.vn</div></footer>
 
+<script src="tai-lieu.js"></script>
 <script>
 /* Địa chỉ /exec của apps-script/nhan-bai-thu-thach.gs. Để trống thì nút Nộp báo chưa nối. */
 var NOI_NHAN = 'https://script.google.com/macros/s/AKfycbxCLolz16hYvDoaNCHf7aW__E2kI-dF31mbERGxl0mwRbnXprZRJpuKgQSbMhPe1mA9nA/exec';
@@ -160,7 +192,7 @@ var NGAY = {
         sau: 'Video cam kết không giới hạn độ dài.'
       }
     ],
-    nopSau: ['Nộp xong, bạn nhận email Ngày 1, và ngày nhận email đó là Ngày 1 của bạn.']
+    nopSau: ['Nộp xong, bạn làm tiếp Ngày 1 trên trang này. Đợt đầu cả nhóm làm Ngày 1 vào 17/10, người vào sau thì ngày nộp video cam kết là Ngày 1 của mình. Mỗi ngày tiếp theo mở lúc 0h hôm sau, khi bạn đã nộp bài ngày trước.']
   },
   1: {
     ten: 'Nhìn lại quy trình tư vấn bạn đang dùng',
@@ -257,6 +289,14 @@ var NGAY = {
     ]
   }
 };
+if (typeof BAI !== 'undefined') for (var k in BAI) NGAY[k] = BAI[k];   // Ngày 2 tới 7 và Tổng kết sinh từ tài liệu, xem dung_tai_lieu_thu_thach.py
+
+/* Mã video YouTube (chế độ không công khai) của bài giảng từng ngày, ví dụ 'dQw4w9WgXcQ'. Để trống thì trang báo video sắp có. */
+var VIDEO = { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '' };
+
+/* Bật khi bản thỏa thuận đã qua người làm pháp lý và trang thoa-thuan/ mở cho thành viên:
+   lúc đó phải bấm Tôi đồng ý ở trang thỏa thuận thì mới nộp được. */
+var CAN_THOA_THUAN = false;
 
 /* ---------- lưu trên máy, bọc try vì trình duyệt ẩn danh có thể chặn ---------- */
 var TIEN_TO = 'tt-tvbh:';   // mỗi thử thách một tiền tố riêng, kẻo bài thử thách sau đè bài thử thách trước
@@ -291,27 +331,43 @@ $('sua-nguoi').onclick = function () {
 
 /* ---------- dựng trang một ngày ---------- */
 function oHtml(o) {
-  var v = esc(doc(o.id));
+  var v = doc(o.id);
   var goi = o.goi ? '<small>' + esc(o.goi) + '</small>' : '';
+  if (o.chon) return '<fieldset class="o"><legend>' + esc(o.nhan) + '</legend>' + goi + o.chon.map(function (c) {
+    return '<label class="chon"><input type="radio" name="' + o.id + '" value="' + esc(c) + '"' + (v === c ? ' checked' : '') + '>' + esc(c) + '</label>';
+  }).join('') + '</fieldset>';
   var nhap = o.dong === 1
-    ? '<textarea id="' + o.id + '" rows="1" style="min-height:48px">' + v + '</textarea>'
-    : '<textarea id="' + o.id + '" rows="3">' + v + '</textarea>';
+    ? '<textarea id="' + o.id + '" rows="1" style="min-height:48px">' + esc(v) + '</textarea>'
+    : '<textarea id="' + o.id + '" rows="3">' + esc(v) + '</textarea>';
   return '<label class="o"><span>' + esc(o.nhan) + '</span>' + goi + nhap + '</label>';
+}
+
+function videoHtml(n) {
+  if (n < 1 || n > 7) return '';
+  return VIDEO[n]
+    ? '<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(VIDEO[n]) + '?rel=0" title="Video Ngày ' + n + '" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
+    : '<div class="video-cho">Video sẽ có trước 0h ngày mở.</div>';
 }
 
 function dungNgay(n) {
   var d = NGAY[n], h = '';
-  if (!d) {
-    $('bai').innerHTML = '<div class="ngay-dau"><div class="nhan">Ngày ' + n + '</div><h2>Bài của ngày này chưa mở</h2></div><p>Bài Ngày ' + n + ' sẽ có trên trang này vào đúng ngày học. Bạn làm tiếp các ngày đã mở ở thanh trên.</p>';
-    return;
-  }
+  if (!d) { $('bai').innerHTML = '<div class="ngay-dau"><h2>Trang chưa tải xong bài của ngày này</h2></div><p>Bạn tải lại trang giúp Duy. Chữ đã gõ vẫn còn trên máy.</p>'; return; }
   h += '<div class="ngay-dau"><div class="nhan">' + nhanNgay(n) + '</div><h2>' + esc(d.ten) + '</h2></div>';
+  var tt = trangThai(n);
+  if (tt) h += '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '. Bạn vẫn xem trước được, nhưng nên làm xong ngày trước rồi hẵng làm ngày này.</div>';
   if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
-  if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3><ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol></section>';
+  h += videoHtml(n);
+  if (typeof TAI_LIEU !== 'undefined' && TAI_LIEU[n]) h += '<details class="tai-lieu"><summary>Tài liệu Ngày ' + n + '</summary>' + TAI_LIEU[n] +
+    '<p><a class="nut phu nho-gon" href="pdf/ngay-' + n + '.pdf" target="_blank" rel="noopener">Mở bản PDF để in</a></p></details>';
+  if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3>' + (typeof d.viec === 'string'
+    ? '<div class="chu">' + d.viec + '</div>'
+    : '<ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol>') + '</section>';
   d.phan.forEach(function (p) {
     h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '') +
+         (p.rieng ? '<p class="nho rieng">Phần này để bạn tự kiểm tra, không cần nộp. Chữ chỉ lưu trên máy này.</p>' : '') +
          (p.ds ? '<ol class="viec">' + p.ds.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' : '');
     p.nhom.forEach(function (g) {
+      if (g.h) { h += '<div class="chu">' + g.h + '</div>'; return; }
       var trong = (g.mo ? '<p class="nho">' + esc(g.mo) + '</p>' : '') + g.o.map(oHtml).join('');
       if (g.gap) {
         var co = g.o.some(function (o) { return doc(o.id); });
@@ -320,10 +376,14 @@ function dungNgay(n) {
         h += '<div class="nhom">' + (g.tieu ? '<h4>' + esc(g.tieu) + '</h4>' : '') + trong + '</div>';
       }
     });
-    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>Lấy chữ từ Mẫu 1 vào các ô còn trống</button></p>';
+    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Lấy chữ từ Mẫu 1 vào các ô còn trống') + '</button></p>';
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
   });
+  if (n === 7) h += '<section class="phan in-duoc"><h3>Bản Quy trình hoàn chỉnh</h3>' +
+    '<p>Trang ghép phần Quy trình bạn đã điền từ Ngày 1 tới Ngày 7 thành một bản, theo thứ tự Phần 1 tới Phần 10. Phần 3 lấy bản sửa hôm nay, còn trống thì lấy bản Ngày 1. Khi bạn nộp bài hôm nay, bản này được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
+    '<p class="hang"><button type="button" class="nut phu nho-gon" id="rap">Ráp bản Quy trình</button> <button type="button" class="nut phu nho-gon" id="in" hidden>In bản này</button></p>' +
+    '<p class="nho" id="thieu-qt"></p><div id="ban-qt" hidden></div></section>';
   if (d.kiem) h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
     var id = 'kiem-' + n + '-' + i;
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
@@ -341,63 +401,128 @@ function dungNgay(n) {
   $('nop').onclick = function () { nop(n); };
   var nut = $('bai').querySelector('[data-lay-tu]');
   if (nut) nut.onclick = function () {
-    var so = 0;
+    var dem = 0;
     tatCaO(n).forEach(function (o) {
-      var dich = $(o.id), nguon = o.tu && $(o.tu);
-      if (nguon && !dich.value.trim() && nguon.value.trim()) { dich.value = nguon.value; ghi(o.id, dich.value); gian(dich); so++; }
+      var dich = $(o.id), nguon = o.tu && doc(o.tu).trim();
+      if (dich && nguon && !dich.value.trim()) { dich.value = nguon; ghi(o.id, nguon); gian(dich); dem++; }
     });
-    nut.textContent = so ? 'Đã chép ' + so + ' ô từ Mẫu 1' : 'Không có ô trống nào lấy được chữ từ Mẫu 1';
+    nut.textContent = dem ? 'Đã chép ' + dem + ' ô' : 'Không có ô trống nào lấy được chữ';
   };
+  if (n === 7) $('rap').onclick = function () {
+    var b = banQuyTrinh();
+    $('ban-qt').textContent = b.chu; $('ban-qt').hidden = false; $('in').hidden = false;
+    $('thieu-qt').textContent = b.thieu.length ? 'Còn trống: ' + b.thieu.join(', ') + '. Bạn mở lại ngày đó điền thêm rồi ráp lại.' : '';
+  };
+  if (n === 7) $('in').onclick = function () { window.print(); };
 }
 
 function gian(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 2 + 'px'; }
 
+function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này' : 'Trình duyệt này không cho lưu chữ, bạn nộp bài trước khi đóng trang'; }
 $('bai').addEventListener('input', function (e) {
   var t = e.target;
-  if (t.tagName === 'TEXTAREA') {
-    gian(t);
-    $('tu-luu').textContent = ghi(t.id, t.value) ? 'Đã lưu trên máy này' : 'Trình duyệt này không cho lưu chữ, bạn nộp bài trước khi đóng trang';
-  }
+  if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
 });
 $('bai').addEventListener('change', function (e) {
-  if (e.target.type === 'checkbox' && e.target.id.indexOf('kiem-') === 0) ghi(e.target.id, e.target.checked ? '1' : '');
+  var t = e.target;
+  if (t.type === 'radio') baoLuu(ghi(t.name, t.value));
+  if (t.type === 'checkbox' && t.id.indexOf('kiem-') === 0) ghi(t.id, t.checked ? '1' : '');
 });
 
 /* ---------- gom bài ---------- */
 function tatCaO(n) {
   var r = [];
   NGAY[n].phan.forEach(function (p) {
-    p.nhom.forEach(function (g) { g.o.forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, nhan: o.nhan, phan: p.tieu, cot: p.cot, nhom: g.tieu }); }); });
+    p.nhom.forEach(function (g) {
+      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, cot: p.cot, nhom: g.tieu }); });
+    });
   });
   return r;
 }
-function tenCot(o) { return [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
+function tenCot(o) { return o.ten || [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
+
+/* Ghép phần Quy trình của Ngày 1 tới 7. Ngày 1 lấy tên Phần từ tiêu đề nhóm, Ngày 2 tới 7 từ o.qp. */
+function banQuyTrinh() {
+  var muc = [];
+  for (var n = 1; n <= 7; n++) {
+    NGAY[n].phan.forEach(function (p) {
+      if (p.cot !== 'Quy trình') return;
+      p.nhom.forEach(function (g) {
+        (g.o || []).forEach(function (o) {
+          var tieu = o.qp || g.tieu || '', so = +((tieu.match(/Phần (\d+)/) || [])[1]);
+          if (!so) return;
+          var nhan = o.qp && g.tieu ? (o.nhan === 'Bạn điền' ? g.tieu : g.tieu + ': ' + o.nhan) : o.nhan;
+          muc.push({ so: so, tieu: tieu, ngay: n, nhan: nhan, v: doc(o.id).trim() });
+        });
+      });
+    });
+  }
+  var sua3 = muc.some(function (m) { return m.so === 3 && m.ngay === 7 && m.v; });
+  muc = muc.filter(function (m) { return !(m.so === 3 && m.ngay === (sua3 ? 1 : 7)); });
+  var nguoi = layNguoi() || {}, chu = '# Quy trình tư vấn bán hàng tiêu chuẩn của ' + (nguoi.ten || 'bạn'), thieu = [];
+  for (var so = 1; so <= 10; so++) {
+    var o = muc.filter(function (m) { return m.so === so; }), co = o.filter(function (m) { return m.v; });
+    if (!o.length) continue;
+    if (!co.length) { thieu.push('Phần ' + so + ' (Ngày ' + o[0].ngay + ')'); continue; }
+    chu += '\n\n## ' + o[0].tieu.replace(/, bản (sửa|đầu)$/, '');
+    co.forEach(function (m) { chu += '\n\n' + m.nhan + '\n' + m.v; });
+  }
+  return { chu: chu, thieu: thieu };
+}
+
+/* ---------- tiến độ: máy chủ giữ, trang chỉ nhắc, không chặn nộp ---------- */
+function layTienDo() { try { return JSON.parse(doc('tien-do')) || null; } catch (e) { return null; } }
+function ngayVN(s) { var p = String(s).split('-'); return p[2] + '/' + p[1]; }
+/* Trả về lời nhắc khi ngày n chưa mở, '' khi đã mở hoặc chưa biết tiến độ (máy chủ cũ). */
+function trangThai(n) {
+  var t = layTienDo();
+  if (!t || !t.mo || n === 0 || t.mo.indexOf(n) > -1) return '';
+  var truoc = n - 1;
+  if (!t.da_nop[truoc]) return 'Nộp ' + (truoc === 0 ? 'video cam kết' : 'bài Ngày ' + truoc) + ' để mở';
+  return t.lich && t.lich[n] ? 'Mở lúc 0h ngày ' + ngayVN(t.lich[n]) : 'Chưa tới ngày mở';
+}
+function hoiTienDo() {
+  var nguoi = layNguoi();
+  if (!NOI_NHAN || !nguoi || !nguoi.sdt) return;
+  fetch(NOI_NHAN, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ hoi: 'tien_do', email: nguoi.email, dien_thoai: nguoi.sdt }) })
+    .then(function (r) { return r.json(); })
+    .then(function (k) { if (k.ok && k.tien_do) { ghi('tien-do', JSON.stringify(k.tien_do)); chonNgay(); } })
+    .catch(function () { });
+}
 
 /* ---------- nộp ---------- */
 function nop(n) {
   var bao = $('bao'), nut = $('nop'), nguoi = layNguoi();
   function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
   if (!nguoi || !nguoi.dongy || !nguoi.sdt) { baoLoi('Bạn ghi họ tên, email, số điện thoại và tích ô đồng ý ở đầu trang trước khi nộp.'); $('sua-nguoi').click(); return; }
-  var cot = tatCaO(n).map(function (o) { return [tenCot(o), doc(o.id).trim()]; });
+  if (CAN_THOA_THUAN && !doc('thoa-thuan')) { baoLoi('Bạn đọc và bấm Tôi đồng ý ở trang thỏa thuận sử dụng tư liệu trước khi nộp. Trang đó ở địa chỉ coachduynguyen.vn/thu-thach/tu-van-ban-hang/thoa-thuan/'); return; }
+  var o = tatCaO(n).filter(function (x) { return !x.rieng; });
+  var cot = o.map(function (x) { return [tenCot(x), doc(x.id).trim()]; });
   if (!cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
-  var saiLk = tatCaO(n).filter(function (o) { var v = doc(o.id).trim(); return o.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
+  var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
   if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chép lại đường dẫn video, chỉ một dòng, không kèm chữ khác.'); $(saiLk.id).focus(); return; }
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
 
+  var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot };
+  if (n === 7) goi.ban_quy_trinh = banQuyTrinh().chu;
   nut.disabled = true; nut.textContent = 'Đang gửi...';
   bao.className = 'bao'; bao.textContent = '';
-  var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 30000);
+  var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 45000);
   fetch(NOI_NHAN, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot }),
+    body: JSON.stringify(goi),
     signal: huy.signal
   }).then(function (r) { return r.json(); }).then(function (k) {
     if (!k.ok) { var l = new Error(k.loi || 'Nơi nhận bài báo lỗi.'); l.tuNoiNhan = true; throw l; }
     var gio = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
     ghi('da-nop-' + n, gio);
+    if (k.tien_do) ghi('tien-do', JSON.stringify(k.tien_do));
     bao.className = 'bao dung';
-    bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.';
+    bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.' +
+      (k.tre ? ' Bài này nộp sau hạn nên được ghi là nộp sau hạn.' : '') + (k.doc ? ' Bản Quy trình đã được lưu thành Google Doc.' : '');
+    if (k.tien_do) veThanh();
   }).catch(function (e) {
     var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn hoặc nơi nhận bài chưa trả lời';
     baoLoi('Chưa gửi được' + vi + '. Chữ của bạn vẫn còn nguyên trên trang, bạn bấm Nộp lại.');
@@ -406,21 +531,30 @@ function nop(n) {
   });
 }
 
-/* ---------- chọn ngày theo #ngay-N ---------- */
-function ngayHienTai() { if (location.hash === '#cam-ket') return 0; var m = location.hash.match(/^#ngay-([1-7])$/); return m ? +m[1] : 1; }
+/* ---------- chọn ngày theo #cam-ket, #ngay-N, #tong-ket ---------- */
+function maNgay(n) { return n === 0 ? 'cam-ket' : n === 8 ? 'tong-ket' : 'ngay-' + n; }
+function ngayHienTai() {
+  for (var i = 0; i <= 8; i++) if (location.hash === '#' + maNgay(i)) return i;
+  var t = layTienDo();
+  if (t && t.da_nop) { for (i = 0; i <= 8; i++) if (!t.da_nop[i]) return i; return 8; }
+  return doc('da-nop-0') ? 1 : 0;
+}
 function nhanNgay(n) { return NGAY[n] && NGAY[n].nhan || 'Ngày ' + n; }
 function tenBai(n) { return NGAY[n] && NGAY[n].bai || 'bài Ngày ' + n; }
-function chonNgay() {
-  var n = ngayHienTai(), h = '<a href="#cam-ket"' + (n === 0 ? ' aria-current="true"' : '') + '>Cam kết</a>';
-  for (var i = 1; i <= 7; i++) {
-    h += '<a href="#ngay-' + i + '"' + (i === n ? ' aria-current="true"' : '') + (NGAY[i] ? '' : ' class="khoa"') + '>Ngày ' + i + '</a>';
+function veThanh() {
+  var n = ngayHienTai(), h = '';
+  for (var i = 0; i <= 8; i++) {
+    h += '<a href="#' + maNgay(i) + '"' + (i === n ? ' aria-current="true"' : '') + (trangThai(i) ? ' class="khoa"' : '') + '>' +
+         (i === 0 ? 'Cam kết' : i === 8 ? 'Tổng kết' : 'Ngày ' + i) + '</a>';
   }
   $('the-ngay').innerHTML = h;
-  dungNgay(n);
+  return n;
 }
+function chonNgay() { dungNgay(veThanh()); }
 window.addEventListener('hashchange', function () { chonNgay(); $('the-ngay').parentNode.scrollIntoView(); });
 hienNguoi();
 chonNgay();
+hoiTienDo();
 </script>
 </body>
 </html>
