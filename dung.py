@@ -1968,6 +1968,32 @@ HOC_VIEN = [
        trich="Câu trích mẫu, sẽ thay bằng lời học viên nói trong video.", nguon_trich="Học viên mẫu",
        ket_qua="Kết quả mẫu", yt="", anh="",
        gioi_han="Ô mẫu cho phần giới hạn của câu chuyện: trường hợp này đúng trong bối cảnh nào, và chưa chắc lặp lại ở đâu."),
+  # Ba câu chuyện Founder dưới đây lấy từ phụ đề tự sinh của video trên kênh Next Step Group,
+  # danh sách phát PLD1qZtUJq-8g. Câu trích chép theo phụ đề, cần nghe lại trước khi coi là nguyên văn.
+  dict(ten="Coach Lê Phương", nhom="founder", chuyen_mon="", nganh="Tư vấn tử vi, phong thủy", nam="2022",
+       yt="dC0Fv8otjRI", anh="",
+       tieu_de="Coach Lê Phương bắt đầu từ một chiếc điện thoại, rồi tự thiết kế được sản phẩm đào tạo của mình",
+       than=["Trước năm 2022, Lê Phương đi lên từ số 0. Phương tự tìm trên TikTok và YouTube, đọc và nghe rất nhiều, nhưng ghép kiến thức của nhiều người lại thì vẫn không ra cách làm của riêng mình. Quãng đó tốn nhiều thời gian và tiền.",
+             "Điều đổi đầu tiên, theo lời Phương, là cách nghĩ về truyền thông. Không dùng chiêu trò, mà làm từ sự chân thành, trong cách nghĩ, cách tổ chức công việc và cách nói với cộng đồng. Duy đi cùng Phương từ chiến lược truyền thông dài hạn tới cách làm từng video.",
+             "Thiết bị lúc đầu chỉ là một chiếc điện thoại. Qua những câu hỏi trong các buổi làm việc, Phương còn tự thiết kế được các sản phẩm đào tạo của mình, điều mà Phương nói trước đó chưa chắc đã nghĩ ra."],
+       trich="",  # chờ nghe lại (B4): "Tôi không biết gì về kinh doanh cả, không biết gì về marketing, không biết gì về sale, không biết gì về chiến lược hay là mô hình gì hết.",
+       nguon_trich="Coach Lê Phương", ket_qua="",
+       gioi_han="Video không nêu con số doanh thu, nên trang này cũng không nêu. Kết quả Phương nhắc tới là kênh TikTok và các sản phẩm đào tạo đang bán, bạn có thể tự xem trên kênh của Phương. Video cũng không nói mất bao lâu từ năm 2022 tới lúc có kết quả đó."),
+  dict(ten="Master Kris Tran", nhom="founder", chuyen_mon="", nganh="Đầu tư và kinh doanh", nam="",
+       yt="IUFV6HX3xZw", anh="",
+       tieu_de="Master Kris Tran từng sợ máy quay, giờ ngồi nói trước ống kính được",
+       than=["Kris từ nước ngoài trở về, chưa quen cách làm việc ở Việt Nam, và rất sợ mạng xã hội, sợ máy quay. Trước khi tìm tới Duy, Kris đã tìm hiểu rất nhiều người. Kris nói kiến thức thì nhiều người cũng có, điều làm Kris chọn là cách nghĩ và chuẩn làm việc.",
+             "Có một chuyện Kris nhắc lại. Điều Kris coi là điểm yếu của mình, Duy chỉ ra đó lại là điểm khác biệt nên khai thác. Lúc khó sắp xếp ý và câu chữ, Kris viết ra giấy trước, rồi thấy mọi thứ dễ sắp xếp hơn hẳn.",
+             "Duy cũng giới thiệu Kris với những người cần gặp ở Việt Nam. Kris kể nhờ vậy tiết kiệm được nhiều thời gian và chi phí so với tự dò đường."],
+       trich="",  # chờ nghe lại (B4): "…sợ social media, sợ ống kính, sợ máy quay thì bây giờ mình đã bớt sợ hơn rồi và mình có thể tự tin ngồi nói chuyện trước ống kính.",
+       nguon_trich="Master Kris Tran", ket_qua="",
+       gioi_han="Kris nói vượt nỗi sợ máy quay chỉ là một việc nhỏ trong những việc đã làm cùng Duy. Video không nêu con số kinh doanh, nên trang này cũng không nêu."),
+  dict(ten="Hoa hậu Kayla Dinh", nhom="founder", chuyen_mon="", nganh="", nam="",
+       yt="tQGCCakjdps", anh="", trich="", nguon_trich="", ket_qua="",
+       tieu_de="Hoa hậu Kayla Dinh về Việt Nam và cần người hiểu cách làm ăn ở đây",
+       than=["Kayla đang ở Mỹ thì tình cờ thấy Duy trên mạng xã hội. Kayla còn mới với cách làm việc ở Việt Nam, nên muốn tìm một người đi cùng trên đoạn đường đầu.",
+             "Về Việt Nam gặp nói chuyện trực tiếp, Kayla thấy hướng đi của mình được giúp khá nhiều, nhất là những điều chưa biết về cách làm kinh doanh ở đây và những mối quen biết cần có. Kayla nói chọn đi cùng lâu dài vì nhóm khách hai bên hướng tới giống nhau."],
+       gioi_han="Video ngắn. Kayla kể lý do chọn làm việc cùng Duy, chưa kể kết quả kinh doanh."),
   dict(ten="Nguyễn Minh Chiến", nhom="ban-hang", chuyen_mon="", nganh="Bất động sản", nam="", yt="", anh="",
        tieu_de="Khách chọn người hỏi về gia đình mình, không chọn người rẻ nhất",
        than=["Một giao dịch bất động sản trị giá 10,6 tỷ. Hai người bán khác đã sẵn sàng giảm cho khách khoảng 300 triệu. Nếu khách chỉ so sánh giá thì anh Nguyễn Minh Chiến đã thua từ trước khi kịp nói câu nào.",
@@ -2026,7 +2052,7 @@ def _than_dai(h):
 _FOUNDER = [h for h in HOC_VIEN if h["nhom"] == "founder"]
 _BH_DAI = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("than")]
 _BH_THE = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("doi")]
-_CO_VIDEO = [h for h in HOC_VIEN if h["yt"] or h.get("mau")]
+_CO_VIDEO = [h for h in HOC_VIEN if (h["yt"] and h["nhom"] != "founder") or h.get("mau")]  # video Founder đã nằm trong khu Founder
 _CO_ANH = [h for h in HOC_VIEN if h["anh"] or h.get("mau")]
 
 def _ca_mau(ds):
