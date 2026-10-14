@@ -30,7 +30,7 @@
  * Bản này thêm ba việc:
  * - Hỏi tiến độ (hoi = 'tien_do'): khớp cả email lẫn số điện thoại, trả về ngày
  *   nào đã nộp, ngày nào đã mở. Lịch tính từ ngày nộp cam kết, không sớm hơn
- *   NGAY_KHAI_MAC. Trang chỉ nhắc, không chặn nộp.
+ *   NGAY_KHAI_MAC. Trang khóa hẳn ngày chưa mở; nộp xong thì chờ 0h hôm sau.
  * - Nộp sau hạn: hạn cuối là ngày bắt đầu + 9. Nộp sau hạn vẫn nhận, cột
  *   "Nộp sau hạn" ghi Có.
  * - Đồng ý thỏa thuận (hoi = 'dong_y'): lưu bản PDF khổ A4 gồm họ tên, email, số
@@ -208,8 +208,10 @@ function hoiTienDo(d) {
 /**
  * Khớp cả email lẫn số điện thoại, chỉ đọc bảng, không ghi gì.
  * Ngày bắt đầu = ngày nộp cam kết, nhưng không sớm hơn NGAY_KHAI_MAC.
- * Ngày N (1 tới 7) mở khi đã nộp Ngày N-1 và đã tới 0h ngày bắt đầu + N-1.
- * Người chậm lịch nộp bù thì ngày sau mở ngay, vì ngày mở theo lịch đã qua.
+ * Ngày 1 mở lúc 0h ngày bắt đầu, nên ai nộp cam kết từ ngày khai mạc trở đi làm được ngay.
+ * Ngày N (2 tới 7) mở khi đã nộp Ngày N-1, lúc 0h của ngày muộn hơn trong hai ngày:
+ * ngày bắt đầu + N-1, và ngày sau hôm nộp Ngày N-1. Nộp trễ thì vẫn chờ 0h hôm sau,
+ * mỗi ngày chỉ làm một bài (Coach Duy chốt 14/10/2026).
  * Tổng kết mở khi đã nộp Ngày 7.
  */
 function tinhTienDo(email, sdt) {
@@ -232,6 +234,7 @@ function tinhTienDo(email, sdt) {
   kq.han = congNgay(bd, SO_NGAY_HAN);
   for (n = 1; n <= 7; n++) {
     kq.lich[n] = congNgay(bd, n - 1);
+    if (n > 1 && daNop[n - 1] && congNgay(daNop[n - 1], 1) > kq.lich[n]) kq.lich[n] = congNgay(daNop[n - 1], 1);
     if (daNop[n - 1] && hom >= kq.lich[n]) kq.mo.push(n);
   }
   if (daNop[7]) kq.mo.push(8);

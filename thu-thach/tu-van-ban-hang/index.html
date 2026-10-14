@@ -612,7 +612,7 @@ function trangThai(n) {
   if (t.mo.indexOf(n) > -1) return '';
   var truoc = n - 1;
   if (!t.da_nop[truoc]) return 'Nộp ' + (truoc === 0 ? 'video cam kết' : 'bài Ngày ' + truoc) + ' để mở';
-  return t.lich && t.lich[n] ? 'Mở lúc 0h ngày ' + ngayVN(t.lich[n]) : 'Chưa tới ngày mở';
+  return t.lich && t.lich[n] ? 'Tới 0h ngày ' + ngayVN(t.lich[n]) + ' bài sẽ mở, lúc đó bạn tải lại trang' : 'Chưa tới ngày mở';
 }
 function hoiTienDo() {
   var nguoi = layNguoi();
@@ -657,7 +657,8 @@ function nop(n) {
     if (k.tien_do) ghi('tien-do', JSON.stringify(k.tien_do));
     bao.className = 'bao dung';
     bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.' +
-      (k.tre ? ' Bài này nộp sau hạn nên được ghi là nộp sau hạn.' : '') + (k.doc ? ' Bản Quy trình đã được lưu thành Google Doc.' : '');
+      (k.tre ? ' Bài này nộp sau hạn nên được ghi là nộp sau hạn.' : '') + (k.doc ? ' Bản Quy trình đã được lưu thành Google Doc.' : '') +
+      (n >= 1 && n < 7 && k.tien_do && k.tien_do.lich && k.tien_do.lich[n + 1] && (k.tien_do.mo || []).indexOf(n + 1) < 0 ? ' Ngày ' + (n + 1) + ' mở lúc 0h ngày ' + ngayVN(k.tien_do.lich[n + 1]) + '.' : '');
     if (k.tien_do) veThanh();
   }).catch(function (e) {
     var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn hoặc nơi nhận bài chưa trả lời';
