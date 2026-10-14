@@ -331,14 +331,13 @@ function dungNgay(n) {
   h += '<section class="phan"><h3>Nộp bài</h3>' + d.nopSau.map(function (c) { return '<p>' + esc(c) + '</p>'; }).join('') + '</section>';
   var daNop = doc('da-nop-' + n);
   h += '<div class="nop"><input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-       '<div class="hang"><button type="button" class="nut phu" id="chep">Chép bài</button><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
+       '<div class="hang"><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
        '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp ' + tenBai(n) + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
        '<div class="tu-luu" id="tu-luu"></div></div>';
   $('bai').innerHTML = h;
   if (daNop) $('bao').className = 'bao dung';
 
   $('bai').querySelectorAll('textarea').forEach(gian);
-  $('chep').onclick = function () { chep(n); };
   $('nop').onclick = function () { nop(n); };
   var nut = $('bai').querySelector('[data-lay-tu]');
   if (nut) nut.onclick = function () {
@@ -373,36 +372,6 @@ function tatCaO(n) {
   return r;
 }
 function tenCot(o) { return [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
-
-function banChu(n) {
-  var nguoi = layNguoi() || {}, dong = [nhanNgay(n) + ': ' + NGAY[n].ten + (nguoi.ten ? ' · ' + nguoi.ten : '')];
-  var phanTruoc = '', nhomTruoc = '';
-  tatCaO(n).forEach(function (o) {
-    var v = doc(o.id).trim();
-    if (!v) return;
-    if (o.phan !== phanTruoc) { dong.push('', o.phan.toUpperCase()); phanTruoc = o.phan; nhomTruoc = ''; }
-    if (o.nhom && o.nhom !== nhomTruoc) { dong.push('', o.nhom); nhomTruoc = o.nhom; }
-    dong.push('- ' + o.nhan + ': ' + v);
-  });
-  return dong.join('\n');
-}
-
-function chep(n) {
-  var chu = banChu(n), bao = $('bao');
-  function xong(ok) {
-    bao.className = 'bao ' + (ok ? 'dung' : 'loi');
-    bao.textContent = ok ? 'Đã chép bài, bạn dán vào chỗ cần dùng.' : 'Máy chưa cho chép tự động. Bạn giữ ngón tay trên khung chữ vừa hiện ra, chọn tất cả rồi chép.';
-  }
-  if (chu.split('\n').length < 2) { bao.className = 'bao loi'; bao.textContent = 'Bài còn trống, chưa có gì để chép.'; return; }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(chu).then(function () { xong(true); }, function () { hienKhungChep(chu); xong(false); });
-  } else { hienKhungChep(chu); xong(false); }
-}
-function hienKhungChep(chu) {
-  var t = $('khung-chep') || document.createElement('textarea');
-  t.id = 'khung-chep'; t.readOnly = true; t.value = chu; t.style.marginTop = '10px';
-  $('bao').after(t); gian(t); t.focus(); t.select();
-}
 
 /* ---------- nộp ---------- */
 function nop(n) {
