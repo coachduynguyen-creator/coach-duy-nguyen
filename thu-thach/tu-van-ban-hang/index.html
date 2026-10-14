@@ -104,6 +104,22 @@ ul.tich{list-style:none;padding-left:0}
 .video{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:var(--bg-2);margin-top:14px}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-cho{border:1px dashed var(--line-2);border-radius:14px;padding:22px 16px;text-align:center;color:var(--ink-3);margin-top:14px}
+.buoc{border:2px solid var(--cam);border-radius:18px;padding:4px 16px 18px;margin-top:26px;background:#fff}
+.buoc-dau{display:flex;gap:12px;align-items:center;padding:14px 0 6px;border-bottom:1px solid var(--line)}
+.buoc-dau b{flex:none;width:36px;height:36px;border-radius:50%;background:var(--cam-dam);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--f-tit);font-size:18px}
+.buoc-dau h3{font-size:20px;margin:0}
+.buoc-dau small{display:block;font-size:13.5px;color:var(--ink-3);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.buoc.xong{border-color:var(--dung)}
+.buoc.xong .buoc-dau b{background:var(--dung)}
+.buoc.khoa{border:2px dashed var(--line-2);background:var(--bg-2)}
+.buoc.khoa .buoc-dau b{background:var(--line-2)}
+.buoc.khoa .buoc-than,.buoc:not(.khoa) .buoc-khoa{display:none}
+.buoc-khoa{margin:12px 0 0;color:var(--ink-3)}
+.buoc .buoc-than > section.phan:first-child{margin-top:18px}
+.xem-bao{margin:10px 0 0;font-size:15px;font-weight:600;color:var(--cam-dam)}
+.xem-bao.dung{color:var(--dung)}
+.thanh-xem{height:8px;border-radius:99px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden;margin-top:8px}
+.thanh-xem i{display:block;height:100%;background:var(--cam);width:0}
 fieldset.o{border:0;padding:0;margin:14px 0 0}
 fieldset.o legend{font-weight:600;color:var(--ink);font-size:15.5px;line-height:1.4;margin-bottom:6px;padding:0}
 fieldset.o > small{display:block;color:var(--ink-3);font-size:14px;margin:-2px 0 6px}
@@ -113,8 +129,9 @@ label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
 .khoa-bao{border:1px solid var(--cam);background:var(--cam-mo);border-radius:14px;padding:14px 16px;margin-top:18px;color:var(--ink)}
 #ban-qt{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;font-size:15.5px}
 @media print{
-  header.dau,.mo,#nguoi,#nguoi-gon,nav.ngay,footer,.nop,#bai > :not(.in-duoc){display:none !important}
-  #bai > .in-duoc > :not(#ban-qt){display:none}
+  header.dau,.mo,#nguoi,#nguoi-gon,nav.ngay,footer,.nop,#bai > :not(.buoc-2),.buoc-2 > :not(.buoc-than),.buoc-2 .buoc-than > :not(.in-duoc){display:none !important}
+  .buoc-2{border:0;padding:0;margin:0}
+  .in-duoc > :not(#ban-qt){display:none}
   #ban-qt{border:0;padding:0}
 }
 footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:14px;color:var(--ink-3)}
@@ -365,7 +382,7 @@ function oHtml(o) {
 function videoHtml(n) {
   if (n < 1 || n > 7) return '';
   return VIDEO[n]
-    ? '<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(VIDEO[n]) + '?rel=0" title="Video Ngày ' + n + '" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
+    ? '<div class="video"><iframe id="video-' + n + '" src="https://www.youtube-nocookie.com/embed/' + esc(VIDEO[n]) + '?rel=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin) + '" title="Video Ngày ' + n + '" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
     : '<div class="video-cho">Video sẽ có trước 0h ngày mở.</div>';
 }
 
@@ -376,8 +393,20 @@ function dungNgay(n) {
   var tt = trangThai(n);
   if (tt) h += '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '. Bạn vẫn xem trước được, nhưng nên làm xong ngày trước rồi hẵng làm ngày này.</div>';
   if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
+  /* Ngày 1 tới 7 chia ba bước: Bước 2 và 3 khóa tới khi xem đủ video và trả lời ba câu ở Bước 1. */
+  var coBuoc = n >= 1 && n <= 7, khoa = coBuoc && !daMo(n);
+  function buoc(so, tieu, khoaChu) {
+    if (!coBuoc) return;
+    h += '<section class="buoc buoc-' + so + (so > 1 && khoa ? ' khoa' : '') + '" id="buoc-' + so + '"><div class="buoc-dau"><b>' + so + '</b><div><small>Bước ' + so + '</small><h3>' + tieu + '</h3></div></div>' +
+         (khoaChu ? '<p class="buoc-khoa">' + khoaChu + '</p>' : '') + '<div class="buoc-than">';
+  }
+  function hetBuoc() { if (coBuoc) h += '</div></section>'; }
+  buoc(1, 'Xem hết video, trả lời ba câu');
   h += videoHtml(n);
+  if (coBuoc && VIDEO[n]) h += '<div class="thanh-xem" aria-hidden="true"><i id="thanh-xem"></i></div><p class="xem-bao" id="xem-bao" role="status"></p>';
   d.phan.forEach(function (p) { if (p.sauVideo) phan(p); });
+  hetBuoc();
+  buoc(2, 'Đọc tài liệu và làm bài', 'Bước này mở khi bạn xem hết video và trả lời đủ ba câu ở Bước 1.');
   if (typeof TAI_LIEU !== 'undefined' && TAI_LIEU[n]) h += '<details class="tai-lieu"><summary>Tài liệu Ngày ' + n + '</summary>' + TAI_LIEU[n] +
     '<p><a class="nut phu nho-gon" href="pdf/ngay-' + n + '.pdf" target="_blank" rel="noopener">Mở bản PDF để in</a></p></details>';
   if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3>' + (typeof d.viec === 'string'
@@ -406,6 +435,8 @@ function dungNgay(n) {
     '<p>Trang ghép phần Quy trình bạn đã điền từ Ngày 1 tới Ngày 7 thành một bản, theo thứ tự Phần 1 tới Phần 10. Phần 3 lấy bản sửa hôm nay, còn trống thì lấy bản Ngày 1. Khi bạn nộp bài hôm nay, bản này được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
     '<p class="hang"><button type="button" class="nut phu nho-gon" id="rap">Ráp bản Quy trình</button> <button type="button" class="nut phu nho-gon" id="in" hidden>In bản này</button></p>' +
     '<p class="nho" id="thieu-qt"></p><div id="ban-qt" hidden></div></section>';
+  hetBuoc();
+  buoc(3, 'Nộp bài cuối ngày', 'Bước này mở cùng Bước 2. Làm xong bài ở Bước 2 rồi bạn nộp ở đây.');
   if (d.kiem) h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
     var id = 'kiem-' + n + '-' + i;
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
@@ -416,8 +447,10 @@ function dungNgay(n) {
        '<div class="hang"><button type="button" class="nut chinh" id="nop">Nộp bài</button></div>' +
        '<p class="bao" id="bao" role="status" aria-live="polite">' + (daNop ? 'Bạn đã nộp ' + tenBai(n) + ' lúc ' + esc(daNop) + '. Sửa xong có thể nộp lại.' : '') + '</p>' +
        '<div class="tu-luu" id="tu-luu"></div></div>';
+  hetBuoc();
   $('bai').innerHTML = h;
   if (daNop) $('bao').className = 'bao dung';
+  if (coBuoc) { veXem(n); doXem(n); }
 
   $('bai').querySelectorAll('textarea').forEach(gian);
   $('nop').onclick = function () { nop(n); };
@@ -444,7 +477,70 @@ function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này'
 $('bai').addEventListener('input', function (e) {
   var t = e.target;
   if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
+  if (/^sv\d-/.test(t.id)) veXem(+t.id[2]);
 });
+
+/* ---------- đo phần video đã xem ----------
+   Lưu từng giây đã phát thành chuỗi 0 và 1 ở tt-tvbh:xem-N, gắn với mã video nên thay video thật là đo lại.
+   Chỉ cộng khi thời điểm phát tăng đúng nhịp đồng hồ (tính cả tốc độ phát), nên tua qua không được tính.
+   ponytail: chỉ chứng minh trình phát đã chạy, không chứng minh người xem có chú ý; ba câu sau video mới là phép thử nội dung. */
+var CAN_XEM = 90, xem = { hen: 0, cho: 0, loi: {} };
+function layXem(n) { try { var x = JSON.parse(doc('xem-' + n)); return x && x.id === VIDEO[n] ? x : null; } catch (e) { return null; } }
+function phanTram(n) { var x = layXem(n); return x && x.s ? Math.floor(100 * x.s.replace(/0/g, '').length / x.s.length) : 0; }
+function xemDu(n) { return !VIDEO[n] || phanTram(n) >= CAN_XEM || !!xem.loi[n]; }
+function daMo(n) { return doc('mo-' + n) === (VIDEO[n] || '-'); }
+function danhDau(n, dai, a, b) {
+  var L = Math.ceil(dai), x = layXem(n) || { id: VIDEO[n] };
+  var s = x.s && x.s.length === L ? x.s.split('') : new Array(L + 1).join('0').split('');
+  for (var i = Math.max(0, Math.floor(a)); i < Math.min(L, Math.ceil(b)); i++) s[i] = '1';
+  x.s = s.join(''); ghi('xem-' + n, JSON.stringify(x)); veXem(n);
+}
+function veXem(n) {
+  var bao = $('xem-bao'), pt = phanTram(n), du = xemDu(n);
+  if (bao) {
+    $('thanh-xem').style.width = pt + '%';
+    bao.className = 'xem-bao' + (du ? ' dung' : '');
+    bao.textContent = xem.loi[n] && pt < CAN_XEM ? 'Trình duyệt này không cho trang đo thời gian xem. Bạn vẫn xem hết video rồi làm tiếp, bài nộp sẽ ghi là không đo được.'
+      : du ? 'Bạn đã xem ' + pt + '% video.'
+      : 'Bạn đã xem ' + pt + '% video. Xem từ ' + CAN_XEM + '% trở lên thì mở được Bước 2. Đoạn tua qua không được tính.';
+  }
+  var traLoi = tatCaO(n).every(function (o) { return !o.can || doc(o.id).trim(); });
+  var b1 = $('buoc-1');
+  if (b1) b1.classList.toggle('xong', du && traLoi);
+  if (!daMo(n) && du && traLoi) ghi('mo-' + n, VIDEO[n] || '-');
+  if (daMo(n)) ['buoc-2', 'buoc-3'].forEach(function (id) { if ($(id)) $(id).classList.remove('khoa'); });
+}
+function napYT(xong) {
+  if (window.YT && YT.Player) return xong();
+  napYT.cho = (napYT.cho || []).concat(xong);
+  if (napYT.cho.length > 1) return;
+  window.onYouTubeIframeAPIReady = function () { napYT.cho.forEach(function (f) { f(); }); napYT.cho = []; };
+  var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+}
+function doXem(n) {
+  clearInterval(xem.hen); clearTimeout(xem.cho);
+  var khung = $('video-' + n);
+  if (!khung) return;
+  /* 20 giây chưa nối được trình phát (chặn script, mạng hỏng) thì không khóa mãi: cho làm tiếp và ghi là không đo được. */
+  xem.cho = setTimeout(function () { if ($('video-' + n) === khung) { xem.loi[n] = true; veXem(n); } }, 20000);
+  napYT(function () {
+    if ($('video-' + n) !== khung) return;
+    var p = new YT.Player(khung, { events: { onReady: function () {
+      clearTimeout(xem.cho); delete xem.loi[n]; veXem(n);
+      var truoc = null, luc = 0;
+      xem.hen = setInterval(function () {
+        if ($('video-' + n) !== khung) return clearInterval(xem.hen);
+        var tt = p.getPlayerState(), t = p.getCurrentTime(), dai = p.getDuration(), bay = Date.now();
+        if (tt === 0) t = dai;
+        if (dai && truoc !== null && (tt === 1 || tt === 0)) {
+          var di = t - truoc, toiDa = (bay - luc) / 1000 * (p.getPlaybackRate() || 1) * 1.5 + 0.5;
+          if (di > 0 && di <= toiDa) danhDau(n, dai, truoc, t);
+        }
+        truoc = tt === 1 ? t : null; luc = bay;
+      }, 1000);
+    } } });
+  });
+}
 $('bai').addEventListener('change', function (e) {
   var t = e.target;
   if (t.type === 'radio') baoLuu(ghi(t.name, t.value));
@@ -526,6 +622,7 @@ function nop(n) {
   if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
   var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
   if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chép lại đường dẫn video, chỉ một dòng, không kèm chữ khác.'); $(saiLk.id).focus(); return; }
+  if (n >= 1 && n <= 7 && VIDEO[n]) cot.push(['Đã xem video (%)', xem.loi[n] && phanTram(n) < CAN_XEM ? 'không đo được, đo được ' + phanTram(n) : String(phanTram(n))]);
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
 
   var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot };
