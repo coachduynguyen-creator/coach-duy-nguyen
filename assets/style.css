@@ -1815,6 +1815,34 @@ a.k .k-ten::after{content:" \2197";letter-spacing:0}
   .ch-so{grid-template-columns:1fr;gap:10px}
 }
 
+/* Bố cục mới 14/10/2026: khu Founder, tường video lọc theo chuyên môn, khu ảnh. Mục mẫu
+   mang data-mau và hidden, chỉ hiện khi mở trang với ?xem-truoc. */
+[data-mau][hidden]{display:none!important}
+.ch-founder{margin-top:34px}
+.ch-founder+.ch-founder{margin-top:56px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-founder h3{font-size:clamp(22px,2.6vw,30px);margin:10px 0 20px}
+.ch-founder .vd-nut{margin-bottom:24px}
+.vd-luoi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:26px}
+.vd-o{margin:0;display:flex;flex-direction:column;gap:12px}
+.vd-o.vd-an{display:none}
+.vd-o figcaption b{display:block;font-family:var(--f-tit);font-size:17px;color:var(--ink)}
+.vd-o figcaption span{display:block;margin-top:4px;font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.vd-o figcaption p{margin-top:8px;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.vd-nut,.vd-khung{display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden;background:#000}
+.vd-nut{position:relative;padding:0;cursor:pointer}
+.vd-nut img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s var(--ease)}
+.vd-nut:hover img{opacity:.8}
+.vd-phat{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:var(--vang);box-shadow:var(--shadow-v)}
+.vd-phat::after{content:"";position:absolute;left:26px;top:20px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--on-vang)}
+.vd-trong,.anh-trong{display:grid;place-items:center;cursor:default;background:var(--bg-2);border:1px dashed var(--line-2);color:var(--ink-3);font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:12px}
+.anh-luoi{columns:3 260px;column-gap:18px;margin-top:30px}
+.anh-o{margin:0 0 18px;break-inside:avoid}
+.anh-o img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-s)}
+.anh-trong{aspect-ratio:3/4;border-radius:var(--r-s)}
+.anh-o figcaption{margin-top:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+@media(max-width:900px){.vd-luoi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.vd-luoi{grid-template-columns:1fr}}
+
 /* ===== Chips triệu chứng trên trang chủ ===== */
 /* Học từ khối dấu hiệu của scaleos.vn: người đọc tự nhận ra mình trong một
    câu, không cần ai thuyết phục. Bốn câu lấy nguyên văn từ bài blog bốn câu
