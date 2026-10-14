@@ -96,6 +96,11 @@ ul.kiem input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(-
 .nop .hang{display:flex;gap:10px}
 .nop .hang .nut{flex:1}
 .bao{margin:10px 0 0;font-size:15px;font-weight:600}
+#nhac-may{border:0;border-radius:16px;padding:22px 20px 18px;max-width:min(420px,calc(100vw - 32px));box-shadow:0 12px 40px rgba(0,0,0,.25)}
+#nhac-may::backdrop{background:rgba(0,0,0,.45)}
+#nhac-may h2{margin:0 0 10px;font-family:var(--f-tit);font-size:20px;color:var(--ink)}
+#nhac-may p{margin:0 0 10px;font-size:15.5px;line-height:1.5}
+#nhac-may .nut{width:100%;margin-top:6px}
 .bao.dung{color:var(--dung)}
 .bao.loi{color:var(--loi)}
 .bao:empty{display:none}
@@ -165,7 +170,7 @@ footer p{margin:12px 0 0}
     <h1>Sổ làm bài Thử thách 7 ngày</h1>
     <p class="ten-tt">Nâng cấp Quy trình Tư vấn Bán hàng</p>
     <div class="dan"><img src="../../img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"><div><span class="nhan">Người dẫn thử thách</span><b>Coach Duy Nguyễn</b><span class="vai">Người cố vấn cho nhà sáng lập thế hệ mới</span></div></div>
-    <p>Bạn làm bài ngay trên trang này, bằng điện thoại hay máy tính đều được. Bạn gõ tới đâu, trang tự lưu tới đó. Làm xong phần nào, bạn bấm Nộp để gửi phần đó cho Coach Duy Nguyễn và Next Gen Founder.</p>
+    <p>Bạn làm bài ngay trên trang này. Nên dùng máy tính, vì bài mỗi ngày có nhiều ô và bảng. Điện thoại vẫn làm được, nhưng gõ chậm và khó nhìn hơn. Bạn gõ tới đâu, trang tự lưu tới đó. Làm xong phần nào, bạn bấm Nộp để gửi phần đó cho Coach Duy Nguyễn và Next Gen Founder.</p>
     <p class="nho">Cần nhớ: bài chỉ được lưu trên đúng máy và đúng ứng dụng bạn đang dùng để mở trang. Ví dụ hôm nay bạn mở trang từ Facebook, hôm sau mở lại bằng Safari hay Chrome, thì sẽ không thấy bài đang làm dở. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại nhiều lần cũng không sao, lần nộp nào cũng được giữ.</p>
   </div>
 
@@ -200,6 +205,15 @@ footer p{margin:12px 0 0}
   <nav class="ngay" aria-label="Chọn ngày"><div class="khung" id="the-ngay"></div></nav>
   <div class="khung" id="bai"></div>
 </main>
+
+<dialog id="nhac-may" aria-labelledby="nhac-may-tit">
+  <h2 id="nhac-may-tit">Nên làm bài trên máy tính</h2>
+  <p>Bài mỗi ngày có nhiều ô và bảng. Gõ trên máy tính nhanh hơn và dễ nhìn hơn nhiều so với điện thoại.</p>
+  <p>Nếu đã làm một phần trên điện thoại, bạn bấm Nộp phần đó trước rồi mới mở trang trên máy tính. Bài chưa nộp không tự chuyển sang máy khác.</p>
+  <form method="dialog"><button class="nut chinh">Tôi đã hiểu</button></form>
+</dialog>
+<script>/* Nhắc dùng máy tính: chỉ hiện trên màn hình hẹp, hiện lại mỗi lần mở trang, không lưu gì. */
+(function(){var d=document.getElementById('nhac-may');if(d.showModal&&matchMedia('(max-width:760px)').matches)d.showModal();})();</script>
 
 <footer><div class="khung"><div class="hieu"><a class="cdn" href="../../" aria-label="Coach Duy Nguyễn, trang chủ"><img src="../../img/logo-dn.webp" loading="lazy" alt="" width="260" height="301"><b>Coach Duy Nguyễn</b></a><span class="gach-doc" aria-hidden="true"></span><img class="ngf" src="../../cong-dong/img/ngf-logo-ngang-sang.webp" alt="Next Gen Founder" loading="lazy" width="583" height="208"></div><p>Thử thách 7 ngày Nâng cấp Quy trình Tư vấn Bán hàng · coachduynguyen.vn</p></div></footer>
 
