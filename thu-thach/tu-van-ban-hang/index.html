@@ -165,8 +165,8 @@ footer p{margin:12px 0 0}
     <h1>Sổ làm bài Thử thách 7 ngày</h1>
     <p class="ten-tt">Nâng cấp Quy trình Tư vấn Bán hàng</p>
     <div class="dan"><img src="../../img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"><div><span class="nhan">Người dẫn thử thách</span><b>Coach Duy Nguyễn</b><span class="vai">Người cố vấn cho nhà sáng lập thế hệ mới</span></div></div>
-    <p>Bạn điền bài ngay trên điện thoại. Chữ tự lưu trên máy sau mỗi lần gõ, bấm Nộp thì bài được gửi về Coach Duy Nguyễn và Next Gen Founder.</p>
-    <p class="nho">Chữ chỉ lưu trong trình duyệt bạn đang mở. Mở trang bằng trình duyệt khác, hoặc mở từ Facebook rồi sau đó mở bằng Safari hay Chrome, thì sẽ không thấy chữ cũ. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại bao nhiêu lần cũng được, bài nào cũng được giữ.</p>
+    <p>Bạn làm bài ngay trên trang này, bằng điện thoại hay máy tính đều được. Bạn gõ tới đâu, trang tự lưu tới đó. Làm xong phần nào, bạn bấm Nộp để gửi phần đó cho Coach Duy Nguyễn và Next Gen Founder.</p>
+    <p class="nho">Cần nhớ: bài chỉ được lưu trên đúng máy và đúng ứng dụng bạn đang dùng để mở trang. Ví dụ hôm nay bạn mở trang từ Facebook, hôm sau mở lại bằng Safari hay Chrome, thì sẽ không thấy bài đang làm dở. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại nhiều lần cũng không sao, lần nộp nào cũng được giữ.</p>
   </div>
 
   <div class="khung">
@@ -176,16 +176,16 @@ footer p{margin:12px 0 0}
       <label class="o"><span>Họ và tên</span><input type="text" id="ten" autocomplete="name"></label>
       <label class="o"><span>Email bạn dùng khi đăng ký thử thách</span><input type="email" id="email" autocomplete="email" inputmode="email"></label>
       <label class="o"><span>Số điện thoại</span><input type="tel" id="sdt" autocomplete="tel" inputmode="tel"></label>
-      <p>Khi tham gia thử thách, bạn đồng ý để Next Gen Founder:</p>
+      <p>Khi tham gia thử thách, bạn đồng ý để Next Gen Founder làm những việc sau:</p>
       <ul class="dk">
-        <li>lưu và sử dụng bài điền, video, hình ảnh và những chia sẻ bạn đã gửi trong thử thách;</li>
-        <li>dùng công khai những tư liệu đó để lan tỏa và truyền thông cho cộng đồng, trong đó có kể lại câu chuyện của thành viên đã đi qua thử thách;</li>
-        <li>lưu họ tên và số điện thoại bạn nhập khi nộp bài, để theo dõi bạn đã làm tới ngày nào;</li>
-        <li>dùng công cụ AI để đọc và tổng hợp bài nộp;</li>
-        <li>liên hệ với bạn sau thử thách về các chương trình tiếp theo của cộng đồng;</li>
-        <li>nêu tên bạn khi vinh danh người hoàn thành trên nhóm Facebook và nhóm Zalo Cộng đồng Thành viên.</li>
+        <li>giữ lại bài làm, video, hình ảnh và những điều bạn chia sẻ trong thử thách;</li>
+        <li>đăng những nội dung đó lên trang web, mạng xã hội và video của Next Gen Founder, ví dụ kể lại câu chuyện của người đã làm xong thử thách;</li>
+        <li>lưu họ tên và số điện thoại của bạn để biết bạn đã làm tới ngày nào;</li>
+        <li>dùng AI để đọc và tổng hợp các bài nộp;</li>
+        <li>liên hệ với bạn sau thử thách để giới thiệu các chương trình tiếp theo của cộng đồng;</li>
+        <li>nêu tên và chúc mừng bạn trong nhóm Facebook và nhóm Zalo Cộng đồng Thành viên khi bạn hoàn thành thử thách.</li>
       </ul>
-      <p class="nho">Bài và video của bạn được lưu tới khi bạn xin xóa. Muốn xóa, bạn nhắn riêng cho người hỗ trợ trong nhóm Facebook của thử thách.</p>
+      <p class="nho">Bài và video của bạn được giữ cho tới khi bạn yêu cầu xóa. Muốn xóa, bạn nhắn riêng cho người hỗ trợ trong nhóm Facebook của thử thách.</p>
       <label class="dongy"><input type="checkbox" id="dongy"><span>Tôi đã đọc và đồng ý với những điều trên.</span></label>
       <p class="nho">Bài nộp không ghi tên, số điện thoại hay ảnh chụp tin nhắn thật của khách. Bạn gọi là "khách A" hoặc "chị khách ở quận 3" là đủ.</p>
       <p><button type="button" class="nut chinh" id="luu-nguoi">Lưu và bắt đầu làm bài</button></p>
@@ -212,7 +212,7 @@ var NAM_CHANG = ['Chuẩn bị và hiểu khách', 'Mở đầu', 'Khai thác v�
 
 /* Mỗi ngày: tên, câu hứa, việc cần làm, các phần bài, danh sách tự kiểm.
    Mỗi phần có nhóm ô; mỗi ô có id (khóa lưu trên máy) và nhãn (tên cột trên bảng tính).
-   Ô có "tu" thì nút "Lấy chữ từ Mẫu 1" chép chữ của ô đó sang khi ô này còn trống. */
+   Ô có "tu" thì nút "Chép bài đã viết ở Mẫu 1" chép nội dung ô đó sang khi ô này còn trống. */
 var GOI_VIDEO = 'Bạn đưa video lên chỗ lưu bạn quen dùng, để chế độ ai có đường dẫn cũng xem được, rồi dán đường dẫn vào đây.';
 
 var NGAY = {
@@ -405,7 +405,7 @@ function videoHtml(n) {
 
 function dungNgay(n) {
   var d = NGAY[n], h = '';
-  if (!d) { $('bai').innerHTML = '<div class="ngay-dau"><h2>Trang chưa tải xong bài của ngày này</h2></div><p>Bạn tải lại trang giúp Duy. Chữ đã gõ vẫn còn trên máy.</p>'; return; }
+  if (!d) { $('bai').innerHTML = '<div class="ngay-dau"><h2>Trang chưa tải xong bài của ngày này</h2></div><p>Bạn tải lại trang giúp Duy. Bài bạn đã làm vẫn được lưu trên máy.</p>'; return; }
   h += '<div class="ngay-dau"><div class="nhan">' + nhanNgay(n) + '</div><h2>' + esc(d.ten) + '</h2></div>';
   var tt = trangThai(n);
   if (tt && !XEM_TRUOC) { $('bai').innerHTML = h + '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '.</div>'; return; }
@@ -434,7 +434,7 @@ function dungNgay(n) {
   d.phan.forEach(function (p) { if (!p.sauVideo) phan(p); });
   function phan(p) {
     h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '') +
-         (p.rieng ? '<p class="nho rieng">Phần này để bạn tự kiểm tra, không cần nộp. Chữ chỉ lưu trên máy này.</p>' : '') +
+         (p.rieng ? '<p class="nho rieng">Phần này để bạn tự kiểm tra, không cần nộp. Phần này chỉ lưu trên máy của bạn.</p>' : '') +
          (p.ds ? '<ol class="viec">' + p.ds.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' : '');
     p.nhom.forEach(function (g) {
       if (g.h) { h += '<div class="chu">' + g.h + '</div>'; return; }
@@ -446,7 +446,7 @@ function dungNgay(n) {
         h += '<div class="nhom">' + (g.tieu ? '<h4>' + esc(g.tieu) + '</h4>' : '') + trong + '</div>';
       }
     });
-    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Lấy chữ từ Mẫu 1 vào các ô còn trống') + '</button></p>';
+    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Chép bài đã viết ở Mẫu 1 vào các ô còn trống') + '</button></p>';
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
   }
@@ -482,7 +482,7 @@ function dungNgay(n) {
       var dich = $(o.id), nguon = o.tu && doc(o.tu).trim();
       if (dich && nguon && !dich.value.trim()) { dich.value = nguon; ghi(o.id, nguon); gian(dich); dem++; }
     });
-    nut.textContent = dem ? 'Đã chép ' + dem + ' ô' : 'Không có ô trống nào lấy được chữ';
+    nut.textContent = dem ? 'Đã chép ' + dem + ' ô' : 'Không có ô trống nào để chép';
   };
   if (n === 7) $('rap').onclick = function () {
     var b = banQuyTrinh();
@@ -494,7 +494,7 @@ function dungNgay(n) {
 
 function gian(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 2 + 'px'; }
 
-function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này' : 'Trình duyệt này không cho lưu chữ, bạn nộp bài trước khi đóng trang'; }
+function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này' : 'Trình duyệt này không lưu được bài, bạn nộp bài trước khi đóng trang'; }
 $('bai').addEventListener('input', function (e) {
   var t = e.target;
   if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
@@ -652,9 +652,9 @@ function nop(n) {
   var thieu = o.filter(function (x) { return x.can && !doc(x.id).trim(); })[0];
   if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
   var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
-  if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chép lại đường dẫn video, chỉ một dòng, không kèm chữ khác.'); $(saiLk.id).focus(); return; }
+  if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chỉ dán đường dẫn video vào ô này, không viết thêm gì khác.'); $(saiLk.id).focus(); return; }
   if (n >= 1 && n <= 7 && VIDEO[n]) cot.push(['Đã xem video (%)', xem.loi[n] && phanTram(n) < CAN_XEM ? 'không đo được, đo được ' + phanTram(n) : String(phanTram(n))]);
-  if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
+  if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Bài của bạn vẫn được lưu trên máy này.'); return; }
 
   var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot };
   if (n === 7) goi.ban_quy_trinh = banQuyTrinh().chu;
@@ -672,13 +672,13 @@ function nop(n) {
     ghi('da-nop-' + n, gio);
     if (k.tien_do) ghi('tien-do', JSON.stringify(k.tien_do));
     bao.className = 'bao dung';
-    bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bạn có xóa chữ trên máy cũng không mất.' +
+    bao.textContent = 'Đã lưu ' + tenBai(n) + ' lúc ' + gio + '. Next Gen Founder đã giữ bài này, bài trên máy có bị xóa thì cũng không mất.' +
       (k.tre ? ' Bài này nộp sau hạn nên được ghi là nộp sau hạn.' : '') + (k.doc ? ' Bản Quy trình đã được lưu thành Google Doc.' : '') +
       (n >= 1 && n < 7 && k.tien_do && k.tien_do.lich && k.tien_do.lich[n + 1] && (k.tien_do.mo || []).indexOf(n + 1) < 0 ? ' Ngày ' + (n + 1) + ' mở lúc 0h ngày ' + ngayVN(k.tien_do.lich[n + 1]) + '.' : '');
     if (k.tien_do) veThanh();
   }).catch(function (e) {
     var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn hoặc nơi nhận bài chưa trả lời';
-    baoLoi('Chưa gửi được' + vi + '. Chữ của bạn vẫn còn nguyên trên trang, bạn bấm Nộp lại.');
+    baoLoi('Chưa gửi được' + vi + '. Bài của bạn vẫn còn nguyên trên trang, bạn bấm Nộp lại.');
   }).then(function () {
     clearTimeout(hen); nut.disabled = false; nut.textContent = 'Nộp bài';
   });

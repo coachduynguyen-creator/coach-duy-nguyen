@@ -184,7 +184,7 @@ def phan_bai(n, tieu, than, si=0):
     for g in p["nhom"]:
         g.pop("_nhieu", None)
     if any(o.get("tu") for g in p["nhom"] for o in g.get("o", [])):
-        p["layTu"] = "Lấy chữ đã viết ở Ngày 1 vào các ô còn trống"
+        p["layTu"] = "Chép bài đã viết ở Ngày 1 vào các ô còn trống"
     return p
 
 

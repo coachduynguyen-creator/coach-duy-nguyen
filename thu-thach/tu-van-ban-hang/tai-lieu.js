@@ -2302,7 +2302,7 @@ var BAI = {
 ]
 }
 ],
-"layTu": "Lấy chữ đã viết ở Ngày 1 vào các ô còn trống"
+"layTu": "Chép bài đã viết ở Ngày 1 vào các ô còn trống"
 },
 {
 "tieu": "Quy trình tư vấn bán hàng tiêu chuẩn của bạn: phần hoàn thành hôm nay",
