@@ -2720,12 +2720,13 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
   :is(p,li):not(#_):not(:where(nav,.ndd,.cc-chu,.kenh4,.kenh-them,.so-tong,.vach) *):not(:where(.mono,.meta,.ten-dt,.k-so,.k-ten,.k-vai,.v5-so,.cg-chuc,.nut,.hst-en,.tang,.bt-xong,.bt-loi,.danh-xung)){text-align:justify!important;text-justify:inter-word;hyphens:none}
   /* đoạn vốn căn giữa (đoạn dẫn dưới tiêu đề, phần chữ đầu trang cộng đồng, khung, ghi chú ảnh): căn đều, dòng cuối giữ ở giữa */
   :is(p,li):not(#_):is(:where(.phan-dau,.hero-chu,.hero-giua,.khung) *,.hero-ghi,.kh-dan,.cd-ghi){text-align-last:center}
-  :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form,.ndd,.dau-bai,.hh,.cc-lenh) *){text-align:center!important}
+  /* 14/10/2026 Coach Duy: tiêu đề trong đầu trang cũng căn giữa (bỏ loại trừ header) */
+  :is(h1,h2,h3):not(#_):not(:where(footer,nav,form,.ndd,.hh,.cc-lenh) *){text-align:center!important}
   /* nhãn trên bìa thẻ công cụ, e-book căn giữa theo tiêu đề thẻ */
   .tv-bia-dau,.eb-bia-dau{justify-content:center}
   .eb-bia-cd{display:block;text-align:center}
   /* nhãn nhỏ đứng ngay trên tiêu đề thì căn giữa theo tiêu đề */
-  .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form,.ndd) *){text-align:center!important}
+  .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(footer,nav,form,.ndd) *){text-align:center!important}
 }
 /* Khối nền sáng: ô đánh dấu và ô chọn gốc của trình duyệt theo bảng màu sáng, không hiện ô đen đặc như đã tích (13/10/2026) */
 .phan-sang{color-scheme:light}
