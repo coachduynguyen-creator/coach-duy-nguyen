@@ -291,8 +291,28 @@ var NGAY = {
 };
 if (typeof BAI !== 'undefined') for (var k in BAI) NGAY[k] = BAI[k];   // Ngày 2 tới 7 và Tổng kết sinh từ tài liệu, xem dung_tai_lieu_thu_thach.py
 
-/* Mã video YouTube (chế độ không công khai) của bài giảng từng ngày, ví dụ 'dQw4w9WgXcQ'. Để trống thì trang báo video sắp có. */
-var VIDEO = { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '' };
+/* Mã video YouTube (chế độ không công khai) của bài giảng từng ngày, ví dụ 'dQw4w9WgXcQ'. Để trống thì trang báo video sắp có.
+   Bản thử 14/10/2026: video có sẵn trên kênh, gần chủ đề từng ngày, thay bằng video thật khi quay xong. */
+var VIDEO = {
+  1: 'r_yjjvexSVA',   // Tăng tỷ lệ chốt sau một tuần: sửa quy trình, không sửa người
+  2: '7lZvXC4baY8',   // 30 phút luyện nhận diện khách tiềm năng
+  3: 'ToQMhBlWhyw',   // Gây ấn tượng với khách cao cấp ngay lần đầu
+  4: 'YbiDnjbCK8Q',   // Đừng thuyết phục nữa. Đây là cách khách tự mua
+  5: 'eGQbItur-co',   // Càng bán nhiều thứ, khách càng khó mua
+  6: 'IAYzc91zZ3A',   // Giá có thật là điều khách quan tâm nhất?
+  7: 'IUNdDgUxGWM'    // Mười bước biến doanh nghiệp thành cỗ máy bán hàng
+};
+
+/* Ba câu sau video, Ngày 1 tới 7. Bắt buộc đủ ba câu khi nộp, để biết người làm đã xem video. */
+for (var n = 1; n <= 7; n++) if (NGAY[n]) NGAY[n].phan.unshift({
+  tieu: 'Sau khi xem video', cot: 'Sau video', sauVideo: true,
+  mo: 'Xem hết video rồi trả lời ba câu. Mỗi câu vài dòng là đủ, miễn là ý của bạn chứ không chép lại lời trong video.',
+  nhom: [{ o: [
+    { id: 'sv' + n + '-hoc', nhan: 'Điều bạn học được từ video này', goi: 'Ghi một ý cụ thể, kèm phút trong video nếu bạn nhớ.', can: true },
+    { id: 'sv' + n + '-doi', nhan: 'Một điều bạn sẽ thay đổi trong cách tư vấn của mình', can: true },
+    { id: 'sv' + n + '-so', nhan: 'Một chỉ số bạn sẽ theo dõi để biết thay đổi đó có tác dụng', goi: 'Ví dụ: trong mười khách hỏi giá, bao nhiêu người hẹn được buổi gặp tiếp.', can: true }
+  ] }]
+});
 
 /* Bật khi bản thỏa thuận đã qua người làm pháp lý và trang thoa-thuan/ mở cho thành viên:
    lúc đó phải bấm Tôi đồng ý ở trang thỏa thuận thì mới nộp được. */
@@ -357,12 +377,14 @@ function dungNgay(n) {
   if (tt) h += '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '. Bạn vẫn xem trước được, nhưng nên làm xong ngày trước rồi hẵng làm ngày này.</div>';
   if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
   h += videoHtml(n);
+  d.phan.forEach(function (p) { if (p.sauVideo) phan(p); });
   if (typeof TAI_LIEU !== 'undefined' && TAI_LIEU[n]) h += '<details class="tai-lieu"><summary>Tài liệu Ngày ' + n + '</summary>' + TAI_LIEU[n] +
     '<p><a class="nut phu nho-gon" href="pdf/ngay-' + n + '.pdf" target="_blank" rel="noopener">Mở bản PDF để in</a></p></details>';
   if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3>' + (typeof d.viec === 'string'
     ? '<div class="chu">' + d.viec + '</div>'
     : '<ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol>') + '</section>';
-  d.phan.forEach(function (p) {
+  d.phan.forEach(function (p) { if (!p.sauVideo) phan(p); });
+  function phan(p) {
     h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '') +
          (p.rieng ? '<p class="nho rieng">Phần này để bạn tự kiểm tra, không cần nộp. Chữ chỉ lưu trên máy này.</p>' : '') +
          (p.ds ? '<ol class="viec">' + p.ds.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' : '');
@@ -379,7 +401,7 @@ function dungNgay(n) {
     if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Lấy chữ từ Mẫu 1 vào các ô còn trống') + '</button></p>';
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
-  });
+  }
   if (n === 7) h += '<section class="phan in-duoc"><h3>Bản Quy trình hoàn chỉnh</h3>' +
     '<p>Trang ghép phần Quy trình bạn đã điền từ Ngày 1 tới Ngày 7 thành một bản, theo thứ tự Phần 1 tới Phần 10. Phần 3 lấy bản sửa hôm nay, còn trống thì lấy bản Ngày 1. Khi bạn nộp bài hôm nay, bản này được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
     '<p class="hang"><button type="button" class="nut phu nho-gon" id="rap">Ráp bản Quy trình</button> <button type="button" class="nut phu nho-gon" id="in" hidden>In bản này</button></p>' +
@@ -434,7 +456,7 @@ function tatCaO(n) {
   var r = [];
   NGAY[n].phan.forEach(function (p) {
     p.nhom.forEach(function (g) {
-      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, cot: p.cot, nhom: g.tieu }); });
+      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, can: o.can, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, cot: p.cot, nhom: g.tieu }); });
     });
   });
   return r;
@@ -500,6 +522,8 @@ function nop(n) {
   var o = tatCaO(n).filter(function (x) { return !x.rieng; });
   var cot = o.map(function (x) { return [tenCot(x), doc(x.id).trim()]; });
   if (!cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
+  var thieu = o.filter(function (x) { return x.can && !doc(x.id).trim(); })[0];
+  if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
   var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
   if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chép lại đường dẫn video, chỉ một dòng, không kèm chữ khác.'); $(saiLk.id).focus(); return; }
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Chữ của bạn vẫn lưu trên máy này.'); return; }
