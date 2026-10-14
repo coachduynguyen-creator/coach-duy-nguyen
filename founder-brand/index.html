@@ -834,6 +834,10 @@ figure{margin:0}
   :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form) *){text-align:center!important}
   .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form) *){text-align:center!important}
 }
+@media (max-width:760px){
+  /* Điện thoại: chữ nội dung căn đều hai lề như cả website (Coach Duy chốt 12/10 và 14/10/2026); giữ nguyên nhãn ngắn, nút, menu */
+  :is(p,li):not(#_):not(:where(nav,.nav,.nav-phan) *):not(:where(.mono,.nhan,.nut,.btn)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Course",

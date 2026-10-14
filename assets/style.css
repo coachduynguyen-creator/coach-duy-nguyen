@@ -2712,11 +2712,14 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
   .cg-hs-in{align-content:start}
 }
 /* Điện thoại: Coach Duy chốt 12/10/2026 lúc 23:00, thay luật căn trái lúc 16:06. Tiêu đề căn giữa,
-   chữ nội dung căn đều hai lề cho thẳng hàng. Trừ đầu trang, chân trang, biểu mẫu, ô câu lệnh,
-   bảng, hình minh họa có số, nhãn ngắn và chữ vốn căn giữa. Trang Người Dẫn Đường có luật riêng.
+   chữ nội dung căn đều hai lề cho thẳng hàng. Ngày 14/10/2026 Coach Duy yêu cầu áp cho mọi trang, không sót:
+   căn đều cả đầu trang, đầu bài blog, mục lục, ô câu lệnh, câu kết dưới khung số, biểu mẫu, chân trang.
+   Chỉ giữ nguyên nhãn ngắn, con số, chức danh, nút, menu và chính chữ câu lệnh để chép. Trang Người Dẫn Đường có luật riêng.
    ponytail: :not(#_) chỉ để nâng độ ưu tiên qua các luật căn trái có !important của trang công cụ. */
 @media (max-width:760px){
-  :is(p,li):not(#_):not(:where(header,footer,nav,form,table,.ndd,.phan-dau,.hero-giua,.hero-chu,.cc-lenh,.cc-kq,.dau-bai,.hh,.kenh4,.kenh-them,.so-tong,.muc-luc,.vach,figcaption) *):not(:where(.mono,.meta,.kh-dan,.cd-ghi,.ten-dt,.chu-nho,.k-so,.k-ten,.k-vai,.v5-so,.cg-chuc,.nut,.hst-en,.vi,.tang,.bt-xong,.bt-loi,.hero-ghi,.danh-xung)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+  :is(p,li):not(#_):not(:where(nav,.ndd,.cc-chu,.kenh4,.kenh-them,.so-tong,.vach) *):not(:where(.mono,.meta,.ten-dt,.k-so,.k-ten,.k-vai,.v5-so,.cg-chuc,.nut,.hst-en,.tang,.bt-xong,.bt-loi,.danh-xung)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+  /* đoạn vốn căn giữa (đoạn dẫn dưới tiêu đề, phần chữ đầu trang cộng đồng, khung, ghi chú ảnh): căn đều, dòng cuối giữ ở giữa */
+  :is(p,li):not(#_):is(:where(.phan-dau,.hero-chu,.hero-giua,.khung) *,.hero-ghi,.kh-dan,.cd-ghi){text-align-last:center}
   :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form,.ndd,.dau-bai,.hh,.cc-lenh) *){text-align:center!important}
   /* nhãn trên bìa thẻ công cụ, e-book căn giữa theo tiêu đề thẻ */
   .tv-bia-dau,.eb-bia-dau{justify-content:center}

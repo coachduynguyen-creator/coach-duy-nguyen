@@ -290,6 +290,11 @@ mark{color:var(--muc);font-weight:600;background:linear-gradient(transparent 58%
   :is(h1,h2,h3):not(#_):not(:where(header,footer,nav,form) *){text-align:center!important}
   .mono:not(#_):has(+ :is(h1,h2,h3)):not(:where(header,footer,nav,form) *){text-align:center!important}
 }
+@media (max-width:760px){
+  /* Điện thoại: chữ nội dung căn đều hai lề như cả website (Coach Duy chốt 12/10 và 14/10/2026); đoạn vốn căn giữa giữ dòng cuối ở giữa; tên và chức danh, nhãn, nút giữ nguyên */
+  :is(p,li):not(#_):not(:where(nav,.nav) *):not(:where(.mono,.nhan,.nut,.btn,.ten-dt)){text-align:justify!important;text-justify:inter-word;hyphens:none}
+  :is(p,li):not(#_):is(:where(.hero-chu,.khung) *){text-align-last:center}
+}
 </style>
 </head>
 <body>
