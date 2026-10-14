@@ -126,6 +126,7 @@ fieldset.o > small{display:block;color:var(--ink-3);font-size:14px;margin:-2px 0
 label.chon{display:inline-flex;gap:8px;align-items:center;margin:4px 16px 4px 0;font-size:15.5px}
 label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
 .rieng{background:var(--cam-mo);border-radius:10px;padding:10px 14px}
+.xac-nhan label{display:flex;gap:10px;align-items:flex-start;font-weight:600}
 .khoa-bao{border:1px solid var(--cam);background:var(--cam-mo);border-radius:14px;padding:14px 16px;margin-top:18px;color:var(--ink)}
 #ban-qt{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;font-size:15.5px}
 @media print{
@@ -391,7 +392,9 @@ function dungNgay(n) {
   if (!d) { $('bai').innerHTML = '<div class="ngay-dau"><h2>Trang chưa tải xong bài của ngày này</h2></div><p>Bạn tải lại trang giúp Duy. Chữ đã gõ vẫn còn trên máy.</p>'; return; }
   h += '<div class="ngay-dau"><div class="nhan">' + nhanNgay(n) + '</div><h2>' + esc(d.ten) + '</h2></div>';
   var tt = trangThai(n);
-  if (tt) h += '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '. Bạn vẫn xem trước được, nhưng nên làm xong ngày trước rồi hẵng làm ngày này.</div>';
+  if (tt && !XEM_TRUOC) { $('bai').innerHTML = h + '<div class="khoa-bao"><b>Bài này chưa mở.</b> ' + esc(tt) + '.</div>'; return; }
+  if (tt) h += '<div class="khoa-bao"><b>Đang xem trước.</b> Học viên chưa thấy bài này: ' + esc(tt) + '.</div>';
+  dangMo = n;
   if (d.hua) h += '<blockquote>' + esc(d.hua) + '</blockquote>';
   /* Ngày 1 tới 7 chia ba bước: Bước 2 và 3 khóa tới khi xem đủ video và trả lời ba câu ở Bước 1. */
   var coBuoc = n >= 1 && n <= 7, khoa = coBuoc && !daMo(n);
@@ -435,8 +438,10 @@ function dungNgay(n) {
     '<p>Trang ghép phần Quy trình bạn đã điền từ Ngày 1 tới Ngày 7 thành một bản, theo thứ tự Phần 1 tới Phần 10. Phần 3 lấy bản sửa hôm nay, còn trống thì lấy bản Ngày 1. Khi bạn nộp bài hôm nay, bản này được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
     '<p class="hang"><button type="button" class="nut phu nho-gon" id="rap">Ráp bản Quy trình</button> <button type="button" class="nut phu nho-gon" id="in" hidden>In bản này</button></p>' +
     '<p class="nho" id="thieu-qt"></p><div id="ban-qt" hidden></div></section>';
+  if (coBuoc) h += '<section class="phan xac-nhan"><h3>Xác nhận xong Bước 2</h3><label><input type="checkbox" id="kiem-' + n + '-xn"' + (doc('kiem-' + n + '-xn') ? ' checked' : '') +
+    '><span>Tôi đã đọc hết tài liệu Ngày ' + n + ' và điền xong bài làm ở trên.</span></label><p class="nho" id="xn-bao"></p></section>';
   hetBuoc();
-  buoc(3, 'Nộp bài cuối ngày', 'Bước này mở cùng Bước 2. Làm xong bài ở Bước 2 rồi bạn nộp ở đây.');
+  buoc(3, 'Nộp bài cuối ngày', 'Bước này mở khi bạn điền bài ở Bước 2 và tích ô xác nhận cuối Bước 2.');
   if (d.kiem) h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
     var id = 'kiem-' + n + '-' + i;
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
@@ -477,13 +482,14 @@ function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này'
 $('bai').addEventListener('input', function (e) {
   var t = e.target;
   if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
-  if (/^sv\d-/.test(t.id)) veXem(+t.id[2]);
+  if (dangMo >= 1 && dangMo <= 7) veXem(dangMo);
 });
 
 /* ---------- đo phần video đã xem ----------
    Lưu từng giây đã phát thành chuỗi 0 và 1 ở tt-tvbh:xem-N, gắn với mã video nên thay video thật là đo lại.
    Chỉ cộng khi thời điểm phát tăng đúng nhịp đồng hồ (tính cả tốc độ phát), nên tua qua không được tính.
    ponytail: chỉ chứng minh trình phát đã chạy, không chứng minh người xem có chú ý; ba câu sau video mới là phép thử nội dung. */
+var XEM_TRUOC = /[?&]xem-truoc\b/.test(location.search), dangMo = -1;
 var CAN_XEM = 90, xem = { hen: 0, cho: 0, loi: {} };
 function layXem(n) { try { var x = JSON.parse(doc('xem-' + n)); return x && x.id === VIDEO[n] ? x : null; } catch (e) { return null; } }
 function phanTram(n) { var x = layXem(n); return x && x.s ? Math.floor(100 * x.s.replace(/0/g, '').length / x.s.length) : 0; }
@@ -508,7 +514,13 @@ function veXem(n) {
   var b1 = $('buoc-1');
   if (b1) b1.classList.toggle('xong', du && traLoi);
   if (!daMo(n) && du && traLoi) ghi('mo-' + n, VIDEO[n] || '-');
-  if (daMo(n)) ['buoc-2', 'buoc-3'].forEach(function (id) { if ($(id)) $(id).classList.remove('khoa'); });
+  if (daMo(n) && $('buoc-2')) $('buoc-2').classList.remove('khoa');
+  /* Bước 3 mở khi đã điền ít nhất một ô của Bước 2 và tích ô xác nhận; xóa hết chữ thì khóa lại. */
+  var coChu = tatCaO(n).some(function (o) { return !o.sv && !o.rieng && doc(o.id).trim(); });
+  var xn = !!doc('kiem-' + n + '-xn'), xong2 = daMo(n) && coChu && xn;
+  if ($('buoc-2')) $('buoc-2').classList.toggle('xong', xong2);
+  if ($('buoc-3')) $('buoc-3').classList.toggle('khoa', !xong2);
+  if ($('xn-bao')) $('xn-bao').textContent = xn && !coChu ? 'Bạn chưa điền ô nào ở Bước 2, điền bài rồi Bước 3 mới mở.' : '';
 }
 function napYT(xong) {
   if (window.YT && YT.Player) return xong();
@@ -545,6 +557,7 @@ $('bai').addEventListener('change', function (e) {
   var t = e.target;
   if (t.type === 'radio') baoLuu(ghi(t.name, t.value));
   if (t.type === 'checkbox' && t.id.indexOf('kiem-') === 0) ghi(t.id, t.checked ? '1' : '');
+  if (dangMo >= 1 && dangMo <= 7) veXem(dangMo);
 });
 
 /* ---------- gom bài ---------- */
@@ -552,7 +565,7 @@ function tatCaO(n) {
   var r = [];
   NGAY[n].phan.forEach(function (p) {
     p.nhom.forEach(function (g) {
-      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, can: o.can, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, cot: p.cot, nhom: g.tieu }); });
+      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, can: o.can, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, sv: p.sauVideo, cot: p.cot, nhom: g.tieu }); });
     });
   });
   return r;
@@ -588,13 +601,15 @@ function banQuyTrinh() {
   return { chu: chu, thieu: thieu };
 }
 
-/* ---------- tiến độ: máy chủ giữ, trang chỉ nhắc, không chặn nộp ---------- */
+/* ---------- tiến độ: máy chủ giữ, trang khóa ngày chưa mở (thêm ?xem-truoc vào địa chỉ để xem trước) ---------- */
 function layTienDo() { try { return JSON.parse(doc('tien-do')) || null; } catch (e) { return null; } }
 function ngayVN(s) { var p = String(s).split('-'); return p[2] + '/' + p[1]; }
 /* Trả về lời nhắc khi ngày n chưa mở, '' khi đã mở hoặc chưa biết tiến độ (máy chủ cũ). */
 function trangThai(n) {
   var t = layTienDo();
-  if (!t || !t.mo || n === 0 || t.mo.indexOf(n) > -1) return '';
+  if (n === 0) return '';
+  if (!t || !t.mo) return 'Trang chưa lấy được tiến độ của bạn. Bạn điền họ tên, email, số điện thoại ở đầu trang, nộp video cam kết, rồi tải lại trang';
+  if (t.mo.indexOf(n) > -1) return '';
   var truoc = n - 1;
   if (!t.da_nop[truoc]) return 'Nộp ' + (truoc === 0 ? 'video cam kết' : 'bài Ngày ' + truoc) + ' để mở';
   return t.lich && t.lich[n] ? 'Mở lúc 0h ngày ' + ngayVN(t.lich[n]) : 'Chưa tới ngày mở';
