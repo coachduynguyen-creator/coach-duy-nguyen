@@ -3,11 +3,14 @@
 
 Đọc Tài liệu Ngày 1 tới 7 (.md, phần sau <!-- BẢN THÀNH VIÊN -->), giữ các mục để đọc
 (Bảy ngày, Ba điều, Ví dụ đã điền, Những lỗi hay gặp...), bỏ các mục đã thành ô bài trên
-trang (Việc cần làm, Mẫu, Đề bài video, Tự kiểm tra, Nộp bài, Quy trình).
+trang (Việc cần làm, Mẫu, Đề bài video, Tự kiểm tra, Nộp bài).
 Phần bài của Ngày 2 tới 7 và video tổng kết (BAI[8]) cũng sinh từ chính tệp .md: mỗi bảng thành
 các ô điền, chữ trên trang khớp nguyên văn nguồn. Ngày 0 và 1 viết tay trong index.html vì khóa
 lưu của hai ngày đó đã có người dùng. Khóa ô sinh ra theo vị trí (n2-1-0-3-1: ngày, mục, bảng,
 dòng, cột), nên thêm hay bớt dòng trong bảng cũ thì chữ đã điền ở các dòng sau sẽ lệch ô.
+Riêng các ô nối với Bảng quy trình bán hàng bảy bước mang khóa cố định: cột "Từ nay" và "Việc sửa"
+của mẫu sửa dòng ghi vào bản 2 (bang2-b{dòng}-lam, -sua; dòng 2 tách 2pl phân loại, 2tc tiếp cận),
+cột "Trước đây" và "Số đo bản 1" chép từ bản 1 của Ngày 1 (bang1-...). Ngày 7 ráp hai bản từ các khóa này.
 Ghi ra thu-thach/tu-van-ban-hang/tai-lieu.js và chép PDF sang thu-thach/tu-van-ban-hang/pdf/.
 Sửa chữ tài liệu thì sửa tệp .md bên NGF rồi chạy lại: python3 dung_tai_lieu_thu_thach.py
 """
@@ -15,7 +18,7 @@ import importlib.util, json, pathlib, re, shutil, unicodedata
 
 NGUON = pathlib.Path.home() / "Codex_Projects/Next Gen Founder/outputs/ngf_thu_thach_7_ngay_20261014"
 DICH = pathlib.Path(__file__).parent / "thu-thach/tu-van-ban-hang"
-BO = ("Việc cần làm", "Mẫu ", "Đề bài video", "Tự kiểm tra", "Nộp bài", "Video tổng kết", "Quy trình")
+BO = ("Việc cần làm", "Mẫu", "Đề bài video", "Tự kiểm tra", "Nộp bài", "Video tổng kết")
 
 spec = importlib.util.spec_from_file_location("dung_pdf", NGUON / "dung_pdf.py")
 dung_pdf = importlib.util.module_from_spec(spec)
@@ -53,10 +56,31 @@ CHON = {"Có / Chưa": ["Có", "Chưa"], "Có / Chưa / Không áp dụng": ["C�
         "Rõ hay chưa rõ": ["Rõ", "Chưa rõ"]}
 GOP = [("Đã ổn", "Cần sửa"), ("Sự thật về sản phẩm", "Dự đoán của tôi", "Cần nguồn hoặc được phép")]
 NGAN = ("Đã nghe", "Nguồn", "Thời gian", "Rõ hay")
-RIENG = {(2, "Mẫu 2"), (4, "Mẫu 2")}   # theo mục Nộp bài: "không cần nộp", ô vẫn tự lưu nhưng không gửi đi
-CHANG = ["Chuẩn bị và hiểu khách", "Mở đầu", "Khai thác và chẩn đoán", "Đề xuất", "Giúp khách quyết định và theo sát"]   # khớp NAM_CHANG trong index.html
-TU = {"Chặng bạn thấy yếu nhất ở Ngày 1": "m1-nghen"}
-MUC = []   # bốn mức, đọc từ danh sách "- [ ]" của Ngày 7
+RIENG = {(7, "Mẫu 4")}   # theo mục Nộp bài: sổ ghi tình huống "không cần nộp", ô vẫn tự lưu nhưng không gửi đi
+TU = {"Bản 1: số khách": "bang1-khoang"}   # ô một dòng: nhãn bắt đầu bằng khóa thì chép từ ô Ngày 1
+ID = {"Bản 2: số khách": "bang2-khoang", "Bước thay đổi rõ nhất": "bang2-ro", "Tuần sau bạn sẽ sửa bước nào": "bang2-tiep"}
+NUA = {"phân loại": "pl", "tiếp cận": "tc"}   # "2. Phần phân loại" (Ngày 2), "2. Phần tiếp cận" (Ngày 3)
+
+
+def o_bang(x, nhan, cot):
+    """Ô ở dòng "N. ..." của bảng sửa dòng hay bảng so sánh: gắn khóa bản 2 hoặc chép từ bản 1."""
+    m = re.match(r"(\d)\. ", nhan)
+    if not m:
+        return
+    so = m.group(1)
+    k = so + NUA.get(nhan[8:], "") if nhan.startswith("2. Phần ") else so
+    if cot.startswith("Trước đây"):
+        x["tu"] = f"bang1-b{so}-lam"
+    elif cot.startswith("Từ nay"):
+        x["id"] = f"bang2-b{k}-lam"
+    elif cot.startswith("Việc sửa"):
+        x["id"] = f"bang2-b{k}-sua"
+    elif cot == "Số đo bản 1":
+        x["tu"] = f"bang1-b{so}-so"
+    elif cot == "Số đo bản 2":
+        x["id"] = f"bang2-b{so}-so"
+    elif cot.startswith("Đã sửa gì"):
+        x["id"] = f"bang2-b{so}-dasua"
 
 
 def tron(t):
@@ -107,8 +131,7 @@ def bang_o(dong, ma, nhom, dau_muc):
                 x["chon"] = CHON[dau[c]]
             elif dau[c].startswith(NGAN):
                 x["dong"] = 1
-            if dau[c] == "Ngày 1" and nhan in CHANG:   # Mẫu 3 Ngày 7: cột Ngày 1 lấy từ Mẫu 1 Ngày 1
-                x["tu"] = f"m1-c{CHANG.index(nhan)}-lam"
+            o_bang(x, nhan, tron(dau[c]))
             o.append(x)
         if not nhan and not le_dong:
             nhan = f"Dòng {r + 1}"
@@ -117,8 +140,9 @@ def bang_o(dong, ma, nhom, dau_muc):
             for k, v in TU.items():
                 if nhan.startswith(k):
                     o[0]["tu"] = v
-            if nhan.startswith("Bạn đang ở mức nào"):
-                o[0]["chon"] = MUC
+            for k, v in ID.items():
+                if nhan.startswith(k):
+                    o[0]["id"] = v
             if goi:
                 o[0]["goi"] = goi
             ten = le_dong or ""
@@ -134,8 +158,8 @@ def bang_o(dong, ma, nhom, dau_muc):
 
 
 def phan_bai(n, tieu, than, si=0):
-    """Một mục ## (Mẫu, Quy trình, Đề bài video) thành một phần bài trên trang."""
-    cot = "Quy trình" if tieu.startswith("Quy trình") else "Video" if "video" in tieu.lower() else tieu.split(".")[0]
+    """Một mục ## (Mẫu, Đề bài video) thành một phần bài trên trang."""
+    cot = "Video" if "video" in tieu.lower() else tieu.split(".")[0]
     p = {"tieu": tieu, "cot": cot, "nhom": []}
     if (n, cot) in RIENG:
         p["rieng"] = 1
@@ -162,16 +186,7 @@ def phan_bai(n, tieu, than, si=0):
             for g in p["nhom"][truoc:]:
                 for o in g["o"]:
                     o["ten"] = " · ".join(filter(None, [cot, muc, g.get("tieu"), o["nhan"]]))
-                    if cot == "Quy trình":
-                        o["qp"] = muc
             ma += 1; i = j; continue
-        if s.startswith("- [ ] ") and cot == "Quy trình":
-            xa(); j = i
-            while j < len(dong) and dong[j].strip().startswith("- [ ] "):
-                MUC.append(dong[j].strip()[6:]); j += 1
-            o = {"id": f"n{n}-{si}-{ma}-muc", "nhan": "Mức bạn đang ở", "chon": MUC, "qp": muc}
-            o["ten"] = " · ".join([cot, muc, o["nhan"]])
-            p["nhom"].append({"o": [o]}); ma += 1; i = j; continue
         if hd and (s.startswith("### ") or (hd.group(3) and "**" not in hd.group(2))):
             xa(); muc = hd.group(2).rstrip(".")
             p["nhom"].append({"h": f"<h4>{dung_pdf.inline(muc)}</h4>"}); i += 1; continue
@@ -207,9 +222,9 @@ def bai_ngay(n, md):
         elif tieu.startswith("Video tổng kết"):
             tong = {"nhan": "Sau Ngày 7", "ten": tieu, "bai": "video tổng kết", "phan": [phan_bai(8, tieu, than)],
                     "nopSau": ["Hạn nộp video tổng kết giống hạn cuối của cả thử thách, tức ba ngày sau Ngày 7."]}
-        elif tieu.startswith(("Mẫu ", "Quy trình", "Đề bài video")):
+        elif tieu.startswith(("Mẫu ", "Đề bài video")):
             d["phan"].append(phan_bai(n, tieu.strip(), than, len(d["phan"])))
-    # trang đi theo thứ tự làm: Mẫu, Quy trình, rồi Video
+    # trang đi theo thứ tự làm: Mẫu rồi Video
     d["phan"].sort(key=lambda p: p["cot"] == "Video")
     return d, tong
 
@@ -220,7 +235,7 @@ for n in range(1, 8):
     ten = f"NGF - Tài liệu Ngày {n} thử thách 7 ngày"
     md = tim(ten + ".md").read_text(encoding="utf-8")
     html = phan_doc(md)
-    assert "Việc cần làm" not in html and "<h1>" not in html, n
+    assert not re.search(r"<h2[^>]*>Việc cần làm", html) and "<h1>" not in html, n
     tai_lieu[n] = html
     shutil.copyfile(tim(ten + ".pdf"), DICH / f"pdf/ngay-{n}.pdf")
     if n >= 2:

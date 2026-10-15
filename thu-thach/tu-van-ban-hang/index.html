@@ -147,7 +147,13 @@ label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
 .rieng{background:var(--cam-mo);border-radius:10px;padding:10px 14px}
 .xac-nhan label{display:flex;gap:10px;align-items:flex-start;font-weight:600}
 .khoa-bao{border:1px solid var(--cam);background:var(--cam-mo);border-radius:14px;padding:14px 16px;margin-top:18px;color:var(--ink)}
-#ban-qt{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;font-size:15.5px}
+#ban-qt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;font-size:15.5px}
+#ban-qt h4{margin:18px 0 8px}
+.hai-ban{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hai-ban > div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.hai-ban b{display:block;font-size:13.5px;color:var(--ink-3);margin-top:6px}
+.hai-ban p{margin:2px 0;white-space:pre-wrap}
+@media (max-width:600px){.hai-ban{grid-template-columns:1fr}}
 @media print{
   header.dau,.mo,#nguoi,#nguoi-gon,nav.ngay,footer,.nop,#bai > :not(.buoc-2),.buoc-2 > :not(.buoc-than),.buoc-2 .buoc-than > :not(.in-duoc){display:none !important}
   .buoc-2{border:0;padding:0;margin:0}
@@ -258,9 +264,9 @@ var NGAY = {
     viec: [
       'Bạn <b>chọn một sản phẩm và một nhóm khách</b> để làm trong cả bảy ngày, nên là sản phẩm bạn đang bán nhiều nhất hoặc đang muốn bán tốt hơn.',
       '<b>Lấy ra mười khách tiềm năng gần nhất</b> của sản phẩm đó, tức mười người gần nhất đã hỏi bạn hoặc được bạn liên hệ, dù họ có mua hay không. Chưa đủ mười người thì lấy hết số bạn có và ghi rõ.',
-      '<b>Điền ô "Ở bước này tôi làm gì, nói gì"</b> cho cả bảy bước, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
-      '<b>Đếm và ghi ô số đo</b> cho từng bước, theo gợi ý trong ô. Số nào ước thì ghi "ước".',
-      '<b>Ghi khách rơi ở đâu, vì sao</b>, phần lý do bắt đầu bằng chữ "đoán". Ô việc sửa để trống, từ Ngày 2 mỗi ngày bạn điền ô này cho bước của ngày đó.',
+      '<b>Điền cột "Ở bước này tôi làm gì, nói gì"</b> cho cả bảy dòng, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
+      '<b>Đếm và ghi ô số đo</b> cho từng dòng, theo gợi ý trong ô. Số nào ước thì ghi "ước".',
+      '<b>Ghi khách rơi ở đâu, vì sao</b>, phần lý do bắt đầu bằng chữ "đoán". Ô việc sửa để trống, từ Ngày 2 mỗi ngày bạn điền ô này cho dòng của ngày đó.',
       '<b>Ghi bước mất nhiều khách nhất</b>, rồi quay video từ một tới ba phút theo đề bài ở cuối trang và nộp bài.'
     ],
     phan: [
@@ -297,9 +303,9 @@ var NGAY = {
       }
     ],
     kiem: [
-      'Bảng có đủ bảy bước, bước nào cũng đã ghi bạn làm gì, nói gì ở bước đó.',
-      'Ô số đo của cả bảy bước đều có số, số thật hoặc số có ghi "ước".',
-      'Từ bước 2 tới bước 6, con số giữ nguyên hoặc giảm dần.',
+      'Bảng có đủ bảy dòng, mỗi dòng đã ghi bạn làm gì, nói gì ở bước đó.',
+      'Ô số đo của cả bảy dòng đều có số, số thật hoặc số có ghi "ước".',
+      'Từ dòng 2 tới dòng 6, con số giữ nguyên hoặc giảm dần.',
       'Lý do khách rơi bắt đầu bằng chữ "đoán", trừ khi khách đã nói thẳng.',
       'Đã ghi một bước mất nhiều khách nhất.',
       'Không có tên, số điện thoại, ảnh chụp tin nhắn thật của khách.',
@@ -444,10 +450,10 @@ function dungNgay(n) {
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
   }
-  if (n === 7) h += '<section class="phan in-duoc"><h3>Bản Quy trình hoàn chỉnh</h3>' +
-    '<p>Trang ghép phần Quy trình bạn đã điền từ Ngày 1 tới Ngày 7 thành một bản, theo thứ tự Phần 1 tới Phần 10. Phần 3 lấy bản sửa hôm nay, còn trống thì lấy bản Ngày 1. Khi bạn nộp bài hôm nay, bản này được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
-    '<p class="hang"><button type="button" class="nut phu nho-gon" id="rap">Ráp bản Quy trình</button> <button type="button" class="nut phu nho-gon" id="in" hidden>In bản này</button></p>' +
-    '<p class="nho" id="thieu-qt"></p><div id="ban-qt" hidden></div></section>';
+  if (n === 7) h += '<section class="phan in-duoc"><h3>Bảng quy trình bán hàng bảy bước, bản 1 và bản 2</h3>' +
+    '<p>Bản 1 là bảng bạn điền ở Ngày 1. Bản 2 lấy những dòng bạn đã sửa từ Ngày 2 tới hôm nay, cùng số đo bản 2 ở phần so sánh bên trên. Dòng nào chưa sửa thì giữ như bản 1. Khi bạn nộp bài hôm nay, hai bản được gửi kèm và Next Gen Founder lưu thành một Google Doc, tên tệp có họ tên của bạn.</p>' +
+    '<p class="hang"><button type="button" class="nut phu nho-gon" id="chep-ban">Chép hai bản</button> <button type="button" class="nut phu nho-gon" id="in">In hai bản</button></p>' +
+    '<p class="nho" id="thieu-qt"></p><div id="ban-qt"></div></section>';
   if (coBuoc) h += '<section class="phan xac-nhan"><h3>Xác nhận xong Bước 2</h3><label><input type="checkbox" id="kiem-' + n + '-xn"' + (doc('kiem-' + n + '-xn') ? ' checked' : '') +
     '><span>Tôi đã đọc hết tài liệu Ngày ' + n + ' và điền xong bài làm ở trên.</span></label><p class="nho" id="xn-bao"></p></section>';
   hetBuoc();
@@ -478,12 +484,14 @@ function dungNgay(n) {
     });
     nut.textContent = dem ? 'Đã chép ' + dem + ' ô' : 'Không có ô trống nào để chép';
   };
-  if (n === 7) $('rap').onclick = function () {
-    var b = banQuyTrinh();
-    $('ban-qt').textContent = b.chu; $('ban-qt').hidden = false; $('in').hidden = false;
-    $('thieu-qt').textContent = b.thieu.length ? 'Còn trống: ' + b.thieu.join(', ') + '. Bạn mở lại ngày đó điền thêm rồi ráp lại.' : '';
-  };
-  if (n === 7) $('in').onclick = function () { window.print(); };
+  if (n === 7) {
+    veHaiBan();
+    $('in').onclick = function () { window.print(); };
+    $('chep-ban').onclick = function () {
+      var nut = this;
+      navigator.clipboard.writeText(banHaiBan().chu).then(function () { nut.textContent = 'Đã chép hai bản'; }, function () { nut.textContent = 'Trình duyệt chưa cho chép, bạn dùng nút In'; });
+    };
+  }
 }
 
 function gian(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 2 + 'px'; }
@@ -493,6 +501,7 @@ $('bai').addEventListener('input', function (e) {
   var t = e.target;
   if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
   if (dangMo >= 1 && dangMo <= 7) veXem(dangMo);
+  if (dangMo === 7) veHaiBan();
 });
 
 /* ---------- đo phần video đã xem ----------
@@ -568,6 +577,7 @@ $('bai').addEventListener('change', function (e) {
   if (t.type === 'radio') baoLuu(ghi(t.name, t.value));
   if (t.type === 'checkbox' && t.id.indexOf('kiem-') === 0) ghi(t.id, t.checked ? '1' : '');
   if (dangMo >= 1 && dangMo <= 7) veXem(dangMo);
+  if (dangMo === 7) veHaiBan();
 });
 
 /* ---------- gom bài ---------- */
@@ -575,40 +585,51 @@ function tatCaO(n) {
   var r = [];
   NGAY[n].phan.forEach(function (p) {
     p.nhom.forEach(function (g) {
-      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, can: o.can, nhan: o.nhan, ten: o.ten, qp: o.qp, rieng: p.rieng, sv: p.sauVideo, cot: p.cot, nhom: g.tieu }); });
+      (g.o || []).forEach(function (o) { r.push({ id: o.id, tu: o.tu, lk: o.lk, can: o.can, nhan: o.nhan, ten: o.ten, rieng: p.rieng, sv: p.sauVideo, cot: p.cot, nhom: g.tieu }); });
     });
   });
   return r;
 }
 function tenCot(o) { return o.ten || [o.cot, o.nhom, o.nhan].filter(Boolean).join(' · '); }
 
-/* Ghép phần Quy trình của Ngày 1 tới 7. Ngày 1 lấy tên Phần từ tiêu đề nhóm, Ngày 2 tới 7 từ o.qp. */
-function banQuyTrinh() {
-  var muc = [];
-  for (var n = 1; n <= 7; n++) {
-    NGAY[n].phan.forEach(function (p) {
-      if (p.cot !== 'Quy trình') return;
-      p.nhom.forEach(function (g) {
-        (g.o || []).forEach(function (o) {
-          var tieu = o.qp || g.tieu || '', so = +((tieu.match(/Phần (\d+)/) || [])[1]);
-          if (!so) return;
-          var nhan = o.qp && g.tieu ? (o.nhan === 'Bạn điền' ? g.tieu : g.tieu + ': ' + o.nhan) : o.nhan;
-          muc.push({ so: so, tieu: tieu, ngay: n, nhan: nhan, v: doc(o.id).trim() });
-        });
-      });
-    });
+/* Bản 1 (Ngày 1, bang1-...) và bản 2 (bang2-...: ô "Từ nay", "Việc sửa" của Ngày 2 tới 7, số đo bản 2 của Ngày 7).
+   Dòng chưa sửa giữ như bản 1. Dòng 2 sửa hai lần: phân loại ở Ngày 2 (b2pl), tiếp cận ở Ngày 3 (b2tc). */
+function banHaiBan() {
+  function v(id) { return doc(id).trim(); }
+  function dong2(c) {
+    var tc = v('bang2-b2tc-' + c), pl = v('bang2-b2pl-' + c);
+    return tc || pl ? 'Tiếp cận: ' + (tc || 'giữ như bản 1') + '\nPhân loại: ' + (pl || 'giữ như bản 1') : '';
   }
-  var sua3 = muc.some(function (m) { return m.so === 3 && m.ngay === 7 && m.v; });
-  muc = muc.filter(function (m) { return !(m.so === 3 && m.ngay === (sua3 ? 1 : 7)); });
-  var nguoi = layNguoi() || {}, chu = '# Quy trình tư vấn bán hàng tiêu chuẩn của ' + (nguoi.ten || 'bạn'), thieu = [];
-  for (var so = 1; so <= 10; so++) {
-    var o = muc.filter(function (m) { return m.so === so; }), co = o.filter(function (m) { return m.v; });
-    if (!o.length) continue;
-    if (!co.length) { thieu.push('Phần ' + so + ' (Ngày ' + o[0].ngay + ')'); continue; }
-    chu += '\n\n## ' + o[0].tieu.replace(/, bản (sửa|đầu)$/, '');
-    co.forEach(function (m) { chu += '\n\n' + m.nhan + '\n' + m.v; });
-  }
-  return { chu: chu, thieu: thieu };
+  var nguoi = layNguoi() || {}, thieu = [], dong = [];
+  BUOC.forEach(function (b, i) {
+    var k1 = 'bang1-b' + (i + 1), k2 = 'bang2-b' + (i + 1), lam1 = v(k1 + '-lam');
+    var lam2 = i === 1 ? dong2('lam') : v(k2 + '-lam'), sua2 = i === 1 ? dong2('sua') : v(k2 + '-sua');
+    if (!v(k2 + '-so')) thieu.push(i + 1);
+    dong.push({ tieu: (i + 1) + '. ' + b[0],
+      b1: [['Tôi làm gì, nói gì', lam1], ['Số đo', v(k1 + '-so')], ['Khách rơi ở đâu, vì sao', v(k1 + '-roi')], ['Việc sửa trong tuần này', v(k1 + '-sua')]],
+      b2: [['Tôi làm gì, nói gì', lam2 || (lam1 && lam1 + ' (giữ như bản 1)')], ['Số đo', v(k2 + '-so')], ['Việc sửa trong tuần này', sua2], ['Đã sửa gì ở bước này', v(k2 + '-dasua')]] });
+  });
+  var dau1 = [['Mười khách tính từ ngày nào tới ngày nào', v('bang1-khoang')]], dau2 = [['Số khách, tính từ ngày nào tới ngày nào', v('bang2-khoang')]];
+  var cuoi1 = [['Bước mất nhiều khách nhất', v('bang1-nhat')], ['Bạn đoán vì sao', v('bang1-doan')]];
+  var cuoi2 = [['Bước thay đổi rõ nhất', v('bang2-ro')], ['Tuần sau bạn sẽ sửa bước nào', v('bang2-tiep')]];
+  function o(ds) { return ds.map(function (x) { return '<b>' + esc(x[0]) + '</b><p>' + esc(x[1] || '(trống)') + '</p>'; }).join(''); }
+  function t(ds) { return ds.map(function (x) { return x[0] + ': ' + (x[1] || '(trống)'); }).join('\n'); }
+  function cap(tieu, a, b) { return (tieu ? '<h4>' + esc(tieu) + '</h4>' : '') + '<div class="hai-ban"><div><b>Bản 1</b>' + o(a) + '</div><div><b>Bản 2</b>' + o(b) + '</div></div>'; }
+  var html = '<p><b>Sản phẩm hoặc dịch vụ:</b> ' + esc(v('bang1-sp') || '(trống)') + '<br><b>Nhóm khách:</b> ' + esc(v('bang1-khach') || '(trống)') + '</p>' + cap('', dau1, dau2);
+  dong.forEach(function (d) { html += cap(d.tieu, d.b1, d.b2); });
+  html += cap('Tổng kết', cuoi1, cuoi2);
+  var chu = '# Bảng quy trình bán hàng bảy bước của ' + (nguoi.ten || 'bạn') + '\n\nSản phẩm hoặc dịch vụ: ' + (v('bang1-sp') || '(trống)') + '\nNhóm khách: ' + (v('bang1-khach') || '(trống)');
+  chu += '\n\n## Bản 1, điền ở Ngày 1\n\n' + t(dau1);
+  dong.forEach(function (d) { chu += '\n\n### ' + d.tieu + '\n' + t(d.b1); });
+  chu += '\n\n' + t(cuoi1) + '\n\n## Bản 2, đếm lại ở Ngày 7\n\n' + t(dau2);
+  dong.forEach(function (d) { chu += '\n\n### ' + d.tieu + '\n' + t(d.b2); });
+  chu += '\n\n' + t(cuoi2);
+  return { html: html, chu: chu, thieu: thieu };
+}
+function veHaiBan() {
+  var b = banHaiBan();
+  $('ban-qt').innerHTML = b.html;
+  $('thieu-qt').textContent = b.thieu.length ? 'Còn thiếu số đo bản 2 ở dòng ' + b.thieu.join(', ') + '. Bạn điền ở phần so sánh bên trên.' : '';
 }
 
 /* ---------- tiến độ: máy chủ giữ, trang khóa ngày chưa mở (thêm ?xem-truoc vào địa chỉ để xem trước) ---------- */
@@ -652,7 +673,7 @@ function nop(n) {
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Bài của bạn vẫn được lưu trên máy này.'); return; }
 
   var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot };
-  if (n === 7) goi.ban_quy_trinh = banQuyTrinh().chu;
+  if (n === 7) goi.ban_quy_trinh = banHaiBan().chu;
   nut.disabled = true; nut.textContent = 'Đang gửi...';
   bao.className = 'bao'; bao.textContent = '';
   var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 45000);

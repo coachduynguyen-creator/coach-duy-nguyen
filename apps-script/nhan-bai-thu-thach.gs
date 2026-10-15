@@ -361,14 +361,15 @@ function dongY(d) {
   }
 }
 
-/** Bản Quy trình Ngày 7: dòng bắt đầu bằng "# " hoặc "## " thành tiêu đề. */
+/** Bảng quy trình bán hàng bảy bước, bản 1 và bản 2, gửi kèm bài Ngày 7: dòng bắt đầu bằng "# ", "## ", "### " thành tiêu đề. */
 function taoDoc(ten, chu) {
   var ma = PropertiesService.getScriptProperties().getProperty('ma_thu_muc');
   var gio = Utilities.formatDate(new Date(), 'Asia/Ho_Chi_Minh', 'dd-MM-yyyy HH:mm');
-  var doc = DocumentApp.create('Quy trình của ' + ten + ' (' + gio + ')');
+  var doc = DocumentApp.create('Bảng quy trình bán hàng bảy bước của ' + ten + ' (' + gio + ')');
   var than = doc.getBody();
   chu.slice(0, 200000).split('\n').forEach(function (dong) {
-    if (dong.indexOf('## ') === 0) than.appendParagraph(dong.slice(3)).setHeading(DocumentApp.ParagraphHeading.HEADING2);
+    if (dong.indexOf('### ') === 0) than.appendParagraph(dong.slice(4)).setHeading(DocumentApp.ParagraphHeading.HEADING3);
+    else if (dong.indexOf('## ') === 0) than.appendParagraph(dong.slice(3)).setHeading(DocumentApp.ParagraphHeading.HEADING2);
     else if (dong.indexOf('# ') === 0) than.appendParagraph(dong.slice(2)).setHeading(DocumentApp.ParagraphHeading.HEADING1);
     else than.appendParagraph(dong);
   });
