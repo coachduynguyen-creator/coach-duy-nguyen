@@ -2161,7 +2161,7 @@ KHU_BA_NGANH = """
 """ % "".join('<article class="ch-the"><i>%s · %s</i><b>%s</b><p>%s</p></article>'
               % (html.escape(h["ten"]), html.escape(h["nganh"]), h["ket_qua"], h["doi"]) for h in _BH_THE)
 
-CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Họ đã đổi cách làm thế nào, và chuyện gì xảy ra sau đó",
+CAU_CHUYEN = dau_trang("Câu chuyện thành công", "Họ đã đổi cách làm thế nào, và chuyện gì xảy ra sau đó",
   "Đây là chuyện của những người chủ doanh nghiệp và những người làm tư vấn bán hàng đã làm việc cùng Duy. Họ tự kể bằng video hoặc tin nhắn: trước đây họ làm thế nào, đã đổi điều gì, và sau đó ra sao.") \
   + KHU_FOUNDER + KHU_BAN_HANG + TUONG_VIDEO + KHU_ANH + KHU_BA_NGANH \
   + _story(_NOI_BAT) + "".join(_ngan(h) for h in _FOUNDER + _BH_DAI) + """
@@ -2216,7 +2216,7 @@ CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Họ đã đổi cách làm
 })();
 </script>
 """
-trang("cau-chuyen-hoc-vien.html", "Câu chuyện học viên · Coach Duy Nguyễn",
+trang("cau-chuyen-hoc-vien.html", "Câu chuyện thành công · Coach Duy Nguyễn",
       "Người chủ doanh nghiệp và người làm tư vấn bán hàng kể lại họ đã đổi cách làm ra sao khi làm việc cùng Coach Duy Nguyễn: Coach Lê Phương, Master Kris Tran, Hoa hậu Kayla Dinh, anh Chiến được khách chọn dù người bán khác chào giảm 3%, anh Thức bán chiếc đồng hồ hơn 500 triệu.",
       CAU_CHUYEN, "chuong-trinh.html")
 print("  cau-chuyen-hoc-vien.html")

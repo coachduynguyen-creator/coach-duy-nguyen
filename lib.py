@@ -58,7 +58,7 @@ MENU = [
     # Phương pháp giữ nguyên, dẫn tới từ trang Về Duy, trang chủ và chân trang.
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
-    ("cau-chuyen-hoc-vien.html", "Câu chuyện học viên", None),
+    ("cau-chuyen-hoc-vien.html", "Câu chuyện thành công", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
@@ -187,7 +187,7 @@ def footer(p=""):
       -->
       <div>
         <b>Nội dung</b>
-        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Công cụ</a><a href="%s">Podcast</a><a href="%s">Câu chuyện học viên</a>
+        <a href="%s">Blog</a><a href="%s">Phương pháp</a><a href="%s">Công cụ</a><a href="%s">Podcast</a><a href="%s">Câu chuyện thành công</a>
       </div>
       <div>
         <b>Đi tiếp</b>
