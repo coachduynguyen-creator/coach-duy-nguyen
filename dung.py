@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Dựng toàn bộ website Coach Duy Nguyễn. Chạy: python3 dung.py"""
-import html, json, os, re
+import html, json, os, re, unicodedata
 from lib import (tieu_de_trang, BASE, CONG_DONG, CO_MAY, PHIEU, EMAIL, TTC_LANDING, YOUTUBE, TIKTOK, FACEBOOK,
                  NGAY_SUA, TSTS_LANDING, FGS_LANDING, CGS_LANDING, trang, dau_trang, dd, VER)
 from bai_viet import BAI
@@ -2020,6 +2020,13 @@ def _chuyen_mon(h):
 def _nhan_hv(h):
     return " · ".join(x for x in (_chuyen_mon(h), h["nganh"], h["nam"]) if x)
 
+def _anh_bia(h, lon=False):
+    # bia: ảnh bìa tự cắt khi ảnh YouTube mang chữ tên lớp hoặc con số chưa kiểm
+    # lon: bìa dọc toàn khung cần ảnh 16:9 không viền đen (hqdefault có viền trên dưới)
+    if h.get("bia"):
+        return "img/cau-chuyen/%s.webp" % h["bia"]
+    return "https://i.ytimg.com/vi/%s/%s.jpg" % (html.escape(h["yt"]), "maxresdefault" if lon else "hqdefault")
+
 def _video(h):
     """Video nhúng nhẹ: chỉ ảnh bìa và nút phát, bấm mới tải khung youtube-nocookie."""
     e = html.escape
@@ -2028,22 +2035,54 @@ def _video(h):
     return ('<button class="vd-nut" type="button" data-yt="%s"%s aria-label="Phát video của %s">'
             '<img src="%s" alt="" width="480" height="360" loading="lazy">'
             '<span class="vd-phat" aria-hidden="true"></span></button>' % (e(h["yt"]), ' data-end="%d"' % h["het"] if h.get("het") else "", e(h["ten"]),
-               # bia: ảnh bìa tự cắt khi ảnh YouTube mang chữ tên lớp hoặc con số chưa kiểm
-               "img/cau-chuyen/%s.webp" % h["bia"] if h.get("bia") else "https://i.ytimg.com/vi/%s/hqdefault.jpg" % e(h["yt"])))
+               _anh_bia(h)))
 
-def _than_dai(h):
+# Bố cục mới, Coach Duy chốt 00:20 15/10/2026 (vault "[C] Bản chốt bố cục trang Câu chuyện
+# học viên 15-10-2026.md"): bìa nổi bật Kris mở kiểu story (A6, A5), thẻ bìa mở ngăn trượt có
+# đường dẫn riêng #ma (A2, B1), chữ trong ngăn theo dòng thời gian (A4), kệ vuốt cho video
+# ngắn (A3), tường lưới tin nhắn bấm phóng to (A1). Chỉ dùng câu đã duyệt; chữ mới chỉ là nhãn.
+def _ma(h):
+    s = unicodedata.normalize("NFD", h["ten"].replace("đ", "d").replace("Đ", "D"))
+    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-").replace("master-", "").replace("coach-", "").replace("hoa-hau-", "")
+
+# Nhãn dòng thời gian (A4) theo số đoạn đã duyệt.
+_MOC = {3: ("Trước đây", "Điều đã đổi", "Sau đó"), 2: ("Trước đây", "Điều đã đổi")}
+
+def _ngan(h):
+    """Ngăn trượt của một chuyện: video, dòng thời gian, ô số, câu trích."""
     e = html.escape
-    s = "".join("<p>%s</p>" % p for p in h["than"])
-    if h.get("so"):
-        s += '<div class="ch-so">%s</div>' % "".join("<div><b>%s</b><span>%s</span></div>" % c for c in h["so"])
-    if h["trich"]:
-        s += '<div class="ch-quote"><p>%s</p><span>%s</span></div>' % (e(h["trich"]), e(h["nguon_trich"]))
-    return s
+    moc = "".join('<li><i>%s</i><p>%s</p></li>' % (m, p) for m, p in zip(_MOC[len(h["than"])], h["than"]))
+    so = ('<div class="ch-so">%s</div>' % "".join("<div><b>%s</b><span>%s</span></div>" % c for c in h["so"])) if h.get("so") else ""
+    trich = ('<div class="ch-quote"><p>%s</p><span>%s</span></div>' % (e(h["trich"]), e(h["nguon_trich"]))) if h["trich"] else ""
+    return ('<dialog class="ch-ngan" id="%s" aria-labelledby="%s-td"><div class="ch-ngan-in">'
+            '<button class="ch-dong" type="button" aria-label="Đóng">×</button>'
+            '<p class="mono">%s</p><h2 id="%s-td">%s</h2>%s<ol class="ch-moc">%s</ol>%s%s</div></dialog>'
+            % (_ma(h), _ma(h), e(_nhan_hv(h)), _ma(h), h["tieu_de"], _video(h), moc, so, trich))
 
-_FOUNDER = [h for h in HOC_VIEN if h["nhom"] == "founder"]
+def _the_bia(h):
+    return ('<button class="ch-bia hien" type="button" data-mo="%s"><span class="ch-bia-anh"><img src="%s" alt="" width="480" height="360" loading="lazy"></span>'
+            '<span class="ch-bia-chu"><span class="mono">%s</span><b>%s</b><span class="ch-bia-doc">Đọc câu chuyện</span></span></button>'
+            % (_ma(h), _anh_bia(h), html.escape(_nhan_hv(h)), h["tieu_de"]))
+
+def _story(h):
+    """Kiểu story cho chuyện nổi bật: vuốt ngang hoặc chạm hai bên, không tự chạy."""
+    e = html.escape
+    o = ['<div class="st-o st-mo" style="background-image:url(%s)"><p class="mono">%s</p><h2 id="%s-td">%s</h2></div>' % (_anh_bia(h, True), e(_nhan_hv(h)), _ma(h), h["tieu_de"])]
+    o += ['<div class="st-o"><i>%s</i><p>%s</p></div>' % (m, p) for m, p in zip(_MOC[len(h["than"])], h["than"])]
+    o.append('<div class="st-o st-vd">%s</div>' % _video(h))
+    if h["trich"]:
+        o.append('<div class="st-o"><div class="ch-quote"><p>%s</p><span>%s</span></div></div>' % (e(h["trich"]), e(h["nguon_trich"])))
+    o.append('<div class="st-o st-het"><p class="mono">%s</p><button class="nut" type="button" data-chuyen-khac>Xem chuyện khác</button></div>' % e(_chuyen_mon(h)))
+    return ('<dialog class="ch-story" id="%s" aria-labelledby="%s-td"><div class="st-vach">%s</div>'
+            '<button class="ch-dong" type="button" aria-label="Đóng">×</button><div class="st-khung">%s</div></dialog>'
+            % (_ma(h), _ma(h), '<i class="qua"></i>' + "<i></i>" * (len(o) - 1), "".join(o)))
+
+_NOI_BAT = next(h for h in HOC_VIEN if h["ten"] == "Master Kris Tran")
+_FOUNDER = [h for h in HOC_VIEN if h["nhom"] == "founder" and h is not _NOI_BAT]
 _BH_DAI = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("than")]
 _BH_THE = [h for h in HOC_VIEN if h["nhom"] == "ban-hang" and h.get("doi")]
-_CO_VIDEO = [h for h in HOC_VIEN if h["yt"] and not h.get("than")]  # mục có bài dài đã hiện video trong bài
+_CO_VIDEO = [h for h in HOC_VIEN if h["yt"] and not h.get("than")]  # mục có bài dài đã hiện video trong ngăn
 
 KHU_FOUNDER = """
 <section class="phan bd hoa-van">
@@ -2052,17 +2091,23 @@ KHU_FOUNDER = """
     <h2>Người chủ doanh nghiệp kể lại chặng đường làm thương hiệu cá nhân</h2>
     <p>Ba người dưới đây bắt đầu từ ba chỗ rất khác nhau. Một người chỉ có chiếc điện thoại, một người sợ máy quay, một người mới từ Mỹ về và chưa quen cách làm kinh doanh ở Việt Nam.</p>
   </div>
-  %s
+  <button class="ch-bia-lon hien" type="button" data-mo="%s"><img src="%s" alt="" width="480" height="360">
+    <span class="ch-bia-chu"><span class="mono">%s</span><b>%s</b><span class="ch-bia-doc">Xem câu chuyện</span></span></button>
+  <div class="ch-bia-luoi" id="chuyen-khac">%s</div>
 </section>
-""" % "".join(
-    '<article class="bai-than hien ch-founder" style="max-width:74ch;margin-inline:auto">'
-    '<p class="mono">%s</p><h3>%s</h3>%s%s</article>'
-    % (html.escape(_nhan_hv(h)), h["tieu_de"], _video(h), _than_dai(h)) for h in _FOUNDER)
+""" % (_ma(_NOI_BAT), _anh_bia(_NOI_BAT, True), html.escape(_nhan_hv(_NOI_BAT)), _NOI_BAT["tieu_de"], "".join(_the_bia(h) for h in _FOUNDER))
 
-_ds_cm = []
-for h in _CO_VIDEO:
-    if _chuyen_mon(h) not in _ds_cm:
-        _ds_cm.append(_chuyen_mon(h))
+KHU_BAN_HANG = """
+<section class="phan bd duoi" id="ky-nang-tu-van">
+  <div class="phan-dau hien">
+    <p class="mono">Kỹ năng tư vấn</p>
+    <h2>Từ người chào hàng thành người khách tin để hỏi ý kiến</h2>
+    <p>Những người dưới đây làm tư vấn bán hàng ở nhiều ngành khác nhau. Điểm chung là họ không còn mở đầu bằng giá và sản phẩm. Họ hỏi để hiểu hoàn cảnh của khách trước, rồi mới tư vấn.</p>
+  </div>
+  <div class="ch-bia-luoi">%s</div>
+</section>
+""" % "".join(_the_bia(h) for h in _BH_DAI)
+
 TUONG_VIDEO = """
 <section class="phan bd phan-sang" id="tuong-video">
   <div class="phan-dau hien">
@@ -2070,14 +2115,11 @@ TUONG_VIDEO = """
     <h2>Nghe chính học viên kể lại</h2>
     <p>Bấm vào ảnh để xem video.</p>
   </div>
-  <div class="tl-loc" role="group" aria-label="Lọc video theo chuyên môn"><button class="tl-nut chon" type="button" data-cm="all">Tất cả</button>%s</div>
-  <div class="vd-luoi">%s</div>
+  <div class="vd-ke">%s</div>
 </section>
-""" % ("".join('<button class="tl-nut" type="button" data-cm="%s">%s</button>'
-               % (html.escape(k), html.escape(k)) for k in _ds_cm),
-       "".join('<figure class="vd-o" data-cm="%s">%s<figcaption><b>%s</b><span>%s</span>%s</figcaption></figure>'
-               % (html.escape(_chuyen_mon(h)), _video(h), html.escape(h["ten"]), html.escape(_nhan_hv(h)),
-                  "<p>%s</p>" % html.escape(h["trich"]) if h["trich"] else "") for h in _CO_VIDEO))
+""" % "".join('<figure class="vd-o">%s<figcaption><b>%s</b><span>%s</span>%s</figcaption></figure>'
+              % (_video(h), html.escape(h["ten"]), html.escape(_nhan_hv(h)),
+                 "<p>%s</p>" % html.escape(h["trich"]) if h["trich"] else "") for h in _CO_VIDEO)
 
 # Ảnh tin nhắn: (tệp, tên, ngành, rộng, cao). Ngành chưa rõ thì để trống, không đoán.
 ANH_TIN_NHAN = [
@@ -2100,29 +2142,14 @@ KHU_ANH = """
     <h2>Tin nhắn học viên gửi lại cho Duy</h2>
   </div>
   <div class="anh-luoi">%s</div>
+  <dialog class="anh-phong" aria-label="Ảnh tin nhắn phóng to"><button class="ch-dong" type="button" aria-label="Đóng">×</button><img alt=""></dialog>
 </section>
 """ % "".join(
-    '<figure class="anh-o"><img src="img/cau-chuyen/%s.webp" alt="Tin nhắn của %s" width="%d" height="%d" loading="lazy">'
+    '<figure class="anh-o"><button class="anh-nut" type="button" aria-label="Phóng to tin nhắn của %s"><img src="img/cau-chuyen/%s.webp" alt="Tin nhắn của %s" width="%d" height="%d" loading="lazy"></button>'
     '<figcaption>%s</figcaption></figure>'
-    % (f, html.escape(t), w, c, html.escape(" · ".join(x for x in (t, n) if x))) for f, t, n, w, c in ANH_TIN_NHAN)
+    % (html.escape(t), f, html.escape(t), w, c, html.escape(" · ".join(x for x in (t, n) if x))) for f, t, n, w, c in ANH_TIN_NHAN)
 
-KHU_BAN_HANG = """
-<section class="phan bd duoi" id="ky-nang-tu-van" style="padding-bottom:0">
-  <div class="phan-dau hien">
-    <p class="mono">Kỹ năng tư vấn</p>
-    <h2>Từ người chào hàng thành người khách tin để hỏi ý kiến</h2>
-    <p>Những người dưới đây làm tư vấn bán hàng ở nhiều ngành khác nhau. Điểm chung là họ không còn mở đầu bằng giá và sản phẩm. Họ hỏi để hiểu hoàn cảnh của khách trước, rồi mới tư vấn.</p>
-  </div>
-</section>
-""" + "".join("""
-<section class="phan bd hoa-van%s">
-  <div class="phan-dau hien">
-    <p class="mono">%s</p>
-    <h2>%s</h2>
-  </div>
-  <div class="bai-than hien" style="max-width:74ch;margin-inline:auto">%s%s</div>
-</section>
-""" % ("" if i == 0 else " duoi", html.escape(_nhan_hv(h)), h["tieu_de"], _video(h), _than_dai(h)) for i, h in enumerate(_BH_DAI)) + """
+KHU_BA_NGANH = """
 <section class="phan bd phan-sang" id="bon-nganh">
   <div class="phan-dau hien">
     <p class="mono">Ba ngành khác</p>
@@ -2136,25 +2163,56 @@ KHU_BAN_HANG = """
 
 CAU_CHUYEN = dau_trang("Câu chuyện học viên", "Họ đã đổi cách làm thế nào, và chuyện gì xảy ra sau đó",
   "Đây là chuyện của những người chủ doanh nghiệp và những người làm tư vấn bán hàng đã làm việc cùng Duy. Họ tự kể bằng video hoặc tin nhắn: trước đây họ làm thế nào, đã đổi điều gì, và sau đó ra sao.") \
-  + KHU_FOUNDER + TUONG_VIDEO + KHU_ANH + KHU_BAN_HANG + """
+  + KHU_FOUNDER + KHU_BAN_HANG + TUONG_VIDEO + KHU_ANH + KHU_BA_NGANH \
+  + _story(_NOI_BAT) + "".join(_ngan(h) for h in _FOUNDER + _BH_DAI) + """
 <script>
 (function(){
+  function mo(ma){
+    var d=document.getElementById(ma);
+    if(!d||!d.showModal||d.open)return;
+    d.showModal();
+    var k=d.querySelector('.st-khung');if(k)k.scrollLeft=0;
+    var n=d.querySelector('.ch-ngan-in');if(n)n.scrollTop=0;
+    history.replaceState(null,'','#'+ma);
+  }
+  document.querySelectorAll('dialog.ch-ngan,dialog.ch-story,dialog.anh-phong').forEach(function(d){
+    d.addEventListener('close',function(){
+      // dừng video đang phát: trả lại nút ảnh bìa
+      d.querySelectorAll('iframe.vd-khung').forEach(function(f){if(f._nut)f.replaceWith(f._nut)});
+      if(location.hash==='#'+d.id)history.replaceState(null,'',location.pathname+location.search);
+    });
+    // bấm ra nền tối thì đóng
+    d.addEventListener('click',function(ev){if(ev.target===d)d.close()});
+  });
+  var st=document.querySelector('.st-khung');
+  if(st){
+    var vach=st.parentNode.querySelectorAll('.st-vach i');
+    function ve(){var i=Math.round(st.scrollLeft/st.clientWidth);vach.forEach(function(v,j){v.classList.toggle('qua',j<=i)})}
+    st.addEventListener('scroll',ve,{passive:true});ve();
+    st.addEventListener('click',function(ev){
+      if(ev.target.closest('button,iframe,a'))return;
+      var r=st.getBoundingClientRect();
+      st.scrollBy({left:(ev.clientX-r.left<r.width*.35?-1:1)*st.clientWidth,behavior:'smooth'});
+    });
+  }
   document.addEventListener('click',function(ev){
-    var b=ev.target.closest('.vd-nut[data-yt]');
+    var t=ev.target;
+    var b=t.closest('.vd-nut[data-yt]');
     if(b){
       var f=document.createElement('iframe');
       f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(b.dataset.yt)+'?autoplay=1&rel=0'+(b.dataset.end?'&end='+b.dataset.end:'');
       f.title=b.getAttribute('aria-label');f.className='vd-khung';
       f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;
-      b.replaceWith(f);return;
+      f._nut=b;b.replaceWith(f);return;
     }
-    var n=ev.target.closest('#tuong-video .tl-nut');
-    if(!n)return;
-    var k=n.dataset.cm;
-    document.querySelectorAll('#tuong-video .tl-nut').forEach(function(x){x.classList.toggle('chon',x===n)});
-    document.querySelectorAll('#tuong-video .vd-o').forEach(function(o){
-      o.classList.toggle('vd-an',k!=='all'&&o.dataset.cm!==k)});
+    var m=t.closest('[data-mo]');
+    if(m){mo(m.dataset.mo);return;}
+    if(t.closest('.ch-dong')){t.closest('dialog').close();return;}
+    if(t.closest('[data-chuyen-khac]')){t.closest('dialog').close();document.getElementById('chuyen-khac').scrollIntoView({behavior:'smooth',block:'start'});return;}
+    var a=t.closest('.anh-nut');
+    if(a){var p=document.querySelector('.anh-phong'),i=a.querySelector('img');p.querySelector('img').src=i.src;p.querySelector('img').alt=i.alt;p.showModal();}
   });
+  if(location.hash)mo(decodeURIComponent(location.hash.slice(1)));
 })();
 </script>
 """
