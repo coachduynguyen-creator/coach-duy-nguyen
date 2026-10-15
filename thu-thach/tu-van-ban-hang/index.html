@@ -222,11 +222,21 @@ footer p{margin:12px 0 0}
 /* Địa chỉ /exec của apps-script/nhan-bai-thu-thach.gs. Để trống thì nút Nộp báo chưa nối. */
 var NOI_NHAN = 'https://script.google.com/macros/s/AKfycbxCLolz16hYvDoaNCHf7aW__E2kI-dF31mbERGxl0mwRbnXprZRJpuKgQSbMhPe1mA9nA/exec';
 
-var NAM_CHANG = ['Chuẩn bị và hiểu khách', 'Mở đầu', 'Khai thác và chẩn đoán', 'Đề xuất', 'Giúp khách quyết định và theo sát'];
+/* Bảy bước của Bảng quy trình bán hàng. Khóa lưu từng dòng là bang1-b{1..7}-lam, -so, -roi, -sua,
+   để Ngày 2 tới 7 dùng "tu" chép dòng của bản 1 sang, và Ngày 7 lưu bản 2 (bang2-...) rồi so sánh. */
+var BUOC = [
+  ['Tìm kiếm khách', 'Nhận biết', 'Mười khách này đến với bạn trong bao lâu, từ những nguồn nào. Ví dụ: 10 khách trong 6 tuần, 7 từ trang Facebook, 3 người quen giới thiệu', 'Ngày 2'],
+  ['Tiếp cận và phân loại', 'Tìm hiểu', 'Trong mười người, bao nhiêu người trả lời tiếp và đúng là nhóm khách bạn phục vụ', 'Ngày 2 và Ngày 3'],
+  ['Khai thác sâu', 'Tìm hiểu', 'Bao nhiêu người đã kể cho bạn họ muốn đạt điều gì và đang vướng ở đâu', 'Ngày 3'],
+  ['Trình bày giải pháp', 'Lựa chọn', 'Bao nhiêu người nhận được đề xuất từ bạn', 'Ngày 4'],
+  ['Xử lý từ chối', 'Lựa chọn', 'Sau khi nghe đề xuất, bao nhiêu người vẫn trao đổi tiếp, kể cả người nói ra băn khoăn', 'Ngày 5'],
+  ['Đề nghị khách quyết định', 'Mua', 'Bao nhiêu người được bạn đề nghị quyết định, và bao nhiêu người mua', 'Ngày 6'],
+  ['Chăm sóc sau bán', 'Trải nghiệm', 'Trong những người đã mua, bao nhiêu người được bạn hỏi thăm sau khi dùng, và bao nhiêu người mua lại hoặc giới thiệu người khác. Khách mới mua chưa lâu thì lấy số khách cũ và ghi "ước"', 'Ngày 7']
+];
 
 /* Mỗi ngày: tên, câu hứa, việc cần làm, các phần bài, danh sách tự kiểm.
    Mỗi phần có nhóm ô; mỗi ô có id (khóa lưu trên máy) và nhãn (tên cột trên bảng tính).
-   Ô có "tu" thì nút "Chép bài đã viết ở Mẫu 1" chép nội dung ô đó sang khi ô này còn trống. */
+   Ô có "tu" thì nút chép bài (phần có layTu) chép nội dung ô đó sang khi ô này còn trống. */
 var GOI_VIDEO = 'Bạn đưa video lên chỗ lưu bạn quen dùng, để chế độ ai có đường dẫn cũng xem được, rồi dán đường dẫn vào đây.';
 
 var NGAY = {
@@ -235,105 +245,69 @@ var NGAY = {
     phan: [
       { tieu: 'Quay video cam kết', cot: 'Cam kết',
         mo: 'Việc đầu tiên của thử thách là quay một video cam kết. Trong video, bạn nói bốn điều:',
-        ds: ['Bạn là ai, đang làm doanh nghiệp gì.', 'Sản phẩm và nhóm khách bạn vừa chọn cho bảy ngày.', 'Vì sao bạn tham gia thử thách này.', 'Bạn cam kết đi hết bảy ngày.'],
+        ds: ['Bạn là ai, đang làm doanh nghiệp gì.', 'Sản phẩm và nhóm khách bạn định làm trong bảy ngày.', 'Vì sao bạn tham gia thử thách này.', 'Bạn cam kết đi hết bảy ngày.'],
         nhom: [{ o: [{ id: 'ck-video', nhan: 'Đường dẫn video cam kết', goi: GOI_VIDEO, dong: 1, lk: true }] }],
-        sau: 'Video cam kết không giới hạn độ dài.'
+        sau: 'Video cam kết không giới hạn độ dài. Tới Ngày 1 bạn chốt sản phẩm và nhóm khách ở đầu Bảng quy trình bán hàng bảy bước.'
       }
     ],
     nopSau: ['Nộp xong, bạn làm tiếp Ngày 1 trên trang này. Đợt đầu cả nhóm làm Ngày 1 vào 17/10, người vào sau thì ngày nộp video cam kết là Ngày 1 của mình. Mỗi ngày tiếp theo mở lúc 0h hôm sau, khi bạn đã nộp bài ngày trước.']
   },
   1: {
-    ten: 'Nhìn lại quy trình tư vấn bạn đang dùng',
-    hua: 'Sau hôm nay, bạn có hai điều trong tay: một bản đồ cho thấy cuộc tư vấn của bạn đang đi qua những chặng nào, và một điểm nghẽn đủ hẹp để sửa trong sáu ngày tới.',
+    ten: 'Bản đồ quy trình bảy bước',
+    hua: 'Sau hôm nay, bạn có bản đầu tiên của Bảng quy trình bán hàng bảy bước. Nhìn vào bảng, bạn biết mười khách gần nhất của mình đã dừng lại ở bước nào, và bước nào bạn cần để ý nhất trong tuần này.',
     viec: [
       'Bạn <b>chọn một sản phẩm và một nhóm khách</b> để làm trong cả bảy ngày, nên là sản phẩm bạn đang bán nhiều nhất hoặc đang muốn bán tốt hơn.',
-      '<b>Xem lại tối đa ba cuộc tư vấn gần đây</b>, dựa vào tin nhắn còn lưu, ghi chú hoặc trí nhớ của bạn, rồi ghi vào Mẫu 2. Chưa có đủ ba cuộc thì một cuộc cũng được. Chưa có cuộc nào thì tự dựng một tình huống và ghi rõ <b>MÔ PHỎNG</b>.',
-      '<b>Điền Mẫu 1</b>, bản đồ quy trình tư vấn hiện tại, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
-      'Từ bản đồ đó, bạn <b>chọn một điểm nghẽn</b>, rồi viết ở cuối Mẫu 1 điều bạn muốn khác đi sau bảy ngày.',
-      '<b>Điền phần Quy trình</b> của hôm nay, ngay dưới Mẫu 2.',
-      '<b>Quay video</b> từ một tới ba phút theo đề bài ở cuối trang, dán đường dẫn video rồi nộp bài.'
+      '<b>Lấy ra mười khách tiềm năng gần nhất</b> của sản phẩm đó, tức mười người gần nhất đã hỏi bạn hoặc được bạn liên hệ, dù họ có mua hay không. Chưa đủ mười người thì lấy hết số bạn có và ghi rõ.',
+      '<b>Điền ô "Ở bước này tôi làm gì, nói gì"</b> cho cả bảy bước, theo cách bạn đang làm thật chứ không phải cách bạn muốn làm.',
+      '<b>Đếm và ghi ô số đo</b> cho từng bước, theo gợi ý trong ô. Số nào ước thì ghi "ước".',
+      '<b>Ghi khách rơi ở đâu, vì sao</b>, phần lý do bắt đầu bằng chữ "đoán". Ô việc sửa để trống, từ Ngày 2 mỗi ngày bạn điền ô này cho bước của ngày đó.',
+      '<b>Ghi bước mất nhiều khách nhất</b>, rồi quay video từ một tới ba phút theo đề bài ở cuối trang và nộp bài.'
     ],
     phan: [
-      { tieu: 'Mẫu 1. Bản đồ quy trình tư vấn hiện tại', cot: 'Mẫu 1',
+      { tieu: 'Bảng quy trình bán hàng bảy bước, bản 1', cot: 'Bảng bản 1',
+        mo: 'Bảng này bạn giữ suốt bảy ngày. Không ghi tên hay số điện thoại của khách, cần nhắc tới ai thì gọi là "khách A", "khách B".',
         nhom: [
-          { o: [
-            { id: 'm1-sp', nhan: 'Sản phẩm hoặc dịch vụ', dong: 1 },
-            { id: 'm1-khach', nhan: 'Nhóm khách thường mua', dong: 1 },
-            { id: 'm1-cach', nhan: 'Cuộc tư vấn diễn ra thế nào', goi: 'Gặp trực tiếp, gọi điện, hay nhắn tin', dong: 1 },
-            { id: 'm1-lau', nhan: 'Một cuộc thường kéo dài bao lâu', dong: 1 }
+          { tieu: 'Phần đầu', mo: 'Bản số: 1', o: [
+            { id: 'bang1-sp', nhan: 'Sản phẩm hoặc dịch vụ', dong: 1 },
+            { id: 'bang1-khach', nhan: 'Nhóm khách', dong: 1 },
+            { id: 'bang1-ngay', nhan: 'Ngày điền', dong: 1 },
+            { id: 'bang1-khoang', nhan: 'Mười khách tính từ ngày nào tới ngày nào', dong: 1 }
           ] }
-        ].concat(NAM_CHANG.map(function (c, i) {
-          return { tieu: (i + 1) + '. ' + c, o: [
-            { id: 'm1-c' + i + '-lam', nhan: 'Bạn đang làm gì' },
-            { id: 'm1-c' + i + '-kho', nhan: 'Khó khăn bạn thấy được' },
-            { id: 'm1-c' + i + '-bc', nhan: 'Bằng chứng: khách nói hoặc làm gì' },
-            { id: 'm1-c' + i + '-chua', nhan: 'Điều bạn chưa chắc' }
+        ].concat(BUOC.map(function (b, i) {
+          var k = 'bang1-b' + (i + 1);
+          return { tieu: (i + 1) + '. ' + b[0], mo: 'Khách đang ở đâu: ' + b[1], o: [
+            { id: k + '-lam', nhan: 'Ở bước này tôi làm gì, nói gì' },
+            { id: k + '-so', nhan: 'Số đo: bao nhiêu khách qua được bước này', goi: b[2] },
+            { id: k + '-roi', nhan: 'Khách rơi ở đâu, vì sao', goi: 'Lý do bạn đoán thì bắt đầu bằng chữ "đoán"' },
+            { id: k + '-sua', nhan: 'Việc sửa trong tuần này', goi: 'Hôm nay để trống, ' + b[3] + ' bạn điền ô này' }
           ] };
         })).concat([
-          { tieu: 'Điểm nghẽn bạn chọn', o: [
-            { id: 'm1-nghen', nhan: 'Điểm nghẽn ưu tiên, viết bằng hành vi', goi: 'Ví dụ: Tôi gửi báo giá trước khi hiểu khách cần giải quyết chuyện gì' },
-            { id: 'm1-khac', nhan: 'Sau bảy ngày, bạn muốn điều gì khác đi', goi: 'Viết sao cho tới Ngày 7 biết chắc đã làm được hay chưa' }
+          { tieu: 'Bước mất nhiều khách nhất', o: [
+            { id: 'bang1-nhat', nhan: 'Bước mất nhiều khách nhất, và mất bao nhiêu người', dong: 1 },
+            { id: 'bang1-doan', nhan: 'Bạn đoán vì sao' }
           ] }
         ]),
-        sau: 'Chặng nào bạn đang bỏ qua thì ghi "chưa làm", vì đó cũng là một thông tin đáng giá.'
-      },
-      { tieu: 'Mẫu 2. Phiếu nhìn lại tối đa ba cuộc tư vấn', cot: 'Mẫu 2',
-        mo: 'Năm ô đầu ghi điều thấy được, còn ô giả thuyết ghi điều đang đoán, nên hai phần này phải nằm ở hai chỗ riêng.',
-        nhom: [1, 2, 3].map(function (n) {
-          return { tieu: 'Cuộc ' + n, gap: n > 1, o: [
-            { id: 'm2-' + n + '-th', nhan: 'Tình huống, viết ẩn danh' },
-            { id: 'm2-' + n + '-chang', nhan: 'Khi có chuyện xảy ra, cuộc trao đổi đang ở chặng nào' },
-            { id: 'm2-' + n + '-khach', nhan: 'Khách đã nói gì hoặc làm gì' },
-            { id: 'm2-' + n + '-ban', nhan: 'Bạn đã làm gì ngay lúc đó' },
-            { id: 'm2-' + n + '-buoc', nhan: 'Cuối buổi, hai bên có thống nhất được bước tiếp theo không' },
-            { id: 'm2-' + n + '-gt', nhan: 'Giả thuyết của bạn, chưa cần đúng' }
-          ] };
-        })
-      },
-      { tieu: 'Quy trình tư vấn bán hàng tiêu chuẩn của bạn: phần hoàn thành hôm nay', cot: 'Quy trình',
-        mo: 'Đây là trang đầu của bộ quy trình bạn sẽ ghép lại ở Ngày 7. Bạn chép từ Mẫu 1 sang và viết gọn lại bằng lời của chính bạn.',
-        layTu: true,
-        nhom: [
-          { tieu: 'Phần 1. Phạm vi', o: [
-            { id: 'qt1-sp', nhan: 'Sản phẩm hoặc dịch vụ', dong: 1, tu: 'm1-sp' },
-            { id: 'qt1-khach', nhan: 'Nhóm khách', dong: 1, tu: 'm1-khach' },
-            { id: 'qt1-cach', nhan: 'Cuộc tư vấn diễn ra thế nào', dong: 1, tu: 'm1-cach' },
-            { id: 'qt1-lau', nhan: 'Một cuộc thường kéo dài bao lâu', dong: 1, tu: 'm1-lau' },
-            { id: 'qt1-ai', nhan: 'Ai dùng bộ quy trình này: bạn, hoặc người bạn sẽ giao', dong: 1 },
-            { id: 'qt1-nghen', nhan: 'Điểm nghẽn bạn chọn cải thiện', tu: 'm1-nghen' }
-          ] },
-          { tieu: 'Phần 3. Đường đi của một cuộc tư vấn, bản đầu',
-            mo: 'Hôm nay bạn ghi lại cách đang làm, còn tới Ngày 7 bạn sẽ sửa theo những gì đã học và chia thời gian cho từng chặng.',
-            o: [].concat.apply([], NAM_CHANG.map(function (c, i) {
-              return [
-                { id: 'qt3-c' + i + '-lam', nhan: c + ': việc bạn đang làm ở chặng này', tu: 'm1-c' + i + '-lam' },
-                { id: 'qt3-c' + i + '-tg', nhan: c + ': thời gian hiện nay', dong: 1 }
-              ];
-            }))
-          }
-        ],
-        sau: 'Phần 2 bạn làm ở Ngày 2, các phần sau làm ở những ngày tiếp theo.'
+        sau: 'Từ bước 2 tới bước 6, mỗi bước đếm trên những người đã qua bước ngay trước, nên con số chỉ giữ nguyên hoặc giảm dần. Bước mất nhiều khách nhất là bước có số người rơi lớn nhất so với bước trước.'
       },
       { tieu: 'Video Ngày 1', cot: 'Video',
         mo: 'Quay một video dài một tới ba phút, trả lời ba câu sau:',
-        ds: ['Bạn đang bán gì, và một cuộc tư vấn của bạn đang diễn ra thế nào?', 'Vấn đề lớn nhất bạn thấy là gì, và quan sát nào khiến bạn nói vậy?', 'Bạn muốn thay đổi điều gì trước tiên trong cách tư vấn của bạn?'],
+        ds: ['Bạn đang bán gì, cho nhóm khách nào?', 'Theo số của bạn, mười khách gần nhất rơi nhiều nhất ở bước nào, và rơi bao nhiêu người?', 'Bạn đoán vì sao khách rơi ở bước đó?'],
         nhom: [{ o: [{ id: 'v1-video', nhan: 'Đường dẫn video Ngày 1', goi: GOI_VIDEO, dong: 1, lk: true }] }],
-        sau: 'Video không cần dựng, quay bằng điện thoại là đủ. Bạn không đưa tên, số điện thoại hay tin nhắn thật của khách vào video. Hãy nói đúng tình trạng hiện tại, vì video này là mốc để tới Ngày 7 bạn nhìn lại.'
+        sau: 'Video không cần dựng, quay bằng điện thoại là đủ. Bạn không đưa tên, số điện thoại hay tin nhắn thật của khách vào video. Hãy nói đúng con số hôm nay, kể cả khi nó chưa đẹp, vì video này là mốc để tới Ngày 7 bạn nhìn lại.'
       }
     ],
     kiem: [
-      'Mẫu 1 đã điền đủ năm chặng. Chặng nào bỏ qua thì đã ghi "chưa làm".',
-      'Có ít nhất một khó khăn cụ thể, kèm điều khách đã nói hoặc làm.',
-      'Phần đoán nguyên nhân nằm ở ô giả thuyết, không lẫn vào phần bằng chứng.',
-      'Điểm nghẽn là một chỗ, viết bằng hành vi, không phải "tăng doanh số".',
-      'Điều muốn khác đi đủ rõ để tới Ngày 7 biết chắc đã làm được hay chưa.',
+      'Bảng có đủ bảy bước, bước nào cũng đã ghi bạn làm gì, nói gì ở bước đó.',
+      'Ô số đo của cả bảy bước đều có số, số thật hoặc số có ghi "ước".',
+      'Từ bước 2 tới bước 6, con số giữ nguyên hoặc giảm dần.',
+      'Lý do khách rơi bắt đầu bằng chữ "đoán", trừ khi khách đã nói thẳng.',
+      'Đã ghi một bước mất nhiều khách nhất.',
       'Không có tên, số điện thoại, ảnh chụp tin nhắn thật của khách.',
-      'Nếu dùng tình huống tự nghĩ ra, đã ghi MÔ PHỎNG.',
       'Video trả lời đủ ba câu, dài từ một tới ba phút.'
     ],
     nopSau: [
-      'Nộp Mẫu 1, Mẫu 2 nếu có, và video Ngày 1, ngay trong ngày học. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.',
-      'Nộp xong, bạn có thể đăng một bài ngắn trong nhóm Facebook của thử thách, kể hôm nay bạn làm được gì và vướng ở đâu. Bài đăng trong nhóm thì các thành viên khác cùng đọc, nên bạn đừng đưa thông tin thật của khách vào đó.'
+      'Nộp Bảng quy trình bán hàng bảy bước bản 1 và video Ngày 1 ngay trên trang này, trong ngày học. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.',
+      'Nộp xong, bạn có thể đăng một bài ngắn trong nhóm Facebook của thử thách, kể hôm nay bạn đếm ra điều gì bất ngờ. Bài đăng trong nhóm thì các thành viên khác cùng đọc, nên bạn đừng đưa thông tin thật của khách vào đó.'
     ]
   }
 };
@@ -367,7 +341,13 @@ for (var n = 1; n <= 7; n++) if (NGAY[n]) NGAY[n].phan.unshift({
 var CAN_THOA_THUAN = false;
 
 /* ---------- lưu trên máy, bọc try vì trình duyệt ẩn danh có thể chặn ---------- */
-var TIEN_TO = 'tt-tvbh:';   // mỗi thử thách một tiền tố riêng, kẻo bài thử thách sau đè bài thử thách trước
+var TIEN_TO = 'tt-tvbh2:';   // mỗi thử thách một tiền tố riêng, kẻo bài thử thách sau đè bài thử thách trước
+/* 15/10/2026 Ngày 1 đổi sang Bảng bảy bước nên đổi tiền tố, bài kiểu cũ ở tt-tvbh: không lẫn vào.
+   Chỉ mang sang thông tin người làm, đồng ý thỏa thuận và video cam kết. */
+try { ['nguoi', 'thoa-thuan', 'ck-video', 'da-nop-0', 'tien-do'].forEach(function (k) {
+  var cu = localStorage.getItem('tt-tvbh:' + k);
+  if (cu && !localStorage.getItem(TIEN_TO + k)) localStorage.setItem(TIEN_TO + k, cu);
+}); } catch (e) { }
 function doc(k) { try { return localStorage.getItem(TIEN_TO + k) || ''; } catch (e) { return ''; } }
 function ghi(k, v) { try { localStorage.setItem(TIEN_TO + k, v); return true; } catch (e) { return false; } }
 
@@ -460,7 +440,7 @@ function dungNgay(n) {
         h += '<div class="nhom">' + (g.tieu ? '<h4>' + esc(g.tieu) + '</h4>' : '') + trong + '</div>';
       }
     });
-    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Chép bài đã viết ở Mẫu 1 vào các ô còn trống') + '</button></p>';
+    if (p.layTu) h += '<p class="lay-tu"><button type="button" class="nut phu nho-gon" data-lay-tu>' + esc(typeof p.layTu === 'string' ? p.layTu : 'Chép bài đã viết ở Bảng bản 1 vào các ô còn trống') + '</button></p>';
     if (p.sau) h += '<p class="nho">' + esc(p.sau) + '</p>';
     h += '</section>';
   }
@@ -516,7 +496,7 @@ $('bai').addEventListener('input', function (e) {
 });
 
 /* ---------- đo phần video đã xem ----------
-   Lưu từng giây đã phát thành chuỗi 0 và 1 ở tt-tvbh:xem-N, gắn với mã video nên thay video thật là đo lại.
+   Lưu từng giây đã phát thành chuỗi 0 và 1 ở tt-tvbh2:xem-N, gắn với mã video nên thay video thật là đo lại.
    Chỉ cộng khi thời điểm phát tăng đúng nhịp đồng hồ (tính cả tốc độ phát), nên tua qua không được tính.
    ponytail: chỉ chứng minh trình phát đã chạy, không chứng minh người xem có chú ý; ba câu sau video mới là phép thử nội dung. */
 var XEM_TRUOC = /[?&]xem-truoc\b/.test(location.search), dangMo = -1;
