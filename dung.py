@@ -2729,6 +2729,9 @@ for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-
 <script>location.replace('../cong-cu/%(m)s.html' + location.search + location.hash);</script></body></html>""" % {"b": BASE, "m": _ma})
     print("  %s/ -> cong-cu/%s.html" % (_ngan, _ma))
 
+# Trang Người Dẫn Đường dựng ở tệp riêng; gọi luôn ở đây để đổi menu hay CSS không bị sót trang đó.
+import nguoi_dan_duong
+
 # Soát trang công cụ theo Tiêu chuẩn trang công cụ (11/10/2026). Thiếu điểm nào thì báo to.
 import kiem_cong_cu
 print("\nSoát tiêu chuẩn trang công cụ:")
