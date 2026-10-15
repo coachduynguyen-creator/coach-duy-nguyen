@@ -24,7 +24,11 @@ CGS_LANDING = "https://coachduynguyen.vn/community-growth/"
 YOUTUBE = "https://www.youtube.com/@coachduynguyen"
 TIKTOK = "https://www.tiktok.com/@coachduynguyenofficial"
 FACEBOOK = "https://www.facebook.com/coachduynguyen"
-VER = "20261014b"   # tăng số này mỗi lần sửa style.css hoặc site.js
+# Mã phiên bản tự tính từ nội dung style.css và site.js: sửa tệp là mã đổi, trình duyệt
+# không dùng lại bản cũ. Trước đây phải tăng tay, quên tăng là khách thấy trang vỡ giao diện.
+import hashlib
+VER = hashlib.md5(b"".join(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", f), "rb").read()
+                           for f in ("style.css", "site.js"))).hexdigest()[:8]
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
@@ -54,6 +58,7 @@ MENU = [
     # Phương pháp giữ nguyên, dẫn tới từ trang Về Duy, trang chủ và chân trang.
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
+    ("cau-chuyen-hoc-vien.html", "Câu chuyện học viên", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
