@@ -58,7 +58,7 @@ MENU = [
     # Phương pháp giữ nguyên, dẫn tới từ trang Về Duy, trang chủ và chân trang.
     ("chuong-trinh.html", "Chương trình", CT_MENU),
     ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
-    ("cau-chuyen-hoc-vien.html", "Câu chuyện thành công", None),
+    ("cau-chuyen-hoc-vien.html", "Câu chuyện", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
