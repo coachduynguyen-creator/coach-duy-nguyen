@@ -190,7 +190,6 @@ footer p{margin:12px 0 0}
       <p>Khi tham gia thử thách, bạn đồng ý để Next Gen Founder làm những việc sau:</p>
       <ul class="dk">
         <li>giữ lại bài làm, video, hình ảnh và những điều bạn chia sẻ trong thử thách;</li>
-        <li>đăng những nội dung đó lên trang web, mạng xã hội và video của Next Gen Founder, ví dụ kể lại câu chuyện của người đã làm xong thử thách;</li>
         <li>lưu họ tên và số điện thoại của bạn để biết bạn đã làm tới ngày nào;</li>
         <li>dùng AI để đọc và tổng hợp các bài nộp;</li>
         <li>liên hệ với bạn sau thử thách để giới thiệu các chương trình tiếp theo của cộng đồng;</li>
@@ -198,6 +197,7 @@ footer p{margin:12px 0 0}
       </ul>
       <p class="nho">Bài và video của bạn được giữ cho tới khi bạn yêu cầu xóa. Muốn xóa, bạn nhắn riêng cho người hỗ trợ trong nhóm Facebook của thử thách.</p>
       <label class="dongy"><input type="checkbox" id="dongy"><span>Tôi đã đọc và đồng ý với những điều trên.</span></label>
+      <label class="dongy"><input type="checkbox" id="dang"><span>Tôi đồng ý để Next Gen Founder đăng bài làm, video và câu chuyện của tôi lên trang web, mạng xã hội và video của Next Gen Founder, ví dụ kể lại câu chuyện của người đã làm xong thử thách. Ô này không bắt buộc, không tích bạn vẫn làm và nộp bài bình thường.</span></label>
       <p class="nho">Bài nộp không ghi tên, số điện thoại hay ảnh chụp tin nhắn thật của khách. Bạn gọi là "khách A" hoặc "chị khách ở quận 3" là đủ.</p>
       <p><button type="button" class="nut chinh" id="luu-nguoi">Lưu và bắt đầu làm bài</button></p>
       <p class="bao loi" id="bao-nguoi" role="alert"></p>
@@ -371,15 +371,15 @@ function hienNguoi() {
 }
 $('luu-nguoi').onclick = function () {
   var ten = $('ten').value.trim(), email = $('email').value.trim(), sdt = $('sdt').value.replace(/[\s.\-()]/g, '');
-  var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !/^\+?\d{9,12}$/.test(sdt) ? 'Số điện thoại chưa đúng, bạn xem lại giúp.' : !$('dongy').checked ? 'Bạn cần tích ô đồng ý thì bài nộp mới được nhận.' : '';
+  var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !/^\+?\d{9,12}$/.test(sdt) ? 'Số điện thoại chưa đúng, bạn xem lại giúp.' : !$('dongy').checked ? 'Bạn cần tích ô "Tôi đã đọc và đồng ý với những điều trên" thì bài nộp mới được nhận.' : '';
   $('bao-nguoi').textContent = loi;
   if (loi) return;
-  ghi('nguoi', JSON.stringify({ ten: ten, email: email, sdt: sdt, dongy: true }));
+  ghi('nguoi', JSON.stringify({ ten: ten, email: email, sdt: sdt, dongy: true, dang: $('dang').checked }));
   hienNguoi();
 };
 $('sua-nguoi').onclick = function () {
   var n = layNguoi() || {};
-  $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('sdt').value = n.sdt || ''; $('dongy').checked = !!n.dongy;
+  $('ten').value = n.ten || ''; $('email').value = n.email || ''; $('sdt').value = n.sdt || ''; $('dongy').checked = !!n.dongy; $('dang').checked = !!n.dang;
   $('nguoi').hidden = false; $('nguoi-gon').hidden = true; $('ten').focus();
 };
 
@@ -672,7 +672,7 @@ function nop(n) {
   if (n >= 1 && n <= 7 && VIDEO[n]) cot.push(['Đã xem video (%)', xem.loi[n] && phanTram(n) < CAN_XEM ? 'không đo được, đo được ' + phanTram(n) : String(phanTram(n))]);
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Bài của bạn vẫn được lưu trên máy này.'); return; }
 
-  var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, bay: $('bay').value, cot: cot };
+  var goi = { ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, dongy: true, dang: !!nguoi.dang, bay: $('bay').value, cot: cot };
   if (n === 7) goi.ban_quy_trinh = banHaiBan().chu;
   nut.disabled = true; nut.textContent = 'Đang gửi...';
   bao.className = 'bao'; bao.textContent = '';

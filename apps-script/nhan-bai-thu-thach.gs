@@ -168,6 +168,7 @@ function doPost(e) {
     giaTri['Email'] = chuoi(d.email);
     giaTri['Số điện thoại'] = "'" + sdt;   // dấu ' giữ số 0 ở đầu
     giaTri['Đồng ý dùng bài'] = 'Có';
+    giaTri['Đồng ý đăng công khai'] = d.dang === true ? 'Có' : 'Không';   // ô không bắt buộc, chỉ đăng bài của người ghi Có
     giaTri['Google Doc'] = docUrl;
     var tre = false;
     if (ngay >= 1) {
