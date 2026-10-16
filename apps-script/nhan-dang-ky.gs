@@ -24,6 +24,15 @@
  * chạy ngoài mạng là Phiên bản 1 lúc 23:36 ngày 17/09/2026, chưa có hàm
  * `xoaDongKiemThu` vì hàm đó thêm sau. Không sao, đó là hàm chạy tay.
  *
+ * BỔ SUNG 16/10/2026: ĐƠN NGƯỜI DẪN ĐƯỜNG
+ * Thêm nguồn `nguoi-dan-duong` với trang tính riêng, nhãn gợi ý, thư xác nhận
+ * "trả lời trong 7 ngày", thư báo tiêu đề "[NGƯỜI DẪN ĐƯỜNG] Họ tên" tới email riêng
+ * của Duy (không gửi đội ngũ) và tin Telegram. Mã bot và mã cuộc trò chuyện KHÔNG
+ * nằm trong tệp này: Duy tự thêm hai mục `telegram_bot_token` và `telegram_chat_id`
+ * vào Cài đặt dự án > Thuộc tính tập lệnh. Sau khi dán tệp: lưu, chạy `khoiTao` (tạo
+ * trang tính mới), chạy `kiemTraTelegram` (cấp quyền gọi ra ngoài), rồi Triển khai
+ * một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
+ *
  * LƯU Ý CHO THỢ SAU
  * Trang gửi bằng Content-Type: text/plain, KHÔNG phải application/json. Đây là
  * cố ý. Apps Script không trả về header cho phép gọi chéo miền đối với yêu cầu
@@ -60,8 +69,59 @@ var NGUON = {
               d.trang_nguon || '', d.phien_ban_trang || '', d.nguon_chien_dich || '',
               'Chưa liên hệ', ''];
     }
+  },
+  /* Đơn làm Người Dẫn Đường. Thêm 16/10/2026 theo bản chốt trong vault
+     ([C] Bản chốt trang đăng ký Người Dẫn Đường.md). Email phải đứng cột 4 vì daCo() đọc cột đó.
+     Thư báo chỉ gửi cho Duy, không gửi đội ngũ, nên khai email riêng ở EMAIL_RIENG. */
+  'nguoi-dan-duong': {
+    tab: 'Người Dẫn Đường',
+    ten_chuong_trinh: 'Người Dẫn Đường',
+    tieu_de_thu: 'Duy đã nhận đơn của bạn · Người Dẫn Đường',
+    bat_buoc: ['nhom', 'linh_vuc', 'ket_qua', 'kiem_chung', 'muon_dan', 'thoi_gian', 'nhan_xet', 'dan_lai'],
+    cot: ['Thời gian', 'Họ và tên', 'Điện thoại hoặc Zalo', 'Email',
+          'Gợi ý của hệ thống',
+          'Nhóm', 'Lĩnh vực và số năm', 'Đường dẫn công khai',
+          'Kết quả lớn nhất đã làm ra', 'Ai hoặc điều gì kiểm chứng',
+          'Số người hỏi mỗi tháng', 'Muốn dẫn ai và giúp đạt gì',
+          'Đã từng dẫn người khác', 'Tám giờ mỗi tuần, mười hai tháng',
+          'Nhận xét thẳng sau mỗi buổi', 'Dẫn lại người đi sau',
+          'Mong có được sau mười hai tháng', 'Biết Duy qua đâu',
+          'Điều băn khoăn nhất', 'Điều muốn Duy biết trước buổi gặp',
+          'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng', 'Ghi chú của Duy'],
+    lay: function (d) {
+      return [d.ten, d.dienthoai, d.email, goiY(d).chuoi, d.nhom, d.linh_vuc, d.lien_ket || '',
+              d.ket_qua, d.kiem_chung, d.nguoi_hoi || '', d.muon_dan,
+              d.tung_dan || '', d.thoi_gian, d.nhan_xet, d.dan_lai,
+              d.mong || '', d.biet_qua || '', d.bang_khoan || '', d.dieu_biet || '',
+              d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa đọc', ''];
+    }
   }
 };
+
+/** Email và Telegram riêng của Duy cho đơn Người Dẫn Đường (bản chốt A1). */
+var EMAIL_RIENG = 'coachduynguyen@gmail.com';
+var KHOA_TELEGRAM_MA = 'telegram_bot_token';
+var KHOA_TELEGRAM_CHAT = 'telegram_chat_id';
+
+/**
+ * Nhãn gợi ý riêng cho Duy (bản chốt A4). Chỉ để Duy đọc đơn nhanh hơn, không tự
+ * từ chối ai và không nhắn gì cho người đăng ký. Đọc từ các câu chọn sẵn, nên chuỗi
+ * lựa chọn trên trang form phải khớp đầu chuỗi ở đây.
+ */
+function goiY(d) {
+  var dau = function (v) { return chuoi(v).toLowerCase(); };
+  var cung = [], mem = [];
+  if (dau(d.thoi_gian).indexOf('chưa chắc') === 0) cung.push('chưa chắc có đủ thời gian');
+  if (dau(d.nhan_xet).indexOf('tôi chưa chắc') === 0) cung.push('chưa chắc nhận được nhận xét thẳng');
+  if (dau(d.thoi_gian).indexOf('cần sắp xếp') === 0) mem.push('cần sắp xếp lại thời gian');
+  if (dau(d.nhan_xet).indexOf('tôi sẽ cần làm quen') === 0) mem.push('cần làm quen với nhận xét thẳng');
+  if (dau(d.dan_lai).indexOf('cần nghe thêm') === 0) mem.push('cần nghe thêm về việc dẫn lại người đi sau');
+  if (dau(d.nguoi_hoi).indexOf('chưa có') === 0) mem.push('chưa có ai hỏi cách làm');
+  if (dau(d.tung_dan).indexOf('chưa') === 0) mem.push('chưa từng dẫn người khác');
+  var nhan = cung.length >= 2 ? 'Chưa hợp' : (cung.length === 1 || mem.length >= 2 ? 'Cần hỏi thêm' : 'Hợp');
+  var ly = cung.concat(mem);
+  return { nhan: nhan, ly: ly, chuoi: nhan + (ly.length ? (nhan === 'Hợp' ? ', lưu ý: ' : ': ') + ly.join('; ') : '') };
+}
 
 /* ------------------------------------------------------------------ */
 /* Dựng bảng, chạy tay một lần                                         */
@@ -146,6 +206,9 @@ function doPost(e) {
       return tra({ ok: false, loi: 'Địa chỉ email chưa đúng dạng.' });
     }
 
+    var thieu_them = (c.bat_buoc || []).filter(function (k) { return !chuoi(d[k]); });
+    if (thieu_them.length) return tra({ ok: false, loi: 'Còn thiếu câu trả lời bắt buộc.' });
+
     var t = layBang().getSheetByName(c.tab);
     if (!t) throw new Error('Không thấy trang tính ' + c.tab + ', chạy lại khoiTao.');
 
@@ -158,7 +221,8 @@ function doPost(e) {
     t.appendRow(dong);
 
     guiThuChoKhach(lamSach(d), c);
-    guiThuChoDoiNgu(lamSach(d), c);
+    if (d.nguon === 'nguoi-dan-duong') guiBaoRieng(lamSach(d), c);
+    else guiThuChoDoiNgu(lamSach(d), c);
 
     return tra({ ok: true });
   } catch (loi) {
@@ -207,14 +271,15 @@ function ghiLoi(loi, d) {
 /* ------------------------------------------------------------------ */
 
 function guiThuChoKhach(d, c) {
-  var than = d.nguon === 'founder-brand' ? thuFounderBrand(d) : thuCongDong(d);
+  var than = d.nguon === 'founder-brand' ? thuFounderBrand(d)
+    : (d.nguon === 'nguoi-dan-duong' ? thuNguoiDanDuong(d) : thuCongDong(d));
   try {
     MailApp.sendEmail({
       to: d.email,
-      subject: 'Duy đã nhận đăng ký của bạn · ' + c.ten_chuong_trinh,
+      subject: c.tieu_de_thu || ('Duy đã nhận đăng ký của bạn · ' + c.ten_chuong_trinh),
       htmlBody: than,
       name: 'Coach Duy Nguyễn',
-      replyTo: THU_DOI_NGU
+      replyTo: d.nguon === 'nguoi-dan-duong' ? EMAIL_RIENG : THU_DOI_NGU
     });
   } catch (loi) {
     ghiLoi('Không gửi được thư cho khách: ' + loi, d);
@@ -242,6 +307,72 @@ function thuFounderBrand(d) {
     '<p>Có gì cần hỏi trước thì trả lời thẳng thư này.</p>',
     d
   );
+}
+
+function thuNguoiDanDuong(d) {
+  return khung(
+    '<p>Chào ' + escape_(d.ten) + ',</p>' +
+    '<p>Duy đã nhận đơn làm Người Dẫn Đường của bạn. Thư này để bạn biết chắc là đơn đã tới, không rơi đâu cả.</p>' +
+    '<p>Duy đọc từng đơn và trả lời bạn trong 7 ngày. Có thể Duy hẹn một buổi gặp, cũng có thể Duy hỏi thêm vài điều trước khi gặp. Gửi đơn chưa có nghĩa là bạn đã được nhận, và Duy sẽ nói thẳng bước tiếp theo sau khi đọc.</p>' +
+    '<p>Bạn không cần làm gì thêm lúc này. Có gì muốn nói thêm thì trả lời thẳng thư này, thư sẽ tới tay Duy.</p>',
+    d
+  );
+}
+
+/** Báo riêng cho Duy về đơn Người Dẫn Đường: một email tiêu đề riêng và một tin Telegram. */
+function guiBaoRieng(d, c) {
+  var g = goiY(d);
+  var ten_cot = c.cot.slice(1), gia_tri = [d.ten].concat(c.lay(d));
+  var dong = ten_cot.map(function (k, i) {
+    var v = chuoi(gia_tri[i]);
+    return v ? '<tr><td style="padding:4px 14px 4px 0;color:#6B6B6B;vertical-align:top">' + escape_(k) + '</td><td style="padding:4px 0">' + escape_(v) + '</td></tr>' : '';
+  }).join('');
+  try {
+    MailApp.sendEmail({
+      to: EMAIL_RIENG,
+      subject: '[NGƯỜI DẪN ĐƯỜNG] ' + chuoi(d.ten),
+      htmlBody: '<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:14px">' +
+        '<p><b>Gợi ý của hệ thống: ' + escape_(g.chuoi) + '</b><br><span style="color:#6B6B6B">Chỉ để đọc nhanh, quyết định là của Duy.</span></p>' +
+        '<table>' + dong + '</table>' +
+        '<p style="margin-top:16px"><a href="' + layBang().getUrl() + '">Mở bảng đăng ký, trang tính Người Dẫn Đường</a></p></div>',
+      replyTo: chuoi(d.email) || EMAIL_RIENG
+    });
+  } catch (loi) {
+    ghiLoi('Không gửi được thư báo riêng: ' + loi, d);
+  }
+  baoTelegram('Đơn Người Dẫn Đường mới\n' + chuoi(d.ten) + ' · ' + chuoi(d.dienthoai) + ' · ' + chuoi(d.email) +
+    '\nGợi ý: ' + g.chuoi +
+    '\nNhóm: ' + chuoi(d.nhom) + ' · ' + chuoi(d.linh_vuc) +
+    '\nKết quả: ' + chuoi(d.ket_qua).slice(0, 400) +
+    '\nMuốn dẫn: ' + chuoi(d.muon_dan).slice(0, 300) +
+    '\nĐọc đủ ở trang tính Người Dẫn Đường trong bảng đăng ký.', d);
+}
+
+/** Không có mã bot hoặc mã cuộc trò chuyện trong Cài đặt dự án thì bỏ qua, không báo lỗi. Mã không bao giờ nằm trong tệp này. */
+function baoTelegram(chu, d) {
+  var kho = PropertiesService.getScriptProperties();
+  var ma = kho.getProperty(KHOA_TELEGRAM_MA), chat = kho.getProperty(KHOA_TELEGRAM_CHAT);
+  if (!ma || !chat) return false;
+  try {
+    var r = UrlFetchApp.fetch('https://api.telegram.org/bot' + ma + '/sendMessage', {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify({ chat_id: chat, text: chu.slice(0, 4000) }),
+      muteHttpExceptions: true
+    });
+    if (r.getResponseCode() !== 200) ghiLoi('Telegram trả mã ' + r.getResponseCode(), d || {});
+    return r.getResponseCode() === 200;
+  } catch (loi) {
+    ghiLoi('Không gửi được Telegram: ' + String(loi).replace(ma, '***'), d || {});
+    return false;
+  }
+}
+
+/** Chạy tay một lần sau khi dán mã vào Cài đặt dự án: cấp quyền gọi ra ngoài và gửi thử một tin. */
+function kiemTraTelegram() {
+  var ok = baoTelegram('Thử nối Telegram từ nơi nhận đăng ký coachduynguyen.vn. Thấy tin này là đã nối xong.');
+  Logger.log(ok ? 'Đã gửi tin thử. Mở Telegram xem có tin chưa.' : 'Chưa gửi được. Kiểm tra hai mục telegram_bot_token và telegram_chat_id trong Cài đặt dự án, rồi xem trang tính Lỗi.');
+  return ok;
 }
 
 function khung(ruot, d) {

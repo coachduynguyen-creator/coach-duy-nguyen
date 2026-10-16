@@ -238,7 +238,7 @@ def tieu_de_trang(ten):
 
 def trang(ten_tep, tieu_de, mo_ta, than, active, jsonld=None, lop_body="", cuoi=True, anh_chia_se=None):
     sau = "/" in ten_tep
-    p = "../" if sau else ""
+    p = "../" * ten_tep.count("/")
     # Trang index.html trong thư mục con khai địa chỉ gọn, không kèm tên tệp.
     url = BASE + "/" + (ten_tep[:-len("index.html")] if ten_tep.endswith("/index.html") else ten_tep)
     doc = """<!doctype html>

@@ -335,10 +335,10 @@ THAN = CSS + """<div class="ndd">
     <div class="phan-dau hien">
       <p class="mono">Khóa đầu, sáu tới mười người</p>
       <h2>Bạn muốn là một trong sáu tới mười người đầu tiên?</h2>
-      <p>Nhắn cho Duy vài dòng: kết quả bạn đã làm ra, và người bạn muốn dẫn dắt. Nếu bạn chưa là thành viên, hãy vào Cộng đồng Next Gen Founder trước, đó là nơi Duy gặp và mời những người đầu tiên.</p>
+      <p>Gửi đơn kể về kết quả bạn đã làm ra và người bạn muốn dẫn dắt. Duy đọc từng đơn và trả lời trong 7 ngày. Nếu bạn chưa là thành viên, hãy vào Cộng đồng Next Gen Founder, đó là nơi Duy gặp và mời những người đầu tiên.</p>
     </div>
     <div class="ndd-nut hien">
-      <a class="nut nut-v" href="../lien-he.html">Nhắn cho Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="nut nut-v" href="dang-ky/">Gửi đơn làm Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a>
       <a class="nut nut-vien" href="../tham-gia/">Vào Cộng đồng Next Gen Founder</a>
     </div>
   </div>

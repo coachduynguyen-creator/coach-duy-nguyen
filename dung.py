@@ -2731,6 +2731,7 @@ for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-
 
 # Trang Người Dẫn Đường dựng ở tệp riêng; gọi luôn ở đây để đổi menu hay CSS không bị sót trang đó.
 import nguoi_dan_duong
+import nguoi_dan_duong_dang_ky
 
 # Soát trang công cụ theo Tiêu chuẩn trang công cụ (11/10/2026). Thiếu điểm nào thì báo to.
 import kiem_cong_cu
