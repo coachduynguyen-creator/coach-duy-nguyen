@@ -42,10 +42,12 @@ BAN_LA_AI = [
 
 # ------------------------------------------------------------ BỐN THỨ MANG VỀ
 BON = [
-    ("mc/mc-banlam", "Nghề dẫn đường", "Bạn ngồi cùng một bàn với ba người chủ, hỏi đúng câu, và nhìn họ tự đi tới quyết định của mình."),
-    ("bl-phong-thu", "Thương hiệu cá nhân", "Kinh nghiệm của bạn thành câu chuyện, thành kênh, thành lý do để người lạ tin bạn trước khi gặp."),
-    ("bl-viet-tay", "Mô hình kinh doanh từ chuyên môn", "Thứ bạn biết được đóng gói thành sản phẩm có tên, có giá, có người mua, không còn là bán giờ công."),
-    ("mc/mc-hoitruong", "Cộng đồng của riêng bạn", "Một nhóm người đi theo bạn vì cách bạn dẫn họ, giống cách Duy đang xây Cộng đồng Next Gen Founder."),
+    ("bl-viet-tay", "Phương pháp của riêng bạn", "Điều bạn đã trả giá để biết được viết ra thành các bước rõ ràng, để người khác làm theo và đạt kết quả. Duy chỉ bạn cách dựng, vì chính Duy đã dựng như vậy.", "một phương pháp có tên, có các bước, đã thử với khách thật"),
+    ("bl-phong-thu", "Thương hiệu được tin cậy", "Người ta tìm tới bạn như một chuyên gia trong ngành, vì họ đã biết câu chuyện và lời hứa của bạn từ trước khi gặp.", "câu chuyện gốc, lời hứa, và một kênh chạy đều"),
+    ("mc/mc-banlam", "Nghề huấn luyện viên kinh doanh", "Bạn tự dẫn được buổi coaching: hỏi đúng câu để chủ doanh nghiệp tự nhìn ra chỗ kẹt và tự quyết định.", "nhiều buổi coaching thật, có Duy ngồi cùng và nhận xét thẳng"),
+    ("bl-noi-2", "Dịch vụ coaching có tên, có giá", "Phương pháp của bạn thành một dịch vụ người ta mua được, thay vì chỉ bán từng giờ làm việc.", "một dịch vụ mang tên của bạn"),
+    ("bl-may-tinh", "Bộ công cụ làm nghề", "Những thứ Duy đang dùng hằng ngày với khách hàng, bạn được dùng và chỉnh lại cho khách của mình.", "mẫu, kịch bản, bảng chấm điểm, bộ công cụ AI"),
+    ("mc/mc-hoitruong", "Một nhóm người đi theo bạn", "Những người trong Cộng đồng Next Gen Founder tin cách bạn dẫn, cùng những người Duy giới thiệu bạn tới.", "một nhóm của riêng bạn trong cộng đồng"),
 ]
 
 # ------------------------------------------------------------ BA CHÂN DUNG
@@ -60,18 +62,6 @@ AI = [
     ("ngf-dan-doi", "Người dẫn đội ngũ", "Quản lý, người đào tạo nội bộ ở doanh nghiệp lớn",
      "Mình đã dẫn hàng trăm người, nhưng ngoài công ty chưa ai biết tên mình.",
      "Bạn đã dẫn đội ngũ, đào tạo người mới, gỡ chuyện khó cho người khác suốt nhiều năm. Bạn muốn làm việc đó cho chính mình, dưới tên của chính mình."),
-]
-
-# ------------------------------------------------------------ NGƯỜI DUY ĐÃ ĐẦU TƯ
-# Theo hồ sơ case trong vault (Trusted Founder Brand): luôn ghi là kèm riêng, không
-# nêu lĩnh vực hiện tại, không nêu phần trăm tăng trưởng, không nói doanh thu.
-CA = [
-    ("img/chuyen-gia/phong-thuy.webp", "Coach Lê Phương", "Năm 2022, kèm riêng",
-     "Anh đang làm nghề phòng cháy chữa cháy, muốn đổi hướng sự nghiệp. Duy kèm anh xây kênh, đóng gói kiến thức thành chương trình, rồi thiết kế lại sản phẩm.",
-     [("160.700", "người theo dõi TikTok"), ("5 triệu → 500 triệu", "giá trị sản phẩm sau khi thiết kế lại")]),
-    ("img/kris-tran.webp", "Kris Trần", "Sáu tháng, kèm riêng",
-     "Kris làm đầu tư tài chính ở Mỹ, hướng nội, ngại máy quay, muốn về Việt Nam lập nghiệp. Duy chỉ ra điểm Kris tưởng là yếu chính là chỗ khác biệt, rồi cùng Kris dựng một khung phương pháp mang tên riêng.",
-     [("59.000", "người theo dõi Facebook"), ("153", "bài đăng trong sáu tháng")]),
 ]
 
 # ------------------------------------------------------------ BẠN SẼ CÓ MẶT Ở ĐÓ
@@ -104,8 +94,7 @@ CSS = """<style>
 .ndd{--ke:clamp(18px,3vw,28px)}
 .ndd section:not(.kh) img{height:auto}
 /* Trang chung canh đều hai bên (.bd p). Trong thẻ và cột hẹp thì canh trái, đầu mục giữ canh giữa của .phan-dau. */
-.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd-ca p,.ndd-ca dd,.ndd-t p,.ndd-canh li,.ndd-o p,.ndd-o li,.ndd-vao span,.ndd-ai3 span,.ndd-ai3 b,.ndd-ai3 p,.ndd-kk p,.ndd-kk h3,.ndd-hd b,.ndd-ai span,.ndd-ai q,.ndd-ai b,.ndd-ai p,.ndd-moi p,.ndd-chang,.ndd li{text-align:left !important;text-justify:auto;hyphens:none}
-.ndd .mono{color:var(--vang)}
+.ndd-hero p,.ndd-dt p,.ndd-dt li,.ndd-bon span,.ndd .mono{color:var(--vang)}
 .ndd-hero{position:relative;overflow:hidden;isolation:isolate}
 .ndd-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2;filter:saturate(.6) brightness(.5) blur(3px);transform:scale(1.05)}
 .ndd-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,18,15,.96) 0%,rgba(23,18,15,.75) 55%,rgba(23,18,15,.35) 100%),linear-gradient(180deg,transparent 60%,rgba(23,18,15,.98) 100%)}
@@ -128,9 +117,10 @@ CSS = """<style>
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
 .ndd-dt h2{font-size:clamp(30px,4.2vw,50px);line-height:1.08;margin:8px 0 14px}
 .ndd-dt p{color:var(--ink-2);font-size:17px}
-.ndd-bon{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ndd-bon{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ndd-bon em{display:block;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-style:normal;font-size:14px;line-height:1.45;color:var(--vang)}
 .ndd-bon figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.ndd-bon img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.ndd-bon img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .ndd-bon figcaption{padding:16px 18px 20px}
 .ndd-bon b{display:block;font-family:var(--f-tit);font-size:21px;line-height:1.2;margin-bottom:6px}
 .ndd-bon span{font-size:15px;color:var(--ink-2);line-height:1.5}
@@ -145,15 +135,6 @@ CSS = """<style>
 .ndd-ai b{font-family:var(--f-tit);font-size:22px;line-height:1.2}
 .ndd-ai q{font-family:var(--f-tit);font-size:18px;line-height:1.35;color:var(--vang-2);quotes:"“" "”"}
 .ndd-ai span{font-size:15px;color:var(--ink-2);line-height:1.55}
-.ndd-ca{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.ndd-ca article{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.ndd-ca .anh{width:150px;height:190px !important;border-radius:var(--r-s);object-fit:cover;object-position:50% 20%;background:var(--panel-2);display:grid;place-items:center;font-family:var(--f-tit);font-size:48px;font-weight:800;color:var(--vang)}
-.ndd-ca h3{font-size:22px;margin:0}
-.ndd-ca .khi{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin:4px 0 10px}
-.ndd-ca p{font-size:15px;color:var(--ink-2)}
-.ndd-ca dl{display:flex;flex-wrap:wrap;gap:10px 22px;margin:12px 0 0}
-.ndd-ca dt{font-family:var(--f-tit);font-size:24px;font-weight:700;color:var(--ink)}
-.ndd-ca dd{margin:0;font-size:13px;color:var(--ink-3)}
 .ndd-kks{display:grid;gap:clamp(36px,6vw,72px)}
 .ndd-kk{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(22px,4vw,48px);align-items:center}
 .ndd-kk.dao > img{order:2}
@@ -185,29 +166,20 @@ CSS = """<style>
   .ndd-ai{grid-template-columns:1fr 1fr}
   .ndd-hd{grid-template-columns:1fr 1fr}
   .ndd-vao{grid-template-columns:repeat(2,1fr)}
-  .ndd-ca{grid-template-columns:1fr}
-}
+  }
 @media (max-width:700px){
   /* Coach Duy chốt 12/10/2026: trên điện thoại, tiêu đề căn giữa, chữ nội dung căn đều hai bên. */
-  .ndd h1,.ndd h2,.ndd h3,.ndd .mono,.ndd .ndd-nho,.ndd .ndd-phu,.ndd .khi,.ndd-ai3 b,.ndd-bon b,.ndd-hd b,.ndd-ai b,.ndd-ai q,.ndd-vao b,.ndd-so i,.ndd-so b,.ndd-so span,.ndd-ca dd,.ndd-ca dt{text-align:center !important}
-  .ndd-hero .tren > div{text-align:center}
+  .ndd h1,.ndd h2,.ndd h3,.ndd .mono,.ndd .ndd-nho,.ndd .ndd-phu,.ndd .khi,.ndd-ai3 b,.ndd-bon b,.ndd-hd b,.ndd-ai b,.ndd-ai q,.ndd-vao b,.ndd-so i,.ndd-so b,.ndd-so span,  .ndd-hero .tren > div{text-align:center}
   .ndd-so div,.ndd-nhan{text-align:center !important}
-  .ndd-ca dl{justify-content:center}
-  .ndd-ca dl > div{text-align:center}
-  .ndd-vao li:before{display:block;text-align:center}
-  .ndd p:not(.mono):not(.ndd-nho):not(.ndd-phu):not(.khi):not(.ndd-nhan),.ndd li,.ndd-bon span,.ndd-ai span,.ndd-ai3 span,.ndd-vao span{text-align:justify !important;text-justify:inter-word}
+      .ndd-vao li:before{display:block;text-align:center}
+  .ndd p:not(.mono):not(.ndd-nho):not(.ndd-phu):not(.khi):not(.ndd-nhan),.ndd li,.ndd-bon span,.ndd-bon em,.ndd-ai span,.ndd-ai3 span,.ndd-vao span{text-align:justify !important;text-justify:inter-word}
   .ndd-trich{border-left:0 !important;padding-left:0 !important;border-top:2px solid var(--vang);padding-top:12px}
-  .ndd-hero .tren{grid-template-columns:1fr}
+  .ndd-hero .tren,.ndd-bon{grid-template-columns:1fr}
   .ndd-hero h1 span{display:inline}
   .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
   .ndd-hero .tren > img{max-height:320px;order:-1}
-  .ndd-so,.ndd-dt,.ndd-canh,.ndd-hai,.ndd-luoi12,.ndd-vao,.ndd-bon,.ndd-ai,.ndd-ai3,.ndd-hd,.ndd-kk{grid-template-columns:1fr}
-  .ndd-kk > img,.ndd-kk.dao > img{order:-1}
-  .ndd-dt > img,.ndd-canh > img{order:-1}
-  .ndd-ca article{grid-template-columns:1fr}
-  .ndd-ca .anh{width:100%;height:240px !important;object-position:50% 25%}
-  .ndd-ca dt{font-size:21px}
-}
+  .ndd-so,.ndd-dt,  .ndd-kk > img,.ndd-kk.dao > img{order:-1}
+  .ndd-dt > img,      }
 </style>"""
 
 def anh(ten, alt=""):
@@ -215,12 +187,6 @@ def anh(ten, alt=""):
 
 def ds(xs, lop="ndd-ds"):
     return '<ul class="%s">%s</ul>' % (lop, "".join("<li>%s</li>" % x for x in xs))
-
-def the_ca(c):
-    a, ten, khi, chu, so = c
-    hinh = ('<img class="anh" src="%s%s" alt="%s" loading="lazy">' % (P, a, ten)) if a else ('<div class="anh" aria-hidden="true">%s</div>' % ten.split()[-1][0])
-    return ('<article class="hien">%s<div><h3>%s</h3><p class="khi">%s</p><p>%s</p><dl>%s</dl></div></article>'
-            % (hinh, ten, khi, chu, "".join("<div><dt>%s</dt><dd>%s</dd></div>" % s for s in so)))
 
 def dong_kk(k, i):
     a, nhan, tieu, chu = k
@@ -257,9 +223,10 @@ THAN = CSS + """<div class="ndd">
   <div class="ndd-dt">
     <div class="hien">
       <p class="mono">Vì sao có chương trình này</p>
-      <h2>Đây là những người Duy đầu tư nhiều nhất</h2>
-      <p>Thời gian, mạng lưới quan hệ, cách làm mà khách đã trả tới một tỷ đồng một năm. Duy dồn những thứ đó vào một nhóm nhỏ, để đưa từng người trở lại làm bằng chứng cho Cộng đồng Next Gen Founder.</p>
-      <p class="ndd-trich">Duy không cần thêm học viên. Duy cần những người đi cùng một con đường.</p>
+      <h2>Duy chỉ nhận ít người, để kèm cho tới nơi tới chốn</h2>
+      <p>Mỗi khóa Duy nhận sáu tới mười người. Duy dành cho mỗi người thời gian của mình, giới thiệu bạn với những người Duy quen, và cho bạn dùng đúng cách làm Duy đang dùng với khách trả tới một tỷ đồng một năm.</p>
+      <p>Đổi lại, Duy mong bạn làm ra kết quả thật cho những người bạn dẫn dắt, để Cộng đồng Next Gen Founder có thêm những người dẫn đường đáng tin.</p>
+      <p class="ndd-trich">Duy không tìm thêm học viên. Duy tìm người sẽ dẫn người khác tới kết quả thật.</p>
     </div>
     """ + anh("mc/mc-chungnhan", "Một lớp học viên nhận chứng nhận cùng Coach Duy") + """
   </div>
@@ -267,10 +234,11 @@ THAN = CSS + """<div class="ndd">
 
 <section class="phan bd">
   <div class="phan-dau hien">
-    <p class="mono">Sau mười hai tháng</p>
-    <h2>Bạn mang về bốn thứ, không phải một tấm giấy</h2>
+    <p class="mono">Bạn nhận được gì</p>
+    <h2>Sau mười hai tháng, bạn cầm về sáu thứ</h2>
+    <p>Mỗi thứ dưới đây là thứ bạn mang về được, không phải cảm giác đã học xong.</p>
   </div>
-  <div class="ndd-bon">""" + "".join('<figure class="hien">%s<figcaption><b>%s</b><span>%s</span></figcaption></figure>' % (anh(a, t), t, c) for a, t, c in BON) + """</div>
+  <div class="ndd-bon">""" + "".join('<figure class="hien">%s<figcaption><b>%s</b><span>%s</span><em>Bạn cầm về: %s</em></figcaption></figure>' % (anh(a, t), t, c, d) for a, t, c, d in BON) + """</div>
 </section>
 
 <section class="phan tran">
@@ -281,14 +249,6 @@ THAN = CSS + """<div class="ndd">
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">""" + SO_LIEU_HTML + """</div>
     <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
   </div>
-</section>
-
-<section class="phan bd">
-  <div class="phan-dau hien">
-    <p class="mono">Những người Duy đã đầu tư</p>
-    <h2>Trước khi có tên chương trình, Duy đã làm việc này</h2>
-  </div>
-  <div class="ndd-ca">""" + "".join(the_ca(c) for c in CA) + """</div>
 </section>
 
 <section class="phan bd" id="co-mat">
@@ -371,7 +331,7 @@ THAN = CSS + """<div class="ndd">
   <div class="bd">
     <div class="phan-dau hien">
       <p class="mono">Khóa đầu, sáu tới mười người</p>
-      <h2>Bạn muốn là một trong những người Duy đầu tư nhiều nhất?</h2>
+      <h2>Bạn muốn là một trong sáu tới mười người đầu tiên?</h2>
       <p>Nhắn cho Duy vài dòng: kết quả bạn đã làm ra, và người bạn muốn dẫn dắt. Nếu bạn chưa là thành viên, hãy vào Cộng đồng Next Gen Founder trước, đó là nơi Duy gặp và mời những người đầu tiên.</p>
     </div>
     <div class="ndd-nut hien">
