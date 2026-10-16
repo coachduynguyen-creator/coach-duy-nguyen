@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Trang đăng ký làm Người Dẫn Đường (bản chốt 16/10/2026, mục C1 tới C4).
+"""Trang đăng ký trở thành Người Dẫn Đường (bản chốt 16/10/2026, mục C1 tới C4).
 
 Dựng nguoi-dan-duong/dang-ky/index.html. Dung.py gọi ngay sau trang chương trình.
 
@@ -175,8 +175,8 @@ JS = """<script>
 </script>"""
 
 THAN = CSS + """
-""" + dau_trang("Đơn làm Người Dẫn Đường",
-                "Gửi đơn làm <span>Người Dẫn Đường</span>",
+""" + dau_trang("Đơn trở thành Người Dẫn Đường",
+                "Gửi đơn trở thành <span>Người Dẫn Đường</span>",
                 "Duy đọc từng đơn và trả lời trong 7 ngày. Có khá nhiều câu hỏi, vì mỗi câu giúp Duy hiểu bạn trước buổi gặp. Bạn cứ viết thật.") + """
 <section class="ddk">
   <div class="ddk-khung">
@@ -192,7 +192,7 @@ THAN = CSS + """
       <div class="ddk-nut">
         <button type="button" class="nut nut-vien" id="ddk-lui">Quay lại</button>
         <button type="button" class="nut nut-v" id="ddk-tiep">Tiếp tục <span class="mt" aria-hidden="true">&rarr;</span></button>
-        <button type="submit" class="nut nut-v" id="ddk-gui" style="display:none">Gửi đơn làm Người Dẫn Đường</button>
+        <button type="submit" class="nut nut-v" id="ddk-gui" style="display:none">Gửi đơn trở thành Người Dẫn Đường</button>
       </div>
       <div class="ddk-xong" role="status"><b>Duy đã nhận đơn của bạn.</b><p>Duy đọc từng đơn và trả lời bạn trong 7 ngày. Một thư xác nhận đang được gửi tới email bạn vừa điền.</p></div>
     </form>
@@ -201,8 +201,8 @@ THAN = CSS + """
 </section>
 """ + JS
 
-trang(TEP, "Gửi đơn làm Người Dẫn Đường",
-      "Đơn đăng ký làm Người Dẫn Đường của Coach Duy Nguyễn: ba bước ngắn để Duy hiểu bạn trước buổi gặp.",
+trang(TEP, "Gửi đơn trở thành Người Dẫn Đường",
+      "Đơn đăng ký trở thành Người Dẫn Đường của Coach Duy Nguyễn: ba bước ngắn để Duy hiểu bạn trước buổi gặp.",
       THAN, "")
 
 # Trang đăng ký không đưa lên Google: chỉ người bấm từ trang chương trình mới cần tới.

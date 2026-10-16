@@ -70,7 +70,7 @@ var NGUON = {
               'Chưa liên hệ', ''];
     }
   },
-  /* Đơn làm Người Dẫn Đường. Thêm 16/10/2026 theo bản chốt trong vault
+  /* Đơn trở thành Người Dẫn Đường. Thêm 16/10/2026 theo bản chốt trong vault
      ([C] Bản chốt trang đăng ký Người Dẫn Đường.md). Email phải đứng cột 4 vì daCo() đọc cột đó.
      Thư báo chỉ gửi cho Duy, không gửi đội ngũ, nên khai email riêng ở EMAIL_RIENG. */
   'nguoi-dan-duong': {
@@ -312,7 +312,7 @@ function thuFounderBrand(d) {
 function thuNguoiDanDuong(d) {
   return khung(
     '<p>Chào ' + escape_(d.ten) + ',</p>' +
-    '<p>Duy đã nhận đơn làm Người Dẫn Đường của bạn. Thư này để bạn biết chắc là đơn đã tới, không rơi đâu cả.</p>' +
+    '<p>Duy đã nhận đơn trở thành Người Dẫn Đường của bạn. Thư này để bạn biết chắc là đơn đã tới, không rơi đâu cả.</p>' +
     '<p>Duy đọc từng đơn và trả lời bạn trong 7 ngày. Có thể Duy hẹn một buổi gặp, cũng có thể Duy hỏi thêm vài điều trước khi gặp. Gửi đơn chưa có nghĩa là bạn đã được nhận, và Duy sẽ nói thẳng bước tiếp theo sau khi đọc.</p>' +
     '<p>Bạn không cần làm gì thêm lúc này. Có gì muốn nói thêm thì trả lời thẳng thư này, thư sẽ tới tay Duy.</p>',
     d
