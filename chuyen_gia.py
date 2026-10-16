@@ -140,8 +140,8 @@ def ho_so(t):
 KHOI_TRANG_CHU = """<section class="phan bd hoa-van duoi" id="doi-ngu-co-van">
   <div class="phan-dau hien">
     <p class="mono">Đội ngũ chuyên gia cố vấn</p>
-    <h2>Có những câu hỏi cần đúng người trong nghề trả lời</h2>
-    <p>Chiến lược marketing, đội ngũ bán hàng, mô hình kinh doanh, tiền của gia đình. Người chủ hay để tới lúc có chuyện mới đi hỏi, và lúc đó thường đã muộn. <span class="nhan">Duy mời về Cộng đồng Next Gen Founder những chuyên gia đang hành nghề thật</span>, để bạn hỏi đúng người ngay từ lúc mới nghĩ tới.</p>
+    <h2>Có những câu hỏi cần đúng chuyên gia trả lời</h2>
+    <p>Chiến lược marketing, đội ngũ bán hàng, mô hình kinh doanh, tiền của gia đình. Người chủ hay để tới lúc có chuyện mới đi hỏi, và lúc đó thường đã muộn. <span class="nhan">Duy mời về Cộng đồng Next Gen Founder những chuyên gia trong từng lĩnh vực</span>, để bạn hỏi đúng người ngay từ lúc mới nghĩ tới.</p>
   </div>
   <div class="cg-luoi cg-luoi-gon tre hien">%s</div>
   <div class="blog-them"><a class="nut nut-vien" href="doi-ngu-chuyen-gia.html">Xem đội ngũ chuyên gia cố vấn <span class="mt" aria-hidden="true">&rarr;</span></a></div>
@@ -152,8 +152,8 @@ KHOI_TRANG_CHU = """<section class="phan bd hoa-van duoi" id="doi-ngu-co-van">
 # ------------------------------------------------------------ TRANG RIÊNG
 THAN = dau_trang(
     "Đội ngũ chuyên gia cố vấn",
-    "Người trong nghề ngồi cùng bạn trước khi việc lớn xảy ra",
-    "Duy đi cùng bạn ở thương hiệu, tư vấn, hệ thống và cộng đồng. Còn những việc cần chuyên môn sâu như marketing, bán hàng, mô hình kinh doanh hay tài chính gia đình thì nên hỏi người đang làm nghề đó mỗi ngày. Những chuyên gia dưới đây đồng hành cùng Cộng đồng Next Gen Founder, để bạn hỏi đúng người, đúng lúc.") + """
+    "Chuyên gia ngồi cùng bạn trước khi việc lớn xảy ra",
+    "Duy đi cùng bạn ở thương hiệu, tư vấn, hệ thống và cộng đồng. Còn những việc cần chuyên môn sâu như marketing, bán hàng, mô hình kinh doanh hay tài chính gia đình thì nên hỏi chuyên gia trong lĩnh vực đó. Những chuyên gia dưới đây đồng hành cùng Cộng đồng Next Gen Founder, để bạn hỏi đúng người, đúng lúc.") + """
 
 <section class="phan bd">
   <div class="phan-dau hien">
@@ -169,7 +169,7 @@ THAN = dau_trang(
     <div>
       <p class="mono">Dành cho chuyên gia</p>
       <h2>Bạn muốn đồng hành cùng cộng đồng?</h2>
-      <p>Nếu bạn đang hành nghề ở một lĩnh vực người chủ doanh nghiệp cần, và muốn dành một phần thời gian cho những người đang xây doanh nghiệp từ chính uy tín của mình, Duy muốn được nói chuyện với bạn.</p>
+      <p>Nếu bạn là chuyên gia trong một lĩnh vực người chủ doanh nghiệp cần, và muốn dành một phần thời gian cho những người đang xây doanh nghiệp từ chính uy tín của mình, Duy muốn được nói chuyện với bạn.</p>
     </div>
     <a class="nut nut-v" href="lien-he.html">Liên hệ với Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
