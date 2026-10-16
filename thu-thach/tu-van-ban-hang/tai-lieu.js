@@ -143,352 +143,352 @@ var BAI = {
 "h": "<p>Gọi khách là \"khách A\", \"khách B\" như hôm qua. Ở bốn cột tiêu chí ghi \"có\", \"không\" hoặc \"chưa biết\" nếu bạn chưa từng hỏi.</p>"
 },
 {
-"tieu": "Dòng 1",
+"tieu": "Khách A",
 "o": [
 {
 "id": "n2-2-0-0-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 1 · Nhu cầu"
+"ten": "Mẫu 3 · Khách A · Nhu cầu"
 },
 {
 "id": "n2-2-0-0-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 1 · Ngân sách"
+"ten": "Mẫu 3 · Khách A · Ngân sách"
 },
 {
 "id": "n2-2-0-0-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 1 · Người quyết định"
+"ten": "Mẫu 3 · Khách A · Người quyết định"
 },
 {
 "id": "n2-2-0-0-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 1 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách A · Thời điểm mua"
 },
 {
 "id": "n2-2-0-0-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 1 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách A · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-0-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 1 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách A · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 2",
+"tieu": "Khách B",
 "o": [
 {
 "id": "n2-2-0-1-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 2 · Nhu cầu"
+"ten": "Mẫu 3 · Khách B · Nhu cầu"
 },
 {
 "id": "n2-2-0-1-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 2 · Ngân sách"
+"ten": "Mẫu 3 · Khách B · Ngân sách"
 },
 {
 "id": "n2-2-0-1-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 2 · Người quyết định"
+"ten": "Mẫu 3 · Khách B · Người quyết định"
 },
 {
 "id": "n2-2-0-1-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 2 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách B · Thời điểm mua"
 },
 {
 "id": "n2-2-0-1-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 2 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách B · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-1-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 2 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách B · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 3",
+"tieu": "Khách C",
 "o": [
 {
 "id": "n2-2-0-2-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 3 · Nhu cầu"
+"ten": "Mẫu 3 · Khách C · Nhu cầu"
 },
 {
 "id": "n2-2-0-2-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 3 · Ngân sách"
+"ten": "Mẫu 3 · Khách C · Ngân sách"
 },
 {
 "id": "n2-2-0-2-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 3 · Người quyết định"
+"ten": "Mẫu 3 · Khách C · Người quyết định"
 },
 {
 "id": "n2-2-0-2-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 3 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách C · Thời điểm mua"
 },
 {
 "id": "n2-2-0-2-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 3 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách C · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-2-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 3 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách C · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 4",
+"tieu": "Khách D",
 "o": [
 {
 "id": "n2-2-0-3-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 4 · Nhu cầu"
+"ten": "Mẫu 3 · Khách D · Nhu cầu"
 },
 {
 "id": "n2-2-0-3-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 4 · Ngân sách"
+"ten": "Mẫu 3 · Khách D · Ngân sách"
 },
 {
 "id": "n2-2-0-3-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 4 · Người quyết định"
+"ten": "Mẫu 3 · Khách D · Người quyết định"
 },
 {
 "id": "n2-2-0-3-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 4 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách D · Thời điểm mua"
 },
 {
 "id": "n2-2-0-3-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 4 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách D · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-3-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 4 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách D · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 5",
+"tieu": "Khách E",
 "o": [
 {
 "id": "n2-2-0-4-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 5 · Nhu cầu"
+"ten": "Mẫu 3 · Khách E · Nhu cầu"
 },
 {
 "id": "n2-2-0-4-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 5 · Ngân sách"
+"ten": "Mẫu 3 · Khách E · Ngân sách"
 },
 {
 "id": "n2-2-0-4-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 5 · Người quyết định"
+"ten": "Mẫu 3 · Khách E · Người quyết định"
 },
 {
 "id": "n2-2-0-4-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 5 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách E · Thời điểm mua"
 },
 {
 "id": "n2-2-0-4-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 5 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách E · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-4-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 5 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách E · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 6",
+"tieu": "Khách G",
 "o": [
 {
 "id": "n2-2-0-5-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 6 · Nhu cầu"
+"ten": "Mẫu 3 · Khách G · Nhu cầu"
 },
 {
 "id": "n2-2-0-5-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 6 · Ngân sách"
+"ten": "Mẫu 3 · Khách G · Ngân sách"
 },
 {
 "id": "n2-2-0-5-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 6 · Người quyết định"
+"ten": "Mẫu 3 · Khách G · Người quyết định"
 },
 {
 "id": "n2-2-0-5-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 6 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách G · Thời điểm mua"
 },
 {
 "id": "n2-2-0-5-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 6 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách G · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-5-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 6 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách G · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 7",
+"tieu": "Khách H",
 "o": [
 {
 "id": "n2-2-0-6-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 7 · Nhu cầu"
+"ten": "Mẫu 3 · Khách H · Nhu cầu"
 },
 {
 "id": "n2-2-0-6-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 7 · Ngân sách"
+"ten": "Mẫu 3 · Khách H · Ngân sách"
 },
 {
 "id": "n2-2-0-6-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 7 · Người quyết định"
+"ten": "Mẫu 3 · Khách H · Người quyết định"
 },
 {
 "id": "n2-2-0-6-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 7 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách H · Thời điểm mua"
 },
 {
 "id": "n2-2-0-6-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 7 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách H · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-6-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 7 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách H · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 8",
+"tieu": "Khách I",
 "o": [
 {
 "id": "n2-2-0-7-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 8 · Nhu cầu"
+"ten": "Mẫu 3 · Khách I · Nhu cầu"
 },
 {
 "id": "n2-2-0-7-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 8 · Ngân sách"
+"ten": "Mẫu 3 · Khách I · Ngân sách"
 },
 {
 "id": "n2-2-0-7-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 8 · Người quyết định"
+"ten": "Mẫu 3 · Khách I · Người quyết định"
 },
 {
 "id": "n2-2-0-7-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 8 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách I · Thời điểm mua"
 },
 {
 "id": "n2-2-0-7-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 8 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách I · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-7-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 8 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách I · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 9",
+"tieu": "Khách K",
 "o": [
 {
 "id": "n2-2-0-8-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 9 · Nhu cầu"
+"ten": "Mẫu 3 · Khách K · Nhu cầu"
 },
 {
 "id": "n2-2-0-8-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 9 · Ngân sách"
+"ten": "Mẫu 3 · Khách K · Ngân sách"
 },
 {
 "id": "n2-2-0-8-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 9 · Người quyết định"
+"ten": "Mẫu 3 · Khách K · Người quyết định"
 },
 {
 "id": "n2-2-0-8-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 9 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách K · Thời điểm mua"
 },
 {
 "id": "n2-2-0-8-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 9 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách K · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-8-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 9 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách K · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
 {
-"tieu": "Dòng 10",
+"tieu": "Khách L",
 "o": [
 {
 "id": "n2-2-0-9-1",
 "nhan": "Nhu cầu",
-"ten": "Mẫu 3 · Dòng 10 · Nhu cầu"
+"ten": "Mẫu 3 · Khách L · Nhu cầu"
 },
 {
 "id": "n2-2-0-9-2",
 "nhan": "Ngân sách",
-"ten": "Mẫu 3 · Dòng 10 · Ngân sách"
+"ten": "Mẫu 3 · Khách L · Ngân sách"
 },
 {
 "id": "n2-2-0-9-3",
 "nhan": "Người quyết định",
-"ten": "Mẫu 3 · Dòng 10 · Người quyết định"
+"ten": "Mẫu 3 · Khách L · Người quyết định"
 },
 {
 "id": "n2-2-0-9-4",
 "nhan": "Thời điểm mua",
-"ten": "Mẫu 3 · Dòng 10 · Thời điểm mua"
+"ten": "Mẫu 3 · Khách L · Thời điểm mua"
 },
 {
 "id": "n2-2-0-9-5",
 "nhan": "Xếp vào loại nào",
-"ten": "Mẫu 3 · Dòng 10 · Xếp vào loại nào"
+"ten": "Mẫu 3 · Khách L · Xếp vào loại nào"
 },
 {
 "id": "n2-2-0-9-6",
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
-"ten": "Mẫu 3 · Dòng 10 · Ở Ngày 1, khách này dừng ở bước nào"
+"ten": "Mẫu 3 · Khách L · Ở Ngày 1, khách này dừng ở bước nào"
 }
 ]
 },
@@ -618,8 +618,8 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp trang chân dung, bốn tiêu chí, bảng xếp lại mười khách, Bảng quy trình bán hàng bảy bước đã sửa dòng 1 và dòng 2 cùng video Ngày 2.",
-"Bạn bấm Nộp bài ở cuối trang này, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
-"> Ngày mai. Bạn giữ nguyên nhóm khách này tới Ngày 7. Ngày 3, chúng ta sẽ sửa phần tiếp cận của dòng 2 và dòng 3: mở đầu cuộc trò chuyện thế nào, và hỏi gì để khách kể ra điều họ thật sự cần. Bạn sẽ trò chuyện với ba khách đúng nhóm vừa ghi ra hôm nay."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
+"Ngày mai. Bạn giữ nguyên nhóm khách này tới Ngày 7. Ngày 3, chúng ta sẽ sửa phần tiếp cận của dòng 2 và dòng 3: mở đầu cuộc trò chuyện thế nào, và hỏi gì để khách kể ra điều họ thật sự cần. Bạn sẽ trò chuyện với ba khách đúng nhóm vừa ghi ra hôm nay."
 ]
 },
 "3": {
@@ -914,8 +914,8 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp câu mở đầu, bộ câu hỏi ba tầng, ghi chép các khách đã gặp kèm câu tóm tắt, Bảng quy trình bán hàng bảy bước đã sửa dòng 2 và dòng 3, và video Ngày 3.",
-"Bạn bấm Nộp bài ở cuối trang này, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
-"> Ngày mai. Bạn giữ lại các câu tóm tắt mong và lo. Ngày 4, chúng ta sẽ sửa dòng 4: mở phần trình bày bằng chính câu tóm tắt đó, rồi chỉ nói những phần sản phẩm giải quyết đúng chuyện khách đã kể."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
+"Ngày mai. Bạn giữ lại các câu tóm tắt mong và lo. Ngày 4, chúng ta sẽ sửa dòng 4: mở phần trình bày bằng chính câu tóm tắt đó, rồi chỉ nói những phần sản phẩm giải quyết đúng chuyện khách đã kể."
 ]
 },
 "4": {
@@ -1134,8 +1134,8 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp Mẫu 1, ba câu trình bày ở Mẫu 2, Bảng quy trình bán hàng bảy bước đã sửa dòng 4 cùng video Ngày 4.",
-"Bạn bấm Nộp bài ở cuối trang này, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
-"> Ngày mai. Bạn giữ lại Mẫu 1. Ngày 5, chúng ta sẽ sửa dòng 5: khi khách nói \"để anh suy nghĩ thêm\", bạn hỏi gốc của băn khoăn trước khi đáp, và dùng Mẫu 1 để xem mình đã bỏ sót chuyện gì khách kể."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
+"Ngày mai. Bạn giữ lại Mẫu 1. Ngày 5, chúng ta sẽ sửa dòng 5: khi khách nói \"để anh suy nghĩ thêm\", bạn hỏi gốc của băn khoăn trước khi đáp, và dùng Mẫu 1 để xem mình đã bỏ sót chuyện gì khách kể."
 ]
 },
 "5": {
@@ -1366,8 +1366,8 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp ba câu từ chối và cách đáp, phần đối chiếu với Mẫu 1 của Ngày 4, Bảng quy trình bán hàng bảy bước đã sửa dòng 5, và video Ngày 5.",
-"Bạn bấm Nộp bài ở cuối trang này, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
-"> Ngày mai. Ngày 6, chúng ta sẽ sửa dòng 6: báo giá thật rõ, rồi đề nghị khách quyết định. Những băn khoăn bạn đã gỡ hôm nay sẽ được nhắc lại ngay trước câu hỏi đó."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
+"Ngày mai. Ngày 6, chúng ta sẽ sửa dòng 6: báo giá thật rõ, rồi đề nghị khách quyết định. Những băn khoăn bạn đã gỡ hôm nay sẽ được nhắc lại ngay trước câu hỏi đó."
 ]
 },
 "6": {
@@ -1543,8 +1543,8 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp Mẫu 1 và Mẫu 2, Bảng quy trình bán hàng bảy bước đã sửa dòng 6, và video Ngày 6.",
-"Bạn bấm Nộp bài ở cuối trang này, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
-"> Ngày mai. Ngày 7, chúng ta sẽ sửa dòng cuối cùng, chăm sóc sau bán, rồi đếm lại cả bảy dòng để thấy bảng của bạn đã đổi ra sao sau một tuần."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận, miễn là trước hạn cuối, tức ba ngày sau Ngày 7.",
+"Ngày mai. Ngày 7, chúng ta sẽ sửa dòng cuối cùng, chăm sóc sau bán, rồi đếm lại cả bảy dòng để thấy bảng của bạn đã đổi ra sao sau một tuần."
 ]
 },
 "7": {
@@ -1873,7 +1873,7 @@ var BAI = {
 ],
 "nopSau": [
 "Nộp Bảng quy trình bán hàng bảy bước bản 2, có phần so sánh bản 1 và bản 2, cùng video Ngày 7. Sổ ghi tình huống là của riêng bạn nên không cần nộp, bạn giữ để dùng tiếp.",
-"Bạn bấm Nộp bài ở cuối trang này, tức ba ngày sau hôm nay."
+"Bạn bấm Nộp bài ở cuối trang này. Nộp chậm vẫn được nhận nếu trước hạn cuối, tức ba ngày sau hôm nay."
 ]
 },
 "8": {

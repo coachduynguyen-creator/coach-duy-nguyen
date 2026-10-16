@@ -91,7 +91,7 @@ def tron(t):
 
 def sang_trang(t):
     """Câu nhắc email trong tài liệu, trên trang thì nộp bằng nút."""
-    return re.sub(r"Bạn nộp bài qua đường dẫn nộp bài trong email[^,]*,", "Bạn bấm Nộp bài ở cuối trang này,", t) \
+    return re.sub(r"Bạn nộp bài qua đường dẫn nộp bài trong email[^.,]*", "Bạn bấm Nộp bài ở cuối trang này", t) \
         .replace("Bạn dán đường dẫn video vào trang nộp bài trong email,", "Bạn dán đường dẫn video vào ô bên dưới rồi bấm Nộp bài,")
 
 
@@ -118,11 +118,13 @@ def bang_o(dong, ma, nhom, dau_muc):
         nhan = tron(nhan_dong[0][1]) if nhan_dong and nhan_dong[0][0] == 0 else ""
         goi = "; ".join(tron(dau[c]) + ": " + tron(x) for c, x in nhan_dong if c > 0)
         m = re.match(r"^([A-Z])(\. |$)", nhan)
-        if m:   # Nhóm A, A, A...: mỗi chữ cái một nhóm
+        if m and (m.group(2) or chu_cai):   # Nhóm A, A, A...: mỗi chữ cái một nhóm
             if m.group(2):
                 chu_cai = nhan
             nhan, le_dong = "", chu_cai
         else:
+            if m:   # chữ cái đứng một mình là tên khách: "Khách A"
+                nhan = tron(dau[0]) + " " + nhan
             le_dong = le
         o = []
         for c in trong:
@@ -219,7 +221,7 @@ def bai_ngay(n, md):
         elif tieu.startswith("Tự kiểm tra"):
             d["kiem"] = [tron(l.strip()[6:]) for l in than.splitlines() if l.strip().startswith("- [ ] ")]
         elif tieu.startswith("Nộp bài"):
-            d["nopSau"] = [tron(sang_trang(l)) for l in than.split("\n\n") if l.strip() and not l.strip().startswith("<!--")]
+            d["nopSau"] = [re.sub(r"^>\s*", "", tron(sang_trang(l))) for l in than.split("\n\n") if l.strip() and not l.strip().startswith("<!--")]
             assert "email" not in " ".join(d["nopSau"]), (n, d["nopSau"])
         elif tieu.startswith("Video tổng kết"):
             tong = {"nhan": "Sau Ngày 7", "ten": tieu, "bai": "video tổng kết", "phan": [phan_bai(8, tieu, than)],
