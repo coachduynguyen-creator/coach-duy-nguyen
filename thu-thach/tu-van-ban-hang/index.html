@@ -466,7 +466,9 @@ function dungNgay(n) {
   if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3>' + (typeof d.viec === 'string'
     ? '<div class="chu">' + d.viec + '</div>'
     : '<ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol>') + '</section>';
-  d.phan.forEach(function (p) { if (!p.sauVideo) phan(p); });
+  /* Phần chỉ có ô dán đường dẫn video (Ngày 1) nằm ở Bước 3, cạnh nút Nộp bài. */
+  function chiVideo(p) { return coBuoc && p.nhom.every(function (g) { return g.o && g.o.every(function (o) { return o.lk; }); }); }
+  d.phan.forEach(function (p) { if (!p.sauVideo && !chiVideo(p)) phan(p); });
   function phan(p) {
     h += '<section class="phan"><h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p>' + esc(p.mo) + '</p>' : '') +
          (p.rieng ? '<p class="nho rieng">Phần này để bạn tự kiểm tra, không cần nộp. Phần này chỉ lưu trên máy của bạn.</p>' : '') +
@@ -493,6 +495,7 @@ function dungNgay(n) {
     '<p><button type="button" class="nut chinh" id="nop-2"' + (XEM_TRUOC ? ' disabled' : '') + '>Lưu và nộp Bước 2</button></p><p class="bao" id="bao-2" role="status" aria-live="polite"></p></section>';
   hetBuoc();
   buoc(3, 'Nộp bài cuối ngày', 'Bước này mở khi bạn điền bài ở Bước 2 và bấm Lưu và nộp Bước 2.');
+  d.phan.forEach(function (p) { if (chiVideo(p)) phan(p); });
   if (d.kiem) h += '<section class="phan"><h3>Tự kiểm tra trước khi nộp</h3><ul class="kiem">' + d.kiem.map(function (k, i) {
     var id = 'kiem-' + n + '-' + i;
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
@@ -581,7 +584,7 @@ function veXem(n) {
   if ($('nop-1')) $('nop-1').disabled = !(du && traLoi) || XEM_TRUOC;
   if ((daMo(n) || XEM_TRUOC) && $('buoc-2')) $('buoc-2').classList.remove('khoa');
   /* Bước 3 mở khi máy chủ đã nhận Bước 2 (nút Lưu và nộp), nút chỉ bấm được khi đã điền ít nhất một ô; xóa hết chữ thì khóa lại. */
-  var coChu = tatCaO(n).some(function (o) { return !o.sv && !o.rieng && doc(o.id).trim(); });
+  var coChu = tatCaO(n).some(function (o) { return !o.sv && !o.rieng && !o.lk && doc(o.id).trim(); });
   var xong2 = daMo(n) && coChu && buocNop(n) >= 2;
   if ($('nop-2')) $('nop-2').disabled = !(daMo(n) && coChu) || XEM_TRUOC;
   if ($('buoc-2')) $('buoc-2').classList.toggle('xong', xong2);
