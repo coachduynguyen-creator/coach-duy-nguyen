@@ -81,6 +81,8 @@ def o_bang(x, nhan, cot):
         x["id"] = f"bang2-b{so}-so"
     elif cot.startswith("Đã sửa gì"):
         x["id"] = f"bang2-b{so}-dasua"
+    elif not cot.startswith("Câu hỏi bạn sẽ dùng"):   # cột này lưu theo vị trí, không có khóa cố định
+        raise SystemExit(f"Cột bảng không khớp mẫu nào, khóa lưu bài sẽ mất: dòng \"{nhan}\", cột \"{cot}\". Thêm vào o_bang().")
 
 
 def tron(t):
