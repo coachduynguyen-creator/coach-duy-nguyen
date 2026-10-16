@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quản trị thử thách 7 ngày</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+/* Bố cục: thanh bên trái (4 mục), thanh trên có ô tìm kiếm, nội dung bên phải, hồ sơ thành viên mở thành ngăn kéo bên phải để sales đi hết danh sách mà không rời trang. */
+:root{
+  --bg:#f1f4f5; --pn:#ffffff; --ln:#dce2e5; --fg:#15202a; --mu:#5b6a75; --sb:#10302d; --sbf:#cfe4e1;
+  --ac:#0e6b63; --ac2:#d7eeeb; --warn:#9a5700; --warn2:#fbeed4; --bad:#a3302b; --bad2:#f8e1df; --ok:#1d7a46; --ok2:#dcf0e4; --sh:0 10px 30px rgba(10,30,40,.18);
+  --ft:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1519; --pn:#182026; --ln:#2a353d; --fg:#e6ecef; --mu:#93a3ad; --sb:#0a1e1c; --sbf:#b7d4d0;
+  --ac:#4fc2b6; --ac2:#14332f; --warn:#e8b25a; --warn2:#3a2c12; --bad:#ee8d86; --bad2:#3b1e1c; --ok:#6fcf97; --ok2:#16331f; --sh:0 10px 30px rgba(0,0,0,.5); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1519; --pn:#182026; --ln:#2a353d; --fg:#e6ecef; --mu:#93a3ad; --sb:#0a1e1c; --sbf:#b7d4d0;
+  --ac:#4fc2b6; --ac2:#14332f; --warn:#e8b25a; --warn2:#3a2c12; --bad:#ee8d86; --bad2:#3b1e1c; --ok:#6fcf97; --ok2:#16331f; --sh:0 10px 30px rgba(0,0,0,.5); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 var(--ft);margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+.app{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}
+.sb{background:var(--sb);color:var(--sbf);padding:16px 12px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:4px;padding-left:max(12px,env(safe-area-inset-left,0px))}
+.sb h1{font-size:13px;line-height:1.35;margin:4px 8px 16px;color:#fff;font-weight:700}
+.sb h1 small{display:block;font-weight:400;color:var(--sbf);margin-top:2px;font-size:11.5px}
+.sb button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:13.5px;font-weight:500;color:var(--sbf)}
+.sb button:hover{background:rgba(255,255,255,.08)}
+.sb button[aria-current=page]{background:rgba(255,255,255,.16);color:#fff}
+.sb button:focus-visible{outline:2px solid #fff}
+.sb .sl{font-size:11.5px;background:rgba(255,255,255,.14);border-radius:99px;padding:0 7px;color:#fff;font-variant-numeric:tabular-nums}
+.sb .ft{margin-top:auto;font-size:11.5px;padding:8px;color:var(--sbf)}
+.mn{min-width:0;padding-inline:20px max(20px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.mau{background:var(--warn2);color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:7px 12px;margin:12px 0 0;font-size:12.5px}
+.tp{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:14px 0 12px}
+.tp h2{margin:0;font-size:20px;font-weight:700;flex:1 1 auto;min-width:160px}
+.in{background:var(--pn);border:1px solid var(--ln);border-radius:6px;padding:7px 10px;min-width:0}
+.in:focus-visible,button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.tp .in{width:230px}
+.chip{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--ln);background:var(--pn);border-radius:99px;padding:2px 10px;font-size:12px;color:var(--mu);white-space:nowrap}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.s2{grid-column:span 2}.s4{grid-column:span 4}.s5{grid-column:span 5}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+@media(max-width:1180px){.s2{grid-column:span 4}.s4{grid-column:span 6}.s5,.s7,.s8{grid-column:span 12}}
+@media(max-width:720px){.s2,.s4{grid-column:span 12}.s2{grid-column:span 6}}
+.pn{background:var(--pn);border:1px solid var(--ln);border-radius:8px;padding:14px 16px;min-width:0}
+.pn h3{font-size:14px;margin:0 0 2px;font-weight:700}
+.pn .gc{color:var(--mu);font-size:12.5px;margin:0 0 12px}
+.col{display:grid;gap:14px;align-content:start}
+.kp b{display:block;font-size:28px;line-height:1.15;font-variant-numeric:tabular-nums}
+.kp span{color:var(--mu);font-size:12.5px}
+.kp .dl{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:6px;font-size:12px;color:var(--mu)}
+.up{color:var(--ok);font-weight:600}.dn{color:var(--bad);font-weight:600}
+.kp svg{width:72px;height:24px;flex:none}
+.fn{display:grid;grid-template-columns:78px minmax(0,1fr) 112px;gap:6px 10px;align-items:center;font-size:12.5px}
+.fn .br{height:20px;background:var(--bg);border-radius:4px;overflow:hidden;display:flex}
+.fn .br i{display:block;height:100%}
+.fn .d{background:var(--ac)}.fn .t{background:var(--warn)}
+.fn .nu{text-align:right;font-variant-numeric:tabular-nums;color:var(--mu)}
+.fn .nu b{color:var(--fg)}
+.fn .xa{opacity:.45}
+.lg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--mu);margin-top:10px}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.ct{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ct li button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--ln);border-radius:6px;padding:9px 12px;cursor:pointer}
+.ct li button:hover{border-color:var(--ac);background:var(--ac2)}
+.ct li button:focus-visible{outline:2px solid var(--ac)}
+.ct b{font-size:20px;font-variant-numeric:tabular-nums;min-width:34px;text-align:right}
+.ct small{display:block;color:var(--mu);font-size:12px}
+.b4{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.b4 button{all:unset;box-sizing:border-box;cursor:pointer;border:1px solid var(--ln);border-radius:6px;padding:8px 10px}
+.b4 button:hover{border-color:var(--ac)}
+.b4 button.a{background:var(--ac2);border-color:var(--ac)}
+.b4 b{font-size:22px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.b4 span{font-size:12px;color:var(--mu)}
+.wk{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 40px;gap:6px 10px;align-items:center;font-size:12.5px}
+.wk .br{height:12px;background:var(--bg);border-radius:3px;overflow:hidden}
+.wk .br i{display:block;height:100%;background:var(--mu);opacity:.55}
+.wk .top span{font-weight:700;color:var(--bad)}.wk .top i{background:var(--bad);opacity:1}
+.wk .nu{text-align:right;font-variant-numeric:tabular-nums}
+.sk{display:flex;height:16px;border-radius:4px;overflow:hidden;background:var(--bg);margin:4px 0 6px}
+.sk i{display:block;height:100%}
+.cm{margin-bottom:14px}.cm:last-child{margin:0}
+.cm h4{margin:0;font-size:12.5px;font-weight:600}
+.cm .lg{margin-top:2px}
+.tb{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--mu);text-align:left;padding:9px 6px;border-bottom:1px solid var(--ln);white-space:nowrap;background:var(--pn);position:sticky;top:0}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--ac)}
+td{padding:9px 6px;border-bottom:1px solid var(--ln);vertical-align:middle}
+.cp td{padding-block:4px}
+tr.row td{white-space:nowrap}
+tr.row td:nth-child(2){min-width:150px}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--bg)}
+tr.on td{background:var(--ac2)}
+.sm td{font-size:12.5px}
+.sm th{letter-spacing:0;font-size:11px}.sm th,.sm td{padding-inline:5px}.sm td:first-child{white-space:nowrap}
+td .su{display:block;color:var(--mu);font-size:11.5px}
+.dots{display:flex;gap:3px}
+.dots i{width:12px;height:12px;border-radius:3px;background:var(--ln);display:block}
+.dots i.dung{background:var(--ok)}.dots i.tre{background:var(--warn)}
+.tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.t-ok{background:var(--ok2);color:var(--ok)}.t-w{background:var(--warn2);color:var(--warn)}.t-b{background:var(--bad2);color:var(--bad)}.t-n{background:var(--bg);color:var(--mu);border:1px solid var(--ln)}.t-a{background:var(--ac2);color:var(--ac)}
+.mm{font-size:11px;color:var(--mu);border:1px solid var(--ln);border-radius:4px;padding:0 5px;margin-left:6px;white-space:nowrap}
+.mi{display:inline-block;width:46px;height:6px;background:var(--bg);border-radius:3px;vertical-align:middle;margin-left:6px;overflow:hidden;border:1px solid var(--ln)}
+.mi i{display:block;height:100%;background:var(--ac)}
+.pl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pl button{all:unset;box-sizing:border-box;cursor:pointer;background:var(--pn);border:1px solid var(--ln);border-radius:8px;padding:8px 14px;min-width:110px}
+.pl button:hover{border-color:var(--ac)}
+.pl button[aria-pressed=true]{background:var(--ac);color:var(--pn);border-color:var(--ac)}
+.pl b{display:block;font-size:20px;line-height:1.15;font-variant-numeric:tabular-nums}
+.pl span{font-size:12px;opacity:.85}
+.tl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.tl .in{width:auto}
+.tl .q{flex:1 1 200px;min-width:160px}
+.vw{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;font-size:12.5px;color:var(--mu);align-items:center}
+.vw button{all:unset;cursor:pointer;border:1px solid var(--ln);border-radius:99px;padding:2px 11px;background:var(--pn);color:var(--fg)}
+.vw button:hover{border-color:var(--ac)}
+.bt{border:0;background:var(--ac);color:var(--pn);border-radius:6px;padding:8px 14px;font-weight:600;cursor:pointer}
+.bt.p{background:none;color:var(--ac);border:1px solid var(--ac)}
+.bt.o{background:none;color:var(--fg);border:1px solid var(--ln)}
+.bk{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--ac2);border:1px solid var(--ac);border-radius:6px;padding:8px 12px;margin-bottom:10px;font-size:13px}
+.pg{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:10px;font-size:12.5px;color:var(--mu)}
+.pg .nb{display:flex;gap:4px}
+.pg .nb button{min-width:32px;border:1px solid var(--ln);background:var(--pn);border-radius:6px;padding:4px 8px;cursor:pointer}
+.pg .nb button[aria-current=true]{background:var(--ac);color:var(--pn);border-color:var(--ac)}
+.pg .nb button:disabled{opacity:.4;cursor:default}
+.ov{position:fixed;inset:0;background:rgba(5,15,20,.45);z-index:20}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(580px,100vw);background:var(--bg);box-shadow:var(--sh);z-index:21;display:flex;flex-direction:column}
+.dh{background:var(--pn);border-bottom:1px solid var(--ln);padding:14px 16px;display:flex;gap:10px;align-items:start;justify-content:space-between}
+.dh h3{margin:0;font-size:17px}
+.dh p{margin:2px 0 0;color:var(--mu);font-size:12.5px}
+.dh .nv{display:flex;gap:4px;flex:none}
+.dh .nv button{border:1px solid var(--ln);background:var(--pn);border-radius:6px;padding:4px 9px;cursor:pointer}
+.db{flex:1;overflow-y:auto;padding:14px 16px;display:grid;gap:12px;align-content:start;padding-right:max(16px,env(safe-area-inset-right,0px))}
+.df{background:var(--pn);border-top:1px solid var(--ln);padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px;padding-bottom:max(10px,env(safe-area-inset-bottom,0px))}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px;margin:0}
+.kv dt{color:var(--mu)}.kv dd{margin:0;text-align:right}
+.cr{list-style:none;margin:0;padding:0;font-size:12.5px;columns:2 220px;column-gap:18px}
+.cr li{display:flex;gap:6px;padding:3px 0;break-inside:avoid}
+.cr li>span:first-child{flex:none;width:14px;font-weight:700}
+.cr .y>span:first-child{color:var(--ok)}.cr .n{color:var(--mu)}
+.ph{display:grid;grid-template-columns:minmax(0,1.5fr) 56px minmax(0,1fr);gap:4px 10px;align-items:center;font-size:12.5px}
+.ph .br{height:9px;background:var(--bg);border-radius:3px;overflow:hidden;border:1px solid var(--ln)}
+.ph .br i{display:block;height:100%;background:var(--ac)}
+.ph .yeu{color:var(--bad);font-weight:600}.ph .yeu .br i{background:var(--bad)}
+blockquote{margin:10px 0 0;padding:9px 12px;border-left:3px solid var(--bad);background:var(--bad2);border-radius:0 6px 6px 0;font-size:13px}
+blockquote small{display:block;color:var(--mu);margin-top:3px}
+label{display:block;font-size:12.5px;color:var(--mu);margin:9px 0 3px}
+select.in,textarea.in,input.in{width:100%}
+.ck{display:flex;gap:8px;align-items:center;font-size:13px;margin:3px 0}
+.ck input{width:auto;margin:0}.ck label{margin:0;color:var(--fg)}
+.ghi{font-size:12px;color:var(--mu);margin:8px 0 0}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:9px 16px;border-radius:6px;font-size:13px;max-width:90vw;z-index:30}
+.hm{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+@media(max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .sb{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;padding:8px 12px}
+  .sb h1{display:none}.sb .ft{display:none}
+  .mn{padding-inline:max(14px,env(safe-area-inset-left,0px)) max(14px,env(safe-area-inset-right,0px))}
+  .tp .in{width:100%}
+}
+@media(prefers-reduced-motion:no-preference){.dr{animation:vao .18s ease-out}@keyframes vao{from{transform:translateX(24px);opacity:.4}}}
+.hd h3{margin-top:0}.hd .pn{margin-bottom:14px}.hd ol,.hd ul{margin:6px 0 0;padding-left:20px}.hd li{margin:3px 0}.hd p{margin:6px 0}
+.mc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.mc button{all:unset;cursor:pointer;border:1px solid var(--ln);border-radius:99px;padding:3px 12px;background:var(--pn);font-size:12.5px}
+.mc button:hover{border-color:var(--ac)}.mc button:focus-visible{outline:2px solid var(--ac)}
+.ghim{background:var(--warn2);color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:7px 12px;margin:0 0 12px;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sb">
+    <h1>Thử thách 7 ngày<small>Nâng cấp Quy trình Tư vấn Bán hàng</small></h1>
+    <button data-v="tq">Tổng quan</button>
+    <button data-v="q">Hàng chờ gọi <span class="sl" id="n-q"></span></button>
+    <button data-v="tv">Thành viên <span class="sl" id="n-tv"></span></button>
+    <button data-v="hd">Hướng dẫn</button>
+    <button data-v="cd">Cài đặt</button>
+    <div class="ft">Đăng nhập bằng Google. Chỉ email trong danh sách mới mở được trang này.</div>
+  </aside>
+  <div class="mn">
+    <div class="tp">
+      <h2 id="ttl">Quản trị</h2>
+      <input class="in" id="gq" type="search" placeholder="Tìm tên, điện thoại, email" aria-label="Tìm nhanh">
+      <span class="chip" id="vt" style="margin:0"></span>
+      <button class="bt o" id="rl" type="button">Tải lại</button>
+    </div>
+    <div id="main"></div>
+  </div>
+</div>
+<div id="dro"></div>
+<div id="toast" hidden></div>
+
+<script>
+/* Trang quản trị thử thách 7 ngày, giai đoạn 1: chỉ đọc. Dữ liệu lấy từ layDuLieuQuanTri() trong quan-tri.gs. */
+const BUOC = ['Tìm kiếm khách','Tiếp cận và phân loại','Khai thác sâu','Trình bày giải pháp','Xử lý từ chối','Đề nghị khách quyết định','Chăm sóc sau bán'];
+const GOI_NGAN = {0:'Chưa rõ quy mô',1:'Cộng đồng',2:'Trả phí (tệp lõi)',3:'Diamond hoặc cố vấn',4:'Cố vấn hoặc hợp đồng'};
+const CELL = { cc: ['Gọi trước','Cam kết cao, phù hợp cao'], ch: ['Gọi, nói hướng khác','Cam kết cao, phù hợp chưa cao'], hc: ['Nuôi thêm','Cam kết chưa cao, phù hợp cao'], th: ['Chưa ưu tiên','Cả hai chưa cao'] };
+const NGUON = { may: 'máy đếm', ai: 'AI đọc, chưa chấm', sales: 'sales ghi, chưa nối' };
+const MAU = ['#0e6b63','#4a9b94','#9a5700','#a3302b','#7a8791','#b9c4ca'];
+const TTL = { tq: 'Tổng quan', q: 'Hàng chờ gọi', tv: 'Thành viên', hd: 'Hướng dẫn', cd: 'Cài đặt' };
+const S = { v: 'tq', stage: 'all', q: '', f: { cell: '', cap: '', vt: '', w: '', risk: '' }, sort: { k: 'prio', dir: -1 }, page: 1, size: 25, dr: -1, order: [], thr: 0.6, min: 2, compact: false };
+let D = null, P = [];
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const cong = (s, k) => { const a = s.split('-'); return new Date(Date.UTC(+a[0], a[1] - 1, +a[2] + k)).toISOString().slice(0, 10); };
+const dm = s => s ? s.slice(8, 10) + '/' + s.slice(5, 7) : '';
+const KT = p => p.ten || p.email;
+function toast(t) { const e = $('toast'); e.textContent = t; e.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => e.hidden = true, 3400); }
+
+/* ===== Chuẩn hóa dữ liệu máy chủ ===== */
+function chuan(r) {
+  const hom = r.hom_nay;
+  return r.nguoi.map((p, i) => {
+    const ngay = p.ngay.map(d => !d.nop ? '.' : (!p.bat_dau || d.nop <= cong(p.bat_dau, d.n - 1)) ? 'd' : 't').join('');
+    const due = p.bat_dau ? p.ngay.filter(d => cong(p.bat_dau, d.n - 1) <= hom).length : 0;
+    const nops = p.ngay.map(d => d.nop).filter(Boolean).sort();
+    return Object.assign({}, p, { i, pt: ngay, due, k: p.da_nop, ng3: !!p.ngay[2].nop, last: nops.length ? nops[nops.length - 1] : '' });
+  });
+}
+/* risk tính sau khi có due (Object.assign không đọc được thuộc tính vừa gán) */
+function nap(r) { P = chuan(r).map(p => (p.risk = !!p.bat_dau && p.due - p.k >= 2 && p.k < 7, p)); }
+
+const o3 = t => t.xet >= S.min ? t.dat / t.xet >= S.thr : null;
+const cell = p => { const a = o3(p.ck), b = o3(p.ph); return a === null || b === null ? null : a ? (b ? 'cc' : 'ch') : (b ? 'hc' : 'th'); };
+const cellTen = p => cell(p) ? CELL[cell(p)][0] : 'Chưa xếp ô';
+const stage = p => p.ng3 ? 'cho' : 'cho3';
+const prio = p => ({ cc: 100, ch: 40, hc: 20, th: 0 }[cell(p)] ?? -1) + (p.cap === 2 ? 15 : 0) + p.ck.dat;
+const yeu = p => p.yeu ? p.yeu.buoc - 1 : -1;
+const dots = p => '<div class="dots" title="Xanh: đúng hạn. Vàng: nộp chậm. Xám: chưa nộp">' + [...p.pt].map(x => '<i class="' + (x === 'd' ? 'dung' : x === 't' ? 'tre' : '') + '"></i>').join('') + '</div>';
+const stTag = p => p.ng3 ? '<span class="tag t-w">Chờ gọi</span>' : '<span class="tag t-n">Chưa tới Ngày 3</span>';
+const mi = (v, m) => '<span class="mi"><i style="width:' + (m ? v / m * 100 : 0) + '%"></i></span>';
+const chua = '<span class="su">chưa nối Pancake</span>';
+const pc = (a, b) => b ? Math.round(a / b * 100) : 0;
+
+/* ===== Tổng quan ===== */
+function stack(items, tot) {
+  return '<div class="sk">' + items.map(x => '<i style="width:' + (tot ? x[1] / tot * 100 : 0) + '%;background:' + x[2] + '" title="' + esc(x[0]) + ': ' + x[1] + '"></i>').join('') + '</div><div class="lg">' + items.map(x => '<span><i style="background:' + x[2] + '"></i>' + esc(x[0]) + ' ' + x[1] + '</span>').join('') + '</div>';
+}
+function coCau(f, nhan) {
+  const m = new Map(); P.forEach(p => { const k = f(p) || 'Chưa trả lời'; m.set(k, (m.get(k) || 0) + 1); });
+  const a = [...m.entries()].sort((x, y) => y[1] - x[1]); return stack(a.map((x, i) => [x[0], x[1], MAU[Math.min(i, 5)]]), P.length);
+}
+function scatter(L) {
+  const W = 560, H = 360, l = 46, r = 14, t = 18, b = 44, pw = W - l - r, ph = H - t - b;
+  const X = v => l + v * pw, Y = v => t + ph - v * ph, cnt = { cc: 0, ch: 0, hc: 0, th: 0 };
+  const bx = X(S.thr), by = Y(S.thr); let s = '';
+  s += '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img" aria-label="Biểu đồ chấm: mỗi chấm là một người, ngang là tỷ lệ tiêu chí cam kết đạt, dọc là tỷ lệ tiêu chí phù hợp đạt">';
+  s += '<rect x="' + bx + '" y="' + t + '" width="' + (l + pw - bx) + '" height="' + (by - t) + '" fill="var(--ac2)"/>';
+  for (let i = 0; i <= 5; i++) { const v = i / 5; s += '<line x1="' + X(v) + '" x2="' + X(v) + '" y1="' + t + '" y2="' + (t + ph) + '" stroke="var(--ln)" stroke-width=".6"/><text x="' + X(v) + '" y="' + (t + ph + 15) + '" font-size="11" text-anchor="middle" fill="var(--mu)">' + i * 20 + '%</text><line y1="' + Y(v) + '" y2="' + Y(v) + '" x1="' + l + '" x2="' + (l + pw) + '" stroke="var(--ln)" stroke-width=".6"/><text x="' + (l - 8) + '" y="' + (Y(v) + 4) + '" font-size="11" text-anchor="end" fill="var(--mu)">' + i * 20 + '%</text>'; }
+  s += '<line x1="' + bx + '" x2="' + bx + '" y1="' + t + '" y2="' + (t + ph) + '" stroke="var(--ac)" stroke-width="1.5" stroke-dasharray="5 4"/><line y1="' + by + '" y2="' + by + '" x1="' + l + '" x2="' + (l + pw) + '" stroke="var(--ac)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+  L.forEach(p => {
+    const c = cell(p); if (!c) return; cnt[c]++;
+    const jx = ((p.i * 37) % 100) / 100 - .5, jy = ((p.i * 61) % 100) / 100 - .5;
+    const x = X(p.ck.dat / p.ck.xet) + jx * 14, y = Y(p.ph.dat / p.ph.xet) + jy * 14;
+    s += '<circle data-p="' + p.i + '" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4.6" fill="' + (p.ng3 ? 'var(--ac)' : 'var(--mu)') + '" fill-opacity=".85" stroke="var(--pn)" stroke-width="1" style="cursor:pointer"><title>' + esc(KT(p)) + ': cam kết ' + p.ck.dat + '/' + p.ck.xet + ', phù hợp ' + p.ph.dat + '/' + p.ph.xet + '</title></circle>';
+  });
+  const lb = (x, y, a, k) => '<text x="' + x + '" y="' + y + '" text-anchor="' + a + '" font-size="11.5" font-weight="700" fill="var(--fg)" style="paint-order:stroke;stroke:var(--pn);stroke-width:3px">' + CELL[k][0] + ' · ' + cnt[k] + '</text>';
+  s += lb(l + pw - 6, t + 14, 'end', 'cc') + lb(l + 6, t + 14, 'start', 'hc') + lb(l + pw - 6, t + ph - 8, 'end', 'ch') + lb(l + 6, t + ph - 8, 'start', 'th');
+  s += '<text x="' + (l + pw / 2) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="12" fill="var(--mu)">Tỷ lệ tiêu chí cam kết đạt</text><text transform="translate(12 ' + (t + ph / 2) + ') rotate(-90)" text-anchor="middle" font-size="12" fill="var(--mu)">Tỷ lệ tiêu chí phù hợp đạt</text></svg>';
+  return [s, cnt];
+}
+function tongQuan() {
+  const N = P.length, ngu = P.filter(p => p.risk), g3 = P.filter(p => p.ng3), dep = P.filter(p => p.k >= 5);
+  const kp = (so, lb, dl) => '<div class="pn kp s2"><span>' + lb + '</span><b>' + so + '</b><div class="dl"><span>' + dl + '</span></div></div>';
+  if (!N) return '<div class="pn"><h3>Chưa có ai đăng ký</h3><p class="gc">Khi có người điền Cam kết hoặc nộp bài, họ hiện ở đây.</p></div>';
+  let h = '<div class="g">' +
+    kp(N, 'Đã có trong bảng', 'người điền Cam kết hoặc nộp bài') +
+    kp(dep.length + ' <small style="font-size:14px;font-weight:500;color:var(--mu)">' + pc(dep.length, N) + '%</small>', 'Đã nộp từ 5 ngày', 'trên số người trong bảng') +
+    kp(ngu.length, 'Có nguy cơ bỏ', 'chậm từ 2 ngày trở lên') +
+    kp(g3.length + ' <small style="font-size:14px;font-weight:500;color:var(--mu)">' + pc(g3.length, N) + '%</small>', 'Gọi được (đã nộp Ngày 3)', 'vào Hàng chờ gọi') +
+    kp('<small style="font-size:15px;color:var(--mu)">chưa nối</small>', 'Đã gọi', 'cần Pancake') +
+    kp('<small style="font-size:15px;color:var(--mu)">chưa nối</small>', 'Đã mua chương trình', 'cần Pancake') + '</div>';
+  /* phễu */
+  const nd = i => P.filter(p => p.pt[i] !== '.').length, dd = i => P.filter(p => p.pt[i] === 'd').length;
+  let fn = '<div class="fn"><span>Có trong bảng</span><div class="br"><i class="d" style="width:100%;background:var(--mu);opacity:.4"></i></div><span class="nu"><b>' + N + '</b> · 100%</span>', pv = N;
+  for (let i = 0; i < 7; i++) { const a = nd(i), d = dd(i), tr = a === 0; fn += '<span class="' + (tr ? 'xa' : '') + '">Ngày ' + (i + 1) + '</span><div class="br ' + (tr ? 'xa' : '') + '"><i class="d" style="width:' + d / N * 100 + '%"></i><i class="t" style="width:' + (a - d) / N * 100 + '%"></i></div><span class="nu ' + (tr ? 'xa' : '') + '">' + (tr ? 'chưa ai nộp' : '<b>' + a + '</b> · ' + pc(a, N) + '%' + (pv > a ? ' <span class="dn">−' + (pv - a) + '</span>' : '')) + '</span>'; if (!tr) pv = a; }
+  fn += '</div><div class="lg"><span><i style="background:var(--ac)"></i>Nộp đúng hạn</span><span><i style="background:var(--warn)"></i>Nộp chậm</span></div>';
+  h += '<div class="g" style="margin-top:14px"><div class="pn s7"><h3>Mất người ở ngày nào</h3><p class="gc">Số người đã nộp bài từng ngày, tính trên số người trong bảng. Nhìn ngày nào tụt mạnh nhất.</p>' + fn + '</div>';
+  const chuaXep = P.filter(p => !cell(p)).length, trung = P.filter(p => p.trung).length;
+  h += '<div class="pn s5"><h3>Việc hôm nay</h3><p class="gc">Bấm để mở đúng danh sách.</p><ul class="ct">' +
+    '<li><button data-go="cho"><span>Chờ gọi<small>đã nộp Ngày 3, hiện chưa biết ai đã gọi</small></span><b>' + g3.length + '</b></button></li>' +
+    '<li><button data-go="risk"><span>Có nguy cơ bỏ<small>nên nhắn nhắc, chưa phải gọi bán</small></span><b>' + ngu.length + '</b></button></li>' +
+    '<li><button data-go="none"><span>Chưa xếp ô<small>chưa đủ dữ liệu để chấm</small></span><b>' + chuaXep + '</b></button></li>' +
+    '<li><button data-go="trung"><span>Trùng số điện thoại<small>xem lại trước khi gọi</small></span><b>' + trung + '</b></button></li></ul></div></div>';
+  /* hai trục */
+  const sc = scatter(P), cnt = sc[1], wc = BUOC.map(() => 0); P.forEach(p => { if (p.yeu) wc[p.yeu.buoc - 1]++; });
+  const wm = Math.max(...wc, 1), tot = wc.reduce((a, b) => a + b, 0);
+  h += '<div class="g" style="margin-top:14px"><div class="pn s7"><h3>Hai trục: cam kết và phù hợp</h3><p class="gc">Mỗi chấm là một người, bấm vào chấm để mở hồ sơ. Không cộng thành điểm tổng. Đường nét đứt là ngưỡng cao (chỉnh ở Cài đặt). Người học không thấy biểu đồ này. Người chưa đủ dữ liệu không có chấm (' + chuaXep + ' người).</p>' + sc[0] +
+    '<div class="lg"><span><i style="background:var(--ac)"></i>Đã nộp Ngày 3</span><span><i style="background:var(--mu)"></i>Chưa tới Ngày 3</span></div></div>' +
+    '<div class="col s5"><div class="pn"><h3>Bốn ô</h3><p class="gc">Bấm để lọc danh sách theo ô.</p><div class="b4">' + ['cc', 'ch', 'hc', 'th'].map(k => '<button data-go="cell-' + k + '" class="' + (k === 'cc' ? 'a' : '') + '"><b>' + cnt[k] + '</b><span>' + CELL[k][0] + '</span></button>').join('') + '</div></div>' +
+    '<div class="pn"><h3>Cả nhóm yếu ở bước nào</h3><p class="gc">Mỗi người tính một bước mất khách nhiều nhất, theo bảng quy trình bán hàng bảy bước. Máy chỉ so sánh được bước 2 tới 6 với bước ngay trước nó.</p><div class="wk">' +
+    BUOC.map((b, i) => '<span class="' + (tot && wc[i] === wm ? 'top' : '') + '"><span>' + (i + 1) + '. ' + b + '</span></span><div class="br ' + (tot && wc[i] === wm ? 'top' : '') + '"><i style="width:' + wc[i] / wm * 100 + '%"></i></div><span class="nu">' + wc[i] + '</span>').join('') + '</div>' +
+    (tot ? '<p class="ghi">Nhiều người yếu nhất ở <b>' + BUOC[wc.indexOf(wm)] + '</b> (' + pc(wm, tot) + '% số người đã có số đo). Đây cũng là chỗ nên dạy lại cho cả nhóm.</p>' : '<p class="ghi">Chưa ai nộp đủ số đo Bước 1 nên chưa có thống kê.</p>') + '</div></div></div>';
+  const ev = P.filter(p => p.last).sort((a, b) => b.last.localeCompare(a.last)).slice(0, 7);
+  h += '<div class="g" style="margin-top:14px"><div class="pn s4"><h3>Ai đang tham gia</h3><p class="gc">Cơ cấu người trong bảng.</p>' +
+    '<div class="cm"><h4>Vai trò</h4>' + coCau(p => p.vai_tro) + '</div>' +
+    '<div class="cm"><h4>Cấp quy mô (cấp 2 là tệp lõi)</h4>' + stack([0, 1, 2, 3, 4].map(c => [c ? 'Cấp ' + c : 'Chưa rõ', P.filter(p => p.cap === c).length, MAU[c]]), N) + '</div>' +
+    '<div class="cm"><h4>Doanh thu một năm</h4>' + coCau(p => p.doanh_thu) + '</div></div>' +
+    '<div class="pn s4"><h3>Việc của từng sales</h3><p class="gc">Chưa có.</p><p class="ghi">Cần nối Pancake để biết ai được giao ai và đã gọi chưa. Xem mục Chưa làm xong trong Hướng dẫn.</p></div>' +
+    '<div class="pn s4"><h3>Mới nộp bài</h3><p class="gc">Bảy người có ngày nộp gần nhất.</p><ul class="ct">' +
+    ev.map(p => '<li><button data-p="' + p.i + '"><span>' + esc(KT(p)) + '<small>đã nộp ' + p.k + ' ngày, gần nhất ' + dm(p.last) + '</small></span></button></li>').join('') + '</ul></div></div>';
+  return h;
+}
+
+/* ===== Danh sách (Hàng chờ gọi và Thành viên) ===== */
+const COLS = [['name', 'Họ tên', 'name'], ['cell', 'Ô', 'prio'], ['cap', 'Cấp', 'cap'], ['dots', '7 ngày', 'nops', 'tv'], ['c', 'Cam kết (đạt/xét được)', 'c'], ['d', 'Phù hợp (đạt/xét được)', 'd'],
+  ['w', 'Điểm yếu nhất', ''], ['prog', 'Gợi ý chương trình', '', 'q'], ['st', 'Tình trạng', '', 'tv'], ['last', 'Nộp gần nhất', 'last', 'tv']];
+function loc() {
+  let L = P.slice(); const f = S.f, q = S.q.trim().toLowerCase();
+  const st = S.v === 'q' ? 'cho' : S.stage; if (st !== 'all') L = L.filter(p => stage(p) === st);
+  if (f.cell) L = L.filter(p => (cell(p) || 'none') === f.cell); if (f.cap !== '') L = L.filter(p => p.cap === +f.cap); if (f.vt) L = L.filter(p => (p.vai_tro || 'Chưa trả lời') === f.vt);
+  if (f.w !== '') L = L.filter(p => yeu(p) === +f.w);
+  if (f.risk === 'risk') L = L.filter(p => p.risk); if (f.risk === 'trung') L = L.filter(p => p.trung);
+  if (q) L = L.filter(p => (p.ten + ' ' + p.sdt + ' ' + p.email).toLowerCase().includes(q.replace(/^0/, '')) || (p.ten + ' ' + p.sdt + ' ' + p.email).toLowerCase().includes(q));
+  const k = S.sort.k, d = S.sort.dir, key = { prio, name: p => KT(p).split(' ').pop(), cap: p => p.cap, nops: p => p.k, c: p => p.ck.dat, d: p => p.ph.dat, last: p => p.last }[k] || prio;
+  L.sort((a, b) => { const x = key(a), y = key(b); return (typeof x === 'string' ? x.localeCompare(y, 'vi') : x - y) * d || a.i - b.i; });
+  return L;
+}
+function drawTbl() {
+  const L = loc(), md = S.v === 'q' ? 'q' : 'tv', cols = COLS.filter(c => !c[3] || c[3] === md), pages = Math.max(1, Math.ceil(L.length / S.size)); S.page = Math.min(S.page, pages);
+  const a = (S.page - 1) * S.size, R = L.slice(a, a + S.size); S.order = L.map(p => p.i);
+  const tr = (n, x) => n + '/' + x + mi(n, x);
+  const cf = { name: p => '<b>' + esc(KT(p)) + '</b>' + (p.trung ? ' <span class="tag t-b" title="Số điện thoại này có ở bản ghi khác">Trùng số</span>' : '') + '<span class="su">' + esc(p.vai_tro || 'Chưa rõ vai trò') + '</span>',
+    cell: p => '<span class="tag ' + (cell(p) === 'cc' ? 't-ok' : 't-n') + '">' + cellTen(p) + '</span>', cap: p => p.cap ? 'Cấp ' + p.cap : '<span class="su">chưa rõ</span>', dots,
+    c: p => tr(p.ck.dat, p.ck.xet), d: p => tr(p.ph.dat, p.ph.xet), w: p => p.yeu ? BUOC[p.yeu.buoc - 1] : '<span class="su">chưa đủ số đo</span>',
+    prog: p => GOI_NGAN[p.cap], st: stTag, last: p => p.last ? 'Ngày ' + p.k + ', ' + dm(p.last) : '<span class="su">chưa nộp bài</span>' };
+  const th = c => c[2] ? '<th scope="col" aria-sort="' + (S.sort.k === c[2] ? (S.sort.dir > 0 ? 'ascending' : 'descending') : 'none') + '"><button data-sort="' + c[2] + '">' + c[1] + (S.sort.k === c[2] ? (S.sort.dir > 0 ? ' ▲' : ' ▼') : '') + '</button></th>' : '<th scope="col">' + c[1] + '</th>';
+  let h = '<div class="tb" style="max-height:640px;overflow-y:auto"><table class="' + (S.compact ? 'cp sm' : '') + '"><thead><tr>' + cols.map(th).join('') + '</tr></thead><tbody>' +
+    (R.length ? R.map(p => '<tr class="row ' + (S.dr === p.i ? 'on' : '') + '" data-p="' + p.i + '" tabindex="0">' + cols.map(c => '<td>' + cf[c[0]](p) + '</td>').join('') + '</tr>').join('') : '<tr><td colspan="' + cols.length + '" style="padding:28px;text-align:center;color:var(--mu)">Không có ai khớp bộ lọc này. Bỏ bớt một bộ lọc hoặc bấm “Xóa lọc”.</td></tr>') + '</tbody></table></div>';
+  const np = []; for (let i = 1; i <= pages; i++) if (i === 1 || i === pages || Math.abs(i - S.page) <= 1) np.push(i); else if (np[np.length - 1] !== '…') np.push('…');
+  h += '<div class="pg"><span>Hiển thị ' + (L.length ? a + 1 : 0) + ' tới ' + Math.min(a + S.size, L.length) + ' trong ' + L.length + ' người</span><div class="nb"><button data-pg="' + (S.page - 1) + '"' + (S.page < 2 ? ' disabled' : '') + '>‹</button>' + np.map(n => n === '…' ? '<span style="padding:4px">…</span>' : '<button data-pg="' + n + '"' + (n === S.page ? ' aria-current="true"' : '') + '>' + n + '</button>').join('') + '<button data-pg="' + (S.page + 1) + '"' + (S.page >= pages ? ' disabled' : '') + '>›</button></div></div>';
+  $('tbl').innerHTML = h;
+  const ps = $('pl'); if (ps) ps.innerHTML = plHtml();
+}
+function plHtml() {
+  const c = k => P.filter(p => stage(p) === k).length;
+  return [['all', 'Tất cả', P.length], ['cho3', 'Chưa tới Ngày 3', c('cho3')], ['cho', 'Chờ gọi', c('cho')]].map(x => '<button data-stage="' + x[0] + '" aria-pressed="' + (S.stage === x[0]) + '"><b>' + x[2] + '</b><span>' + x[1] + '</span></button>').join('');
+}
+function dsach() {
+  const o = (v, t, sel) => '<option value="' + esc(v) + '"' + (String(sel) === String(v) ? ' selected' : '') + '>' + esc(t) + '</option>', f = S.f;
+  const vts = [...new Set(P.map(p => p.vai_tro || 'Chưa trả lời'))].sort();
+  return (S.v === 'tv' ? '<div class="pl" id="pl">' + plHtml() + '</div>' : '<p class="ghim">Trang chưa nối Pancake nên chưa biết ai đã được gọi. Danh sách này là mọi người đã nộp Ngày 3, xếp theo ô và số tiêu chí đạt. Ghi kết quả cuộc gọi ở Pancake.</p>') +
+    '<div class="pn"><div class="vw"><span>Góc nhìn nhanh:</span><button data-vw="cc">Ô Gọi trước</button><button data-vw="lot">Cấp 2 (tệp lõi)</button><button data-vw="nguy">Có nguy cơ bỏ</button><button data-vw="none">Chưa xếp ô</button><button data-vw="trung">Trùng số</button><button data-vw="xoa">Xóa lọc</button></div>' +
+    '<div class="tl"><input class="in q" id="q" type="search" placeholder="Tìm tên, điện thoại, email" value="' + esc(S.q) + '" aria-label="Tìm trong danh sách">' +
+    '<select class="in" id="f-cell" aria-label="Ô">' + o('', 'Mọi ô', f.cell) + Object.keys(CELL).map(k => o(k, CELL[k][0], f.cell)).join('') + o('none', 'Chưa xếp ô', f.cell) + '</select>' +
+    '<select class="in" id="f-cap" aria-label="Cấp quy mô">' + o('', 'Mọi cấp', f.cap) + [1, 2, 3, 4, 0].map(c => o(c, c ? 'Cấp ' + c : 'Chưa rõ', f.cap)).join('') + '</select>' +
+    '<select class="in" id="f-vt" aria-label="Vai trò">' + o('', 'Mọi vai trò', f.vt) + vts.map(v => o(v, v, f.vt)).join('') + '</select>' +
+    '<select class="in" id="f-w" aria-label="Điểm yếu">' + o('', 'Mọi điểm yếu', f.w) + BUOC.map((v, i) => o(i, 'Yếu: ' + v, f.w)).join('') + '</select>' +
+    '<label class="ck" style="margin:0"><input type="checkbox" id="cp"' + (S.compact ? ' checked' : '') + '><span>Dòng gọn</span></label>' +
+    '<select class="in" id="sz" aria-label="Số dòng mỗi trang">' + [15, 25, 50, 100].map(n => o(n, n + ' dòng', S.size)).join('') + '</select></div>' +
+    '<div id="tbl"></div><p class="ghi">Bấm một dòng để mở hồ sơ. Trong hồ sơ, phím J hoặc K chuyển sang người sau hoặc trước trong danh sách đang lọc, phím Esc để đóng.</p></div>';
+}
+
+/* ===== Cài đặt ===== */
+function caiDat() {
+  const cc = P.filter(p => cell(p) === 'cc').length, c = D.cai_dat;
+  const ds = D.vai_tro === 'Quản trị' ? '<div class="tb"><table><thead><tr><th>Email</th><th>Vai trò</th></tr></thead><tbody>' + (D.danh_sach.length ? D.danh_sach.map(x => '<tr><td>' + esc(x.email) + '</td><td>' + esc(x.vai_tro) + '</td></tr>').join('') : '<tr><td colspan="2">Chưa có ai.</td></tr>') + '</tbody></table></div><p class="ghi">Muốn thêm hoặc bớt người: mở trang tính “Quản trị” trong Google Sheet nơi nhận bài, sửa một dòng. Người đó cũng cần được chia sẻ Sheet này ở quyền Người xem.</p>' : '<p class="ghi">Chỉ người có vai trò Quản trị mới xem được danh sách này.</p>';
+  const tc = ar => '<div class="tb"><table><thead><tr><th>Mã</th><th>Tiêu chí</th><th>Ai chấm</th></tr></thead><tbody>' + ar.map(x => '<tr><td>' + x[0] + '</td><td>' + esc(x[1]) + '</td><td>' + NGUON[x[2]] + '</td></tr>').join('') + '</tbody></table></div>';
+  return '<div class="g"><div class="pn s5"><h3>Ngưỡng xếp ô</h3><p class="gc">Đổi ngưỡng ở đây chỉ đổi cách xếp trên màn hình này, không lưu và không đổi dữ liệu. Tải lại trang thì về giá trị mặc định.</p>' +
+    '<label for="tc">Một trục tính là cao khi tỷ lệ tiêu chí đạt từ (phần trăm)</label><input class="in" id="tc" type="number" min="10" max="100" step="5" value="' + Math.round(S.thr * 100) + '">' +
+    '<p class="ghi">Với ngưỡng hiện tại có <b>' + cc + '</b> người vào ô Gọi trước. Con số mặc định là ngưỡng đặt tạm, chưa có dữ liệu thật để chọn. Sau khi AI chấm thử 10 bài thật sẽ chỉnh lại. Muốn đổi mặc định cho mọi người thì sửa hằng số trong quan-tri.gs.</p>' +
+    '<h3 style="margin-top:16px">Số đang dùng</h3><dl class="kv"><dt>Xem video đạt khi trung bình từ</dt><dd>' + c.can_xem_video + '%</dd><dt>Bài đủ chi tiết khi ô đã điền từ</dt><dd>' + Math.round(c.nguong_dien * 100) + '%</dd><dt>Trục cần ít nhất</dt><dd>' + c.toi_thieu_xet + ' tiêu chí xét được</dd><dt>Hôm nay (giờ máy chủ)</dt><dd>' + dm(D.hom_nay) + '</dd></dl></div>' +
+    '<div class="pn s7"><h3>Ai được mở trang</h3><p class="gc">Bạn đang đăng nhập bằng <b>' + esc(D.email) + '</b>, vai trò <b>' + esc(D.vai_tro) + '</b>. Người ngoài danh sách đăng nhập Google vẫn không vào được.</p>' + ds + '</div>' +
+    '<div class="pn s6" style="grid-column:span 6"><h3>Chín tiêu chí Cam kết</h3>' + tc(D.tieu_chi.c) + '</div><div class="pn s6" style="grid-column:span 6"><h3>Sáu tiêu chí Phù hợp</h3>' + tc(D.tieu_chi.d) + '</div>' +
+    '<div class="pn s12"><h3>Quy tắc nhắc việc</h3><ul class="cr" style="columns:1"><li class="y"><span>•</span><span>Đã tới hạn nộp từ hai ngày trở lên mà chưa nộp thì vào nhóm “Có nguy cơ bỏ”. Hạn tính từ ngày điền Cam kết, hoặc ngày khai mạc nếu điền sớm hơn.</span></li><li class="y"><span>•</span><span>Nộp Ngày 3 xong thì người học vào Hàng chờ gọi.</span></li><li class="y"><span>•</span><span>Người có dưới hai tiêu chí xét được ở một trục thì chưa xếp ô, tránh xếp bừa khi chưa đủ dữ liệu.</span></li></ul></div></div>';
+}
+
+/* ===== Hướng dẫn ===== */
+function huongDan() {
+  const H = (id, t) => '<h3 id="hd-' + id + '">' + t + '</h3>';
+  const tb = (th, rows) => '<div class="tb"><table><thead><tr>' + th.map(x => '<th>' + x + '</th>').join('') + '</tr></thead><tbody>' + rows.map(r => '<tr>' + r.map(x => '<td>' + x + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
+  const chip = [['nen', 'Mỗi nền tảng dùng để làm gì'], ['luong', 'Một khách đi qua những đâu'], ['sales', 'Việc của sales'], ['hotro', 'Việc của người hỗ trợ'], ['doc', 'Đọc hồ sơ một người'], ['ai', 'Ai sửa gì'], ['loi', 'Gặp sự cố'], ['chua', 'Chưa làm xong']];
+  return '<div class="hd"><div class="mc">' + chip.map(c => '<button data-sc="hd-' + c[0] + '">' + c[1] + '</button>').join('') + '</div>' +
+    '<div class="pn">' + H('nen', 'Mỗi nền tảng dùng để làm gì') + '<p class="gc">Sáu nơi cùng chạm vào một khách. Mỗi nơi giữ một loại thông tin, không nơi nào làm thay nơi khác.</p>' +
+    tb(['Nền tảng', 'Dùng để làm gì', 'Ai dùng', 'Tình trạng'], [
+      ['<b>Website coachduynguyen.vn</b>', 'Người học đăng ký, xem video, làm bài và nộp bài từng ngày.', 'Người học', 'Đang chạy'],
+      ['<b>Google Sheet nơi nhận bài, kèm Apps Script</b>', 'Giữ bài nộp, giờ nộp, phần trăm video đã xem. Apps Script là phần chạy phía sau: nhận bài từ website và đưa số liệu lên trang quản trị này.', 'Chủ dự án mở trực tiếp. Sales và hỗ trợ không cần mở.', 'Đang chạy'],
+      ['<b>Trang quản trị này</b>', 'Xem ai đang học tới đâu, ai nên gọi trước, đọc hồ sơ trước khi gọi. Chỉ đọc, không sửa được gì ở đây.', 'Quản trị, sales, người hỗ trợ', 'Đang chạy, giai đoạn 1'],
+      ['<b>Pancake CRM</b>', 'Giữ hồ sơ khách, người phụ trách, lịch hẹn gọi lại, kết quả cuộc gọi, khách đã mua gì.', 'Sales, người hỗ trợ', 'Chưa nối với trang này: người đăng ký thử thách chưa tự vào Pancake, và trang chưa đọc được kết quả gọi. Kết quả gọi ghi tay ở Pancake.'],
+      ['<b>Botcake</b>', 'Bot trả lời tự động: khách nhắn một từ khóa, bot gửi đường link ngắn tới đúng công cụ AI.', 'Người hỗ trợ cài từ khóa; khách là người dùng', 'Chạy riêng, không nối với trang này'],
+      ['<b>Nhóm Facebook của thử thách</b>', 'Nhắc nộp bài, giải đáp thắc mắc, nhắc người học làm đều.', 'Người hỗ trợ, Coach Duy', 'Chạy riêng, không nối với trang này'],
+      ['<b>Looker Studio</b>', 'Báo cáo biểu đồ dài hạn cho quản lý.', 'Quản lý', 'Chưa làm']]) + '</div>' +
+    '<div class="pn">' + H('luong', 'Một khách đi qua những đâu') + '<ol><li>Khách đăng ký trên website: họ tên, số điện thoại, email, vai trò, quy mô, doanh thu. Thông tin vào Google Sheet.</li><li>Mỗi ngày khách vào trang làm bài, xem video và nộp bài. Mỗi lần nộp thêm một dòng vào Google Sheet.</li><li>Trang quản trị này đọc Google Sheet mỗi lần bạn mở hoặc bấm “Tải lại”, tự chấm các tiêu chí máy đếm được rồi xếp khách vào bốn ô.</li><li>Khách nộp Ngày 3 thì hiện trong Hàng chờ gọi. Sales mở hồ sơ, đọc, rồi gọi.</li><li>Sales ghi kết quả cuộc gọi vào Pancake. Phần này chưa tự hiện lại trên trang quản trị.</li></ol></div>' +
+    '<div class="pn">' + H('sales', 'Việc của sales') + '<ol><li>Mở <b>Hàng chờ gọi</b> ở thanh bên. Danh sách là người đã nộp Ngày 3, xếp ô Gọi trước lên đầu.</li><li>Lọc nếu cần: bấm “Ô Gọi trước” hoặc “Cấp 2 (tệp lõi)”, hoặc chọn bộ lọc trên thanh công cụ.</li><li>Bấm một dòng để mở hồ sơ. Đọc theo thứ tự: Gợi ý cho cuộc gọi, Chỗ yếu nhất kèm câu trích từ bài làm, rồi Hai trục.</li><li>Mở đầu cuộc gọi bằng việc hỏi hoàn cảnh hiện tại của khách, rồi đi vào bước yếu nhất. Gợi ý chương trình chỉ để tham khảo, bạn quyết định cuối.</li><li>Có nhãn “Trùng số” thì xem lại trong Pancake trước khi gọi, trang không tự gộp hai bản ghi.</li><li>Gọi xong, ghi kết quả vào Pancake: đã gọi, hẹn gọi lại, kết quả, tín hiệu ngoài trang, ghi chú.</li><li>Bấm J hoặc K trong hồ sơ để sang người kế tiếp mà không phải đóng mở.</li></ol><p class="ghi">Hiện sales thấy mọi người trong bảng, chưa có bước giao riêng từng người. Việc đó làm cùng lúc với nối Pancake.</p></div>' +
+    '<div class="pn">' + H('hotro', 'Việc của người hỗ trợ') + '<ol><li>Mỗi sáng mở <b>Tổng quan</b>, nhìn biểu đồ “Mất người ở ngày nào” để biết hôm qua tụt ở đâu.</li><li>Bấm “Có nguy cơ bỏ” trong Việc hôm nay. Đây là người chậm từ hai ngày. Nhắn nhắc trong nhóm Facebook hoặc tin riêng, chưa phải gọi bán.</li><li>Người ở “Chưa tới Ngày 3” là việc của hỗ trợ: giúp họ nộp bài, giải đáp cách dùng trang làm bài.</li><li>Gặp nhãn “Trùng số”, báo lại cho quản trị xem lại. Đừng sửa tay ở Google Sheet.</li><li>Khách hỏi giá, chương trình hay chuyện chuyên môn thì chuyển cho sales, không hứa thay.</li><li>Từ khóa Botcake mới cho công cụ AI: thêm trong Botcake, rồi báo quản trị ghi vào danh sách công cụ.</li></ol></div>' +
+    '<div class="pn">' + H('doc', 'Đọc hồ sơ một người') + '<ul><li><b>Hai trục.</b> Cam kết là mức người học đã bỏ công sức thật. Phù hợp là mức người học khớp với chương trình. Hai trục không cộng thành một điểm. Mỗi tiêu chí có nhãn nguồn: máy đếm, AI đọc, hoặc sales ghi.</li><li><b>Nhãn “chưa có dữ liệu”.</b> Tiêu chí do AI đọc hoặc sales ghi chưa chạy, nên trục hiện chỉ tính trên phần máy đếm được. Đạt “2/3” nghĩa là 2 trên 3 tiêu chí đã xét được, không phải trên 9.</li><li><b>Bốn ô.</b> Gọi trước, Gọi và nói hướng khác, Nuôi thêm, Chưa ưu tiên. Ô là gợi ý thứ tự, không thay cho cảm nhận của sales sau khi nói chuyện.</li><li><b>Chỗ yếu nhất.</b> Bước trong bảy bước bán hàng mà người học tự ghi mất nhiều khách nhất so với bước ngay trước, kèm câu họ viết.</li><li><b>Cấp quy mô.</b> Cấp 1 gợi ý Cộng đồng Thành viên. Cấp 2 (từ 5 người và hơn 3 năm) gợi ý chương trình trả phí. Cấp 3 gợi ý Diamond Founder Club hoặc cố vấn riêng. Cấp 4 (trên 50 người) gợi ý cố vấn riêng hoặc hợp đồng doanh nghiệp.</li><li><b>Chấm đúng hạn và chậm.</b> Xanh là nộp đúng hạn, vàng là nộp chậm, xám là chưa nộp.</li></ul></div>' +
+    '<div class="pn">' + H('ai', 'Ai sửa gì') + '<p class="gc">Mỗi thông tin chỉ có một nơi giữ bản chuẩn và một bên được sửa, để hai hệ thống không lệch nhau.</p>' +
+    tb(['Thông tin', 'Bản chuẩn nằm ở', 'Ai sửa'], [
+      ['Tên, số điện thoại, chức danh, ngành, quy mô, doanh thu', 'Pancake (khi đã nối)', 'Form đăng ký; sales sửa tay khi khách báo đổi'],
+      ['Tiến độ, bài làm, giờ nộp, phần trăm video', 'Google Sheet', 'Người học'],
+      ['Đã gọi, hẹn gọi lại, kết quả, đã mua, tín hiệu ngoài trang, ghi chú, người phụ trách', 'Pancake', 'Sales'],
+      ['Hai trục, bốn ô, chỗ yếu, gợi ý chương trình', 'Không lưu, tính lại mỗi lần mở', 'Máy']]) +
+    '<p class="ghi">Hai bên nối với nhau bằng số điện thoại đã chuẩn hóa. Hai bản ghi trùng số thì trang gắn nhãn “Trùng số”, không tự gộp.</p></div>' +
+    '<div class="pn">' + H('loi', 'Gặp sự cố') + '<ul><li><b>Thấy màn hình “không có quyền”.</b> Email đăng nhập chưa có trong trang tính Quản trị. Gửi email đó cho quản trị để thêm một dòng.</li><li><b>Mở ra báo không đọc được dữ liệu.</b> Email đã có trong danh sách nhưng chưa được chia sẻ Google Sheet. Nhờ quản trị chia sẻ ở quyền Người xem.</li><li><b>Lần đầu Google báo “ứng dụng chưa được xác minh”.</b> Bình thường với ứng dụng nội bộ: bấm Nâng cao, rồi mở trang. Chỉ cần làm một lần.</li><li><b>Số liệu chưa khớp với lúc vừa nộp bài.</b> Bấm “Tải lại” ở góc trên. Trang không tự cập nhật khi đang mở.</li><li><b>Vẫn lỗi.</b> Chụp màn hình gửi quản trị, kèm giờ xảy ra.</li></ul></div>' +
+    '<div class="pn">' + H('chua', 'Chưa làm xong') + '<ul><li>Nối Pancake: đăng ký thử thách tự vào Pancake, trang đọc lại kết quả gọi, nút Nhận khách, giao khách cho từng sales.</li><li>AI đọc bài để chấm các tiêu chí cam kết và phù hợp còn lại (đang chờ chấm thử 10 bài thật).</li><li>Bản tóm tắt điểm yếu gửi cho người học sau Ngày 7.</li><li>Báo cáo Looker Studio.</li><li>Giới hạn khách mỗi sales thấy.</li></ul></div></div>';
+}
+
+/* ===== Ngăn kéo hồ sơ ===== */
+function drawer(i) {
+  const p = P[i]; if (!p) return; S.dr = i;
+  const k = S.order.indexOf(i), y = p.yeu;
+  const cr = (ds, kq) => '<ul class="cr">' + ds.map(x => { const v = kq[x[0]] === undefined ? null : kq[x[0]]; return '<li class="' + (v === true ? 'y' : 'n') + '"><span>' + (v === true ? '✓' : '–') + '</span><span>' + esc(x[1]) + (v === null ? ' <span class="su">(chưa có dữ liệu)</span>' : '') + '<span class="mm">' + NGUON[x[2]] + '</span></span></li>'; }).join('') + '</ul>';
+  $('dro').innerHTML = '<div class="ov" data-act="dong"></div><aside class="dr" role="dialog" aria-label="Hồ sơ ' + esc(KT(p)) + '"><div class="dh"><div><h3>' + esc(KT(p)) + '</h3><p>' + esc(p.vai_tro || 'Chưa rõ vai trò') + ' · ' + esc(p.email) + '</p><p style="margin-top:6px"><span class="tag ' + (cell(p) === 'cc' ? 't-ok' : 't-n') + '">' + cellTen(p) + '</span> <span class="tag t-n">' + (p.cap ? 'Cấp ' + p.cap : 'Chưa rõ cấp') + '</span> ' + stTag(p) + '</p></div><div class="nv"><button data-act="truoc" aria-label="Người trước (K)"' + (k < 1 ? ' disabled' : '') + '>‹</button><button data-act="sau" aria-label="Người sau (J)"' + (k < 0 || k >= S.order.length - 1 ? ' disabled' : '') + '>›</button><button data-act="dong" aria-label="Đóng (Esc)">✕</button></div></div>' +
+    '<div class="db">' +
+    '<div class="pn"><h3>Gợi ý cho cuộc gọi</h3><p class="gc">Chỉ là gợi ý theo cấp quy mô. Sales quyết định cuối.</p><dl class="kv"><dt>Điện thoại</dt><dd><b>' + esc(p.sdt) + '</b> <button class="bt o" data-act="chep" style="padding:2px 8px;margin-left:6px">Chép</button></dd><dt>Gợi ý chương trình</dt><dd>' + esc(p.goi_y || 'Chưa đủ thông tin quy mô') + '</dd><dt>Quy mô</dt><dd>' + esc(p.so_nguoi || 'chưa trả lời') + ', ' + esc(p.so_nam || 'chưa trả lời') + '</dd><dt>Doanh thu</dt><dd>' + esc(p.doanh_thu || 'chưa trả lời') + '</dd><dt>Đồng ý đăng công khai</dt><dd>' + esc(p.dang || 'chưa trả lời') + '</dd></dl>' +
+    (y ? '<p class="ghi">Mở đầu bằng việc hỏi hoàn cảnh hiện tại của khách. Sau đó đi vào bước ' + esc(y.ten.toLowerCase()) + '.</p>' : '<p class="ghi">Người này chưa có số đo Bước 1 nên chưa có chỗ yếu để dựa vào. Nên nhắn nhắc nộp bài, chưa gọi bán.</p>') + '</div>' +
+    '<div class="pn"><h3>Bảy ngày</h3><p class="gc">Đã nộp ' + p.k + ' ngày' + (p.video_tb !== null ? ', video xem trung bình ' + p.video_tb + '%' : '') + (p.bat_dau ? '. Bắt đầu tính từ ' + dm(p.bat_dau) + '.' : '. Chưa điền Cam kết nên chưa có lịch.') + '</p>' + dots(p) +
+    '<div class="tb" style="margin-top:8px"><table class="sm"><thead><tr><th>Ngày</th><th>Nộp lúc</th><th>Video</th></tr></thead><tbody>' + p.ngay.map(d => '<tr><td>Ngày ' + d.n + '</td><td>' + (d.nop ? dm(d.nop) : '<span class="su">chưa nộp</span>') + '</td><td>' + (d.video === null ? '<span class="su">chưa có</span>' : d.video + '%') + '</td></tr>').join('') + '</tbody></table></div></div>' +
+    (y ? '<div class="pn"><h3>Chỗ yếu nhất trong quy trình bán hàng</h3><p class="gc">Mất nhiều khách nhất ở bước <b>' + y.buoc + '. ' + esc(y.ten) + '</b> (từ ' + y.tu + ' còn ' + y.den + ').</p>' + (y.trich ? '<blockquote>“' + esc(y.trich) + '”<small>Trích từ bài làm của người học.</small></blockquote>' : '<p class="ghi">Người học chưa viết lý do rơi ở bước này.</p>') + '</div>' : '') +
+    '<div class="pn"><h3>Hai trục</h3><p class="gc">Cam kết ' + p.ck.dat + '/' + p.ck.xet + ' tiêu chí xét được, phù hợp ' + p.ph.dat + '/' + p.ph.xet + '. Không cộng thành một điểm.</p><b style="font-size:12.5px">Cam kết</b>' + cr(D.tieu_chi.c, p.c) + '<b style="font-size:12.5px;display:block;margin-top:8px">Phù hợp</b>' + cr(D.tieu_chi.d, p.d) + '</div>' +
+    '<div class="pn"><h3>Trong Pancake</h3>' + (p.trung ? '<p class="ghi" role="note"><b>Trùng số điện thoại.</b> Số này có ở một bản ghi khác trong bảng. Xem lại trước khi gọi, trang không tự gộp.</p>' : '') + '<p class="gc">Chưa nối. Đã gọi chưa, hẹn gọi lại, kết quả và người phụ trách ghi và xem trong Pancake. Khi nối xong, thông tin đó hiện lại ở đây.</p></div></div>' +
+    '<div class="df"><button class="bt o" data-act="sau">Người tiếp theo</button></div></aside>';
+  if (S.v === 'q' || S.v === 'tv') drawTbl();
+}
+function dongDr() { S.dr = -1; $('dro').innerHTML = ''; if (S.v === 'q' || S.v === 'tv') drawTbl(); }
+function ke(dir) { const i = S.order.indexOf(S.dr), j = i + dir; if (i >= 0 && S.order[j] !== undefined) drawer(S.order[j]); }
+
+/* ===== Điều hướng ===== */
+function ve() {
+  $('ttl').textContent = TTL[S.v];
+  document.querySelectorAll('.sb [data-v]').forEach(b => b.setAttribute('aria-current', b.dataset.v === S.v ? 'page' : 'false'));
+  $('n-q').textContent = P.filter(p => p.ng3).length; $('n-tv').textContent = P.length;
+  $('main').innerHTML = S.v === 'tq' ? tongQuan() : S.v === 'cd' ? caiDat() : S.v === 'hd' ? huongDan() : dsach();
+  if (S.v === 'q' || S.v === 'tv') drawTbl();
+}
+const locRong = () => ({ cell: '', cap: '', vt: '', w: '', risk: '' });
+function den(v) { S.v = v; S.page = 1; S.stage = 'all'; S.f = locRong(); S.q = ''; S.sort = { k: 'prio', dir: -1 }; ve(); window.scrollTo(0, 0); }
+
+document.addEventListener('click', e => {
+  const t = e.target, $c = s => t.closest && t.closest(s); let x;
+  if (x = $c('[data-v]')) { den(x.dataset.v); return; }
+  if (x = $c('[data-sc]')) { const el = $(x.dataset.sc); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+  if (x = $c('[data-go]')) { const g = x.dataset.go; den(g === 'cho' ? 'q' : 'tv');
+    if (g === 'risk' || g === 'trung') S.f.risk = g; else if (g === 'none') S.f.cell = 'none'; else if (g.startsWith('cell-')) S.f.cell = g.slice(5); ve(); return; }
+  if (x = $c('[data-stage]')) { S.stage = x.dataset.stage; S.page = 1; drawTbl(); return; }
+  if (x = $c('[data-sort]')) { const k = x.dataset.sort; S.sort = { k, dir: S.sort.k === k ? -S.sort.dir : (k === 'name' ? 1 : -1) }; drawTbl(); return; }
+  if (x = $c('[data-pg]')) { S.page = +x.dataset.pg; drawTbl(); return; }
+  if (x = $c('[data-vw]')) { const v = x.dataset.vw; S.f = locRong(); S.stage = 'all'; S.q = ''; S.page = 1;
+    if (v === 'cc') S.f.cell = 'cc'; if (v === 'lot') S.f.cap = '2'; if (v === 'nguy') { S.f.risk = 'risk'; S.v = 'tv'; } if (v === 'trung') { S.f.risk = 'trung'; S.v = 'tv'; } if (v === 'none') { S.f.cell = 'none'; S.v = 'tv'; }
+    S.sort = { k: 'prio', dir: -1 }; ve(); return; }
+  if (x = $c('[data-act]')) { const a = x.dataset.act;
+    if (a === 'dong') dongDr(); else if (a === 'truoc') ke(-1); else if (a === 'sau') ke(1);
+    else if (a === 'chep') { const p = P[S.dr]; (navigator.clipboard ? navigator.clipboard.writeText(p.sdt) : Promise.reject()).then(() => toast('Đã chép số điện thoại.')).catch(() => toast('Không chép tự động được, bạn bôi đen số để chép.')); }
+    return; }
+  if (x = $c('[data-p]')) { drawer(+x.dataset.p); return; }
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.id === 'q') { S.q = t.value; S.page = 1; drawTbl(); }
+  if (t.id === 'tc') { const v = +t.value; if (v >= 10 && v <= 100) { S.thr = v / 100; clearTimeout(input.h); input.h = setTimeout(() => { ve(); const e2 = $('tc'); e2.focus(); toast('Đã đổi ngưỡng. Mở Tổng quan để thấy bốn ô thay đổi.'); }, 700); } }
+});
+function input() {}
+document.addEventListener('change', e => {
+  const t = e.target, m = { 'f-cell': 'cell', 'f-cap': 'cap', 'f-vt': 'vt', 'f-w': 'w' };
+  if (m[t.id]) { S.f[m[t.id]] = t.value; S.page = 1; drawTbl(); }
+  if (t.id === 'sz') { S.size = +t.value; S.page = 1; drawTbl(); }
+  if (t.id === 'cp') { S.compact = t.checked; drawTbl(); }
+});
+$('gq').addEventListener('keydown', e => { if (e.key === 'Enter') { const q = e.target.value; den('tv'); S.q = q; ve(); } });
+document.addEventListener('keydown', e => {
+  const tg = e.target.tagName;
+  if (e.key === 'Escape' && S.dr >= 0) dongDr();
+  else if (S.dr >= 0 && !/INPUT|SELECT|TEXTAREA/.test(tg)) { if (e.key === 'j') ke(1); if (e.key === 'k') ke(-1); }
+  else if (e.key === 'Enter' && e.target.matches && e.target.matches('tr.row')) drawer(+e.target.dataset.p);
+});
+
+/* ===== Lấy dữ liệu ===== */
+function bao(tieude, noidung) { $('main').innerHTML = '<div class="pn" style="max-width:640px;margin-top:20px"><h3>' + tieude + '</h3><p>' + noidung + '</p><p><button class="bt" id="thu">Thử lại</button></p></div>'; $('thu').onclick = tai; }
+function tai() {
+  $('main').innerHTML = '<div class="pn" style="margin-top:20px"><p>Đang lấy dữ liệu từ Google Sheet…</p></div>';
+  google.script.run.withSuccessHandler(r => {
+    if (!r || !r.quyen) { document.querySelector('.app').innerHTML = '<div class="mn"><div class="pn" style="max-width:560px;margin:40px auto"><h3>Bạn chưa có quyền mở trang này</h3><p>' + (r && r.email ? 'Email <b>' + esc(r.email) + '</b> chưa có trong danh sách.' : 'Google không đưa email của bạn cho trang này. Hãy đăng nhập bằng tài khoản Google công việc rồi mở lại đường dẫn.') + '</p><p>Gửi email đó cho quản trị để được thêm vào trang tính “Quản trị”, rồi tải lại trang.</p></div></div>'; return; }
+    D = r; S.thr = r.cai_dat.nguong_truc; S.min = r.cai_dat.toi_thieu_xet; nap(r);
+    $('vt').textContent = r.vai_tro + ' · ' + r.email; $('vt').title = 'Dữ liệu lấy lúc ' + new Date().toLocaleTimeString('vi-VN');
+    if (S.dr >= 0) dongDr(); ve();
+  }).withFailureHandler(er => bao('Không đọc được dữ liệu', 'Thường do email của bạn chưa được chia sẻ Google Sheet nơi nhận bài ở quyền Người xem, hoặc mạng bị ngắt. Chi tiết: ' + esc(er && er.message || er))).layDuLieuQuanTri();
+}
+$('rl').onclick = tai;
+tai();
+</script>
+</body>
+</html>

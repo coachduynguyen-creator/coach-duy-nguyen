@@ -143,7 +143,11 @@ function layBang() {
   return SpreadsheetApp.openById(ma);
 }
 
-function doGet() {
+function doGet(e) {
+  if (e && e.parameter && e.parameter.trang === 'quan-tri') {
+    return HtmlService.createHtmlOutputFromFile('quan-tri').setTitle('Quản trị thử thách 7 ngày')
+      .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+  }
   return tra({ ok: true, thong_diep: 'Nơi nhận bài thử thách 7 ngày đang chạy.' });
 }
 
