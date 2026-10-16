@@ -75,9 +75,9 @@ def o_bang(x, nhan, cot):
         x["id"] = f"bang2-b{k}-lam"
     elif cot.startswith("Việc sửa"):
         x["id"] = f"bang2-b{k}-sua"
-    elif cot == "Số đo bản 1":
+    elif cot.startswith(("Số đo bản 1", "Số bản 1")):
         x["tu"] = f"bang1-b{so}-so"
-    elif cot == "Số đo bản 2":
+    elif cot.startswith(("Số đo bản 2", "Số bản 2")):
         x["id"] = f"bang2-b{so}-so"
     elif cot.startswith("Đã sửa gì"):
         x["id"] = f"bang2-b{so}-dasua"
