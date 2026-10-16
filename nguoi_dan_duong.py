@@ -42,10 +42,10 @@ BAN_LA_AI = [
 
 # ------------------------------------------------------------ BỐN THỨ MANG VỀ
 BON = [
-    ("bl-viet-tay", "Phương pháp của riêng bạn", "Điều bạn đã trả giá để biết được viết ra thành các bước rõ ràng, để người khác làm theo và đạt kết quả. Duy chỉ bạn cách dựng, vì chính Duy đã dựng như vậy.", "một phương pháp có tên, có các bước, đã thử với khách thật"),
+    ("bl-viet-tay", "Phương pháp của riêng bạn", "Điều bạn đã trả giá để biết được viết ra thành các bước rõ ràng, để người khác làm theo và đạt kết quả. Duy chỉ bạn cách dựng, vì chính Duy đã dựng như vậy.", "một phương pháp có tên, có các bước, đã thử với khách thật, và buổi bạn trình bày nó trước Duy để được nhận xét thẳng"),
     ("bl-phong-thu", "Thương hiệu được tin cậy", "Người ta tìm tới bạn như một chuyên gia trong ngành, vì họ đã biết câu chuyện và lời hứa của bạn từ trước khi gặp.", "câu chuyện gốc, lời hứa, và một kênh chạy đều"),
-    ("mc/mc-banlam", "Nghề huấn luyện viên kinh doanh", "Bạn tự dẫn được buổi coaching: hỏi đúng câu để chủ doanh nghiệp tự nhìn ra chỗ kẹt và tự quyết định.", "nhiều buổi coaching thật, có Duy ngồi cùng và nhận xét thẳng"),
-    ("bl-noi-2", "Dịch vụ coaching có tên, có giá", "Phương pháp của bạn thành một dịch vụ người ta mua được, thay vì chỉ bán từng giờ làm việc.", "một dịch vụ mang tên của bạn"),
+    ("mc/mc-banlam", "Nghề huấn luyện viên kinh doanh", "Bạn tự dẫn được buổi coaching: hỏi đúng câu để chủ doanh nghiệp tự nhìn ra chỗ kẹt và tự quyết định.", "nhiều buổi coaching thật, có Duy ngồi cùng và nhận xét thẳng, được ghi lại thành sổ giờ coaching của bạn"),
+    ("bl-noi-2", "Dịch vụ coaching có tên, có giá", "Phương pháp của bạn thành một dịch vụ người ta mua được, thay vì chỉ bán từng giờ làm việc.", "một dịch vụ mang tên của bạn, và những khách đầu tiên do Duy hoặc cộng đồng giới thiệu"),
     ("bl-may-tinh", "Bộ công cụ làm nghề", "Những thứ Duy đang dùng hằng ngày với khách hàng, bạn được dùng và chỉnh lại cho khách của mình.", "mẫu, kịch bản, bảng chấm điểm, bộ công cụ AI"),
     ("mc/mc-hoitruong", "Một nhóm người đi theo bạn", "Những người trong Cộng đồng Next Gen Founder tin cách bạn dẫn, cùng những người Duy giới thiệu bạn tới.", "một nhóm của riêng bạn trong cộng đồng"),
 ]
@@ -284,6 +284,7 @@ THAN = CSS + """<div class="ndd">
         "Tin giá trị đi trước, tiền bạc đến sau",
         "Ít nhất tám giờ mỗi tuần trong mười hai tháng",
         "Sẵn sàng để Duy nhận xét thẳng sau mỗi buổi mình dẫn",
+        "Cam kết dẫn lại người đi sau, như Duy đã dẫn bạn",
     ]) + """</div>
     <div class="ndd-o hien"><h3>Chương trình chưa hợp với bạn nếu</h3>""" + ds([
         "Bạn đang tìm một tấm chứng nhận để treo lên tường",
@@ -298,7 +299,8 @@ THAN = CSS + """<div class="ndd">
     <div class="hien">
       <p class="mono">Chứng nhận</p>
       <h2>Đo bằng kết quả của người bạn coaching</h2>""" + ds([
-        "Bạn đã tự dẫn đủ số buổi có Duy dự và nhận xét",
+        "Bạn đã tự dẫn đủ số buổi có Duy dự và nhận xét, ghi trong sổ giờ coaching của bạn",
+        "Bạn đã trình bày phương pháp của mình trước Duy và được duyệt",
         "Có thành viên do bạn coaching đạt kết quả, và kết quả đó được ghi lại",
         "Duy là người duyệt cuối",
         "Chứng nhận có hạn một năm, gia hạn khi bạn vẫn dẫn nhóm và vẫn giữ chuẩn",
