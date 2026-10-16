@@ -223,6 +223,9 @@ def bai_ngay(n, md):
         elif tieu.startswith("Nộp bài"):
             d["nopSau"] = [re.sub(r"^>\s*", "", tron(sang_trang(l))) for l in than.split("\n\n") if l.strip() and not l.strip().startswith("<!--")]
             assert "email" not in " ".join(d["nopSau"]), (n, d["nopSau"])
+            for c in d["nopSau"]:   # câu bị cắt giữa chừng thường mất dấu chấm cuối (lỗi 16/10/2026)
+                if not c.rstrip().endswith((".", "?", "!")):
+                    raise SystemExit(f"Ngày {n}, phần Nộp bài có câu không kết thúc bằng dấu chấm, có thể bị cắt: {c}")
         elif tieu.startswith("Video tổng kết"):
             tong = {"nhan": "Sau Ngày 7", "ten": tieu, "bai": "video tổng kết", "phan": [phan_bai(8, tieu, than)],
                     "nopSau": ["Hạn nộp video tổng kết giống hạn cuối của cả thử thách, tức ba ngày sau Ngày 7."]}

@@ -426,8 +426,8 @@ function dungNgay(n) {
   d.phan.forEach(function (p) { if (p.sauVideo) phan(p); });
   hetBuoc();
   buoc(2, 'Đọc tài liệu và làm bài', 'Bước này mở khi bạn xem hết video và trả lời đủ ba câu ở Bước 1.');
-  if (typeof TAI_LIEU !== 'undefined' && TAI_LIEU[n]) h += '<details class="tai-lieu"><summary>Tài liệu Ngày ' + n + '</summary>' + TAI_LIEU[n] +
-    '<p><a class="nut phu nho-gon" href="pdf/ngay-' + n + '.pdf" target="_blank" rel="noopener">Mở bản PDF để in</a></p></details>';
+  if (typeof TAI_LIEU !== 'undefined' && TAI_LIEU[n]) h += '<p><a class="nut phu nho-gon" href="pdf/ngay-' + n + '.pdf" download="Tài liệu Ngày ' + n + '.pdf">Tải tài liệu Ngày ' + n + ' (PDF)</a></p>' +
+    '<details class="tai-lieu"><summary>Tài liệu Ngày ' + n + '</summary>' + TAI_LIEU[n] + '</details>';
   if (d.viec) h += '<section class="phan"><h3>Việc cần làm hôm nay</h3>' + (typeof d.viec === 'string'
     ? '<div class="chu">' + d.viec + '</div>'
     : '<ol class="viec">' + d.viec.map(function (v) { return '<li>' + v + '</li>'; }).join('') + '</ol>') + '</section>';
