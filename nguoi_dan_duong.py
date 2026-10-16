@@ -78,7 +78,7 @@ KHOANH_KHAC = [
      "Bạn xem Duy làm một video từ ý tưởng tới lúc đăng, rồi làm kênh của mình theo đúng cách đó. Thương hiệu cá nhân của bạn lớn lên cạnh thương hiệu của Duy, qua những lần hai người cùng xuất hiện."),
     ("bl-ban-lam-viec", "Ở hậu trường", "Khi công ty của Duy vận hành mỗi ngày",
      "Bạn được xem những thứ Duy chưa đưa ra ngoài: cách Duy dựng một chương trình, kịch bản tư vấn, bộ công cụ AI Duy dùng hằng ngày, và cách đội ngũ chạy việc khi Duy không có mặt."),
-    ("mc/mc-phongnho", "Ngày nhận chứng nhận", "Rồi tới một ngày, bạn đứng ở hàng đầu bức ảnh",
+    ("mc/mc-trao-bang", "Ngày nhận chứng nhận", "Rồi tới một ngày, bạn đứng ở hàng đầu bức ảnh",
      "Lúc đó bạn không còn là người ngồi nghe. Bạn đã dẫn một nhóm của riêng mình, và có những người gọi bạn là người dẫn đường."),
 ]
 HOAT_DONG = [
@@ -178,8 +178,9 @@ CSS = """<style>
   .ndd-hero h1 span{display:inline}
   .ndd-nhan{font-size:10.5px;letter-spacing:.06em;border-radius:14px}
   .ndd-hero .tren > img{max-height:320px;order:-1}
-  .ndd-so,.ndd-dt,  .ndd-kk > img,.ndd-kk.dao > img{order:-1}
-  .ndd-dt > img,      }
+  .ndd-so,.ndd-dt,.ndd-kk{grid-template-columns:1fr}
+  .ndd-dt > img,.ndd-kk > img,.ndd-kk.dao > img{order:-1}
+}
 </style>"""
 
 def anh(ten, alt=""):
