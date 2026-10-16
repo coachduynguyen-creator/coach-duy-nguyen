@@ -21,6 +21,16 @@
  * 6. Chép địa chỉ kết thúc bằng /exec gửi cho thợ, thợ dán vào NOI_NHAN của
  *    thu-thach/tu-van-ban-hang/index.html.
  *
+ * CẬP NHẬT 16/10/2026: NỘP TỪNG BƯỚC VÀ BA CÂU HỎI LÚC ĐĂNG KÝ (dán trước 17/10)
+ * Làm đúng ba việc: mở dự án Apps Script cũ, xoá hết chữ, dán toàn bộ tệp này,
+ * bấm Lưu; rồi Triển khai > Quản lý triển khai > bấm cây bút > Phiên bản: Phiên
+ * bản mới > Triển khai. Địa chỉ /exec giữ nguyên, không cần chạy khoiTao lại.
+ * Chưa dán thì trang vẫn chạy: nút Nộp Bước 1 và Lưu và nộp Bước 2 chỉ mở bước ở
+ * máy người học, bài vẫn gửi ở bước Nộp bài cuối ngày. Dán rồi thì hai nút gửi lên đây.
+ * - Mỗi bài có thêm cột Vai trò, Số người, Số năm hoạt động, Doanh thu một năm, Bản đồng ý.
+ * - Cột "Bước nộp": 1 hoặc 2 là dòng nộp một phần (không tính là đã nộp ngày, không
+ *   mở ngày sau), để trống là nộp bài cuối ngày. Tiến độ trả thêm ver 2 và buoc.
+ *
  * CẬP NHẬT 14/10/2026 CHO BẢN ĐANG CHẠY (đã có địa chỉ /exec, không đổi địa chỉ)
  * 1. Mở dự án Apps Script cũ, xoá hết chữ, dán toàn bộ tệp này, bấm Lưu.
  * 2. Chọn hàm `khoiTao`, bấm Chạy một lần. Hàm thêm trang tính Tổng kết, các
@@ -170,10 +180,19 @@ function doPost(e) {
     giaTri['Đồng ý dùng bài'] = 'Có';
     giaTri['Đồng ý đăng công khai'] = d.dang === true ? 'Có' : 'Không';   // ô không bắt buộc, chỉ đăng bài của người ghi Có
     giaTri['Google Doc'] = docUrl;
+    giaTri['Vai trò'] = chuoi(d.vai_tro);
+    giaTri['Số người'] = chuoi(d.so_nguoi);
+    giaTri['Số năm hoạt động'] = chuoi(d.so_nam);
+    giaTri['Doanh thu một năm'] = chuoi(d.doanh_thu);
+    giaTri['Bản đồng ý'] = chuoi(d.dk);
+    // Nộp Bước 1 hoặc Lưu và nộp Bước 2: dòng một phần, để trống ở nộp bài cuối ngày. docBaiNop không tính dòng một phần là đã nộp ngày.
+    var buoc = parseInt(d.buoc, 10);
+    if (buoc !== 1 && buoc !== 2) buoc = 0;
+    if (buoc) giaTri['Bước nộp'] = String(buoc);
     var tre = false;
     if (ngay >= 1) {
       var td0 = tinhTienDo(chuoi(d.email), sdt);
-      tre = !!td0.han && homNay() > td0.han;
+      tre = !buoc && !!td0.han && homNay() > td0.han;
       if (tre) giaTri['Nộp sau hạn'] = 'Có';
     }
     d.cot.forEach(function (c) {
@@ -228,7 +247,10 @@ function hoiTienDo(d) {
  */
 function tinhTienDo(email, sdt) {
   var p = docBaiNop(layBang())[email.toLowerCase() + '|' + soCuoi(sdt)];
-  return lichTuNop(p ? p.da_nop : {});
+  var kq = lichTuNop(p ? p.da_nop : {});
+  kq.ver = 2;                       // trang thấy ver 2 thì mới gửi Nộp Bước 1, Bước 2 lên đây
+  kq.buoc = p ? p.buoc : {};        // bước một phần xa nhất đã nộp của từng ngày: {"1": 2, "2": 1}
+  return kq;
 }
 
 /** Đọc chín trang tính một lượt. Mỗi người là một cặp email + chín số cuối điện thoại, giữ ngày nộp sớm nhất của từng bài. */
@@ -238,13 +260,15 @@ function docBaiNop(bang) {
     var t = bang.getSheetByName(tenTrang(n));
     if (!t || t.getLastRow() < 2) continue;
     var v = t.getDataRange().getValues(), td = v[0].map(String);
-    var cGio = td.indexOf('Thời gian'), cTen = td.indexOf('Họ và tên'), cEm = td.indexOf('Email'), cSo = td.indexOf('Số điện thoại');
+    var cBuoc = td.indexOf('Bước nộp'), cGio = td.indexOf('Thời gian'), cTen = td.indexOf('Họ và tên'), cEm = td.indexOf('Email'), cSo = td.indexOf('Số điện thoại');
     for (var i = 1; i < v.length; i++) {
       var em = String(v[i][cEm]).trim().toLowerCase(), so = soCuoi(v[i][cSo]);
       if (!em || !so) continue;
-      var p = ds[em + '|' + so] || (ds[em + '|' + so] = { ten: '', email: em, sdt: String(v[i][cSo]), da_nop: {} });
+      var p = ds[em + '|' + so] || (ds[em + '|' + so] = { ten: '', email: em, sdt: String(v[i][cSo]), da_nop: {}, buoc: {} });
       if (chuoi(v[i][cTen])) p.ten = chuoi(v[i][cTen]);
       var ngay = v[i][cGio] instanceof Date ? Utilities.formatDate(v[i][cGio], GIO, 'yyyy-MM-dd') : '';
+      var mot = cBuoc > -1 ? parseInt(v[i][cBuoc], 10) : 0;   // 1 hoặc 2: dòng một phần
+      if (mot === 1 || mot === 2) { p.buoc[n] = Math.max(p.buoc[n] || 0, mot); continue; }
       if (ngay && (!p.da_nop[n] || ngay < p.da_nop[n])) p.da_nop[n] = ngay;
     }
   }
