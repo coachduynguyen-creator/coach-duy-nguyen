@@ -281,7 +281,9 @@ var BUOC = [
 /* Mỗi ngày: tên, câu hứa, việc cần làm, các phần bài, danh sách tự kiểm.
    Mỗi phần có nhóm ô; mỗi ô có id (khóa lưu trên máy) và nhãn (tên cột trên bảng tính).
    Ô có "tu" thì nút chép bài (phần có layTu) chép nội dung ô đó sang khi ô này còn trống. */
-var GOI_VIDEO = 'Bạn đưa video lên chỗ lưu bạn quen dùng, để chế độ ai có đường dẫn cũng xem được, rồi dán đường dẫn vào đây.';
+var GOI_VIDEO = 'YouTube: tải video lên, chọn chế độ Không công khai, rồi chép đường dẫn của video.\n' +
+  'Facebook: đăng video ở chế độ Công khai, bấm Chia sẻ ngay dưới video, rồi bấm Sao chép liên kết.\n' +
+  'Google Drive: tải video lên, bấm Chia sẻ, chọn Bất kỳ ai có đường liên kết, rồi bấm Sao chép đường liên kết.';
 
 var NGAY = {
   0: {
@@ -492,12 +494,13 @@ $('sua-nguoi').onclick = function () {
 /* ---------- dựng trang một ngày ---------- */
 function oHtml(o) {
   var v = doc(o.id);
-  var goi = o.goi ? '<small>' + esc(o.goi) + '</small>' : '';
+  var goi = o.goi ? '<small style="white-space:pre-line">' + esc(o.goi) + '</small>' : '';
   if (o.chon) return '<fieldset class="o"><legend>' + esc(o.nhan) + '</legend>' + goi + o.chon.map(function (c) {
     return '<label class="chon"><input type="radio" name="' + o.id + '" value="' + esc(c) + '"' + (v === c ? ' checked' : '') + '>' + esc(c) + '</label>';
   }).join('') + '</fieldset>';
   var nhap = o.dong === 1
-    ? '<textarea id="' + o.id + '" rows="1" style="min-height:48px">' + esc(v) + '</textarea>'
+    ? '<textarea id="' + o.id + '" rows="1" style="min-height:48px"' + (o.lk ? ' data-lk="1"' : '') + '>' + esc(v) + '</textarea>' +
+      (o.lk ? '<span class="bao loi" id="sai-' + o.id + '" role="alert" style="display:block">' + esc(loiLk(v)) + '</span>' : '')
     : '<textarea id="' + o.id + '" rows="3">' + esc(v) + '</textarea>';
   return '<label class="o"><span>' + esc(o.nhan) + '</span>' + goi + nhap + '</label>';
 }
@@ -615,6 +618,7 @@ function baoLuu(ok) { $('tu-luu').textContent = ok ? 'Đã lưu trên máy này'
 $('bai').addEventListener('input', function (e) {
   var t = e.target;
   if (t.tagName === 'TEXTAREA') { gian(t); baoLuu(ghi(t.id, t.value)); }
+  if (t.dataset && t.dataset.lk) $('sai-' + t.id).textContent = loiLk(t.value);   // dán sai là báo ngay, không chờ bấm Nộp
   if (dangMo >= 1 && dangMo <= 7) veXem(dangMo);
   if (dangMo === 7) veHaiBan();
 });
@@ -825,6 +829,13 @@ function laVideo(v) {
   if (/^youtube\.com([\/?#]|$)/i.test(u)) return /\/(watch|shorts|live|embed)\b/i.test(u);
   return true;
 }
+function loiLk(v) {
+  v = String(v || '').trim();
+  if (!v) return '';
+  if (!/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v)) return 'Đây chưa phải một đường dẫn. Bạn chỉ dán đường dẫn video vào ô này, không viết thêm gì khác.';
+  if (!laVideo(v)) return 'Đây là đường dẫn trang cá nhân hoặc kênh, chưa phải video. Bạn mở đúng video, bấm Chia sẻ, chép liên kết rồi dán lại.';
+  return '';
+}
 function nop(n, b) {
   var hau = b ? '-' + b : '', bao = $('bao' + hau), nut = $('nop' + hau), nhanNut = nut.textContent, nguoi = layNguoi();
   function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
@@ -836,10 +847,8 @@ function nop(n, b) {
   if (b !== 1 && !cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
   var thieu = o.filter(function (x) { return x.can && !doc(x.id).trim(); })[0];
   if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
-  var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
-  if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chỉ dán đường dẫn video vào ô này, không viết thêm gì khác.'); $(saiLk.id).focus(); return; }
-  var khongVideo = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !laVideo(v); })[0];
-  if (khongVideo) { baoLoi('Ô "' + khongVideo.nhan + '" đang là đường dẫn trang cá nhân hoặc kênh, chưa phải video. Bạn mở đúng video, bấm Chia sẻ, chép liên kết rồi dán vào đây.'); $(khongVideo.id).focus(); return; }
+  var saiLk = o.filter(function (x) { return x.lk && loiLk(doc(x.id)); })[0];
+  if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '": ' + loiLk(doc(saiLk.id))); $(saiLk.id).focus(); return; }
   if (n >= 1 && n <= 7 && VIDEO[n]) cot.push(['Đã xem video (%)', xem.loi[n] && phanTram(n) < CAN_XEM ? 'không đo được, đo được ' + phanTram(n) : String(phanTram(n))]);
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Bài của bạn vẫn được lưu trên máy này.'); return; }
 
