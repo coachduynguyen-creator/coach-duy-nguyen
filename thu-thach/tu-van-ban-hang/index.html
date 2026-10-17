@@ -423,8 +423,17 @@ $('luu-nguoi').onclick = function () {
   var loi = !ten ? 'Bạn ghi họ tên giúp Duy.' : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Email chưa đúng dạng, bạn xem lại giúp.' : !/^\+?\d{9,12}$/.test(sdt) ? 'Số điện thoại chưa đúng, bạn xem lại giúp.' : !chonGiaTri('tt-vt') ? 'Bạn chọn vai trò của mình trong việc kinh doanh.' : !chonGiaTri('tt-so') ? 'Bạn chọn việc kinh doanh của bạn có bao nhiêu người.' : !chonGiaTri('tt-nam') ? 'Bạn chọn việc kinh doanh của bạn hoạt động được bao nhiêu năm.' : !$('dongy').checked ? 'Bạn cần tích ô "Tôi đã đọc và đồng ý với những điều trên" thì bài nộp mới được nhận.' : '';
   $('bao-nguoi').textContent = loi;
   if (loi) return;
+  /* Tiến độ trên máy là của người đã lưu trước đó. Đổi email hay số điện thoại thì bỏ đi và hỏi lại máy chủ,
+     kẻo người mới thấy ngày đã mở theo bài của người cũ (lỗi nhân sự báo 17/10/2026). Chữ đã gõ giữ nguyên. */
+  var cu = layNguoi(), so9 = function (s) { return String(s || '').replace(/\D/g, '').slice(-9); };
+  if (!cu || String(cu.email).toLowerCase() !== email.toLowerCase() || so9(cu.sdt) !== so9(sdt)) {
+    ghi('tien-do', '');
+    for (var i = 0; i <= 8; i++) { try { localStorage.removeItem(TIEN_TO + 'da-nop-' + i); } catch (e) { } }
+  }
   ghi('nguoi', JSON.stringify({ ten: ten, email: email, sdt: sdt, vt: chonGiaTri('tt-vt'), so: chonGiaTri('tt-so'), nam: chonGiaTri('tt-nam'), dt: chonGiaTri('tt-dt'), dk: BAN_DONG_Y, dongy: true, dang: $('dang').checked }));
   hienNguoi();
+  chonNgay();
+  hoiTienDo();
   layBai(email, sdt, true);   // điền lại ở trình duyệt mới thì bài đã nộp cũng về theo
 };
 /* Lấy lại bài đã nộp từ máy chủ khi đổi máy hoặc trình duyệt. Chỉ điền ô đang trống, không đè chữ đang có trên máy này.
