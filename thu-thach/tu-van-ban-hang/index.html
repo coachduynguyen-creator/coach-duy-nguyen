@@ -344,10 +344,11 @@ var NGAY = {
 if (typeof BAI !== 'undefined') for (var k in BAI) NGAY[k] = BAI[k];   // Ngày 2 tới 7 và Tổng kết sinh từ tài liệu, xem dung_tai_lieu_thu_thach.py
 
 /* Mã video YouTube (chế độ không công khai) của bài giảng từng ngày, ví dụ 'dQw4w9WgXcQ'. Để trống thì trang báo video sắp có.
-   Bản thử 14/10/2026: video có sẵn trên kênh, gần chủ đề từng ngày, thay bằng video thật khi quay xong. */
+   0 là video chào mừng ở phần Trước Ngày 1, chỉ để xem, không khóa bước. Ngày 3 tới 7 còn là video tạm trên kênh, thay khi quay xong. */
 var VIDEO = {
-  1: 'r_yjjvexSVA',   // Tăng tỷ lệ chốt sau một tuần: sửa quy trình, không sửa người
-  2: '7lZvXC4baY8',   // 30 phút luyện nhận diện khách tiềm năng
+  0: '9FmMYT5Kuo8',   // Bài chào mừng (video thật 17/10/2026)
+  1: 'pd_0pohREmw',   // Bài Ngày 1 (video thật 17/10/2026)
+  2: 'BtbGC3Nqn4U',   // Bài Ngày 2 (video thật 17/10/2026)
   3: 'ToQMhBlWhyw',   // Gây ấn tượng với khách cao cấp ngay lần đầu
   4: 'YbiDnjbCK8Q',   // Đừng thuyết phục nữa. Đây là cách khách tự mua
   5: 'eGQbItur-co',   // Càng bán nhiều thứ, khách càng khó mua
@@ -431,9 +432,9 @@ function oHtml(o) {
 }
 
 function videoHtml(n) {
-  if (n < 1 || n > 7) return '';
+  if (n < 0 || n > 7) return '';
   return VIDEO[n]
-    ? '<div class="video"><iframe id="video-' + n + '" src="https://www.youtube-nocookie.com/embed/' + esc(VIDEO[n]) + '?rel=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin) + '" title="Video Ngày ' + n + '" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
+    ? '<div class="video"><iframe id="video-' + n + '" src="https://www.youtube-nocookie.com/embed/' + esc(VIDEO[n]) + '?rel=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin) + '" title="' + (n ? 'Video Ngày ' + n : 'Video chào mừng') + '" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
     : '<div class="video-cho">Video sẽ có trước 0h ngày mở.</div>';
 }
 
