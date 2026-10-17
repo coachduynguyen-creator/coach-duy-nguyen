@@ -358,7 +358,11 @@ function dsach() {
 /* ===== Cài đặt ===== */
 function caiDat() {
   const cc = P.filter(p => cell(p) === 'cc').length, c = D.cai_dat;
-  const ds = D.vai_tro === 'Quản trị' ? '<div class="tb"><table><thead><tr><th>Email</th><th>Vai trò</th></tr></thead><tbody>' + (D.danh_sach.length ? D.danh_sach.map(x => '<tr><td>' + esc(x.email) + '</td><td>' + esc(x.vai_tro) + '</td></tr>').join('') : '<tr><td colspan="2">Chưa có ai.</td></tr>') + '</tbody></table></div><p class="ghi">Muốn thêm hoặc bớt người: mở trang tính “Quản trị” trong Google Sheet nơi nhận bài, sửa một dòng. Người đó cũng cần được chia sẻ Sheet này ở quyền Người xem.</p>' : '<p class="ghi">Chỉ người có vai trò Quản trị mới xem được danh sách này.</p>';
+  const opt = v => ['Sales', 'Quản trị'].map(x => '<option' + (x === v ? ' selected' : '') + '>' + x + '</option>').join('');
+  const minh = em => em === D.email;
+  const ds = D.vai_tro === 'Quản trị' ? '<div class="tb"><table><thead><tr><th>Email</th><th>Vai trò</th><th></th></tr></thead><tbody>' + (D.danh_sach.length ? D.danh_sach.map(x => '<tr><td>' + esc(x.email) + (minh(x.email) ? ' (bạn)' : '') + '</td><td><select class="in" style="min-width:112px" data-tv="' + esc(x.email) + '" aria-label="Vai trò của ' + esc(x.email) + '"' + (minh(x.email) ? ' disabled' : '') + '>' + opt(x.vai_tro) + '</select></td><td>' + (minh(x.email) ? '' : '<button class="in" data-act="go" data-em="' + esc(x.email) + '">Gỡ</button>') + '</td></tr>').join('') : '<tr><td colspan="3">Chưa có ai.</td></tr>') + '</tbody></table></div>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><input class="in" id="tv-em" type="email" placeholder="email Google của người mới" aria-label="Email người mới" style="flex:1 1 220px"><select class="in" id="tv-vt" aria-label="Vai trò người mới">' + opt('Sales') + '</select><button class="bt" data-act="them">Thêm người</button></div>' +
+    '<p class="ghi"><b>Sales</b> xem được mọi hồ sơ trên trang này, Google Sheet ở quyền Người xem. <b>Quản trị</b> xem được như Sales, thêm, đổi, gỡ người, và có quyền sửa Google Sheet. Thêm người thì máy tự chia sẻ Sheet, gỡ người thì máy thu lại quyền. Thêm xong, bạn gửi đường dẫn trang này cho họ, họ đăng nhập đúng email đó là vào được.</p>' : '<p class="ghi">Chỉ người có vai trò Quản trị mới xem và sửa được danh sách này.</p>';
   const tc = ar => '<div class="tb"><table><thead><tr><th>Mã</th><th>Tiêu chí</th><th>Ai chấm</th></tr></thead><tbody>' + ar.map(x => '<tr><td>' + x[0] + '</td><td>' + esc(x[1]) + '</td><td>' + NGUON[x[2]] + '</td></tr>').join('') + '</tbody></table></div>';
   return '<div class="g"><div class="pn s5"><h3>Ngưỡng xếp ô</h3><p class="gc">Đổi ngưỡng ở đây chỉ đổi cách xếp trên màn hình này, không lưu và không đổi dữ liệu. Tải lại trang thì về giá trị mặc định.</p>' +
     '<label for="tc">Một trục tính là cao khi tỷ lệ tiêu chí đạt từ (phần trăm)</label><input class="in" id="tc" type="number" min="10" max="100" step="5" value="' + Math.round(S.thr * 100) + '">' +
@@ -379,7 +383,7 @@ function huongDan() {
     tb(['Nền tảng', 'Dùng để làm gì', 'Ai dùng', 'Tình trạng'], [
       ['<b>Website coachduynguyen.vn</b>', 'Người học đăng ký, xem video, làm bài và nộp bài từng ngày.', 'Người học', 'Đang chạy'],
       ['<b>Google Sheet nơi nhận bài, kèm Apps Script</b>', 'Giữ bài nộp, giờ nộp, phần trăm video đã xem. Apps Script là phần chạy phía sau: nhận bài từ website và đưa số liệu lên trang quản trị này.', 'Chủ dự án mở trực tiếp. Sales và hỗ trợ không cần mở.', 'Đang chạy'],
-      ['<b>Trang quản trị này</b>', 'Xem ai đang học tới đâu, ai nên gọi trước, đọc hồ sơ trước khi gọi. Chỉ đọc, không sửa được gì ở đây.', 'Quản trị, sales, người hỗ trợ', 'Đang chạy, giai đoạn 1'],
+      ['<b>Trang quản trị này</b>', 'Xem ai đang học tới đâu, ai nên gọi trước, đọc hồ sơ trước khi gọi. Chỉ đọc bài làm, không sửa được bài ở đây. Quản trị thêm hoặc gỡ người ở mục Cài đặt.', 'Quản trị, sales, người hỗ trợ', 'Đang chạy, giai đoạn 1'],
       ['<b>Pancake CRM</b>', 'Giữ hồ sơ khách, người phụ trách, lịch hẹn gọi lại, kết quả cuộc gọi, khách đã mua gì.', 'Sales, người hỗ trợ', 'Chưa nối với trang này: người đăng ký thử thách chưa tự vào Pancake, và trang chưa đọc được kết quả gọi. Kết quả gọi ghi tay ở Pancake.'],
       ['<b>Botcake</b>', 'Bot trả lời tự động: khách nhắn một từ khóa, bot gửi đường link ngắn tới đúng công cụ AI.', 'Người hỗ trợ cài từ khóa; khách là người dùng', 'Chạy riêng, không nối với trang này'],
       ['<b>Nhóm Facebook của thử thách</b>', 'Nhắc nộp bài, giải đáp thắc mắc, nhắc người học làm đều.', 'Người hỗ trợ, Coach Duy', 'Chạy riêng, không nối với trang này'],
@@ -444,6 +448,8 @@ document.addEventListener('click', e => {
     S.sort = { k: 'prio', dir: -1 }; ve(); return; }
   if (x = $c('[data-act]')) { const a = x.dataset.act;
     if (a === 'dong') dongDr(); else if (a === 'truoc') ke(-1); else if (a === 'sau') ke(1);
+    else if (a === 'them') { const em = $('tv-em').value.trim(), vt = $('tv-vt').value; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { toast('Email chưa đúng.'); $('tv-em').focus(); } else luuTv(em, vt, 'Đã thêm ' + em + ', vai trò ' + vt + '.'); }
+    else if (a === 'go') { const em = x.dataset.em; if (confirm('Gỡ ' + em + ' khỏi trang quản trị? Người này cũng mất quyền xem Google Sheet nơi nhận bài.')) luuTv(em, '', 'Đã gỡ ' + em + '.'); }
     else if (a === 'chep') { const p = P[S.dr]; (navigator.clipboard ? navigator.clipboard.writeText(p.sdt) : Promise.reject()).then(() => toast('Đã chép số điện thoại.')).catch(() => toast('Không chép tự động được, bạn bôi đen số để chép.')); }
     return; }
   if (x = $c('[data-p]')) { drawer(+x.dataset.p); return; }
@@ -459,6 +465,7 @@ document.addEventListener('change', e => {
   if (m[t.id]) { S.f[m[t.id]] = t.value; S.page = 1; drawTbl(); }
   if (t.id === 'sz') { S.size = +t.value; S.page = 1; drawTbl(); }
   if (t.id === 'cp') { S.compact = t.checked; drawTbl(); }
+  if (t.dataset && t.dataset.tv) luuTv(t.dataset.tv, t.value, 'Đã đổi ' + t.dataset.tv + ' sang ' + t.value + '.');
 });
 $('gq').addEventListener('keydown', e => { if (e.key === 'Enter') { const q = e.target.value; den('tv'); S.q = q; ve(); } });
 document.addEventListener('keydown', e => {
@@ -469,6 +476,11 @@ document.addEventListener('keydown', e => {
 });
 
 /* ===== Lấy dữ liệu ===== */
+function luuTv(em, vt, xong) {
+  toast('Đang lưu…');
+  google.script.run.withSuccessHandler(ds => { D.danh_sach = ds; ve(); toast(xong); })
+    .withFailureHandler(er => { ve(); toast('Chưa lưu được. ' + (er && er.message || er)); }).luuThanhVien(em, vt);
+}
 function bao(tieude, noidung) { $('main').innerHTML = '<div class="pn" style="max-width:640px;margin-top:20px"><h3>' + tieude + '</h3><p>' + noidung + '</p><p><button class="bt" id="thu">Thử lại</button></p></div>'; $('thu').onclick = tai; }
 function tai() {
   $('main').innerHTML = '<div class="pn" style="margin-top:20px"><p>Đang lấy dữ liệu từ Google Sheet…</p></div>';

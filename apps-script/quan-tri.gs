@@ -8,7 +8,7 @@
  * lúc chủ dự án chạy tay, nên người vào trước không bao giờ thành quản trị.
  * Cửa khóa thật là quyền xem Sheet: ai chưa được chia sẻ Sheet thì máy không đọc được gì cho họ.
  *
- * Trang này chỉ đọc, không ghi gì vào bảng bài nộp. Dữ liệu Pancake (kết quả gọi) chưa nối, nên các
+ * Trang này không ghi gì vào bảng bài nộp, chỉ ghi vào trang tính Quản trị khi Quản trị thêm hoặc gỡ người. Dữ liệu Pancake (kết quả gọi) chưa nối, nên các
  * trường đó trả về null và trang hiện "chưa nối".
  */
 
@@ -31,7 +31,7 @@ function khoiTaoQuanTri() {
     t.setFrozenRows(1);
     var chu = Session.getEffectiveUser().getEmail();
     if (chu) t.appendRow([chu, 'Quản trị']);
-    t.getRange('D1').setValue('Vai trò chỉ nhận hai giá trị: Quản trị (xem tất cả) hoặc Sales (xem khách được giao và khách chưa ai nhận). Thêm người thì thêm một dòng, người đó cũng cần được chia sẻ Sheet này ở quyền Người xem.');
+    t.getRange('D1').setValue('Vai trò chỉ nhận hai giá trị: Quản trị (xem tất cả, thêm và gỡ người) hoặc Sales (xem khách). Thêm hoặc gỡ người ở mục Cài đặt của trang quản trị, máy tự chia sẻ Sheet. Sửa tay ở đây thì phải tự chia sẻ Sheet.');
   }
   return 'Đã có trang tính ' + TEN_TRANG_QUAN_TRI + '. Mở nó, thêm email của sales và người hỗ trợ.';
 }
@@ -52,6 +52,40 @@ function vaiTroNguoiXem() {
   var ds = danhSachQuanTri();
   for (var i = 0; i < ds.length; i++) if (ds[i].email === em) return ds[i];
   return { email: em, vai_tro: '' };
+}
+
+/**
+ * Quản trị thêm người, đổi vai trò hoặc gỡ người (vaiTro rỗng) ngay trên trang.
+ * Máy chia sẻ Sheet theo vai trò: Sales ở quyền Người xem, Quản trị ở quyền Người sửa (cần quyền sửa
+ * để ghi vào trang tính Quản trị khi thêm người). Gỡ người thì thu cả hai quyền, trừ chủ Sheet.
+ * Trang chạy bằng tài khoản người đang mở, nên Google chỉ cho làm khi người đó có quyền sửa Sheet.
+ */
+function luuThanhVien(email, vaiTro) {
+  var ai = vaiTroNguoiXem();
+  if (ai.vai_tro !== 'Quản trị') throw new Error('Chỉ Quản trị mới thêm, đổi hoặc gỡ người được.');
+  email = chuoi(email).toLowerCase();
+  vaiTro = chuoi(vaiTro);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Email chưa đúng.');
+  if (['Quản trị', 'Sales', ''].indexOf(vaiTro) < 0) throw new Error('Vai trò chỉ là Quản trị hoặc Sales.');
+  if (email === ai.email && vaiTro !== 'Quản trị') throw new Error('Bạn không tự gỡ hoặc tự hạ vai trò của mình được. Nhờ một Quản trị khác làm.');
+  var khoa = LockService.getScriptLock();
+  khoa.waitLock(10000);
+  try {
+    var bang = layBang(), t = bang.getSheetByName(TEN_TRANG_QUAN_TRI);
+    if (!t) throw new Error('Chưa có trang tính Quản trị. Chủ dự án chạy khoiTaoQuanTri trước.');
+    var n = t.getLastRow(), v = n > 1 ? t.getRange(2, 1, n - 1, 1).getValues() : [], dong = -1;
+    for (var i = 0; i < v.length; i++) if (chuoi(v[i][0]).toLowerCase() === email) dong = i + 2;
+    var chu = bang.getOwner() ? bang.getOwner().getEmail().toLowerCase() : '';
+    if (email !== chu) {   // chia sẻ trước, lỗi thì dừng, chưa ghi dòng nào
+      var thu = function (f) { try { f(); } catch (bo) { } };   // gỡ quyền người không có quyền đó thì bỏ qua
+      if (vaiTro === 'Quản trị') bang.addEditor(email);
+      else { thu(function () { bang.removeEditor(email); }); if (vaiTro === 'Sales') bang.addViewer(email); else thu(function () { bang.removeViewer(email); }); }
+    }
+    if (!vaiTro) { if (dong > 0) t.deleteRow(dong); }
+    else if (dong > 0) t.getRange(dong, 2).setValue(vaiTro);
+    else t.appendRow([email, vaiTro]);
+  } finally { khoa.releaseLock(); }
+  return danhSachQuanTri();
 }
 
 /* ---------- đọc dữ liệu ---------- */
