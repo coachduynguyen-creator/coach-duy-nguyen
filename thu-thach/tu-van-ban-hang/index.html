@@ -817,6 +817,14 @@ function hoiTienDo() {
 
 /* ---------- nộp ---------- */
 /* b = 1: Nộp Bước 1, b = 2: Lưu và nộp Bước 2, bỏ trống: Nộp bài cuối ngày. Hai bước đầu là nộp một phần, máy chủ chưa tính là đã nộp ngày. */
+/* Facebook và YouTube: trang cá nhân, trang chủ, kênh không phải video (14/10/2026 một bài cam kết dán trang Facebook cá nhân vẫn mở Ngày 1).
+   Nơi khác (Drive, youtu.be, fb.watch, TikTok) cho qua. */
+function laVideo(v) {
+  var u = v.replace(/^https?:\/\//i, '').replace(/^(www|m|web|mobile)\./i, '');
+  if (/^(facebook|fb)\.com([\/?#]|$)/i.test(u)) return /\/(videos?|reels?|watch|share|story\.php|permalink\.php|posts)\b|[?&]v=/i.test(u);
+  if (/^youtube\.com([\/?#]|$)/i.test(u)) return /\/(watch|shorts|live|embed)\b/i.test(u);
+  return true;
+}
 function nop(n, b) {
   var hau = b ? '-' + b : '', bao = $('bao' + hau), nut = $('nop' + hau), nhanNut = nut.textContent, nguoi = layNguoi();
   function baoLoi(s) { bao.className = 'bao loi'; bao.textContent = s; }
@@ -830,6 +838,8 @@ function nop(n, b) {
   if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
   var saiLk = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !/^(https?:\/\/)?[^\s\/]+\.[^\s]+$/i.test(v); })[0];
   if (saiLk) { baoLoi('Ô "' + saiLk.nhan + '" chưa phải một đường dẫn. Bạn chỉ dán đường dẫn video vào ô này, không viết thêm gì khác.'); $(saiLk.id).focus(); return; }
+  var khongVideo = o.filter(function (x) { var v = doc(x.id).trim(); return x.lk && v && !laVideo(v); })[0];
+  if (khongVideo) { baoLoi('Ô "' + khongVideo.nhan + '" đang là đường dẫn trang cá nhân hoặc kênh, chưa phải video. Bạn mở đúng video, bấm Chia sẻ, chép liên kết rồi dán vào đây.'); $(khongVideo.id).focus(); return; }
   if (n >= 1 && n <= 7 && VIDEO[n]) cot.push(['Đã xem video (%)', xem.loi[n] && phanTram(n) < CAN_XEM ? 'không đo được, đo được ' + phanTram(n) : String(phanTram(n))]);
   if (!NOI_NHAN) { baoLoi('Trang chưa nối nơi nhận bài nên chưa nộp được. Bài của bạn vẫn được lưu trên máy này.'); return; }
 
