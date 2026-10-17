@@ -104,6 +104,9 @@ ul.kiem input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(-
 .bao.dung{color:var(--dung)}
 .bao.loi{color:var(--loi)}
 .bao:empty{display:none}
+.trong-app{border:2px solid var(--loi)}
+.lay-bai{border:1px dashed var(--line);border-radius:12px;padding:4px 14px 14px;margin:6px 0 14px}
+#lk-trang{word-break:break-all}
 .tu-luu{font-size:13.5px;color:var(--ink-3);text-align:right;margin-top:6px}
 .bay{position:absolute;left:-9999px}
 .chu p,.chu li{margin:8px 0}
@@ -176,6 +179,8 @@ footer p{margin:12px 0 0}
 @media(max-width:759px){
   .mo h1,.mo .ten-tt,.ngay-dau h2,.ngay-dau .nhan{text-align:center}
   .mo p,section.phan > p,blockquote,.the > p,.chu p,.tai-lieu p,aside.goi{text-align:justify}
+  .tai-bai .nut,#lay-bai,.trong-app .nut{width:100%;margin-top:6px}
+  .the.trong-app > p{text-align:left}
 }
 </style>
 </head>
@@ -188,18 +193,26 @@ footer p{margin:12px 0 0}
     <p class="ten-tt">Nâng cấp Quy trình Tư vấn Bán hàng</p>
     <div class="dan"><img src="../../img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"><div><span class="nhan">Người dẫn thử thách</span><b>Coach Duy Nguyễn</b><span class="vai">Người cố vấn cho nhà sáng lập thế hệ mới</span></div></div>
     <p>Bạn làm bài ngay trên trang này. Nên dùng máy tính, vì bài mỗi ngày có nhiều ô và bảng. Điện thoại vẫn làm được, nhưng gõ chậm và khó nhìn hơn. Bạn gõ tới đâu, trang tự lưu tới đó. Làm xong phần nào, bạn bấm Nộp để gửi phần đó cho Coach Duy Nguyễn và Next Gen Founder.</p>
-    <p class="nho">Cần nhớ: bài chỉ được lưu trên đúng máy và đúng ứng dụng bạn đang dùng để mở trang. Ví dụ hôm nay bạn mở trang từ Facebook, hôm sau mở lại bằng Safari hay Chrome, thì sẽ không thấy bài đang làm dở. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại nhiều lần cũng không sao, lần nộp nào cũng được giữ.</p>
+    <p class="nho">Cần nhớ: bài chỉ được lưu trên đúng máy và đúng ứng dụng bạn đang dùng để mở trang. Ví dụ hôm nay bạn mở trang từ Facebook, hôm sau mở lại bằng Safari hay Chrome, thì sẽ không thấy bài đang làm dở. Vì vậy làm xong phần nào, bạn nộp luôn phần đó. Nộp lại nhiều lần cũng không sao, lần nộp nào cũng được giữ. Sang máy khác thì bạn bấm Lấy lại bài đã nộp ở phần Trước khi làm bài, trang lấy lại những phần bạn đã nộp.</p>
     <div class="tai-bai"><button type="button" class="nut chinh" id="tai-bai">Tải bài làm của tôi</button><button type="button" class="nut phu" id="chep-bai">Chép bài làm</button></div>
     <p class="nho" id="tai-bao" role="status">Bấm Tải bài làm của tôi, trang mở khung in với mọi ô bạn đã điền, bạn chọn Lưu thành PDF. Mở trang trong Zalo hay Facebook mà không thấy khung in thì bấm Chép bài làm rồi dán vào ghi chú, hoặc mở trang bằng Chrome, Safari.</p>
   </div>
 
   <div class="khung">
+    <div class="the trong-app" id="trong-app" hidden>
+      <h2>Bạn đang mở trang trong <span id="ten-app">ứng dụng chat</span></h2>
+      <p>Trình duyệt bên trong Zalo, Facebook, Messenger hay xóa bài làm khi bạn tắt trang. Để bài được giữ qua các ngày, bạn mở trang bằng Chrome hoặc Safari.</p>
+      <p><a class="nut chinh" id="mo-chrome" hidden>Mở bằng Chrome</a> <button type="button" class="nut phu" id="chep-lk">Chép đường dẫn</button></p>
+      <p class="nho">Chép xong, bạn mở Chrome hoặc Safari, dán vào ô địa chỉ. Hoặc bấm nút ba chấm ở góc trên rồi chọn Mở bằng trình duyệt. Đường dẫn: <b id="lk-trang"></b></p>
+    </div>
     <div class="the" id="nguoi">
       <h2>Trước khi làm bài</h2>
       <p>Bạn trả lời vài câu dưới đây một lần, trang sẽ nhớ cho những lần sau.</p>
       <label class="o"><span>Họ và tên</span><input type="text" id="ten" autocomplete="name"></label>
       <label class="o"><span>Email bạn dùng khi đăng ký thử thách</span><input type="email" id="email" autocomplete="email" inputmode="email"></label>
       <label class="o"><span>Số điện thoại</span><input type="tel" id="sdt" autocomplete="tel" inputmode="tel"></label>
+      <div class="lay-bai"><p class="nho">Đã làm bài ở máy khác hoặc trình duyệt khác? Bạn điền email và số điện thoại đã dùng ở trên rồi bấm nút này, trang lấy lại những phần bạn đã nộp.</p>
+        <button type="button" class="nut phu" id="lay-bai">Lấy lại bài đã nộp</button></div>
       <fieldset class="o"><legend>Vai trò của bạn trong việc kinh doanh</legend>
         <label class="chon"><input type="radio" name="tt-vt" value="Chủ doanh nghiệp">Chủ doanh nghiệp</label><label class="chon"><input type="radio" name="tt-vt" value="Quản lý">Quản lý</label><label class="chon"><input type="radio" name="tt-vt" value="Nhân viên">Nhân viên</label></fieldset>
       <fieldset class="o"><legend>Việc kinh doanh của bạn có bao nhiêu người</legend>
@@ -228,6 +241,7 @@ footer p{margin:12px 0 0}
       <span>Đang làm bài với tên <b id="ten-gon"></b></span>
       <button type="button" class="nut phu nho-gon" id="sua-nguoi">Sửa thông tin</button>
     </div>
+    <p class="bao" id="bao-lay" role="status"></p>
   </div>
 
   <nav class="ngay" aria-label="Chọn ngày"><div class="khung" id="the-ngay"></div></nav>
@@ -411,7 +425,55 @@ $('luu-nguoi').onclick = function () {
   if (loi) return;
   ghi('nguoi', JSON.stringify({ ten: ten, email: email, sdt: sdt, vt: chonGiaTri('tt-vt'), so: chonGiaTri('tt-so'), nam: chonGiaTri('tt-nam'), dt: chonGiaTri('tt-dt'), dk: BAN_DONG_Y, dongy: true, dang: $('dang').checked }));
   hienNguoi();
+  layBai(email, sdt, true);   // điền lại ở trình duyệt mới thì bài đã nộp cũng về theo
 };
+/* Lấy lại bài đã nộp từ máy chủ khi đổi máy hoặc trình duyệt. Chỉ điền ô đang trống, không đè chữ đang có trên máy này.
+   im = true: gọi ngầm sau khi lưu thông tin, chỉ báo khi lấy được. */
+function layBai(email, sdt, im) {
+  var bao = $('bao-lay'), nut = $('lay-bai');
+  function noi(lop, s) { if (!im) { bao.className = 'bao ' + lop; bao.textContent = s; } }
+  sdt = String(sdt).replace(/[\s.\-()]/g, '');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^\+?\d{9,12}$/.test(sdt)) return noi('loi', 'Bạn điền email và số điện thoại đã dùng khi nộp bài rồi bấm lại.');
+  if (!NOI_NHAN || XEM_TRUOC) return noi('loi', 'Chế độ này không lấy lại bài được.');
+  if (!im) { nut.disabled = true; noi('', 'Đang tìm bài của bạn...'); }
+  fetch(NOI_NHAN, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ hoi: 'lay_bai', email: email, dien_thoai: sdt }) })
+    .then(function (r) { return r.json(); })
+    .then(function (k) {
+      if (!k.ok) return noi('loi', k.loi === 'Không rõ bài của ngày nào.' ? 'Nút này chưa dùng được, ban tổ chức đang cập nhật. Bạn điền thông tin và làm tiếp, bài nộp vẫn được giữ.' : k.loi);
+      var cu = layNguoi(), m = k.nguoi || {}, so = 0;
+      if (!nguoiDu(cu)) ghi('nguoi', JSON.stringify({ ten: m.ten || '', email: email, sdt: sdt, vt: m.vt || '', so: m.so || '', nam: m.nam || '', dt: m.dt || '',
+        dk: +m.dk || 0, dongy: +m.dk === BAN_DONG_Y, dang: m.dang === 'Có' }));
+      for (var n = 0; n <= 8; n++) {
+        var b = k.bai && k.bai[n];
+        if (!b || !NGAY[n]) continue;
+        tatCaO(n).forEach(function (o) { var v = b[tenCot(o)]; if (!o.rieng && v && !doc(o.id).trim()) { ghi(o.id, v); so++; } });
+      }
+      if (k.tien_do) {
+        ghi('tien-do', JSON.stringify(k.tien_do));
+        Object.keys(k.tien_do.da_nop || {}).forEach(function (n) { if (!doc('da-nop-' + n)) ghi('da-nop-' + n, ngayVN(k.tien_do.da_nop[n])); });
+      }
+      hienNguoi(); chonNgay();
+      if (!im || so) { im = false; noi('dung', 'Đã lấy lại ' + so + ' ô bạn đã nộp. Chữ gõ mà chưa bấm nộp thì không lấy lại được.'); }
+    })
+    .catch(function () { noi('loi', 'Mạng đang chập chờn, bạn bấm lại sau ít phút.'); })
+    .then(function () { nut.disabled = false; });
+}
+$('lay-bai').onclick = function () { layBai($('email').value.trim(), $('sdt').value, false); };
+
+/* Trình duyệt bên trong ứng dụng chat hay xóa bộ nhớ khi tắt: nhắc mở bằng Chrome hoặc Safari. */
+(function () {
+  var ua = navigator.userAgent, app = /Zalo/i.test(ua) ? 'Zalo' : /Messenger|FB_IAB\/MESSENGER/i.test(ua) ? 'Messenger' : /FBAN|FBAV|FB_IAB|FBIOS/i.test(ua) ? 'Facebook' : /Instagram/i.test(ua) ? 'Instagram' : /TikTok|musical_ly/i.test(ua) ? 'TikTok' : /\bLine\//i.test(ua) ? 'Line' : '';
+  if (!app) return;
+  var lk = location.origin + location.pathname;
+  $('trong-app').hidden = false; $('ten-app').textContent = app; $('lk-trang').textContent = lk;
+  if (/Android/i.test(ua)) { var c = $('mo-chrome'); c.hidden = false; c.href = 'intent://' + location.host + location.pathname + '#Intent;scheme=https;package=com.android.chrome;end'; }
+  $('chep-lk').onclick = function () {
+    var nut = this;
+    (navigator.clipboard ? navigator.clipboard.writeText(lk) : Promise.reject()).then(function () { nut.textContent = 'Đã chép đường dẫn'; },
+      function () { nut.textContent = 'Chưa chép được, bạn giữ tay lên đường dẫn bên dưới để chép'; });
+  };
+})();
 $('sua-nguoi').onclick = function () {
   var n = layNguoi() || {};
   dienNguoi(n);

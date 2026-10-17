@@ -21,6 +21,12 @@
  * 6. Chép địa chỉ kết thúc bằng /exec gửi cho thợ, thợ dán vào NOI_NHAN của
  *    thu-thach/tu-van-ban-hang/index.html.
  *
+ * CẬP NHẬT 17/10/2026: LẤY LẠI BÀI KHI ĐỔI MÁY HOẶC TRÌNH DUYỆT
+ * Dán toàn bộ tệp này, bấm Lưu, rồi Triển khai > Quản lý triển khai > cây bút >
+ * Phiên bản mới > Triển khai. Không cần chạy khoiTao. Thêm hoi = 'lay_bai': người
+ * học nhập email và số điện thoại, trang lấy lại bài đã nộp và thông tin người làm.
+ * Chưa dán thì nút Lấy lại bài báo chưa dùng được, phần còn lại chạy như cũ.
+ *
  * CẬP NHẬT 16/10/2026: NỘP TỪNG BƯỚC VÀ BA CÂU HỎI LÚC ĐĂNG KÝ (dán trước 17/10)
  * Làm đúng ba việc: mở dự án Apps Script cũ, xoá hết chữ, dán toàn bộ tệp này,
  * bấm Lưu; rồi Triển khai > Quản lý triển khai > bấm cây bút > Phiên bản: Phiên
@@ -158,6 +164,7 @@ function doPost(e) {
 
   if (d.bay) return tra({ ok: true });   // ô bẫy máy rác, người thật để trống
   if (d.hoi === 'tien_do') return hoiTienDo(d);
+  if (d.hoi === 'lay_bai') return layBai(d);
   if (d.hoi === 'dong_y') return dongY(d);
 
   var ngay = parseInt(d.ngay, 10);
@@ -238,6 +245,47 @@ function hoiTienDo(d) {
   if (!chuoi(d.email) || !/^\+?\d{9,12}$/.test(sdt)) return tra({ ok: false, loi: 'Thiếu email hoặc số điện thoại.' });
   try { return tra({ ok: true, tien_do: tinhTienDo(chuoi(d.email), sdt) }); }
   catch (loi) { ghiLoi(loi, d); return tra({ ok: false, loi: 'Chưa xem được tiến độ.' }); }
+}
+
+/**
+ * Lấy lại bài (hoi = 'lay_bai'): người học mở trang ở máy hoặc trình duyệt khác,
+ * nhập email và số điện thoại đã dùng. Khớp cả hai, trả về thông tin người làm và
+ * dòng nộp mới nhất của từng ngày (cả dòng Bước 1, Bước 2). Chỉ đọc bảng, không ghi.
+ * Chữ gõ mà chưa bấm nộp thì máy chủ không có, không lấy lại được.
+ */
+var COT_NGUOI = { 'Họ và tên': 'ten', 'Vai trò': 'vt', 'Số người': 'so', 'Số năm hoạt động': 'nam', 'Doanh thu một năm': 'dt', 'Đồng ý đăng công khai': 'dang', 'Bản đồng ý': 'dk' };
+var COT_BO = ['Thời gian', 'Họ và tên', 'Email', 'Số điện thoại', 'Đồng ý dùng bài', 'Google Doc', 'Bước nộp', 'Nộp sau hạn', 'Đã xem video (%)'];
+function layBai(d) {
+  var sdt = chuoi(d.dien_thoai).replace(/[\s.\-()]/g, '');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chuoi(d.email)) || !/^\+?\d{9,12}$/.test(sdt)) return tra({ ok: false, loi: 'Thiếu email hoặc số điện thoại.' });
+  var em = chuoi(d.email).toLowerCase(), so = soCuoi(sdt);
+  try {
+    var bang = layBang(), bai = {}, nguoi = null, gioNguoi = 0;
+    for (var n = 0; n <= 8; n++) {
+      var t = bang.getSheetByName(tenTrang(n));
+      if (!t || t.getLastRow() < 2) continue;
+      var v = t.getDataRange().getValues(), td = v[0].map(String);
+      var cEm = td.indexOf('Email'), cSo = td.indexOf('Số điện thoại'), cGio = td.indexOf('Thời gian');
+      for (var i = v.length - 1; i >= 1; i--) {   // dòng dưới cùng là lần nộp mới nhất
+        if (String(v[i][cEm]).trim().toLowerCase() !== em || soCuoi(v[i][cSo]) !== so) continue;
+        var dong = {}, gio = v[i][cGio] instanceof Date ? v[i][cGio].getTime() : 0;
+        td.forEach(function (k, c) {
+          var x = v[i][c];
+          if (x === '' || x === null) return;
+          x = x instanceof Date ? Utilities.formatDate(x, GIO, 'dd/MM/yyyy') : String(x);
+          if (COT_BO.indexOf(k) < 0 && !COT_NGUOI[k]) dong[k] = x;
+        });
+        bai[n] = dong;
+        if (gio >= gioNguoi) {
+          gioNguoi = gio; nguoi = {};
+          Object.keys(COT_NGUOI).forEach(function (k) { var c = td.indexOf(k); if (c > -1) nguoi[COT_NGUOI[k]] = chuoi(v[i][c]); });
+        }
+        break;
+      }
+    }
+    if (!nguoi) return tra({ ok: false, loi: 'Chưa thấy bài nào nộp bằng email và số điện thoại này.' });
+    return tra({ ok: true, nguoi: nguoi, bai: bai, tien_do: tinhTienDo(em, sdt) });
+  } catch (loi) { ghiLoi(loi, { hoi: 'lay_bai', email: d.email }); return tra({ ok: false, loi: 'Chưa lấy được bài, bạn thử lại sau ít phút.' }); }
 }
 
 /**
