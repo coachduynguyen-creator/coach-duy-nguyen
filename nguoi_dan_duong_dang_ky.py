@@ -36,8 +36,8 @@ def o_chon(ten, nhan, cac, bat_buoc=False, them=""):
     thuoc = ' data-bb="1"' if bat_buoc else ""
     ds = "".join('<label class="chon"><input type="radio" name="%s" value="%s"><span>%s</span></label>'
                  % (ten, e(c), e(c)) for c in cac)
-    return ('<fieldset class="o nhom"%s data-ten="%s"><legend>%s%s</legend><div class="cac-chon">%s</div>%s</fieldset>'
-            % (thuoc, ten, nhan, sao, ds, them))
+    return ('<fieldset class="o nhom"%s data-ten="%s"><legend>%s%s</legend><div class="cac-chon%s">%s</div>%s</fieldset>'
+            % (thuoc, ten, nhan, sao, " n4" if len(cac) == 4 else "", ds, them))
 
 
 B1 = ["Chủ doanh nghiệp đã đi qua một chặng", "Chuyên gia hành nghề lâu năm",
@@ -50,8 +50,10 @@ B11 = ["Có", "Cần nghe thêm"]
 B13 = ["YouTube", "Facebook", "Người giới thiệu", "Sự kiện hoặc lớp học", "Khác"]
 
 BUOC1 = "".join([
+    '<div class="hang2">',
     o_chu("ten", "Họ và tên", True, goi_y="Ví dụ: Nguyễn Văn An"),
     o_chu("dienthoai", "Số điện thoại hoặc Zalo", True, loai="tel", goi_y="09xx xxx xxx"),
+    '</div>',
     o_chu("email", "Email", True, loai="email", goi_y="ban@vidu.com"),
     o_chon("nhom", "Bạn thuộc nhóm nào?", B1, True),
     o_chu("linh_vuc", "Bạn làm trong lĩnh vực nào, được bao nhiêu năm?", True, goi_y="Ví dụ: Tư vấn tài chính cá nhân, 12 năm"),
@@ -83,14 +85,24 @@ BUOC3 = "".join([
 CSS = """<style>
 .ddk{padding:8px 0 96px}
 .ddk-khung{width:min(100% - 40px,760px);margin-inline:auto}
-.ddk-tien{display:flex;gap:8px;margin:0 0 22px;padding:0;list-style:none}
-.ddk-tien li{flex:1;border-top:3px solid var(--line-2);padding-top:8px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4)}
-.ddk-tien li.on{border-color:var(--vang);color:var(--vang)}
-.ddk-tien li.xong{border-color:var(--vang-3);color:var(--ink-3)}
+.ddk-tien{display:flex;margin:0 0 24px;padding:0;list-style:none;counter-reset:b}
+.ddk-tien li{flex:1;display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4)}
+.ddk-tien li::before{counter-increment:b;content:counter(b);flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;font-size:13px;letter-spacing:0}
+.ddk-tien li::after{content:"";flex:1;height:1px;margin:0 12px;background:var(--line-2);opacity:.6}
+.ddk-tien li:last-child{flex:none}
+.ddk-tien li:last-child::after{display:none}
+.ddk-tien li.on{color:var(--vang)}
+.ddk-tien li.on::before{background:var(--vang);border-color:var(--vang);color:#1B1208;font-weight:700}
+.ddk-tien li.xong{color:var(--ink-3)}
+.ddk-tien li.xong::before{content:"\\2713";border-color:var(--vang-3);color:var(--vang)}
+.ddk-tien li.xong::after{background:var(--vang-3);opacity:1}
 .ddk-form{color-scheme:light;--ink:#241B14;--ink-2:#4E4034;--ink-3:#5E4F3E;--ink-4:#75634F;--line-2:#B9A78E;background:#FBF6EB;color:#241B14;border:1px solid #DFD2BE;border-radius:var(--r);padding:30px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .ddk-form .buoc{border:0;margin:0;padding:0;min-width:0;display:none}
 .ddk-form .buoc.on{display:block}
-.ddk-form .buoc > h2{font-size:clamp(22px,3vw,28px);margin:0 0 20px}
+.ddk-form .buoc > h2{font-size:clamp(22px,3vw,28px);margin:0 0 6px}
+.ddk-form .buoc-k{margin:0 0 4px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#A8620A}
+.ddk-form .buoc-d{margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid #E6DAC6;font-size:15px;color:var(--ink-3)}
+.ddk-form .hang2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
 .ddk-form .o{display:flex;flex-direction:column;gap:7px;margin:0 0 20px;font-size:15.5px;font-weight:600;color:var(--ink);border:0;padding:0;min-width:0}
 .ddk-form .o legend{padding:0;margin:0 0 8px;font-size:15.5px;font-weight:600;color:var(--ink)}
 .ddk-form .o small{font-weight:500;color:var(--ink-4);font-size:13px}
@@ -100,8 +112,10 @@ CSS = """<style>
 .ddk-form textarea{min-height:112px;resize:vertical}
 .ddk-form input::placeholder,.ddk-form textarea::placeholder{color:var(--ink-4)}
 .ddk-form input:focus-visible,.ddk-form textarea:focus-visible{outline:none;border-color:#A8620A;box-shadow:0 0 0 3px rgba(168,98,10,.22)}
-.ddk-form .cac-chon{display:grid;gap:8px}
-.ddk-form .chon{display:flex;align-items:center;gap:12px;margin:0;padding:12px 14px;border:1px solid var(--line-2);border-radius:var(--r-s);background:#fff;font-weight:500;font-size:15.5px;cursor:pointer}
+.ddk-form .cac-chon{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.ddk-form .cac-chon.n4{grid-template-columns:repeat(2,1fr)}
+.ddk-form .chon{display:flex;align-items:center;gap:12px;margin:0;padding:13px 14px;border:1px solid #D9CBB3;border-radius:var(--r-s);background:#fff;font-weight:500;font-size:15.5px;line-height:1.4;cursor:pointer;transition:border-color .15s,background .15s}
+.ddk-form .chon:hover{border-color:#A8620A}
 .ddk-form .chon input{accent-color:#A8620A;width:18px;height:18px;flex:none;margin:0}
 .ddk-form .chon:has(input:checked){border-color:#A8620A;background:#F7E6C8}
 .ddk-form .chon:has(input:focus-visible){box-shadow:0 0 0 3px rgba(168,98,10,.22)}
@@ -114,13 +128,18 @@ CSS = """<style>
 .ddk-nut .nut{cursor:pointer;font-size:16px}
 .ddk-nut button.nut:disabled{opacity:.6;cursor:default}
 .ddk-bay{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.ddk-xong{display:none;padding:26px;border-radius:var(--r);background:#F7E6C8;border:1px solid #D9B26A}
-.ddk-xong b{display:block;font-family:var(--f-tit);font-size:24px;margin-bottom:8px}
-.ddk-xong p{color:#4E4034}
+.ddk-xong{display:none;padding:14px 4px;text-align:center}
+.ddk-xong .tich{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:#A8620A;color:#fff;font-size:28px}
+.ddk-xong b{display:block;font-family:var(--f-tit);font-size:clamp(24px,3.4vw,30px);margin-bottom:10px}
+.ddk-xong p{margin:0 auto 10px;max-width:46ch;color:#4E4034}
+.ddk-xong .chuyen{margin-top:18px;padding-top:16px;border-top:1px solid #E6DAC6;font-size:14.5px;color:var(--ink-3)}
+.ddk-xong .chuyen a{color:#A8620A;font-weight:600}
 .ddk-form.da-gui .buoc,.ddk-form.da-gui .ddk-nut,.ddk-form.da-gui .ddk-loi{display:none}
 .ddk-form.da-gui .ddk-xong{display:block}
-.ddk-ghi{margin-top:16px;font-size:14px;color:var(--ink-3)}
-@media (max-width:560px){.ddk-form{padding:20px}.ddk-nut .nut{width:100%;justify-content:center}}
+.ddk-ghi{margin-top:18px;text-align:center;font-size:14px;color:var(--ink-3)}
+.ddk-nut{padding-top:22px;border-top:1px solid #E6DAC6}
+@media (max-width:640px){.ddk-form .hang2,.ddk-form .cac-chon.n4{grid-template-columns:1fr}}
+@media (max-width:560px){.ddk-form{padding:20px}.ddk-nut .nut{width:100%;justify-content:center}.ddk-tien li span{display:none}.ddk-tien li.on span{display:inline}.ddk-tien li.on{flex:none}.ddk-tien li{flex:1}.ddk-tien li.on::after{flex:1}}
 </style>"""
 
 JS = """<script>
@@ -166,7 +185,7 @@ JS = """<script>
     /* text/plain là cố ý, giống trang Cộng đồng: tránh yêu cầu kiểm tra trước của trình duyệt mà Apps Script không trả lời. */
     fetch(URL_GUI,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
       .then(function(r){ return r.json(); })
-      .then(function(kq){ if(kq&&kq.ok){ f.classList.add('da-gui'); d.querySelector('.ddk-tien').style.display='none'; d.querySelector('.ddk-ghi').style.display='none'; f.scrollIntoView({behavior:'smooth',block:'start'}); } else loiGui(kq&&kq.loi?e2(kq.loi):''); })
+      .then(function(kq){ if(kq&&kq.ok){ f.classList.add('da-gui'); d.querySelector('.ddk-tien').style.display='none'; d.querySelector('.ddk-ghi').style.display='none'; f.scrollIntoView({behavior:'smooth',block:'start'}); setTimeout(function(){ location.href='../../tham-gia/'; },3500); } else loiGui(kq&&kq.loi?e2(kq.loi):''); })
       .catch(function(){ loiGui(''); });
   });
   function e2(s){ return String(s).replace(/[&<>]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
@@ -181,12 +200,12 @@ THAN = CSS + """
 <section class="ddk">
   <div class="ddk-khung">
     <ol class="ddk-tien" aria-label="Các bước">
-      <li class="on">1 · Bạn là ai</li><li>2 · Kết quả</li><li>3 · Sẵn sàng</li>
+      <li class="on"><span>Bạn là ai</span></li><li><span>Kết quả</span></li><li><span>Sẵn sàng</span></li>
     </ol>
     <form id="ddk-form" class="ddk-form" novalidate>
-      <fieldset class="buoc on"><h2>Bạn là ai</h2>""" + BUOC1 + """</fieldset>
-      <fieldset class="buoc"><h2>Kết quả và người bạn muốn dẫn</h2>""" + BUOC2 + """</fieldset>
-      <fieldset class="buoc"><h2>Mức sẵn sàng</h2>""" + BUOC3 + """</fieldset>
+      <fieldset class="buoc on"><p class="buoc-k">Bước 1 trên 3</p><h2>Bạn là ai</h2><p class="buoc-d">Để Duy biết đang nói chuyện với ai.</p>""" + BUOC1 + """</fieldset>
+      <fieldset class="buoc"><p class="buoc-k">Bước 2 trên 3</p><h2>Kết quả và người bạn muốn dẫn</h2><p class="buoc-d">Đây là phần Duy đọc kỹ nhất. Bạn viết cụ thể, có con số.</p>""" + BUOC2 + """</fieldset>
+      <fieldset class="buoc"><p class="buoc-k">Bước 3 trên 3</p><h2>Mức sẵn sàng</h2><p class="buoc-d">Để Duy biết hai bên có hợp nhịp làm việc không. Câu nào chưa chắc, bạn cứ chọn đúng như vậy.</p>""" + BUOC3 + """</fieldset>
       <div class="ddk-bay" aria-hidden="true"><label>Để trống<input type="text" name="bay" tabindex="-1" autocomplete="off"></label></div>
       <p class="ddk-loi" id="ddk-loi" role="alert"></p>
       <div class="ddk-nut">
@@ -194,7 +213,7 @@ THAN = CSS + """
         <button type="button" class="nut nut-v" id="ddk-tiep">Tiếp tục <span class="mt" aria-hidden="true">&rarr;</span></button>
         <button type="submit" class="nut nut-v" id="ddk-gui" style="display:none">Gửi đơn trở thành Người Dẫn Đường</button>
       </div>
-      <div class="ddk-xong" role="status"><b>Duy đã nhận đơn của bạn.</b><p>Duy đọc từng đơn và trả lời bạn trong 7 ngày. Một thư xác nhận đang được gửi tới email bạn vừa điền.</p></div>
+      <div class="ddk-xong" role="status"><span class="tich" aria-hidden="true">&#10003;</span><b>Duy đã nhận đơn của bạn.</b><p>Duy đọc từng đơn và trả lời bạn trong 7 ngày. Một thư xác nhận đang được gửi tới email bạn vừa điền.</p><p class="chuyen">Vài giây nữa trang sẽ chuyển tới nơi tham gia Cộng đồng Next Gen Founder. <a href="../../tham-gia/">Vào ngay</a></p></div>
     </form>
     <p class="ddk-ghi">Đơn này chỉ để Duy hiểu bạn trước buổi gặp. Gửi đơn không đồng nghĩa với việc được nhận hay bị từ chối ngay.</p>
   </div>
@@ -203,7 +222,7 @@ THAN = CSS + """
 
 trang(TEP, "Gửi đơn trở thành Người Dẫn Đường",
       "Đơn đăng ký trở thành Người Dẫn Đường của Coach Duy Nguyễn: ba bước ngắn để Duy hiểu bạn trước buổi gặp.",
-      THAN, "")
+      THAN, "", cuoi=False)
 
 # Trang đăng ký không đưa lên Google: chỉ người bấm từ trang chương trình mới cần tới.
 _p = os.path.join(GOC, TEP)
