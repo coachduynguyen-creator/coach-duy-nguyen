@@ -86,21 +86,21 @@ CSS = """<style>
 .ddk{padding:8px 0 96px}
 .ddk-khung{width:min(100% - 40px,760px);margin-inline:auto}
 .ddk-tien{display:flex;margin:0 0 24px;padding:0;list-style:none;counter-reset:b}
-.ddk-tien li{flex:1;display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4)}
-.ddk-tien li::before{counter-increment:b;content:counter(b);flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;font-size:13px;letter-spacing:0}
-.ddk-tien li::after{content:"";flex:1;height:1px;margin:0 12px;background:var(--line-2);opacity:.6}
+.ddk-tien li{flex:1;display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.ddk-tien li::before{counter-increment:b;content:counter(b);flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid #9A8B7A;display:grid;place-items:center;font-size:13px;letter-spacing:0}
+.ddk-tien li::after{content:"";flex:1;height:1px;margin:0 12px;background:#9A8B7A;opacity:.7}
 .ddk-tien li:last-child{flex:none}
 .ddk-tien li:last-child::after{display:none}
 .ddk-tien li.on{color:var(--vang)}
 .ddk-tien li.on::before{background:var(--vang);border-color:var(--vang);color:#1B1208;font-weight:700}
-.ddk-tien li.xong{color:var(--ink-3)}
+.ddk-tien li.xong{color:var(--ink)}
 .ddk-tien li.xong::before{content:"\\2713";border-color:var(--vang-3);color:var(--vang)}
 .ddk-tien li.xong::after{background:var(--vang-3);opacity:1}
 .ddk-form{color-scheme:light;--ink:#241B14;--ink-2:#4E4034;--ink-3:#5E4F3E;--ink-4:#75634F;--line-2:#B9A78E;background:#FBF6EB;color:#241B14;border:1px solid #DFD2BE;border-radius:var(--r);padding:30px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .ddk-form .buoc{border:0;margin:0;padding:0;min-width:0;display:none}
 .ddk-form .buoc.on{display:block}
 .ddk-form .buoc > h2{font-size:clamp(22px,3vw,28px);margin:0 0 6px}
-.ddk-form .buoc-k{margin:0 0 4px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#A8620A}
+.ddk-form .buoc-k{margin:0 0 4px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8A4E06}
 .ddk-form .buoc-d{margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid #E6DAC6;font-size:15px;color:var(--ink-3)}
 .ddk-form .hang2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
 .ddk-form .o{display:flex;flex-direction:column;gap:7px;margin:0 0 20px;font-size:15.5px;font-weight:600;color:var(--ink);border:0;padding:0;min-width:0}
@@ -136,7 +136,7 @@ CSS = """<style>
 .ddk-xong .chuyen a{color:#A8620A;font-weight:600}
 .ddk-form.da-gui .buoc,.ddk-form.da-gui .ddk-nut,.ddk-form.da-gui .ddk-loi{display:none}
 .ddk-form.da-gui .ddk-xong{display:block}
-.ddk-ghi{margin-top:18px;text-align:center;font-size:14px;color:var(--ink-3)}
+.ddk-ghi{margin-top:18px;text-align:center;font-size:14px;color:var(--ink-2)}
 .ddk-nut{padding-top:22px;border-top:1px solid #E6DAC6}
 @media (max-width:640px){.ddk-form .hang2,.ddk-form .cac-chon.n4{grid-template-columns:1fr}}
 @media (max-width:560px){.ddk-form{padding:20px}.ddk-nut .nut{width:100%;justify-content:center}.ddk-tien li span{display:none}.ddk-tien li.on span{display:inline}.ddk-tien li.on{flex:none}.ddk-tien li{flex:1}.ddk-tien li.on::after{flex:1}}
