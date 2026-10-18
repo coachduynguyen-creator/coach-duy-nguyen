@@ -9,7 +9,7 @@
 
   // Gửi qua trạm Cloudflare /api/dang-ky vào Pancake; câu phân loại, cột Pancake, Rất ưu tiên ở dang-ky.js.
   var DK = window.NGF_DK;
-  var NGUON_HOP_LE = ['facebook', 'youtube', 'tiktok', 'zalo', 'gioi-thieu'];
+  var NGUON_HOP_LE = ['facebook', 'youtube', 'tiktok', 'zalo', 'instagram', 'gioi-thieu'];
 
   function doc(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   function ghi(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }

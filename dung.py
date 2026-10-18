@@ -2237,14 +2237,14 @@ from ebook.dung_ebook import thong_tin as _tt_eb
 from ebook.dung_ebook import TEP_PDF as _TEP_EB
 _CONG_CU_EB = {"F1": ["dongtien", "laithat", "sokhach"], "F2": ["ketqua", "nhanvienmoi", "traodoi"], "F3": ["khachdeu", "quangcao", "khachcu"],
                "F4": ["2027", "sokhach", "quytrinh"], "F5": ["giaoviec", "lichtuan", "vangmat"], "F6": ["kehoach", "2027"],
-               "F7": ["tuvan", "giacao"], "F8": ["diemnghen", "lichtuan"], "E1": ["cauchuyen"], "E2": ["giaoviec", "ketqua"],
+               "F7": ["tuvan", "giacao", "cauhoi"], "F8": ["diemnghen", "lichtuan"], "E1": ["cauchuyen"], "E2": ["giaoviec", "ketqua"],
                "E3": ["cauchuyen", "hoso"], "E4": ["tuvan", "khachkho"], "E5": ["cauchuyen", "loigioithieu"], "E6": ["hoso", "loigioithieu"]}
 _ngan_ma = {n: m for n, m in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-luong-co-lai"), ("quytrinh", "quy-trinh-tu-cach-lam"),
             ("khachkho", "khach-kho-tinh"), ("dongtien", "du-bao-dong-tien-13-tuan"), ("laithat", "lai-that-tung-goi"), ("quangcao", "chi-phi-quang-cao-moi-khach"),
             ("khachdeu", "khach-den-khong-deu"), ("khachcu", "khach-cu-quay-lai"), ("loigioithieu", "loi-gioi-thieu-doanh-nghiep"), ("tuvan", "tu-van-khach-chua-mua"),
             ("giacao", "khach-noi-gia-cao"), ("giaoviec", "giao-viec-cho-quan-ly"), ("lichtuan", "lich-lam-viec-nguoi-chu"), ("vangmat", "chu-vang-hai-tuan"),
             ("diemnghen", "diem-nghen-khi-chung-lai"), ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"),
-            ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang")]}
+            ("cauchuyen", "cau-chuyen-thuong-hieu"), ("hoso", "hoso-doanh-nghiep-chatgpt"), ("kehoach", "ke-hoach-kinh-doanh-mot-trang"), ("cauhoi", "cau-hoi-mo-dau-tu-van")]}
 _ten_cc = {c["ma"]: c["tieu"] for c in cong_cu_ai.DS}
 def trang_ebook(ma):
     x = _tt_eb(ma); m = ma.lower(); pdf = _TEP_EB[ma]; e = html.escape
@@ -2717,7 +2717,7 @@ for _ngan, _ma in [("2027", "danh-gia-ke-hoach-2027"), ("sokhach", "so-khach-du-
                    ("ketqua", "ket-qua-tung-vi-tri"), ("nhanvienmoi", "dao-tao-nhan-vien-moi"), ("traodoi", "trao-doi-kho-voi-nhan-vien"), ("phongvan", "phong-van-tuyen-dung"),
                    ("gioithieukhach", "khach-gioi-thieu-khach"), ("loigioithieu", "loi-gioi-thieu-doanh-nghiep"), ("tuvan", "tu-van-khach-chua-mua"), ("giacao", "khach-noi-gia-cao"),
                    ("giaoviec", "giao-viec-cho-quan-ly"), ("lichtuan", "lich-lam-viec-nguoi-chu"), ("vangmat", "chu-vang-hai-tuan"), ("diemnghen", "diem-nghen-khi-chung-lai"),
-                   ("laithat", "lai-that-tung-goi"), ("quangcao", "chi-phi-quang-cao-moi-khach"), ("khachdeu", "khach-den-khong-deu"), ("khachcu", "khach-cu-quay-lai")]:
+                   ("laithat", "lai-that-tung-goi"), ("quangcao", "chi-phi-quang-cao-moi-khach"), ("khachdeu", "khach-den-khong-deu"), ("khachcu", "khach-cu-quay-lai"), ("cauhoi", "cau-hoi-mo-dau-tu-van")]:
     os.makedirs(os.path.join(_GOC, _ngan), exist_ok=True)
     open(os.path.join(_GOC, _ngan, "index.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">

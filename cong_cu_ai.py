@@ -41,6 +41,7 @@ CONG_CU = [
     ("cau-chuyen-thuong-hieu", "NGF - Tài liệu thu lead 23, tìm câu chuyện thật để xây dựng thương hiệu cá nhân.md"),
     ("hoso-doanh-nghiep-chatgpt", "NGF - Tài liệu thu lead 24, hồ sơ doanh nghiệp dùng cho ChatGPT.md"),
     ("ke-hoach-kinh-doanh-mot-trang", "NGF - Tài liệu thu lead 25, lập kế hoạch kinh doanh năm 2027 trong một trang.md"),
+    ("cau-hoi-mo-dau-tu-van", "NGF - Tài liệu thu lead 26, chép cách bạn tư vấn thành năm câu hỏi mở đầu cho nhân viên.md"),
 ]
 # Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
@@ -89,6 +90,10 @@ HINH = {
    cot=[("Với bản hồ sơ nháp", 7, "7 chỗ"), ("Mục tiêu sau khi sửa", 2, "2 chỗ")],
    ket="Sửa ba lỗ hổng trong hồ sơ để số chỗ ChatGPT phải tự giả định giảm từ 7 xuống 2", vd="Công ty phân phối thực phẩm đông lạnh 25 người",
    boi="Chủ một công ty phân phối thực phẩm đông lạnh 25 người có 5 người dùng ChatGPT, mỗi lần đều phải giới thiệu lại công ty. AI hỏi mười câu, soạn hồ sơ rồi thử ba việc thật. Với bản nháp đầu, ChatGPT phải tự giả định ở 7 chỗ."),
+ "cau-hoi-mo-dau-tu-van": dict(kieu="cot", tieu="Lần đầu nhắc tới mắc cài hoặc giá nằm ở câu thứ mấy",
+   cot=[("Nhân viên tư vấn", 1, "câu thứ 1"), ("Bác sĩ chủ phòng khám", 7, "câu thứ 7")],
+   ket="Bác sĩ chủ hỏi về bé và gia đình trước, nên 60% gia đình đồng ý, nhân viên chỉ 30%", vd="Phòng khám nha khoa niềng răng trẻ em",
+   boi="Bác sĩ chủ một phòng khám nha khoa niềng răng trẻ em chép lại năm phút đầu của ba buổi mình tư vấn. Bác sĩ nghĩ phụ huynh tin vì mình là bác sĩ. AI chỉ ra khác biệt nằm ở thứ tự câu hỏi: nhân viên mở đầu bằng bảng giá mắc cài."),
  "ke-hoach-kinh-doanh-mot-trang": dict(kieu="cot", tieu="Số dư tiền cuối tháng 3 năm 2027, tháng mua máy pha mới",
    cot=[("Số dư cuối tháng 3", 34, "34 triệu"), ("Mức chủ muốn luôn giữ", 50, "50 triệu")],
    ket="Thiếu 16 triệu so với mức muốn giữ, dù cả năm 2027 vẫn lãi khoảng 381 triệu", vd="Quán cà phê hai cơ sở",
@@ -186,10 +191,10 @@ CHU_DE = {"danh-gia-ke-hoach-2027": "Điểm nghẽn của người sáng lập"
           "ket-qua-tung-vi-tri": "Hệ thống tăng trưởng", "dao-tao-nhan-vien-moi": "Hệ thống tăng trưởng",
           "trao-doi-kho-voi-nhan-vien": "Điểm nghẽn của người sáng lập", "phong-van-tuyen-dung": "Hệ thống tăng trưởng",
           "cau-chuyen-thuong-hieu": "Thương hiệu của người sáng lập", "hoso-doanh-nghiep-chatgpt": "AI cho người chủ",
-          "ke-hoach-kinh-doanh-mot-trang": "Điểm nghẽn của người sáng lập"}
+          "ke-hoach-kinh-doanh-mot-trang": "Điểm nghẽn của người sáng lập", "cau-hoi-mo-dau-tu-van": "Bán hàng và phòng kinh doanh"}
 
 # Mã YouTube của video Coach Duy làm thật, khoảng 5 phút. Để trống thì trang không có khối video.
-VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "ket-qua-tung-vi-tri": "", "khach-gioi-thieu-khach": "", "lai-that-tung-goi": "", "chi-phi-quang-cao-moi-khach": "", "khach-den-khong-deu": "", "khach-cu-quay-lai": "", "loi-gioi-thieu-doanh-nghiep": "", "tu-van-khach-chua-mua": "", "khach-noi-gia-cao": "", "giao-viec-cho-quan-ly": "", "lich-lam-viec-nguoi-chu": "", "chu-vang-hai-tuan": "", "diem-nghen-khi-chung-lai": "", "dao-tao-nhan-vien-moi": "", "trao-doi-kho-voi-nhan-vien": "", "phong-van-tuyen-dung": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": ""}
+VIDEO = {"danh-gia-ke-hoach-2027": "", "so-khach-du-luong-co-lai": "", "quy-trinh-tu-cach-lam": "", "khach-kho-tinh": "", "phan-bien-quyet-dinh": "", "du-bao-dong-tien-13-tuan": "", "cau-chuyen-thuong-hieu": "", "ket-qua-tung-vi-tri": "", "khach-gioi-thieu-khach": "", "lai-that-tung-goi": "", "chi-phi-quang-cao-moi-khach": "", "khach-den-khong-deu": "", "khach-cu-quay-lai": "", "loi-gioi-thieu-doanh-nghiep": "", "tu-van-khach-chua-mua": "", "khach-noi-gia-cao": "", "giao-viec-cho-quan-ly": "", "lich-lam-viec-nguoi-chu": "", "chu-vang-hai-tuan": "", "diem-nghen-khi-chung-lai": "", "dao-tao-nhan-vien-moi": "", "trao-doi-kho-voi-nhan-vien": "", "phong-van-tuyen-dung": "", "hoso-doanh-nghiep-chatgpt": "", "ke-hoach-kinh-doanh-mot-trang": "", "cau-hoi-mo-dau-tu-van": ""}
 
 
 # ------------------------------------------------------------ đọc tệp .md

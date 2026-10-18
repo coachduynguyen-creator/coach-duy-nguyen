@@ -8,7 +8,7 @@
   function doc(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   function ghi(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   var q = new URLSearchParams(location.search), nguon = (q.get('nguon') || '').toLowerCase();
-  if (['facebook', 'youtube', 'tiktok', 'zalo', 'gioi-thieu'].indexOf(nguon) > -1) ghi('ngf-nguon', nguon); else nguon = doc('ngf-nguon') || 'khong-ro';
+  if (['facebook', 'youtube', 'tiktok', 'zalo', 'instagram', 'gioi-thieu'].indexOf(nguon) > -1) ghi('ngf-nguon', nguon); else nguon = doc('ngf-nguon') || 'khong-ro';
   var THU = q.get('thu') === '1';
 
   function gui(n) {
