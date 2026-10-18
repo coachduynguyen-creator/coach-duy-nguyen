@@ -16,6 +16,7 @@ for tep in sorted(trang_html):
     ids = set(re.findall(r'id="([^"]+)"', s))
     for attr, pat in (("href", r'href="([^"]+)"'), ("src", r'src="([^"]+)"')):
         for u in re.findall(pat, s):
+            if re.search(r"'\s*\+", u): continue  # đường dẫn ghép bằng mã, không phải đường dẫn thật
             if u.startswith(('http://', 'https://', 'mailto:', 'data:', '#')):
                 if u.startswith('#') and len(u) > 1 and u[1:] not in ids:
                     loi.append('%s: neo %s không có trong trang' % (ten, u))

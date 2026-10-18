@@ -112,6 +112,8 @@ CSS = """<style>
 .ndd-so b{display:block;font-family:var(--f-tit);font-size:clamp(26px,3.4vw,40px);line-height:1.05;color:var(--ink)}
 .ndd-so i{font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--vang)}
 .ndd-so span{display:block;margin-top:6px;font-size:14.5px;color:var(--ink-3);line-height:1.45}
+.ndd-luu{margin-top:14px;font-size:14.5px;color:var(--ink-3)}
+.ndd-cuoi .ndd-luu{text-align:center;max-width:640px;margin:18px auto 0}
 .ndd-trich{margin-top:18px;padding-left:16px;border-left:3px solid var(--vang);font-family:var(--f-tit);font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--ink) !important}
 .ndd-dt{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--ke);align-items:center}
 .ndd-dt > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
@@ -209,6 +211,7 @@ THAN = CSS + """<div class="ndd">
     <p class="dan">Mười hai tháng Duy kèm bạn trở thành một huấn luyện viên kinh doanh: người ngồi cùng chủ doanh nghiệp, giúp họ nhìn ra chỗ đang kẹt và tự đi tiếp. Bạn học bằng cách ngồi cạnh Duy trong những buổi coaching thật, với khách hàng thật.</p>
     </div><img src="%simg/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high"></div>
     <div class="ndd-so">%s</div>
+    <p class="ndd-luu">Ba con số trên là những gì Duy đã làm được. Chương trình không hứa bạn sẽ có mức thu nhập nào.</p>
   </div>
 </section>
 """ % (P, P, "".join('<div><i>%s</i><b>%s</b><span>%s</span></div>' % (d, s, m) for s, d, m in SO)) + KHACH_SEC + """
@@ -310,7 +313,7 @@ THAN = CSS + """<div class="ndd">
     """ + anh("dh-giua-doan", "Coach Duy Nguyễn giữa học viên trong một buổi đào tạo") + """
   </div>
   <div class="ndd-hai" style="margin-top:28px">
-    <div class="ndd-o hien"><p class="ndd-nho">Con đường 1</p><h3>Mentor trong Cộng đồng Next Gen Founder</h3><p>Bạn dẫn nhóm thành viên, cùng dẫn các buổi coaching của cộng đồng, nhận khách kèm riêng do cộng đồng giới thiệu và được chia doanh thu từ nhóm mình dẫn.</p></div>
+    <div class="ndd-o hien"><p class="ndd-nho">Con đường 1</p><h3>Mentor trong Cộng đồng Next Gen Founder</h3><p>Bạn dẫn nhóm thành viên, cùng dẫn các buổi coaching của cộng đồng, nhận khách kèm riêng do cộng đồng giới thiệu và được chia doanh thu từ nhóm mình dẫn. Tỷ lệ chia Duy nói rõ ở buổi gặp riêng.</p></div>
     <div class="ndd-o hien"><p class="ndd-nho">Con đường 2</p><h3>Coach độc lập mang chứng nhận</h3><p>Bạn làm dịch vụ của riêng mình và ghi chứng nhận Người Dẫn Đường khi chứng nhận còn hạn. Tên dịch vụ là tên của bạn, không mang tên Next Gen Founder hay tên chương trình.</p></div>
   </div>
 </section>
@@ -322,8 +325,8 @@ THAN = CSS + """<div class="ndd">
     <p>Duy mời trước thành viên Cộng đồng Pro và Diamond Founder Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
   </div>
   <ol class="ndd-vao hien">
-    <li><b>Thư mời</b><span>Duy gửi tới những người Duy thấy phù hợp.</span></li>
-    <li><b>Phiếu khảo sát</b><span>Bạn kể kết quả mình đã làm ra, và người bạn muốn dẫn dắt.</span></li>
+    <li><b>Thư mời hoặc đơn của bạn</b><span>Duy gửi thư mời tới người Duy thấy phù hợp, hoặc bạn tự gửi đơn.</span></li>
+    <li><b>Đơn của bạn</b><span>Bạn kể kết quả mình đã làm ra, và người bạn muốn dẫn dắt.</span></li>
     <li><b>Gặp riêng Duy</b><span>Một buổi nói thẳng về mong muốn của bạn và yêu cầu của chương trình.</span></li>
     <li><b>Dẫn thử một buổi</b><span>Có Duy ngồi dự. Nói chuyện giỏi chưa chắc đã dẫn nhóm giỏi, nên bước này không bỏ.</span></li>
   </ol>
@@ -341,6 +344,7 @@ THAN = CSS + """<div class="ndd">
       <a class="nut nut-v" href="dang-ky/">Gửi đơn trở thành Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a>
       <a class="nut nut-vien" href="../tham-gia/">Vào Cộng đồng Next Gen Founder</a>
     </div>
+    <p class="ndd-luu hien">Gửi đơn không mất phí. Duy đọc và trả lời trong 7 ngày. Nếu hợp, hai bên gặp riêng, rồi bạn dẫn thử một buổi có Duy dự. Chi phí tham gia, nếu có, Duy nói rõ ở buổi gặp riêng, trước khi bạn quyết định.</p>
   </div>
 </section>
 </div>
