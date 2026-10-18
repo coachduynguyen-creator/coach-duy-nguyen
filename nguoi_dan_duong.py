@@ -162,6 +162,7 @@ CSS = """<style>
 .ndd-vao li:before{content:"Bước " counter(b);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--vang)}
 .ndd-vao b{display:block;font-family:var(--f-tit);font-size:19px;margin:8px 0 6px}
 .ndd-vao span{font-size:14.5px;color:var(--ink-2)}
+.ndd-nut-dau{margin-top:22px}
 .ndd-nut{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 @media (max-width:1000px){
   .ndd-bon{grid-template-columns:repeat(2,1fr)}
@@ -209,6 +210,7 @@ THAN = CSS + """<div class="ndd">
     <h1><span>Những gì bạn đã trả giá để biết,</span> <span>đừng để nó dừng lại ở bạn.</span></h1>
     <p class="ndd-phu">Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh (business coach)</p>
     <p class="dan">Mười hai tháng Duy kèm bạn trở thành một huấn luyện viên kinh doanh: người ngồi cùng chủ doanh nghiệp, giúp họ nhìn ra chỗ đang kẹt và tự đi tiếp. Bạn học bằng cách ngồi cạnh Duy trong những buổi coaching thật, với khách hàng thật.</p>
+    <p class="ndd-nut-dau"><a class="nut nut-v" href="dang-ky/">Gửi đơn trở thành Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></p>
     </div><img src="%simg/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high"></div>
     <div class="ndd-so">%s</div>
     <p class="ndd-luu">Ba con số trên là những gì Duy đã làm được. Chương trình không hứa bạn sẽ có mức thu nhập nào.</p>
@@ -338,11 +340,10 @@ THAN = CSS + """<div class="ndd">
     <div class="phan-dau hien">
       <p class="mono">Khóa đầu, sáu tới mười người</p>
       <h2>Bạn muốn là một trong sáu tới mười người đầu tiên?</h2>
-      <p>Gửi đơn kể về kết quả bạn đã làm ra và người bạn muốn dẫn dắt. Duy đọc từng đơn và trả lời trong 7 ngày. Nếu bạn chưa là thành viên, hãy vào Cộng đồng Next Gen Founder, đó là nơi Duy gặp và mời những người đầu tiên.</p>
+      <p>Gửi đơn kể về kết quả bạn đã làm ra và người bạn muốn dẫn dắt. Duy đọc từng đơn và trả lời trong 7 ngày.</p>
     </div>
     <div class="ndd-nut hien">
       <a class="nut nut-v" href="dang-ky/">Gửi đơn trở thành Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a>
-      <a class="nut nut-vien" href="../tham-gia/">Vào Cộng đồng Next Gen Founder</a>
     </div>
     <p class="ndd-luu hien">Gửi đơn không mất phí. Duy đọc và trả lời trong 7 ngày. Nếu hợp, hai bên gặp riêng, rồi bạn dẫn thử một buổi có Duy dự. Chi phí tham gia, nếu có, Duy nói rõ ở buổi gặp riêng, trước khi bạn quyết định.</p>
   </div>
@@ -353,7 +354,7 @@ THAN = CSS + """<div class="ndd">
 TEP = "nguoi-dan-duong/index.html"
 trang(TEP, "Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh",
       "Mười hai tháng Coach Duy Nguyễn kèm bạn trở thành huấn luyện viên kinh doanh (business coach): ngồi cạnh Duy trong những buổi coaching thật, rồi làm mentor trong Cộng đồng Next Gen Founder hoặc mở dịch vụ coaching của riêng bạn.",
-      THAN, "")
+      THAN, "", cuoi=False)
 
 # Coach Duy chốt 12/10/2026: đưa vào menu Chương trình, mở cho Google (bỏ noindex), có trong sitemap.
 print("  " + TEP)
