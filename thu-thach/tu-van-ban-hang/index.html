@@ -658,6 +658,14 @@ function veXem(n) {
   if (b1) b1.classList.toggle('xong', du && traLoi);
   /* Bước 2 mở khi máy chủ đã nhận Bước 1 (nút Nộp Bước 1); nút chỉ bấm được khi xem đủ video và trả lời đủ ba câu. */
   if ($('nop-1')) $('nop-1').disabled = !(du && traLoi) || XEM_TRUOC;
+  /* Nút mờ mà không nói vì sao thì người học tưởng trang hỏng (nhân sự báo 18/10/2026): ghi lý do ngay dưới nút. */
+  var bao1 = $('bao-1');
+  if (bao1 && !XEM_TRUOC) {
+    if (!(du && traLoi)) {
+      bao1.className = 'bao'; bao1.dataset.goiY = '1';
+      bao1.textContent = ((du ? '' : 'Nút Nộp mở khi bạn xem từ ' + CAN_XEM + '% video, hiện đã xem ' + pt + '%. ') + (traLoi ? '' : 'Trả lời đủ ba câu ở trên.')).trim();
+    } else if (bao1.dataset.goiY) { bao1.textContent = ''; delete bao1.dataset.goiY; }
+  }
   if ((daMo(n) || XEM_TRUOC) && $('buoc-2')) $('buoc-2').classList.remove('khoa');
   /* Bước 3 mở khi máy chủ đã nhận Bước 2 (nút Lưu và nộp), nút chỉ bấm được khi đã điền ít nhất một ô; xóa hết chữ thì khóa lại. */
   var coChu = tatCaO(n).some(function (o) { return !o.sv && !o.rieng && !o.lk && doc(o.id).trim(); });
