@@ -41,7 +41,7 @@ CONG_CU = [
     ("cau-chuyen-thuong-hieu", "NGF - Tài liệu thu lead 23, tìm câu chuyện thật để xây dựng thương hiệu cá nhân.md"),
     ("hoso-doanh-nghiep-chatgpt", "NGF - Tài liệu thu lead 24, hồ sơ doanh nghiệp dùng cho ChatGPT.md"),
     ("ke-hoach-kinh-doanh-mot-trang", "NGF - Tài liệu thu lead 25, lập kế hoạch kinh doanh năm 2027 trong một trang.md"),
-    ("cau-hoi-mo-dau-tu-van", "NGF - Tài liệu thu lead 26, chép cách bạn tư vấn thành năm câu hỏi mở đầu cho nhân viên.md"),
+    ("cau-hoi-mo-dau-tu-van", "NGF - Tài liệu thu lead 26, biến cách bạn tư vấn thành năm câu hỏi mở đầu cho nhân viên.md"),
 ]
 # Hình minh họa đầu trang, dựng bằng HTML từ số của bài mẫu thứ nhất trong tệp
 # nội dung. Mỗi trang một kiểu hình. Đổi số trong bài mẫu thì sửa luôn ở đây.
