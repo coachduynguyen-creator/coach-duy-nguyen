@@ -165,7 +165,7 @@ function bacSoNguoi(s) { s = chuoi(s); return s.indexOf('Dưới 5') === 0 ? 0 :
 function bacSoNam(s) { s = chuoi(s); return s.indexOf('Dưới 3') === 0 ? 0 : s.indexOf('3 tới 5') === 0 ? 1 : s.indexOf('Trên 5') === 0 ? 2 : -1; }
 function bacDoanhThu(s) { s = chuoi(s); return s.indexOf('Dưới 1 tỷ') === 0 ? 0 : (s.indexOf('1 tới 5') === 0 || s.indexOf('5 tới 20') === 0 || s.indexOf('Trên 20') === 0) ? 1 : -1; }
 
-/** Chấm các tiêu chí máy đếm được. true / false / null (chưa xác định được). AI đọc và sales ghi để null. */
+/** Chấm các tiêu chí máy đếm được. true / false / null (chưa xác định được). Sales ghi để null. */
 function chamTieuChi(p, ls) {
   var hom = homNay(), nop = {}, dung = 0, den = 0, tre = false, quayLai = null;
   for (var n = 1; n <= 7; n++) if (p.ngay[n]) nop[n] = p.ngay[n].nop;
@@ -200,11 +200,11 @@ function chamTieuChi(p, ls) {
   return { C: C, D: D, cap: cap, dat_nop: nop };
 }
 
+// 20/10/2026: Coach Duy chốt không dùng AI chấm, bỏ C4 tới C7, C9 và D4 (bản chốt 16/10).
 var CAM_KET = [['C1', 'Nộp đủ và đúng hạn', 'may'], ['C2', 'Xem video', 'may'], ['C3', 'Quay lại sau khi chậm', 'may'],
-  ['C4', 'Nói được nỗi đau cụ thể', 'ai'], ['C5', 'Mong muốn có con số và mốc thời gian', 'ai'], ['C6', 'Mức gấp của vấn đề', 'ai'],
-  ['C7', 'Hành động thật ở Bước 3', 'ai'], ['C8', 'Độ chi tiết của bài', 'may'], ['C9', 'Bài có tình huống và số liệu thật', 'ai']];
+  ['C8', 'Độ chi tiết của bài', 'may']];
 var PHU_HOP = [['D1', 'Là chủ doanh nghiệp', 'may'], ['D2', 'Quy mô từ 5 người và 3 năm', 'may'], ['D3', 'Doanh thu từ 1 tỷ', 'may'],
-  ['D4', 'Điểm nghẽn lớn hơn bảy ngày giải được', 'ai'], ['D5', 'Đồng ý đăng công khai', 'may'], ['D6', 'Tín hiệu ngoài trang', 'sales']];
+  ['D5', 'Đồng ý đăng công khai', 'may'], ['D6', 'Tín hiệu ngoài trang', 'sales']];
 
 function truc(ds, kq) {
   var dat = 0, xet = 0;
