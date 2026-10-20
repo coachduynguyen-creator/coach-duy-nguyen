@@ -8,8 +8,10 @@
  * lúc chủ dự án chạy tay, nên người vào trước không bao giờ thành quản trị.
  * Cửa khóa thật là quyền xem Sheet: ai chưa được chia sẻ Sheet thì máy không đọc được gì cho họ.
  *
- * Trang này không ghi gì vào bảng bài nộp, chỉ ghi vào trang tính Quản trị khi Quản trị thêm hoặc gỡ người. Dữ liệu Pancake (kết quả gọi) chưa nối, nên các
- * trường đó trả về null và trang hiện "chưa nối".
+ * Trang này không ghi gì vào bảng bài nộp, chỉ ghi vào trang tính Quản trị khi Quản trị thêm hoặc gỡ người.
+ * Người phụ trách từng khách lưu ở Script Properties (khóa pt:<chín số cuối>), vì Sales chỉ có quyền xem Sheet
+ * nên không ghi được vào trang tính nào. Kết quả gọi đọc từ Pancake CRM khi chủ dự án đã thêm khóa PANCAKE_KEY
+ * vào Script Properties; chưa có khóa thì trường pancake trả về null và trang hiện "chưa nối".
  */
 
 var TEN_TRANG_QUAN_TRI = 'Quản trị';
@@ -217,15 +219,114 @@ function xepO(ck, ph) {
   return ck.cao ? (ph.cao ? 'cc' : 'ch') : (ph.cao ? 'hc' : 'th');
 }
 
-/** Hàm trang gọi khi mở. Sales chỉ nhận khách chưa ai nhận (chưa nối Pancake nên hiện tạm tất cả khách đã xếp ô). */
+/* ---------- người phụ trách ---------- */
+
+function phuTrach_() {
+  var t = PropertiesService.getScriptProperties().getProperties(), ra = {};
+  Object.keys(t).forEach(function (k) { if (k.indexOf('pt:') === 0) ra[k.slice(3)] = t[k].split('|')[0]; });
+  return ra;
+}
+
+/**
+ * Nhận khách, giao khách hoặc trả lại. id là "email|chín số cuối" như trong danh sách; ganCho rỗng là trả lại.
+ * Sales chỉ nhận khách chưa ai nhận về cho chính mình, và chỉ trả lại khách của mình. Quản trị giao cho bất kỳ ai trong danh sách.
+ */
+function nhanKhach(id, ganCho) {
+  var ai = vaiTroNguoiXem(), so = soCuoi(String(id).split('|')[1]);
+  if (!ai.vai_tro) throw new Error('Bạn chưa có quyền.');
+  if (!so) throw new Error('Không đọc được số điện thoại của khách.');
+  ganCho = chuoi(ganCho).toLowerCase();
+  if (ganCho && !danhSachQuanTri().some(function (x) { return x.email === ganCho; })) throw new Error('Email này chưa có trong danh sách trang quản trị.');
+  var kho = PropertiesService.getScriptProperties(), khoa = LockService.getScriptLock();
+  khoa.waitLock(10000);
+  try {
+    var cu = (kho.getProperty('pt:' + so) || '').split('|')[0];
+    if (ai.vai_tro !== 'Quản trị') {
+      if (ganCho && ganCho !== ai.email) throw new Error('Sales chỉ nhận khách về cho chính mình.');
+      if (ganCho && cu && cu !== ai.email) throw new Error('Khách này đã có ' + cu + ' nhận. Tải lại trang để thấy danh sách mới.');
+      if (!ganCho && cu !== ai.email) throw new Error('Bạn chỉ trả lại được khách của mình.');
+    }
+    if (ganCho) kho.setProperty('pt:' + so, ganCho + '|' + new Date().toISOString() + '|' + ai.email);
+    else kho.deleteProperty('pt:' + so);
+  } finally { khoa.releaseLock(); }
+  return ganCho;
+}
+
+/* ---------- Pancake CRM ---------- */
+
+var PANCAKE_CRM = 'https://pos.pages.fm/api/v1/shops/430111447/crm/Contact/records';
+
+/** Chạy tay một lần sau khi thêm PANCAKE_KEY: in ra cách Pancake trả danh sách liên hệ, để biết tên cột kết quả gọi. */
+function xemCotPancake() {
+  if (vaiTroNguoiXem().vai_tro !== 'Quản trị') throw new Error('Chỉ Quản trị chạy được.');
+  var key = PropertiesService.getScriptProperties().getProperty('PANCAKE_KEY');
+  if (!key) return 'Chưa có khóa PANCAKE_KEY trong Script Properties.';
+  var r = UrlFetchApp.fetch(PANCAKE_CRM + '?api_key=' + encodeURIComponent(key) + '&page_size=2', { muteHttpExceptions: true });
+  var j = {}; try { j = JSON.parse(r.getContentText()); } catch (e) { }
+  var ds = danhSachPancake_(j), mot = ds[0] || {};
+  var kq = 'Mã trả về: ' + r.getResponseCode() + '\nCác khóa ngoài cùng: ' + Object.keys(j).join(', ') +
+    '\nSố bản ghi đọc được: ' + ds.length + '\nCác cột của một bản ghi: ' + Object.keys(mot).join(', ') +
+    '\nNgoài danh sách: ' + JSON.stringify(j, function (k, v) { return Array.isArray(v) ? '[' + v.length + ' mục]' : v; }).slice(0, 600);
+  Logger.log(kq);
+  return kq;
+}
+
+function danhSachPancake_(j) {
+  var c = [j.data, j.records, j.data && j.data.records, j.data && j.data.data, j.result];
+  for (var i = 0; i < c.length; i++) if (Array.isArray(c[i])) return c[i];
+  return [];
+}
+
+/** Bỏ đuôi mã của giá trị chọn trong Pancake: "Quản lý-0268-27d9-..." thành "Quản lý". */
+function boMa_(v) {
+  if (Array.isArray(v)) return v.map(boMa).filter(Boolean).join(', ');
+  if (v && typeof v === 'object') return chuoi(v.name || v.label || v.value || '');
+  return chuoi(v).replace(/(-[0-9a-f]{4}){3,}$/i, '');
+}
+
+/**
+ * Đọc liên hệ Pancake, trả về { chín số cuối: [[tên cột, giá trị], ...] } chỉ cho các số đang có trong bảng bài nộp.
+ * Giữ 5 phút trong bộ nhớ đệm để mở trang không gọi Pancake mỗi lần. Lỗi hoặc chưa có khóa thì trả null.
+ */
+function docPancake_(canSo) {
+  var key = PropertiesService.getScriptProperties().getProperty('PANCAKE_KEY');
+  if (!key) return null;
+  var dem = CacheService.getScriptCache(), luu = dem.get('pancake');
+  if (luu) return JSON.parse(luu);
+  var bo = ['id', 'Name', 'Phone', 'Note', 'url_page', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'chuc_danh', 'nganh_nghe', 'cap_do', 'tuoi_nghe',
+    'day_co_phai_van_de_anh_chi_muon_uu_tien_giai_quyet_khong', 'noi_dau_kh', 'uu_tien', 'inserted_at', 'updated_at', 'shop_id'];
+  var ra = {};
+  try {
+    for (var trang = 1; trang <= 30; trang++) {   // ponytail: tối đa 3.000 liên hệ; Pancake nhiều hơn thì lọc theo số khi biết tham số lọc
+      var r = UrlFetchApp.fetch(PANCAKE_CRM + '?api_key=' + encodeURIComponent(key) + '&page_size=100&page_number=' + trang, { muteHttpExceptions: true });
+      if (r.getResponseCode() !== 200) return null;
+      var ds = danhSachPancake_(JSON.parse(r.getContentText()));
+      ds.forEach(function (x) {
+        var so = soCuoi(x.Phone || x.phone || '');
+        if (!so || !canSo[so]) return;
+        var o = [];
+        Object.keys(x).forEach(function (k) { if (bo.indexOf(k) < 0) { var v = boMa_(x[k]); if (v) o.push([k, v]); } });
+        ra[so] = o;
+      });
+      if (ds.length < 100) break;
+    }
+  } catch (e) { return null; }
+  dem.put('pancake', JSON.stringify(ra), 300);
+  return ra;
+}
+
+/** Hàm trang gọi khi mở. Sales thấy khách mình đã nhận và khách chưa ai nhận; Quản trị thấy tất cả. */
 function layDuLieuQuanTri() {
   var ai = vaiTroNguoiXem();
   if (!ai.vai_tro) return { quyen: false, email: ai.email };
-  var bang = layBang(), ds = docChiTiet(bang), hom = homNay();
+  var bang = layBang(), ds = docChiTiet(bang), hom = homNay(), pt = phuTrach_();
   var dem = {}, ra = [];
+  var can = {}; Object.keys(ds).forEach(function (k) { can[soCuoi(ds[k].sdt)] = 1; });
+  var pc = docPancake_(can);
   Object.keys(ds).forEach(function (k) { var s = soCuoi(ds[k].sdt); dem[s] = (dem[s] || 0) + 1; });
   Object.keys(ds).forEach(function (k) {
-    var p = ds[k], dn = {};
+    var p = ds[k], dn = {}, nguoiNhan = pt[soCuoi(p.sdt)] || '';
+    if (ai.vai_tro !== 'Quản trị' && nguoiNhan && nguoiNhan !== ai.email) return;
     Object.keys(p.ngay).forEach(function (n) { dn[n] = p.ngay[n].nop; });
     var ls = lichTuNop(p.camket ? Object.assign({ 0: p.camket }, dn) : dn);
     var kq = chamTieuChi(p, ls);
@@ -242,7 +343,8 @@ function layDuLieuQuanTri() {
       da_nop: Object.keys(p.ngay).length, video_tb: videoTb,
       c: kq.C, d: kq.D, ck: ck, ph: ph, o: o, yeu: yeu,
       trung: dem[soCuoi(p.sdt)] > 1,
-      pancake: null   // chưa nối: đã gọi, ngày hẹn, kết quả, đã mua, D6, người phụ trách
+      phu_trach: nguoiNhan,
+      pancake: pc ? (pc[soCuoi(p.sdt)] || []) : null   // null: chưa nối; []: chưa có trong Pancake
     });
   });
   return {
@@ -250,6 +352,7 @@ function layDuLieuQuanTri() {
     nguoi: ra,
     tieu_chi: { c: CAM_KET, d: PHU_HOP },
     cai_dat: { can_xem_video: CAN_XEM_VIDEO, nguong_dien: NGUONG_DIEN, nguong_truc: NGUONG_TRUC, toi_thieu_xet: TOI_THIEU_XET },
-    danh_sach: ai.vai_tro === 'Quản trị' ? danhSachQuanTri() : []
+    danh_sach: ai.vai_tro === 'Quản trị' ? danhSachQuanTri() : [],
+    pancake_noi: pc !== null
   };
 }

@@ -199,7 +199,7 @@ select.in,textarea.in,input.in{width:100%}
 const BUOC = ['Tìm kiếm khách','Tiếp cận và phân loại','Khai thác sâu','Trình bày giải pháp','Xử lý từ chối','Đề nghị khách quyết định','Chăm sóc sau bán'];
 const GOI_NGAN = {0:'Chưa rõ quy mô',1:'Cộng đồng',2:'Trả phí (tệp lõi)',3:'Diamond hoặc cố vấn',4:'Cố vấn hoặc hợp đồng'};
 const CELL = { cc: ['Gọi trước','Cam kết cao, phù hợp cao'], ch: ['Gọi, nói hướng khác','Cam kết cao, phù hợp chưa cao'], hc: ['Nuôi thêm','Cam kết chưa cao, phù hợp cao'], th: ['Chưa ưu tiên','Cả hai chưa cao'] };
-const NGUON = { may: 'máy đếm', sales: 'sales ghi, chưa nối' };
+const NGUON = { may: 'máy đếm', sales: 'sales ghi ở Pancake' };
 const MAU = ['#0e6b63','#4a9b94','#9a5700','#a3302b','#7a8791','#b9c4ca'];
 const TTL = { tq: 'Tổng quan', q: 'Hàng chờ gọi', tv: 'Thành viên', hd: 'Hướng dẫn', cd: 'Cài đặt' };
 const S = { v: 'tq', stage: 'all', q: '', f: { cell: '', cap: '', vt: '', w: '', risk: '' }, sort: { k: 'prio', dir: -1 }, page: 1, size: 25, dr: -1, order: [], thr: 0.6, min: 2, compact: false };
@@ -233,7 +233,7 @@ const yeu = p => p.yeu ? p.yeu.buoc - 1 : -1;
 const dots = p => '<div class="dots" title="Xanh: đúng hạn. Vàng: nộp chậm. Xám: chưa nộp">' + [...p.pt].map(x => '<i class="' + (x === 'd' ? 'dung' : x === 't' ? 'tre' : '') + '"></i>').join('') + '</div>';
 const stTag = p => p.ng3 ? '<span class="tag t-w">Chờ gọi</span>' : '<span class="tag t-n">Chưa tới Ngày 3</span>';
 const mi = (v, m) => '<span class="mi"><i style="width:' + (m ? v / m * 100 : 0) + '%"></i></span>';
-const chua = '<span class="su">chưa nối Pancake</span>';
+const chua = '<span class="su">chưa đọc từ Pancake</span>';
 const pc = (a, b) => b ? Math.round(a / b * 100) : 0;
 
 /* ===== Tổng quan ===== */
@@ -272,8 +272,8 @@ function tongQuan() {
     kp(dep.length + ' <small style="font-size:14px;font-weight:500;color:var(--mu)">' + pc(dep.length, N) + '%</small>', 'Đã nộp từ 5 ngày', 'trên số người trong bảng') +
     kp(ngu.length, 'Có nguy cơ bỏ', 'chậm từ 2 ngày trở lên') +
     kp(g3.length + ' <small style="font-size:14px;font-weight:500;color:var(--mu)">' + pc(g3.length, N) + '%</small>', 'Gọi được (đã nộp Ngày 3)', 'vào Hàng chờ gọi') +
-    kp('<small style="font-size:15px;color:var(--mu)">chưa nối</small>', 'Đã gọi', 'cần Pancake') +
-    kp('<small style="font-size:15px;color:var(--mu)">chưa nối</small>', 'Đã mua chương trình', 'cần Pancake') + '</div>';
+    kp('<small style="font-size:15px;color:var(--mu)">chưa đọc</small>', 'Đã gọi', 'cần Pancake') +
+    kp('<small style="font-size:15px;color:var(--mu)">chưa đọc</small>', 'Đã mua chương trình', 'cần Pancake') + '</div>';
   /* phễu */
   const nd = i => P.filter(p => p.pt[i] !== '.').length, dd = i => P.filter(p => p.pt[i] === 'd').length;
   let fn = '<div class="fn"><span>Có trong bảng</span><div class="br"><i class="d" style="width:100%;background:var(--mu);opacity:.4"></i></div><span class="nu"><b>' + N + '</b> · 100%</span>', pv = N;
@@ -300,7 +300,8 @@ function tongQuan() {
     '<div class="cm"><h4>Vai trò</h4>' + coCau(p => p.vai_tro) + '</div>' +
     '<div class="cm"><h4>Cấp quy mô (cấp 2 là tệp lõi)</h4>' + stack([0, 1, 2, 3, 4].map(c => [c ? 'Cấp ' + c : 'Chưa rõ', P.filter(p => p.cap === c).length, MAU[c]]), N) + '</div>' +
     '<div class="cm"><h4>Doanh thu một năm</h4>' + coCau(p => p.doanh_thu) + '</div></div>' +
-    '<div class="pn s4"><h3>Việc của từng sales</h3><p class="gc">Chưa có.</p><p class="ghi">Cần nối Pancake để biết ai được giao ai và đã gọi chưa. Xem mục Chưa làm xong trong Hướng dẫn.</p></div>' +
+    '<div class="pn s4"><h3>Việc của từng sales</h3><p class="gc">' + (D.vai_tro === 'Quản trị' ? 'Số khách mỗi người đang phụ trách.' : 'Khách bạn đã nhận và khách chưa ai nhận.') + '</p>' +
+    '<div class="cm">' + coCau(p => p.phu_trach || 'Chưa ai nhận') + '</div><p class="ghi">Đã gọi hay chưa vẫn xem ở Pancake.</p></div>' +
     '<div class="pn s4"><h3>Mới nộp bài</h3><p class="gc">Bảy người có ngày nộp gần nhất.</p><ul class="ct">' +
     ev.map(p => '<li><button data-p="' + p.i + '"><span>' + esc(KT(p)) + '<small>đã nộp ' + p.k + ' ngày, gần nhất ' + dm(p.last) + '</small></span></button></li>').join('') + '</ul></div></div>';
   return h;
@@ -343,7 +344,7 @@ function plHtml() {
 function dsach() {
   const o = (v, t, sel) => '<option value="' + esc(v) + '"' + (String(sel) === String(v) ? ' selected' : '') + '>' + esc(t) + '</option>', f = S.f;
   const vts = [...new Set(P.map(p => p.vai_tro || 'Chưa trả lời'))].sort();
-  return (S.v === 'tv' ? '<div class="pl" id="pl">' + plHtml() + '</div>' : '<p class="ghim">Trang chưa nối Pancake nên chưa biết ai đã được gọi. Danh sách này là mọi người đã nộp Ngày 3, xếp theo ô và số tiêu chí đạt. Ghi kết quả cuộc gọi ở Pancake.</p>') +
+  return (S.v === 'tv' ? '<div class="pl" id="pl">' + plHtml() + '</div>' : '<p class="ghim">Trang chưa đọc được kết quả gọi từ Pancake, nên bấm “Nhận khách này” trước khi gọi để không gọi trùng. Danh sách này là mọi người đã nộp Ngày 3, xếp theo ô và số tiêu chí đạt. Ghi kết quả cuộc gọi ở Pancake.</p>') +
     '<div class="pn"><div class="vw"><span>Góc nhìn nhanh:</span><button data-vw="cc">Ô Gọi trước</button><button data-vw="lot">Cấp 2 (tệp lõi)</button><button data-vw="nguy">Có nguy cơ bỏ</button><button data-vw="none">Chưa xếp ô</button><button data-vw="trung">Trùng số</button><button data-vw="xoa">Xóa lọc</button></div>' +
     '<div class="tl"><input class="in q" id="q" type="search" placeholder="Tìm tên, điện thoại, email" value="' + esc(S.q) + '" aria-label="Tìm trong danh sách">' +
     '<select class="in" id="f-cell" aria-label="Ô">' + o('', 'Mọi ô', f.cell) + Object.keys(CELL).map(k => o(k, CELL[k][0], f.cell)).join('') + o('none', 'Chưa xếp ô', f.cell) + '</select>' +
@@ -384,23 +385,24 @@ function huongDan() {
       ['<b>Website coachduynguyen.vn</b>', 'Người học đăng ký, xem video, làm bài và nộp bài từng ngày.', 'Người học', 'Đang chạy'],
       ['<b>Google Sheet nơi nhận bài, kèm Apps Script</b>', 'Giữ bài nộp, giờ nộp, phần trăm video đã xem. Apps Script là phần chạy phía sau: nhận bài từ website và đưa số liệu lên trang quản trị này.', 'Chủ dự án mở trực tiếp. Sales và hỗ trợ không cần mở.', 'Đang chạy'],
       ['<b>Trang quản trị này</b>', 'Xem ai đang học tới đâu, ai nên gọi trước, đọc hồ sơ trước khi gọi. Chỉ đọc bài làm, không sửa được bài ở đây. Quản trị thêm hoặc gỡ người ở mục Cài đặt.', 'Quản trị, sales, người hỗ trợ', 'Đang chạy, giai đoạn 1'],
-      ['<b>Pancake CRM</b>', 'Giữ hồ sơ khách, người phụ trách, lịch hẹn gọi lại, kết quả cuộc gọi, khách đã mua gì.', 'Sales, người hỗ trợ', 'Chưa nối với trang này: người đăng ký thử thách chưa tự vào Pancake, và trang chưa đọc được kết quả gọi. Kết quả gọi ghi tay ở Pancake.'],
+      ['<b>Pancake CRM</b>', 'Giữ hồ sơ khách, người phụ trách, lịch hẹn gọi lại, kết quả cuộc gọi, khách đã mua gì.', 'Sales, người hỗ trợ', 'Người đăng ký thử thách tự vào Pancake khi lưu thông tin trên trang làm bài. Trang này đọc lại các cột Pancake trong hồ sơ từng người khi quản trị đã thêm khóa Pancake. Kết quả gọi vẫn ghi ở Pancake.'],
       ['<b>Botcake</b>', 'Bot trả lời tự động: khách nhắn một từ khóa, bot gửi đường link ngắn tới đúng công cụ AI.', 'Người hỗ trợ cài từ khóa; khách là người dùng', 'Chạy riêng, không nối với trang này'],
       ['<b>Nhóm Facebook của thử thách</b>', 'Nhắc nộp bài, giải đáp thắc mắc, nhắc người học làm đều.', 'Người hỗ trợ, Coach Duy', 'Chạy riêng, không nối với trang này'],
       ['<b>Looker Studio</b>', 'Báo cáo biểu đồ dài hạn cho quản lý.', 'Quản lý', 'Chưa làm']]) + '</div>' +
     '<div class="pn">' + H('luong', 'Một khách đi qua những đâu') + '<ol><li>Khách đăng ký trên website: họ tên, số điện thoại, email, vai trò, quy mô, doanh thu. Thông tin vào Google Sheet.</li><li>Mỗi ngày khách vào trang làm bài, xem video và nộp bài. Mỗi lần nộp thêm một dòng vào Google Sheet.</li><li>Trang quản trị này đọc Google Sheet mỗi lần bạn mở hoặc bấm “Tải lại”, tự chấm các tiêu chí máy đếm được rồi xếp khách vào bốn ô.</li><li>Khách nộp Ngày 3 thì hiện trong Hàng chờ gọi. Sales mở hồ sơ, đọc, rồi gọi.</li><li>Sales ghi kết quả cuộc gọi vào Pancake. Phần này chưa tự hiện lại trên trang quản trị.</li></ol></div>' +
-    '<div class="pn">' + H('sales', 'Việc của sales') + '<ol><li>Mở <b>Hàng chờ gọi</b> ở thanh bên. Danh sách là người đã nộp Ngày 3, xếp ô Gọi trước lên đầu.</li><li>Lọc nếu cần: bấm “Ô Gọi trước” hoặc “Cấp 2 (tệp lõi)”, hoặc chọn bộ lọc trên thanh công cụ.</li><li>Bấm một dòng để mở hồ sơ. Đọc theo thứ tự: Gợi ý cho cuộc gọi, Chỗ yếu nhất kèm câu trích từ bài làm, rồi Hai trục.</li><li>Mở đầu cuộc gọi bằng việc hỏi hoàn cảnh hiện tại của khách, rồi đi vào bước yếu nhất. Gợi ý chương trình chỉ để tham khảo, bạn quyết định cuối.</li><li>Có nhãn “Trùng số” thì xem lại trong Pancake trước khi gọi, trang không tự gộp hai bản ghi.</li><li>Gọi xong, ghi kết quả vào Pancake: đã gọi, hẹn gọi lại, kết quả, tín hiệu ngoài trang, ghi chú.</li><li>Bấm J hoặc K trong hồ sơ để sang người kế tiếp mà không phải đóng mở.</li></ol><p class="ghi">Hiện sales thấy mọi người trong bảng, chưa có bước giao riêng từng người. Việc đó làm cùng lúc với nối Pancake.</p></div>' +
+    '<div class="pn">' + H('sales', 'Việc của sales') + '<ol><li>Mở <b>Hàng chờ gọi</b> ở thanh bên. Danh sách là người đã nộp Ngày 3, xếp ô Gọi trước lên đầu.</li><li>Lọc nếu cần: bấm “Ô Gọi trước” hoặc “Cấp 2 (tệp lõi)”, hoặc chọn bộ lọc trên thanh công cụ.</li><li>Bấm một dòng để mở hồ sơ. Đọc theo thứ tự: Gợi ý cho cuộc gọi, Chỗ yếu nhất kèm câu trích từ bài làm, rồi Hai trục.</li><li>Mở đầu cuộc gọi bằng việc hỏi hoàn cảnh hiện tại của khách, rồi đi vào bước yếu nhất. Gợi ý chương trình chỉ để tham khảo, bạn quyết định cuối.</li><li>Có nhãn “Trùng số” thì xem lại trong Pancake trước khi gọi, trang không tự gộp hai bản ghi.</li><li>Gọi xong, ghi kết quả vào Pancake: đã gọi, hẹn gọi lại, kết quả, tín hiệu ngoài trang, ghi chú.</li><li>Bấm J hoặc K trong hồ sơ để sang người kế tiếp mà không phải đóng mở.</li></ol><p class="ghi">Sales thấy khách mình đã nhận và khách chưa ai nhận. Bấm “Nhận khách này” trong hồ sơ trước khi gọi, để sales khác không gọi trùng. Quản trị thấy tất cả và giao lại được. Việc đó làm cùng lúc với nối Pancake.</p></div>' +
     '<div class="pn">' + H('hotro', 'Việc của người hỗ trợ') + '<ol><li>Mỗi sáng mở <b>Tổng quan</b>, nhìn biểu đồ “Mất người ở ngày nào” để biết hôm qua tụt ở đâu.</li><li>Bấm “Có nguy cơ bỏ” trong Việc hôm nay. Đây là người chậm từ hai ngày. Nhắn nhắc trong nhóm Facebook hoặc tin riêng, chưa phải gọi bán.</li><li>Người ở “Chưa tới Ngày 3” là việc của hỗ trợ: giúp họ nộp bài, giải đáp cách dùng trang làm bài.</li><li>Gặp nhãn “Trùng số”, báo lại cho quản trị xem lại. Đừng sửa tay ở Google Sheet.</li><li>Khách hỏi giá, chương trình hay chuyện chuyên môn thì chuyển cho sales, không hứa thay.</li><li>Từ khóa Botcake mới cho công cụ AI: thêm trong Botcake, rồi báo quản trị ghi vào danh sách công cụ.</li></ol></div>' +
-    '<div class="pn">' + H('doc', 'Đọc hồ sơ một người') + '<ul><li><b>Hai trục.</b> Cam kết là mức người học đã bỏ công sức thật. Phù hợp là mức người học khớp với chương trình. Hai trục không cộng thành một điểm. Mỗi tiêu chí có nhãn nguồn: máy đếm hoặc sales ghi.</li><li><b>Nhãn “chưa có dữ liệu”.</b> Tiêu chí do sales ghi chưa nối, nên trục hiện chỉ tính trên phần máy đếm được. Đạt “2/3” nghĩa là 2 trên 3 tiêu chí đã xét được.</li><li><b>Bốn ô.</b> Gọi trước, Gọi và nói hướng khác, Nuôi thêm, Chưa ưu tiên. Ô là gợi ý thứ tự, không thay cho cảm nhận của sales sau khi nói chuyện.</li><li><b>Chỗ yếu nhất.</b> Bước trong bảy bước bán hàng mà người học tự ghi mất nhiều khách nhất so với bước ngay trước, kèm câu họ viết.</li><li><b>Cấp quy mô.</b> Cấp 1 gợi ý Cộng đồng Thành viên. Cấp 2 (từ 5 người và hơn 3 năm) gợi ý chương trình trả phí. Cấp 3 gợi ý Diamond Founder Club hoặc cố vấn riêng. Cấp 4 (trên 50 người) gợi ý cố vấn riêng hoặc hợp đồng doanh nghiệp.</li><li><b>Chấm đúng hạn và chậm.</b> Xanh là nộp đúng hạn, vàng là nộp chậm, xám là chưa nộp.</li></ul></div>' +
+    '<div class="pn">' + H('doc', 'Đọc hồ sơ một người') + '<ul><li><b>Hai trục.</b> Cam kết là mức người học đã bỏ công sức thật. Phù hợp là mức người học khớp với chương trình. Hai trục không cộng thành một điểm. Mỗi tiêu chí có nhãn nguồn: máy đếm hoặc sales ghi.</li><li><b>Nhãn “chưa có dữ liệu”.</b> Trang chưa đọc được các tiêu chí sales ghi ở Pancake, nên trục hiện chỉ tính trên phần máy đếm được. Đạt “2/3” nghĩa là 2 trên 3 tiêu chí đã xét được.</li><li><b>Bốn ô.</b> Gọi trước, Gọi và nói hướng khác, Nuôi thêm, Chưa ưu tiên. Ô là gợi ý thứ tự, không thay cho cảm nhận của sales sau khi nói chuyện.</li><li><b>Chỗ yếu nhất.</b> Bước trong bảy bước bán hàng mà người học tự ghi mất nhiều khách nhất so với bước ngay trước, kèm câu họ viết.</li><li><b>Cấp quy mô.</b> Cấp 1 gợi ý Cộng đồng Thành viên. Cấp 2 (từ 5 người và hơn 3 năm) gợi ý chương trình trả phí. Cấp 3 gợi ý Diamond Founder Club hoặc cố vấn riêng. Cấp 4 (trên 50 người) gợi ý cố vấn riêng hoặc hợp đồng doanh nghiệp.</li><li><b>Chấm đúng hạn và chậm.</b> Xanh là nộp đúng hạn, vàng là nộp chậm, xám là chưa nộp.</li></ul></div>' +
     '<div class="pn">' + H('ai', 'Ai sửa gì') + '<p class="gc">Mỗi thông tin chỉ có một nơi giữ bản chuẩn và một bên được sửa, để hai hệ thống không lệch nhau.</p>' +
     tb(['Thông tin', 'Bản chuẩn nằm ở', 'Ai sửa'], [
       ['Tên, số điện thoại, chức danh, ngành, quy mô, doanh thu', 'Pancake (khi đã nối)', 'Form đăng ký; sales sửa tay khi khách báo đổi'],
       ['Tiến độ, bài làm, giờ nộp, phần trăm video', 'Google Sheet', 'Người học'],
-      ['Đã gọi, hẹn gọi lại, kết quả, đã mua, tín hiệu ngoài trang, ghi chú, người phụ trách', 'Pancake', 'Sales'],
+      ['Đã gọi, hẹn gọi lại, kết quả, đã mua, tín hiệu ngoài trang, ghi chú', 'Pancake', 'Sales'],
+      ['Người phụ trách khách trong thử thách', 'Trang quản trị này', 'Sales tự nhận; quản trị giao lại'],
       ['Hai trục, bốn ô, chỗ yếu, gợi ý chương trình', 'Không lưu, tính lại mỗi lần mở', 'Máy']]) +
     '<p class="ghi">Hai bên nối với nhau bằng số điện thoại đã chuẩn hóa. Hai bản ghi trùng số thì trang gắn nhãn “Trùng số”, không tự gộp.</p></div>' +
     '<div class="pn">' + H('loi', 'Gặp sự cố') + '<ul><li><b>Thấy màn hình “không có quyền”.</b> Email đăng nhập chưa có trong trang tính Quản trị. Gửi email đó cho quản trị để thêm một dòng.</li><li><b>Mở ra báo không đọc được dữ liệu.</b> Email đã có trong danh sách nhưng chưa được chia sẻ Google Sheet. Nhờ quản trị chia sẻ ở quyền Người xem.</li><li><b>Lần đầu Google báo “ứng dụng chưa được xác minh”.</b> Bình thường với ứng dụng nội bộ: bấm Nâng cao, rồi mở trang. Chỉ cần làm một lần.</li><li><b>Số liệu chưa khớp với lúc vừa nộp bài.</b> Bấm “Tải lại” ở góc trên. Trang không tự cập nhật khi đang mở.</li><li><b>Vẫn lỗi.</b> Chụp màn hình gửi quản trị, kèm giờ xảy ra.</li></ul></div>' +
-    '<div class="pn">' + H('chua', 'Chưa làm xong') + '<ul><li>Nối Pancake: đăng ký thử thách tự vào Pancake, trang đọc lại kết quả gọi, nút Nhận khách, giao khách cho từng sales.</li><li>Báo cáo Looker Studio.</li><li>Giới hạn khách mỗi sales thấy.</li></ul></div></div>';
+    '<div class="pn">' + H('chua', 'Chưa làm xong') + '<ul><li>Hai ô Đã gọi và Đã mua ở Tổng quan, và tiêu chí Tín hiệu ngoài trang: chờ biết tên cột trong Pancake.</li><li>Báo cáo Looker Studio.</li></ul></div></div>';
 }
 
 /* ===== Ngăn kéo hồ sơ ===== */
@@ -409,18 +411,29 @@ function drawer(i) {
   const k = S.order.indexOf(i), y = p.yeu;
   const cr = (ds, kq) => '<ul class="cr">' + ds.map(x => { const v = kq[x[0]] === undefined ? null : kq[x[0]]; return '<li class="' + (v === true ? 'y' : 'n') + '"><span>' + (v === true ? '✓' : '–') + '</span><span>' + esc(x[1]) + (v === null ? ' <span class="su">(chưa có dữ liệu)</span>' : '') + '<span class="mm">' + NGUON[x[2]] + '</span></span></li>'; }).join('') + '</ul>';
   $('dro').innerHTML = '<div class="ov" data-act="dong"></div><aside class="dr" role="dialog" aria-label="Hồ sơ ' + esc(KT(p)) + '"><div class="dh"><div><h3>' + esc(KT(p)) + '</h3><p>' + esc(p.vai_tro || 'Chưa rõ vai trò') + ' · ' + esc(p.email) + '</p><p style="margin-top:6px"><span class="tag ' + (cell(p) === 'cc' ? 't-ok' : 't-n') + '">' + cellTen(p) + '</span> <span class="tag t-n">' + (p.cap ? 'Cấp ' + p.cap : 'Chưa rõ cấp') + '</span> ' + stTag(p) + '</p></div><div class="nv"><button data-act="truoc" aria-label="Người trước (K)"' + (k < 1 ? ' disabled' : '') + '>‹</button><button data-act="sau" aria-label="Người sau (J)"' + (k < 0 || k >= S.order.length - 1 ? ' disabled' : '') + '>›</button><button data-act="dong" aria-label="Đóng (Esc)">✕</button></div></div>' +
-    '<div class="db">' +
+    '<div class="db">' + ptPanel(p) +
     '<div class="pn"><h3>Gợi ý cho cuộc gọi</h3><p class="gc">Chỉ là gợi ý theo cấp quy mô. Sales quyết định cuối.</p><dl class="kv"><dt>Điện thoại</dt><dd><b>' + esc(p.sdt) + '</b> <button class="bt o" data-act="chep" style="padding:2px 8px;margin-left:6px">Chép</button></dd><dt>Gợi ý chương trình</dt><dd>' + esc(p.goi_y || 'Chưa đủ thông tin quy mô') + '</dd><dt>Quy mô</dt><dd>' + esc(p.so_nguoi || 'chưa trả lời') + ', ' + esc(p.so_nam || 'chưa trả lời') + '</dd><dt>Doanh thu</dt><dd>' + esc(p.doanh_thu || 'chưa trả lời') + '</dd><dt>Đồng ý đăng công khai</dt><dd>' + esc(p.dang || 'chưa trả lời') + '</dd></dl>' +
     (y ? '<p class="ghi">Mở đầu bằng việc hỏi hoàn cảnh hiện tại của khách. Sau đó đi vào bước ' + esc(y.ten.toLowerCase()) + '.</p>' : '<p class="ghi">Người này chưa có số đo Bước 1 nên chưa có chỗ yếu để dựa vào. Nên nhắn nhắc nộp bài, chưa gọi bán.</p>') + '</div>' +
     '<div class="pn"><h3>Bảy ngày</h3><p class="gc">Đã nộp ' + p.k + ' ngày' + (p.video_tb !== null ? ', video xem trung bình ' + p.video_tb + '%' : '') + (p.bat_dau ? '. Bắt đầu tính từ ' + dm(p.bat_dau) + '.' : '. Chưa điền Cam kết nên chưa có lịch.') + '</p>' + dots(p) +
     '<div class="tb" style="margin-top:8px"><table class="sm"><thead><tr><th>Ngày</th><th>Nộp lúc</th><th>Video</th></tr></thead><tbody>' + p.ngay.map(d => '<tr><td>Ngày ' + d.n + '</td><td>' + (d.nop ? dm(d.nop) : '<span class="su">chưa nộp</span>') + '</td><td>' + (d.video === null ? '<span class="su">chưa có</span>' : d.video + '%') + '</td></tr>').join('') + '</tbody></table></div></div>' +
     (y ? '<div class="pn"><h3>Chỗ yếu nhất trong quy trình bán hàng</h3><p class="gc">Mất nhiều khách nhất ở bước <b>' + y.buoc + '. ' + esc(y.ten) + '</b> (từ ' + y.tu + ' còn ' + y.den + ').</p>' + (y.trich ? '<blockquote>“' + esc(y.trich) + '”<small>Trích từ bài làm của người học.</small></blockquote>' : '<p class="ghi">Người học chưa viết lý do rơi ở bước này.</p>') + '</div>' : '') +
     '<div class="pn"><h3>Hai trục</h3><p class="gc">Cam kết ' + p.ck.dat + '/' + p.ck.xet + ' tiêu chí xét được, phù hợp ' + p.ph.dat + '/' + p.ph.xet + '. Không cộng thành một điểm.</p><b style="font-size:12.5px">Cam kết</b>' + cr(D.tieu_chi.c, p.c) + '<b style="font-size:12.5px;display:block;margin-top:8px">Phù hợp</b>' + cr(D.tieu_chi.d, p.d) + '</div>' +
-    '<div class="pn"><h3>Trong Pancake</h3>' + (p.trung ? '<p class="ghi" role="note"><b>Trùng số điện thoại.</b> Số này có ở một bản ghi khác trong bảng. Xem lại trước khi gọi, trang không tự gộp.</p>' : '') + '<p class="gc">Chưa nối. Đã gọi chưa, hẹn gọi lại, kết quả và người phụ trách ghi và xem trong Pancake. Khi nối xong, thông tin đó hiện lại ở đây.</p></div></div>' +
+    '<div class="pn"><h3>Trong Pancake</h3>' + (p.trung ? '<p class="ghi" role="note"><b>Trùng số điện thoại.</b> Số này có ở một bản ghi khác trong bảng. Xem lại trước khi gọi, trang không tự gộp.</p>' : '') + (p.pancake === null ? '<p class="gc">Chưa nối. Đã gọi chưa, hẹn gọi lại và kết quả ghi và xem trong Pancake. Khi nối xong, thông tin đó hiện lại ở đây.</p>' : !p.pancake.length ? '<p class="gc">Số này chưa có trong Pancake, hoặc chưa có cột nào được ghi.</p>' : '<p class="gc">Đọc từ Pancake, cập nhật mỗi 5 phút. Sửa thì sửa trong Pancake.</p><dl class="kv">' + p.pancake.map(x => '<dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd>').join('') + '</dl>') + '</div></div>' +
     '<div class="df"><button class="bt o" data-act="sau">Người tiếp theo</button></div></aside>';
   if (S.v === 'q' || S.v === 'tv') drawTbl();
 }
 function dongDr() { S.dr = -1; $('dro').innerHTML = ''; if (S.v === 'q' || S.v === 'tv') drawTbl(); }
+function ptPanel(p) {
+  const qt = D.vai_tro === 'Quản trị', cua = p.phu_trach === D.email;
+  return '<div class="pn"><h3>Người phụ trách</h3><p class="gc">' + (!p.phu_trach ? 'Chưa ai nhận khách này.' : cua ? 'Bạn đang phụ trách khách này.' : 'Đang do <b>' + esc(p.phu_trach) + '</b> phụ trách.') + '</p>' +
+    (!p.phu_trach ? '<button class="bt" data-act="nhan">Nhận khách này</button>' : cua ? '<button class="bt o" data-act="tra">Trả lại</button>' : '') +
+    (qt ? '<label class="gc" style="display:block;margin-top:8px">Giao cho <select data-giao="1"><option value="">Chưa giao</option>' + D.danh_sach.map(x => '<option value="' + esc(x.email) + '"' + (x.email === p.phu_trach ? ' selected' : '') + '>' + esc(x.email) + ' (' + esc(x.vai_tro) + ')</option>').join('') + '</select></label>' : '') + '</div>';
+}
+function giao(em, xong) {
+  const i = S.dr; toast('Đang lưu…');
+  google.script.run.withSuccessHandler(e => { P[i].phu_trach = e; if (S.dr === i) drawer(i); toast(xong); })
+    .withFailureHandler(er => { toast('Chưa lưu được. ' + (er && er.message || er)); if (S.dr === i) drawer(i); }).nhanKhach(P[i].id, em);
+}
 function ke(dir) { const i = S.order.indexOf(S.dr), j = i + dir; if (i >= 0 && S.order[j] !== undefined) drawer(S.order[j]); }
 
 /* ===== Điều hướng ===== */
@@ -450,6 +463,8 @@ document.addEventListener('click', e => {
     if (a === 'dong') dongDr(); else if (a === 'truoc') ke(-1); else if (a === 'sau') ke(1);
     else if (a === 'them') { const em = $('tv-em').value.trim(), vt = $('tv-vt').value; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { toast('Email chưa đúng.'); $('tv-em').focus(); } else luuTv(em, vt, 'Đã thêm ' + em + ', vai trò ' + vt + '.'); }
     else if (a === 'go') { const em = x.dataset.em; if (confirm('Gỡ ' + em + ' khỏi trang quản trị? Người này cũng mất quyền xem Google Sheet nơi nhận bài.')) luuTv(em, '', 'Đã gỡ ' + em + '.'); }
+    else if (a === 'nhan') giao(D.email, 'Đã nhận khách. Sales khác không còn thấy khách này.');
+    else if (a === 'tra') { if (confirm('Trả lại khách này? Sales khác sẽ thấy và nhận được.')) giao('', 'Đã trả lại khách.'); }
     else if (a === 'chep') { const p = P[S.dr]; (navigator.clipboard ? navigator.clipboard.writeText(p.sdt) : Promise.reject()).then(() => toast('Đã chép số điện thoại.')).catch(() => toast('Không chép tự động được, bạn bôi đen số để chép.')); }
     return; }
   if (x = $c('[data-p]')) { drawer(+x.dataset.p); return; }
@@ -465,6 +480,7 @@ document.addEventListener('change', e => {
   if (m[t.id]) { S.f[m[t.id]] = t.value; S.page = 1; drawTbl(); }
   if (t.id === 'sz') { S.size = +t.value; S.page = 1; drawTbl(); }
   if (t.id === 'cp') { S.compact = t.checked; drawTbl(); }
+  if (t.dataset && t.dataset.giao) giao(t.value, t.value ? 'Đã giao cho ' + t.value + '.' : 'Đã bỏ người phụ trách.');
   if (t.dataset && t.dataset.tv) luuTv(t.dataset.tv, t.value, 'Đã đổi ' + t.dataset.tv + ' sang ' + t.value + '.');
 });
 $('gq').addEventListener('keydown', e => { if (e.key === 'Enter') { const q = e.target.value; den('tv'); S.q = q; ve(); } });
