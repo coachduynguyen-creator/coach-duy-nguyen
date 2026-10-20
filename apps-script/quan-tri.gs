@@ -19,7 +19,7 @@ var NGUONG_TRUC = 0.6;        // tỷ lệ tiêu chí đạt trên số tiêu ch
 var TOI_THIEU_XET = 2;        // dưới số này thì trục chưa đủ dữ liệu, chưa xếp ô
 var COT_KHONG_DEM = ['Thời gian', 'Họ và tên', 'Email', 'Số điện thoại', 'Đồng ý dùng bài', 'Google Doc',
   'Đồng ý đăng công khai', 'Vai trò', 'Số người', 'Số năm hoạt động', 'Doanh thu một năm', 'Bản đồng ý',
-  'Bước nộp', 'Nộp sau hạn', 'Đã xem video (%)', 'Việc sửa trong tuần này'];
+  'Bước nộp', 'Nộp sau hạn', 'Đã xem video (%)', 'Việc sửa trong tuần này', 'Tệp đính kèm'];
 
 /** Chạy tay một lần, bằng tài khoản chủ dự án. Tạo trang tính Quản trị và ghi chủ dự án làm Quản trị đầu tiên. */
 function khoiTaoQuanTri() {

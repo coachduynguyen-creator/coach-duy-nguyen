@@ -107,6 +107,7 @@ ul.kiem input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(-
 .trong-app{border:2px solid var(--loi)}
 .lay-bai{border:1px dashed var(--line);border-radius:12px;padding:4px 14px 14px;margin:6px 0 14px}
 #lk-trang{word-break:break-all}
+.ds-tep{list-style:none;padding:0;margin:8px 0 0}.ds-tep li{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
 .tu-luu{font-size:13.5px;color:var(--ink-3);text-align:right;margin-top:6px}
 .bay{position:absolute;left:-9999px}
 .chu p,.chu li{margin:8px 0}
@@ -361,6 +362,7 @@ if (typeof BAI !== 'undefined') for (var k in BAI) NGAY[k] = BAI[k];   // Ngày 
 
 /* Mã video YouTube (chế độ không công khai) của bài giảng từng ngày, ví dụ 'dQw4w9WgXcQ'. Để trống thì trang báo video sắp có.
    0 là video chào mừng ở phần Trước Ngày 1, chỉ để xem, không khóa bước. */
+var TEP_MAX = 3, TEP_MB = 10;   // ảnh, PDF gửi kèm ở Bước 3 (A5)
 var VIDEO = {
   0: '9FmMYT5Kuo8',   // Bài chào mừng (video thật 17/10/2026)
   1: 'pd_0pohREmw',   // Bài Ngày 1 (video thật 17/10/2026)
@@ -459,6 +461,8 @@ function layBai(email, sdt, im) {
         var b = k.bai && k.bai[n];
         if (!b || !NGAY[n]) continue;
         tatCaO(n).forEach(function (o) { var v = b[tenCot(o)]; if (!o.rieng && v && !doc(o.id).trim()) { ghi(o.id, v); so++; } });
+        if (b['Tệp đính kèm'] && !dsTep(n).length) ghi('tep-' + n, JSON.stringify(b['Tệp đính kèm'].split('\n').map(function (d) {
+          var i = d.lastIndexOf(': https://'); return i > 0 ? { ten: d.slice(0, i), url: d.slice(i + 2) } : null; }).filter(Boolean)));
       }
       if (k.tien_do) {
         ghi('tien-do', JSON.stringify(k.tien_do));
@@ -576,6 +580,11 @@ function dungNgay(n) {
     return '<li><label><input type="checkbox" id="' + id + '"' + (doc(id) ? ' checked' : '') + '><span>' + esc(k) + '</span></label></li>';
   }).join('') + '</ul></section>';
   h += '<section class="phan"><h3>Nộp bài</h3>' + d.nopSau.map(function (c) { return '<p>' + esc(c) + '</p>'; }).join('') + '</section>';
+  var t3 = layTienDo();
+  if (coBuoc && t3 && t3.ver >= 3) h += '<section class="phan"><h3>Ảnh hoặc PDF gửi kèm, không bắt buộc</h3>' +
+    '<p>Bạn làm bài trên giấy, có ảnh chụp tin nhắn hay tệp PDF thì gửi kèm ở đây. Mỗi ngày tối đa ' + TEP_MAX + ' tệp, mỗi tệp không quá ' + TEP_MB + ' MB. Ảnh tin nhắn thì che tên và số điện thoại của khách trước khi gửi.</p>' +
+    '<p><input type="file" id="tep" accept="image/*,application/pdf" multiple' + (XEM_TRUOC ? ' disabled' : '') + '></p>' +
+    '<ul class="ds-tep" id="ds-tep"></ul><p class="bao" id="bao-tep" role="status" aria-live="polite"></p></section>';
   var daNop = doc('da-nop-' + n);
   h += '<div class="nop"><input class="bay" id="bay" tabindex="-1" autocomplete="off" aria-hidden="true">' +
        '<div class="hang"><button type="button" class="nut chinh" id="nop"' + (XEM_TRUOC ? ' disabled>Chế độ xem của nhân sự, không nộp bài' : '>Nộp bài') + '</button></div>' +
@@ -588,6 +597,7 @@ function dungNgay(n) {
 
   $('bai').querySelectorAll('textarea').forEach(gian);
   $('nop').onclick = function () { nop(n); };
+  if ($('tep')) { veTep(n); $('tep').onchange = function () { guiTep(n, this); }; }
   if (coBuoc) {
     $('nop-1').onclick = function () { nop(n, 1); };
     $('nop-2').onclick = function () { nop(n, 2); };
@@ -852,6 +862,8 @@ function nop(n, b) {
   if (CAN_THOA_THUAN && !doc('thoa-thuan')) { baoLoi('Bạn đọc và bấm Tôi đồng ý ở trang thỏa thuận sử dụng tư liệu trước khi nộp. Trang đó ở địa chỉ coachduynguyen.vn/thu-thach/tu-van-ban-hang/thoa-thuan/'); return; }
   var o = tatCaO(n).filter(function (x) { return !x.rieng; });
   var cot = o.map(function (x) { return [tenCot(x), doc(x.id).trim()]; });
+  var tep = b ? [] : dsTep(n);
+  if (tep.length) cot.push(['Tệp đính kèm', tep.map(function (t) { return t.ten + ': ' + t.url; }).join('\n')]);
   if (b !== 1 && !cot.some(function (c) { return c[1]; })) { baoLoi('Bài còn trống, bạn điền ít nhất một ô rồi nộp.'); return; }
   var thieu = o.filter(function (x) { return x.can && !doc(x.id).trim(); })[0];
   if (thieu) { baoLoi('Bạn trả lời đủ ba câu sau video rồi nộp. Còn trống: ' + thieu.nhan + '.'); $(thieu.id).focus(); return; }
@@ -901,6 +913,57 @@ function nop(n, b) {
   }).then(function () {
     clearTimeout(hen); nut.disabled = false; nut.textContent = nhanNut;
     if (b) veXem(n);
+  });
+}
+/* ---------- ảnh, PDF ở Bước 3: gửi từng tệp ngay khi chọn, giữ đường dẫn trên máy, Nộp bài thì gửi kèm ---------- */
+function dsTep(n) { try { return JSON.parse(doc('tep-' + n) || '[]'); } catch (e) { return []; } }
+function veTep(n) {
+  var ul = $('ds-tep');
+  ul.innerHTML = dsTep(n).map(function (t, i) { return '<li><span>Đã gửi: ' + esc(t.ten) + '</span> <button type="button" class="nut phu nho-gon" data-bo-tep="' + i + '">Bỏ</button></li>'; }).join('');
+  ul.querySelectorAll('[data-bo-tep]').forEach(function (nut) {
+    nut.onclick = function () { var ds = dsTep(n); ds.splice(+nut.dataset.boTep, 1); ghi('tep-' + n, JSON.stringify(ds)); veTep(n); };
+  });
+}
+function guiTep(n, o) {
+  var bao = $('bao-tep'), nguoi = layNguoi(), chon = [].slice.call(o.files), coSan = dsTep(n).length;
+  function noi(lop, s) { bao.className = 'bao ' + lop; bao.textContent = s; }
+  o.value = '';
+  if (!chon.length) return;
+  if (!nguoiDu(nguoi)) return noi('loi', 'Bạn trả lời các câu hỏi ở đầu trang và bấm Lưu rồi mới gửi tệp.');
+  if (coSan + chon.length > TEP_MAX) return noi('loi', 'Mỗi ngày gửi tối đa ' + TEP_MAX + ' tệp. Bạn đã gửi ' + coSan + ' tệp nên chọn thêm được ' + (TEP_MAX - coSan) + ' tệp.');
+  var sai = chon.filter(function (f) { return !/^image\/|^application\/pdf$/.test(f.type); })[0];
+  if (sai) return noi('loi', 'Tệp "' + sai.name + '" không phải ảnh hay PDF.');
+  var to = chon.filter(function (f) { return f.size > TEP_MB * 1048576; })[0];
+  if (to) return noi('loi', 'Tệp "' + to.name + '" nặng ' + (to.size / 1048576).toFixed(1).replace('.', ',') + ' MB, quá ' + TEP_MB + ' MB. Bạn chụp lại ảnh nhỏ hơn hoặc tách PDF ra.');
+  o.disabled = true;
+  var lan = Promise.resolve();
+  chon.forEach(function (f, i) {
+    lan = lan.then(function () { noi('', 'Đang gửi tệp ' + (i + 1) + ' trên ' + chon.length + ': ' + f.name + '...'); return motTep(n, f, nguoi); })
+      .then(function (url) { var ds = dsTep(n); ds.push({ ten: f.name, url: url }); ghi('tep-' + n, JSON.stringify(ds)); veTep(n); });
+  });
+  lan.then(function () { noi('dung', 'Đã gửi ' + chon.length + ' tệp. Bạn bấm Nộp bài để tệp đi kèm bài hôm nay.'); })
+    .catch(function (e) {
+      var vi = e.name === 'AbortError' ? ' vì mạng chậm quá' : e.tuNoiNhan ? ': ' + e.message.replace(/\.$/, '') : ' vì mạng đang chập chờn';
+      noi('loi', 'Chưa gửi được' + vi + '. Tệp nào đã hiện chữ Đã gửi thì đã lưu, tệp còn lại bạn chọn gửi lại.');
+    })
+    .then(function () { o.disabled = false; });
+}
+function motTep(n, f, nguoi) {
+  return new Promise(function (xong, hong) {
+    var r = new FileReader();
+    r.onload = function () { xong(String(r.result).split(',')[1]); };
+    r.onerror = hong;
+    r.readAsDataURL(f);
+  }).then(function (b64) {
+    var huy = new AbortController(), hen = setTimeout(function () { huy.abort(); }, 180000);
+    return fetch(NOI_NHAN, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, signal: huy.signal,
+      body: JSON.stringify({ hoi: 'tep', ngay: n, ten: nguoi.ten, email: nguoi.email, dien_thoai: nguoi.sdt, ten_tep: f.name, loai: f.type, du_lieu: b64 }) })
+      .then(function (r) { return r.json(); })
+      .then(function (k) {
+        clearTimeout(hen);
+        if (!k.ok || !k.url) { var l = new Error(k.loi || 'Nơi nhận bài báo lỗi.'); l.tuNoiNhan = true; throw l; }
+        return k.url;
+      });
   });
 }
 /* Máy chủ (hoặc máy này khi máy chủ chưa cập nhật) đã nhận bước b của ngày n: ghi cờ rồi vẽ lại khóa. */

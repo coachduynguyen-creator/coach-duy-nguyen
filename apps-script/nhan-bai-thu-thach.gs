@@ -27,6 +27,11 @@
  * học nhập email và số điện thoại, trang lấy lại bài đã nộp và thông tin người làm.
  * Chưa dán thì nút Lấy lại bài báo chưa dùng được, phần còn lại chạy như cũ.
  *
+ * CẬP NHẬT 20/10/2026: GỬI ẢNH VÀ PDF Ở BƯỚC 3
+ * Dán toàn bộ tệp này, bấm Lưu, rồi Triển khai > Quản lý triển khai > cây bút > Phiên bản mới > Triển khai.
+ * Tiến độ trả ver 3, trang thấy ver 3 mới hiện ô gửi tệp. Tệp lưu ở thư mục con
+ * "Ảnh và PDF nộp ở Bước 3" trong thư mục bản Quy trình. Dán cả quan-tri.gs.
+ *
  * CẬP NHẬT 16/10/2026: NỘP TỪNG BƯỚC VÀ BA CÂU HỎI LÚC ĐĂNG KÝ (dán trước 17/10)
  * Làm đúng ba việc: mở dự án Apps Script cũ, xoá hết chữ, dán toàn bộ tệp này,
  * bấm Lưu; rồi Triển khai > Quản lý triển khai > bấm cây bút > Phiên bản: Phiên
@@ -166,6 +171,7 @@ function doPost(e) {
   if (d.hoi === 'tien_do') return hoiTienDo(d);
   if (d.hoi === 'lay_bai') return layBai(d);
   if (d.hoi === 'dong_y') return dongY(d);
+  if (d.hoi === 'tep') return nhanTep(d);
 
   var ngay = parseInt(d.ngay, 10);
   if (!(ngay >= 0 && ngay <= 8)) return tra({ ok: false, loi: 'Không rõ bài của ngày nào.' });
@@ -300,7 +306,7 @@ function layBai(d) {
 function tinhTienDo(email, sdt) {
   var p = docBaiNop(layBang())[email.toLowerCase() + '|' + soCuoi(sdt)];
   var kq = lichTuNop(p ? p.da_nop : {});
-  kq.ver = 2;                       // trang thấy ver 2 thì mới gửi Nộp Bước 1, Bước 2 lên đây
+  kq.ver = 3;                       // ver 2: trang gửi Nộp Bước 1, Bước 2 lên đây. ver 3: trang hiện ô gửi ảnh, PDF ở Bước 3
   kq.buoc = p ? p.buoc : {};        // bước một phần xa nhất đã nộp của từng ngày: {"1": 2, "2": 1}
   return kq;
 }
@@ -454,6 +460,43 @@ function taoDoc(ten, chu) {
   var tep = DriveApp.getFileById(doc.getId());
   if (ma) tep.moveTo(DriveApp.getFolderById(ma));
   return doc.getUrl();
+}
+
+/* ---------- ảnh, PDF ở Bước 3 (A5, Coach Duy chốt 16/10/2026) ----------
+ * Trang gửi từng tệp một ngay khi người học chọn (hoi = 'tep'), nhận lại đường dẫn Drive,
+ * rồi gửi các đường dẫn trong cột "Tệp đính kèm" lúc nộp bài cuối ngày.
+ * Chỉ nhận của người đã nộp bài cam kết, tệp để riêng tư trong thư mục của chủ dự án. */
+var TEP_TOI_DA = 10 * 1024 * 1024;   // 10 MB, trang cũng chặn trước khi gửi
+var LOAI_TEP = /^(image\/[a-z0-9.+-]+|application\/pdf)$/;
+function nhanTep(d) {
+  var sdt = chuoi(d.dien_thoai).replace(/[\s.\-()]/g, ''), ngay = parseInt(d.ngay, 10), loai = chuoi(d.loai);
+  if (!(ngay >= 1 && ngay <= 7)) return tra({ ok: false, loi: 'Không rõ tệp của ngày nào.' });
+  if (!chuoi(d.email) || !/^\+?\d{9,12}$/.test(sdt)) return tra({ ok: false, loi: 'Thiếu email hoặc số điện thoại.' });
+  if (!LOAI_TEP.test(loai)) return tra({ ok: false, loi: 'Chỉ nhận ảnh và PDF.' });
+  try {
+    var byte = Utilities.base64Decode(chuoi(d.du_lieu));
+    if (!byte.length || byte.length > TEP_TOI_DA) return tra({ ok: false, loi: 'Tệp trống hoặc lớn hơn 10 MB.' });
+    if (!tinhTienDo(chuoi(d.email), sdt).da_nop[0]) return tra({ ok: false, loi: 'Bạn nộp bài cam kết trước rồi mới gửi tệp.' });
+    var ten = 'Ngày ' + ngay + ' - ' + chuoi(d.ten).slice(0, 80) + ' - ' + chuoi(d.ten_tep).slice(0, 120);
+    var tep = layThuMucTep().createFile(Utilities.newBlob(byte, loai, ten));
+    return tra({ ok: true, url: tep.getUrl() });
+  } catch (loi) {
+    ghiLoi(loi, { hoi: 'tep', email: d.email, ten_tep: d.ten_tep, loai: loai });   // không ghi dữ liệu tệp vào bảng Lỗi
+    return tra({ ok: false, loi: 'Chưa lưu được tệp, bạn thử lại sau ít phút.' });
+  }
+}
+function layThuMucTep() {
+  var kho = PropertiesService.getScriptProperties(), ma = kho.getProperty('ma_thu_muc_tep');
+  if (ma) return DriveApp.getFolderById(ma);
+  var khoa = LockService.getScriptLock();
+  khoa.waitLock(20000);
+  try {
+    ma = kho.getProperty('ma_thu_muc_tep');   // hai người gửi cùng lúc lần đầu thì chỉ tạo một thư mục
+    if (ma) return DriveApp.getFolderById(ma);
+    var thuMuc = DriveApp.getFolderById(kho.getProperty('ma_thu_muc')).createFolder('Ảnh và PDF nộp ở Bước 3');
+    kho.setProperty('ma_thu_muc_tep', thuMuc.getId());
+    return thuMuc;
+  } finally { khoa.releaseLock(); }
 }
 
 function chuoi(v) { return v === undefined || v === null ? '' : String(v).trim(); }
