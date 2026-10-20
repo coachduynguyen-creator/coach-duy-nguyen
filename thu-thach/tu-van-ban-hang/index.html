@@ -451,7 +451,31 @@ $('luu-nguoi').onclick = function () {
   chonNgay();
   hoiTienDo();
   layBai(email, sdt, true);   // điền lại ở trình duyệt mới thì bài đã nộp cũng về theo
+  guiPancake(layNguoi());
 };
+/* Người học vào Pancake một lần cho mỗi số điện thoại, qua trạm /api/dang-ky dùng chung với trang công cụ.
+   Chỉ tạo mới: đã có mã Pancake (lưu ở đây hoặc từ trang công cụ, khóa ngf-lead) thì thôi, để không đè ghi chú Sales đã viết.
+   Trạm chỉ nhận số Việt Nam dạng 0xxxxxxxxx hoặc 84xxxxxxxxx. Lỗi thì bỏ qua, không làm phiền người học. */
+function guiPancake(n) {
+  if (XEM_TRUOC || !n) return;
+  var so9 = function (s) { return String(s || '').replace(/\D/g, '').slice(-9); }, sdt = String(n.sdt).replace(/^\+/, '');
+  if (!/^(0\d{9}|84\d{9})$/.test(sdt)) return;
+  var da = {}, lead = {};
+  try { da = JSON.parse(doc('pancake') || '{}'); } catch (e) { }
+  if (da.so === so9(sdt)) return;
+  try { lead = JSON.parse(localStorage.getItem('ngf-lead') || '{}'); } catch (e) { }
+  if (lead.pid && so9(lead.zalo) === so9(sdt)) { ghi('pancake', JSON.stringify({ so: so9(sdt), id: lead.pid })); return; }
+  var q = new URLSearchParams(location.search), data = {
+    Name: n.ten, Phone: sdt, url_page: location.origin + location.pathname,
+    Note: 'Thử thách 7 ngày Tư vấn Bán hàng · Email: ' + n.email + ' · Vai trò: ' + n.vt + ' · Quy mô: ' + n.so + ' · Hoạt động: ' + n.nam + ' · Doanh thu: ' + (n.dt || 'chưa trả lời')
+  }, CD = { 'Chủ doanh nghiệp': 'Chủ doanh nghiệp-4421-8240-f9b1-4edf-3105-9677-c312', 'Quản lý': 'Quản lý-0268-27d9-11a8-cdfd-599c-b34f-b1c3' };
+  if (CD[n.vt]) data.chuc_danh = CD[n.vt];
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { if (q.get(k)) data[k] = q.get(k); });
+  fetch('/api/dang-ky', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true, body: JSON.stringify({ data: data, id: null }) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j && j.success) ghi('pancake', JSON.stringify({ so: so9(sdt), id: j.id || '' })); })
+    .catch(function () { });
+}
 /* Lấy lại bài đã nộp từ máy chủ khi đổi máy hoặc trình duyệt. Chỉ điền ô đang trống, không đè chữ đang có trên máy này.
    im = true: gọi ngầm sau khi lưu thông tin, chỉ báo khi lấy được. */
 function layBai(email, sdt, im) {
@@ -1029,6 +1053,7 @@ window.addEventListener('hashchange', function () { chonNgay(); $('the-ngay').pa
 hienNguoi();
 chonNgay();
 hoiTienDo();
+guiPancake(layNguoi());   // người đã lưu thông tin trước khi có phần nối Pancake cũng được gửi một lần
 </script>
 </body>
 </html>
