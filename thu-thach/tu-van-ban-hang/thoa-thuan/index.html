@@ -12,8 +12,8 @@
 <!-- Trang thỏa thuận sử dụng tư liệu Thử thách 7 ngày, dựng 14/10/2026.
      Nguồn chữ: ~/Codex_Projects/Next Gen Founder/outputs/ngf_thu_thach_7_ngay_20261014/NGF - Thỏa thuận sử dụng tư liệu thử thách 7 ngày.md,
      phần dưới dấu BẢN THÀNH VIÊN. Sửa chữ thì sửa tệp nguồn trước, rồi chép lại vào khối id="ban" bên dưới.
-     CHƯA MỞ CHO THÀNH VIÊN: chờ người làm pháp lý đọc và tên pháp lý đầy đủ của công ty. Trang để noindex, không có liên kết nào trỏ tới.
-     Khi đã soát xong: đặt NHAP = false ở đây, đặt CAN_THOA_THUAN = true trong ../index.html, rồi thêm liên kết từ sổ làm bài.
+     20/10/2026: Coach Duy chốt không cần soát pháp lý, đã đặt NHAP = false. Trang để noindex.
+     Muốn bắt buộc đồng ý trước khi nộp: đặt CAN_THOA_THUAN = true trong ../index.html, rồi thêm liên kết từ sổ làm bài.
      Bấm Tôi đồng ý thì gửi { hoi: 'dong_y', ten, email, dien_thoai, ban } về apps-script/nhan-bai-thu-thach.gs, máy lưu PDF vào Drive. -->
 <style>
 :root{
@@ -87,7 +87,8 @@ Bạn cho phép Coach Duy Nguyễn và Next Step Group, công ty vận hành Nex
 - dùng công khai tư liệu để lan tỏa và truyền thông cho cộng đồng, trên trang web, mạng xã hội, video, bài viết và tài liệu của Next Gen Founder;
 - kể lại câu chuyện của bạn như một câu chuyện thành viên, kèm lời bạn nói trong video tổng kết;
 - nêu tên bạn khi vinh danh người hoàn thành;
-- liên hệ với bạn sau thử thách về các chương trình tiếp theo của cộng đồng;
+- đọc bài làm của bạn để gợi ý chương trình phù hợp với bạn;
+- gọi điện hoặc nhắn tin cho bạn để trao đổi và giới thiệu các chương trình của cộng đồng, sớm nhất là ngay sau khi bạn nộp bài Ngày 3;
 - và các việc khác phục vụ truyền thông, đào tạo và phát triển cộng đồng Next Gen Founder.
 
 ## 3. Thù lao
@@ -111,7 +112,7 @@ Khi bạn bấm "Tôi đồng ý", họ tên, email, giờ bấm và nguyên vă
 Tôi đã đọc hết thỏa thuận này. Tôi đồng ý cho phép Coach Duy Nguyễn và Next Step Group, công ty vận hành Next Gen Founder, lưu và sử dụng bài điền, video, hình ảnh, thông tin và những chia sẻ tôi gửi trong Thử thách 7 ngày, theo đúng các mục ở trên.</script>
 
 <script>
-var NHAP = true;   // còn chờ soát pháp lý
+var NHAP = false;   // Coach Duy chốt 20/10/2026: không cần soát pháp lý
 var NOI_NHAN = 'https://script.google.com/macros/s/AKfycbxCLolz16hYvDoaNCHf7aW__E2kI-dF31mbERGxl0mwRbnXprZRJpuKgQSbMhPe1mA9nA/exec';   // cùng địa chỉ với ../index.html
 var TIEN_TO = 'tt-tvbh2:';   // cùng tiền tố với sổ làm bài, để sổ làm bài biết bạn đã đồng ý
 
