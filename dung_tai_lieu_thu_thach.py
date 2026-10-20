@@ -101,13 +101,15 @@ def bang_o(dong, ma, nhom, dau_muc):
     dau, than = hang[0], hang[2:]
     if len(dau) == 1:   # bảng một cột: tiêu đề là tên ô, dòng có chữ là câu mẫu
         mau = " ".join(tron(h[0]) for h in than if h[0])
-        nhom.append({"o": [{"id": ma + "-0", "nhan": tron(dau[0]), "goi": mau}]})
+        x = {"id": ma + "-0", "nhan": tron(dau[0]), "goi": mau}
+        nhom.append({"o": [x], "bang": {"dau": [x["nhan"]], "hang": [[x]]}})
         return
     gop = {c: g for g in GOP for c, x in enumerate(dau) if x == g[0] and all(y in dau for y in g)}
     bo_cot = {dau.index(y) for g in gop.values() for y in g[1:]}
     tieu_de = [h for h in than if all(h) and h[-1] == dau[-1]]
     le = None if not tieu_de else tron(dau[0])
     gom, chu_cai = None, None
+    truoc, o_tai = len(nhom), {}   # o_tai[(r, c)]: ô điền ở dòng r cột c, để bản tải dựng lại bảng (A3)
     for r, h in enumerate(than):
         if all(h):
             if h[-1] == dau[-1]:
@@ -137,6 +139,7 @@ def bang_o(dong, ma, nhom, dau_muc):
                 x["dong"] = 1
             o_bang(x, nhan, tron(dau[c]))
             o.append(x)
+            o_tai[(r, c)] = x
         if not nhan and not le_dong:
             nhan = f"Dòng {r + 1}"
         if len(o) == 1 and nhan:   # một ô: nhãn dòng là tên ô
@@ -159,6 +162,11 @@ def bang_o(dong, ma, nhom, dau_muc):
                 o[0]["goi"] = goi
             gom = {"tieu": " · ".join(filter(None, [le_dong, nhan])), "o": o, "_nhieu": 1}
             nhom.append(gom)
+    # Bố cục bảng cho bản tải: ô chữ giữ nguyên, ô điền trỏ tới khóa (id gắn sau cùng, nên giữ tham chiếu rồi đổi khi ghi tệp)
+    cot = [c for c in range(len(dau)) if c not in bo_cot]
+    if len(nhom) > truoc:
+        nhom[truoc]["bang"] = {"dau": [" / ".join(gop[c]) if c in gop else tron(dau[c]) for c in cot],
+                               "hang": [[o_tai.get((r, c)) or tron(h[c]) for c in cot] for r, h in enumerate(than)]}
 
 
 def phan_bai(n, tieu, than, si=0):
@@ -261,6 +269,12 @@ for n, d in bai.items():
                 k = o["ten"][:190]
                 da[k] = da.get(k, 0) + 1
                 o["ten"] = k + (f" ({da[k]})" if da[k] > 1 else "")
+
+for d in bai.values():
+    for p in d["phan"]:
+        for g in p["nhom"]:
+            if "bang" in g:
+                g["bang"]["hang"] = [[{"o": x["id"]} if isinstance(x, dict) else x for x in h] for h in g["bang"]["hang"]]
 
 (DICH / "tai-lieu.js").write_text(
     "/* Dựng tự động bằng dung_tai_lieu_thu_thach.py, đừng sửa tay. */\nvar TAI_LIEU = "

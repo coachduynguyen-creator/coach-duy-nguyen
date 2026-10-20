@@ -32,7 +32,27 @@ var BAI = {
 "nhan": "Nhóm khách, gọi bằng một câu",
 "ten": "Mẫu 1 · Nhóm khách, gọi bằng một câu"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Sản phẩm hoặc dịch vụ, giữ như Ngày 1",
+{
+"o": "n2-0-0-0-1"
+}
+],
+[
+"Nhóm khách, gọi bằng một câu",
+{
+"o": "n2-0-0-1-1"
+}
 ]
+]
+}
 },
 {
 "tieu": "Khối 1. Họ là ai, vì sao hợp với sản phẩm của bạn",
@@ -48,7 +68,43 @@ var BAI = {
 "dong": 1,
 "ten": "Mẫu 1 · Khối 1. Họ là ai, vì sao hợp với sản phẩm của bạn · Đã nghe từ khách hay đang đoán"
 }
+],
+"bang": {
+"dau": [
+"Ba khối",
+"Bạn điền",
+"Đã nghe từ khách hay đang đoán"
+],
+"hang": [
+[
+"Khối 1. Họ là ai, vì sao hợp với sản phẩm của bạn",
+{
+"o": "n2-0-1-0-1"
+},
+{
+"o": "n2-0-1-0-2"
+}
+],
+[
+"Khối 2. Họ đang gặp vấn đề gì, muốn đạt kết quả gì (ghi bằng lời khách)",
+{
+"o": "n2-0-1-1-1"
+},
+{
+"o": "n2-0-1-1-2"
+}
+],
+[
+"Khối 3. Chuyện gì xảy ra thì họ bắt đầu đi tìm giải pháp",
+{
+"o": "n2-0-1-2-1"
+},
+{
+"o": "n2-0-1-2-2"
+}
 ]
+]
+}
 },
 {
 "tieu": "Khối 2. Họ đang gặp vấn đề gì, muốn đạt kết quả gì (ghi bằng lời khách)",
@@ -94,7 +150,27 @@ var BAI = {
 "nhan": "Một điều cần hỏi lại khách thật để biết chỗ đang đoán là đúng hay sai",
 "ten": "Mẫu 1 · Một điều cần hỏi lại khách thật để biết chỗ đang đoán là đúng hay sai"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Ba khối có khớp nhau không. Người ở Khối 1 có đúng là người gặp vấn đề ở Khối 2 và gặp chuyện ở Khối 3 không",
+{
+"o": "n2-0-2-0-1"
+}
+],
+[
+"Một điều cần hỏi lại khách thật để biết chỗ đang đoán là đúng hay sai",
+{
+"o": "n2-0-2-1-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -128,7 +204,44 @@ var BAI = {
 "goi": "Cho biết điều gì: Đang tìm hiểu hay sắp mua",
 "ten": "Mẫu 2 · 4. Thời điểm mua"
 }
+],
+"bang": {
+"dau": [
+"Tiêu chí",
+"Câu hỏi bạn sẽ dùng, viết theo sản phẩm của bạn",
+"Cho biết điều gì"
+],
+"hang": [
+[
+"1. Nhu cầu",
+{
+"o": "n2-1-0-0-1"
+},
+"Đúng nhóm hay chưa"
+],
+[
+"2. Ngân sách",
+{
+"o": "n2-1-0-1-1"
+},
+"Đúng nhóm hay chưa"
+],
+[
+"3. Người quyết định",
+{
+"o": "n2-1-0-2-1"
+},
+"Đang nói với đúng người chưa"
+],
+[
+"4. Thời điểm mua",
+{
+"o": "n2-1-0-3-1"
+},
+"Đang tìm hiểu hay sắp mua"
 ]
+]
+}
 },
 {
 "h": "<p>Đạt nhu cầu và ngân sách là đúng nhóm. Đúng nhóm mà đạt thêm thời điểm mua là sắp mua. Người đang trò chuyện chưa phải người quyết định thì khách vẫn giữ loại đó, nhưng trước khi tư vấn bạn hẹn thêm người cùng quyết định.</p>"
@@ -175,7 +288,230 @@ var BAI = {
 "nhan": "Ở Ngày 1, khách này dừng ở bước nào",
 "ten": "Mẫu 3 · Khách A · Ở Ngày 1, khách này dừng ở bước nào"
 }
+],
+"bang": {
+"dau": [
+"Khách",
+"Nhu cầu",
+"Ngân sách",
+"Người quyết định",
+"Thời điểm mua",
+"Xếp vào loại nào",
+"Ở Ngày 1, khách này dừng ở bước nào"
+],
+"hang": [
+[
+"A",
+{
+"o": "n2-2-0-0-1"
+},
+{
+"o": "n2-2-0-0-2"
+},
+{
+"o": "n2-2-0-0-3"
+},
+{
+"o": "n2-2-0-0-4"
+},
+{
+"o": "n2-2-0-0-5"
+},
+{
+"o": "n2-2-0-0-6"
+}
+],
+[
+"B",
+{
+"o": "n2-2-0-1-1"
+},
+{
+"o": "n2-2-0-1-2"
+},
+{
+"o": "n2-2-0-1-3"
+},
+{
+"o": "n2-2-0-1-4"
+},
+{
+"o": "n2-2-0-1-5"
+},
+{
+"o": "n2-2-0-1-6"
+}
+],
+[
+"C",
+{
+"o": "n2-2-0-2-1"
+},
+{
+"o": "n2-2-0-2-2"
+},
+{
+"o": "n2-2-0-2-3"
+},
+{
+"o": "n2-2-0-2-4"
+},
+{
+"o": "n2-2-0-2-5"
+},
+{
+"o": "n2-2-0-2-6"
+}
+],
+[
+"D",
+{
+"o": "n2-2-0-3-1"
+},
+{
+"o": "n2-2-0-3-2"
+},
+{
+"o": "n2-2-0-3-3"
+},
+{
+"o": "n2-2-0-3-4"
+},
+{
+"o": "n2-2-0-3-5"
+},
+{
+"o": "n2-2-0-3-6"
+}
+],
+[
+"E",
+{
+"o": "n2-2-0-4-1"
+},
+{
+"o": "n2-2-0-4-2"
+},
+{
+"o": "n2-2-0-4-3"
+},
+{
+"o": "n2-2-0-4-4"
+},
+{
+"o": "n2-2-0-4-5"
+},
+{
+"o": "n2-2-0-4-6"
+}
+],
+[
+"G",
+{
+"o": "n2-2-0-5-1"
+},
+{
+"o": "n2-2-0-5-2"
+},
+{
+"o": "n2-2-0-5-3"
+},
+{
+"o": "n2-2-0-5-4"
+},
+{
+"o": "n2-2-0-5-5"
+},
+{
+"o": "n2-2-0-5-6"
+}
+],
+[
+"H",
+{
+"o": "n2-2-0-6-1"
+},
+{
+"o": "n2-2-0-6-2"
+},
+{
+"o": "n2-2-0-6-3"
+},
+{
+"o": "n2-2-0-6-4"
+},
+{
+"o": "n2-2-0-6-5"
+},
+{
+"o": "n2-2-0-6-6"
+}
+],
+[
+"I",
+{
+"o": "n2-2-0-7-1"
+},
+{
+"o": "n2-2-0-7-2"
+},
+{
+"o": "n2-2-0-7-3"
+},
+{
+"o": "n2-2-0-7-4"
+},
+{
+"o": "n2-2-0-7-5"
+},
+{
+"o": "n2-2-0-7-6"
+}
+],
+[
+"K",
+{
+"o": "n2-2-0-8-1"
+},
+{
+"o": "n2-2-0-8-2"
+},
+{
+"o": "n2-2-0-8-3"
+},
+{
+"o": "n2-2-0-8-4"
+},
+{
+"o": "n2-2-0-8-5"
+},
+{
+"o": "n2-2-0-8-6"
+}
+],
+[
+"L",
+{
+"o": "n2-2-0-9-1"
+},
+{
+"o": "n2-2-0-9-2"
+},
+{
+"o": "n2-2-0-9-3"
+},
+{
+"o": "n2-2-0-9-4"
+},
+{
+"o": "n2-2-0-9-5"
+},
+{
+"o": "n2-2-0-9-6"
+}
 ]
+]
+}
 },
 {
 "tieu": "Khách B",
@@ -514,7 +850,39 @@ var BAI = {
 "nhan": "Chưa biết, cần hỏi thêm",
 "ten": "Mẫu 3 · Chưa biết, cần hỏi thêm"
 }
+],
+"bang": {
+"dau": [
+"",
+"Số người"
+],
+"hang": [
+[
+"Đúng nhóm, sắp mua",
+{
+"o": "n2-2-1-0-1"
+}
+],
+[
+"Đúng nhóm, đang tìm hiểu",
+{
+"o": "n2-2-1-1-1"
+}
+],
+[
+"Chưa đúng nhóm",
+{
+"o": "n2-2-1-2-1"
+}
+],
+[
+"Chưa biết, cần hỏi thêm",
+{
+"o": "n2-2-1-3-1"
+}
 ]
+]
+}
 },
 {
 "o": [
@@ -528,7 +896,27 @@ var BAI = {
 "nhan": "Điều này làm bạn nhìn bước 2 khác đi thế nào",
 "ten": "Mẫu 3 · Điều này làm bạn nhìn bước 2 khác đi thế nào"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Trong số người rơi ở bước 2, bao nhiêu người vốn chưa đúng nhóm",
+{
+"o": "n2-2-2-0-1"
+}
+],
+[
+"Điều này làm bạn nhìn bước 2 khác đi thế nào",
+{
+"o": "n2-2-2-1-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -555,7 +943,41 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 4 · 1. Tìm kiếm khách · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"1. Tìm kiếm khách",
+{
+"o": "n2-3-0-0-1"
+},
+{
+"o": "bang2-b1-lam"
+},
+{
+"o": "bang2-b1-sua"
+}
+],
+[
+"2. Phần phân loại",
+{
+"o": "n2-3-0-1-1"
+},
+{
+"o": "bang2-b2pl-lam"
+},
+{
+"o": "bang2-b2pl-sua"
+}
 ]
+]
+}
 },
 {
 "tieu": "2. Phần phân loại",
@@ -647,7 +1069,33 @@ var BAI = {
 "nhan": "Khách hỏi giá ngay từ đầu thì bạn nói gì",
 "ten": "Mẫu 1 · Khách hỏi giá ngay từ đầu thì bạn nói gì"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Lâu nay bạn thường mở đầu bằng câu nào",
+{
+"o": "n3-0-0-0-1"
+}
+],
+[
+"Câu mở đầu mới: bạn sẽ hỏi trước, vì sao, mất bao lâu",
+{
+"o": "n3-0-0-1-1"
+}
+],
+[
+"Khách hỏi giá ngay từ đầu thì bạn nói gì",
+{
+"o": "n3-0-0-2-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -681,7 +1129,44 @@ var BAI = {
 "goi": "Câu hỏi mẫu: \"Lúc đó anh chị xử lý thế nào?\", \"Sao chuyện đó làm anh chị lo?\"",
 "ten": "Mẫu 2 · Câu hỏi nối tiếp, dùng khi khách vừa kể một chuyện"
 }
+],
+"bang": {
+"dau": [
+"Tầng",
+"Câu hỏi mẫu",
+"Câu hỏi của bạn"
+],
+"hang": [
+[
+"Tầng một. Thứ khách nhận được",
+"\"Anh chị cần trong bao lâu?\", \"Anh chị dự tính chi chừng bao nhiêu?\"",
+{
+"o": "n3-1-0-0-2"
+}
+],
+[
+"Tầng hai. Trải nghiệm và cảm xúc",
+"\"Anh chị đã thử những cách nào rồi?\", \"Có lần nào xong việc này lại sinh thêm việc khác không?\"",
+{
+"o": "n3-1-0-1-2"
+}
+],
+[
+"Tầng ba. Ý nghĩa và lý do khách tới",
+"\"Chuyện này ảnh hưởng tới công việc của anh chị thế nào?\", \"Sao lúc này anh chị mới tính tới chuyện này?\"",
+{
+"o": "n3-1-0-2-2"
+}
+],
+[
+"Câu hỏi nối tiếp, dùng khi khách vừa kể một chuyện",
+"\"Lúc đó anh chị xử lý thế nào?\", \"Sao chuyện đó làm anh chị lo?\"",
+{
+"o": "n3-1-0-3-2"
+}
 ]
+]
+}
 }
 ]
 },
@@ -710,7 +1195,89 @@ var BAI = {
 "nhan": "Khách C",
 "ten": "Mẫu 3 · Khách hỏi về điều gì · Khách C"
 }
+],
+"bang": {
+"dau": [
+"",
+"Khách A",
+"Khách B",
+"Khách C"
+],
+"hang": [
+[
+"Khách hỏi về điều gì",
+{
+"o": "n3-2-0-0-1"
+},
+{
+"o": "n3-2-0-0-2"
+},
+{
+"o": "n3-2-0-0-3"
+}
+],
+[
+"Cuộc trò chuyện xuống tới tầng nào",
+{
+"o": "n3-2-0-1-1"
+},
+{
+"o": "n3-2-0-1-2"
+},
+{
+"o": "n3-2-0-1-3"
+}
+],
+[
+"Câu hỏi giúp khách kể sâu nhất",
+{
+"o": "n3-2-0-2-1"
+},
+{
+"o": "n3-2-0-2-2"
+},
+{
+"o": "n3-2-0-2-3"
+}
+],
+[
+"Câu khách nói đáng nhớ nhất, ghi đúng lời khách",
+{
+"o": "n3-2-0-3-1"
+},
+{
+"o": "n3-2-0-3-2"
+},
+{
+"o": "n3-2-0-3-3"
+}
+],
+[
+"Câu tóm tắt: anh chị mong..., anh chị lo...",
+{
+"o": "n3-2-0-4-1"
+},
+{
+"o": "n3-2-0-4-2"
+},
+{
+"o": "n3-2-0-4-3"
+}
+],
+[
+"Khách nói bạn hiểu đúng chưa",
+{
+"o": "n3-2-0-5-1"
+},
+{
+"o": "n3-2-0-5-2"
+},
+{
+"o": "n3-2-0-5-3"
+}
 ]
+]
+}
 },
 {
 "tieu": "Cuộc trò chuyện xuống tới tầng nào",
@@ -824,7 +1391,27 @@ var BAI = {
 "nhan": "Lần sau gặp khách tương tự, bạn sẽ hỏi thêm câu nào",
 "ten": "Mẫu 3 · Lần sau gặp khách tương tự, bạn sẽ hỏi thêm câu nào"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Cuộc nào bạn dừng ở tầng một, và vì sao",
+{
+"o": "n3-2-1-0-1"
+}
+],
+[
+"Lần sau gặp khách tương tự, bạn sẽ hỏi thêm câu nào",
+{
+"o": "n3-2-1-1-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -851,7 +1438,41 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 4 · 2. Phần tiếp cận · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"2. Phần tiếp cận",
+{
+"o": "n3-3-0-0-1"
+},
+{
+"o": "bang2-b2tc-lam"
+},
+{
+"o": "bang2-b2tc-sua"
+}
+],
+[
+"3. Khai thác sâu",
+{
+"o": "n3-3-0-1-1"
+},
+{
+"o": "bang2-b3-lam"
+},
+{
+"o": "bang2-b3-sua"
+}
 ]
+]
+}
 },
 {
 "tieu": "3. Khai thác sâu",
@@ -952,7 +1573,73 @@ var BAI = {
 "nhan": "Câu bạn sẽ nói với khách",
 "ten": "Mẫu 1 · Dòng 1 · Câu bạn sẽ nói với khách"
 }
+],
+"bang": {
+"dau": [
+"Khách kể gì, ghi đúng lời khách",
+"Ở tầng nào",
+"Phần sản phẩm giải quyết chuyện đó",
+"Câu bạn sẽ nói với khách"
+],
+"hang": [
+[
+{
+"o": "n4-0-0-0-0"
+},
+{
+"o": "n4-0-0-0-1"
+},
+{
+"o": "n4-0-0-0-2"
+},
+{
+"o": "n4-0-0-0-3"
+}
+],
+[
+{
+"o": "n4-0-0-1-0"
+},
+{
+"o": "n4-0-0-1-1"
+},
+{
+"o": "n4-0-0-1-2"
+},
+{
+"o": "n4-0-0-1-3"
+}
+],
+[
+{
+"o": "n4-0-0-2-0"
+},
+{
+"o": "n4-0-0-2-1"
+},
+{
+"o": "n4-0-0-2-2"
+},
+{
+"o": "n4-0-0-2-3"
+}
+],
+[
+{
+"o": "n4-0-0-3-0"
+},
+{
+"o": "n4-0-0-3-1"
+},
+{
+"o": "n4-0-0-3-2"
+},
+{
+"o": "n4-0-0-3-3"
+}
 ]
+]
+}
 },
 {
 "tieu": "Dòng 2",
@@ -1036,7 +1723,21 @@ var BAI = {
 "nhan": "Những phần bạn hay nói nhưng không liên quan tới chuyện của khách này, hôm nay bỏ",
 "ten": "Mẫu 1 · Những phần bạn hay nói nhưng không liên quan tới chuyện của khách này, hôm nay bỏ"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Những phần bạn hay nói nhưng không liên quan tới chuyện của khách này, hôm nay bỏ",
+{
+"o": "n4-0-1-0-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1066,7 +1767,39 @@ var BAI = {
 "nhan": "Câu hỏi cuối để biết bạn nói trúng chưa",
 "ten": "Mẫu 2 · Câu hỏi cuối để biết bạn nói trúng chưa"
 }
+],
+"bang": {
+"dau": [
+"Câu",
+"Bạn điền"
+],
+"hang": [
+[
+"\"Anh chị mong...\"",
+{
+"o": "n4-1-0-0-1"
+}
+],
+[
+"\"Anh chị lo...\"",
+{
+"o": "n4-1-0-1-1"
+}
+],
+[
+"\"Phương án em đề xuất giúp anh chị...\"",
+{
+"o": "n4-1-0-2-1"
+}
+],
+[
+"Câu hỏi cuối để biết bạn nói trúng chưa",
+{
+"o": "n4-1-0-3-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1093,7 +1826,29 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 3 · 4. Trình bày giải pháp · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"4. Trình bày giải pháp",
+{
+"o": "n4-2-0-0-1"
+},
+{
+"o": "bang2-b4-lam"
+},
+{
+"o": "bang2-b4-sua"
+}
 ]
+]
+}
 },
 {
 "h": "<p>Bạn chép cột \"từ nay\" và cột \"việc sửa\" sang dòng 4 trong Bảng quy trình bán hàng bảy bước.</p>"
@@ -1167,7 +1922,89 @@ var BAI = {
 "nhan": "Câu thứ ba",
 "ten": "Mẫu 1 · Khách nói gì, ghi đúng lời khách · Câu thứ ba"
 }
+],
+"bang": {
+"dau": [
+"",
+"Câu thứ nhất",
+"Câu thứ hai",
+"Câu thứ ba"
+],
+"hang": [
+[
+"Khách nói gì, ghi đúng lời khách",
+{
+"o": "n5-0-0-0-1"
+},
+{
+"o": "n5-0-0-0-2"
+},
+{
+"o": "n5-0-0-0-3"
+}
+],
+[
+"Bước 1. Bạn nhắc lại thế nào",
+{
+"o": "n5-0-0-1-1"
+},
+{
+"o": "n5-0-0-1-2"
+},
+{
+"o": "n5-0-0-1-3"
+}
+],
+[
+"Bước 2. Bạn ghi nhận thế nào, và hỏi gốc bằng câu nào",
+{
+"o": "n5-0-0-2-1"
+},
+{
+"o": "n5-0-0-2-2"
+},
+{
+"o": "n5-0-0-2-3"
+}
+],
+[
+"Gốc bạn đoán đằng sau câu này",
+{
+"o": "n5-0-0-3-1"
+},
+{
+"o": "n5-0-0-3-2"
+},
+{
+"o": "n5-0-0-3-3"
+}
+],
+[
+"Bước 3. Hướng đi bạn đề xuất, khớp với điều nào khách đã kể",
+{
+"o": "n5-0-0-4-1"
+},
+{
+"o": "n5-0-0-4-2"
+},
+{
+"o": "n5-0-0-4-3"
+}
+],
+[
+"Điều bạn sẽ không làm khi nghe câu này",
+{
+"o": "n5-0-0-5-1"
+},
+{
+"o": "n5-0-0-5-2"
+},
+{
+"o": "n5-0-0-5-3"
+}
 ]
+]
+}
 },
 {
 "tieu": "Bước 1. Bạn nhắc lại thế nào",
@@ -1297,7 +2134,39 @@ var BAI = {
 "nhan": "Lần sau bạn thêm câu nào vào phần trình bày",
 "ten": "Mẫu 2 · Lần sau bạn thêm câu nào vào phần trình bày"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Câu từ chối nào cho thấy khách còn một nỗi lo chưa được trả lời",
+{
+"o": "n5-1-0-0-1"
+}
+],
+[
+"Nỗi lo đó khách đã kể ở Ngày 3 chưa, bằng lời nào",
+{
+"o": "n5-1-0-1-1"
+}
+],
+[
+"Phần trình bày ở Ngày 4 đã bỏ sót gì",
+{
+"o": "n5-1-0-2-1"
+}
+],
+[
+"Lần sau bạn thêm câu nào vào phần trình bày",
+{
+"o": "n5-1-0-3-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1324,7 +2193,29 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 3 · 5. Xử lý từ chối · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"5. Xử lý từ chối",
+{
+"o": "n5-2-0-0-1"
+},
+{
+"o": "bang2-b5-lam"
+},
+{
+"o": "bang2-b5-sua"
+}
 ]
+]
+}
 },
 {
 "h": "<p>Bạn chép cột \"từ nay\" và cột \"việc sửa\" sang dòng 5 trong Bảng quy trình bán hàng bảy bước.</p>"
@@ -1418,7 +2309,57 @@ var BAI = {
 "nhan": "Buổi trao đổi kết thúc thế nào",
 "ten": "Mẫu 1 · Buổi trao đổi kết thúc thế nào"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Điều khách mong, bằng lời khách",
+{
+"o": "n6-0-0-0-1"
+}
+],
+[
+"Điều khách lo, bằng lời khách",
+{
+"o": "n6-0-0-1-1"
+}
+],
+[
+"Băn khoăn đã gỡ ở Ngày 5",
+{
+"o": "n6-0-0-2-1"
+}
+],
+[
+"Câu nhắc lại bạn sẽ nói",
+{
+"o": "n6-0-0-3-1"
+}
+],
+[
+"Câu hỏi thứ nhất: khách trả lời gì",
+{
+"o": "n6-0-0-4-1"
+}
+],
+[
+"Câu hỏi thứ hai: khách trả lời gì",
+{
+"o": "n6-0-0-5-1"
+}
+],
+[
+"Buổi trao đổi kết thúc thế nào",
+{
+"o": "n6-0-0-6-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1473,7 +2414,69 @@ var BAI = {
 "nhan": "Ngày giờ bạn gọi lại",
 "ten": "Mẫu 2 · Ngày giờ bạn gọi lại"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Giá, một con số",
+{
+"o": "n6-1-0-0-1"
+}
+],
+[
+"Gồm những gì",
+{
+"o": "n6-1-0-1-1"
+}
+],
+[
+"Điều khách lo mà bạn nhắc lại khi báo giá",
+{
+"o": "n6-1-0-2-1"
+}
+],
+[
+"Câu báo giá đầy đủ, đúng như bạn sẽ nói với khách",
+{
+"o": "n6-1-0-3-1"
+}
+],
+[
+"Nếu khách chưa đồng ý mua: lịch hẹn, việc gì",
+{
+"o": "n6-1-0-4-1"
+}
+],
+[
+"Ai làm",
+{
+"o": "n6-1-0-5-1"
+}
+],
+[
+"Khi nào, ngày và giờ",
+{
+"o": "n6-1-0-6-1"
+}
+],
+[
+"Nếu người quyết định không có mặt: ba ý chính gửi khách trình lại",
+{
+"o": "n6-1-0-7-1"
+}
+],
+[
+"Ngày giờ bạn gọi lại",
+{
+"o": "n6-1-0-8-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1500,7 +2503,29 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 3 · 6. Đề nghị khách quyết định · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"6. Đề nghị khách quyết định",
+{
+"o": "n6-2-0-0-1"
+},
+{
+"o": "bang2-b6-lam"
+},
+{
+"o": "bang2-b6-sua"
+}
 ]
+]
+}
 },
 {
 "h": "<p>Bạn chép cột \"từ nay\" và cột \"việc sửa\" sang dòng 6 trong Bảng quy trình bán hàng bảy bước.</p>"
@@ -1582,7 +2607,45 @@ var BAI = {
 "nhan": "Khi nào bạn dừng",
 "ten": "Mẫu 1 · Khi nào bạn dừng"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Ngay sau khi khách mua: bạn gửi gì, nói gì",
+{
+"o": "n7-0-0-0-1"
+}
+],
+[
+"Lúc khách thấy kết quả đầu tiên: đó là lúc nào, bạn làm gì",
+{
+"o": "n7-0-0-1-1"
+}
+],
+[
+"Lúc giao xong: khi nào, câu bạn sẽ nói",
+{
+"o": "n7-0-0-2-1"
+}
+],
+[
+"Giữ liên lạc với khách cũ: bao lâu nhắn một lần, mỗi lần gửi thứ gì có ích",
+{
+"o": "n7-0-0-3-1"
+}
+],
+[
+"Khi nào bạn dừng",
+{
+"o": "n7-0-0-4-1"
+}
 ]
+]
+}
 }
 ]
 },
@@ -1609,7 +2672,29 @@ var BAI = {
 "nhan": "Việc sửa trong tuần này",
 "ten": "Mẫu 2 · 7. Chăm sóc sau bán · Việc sửa trong tuần này"
 }
+],
+"bang": {
+"dau": [
+"Dòng",
+"Trước đây tôi làm gì, nói gì",
+"Từ nay tôi làm gì, nói gì",
+"Việc sửa trong tuần này"
+],
+"hang": [
+[
+"7. Chăm sóc sau bán",
+{
+"o": "n7-1-0-0-1"
+},
+{
+"o": "bang2-b7-lam"
+},
+{
+"o": "bang2-b7-sua"
+}
 ]
+]
+}
 },
 {
 "h": "<p>Bạn chép cột \"từ nay\" và cột \"việc sửa\" sang dòng 7 trong Bảng quy trình bán hàng bảy bước.</p>"
@@ -1637,7 +2722,27 @@ var BAI = {
 "nhan": "Bản 2: số khách, tính từ ngày nào tới ngày nào",
 "ten": "Mẫu 3 · Bản 2: số khách, tính từ ngày nào tới ngày nào"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Bản 1: số khách, tính từ ngày nào tới ngày nào",
+{
+"o": "n7-2-0-0-1"
+}
+],
+[
+"Bản 2: số khách, tính từ ngày nào tới ngày nào",
+{
+"o": "bang2-khoang"
+}
 ]
+]
+}
 },
 {
 "tieu": "1. Tìm kiếm khách",
@@ -1658,7 +2763,101 @@ var BAI = {
 "nhan": "Đã sửa gì ở bước này",
 "ten": "Mẫu 3 · 1. Tìm kiếm khách · Đã sửa gì ở bước này"
 }
+],
+"bang": {
+"dau": [
+"Bước",
+"Số bản 1, đếm Ngày 1",
+"Số bản 2, đếm tuần này",
+"Đã sửa gì ở bước này"
+],
+"hang": [
+[
+"1. Tìm kiếm khách",
+{
+"o": "n7-2-1-0-1"
+},
+{
+"o": "bang2-b1-so"
+},
+{
+"o": "bang2-b1-dasua"
+}
+],
+[
+"2. Tiếp cận và phân loại",
+{
+"o": "n7-2-1-1-1"
+},
+{
+"o": "bang2-b2-so"
+},
+{
+"o": "bang2-b2-dasua"
+}
+],
+[
+"3. Khai thác sâu",
+{
+"o": "n7-2-1-2-1"
+},
+{
+"o": "bang2-b3-so"
+},
+{
+"o": "bang2-b3-dasua"
+}
+],
+[
+"4. Trình bày giải pháp",
+{
+"o": "n7-2-1-3-1"
+},
+{
+"o": "bang2-b4-so"
+},
+{
+"o": "bang2-b4-dasua"
+}
+],
+[
+"5. Xử lý từ chối",
+{
+"o": "n7-2-1-4-1"
+},
+{
+"o": "bang2-b5-so"
+},
+{
+"o": "bang2-b5-dasua"
+}
+],
+[
+"6. Đề nghị khách quyết định",
+{
+"o": "n7-2-1-5-1"
+},
+{
+"o": "bang2-b6-so"
+},
+{
+"o": "bang2-b6-dasua"
+}
+],
+[
+"7. Chăm sóc sau bán",
+{
+"o": "n7-2-1-6-1"
+},
+{
+"o": "bang2-b7-so"
+},
+{
+"o": "bang2-b7-dasua"
+}
 ]
+]
+}
 },
 {
 "tieu": "2. Tiếp cận và phân loại",
@@ -1798,7 +2997,27 @@ var BAI = {
 "nhan": "Tuần sau bạn sẽ sửa bước nào, vì sao",
 "ten": "Mẫu 3 · Tuần sau bạn sẽ sửa bước nào, vì sao"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Bước thay đổi rõ nhất, và số đó đứng trên bao nhiêu khách",
+{
+"o": "bang2-ro"
+}
+],
+[
+"Tuần sau bạn sẽ sửa bước nào, vì sao",
+{
+"o": "bang2-tiep"
+}
 ]
+]
+}
 }
 ],
 "layTu": "Chép bài đã viết ở Ngày 1 vào các ô còn trống"
@@ -1834,7 +3053,45 @@ var BAI = {
 "nhan": "Lần sau làm khác điều gì",
 "ten": "Mẫu 4 · Lần sau làm khác điều gì"
 }
+],
+"bang": {
+"dau": [
+"",
+"Bạn điền"
+],
+"hang": [
+[
+"Chuyện gì xảy ra",
+{
+"o": "n7-3-0-0-1"
+}
+],
+[
+"Lúc đó cần gì",
+{
+"o": "n7-3-0-1-1"
+}
+],
+[
+"Bạn đã nói, làm gì",
+{
+"o": "n7-3-0-2-1"
+}
+],
+[
+"Khách phản ứng ra sao",
+{
+"o": "n7-3-0-3-1"
+}
+],
+[
+"Lần sau làm khác điều gì",
+{
+"o": "n7-3-0-4-1"
+}
 ]
+]
+}
 }
 ],
 "rieng": 1

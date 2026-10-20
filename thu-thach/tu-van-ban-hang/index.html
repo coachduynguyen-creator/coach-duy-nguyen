@@ -168,7 +168,16 @@ label.chon input{width:20px;height:20px;margin:0;accent-color:var(--cam-dam)}
   #ban-in h3{margin:14px 0 4px;font-size:16px}
   #ban-in h4{margin:10px 0 2px;font-size:14.5px}
   #ban-in b{display:block;margin-top:6px}
+  #ban-in .chu b,#ban-in .chu strong{display:inline}
   #ban-in p{margin:2px 0;white-space:pre-wrap}
+  #ban-in .mo{color:#555}
+  #ban-in p.dien{border:1px solid #bbb;border-radius:4px;padding:4px 6px;min-height:1.6em}
+  #ban-in blockquote{margin:6px 0;padding-left:10px;border-left:3px solid #999}
+  #ban-in .bang-in{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0 12px}
+  #ban-in .bang-in th,#ban-in .bang-in td{border:1px solid #999;padding:4px 6px;vertical-align:top;text-align:left;white-space:pre-wrap}
+  #ban-in .bang-in th{background:#eee}
+  #ban-in .bang-in tr{break-inside:avoid}
+  #ban-in h2,#ban-in h3,#ban-in h4{break-after:avoid}
   #ban-in .hai-ban{grid-template-columns:1fr 1fr}
   header.dau,.mo,#nguoi,#nguoi-gon,nav.ngay,footer,.nop,#bai > :not(.buoc-2),.buoc-2 > :not(.buoc-than),.buoc-2 .buoc-than > :not(.in-duoc){display:none !important}
   .buoc-2{border:0;padding:0;margin:0}
@@ -322,7 +331,10 @@ var NGAY = {
           ] }
         ].concat(BUOC.map(function (b, i) {
           var k = 'bang1-b' + (i + 1);
-          return { tieu: (i + 1) + '. ' + b[0], mo: 'Khách đang ở đâu: ' + b[1], o: [
+          return { tieu: (i + 1) + '. ' + b[0], mo: 'Khách đang ở đâu: ' + b[1], bang: i ? undefined : {
+            dau: ['Bước', 'Khách đang ở đâu', 'Ở bước này tôi làm gì, nói gì', 'Số đo', 'Khách rơi ở đâu, vì sao', 'Việc sửa trong tuần này'],
+            hang: BUOC.map(function (c, j) { var q = 'bang1-b' + (j + 1); return [(j + 1) + '. ' + c[0], c[1], { o: q + '-lam' }, { o: q + '-so' }, { o: q + '-roi' }, { o: q + '-sua' }]; })
+          }, o: [
             { id: k + '-lam', nhan: 'Ở bước này tôi làm gì, nói gì' },
             { id: k + '-so', nhan: 'Số đo: bao nhiêu khách qua được bước này', goi: b[2] },
             { id: k + '-roi', nhan: 'Khách rơi ở đâu, vì sao', goi: 'Lý do bạn đoán thì bắt đầu bằng chữ "đoán"' },
@@ -769,7 +781,26 @@ function banHaiBan() {
   chu += '\n\n' + t(cuoi2);
   return { html: html, chu: chu, thieu: thieu };
 }
-/* Bản mang về: mọi ô đã điền của mọi ngày, lấy từ bộ nhớ trên máy. */
+/* Bản in: mỗi phần giữ đúng bố cục trên trang, bảng của tài liệu in thành bảng có chữ người học trong ô (A3). */
+function inPhan(p) {
+  var da = {}, h = '<h3>' + esc(p.tieu) + '</h3>' + (p.mo ? '<p class="mo">' + esc(p.mo) + '</p>' : '') +
+    (p.ds ? '<ol>' + p.ds.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ol>' : '');
+  p.nhom.forEach(function (g) {
+    if (g.h) { h += '<div class="chu">' + g.h + '</div>'; return; }
+    if (g.bang) h += '<table class="bang-in"><thead><tr>' + g.bang.dau.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      g.bang.hang.map(function (r) { return '<tr>' + r.map(function (c) {
+        if (c && c.o) { da[c.o] = 1; return '<td class="dien">' + esc(doc(c.o).trim()) + '</td>'; }
+        return '<td>' + esc(c || '') + '</td>';
+      }).join('') + '</tr>'; }).join('') + '</tbody></table>';
+    var con = (g.o || []).filter(function (o) { return !da[o.id]; });
+    if (!con.length) return;
+    if (g.tieu) h += '<h4>' + esc(g.tieu) + '</h4>';
+    if (g.mo) h += '<p class="mo">' + esc(g.mo) + '</p>';
+    con.forEach(function (o) { h += '<b>' + esc(o.nhan) + '</b><p class="dien">' + esc(doc(o.id).trim()) + '</p>'; });
+  });
+  return h;
+}
+/* Bản mang về: mọi ngày có ít nhất một ô đã điền, lấy từ bộ nhớ trên máy. */
 function banBaiLam() {
   var nguoi = layNguoi() || {}, html = '', chu = '', co = 0;
   Object.keys(NGAY).forEach(function (k) {
@@ -782,9 +813,9 @@ function banBaiLam() {
         if (g.tieu) { hp += '<h4>' + esc(g.tieu) + '</h4>'; cp += '\n' + g.tieu + '\n'; }
         dien.forEach(function (o) { var v = doc(o.id).trim(); co++; hp += '<b>' + esc(o.nhan) + '</b><p>' + esc(v) + '</p>'; cp += o.nhan + ': ' + v + '\n'; });
       });
-      if (hp) { hn += '<h3>' + esc(p.tieu) + '</h3>' + hp; cn += '\n### ' + p.tieu + '\n' + cp; }
+      if (hp) { hn = 1; cn += '\n### ' + p.tieu + '\n' + cp; }
     });
-    if (hn) { html += '<h2>' + esc(nhanNgay(n) + ' · ' + d.ten) + '</h2>' + hn; chu += '\n\n## ' + nhanNgay(n) + ' · ' + d.ten + '\n' + cn; }
+    if (hn) { html += '<h2>' + esc(nhanNgay(n) + ' · ' + d.ten) + '</h2>' + (d.hua ? '<blockquote>' + esc(d.hua) + '</blockquote>' : '') + d.phan.map(inPhan).join(''); chu += '\n\n## ' + nhanNgay(n) + ' · ' + d.ten + '\n' + cn; }
   });
   var hai = banHaiBan();
   if (co && doc('bang1-sp')) { html += '<h2>Bảng quy trình bán hàng bảy bước, bản 1 và bản 2</h2>' + hai.html; chu += '\n\n' + hai.chu.replace(/^# /, '## '); }
