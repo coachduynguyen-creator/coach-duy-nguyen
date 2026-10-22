@@ -165,6 +165,17 @@ figure{margin:0}
 .hoi h3{color:var(--ink)}
 
 /* ký tên */
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+@media (max-width:900px){.nav-links{display:none}}
+.nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;border:1px solid #F2B14A;background:#F2B14A;color:#17120F;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;transition:background .16s,box-shadow .16s}
+.nut:hover{background:#E5A233;border-color:#E5A233;box-shadow:0 6px 18px -8px rgba(242,177,74,.6)}
+.nut svg{width:16px;height:16px}
+.nav .nut{height:40px;padding:0 16px;font-size:14px;margin-left:auto;flex:none}
+.nav-links + .nut{margin-left:8px}
+@media (max-width:520px){.nav .duoi{display:none}}
+.cuoi .nut{margin-top:28px;height:56px;padding:0 30px;font-size:17px}
 .cuoi{max-width:720px}
 .ky-ten{margin-top:32px;padding-top:20px;border-top:1px solid var(--line)}
 .ky-ten .ten-duy{font-family:var(--f-tit);font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
@@ -178,6 +189,8 @@ figure{margin:0}
 <header class="nav">
   <div class="bao">
     <a class="logo" href="../"><img class="dau-hieu" src="../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
+    <nav class="nav-links" aria-label="Các trang"><a href="../cong-dong/">Cộng đồng</a><a href="../ve-toi.html">Về Duy</a><a href="../chuong-trinh.html">Chương trình</a><a href="../blog.html">Blog</a><a href="../lien-he.html">Liên hệ</a></nav>
+    <a class="nut" href="/tham-gia/">Đăng ký<span class="duoi">&nbsp;tham gia</span></a>
   </div>
 </header>
 
@@ -186,7 +199,7 @@ figure{margin:0}
   <div class="bao">
     <div>
       <div class="nhan">Next Gen Founder · Master Club</div>
-      <h1>Chào mừng bạn đến với Master Club của cộng đồng Next Gen Founder</h1>
+      <h1>Master Club của cộng đồng Next Gen Founder</h1>
       <p class="mo">Master Club là nhóm nhỏ trong cộng đồng Next Gen Founder (nhà sáng lập thế hệ mới). Mỗi tuần, các chủ doanh nghiệp mang một việc đang vướng thật trong doanh nghiệp mình tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó. Đích đến là doanh nghiệp của bạn bớt dần những việc phải chờ người chủ.</p>
     </div>
     <figure class="anh-khung"><img src="../cong-dong/img/cd-ca-phong.jpg" alt="Coach Duy Nguyễn đứng giữa một phòng các nhà sáng lập" width="1800" height="1182" fetchpriority="high" decoding="async"></figure>
@@ -210,7 +223,7 @@ figure{margin:0}
     <h2>Vì sao Duy mở Master Club</h2>
     <div class="canh">
       <div class="doan">
-        <p>Mấy tuần nay, đội ngũ tư vấn của Duy đã nói chuyện với khá nhiều chủ doanh nghiệp. Người thì nói về quy trình, người nói về đội ngũ, người nói về thương hiệu cá nhân, có người chỉ mong tìm được vài người chủ khác để học hỏi cùng. Nghe kỹ thì nhiều câu chuyện lại kẹt đúng một chỗ, và chỗ đó hay được nói ra bằng những câu như thế này.</p>
+        <p>Đội ngũ tư vấn của Duy đã nói chuyện với khá nhiều chủ doanh nghiệp trong cộng đồng. Người thì nói về quy trình, người nói về đội ngũ, người nói về thương hiệu cá nhân, có người chỉ mong tìm được vài người chủ khác để học hỏi cùng. Nghe kỹ thì nhiều câu chuyện lại kẹt đúng một chỗ, và chỗ đó hay được nói ra bằng những câu như thế này.</p>
         <ul class="loi">
           <li>Khách hỏi thì nhiều, mà ra quyết định thì ít.</li>
           <li>Nhân viên tư vấn theo cảm tính, mỗi người một kiểu.</li>
@@ -342,7 +355,7 @@ figure{margin:0}
       </div>
       <div class="o hoi">
         <h3>"Mình muốn xem thử trước đã"</h3>
-        <p>Bạn cứ xem. Ở mức Thành viên, bạn vẫn dự các buổi chung của cộng đồng và thấy được cách Duy làm việc. Khi nào thấy việc đang vướng cần có người cùng mổ xẻ hằng tuần thì bạn nhắn tư vấn viên.</p>
+        <p>Bạn cứ xem. Ở mức Thành viên, bạn vẫn dự các buổi chung của cộng đồng và thấy được cách Duy làm việc. Khi nào thấy việc đang vướng cần có người cùng mổ xẻ hằng tuần thì bạn đăng ký ở cuối trang này.</p>
       </div>
       <div class="o hoi">
         <h3>"Mình đã học khá nhiều khóa rồi, Master Club khác gì?"</h3>
@@ -358,7 +371,7 @@ figure{margin:0}
       </div>
       <div class="o hoi">
         <h3>"Vào rồi mà thấy không hợp thì sao?"</h3>
-        <p>Phí đã đóng thì không hoàn lại, nên Duy muốn bạn biết rõ trước khi vào. Đó cũng là lý do tư vấn viên chỉ mời sau khi đã nói chuyện kỹ với bạn, và Duy viết rõ ở trên ai chưa hợp với Master Club. Còn khi đã vào, cứ 90 ngày bạn và Duy ngồi lại xem việc nào đã khác, việc nào chưa, để chỉnh cách đi cho chặng sau.</p>
+        <p>Phí đã đóng thì không hoàn lại, nên Duy muốn bạn biết rõ trước khi vào. Đó cũng là lý do tư vấn viên luôn nói chuyện kỹ với bạn trước khi bạn đóng phí, và Duy viết rõ ở trên ai chưa hợp với Master Club. Còn khi đã vào, cứ 90 ngày bạn và Duy ngồi lại xem việc nào đã khác, việc nào chưa, để chỉnh cách đi cho chặng sau.</p>
       </div>
     </div>
   </div>
@@ -369,8 +382,9 @@ figure{margin:0}
     <div class="cuoi">
       <h2>Nếu bạn muốn bắt đầu</h2>
       <div class="doan">
-        <p>Duy giữ suất cho bạn trong bảy ngày kể từ lúc bạn nhận trang này. Nếu thấy đúng là việc mình cần lúc này, bạn nhắn lại tư vấn viên đã gửi trang để nhận thông tin thanh toán. Thanh toán xong, tư vấn viên sẽ gửi bạn lịch buổi coaching gần nhất.</p>
-        <p>Còn nếu thấy chưa phải lúc, bạn cứ nói thật với tư vấn viên. Được mời không có nghĩa là phải vào, và Duy vẫn gặp bạn trong cộng đồng như thường.</p>
+        <p>Bạn bấm nút bên dưới và trả lời vài câu hỏi ngắn về doanh nghiệp của mình. Tư vấn viên sẽ liên hệ để nghe kỹ việc bạn đang vướng, rồi cùng bạn xem Master Club có hợp lúc này không. Nếu hợp, tư vấn viên gửi bạn thông tin thanh toán, và thanh toán xong bạn nhận lịch buổi coaching gần nhất.</p>
+        <p>Còn nếu nói chuyện xong mà thấy chưa phải lúc, bạn cứ nói thật với tư vấn viên. Đăng ký không có nghĩa là phải vào, và Duy vẫn gặp bạn trong cộng đồng như thường.</p>
+        <a class="nut" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="ky-ten">
         <div class="ten-duy">Duy</div>
