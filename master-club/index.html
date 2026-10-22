@@ -143,12 +143,8 @@ figure{margin:0}
 .vsl-mo:hover i{transform:scale(1.06)}
 .vsl-mo i::before{content:'';margin-left:6px;border-left:24px solid #1B1204;border-top:15px solid transparent;border-bottom:15px solid transparent}
 .hanh-dong{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 22px;margin-top:32px}
-.gia-nho{font-size:14.5px;line-height:1.45;color:var(--ink-3);max-width:34ch;text-align:left}
-.gia-nho b{display:block;font-size:17px;font-weight:700;color:var(--ink)}
-.hero .gia-nho{color:#8A919B}
-.hero .gia-nho b{color:#F4F1EA}
 .dai .gia-ghi{font-size:14px;color:#8A919B;margin-top:10px}
-@media (max-width:640px){.hero .gia-nho{text-align:center}.hero{padding:36px 0 56px}.vsl-khung{margin-top:28px;border-radius:14px}.vsl-mo i{width:68px;height:68px}}
+@media (max-width:640px){.hero{padding:36px 0 56px}.vsl-khung{margin-top:28px;border-radius:14px}.vsl-mo i{width:68px;height:68px}}
 
 /* nhãn cho bản xem thiết kế: phần còn chờ chốt, ảnh còn chờ chụp. Xoá hết trước khi đẩy lên mạng. */
 .anh-cho{aspect-ratio:16/10;border:2px dashed var(--line-2);border-radius:var(--r);background:repeating-linear-gradient(135deg,var(--bg-3) 0 14px,var(--bg-2) 14px 28px);display:grid;place-content:center;gap:6px;text-align:center;padding:24px;font-size:14.5px;line-height:1.5;color:var(--ink-3)}
@@ -195,6 +191,7 @@ figure{margin:0}
 .chi-so p{font-size:14.5px;line-height:1.5}
 @media (max-width:980px){.chi-so{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:400px){.chi-so .o{padding:18px}}
+@media (max-width:640px){.chi-so{grid-template-columns:1fr;gap:12px}.chi-so .o{display:grid;grid-template-columns:60px 1fr;column-gap:14px;align-items:start}.chi-so b{grid-row:span 2}.chi-so .don{margin-top:2px}}
 
 /* vì sao */
 .vi-sao{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
@@ -333,7 +330,6 @@ figure{margin:0}
     </div>
     <div class="hanh-dong">
       <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <p class="gia-nho"><b>Chỉ khoảng 3,3 triệu đồng mỗi tháng</b>Thanh toán theo năm, 40 triệu đồng đã gồm thuế. Đăng ký tới hết 31/12/2026, bạn học miễn phí chương trình chuyên đề trong 12 tháng.</p>
     </div>
   </div>
 </section>
