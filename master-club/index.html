@@ -258,6 +258,20 @@ figure{margin:0}
 .cac-buoc li::before{content:counter(d);display:block;font-family:var(--f-tit);font-size:26px;font-weight:800;line-height:1;color:var(--cam-dam);margin-bottom:8px}
 @media (max-width:900px){.cac-buoc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.cuoi{padding:28px 20px}.cac-buoc{grid-template-columns:minmax(0,1fr)}}
+/* phiếu đăng ký Master Club */
+.phieu{background:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-s);position:relative}
+.phieu-cot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+.phieu label{display:flex;flex-direction:column;gap:6px;font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:16px}
+.phieu .phu{font-size:13.5px;font-weight:400;color:var(--ink-3);line-height:1.5}
+.phieu input,.phieu select,.phieu textarea{height:48px;padding:0 14px;border:1px solid var(--line-2);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px;font-weight:400;width:100%}
+.phieu textarea{height:auto;min-height:96px;padding:12px 14px;resize:vertical;line-height:1.5}
+.phieu [aria-invalid="true"]{border-color:#C0412B}
+.phieu .loi{display:none;margin:0 0 14px;color:#C0412B;font-size:14.5px}
+.phieu.co-loi .loi{display:block}
+.phieu .xong{display:none;font-size:16px;line-height:1.6;color:var(--ink)}
+.phieu.da-gui .xong{display:block}
+.phieu.da-gui .an-khi-xong{display:none}
+@media (max-width:640px){.phieu{padding:20px 16px}.phieu-cot{grid-template-columns:minmax(0,1fr)}}
 .ky-ten{margin-top:32px;padding-top:20px;border-top:1px solid var(--line-2)}
 .ky-ten .ten-duy{font-family:var(--f-tit);font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
 .ky-ten .chuc{font-size:15px;color:var(--ink-3)}
@@ -289,7 +303,7 @@ figure{margin:0}
   <div class="bao">
     <a class="logo" href="../"><img class="dau-hieu" src="../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
     <nav class="nav-links" aria-label="Các trang"><a href="../cong-dong/">Cộng đồng</a><a href="../ve-toi.html">Về Duy</a><a href="../chuong-trinh.html">Chương trình</a><a href="../blog.html">Blog</a><a href="../lien-he.html">Liên hệ</a></nav>
-    <a class="nut" href="/tham-gia/">Đăng ký<span class="duoi">&nbsp;tham gia</span></a>
+    <a class="nut" href="#dang-ky">Đăng ký<span class="duoi">&nbsp;Master Club</span></a>
   </div>
 </header>
 
@@ -304,7 +318,7 @@ figure{margin:0}
       <img src="../cong-dong/img/cd-ca-phong.jpg" alt="" width="1800" height="1182" fetchpriority="high" decoding="async">
     </div>
     <div class="hanh-dong">
-      <a class="nut lon" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <p class="gia-nho"><b>40 triệu đồng một năm</b>Đăng ký tới hết 31/12/2026, bạn học miễn phí chương trình chuyên đề trong 12 tháng.</p>
     </div>
   </div>
@@ -313,10 +327,10 @@ figure{margin:0}
 <section class="phan nen gon">
   <div class="bao">
     <div class="chi-so">
-      <div class="o"><b>1</b><span class="don">buổi coaching mỗi tuần</span><p>Zoom 2,5 tới 3 tiếng cùng Duy. Bạn đăng ký lượt để mang việc của mình ra cùng phân tích.</p></div>
+      <div class="o"><b>1</b><span class="don">buổi coaching mỗi tuần</span><p>Zoom 2,5 tới 3 tiếng cùng Duy. Bạn đăng ký lượt trình bày để mang việc của mình ra cùng phân tích.</p></div>
       <div class="o"><b>12</b><span class="don">tháng học chuyên đề miễn phí</span><p>Dành cho người đăng ký tới hết ngày 31/12/2026, tính từ ngày đăng ký.</p></div>
       <div class="o"><b>90</b><span class="don">ngày một lần nhìn lại</span><p>Bạn và Duy ngồi lại xem việc nào đã khác, việc nào chưa.</p></div>
-      <div class="o"><b>2</b><span class="don">ngày làm việc</span><p>Hạn có câu trả lời ở nhóm hỗ trợ, cho những câu hỏi tới giữa tuần.</p></div>
+      <div class="o"><b>2</b><span class="don">ngày làm việc</span><p>Câu hỏi bạn gửi vào nhóm hỗ trợ giữa hai buổi coaching được trả lời trong vòng hai ngày làm việc.</p></div>
     </div>
   </div>
 </section>
@@ -350,10 +364,10 @@ figure{margin:0}
   <div class="bao">
     <h2>Ở Master Club, bạn không phải gỡ việc một mình</h2>
     <div class="o3">
-      <div class="o"><div class="so-tt">01</div><h3>Tuần nào cũng có chỗ mang việc tới</h3><p>Không phải chờ tới khóa học sau hay hẹn được ai đó rảnh. Mỗi tuần có một buổi, và bạn đăng ký lượt khi có việc cần mọi người cùng phân tích.</p></div>
-      <div class="o"><div class="so-tt">02</div><h3>Ngồi cạnh những người chủ cùng loại bài toán</h3><p>Nhóm kết nối kinh doanh riêng là chỗ để bạn hỏi những chuyện khó nói ở công ty, với người hiểu vì sao nó khó.</p></div>
-      <div class="o"><div class="so-tt">03</div><h3>Tuần sau có người hỏi lại</h3><p>Bạn kể lại đã làm được tới đâu. Biết sẽ có người hỏi, việc đang làm khó bị bỏ dở giữa chừng như khi tự làm một mình.</p></div>
-      <div class="o"><div class="so-tt">04</div><h3>Câu hỏi giữa tuần không phải để dồn</h3><p>Nhóm hỗ trợ có AI và nhân sự trả lời trong hai ngày làm việc, nên việc đang làm dở không phải dừng chờ tới buổi sau.</p></div>
+      <div class="o"><div class="so-tt">01</div><h3>Tuần nào cũng có chỗ mang việc tới</h3><p>Không phải chờ tới khóa học sau hay hẹn được ai đó rảnh. Mỗi tuần có một buổi, và bạn đăng ký lượt trình bày khi có việc cần mọi người cùng phân tích.</p></div>
+      <div class="o"><div class="so-tt">02</div><h3>Ngồi cùng những người chủ đang gặp chuyện giống bạn</h3><p>Nhóm kết nối kinh doanh riêng là chỗ để bạn hỏi những chuyện khó nói ở công ty, với người hiểu vì sao nó khó.</p></div>
+      <div class="o"><div class="so-tt">03</div><h3>Tuần sau có người hỏi lại</h3><p>Bạn kể lại đã làm được tới đâu. Biết tuần sau sẽ có người hỏi lại, bạn ít bỏ dở việc giữa chừng như khi tự làm một mình.</p></div>
+      <div class="o"><div class="so-tt">04</div><h3>Có câu hỏi thì hỏi luôn, không phải chờ tới buổi sau</h3><p>Nhóm hỗ trợ có AI và nhân sự trả lời trong hai ngày làm việc, nên việc đang làm dở không phải dừng chờ tới buổi sau.</p></div>
       <div class="o"><div class="so-tt">05</div><h3>Có sẵn thứ để đào tạo nhân viên</h3><p>Bộ tài liệu và mẫu để bạn sửa theo doanh nghiệp mình, rồi đưa người khác cầm trên tay mà làm theo.</p></div>
       <div class="o"><div class="so-tt">06</div><h3>Cứ 90 ngày nhìn lại một lần</h3><p>Bạn và Duy xem việc nào đã khác, việc nào chưa, để chỉnh cách đi cho chặng sau thay vì cứ thế đi tiếp.</p></div>
     </div>
@@ -364,7 +378,7 @@ figure{margin:0}
   <div class="bao">
     <div class="dai">
       <div><h3>Bạn đang có một việc muốn sửa trước?</h3><p>Bấm đăng ký, trả lời vài câu hỏi ngắn. Tư vấn viên sẽ liên hệ để nghe kỹ việc bạn đang vướng, rồi hai bên cùng xem Master Club có hợp với bạn lúc này không.</p></div>
-      <a class="nut lon" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -373,7 +387,7 @@ figure{margin:0}
   <div class="bao">
     <h2>Một tuần ở Master Club</h2>
     <ol class="tuan">
-      <li><h3>Gọi tên</h3><p>Trước buổi, bạn nói rõ việc đang làm mình kẹt nhất tuần này, rồi đăng ký lượt.</p></li>
+      <li><h3>Chọn việc</h3><p>Trước buổi, bạn chọn việc đang khiến bạn vướng nhất tuần này, rồi đăng ký lượt trình bày.</p></li>
       <li><h3>Mổ xẻ</h3><p>Tới lượt bạn, Duy và mọi người hỏi cho tới khi thấy điểm nghẽn thật, rồi cùng tìm ra phương án.</p></li>
       <li><h3>Áp dụng</h3><p>Sau buổi, bạn chọn một việc trong phương án để làm ngay trong tuần.</p></li>
       <li><h3>Nhìn lại</h3><p>Tuần sau, bạn kể lại đã làm được tới đâu, còn vướng chỗ nào.</p></li>
@@ -392,7 +406,7 @@ figure{margin:0}
     <div class="ben-trong">
       <div class="hang">
         <figure class="anh-khung"><img src="../img/bl-phong-thu.webp" alt="Coach Duy Nguyễn ngồi trong phòng thu, sẵn sàng cho một buổi coaching qua Zoom" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Mỗi tuần</div><h3>Buổi coaching với Duy</h3><p>Zoom khoảng 2,5 tới 3 tiếng để cùng phân tích việc thật của bạn khi tới lượt. Tuần chưa tới lượt, bạn nghe việc của người khác và hỏi thêm.</p><p>Sau mỗi buổi, bạn chọn một việc để làm trong tuần rồi kể lại. Thứ bạn mang về là việc đã làm thật trên khách thật, nhân viên thật, chứ không phải thêm một buổi đã nghe.</p></div>
+        <div><div class="khi">Mỗi tuần</div><h3>Buổi coaching với Duy</h3><p>Zoom khoảng 2,5 tới 3 tiếng để cùng phân tích việc thật của bạn khi tới lượt. Tuần chưa tới lượt, bạn nghe việc của người khác và hỏi thêm.</p><p>Sau mỗi buổi, bạn chọn một việc để làm trong tuần rồi kể lại. Thứ bạn mang về là việc đã làm thật, với khách thật, nhân viên thật, chứ không phải thêm một buổi ngồi nghe.</p></div>
       </div>
       <div class="hang">
         <figure class="anh-khung"><img src="../img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng một chuyên đề, sau lưng là trang trình chiếu" width="1400" height="933" loading="lazy" decoding="async"></figure>
@@ -400,11 +414,11 @@ figure{margin:0}
       </div>
       <div class="hang">
         <!-- ảnh Pexels tạm, thay bằng màn hình thư viện khóa học thật --><figure class="anh-khung"><img src="../img/mc/mc-hoc-online.webp" alt="Một người vừa xem bài học online trên máy tính vừa ghi chép" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Suốt năm tham gia</div><h3>Mọi khóa học online của Next Gen Founder</h3><p>Miễn phí, kể cả những khóa làm sau này. Bạn xem phần nền ở nhà để buổi coaching dồn hết thời gian cho việc của mình.</p></div>
+        <div><div class="khi">Suốt năm tham gia</div><h3>Mọi khóa học online của Next Gen Founder</h3><p>Miễn phí, kể cả những khóa làm sau này. Phần kiến thức cơ bản bạn xem ở nhà, để buổi coaching dành hết thời gian cho việc của bạn.</p></div>
       </div>
       <div class="hang">
         <!-- ảnh Pexels tạm, thay bằng ảnh chụp nhóm hỗ trợ đã che tên --><figure class="anh-khung"><img src="../img/mc/mc-nhan-tin.webp" alt="Một chủ doanh nghiệp nhắn câu hỏi trên điện thoại giữa giờ làm" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Suốt năm tham gia</div><h3>Nhóm hỗ trợ có AI và nhân sự</h3><p>Câu hỏi tới giữa tuần có câu trả lời trong hai ngày làm việc, nên việc đang làm không phải dừng giữa chừng.</p></div>
+        <div><div class="khi">Suốt năm tham gia</div><h3>Nhóm hỗ trợ có AI và nhân sự</h3><p>Câu hỏi bạn gửi giữa hai buổi coaching được trả lời trong hai ngày làm việc, nên việc đang làm không phải dừng lại chờ.</p></div>
       </div>
       <div class="hang">
         <figure class="anh-khung"><img src="../img/bl-viet-tay.webp" alt="Coach Duy Nguyễn ghi chép trên bàn làm việc, bên cạnh tài liệu" width="1400" height="933" loading="lazy" decoding="async"></figure>
@@ -416,7 +430,7 @@ figure{margin:0}
       <div class="o"><div class="khi">Suốt năm tham gia</div><h3>Workshop với chuyên gia khách mời</h3><p>Hỏi thẳng người đang làm nghề về những chuyện như thuế hay pháp lý, theo đúng tình huống doanh nghiệp của bạn.</p></div>
       <div class="o"><div class="khi">Suốt năm tham gia</div><h3>Các công cụ đặc biệt dành cho thành viên</h3><p>Công cụ Duy và đội ngũ làm riêng cho thành viên, miễn phí trong suốt thời gian tham gia.</p></div>
     </div>
-    <p class="phu">Mỗi tháng còn có buổi giao lưu gặp trực tiếp tại Hà Nội, có Duy dự, mở cho cả cộng đồng. Vé mua riêng, chỉ đủ chi phí tổ chức.</p>
+    <p class="phu">Mỗi tháng còn có buổi giao lưu gặp trực tiếp tại Hà Nội, có Duy dự, mở cho cả cộng đồng. Vé bán riêng, giá chỉ đủ bù chi phí tổ chức.</p>
   </div>
 </section>
 
@@ -424,7 +438,7 @@ figure{margin:0}
   <div class="bao">
     <div class="dai">
       <div><h3>40 triệu đồng một năm, đã gồm thuế giá trị gia tăng</h3><p>Đăng ký tới hết 31/12/2026, bạn học miễn phí mọi chương trình chuyên đề hằng tháng trong 12 tháng, tính từ ngày đăng ký.</p></div>
-      <a class="nut lon" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -478,7 +492,7 @@ figure{margin:0}
         <div><div class="khi">Dành cho</div><p>Người chủ có một doanh nghiệp đang hoạt động thật, khách quan trọng vẫn phải tự mình ra gặp, và đã thấy rõ một việc mình muốn sửa trước.</p></div>
         <div><div class="khi">Bạn nhận</div><ul class="danh"><li>Buổi coaching hằng tuần với Duy</li><li>Chương trình chuyên đề hằng tháng, miễn phí 12 tháng nếu đăng ký tới hết 31/12/2026</li><li>Mọi khóa học online và workshop với chuyên gia khách mời</li><li>Nhóm kết nối kinh doanh và nhóm hỗ trợ có AI và nhân sự</li><li>Bộ tài liệu và mẫu cao cấp</li></ul></div>
         <div><div class="khi">Điều kiện</div><p>Nói rõ được một việc muốn sửa trước, sẵn sàng làm thử ngay trong tuần và quay lại kể kết quả.</p></div>
-        <a class="nut" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="nut" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="o cap">
         <div><div class="khi">Cấp 3</div><div class="ten">Diamond Founder Club</div><div class="phi-cap">Theo lời mời</div></div>
@@ -501,7 +515,7 @@ figure{margin:0}
           <div><b>Đăng ký tới hết 31/12/2026</b>Học miễn phí mọi chương trình chuyên đề hằng tháng trong 12 tháng, tính từ ngày đăng ký.</div>
           <div><b>Đăng ký từ năm 2027</b>Chương trình chuyên đề giảm 50%, còn 2,5 triệu đồng một chương trình.</div>
         </div>
-        <a class="nut lon" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <ul class="dieu">
         <li><div class="khi">Cách thanh toán</div><p>Chuyển khoản, quét mã QR hoặc trả bằng thẻ qua cổng thanh toán. Bạn nhận hóa đơn điện tử.</p></li>
@@ -566,18 +580,43 @@ figure{margin:0}
   </div>
 </section>
 
-<section class="phan nen">
+<section class="phan nen" id="dang-ky">
   <div class="bao">
     <div class="cuoi">
       <h2>Nếu bạn muốn bắt đầu</h2>
       <p class="doan">Đăng ký không có nghĩa là phải vào. Nói chuyện xong mà thấy chưa phải lúc, bạn cứ nói thật với tư vấn viên, và Duy vẫn gặp bạn trong cộng đồng như thường.</p>
       <ol class="cac-buoc">
-        <li>Bạn bấm nút bên dưới và trả lời vài câu hỏi ngắn về doanh nghiệp của mình.</li>
+        <li>Bạn điền phiếu bên dưới với vài câu hỏi ngắn về doanh nghiệp của mình.</li>
         <li>Tư vấn viên liên hệ để nghe kỹ việc bạn đang vướng.</li>
         <li>Hai bên cùng xem Master Club có hợp với bạn lúc này không.</li>
         <li>Nếu hợp, bạn thanh toán và nhận lịch buổi coaching gần nhất.</li>
       </ol>
-      <a class="nut lon" href="/tham-gia/">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <form class="phieu" id="phieu" novalidate>
+        <div class="an-khi-xong">
+          <div class="phieu-cot">
+            <label>Họ và tên<input name="ten" autocomplete="name" required></label>
+            <label>Số Zalo<input name="dienthoai" type="tel" inputmode="tel" autocomplete="tel" required></label>
+          </div>
+          <label>Email<span class="phu">Duy gửi thư xác nhận vào địa chỉ này.</span><input name="email" type="email" autocomplete="email" required></label>
+          <div class="phieu-cot">
+            <label>Tên doanh nghiệp và lĩnh vực<input name="doanhnghiep" required placeholder="Ví dụ: Công ty An Phát, phân phối thiết bị y tế"></label>
+            <label>Số nhân sự<select name="nhansu" required>
+              <option value="">Chọn một mức</option>
+              <option>Chỉ mình tôi</option>
+              <option>2 tới 10 người</option>
+              <option>11 tới 30 người</option>
+              <option>31 tới 100 người</option>
+              <option>Trên 100 người</option>
+            </select></label>
+          </div>
+          <label>Việc bạn đang vướng nhất<textarea name="vuong" required></textarea></label>
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Đừng điền ô này<input type="text" name="bay" tabindex="-1" autocomplete="off"></label></div>
+          <p class="loi" id="phieu-loi" role="alert"></p>
+          <button class="nut lon" id="phieu-nut" type="submit">Đăng ký Master Club</button>
+          <p class="phu" style="margin-top:12px">Gửi phiếu chưa phải là thanh toán. Tư vấn viên liên hệ qua Zalo trước, hai bên nói chuyện xong rồi mới quyết.</p>
+        </div>
+        <div class="xong" id="phieu-xong" role="status"></div>
+      </form>
       <div class="ky-ten">
         <div class="ten-duy">Duy</div>
         <div class="chuc">Coach Duy Nguyễn, người sáng lập Next Gen Founder</div>
@@ -616,6 +655,37 @@ figure{margin:0}
       khung.innerHTML=''; khung.appendChild(f);
     });
   } else { mo.disabled=true; mo.style.cursor='default'; }
+})();
+</script>
+<script>
+/* phiếu đăng ký Master Club: gửi về Apps Script, nguồn master-club (trang tính riêng, thư xác nhận, thư báo đội ngũ) */
+(function(){
+  var DIA_CHI='https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec';
+  var f=document.getElementById('phieu'),nut=document.getElementById('phieu-nut'),loi=document.getElementById('phieu-loi');
+  function baoLoi(t){loi.textContent=t;f.classList.add('co-loi')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); f.classList.remove('co-loi');
+    var d={},thieu=null;
+    ['ten','dienthoai','email','doanhnghiep','nhansu','vuong'].forEach(function(k){
+      var o=f.elements[k],v=o.value.trim(),sai=!v||(k==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      o.setAttribute('aria-invalid',sai); if(sai&&!thieu)thieu=o; d[k]=v;
+    });
+    if(thieu){baoLoi(thieu.name==='email'&&thieu.value.trim()?'Email chưa đúng dạng, bạn xem lại giúp Duy.':'Bạn điền đủ các ô giúp Duy nhé.');thieu.focus();return}
+    var q=new URLSearchParams(location.search);
+    d.bay=f.elements.bay.value; d.nguon='master-club'; d.trang_nguon=location.pathname; d.nguon_chien_dich=q.get('utm_source')||q.get('nguon')||'';
+    nut.disabled=true; nut.textContent='Đang gửi...';
+    fetch(DIA_CHI,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+      .then(function(r){return r.json()})
+      .then(function(kq){
+        if(!kq.ok)throw new Error(kq.loi||'');
+        document.getElementById('phieu-xong').textContent='Duy đã nhận phiếu của '+d.ten+'. Tư vấn viên sẽ liên hệ qua số Zalo '+d.dienthoai+', và thư xác nhận đã gửi tới '+d.email+'.';
+        f.classList.add('da-gui');
+      })
+      .catch(function(err){
+        nut.disabled=false; nut.textContent='Đăng ký Master Club';
+        baoLoi(err&&err.message&&err.message!=='Failed to fetch'&&!/JSON/.test(err.message)?err.message:'Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới nextstepacademyvietnam@gmail.com.');
+      });
+  });
 })();
 </script>
 </body>

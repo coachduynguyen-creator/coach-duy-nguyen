@@ -33,6 +33,13 @@
  * trang tính mới), chạy `kiemTraTelegram` (cấp quyền gọi ra ngoài), rồi Triển khai
  * một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
+ * BỔ SUNG 23/10/2026: PHIẾU ĐĂNG KÝ MASTER CLUB
+ * Thêm nguồn `master-club` (bản chốt trong vault, [C] Bản chốt nút đăng ký và câu
+ * khó trang Master Club 23-10-2026.md): trang tính riêng, thư xác nhận riêng, thư
+ * báo tới đội ngũ như trang cộng đồng. doGet trả thêm `ver` để kiểm bản đang chạy.
+ * Sau khi dán: lưu, chạy `khoiTao` (tạo trang tính Master Club), rồi Triển khai một
+ * PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
+ *
  * LƯU Ý CHO THỢ SAU
  * Trang gửi bằng Content-Type: text/plain, KHÔNG phải application/json. Đây là
  * cố ý. Apps Script không trả về header cho phép gọi chéo miền đối với yêu cầu
@@ -68,6 +75,19 @@ var NGUON = {
       return [d.ten, d.dienthoai, d.email, d.dongy || '', d.muc_gia || '',
               d.trang_nguon || '', d.phien_ban_trang || '', d.nguon_chien_dich || '',
               'Chưa liên hệ', ''];
+    }
+  },
+  /* Phiếu đăng ký Master Club, thêm 23/10/2026. Email đứng cột 4 vì daCo() đọc cột đó. */
+  'master-club': {
+    tab: 'Master Club',
+    ten_chuong_trinh: 'Master Club',
+    bat_buoc: ['doanhnghiep', 'nhansu', 'vuong'],
+    cot: ['Thời gian', 'Họ và tên', 'Số Zalo', 'Email',
+          'Doanh nghiệp và lĩnh vực', 'Số nhân sự', 'Việc đang vướng nhất',
+          'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
+    lay: function (d) {
+      return [d.ten, d.dienthoai, d.email, d.doanhnghiep, d.nhansu, d.vuong,
+              d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
     }
   },
   /* Đơn trở thành Người Dẫn Đường. Thêm 16/10/2026 theo bản chốt trong vault
@@ -178,7 +198,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'master-club-23-10', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -272,7 +292,8 @@ function ghiLoi(loi, d) {
 
 function guiThuChoKhach(d, c) {
   var than = d.nguon === 'founder-brand' ? thuFounderBrand(d)
-    : (d.nguon === 'nguoi-dan-duong' ? thuNguoiDanDuong(d) : thuCongDong(d));
+    : d.nguon === 'nguoi-dan-duong' ? thuNguoiDanDuong(d)
+    : d.nguon === 'master-club' ? thuMasterClub(d) : thuCongDong(d);
   try {
     MailApp.sendEmail({
       to: d.email,
@@ -294,6 +315,18 @@ function thuCongDong(d) {
     '<p>Điều bạn ghi là đang kẹt nhất:</p>' +
     '<blockquote style="margin:0 0 18px;padding:12px 16px;border-left:3px solid #F2B14A;background:#FAF7F2;color:#3A3A3A">' + escape_(d.ket) + '</blockquote>' +
     '<p>Bạn không cần làm gì thêm lúc này. Có gì muốn nói trước thì trả lời thẳng thư này.</p>',
+    d
+  );
+}
+
+function thuMasterClub(d) {
+  return khung(
+    '<p>Chào ' + escape_(d.ten) + ',</p>' +
+    '<p>Duy đã nhận phiếu đăng ký Master Club của bạn. Thư này để bạn biết chắc là phiếu đã tới.</p>' +
+    '<p>Bước tiếp theo: tư vấn viên của Duy sẽ liên hệ qua số Zalo bạn để lại, để nghe kỹ việc bạn đang vướng. Hai bên cùng xem Master Club có hợp với bạn lúc này không. Gửi phiếu chưa phải là thanh toán, và nói chuyện xong thấy chưa phải lúc thì bạn cứ nói thật.</p>' +
+    '<p>Việc bạn ghi là đang vướng nhất:</p>' +
+    '<blockquote style="margin:0 0 18px;padding:12px 16px;border-left:3px solid #F2B14A;background:#FAF7F2;color:#3A3A3A">' + escape_(d.vuong) + '</blockquote>' +
+    '<p>Có gì muốn nói trước thì trả lời thẳng thư này.</p>',
     d
   );
 }
