@@ -161,10 +161,10 @@ figure{margin:0}
 /* bên trong Master Club: ảnh và chữ so le */
 .hang{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding:40px 0;border-top:1px solid var(--line-2)}
 .hang:first-child{border-top:0;padding-top:8px}
-.hang:nth-child(even) .anh-cho{order:2}
+.hang:nth-child(even) .anh-cho,.hang:nth-child(even) .anh-khung{order:2}
 .hang h3{font-size:clamp(22px,2.4vw,28px);margin-bottom:12px}
 .hang p{font-size:16.5px;line-height:1.65}
-@media (max-width:820px){.hang{grid-template-columns:minmax(0,1fr);gap:22px;padding:32px 0}.hang:nth-child(even) .anh-cho{order:0}}
+@media (max-width:820px){.hang{grid-template-columns:minmax(0,1fr);gap:22px;padding:32px 0}.hang:nth-child(even) .anh-cho,.hang:nth-child(even) .anh-khung{order:0}}
 .ben-trong + .o3{margin-top:40px}
 
 /* ba cấp */
@@ -274,6 +274,14 @@ figure{margin:0}
   .phan .bao > h2,.cuoi h2,.cuoi .doan,.dai{text-align:center}
   .dai p{margin-inline:auto}
   .cuoi .nut{width:100%}
+}
+/* điện thoại: ba cấp bấm chọn từng cấp, mặc định Master Club */
+.chon-cap{display:none}
+@media (max-width:640px){
+  .chon-cap{display:flex;gap:4px;margin-bottom:24px;padding:4px;background:var(--the);border:1px solid var(--line);border-radius:999px}
+  .chon-cap button{flex:1;min-height:44px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+  .chon-cap button[aria-selected="true"]{background:#F2B14A;color:#17120F}
+  .ba-cap .cap.an{display:none}
 }
 </style>
 </head>
@@ -386,23 +394,23 @@ figure{margin:0}
     <h2>Bên trong Master Club</h2>
     <div class="ben-trong">
       <div class="hang">
-        <div class="anh-cho"><b>Ảnh chờ</b>Chụp màn hình một buổi coaching trên Zoom, che mặt và tên người chưa đồng ý</div>
+        <figure class="anh-khung"><img src="../img/bl-phong-thu.webp" alt="Coach Duy Nguyễn ngồi trong phòng thu, sẵn sàng cho một buổi coaching qua Zoom" width="1400" height="933" loading="lazy" decoding="async"></figure>
         <div><div class="khi">Mỗi tuần</div><h3>Buổi coaching với Duy</h3><p>Zoom khoảng 2,5 tới 3 tiếng để mổ xẻ việc thật của bạn khi tới lượt. Tuần chưa tới lượt, bạn nghe người khác mổ xẻ và hỏi thêm.</p><p>Sau mỗi buổi, bạn chọn một việc để làm trong tuần rồi kể lại. Thứ bạn mang về là việc đã làm thật trên khách thật, nhân viên thật, chứ không phải thêm một buổi đã nghe.</p></div>
       </div>
       <div class="hang">
-        <div class="anh-cho"><b>Ảnh chờ</b>Trang bìa chương trình chuyên đề tháng đầu tiên</div>
+        <figure class="anh-khung"><img src="../img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng một chuyên đề, sau lưng là trang trình chiếu" width="1400" height="933" loading="lazy" decoding="async"></figure>
         <div><div class="khi">Mỗi tháng</div><h3>Chương trình chuyên đề hằng tháng</h3><p>Mỗi tháng một chủ đề, 4 tới 6 buổi Zoom buổi tối do Duy thiết kế, cho những việc một buổi không sửa xong, như dựng lại cách tư vấn của cả đội ngũ hay viết quy trình cho một bộ phận. Bạn chọn đúng chủ đề mình đang kẹt để học.</p><p class="gia">Thành viên đóng 5 triệu đồng một chương trình. Đăng ký Master Club tới hết 31/12/2026: miễn phí trong 12 tháng.</p></div>
       </div>
       <div class="hang">
-        <div class="anh-cho"><b>Ảnh chờ</b>Màn hình thư viện khóa học online của Next Gen Founder</div>
+        <!-- ảnh Pexels tạm, thay bằng màn hình thư viện khóa học thật --><figure class="anh-khung"><img src="../img/mc/mc-hoc-online.webp" alt="Một người vừa xem bài học online trên máy tính vừa ghi chép" width="1400" height="933" loading="lazy" decoding="async"></figure>
         <div><div class="khi">Suốt năm tham gia</div><h3>Mọi khóa học online của Next Gen Founder</h3><p>Miễn phí, kể cả những khóa làm sau này. Bạn xem phần nền ở nhà để buổi coaching dồn hết thời gian cho việc của mình.</p></div>
       </div>
       <div class="hang">
-        <div class="anh-cho"><b>Ảnh chờ</b>Một câu hỏi và câu trả lời trong nhóm hỗ trợ, đã che tên</div>
+        <!-- ảnh Pexels tạm, thay bằng ảnh chụp nhóm hỗ trợ đã che tên --><figure class="anh-khung"><img src="../img/mc/mc-nhan-tin.webp" alt="Một chủ doanh nghiệp nhắn câu hỏi trên điện thoại giữa giờ làm" width="1400" height="933" loading="lazy" decoding="async"></figure>
         <div><div class="khi">Suốt năm tham gia</div><h3>Nhóm hỗ trợ có AI và nhân sự</h3><p>Câu hỏi tới giữa tuần có câu trả lời trong hai ngày làm việc, nên việc đang làm không phải dừng giữa chừng.</p></div>
       </div>
       <div class="hang">
-        <div class="anh-cho"><b>Ảnh chờ</b>Vài trang mẫu trong bộ tài liệu, chụp nghiêng trên bàn</div>
+        <figure class="anh-khung"><img src="../img/bl-viet-tay.webp" alt="Coach Duy Nguyễn ghi chép trên bàn làm việc, bên cạnh tài liệu" width="1400" height="933" loading="lazy" decoding="async"></figure>
         <div><div class="khi">Suốt năm tham gia</div><h3>Bộ tài liệu và mẫu cao cấp</h3><p>Mẫu, bảng và tài liệu để sửa theo doanh nghiệp mình, cũng là thứ để người khác cầm trên tay mà làm theo khi bạn dạy lại.</p></div>
       </div>
     </div>
@@ -455,6 +463,11 @@ figure{margin:0}
 <section class="phan nen">
   <div class="bao">
     <h2>Ba cấp trong cộng đồng Next Gen Founder</h2>
+    <div class="chon-cap" role="tablist" aria-label="Chọn cấp để xem">
+      <button type="button" role="tab" aria-selected="false">Thành viên</button>
+      <button type="button" role="tab" aria-selected="true">Master Club</button>
+      <button type="button" role="tab" aria-selected="false">Diamond</button>
+    </div>
     <div class="ba-cap">
       <div class="o cap">
         <div><div class="khi">Cấp 1</div><div class="ten">Thành viên</div><div class="phi-cap">Miễn phí, có đăng ký tham gia</div></div>
@@ -579,6 +592,15 @@ figure{margin:0}
 
 <footer class="chan-trang"><div class="bao">Phí và quyền lợi trên trang tính tới ngày 22/10/2026.</div></footer>
 
+<script>
+/* ba cấp: trên điện thoại chỉ hiện cấp đang chọn; không có JS thì hiện cả ba */
+(function(){
+  var nut=document.querySelectorAll('.chon-cap button'),cap=document.querySelectorAll('.ba-cap .cap');
+  function chon(i){nut.forEach(function(b,k){b.setAttribute('aria-selected',k===i)});cap.forEach(function(c,k){c.classList.toggle('an',k!==i)})}
+  nut.forEach(function(b,i){b.addEventListener('click',function(){chon(i)})});
+  chon(1);
+})();
+</script>
 <script>
 (function(){
   var d=document;
