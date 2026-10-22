@@ -405,15 +405,15 @@ INDEX = """
   </div>
   <div class="ht-luoi tre hien">
     <a class="ht" href="cong-dong/#ba-cap">
-      <em>Chặng 01</em><h3>Cộng đồng Thành viên</h3>
+      <em>Chặng 01</em><h3>Thành viên</h3>
       <p>Cửa vào rộng nhất, miễn phí, có đăng ký tham gia. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
       <i>Miễn phí &middot; có đăng ký tham gia</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="cong-dong/#ba-cap">
-      <em>Chặng 02</em><h3>Cộng đồng Pro</h3>
-      <p>Luyện đủ bốn năng lực suốt một năm ngay trong công việc thật, làm đều đặn, có người phản hồi và đi cùng cả chặng.</p>
-      <i>Bốn năng lực &middot; một năm</i>
+    <a class="ht" href="master-club/">
+      <em>Chặng 02</em><h3>Master Club</h3>
+      <p>Mức đồng hành hằng tuần cùng Duy. Mỗi tuần bạn mang một việc đang vướng thật tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó.</p>
+      <i>Mỗi tuần một buổi &middot; gói năm</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="cong-dong/#ba-cap">
@@ -1061,10 +1061,10 @@ def nhom_ct(ten):
 # Coach Duy chốt 12/10/2026: trang tổng chỉ còn Cộng đồng ba mức và Người Dẫn Đường.
 # Mô tả ba mức chép từ khối "ba cấp" của trang cong-dong/index.html, sửa ở đó thì sửa cả đây.
 CAP = [
-    ("Cấp 1 · Miễn phí, có đăng ký", "Cộng đồng Thành viên", "Nơi bạn nhìn rõ vấn đề của mình và trải nghiệm cách cộng đồng làm việc.",
+    ("Cấp 1 · Miễn phí, có đăng ký", "Thành viên", "Nơi bạn nhìn rõ vấn đề của mình và trải nghiệm cách cộng đồng làm việc.",
      "Người đang ấp ủ khởi nghiệp, người mới bắt đầu kinh doanh, chuyên gia và chủ doanh nghiệp muốn xem cách cộng đồng dẫn dắt trước khi đi sâu."),
-    ("Cấp 2 · Đồng hành cả năm", "Cộng đồng Pro", "Nơi cộng đồng đi cùng bạn để tiến bộ đều đặn trong cả năm.",
-     "Chủ doanh nghiệp đang vận hành kinh doanh thật, có khách, muốn tiến bộ bài bản ở ít nhất một năng lực."),
+    ("Cấp 2 · Đồng hành hằng tuần", "Master Club", "Mức đồng hành hằng tuần cùng Duy. Mỗi tuần bạn mang một việc đang vướng thật trong doanh nghiệp mình tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó.",
+     "Người chủ đang có một doanh nghiệp chạy thật, vẫn là người bán chính hoặc người giữ những khách lớn, và đã thấy rõ một việc mình muốn sửa trước."),
     ("Cấp 3 · Theo lời mời", "Diamond Founder Club", "Nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.",
      "Người đã có ít nhất một thay đổi thật trong doanh nghiệp và một vấn đề cụ thể cần giải trong mười hai tháng."),
 ]
@@ -1088,14 +1088,14 @@ CHUONG_TRINH = dau_trang("Chương trình",
     <div class="phan-dau hien">
       <p class="mono">Con đường 2 · Theo thư mời</p>
       <h2>Người Dẫn Đường</h2>
-      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Cộng đồng Pro và Diamond Founder Club.</p>
+      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Master Club và Diamond Founder Club.</p>
     </div>
     <div class="blog-them"><a class="nut nut-v" href="nguoi-dan-duong/">Xem chương trình Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   </div>
 </section>
 """.replace("{CAP}", "".join(
-    '<article class="the"><span class="trang-thai"><i aria-hidden="true"></i>%s</span><h3>%s</h3><p style="text-align:left">%s</p><p style="margin-top:12px;color:var(--ink-3);text-align:left"><b style="color:var(--ink-2)">Dành cho:</b> %s</p></article>'
-    % c for c in CAP))
+    '<article class="the"><span class="trang-thai"><i aria-hidden="true"></i>%s</span><h3>%s</h3><p style="text-align:left">%s</p><p style="margin-top:12px;color:var(--ink-3);text-align:left"><b style="color:var(--ink-2)">Dành cho:</b> %s</p>%s</article>'
+    % (c + ('<p style="margin-top:16px;text-align:left"><a class="nut nut-v" href="master-club/">Xem chi tiết Master Club <span class="mt" aria-hidden="true">&rarr;</span></a></p>' if c[1] == "Master Club" else "",)) for c in CAP))
 
 trang("chuong-trinh.html", "Chương trình · Coach Duy Nguyễn",
       "Hai con đường đi cùng Coach Duy Nguyễn: Cộng đồng Next Gen Founder ba mức, và Người Dẫn Đường, chương trình đào tạo huấn luyện viên kinh doanh theo thư mời.",
@@ -2497,19 +2497,33 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 print("  chuong-trinh/the-trusted-advisor.html (chuyen huong)")
 
 # Ba mức cộng đồng đổi tên ngày 08/10/2026 theo DEC-C03: Thành viên, Pro, Diamond.
-# Cộng đồng Mở cũ nay là Cộng đồng Thành viên. Giữ địa chỉ cũ chuyển hướng sang trang mới.
+# Cộng đồng Mở cũ nay là mức Thành viên (D84). Giữ địa chỉ cũ chuyển hướng sang trang mới.
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                   "chuong-trinh", "cong-dong-mo.html"), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Cộng đồng Thành viên Next Gen Founder</title>
+<title>Thành viên Next Gen Founder</title>
 <link rel="canonical" href="%s/chuong-trinh/cong-dong-thanh-vien.html">
 <meta name="robots" content="noindex, follow">
 <meta http-equiv="refresh" content="0; url=cong-dong-thanh-vien.html">
 </head>
 <body><p>Cộng đồng Mở nay là
-<a href="cong-dong-thanh-vien.html">Cộng đồng Thành viên Next Gen Founder</a>.</p>
+<a href="cong-dong-thanh-vien.html">mức Thành viên của Next Gen Founder</a>.</p>
 <script>location.replace('cong-dong-thanh-vien.html');</script></body></html>""" % BASE)
 print("  chuong-trinh/cong-dong-mo.html (chuyen huong)")
+
+# D84 ngày 22/10/2026: Cộng đồng Pro đổi tên thành Master Club, trang chi tiết ở /master-club/.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "cong-dong-pro.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Master Club Next Gen Founder</title>
+<link rel="canonical" href="%s/master-club/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=../master-club/">
+</head>
+<body><p>Cộng đồng Pro nay là
+<a href="../master-club/">Master Club Next Gen Founder</a>.</p>
+<script>location.replace('../master-club/');</script></body></html>""" % BASE)
+print("  chuong-trinh/cong-dong-pro.html (chuyen huong)")
 
 # Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
 # mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm
@@ -2672,6 +2686,7 @@ llms = """# Coach Duy Nguyễn
 - [Công cụ và tài liệu](%(b)s/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
 - [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, {SO_YT} người đăng ký
 - [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang nhận đăng ký
+- [Master Club](%(b)s/master-club/): nhóm nhỏ trong cộng đồng Next Gen Founder. Mỗi tuần, các chủ doanh nghiệp mang một việc đang vướng thật trong doanh nghiệp mình tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó
 - [Liên hệ](%(b)s/lien-he.html)
 
 ## Chương trình

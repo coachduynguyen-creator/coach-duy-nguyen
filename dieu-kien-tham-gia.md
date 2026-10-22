@@ -52,7 +52,7 @@
   - Mở khi phạm vi phù hợp, bắt đầu bằng một buổi trao đổi ngắn
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
-## Cộng đồng Thành viên Next Gen Founder
+## Thành viên Next Gen Founder
 
 - Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-thanh-vien.html
 - Dành cho: Người đang ấp ủ khởi nghiệp, người mới bắt đầu hoặc đang kinh doanh một mình, chuyên gia và chủ doanh nghiệp muốn tìm hiểu Next Gen Founder trước khi quyết định đi sâu.
@@ -62,18 +62,6 @@
   - Muốn học từ những người đã đi trước và gỡ điểm nghẽn trong công việc thật
   - Miễn phí, có đăng ký tham gia và trả lời vài câu hỏi ngắn
   - Đăng ký ở trang coachduynguyen.vn/tham-gia
-- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
-
-## Cộng đồng Pro Next Gen Founder
-
-- Trang: https://coachduynguyen.vn/chuong-trinh/cong-dong-pro.html
-- Dành cho: Chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, muốn phát triển bốn năng lực trong công việc thật; gồm chuyên gia đang xây doanh nghiệp từ chuyên môn.
-- Hình thức: Thành viên theo năm, có lịch hoạt động cố định hằng tháng và trải nghiệm mười bốn ngày đầu để bắt đầu đúng.
-- Điều kiện tham gia:
-  - Là chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn; nếu là chuyên gia, đã có sản phẩm, khách hàng, doanh thu và ý định xây hệ thống vượt khỏi số giờ cá nhân
-  - Muốn luyện đủ bốn năng lực trong công việc thật, thay vì xem một kho nội dung
-  - Cam kết theo năm và theo được lịch hoạt động cố định hằng tháng
-  - Bắt đầu bằng trải nghiệm mười bốn ngày đầu
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
 ## Diamond Founder Club

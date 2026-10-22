@@ -87,7 +87,7 @@ HOAT_DONG = [
     ("bl-may-tinh", "Hệ thống, phương pháp, công cụ", ["Mẫu, kịch bản, bảng chấm điểm Duy đang dùng", "Bộ công cụ AI cho nội dung, tư vấn và vận hành", "Cách đóng gói chuyên môn thành sản phẩm có giá"]),
     ("mc/mc-sankhau", "Đồng hành trực tiếp", ["Dự, đồng dẫn, rồi tự dẫn buổi coaching có Duy ngồi cùng", "Làm việc với khách hàng thật", "Đi gặp đối tác, đứng trên sân khấu cùng Duy"]),
     ("bl-noi-2", "Thương hiệu cá nhân", ["Câu chuyện gốc và lời hứa của bạn", "Một kênh chạy đều theo cách Duy đang làm", "Những lần cùng xuất hiện với Duy"]),
-    ("mc/mc-daotao", "Cộng đồng", ["Sinh hoạt cùng Cộng đồng Pro và Diamond Founder Club", "Một nhóm của riêng bạn trong cộng đồng", "Những người cùng khóa đi tiếp với nhau sau chương trình"]),
+    ("mc/mc-daotao", "Cộng đồng", ["Sinh hoạt cùng Master Club và Diamond Founder Club", "Một nhóm của riêng bạn trong cộng đồng", "Những người cùng khóa đi tiếp với nhau sau chương trình"]),
 ]
 
 CSS = """<style>
@@ -324,7 +324,7 @@ THAN = CSS + """<div class="ndd">
   <div class="phan-dau hien">
     <p class="mono">Cách vào</p>
     <h2>Chỉ nhận theo thư mời, khóa đầu sáu tới mười người</h2>
-    <p>Duy mời trước thành viên Cộng đồng Pro và Diamond Founder Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
+    <p>Duy mời trước thành viên Master Club và Diamond Founder Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
   </div>
   <ol class="ndd-vao hien">
     <li><b>Thư mời hoặc đơn của bạn</b><span>Duy gửi thư mời tới người Duy thấy phù hợp, hoặc bạn tự gửi đơn.</span></li>
