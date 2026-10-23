@@ -270,11 +270,10 @@ figure{margin:0}
 /* đăng ký ở cuối */
 .cuoi{background:var(--cam-mo);border:2px solid var(--cam);border-radius:24px;padding:48px;box-shadow:var(--shadow)}
 .cuoi h2{margin-bottom:12px}
-.cac-buoc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0;counter-reset:d}
-.cac-buoc li{counter-increment:d;background:var(--the);border:1px solid var(--line);border-radius:var(--r-s);padding:16px;font-size:15px;line-height:1.5}
-.cac-buoc li::before{content:counter(d);display:block;font-family:var(--f-tit);font-size:26px;font-weight:800;line-height:1;color:var(--cam-dam);margin-bottom:8px}
-@media (max-width:900px){.cac-buoc{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.cuoi{padding:28px 20px}.cac-buoc{grid-template-columns:minmax(0,1fr)}}
+.cac-buoc{list-style:none;margin:28px 0;padding:4px 20px;counter-reset:d;background:var(--the);border:1px solid var(--line);border-radius:var(--r-s)}
+.cac-buoc li{counter-increment:d;display:flex;align-items:center;gap:14px;padding:14px 0;font-size:15px;line-height:1.5}.cac-buoc li+li{border-top:1px solid var(--line)}
+.cac-buoc li::before{content:counter(d);flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--cam-mo);border:1px solid var(--cam);font-family:var(--f-tit);font-size:14px;font-weight:800;color:var(--cam-dam)}
+@media (max-width:640px){.cuoi{padding:28px 20px}}
 /* phiếu đăng ký Master Club */
 .phieu{background:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-s);position:relative}
 .phieu-cot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
