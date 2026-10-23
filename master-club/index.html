@@ -304,11 +304,11 @@ figure{margin:0}
 .noi{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .noi-nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;min-width:48px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px -8px rgba(0,0,0,.45);transition:opacity .25s var(--ease),transform .25s var(--ease)}
 .noi-nut svg{width:22px;height:22px}
-.noi-zalo{background:#0068FF;color:#fff;padding:0 18px 0 14px;font-weight:600;font-size:15px}
+.noi-zalo{background:#0068FF;width:52px;height:52px}
+.noi-zalo svg{width:34px;height:34px}
 .noi-zalo[hidden]{display:none}
 .noi-len{background:#0E1116;color:#E2B654;border:2px solid #E2B654;width:52px;height:52px}
 .noi-len:not(.hien-nut){opacity:0;transform:translateY(8px);pointer-events:none}
-@media (max-width:640px){.noi-zalo span{display:none}.noi-zalo{padding:0;width:48px}}
 /* điện thoại: khung ảnh thấp lại, tiêu đề và nút chính căn giữa */
 @media (max-width:640px){
   .hang{gap:14px;padding:24px 0}
@@ -394,10 +394,10 @@ figure{margin:0}
           <li>Nhân viên tư vấn theo cảm tính, khách hỏi nhiều mà mua thì ít.</li>
           <li>Đào tạo người mới mãi mà vẫn chưa làm được như mình.</li>
         </ul>
-        <p class="doan" style="margin-top:22px">Nếu bạn cũng đang làm cả ngày mà cuối tuần vẫn thấy mình loay hoay ở đúng chỗ cũ, thì phần dưới đây Duy viết cho bạn.</p>
       </div>
       <div class="o ke">
-        <p>Duy cũng từng ở đúng chỗ đó. Có giai đoạn thương hiệu của Duy đi lên rất nhanh, nhưng việc gì trong công ty cũng chờ Duy quyết, khách quan trọng nào cũng chờ Duy ra gặp.</p>
+        <p>Nếu những chuyện này cũng là điều bạn đang lo lắng mỗi ngày thì bạn không một mình. Duy cũng từng như bạn.</p>
+        <p>Có giai đoạn thương hiệu của Duy đi lên rất nhanh, nhưng việc gì trong công ty cũng chờ Duy quyết, khách quan trọng nào cũng chờ Duy ra gặp.</p>
         <p>Lúc đó Duy không thiếu kiến thức. Sách đã đọc, lớp đã học. Duy đoán bạn cũng vậy.</p>
         <p class="nhan-manh">Điều Duy thiếu là một chỗ để mang đúng việc mình đang vướng ra, có người ngồi cùng phân tích tới nơi tới chốn, rồi về làm ngay trong tuần.</p>
         <p style="margin-top:20px">Master Club là chỗ đó, tuần nào cũng có.</p>
@@ -694,7 +694,7 @@ figure{margin:0}
 </footer>
 
 <div class="noi" aria-label="Lối tắt">
-  <a class="noi-nut noi-zalo" id="noi-zalo" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.6 1.3 4.9 3.4 6.5L4.6 21l3.3-1.7c1.3.4 2.6.6 4.1.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3z" fill="currentColor"/></svg><span>Nhắn Zalo</span></a>
+  <a class="noi-nut noi-zalo" id="noi-zalo" href="#" target="_blank" rel="noopener" aria-label="Nhắn Zalo cho Coach Duy Nguyễn" title="Nhắn Zalo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.6 1.3 4.9 3.4 6.5L4.6 21l3.3-1.7c1.3.4 2.6.6 4.1.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3z" fill="#fff"/><text x="12" y="13.9" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="5.6" font-weight="700" fill="#0068FF">Zalo</text></svg></a>
   <a class="noi-nut noi-len" id="noi-len" href="#top" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
