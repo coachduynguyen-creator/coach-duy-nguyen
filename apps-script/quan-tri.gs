@@ -161,7 +161,7 @@ function capQuyMo(n, y) {
   if (n >= 1 && y >= 1) return 2;
   return 1;
 }
-var GOI_Y = { 1: 'Cộng đồng Thành viên', 2: 'Chương trình trả phí (tệp lõi)', 3: 'Diamond Founder Club hoặc cố vấn riêng', 4: 'Cố vấn riêng hoặc hợp đồng doanh nghiệp' };
+var GOI_Y = { 1: 'Cộng đồng Thành viên', 2: 'Chương trình trả phí (tệp lõi)', 3: 'Grand Master Club hoặc cố vấn riêng', 4: 'Cố vấn riêng hoặc hợp đồng doanh nghiệp' };
 
 function bacSoNguoi(s) { s = chuoi(s); return s.indexOf('Dưới 5') === 0 ? 0 : s.indexOf('5 tới 9') === 0 ? 1 : s.indexOf('10 tới 50') === 0 ? 2 : s.indexOf('Trên 50') === 0 ? 3 : -1; }
 function bacSoNam(s) { s = chuoi(s); return s.indexOf('Dưới 3') === 0 ? 0 : s.indexOf('3 tới 5') === 0 ? 1 : s.indexOf('Trên 5') === 0 ? 2 : -1; }

@@ -107,7 +107,7 @@ KET_HST = {
    "Việc quan trọng nào cũng phải qua tay tôi thì mới chạy.",
  "community-growth-system.html":
    "Khách mua xong là quan hệ dừng lại. Mỗi lần bán là mỗi lần bắt đầu từ đầu.",
- "diamond-founder-club.html":
+ "grand-master-club.html":
    "Tôi cần ngồi cùng những người đã đi xa hơn, không cần thêm một lớp học nữa.",
  "co-van-rieng.html":
    "Tôi đang có một quyết định lớn, cần đưa ra bàn với một người ngoài cuộc.",

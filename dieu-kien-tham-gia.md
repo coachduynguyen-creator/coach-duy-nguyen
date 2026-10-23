@@ -64,9 +64,9 @@
   - Đăng ký ở trang coachduynguyen.vn/tham-gia
 - Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư
 
-## Diamond Founder Club
+## Grand Master Club
 
-- Trang: https://coachduynguyen.vn/chuong-trinh/diamond-founder-club.html
+- Trang: https://coachduynguyen.vn/chuong-trinh/grand-master-club.html
 - Dành cho: Chủ doanh nghiệp đúng nhóm khách hàng lõi, đã có kết quả quan sát được và có tinh thần đóng góp cho người đi sau, hợp với văn hoá của cộng đồng.
 - Hình thức: Xét mời qua hội đồng. Thành viên theo năm.
 - Điều kiện tham gia:

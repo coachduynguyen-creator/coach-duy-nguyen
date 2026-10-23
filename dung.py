@@ -418,7 +418,7 @@ INDEX = """
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="cong-dong/#ba-cap">
       <em>Chặng 03</em><h3>Đi sâu hơn</h3>
-      <p>Diamond Founder Club, nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.</p>
+      <p>Grand Master Club, nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.</p>
       <i>Theo lời mời &middot; nhận giới hạn</i>
     </a>
   </div>
@@ -1065,7 +1065,7 @@ CAP = [
      "Người đang ấp ủ khởi nghiệp, người mới bắt đầu kinh doanh, chuyên gia và chủ doanh nghiệp muốn xem cách cộng đồng dẫn dắt trước khi đi sâu."),
     ("Cấp 2 · Đồng hành hằng tuần", "Master Club", "Mức đồng hành hằng tuần cùng Duy. Mỗi tuần bạn mang một việc đang vướng thật trong doanh nghiệp mình tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó.",
      "Người chủ đang có một doanh nghiệp chạy thật, vẫn là người bán chính hoặc người giữ những khách lớn, và đã thấy rõ một việc mình muốn sửa trước."),
-    ("Cấp 3 · Theo lời mời", "Diamond Founder Club", "Nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.",
+    ("Cấp 3 · Theo lời mời", "Grand Master Club", "Nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.",
      "Người đã có ít nhất một thay đổi thật trong doanh nghiệp và một vấn đề cụ thể cần giải trong mười hai tháng."),
 ]
 CHUONG_TRINH = dau_trang("Chương trình",
@@ -1076,7 +1076,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
   <div class="phan-dau hien">
     <p class="mono">Con đường 1 · Mọi người bắt đầu ở đây</p>
     <h2>Cộng đồng Next Gen Founder, ba mức</h2>
-    <p>Bạn bắt đầu ở mức hợp với vấn đề và sự sẵn sàng của mình. Diamond Founder Club luôn theo lời mời.</p>
+    <p>Bạn bắt đầu ở mức hợp với vấn đề và sự sẵn sàng của mình. Grand Master Club luôn theo lời mời.</p>
   </div>
   <div class="luoi c3 tre hien">{CAP}</div>
   <div class="blog-them"><a class="nut nut-v" href="cong-dong/">Xem Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a></div>
@@ -1088,7 +1088,7 @@ CHUONG_TRINH = dau_trang("Chương trình",
     <div class="phan-dau hien">
       <p class="mono">Con đường 2 · Theo thư mời</p>
       <h2>Người Dẫn Đường</h2>
-      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Master Club và Diamond Founder Club.</p>
+      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Master Club và Grand Master Club.</p>
     </div>
     <div class="blog-them"><a class="nut nut-v" href="nguoi-dan-duong/">Xem chương trình Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   </div>
@@ -2524,6 +2524,20 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 <a href="../master-club/">Master Club Next Gen Founder</a>.</p>
 <script>location.replace('../master-club/');</script></body></html>""" % BASE)
 print("  chuong-trinh/cong-dong-pro.html (chuyen huong)")
+
+# Coach Duy chốt 23/10/2026: Diamond Founder Club đổi tên thành Grand Master Club.
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                  "chuong-trinh", "diamond-founder-club.html"), "w", encoding="utf-8").write(
+"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<title>Grand Master Club Next Gen Founder</title>
+<link rel="canonical" href="%s/chuong-trinh/grand-master-club.html">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=grand-master-club.html">
+</head>
+<body><p>Diamond Founder Club nay là
+<a href="grand-master-club.html">Grand Master Club Next Gen Founder</a>.</p>
+<script>location.replace('grand-master-club.html');</script></body></html>""" % BASE)
+print("  chuong-trinh/diamond-founder-club.html (chuyen huong)")
 
 # Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
 # mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm
