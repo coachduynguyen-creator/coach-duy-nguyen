@@ -533,7 +533,7 @@ figure{margin:0}
       <div class="o cap">
         <div><div class="khi">Cấp 3</div><div class="ten">Grand Master Club</div><div class="phi-cap">Theo lời mời</div></div>
         <div><div class="khi">Dành cho</div><p>Nhóm dành riêng cho những Founder thực sự muốn nâng cấp bản thân, rèn luyện năng lực của một người chủ doanh nghiệp có vị thế, và giúp cả nhân sự của mình cùng nâng cấp.</p></div>
-        <a class="nut" href="https://zalo.me/0348264003" target="_blank" rel="noopener" style="background:transparent;color:var(--ink);border-color:var(--line-2);white-space:normal;height:auto;min-height:48px;padding:10px 22px;text-align:center">Trao đổi với đội ngũ tư vấn để nhận thư mời</a>
+        <a class="nut" href="#dang-ky" data-cap="Grand Master Club" style="background:transparent;color:var(--ink);border-color:var(--line-2);white-space:normal;height:auto;min-height:48px;padding:10px 22px;text-align:center">Trao đổi với đội ngũ tư vấn để nhận thư mời</a>
       </div>
     </div>
   </div>
@@ -629,6 +629,10 @@ figure{margin:0}
       </ol>
       <form class="phieu" id="phieu" novalidate>
         <div class="an-khi-xong">
+          <label>Bạn quan tâm<select name="cap">
+            <option>Master Club</option>
+            <option>Grand Master Club</option>
+          </select></label>
           <div class="phieu-cot">
             <label>Họ và tên<input name="ten" autocomplete="name" required></label>
             <label>Số Zalo<input name="dienthoai" type="tel" inputmode="tel" autocomplete="tel" required></label>
@@ -732,11 +736,16 @@ figure{margin:0}
 })();
 </script>
 <script>
-/* phiếu đăng ký Master Club: gửi về Apps Script, nguồn master-club (trang tính riêng, thư xác nhận, thư báo đội ngũ) */
+/* phiếu đăng ký Master Club và Grand Master Club (ô cap): gửi về Apps Script, nguồn master-club (trang tính riêng, thư xác nhận, thư báo đội ngũ),
+   và gửi riêng vào Pancake CRM qua trạm /api/dang-ky như đơn Người Dẫn Đường: một bên lỗi thì bên kia vẫn nhận. */
 (function(){
   var DIA_CHI='https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec';
   var f=document.getElementById('phieu'),nut=document.getElementById('phieu-nut'),loi=document.getElementById('phieu-loi');
   function baoLoi(t){loi.textContent=t;f.classList.add('co-loi')}
+  function chuNut(){return 'Đăng ký '+f.elements.cap.value}
+  f.elements.cap.addEventListener('change',function(){nut.textContent=chuNut()});
+  /* nút cấp 3 mở cùng phiếu, chọn sẵn Grand Master Club */
+  [].forEach.call(document.querySelectorAll('a[data-cap]'),function(a){a.addEventListener('click',function(){f.elements.cap.value=a.dataset.cap;nut.textContent=chuNut()})});
   f.addEventListener('submit',function(e){
     e.preventDefault(); f.classList.remove('co-loi');
     var d={},thieu=null;
@@ -746,8 +755,15 @@ figure{margin:0}
     });
     if(thieu){baoLoi(thieu.name==='email'&&thieu.value.trim()?'Email chưa đúng dạng, bạn xem lại giúp Duy.':'Bạn điền đủ các ô giúp Duy nhé.');thieu.focus();return}
     var q=new URLSearchParams(location.search);
-    d.bay=f.elements.bay.value; d.nguon='master-club'; d.trang_nguon=location.pathname; d.nguon_chien_dich=q.get('utm_source')||q.get('nguon')||'';
+    d.cap=f.elements.cap.value; d.bay=f.elements.bay.value; d.nguon='master-club'; d.trang_nguon=location.pathname; d.nguon_chien_dich=q.get('utm_source')||q.get('nguon')||'';
     nut.disabled=true; nut.textContent='Đang gửi...';
+    if(!d.bay){
+      var pk={Name:d.ten, Phone:d.dienthoai.replace(/[^\d+]/g,''), url_page:location.href.slice(0,500),
+        Note:'Đơn '+d.cap+' · Email: '+d.email+' · Doanh nghiệp: '+d.doanhnghiep+' · Nhân sự: '+d.nhansu+' · Đang vướng: '+d.vuong.slice(0,1500)};
+      ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ if(q.get(k)) pk[k]=q.get(k).slice(0,200); });
+      fetch('/api/dang-ky',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({data:pk,id:window.mcPid||null})})
+        .then(function(r){ return r.json(); }).then(function(j){ if(j&&j.id) window.mcPid=j.id; }).catch(function(){});
+    }
     fetch(DIA_CHI,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
       .then(function(r){return r.json()})
       .then(function(kq){
@@ -756,7 +772,7 @@ figure{margin:0}
         f.classList.add('da-gui');
       })
       .catch(function(err){
-        nut.disabled=false; nut.textContent='Đăng ký Master Club';
+        nut.disabled=false; nut.textContent=chuNut();
         baoLoi(err&&err.message&&err.message!=='Failed to fetch'&&!/JSON/.test(err.message)?err.message:'Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới nextstepacademyvietnam@gmail.com.');
       });
   });

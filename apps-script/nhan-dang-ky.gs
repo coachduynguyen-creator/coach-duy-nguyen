@@ -38,9 +38,9 @@
  * khó trang Master Club 23-10-2026.md): trang tính riêng, thư xác nhận riêng, thư
  * báo tới đội ngũ như trang cộng đồng, kèm tin Telegram vào cùng bot và cuộc trò chuyện
  * của đơn Người Dẫn Đường. doGet trả thêm `ver` để kiểm bản đang chạy.
- * Phiếu Master Club và đơn Người Dẫn Đường còn được đẩy sang Pancake POS (thêm mục
- * pancake_pos_api_key vào Thuộc tính tập lệnh rồi chạy kiemTraPancake). Thư báo Master
- * Club gửi cả email chung lẫn email riêng của Duy.
+ * Phiếu có ô `cap` (Master Club hoặc Grand Master Club, nút cấp 3 trên trang mở cùng phiếu).
+ * Pancake không đi qua tệp này: trang gửi thẳng vào trạm /api/dang-ky (thư mục tram-pancake),
+ * trạm giữ khóa Pancake. Thư báo Master Club gửi cả email chung lẫn email riêng của Duy.
  * Sau khi dán: lưu, chạy `khoiTao` (tạo trang tính Master Club), rồi Triển khai một
  * PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
@@ -86,11 +86,11 @@ var NGUON = {
     tab: 'Master Club',
     ten_chuong_trinh: 'Master Club',
     bat_buoc: ['doanhnghiep', 'nhansu', 'vuong'],
-    cot: ['Thời gian', 'Họ và tên', 'Số Zalo', 'Email',
+    cot: ['Thời gian', 'Họ và tên', 'Số Zalo', 'Email', 'Cấp quan tâm',
           'Doanh nghiệp và lĩnh vực', 'Số nhân sự', 'Việc đang vướng nhất',
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
-      return [d.ten, d.dienthoai, d.email, d.doanhnghiep, d.nhansu, d.vuong,
+      return [d.ten, d.dienthoai, d.email, d.cap, d.doanhnghiep, d.nhansu, d.vuong,
               d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
     }
   },
@@ -126,10 +126,6 @@ var NGUON = {
 var EMAIL_RIENG = 'coachduynguyen@gmail.com';
 var KHOA_TELEGRAM_MA = 'telegram_bot_token';
 var KHOA_TELEGRAM_CHAT = 'telegram_chat_id';
-
-/** Pancake POS, cửa hàng Coach Duy Nguyễn - Cửa hàng chính. Mã khóa API nằm ở Cài đặt dự án, mục pancake_pos_api_key, không bao giờ nằm trong tệp này. */
-var KHOA_PANCAKE = 'pancake_pos_api_key';
-var PANCAKE_GOC = 'https://pos.pages.fm/api/v1/shops/430111447';
 
 /**
  * Nhãn gợi ý riêng cho Duy (bản chốt A4). Chỉ để Duy đọc đơn nhanh hơn, không tự
@@ -206,7 +202,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, ver: 'master-club-23-10-pancake', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'master-club-23-10-cap', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -223,6 +219,7 @@ function doPost(e) {
 
     var c = NGUON[d.nguon];
     if (!c) return tra({ ok: false, loi: 'Không rõ đăng ký từ trang nào.' });
+    if (d.nguon === 'master-club') d.cap = d.cap === 'Grand Master Club' ? 'Grand Master Club' : 'Master Club';
 
     /* Bẫy máy gửi rác: ô này người thật không thấy nên luôn rỗng. Có chữ trong
        đó là máy điền hộ. Vẫn trả về ok để máy rác không biết mình bị chặn. */
@@ -253,13 +250,12 @@ function doPost(e) {
     else guiThuChoDoiNgu(lamSach(d), c);
     if (d.nguon === 'master-club') {
       var m = lamSach(d);
-      baoTelegram('Đăng ký Master Club mới\n' + chuoi(m.ten) + ' · Zalo ' + chuoi(m.dienthoai) + ' · ' + chuoi(m.email) +
+      baoTelegram('Đăng ký ' + m.cap + ' mới\n' + chuoi(m.ten) + ' · Zalo ' + chuoi(m.dienthoai) + ' · ' + chuoi(m.email) +
         '\nDoanh nghiệp: ' + chuoi(m.doanhnghiep) + ' · Nhân sự: ' + chuoi(m.nhansu) +
         '\nĐang vướng: ' + chuoi(m.vuong).slice(0, 500) +
         '\nNguồn: ' + (chuoi(m.nguon_chien_dich) || 'không ghi') +
         '\nĐọc đủ ở trang tính Master Club trong bảng đăng ký.', m);
     }
-    if (d.nguon === 'master-club' || d.nguon === 'nguoi-dan-duong') dayPancake(lamSach(d), c);
 
     return tra({ ok: true });
   } catch (loi) {
@@ -314,7 +310,7 @@ function guiThuChoKhach(d, c) {
   try {
     MailApp.sendEmail({
       to: d.email,
-      subject: c.tieu_de_thu || ('Duy đã nhận đăng ký của bạn · ' + c.ten_chuong_trinh),
+      subject: c.tieu_de_thu || ('Duy đã nhận đăng ký của bạn · ' + (d.cap || c.ten_chuong_trinh)),
       htmlBody: than,
       name: 'Coach Duy Nguyễn',
       replyTo: d.nguon === 'nguoi-dan-duong' ? EMAIL_RIENG : THU_DOI_NGU
@@ -339,8 +335,8 @@ function thuCongDong(d) {
 function thuMasterClub(d) {
   return khung(
     '<p>Chào ' + escape_(d.ten) + ',</p>' +
-    '<p>Duy đã nhận phiếu đăng ký Master Club của bạn. Thư này để bạn biết chắc là phiếu đã tới.</p>' +
-    '<p>Bước tiếp theo: tư vấn viên của Duy sẽ liên hệ qua số Zalo bạn để lại, để nghe kỹ việc bạn đang vướng. Hai bên cùng xem Master Club có hợp với bạn lúc này không. Gửi phiếu chưa phải là thanh toán, và nói chuyện xong thấy chưa phải lúc thì bạn cứ nói thật.</p>' +
+    '<p>Duy đã nhận phiếu đăng ký ' + escape_(d.cap) + ' của bạn. Thư này để bạn biết chắc là phiếu đã tới.</p>' +
+    '<p>Bước tiếp theo: tư vấn viên của Duy sẽ liên hệ qua số Zalo bạn để lại, để nghe kỹ việc bạn đang vướng. Hai bên cùng xem ' + escape_(d.cap) + ' có hợp với bạn lúc này không. Gửi phiếu chưa phải là thanh toán, và nói chuyện xong thấy chưa phải lúc thì bạn cứ nói thật.</p>' +
     '<p>Việc bạn ghi là đang vướng nhất:</p>' +
     '<blockquote style="margin:0 0 18px;padding:12px 16px;border-left:3px solid #F2B14A;background:#FAF7F2;color:#3A3A3A">' + escape_(d.vuong) + '</blockquote>' +
     '<p>Có gì muốn nói trước thì trả lời thẳng thư này.</p>',
@@ -418,53 +414,6 @@ function baoTelegram(chu, d) {
   }
 }
 
-/**
- * Đẩy phiếu sang Pancake POS: tìm khách theo số Zalo, chưa có thì tạo, rồi thêm một ghi chú
- * đủ các ô khách điền. Thiếu mã khóa thì bỏ qua. Lỗi thì ghi trang tính Lỗi và báo Telegram;
- * phiếu vẫn nằm trong bảng đăng ký, bảng là bản gốc.
- * ponytail: đường dẫn tạo khách và thêm ghi chú theo tài liệu POS, chưa thử bằng phiếu thật.
- */
-function dayPancake(d, c) {
-  var ma = PropertiesService.getScriptProperties().getProperty(KHOA_PANCAKE);
-  if (!ma) return false;
-  try {
-    var sdt = chuoi(d.dienthoai).replace(/[^\d+]/g, '');
-    var tim = goiPancake('get', '/customers?page_size=1&search=' + encodeURIComponent(sdt), null, ma);
-    var khach = tim.data && tim.data[0];
-    if (!khach) {
-      khach = goiPancake('post', '/customers', { customer: {
-        name: chuoi(d.ten), phoneNumber: sdt, emails: chuoi(d.email) ? [chuoi(d.email)] : [] } }, ma).data;
-    }
-    if (!khach || !khach.id) throw 'Pancake không trả mã khách';
-    var ten_cot = c.cot.slice(1, -2), gia_tri = c.lay(d);
-    var ghi = ten_cot.map(function (k, i) { var v = chuoi(gia_tri[i]); return v ? k + ': ' + v : ''; }).filter(String);
-    goiPancake('post', '/customers/' + khach.id + '/create_note',
-      { message: 'Đăng ký ' + c.ten_chuong_trinh + ' từ website coachduynguyen.vn\n' + ghi.join('\n') }, ma);
-    return true;
-  } catch (loi) {
-    ghiLoi('Không đẩy được sang Pancake: ' + String(loi).split(ma).join('***'), d);
-    baoTelegram('Phiếu ' + c.ten_chuong_trinh + ' của ' + chuoi(d.ten) + ' chưa vào được Pancake. Phiếu vẫn nằm trong bảng đăng ký, lỗi ghi ở trang tính Lỗi.', d);
-    return false;
-  }
-}
-
-function goiPancake(cach, duong, than, ma) {
-  var tuy_chon = { method: cach, muteHttpExceptions: true };
-  if (than) { tuy_chon.contentType = 'application/json'; tuy_chon.payload = JSON.stringify(than); }
-  var r = UrlFetchApp.fetch(PANCAKE_GOC + duong + (duong.indexOf('?') < 0 ? '?' : '&') + 'api_key=' + ma, tuy_chon);
-  if (r.getResponseCode() >= 300) throw 'Pancake trả mã ' + r.getResponseCode() + ' ở ' + duong.split('?')[0] + ': ' + r.getContentText().slice(0, 300);
-  return JSON.parse(r.getContentText());
-}
-
-/** Chạy tay một lần sau khi thêm mã khóa: chỉ đọc một khách, không tạo gì trong Pancake. */
-function kiemTraPancake() {
-  var ma = PropertiesService.getScriptProperties().getProperty(KHOA_PANCAKE);
-  if (!ma) { Logger.log('Chưa có mục pancake_pos_api_key trong Cài đặt dự án.'); return false; }
-  var r = goiPancake('get', '/customers?page_size=1', null, ma);
-  Logger.log('Đã nối Pancake POS. Cửa hàng đang có ' + r.total_entries + ' khách.');
-  return true;
-}
-
 /** Chạy tay một lần sau khi dán mã vào Cài đặt dự án: cấp quyền gọi ra ngoài và gửi thử một tin. */
 function kiemTraTelegram() {
   var ok = baoTelegram('Thử nối Telegram từ nơi nhận đăng ký coachduynguyen.vn. Thấy tin này là đã nối xong.');
@@ -489,7 +438,7 @@ function guiThuChoDoiNgu(d, c) {
   try {
     MailApp.sendEmail({
       to: d.nguon === 'master-club' ? THU_DOI_NGU + ',' + EMAIL_RIENG : THU_DOI_NGU,
-      subject: '[Đăng ký] ' + c.ten_chuong_trinh + ' · ' + chuoi(d.ten) + ' · ' + chuoi(d.dienthoai),
+      subject: '[Đăng ký] ' + (d.cap || c.ten_chuong_trinh) + ' · ' + chuoi(d.ten) + ' · ' + chuoi(d.dienthoai),
       htmlBody: '<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:14px">' +
         '<p><b>Đăng ký mới từ trang ' + escape_(d.nguon) + '</b></p><table>' + dong + '</table>' +
         '<p style="margin-top:16px"><a href="' + layBang().getUrl() + '">Mở bảng đăng ký</a></p></div>',
