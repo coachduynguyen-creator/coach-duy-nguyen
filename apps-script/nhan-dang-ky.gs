@@ -202,7 +202,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, ver: 'master-club-23-10-cap', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'master-club-23-10-so0', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -243,6 +243,7 @@ function doPost(e) {
     }
 
     var dong = [new Date()].concat(c.lay(lamSach(d)));
+    dong[2] = "'" + dong[2]; /* cột số Zalo ghi dạng chữ, không thì Sheets bỏ số 0 đầu */
     t.appendRow(dong);
 
     guiThuChoKhach(lamSach(d), c);
