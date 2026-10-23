@@ -306,7 +306,7 @@ figure{margin:0}
 .noi-nut svg{width:22px;height:22px}
 .noi-zalo{background:#0068FF;color:#fff;padding:0 18px 0 14px;font-weight:600;font-size:15px}
 .noi-zalo[hidden]{display:none}
-.noi-len{background:#E2B654;color:#0E1116}
+.noi-len{background:#0E1116;color:#E2B654;border:2px solid #E2B654;width:52px;height:52px}
 .noi-len:not(.hien-nut){opacity:0;transform:translateY(8px);pointer-events:none}
 @media (max-width:640px){.noi-zalo span{display:none}.noi-zalo{padding:0;width:48px}}
 /* điện thoại: khung ảnh thấp lại, tiêu đề và nút chính căn giữa */
@@ -717,7 +717,8 @@ figure{margin:0}
   var ZALO='';
   if(ZALO){var z=document.getElementById('noi-zalo');z.href='https://zalo.me/'+ZALO;z.hidden=false;}
   var len=document.getElementById('noi-len');
-  addEventListener('scroll',function(){len.classList.toggle('hien-nut',scrollY>900);},{passive:true});
+  function xemLen(){len.classList.toggle('hien-nut',scrollY>500);}
+  addEventListener('scroll',xemLen,{passive:true});xemLen();
 
   var VSL={youtube:'zzAchaubGJU'};
   var mo=d.getElementById('vsl-mo'), khung=d.getElementById('vsl'), bia=khung.querySelector('img');
