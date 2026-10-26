@@ -28,6 +28,8 @@ export default {
     for (const k of O_CHO_PHEP) if (typeof d[k] === "string" && d[k].length <= 2000) data[k] = d[k];
     if (!data.Name || !/^(0\d{9}|\+?84\d{9})$/.test(data.Phone || "")) return tra(origin, 400, { success: false });
     if (data.noi_dau_kh) data.noi_dau_kh = [data.noi_dau_kh];   // cột chọn nhiều của Pancake nhận danh sách
+    // Khách từ công cụ và e-book: cột Nguồn khách hàng nhận danh sách, gửi chữ trơn thì Pancake báo lỗi 500 (thử ngày 26/10/2026). Master Club và Người dẫn đường không ghi.
+    if (data.utm_medium === "cong-cu-ai" || data.utm_medium === "ebook") data.nguon_khach_hang = ["Web Lead Magnet"];
     const url = PANCAKE + "?api_key=" + env.PANCAKE_KEY, dau = { "Content-Type": "application/json" };
     // Người đã đăng ký (trình duyệt giữ mã khách) thì cập nhật đúng khách cũ, không tạo khách trùng.
     // Mã không còn (Sales đã xoá) thì tạo mới như lần đầu.
