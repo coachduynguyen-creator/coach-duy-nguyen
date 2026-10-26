@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nhận bộ kế hoạch kinh doanh 2027 · Coach Duy Nguyễn</title><meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Bảng màu, phông, thẻ và phiếu lấy từ trang Master Club (master-club/index.html) để hai trang cùng một giao diện. */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --bg-2:#F6F7F9; --bg-3:#EDEFF3;
+  --line:#E3E6EB; --line-2:#CBD0D8;
+  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79;
+  --cam:#C98A28; --cam-dam:#8A5A0F; --cam-mo:#FBF1DC;
+  --the:#FFFFFF; --nav:rgba(255,255,255,.86);
+  --shadow-s:0 1px 2px rgba(15,18,24,.05),0 12px 28px -16px rgba(15,18,24,.22);
+  --shadow:0 2px 4px rgba(15,18,24,.06),0 30px 60px -28px rgba(15,18,24,.34);
+  --r:16px; --r-s:12px;
+  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
+  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{margin:0;color:var(--ink);font-family:var(--f-tit);font-variation-settings:'opsz' 72;letter-spacing:-.025em;line-height:1.1;font-weight:700;text-wrap:balance}
+p,li{text-wrap:pretty}
+p{margin:0}
+p + p{margin-top:14px}
+ul,ol{margin:0;padding:0;list-style:none}
+img{max-width:100%;display:block}
+.bao{max-width:1040px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.bao{padding:0 16px}}
+
+.nav{position:sticky;top:0;z-index:60;background:var(--nav);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+.nav .bao{display:flex;align-items:center;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.logo img{width:26px;height:auto;flex:none}
+.ten-hieu{display:flex;flex-direction:column;line-height:1.05;font-family:var(--f-tit);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.ten-hieu small{font-family:var(--f-than);font-weight:500;font-size:13px;letter-spacing:0;color:var(--ink-3);margin-top:3px}
+
+.nut{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;border:1px solid #F2B14A;background:#F2B14A;color:#17120F;font:inherit;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .16s}
+.nut:hover{background:#E5A233;border-color:#E5A233}
+.nut.lon{height:56px;padding:0 30px;font-size:16.5px}
+.nut[disabled]{opacity:.6;cursor:default}
+.nav .nut{height:40px;padding:0 16px;font-size:14px;margin-left:auto}
+
+.nhan{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.nhan::before{content:'';width:18px;height:2px;background:var(--cam)}
+.khi{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:10px}
+.doan{max-width:62ch;font-size:17.5px}
+.phu{font-size:15px;color:var(--ink-3)}
+
+.hero{background:#0E1116;padding:64px 0 72px;color:#B3B9C2;text-align:center}
+.hero .nhan{justify-content:center;color:#8A919B}
+.hero h1{color:#F4F1EA;font-size:clamp(34px,5vw,56px);max-width:860px;margin:0 auto}
+.hero .mo{font-size:18px;line-height:1.65;margin:20px auto 0;max-width:60ch;color:#B3B9C2}
+.gia-hero{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 14px;margin-top:30px}
+.gia-hero b{font-family:var(--f-tit);font-size:clamp(44px,6vw,64px);font-weight:800;letter-spacing:-.03em;color:#E2B654;line-height:1}
+.gia-hero span{font-size:15px;color:#8A919B}
+.hanh-dong{margin-top:28px}
+.cho-ban{max-width:640px;margin:28px auto 0;padding:18px 22px;border:1px dashed rgba(226,182,84,.6);border-radius:14px;background:rgba(226,182,84,.07);color:#E8DDBF;font-size:16px;line-height:1.55}
+.cho-ban b{color:#E2B654}
+
+.phan{padding:80px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+.phan.nen{background:var(--bg-2)}
+.phan h2{font-size:clamp(28px,3.2vw,40px);max-width:820px;margin-bottom:28px}
+
+.khac{max-width:780px;margin:0 auto;padding:28px 30px;border:2px solid var(--cam);border-radius:20px;background:var(--cam-mo);box-shadow:var(--shadow-s)}
+.khac p{font-family:var(--f-tit);font-variation-settings:'opsz' 40;font-weight:600;font-size:clamp(20px,2.3vw,25px);line-height:1.45;letter-spacing:-.01em;color:var(--ink)}
+.khac p + p{margin-top:12px}
+
+.o{background:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-s)}
+.o h3{font-family:var(--f-than);font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin-bottom:8px}
+.o p,.o li{font-size:15.5px;line-height:1.55}
+.o ul{display:grid;gap:8px;margin-top:12px}
+.o li{position:relative;padding-left:20px}
+.o li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--cam)}
+.bon{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.bon .o .so-tt{font-family:var(--f-tit);font-size:30px;font-weight:800;line-height:1;color:var(--cam);margin-bottom:12px}
+.bon .o p + p,.bon .o ul + p{margin-top:12px}
+
+.buoc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:b}
+.buoc li{counter-increment:b;position:relative;padding-top:56px}
+.buoc li::before{content:counter(b);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:#F2B14A;color:#17120F;display:grid;place-items:center;font-family:var(--f-tit);font-weight:800;font-size:18px}
+.buoc h3{font-family:var(--f-than);font-size:18px;font-weight:700;margin-bottom:6px}
+.buoc p{font-size:15.5px}
+
+.hoi{max-width:820px}
+.hoi details{border:1px solid var(--line);border-radius:var(--r-s);background:var(--the);box-shadow:var(--shadow-s)}
+.hoi details + details{margin-top:12px}
+.hoi summary{list-style:none;cursor:pointer;position:relative;padding:18px 56px 18px 20px;font-weight:600;font-size:16.5px;line-height:1.45;color:var(--ink)}
+.hoi summary::-webkit-details-marker{display:none}
+.hoi summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:500;color:var(--cam-dam)}
+.hoi details[open] summary::after{content:'\2212'}
+.hoi details p{padding:0 20px 20px;font-size:16px;line-height:1.6}
+
+/* đặt mua */
+.cuoi{background:var(--cam-mo);border:2px solid var(--cam);border-radius:24px;padding:44px;box-shadow:var(--shadow)}
+.cuoi h2{margin-bottom:12px}
+.cuoi .doan{margin-bottom:24px}
+@media (max-width:640px){.cuoi{padding:26px 18px}}
+.phieu{background:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-s);position:relative}
+.phieu-cot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+.phieu label{display:flex;flex-direction:column;gap:6px;font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:16px}
+.phieu input{height:48px;padding:0 14px;border:1px solid var(--line-2);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px;font-weight:400;width:100%}
+.phieu [aria-invalid="true"]{border-color:#C0412B}
+.phieu .loi{display:none;margin:0 0 14px;color:#C0412B;font-size:14.5px}
+.phieu.co-loi .loi{display:block}
+.phieu .xong{display:none;font-size:16px;line-height:1.6;color:var(--ink)}
+.phieu.da-gui .xong{display:block}
+.phieu.da-gui .an-khi-xong{display:none}
+@media (max-width:640px){.phieu{padding:20px 16px}.phieu-cot{grid-template-columns:minmax(0,1fr)}.cuoi .nut{width:100%}}
+.ck{margin-top:16px;padding:18px;border-radius:12px;border:1px dashed var(--line-2);background:var(--bg-2);font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.ck b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:8px}
+.dong-ck{display:flex;justify-content:space-between;gap:14px;padding:4px 0;border-bottom:1px solid var(--line)}
+.dong-ck:last-of-type{border-bottom:0}
+.dong-ck span:first-child{color:var(--ink-3);flex:none}
+.dong-ck span:last-child{color:var(--ink);font-weight:600;text-align:right;font-family:var(--f-mono);font-size:14px}
+/* nhãn nháp: ô còn chờ Coach Duy điền. Gỡ hết trước khi đẩy lên mạng. */
+[data-tam]{background:#FFF3B0;outline:1px dashed #B58900}
+.dong-ck.an,[hidden]{display:none}
+
+.chan-trang{background:#0E1116;color:#8A919B;padding:40px 0 28px;font-size:14px;line-height:1.6}
+.chan-trang .bao{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px}
+.chan-trang a{color:#B3B9C2;text-decoration:none}
+.chan-trang a:hover{color:#E2B654}
+.chan-trang b{color:#F4F1EA}
+
+@media (max-width:760px){
+  .bon,.buoc{grid-template-columns:minmax(0,1fr)}
+  .phan{padding:56px 0}
+  .phan .bao > h2{text-align:center}
+}
+
+.phan-nhan{margin-top:16px}
+.phan-nhan .o{display:grid;gap:14px}
+.phan-nhan h3{font-size:20px}
+.lk{display:flex;flex-wrap:wrap;gap:10px}
+.cho{padding:14px 16px;border:2px dashed #B58900;border-radius:12px;background:#FFF3B0;color:#5C4500;font-size:15px;line-height:1.5}
+.cho b{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.cho[hidden],.lk a[hidden]{display:none}
+.ghi-nho{max-width:62ch;margin:0 0 28px;font-size:16px}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="bao">
+    <a class="logo" href="../../"><img src="../../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="bao">
+    <p class="nhan">Bộ kế hoạch kinh doanh 2027</p>
+    <h1>Cảm ơn bạn. Đây là bộ của bạn.</h1>
+    <p class="mo">Bộ có bốn phần. Bạn làm theo thứ tự từ phần 1 tới phần 4, hoặc vào thẳng phần bạn cần. Trang này chỉ dành cho người đã mua, bạn đừng gửi đường dẫn cho người khác.</p>
+  </div>
+</section>
+
+<section class="phan">
+  <div class="bao">
+    <p class="ghi-nho">Đang làm mà chưa rõ chỗ nào, bạn cứ hỏi trong nhóm chung của cộng đồng Next Gen Founder (phần 4). Không cần làm xong rồi mới được hỏi.</p>
+
+    <div class="phan-nhan">
+      <div class="o" id="p1">
+        <p class="khi">Phần 1</p>
+        <h3>Bộ công cụ AI và bảng tính</h3>
+        <p>Làm theo ba chặng trong ChatGPT hoặc Claude: nhìn lại 2026, lập kế hoạch 2027, đánh giá lại kế hoạch vừa dựng. Điền số liệu vào bảng tính trước, rồi mới dán vào AI.</p>
+        <div class="lk">
+          <a class="nut" data-khoa="congcu" href="#" target="_blank" rel="noopener" hidden>Mở bộ công cụ</a>
+          <a class="nut" data-khoa="bangtinh" href="#" target="_blank" rel="noopener" hidden>Mở bảng tính mẫu</a>
+        </div>
+        <div class="cho" data-cho="congcu"><b>Chưa có tệp</b><br>Bộ công cụ chờ Coach Duy duyệt xong, rồi điền đường dẫn vào đây.</div>
+        <div class="cho" data-cho="bangtinh"><b>Chưa có tệp</b><br>Bảng tính mẫu chờ làm xong, rồi điền đường dẫn vào đây.</div>
+      </div>
+
+      <div class="o" id="p2">
+        <p class="khi">Phần 2</p>
+        <h3>Video hướng dẫn dùng bộ công cụ</h3>
+        <p>Duy làm thử trên màn hình với một doanh nghiệp mẫu, đi đủ ba chặng.</p>
+        <div class="lk"><a class="nut" data-khoa="huongdan" href="#" target="_blank" rel="noopener" hidden>Xem video hướng dẫn</a></div>
+        <div class="cho" data-cho="huongdan"><b>Chưa có video</b><br>Video chưa quay xong, chưa có ngày giao. Có video thì Duy điền đường dẫn vào đây.</div>
+      </div>
+
+      <div class="o" id="p3">
+        <p class="khi">Phần 3</p>
+        <h3>Video workshop chiến lược 2027</h3>
+        <p>Bản ghi buổi workshop Kế hoạch 2027, đã cắt phần hỏi đáp của người dự.</p>
+        <div class="lk"><a class="nut" data-khoa="workshop" href="#" target="_blank" rel="noopener" hidden>Xem video workshop</a></div>
+        <div class="cho" data-cho="workshop"><b>Chưa có video</b><br>Bản ghi Zoom đã có nhưng chưa cắt, chưa có nơi lưu. Cắt xong thì Duy điền đường dẫn vào đây.</div>
+      </div>
+
+      <div class="o" id="p4">
+        <p class="khi">Phần 4</p>
+        <h3>Lời mời vào cộng đồng Next Gen Founder</h3>
+        <p>Xem video giới thiệu cộng đồng (4 phút 42 giây), đăng ký mức Thành viên miễn phí, rồi vào nhóm chung để hỏi và trao đổi với những người đang làm cùng việc với bạn.</p>
+        <div class="lk">
+          <a class="nut" data-khoa="gioithieu" href="#" target="_blank" rel="noopener" hidden>Xem video giới thiệu</a>
+          <a class="nut" data-khoa="dangky" href="#" target="_blank" rel="noopener" hidden>Đăng ký Thành viên miễn phí</a>
+        </div>
+        <div class="cho" data-cho="gioithieu"><b>Chưa có đường dẫn</b><br>Video giới thiệu cộng đồng, điền đường dẫn vào đây.</div>
+        <div class="cho" data-cho="dangky"><b>Chưa có đường dẫn</b><br>Đường dẫn đăng ký mức Thành viên miễn phí, điền vào đây.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="chan-trang">
+  <div class="bao">
+    <span><b>Coach Duy Nguyễn</b> · Người sáng lập Next Gen Founder</span>
+    <span>Cần hỗ trợ: <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span>
+  </div>
+</footer>
+
+<script>
+/* Điền đường dẫn thật vào đây. Ô nào để trống thì hiện khung vàng "Chưa có". Điền xong thì khung vàng tự mất, nút tự hiện. */
+var LIEN_KET={
+  congcu:'',      /* bộ công cụ AI, phần 1 */
+  bangtinh:'',    /* bảng tính mẫu, phần 1 */
+  huongdan:'',    /* video hướng dẫn, phần 2 */
+  workshop:'',    /* video workshop, phần 3 */
+  gioithieu:'',   /* video giới thiệu cộng đồng, phần 4 */
+  dangky:''       /* đăng ký mức Thành viên miễn phí, phần 4 */
+};
+Object.keys(LIEN_KET).forEach(function(k){
+  var u=LIEN_KET[k]; if(!u) return;
+  var a=document.querySelector('[data-khoa="'+k+'"]'), c=document.querySelector('[data-cho="'+k+'"]');
+  a.href=u; a.hidden=false; if(c) c.hidden=true;
+});
+</script>
+</body>
+</html>
