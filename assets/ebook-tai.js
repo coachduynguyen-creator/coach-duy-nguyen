@@ -12,11 +12,12 @@
   var THU = q.get('thu') === '1';
 
   function gui(n) {
-    n.eb = n.eb || []; if (n.eb.indexOf(MA) < 0) n.eb.push(MA); ghi('ngf-lead', n);
+    n.eb = n.eb || []; if (n.eb.indexOf(MA) < 0) n.eb.push(MA);
     var data = {Name: (THU ? 'BẢN THỬ, XÓA - ' : '') + n.ten, Phone: n.zalo,
-      Note: ((n.da || []).length ? 'Công cụ đã mở: ' + n.da.join(', ') + ' · ' : '') + 'E-book đã nhận: ' + n.eb.join(', ') + ' · Nguồn: ' + nguon + DK.ghiChu(n),
+      Note: DK.nguon(n, MA, 'E-book «' + TEN + '»', nguon) + DK.ghiChu(n),
       utm_source: nguon, utm_medium: 'ebook', utm_campaign: 'ngf-thu-lead', utm_content: MA, url_page: location.href};
     var t = DK.truong(n, NOI_DAU); for (var k in t) data[k] = t[k];
+    ghi('ngf-lead', n);
     return DK.gui(n, data).catch(function () {});
   }
   function moNut() { f.hidden = true; d.querySelector('#eb-cua > .cc-cua-dan').hidden = true; d.querySelector('#eb-cua > h2').hidden = true; xong.hidden = false; }
@@ -30,7 +31,7 @@
   f.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var cu = doc('ngf-lead') || {}, pl = DK.docPL(f);
-    var n = {ten: f.ten.value.trim(), zalo: DK.zalo(f.zalo.value), vai_tro: f.vai_tro.value, pl: pl.pl, pid: cu.pid, da: cu.da, eb: cu.eb};
+    var n = {ten: f.ten.value.trim(), zalo: DK.zalo(f.zalo.value), vai_tro: f.vai_tro.value, pl: pl.pl, pid: cu.pid, da: cu.da, eb: cu.eb, dau: cu.dau, nhan: cu.nhan};
     var thieu = !n.ten ? 'Bạn điền tên giúp Duy.' : !n.zalo ? 'Số Zalo chưa đúng, bạn kiểm tra lại giúp Duy. Số bắt đầu bằng 0 và có 10 chữ số.' :
       n.vai_tro === '' ? 'Bạn chọn vai trò giúp Duy.' : pl.thieu;
     if (thieu) { loi.textContent = thieu; loi.hidden = false; return; }

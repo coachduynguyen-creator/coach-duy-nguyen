@@ -508,7 +508,7 @@ def than_trang(cc):
                 '<p class="cc-mo-gpt-ghi">Mở ChatGPT, dán câu lệnh vào ô chat. Các câu lệnh sau, bạn chép rồi dán tiếp vào đúng cuộc trò chuyện này.</p></div></div>')
         if l["so"] == 1:   # câu lệnh 1 mở cho mọi người xem trước khi điền
             lenh_mo, lenh = lenh, ""
-    du_lieu = json.dumps(dict(ma=ma, trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"]), noi_dau=noi_dau(ma, CHU_DE.get(ma, ""))), ensure_ascii=False).replace("</", "<\\/")
+    du_lieu = json.dumps(dict(ma=ma, ten=cc["tieu"], trong=cc["trong"], mau2=cc["lenh"][1]["chu"], n=len(cc["lenh"]), noi_dau=noi_dau(ma, CHU_DE.get(ma, ""))), ensure_ascii=False).replace("</", "<\\/")
 
     khac = "".join(_the_lien_quan(c) for c in lien_quan(ma))
     return """<header class="dau-trang hoa-van cc-dau">

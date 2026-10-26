@@ -36,6 +36,15 @@ window.NGF_DK = (function () {
       .forEach(function (x) { if (pl[x[0]]) ra += ' · ' + x[1] + ': ' + pl[x[0]].chu; });
     return ra + ' · Cần gọi lại: ' + (canGoi(n) ? 'CÓ' : 'không');
   }
+  // Dòng nguồn đầu ghi chú cho Sales đọc: nhớ chỗ khách đến lần đầu, nối thêm từng công cụ và e-book đã dùng.
+  var KENH = {facebook: 'Facebook', youtube: 'YouTube', tiktok: 'TikTok', zalo: 'Zalo', instagram: 'Instagram', 'gioi-thieu': 'Người giới thiệu'};
+  function nguon(n, ma, nhan, kenh) {
+    n.nhan = n.nhan || {}; n.nhan[ma] = nhan;
+    if (!n.dau) n.dau = nhan + ' (' + new Date().toLocaleDateString('vi-VN') + ')';
+    var da = [].concat(n.da || [], n.eb || []).filter(function (m, i, a) { return a.indexOf(m) === i; })
+      .map(function (m) { return n.nhan[m] || m; });
+    return 'Nguồn: Web Lead Magnet · Đến lần đầu từ: ' + n.dau + ' · Đã dùng: ' + da.join(', ') + ' · Kênh: ' + (KENH[kenh] || 'Không rõ');
+  }
   function gui(n, data) {
     return fetch('/api/dang-ky', {method: 'POST', headers: {'Content-Type': 'application/json'}, keepalive: true,
       body: JSON.stringify({data: data, id: n.pid || null})})
@@ -46,5 +55,5 @@ window.NGF_DK = (function () {
         return j;
       });
   }
-  return {zalo: zalo, docPL: docPL, truong: truong, ghiChu: ghiChu, gui: gui};
+  return {zalo: zalo, docPL: docPL, truong: truong, ghiChu: ghiChu, nguon: nguon, gui: gui};
 })();

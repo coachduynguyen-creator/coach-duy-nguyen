@@ -28,7 +28,7 @@ FACEBOOK = "https://www.facebook.com/coachduynguyen"
 # không dùng lại bản cũ. Trước đây phải tăng tay, quên tăng là khách thấy trang vỡ giao diện.
 import hashlib
 VER = hashlib.md5(b"".join(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", f), "rb").read()
-                           for f in ("style.css", "site.js"))).hexdigest()[:8]
+                           for f in ("style.css", "site.js", "dang-ky.js", "cong-cu-ai.js", "ebook-tai.js"))).hexdigest()[:8]
 
 # Ảnh hiện khi ai đó dán đường dẫn trang lên Facebook, Zalo, LinkedIn hoặc gửi
 # trong tin nhắn. Trang nào có ảnh lớn riêng thì lấy đúng ảnh đó, trang nào
