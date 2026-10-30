@@ -89,22 +89,23 @@ THAN = dau_trang(
     <p>Người nghe là thành viên Master Club và Grand Master Club, hai cấp đồng hành dài hạn của Cộng đồng Next Gen Founder. Đây là những người chủ đang điều hành doanh nghiệp và mang vấn đề đang gặp tới buổi chia sẻ.</p>
   </div>
   <div class="luoi c2 tre hien">
-    <div class="anh-khung ngang"><img src="../img/mentor/ghi-chep.webp" alt="Thành viên ghi chép trong một buổi học" loading="lazy"></div>
-    <div class="anh-khung ngang"><img src="../img/mentor/hoi-truong.webp" alt="Thành viên Cộng đồng trong một buổi học trực tiếp" loading="lazy"></div>
+    <div class="anh-khung ngang"><img src="../img/mentor/ghi-chep.webp" alt="Những người chủ ngồi quanh bàn họp trong một buổi trao đổi" loading="lazy"></div>
+    <div class="anh-khung ngang"><img src="../img/mentor/hoi-truong.webp" alt="Hội trường kín người trong một buổi Duy giảng trực tiếp" loading="lazy"></div>
   </div>
 </section>
 
-<section class="phan bd phan-sang">
+<section class="phan bd phan-vang">
   <div class="phan-dau hien">
-    <p class="mono">Quyền lợi</p>
-    <h2>Anh chị nhận lại gì</h2>
+    <p class="mono">Điều anh chị nhận lại</p>
+    <h2>Chia sẻ những gì mình đã trải qua với người đang thực sự cần</h2>
+    <p>Làm mentor không phải một cuộc trao đổi quyền lợi. Phần anh chị nhận lại nằm ở chỗ khác: <span class="nhan">những gì anh chị đã trải qua giúp được người đang cần nó.</span></p>
   </div>
-  <div class="luoi c2 tre hien">
-    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><span class="mt-nhan">Trong buổi</span><h3>Không có phần bán hàng</h3><p>Trong buổi chia sẻ không có phần bán hàng, kể cả bán hàng của Duy. Người nghe tới để học, nên họ nghe câu chuyện của anh chị mà không phải dè chừng.</p></article>
-    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.4 3-2.4s2.4.8 3 2.4M14 10h4M14 13h4"/></svg></i><span class="mt-nhan">Sau buổi</span><h3>Trang hồ sơ trên website</h3><p>Anh chị có một trang hồ sơ trên website coachduynguyen.vn, kèm phần giới thiệu doanh nghiệp, để sau buổi chia sẻ, thành viên biết anh chị và doanh nghiệp của anh chị đang làm gì.</p></article>
-    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/><path d="M7 12l2 2 3-3"/></svg></i><span class="mt-nhan">Bản ghi hình</span><h3>Anh chị duyệt trước</h3><p>Bản ghi hình buổi chia sẻ chỉ thành viên Master Club và Grand Master Club xem được, trong nhóm của Cộng đồng. Anh chị xem và duyệt trước khi bản ghi được đăng ở bất kỳ đâu. Anh chị cũng nhận bản ghi đó để đăng lên kênh của mình nếu muốn.</p></article>
-    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 16l8-8M12 7v1M12 16v1"/></svg></i><span class="mt-nhan">Nói rõ từ đầu</span><h3>Không có thù lao</h3><p>Vai trò mentor không có thù lao. Duy nói rõ điều này từ đầu để anh chị cân nhắc trước khi nhận lời.</p></article>
+  <div class="luoi c3 tre hien">
+    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-1v-6h3M4 13h3v6H6a2 2 0 0 1-2-2z"/></svg></i><h3>Người nghe đang gặp đúng chỗ anh chị từng gặp</h3><p>Người ngồi nghe là những người chủ đang điều hành doanh nghiệp, và vấn đề họ mang tới thường là chỗ anh chị từng đi qua. Câu chuyện anh chị kể có thể giúp họ tránh được chỗ anh chị đã vấp.</p></article>
+    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></i><h3>Thấy kinh nghiệm của mình giúp được người khác</h3><p>Sau phần kể chuyện, anh chị nghe vấn đề thật của một người chủ khác và góp ý từ chính những gì mình đã làm. Bài học anh chị có được trong doanh nghiệp của mình giờ giúp thêm một doanh nghiệp nữa.</p></article>
+    <article class="the mt-ql"><i class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 11c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></i><h3>Để lại di sản của chính mình</h3><p>Kinh nghiệm anh chị đã tốn tiền và thời gian mới có được, nếu không kể ra thì sẽ dừng lại ở anh chị. Kể ra rồi, nó đi tiếp qua những người chủ đã nghe anh chị và doanh nghiệp của họ.</p></article>
   </div>
+  <p class="mt-ro tre hien"><b>Vài điều Duy nói rõ từ đầu để anh chị yên tâm.</b> Buổi chia sẻ không có phần bán hàng của bất kỳ ai, kể cả Duy. Bản ghi hình chỉ được đăng khi anh chị đã duyệt, và anh chị nhận bản ghi để đăng lên kênh của mình nếu muốn. Anh chị có một trang hồ sơ trên coachduynguyen.vn để sau buổi chia sẻ, thành viên biết anh chị đang làm gì. Vai trò mentor không có thù lao.</p>
 </section>
 
 <section class="phan bd hoa-van duoi">
@@ -124,6 +125,9 @@ THAN = dau_trang(
 .mt-ql{border-top:3px solid #F2B14A}
 .mt-ic{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#17120F;color:#F2B14A;margin-bottom:16px}
 .mt-ic svg{width:26px;height:26px}
+.phan-vang .mt-ql h3{margin-bottom:10px}
+.mt-ro{max-width:68ch;margin:40px auto 0;text-align:center;font-size:15px;line-height:1.7;color:rgba(23,18,15,.78)}
+.mt-ro b{color:var(--on-vang)}
 .mt-vap{position:relative;overflow:hidden;background:#17120F;border-radius:var(--r);padding:30px 28px 34px;min-height:230px;box-shadow:0 24px 50px -28px rgba(23,18,15,.75);transition:transform .4s var(--ease)}
 .mt-vap:hover{transform:translateY(-4px)}
 .mt-vap::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#F2B14A,transparent)}
