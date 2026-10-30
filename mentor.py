@@ -12,7 +12,9 @@ THAN = dau_trang(
     "Duy đang mời một nhóm nhỏ những người đã tự tay đưa doanh nghiệp qua giai đoạn khó nhất, "
     "từ chủ doanh nghiệp tới CEO và tổng giám đốc. Anh chị chia sẻ theo lịch hợp với mình, kể cho những "
     "người chủ đang xây doanh nghiệp nghe một giai đoạn mình đã đi qua, rồi góp ý vào vấn đề họ đang gặp."
-).replace('class="dau-trang hoa-van"', 'class="dau-trang hoa-van mt-nen"', 1) + """
+,
+    anh="../img/mentor/nen-dau.webp", vi_tri="right 40%",
+) + """
 <section class="phan bd hoa-van">
   <div class="doi-cot mt-dau">
     <div class="hien">
@@ -142,10 +144,6 @@ THAN = dau_trang(
 .mt-vap h3:not(#_){text-align:left!important;margin:0;color:#F9F5F0;font-size:clamp(20px,2vw,24px);line-height:1.3;max-width:15ch}
 
 @media(max-width:999px){.mt-dau > .anh-khung{order:-1}}
-.dau-trang.mt-nen{padding:130px 0 120px;background:linear-gradient(90deg,rgba(18,15,12,.94) 0%,rgba(18,15,12,.82) 42%,rgba(18,15,12,.25) 75%,rgba(18,15,12,.1) 100%),url(../img/mentor/nen-dau.webp) right 40%/cover no-repeat}
-.mt-nen h1{max-width:min(20ch,100%);text-shadow:0 2px 18px rgba(0,0,0,.5)}
-.mt-nen p.dan{max-width:min(54ch,100%);color:#E9E1D6}
-@media(max-width:760px){.dau-trang.mt-nen{padding:200px 0 56px;background:linear-gradient(180deg,rgba(18,15,12,.15) 0%,rgba(18,15,12,.7) 38%,rgba(18,15,12,.95) 62%),url(../img/mentor/nen-dau.webp) 80% top/auto 70% no-repeat,#120f0c}}
 .mt-anh{margin-bottom:34px}
 .mt-anh figure{margin:0}
 .mt-anh figcaption{margin-top:10px;font-size:14px;color:var(--ink-3);text-align:center}
