@@ -767,6 +767,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   /* dòng trong thẻ cũng sáng theo */
   .the:hover p,.hop:hover p,.dx article:hover p,.the-ct:hover p,.the-bai:hover p,.bai-lon:hover p,
   .chang:hover p,.yt-the:hover p,.niem-tin article:hover p,.cd-hang article:hover p{color:var(--ink-doc)}
+  /* nền kem: thẻ giữ màu sáng khi rê, không thì chữ tối nằm trên nền tối */
+  .phan-sang :is(.the,.hop,.dx article,.the-ct,.loi:not(.vang),.the-bai,.bai-lon,.chang,.yt-the,.niem-tin article,.cd-hang article,.hst-nhom):hover{
+    background-color:var(--panel);background-image:var(--paper);border-color:var(--vang);
+    box-shadow:var(--shadow)}
+  .phan-sang :is(.the,.hop,.dx article,.the-ct,.the-bai,.bai-lon,.chang,.yt-the,.niem-tin article,.cd-hang article):hover p{color:var(--ink-2)}
   /* hàng trong danh sách cũng phải thấy rõ khi rê */
   .viec5 .d:hover,.nl .hang:hover,.tap:hover,.bai-nho:hover,.dau .o:hover{background:rgba(242,177,74,.07)}
 }
