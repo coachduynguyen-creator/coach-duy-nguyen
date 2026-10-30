@@ -151,6 +151,17 @@ button,input,select,textarea{font:inherit;color:inherit}
 .ten-dt{display:none;grid-column:1/-1;text-align:center;margin:10px 0 0;font-size:13px;font-weight:700;color:var(--ink);line-height:1.35}.ten-dt span{display:block;font-weight:500;font-size:12.5px;color:var(--ink-3);margin-top:1px}
 @media (max-width:479px){.luoi{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start}.luoi .the.anh:not(.uu1b):not(.trung-tam),.luoi .the.anh.cao{display:none}.the.anh.trung-tam{grid-column:auto;grid-row:auto;order:2}.the.anh.dt-truoc{order:1}.the.anh.dt-sau{order:3}.ten-dt{order:8}.hero-chu{order:9}.the.anh,.the.anh.vuong,.the.anh.cat{aspect-ratio:3/4}.the.anh .ten{display:none}.ten-dt{display:block}.hero{padding:24px 0 64px}.hero-chu{padding-top:18px;gap:14px}.hero h1{font-size:30px}.hero .dan{font-size:16px}}
 
+/* dưới 1200 các cột tan ra nên vạch theo cột bị ẩn; kẻ lại vạch dọc giữa mỗi cột của lưới mới để ipad và điện thoại giữ nền kẻ sọc như máy tính.
+   Lớp kẻ rộng hơn lưới nửa khe mỗi bên, nên mỗi ô nền đúng bằng một cột cộng một khe và vạch rơi giữa cột. */
+@media (max-width:1199px){
+  .luoi{--n:6;--g:16px}
+  .luoi::before{content:'';position:absolute;top:-40px;bottom:-60px;left:calc(var(--g)/-2);right:calc(var(--g)/-2);z-index:0;pointer-events:none;
+    background:linear-gradient(90deg,transparent calc(50% - .5px),var(--line) calc(50% - .5px),var(--line) calc(50% + .5px),transparent calc(50% + .5px)) 0 0/calc(100% / var(--n)) 100%;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 8%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 8%,#000 88%,transparent)}
+}
+@media (max-width:759px){.luoi{--n:4;--g:12px}}
+@media (max-width:479px){.luoi{--n:3;--g:8px}}
+
 /* chữ mới trên lưới cũ (Coach Duy chốt 30/10/2026): tiêu đề ba chữ, nút đen, dải ba số dưới lưới */
 .hero h1 span{display:inline;white-space:nowrap;color:inherit}
 .nut.den{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -643,6 +654,8 @@ figure{margin:0}
     .quyet b,.nam5 b,.dong b,.moc b,.ch-chung b{margin-bottom:6px}
   }
 }
+/* điện thoại và ipad dọc: ảnh ba điểm xuất phát chỉ để minh hoạ, thu nhỏ đặt giữa trên tên, không chiếm cả màn hình (Coach Duy góp ý 30/10/2026) */
+@media (max-width:860px){.nganh3 .anh-khung{width:120px;align-self:center;margin-bottom:16px}}
 @media (max-width:680px){
   @supports (grid-template-rows: subgrid){
     .ch-truoc,.ch-sau{grid-row:auto;grid-template-rows:none;display:flex}
