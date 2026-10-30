@@ -1203,7 +1203,7 @@ for c in CT:
     if c.get("chuyen_tiep"): tt.append(("Tên chương trình", c["chuyen_tiep"]))
     bang_tt = "".join('<div><b>%s</b><span>%s</span></div>' % t for t in tt)
 
-    than = dau_trang(c["nang_luc"], c["ten"], c["tom"], anh="../img/dau-trang/chuong-trinh-rieng.webp", vi_tri="50% 45%") + """
+    than = dau_trang(c["nang_luc"], c["ten"], c["tom"], anh="../img/dau-trang/" + ("ct-" + c["tep"].replace(".html", ".webp") if os.path.exists("img/dau-trang/ct-" + c["tep"].replace(".html", ".webp")) else "chuong-trinh-rieng.webp"), vi_tri="50% 45%") + """
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
