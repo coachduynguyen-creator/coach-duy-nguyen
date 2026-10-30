@@ -20,6 +20,7 @@ from chuong_trinh import CT
 import cong_cu_ai
 import so_do
 import chuyen_gia   # dựng luôn trang doi-ngu-chuyen-gia.html
+import mentor       # dựng luôn trang mentor/index.html
 
 # Khung đầu bài thay cho ảnh chân dung (CDN 10/10/2026: không bài nào cũng đưa ảnh
 # của Duy lên đầu). Mỗi bài một kiểu theo nội dung, chữ lấy từ chính bài.
