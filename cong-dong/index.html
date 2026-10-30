@@ -103,41 +103,73 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (max-width:420px){.logo .ten-hieu small{display:none}}
 @media (max-width:520px){.nav .duoi{display:none}.nav .bao-rong{padding:0 16px}}
 
-/* ============ HERO: ảnh hội trường tràn màn hình, chữ tối trên lớp sáng, dải số ở chân ảnh ============ */
-/* Menu trong suốt nằm trên ảnh. --nav-h do script đo theo chiều cao thanh menu thật. */
-.nav:not(.cuon){background:transparent;border-bottom-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
-.nav{transition:background .26s var(--ease),border-color .26s var(--ease)}
-.hero{--nav-h:64px;position:relative;margin-top:calc(-1*var(--nav-h));min-height:100vh;min-height:100svh;display:flex;flex-direction:column;background:#DCE3EA url(img/cd-hoi-truong.webp) 50% 30%/cover no-repeat;overflow:hidden}
-/* Lớp sáng phía trên để chữ tối đọc được, không phủ lớp tối. */
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.7) 34%,rgba(255,255,255,.35) 52%,rgba(255,255,255,0) 66%);pointer-events:none}
-.hero-chu{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;width:100%;max-width:900px;margin-inline:auto;padding:calc(var(--nav-h) + clamp(40px,10vh,120px)) 24px 56px}
-.hero h1{font-size:clamp(40px,6.2vw,84px);line-height:1.02;letter-spacing:-.035em}
-.hero h1 span{white-space:nowrap}
-.hero h1,.hero .dan{text-shadow:0 0 18px rgba(255,255,255,.9),0 0 3px rgba(255,255,255,.8)}
-.hero .dan{font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:var(--ink-2);max-width:56ch;margin:0}
+/* ============ HERO: lưới chân dung, Coach Duy ở giữa ============ */
+.hero{position:relative;padding:44px 0 88px;overflow:hidden}
+.luoi{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.5fr) repeat(4,minmax(0,1fr));gap:16px;align-items:start;--fr:calc((100% - 8*16px)/9.5)}
+.cot{position:relative;display:flex;flex-direction:column;gap:16px;padding-top:var(--pt,0px)}
+.cot.ngoai{grid-row:1/3}
+/* vạch dọc mảnh phía sau từng cột, như bản mẫu */
+.vach-doc{position:absolute;top:-40px;bottom:-60px;width:1px;background:linear-gradient(180deg,transparent,var(--line) 8%,var(--line) 88%,transparent);pointer-events:none;z-index:0;left:calc(var(--k)*(var(--fr) + 16px) + var(--fr)/2)}
+.vach-doc.giua{left:calc(4*(var(--fr) + 16px) + var(--fr)*.75)}
+.vach-doc.phai{left:calc(4*(var(--fr) + 16px) + var(--fr)*1.5 + 16px + var(--k)*(var(--fr) + 16px) + var(--fr)/2)}
+.the{position:relative;z-index:1;border-radius:var(--r);background:var(--paper);background-color:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s);overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.the:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.the.anh{border:0;background:var(--anh-bg);background-color:#E6EAF0;aspect-ratio:1}
+.the.anh.cao{aspect-ratio:3/4}
+.the.anh.vuong{aspect-ratio:1}
+.the.anh img{width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block}
+/* Ảnh cắt nền giữ nguyên tỉ lệ, nên khung phải đúng bằng tỉ lệ ảnh gốc
+   485 trên 760. Để 3/4 thì hai bên hở 14px mỗi bên, nhìn như ảnh bị lệch. */
+.the.anh.cat{aspect-ratio:485/760}
+.the.anh.cat img{position:absolute;left:50%;bottom:0;height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom;transform:translateX(-50%)}
+.the.anh.noi{box-shadow:var(--shadow)}
+.the.anh.noi::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(15,18,24,.10);pointer-events:none}
+.the.anh .ten{position:absolute;left:12px;right:12px;bottom:0;z-index:2;color:var(--ink);font-size:13.5px;font-weight:700;line-height:1.3;letter-spacing:-.005em;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:10px 10px 0 0;padding:9px 10px 11px;box-shadow:0 -1px 2px rgba(15,18,24,.05)}
+.the.anh .ten span{display:block;font-weight:500;color:var(--ink-3);font-size:13px;margin-top:1px;letter-spacing:0}
+.hero-chu{grid-column:3/8;grid-row:2;position:relative;z-index:2;text-align:center;padding:28px 8px 0;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-chu::before{content:'';position:absolute;inset:0 -40px -40px -40px;z-index:-1;background:radial-gradient(ellipse 70% 80% at 50% 55%,var(--bg) 40%,rgba(255,255,255,0) 100%);pointer-events:none}
+.vien{display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:5px 12px 5px 10px;line-height:1.3;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:.01em}
+.vien i{width:7px;height:7px;border-radius:50%;background:var(--nhan);box-shadow:0 0 0 0 rgba(242,177,74,.5);animation:nhay 2s ease-out infinite;flex:none}
+@keyframes nhay{0%{box-shadow:0 0 0 0 rgba(242,177,74,.5)}70%{box-shadow:0 0 0 7px rgba(242,177,74,0)}100%{box-shadow:0 0 0 0 rgba(242,177,74,0)}}
+.hero h1{font-size:clamp(30px,3.1vw,46px);line-height:1.06;letter-spacing:-.03em}
+.hero h1 span{display:block;color:var(--ink-3)}
+.hero .dan{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:56ch}
+.hero .nutnhom{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.hero .chu-nho{font-size:13.5px;color:var(--ink-3);max-width:60ch}
+/* ẩn hiện theo khổ: dưới 1200 các cột tan ra, Coach Duy đứng đầu và chiếm 2x2 */
+@media (max-width:1199px){
+  .luoi{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .vach-doc{display:none}
+  .cot,.cot.rong,.cot.ngoai,.cot.giua{display:contents;grid-column:auto;grid-row:auto}
+  .the.anh.cao,.the.anh.vuong,.the.anh.cat{aspect-ratio:1}
+  .the.anh.trung-tam{grid-column:3/5;grid-row:1/3}
+  .hero-chu{grid-column:1/-1;grid-row:auto;padding-top:36px}
+  .luoi .the.uu3{display:none}
+  .hero h1{font-size:clamp(30px,4.2vw,44px)}
+}
+@media (max-width:759px){.luoi{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.the.anh.trung-tam{grid-column:2/4}.the.anh .ten{left:10px;right:10px;bottom:0;padding:6px 8px 8px;font-size:13px}.the.anh .ten span{display:none}}
+.ten-dt{display:none;grid-column:1/-1;text-align:center;margin:10px 0 0;font-size:13px;font-weight:700;color:var(--ink);line-height:1.35}.ten-dt span{display:block;font-weight:500;font-size:12.5px;color:var(--ink-3);margin-top:1px}
+@media (max-width:479px){.luoi{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start}.luoi .the.anh:not(.uu1b):not(.trung-tam),.luoi .the.anh.cao{display:none}.the.anh.trung-tam{grid-column:auto;grid-row:auto;order:2}.the.anh.dt-truoc{order:1}.the.anh.dt-sau{order:3}.ten-dt{order:8}.hero-chu{order:9}.the.anh,.the.anh.vuong,.the.anh.cat{aspect-ratio:3/4}.the.anh .ten{display:none}.ten-dt{display:block}.hero{padding:24px 0 64px}.hero-chu{padding-top:18px;gap:14px}.hero h1{font-size:30px}.hero .dan{font-size:16px}}
+
+/* chữ mới trên lưới cũ (Coach Duy chốt 30/10/2026): tiêu đề ba chữ, nút đen, dải ba số dưới lưới */
+.hero h1 span{display:inline;white-space:nowrap;color:inherit}
 .nut.den{background:var(--ink);border-color:var(--ink);color:#fff}
 .nut.den:hover{background:#262B35;border-color:#262B35;box-shadow:0 8px 20px -10px rgba(15,18,24,.55)}
-.dai-so{position:relative;z-index:1;background:rgba(255,255,255,.74);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-top:1px solid rgba(255,255,255,.7)}
-.dai-so .bao-rong{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.dai-so .chi-so{padding:24px 28px 26px;border-left:1px solid rgba(15,18,24,.12)}
+.dai-so{position:relative;z-index:2;margin-top:64px}
+.dai-so .bao-rong{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.dai-so .chi-so{padding:26px 28px 0;border-left:1px solid var(--line)}
 .dai-so .chi-so:first-child{border-left:0;padding-left:0}
 .dai-so b{display:block;font-family:var(--f-tit);font-weight:700;font-size:clamp(30px,3.2vw,44px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
 .dai-so b em{font-style:normal;color:var(--cam-dam)}
 .dai-so span{display:block;margin-top:10px;font-size:14px;line-height:1.45;color:var(--ink-2);max-width:30ch}
 @media (max-width:759px){
-  .hero{background-position:50% 100%}
-  .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.92) 48%,rgba(255,255,255,.5) 68%,rgba(255,255,255,0) 86%)}
-  .hero-chu{padding:calc(var(--nav-h) + 36px) 16px 40px;gap:18px}
-  .hero h1{font-size:clamp(34px,10vw,44px)}
-  .dai-so .bao-rong{grid-template-columns:1fr;padding:0 16px}
-  .dai-so .chi-so,.dai-so .chi-so:first-child{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-left:0;border-top:1px solid rgba(15,18,24,.12)}
+  .dai-so{margin-top:40px}
+  .dai-so .bao-rong{grid-template-columns:1fr}
+  .dai-so .chi-so,.dai-so .chi-so:first-child{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-left:0;border-top:1px solid var(--line)}
   .dai-so .chi-so:first-child{border-top:0}
   .dai-so b{flex:none;min-width:4.6em;font-size:26px}
   .dai-so span{margin-top:0;font-size:13.5px}
 }
-.the{position:relative;z-index:1;border-radius:var(--r);background:var(--paper);background-color:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s);overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
-@media (hover:hover){.the:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
-
 /* ============ PHẦN ============ */
 .phan{padding:96px 0;border-top:1px solid var(--line)}
 .phan.nen{background:var(--bg-2)}
@@ -707,10 +739,55 @@ figure{margin:0}
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero" aria-label="Giới thiệu">
-  <div class="hero-chu">
-    <h1><span>Thương hiệu.</span> <span>Hệ thống.</span> <span>Đội ngũ.</span></h1>
-    <p class="dan">Doanh nghiệp không nên lớn lên bằng cách Founder phải gánh nhiều hơn. Ở Cộng đồng Next Gen Founder, chúng ta cùng biến những điều tốt nhất của Founder thành năng lực của doanh nghiệp.</p>
-    <a class="nut den" href="#dang-ky">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="bao-rong">
+    <div class="luoi" id="luoi">
+      <i class="vach-doc" style="--k:0"></i><i class="vach-doc" style="--k:1"></i><i class="vach-doc" style="--k:2"></i><i class="vach-doc" style="--k:3"></i><i class="vach-doc giua"></i><i class="vach-doc phai" style="--k:0"></i><i class="vach-doc phai" style="--k:1"></i><i class="vach-doc phai" style="--k:2"></i><i class="vach-doc phai" style="--k:3"></i>
+      <!-- Cột 1 và 2: nhóm trái, kéo xuống hai hàng -->
+      <div class="cot ngoai" style="--pt:48px">
+        <div class="the anh cao uu1 uu1b"><img src="https://images.pexels.com/photos/33100431/pexels-photo-33100431.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh vuong uu2"><img src="https://images.pexels.com/photos/26425548/pexels-photo-26425548.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot ngoai" style="--pt:0px">
+        <div class="the anh vuong uu1"><img src="https://images.pexels.com/photos/32559271/pexels-photo-32559271.png?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/25884686/pexels-photo-25884686.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 3 và 4: hàng trên -->
+      <div class="cot" style="--pt:72px">
+        <div class="the anh vuong uu1 uu1b dt-truoc"><img src="https://images.pexels.com/photos/29995732/pexels-photo-29995732.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot" style="--pt:24px">
+        <div class="the anh cao uu2"><img src="https://images.pexels.com/photos/14230741/pexels-photo-14230741.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 5: Coach Duy ở giữa -->
+      <div class="cot giua" style="--pt:0px">
+        <div class="the anh cat noi trung-tam"><img src="img/cd-portrait-760.png" alt="Coach Duy Nguyễn, người sáng lập Cộng đồng Next Gen Founder" width="485" height="760" loading="eager" fetchpriority="high"><div class="ten">Coach Duy Nguyễn<span>Sáng lập Cộng đồng Next Gen Founder</span></div></div>
+      </div>
+      <!-- Cột 6 và 7: hàng trên -->
+      <div class="cot" style="--pt:24px">
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/26953810/pexels-photo-26953810.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot" style="--pt:72px">
+        <div class="the anh vuong uu2"><img src="https://images.pexels.com/photos/25884720/pexels-photo-25884720.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <!-- Cột 8 và 9: nhóm phải, kéo xuống hai hàng -->
+      <div class="cot ngoai" style="--pt:0px">
+        <div class="the anh vuong uu1 uu1b dt-sau"><img src="https://images.pexels.com/photos/29995740/pexels-photo-29995740.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh cao uu3"><img src="https://images.pexels.com/photos/31268616/pexels-photo-31268616.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+      <div class="cot ngoai" style="--pt:48px">
+        <div class="the anh cao uu1 uu1b"><img src="https://images.pexels.com/photos/9991917/pexels-photo-9991917.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+        <div class="the anh vuong uu3"><img src="https://images.pexels.com/photos/29995605/pexels-photo-29995605.jpeg?auto=compress&cs=tinysrgb&w=560&h=720&fit=crop" alt="Ảnh minh hoạ nhà sáng lập" width="560" height="720" loading="eager" decoding="async"></div>
+      </div>
+
+      <!-- Khối chữ giữa -->
+      <p class="ten-dt">Coach Duy Nguyễn <span>Sáng lập Cộng đồng Next Gen Founder</span></p>
+      <div class="hero-chu">
+        <h1><span>Thương hiệu.</span> <span>Hệ thống.</span> <span>Đội ngũ.</span></h1>
+        <p class="dan">Doanh nghiệp không nên lớn lên bằng cách Founder phải gánh nhiều hơn. Ở Cộng đồng Next Gen Founder, chúng ta cùng biến những điều tốt nhất của Founder thành năng lực của doanh nghiệp.</p>
+        <a class="nut den" href="#dang-ky">Đăng ký tham gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="chu-nho">Ảnh các chủ doanh nghiệp trong lưới là ảnh minh hoạ.</p>
+      </div>
+    </div>
   </div>
   <div class="dai-so">
     <div class="bao-rong">
@@ -1335,10 +1412,6 @@ figure{margin:0}
     texts.forEach(function(e,i){ e.style.transitionDelay=(noanim||reduce?0:cards.length*60+i*80)+'ms'; });
     hero.classList.add('len'); }
   if(noanim){ hero.classList.add('len'); } else { setTimeout(lenHero,40); }
-  /* màn hình đầu kéo lên nằm dưới thanh menu trong suốt, đo chiều cao menu thật vì trên điện thoại menu xuống hai dòng */
-  var dau=d.getElementById('top');
-  function doNav(){ if(hero&&dau&&!dau.classList.contains('cuon')) hero.style.setProperty('--nav-h',dau.offsetHeight+'px'); }
-  doNav(); addEventListener('resize',doNav); addEventListener('load',doNav);
 
   /* hiện khi cuộn tới */
   var hien=[].slice.call(d.querySelectorAll('.hien'));
