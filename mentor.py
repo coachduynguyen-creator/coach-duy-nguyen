@@ -13,7 +13,7 @@ THAN = dau_trang(
     "từ chủ doanh nghiệp tới CEO và tổng giám đốc. Anh chị chia sẻ theo lịch hợp với mình, kể cho những "
     "người chủ đang xây doanh nghiệp nghe một giai đoạn mình đã đi qua, rồi góp ý vào vấn đề họ đang gặp.") + """
 <section class="phan bd hoa-van">
-  <div class="doi-cot">
+  <div class="doi-cot mt-dau">
     <div class="hien">
       <p class="mono">Vì sao có nhóm Mentor</p>
       <h2>Vì sao Duy lập nhóm Mentor</h2>
@@ -89,8 +89,8 @@ THAN = dau_trang(
     <p>Người nghe là thành viên Master Club và Grand Master Club, hai cấp đồng hành dài hạn của Cộng đồng Next Gen Founder. Đây là những người chủ đang điều hành doanh nghiệp và mang vấn đề đang gặp tới buổi chia sẻ.</p>
   </div>
   <div class="luoi c2 tre hien">
-    <div class="anh-khung ngang"><img src="../img/mentor/ghi-chep.webp" alt="Những người chủ ngồi quanh bàn họp trong một buổi trao đổi" loading="lazy"></div>
-    <div class="anh-khung ngang"><img src="../img/mentor/hoi-truong.webp" alt="Hội trường kín người trong một buổi Duy giảng trực tiếp" loading="lazy"></div>
+    <div class="anh-khung ngang"><img src="../img/mentor/ghi-chep.webp?v=2" alt="Những người chủ ngồi quanh bàn họp trong một buổi trao đổi" loading="lazy"></div>
+    <div class="anh-khung ngang"><img src="../img/mentor/hoi-truong.webp?v=2" alt="Hội trường kín người trong một buổi Duy giảng trực tiếp" loading="lazy"></div>
   </div>
 </section>
 
@@ -137,6 +137,7 @@ THAN = dau_trang(
 .mt-vap .mt-nhan{color:#A2968A;margin-bottom:8px}
 .mt-vap h3:not(#_){text-align:left!important;margin:0;color:#F9F5F0;font-size:clamp(20px,2vw,24px);line-height:1.3;max-width:15ch}
 
+@media(max-width:999px){.mt-dau > .anh-khung{order:-1}}
 .mt-anh{margin-bottom:34px}
 .mt-anh figure{margin:0}
 .mt-anh figcaption{margin-top:10px;font-size:14px;color:var(--ink-3);text-align:center}
