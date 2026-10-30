@@ -154,5 +154,5 @@ THAN = dau_trang(
 
 trang("mentor/index.html", "Mentor · Đội ngũ cố vấn · Coach Duy Nguyễn",
       "Nhóm Mentor của Cộng đồng Next Gen Founder: những chủ doanh nghiệp đi trước kể lại một giai đoạn đã đi qua cho thành viên Master Club.",
-      THAN, "mentor/", anh_chia_se="img/cd-workshop.webp")
+      THAN, "mentor/", cuoi=False, anh_chia_se="img/cd-workshop.webp")
 print("  mentor/index.html")
