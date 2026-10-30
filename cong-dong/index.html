@@ -603,14 +603,23 @@ figure{margin:0}
 @media (max-width:560px){.form{padding:20px}.form .hang{grid-template-columns:minmax(0,1fr);gap:0}}
 
 /* ============ CHÂN TRANG ============ */
-.chan-trang{border-top:1px solid var(--line);padding:36px 0 44px;font-size:14px;color:var(--ink-3)}
-.chan-trang .bao-rong{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
-.chan-trang a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
-.chan-trang a:hover{color:var(--cam-dam);border-color:var(--cam-dam)}
-.chan-trang .lk{display:flex;gap:20px;flex-wrap:wrap}
-.chan-hieu{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
-.chan-hieu .dau-hieu{width:30px;height:30px;flex:none;color:var(--ink);margin-top:2px}
-.chan-hieu b{font-family:var(--f-tit);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.02em}
+/* chân trang: chép đúng chân trang của trang chủ (assets/style.css), trang này không nạp tệp đó nên giữ màu tối ở đây (Coach Duy góp ý 30/10/2026) */
+.chan-trang{background:#1E1815;border-top:1px solid #3D332C;padding:56px 0 60px;color:#F9F5F0}
+.chan-trang .bd{width:min(100% - 40px,1180px);margin-inline:auto}
+.chan-trang .ct{display:grid;gap:34px}
+@media(min-width:900px){.chan-trang .ct{grid-template-columns:minmax(0,1.1fr) minmax(0,1.9fr);gap:56px}}
+.chan-trang .logo{color:#F9F5F0;gap:11px}
+.chan-trang .logo .dau-hieu{width:30px}
+.chan-trang .logo b{font-family:var(--f-tit);font-weight:800;font-size:15.5px;letter-spacing:-.015em;line-height:1.15;display:block}
+.chan-trang .logo i{display:block;font-style:normal;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;color:#A2968A;text-transform:uppercase}
+.chan-trang .ct-gioi p{font-size:15px;color:#CDC2B6;margin-top:16px;max-width:34ch}
+.chan-trang .ct-cot{display:grid;gap:26px}
+@media(min-width:600px){.chan-trang .ct-cot{grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}}
+.chan-trang .ct-cot b{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A2968A;margin-bottom:12px}
+.chan-trang .ct-cot a{display:block;font-size:15px;color:#CDC2B6;text-decoration:none;padding:5px 0;transition:color .2s var(--ease)}
+.chan-trang .ct-cuoi{margin-top:40px;padding-top:22px;border-top:1px solid #3D332C;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:13.5px;color:#A2968A}
+.chan-trang .ct-cuoi a{color:#A2968A;text-decoration:none}
+.chan-trang .ct-cot a:hover,.chan-trang .ct-cuoi a:hover{color:#F2B14A}
 
 
 /* ============ KHOÁ HÀNG THẲNG NHAU (lưới con) ============ */
@@ -742,6 +751,8 @@ figure{margin:0}
   /* Điện thoại: chữ nội dung căn đều hai lề như cả website (Coach Duy chốt 12/10 và 14/10/2026); đoạn vốn căn giữa giữ dòng cuối ở giữa; tên và chức danh, nhãn, nút giữ nguyên */
   :is(p,li):not(#_):not(:where(nav,.nav) *):not(:where(.mono,.nhan,.nut,.btn,.ten-dt)){text-align:justify!important;text-justify:inter-word;hyphens:none}
   :is(p,li):not(#_):is(:where(.hero-chu,.khung) *){text-align-last:center}
+  /* danh sách và cột hẹp dưới 260px: chữ ít trên mỗi dòng nên căn đều làm hở khoảng trắng, căn trái cho dễ đọc (Coach Duy góp ý 30/10/2026) */
+  :is(li,li p,.nam5 p,.moc p,.dong p,.cg-nguoi .chu p):not(#_):not(#_){text-align:left!important}
 }
 
 /* ============ 05 ĐỘI NGŨ CỐ VẤN: nền cam nhạt riêng cho phần này (kẻ sọc chỉ dùng ở màn hình đầu), hàng chân dung chuyên gia, rồi buổi Mentor ảnh trái chữ phải ============ */
@@ -1491,9 +1502,34 @@ figure{margin:0}
 </section>
 
 <footer class="chan-trang">
-  <div class="bao-rong">
-    <div class="chan-hieu"><svg class="dau-hieu" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.53 10.5A11 11 0 1 0 25.53 21.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="16" r="3.4" fill="#F2B14A"/></svg><span><b>Next Gen Founder</b> by Coach Duy Nguyễn<br><a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span></div>
-    <div class="lk"><a href="../">Trang cá nhân Coach Duy Nguyễn</a><a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/">Cỗ máy Nội dung Một người</a><a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html">Phiếu chẩn đoán 7 phút</a><a href="#top">Lên đầu trang</a></div>
+  <div class="bd ct">
+    <div class="ct-gioi">
+      <a class="logo" href="../index.html" aria-label="Coach Duy Nguyễn"><img class="dau-hieu" src="../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
+      <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng để nhìn đúng vấn đề và giữ chuẩn, rồi trả lại quyền tự chủ.</p>
+    </div>
+    <div class="ct-cot">
+      <!-- Tạm ẩn từ 10/10/2026, dồn người xem vào Cộng đồng. Mở lại thì bỏ thẻ chú thích.
+      <div>
+        <b>Chương trình</b>
+        <a href="../cong-dong/">Cộng đồng Next Gen Founder</a><a href="../nguoi-dan-duong/">Người Dẫn Đường</a><a href="../phuong-phap.html">Phương pháp</a><a href="../chuong-trinh.html">Xem tất cả</a>
+      </div>
+      -->
+      <div>
+        <b>Nội dung</b>
+        <a href="../blog.html">Blog</a><a href="../phuong-phap.html">Phương pháp</a><a href="../cong-cu/">Công cụ</a><a href="../podcast.html">Podcast</a><a href="../cau-chuyen-hoc-vien.html">Câu chuyện thành công</a>
+      </div>
+      <div>
+        <b>Đi tiếp</b>
+        <a href="https://coachduynguyen.vn/cong-dong/">Cộng đồng Next Gen Founder</a>
+        <a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
+        <a href="https://coachduynguyen-creator.github.io/co-may-noi-dung/" target="_blank" rel="noopener">Cỗ máy Nội dung Một người</a>
+        <a href="../ve-toi.html">Về Duy</a><a href="../lien-he.html">Liên hệ</a>
+      </div>
+    </div>
+  </div>
+  <div class="bd ct-cuoi">
+    <span>Next Gen Founder · Coach Duy Nguyễn · <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a></span>
+    <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>
 
