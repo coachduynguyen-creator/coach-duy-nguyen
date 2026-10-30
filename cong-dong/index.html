@@ -546,21 +546,32 @@ figure{margin:0}
 .faq .muc{border-bottom:1px solid var(--line)}
 .faq .muc:last-child{border-bottom:0}
 .faq button{all:unset;display:grid;grid-template-columns:40px minmax(0,1fr) 28px;gap:14px;align-items:baseline;width:100%;box-sizing:border-box;padding:20px 24px;cursor:pointer;transition:background .2s}
-.faq button:hover{background:var(--bg-2)}
+@media (hover:hover){.faq button:hover{background:var(--bg-2)}}
 .faq button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
 .faq button b{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--ink-3);letter-spacing:.04em}
 .faq button span{font-size:18.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1.35}
 .faq button i{justify-self:end;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;position:relative;transition:transform .28s var(--ease),background .2s;align-self:center}
 .faq button i::before,.faq button i::after{content:'';position:absolute;background:var(--ink);width:10px;height:1.5px;left:5px;top:9.5px;transition:transform .28s var(--ease)}
 .faq button i::after{transform:rotate(90deg)}
-.faq .muc.mo button i{background:var(--ink);border-color:var(--ink)}
-.faq .muc.mo button i::before,.faq .muc.mo button i::after{background:#fff}
-.faq .muc.mo button i::after{transform:rotate(0)}
+.faq .muc.mo-ra button i{background:var(--ink);border-color:var(--ink)}
+.faq .muc.mo-ra button i::before,.faq .muc.mo-ra button i::after{background:#fff}
+.faq .muc.mo-ra button i::after{transform:rotate(0)}
 .faq .than{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s var(--ease)}
-.faq .muc.mo .than{grid-template-rows:1fr}
+.faq .muc.mo-ra .than{grid-template-rows:1fr}
 .faq .than > div{overflow:hidden}
 .faq .than p{padding:0 24px 22px 78px;font-size:16px;line-height:1.6;color:var(--ink-2)}
-@media (max-width:620px){.faq button{grid-template-columns:30px minmax(0,1fr) 24px;padding:16px 18px}.faq .than p{padding:0 18px 18px 18px}.faq button span{font-size:17px}}
+/* điện thoại: số thứ tự lên trên thành nhãn nhỏ để câu hỏi chiếm cả bề ngang, dấu cộng trừ không viền tròn (Coach Duy góp ý 30/10/2026) */
+@media (max-width:620px){
+  .faq button{grid-template-columns:minmax(0,1fr) 18px;column-gap:16px;row-gap:4px;padding:16px 18px}
+  .faq button b{grid-column:1;font-size:12px}
+  .faq button span{grid-column:1;font-size:17px}
+  .faq button i{grid-column:2;grid-row:1 / 3;width:18px;height:18px;border:0;border-radius:0}
+  .faq button i::before,.faq button i::after{width:14px;height:2px;left:2px;top:8px}
+  .faq .muc.mo-ra button i{background:none}
+  .faq .muc.mo-ra button i::before,.faq .muc.mo-ra button i::after{background:var(--ink)}
+  .faq .muc.mo-ra button b{color:var(--cam-dam)}
+  .faq .than p{padding:0 18px 18px}
+}
 
 /* ============ ĐĂNG KÝ (khối cuối) ============ */
 .dang-ky{padding:96px 0 104px}
@@ -1425,7 +1436,7 @@ figure{margin:0}
       <h2>Bảy câu hay được hỏi</h2>
     </div>
     <div class="faq hien" id="faq">
-      <div class="muc mo">
+      <div class="muc mo-ra">
         <button type="button" aria-expanded="true"><b>01</b><span>Cộng đồng đã mở chưa? Đăng ký xong thì bao giờ được vào?</span><i aria-hidden="true"></i></button>
         <div class="than"><div><p>Cộng đồng mở theo từng đợt, bắt đầu từ nhóm thành viên đầu tiên. Khi có ngày mở đợt, đội ngũ sẽ báo cho bạn ngay. Đăng ký trước để đội ngũ biết bạn và liên hệ khi tới đợt phù hợp.</p></div></div>
       </div>
@@ -1549,7 +1560,7 @@ figure{margin:0}
 
   /* hỏi đáp */
   var faq=d.getElementById('faq');
-  if(faq){ [].slice.call(faq.querySelectorAll('.muc button')).forEach(function(b){ b.addEventListener('click',function(){ var m=b.parentElement, mo=m.classList.toggle('mo'); b.setAttribute('aria-expanded',mo?'true':'false'); }); }); }
+  if(faq){ [].slice.call(faq.querySelectorAll('.muc button')).forEach(function(b){ b.addEventListener('click',function(){ var m=b.parentElement, mo=!m.classList.contains('mo-ra'); [].slice.call(faq.querySelectorAll('.muc')).forEach(function(x){ x.classList.toggle('mo-ra',x===m&&mo); x.querySelector('button').setAttribute('aria-expanded',x===m&&mo?'true':'false'); }); }); }); }
 
   /* chọn câu chuyện */
   var ch=d.getElementById('chuyen');
