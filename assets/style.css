@@ -344,6 +344,18 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
 .dau-trang .bd{position:relative;z-index:1}
 .dau-trang h1{font-size:clamp(32px,5vw,58px);margin-top:14px;max-width:min(34ch,100%)}
 .dau-trang p.dan{font-size:17.5px;color:var(--ink-2);margin-top:18px;max-width:min(90ch,100%)}
+/* đầu trang có ảnh nền: đen trắng, rê chuột thì hiện màu */
+.dau-trang.co-nen{isolation:isolate;padding:130px 0 120px;background:#120f0c}
+.dau-trang > .dt-nen{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1) contrast(1.08) brightness(.85);transition:filter .8s var(--ease),transform .8s var(--ease)}
+.dau-trang.co-nen::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(18,15,12,.94) 0%,rgba(18,15,12,.82) 42%,rgba(18,15,12,.25) 75%,rgba(18,15,12,.1) 100%)}
+@media(hover:hover){.dau-trang.co-nen:hover > .dt-nen{filter:grayscale(0) brightness(.95);transform:scale(1.02)}}
+.co-nen h1{max-width:min(20ch,100%);text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.co-nen p.dan{max-width:min(54ch,100%);color:#E9E1D6}
+@media(max-width:760px){
+  .dau-trang.co-nen{padding:200px 0 56px}
+  .dau-trang > .dt-nen{height:62%}
+  .dau-trang.co-nen::after{background:linear-gradient(180deg,rgba(18,15,12,.15) 0%,rgba(18,15,12,.7) 38%,rgba(18,15,12,.95) 62%)}
+}
 
 /* ---------- danh sách bài đầy đủ ---------- */
 .luoi-bai{display:grid;gap:22px}
@@ -767,6 +779,11 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);padding:56px 0 60
   /* dòng trong thẻ cũng sáng theo */
   .the:hover p,.hop:hover p,.dx article:hover p,.the-ct:hover p,.the-bai:hover p,.bai-lon:hover p,
   .chang:hover p,.yt-the:hover p,.niem-tin article:hover p,.cd-hang article:hover p{color:var(--ink-doc)}
+  /* nền kem: thẻ giữ màu sáng khi rê, không thì chữ tối nằm trên nền tối */
+  .phan-sang :is(.the,.hop,.dx article,.the-ct,.loi:not(.vang),.the-bai,.bai-lon,.chang,.yt-the,.niem-tin article,.cd-hang article,.hst-nhom):hover{
+    background-color:var(--panel);background-image:var(--paper);border-color:var(--vang);
+    box-shadow:var(--shadow)}
+  .phan-sang :is(.the,.hop,.dx article,.the-ct,.the-bai,.bai-lon,.chang,.yt-the,.niem-tin article,.cd-hang article):hover p{color:var(--ink-2)}
   /* hàng trong danh sách cũng phải thấy rõ khi rê */
   .viec5 .d:hover,.nl .hang:hover,.tap:hover,.bai-nho:hover,.dau .o:hover{background:rgba(242,177,74,.07)}
 }

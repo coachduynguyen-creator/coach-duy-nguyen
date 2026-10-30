@@ -618,7 +618,7 @@ NIEM_TIN = [
 niem_tin_html = "".join('<article><h3>%s</h3><p>%s</p></article>' % n for n in NIEM_TIN)
 
 VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp",
-  "Duy đi cùng các chủ doanh nghiệp biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.") + """
+  "Duy đi cùng các chủ doanh nghiệp biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.", anh="img/dau-trang/ve-duy.webp", vi_tri="60% 45%") + """
 <section class="phan bd">
   <div class="vt">
     <div class="vt-chu hien">
@@ -758,7 +758,7 @@ print("  ve-toi.html")
 
 # ---------------------------------------------------------------- PHƯƠNG PHÁP
 PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn và quỹ đạo niềm tin",
-  "Duy dùng ba bản đồ mỗi ngày khi đi cùng một chủ doanh nghiệp. Bản đầu là năm việc người cố vấn phải làm được, bản hai là bốn năng lực cần có, bản ba là quỹ đạo niềm tin, cách giữ quan hệ với khách lâu dài thay cho phễu bán hàng.") + """
+  "Duy dùng ba bản đồ mỗi ngày khi đi cùng một chủ doanh nghiệp. Bản đầu là năm việc người cố vấn phải làm được, bản hai là bốn năng lực cần có, bản ba là quỹ đạo niềm tin, cách giữ quan hệ với khách lâu dài thay cho phễu bán hàng.", anh="img/dau-trang/phuong-phap.webp", vi_tri="50% 40%") + """
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
@@ -1071,7 +1071,7 @@ CAP = [
 ]
 CHUONG_TRINH = dau_trang("Chương trình",
   "Hai con đường đi cùng Duy",
-  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành huấn luyện viên kinh doanh.") + """
+  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành huấn luyện viên kinh doanh.", anh="img/dau-trang/chuong-trinh.webp", vi_tri="right 40%") + """
 
 <section class="phan bd" style="padding-top:0">
   <div class="phan-dau hien">
@@ -1203,7 +1203,7 @@ for c in CT:
     if c.get("chuyen_tiep"): tt.append(("Tên chương trình", c["chuyen_tiep"]))
     bang_tt = "".join('<div><b>%s</b><span>%s</span></div>' % t for t in tt)
 
-    than = dau_trang(c["nang_luc"], c["ten"], c["tom"]) + """
+    than = dau_trang(c["nang_luc"], c["ten"], c["tom"], anh="../img/dau-trang/" + ("ct-" + c["tep"].replace(".html", ".webp") if os.path.exists("img/dau-trang/ct-" + c["tep"].replace(".html", ".webp")) else "chuong-trinh-rieng.webp"), vi_tri="50% 45%") + """
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
@@ -1268,7 +1268,7 @@ CHU_DE = ["Tất cả"] + sorted({b["chu_de"] for b in BAI})
 chu_de_html = "".join('<button type="button" data-cd="%s"%s>%s</button>' % (t, ' class="on"' if i == 0 else '', t) for i, t in enumerate(CHU_DE))
 
 BLOG = dau_trang("Blog", "Chỗ chủ doanh nghiệp hay vấp nhất, và cách gỡ",
-  "Bài viết về điểm nghẽn của người chủ, từ quan hệ với khách tới việc biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Không viết bài theo xu hướng.") + """
+  "Bài viết về điểm nghẽn của người chủ, từ quan hệ với khách tới việc biến kinh nghiệm thành hệ thống mà đội ngũ cùng vận hành. Không viết bài theo xu hướng.", anh="img/dau-trang/blog.webp", vi_tri="50% 40%") + """
 <section class="phan bd hoa-van">
   <div class="phan-dau hien"><p class="mono">Bài mới nhất</p><h2>%s</h2></div>
   <div class="blog hien">
@@ -2163,7 +2163,7 @@ KHU_BA_NGANH = """
               % (html.escape(h["ten"]), html.escape(h["nganh"]), h["ket_qua"], h["doi"]) for h in _BH_THE)
 
 CAU_CHUYEN = dau_trang("Câu chuyện thành công", "Họ đã đổi cách làm thế nào, và chuyện gì xảy ra sau đó",
-  "Đây là chuyện của những người chủ doanh nghiệp và những người làm tư vấn bán hàng đã làm việc cùng Duy. Họ tự kể bằng video hoặc tin nhắn: trước đây họ làm thế nào, đã đổi điều gì, và sau đó ra sao.") \
+  "Đây là chuyện của những người chủ doanh nghiệp và những người làm tư vấn bán hàng đã làm việc cùng Duy. Họ tự kể bằng video hoặc tin nhắn: trước đây họ làm thế nào, đã đổi điều gì, và sau đó ra sao.", anh="img/dau-trang/cau-chuyen.webp", vi_tri="50% 50%") \
   + KHU_FOUNDER + KHU_BAN_HANG + TUONG_VIDEO + KHU_ANH + KHU_BA_NGANH \
   + _story(_NOI_BAT) + "".join(_ngan(h) for h in _FOUNDER + _BH_DAI) + """
 <script>
@@ -2558,7 +2558,7 @@ print("  chuong-trinh/trusted-founder-brand.html (chuyen huong ve /founder-brand
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
-  "Số lượng nhận rất giới hạn. Chọn đúng cửa dưới đây thì Duy trả lời nhanh hơn, và bạn cũng đỡ mất thời gian chờ.") + """
+  "Số lượng nhận rất giới hạn. Chọn đúng cửa dưới đây thì Duy trả lời nhanh hơn, và bạn cũng đỡ mất thời gian chờ.", anh="img/dau-trang/lien-he.webp", vi_tri="50% 50%") + """
 <section class="phan bd hoa-van">
   <div class="lh tre hien">
     <div class="hop">
@@ -2606,7 +2606,7 @@ print("  lien-he.html")
 
 # ---------------------------------------------------------------- 404
 BON04 = dau_trang("Không tìm thấy", "Không tìm thấy trang này",
-  "Có thể đường dẫn đã đổi, hoặc bạn gõ nhầm một ký tự. Dưới đây là những chỗ hay được tìm nhất.") + """
+  "Có thể đường dẫn đã đổi, hoặc bạn gõ nhầm một ký tự. Dưới đây là những chỗ hay được tìm nhất.", anh="img/dau-trang/khong-tim-thay.webp", vi_tri="50% 35%") + """
 <section class="phan bd hoa-van">
   <div class="luoi c3 tre hien">
     <article class="the"><h3>Trang chủ</h3><p>Bắt đầu lại từ đầu.</p>

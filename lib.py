@@ -316,14 +316,18 @@ NGUONG_MONO = 20
 def lop_nhan(t):
     return "mono" if len(t) <= NGUONG_MONO else "mono mono-dai"
 
-def dau_trang(nhan, tieu, dan):
-    return """<header class="dau-trang hoa-van">
+def dau_trang(nhan, tieu, dan, anh=None, vi_tri="50% 40%"):
+    # anh: ảnh nền đen trắng, rê chuột thì hiện màu. Đường dẫn viết như trong trang gọi.
+    nen = ""
+    if anh:
+        nen = '\n  <img class="dt-nen" src="%s" alt="" aria-hidden="true" fetchpriority="high" style="object-position:%s">' % (anh, vi_tri)
+    return """<header class="dau-trang hoa-van%s">%s
   <div class="bd">
     <p class="%s">%s</p>
     <h1>%s</h1>
     <p class="dan">%s</p>
   </div>
-</header>""" % (lop_nhan(nhan), nhan, tieu, dan)
+</header>""" % (" co-nen" if anh else "", nen, lop_nhan(nhan), nhan, tieu, dan)
 
 # ---------------------------------------------------------------------------
 # Khai báo sẵn chiều rộng và chiều cao cho mọi thẻ ảnh.

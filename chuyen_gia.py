@@ -119,7 +119,7 @@ KHOI_TRANG_CHU = """<section class="phan bd hoa-van duoi" id="doi-ngu-co-van">
 THAN = dau_trang(
     "Đội ngũ chuyên gia cố vấn",
     "Chuyên gia ngồi cùng bạn trước khi việc lớn xảy ra",
-    "Duy đi cùng bạn ở bán hàng, thương hiệu và kỹ năng của người chủ. Còn những việc cần chuyên môn sâu như kế toán, thuế, tài chính gia đình hay phong thủy thì nên hỏi người đang làm nghề đó. Bốn chuyên gia dưới đây đồng hành cùng Cộng đồng Next Gen Founder, để bạn hỏi đúng người, đúng lúc.") + """
+    "Duy đi cùng bạn ở bán hàng, thương hiệu và kỹ năng của người chủ. Còn những việc cần chuyên môn sâu như kế toán, thuế, tài chính gia đình hay phong thủy thì nên hỏi người đang làm nghề đó. Bốn chuyên gia dưới đây đồng hành cùng Cộng đồng Next Gen Founder, để bạn hỏi đúng người, đúng lúc.", anh="img/dau-trang/chuyen-gia.webp", vi_tri="40% 40%") + """
 
 <section class="phan bd">
   <div class="phan-dau hien">
