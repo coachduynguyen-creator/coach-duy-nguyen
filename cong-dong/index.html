@@ -156,7 +156,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .nut.den{background:var(--ink);border-color:var(--ink);color:#fff}
 .nut.den:hover{background:#262B35;border-color:#262B35;box-shadow:0 8px 20px -10px rgba(15,18,24,.55)}
 .dai-so{position:relative;z-index:2;margin-top:64px}
-.dai-so .bao-rong{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.dai-so .bao-rong{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
 .dai-so .chi-so{padding:26px 28px 0;border-left:1px solid var(--line)}
 .dai-so .chi-so:first-child{border-left:0;padding-left:0}
 .dai-so b{display:block;font-family:var(--f-tit);font-weight:700;font-size:clamp(30px,3.2vw,44px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
@@ -719,6 +719,34 @@ figure{margin:0}
   :is(p,li):not(#_):not(:where(nav,.nav) *):not(:where(.mono,.nhan,.nut,.btn,.ten-dt)){text-align:justify!important;text-justify:inter-word;hyphens:none}
   :is(p,li):not(#_):is(:where(.hero-chu,.khung) *){text-align-last:center}
 }
+
+/* ============ 05 ĐỘI NGŨ CỐ VẤN: hàng chân dung chuyên gia trên nền kẻ sọc, rồi buổi Mentor ảnh trái chữ phải ============ */
+.co-van{background-color:#fff;background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),var(--line) calc(25% - 1px),var(--line) 25%)}
+.cg-hang{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cg-nguoi{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;color:inherit;text-decoration:none;box-shadow:var(--shadow-s);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
+@media (hover:hover){.cg-nguoi:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:var(--line-2)}}
+.cg-nguoi img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 25%;background:var(--bg-3)}
+.cg-nguoi .chu{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cg-nguoi h3{font-size:20px}
+.cg-nguoi .nghe{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--cam-dam)}
+.cg-nguoi p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.cg-nguoi .xem{margin-top:auto;padding-top:10px;font-size:14px;font-weight:600;color:var(--ink)}
+.cg-ghi{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 28px;font-size:15px;color:var(--ink-2)}
+.cg-ghi b{color:var(--ink)}
+.mt{margin-top:88px;padding-top:56px;border-top:1px solid var(--ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.mt .anh-khung{aspect-ratio:3/2}
+.mt-chu{display:flex;flex-direction:column;gap:16px}
+.mt-chu h3{font-size:clamp(24px,2.4vw,32px)}
+.mt-chu > p{font-size:16.5px;line-height:1.6;color:var(--ink-2)}
+.mt-vach{display:grid;grid-template-columns:1fr 1fr;border-top:3px solid var(--ink)}
+.mt-vach div{padding:12px 14px 0 0}
+.mt-vach div + div{border-left:1px solid var(--line);padding-left:14px}
+.mt-vach b{display:block;font-family:var(--f-tit);font-size:22px;letter-spacing:-.02em}
+.mt-vach span{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.mt-chu .nho{font-size:14px;color:var(--ink-3)}
+@media (max-width:900px){.mt{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:64px;padding-top:40px}}
+@media (max-width:760px){.co-van{background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(50% - 1px),var(--line) calc(50% - 1px),var(--line) 50%)}.cg-hang{grid-template-columns:minmax(0,1fr);gap:14px}.cg-nguoi{flex-direction:row}.cg-nguoi img{width:38%;flex:none;aspect-ratio:auto;height:auto;min-height:100%}.cg-nguoi .chu{padding:14px 16px 16px}.cg-nguoi h3{font-size:18px}.cg-nguoi p{font-size:14px}}
+@media (max-width:420px){.mt-vach b{font-size:18px;white-space:nowrap}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coachduynguyen.vn/#to-chuc", "name": "Next Gen Founder by Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/", "logo": "https://coachduynguyen.vn/img/logo-dn.webp", "founder": {"@id": "https://coachduynguyen.vn/#coach-duy"}, "description": "Cộng đồng phát triển cho nhà sáng lập thế hệ mới tại Việt Nam."}, {"@type": "Person", "@id": "https://coachduynguyen.vn/#coach-duy", "name": "Coach Duy Nguyễn", "url": "https://coachduynguyen.vn/", "jobTitle": "Người cố vấn cho nhà sáng lập thế hệ mới", "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn tạo niềm tin", "Xây hệ thống doanh nghiệp", "Kiến tạo cộng đồng"]}, {"@type": "WebPage", "@id": "https://coachduynguyen.vn/cong-dong/", "url": "https://coachduynguyen.vn/cong-dong/", "name": "Cộng đồng Next Gen Founder", "inLanguage": "vi-VN", "isPartOf": {"@id": "https://coachduynguyen.vn/#to-chuc"}, "about": {"@id": "https://coachduynguyen.vn/#coach-duy"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cộng đồng đã mở chưa? Đăng ký xong thì bao giờ được vào?", "acceptedAnswer": {"@type": "Answer", "text": "Cộng đồng mở theo từng đợt, bắt đầu từ nhóm thành viên đầu tiên. Khi có ngày mở đợt, đội ngũ sẽ báo cho bạn ngay. Đăng ký trước để đội ngũ biết bạn và liên hệ khi tới đợt phù hợp."}}, {"@type": "Question", "name": "Tôi có phải học cả bốn năng lực mới có kết quả không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Bạn bắt đầu từ năng lực đang cản bước tiếp theo của mình. Không ai ép bạn học cả bốn chỉ để bán thêm. Lộ trình đi theo vấn đề thật của bạn."}}, {"@type": "Question", "name": "Tôi có được gặp riêng Coach Duy không?", "acceptedAnswer": {"@type": "Answer", "text": "Cộng đồng không có tư vấn riêng không giới hạn, và bạn không thể gặp Duy bất cứ lúc nào. Giá trị lớn nhất đến từ các thành viên giúp nhau và từ các hoạt động chung, không dồn hết vào một người. Cố vấn riêng là dịch vụ ký riêng, nhận rất ít."}}, {"@type": "Question", "name": "Cộng đồng có cam kết doanh thu không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Cộng đồng cam kết hoạt động đều đặn và tiêu chuẩn rõ ràng. Bạn nhận góp ý thật và một cách đo tiến bộ có bằng chứng. Bạn tự làm, và luôn có người đi cùng. Cộng đồng không lấy câu chuyện của một người để hứa kết quả cho mọi người."}}, {"@type": "Question", "name": "Tôi làm bán hàng hoặc quản lý, không phải người sáng lập, có hợp không?", "acceptedAnswer": {"@type": "Answer", "text": "Bạn cứ đăng ký. Mức Thành viên giúp bạn tìm hiểu và chọn bước tiếp theo. Người làm bán hàng có chương trình riêng, đội ngũ sẽ chỉ đúng chỗ khi trao đổi. Quản lý chủ chốt của doanh nghiệp thành viên được mời tham gia một số hoạt động."}}, {"@type": "Question", "name": "AI có vai trò gì trong cộng đồng này?", "acceptedAnswer": {"@type": "Answer", "text": "AI có mặt trong cả bốn năng lực, giúp bạn làm nhanh và đều đặn hơn những việc đã làm đúng, đồng thời sắp xếp chất liệu thật từ công việc. Cộng đồng không dùng AI để sản xuất thật nhiều nội dung, và không hợp với người chỉ muốn điều đó."}}]}]}</script>
 </head>
@@ -733,7 +761,7 @@ figure{margin:0}
     <span class="tien" id="tien" aria-hidden="true"></span>
   </div>
   <div class="nav-phan-bao">
-    <nav class="nav-phan" aria-label="Các phần của trang"><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#muc-tieu">Mục tiêu</a><a href="#cau-chuyen">Câu chuyện</a><a href="#loi-ich">Lợi ích</a><a href="#nhip-song">Hoạt động</a><a href="#ba-cap">Ba cấp</a><a href="#ai-dung">Về Coach Duy</a><a href="#tham-gia">Cách tham gia</a><a href="#hoi-dap">Hỏi đáp</a></nav>
+    <nav class="nav-phan" aria-label="Các phần của trang"><a href="#la-gi">Là gì</a><a href="#danh-cho-ai">Dành cho ai</a><a href="#muc-tieu">Mục tiêu</a><a href="#cau-chuyen">Câu chuyện</a><a href="#loi-ich">Lợi ích</a><a href="#nhip-song">Hoạt động</a><a href="#co-van">Đội ngũ cố vấn</a><a href="#ba-cap">Ba cấp</a><a href="#ai-dung">Về Coach Duy</a><a href="#tham-gia">Cách tham gia</a><a href="#hoi-dap">Hỏi đáp</a></nav>
   </div>
 </header>
 
@@ -794,6 +822,7 @@ figure{margin:0}
       <div class="chi-so"><b>20<em>+</em></b><span>năm bán hàng và kinh doanh của Coach Duy, tính từ 2004</span></div>
       <div class="chi-so"><b>800.000<em>+</em></b><span>người theo dõi Coach Duy trên các nền tảng, tính tới tháng 8/2026</span></div>
       <div class="chi-so"><b>10.000</b><span>Next Gen Founder tại Việt Nam, mục tiêu Duy góp phần tạo nên</span></div>
+      <div class="chi-so"><b>200<em>+</em></b><span>thành viên trong Cộng đồng Next Gen Founder, tính tới 30/10/2026</span></div>
     </div>
   </div>
 </section>
@@ -1164,7 +1193,64 @@ figure{margin:0}
   </div>
 </section>
 
-<!-- ================= 05 BA CẤP ================= -->
+<!-- ================= 05 ĐỘI NGŨ CỐ VẤN ================= -->
+<section class="phan co-van" id="co-van">
+  <div class="bao">
+    <div class="dau-phan hien">
+      <span class="nhan">Đội ngũ cố vấn</span>
+      <h2>Người giỏi một nghề, <span>và người đã đi trước bạn vài chặng</span></h2>
+      <p class="dan">Có những việc trong doanh nghiệp cần đúng người trong nghề, như sổ sách, thuế hay tiền của gia đình. Có những việc chỉ người từng đi qua mới kể được. Cộng đồng có cả hai: chuyên gia cố vấn theo từng nghề, và Mentor là những chủ doanh nghiệp đã đi trước.</p>
+    </div>
+
+    <div class="cg-hang hien tre">
+      <a class="cg-nguoi" href="../doi-ngu-chuyen-gia.html#thanh-bui">
+        <img src="../img/chuyen-gia/thanh-bui.webp" alt="Chân dung Thanh Bùi" width="480" height="480" loading="lazy">
+        <div class="chu">
+          <span class="nghe">Kế toán và thuế</span>
+          <h3>Thanh Bùi</h3>
+          <p>20 năm tư vấn, đào tạo và xây dựng hệ thống kế toán chuẩn cho doanh nghiệp và các dự án FDI.</p>
+          <span class="xem">Xem hồ sơ</span>
+        </div>
+      </a>
+      <a class="cg-nguoi" href="../doi-ngu-chuyen-gia.html#tai-chinh-ca-nhan">
+        <img src="../img/chuyen-gia/tai-chinh-ca-nhan.webp" alt="Chân dung Cherry Nguyễn" width="720" height="720" loading="lazy">
+        <div class="chu">
+          <span class="nghe">Tài chính cá nhân, cố vấn tài chính tại FIDT</span>
+          <h3>Cherry Nguyễn</h3>
+          <p>Tách tiền gia đình khỏi tiền doanh nghiệp, để những tháng kinh doanh đi xuống không kéo cả nhà đi theo.</p>
+          <span class="xem">Xem hồ sơ</span>
+        </div>
+      </a>
+      <a class="cg-nguoi" href="../doi-ngu-chuyen-gia.html#phong-thuy">
+        <img src="../img/chuyen-gia/phong-thuy.webp" alt="Chân dung Coach Lê Phương" width="720" height="720" loading="lazy">
+        <div class="chu">
+          <span class="nghe">Phong thủy và tử vi</span>
+          <h3>Coach Lê Phương</h3>
+          <p>Xem phong thủy văn phòng, cửa hàng và chọn thời điểm cho những việc lớn của doanh nghiệp.</p>
+          <span class="xem">Xem hồ sơ</span>
+        </div>
+      </a>
+    </div>
+    <p class="cg-ghi hien"><span><b>Mọi thành viên</b> được dự buổi hỏi đáp trực tuyến với chuyên gia. Thành viên Master Club có thêm workshop với chuyên gia.</span><span>Đội ngũ đang mời thêm chuyên gia pháp lý.</span></p>
+
+    <div class="mt hien">
+      <figure class="anh-khung"><img src="../img/cd-workshop.webp" alt="Coach Duy cầm micro giữa một nhóm nhỏ chủ doanh nghiệp ngồi quanh bàn" width="1400" height="933" loading="lazy"></figure>
+      <div class="mt-chu">
+        <span class="nhan">Mentor</span>
+        <h3>Mỗi tháng một buổi với người đã đi trước</h3>
+        <p>Mỗi tháng có một anh chị chủ doanh nghiệp đi trước kể lại một chặng mình đã đi qua, chỗ đã vấp và cách đã gỡ. Nửa sau buổi, người kể góp ý thẳng vào vấn đề thật của vài thành viên Master Club.</p>
+        <div class="mt-vach">
+          <div><b>45 phút kể</b><span>Một chặng anh chị đã đi qua, chỗ vấp và cách gỡ</span></div>
+          <div><b>45 phút góp ý</b><span>Vào vấn đề thật của vài thành viên Master Club</span></div>
+        </div>
+        <p class="nho">90 phút qua Zoom, buổi tối ngày thường. Dành cho thành viên Master Club và Grand Master Club.</p>
+        <a class="lien" href="../mentor/" style="align-self:flex-start">Bạn đã đi trước và muốn dẫn dắt người đi sau? Xem trang Mentor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 BA CẤP ================= -->
 <section class="phan" id="ba-cap">
   <div class="bao">
     <div class="dau-phan hien">
@@ -1194,6 +1280,7 @@ figure{margin:0}
                 <li>Nội dung chọn lọc, podcast, livestream</li>
                 <li>Bài tự đánh giá và công cụ để bắt đầu</li>
                 <li>Hội thảo định kỳ về những vấn đề người sáng lập hay gặp</li>
+                <li>Buổi hỏi đáp trực tuyến với chuyên gia cố vấn</li>
                 <li>Hướng dẫn chọn bước tiếp theo</li>
               </ul>
               <p class="dk-cap"><b>Điều kiện</b> Miễn phí, có đăng ký tham gia. Bạn cho biết mình là ai trước khi vào.</p>
@@ -1217,6 +1304,7 @@ figure{margin:0}
                 <li>Mỗi tuần một buổi coaching với Duy để mổ xẻ việc của bạn</li>
                 <li>Mỗi tháng một chương trình chuyên đề và một buổi gặp trực tiếp tại Hà Nội</li>
                 <li>Mọi khóa học online của Next Gen Founder, workshop với chuyên gia khách mời</li>
+                <li>Buổi Mentor hằng tháng với chủ doanh nghiệp đi trước</li>
                 <li>Nhóm kết nối kinh doanh riêng, đội ngũ hỗ trợ riêng</li>
                 <li>Bộ tài liệu, mẫu để làm theo</li>
               </ul>
@@ -1258,7 +1346,7 @@ figure{margin:0}
   </div>
 </section>
 
-<!-- ================= 06 AI DỰNG ================= -->
+<!-- ================= 07 AI DỰNG ================= -->
 <section class="phan nen" id="ai-dung">
   <div class="bao">
     <div class="dau-phan hien">
@@ -1317,11 +1405,11 @@ figure{margin:0}
   </div>
 </section>
 
-<!-- ================= 08 HỎI ĐÁP ================= -->
+<!-- ================= 09 HỎI ĐÁP ================= -->
 <section class="phan nen" id="hoi-dap">
   <div class="bao">
     <div class="dau-phan hien">
-      <h2>Sáu câu hay được hỏi</h2>
+      <h2>Bảy câu hay được hỏi</h2>
     </div>
     <div class="faq hien" id="faq">
       <div class="muc mo">
@@ -1347,6 +1435,10 @@ figure{margin:0}
       <div class="muc">
         <button type="button" aria-expanded="false"><b>06</b><span>AI có vai trò gì trong cộng đồng này?</span><i aria-hidden="true"></i></button>
         <div class="than"><div><p>AI có mặt trong cả bốn năng lực, giúp bạn làm nhanh và đều đặn hơn những việc đã làm đúng, đồng thời sắp xếp chất liệu thật từ công việc. Cộng đồng không dùng AI để sản xuất thật nhiều nội dung, và không hợp với người chỉ muốn điều đó.</p></div></div>
+      <div class="muc">
+        <button type="button" aria-expanded="false"><b>07</b><span>Chuyên gia cố vấn và Mentor khác nhau ở chỗ nào?</span><i aria-hidden="true"></i></button>
+        <div class="than"><div><p>Chuyên gia cố vấn giỏi một nghề cụ thể như kế toán, thuế, tài chính hay phong thủy. Mentor là chủ doanh nghiệp đi trước, kể lại con đường mình đã đi.</p></div></div>
+      </div>
       </div>
     </div>
   </div>
