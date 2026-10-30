@@ -52,12 +52,18 @@ CT_MENU = [
     ("chuong-trinh.html", "Xem tất cả chương trình", ""),
 ]
 
+# Coach Duy chốt 30/10/2026: Đội ngũ cố vấn có hai mục con.
+DN_MENU = [
+    ("doi-ngu-chuyen-gia.html", "Chuyên gia cố vấn", "Người giỏi một nghề: thuế, tài chính, phong thủy"),
+    ("mentor/", "Mentor", "Chủ doanh nghiệp đi trước kể lại đường đã đi"),
+]
+
 MENU = [
     ("ve-toi.html", "Về Duy", None),
     # Coach Duy chốt 12/10/2026: mục Chương trình thay chỗ Phương pháp trên menu. Trang
     # Phương pháp giữ nguyên, dẫn tới từ trang Về Duy, trang chủ và chân trang.
     ("chuong-trinh.html", "Chương trình", CT_MENU),
-    ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", None),
+    ("doi-ngu-chuyen-gia.html", "Đội ngũ cố vấn", DN_MENU),
     ("cau-chuyen-hoc-vien.html", "Câu chuyện", None),
     ("blog.html", "Blog", None),
     ("cong-cu/", "Công cụ", None),
@@ -82,7 +88,8 @@ def dd(h, p=""):
 def nav(active, p=""):
     ra = []
     for h, t, con in MENU:
-        on = ' class="on"' if (h == active or (con and active.startswith("chuong-trinh"))) else ''
+        on = ' class="on"' if (h == active or (con and (active in [c[0] for c in con]
+                                     or (h == "chuong-trinh.html" and active.startswith("chuong-trinh"))))) else ''
         if con:
             muc = []
             for ch, ct, cm in con:
@@ -108,12 +115,12 @@ def nav(active, p=""):
         if not con:
             nho.append('<a href="%s"%s>%s</a>' % (dd(h, p), on, t))
             continue
-        muc = ['<a class="con" href="%s">Tất cả chương trình</a>' % dd(h, p)]
+        muc = ['<a class="con" href="%s">Tất cả chương trình</a>' % dd(h, p)] if h == "chuong-trinh.html" else []
         for ch, ct, cm in con:
-            if ch == "SEP" or ch == h: continue
+            if ch == "SEP" or (ch == h and muc): continue
             muc.append('<a class="con" href="%s">%s</a>' % (dd(ch, p), ct))
         nho.append('<details class="gap"%s><summary>%s</summary>%s</details>'
-                   % (" open" if h == active else "", t, "".join(muc)))
+                   % (" open" if h == active or active in [c[0] for c in con] else "", t, "".join(muc)))
     menu_nho = "".join(nho)
 
     cta = ('<a class="nut nut-v nut-nho nav-cta" href="%s">'
