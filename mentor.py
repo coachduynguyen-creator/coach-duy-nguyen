@@ -62,11 +62,17 @@ THAN = dau_trang(
     <p class="mono">Một buổi chia sẻ</p>
     <h2>Một buổi chia sẻ diễn ra thế nào</h2>
     <p>Anh chị nhận bao nhiêu buổi là do anh chị chọn, không có số buổi bắt buộc. Có người chỉ nhận một buổi trong năm, có người sẵn sàng chia sẻ hàng tuần, <span class="nhan">Duy xếp lịch theo anh chị.</span></p>
+    <p>Phần lớn buổi chia sẻ diễn ra qua Zoom. Cộng đồng cũng có những buổi gặp mặt trực tiếp, từ nhóm nhỏ ngồi quanh một màn hình tới bữa tối trao đổi, và Duy rất mong anh chị tới ngồi cùng và chia sẻ ở những buổi đó.</p>
   </div>
   <div class="mt-so tre hien">
     <div><b>90 phút</b><span>mỗi buổi</span></div>
-    <div><b>Zoom</b><span>ngồi ở đâu cũng được</span></div>
+    <div><b>Zoom</b><span>hoặc gặp trực tiếp</span></div>
     <div><b>Buổi tối</b><span>trong tuần</span></div>
+  </div>
+  <div class="luoi c3 tre hien mt-anh">
+    <figure><div class="anh-khung ngang"><img src="../img/mentor/zoom.webp" alt="Thành viên Cộng đồng trao đổi qua Zoom" loading="lazy"></div><figcaption>Qua Zoom, ngồi ở đâu cũng được</figcaption></figure>
+    <figure><div class="anh-khung ngang"><img src="../img/mentor/nhom-nho.webp" alt="Một buổi chia sẻ nhóm nhỏ trực tiếp" loading="lazy"></div><figcaption>Nhóm nhỏ gặp trực tiếp</figcaption></figure>
+    <figure><div class="anh-khung ngang"><img src="../img/mentor/an-toi.webp" alt="Bữa tối trao đổi của Cộng đồng" loading="lazy"></div><figcaption>Bữa tối trao đổi</figcaption></figure>
   </div>
   <div class="duong-chang mt-chang tre hien">
     <div class="chang"><span class="mt-nhan">Một tuần trước</span><b>Duy gọi cho anh chị</b><p>Hai bên cùng chọn giai đoạn sẽ kể, nên anh chị không cần soạn bài trình bày.</p></div>
@@ -81,6 +87,10 @@ THAN = dau_trang(
     <p class="mono">Ai ngồi nghe</p>
     <h2>Những người chủ đang điều hành doanh nghiệp</h2>
     <p>Người nghe là thành viên Master Club và Grand Master Club, hai cấp đồng hành dài hạn của Cộng đồng Next Gen Founder. Đây là những người chủ đang điều hành doanh nghiệp và mang vấn đề đang gặp tới buổi chia sẻ.</p>
+  </div>
+  <div class="luoi c2 tre hien">
+    <div class="anh-khung ngang"><img src="../img/mentor/ghi-chep.webp" alt="Thành viên ghi chép trong một buổi học" loading="lazy"></div>
+    <div class="anh-khung ngang"><img src="../img/mentor/hoi-truong.webp" alt="Thành viên Cộng đồng trong một buổi học trực tiếp" loading="lazy"></div>
   </div>
 </section>
 
@@ -107,9 +117,13 @@ THAN = dau_trang(
 </section>
 <style>
 .doi-cot .mono{color:var(--vang)}
+.anh-khung img{width:100%;height:100%;object-fit:cover}
 .mt-nhan{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vang);margin-bottom:12px}
 .the p + p{margin-top:12px}
 .mt-noi{border-color:var(--vang)}
+.mt-anh{margin-bottom:34px}
+.mt-anh figure{margin:0}
+.mt-anh figcaption{margin-top:10px;font-size:14px;color:var(--ink-3);text-align:center}
 .mt-so{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:760px;margin:0 auto 34px}
 .mt-so > div{text-align:center;border:1px solid var(--line);border-radius:var(--r);padding:20px 10px;background-color:var(--panel)}
 .mt-so b{display:block;font-family:var(--f-tit);font-weight:800;font-size:clamp(22px,3vw,32px);color:var(--vang)}
