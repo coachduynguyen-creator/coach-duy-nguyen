@@ -109,11 +109,14 @@ THAN = dau_trang(
 </section>
 
 <section class="phan bd hoa-van duoi">
+  <div class="doi-cot hinh-trai">
+  <div class="anh-khung ngang hien"><img src="../img/mentor/tro-chuyen.webp" alt="Thành viên Cộng đồng ngồi trò chuyện sau một buổi gặp" loading="lazy"></div>
   <div class="mt-cuoi hien">
     <p class="mono">Sau khi đọc trang này</p>
     <p class="mt-cuoi-chinh">Nếu anh chị nhận trang này từ Duy, Duy sẽ gọi lại trong tuần để hai bên nói chuyện kỹ hơn, và anh chị chưa cần trả lời gì lúc này.</p>
     <p>Nếu anh chị thấy mình hợp với nhóm này mà chưa nói chuyện với Duy, anh chị nhắn Duy qua trang Liên hệ.</p>
     <a class="lk-v" href="../lien-he.html">Mở trang Liên hệ <span class="mt" aria-hidden="true">&rarr;</span></a>
+  </div>
   </div>
 </section>
 <style>
@@ -146,8 +149,8 @@ THAN = dau_trang(
 .mt-so b{display:block;font-family:var(--f-tit);font-weight:800;font-size:clamp(22px,3vw,32px);color:var(--vang)}
 .mt-so span{display:block;margin-top:6px;font-size:14px;color:var(--ink-3)}
 @media(min-width:1000px){.mt-chang{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.mt-cuoi{max-width:62ch;margin:0 auto;text-align:center}
-.mt-cuoi p{text-align:center;font-size:16.5px;color:var(--ink-2);margin-top:12px}
+.mt-cuoi{max-width:62ch}
+.mt-cuoi p{font-size:16.5px;color:var(--ink-2);margin-top:12px}
 .mt-cuoi .mt-cuoi-chinh{font-family:var(--f-tit);font-weight:700;font-size:clamp(20px,2.4vw,26px);color:var(--ink);line-height:1.4}
 .mt-cuoi .lk-v{margin-top:20px}
 </style>"""
