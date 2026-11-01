@@ -30,6 +30,8 @@ export default {
     if (data.noi_dau_kh) data.noi_dau_kh = [data.noi_dau_kh];   // cột chọn nhiều của Pancake nhận danh sách
     // Khách từ công cụ và e-book: cột Nguồn khách hàng nhận danh sách, gửi chữ trơn thì Pancake báo lỗi 500 (thử ngày 26/10/2026). Master Club và Người dẫn đường không ghi.
     if (data.utm_medium === "cong-cu-ai" || data.utm_medium === "ebook") data.nguon_khach_hang = ["Web Lead Magnet"];
+    // Phiếu 84, D3. Chưa triển khai: chờ Coach Duy tạo lựa chọn "Cổng thành viên" trong Pancake và duyệt lần gửi đầu
+    if (data.utm_medium === "cong-thanh-vien") data.nguon_khach_hang = ["Cổng thành viên"];
     const url = PANCAKE + "?api_key=" + env.PANCAKE_KEY, dau = { "Content-Type": "application/json" };
     // Người đã đăng ký (trình duyệt giữ mã khách) thì cập nhật đúng khách cũ, không tạo khách trùng.
     // Mã không còn (Sales đã xoá) thì tạo mới như lần đầu.
