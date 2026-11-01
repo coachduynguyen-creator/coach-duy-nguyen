@@ -20,718 +20,546 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* Giao diện lấy từ trang cộng đồng (cong-dong/index.html): cùng phông, bảng màu, thẻ, khung ảnh. Bố cục dựng lại cho dễ đọc lướt. */
 :root{
-  color-scheme:light;
-  --bg:#FFFFFF; --bg-2:#F6F7F9; --bg-3:#EDEFF3;
-  --line:#E3E6EB; --line-2:#CBD0D8;
-  --ink:#0F1218; --ink-2:#3D4451; --ink-3:#646C79;
-  --cam:#C98A28; --cam-dam:#8A5A0F; --cam-mo:#FBF1DC;
-  --the:#FFFFFF; --nav:rgba(255,255,255,.86);
-  --paper:linear-gradient(180deg,#FFFFFF 0%,#FAFBFC 100%);
-  --shadow-s:0 1px 2px rgba(15,18,24,.05),0 12px 28px -16px rgba(15,18,24,.22);
-  --shadow:0 2px 4px rgba(15,18,24,.06),0 30px 60px -28px rgba(15,18,24,.34);
-  --shadow-h:0 3px 6px rgba(15,18,24,.07),0 22px 44px -20px rgba(15,18,24,.30);
-  --r:16px; --r-s:12px;
-  --f-tit:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
-  --f-than:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-  --ease:cubic-bezier(.23,1,.32,1);
+  --bg:#FFFFFF;--bg-2:#F6F7F9;--bg-3:#EDEFF3;--line:#E3E6EB;--line-2:#CBD0D8;
+  --ink:#0F1218;--ink-2:#3D4451;--ink-3:#646C79;
+  --cam:#C98A28;--cam-dam:#8A5A0F;--cam-mo:#FBF1DC;
+  --toi:#0F1218;--toi-2:#1A1F28;--toi-chu:#C9CED8;
+  --r:16px;--r-s:12px;--ease:cubic-bezier(.23,1,.32,1);
+  --tieu-de:"Bricolage Grotesque",system-ui,sans-serif;
+  --than:"Be Vietnam Pro",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--f-than);font-size:17px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3{margin:0;color:var(--ink);font-family:var(--f-tit);font-variation-settings:'opsz' 72;letter-spacing:-.025em;line-height:1.08;font-weight:700;text-wrap:balance}
-p,li{text-wrap:pretty}
-p{margin:0}
-p + p{margin-top:14px}
-ul,ol{margin:0;padding:0;list-style:none}
-img{max-width:100%;display:block}
-figure{margin:0}
-.bao{max-width:1120px;margin:0 auto;padding:0 24px}
-@media (max-width:640px){.bao{padding:0 16px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--than);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.khung{max-width:1120px;margin:0 auto;padding:0 20px}
+.hep{max-width:760px}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--tieu-de);line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:18px}
+h3{font-size:21px;margin-bottom:8px}
+.nhan{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:16px;display:inline-block}
+.dan{font-size:19px;color:var(--ink-2);max-width:680px}
+.nut{display:inline-flex;align-items:center;gap:10px;background:var(--cam);color:#fff;font:700 17px/1 var(--than);padding:18px 28px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.nut:hover{background:var(--cam-dam);transform:translateY(-2px)}
+.nut-vien{background:transparent;color:inherit;border:1.5px solid currentColor}
+.nut-vien:hover{background:rgba(255,255,255,.08)}
 
-/* thanh trên cùng */
-.nav{position:sticky;top:0;z-index:60;background:var(--nav);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
-.nav .bao{display:flex;align-items:center;height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap}
-.logo .dau-hieu{width:26px;height:auto;flex:none}
-.logo .ten-hieu{display:flex;flex-direction:column;line-height:1.05;font-family:var(--f-tit);font-weight:800;font-size:17.5px;letter-spacing:-.02em;font-variation-settings:'opsz' 40}
-.logo .ten-hieu small{font-family:var(--f-than);font-weight:500;font-size:13px;letter-spacing:0;color:var(--ink-3);margin-top:3px}
-.nav-links{display:flex;gap:2px;margin-left:auto}
-.nav-links a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-@media (max-width:900px){.nav-links{display:none}}
 
-/* nút */
-.nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;border:1px solid #F2B14A;background:#F2B14A;color:#17120F;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;transition:background .16s,box-shadow .16s}
-.nut:hover{background:#E5A233;border-color:#E5A233;box-shadow:0 6px 18px -8px rgba(242,177,74,.6)}
-.nut svg{width:16px;height:16px}
-.nut.lon{height:56px;padding:0 30px;font-size:16.5px}
-.nav .nut{height:40px;padding:0 16px;font-size:14px;margin-left:auto;flex:none}
-.nav-links + .nut{margin-left:8px}
-@media (max-width:520px){.nav .duoi{display:none}}
+/* Đầu trang */
+.dau{position:sticky;top:0;z-index:20;background:rgba(15,18,24,.92);backdrop-filter:blur(10px);color:#fff}
+.dau .khung{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.dau-hieu{width:30px;height:auto}
+.ten-hieu{font:700 16px/1.1 var(--tieu-de)}
+.ten-hieu small{display:block;font:500 11px/1.3 var(--mono);letter-spacing:.08em;color:var(--cam);text-transform:uppercase}
+.dau .nut{padding:12px 20px;font-size:15px}
 
-/* chữ chung */
-.nhan{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
-.nhan::before{content:'';width:18px;height:2px;background:var(--cam)}
-.khi{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:10px}
-.doan{max-width:62ch;font-size:17.5px}
-.phu{margin-top:24px;font-size:15px;color:var(--ink-3);max-width:70ch}
-.nhan-manh{margin-top:24px;padding:4px 0 4px 18px;border-left:3px solid var(--cam);font-family:var(--f-tit);font-variation-settings:'opsz' 40;font-weight:600;font-size:clamp(19px,2vw,22px);line-height:1.4;letter-spacing:-.01em;color:var(--ink)}
+/* Màn hình đầu */
+.mo{background:var(--toi);color:#fff;padding:72px 0 0;overflow:hidden}
+.mo .khung{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.mo .nhan{color:var(--cam)}
+.mo h1{font-size:clamp(38px,6vw,68px);margin-bottom:22px}
+.mo h1 em{font-style:normal;color:var(--cam)}
+.mo .dan{color:var(--toi-chu);margin-bottom:32px}
+.mo-nut{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:28px}
+.mo-gia{font:500 14px/1.6 var(--mono);color:var(--toi-chu);padding-bottom:72px}
+.mo-gia b{color:#fff;font-weight:600}
+.mo-anh{position:relative;align-self:end}
+.mo-anh img{border-radius:var(--r) var(--r) 0 0;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;width:100%;height:auto}
+.mo-the{position:absolute;left:-28px;bottom:36px;background:#fff;color:var(--ink);border-radius:var(--r-s);padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:250px;font-size:14px;line-height:1.45}
+.mo-the b{display:block;font:800 26px/1 var(--tieu-de);color:var(--cam-dam);margin-bottom:4px}
 
-/* phần */
-.phan{padding:96px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
-.phan.nen{background:var(--bg-2)}
-.phan.gon{padding:48px 0}
-.phan h2{font-size:clamp(28px,3.2vw,42px);max-width:820px;margin-bottom:32px}
-@media (max-width:760px){.phan{padding:64px 0}.phan.gon{padding:36px 0}}
+/* Bốn câu */
+.cau-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.nen-cam{background:var(--cam-mo)}
+.nen-toi{background:var(--toi);color:#fff}
+.nen-toi .nhan{color:var(--cam)}
+.nen-toi .dan,.nen-toi .nguon{color:var(--toi-chu)}
+.cau{border-radius:var(--r);padding:28px;background:#fff;position:relative;box-shadow:0 10px 30px rgba(138,90,15,.10)}
+.cau .so{font:800 40px/1 var(--tieu-de);color:var(--cam)}
+.cau q{display:block;font:700 22px/1.3 var(--tieu-de);margin:14px 0 14px;quotes:"\201C" "\201D"}
+.cau p{color:var(--ink-3);font-size:15px}
+.nguon{margin-top:26px;font:500 13px/1.6 var(--mono);color:var(--ink-3)}
 
-/* thẻ */
-.o{background:var(--paper);background-color:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow-s)}
-.o h3{font-family:var(--f-than);font-size:18px;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin-bottom:8px}
-.o p{font-size:15.5px;line-height:1.55}
-.o.hop{border-color:var(--cam);background:var(--cam-mo)}
-.o2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:700px){.o2{grid-template-columns:minmax(0,1fr)}}
+/* Tự kiểm */
+.kiem{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+.kiem ul{list-style:none;display:grid;gap:10px;margin-top:28px}
+.kiem label{display:flex;gap:14px;align-items:flex-start;background:var(--toi-2);color:#fff;border:1px solid #2C3340;border-radius:var(--r-s);padding:16px 18px;cursor:pointer;transition:border-color .2s}
+.kiem input{width:20px;height:20px;accent-color:var(--cam);flex:none;margin-top:3px}
+.kiem label:has(input:checked){border-color:var(--cam);background:#2A2416}
+.diem{position:sticky;top:96px;background:var(--cam);color:#fff;border-radius:var(--r);padding:28px}
+.diem b{display:block;font:800 64px/1 var(--tieu-de);color:#fff}
+.diem p{color:#fff;margin-top:12px;font-size:16px}
 
-/* ảnh */
-.anh-khung{position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg-3);box-shadow:var(--shadow);aspect-ratio:3/2}
-.anh-khung img{width:100%;height:100%;object-fit:cover}
+/* Chuyện Duy */
+.chuyen{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.anh-ghep{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.anh-ghep img{border-radius:var(--r-s);aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+.anh-ghep img:first-child{grid-column:1/-1}
+.chuyen .doanh-nghiep{display:flex;flex-wrap:wrap;gap:8px}
+.chuyen .doanh-nghiep span{background:var(--bg-2);border-radius:999px;padding:6px 14px;font:600 13px/1.4 var(--mono);color:var(--ink-2)}
+.chuyen p{margin-bottom:16px;color:var(--ink-2)}
+.chuyen blockquote{border-left:3px solid var(--cam);padding:4px 0 4px 20px;font:700 22px/1.35 var(--tieu-de);color:var(--ink);margin:24px 0}
+.doanh-nghiep{font:500 13px/1.6 var(--mono);color:var(--ink-3);margin-top:8px}
 
-/* mở đầu nền tối, màu cố định ở cả hai chế độ, video nằm giữa */
-.hero{background:#0E1116;padding:64px 0 76px;color:#B3B9C2}
-.hero .bao{max-width:980px;text-align:center}
-.hero .nhan{justify-content:center;color:#8A919B}
-.huy-hieu{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:26px}
-.huy-hieu img{width:52px;height:auto}
-.huy-ten{font-family:var(--f-tit);font-weight:700;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:#E2B654;padding:6px 0 6px .32em;border-top:1px solid rgba(226,182,84,.5);border-bottom:1px solid rgba(226,182,84,.5)}
-.huy-phu{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A919B}
-.hero h1{color:#F4F1EA;font-size:clamp(32px,4.6vw,54px);max-width:900px;margin:0 auto}
-.hero .h1-phu{display:block;margin-top:.35em;font-size:.6em;color:#E2B654;letter-spacing:-.015em}
-.hero .mo{font-size:18px;line-height:1.65;margin:22px auto 0;max-width:62ch;color:#B3B9C2}
-.loi-hua{max-width:780px;margin:28px auto 0;padding:24px 28px;border:1px solid rgba(226,182,84,.45);border-radius:18px;background:rgba(226,182,84,.07)}
-.loi-hua-chinh{margin:0;font-family:var(--f-tit);font-variation-settings:'opsz' 40;font-weight:600;font-size:clamp(20px,2.3vw,26px);line-height:1.42;letter-spacing:-.01em;color:#F4F1EA}
-.loi-hua-chinh b{font-weight:inherit;color:#E2B654}
-.loi-hua-phu{margin:14px auto 0;max-width:58ch;font-size:16px;line-height:1.6;color:#B3B9C2}
-@media (max-width:640px){.loi-hua{padding:18px 18px;margin-top:22px;border-radius:14px}}
-.vsl-khung{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000;border:1px solid #29303A;box-shadow:0 30px 70px -30px rgba(0,0,0,.8);margin-top:40px}
-.vsl-khung img,.vsl-khung iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
-.vsl-mo{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35));border:0;cursor:pointer;font:inherit}
-.vsl-mo i{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#F6C56A,#E5A233);box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .2s}
-.vsl-mo:hover i{transform:scale(1.06)}
-.vsl-mo i::before{content:'';margin-left:6px;border-left:24px solid #1B1204;border-top:15px solid transparent;border-bottom:15px solid transparent}
-.hanh-dong{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 22px;margin-top:32px}
-@media (max-width:640px){.hero{padding:36px 0 56px}.vsl-khung{margin-top:28px;border-radius:14px}.vsl-mo i{width:68px;height:68px}}
+/* So sánh */
+.so-sanh{background:var(--toi);color:#fff}
+.so-sanh .nhan{color:var(--cam)}
+.so-sanh .dan{color:var(--toi-chu)}
+.bang{display:grid;gap:14px;margin-top:40px}
+.cap{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;align-items:stretch}
+.cap>b{font:700 18px/1.3 var(--tieu-de);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.cap>b i{font:600 12px/1 var(--mono);font-style:normal;color:var(--cam);margin-bottom:8px}
+.cap>p{border-radius:var(--r-s);padding:18px 18px 18px 50px;position:relative;font-size:16px;line-height:1.5}
+.cap .cu{background:var(--toi-2);color:var(--toi-chu)}
+.cap .moi{background:#fff;color:var(--ink);font-weight:500}
+.cap>p::before{position:absolute;left:16px;top:17px;width:22px;height:22px;border-radius:50%;font:700 13px/22px var(--than);text-align:center}
+.cap .cu::before{content:"\2715";background:#2C3340;color:#8B93A3}
+.cap .moi::before{content:"\2713";background:var(--cam);color:#fff}
+.cap-dau{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.cap-dau span:nth-child(2){color:#8B93A3}
+.cap-dau span:nth-child(3){color:var(--cam)}
+.cot{border-radius:var(--r);padding:30px}
+.cot-cu{background:var(--toi-2);color:var(--toi-chu)}
+.cot-moi{background:#fff;color:var(--ink)}
+.cot h3{font-size:19px;margin-bottom:18px}
+.cot-moi h3{color:var(--cam-dam)}
+.cot ul{list-style:none;display:grid;gap:14px}
+.cot li{padding-left:28px;position:relative;font-size:16px}
+.cot-cu li::before{content:"";position:absolute;left:4px;top:11px;width:12px;height:2px;background:#5B6372}
+.cot-moi li::before{content:"";position:absolute;left:2px;top:6px;width:14px;height:8px;border-left:2.5px solid var(--cam);border-bottom:2.5px solid var(--cam);transform:rotate(-45deg)}
 
-/* nhãn cho bản xem thiết kế: phần còn chờ chốt, ảnh còn chờ chụp. Xoá hết trước khi đẩy lên mạng. */
-.anh-cho{aspect-ratio:16/10;border:2px dashed var(--line-2);border-radius:var(--r);background:repeating-linear-gradient(135deg,var(--bg-3) 0 14px,var(--bg-2) 14px 28px);display:grid;place-content:center;gap:6px;text-align:center;padding:24px;font-size:14.5px;line-height:1.5;color:var(--ink-3)}
-.anh-cho b{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cam-dam)}
+/* Một tuần */
+.tuan{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:b}
+.mot-tuan{background:var(--cam);color:#fff}
+.mot-tuan .nhan{color:#fff;opacity:.85}
+.mot-tuan .dan{color:#FFF6E6}
+.buoc{background:#fff;color:var(--ink);border-radius:var(--r);padding:24px}
+.buoc .so{font:800 44px/1 var(--tieu-de);color:var(--cam);margin-bottom:12px}
+.buoc p{color:var(--ink-2);font-size:16px}
+.ghi-chu{margin-top:24px;background:rgba(0,0,0,.14);border-radius:var(--r);padding:18px 24px;color:#fff;font-size:16px}
 
-/* không phải gỡ một mình */
-.o3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-@media (max-width:900px){.o3{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.o3{grid-template-columns:minmax(0,1fr)}}
-.o3 .o .so-tt{font-family:var(--f-tit);font-size:28px;font-weight:800;line-height:1;color:var(--cam);margin-bottom:14px}
-#chu-de + .o3 .o{position:relative;overflow:hidden}
-#chu-de + .o3 .o > *{position:relative;z-index:1}
-#chu-de + .o3 .o .hinh-nen{position:absolute;z-index:0;right:-14px;bottom:-14px;width:120px;height:120px;color:var(--cam);opacity:.13}
+/* Một năm */
 
-/* dải nút giữa trang */
-.dai{display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;background:#0E1116;border:1px solid rgba(242,177,74,.35);border-radius:24px;padding:36px 40px;box-shadow:var(--shadow)}
-.dai h3{color:#F4F1EA;font-size:clamp(22px,2.4vw,28px);margin-bottom:8px}
-.dai p{color:#B3B9C2;font-size:16px;max-width:56ch}
-@media (max-width:640px){.dai{padding:28px 20px}.dai .nut{width:100%}}
+.so-lieu{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px 0 56px}
+.o-so{background:var(--toi);border-radius:var(--r);padding:26px}
+.o-so b{display:block;font:800 52px/1 var(--tieu-de);color:var(--cam);margin-bottom:10px}
+.o-so span{font-size:15px;color:var(--toi-chu);line-height:1.5;display:block}
+.chu-de{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.chu-de div{background:var(--cam-mo);border-radius:var(--r-s);padding:22px}
+.chu-de i{font:700 20px/1 var(--tieu-de);font-style:normal;color:var(--cam-dam)}
+.chu-de h3{font-size:18px;margin:8px 0 10px}
+.chu-de .noi-dau{font-size:15px;line-height:1.55;color:var(--ink);margin:0 0 10px}
+.chu-de .lam{font-size:14.5px;line-height:1.55;color:var(--ink-3);margin:0;padding-top:10px;border-top:1px solid rgba(138,90,15,.18)}
+.chu-de .lam b{color:var(--cam-dam)}
+.chuyen-gia{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.cg img{border-radius:var(--r-s);aspect-ratio:1;object-fit:cover;margin-bottom:12px;background:var(--bg-3)}
+.cg b{display:block;font:700 17px/1.3 var(--tieu-de)}
+.cg span{font-size:14px;color:var(--ink-3)}
 
-/* bên trong Master Club: ảnh và chữ so le */
-.hang{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding:40px 0;border-top:1px solid var(--line-2)}
-.hang:first-child{border-top:0;padding-top:8px}
-.hang:nth-child(even) .anh-cho,.hang:nth-child(even) .anh-khung{order:2}
-.hang h3{font-size:clamp(22px,2.4vw,28px);margin-bottom:12px}
-.hang p{font-size:16.5px;line-height:1.65}
-@media (max-width:820px){.hang{grid-template-columns:minmax(0,1fr);gap:22px;padding:32px 0}.hang:nth-child(even) .anh-cho,.hang:nth-child(even) .anh-khung{order:0}}
-.ben-trong + .o3{margin-top:40px}
+/* Người thật */
+.nguoi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.the-nguoi{border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.the-nguoi .so-to{font:800 40px/1 var(--tieu-de);color:var(--cam-dam)}
+.the-nguoi .so-to small{display:block;font:500 13px/1.5 var(--mono);color:var(--ink-3);margin-top:6px}
+.the-nguoi p{margin-top:16px;color:var(--ink-2);font-size:16px}
+.the-nguoi b.ten{display:block;margin-top:18px;font:700 16px/1.3 var(--tieu-de)}
+.cho-trong{margin-top:18px;border:1.5px dashed var(--cam);border-radius:var(--r);padding:22px 26px;background:var(--cam-mo);color:var(--cam-dam);font-size:15px}
 
-/* ba cấp */
-.ba-cap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
-@media (max-width:900px){.ba-cap{grid-template-columns:minmax(0,1fr)}}
-.cap{position:relative;display:flex;flex-direction:column;gap:18px;padding:28px 24px}
-.cap .ten{font-family:var(--f-tit);font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.15}
-.cap .phi-cap{font-weight:700;font-size:16px;color:var(--ink);margin-top:6px}
-.cap .khi{margin-bottom:6px}
-.cap p,.cap .danh li{font-size:15px}
-.cap.chinh{border:2px solid var(--cam);background:var(--cam-mo);box-shadow:var(--shadow)}
-.cap .dau{position:absolute;top:-13px;left:24px;background:#F2B14A;color:#17120F;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px}
-.cap .nut{margin-top:auto;width:100%}
+/* Hợp */
+.hop{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.hop>div{border-radius:var(--r);padding:30px}
+.hop .co{background:#fff;border:2px solid var(--cam)}
+.hop .chua{background:#fff}
+.hop ul{margin:14px 0 0 20px;display:grid;gap:10px}
+.hop li{font-size:16px;color:var(--ink-2)}
 
-/* bốn con số */
-.chi-so{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.chi-so a{color:var(--cam-dam);font-weight:600;text-decoration:none}
-.chi-so .o{padding:22px}
-.chi-so b{display:block;font-family:var(--f-tit);font-size:clamp(34px,3.6vw,46px);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--cam-dam)}
-.chi-so .don{display:block;font-weight:600;font-size:15px;color:var(--ink);margin:8px 0 6px}
-.chi-so p{font-size:14.5px;line-height:1.5}
-@media (max-width:980px){.chi-so{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* Chuyên gia đồng hành: mỗi người một thẻ ngang, ảnh tròn bên trái */
-.cg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.cg .o{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:22px 18px}
-.cg img,.cg .anh-cho{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;background:var(--bg-3);border:1px solid var(--line)}
-.cg .ten-cg{font-weight:700;font-size:16px;color:var(--ink);line-height:1.3}
-.cg .nghe{font-size:14px;line-height:1.45;color:var(--ink-2);margin-top:3px}
-@media (max-width:980px){.cg{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.cg{grid-template-columns:1fr;gap:10px}.cg .o{flex-direction:row;text-align:left;padding:12px 14px;gap:14px}.cg img,.cg .anh-cho{width:56px;height:56px}}
-@media (max-width:400px){.chi-so .o{padding:18px}}
-@media (max-width:640px){.chi-so{grid-template-columns:1fr;gap:12px}.chi-so .o{display:grid;grid-template-columns:60px 1fr;column-gap:14px;align-items:start}.chi-so b{grid-row:span 2}.chi-so .don{margin-top:2px}}
+/* Giá */
+.gia{background:var(--toi);color:#fff}
+.gia .nhan{color:var(--cam)}
+.gia-khung{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.the-gia{background:#fff;color:var(--ink);border-radius:var(--r);padding:34px}
+.the-gia .tien{font:800 64px/1 var(--tieu-de)}
+.the-gia .tien small{font-size:20px;font-weight:600;color:var(--ink-3)}
+.the-gia .phu{color:var(--ink-3);margin:8px 0 22px;font-size:15px}
+.the-gia ul{list-style:none;display:grid;gap:10px;margin-bottom:28px}
+.the-gia li{padding-left:26px;position:relative;font-size:16px}
+.the-gia li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;border-left:2.5px solid var(--cam);border-bottom:2.5px solid var(--cam);transform:rotate(-45deg)}
+.uu-dai{background:var(--toi-2);border:1px solid #2C3340;border-radius:var(--r);padding:34px}
+.uu-dai b.han{display:inline-block;background:var(--cam);color:#fff;font:600 12px/1 var(--mono);letter-spacing:.08em;padding:8px 12px;border-radius:999px;margin-bottom:18px}
+.uu-dai h3{font-size:24px;margin-bottom:14px}
+.uu-dai p{color:var(--toi-chu);margin-bottom:12px;font-size:16px}
+.cam-ket{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.cam-ket>div{border:1px solid #2C3340;border-radius:var(--r);padding:26px}
+.cam-ket h3{font-size:18px;color:var(--cam)}
+.cam-ket p{color:var(--toi-chu);font-size:15.5px}
 
-/* vì sao */
-.vi-sao{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
-@media (max-width:900px){.vi-sao{grid-template-columns:minmax(0,1fr);gap:28px}}
-.loi{display:grid;gap:10px;margin-top:22px}
-.loi li{position:relative;background:var(--the);border:1px solid var(--line);border-radius:var(--r-s);padding:14px 18px 14px 44px;font-size:16px;line-height:1.5;color:var(--ink);box-shadow:var(--shadow-s)}
-.loi li::before{content:'\201C';position:absolute;left:14px;top:2px;font-family:var(--f-tit);font-size:38px;font-weight:800;color:var(--cam)}
-.ke{padding:32px}
-.ke p{font-size:16.5px;line-height:1.65}
-@media (max-width:640px){.ke{padding:24px 20px}}
-
-/* bốn bước một tuần */
-.tuan{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:b}
-.tuan li{position:relative;padding-top:62px;counter-increment:b}
-.tuan li::before{content:counter(b);position:absolute;top:0;left:0;z-index:1;width:44px;height:44px;border-radius:50%;background:#F2B14A;color:#17120F;display:grid;place-items:center;font-family:var(--f-tit);font-size:20px;font-weight:800}
-.tuan li::after{content:'';position:absolute;top:21px;left:56px;right:-12px;height:2px;background:var(--line-2)}
-.tuan li:last-child::after{display:none}
-.tuan h3{font-family:var(--f-than);font-size:19px;font-weight:700;margin-bottom:6px}
-.tuan p{font-size:15.5px;line-height:1.55}
-@media (max-width:760px){
-  .tuan{grid-template-columns:minmax(0,1fr);gap:0}
-  .tuan li{padding:0 0 28px 64px;min-height:72px}
-  .tuan li::after{top:52px;left:21px;right:auto;bottom:6px;width:2px;height:auto}
-  .tuan li:last-child{padding-bottom:0}
-}
-.ghi-chu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:48px;align-items:stretch}
-.ghi-chu .anh-khung{aspect-ratio:auto;min-height:200px}
-@media (max-width:900px){.ghi-chu{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ghi-chu .anh-khung{grid-column:1/-1;aspect-ratio:3/2}}
-@media (max-width:620px){.ghi-chu{grid-template-columns:minmax(0,1fr)}}
-
-/* hợp, chưa hợp */
-.danh{display:flex;flex-direction:column;gap:10px}
-.danh li{position:relative;padding-left:24px;font-size:15.5px;line-height:1.5}
-.danh li::before{content:'';position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink-3)}
-.o.hop .danh li::before{background:var(--cam);border-color:var(--cam)}
-
-.gia{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;line-height:1.4;color:var(--cam-dam);background:var(--cam-mo);border-radius:10px;padding:8px 12px}
-
-/* phí */
-.phi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
-@media (max-width:900px){.phi{grid-template-columns:minmax(0,1fr);gap:32px}}
-.the-phi{border:2px solid var(--cam);background:var(--cam-mo);border-radius:var(--r);padding:32px;box-shadow:var(--shadow)}
-.the-phi .ky{font-weight:600;font-size:15px;color:var(--ink-2)}
-.the-phi .so{font-family:var(--f-tit);font-size:76px;font-weight:800;line-height:1;letter-spacing:-.04em;color:var(--ink);margin:12px 0 4px}
-.the-phi .nam{margin:0 0 4px;font-size:13.5px;line-height:1.5;color:var(--ink-3)}
-.the-phi .so small{display:block;font-family:var(--f-than);font-size:15px;font-weight:500;letter-spacing:0;color:var(--ink-2);margin-top:10px}
-.moc{display:grid;gap:10px;margin-top:22px}
-.moc div{background:var(--the);border:1px solid var(--line);border-radius:var(--r-s);padding:12px 14px;font-size:15px;line-height:1.5}
-.moc b{display:block;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:2px}
-.the-phi .nut{width:100%;margin-top:22px}
-@media (max-width:640px){.the-phi{padding:24px 20px}.the-phi .so{font-size:64px}}
-.dieu li{padding:18px 0;border-bottom:1px solid var(--line)}
-.dieu li:first-child{padding-top:0}
-.dieu li:last-child{border-bottom:0}
-.dieu p{font-size:16px}
-
-/* hỏi đáp */
-.hoi{max-width:820px}
-.hoi details{border:1px solid var(--line);border-radius:var(--r-s);background:var(--the);box-shadow:var(--shadow-s)}
-.hoi details + details{margin-top:12px}
-.hoi summary{list-style:none;cursor:pointer;position:relative;padding:18px 56px 18px 20px;font-weight:600;font-size:16.5px;line-height:1.45;color:var(--ink)}
+/* Hỏi đáp */
+.hoi{margin-top:36px;border-top:1px solid var(--line)}
+.hoi details{border-bottom:1px solid var(--line)}
+.hoi summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font:700 18px/1.4 var(--tieu-de);position:relative}
 .hoi summary::-webkit-details-marker{display:none}
-.hoi summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:500;line-height:1;color:var(--cam-dam)}
-.hoi details[open] summary::after{content:'\2212'}
-.hoi details p{padding:0 20px 20px;font-size:16px;line-height:1.6}
+.hoi summary::after{content:"+";position:absolute;right:4px;top:18px;font:400 28px/1 var(--than);color:var(--cam-dam);transition:transform .25s var(--ease)}
+.hoi details[open] summary::after{transform:rotate(45deg)}
+.hoi details p{padding:0 0 22px;color:var(--ink-2)}
 
-/* đăng ký ở cuối */
-.cuoi{background:var(--cam-mo);border:2px solid var(--cam);border-radius:24px;padding:48px;box-shadow:var(--shadow)}
-.cuoi h2{margin-bottom:12px}
-.cac-buoc{list-style:none;margin:28px 0;padding:4px 20px;counter-reset:d;background:var(--the);border:1px solid var(--line);border-radius:var(--r-s)}
-.cac-buoc li{counter-increment:d;display:flex;align-items:center;gap:14px;padding:14px 0;font-size:15px;line-height:1.5}.cac-buoc li+li{border-top:1px solid var(--line)}
-.cac-buoc li::before{content:counter(d);flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--cam-mo);border:1px solid var(--cam);font-family:var(--f-tit);font-size:14px;font-weight:800;color:var(--cam-dam)}
-@media (max-width:640px){.cuoi{padding:28px 20px}}
-/* phiếu đăng ký Master Club */
-.phieu{background:var(--the);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-s);position:relative}
-.phieu-cot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
-.phieu label{display:flex;flex-direction:column;gap:6px;font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:16px}
-.phieu .phu{font-size:13.5px;font-weight:400;color:var(--ink-3);line-height:1.5}
-.phieu input,.phieu select,.phieu textarea{height:48px;padding:0 14px;border:1px solid var(--line-2);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px;font-weight:400;width:100%}
-.phieu textarea{height:auto;min-height:96px;padding:12px 14px;resize:vertical;line-height:1.5}
-.phieu [aria-invalid="true"]{border-color:#C0412B}
-.phieu .loi{display:none;margin:0 0 14px;color:#C0412B;font-size:14.5px}
-.phieu.co-loi .loi{display:block}
-.phieu .xong{display:none;font-size:16px;line-height:1.6;color:var(--ink)}
-.phieu.da-gui .xong{display:block}
-.phieu.da-gui .an-khi-xong{display:none}
-@media (max-width:640px){.phieu{padding:20px 16px}.phieu-cot{grid-template-columns:minmax(0,1fr)}}
+/* Đăng ký */
+.dang-ky{background:var(--cam-mo)}
+.dk{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.dk ol{list-style:none;counter-reset:dk;display:grid;gap:18px;margin-top:28px}
+.dk ol li{counter-increment:dk;padding-left:48px;position:relative;color:var(--ink-2)}
+.dk ol li::before{content:counter(dk);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font:600 14px/32px var(--mono);text-align:center}
+.dk ol b{color:var(--ink)}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;gap:16px}
+form label{font-weight:600;font-size:15px;display:grid;gap:6px}
+form input,form select,form textarea{font:400 16px/1.4 var(--than);padding:13px 14px;border:1px solid var(--line-2);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--cam);outline-offset:1px;border-color:var(--cam)}
+.hai{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bay{position:absolute;left:-9999px}
+form .nut{justify-content:center;width:100%}
+form [aria-invalid="true"]{border-color:#C0412B}
+.loi{display:none;color:#C0412B;font-size:15px;margin:0}
+#phieu.co-loi .loi,#phieu.da-gui .bao{display:block}
+#phieu.da-gui .nut{display:none}
+.bao{display:none;background:var(--cam-mo);color:var(--cam-dam);border-radius:10px;padding:14px;font-size:15px}
 
-.chan-trang{background:#0E1116;color:#8A919B;padding:56px 0 28px;font-size:14px;line-height:1.6}
-.ct-tren{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
-.ct-hieu .huy-hieu{align-items:flex-start;margin-bottom:16px}
-.ct-hieu p{max-width:300px;margin:0}
-.ct-cot h4{font-family:var(--f-tit);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E2B654;margin:0 0 14px}
-.ct-cot p{margin:0 0 12px}
-.ct-cot b{color:#F4F1EA}
-.ct-cot a{display:block;color:#B3B9C2;text-decoration:none;margin-bottom:10px;word-break:break-word}
-.ct-cot a:hover{color:#E2B654}
-.ct-duoi{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:13px}
-@media (max-width:900px){.ct-tren{grid-template-columns:1fr 1fr}.ct-hieu{grid-column:1/-1}}
-@media (max-width:640px){.ct-tren{grid-template-columns:1fr;gap:28px;text-align:center}.ct-hieu .huy-hieu{align-items:center}.ct-hieu p{margin-inline:auto}.ct-duoi{justify-content:center;text-align:center}.chan-trang{padding-bottom:132px}}
-.noi{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.noi-nut{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;min-width:48px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px -8px rgba(0,0,0,.45);transition:opacity .25s var(--ease),transform .25s var(--ease)}
-.noi-nut svg{width:22px;height:22px}
-.noi-zalo{background:#0068FF;width:52px;height:52px}
-.noi-zalo svg{width:34px;height:34px}
-.noi-zalo[hidden]{display:none}
-.noi-len{background:#0E1116;color:#E2B654;border:2px solid #E2B654;width:52px;height:52px}
-.noi-len:not(.hien-nut){opacity:0;transform:translateY(8px);pointer-events:none}
-/* điện thoại: khung ảnh thấp lại, tiêu đề và nút chính căn giữa */
-@media (max-width:640px){
-  .hang{gap:14px;padding:24px 0}
-  .hang .anh-cho{aspect-ratio:2/1;padding:12px;font-size:13px}
-  .hang .anh-khung{aspect-ratio:2/1}
-  .ghi-chu .anh-khung{aspect-ratio:2/1;min-height:0}
-  .phan .bao > h2,.cuoi h2,.cuoi .doan,.dai{text-align:center}
-  .dai p{margin-inline:auto}
-  .vi-sao .doan:last-child,.bao > .phu{text-align:center;margin-inline:auto}
-  .cuoi .nut{width:100%}
+/* Chân trang và nút dính */
+.chan{background:var(--toi);color:var(--toi-chu);padding:40px 0 110px;font-size:14px}
+.chan .khung{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.dinh{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(15,18,24,.96);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .35s var(--ease)}
+.dinh.hien{transform:none}
+.dinh span{font:500 13px/1.35 var(--mono);color:var(--toi-chu)}
+.dinh span b{color:#fff}
+.dinh .nut{padding:13px 20px;font-size:15px;flex:none}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .mo .khung,.kiem,.chuyen,.dk,.gia-khung{grid-template-columns:1fr}
+  .cap,.cap-dau{grid-template-columns:1fr 1fr}
+  .cap>b{grid-column:1/-1}
+  .cap-dau span:first-child{display:none}
+  .mo-anh{max-width:420px}
+  .mo-the{left:16px}
+  .diem{position:static}
+  .tuan,.so-lieu,.chuyen-gia{grid-template-columns:repeat(2,1fr)}
+  .chu-de{grid-template-columns:1fr 1fr}
 }
-/* điện thoại: ba cấp bấm chọn từng cấp, mặc định Master Club */
-.chon-cap{display:none}
 @media (max-width:640px){
-  .chon-cap{display:flex;gap:4px;margin-bottom:24px;padding:4px;background:var(--the);border:1px solid var(--line);border-radius:999px}
-  .chon-cap button{flex:1 1 auto;min-height:44px;white-space:nowrap;padding:0 10px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
-  .chon-cap button[aria-selected="true"]{background:#F2B14A;color:#17120F}
-  .ba-cap .cap.an{display:none}
+  body{font-size:16px}
+  .khung{padding:0 16px}
+  .dan{font-size:17px}
+  .dau .nut{display:none}
+  .mo{padding-top:44px}
+  .mo-anh img{aspect-ratio:1;max-height:340px}
+  .cap,.cap-dau,.cau-wrap,.nguoi,.hop,.cam-ket,.chu-de,.hai{grid-template-columns:1fr}
+  .tuan{grid-template-columns:1fr}
+  .so-lieu{gap:12px}
+  .o-so{padding:20px}
+  .o-so b{font-size:40px}
+  .chuyen-gia{gap:14px}
+  .cau q{font-size:20px}
+  .cap-dau{display:none}
+  .the-gia .tien{font-size:52px}
+  .dinh span{display:none}
+  .dinh .nut{width:100%;justify-content:center}
 }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="bao">
+
+<header class="dau">
+  <div class="khung">
     <a class="logo" href="../"><img class="dau-hieu" src="../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
-    <nav class="nav-links" aria-label="Các trang"><a href="../cong-dong/">Cộng đồng</a><a href="../ve-toi.html">Về Duy</a><a href="../chuong-trinh.html">Chương trình</a><a href="../blog.html">Blog</a><a href="../lien-he.html">Liên hệ</a></nav>
-    <a class="nut" href="#dang-ky">Đăng ký<span class="duoi">&nbsp;Master Club</span></a>
+    <a class="nut" href="#dang-ky">Đăng ký tìm hiểu</a>
   </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="bao">
-    <div class="huy-hieu"><img src="../cong-dong/img/ngf-khien.webp" alt="" width="205" height="256" decoding="async"><span class="huy-ten">Master Club</span><span class="huy-phu">Next Gen Founder</span></div>
-    <h1>Việc gì trong công ty cũng chờ bạn quyết?<span class="h1-phu">Mỗi tuần, cùng Coach&nbsp;Duy gỡ từng việc một.</span></h1>
-    <div class="loi-hua">
-      <p class="loi-hua-chinh">Master Club là nhóm chủ doanh nghiệp được <b>Coach Duy Nguyễn trực tiếp đồng hành mỗi tuần</b>, cùng nhau <b>gỡ những điểm nghẽn đang làm doanh nghiệp chững lại</b>.</p>
-      <p class="loi-hua-phu">Bạn làm cả ngày mà doanh nghiệp vẫn đứng yên? Ở đây, tuần nào cũng có người ngồi cùng bạn tìm ra nơi đang nghẽn, để doanh nghiệp bớt dần những việc phải chờ bạn.</p>
+<section class="mo">
+  <div class="khung">
+    <div>
+      <span class="nhan">Master Club · Next Gen Founder</span>
+      <h1>Công ty đã lớn, mà việc gì vẫn <em>chờ bạn quyết?</em></h1>
+      <p class="dan">Master Club là nhóm coaching một năm cùng Duy, dành cho người chủ doanh nghiệp đang chạy thật. Mỗi tuần bạn mang tới một việc đang vướng ở công ty mình, cả nhóm hỏi từng câu cho tới khi bạn thấy rõ việc đó đang kẹt ở đâu, rồi bạn về làm thử ngay trong tuần.</p>
+      <div class="mo-nut">
+        <a class="nut" href="#dang-ky">Đăng ký nói chuyện với tư vấn viên</a>
+        <a class="nut nut-vien" href="#mot-tuan">Xem một tuần diễn ra thế nào</a>
+      </div>
+      <p class="mo-gia"><b>Khoảng 110.000 đồng một ngày</b>, đã gồm thuế. Đăng ký tới hết 31/12/2026 thì được học miễn phí chuyên đề hằng tháng trong 12 tháng.</p>
     </div>
-    <div class="vsl-khung" id="vsl">
-      <button type="button" class="vsl-mo" id="vsl-mo" aria-label="Xem video giới thiệu"><i aria-hidden="true"></i></button>
-      <img src="../cong-dong/img/cd-ca-phong.jpg" alt="" width="1800" height="1182" fetchpriority="high" decoding="async">
-    </div>
-    <div class="hanh-dong">
-      <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="mo-anh">
+      <img src="../img/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" width="853" height="1280">
+      <div class="mo-the"><b>48 buổi</b>coaching nhóm qua Zoom trong một năm, Duy dẫn trực tiếp.</div>
     </div>
   </div>
 </section>
 
-<section class="phan nen gon">
-  <div class="bao">
-    <div class="chi-so">
-      <div class="o"><b>48</b><span class="don">buổi coaching nhóm mỗi năm</span></div>
-      <div class="o"><b>12</b><span class="don">tháng học chuyên đề miễn phí khi đăng ký tới hết ngày 31/12/2026</span></div>
-      <div class="o"><b>4</b><span class="don">lần mỗi năm ngồi lại cùng Duy xem doanh nghiệp đã thay đổi được gì</span></div>
-      <div class="o"><b>12</b><span class="don">buổi cập nhật cách dùng AI, mỗi tháng một buổi</span></div>
+<section class="nen-cam">
+  <div class="khung">
+    <span class="nhan">Điều người chủ kể nhiều nhất</span>
+    <h2>Bốn câu người chủ nói với tư vấn viên của Duy nhiều nhất</h2>
+    <p class="dan">Tháng 10/2026, đội ngũ tư vấn của Duy nói chuyện với hơn 50 chủ doanh nghiệp. Bốn câu dưới đây là những câu được nhắc lại nhiều nhất, kèm lý do thường nằm phía sau.</p>
+    <div class="cau-wrap">
+      <div class="cau"><span class="so">01</span><q>Tháng thì khách đông, tháng thì vắng hẳn.</q><p>Thường là vì khách tới chủ yếu nhờ người quen giới thiệu, hoặc nhờ chính người chủ đi gặp.</p></div>
+      <div class="cau"><span class="so">02</span><q>Chưa có quy trình, mỗi người làm một kiểu.</q><p>Thường là vì cách làm đúng vẫn nằm trong đầu người chủ, chưa viết ra cho ai.</p></div>
+      <div class="cau"><span class="so">03</span><q>Nhân viên tư vấn theo cảm tính, khách hỏi nhiều mà mua thì ít.</q><p>Thường là vì nhân viên chưa có cách tư vấn chung, nên khách quan trọng nào cũng phải chờ người chủ ra gặp.</p></div>
+      <div class="cau"><span class="so">04</span><q>Đào tạo người mới mãi mà vẫn chưa làm được như mình.</q><p>Thường là vì người mới không có tài liệu nào để mở ra xem lại, nên cứ phải hỏi người chủ.</p></div>
+    </div>
+    <p class="nguon">Bốn câu khác nhau, nhưng đi tới cuối thì giống nhau: công ty chưa có quy trình, nên việc gì cũng quay về người chủ.</p>
+  </div>
+</section>
+
+<section class="nen-toi">
+  <div class="khung kiem">
+    <div>
+      <span class="nhan">Tự kiểm tra trong một phút</span>
+      <h2>Bạn nhớ lại tuần vừa rồi ở công ty mình</h2>
+      <p class="dan">Dòng nào đúng với tuần vừa rồi thì bạn tích vào. Trang không lưu lại câu trả lời của bạn.</p>
+      <ul>
+        <li><label><input type="checkbox"> Có ít nhất một khách quan trọng phải chính tôi ra gặp mới chốt được.</label></li>
+        <li><label><input type="checkbox"> Nhân viên gọi hoặc nhắn hỏi tôi về một việc lẽ ra họ tự quyết được.</label></li>
+        <li><label><input type="checkbox"> Tôi phải làm lại một việc vì nhân viên làm chưa đúng ý.</label></li>
+        <li><label><input type="checkbox"> Tôi không chắc tháng sau khách có đều như tháng này không.</label></li>
+        <li><label><input type="checkbox"> Có một việc tôi biết cần sửa từ lâu mà tuần này vẫn chưa đụng tới.</label></li>
+        <li><label><input type="checkbox"> Tôi không có ai ngoài công ty để kể những chuyện khó nói ở công ty.</label></li>
+      </ul>
+    </div>
+    <div class="diem" aria-live="polite">
+      <b id="so-tich">0/6</b>
+      <p id="loi-tich">Bạn tích thử những dòng bên cạnh.</p>
     </div>
   </div>
 </section>
 
-<section class="phan gon" id="chuyen-gia">
-  <div class="bao">
-    <h2>Đội ngũ chuyên gia đồng hành</h2>
-    <div class="cg">
-      <div class="o"><img src="../img/chuyen-gia/mc-coach-duy.webp" alt="Chân dung Coach Duy Nguyễn" width="320" height="320" loading="lazy" decoding="async"><div><div class="ten-cg">Coach Duy Nguyễn</div><div class="nghe">Bán hàng, xây dựng thương hiệu, chuẩn hóa hệ thống và huấn luyện kỹ năng cho chủ doanh nghiệp</div></div></div>
-      <div class="o"><img src="../img/chuyen-gia/mc-thanh-bui.webp" alt="Chân dung Thanh Bùi" width="320" height="320" loading="lazy" decoding="async"><div><div class="ten-cg">Thanh Bùi</div><div class="nghe">Kế toán và thuế, 20 năm tư vấn, đào tạo và xây dựng hệ thống kế toán chuẩn cho doanh nghiệp và dự án FDI</div></div></div>
-      <div class="o"><img src="../img/chuyen-gia/mc-cherry-nguyen.webp" alt="Chân dung Cherry Nguyễn" width="320" height="320" loading="lazy" decoding="async"><div><div class="ten-cg">Cherry Nguyễn</div><div class="nghe">Cố vấn tài chính tại FIDT. Giúp bạn tách tiền gia đình khỏi tiền doanh nghiệp, để những tháng kinh doanh đi xuống không kéo cả nhà đi theo</div></div></div>
-      <div class="o"><img src="../img/chuyen-gia/mc-le-phuong.webp" alt="Chân dung Coach Lê Phương" width="320" height="320" loading="lazy" decoding="async"><div><div class="ten-cg">Coach Lê Phương</div><div class="nghe">Phong thủy và tử vi cho doanh nghiệp. Xem văn phòng, cửa hàng và chọn ngày cho những việc lớn như khai trương, ký kết, chuyển trụ sở</div></div></div>
+<section>
+  <div class="khung chuyen">
+    <div class="anh-ghep">
+      <img src="../img/cd-workshop.webp" alt="Coach Duy Nguyễn trong một buổi workshop" width="1400" height="933" loading="lazy">
+      <img src="../img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng lớp" width="1400" height="932" loading="lazy">
+      <img src="../img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng bài" width="1400" height="933" loading="lazy">
     </div>
-    <p class="phu">Ngoài ra còn có workshop với chuyên gia khách mời, để bạn hỏi thẳng người đang làm nghề về những chuyện như kế toán và thuế, theo đúng tình huống doanh nghiệp mình.</p>
-  </div>
-</section>
-
-<section class="phan">
-  <div class="bao">
-    <h2>Vì sao Duy mở Master Club</h2>
-    <div class="vi-sao">
-      <div>
-        <p class="doan">Trong tháng 10, đội ngũ tư vấn của Duy đã nói chuyện với hơn 50 chủ doanh nghiệp trong cộng đồng. Hai chuyện được nhắc tới nhiều nhất là doanh nghiệp chưa có quy trình rõ ràng, và người chủ thiếu những mối kết nối kinh doanh để cùng làm ăn, cùng hỏi han nhau. Nhiều người kể những câu rất giống nhau:</p>
-        <ul class="loi">
-          <li>Tháng thì khách đông, tháng thì vắng hẳn.</li>
-          <li>Chưa có quy trình, mỗi người làm một kiểu.</li>
-          <li>Nhân viên tư vấn theo cảm tính, khách hỏi nhiều mà mua thì ít.</li>
-          <li>Đào tạo người mới mãi mà vẫn chưa làm được như mình.</li>
-        </ul>
-      </div>
-      <div class="o ke">
-        <p>Nếu những chuyện này cũng là điều bạn đang lo lắng mỗi ngày thì bạn không một mình. Duy cũng từng như bạn.</p>
-        <p>Có giai đoạn thương hiệu của Duy đi lên rất nhanh, nhưng việc gì trong công ty cũng chờ Duy quyết, khách quan trọng nào cũng chờ Duy ra gặp.</p>
-        <p>Lúc đó Duy không thiếu kiến thức. Sách đã đọc, lớp đã học. Duy đoán bạn cũng vậy.</p>
-        <p class="nhan-manh">Điều Duy thiếu là một nơi để mang đúng việc mình đang vướng ra, có người ngồi cùng phân tích cho ra lẽ, rồi về làm ngay trong tuần.</p>
-        <p style="margin-top:20px">Master Club là nơi đó, và tuần nào cũng có một buổi.</p>
-      </div>
+    <div>
+      <span class="nhan">Vì sao Duy mở Master Club</span>
+      <h2>Duy cũng từng là người chủ mà việc gì cũng chờ mình quyết</h2>
+      <p>Tháng 5/2021, Facebook của Duy chưa có một người theo dõi nào. Năm tháng sau, MobiFone mời Duy vào đào tạo nội bộ. Thương hiệu đi lên nhanh, nhưng việc gì trong công ty cũng chờ Duy quyết.</p>
+      <blockquote>Hồi đó Duy đọc sách, đi học đủ cả. Thứ Duy cần là một chỗ để tuần nào cũng đem việc đang vướng ra bàn với những người chủ khác.</blockquote>
+      <p>Master Club là chỗ như vậy. Duy không làm thay bạn. Duy hỏi để bạn tự thấy việc đang kẹt ở đâu, và tuần sau Duy hỏi lại bạn đã làm tới đâu rồi.</p>
+      <p class="doanh-nghiep"><span>MobiFone</span><span>AIA</span><span>KB Securities</span><span>và nhiều doanh nghiệp khác</span></p>
     </div>
   </div>
 </section>
 
-<section class="phan nen">
-  <div class="bao">
-    <h2>Ở Master Club, bạn không phải gỡ việc một mình</h2>
-    <div class="o3">
-      <div class="o"><div class="so-tt">01</div><h3>Mỗi tuần mang một vấn đề tới để được gỡ rối</h3><p>Không phải đợi tới khóa học sau, cũng không phải đi hẹn ai đó lúc họ rảnh. Tuần nào cũng có buổi coaching nhóm, có việc khó thì bạn đăng ký lượt trình bày để mọi người cùng phân tích.</p></div>
-      <div class="o"><div class="so-tt">02</div><h3>Ngồi cùng những người chủ đang gặp chuyện giống bạn</h3><p>Nhóm kết nối kinh doanh riêng là nơi để bạn đưa ra những tình huống khó ở doanh nghiệp mình, với những người chủ đã từng đi qua đúng chuyện đó.</p></div>
-      <div class="o"><div class="so-tt">03</div><h3>Có người hỏi han thì việc không bị bỏ dở</h3><p>Tuần sau bạn kể cho mọi người nghe mình đã làm tới đâu. Làm một mình thì dễ bỏ ngang, còn biết tuần sau thế nào cũng có người hỏi thì bạn sẽ cố làm cho xong.</p></div>
-      <div class="o"><div class="so-tt">04</div><h3>Có câu hỏi thì hỏi luôn, không phải chờ tới buổi sau</h3><p>Đang làm mà vướng thì bạn gửi câu hỏi vào nhóm hỗ trợ, trong hai ngày làm việc sẽ có người trả lời. Việc không phải dừng lại cả tuần.</p></div>
-      <div class="o"><div class="so-tt">05</div><h3>Có sẵn tài liệu để đào tạo nhân viên</h3><p>Bộ tài liệu và mẫu có sẵn, bạn chỉ cần sửa lại cho hợp với doanh nghiệp mình rồi giao cho nhân viên làm theo.</p></div>
-      <div class="o"><div class="so-tt">06</div><h3>Cứ 90 ngày nhìn lại một lần</h3><p>Bạn và Duy ngồi lại xem mục tiêu đặt ra lúc đầu đã đạt tới đâu, rồi chỉnh cách làm cho 90 ngày tiếp theo, chứ không cứ thế làm tiếp.</p></div>
+<section class="so-sanh">
+  <div class="khung">
+    <span class="nhan">So với tự làm hoặc đi học thêm</span>
+    <h2>Ở Master Club, bạn mang chính việc của công ty mình tới để gỡ</h2>
+    <p class="dan">Đi học thì bạn nghe cách làm chung rồi tự về áp vào công ty. Ở Master Club, cả nhóm bắt đầu từ việc thật của bạn.</p>
+    <div class="bang">
+      <div class="cap-dau"><span></span><span>Khi tự làm hoặc đi học thêm</span><span>Ở Master Club</span></div>
+      <div class="cap"><b><i>01</i>Việc đem ra bàn</b><p class="cu">Ví dụ của doanh nghiệp khác, về nhà mới thấy không khớp.</p><p class="moi">Việc thật của công ty bạn, với khách và nhân viên của bạn.</p></div>
+      <div class="cap"><b><i>02</i>Việc cần sửa</b><p class="cu">Biết cần sửa, nhưng tuần nào cũng có việc gấp chen lên trước.</p><p class="moi">Mỗi buổi chọn một việc đủ nhỏ để làm xong trong tuần.</p></div>
+      <div class="cap"><b><i>03</i>Người hỏi lại</b><p class="cu">Không ai hỏi lại bạn đã làm tới đâu, nên việc cứ để đó.</p><p class="moi">Tuần sau bạn kể lại kết quả trước cả nhóm.</p></div>
+      <div class="cap"><b><i>04</i>Chuyện khó nói</b><p class="cu">Bạn giữ trong lòng, vì ngoài công ty không có ai để kể.</p><p class="moi">Có một nhóm người chủ giữ kín chuyện của nhau.</p></div>
     </div>
   </div>
 </section>
 
-<section class="phan gon">
-  <div class="bao">
-    <div class="dai">
-      <div><h3>Bạn đang có một việc muốn gỡ ngay?</h3><p>Bấm đăng ký, trả lời vài câu hỏi ngắn. Tư vấn viên sẽ liên hệ, nghe bạn kể kỹ việc đang vướng, rồi hai bên cùng xem Master Club có hợp với bạn lúc này không.</p></div>
-      <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<section class="mot-tuan" id="mot-tuan">
+  <div class="khung">
+    <span class="nhan">Một tuần ở Master Club</span>
+    <h2>Một tuần của bạn ở Master Club đi qua bốn bước</h2>
+    <p class="dan">Mỗi buổi qua Zoom khoảng 2,5 tới 3 tiếng. Hết một vòng, bạn có thêm một việc đã làm xong ở công ty mình.</p>
+    <div class="tuan">
+      <div class="buoc"><div class="so">01</div><h3>Chọn việc</h3><p>Bạn chọn một việc đang vướng nhất ở công ty mình để đem ra buổi coaching.</p></div>
+      <div class="buoc"><div class="so">02</div><h3>Phân tích</h3><p>Duy và cả nhóm hỏi từng câu cho tới khi bạn thấy rõ việc đó đang kẹt ở đâu.</p></div>
+      <div class="buoc"><div class="so">03</div><h3>Áp dụng</h3><p>Bạn về làm thử ngay trong tuần, với khách và nhân viên của chính bạn.</p></div>
+      <div class="buoc"><div class="so">04</div><h3>Nhìn lại</h3><p>Buổi sau bạn kể lại đã làm được tới đâu, rồi chọn việc tiếp theo.</p></div>
+    </div>
+    <div class="ghi-chu">Tuần nào không đem việc của mình ra bàn, bạn vẫn ngồi nghe việc của người khác và hỏi thêm. Tuần bận thì xem lại phần hướng dẫn chung đã ghi hình.</div>
+  </div>
+</section>
+
+<section class="nam">
+  <div class="khung">
+    <span class="nhan">Một năm gồm những gì</span>
+    <h2>Trong 12 tháng, bạn có những buổi này</h2>
+    <div class="so-lieu">
+      <div class="o-so"><b>48</b><span>buổi coaching nhóm qua Zoom, Duy dẫn trực tiếp</span></div>
+      <div class="o-so"><b>12</b><span>chuyên đề, mỗi tháng một chủ đề</span></div>
+      <div class="o-so"><b>12</b><span>buổi workshop về AI, mỗi tháng một buổi</span></div>
+      <div class="o-so"><b>4</b><span>buổi nhìn lại kết quả cùng Duy, cứ 90 ngày một buổi</span></div>
+    </div>
+    <h3 style="font-size:22px;margin-bottom:18px">Chín chủ đề đi qua trong năm</h3>
+    <div class="chu-de">
+      <div><i>01</i><h3>Quy trình cho nhân viên</h3><p class="noi-dau">Người mới vào, việc gì cũng chạy lên hỏi bạn. Bạn nghỉ hai ngày là việc ở công ty chững lại.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Ghi lại từng bước bạn đang làm trong đầu thành quy trình, để người mới đọc là làm được.</p></div>
+      <div><i>02</i><h3>Có khách đều</h3><p class="noi-dau">Tháng này khách đông, tháng sau vắng hẳn mà bạn không biết vì sao. Khách cũ mua một lần rồi thôi.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Xác định nhóm khách hợp với công ty mình, và chăm khách cũ để họ quay lại, giới thiệu thêm người.</p></div>
+      <div><i>03</i><h3>Gói và giá</h3><p class="noi-dau">Khách hỏi giá xong là im lặng, hoặc chỉ mua gói rẻ nhất. Bán được nhiều mà cuối tháng vẫn không còn lãi.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Sắp xếp lại sản phẩm thành từng gói, đặt giá cho đúng với nhóm khách bạn phục vụ.</p></div>
+      <div><i>04</i><h3>Nhân viên tư vấn</h3><p class="noi-dau">Đơn nhỏ thì nhân viên tự chốt được. Đơn lớn thì lần nào khách cũng đòi gặp bạn.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Dựng cách tư vấn chung cho cả phòng, để đơn hàng lớn không phải chờ bạn ra mặt.</p></div>
+      <div><i>05</i><h3>Tuyển và giữ người</h3><p class="noi-dau">Tuyển mãi mới được một người, vừa dạy xong thì người đó nghỉ. Người giỏi còn ở lại thì nơi khác cũng đang mời.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Tuyển đúng người ngay từ buổi phỏng vấn, và cho người giỏi thấy con đường của họ ở công ty.</p></div>
+      <div><i>06</i><h3>Giao quyền</h3><p class="noi-dau">Bạn đã giao việc cho quản lý, nhưng chuyện gì cuối cùng cũng quay về bàn của bạn.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Chia rõ việc nào người quản lý tự quyết, việc nào mới cần hỏi bạn.</p></div>
+      <div><i>07</i><h3>Dòng tiền</h3><p class="noi-dau">Doanh thu năm nào cũng tăng, nhưng bạn không chắc công ty lãi thật bao nhiêu. Tiền nhà và tiền công ty vẫn đi chung một tài khoản.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Tách tiền nhà khỏi tiền công ty, đọc được số lãi thật, học cùng chuyên gia tài chính.</p></div>
+      <div><i>08</i><h3>Thương hiệu người chủ</h3><p class="noi-dau">Bạn làm nghề giỏi, nhưng khách chỉ biết tới bạn khi có người quen giới thiệu.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Kể kinh nghiệm của bạn ra bên ngoài, để khách biết tới bạn trước cả khi gặp bạn.</p></div>
+      <div><i>09</i><h3>Nhìn lại năm</h3><p class="noi-dau">Hết năm, bạn thấy mình bận suốt mười hai tháng nhưng không nhớ rõ công ty đã khác đi ở chỗ nào.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Xem lại khách, nhân sự, tiền và thời gian của bạn, rồi chọn một hai việc cho năm sau.</p></div>
+    </div>
+    <p class="nguon">Thứ tự các chủ đề có thể đổi theo tình hình thực tế của doanh nghiệp thành viên.</p>
+
+    <h3 style="font-size:22px;margin:56px 0 0">Những người dẫn chuyên đề cùng Duy</h3>
+    <div class="chuyen-gia">
+      <div class="cg"><img src="../img/chuyen-gia/mc-coach-duy.webp" alt="" loading="lazy"><b>Coach Duy Nguyễn</b><span>Dẫn các buổi coaching nhóm hằng tuần</span></div>
+      <div class="cg"><img src="../img/chuyen-gia/mc-thanh-bui.webp" alt="" loading="lazy"><b>Thanh Bùi</b><span>Kế toán và thuế, 20 năm trong nghề</span></div>
+      <div class="cg"><img src="../img/chuyen-gia/mc-cherry-nguyen.webp" alt="" loading="lazy"><b>Cherry Nguyễn</b><span>FIDT, tài chính</span></div>
+      <div class="cg"><img src="../img/chuyen-gia/mc-le-phuong.webp" alt="" loading="lazy"><b>Coach Lê Phương</b><span>Phong thủy</span></div>
     </div>
   </div>
 </section>
 
-<section class="phan" id="mot-tuan">
-  <div class="bao">
-    <h2>Một tuần ở Master Club</h2>
-    <ol class="tuan">
-      <li><h3>Chọn việc</h3><p>Trước buổi, bạn chọn việc đang khiến bạn vướng nhất tuần này, rồi đăng ký lượt trình bày.</p></li>
-      <li><h3>Mổ xẻ</h3><p>Tới lượt bạn, Duy và mọi người hỏi tới khi ra đúng điểm nghẽn, rồi cùng tìm ra phương án.</p></li>
-      <li><h3>Áp dụng</h3><p>Sau buổi, bạn chọn một việc trong phương án để làm ngay trong tuần.</p></li>
-      <li><h3>Nhìn lại</h3><p>Tuần sau, bạn kể lại đã làm được tới đâu, còn vướng ở đâu.</p></li>
-    </ol>
-    <div class="ghi-chu">
-      <figure class="anh-khung"><img src="../cong-dong/img/cd-tuong-tac.jpg" alt="Coach Duy Nguyễn dẫn hai học viên thực hành một cuộc tư vấn" width="1500" height="1000" loading="lazy" decoding="async"></figure>
-      <div class="o"><div class="khi">Tuần chưa tới lượt</div><p>Bạn vẫn ngồi nghe và hỏi thêm. Có khi nghe người khác kể việc của họ, bạn lại nhận ra điểm nghẽn của chính mình mà trước giờ chưa để ý.</p></div>
-      <div class="o"><div class="khi">Tuần bận</div><p>Phần hướng dẫn chung trong buổi có ghi hình để bạn xem lại. Riêng phần phân tích việc của từng người, Duy chỉ ghi hình khi người đó đồng ý.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="phan nen" id="quyen-loi">
-  <div class="bao">
-    <h2>Bên trong Master Club</h2>
-    <div class="ben-trong">
-      <div class="hang">
-        <figure class="anh-khung"><img src="../img/bl-phong-thu.webp" alt="Coach Duy Nguyễn ngồi trong phòng thu, sẵn sàng cho một buổi coaching qua Zoom" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Mỗi tuần</div><h3>Buổi coaching nhóm với Duy</h3><p>Zoom khoảng 2,5 tới 3 tiếng. Tới lượt bạn thì cả nhóm cùng phân tích việc thật của bạn, chưa tới lượt thì bạn nghe việc của người khác và hỏi thêm.</p><p>Sau mỗi buổi, bạn chọn một việc để làm trong tuần rồi kể lại. Hết tuần, bạn có thêm một việc đã làm xong ở công ty mình, chứ không phải chỉ thêm một buổi ngồi nghe.</p></div>
-      </div>
-      <div class="hang">
-        <figure class="anh-khung"><img src="../img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng một chuyên đề, sau lưng là trang trình chiếu" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Mỗi tháng</div><h3>Chương trình chuyên đề hằng tháng</h3><p>Mỗi tháng một chủ đề, học 4 tới 6 buổi tối qua Zoom, chương trình do Duy thiết kế. Chuyên đề dành cho những việc một buổi coaching không sửa xong, như dựng lại cách tư vấn của cả đội ngũ hay viết quy trình cho một bộ phận. Bạn đang kẹt ở chủ đề nào thì chọn học chủ đề đó.</p><p class="gia">Đăng ký Master Club tới hết 31/12/2026: miễn phí trong 12 tháng.</p></div>
-      </div>
-      <div class="hang" id="workshop-ai">
-        <figure class="anh-khung"><img src="../img/bl-may-tinh.webp" alt="Coach Duy Nguyễn làm việc bên máy tính" width="1400" height="934" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Đặc biệt, mỗi tháng</div><h3>Workshop ứng dụng AI cho người chủ và người quản lý</h3><p>Ngoài chín chủ đề của chương trình, mỗi tháng có một buổi workshop về cách dùng AI trong kinh doanh. Mỗi buổi gắn với chủ đề bạn đang học. Ví dụ, khi học quy trình thì dùng AI để ghi lại cách làm thành quy trình. Khi học tư vấn thì cho nhân viên tư vấn thử với AI đóng vai khách. Công cụ AI thay đổi nhanh, nên mỗi buổi bạn được cập nhật cách dùng mới và làm thử ngay trên việc doanh nghiệp mình đang làm.</p></div>
-      </div>
-      <div class="hang">
-        <figure class="anh-khung"><img src="../cong-dong/img/cd-networking.jpg" alt="Coach Duy Nguyễn nâng ly cùng các chủ doanh nghiệp trong một buổi giao lưu buổi tối" width="1500" height="891" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Ngoài giờ coaching</div><h3>Cộng đồng kết nối kinh doanh</h3><p>Nhóm riêng của những người chủ đang giải cùng loại bài toán với bạn. Đây là nơi để bạn hỏi những chuyện khó nói ở công ty, và quen thêm những người chủ có thể hợp tác.</p><p>Mỗi tháng còn có một buổi giao lưu gặp trực tiếp tại Hà Nội, có Duy dự, mở cho cả cộng đồng. Vé bán riêng, giá chỉ đủ bù chi phí tổ chức.</p></div>
-      </div>
-      <div class="hang">
-        <figure class="anh-khung"><img src="../img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng giảng trước một lớp học đông người" width="1400" height="932" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Học lúc nào cũng được</div><h3>Mọi khóa học online của Next Gen Founder</h3><p>Chỉ dành cho thành viên đăng ký tới hết ngày 31/12/2026: học miễn phí cả năm, kể cả những khóa làm sau này. Phần kiến thức cơ bản bạn xem ở nhà, để buổi coaching dành hết thời gian cho việc của bạn.</p><p>Bộ kế hoạch kinh doanh 2027 là bộ công cụ nên không nằm trong quyền lợi khóa học online này.</p></div>
-      </div>
-      <div class="hang">
-        <figure class="anh-khung"><img src="../img/cd-workshop.webp" alt="Coach Duy Nguyễn cầm micro trao đổi với các chủ doanh nghiệp ngồi quanh bàn" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Giữa hai buổi coaching</div><h3>Đội ngũ hỗ trợ riêng</h3><p>Câu hỏi bạn gửi giữa hai buổi coaching được trả lời trong hai ngày làm việc, nên việc đang làm không phải dừng lại chờ.</p></div>
-      </div>
-      <div class="hang">
-        <figure class="anh-khung"><img src="../img/bl-viet-tay.webp" alt="Coach Duy Nguyễn ghi chép trên bàn làm việc, bên cạnh tài liệu" width="1400" height="933" loading="lazy" decoding="async"></figure>
-        <div><div class="khi">Có sẵn để dùng</div><h3>Bộ tài liệu và mẫu cao cấp</h3><p>Mẫu, bảng và tài liệu để sửa theo doanh nghiệp mình, dùng luôn khi đào tạo nhân viên.</p><p>Kèm theo là những công cụ do Duy và đội ngũ làm ra, thành viên dùng miễn phí trong suốt thời gian tham gia.</p></div>
-      </div>
-    </div>
-    <h2 id="chu-de" style="margin-top:72px">Chín chủ đề bạn sẽ học ở Master Club</h2>
-    <div class="o3">
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><div class="so-tt">01</div><h3>Biến cách làm của người chủ thành quy trình cho nhân viên</h3><p>Ghi lại từng bước người chủ đang làm, để nhân viên làm theo được và người mới vào không phải đi hỏi từng việc.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div class="so-tt">02</div><h3>Có khách đều thay vì lúc có lúc không</h3><p>Biết rõ khách nào hợp với doanh nghiệp, nghe câu khách hỏi để biết ai đang muốn mua, và chăm sóc để khách cũ quay lại mua tiếp và giới thiệu thêm người.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/></svg><div class="so-tt">03</div><h3>Sắp xếp gói dịch vụ và giá để khách nhìn là hiểu</h3><p>Gộp các dịch vụ thành vài gói rõ ràng, khách biết nên bắt đầu từ gói nào, và nhân viên bán hàng giải thích được vì sao giá ở mức đó.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg><div class="so-tt">04</div><h3>Nhân viên tư vấn bán được mà không cần người chủ ra mặt</h3><p>Học cách nghe khách nói, hỏi đúng điều khách đang lo rồi mới giới thiệu sản phẩm, để những đơn hàng lớn không phải chờ người chủ. Mỗi tuần cả nhóm bán hàng xem lại số khách hỏi, số khách hẹn gặp và số khách mua, để biết khách đang dừng ở đâu.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg><div class="so-tt">05</div><h3>Tuyển đúng người và giữ người giỏi ở lại</h3><p>Biết rõ doanh nghiệp cần người có năng lực và tính cách ra sao trước khi đăng tuyển, kèm người mới trong những tháng đầu, và có lộ trình thăng tiến rõ ràng để người giỏi muốn ở lại.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></svg><div class="so-tt">06</div><h3>Giao quyền cho người quản lý</h3><p>Chia rõ việc nào người quản lý tự quyết, việc nào cần hỏi người chủ. Người chủ làm cùng người quản lý vài lần đầu cho tới khi họ tự xử lý được, để không còn phải lấy việc về làm mỗi khi có lỗi.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg><div class="so-tt">07</div><h3>Dòng tiền của doanh nghiệp</h3><p>Tách tiền nhà khỏi tiền công ty, và luôn đủ tiền trả lương, trả nhà cung cấp khi doanh nghiệp mở rộng. Chủ đề này học qua các buổi workshop với chuyên gia tài chính.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><div class="so-tt">08</div><h3>Thương hiệu người chủ mang khách về cho doanh nghiệp</h3><p>Khách biết tới chuyên môn của người chủ trước khi gặp, qua bài viết, video và những buổi người chủ chia sẻ. Từ đó khách tin cả doanh nghiệp chứ không chỉ tin một mình người chủ.</p></div>
-      <div class="o"><svg class="hinh-nen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg><div class="so-tt">09</div><h3>Nhìn lại năm cũ và chọn hướng đi cho năm sau</h3><p>Cuối năm xem lại khách hàng, nhân sự, dòng tiền và thời gian của người chủ, chứ không chỉ doanh thu, rồi chọn ra một hai việc phải làm cho bằng được trong năm tới.</p></div>
-    </div>
-    <p class="phu">Thứ tự và nội dung các chủ đề có thể thay đổi theo tình hình thực tế của doanh nghiệp thành viên.</p>
-  </div>
-</section>
-
-<section class="phan">
-  <div class="bao">
-    <h2>Master Club hợp với ai</h2>
-    <div class="o2">
-      <div class="o hop">
+<section class="nen-cam">
+  <div class="khung">
+    <span class="nhan">Nói thẳng trước khi bạn đăng ký</span>
+    <h2>Ai nên vào Master Club, ai nên chờ thêm</h2>
+    <div class="hop">
+      <div class="co">
         <h3>Hợp khi bạn có đủ ba điều</h3>
-        <ul class="danh">
-          <li>Khách quan trọng nào cũng phải chính bạn ra gặp.</li>
-          <li>Bạn đã nói rõ được một việc muốn sửa trước: cách bán, đội ngũ tư vấn, hoặc cách vận hành.</li>
+        <ul>
+          <li>Công ty bạn đang chạy thật, và nhiều việc vẫn phải chờ bạn quyết.</li>
+          <li>Bạn đã biết mình muốn sửa việc gì trước, ví dụ cách bán hàng hay cách nhân viên tư vấn cho khách.</li>
           <li>Bạn sẵn sàng làm thử ngay trong tuần và quay lại kể kết quả.</li>
         </ul>
       </div>
-      <div class="o">
+      <div class="chua">
         <h3>Chưa hợp lúc này nếu</h3>
-        <ul class="danh">
+        <ul>
           <li>Bạn chưa có một doanh nghiệp đang chạy thật.</li>
-          <li>Bạn muốn nghe thêm là chính, chưa muốn làm thử trên doanh nghiệp của mình.</li>
-          <li>Bạn cần ai đó bảo đảm chắc chắn về kết quả.</li>
-          <li>Bạn muốn có người quyết định thay mình.</li>
-          <li>Bạn chưa sẵn sàng giữ kín chuyện doanh nghiệp của người khác.</li>
+          <li>Bạn muốn nghe là chính, chưa muốn làm thử.</li>
+          <li>Bạn cần có người cam kết kết quả, hoặc quyết định thay bạn.</li>
           <li>Bạn vào chủ yếu để bán hàng cho các thành viên khác.</li>
         </ul>
       </div>
     </div>
-    <p class="phu">Nếu bạn thấy mình trong cột chưa hợp, mức Thành viên của cộng đồng sẽ hợp với bạn hơn lúc này, và Duy vẫn gặp bạn ở đó.</p>
+    <p class="nguon">Nếu bạn ở cột chưa hợp, mức Thành viên miễn phí của cộng đồng Next Gen Founder sẽ hợp với bạn hơn lúc này. Duy vẫn gặp bạn ở đó.</p>
   </div>
 </section>
 
-<section class="phan nen">
-  <div class="bao">
-    <h2>Ba cấp trong cộng đồng Next Gen Founder</h2>
-    <div class="chon-cap" role="tablist" aria-label="Chọn cấp để xem">
-      <button type="button" role="tab" aria-selected="false">Thành viên</button>
-      <button type="button" role="tab" aria-selected="true">Master Club</button>
-      <button type="button" role="tab" aria-selected="false">Grand Master</button>
-    </div>
-    <div class="ba-cap">
-      <div class="o cap">
-        <div><div class="khi">Cấp 1</div><div class="ten">Thành viên</div><div class="phi-cap">Miễn phí, có đăng ký tham gia</div></div>
-        <div><div class="khi">Dành cho</div><p>Người mới bắt đầu kinh doanh, hoặc chủ doanh nghiệp muốn xem cộng đồng này làm việc thế nào trước khi đi sâu.</p></div>
-        <div><div class="khi">Bạn nhận</div><p>Nội dung chọn lọc, công cụ để bắt đầu, và tư vấn viên gợi ý nên bắt đầu từ chương trình nào.</p></div>
-        <a class="nut" href="../cong-dong/" style="background:transparent;color:var(--ink);border-color:var(--line-2)">Xem trang cộng đồng</a>
+<section class="gia" id="gia">
+  <div class="khung">
+    <span class="nhan">Phí tham gia</span>
+    <h2>Bạn đóng phí một lần cho cả năm, không có khoản nào phát sinh thêm</h2>
+    <div class="gia-khung">
+      <div class="the-gia">
+        <div class="tien">110.000đ <small>/ ngày</small></div>
+        <p class="phu">Tính cho trọn một năm, đã gồm thuế, thanh toán một lần.</p>
+        <ul>
+          <li>48 buổi coaching nhóm cùng Duy</li>
+          <li>12 workshop về AI</li>
+          <li>4 buổi nhìn lại kết quả cùng Duy, cứ 90 ngày một buổi</li>
+          <li>Câu hỏi giữa tuần được trả lời trong 2 ngày làm việc</li>
+          <li>Nhóm kết nối kinh doanh riêng của thành viên</li>
+          <li>Bộ tài liệu và biểu mẫu, tải về là dùng được</li>
+        </ul>
+        <a class="nut" href="#dang-ky" style="width:100%;justify-content:center">Đăng ký nói chuyện với tư vấn viên</a>
       </div>
-      <div class="o cap chinh">
-        <span class="dau">Trang bạn đang đọc</span>
-        <div><div class="khi">Cấp 2</div><div class="ten">Master Club</div><div class="phi-cap">Đăng ký theo năm</div></div>
-        <div><div class="khi">Dành cho</div><p>Người chủ có doanh nghiệp đang hoạt động thật, khách quan trọng vẫn phải tự mình ra gặp.</p></div>
-        <div><div class="khi">Bạn nhận</div><p>Mỗi tuần một buổi coaching nhóm cùng Duy, sửa từng việc ngay trên doanh nghiệp của bạn.</p></div>
-        <a class="nut" href="#quyen-loi">Xem quyền lợi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="o cap">
-        <div><div class="khi">Cấp 3</div><div class="ten">Grand Master Club</div><div class="phi-cap">Theo lời mời</div></div>
-        <div><div class="khi">Dành cho</div><p>Người chủ muốn nâng cấp cả bản thân lẫn nhân sự của mình.</p></div>
-        <div><div class="khi">Bạn nhận</div><p>Tham gia theo lời mời, đội ngũ tư vấn sẽ trao đổi riêng với bạn.</p></div>
-        <a class="nut" href="#dang-ky" data-cap="Grand Master Club" style="background:transparent;color:var(--ink);border-color:var(--line-2);white-space:normal;height:auto;min-height:48px;padding:10px 22px;text-align:center">Trao đổi với đội ngũ tư vấn</a>
+      <div class="uu-dai">
+        <b class="han">ĐĂNG KÝ TỚI HẾT 31/12/2026</b>
+        <h3>Học miễn phí chuyên đề hằng tháng trong 12 tháng</h3>
+        <p>Người đăng ký trong năm 2026 được học miễn phí 12 chuyên đề, mỗi tháng một chuyên đề. Các khóa học online của Duy, bạn cũng học mà không phải trả thêm.</p>
+        <p>Người đăng ký từ năm 2027 được giảm 50% phí chuyên đề, còn 2,5 triệu đồng một chương trình.</p>
+        <p style="font-size:14px;margin-top:22px">Thanh toán bằng chuyển khoản, mã QR hoặc thẻ. Có hóa đơn điện tử.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="phan" id="phi">
-  <div class="bao">
-    <h2>Phí tham gia</h2>
-    <div class="phi">
-      <div class="the-phi">
-        <div class="ky">Master Club, gói một năm</div>
-        <div class="so">3,3 <small>triệu đồng mỗi tháng</small></div>
-        <p class="nam">Đăng ký theo năm, thanh toán một lần 40 triệu đồng, đã gồm thuế giá trị gia tăng.</p>
-        <div class="moc">
-          <div><b>Đăng ký tới hết 31/12/2026</b>Học miễn phí mọi chương trình chuyên đề hằng tháng trong 12 tháng, tính từ ngày đăng ký, và mọi khóa học online của Next Gen Founder.</div>
-          <div><b>Đăng ký từ năm 2027</b>Chương trình chuyên đề giảm 50%, còn 2,5 triệu đồng một chương trình.</div>
-        </div>
-        <a class="nut lon" href="#dang-ky">Đăng ký Master Club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <ul class="dieu">
-        <li><div class="khi">Cách thanh toán</div><p>Chuyển khoản, quét mã QR hoặc trả bằng thẻ qua cổng thanh toán. Bạn nhận hóa đơn điện tử.</p></li>
-        <li><div class="khi">Thời hạn</div><p>Master Club đăng ký theo năm và thanh toán một lần cho cả năm, không thu theo tháng hay theo quý.</p></li>
-        <li><div class="khi">Hoàn phí</div><p>Phí đã đóng thì không hoàn lại. Vì vậy Duy mong bạn đọc kỹ phần hợp và chưa hợp ở trên, và hỏi tư vấn viên mọi điều còn băn khoăn trước khi đóng.</p></li>
-      </ul>
+    <div class="cam-ket">
+      <div><h3>Điều Duy cam kết</h3><p>48 buổi coaching nhóm trong năm, gần như tuần nào cũng có. Cứ 90 ngày, bạn và Duy nhìn lại kết quả một lần để chỉnh cách làm cho ba tháng sau.</p></div>
+      <div><h3>Điều Duy không hứa</h3><p>Duy không hứa doanh thu tăng bao nhiêu hay khách về bao nhiêu. Duy cũng không hứa công ty tự vận hành được khi bạn đi vắng. Những điều đó tùy vào việc bạn làm sau mỗi buổi.</p></div>
     </div>
   </div>
 </section>
 
-<section class="phan nen">
-  <div class="bao">
-    <h2>Điều Duy cam kết, và điều Duy không hứa</h2>
-    <div class="o2">
-      <div class="o hop"><div class="khi">Duy cam kết</div><p>Tuần nào cũng có một buổi để bạn mang việc thật ra cùng phân tích rồi về làm ngay, có những người chủ cùng hoàn cảnh ngồi cạnh. Cứ 90 ngày, chúng ta cùng nhìn lại xem doanh nghiệp đã thay đổi được những gì.</p></div>
-      <div class="o"><div class="khi">Duy không hứa</div><p>Duy không hứa doanh thu, số khách, hay chuyện doanh nghiệp tự chạy khi bạn vắng mặt. Những điều đó phụ thuộc vào rất nhiều việc bạn làm sau mỗi buổi, nên Duy không muốn hứa một điều mình không nắm được.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="phan">
-  <div class="bao">
-    <h2>Những điều bạn có thể đang băn khoăn</h2>
+<section>
+  <div class="khung hep">
+    <span class="nhan">Hỏi đáp</span>
+    <h2>Những câu người chủ hay hỏi trước khi vào</h2>
     <div class="hoi">
-      <details>
-        <summary>"Khoản phí này không nhỏ, tài chính bên tôi đang chưa thoải mái"</summary>
-        <p>Duy hiểu. Nếu tiền này đang phải lấy từ phần để trả lương hay nhập hàng thì bạn đừng gồng, cứ ở lại cộng đồng ở mức Thành viên, khi nào sẵn sàng chúng ta nói chuyện lại. Còn nếu bạn chỉ đang cân nhắc có đáng hay không, thì bạn thử đặt khoản này cạnh việc đang vướng: một khách quan trọng bị lỡ, hay thêm một năm việc gì cũng chờ bạn quyết, đang tốn của bạn bao nhiêu.</p>
-      </details>
-      <details>
-        <summary>"Tôi bận lắm, sợ không theo được"</summary>
-        <p>Chính vì bạn bận nên Master Club không giao thêm bài tập. Việc bạn làm trong tuần chính là việc bạn đang vướng, nghĩa là có tham gia hay không thì bạn cũng phải làm việc đó. Tuần nào không dự được thì bạn xem lại phần hướng dẫn chung đã ghi hình.</p>
-      </details>
-      <details>
-        <summary>"Tôi muốn xem thử trước đã"</summary>
-        <p>Bạn cứ xem. Ở mức Thành viên, bạn vẫn dự các buổi chung của cộng đồng và thấy được cách Duy làm việc. Khi nào có việc cần người ngồi cùng phân tích hằng tuần thì bạn đăng ký ở cuối trang này.</p>
-      </details>
-      <details>
-        <summary>"Tôi đã học khá nhiều khóa rồi, Master Club khác gì?"</summary>
-        <p>Ở một khóa học, bạn nghe cách làm chung rồi tự mang về áp vào doanh nghiệp mình. Ở Master Club thì đi ngược lại: bạn mang việc của chính mình tới, mọi người hỏi cho tới khi ra điểm nghẽn, và tuần sau bạn kể lại đã làm được tới đâu. Khác nhau lớn nhất nằm ở phần kể lại đó.</p>
-      </details>
-      <details>
-        <summary>"Ngành của tôi khác, những người trong nhóm có hiểu việc của tôi không?"</summary>
-        <p>Người trong nhóm không cần làm cùng ngành với bạn. Chuyện chưa có quy trình, khách hỏi nhiều mà mua thì ít, nhân viên tư vấn mỗi người một kiểu, Duy gặp ở rất nhiều ngành khác nhau. Có khi chính người ngoài ngành lại hỏi ra điều mà người trong ngành đã quen tới mức không còn thấy.</p>
-      </details>
-      <details>
-        <summary>"Tôi ngại kể chuyện doanh nghiệp trước nhiều người"</summary>
-        <p>Bạn kể tới đâu là do bạn chọn. Ai vào Master Club cũng phải giữ kín chuyện doanh nghiệp của người khác, và phần phân tích việc của bạn chỉ được ghi hình khi bạn đồng ý. Tuần đầu, nhiều khi bạn chỉ cần ngồi nghe người khác trước.</p>
-      </details>
-      <details>
-        <summary>"Vào rồi mà thấy không hợp thì sao?"</summary>
-        <p>Phí đã đóng thì không hoàn lại, nên Duy muốn bạn biết rõ trước khi vào. Đó cũng là lý do tư vấn viên luôn nói chuyện kỹ với bạn trước khi bạn đóng phí, và Duy viết rõ ở trên ai chưa hợp với Master Club. Còn khi đã vào, cứ 90 ngày bạn và Duy ngồi lại nhìn kết quả, để chỉnh cách làm cho chặng sau.</p>
-      </details>
-      <details>
-        <summary>"Đóng phí xong thì chuyện gì xảy ra?"</summary>
-        <p>Bạn nhận hóa đơn điện tử và lịch buổi coaching gần nhất, rồi được thêm vào nhóm hỗ trợ và nhóm kết nối kinh doanh. Tuần đầu bạn chưa cần mang việc ra ngay, cứ ngồi nghe một buổi để quen cách mọi người làm việc với nhau.</p>
-      </details>
-      <details>
-        <summary>"Ai chăm sóc tôi trong Master Club?"</summary>
-        <p>Duy trực tiếp dẫn các buổi coaching nhóm hằng tuần. Câu hỏi giữa tuần thì bạn gửi cho đội ngũ hỗ trợ và nhận câu trả lời trong hai ngày làm việc. Còn trước khi vào, tư vấn viên là người nói chuyện kỹ với bạn và trả lời mọi điều bạn còn băn khoăn.</p>
-      </details>
+      <details><summary>"Tôi bận lắm, sợ không theo được."</summary><p>Master Club không giao thêm bài tập. Việc bạn làm trong tuần là chính việc đang vướng ở công ty, việc mà có vào Master Club hay không thì bạn cũng phải làm. Tuần nào không dự được thì bạn xem lại phần hướng dẫn chung đã ghi hình.</p></details>
+      <details><summary>"Khoản phí này không nhỏ, tài chính bên tôi đang chưa thoải mái."</summary><p>Duy hiểu. Phí Master Club tính ra khoảng 110.000 đồng một ngày, trừ thuế thì còn khoảng 100.000 đồng, chỉ bằng tiền một bữa trưa của bạn. Nếu tiền này đang phải lấy từ phần để trả lương hay nhập hàng thì bạn đừng gồng, cứ ở lại cộng đồng ở mức Thành viên, khi nào sẵn sàng chúng ta nói chuyện lại. Còn nếu bạn chỉ đang cân nhắc có đáng hay không thì bạn thử tính xem, thêm một năm nữa mà việc gì cũng chờ bạn quyết thì công ty mất bao nhiêu.</p></details>
+      <details><summary>"Người trong nhóm khác ngành tôi thì có giúp được không?"</summary><p>Người trong nhóm không cần làm cùng ngành với bạn. Chuyện chưa có quy trình, khách hỏi nhiều mà mua thì ít, nhân viên tư vấn mỗi người một kiểu, Duy gặp ở rất nhiều ngành khác nhau. Có khi chính người ngoài ngành lại hỏi ra điều mà người trong ngành đã quen tới mức không còn thấy.</p></details>
+      <details><summary>"Tôi ngại kể chuyện công ty trước người lạ."</summary><p>Bạn kể tới đâu là do bạn chọn. Ai vào Master Club cũng phải giữ kín chuyện doanh nghiệp của người khác, và phần phân tích việc của bạn chỉ được ghi hình khi bạn đồng ý. Tuần đầu, nhiều khi bạn chỉ cần ngồi nghe người khác trước.</p></details>
+      <details><summary>"Vào rồi thấy không hợp thì sao?"</summary><p>Phí đã đóng thì không hoàn lại. Vì vậy trước khi bạn đóng phí, tư vấn viên luôn nói chuyện kỹ để hai bên cùng xem có hợp không. Ở trên Duy cũng đã viết rõ ai nên chờ thêm.</p></details>
     </div>
   </div>
 </section>
 
-<section class="phan nen" id="dang-ky">
-  <div class="bao">
-    <div class="cuoi">
-      <h2>Nếu bạn muốn bắt đầu</h2>
-      <p class="doan">Đăng ký không có nghĩa là phải vào. Nói chuyện xong mà thấy chưa phải lúc, bạn cứ nói thật với tư vấn viên, và Duy vẫn gặp bạn trong cộng đồng như thường.</p>
-      <ol class="cac-buoc">
-        <li>Bạn điền phiếu bên dưới với vài câu hỏi ngắn về doanh nghiệp của mình.</li>
-        <li>Tư vấn viên liên hệ để nghe kỹ việc bạn đang vướng.</li>
-        <li>Hai bên cùng xem Master Club có hợp với bạn lúc này không.</li>
-        <li>Nếu hợp, bạn thanh toán và nhận lịch buổi coaching gần nhất.</li>
+<section class="dang-ky" id="dang-ky">
+  <div class="khung dk">
+    <div>
+      <span class="nhan">Đăng ký</span>
+      <h2>Bắt đầu bằng một cuộc nói chuyện, chưa phải đóng phí</h2>
+      <p class="dan">Bạn điền vài câu ngắn bên cạnh. Từ lúc điền phiếu tới lúc đóng phí có ba bước, và bạn dừng ở bước nào cũng được.</p>
+      <ol>
+        <li><b>Điền phiếu.</b> Vài câu hỏi ngắn về công ty và việc bạn đang vướng nhất.</li>
+        <li><b>Tư vấn viên liên hệ qua Zalo.</b> Nghe bạn kể kỹ việc đang vướng.</li>
+        <li><b>Hai bên cùng xem có hợp không.</b> Chưa hợp thì tư vấn viên nói thẳng với bạn.</li>
+        <li><b>Thanh toán</b> khi bạn đã thấy hợp, và nhận lịch buổi đầu tiên.</li>
       </ol>
-      <form class="phieu" id="phieu" novalidate>
-        <div class="an-khi-xong">
-          <label>Bạn quan tâm<select name="cap">
-            <option>Master Club</option>
-            <option>Grand Master Club</option>
-          </select></label>
-          <div class="phieu-cot">
-            <label>Họ và tên<input name="ten" autocomplete="name" required></label>
-            <label>Số Zalo<input name="dienthoai" type="tel" inputmode="tel" autocomplete="tel" required></label>
-          </div>
-          <label>Email<span class="phu">Duy gửi thư xác nhận vào địa chỉ này.</span><input name="email" type="email" autocomplete="email" required></label>
-          <div class="phieu-cot">
-            <label>Tên doanh nghiệp và lĩnh vực<input name="doanhnghiep" required placeholder="Ví dụ: Công ty An Phát, phân phối thiết bị y tế"></label>
-            <label>Số nhân sự<select name="nhansu" required>
-              <option value="">Chọn một mức</option>
-              <option>Chỉ mình tôi</option>
-              <option>2 tới 10 người</option>
-              <option>11 tới 30 người</option>
-              <option>31 tới 100 người</option>
-              <option>Trên 100 người</option>
-            </select></label>
-          </div>
-          <label>Việc bạn đang vướng nhất<textarea name="vuong" required></textarea></label>
-          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Đừng điền ô này<input type="text" name="bay" tabindex="-1" autocomplete="off"></label></div>
-          <p class="loi" id="phieu-loi" role="alert"></p>
-          <button class="nut lon" id="phieu-nut" type="submit">Đăng ký Master Club</button>
-          <p class="phu" style="margin-top:12px">Gửi phiếu chưa phải là thanh toán. Tư vấn viên liên hệ qua Zalo trước, hai bên nói chuyện xong rồi mới quyết.</p>
-        </div>
-        <div class="xong" id="phieu-xong" role="status"></div>
-      </form>
     </div>
+    <form id="phieu" novalidate>
+      <label>Bạn quan tâm tới
+        <select name="cap"><option>Master Club</option><option>Grand Master Club</option></select>
+      </label>
+      <div class="hai">
+        <label>Họ và tên<input name="ten" autocomplete="name" required></label>
+        <label>Số Zalo<input name="dienthoai" inputmode="tel" autocomplete="tel" required></label>
+      </div>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <div class="hai">
+        <label>Doanh nghiệp và lĩnh vực<input name="doanhnghiep" required></label>
+        <label>Số nhân sự
+          <select name="nhansu"><option>Dưới 5 người</option><option>5 tới 10 người</option><option>11 tới 30 người</option><option>31 tới 100 người</option><option>Trên 100 người</option></select>
+        </label>
+      </div>
+      <label>Việc bạn đang vướng nhất ở công ty<textarea name="vuong" rows="3" required placeholder="Ví dụ: khách hỏi nhiều mà ít mua, nhân viên chưa tự quyết được việc gì"></textarea></label>
+      <input class="bay" name="bay" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="loi" id="phieu-loi" role="alert"></p>
+      <button class="nut" type="submit" id="phieu-nut">Gửi phiếu cho tư vấn viên</button>
+      <div class="bao" id="phieu-xong" role="status"></div>
+    </form>
   </div>
 </section>
-</main>
 
-<footer class="chan-trang">
-  <div class="bao">
-    <div class="ct-tren">
-      <div class="ct-hieu">
-        <div class="huy-hieu"><img src="../cong-dong/img/ngf-khien.webp" alt="" width="205" height="256" loading="lazy" decoding="async"><span class="huy-ten">Master Club</span><span class="huy-phu">Next Gen Founder</span></div>
-        <p>Nhóm nhỏ chủ doanh nghiệp cùng Coach Duy Nguyễn xây thương hiệu cá nhân và hệ thống vận hành trong 12 tháng.</p>
-      </div>
-      <div class="ct-cot">
-        <h4>Người sáng lập</h4>
-        <p><b>Coach Duy Nguyễn</b><br>Người sáng lập Next Gen Founder</p>
-        <p>Những doanh nghiệp Duy đã đồng hành: MobiFone, AIA, KB và nhiều doanh nghiệp khác.</p>
-      </div>
-      <div class="ct-cot">
-        <h4>Các trang</h4>
-        <a href="../cong-dong/">Cộng đồng Next Gen Founder</a>
-        <a href="../ve-toi.html">Về Duy</a>
-        <a href="../chuong-trinh.html">Chương trình</a>
-        <a href="../blog.html">Blog</a>
-      </div>
-      <div class="ct-cot">
-        <h4>Liên hệ</h4>
-        <a href="mailto:nextstepacademyvietnam@gmail.com">nextstepacademyvietnam@gmail.com</a>
-        <a href="../lien-he.html">Trang liên hệ</a>
-        <a href="#dang-ky">Đăng ký Master Club</a>
-      </div>
-    </div>
-    <div class="ct-duoi">
-      <span>© 2026 Next Gen Founder by Coach Duy Nguyễn</span>
-      <span>Phí và quyền lợi trên trang tính tới ngày 22/10/2026.</span>
-    </div>
+<footer class="chan">
+  <div class="khung">
+    <span>Coach Duy Nguyễn · Next Gen Founder</span>
+    <span>Master Club · Cộng đồng Next Gen Founder</span>
   </div>
 </footer>
 
-<div class="noi" aria-label="Lối tắt">
-  <a class="noi-nut noi-zalo" id="noi-zalo" href="#" target="_blank" rel="noopener" aria-label="Nhắn Zalo cho Coach Duy Nguyễn" title="Nhắn Zalo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.6 1.3 4.9 3.4 6.5L4.6 21l3.3-1.7c1.3.4 2.6.6 4.1.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3z" fill="#fff"/><text x="12" y="13.9" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="5.6" font-weight="700" fill="#0068FF">Zalo</text></svg></a>
-  <a class="noi-nut noi-len" id="noi-len" href="#top" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<div class="dinh" id="dinh">
+  <span><b>Master Club</b> · ưu đãi tới hết 31/12/2026</span>
+  <a class="nut" href="#dang-ky">Đăng ký tìm hiểu</a>
 </div>
 
 <script>
-/* ba cấp: trên điện thoại chỉ hiện cấp đang chọn; không có JS thì hiện cả ba */
-(function(){
-  var nut=document.querySelectorAll('.chon-cap button'),cap=document.querySelectorAll('.ba-cap .cap');
-  function chon(i){nut.forEach(function(b,k){b.setAttribute('aria-selected',k===i)});cap.forEach(function(c,k){c.classList.toggle('an',k!==i)})}
-  nut.forEach(function(b,i){b.addEventListener('click',function(){chon(i)})});
-  chon(1);
-})();
-</script>
-<script>
-(function(){
-  var d=document;
-  /* Video tạm: video giới thiệu cộng đồng. Có video Master Club thì thay mã YouTube ở đây. */
-  /* Số Zalo cho nút nổi: điền số (ví dụ '0912345678') là nút hiện, để trống là nút ẩn. */
-  var ZALO='0348264003';
-  if(ZALO){var z=document.getElementById('noi-zalo');z.href='https://zalo.me/'+ZALO;z.hidden=false;}
-  var len=document.getElementById('noi-len');
-  function xemLen(){len.classList.toggle('hien-nut',scrollY>500);}
-  addEventListener('scroll',xemLen,{passive:true});xemLen();
-
-  var VSL={youtube:'zzAchaubGJU'};
-  var mo=d.getElementById('vsl-mo'), khung=d.getElementById('vsl'), bia=khung.querySelector('img');
-  if(VSL.youtube){
-    bia.onerror=function(){ bia.onerror=null; bia.src='https://i.ytimg.com/vi/'+VSL.youtube+'/hqdefault.jpg'; };
-    bia.src='https://i.ytimg.com/vi/'+VSL.youtube+'/maxresdefault.jpg';
-    mo.addEventListener('click',function(){
-      var f=d.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(VSL.youtube)+'?autoplay=1&rel=0&playsinline=1';
-      f.title='Video giới thiệu Master Club';
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
-      khung.innerHTML=''; khung.appendChild(f);
-    });
-  } else { mo.disabled=true; mo.style.cursor='default'; }
-})();
+// Đếm số dòng đã tích ở phần tự kiểm
+const hop = document.querySelectorAll('.kiem input');
+const loi = ['Bạn tích thử những dòng bên cạnh.',
+  'Một việc phải đợi bạn. Có thể chỉ là một tuần bận, cũng có thể là dấu hiệu đầu tiên.',
+  'Hai việc phải đợi bạn. Nếu tuần nào cũng vậy thì cả năm là gần trăm lần công ty dừng lại chờ bạn.'];
+hop.forEach(o => o.addEventListener('change', () => {
+  const n = [...hop].filter(x => x.checked).length;
+  document.getElementById('so-tich').textContent = n + '/6';
+  document.getElementById('loi-tich').textContent = n < 3 ? loi[n]
+    : 'Từ ba dòng trở lên, công ty đang chạy theo lịch của bạn. Mỗi tuần ở Master Club, bạn đem một trong những việc này ra gỡ.';
+}));
+// Nút dính hiện sau màn hình đầu, ẩn khi tới phần đăng ký
+const dinh = document.getElementById('dinh');
+const dk = document.getElementById('dang-ky');
+addEventListener('scroll', () => {
+  const r = dk.getBoundingClientRect();
+  dinh.classList.toggle('hien', scrollY > innerHeight * .8 && r.top > innerHeight);
+}, {passive:true});
 </script>
 <script>
 /* phiếu đăng ký Master Club và Grand Master Club (ô cap): gửi về Apps Script, nguồn master-club (trang tính riêng, thư xác nhận, thư báo đội ngũ),
@@ -740,10 +568,6 @@ figure{margin:0}
   var DIA_CHI='https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec';
   var f=document.getElementById('phieu'),nut=document.getElementById('phieu-nut'),loi=document.getElementById('phieu-loi');
   function baoLoi(t){loi.textContent=t;f.classList.add('co-loi')}
-  function chuNut(){return 'Đăng ký '+f.elements.cap.value}
-  f.elements.cap.addEventListener('change',function(){nut.textContent=chuNut()});
-  /* nút cấp 3 mở cùng phiếu, chọn sẵn Grand Master Club */
-  [].forEach.call(document.querySelectorAll('a[data-cap]'),function(a){a.addEventListener('click',function(){f.elements.cap.value=a.dataset.cap;nut.textContent=chuNut()})});
   f.addEventListener('submit',function(e){
     e.preventDefault(); f.classList.remove('co-loi');
     var d={},thieu=null;
@@ -770,7 +594,7 @@ figure{margin:0}
         f.classList.add('da-gui');
       })
       .catch(function(err){
-        nut.disabled=false; nut.textContent=chuNut();
+        nut.disabled=false; nut.textContent='Gửi phiếu cho tư vấn viên';
         baoLoi(err&&err.message&&err.message!=='Failed to fetch'&&!/JSON/.test(err.message)?err.message:'Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc gửi thư tới nextstepacademyvietnam@gmail.com.');
       });
   });
