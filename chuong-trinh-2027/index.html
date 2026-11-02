@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lập chiến lược kinh doanh và kế hoạch bán hàng 2027 · Coach Duy Nguyễn</title>
+<meta name="description" content="Chương trình Lập chiến lược kinh doanh và kế hoạch bán hàng 2027 gồm bốn buổi học qua Zoom, Coach Duy Nguyễn dạy trực tiếp. Bạn làm trên số thật của doanh nghiệp mình, để trước khi năm 2027 bắt đầu, bạn có kế hoạch kinh doanh trong một trang và biết đội ngũ bán hàng phải làm gì mỗi tháng.">
+<link rel="canonical" href="https://coachduynguyen.vn/chuong-trinh-2027/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coach Duy Nguyễn">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://coachduynguyen.vn/chuong-trinh-2027/">
+<meta property="og:title" content="Năm 2027, mỗi tháng công ty bạn cần bao nhiêu khách để đủ tiền?">
+<meta property="og:description" content="Chương trình Lập chiến lược kinh doanh và kế hoạch bán hàng 2027 gồm bốn buổi học qua Zoom, Coach Duy Nguyễn dạy trực tiếp. Bạn làm trên số thật của doanh nghiệp mình, để trước khi năm 2027 bắt đầu, bạn có kế hoạch kinh doanh trong một trang và biết đội ngũ bán hàng phải làm gì mỗi tháng.">
+<meta property="og:image" content="https://coachduynguyen.vn/chuong-trinh-2027/anh-chia-se.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="720">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;--bg-2:#F6F7F9;--bg-3:#EDEFF3;--line:#E3E6EB;--line-2:#CBD0D8;
+  --ink:#0F1218;--ink-2:#3D4451;--ink-3:#646C79;
+  --cam:#C98A28;--cam-dam:#8A5A0F;--cam-mo:#FBF1DC;
+  --toi:#0F1218;--toi-2:#1A1F28;--toi-chu:#C9CED8;
+  --r:16px;--r-s:12px;--ease:cubic-bezier(.23,1,.32,1);
+  --tieu-de:"Bricolage Grotesque",system-ui,sans-serif;
+  --than:"Be Vietnam Pro",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--than);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.khung{max-width:1120px;margin:0 auto;padding:0 20px}
+.hep{max-width:760px}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--tieu-de);line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:18px}
+h3{font-size:21px;margin-bottom:8px}
+.nhan{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cam-dam);margin-bottom:16px;display:inline-block}
+.dan{font-size:19px;color:var(--ink-2);max-width:680px}
+.nut{display:inline-flex;align-items:center;gap:10px;background:var(--cam);color:#fff;font:700 17px/1 var(--than);padding:18px 28px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.nut:hover{background:var(--cam-dam);transform:translateY(-2px)}
+.nut-vien{background:transparent;color:inherit;border:1.5px solid currentColor}
+.nut-vien:hover{background:rgba(255,255,255,.08)}
+
+
+/* Đầu trang */
+.dau{position:sticky;top:0;z-index:20;background:rgba(15,18,24,.92);backdrop-filter:blur(10px);color:#fff}
+.dau .khung{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.dau-hieu{width:30px;height:auto}
+.ten-hieu{font:700 16px/1.1 var(--tieu-de)}
+.ten-hieu small{display:block;font:500 11px/1.3 var(--mono);letter-spacing:.08em;color:var(--cam);text-transform:uppercase}
+.dau .nut{padding:12px 20px;font-size:15px}
+
+/* Màn hình đầu */
+.mo{background:var(--toi);color:#fff;padding:72px 0 0;overflow:hidden}
+.mo .khung{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.mo .nhan{color:var(--cam)}
+.mo h1{font-size:clamp(38px,6vw,68px);margin-bottom:22px}
+.mo h1 em{font-style:normal;color:var(--cam)}
+.mo .dan{color:var(--toi-chu);margin-bottom:32px}
+.mo-nut{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:28px}
+.mo-gia{font:500 14px/1.6 var(--mono);color:var(--toi-chu);padding-bottom:72px}
+.mo-gia b{color:#fff;font-weight:600}
+.mo-anh{position:relative;align-self:end}
+.mo-anh img{border-radius:var(--r) var(--r) 0 0;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;width:100%;height:auto}
+.mo-the{position:absolute;left:-28px;bottom:36px;background:#fff;color:var(--ink);border-radius:var(--r-s);padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:250px;font-size:14px;line-height:1.45}
+.mo-the b{display:block;font:800 26px/1 var(--tieu-de);color:var(--cam-dam);margin-bottom:4px}
+
+/* Bốn câu */
+.cau-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.nen-cam{background:var(--cam-mo)}
+.nen-toi{background:var(--toi);color:#fff}
+.nen-toi .nhan{color:var(--cam)}
+.nen-toi .dan,.nen-toi .nguon{color:var(--toi-chu)}
+.cau{border-radius:var(--r);padding:28px;background:#fff;position:relative;box-shadow:0 10px 30px rgba(138,90,15,.10)}
+.cau .so{font:800 40px/1 var(--tieu-de);color:var(--cam)}
+.cau q{display:block;font:700 22px/1.3 var(--tieu-de);margin:14px 0 14px;quotes:"\201C" "\201D"}
+.cau p{color:var(--ink-3);font-size:15px}
+.nguon{margin-top:26px;font:500 13px/1.6 var(--mono);color:var(--ink-3)}
+
+/* Tự kiểm */
+.kiem{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+.kiem ul{list-style:none;display:grid;gap:10px;margin-top:28px}
+.kiem label{display:flex;gap:14px;align-items:flex-start;background:var(--toi-2);color:#fff;border:1px solid #2C3340;border-radius:var(--r-s);padding:16px 18px;cursor:pointer;transition:border-color .2s}
+.kiem input{width:20px;height:20px;accent-color:var(--cam);flex:none;margin-top:3px}
+.kiem label:has(input:checked){border-color:var(--cam);background:#2A2416}
+.diem{position:sticky;top:96px;background:var(--cam);color:#fff;border-radius:var(--r);padding:28px}
+.diem b{display:block;font:800 64px/1 var(--tieu-de);color:#fff}
+.diem p{color:#fff;margin-top:12px;font-size:16px}
+
+/* Chuyện Duy */
+.chuyen{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.anh-ghep{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.anh-ghep img{border-radius:var(--r-s);aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+.anh-ghep img:first-child{grid-column:1/-1}
+.chuyen .doanh-nghiep{display:flex;flex-wrap:wrap;gap:8px}
+.chuyen .doanh-nghiep span{background:var(--bg-2);border-radius:999px;padding:6px 14px;font:600 13px/1.4 var(--mono);color:var(--ink-2)}
+.chuyen p{margin-bottom:16px;color:var(--ink-2)}
+.chuyen blockquote{border-left:3px solid var(--cam);padding:4px 0 4px 20px;font:700 22px/1.35 var(--tieu-de);color:var(--ink);margin:24px 0}
+.doanh-nghiep{font:500 13px/1.6 var(--mono);color:var(--ink-3);margin-top:8px}
+
+/* So sánh */
+.so-sanh{background:var(--toi);color:#fff}
+.so-sanh .nhan{color:var(--cam)}
+.so-sanh .dan{color:var(--toi-chu)}
+.bang{display:grid;gap:14px;margin-top:40px}
+.cap{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;align-items:stretch}
+.cap>b{font:700 18px/1.3 var(--tieu-de);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.cap>b i{font:600 12px/1 var(--mono);font-style:normal;color:var(--cam);margin-bottom:8px}
+.cap>p{border-radius:var(--r-s);padding:18px 18px 18px 50px;position:relative;font-size:16px;line-height:1.5}
+.cap .cu{background:var(--toi-2);color:var(--toi-chu)}
+.cap .moi{background:#fff;color:var(--ink);font-weight:500}
+.cap>p::before{position:absolute;left:16px;top:17px;width:22px;height:22px;border-radius:50%;font:700 13px/22px var(--than);text-align:center}
+.cap .cu::before{content:"\2715";background:#2C3340;color:#8B93A3}
+.cap .moi::before{content:"\2713";background:var(--cam);color:#fff}
+.cap-dau{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.cap-dau span:nth-child(2){color:#8B93A3}
+.cap-dau span:nth-child(3){color:var(--cam)}
+.cot{border-radius:var(--r);padding:30px}
+.cot-cu{background:var(--toi-2);color:var(--toi-chu)}
+.cot-moi{background:#fff;color:var(--ink)}
+.cot h3{font-size:19px;margin-bottom:18px}
+.cot-moi h3{color:var(--cam-dam)}
+.cot ul{list-style:none;display:grid;gap:14px}
+.cot li{padding-left:28px;position:relative;font-size:16px}
+.cot-cu li::before{content:"";position:absolute;left:4px;top:11px;width:12px;height:2px;background:#5B6372}
+.cot-moi li::before{content:"";position:absolute;left:2px;top:6px;width:14px;height:8px;border-left:2.5px solid var(--cam);border-bottom:2.5px solid var(--cam);transform:rotate(-45deg)}
+
+/* Một tuần */
+.tuan{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:b}
+.mot-tuan{background:var(--cam);color:#fff}
+.mot-tuan .nhan{color:#fff;opacity:.85}
+.mot-tuan .dan{color:#FFF6E6}
+.buoc{background:#fff;color:var(--ink);border-radius:var(--r);padding:24px}
+.buoc .so{font:800 44px/1 var(--tieu-de);color:var(--cam);margin-bottom:12px}
+.buoc p{color:var(--ink-2);font-size:16px}
+.ghi-chu{margin-top:24px;background:rgba(0,0,0,.14);border-radius:var(--r);padding:18px 24px;color:#fff;font-size:16px}
+
+/* Một năm */
+
+.so-lieu{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px 0 56px}
+.o-so{background:var(--toi);border-radius:var(--r);padding:26px}
+.o-so b{display:block;font:800 52px/1 var(--tieu-de);color:var(--cam);margin-bottom:10px}
+.o-so span{font-size:15px;color:var(--toi-chu);line-height:1.5;display:block}
+.chu-de{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.chu-de div{background:var(--cam-mo);border-radius:var(--r-s);padding:22px}
+.chu-de i{font:700 20px/1 var(--tieu-de);font-style:normal;color:var(--cam-dam)}
+.chu-de h3{font-size:18px;margin:8px 0 10px}
+.chu-de .noi-dau{font-size:15px;line-height:1.55;color:var(--ink);margin:0 0 10px}
+.chu-de .lam{font-size:14.5px;line-height:1.55;color:var(--ink-3);margin:0;padding-top:10px;border-top:1px solid rgba(138,90,15,.18)}
+.chu-de .lam b{color:var(--cam-dam)}
+.chuyen-gia{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.cg img{border-radius:var(--r-s);aspect-ratio:1;object-fit:cover;margin-bottom:12px;background:var(--bg-3)}
+.cg b{display:block;font:700 17px/1.3 var(--tieu-de)}
+.cg span{font-size:14px;color:var(--ink-3)}
+
+/* Người thật */
+.nguoi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.the-nguoi{border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.the-nguoi .so-to{font:800 40px/1 var(--tieu-de);color:var(--cam-dam)}
+.the-nguoi .so-to small{display:block;font:500 13px/1.5 var(--mono);color:var(--ink-3);margin-top:6px}
+.the-nguoi p{margin-top:16px;color:var(--ink-2);font-size:16px}
+.the-nguoi b.ten{display:block;margin-top:18px;font:700 16px/1.3 var(--tieu-de)}
+.cho-trong{margin-top:18px;border:1.5px dashed var(--cam);border-radius:var(--r);padding:22px 26px;background:var(--cam-mo);color:var(--cam-dam);font-size:15px}
+
+/* Hợp */
+.hop{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.hop>div{border-radius:var(--r);padding:30px}
+.hop .co{background:#fff;border:2px solid var(--cam)}
+.hop .chua{background:#fff}
+.hop ul{margin:14px 0 0 20px;display:grid;gap:10px}
+.hop li{font-size:16px;color:var(--ink-2)}
+
+/* Giá */
+.gia{background:var(--toi);color:#fff}
+.gia .nhan{color:var(--cam)}
+.gia-khung{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.the-gia{background:#fff;color:var(--ink);border-radius:var(--r);padding:34px}
+.the-gia .tien{font:800 64px/1 var(--tieu-de)}
+.the-gia .tien small{font-size:20px;font-weight:600;color:var(--ink-3)}
+.the-gia .phu{color:var(--ink-3);margin:8px 0 22px;font-size:15px}
+.the-gia ul{list-style:none;display:grid;gap:10px;margin-bottom:28px}
+.the-gia li{padding-left:26px;position:relative;font-size:16px}
+.the-gia li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;border-left:2.5px solid var(--cam);border-bottom:2.5px solid var(--cam);transform:rotate(-45deg)}
+.uu-dai{background:var(--toi-2);border:1px solid #2C3340;border-radius:var(--r);padding:34px}
+.uu-dai b.han{display:inline-block;background:var(--cam);color:#fff;font:600 12px/1 var(--mono);letter-spacing:.08em;padding:8px 12px;border-radius:999px;margin-bottom:18px}
+.uu-dai h3{font-size:24px;margin-bottom:14px}
+.uu-dai p{color:var(--toi-chu);margin-bottom:12px;font-size:16px}
+.cam-ket{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.cam-ket>div{border:1px solid #2C3340;border-radius:var(--r);padding:26px}
+.cam-ket h3{font-size:18px;color:var(--cam)}
+.cam-ket p{color:var(--toi-chu);font-size:15.5px}
+
+/* Hỏi đáp */
+.hoi{margin-top:36px;border-top:1px solid var(--line)}
+.hoi details{border-bottom:1px solid var(--line)}
+.hoi summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font:700 18px/1.4 var(--tieu-de);position:relative}
+.hoi summary::-webkit-details-marker{display:none}
+.hoi summary::after{content:"+";position:absolute;right:4px;top:18px;font:400 28px/1 var(--than);color:var(--cam-dam);transition:transform .25s var(--ease)}
+.hoi details[open] summary::after{transform:rotate(45deg)}
+.hoi details p{padding:0 0 22px;color:var(--ink-2)}
+
+/* Đăng ký */
+.dang-ky{background:var(--cam-mo)}
+.dk{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.dk ol{list-style:none;counter-reset:dk;display:grid;gap:18px;margin-top:28px}
+.dk ol li{counter-increment:dk;padding-left:48px;position:relative;color:var(--ink-2)}
+.dk ol li::before{content:counter(dk);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font:600 14px/32px var(--mono);text-align:center}
+.dk ol b{color:var(--ink)}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;gap:16px}
+form label{font-weight:600;font-size:15px;display:grid;gap:6px}
+form input,form select,form textarea{font:400 16px/1.4 var(--than);padding:13px 14px;border:1px solid var(--line-2);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--cam);outline-offset:1px;border-color:var(--cam)}
+.hai{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bay{position:absolute;left:-9999px}
+form .nut{justify-content:center;width:100%}
+form [aria-invalid="true"]{border-color:#C0412B}
+.loi{display:none;color:#C0412B;font-size:15px;margin:0}
+#phieu.co-loi .loi,#phieu.da-gui .bao{display:block}
+#phieu.da-gui .nut{display:none}
+.bao{display:none;background:var(--cam-mo);color:var(--cam-dam);border-radius:10px;padding:14px;font-size:15px}
+
+/* Chân trang và nút dính */
+.chan{background:var(--toi);color:var(--toi-chu);padding:40px 0 110px;font-size:14px}
+.chan .khung{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.dinh{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(15,18,24,.96);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .35s var(--ease)}
+.dinh.hien{transform:none}
+.dinh span{font:500 13px/1.35 var(--mono);color:var(--toi-chu)}
+.dinh span b{color:#fff}
+.dinh .nut{padding:13px 20px;font-size:15px;flex:none}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .mo .khung,.kiem,.chuyen,.dk,.gia-khung{grid-template-columns:1fr}
+  .cap,.cap-dau{grid-template-columns:1fr 1fr}
+  .cap>b{grid-column:1/-1}
+  .cap-dau span:first-child{display:none}
+  .mo-anh{max-width:420px}
+  .mo-the{left:16px}
+  .diem{position:static}
+  .tuan,.so-lieu,.chuyen-gia{grid-template-columns:repeat(2,1fr)}
+  .chu-de{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .khung{padding:0 16px}
+  .dan{font-size:17px}
+  .dau .nut{display:none}
+  .mo{padding-top:44px}
+  .mo-anh img{aspect-ratio:1;max-height:340px}
+  .cap,.cap-dau,.cau-wrap,.nguoi,.hop,.cam-ket,.chu-de,.hai{grid-template-columns:1fr}
+  .tuan{grid-template-columns:1fr}
+  .so-lieu{gap:12px}
+  .o-so{padding:20px}
+  .o-so b{font-size:40px}
+  .chuyen-gia{gap:14px}
+  .cau q{font-size:20px}
+  .cap-dau{display:none}
+  .the-gia .tien{font-size:52px}
+  .dinh span{display:none}
+  .dinh .nut{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Riêng trang chương trình 2027 */
+.mo .nhan{line-height:1.6}
+.lich{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-8px 0 28px}
+.lich-nhan{font:500 13px/1.4 var(--mono);color:var(--toi-chu);width:100%}
+.lich-nhan:last-child{margin-top:4px}
+.ngay{background:var(--toi-2);border:1px solid #2C3340;border-radius:var(--r-s);padding:10px 14px;font:500 12px/1.2 var(--mono);color:var(--toi-chu);text-align:center}
+.ngay b{display:block;font:800 22px/1 var(--tieu-de);color:#fff}
+.ngay b+*{display:block}
+.mo-gia a{color:var(--cam)}
+.mo-anh img{object-position:56% 30%}
+.van p{margin-bottom:16px;color:var(--ink-2)}
+.van p:last-child{margin-bottom:0}
+.van .lon{font:700 clamp(21px,2.6vw,26px)/1.35 var(--tieu-de);color:var(--ink);border-left:3px solid var(--cam);padding-left:20px;margin:28px 0}
+.hai-so{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 32px}
+.hai-so div{background:var(--cam-mo);border-radius:var(--r-s);padding:20px}
+.hai-so b{display:block;font:800 40px/1 var(--tieu-de);color:var(--cam-dam);margin-bottom:8px}
+.hai-so span{font-size:15px;color:var(--ink-2);line-height:1.45;display:block}
+.so-do{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:40px 0}
+.so-do li{background:#fff;color:var(--ink);border-radius:var(--r);padding:22px;position:relative}
+.so-do b{display:block;font:700 20px/1.25 var(--tieu-de);margin-bottom:10px}
+.so-do span{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cam-dam)}
+.so-do li+li::before{content:"\2192";position:absolute;left:-23px;top:50%;transform:translateY(-50%);color:var(--cam);font:700 20px/1 var(--than)}
+.cac-buoi{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.the-buoi{border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column}
+.ngay-buoi{font:600 13px/1.4 var(--mono);color:var(--cam-dam);margin-bottom:10px}
+.the-buoi h3{font-size:22px;margin-bottom:12px}
+.the-buoi>p{color:var(--ink-2);font-size:16px;margin-bottom:16px}
+.the-buoi .mang-ve{margin:auto 0 0;background:var(--cam-mo);border-radius:var(--r-s);padding:16px 18px;color:var(--ink)}
+.mang-ve b{color:var(--cam-dam)}
+.nhan-duoc{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;margin-top:40px;align-items:start}
+.tai-lieu{list-style:none;display:grid;gap:12px}
+.tai-lieu li{background:var(--toi);color:#fff;border-radius:var(--r-s);padding:18px 18px 18px 58px;position:relative;font:700 17px/1.4 var(--tieu-de)}
+.tai-lieu li::before{content:"";position:absolute;left:20px;top:17px;width:20px;height:25px;border:2px solid var(--cam);border-radius:3px;background:linear-gradient(var(--cam),var(--cam)) 4px 7px/10px 2px no-repeat,linear-gradient(var(--cam),var(--cam)) 4px 12px/10px 2px no-repeat,linear-gradient(var(--cam),var(--cam)) 4px 17px/6px 2px no-repeat}
+.di-kem{border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.di-kem h3{font-size:19px;margin-bottom:14px}
+.di-kem ul{margin-left:20px;display:grid;gap:10px}
+.di-kem li{font-size:16px;color:var(--ink-2)}
+.qua{margin-top:18px;background:var(--cam-mo);border-radius:var(--r);padding:22px 26px;font-size:16px;color:var(--ink-2)}
+.qua b{color:var(--cam-dam)}
+.khong-hua{background:var(--bg-2)}
+.nguoi-day{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+.nguoi-day img{border-radius:var(--r);background:var(--bg-2);width:100%}
+.doanh-nghiep{display:flex;flex-wrap:wrap;gap:8px}
+.doanh-nghiep span{background:var(--bg-2);border-radius:999px;padding:6px 14px;font:600 13px/1.4 var(--mono);color:var(--ink-2)}
+.bang-gia{list-style:none;display:grid;gap:12px;margin:36px 0 32px}
+.bang-gia li{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--toi-2);border:1px solid #2C3340;border-radius:var(--r-s);padding:20px 24px}
+.bang-gia span{color:var(--toi-chu);font-size:16px}
+.bang-gia b{font:800 24px/1.1 var(--tieu-de);white-space:nowrap}
+.bang-gia .noi{background:var(--cam);border-color:var(--cam)}
+.bang-gia .noi span{color:#fff}
+.gia .van p{color:var(--toi-chu)}
+.lien-ket{margin-top:26px;font-weight:600}
+.lien-ket a{color:var(--cam)}
+.dk .dan{margin-top:8px}
+.nho{font-size:13.5px;color:var(--ink-3);margin:-4px 0 0}
+#phieu.da-gui .nho{display:none}
+.duoi-phieu{margin-top:16px;font-size:15px;color:var(--ink-2)}
+.duoi-phieu a{color:var(--cam-dam);font-weight:600}
+@media (min-width:641px){.dinh{display:none}}
+@media (max-width:900px){
+  .so-do{grid-template-columns:1fr;gap:26px}
+  .so-do li+li::before{content:"\2193";left:50%;top:-24px;transform:translateX(-50%)}
+  .cac-buoi,.nhan-duoc,.nguoi-day{grid-template-columns:1fr}
+  .nguoi-day img{max-width:260px}
+}
+@media (max-width:640px){
+  .mo-anh img{aspect-ratio:4/3;object-position:56% 25%}
+  .ngay{padding:8px 10px}
+  .ngay b{font-size:19px}
+  .hai-so b{font-size:32px}
+  .bang-gia li{flex-direction:column;align-items:flex-start;gap:6px}
+  .the-buoi,.di-kem{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="dau">
+  <div class="khung">
+    <a class="logo" href="../"><img class="dau-hieu" src="../img/logo-dn.webp" alt="" width="260" height="301" decoding="async"><span class="ten-hieu">Coach Duy Nguyễn<small>Next Gen Founder</small></span></a>
+    <a class="nut" href="#dang-ky">Đăng ký tham gia</a>
+  </div>
+</header>
+
+<section class="mo">
+  <div class="khung">
+    <div>
+      <span class="nhan">Chương trình Zoom bốn buổi · Khai giảng thứ Bảy 28/11/2026</span>
+      <h1>Năm 2027, mỗi tháng công ty bạn cần bao nhiêu khách để <em>đủ tiền?</em></h1>
+      <p class="dan">Chương trình Lập chiến lược kinh doanh và kế hoạch bán hàng 2027 gồm bốn buổi học qua Zoom, Coach Duy Nguyễn dạy trực tiếp. Bạn làm trên số thật của doanh nghiệp mình, để trước khi năm 2027 bắt đầu, bạn có kế hoạch kinh doanh trong một trang và biết đội ngũ bán hàng phải làm gì mỗi tháng để đi tới con số đó.</p>
+      <p class="lich" aria-label="Thứ Bảy 28/11, 05/12, 12/12 và 19/12/2026 · Mỗi buổi khoảng ba tiếng">
+        <span class="lich-nhan">Thứ Bảy</span>
+        <span class="ngay"><b>28/11</b></span><span class="ngay"><b>05/12</b></span><span class="ngay"><b>12/12</b></span><span class="ngay"><b>19/12</b>2026</span>
+        <span class="lich-nhan">Mỗi buổi khoảng ba tiếng</span>
+      </p>
+      <div class="mo-nut">
+        <a class="nut" href="#dang-ky">Đăng ký tham gia</a>
+        <a class="nut nut-vien" href="#bon-buoi">Xem bốn buổi học</a>
+      </div>
+      <p class="mo-gia"><b>7,9 triệu đồng.</b> Thành viên cộng đồng Next Gen Founder (nhà sáng lập thế hệ mới) 5 triệu đồng. Thành viên Master Club học miễn phí. Chi tiết ở <a href="#hoc-phi">phần học phí</a> bên dưới.</p>
+    </div>
+    <div class="mo-anh">
+      <img src="../img/cd-dung-lop.webp" alt="Coach Duy Nguyễn đứng lớp" width="1400" height="932" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="khung hep">
+    <h2>Cuối năm nào cũng có một con số doanh thu, nhưng hiếm khi có số khách đi kèm</h2>
+    <div class="hai-so">
+      <div><b>825</b><span>bình luận của chủ doanh nghiệp Duy đọc lại</span></div>
+      <div><b>2 lần</b><span>chữ "kế hoạch" xuất hiện</span></div>
+    </div>
+    <div class="van">
+      <p>Duy đã dành thời gian đọc lại 825 bình luận trên mạng của những người tự nhận là chủ doanh nghiệp. Chữ "kế hoạch" chỉ xuất hiện đúng hai lần, còn điều được nhắc tới nhiều nhất là khách và tiền. Tháng 10 vừa rồi, câu người chủ nói với đội ngũ tư vấn của Duy nhiều nhất cũng là: "Tháng thì khách đông, tháng thì vắng hẳn."</p>
+      <p>Người chủ ít nói tới kế hoạch cũng dễ hiểu. Bạn mở doanh nghiệp vì muốn có khách và có tiền, chứ không phải để ngồi viết kế hoạch.</p>
+      <p>Thường thì cuối năm, bạn ngồi lại đặt một con số cho năm sau, ví dụ doanh thu tăng 30 phần trăm, rồi tự nhủ: "Năm sau khách nhất định phải đều hơn năm nay." Con số đó được ghi vào sổ, có khi còn được đọc cho cả công ty nghe trong buổi tất niên. Tới tháng 3 thì gần như không ai nhắc lại nữa, vì con số đó chưa bao giờ được đổi thành việc cụ thể: mỗi tháng cần bao nhiêu khách, bao nhiêu cuộc tư vấn, khách đến từ đâu, và ai trong đội ngũ làm phần việc nào.</p>
+      <p class="lon">Kế hoạch không tự làm ra khách. Nhưng không có kế hoạch bằng số thật thì bạn chỉ biết tháng đó thiếu khách khi tháng đó đã trôi qua.</p>
+      <p>Bốn buổi này làm đúng một việc: đổi con số doanh thu năm 2027 của bạn thành số khách cần có mỗi tháng, rồi thành việc của từng người trong đội ngũ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="nen-toi">
+  <div class="khung">
+    <h2>Kế hoạch đi trước, bán hàng đi sau</h2>
+    <p class="dan">Buổi 1 cho bạn số thật của năm 2026. Buổi 2 dùng số đó để viết kế hoạch 2027. Buổi 3 đổi con số doanh thu trong kế hoạch thành số khách và số cuộc tư vấn bạn cần có mỗi tháng. Buổi 4 đổi số khách đó thành việc của đội ngũ bán hàng trong 90 ngày đầu năm.</p>
+    <ol class="so-do">
+      <li><b>Số thật 2026</b><span>Buổi 1</span></li>
+      <li><b>Kế hoạch 2027</b><span>Buổi 2</span></li>
+      <li><b>Số khách mỗi tháng</b><span>Buổi 3</span></li>
+      <li><b>Việc của đội ngũ</b><span>Buổi 4</span></li>
+    </ol>
+    <p class="dan">Buổi sau dùng đúng thành phẩm bạn làm ra ở buổi trước, nên bốn buổi là một bộ, không phải bốn bài học rời nhau.</p>
+  </div>
+</section>
+
+<section id="bon-buoi">
+  <div class="khung">
+    <h2>Bốn thứ Bảy, mỗi buổi một phần của kế hoạch</h2>
+    <div class="cac-buoi">
+      <article class="the-buoi">
+        <p class="ngay-buoi">Buổi 1 · Thứ Bảy 28/11/2026</p>
+        <h3>Nhìn lại năm 2026 bằng số thật</h3>
+        <p>Bạn đọc lại năm 2026 của doanh nghiệp bằng số chứ không bằng cảm giác: sản phẩm nào lãi thật, tháng nào thiếu tiền, khách đến từ đâu và tốn bao nhiêu tiền cho mỗi khách, việc gì bạn vẫn đang phải tự làm.</p>
+        <p class="mang-ve"><b>Bạn mang về:</b> một trang tóm tắt năm 2026 của doanh nghiệp, gồm những việc đã làm được, những lỗ hổng còn lại và bài học mang sang năm 2027.</p>
+      </article>
+      <article class="the-buoi">
+        <p class="ngay-buoi">Buổi 2 · Thứ Bảy 05/12/2026</p>
+        <h3>Chiến lược và kế hoạch kinh doanh 2027 trong một trang</h3>
+        <p>Từ số của năm 2026, bạn chọn nhóm khách doanh nghiệp sẽ tập trung phục vụ, sản phẩm chủ lực, mục tiêu doanh thu và lợi nhuận, những việc ưu tiên của năm, và những việc bạn sẽ giao lại cho người khác thay vì tự làm. Viết xong, bạn cho AI đọc lại kế hoạch để tìm lỗ hổng trước khi đưa cho đội ngũ.</p>
+        <p class="mang-ve"><b>Bạn mang về:</b> kế hoạch kinh doanh 2027 gói trong một trang, đã được AI đọc lại một lượt để tìm lỗ hổng.</p>
+      </article>
+      <article class="the-buoi">
+        <p class="ngay-buoi">Buổi 3 · Thứ Bảy 12/12/2026</p>
+        <h3>Kế hoạch bán hàng, từ con số doanh thu tới từng cuộc tư vấn</h3>
+        <p>Bạn đổi mục tiêu doanh thu thành số khách, số cuộc tư vấn và số khách hỏi cần có mỗi tháng. Rồi bạn xem lại một chuyện nhiều chủ doanh nghiệp gặp: khách đã nhắn hỏi, đã quan tâm, mà vẫn không mua. Bạn đọc lại những khách đó để biết vì sao, rồi dựng một cuộc tư vấn theo năm bước: mở đầu, hỏi, nghe, làm rõ, đề xuất. Đi đủ năm bước thì khách tự quyết định, không phải bị ép.</p>
+        <p class="mang-ve"><b>Bạn mang về:</b> bảng chỉ tiêu bán hàng 12 tháng của năm 2027 và kịch bản tư vấn cho sản phẩm chủ lực.</p>
+      </article>
+      <article class="the-buoi">
+        <p class="ngay-buoi">Buổi 4 · Thứ Bảy 19/12/2026</p>
+        <h3>Đội ngũ bán theo kế hoạch</h3>
+        <p>Bạn viết cách bán của mình thành một cách tư vấn chung cho cả phòng, để nhân viên tư vấn làm đồng đều và đơn hàng lớn không phải lần nào cũng chờ bạn. Bạn tập trả lời khi khách nói "để tôi suy nghĩ thêm", khi khách muốn so sánh với nơi khác hay khi khách chê giá cao, mà khách vẫn tin bạn. Bạn tập với AI đóng vai một vị khách khó tính. Cuối buổi, bạn chia kế hoạch cả năm thành việc của ba tháng đầu.</p>
+        <p class="mang-ve"><b>Bạn mang về:</b> sổ tay bán hàng (Sales Playbook) cho đội ngũ và lịch việc ba tháng đầu năm 2027.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="nen-cam">
+  <div class="khung hep">
+    <h2>Bạn làm trên doanh nghiệp của mình, không làm trên ví dụ mẫu</h2>
+    <div class="van">
+      <p>AI trong chương trình là những bộ câu lệnh bạn dán vào ChatGPT. Bạn không cần cài phần mềm, cũng không cần biết lập trình.</p>
+      <p>Bốn buổi chỉ có ích khi bạn làm trên số của chính doanh nghiệp mình. Nên ngay khi đăng ký, bạn nhận bộ câu lệnh AI và bảng số liệu, gồm doanh thu từng tháng, doanh thu từng sản phẩm, những khoản chi lớn và số khách của năm 2026. Trước mỗi buổi, bạn dành khoảng 60 tới 90 phút điền số liệu và làm phần chuẩn bị, rồi mang vào lớp.</p>
+      <p>Chưa đủ số thì bạn vẫn thực hành được trong lớp trên bộ số liệu mẫu có sẵn, rồi về nhà làm lại trên số của mình. Danh sách khách mang vào lớp thì bạn xoá tên và số điện thoại trước khi dán vào ChatGPT, để giữ thông tin của khách.</p>
+      <p>Mỗi buổi ba tiếng đi theo cùng một nhịp, để bạn biết lúc nào nghe Duy giảng, lúc nào tự làm. Từ buổi 2, Duy mở bài làm buổi trước của vài người trong lớp ra xem cùng cả lớp. Duy giảng phần kiến thức, rồi làm mẫu bộ câu lệnh trên màn hình bằng số liệu của Next Step Group, công ty của Duy, để bạn thấy từng bước trên một doanh nghiệp thật. Sau đó bạn làm ngay cho doanh nghiệp của bạn và hỏi Duy ngay trong lớp. Cuối buổi Duy giao bài và trả lời những câu hỏi còn lại.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="khung">
+    <h2>Hết bốn buổi, bạn có bốn tài liệu viết riêng cho doanh nghiệp của mình</h2>
+    <div class="nhan-duoc">
+      <ul class="tai-lieu">
+        <li>Trang tóm tắt năm 2026 bằng số thật.</li>
+        <li>Kế hoạch kinh doanh 2027 trong một trang.</li>
+        <li>Kế hoạch bán hàng 2027, với số khách và số cuộc tư vấn cần có mỗi tháng.</li>
+        <li>Sổ tay bán hàng cho đội ngũ, kèm lịch việc ba tháng đầu năm.</li>
+      </ul>
+      <div class="di-kem">
+        <h3>Đi kèm chương trình:</h3>
+        <ul>
+          <li>Bốn buổi học qua Zoom, Duy dạy trực tiếp, mỗi buổi khoảng ba tiếng.</li>
+          <li>Bộ câu lệnh AI cho từng buổi, kèm bảng số liệu và kết quả mẫu. Bộ câu lệnh là của bạn, cuối năm 2027 bạn dùng lại để tự làm kế hoạch cho năm sau trên số mới.</li>
+          <li>Bản ghi hình bốn buổi, để bạn xem lại hoặc để nhân viên vào sau học lại.</li>
+          <li>Hai buổi hỏi đáp qua Zoom trong 30 ngày sau buổi 4, lúc bạn đã bắt đầu làm theo kế hoạch. Buổi đầu về kế hoạch một trang và chỉ tiêu bán hàng, buổi sau về sổ tay bán hàng, đội ngũ và việc của tháng tiếp theo. Bạn gửi câu hỏi trước trong nhóm hỗ trợ để Duy trả lời đúng chỗ bạn đang vướng. Ngày cụ thể sẽ báo trong lớp.</li>
+          <li>Nhóm hỗ trợ 30 ngày. Trong lúc bạn đem kế hoạch về triển khai, vướng ở đâu thì bạn hỏi trong nhóm, đội ngũ của Duy trả lời.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="qua"><b>Quà tặng cho khóa cuối năm nay:</b> khóa học trực tuyến Sales 3 Điểm Chạm về kỹ năng tư vấn bán hàng. Người tư vấn của Duy sẽ gửi cách nhận khóa học sau khi bạn đăng ký.</p>
+  </div>
+</section>
+
+<section class="nen-cam">
+  <div class="khung">
+    <h2>Nói thẳng trước khi bạn đăng ký</h2>
+    <div class="hop">
+      <div class="co">
+        <h3>Hợp với bạn khi:</h3>
+        <ul>
+          <li>Doanh nghiệp của bạn đang có doanh thu, và bạn vẫn tự bán phần lớn đơn hàng.</li>
+          <li>Bạn đã có vài nhân viên tư vấn, nhưng mỗi người tư vấn một kiểu.</li>
+          <li>Bạn chịu làm trước ở nhà và mang số thật vào lớp.</li>
+        </ul>
+      </div>
+      <div class="chua">
+        <h3>Chưa hợp khi:</h3>
+        <ul>
+          <li>Bạn chưa có doanh nghiệp đang bán hàng, nên chưa có số để làm.</li>
+          <li>Bạn chỉ muốn nghe giảng. Mỗi buổi cần khoảng 60 tới 90 phút chuẩn bị trước và số liệu thật mang vào lớp.</li>
+          <li>Bạn muốn có người viết kế hoạch hộ. Ở đây bạn tự viết, Duy chỉ đường và cùng bạn rà soát lại.</li>
+          <li>Bạn cần một lời cam kết doanh số. Duy không hứa điều đó, và phần ngay dưới đây nói vì sao.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="nguon">Công ty bạn đông người và muốn cả đội ngũ cùng học thì bạn nhắn người tư vấn. Người tư vấn sẽ chuyển để Duy trao đổi riêng với bạn.</p>
+  </div>
+</section>
+
+<section class="khong-hua">
+  <div class="khung hep">
+    <h2>Duy không hứa doanh số</h2>
+    <div class="van">
+      <p>Doanh số năm 2027 còn tùy sản phẩm, thị trường và những việc bạn làm sau khi rời lớp. Điều bốn buổi này làm được là bạn biết rõ mỗi tháng doanh nghiệp cần bao nhiêu khách, khách đến từ đâu, và đội ngũ phải làm gì để có số khách đó. Đi theo kế hoạch tới đâu vẫn là quyết định của bạn.</p>
+      <p>Duy cũng nói trước một điều. Buổi 3 và buổi 4 về bán hàng đủ để đội ngũ có một cách tư vấn chung, nhưng chưa đủ để đi sâu từng kỹ năng tư vấn. Vì vậy khóa này tặng kèm khóa học trực tuyến Sales 3 Điểm Chạm, để bạn và nhân viên học tiếp phần đó.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="khung nguoi-day">
+    <img src="../img/cd-chan-dung.webp" alt="Coach Duy Nguyễn" width="485" height="760" loading="lazy">
+    <div class="van">
+      <h2>Duy dạy trực tiếp cả bốn buổi</h2>
+      <p>Duy có hơn 20 năm bán hàng và kinh doanh ở Việt Nam, Anh và Úc, tính từ lần bán hàng đầu tiên năm 2004 khi còn là sinh viên. Duy tốt nghiệp Đại học Ngoại thương năm 2008, làm phân tích và phát triển thị trường khối ô tô ở Honda Việt Nam, rồi học MBA tại University of Birmingham. Ở Anh, Duy làm việc tại Deloitte UK và đồng sáng lập Veritag, một công ty khởi nghiệp công nghệ được chính phủ Anh tài trợ. Sang Úc, Duy đồng sáng lập Flexi Mortgage và Gia Binh Group, hệ thống nhà hàng và dịch vụ tiệc cưới.</p>
+      <p>Về Việt Nam, Duy là CEO của Next Step Group, công ty đào tạo, và của Kiến Tạo Doanh Nghiệp Việt, công ty dịch vụ marketing, đồng thời đồng sáng lập công ty bất động sản Golden Homes. Duy có chứng chỉ Business Strategy and Implementation (triển khai chiến lược kinh doanh) của Harvard.</p>
+      <p>Từ năm 2021 Duy đào tạo cho doanh nghiệp. Cuối năm đó MobiFone, AIA và KB Securities mời Duy vào đào tạo nội bộ, và từ đó tới nay Duy đã đứng lớp năm khóa đào tạo bán hàng, mỗi khóa khoảng 40 học viên. Đã có 30 doanh nghiệp mời Duy đào tạo và tư vấn. Duy là Phó chủ tịch phụ trách đào tạo của cộng đồng doanh nghiệp GTVN, khoảng 1.500 thành viên, và đang dẫn dắt Cộng đồng Next Gen Founder.</p>
+      <p class="doanh-nghiep"><span>MobiFone</span><span>AIA</span><span>KB Securities</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="gia" id="hoc-phi">
+  <div class="khung hep">
+    <h2>Học phí</h2>
+    <ul class="bang-gia">
+      <li><span>Người chưa là thành viên</span><b>7.900.000 đồng</b></li>
+      <li><span>Thành viên cộng đồng Next Gen Founder</span><b>5.000.000 đồng</b></li>
+      <li class="noi"><span>Thành viên Master Club</span><b>học miễn phí</b></li>
+    </ul>
+    <div class="van">
+      <p>Cộng đồng Next Gen Founder là cộng đồng chủ doanh nghiệp của Duy, vào cộng đồng không mất phí. Thành viên cộng đồng học chương trình này với mức 5 triệu đồng.</p>
+      <p>Nếu bạn đang cân nhắc Master Club, nhóm coaching một năm cùng Duy, thì vào Master Club trước ngày khai giảng 28/11/2026 là bạn học chương trình này mà không đóng học phí riêng. Quyền lợi và học phí Master Club có ở trang Master Club.</p>
+      <p>Học xong mà muốn đi tiếp cùng Duy ở Master Club, số tiền bạn đã đóng cho chương trình này được trừ vào phí Master Club. Người tư vấn sẽ báo hạn áp dụng khi bạn đăng ký.</p>
+    </div>
+    <p class="lien-ket"><a href="/cong-dong/">Vào cộng đồng Next Gen Founder</a> · <a href="/master-club/">Xem Master Club</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="khung hep">
+    <h2>Những câu người chủ hay hỏi trước khi đăng ký</h2>
+    <div class="hoi">
+      <details><summary>Tôi bận, lỡ một buổi thì sao?</summary><p>Bạn xem bản ghi hình của buổi đó và làm phần bài tương ứng trước buổi kế tiếp, vì buổi sau dùng thành phẩm của buổi trước. Chỗ nào chưa rõ, bạn hỏi trong nhóm hỗ trợ.</p></details>
+      <details><summary>Tôi không rành AI, có theo được không?</summary><p>Được. Bạn chỉ cần biết mở ChatGPT và dán câu lệnh, trước buổi 1 có hướng dẫn ngắn cho phần này. Phần khó trong lớp nằm ở việc nghĩ cho đúng về doanh nghiệp của bạn, không nằm ở công cụ.</p></details>
+      <details><summary>Số liệu năm 2026 của tôi chưa đầy đủ thì sao?</summary><p>Bạn mang vào phần đang có. Nhiều người chủ chỉ nhớ doanh thu, còn chi phí và số khách thì phải ngồi tính lại, và buổi 1 có phần để bạn bổ sung những số còn thiếu.</p></details>
+      <details><summary>Giờ học trong ngày là mấy giờ?</summary><p>Mỗi buổi khoảng ba tiếng vào các ngày thứ Bảy ghi ở trên. Giờ học cụ thể người tư vấn sẽ báo khi bạn đăng ký.</p></details>
+      <details><summary>Học xong có cam kết gì không?</summary><p>Duy không cam kết doanh số. Sau bốn buổi, bạn có hai buổi hỏi đáp qua Zoom và nhóm hỗ trợ 30 ngày trong lúc đem kế hoạch về làm.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="dang-ky" id="dang-ky">
+  <div class="khung dk">
+    <div>
+      <h2>Bắt đầu năm 2027 bằng một con số bạn hiểu rõ</h2>
+      <p class="dan">Nếu năm nay bạn vẫn đặt mục tiêu doanh thu mà chưa biết mỗi tháng cần bao nhiêu khách, bốn buổi này là để làm đúng việc đó. Bạn để lại thông tin bên dưới, người tư vấn của Duy sẽ liên hệ để gửi thông tin chuyển khoản và đường dẫn vào lớp.</p>
+    </div>
+    <div>
+      <form id="phieu" novalidate>
+        <label>Họ và tên<input name="ten" autocomplete="name" required></label>
+        <label>Số điện thoại có Zalo<input name="dienthoai" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        <label>Doanh nghiệp của bạn kinh doanh ngành gì<input name="nganh" required></label>
+        <label>Doanh nghiệp có bao nhiêu người, tính cả bạn<input name="nhansu" inputmode="numeric" required></label>
+        <label>Bạn đang là
+          <select name="thanhvien" required>
+            <option value="" selected disabled></option>
+            <option>Chưa là thành viên</option>
+            <option>Thành viên cộng đồng Next Gen Founder</option>
+            <option>Thành viên Master Club</option>
+          </select>
+        </label>
+        <input class="bay" name="bay" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="loi" id="phieu-loi" role="alert"></p>
+        <button class="nut" type="submit" id="phieu-nut">Gửi đăng ký</button>
+        <p class="nho">Thông tin của bạn chỉ dùng để người tư vấn liên hệ về chương trình này.</p>
+        <div class="bao" id="phieu-xong" role="status"></div>
+      </form>
+      <p class="duoi-phieu">Muốn hỏi trước khi đăng ký thì bạn nhắn Zalo đội ngũ tư vấn Next Gen Founder: <a href="https://zalo.me/0348264003">0348 264 003</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="chan">
+  <div class="khung">
+    <span>Coach Duy Nguyễn · Next Gen Founder</span>
+  </div>
+</footer>
+
+<div class="dinh" id="dinh">
+  <a class="nut" href="#dang-ky">Đăng ký tham gia</a>
+</div>
+
+<script>
+// Nút dính hiện sau màn hình đầu, ẩn khi tới phần đăng ký
+const dinh = document.getElementById('dinh');
+const dk = document.getElementById('dang-ky');
+addEventListener('scroll', () => {
+  const r = dk.getBoundingClientRect();
+  dinh.classList.toggle('hien', scrollY > innerHeight * .8 && r.top > innerHeight);
+}, {passive:true});
+</script>
+<script>
+/* phiếu chương trình 2027: gửi về Apps Script nguồn chuong-trinh-2027 (trang tính riêng, thư báo đội ngũ, Telegram; phiếu không có email nên không có thư xác nhận),
+   và gửi riêng vào Pancake CRM qua trạm /api/dang-ky như phiếu Master Club: một bên lỗi thì bên kia vẫn nhận. */
+(function(){
+  var DIA_CHI='https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec';
+  var f=document.getElementById('phieu'),nut=document.getElementById('phieu-nut'),loi=document.getElementById('phieu-loi');
+  function baoLoi(t){loi.textContent=t;f.classList.add('co-loi')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); f.classList.remove('co-loi');
+    var d={},thieu=null;
+    ['ten','dienthoai','nganh','nhansu','thanhvien'].forEach(function(k){
+      var o=f.elements[k],v=o.value.trim(),sai=!v||(k==='dienthoai'&&v.replace(/\D/g,'').length<9);
+      o.setAttribute('aria-invalid',sai); if(sai&&!thieu)thieu=o; d[k]=v;
+    });
+    if(thieu){baoLoi(thieu.name==='dienthoai'&&thieu.value.trim()?'Số điện thoại chưa đúng, bạn xem lại giúp Duy.':'Bạn điền đủ các ô giúp Duy nhé.');thieu.focus();return}
+    var q=new URLSearchParams(location.search);
+    d.bay=f.elements.bay.value; d.nguon='chuong-trinh-2027'; d.trang_nguon=location.pathname; d.nguon_chien_dich=q.get('utm_source')||q.get('nguon')||'';
+    nut.disabled=true; nut.textContent='Đang gửi...';
+    if(!d.bay){
+      var pk={Name:d.ten, Phone:d.dienthoai.replace(/[^\d+]/g,''), url_page:location.href.slice(0,500),
+        Note:'Đơn Chương trình 2027 · Ngành: '+d.nganh+' · Số người: '+d.nhansu+' · Đang là: '+d.thanhvien};
+      ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ if(q.get(k)) pk[k]=q.get(k).slice(0,200); });
+      fetch('/api/dang-ky',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({data:pk,id:window.ctPid||null})})
+        .then(function(r){ return r.json(); }).then(function(j){ if(j&&j.id) window.ctPid=j.id; }).catch(function(){});
+    }
+    fetch(DIA_CHI,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+      .then(function(r){return r.json()})
+      .then(function(kq){
+        if(!kq.ok)throw new Error(kq.loi||'');
+        document.getElementById('phieu-xong').textContent='Duy đã nhận đăng ký của bạn. Người tư vấn sẽ gọi hoặc nhắn Zalo cho bạn theo số vừa để lại.';
+        f.classList.add('da-gui');
+      })
+      .catch(function(err){
+        nut.disabled=false; nut.textContent='Gửi đăng ký';
+        baoLoi(err&&err.message&&err.message!=='Failed to fetch'&&!/JSON/.test(err.message)?err.message:'Chưa gửi được, có thể do mạng. Bạn thử lại, hoặc nhắn Zalo 0348 264 003.');
+      });
+  });
+})();
+</script>
+</body>
+</html>

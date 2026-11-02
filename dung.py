@@ -2622,7 +2622,7 @@ trang("404.html", "Không tìm thấy trang · Coach Duy Nguyễn",
 print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
-URLS = ["", "cong-dong/", "master-club/", "thanh-vien/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
+URLS = ["", "cong-dong/", "master-club/", "chuong-trinh-2027/", "thanh-vien/", "ve-toi.html", "chuong-trinh.html", "phuong-phap.html", "blog.html",
         "cong-cu/", "podcast.html", "lien-he.html", "cau-chuyen-hoc-vien.html",
         "cong-cu/tu-kiem-ba-diem-cham.html", "doi-ngu-chuyen-gia.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \

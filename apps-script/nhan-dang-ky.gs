@@ -44,6 +44,14 @@
  * Sau khi dán: lưu, chạy `khoiTao` (tạo trang tính Master Club), rồi Triển khai một
  * PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
+ * BỔ SUNG 02/11/2026: PHIẾU CHƯƠNG TRÌNH 2027
+ * Thêm nguồn `chuong-trinh-2027` cho trang /chuong-trinh-2027/ (chương trình Lập chiến
+ * lược kinh doanh và kế hoạch bán hàng 2027). Phiếu không có ô email, nên nguồn này
+ * khai `khong_email`: không bắt email, không gửi thư xác nhận cho khách, chặn bấm
+ * hai lần theo số Zalo (cột 3) thay vì email. Vẫn gửi thư báo đội ngũ và tin Telegram.
+ * Sau khi dán: lưu, chạy `khoiTao` (tạo trang tính Chương trình 2027), rồi Triển khai
+ * một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
+ *
  * LƯU Ý CHO THỢ SAU
  * Trang gửi bằng Content-Type: text/plain, KHÔNG phải application/json. Đây là
  * cố ý. Apps Script không trả về header cho phép gọi chéo miền đối với yêu cầu
@@ -91,6 +99,19 @@ var NGUON = {
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
       return [d.ten, d.dienthoai, d.email, d.cap, d.doanhnghiep, d.nhansu, d.vuong,
+              d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
+    }
+  },
+  /* Phiếu chương trình 2027, thêm 02/11/2026. Không có email: daCo() đọc số Zalo ở cột 3. */
+  'chuong-trinh-2027': {
+    tab: 'Chương trình 2027',
+    ten_chuong_trinh: 'Chương trình Lập chiến lược kinh doanh và kế hoạch bán hàng 2027',
+    khong_email: true,
+    bat_buoc: ['nganh', 'nhansu', 'thanhvien'],
+    cot: ['Thời gian', 'Họ và tên', 'Số Zalo', 'Ngành kinh doanh', 'Số người trong doanh nghiệp',
+          'Đang là', 'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
+    lay: function (d) {
+      return [d.ten, d.dienthoai, d.nganh, d.nhansu, d.thanhvien,
               d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
     }
   },
@@ -202,7 +223,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, ver: 'master-club-23-10-so0', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'chuong-trinh-2027-02-11', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -225,9 +246,9 @@ function doPost(e) {
        đó là máy điền hộ. Vẫn trả về ok để máy rác không biết mình bị chặn. */
     if (d.bay) return tra({ ok: true });
 
-    var thieu = ['ten', 'dienthoai', 'email'].filter(function (k) { return !chuoi(d[k]); });
+    var thieu = (c.khong_email ? ['ten', 'dienthoai'] : ['ten', 'dienthoai', 'email']).filter(function (k) { return !chuoi(d[k]); });
     if (thieu.length) return tra({ ok: false, loi: 'Còn thiếu: ' + thieu.join(', ') + '.' });
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chuoi(d.email))) {
+    if (!c.khong_email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chuoi(d.email))) {
       return tra({ ok: false, loi: 'Địa chỉ email chưa đúng dạng.' });
     }
 
@@ -238,7 +259,7 @@ function doPost(e) {
     if (!t) throw new Error('Không thấy trang tính ' + c.tab + ', chạy lại khoiTao.');
 
     /* Cùng email gửi lại trong 12 giờ thì coi là bấm hai lần, không ghi thêm dòng. */
-    if (daCo(t, chuoi(d.email))) {
+    if (c.khong_email ? daCo(t, chuoi(d.dienthoai).replace(/\D/g, ''), 2) : daCo(t, chuoi(d.email), 3)) {
       return tra({ ok: true, trung: true, thong_diep: 'Đăng ký này đã được ghi nhận trước đó.' });
     }
 
@@ -246,7 +267,7 @@ function doPost(e) {
     dong[2] = "'" + dong[2]; /* cột số Zalo ghi dạng chữ, không thì Sheets bỏ số 0 đầu */
     t.appendRow(dong);
 
-    guiThuChoKhach(lamSach(d), c);
+    if (!c.khong_email) guiThuChoKhach(lamSach(d), c);
     if (d.nguon === 'nguoi-dan-duong') guiBaoRieng(lamSach(d), c);
     else guiThuChoDoiNgu(lamSach(d), c);
     if (d.nguon === 'master-club') {
@@ -258,6 +279,14 @@ function doPost(e) {
         '\nĐọc đủ ở trang tính Master Club trong bảng đăng ký.', m);
     }
 
+    if (d.nguon === 'chuong-trinh-2027') {
+      var p = lamSach(d);
+      baoTelegram('Đăng ký Chương trình 2027 mới\n' + chuoi(p.ten) + ' · Zalo ' + chuoi(p.dienthoai) +
+        '\nNgành: ' + chuoi(p.nganh) + ' · Số người: ' + chuoi(p.nhansu) + ' · Đang là: ' + chuoi(p.thanhvien) +
+        '\nNguồn: ' + (chuoi(p.nguon_chien_dich) || 'không ghi') +
+        '\nĐọc đủ ở trang tính Chương trình 2027 trong bảng đăng ký.', p);
+    }
+
     return tra({ ok: true });
   } catch (loi) {
     ghiLoi(loi, d);
@@ -267,15 +296,17 @@ function doPost(e) {
   }
 }
 
-function daCo(t, email) {
+/* Tìm trong 200 dòng cuối: cùng giá trị ở cột `cot` (0 là cột 1) trong 12 giờ. Cột 2 là số Zalo, so theo chữ số. */
+function daCo(t, giaTri, cot) {
   var n = t.getLastRow();
   if (n < 2) return false;
   var tu = Math.max(2, n - 199);
-  var o = t.getRange(tu, 1, n - tu + 1, 4).getValues();
+  var o = t.getRange(tu, 1, n - tu + 1, cot + 1).getValues();
   var moc = new Date().getTime() - 12 * 60 * 60 * 1000;
   for (var i = 0; i < o.length; i++) {
     var luc = o[i][0] instanceof Date ? o[i][0].getTime() : 0;
-    if (String(o[i][3]).toLowerCase() === email.toLowerCase() && luc > moc) return true;
+    var v = cot === 2 ? String(o[i][2]).replace(/\D/g, '') : String(o[i][cot]).toLowerCase();
+    if (giaTri && v === giaTri.toLowerCase() && luc > moc) return true;
   }
   return false;
 }
