@@ -19,7 +19,7 @@ function baoLoi(t){loi.textContent=t||'';loi.hidden=!t}
 function giaTri(id){return (document.getElementById(id).value||'').trim()}
 var LOI={'Invalid login credentials':'Email hoặc mật khẩu chưa đúng.','User already registered':'Email này đã đăng ký. Bạn bấm Đăng nhập, quên mật khẩu thì bấm Quên mật khẩu.',
   'Token has expired or is invalid':'Mã chưa đúng hoặc đã quá 10 phút. Bạn bấm Quay lại đăng nhập rồi bấm Quên mật khẩu để nhận mã mới.'};
-function dichLoi(e){var m=(e&&e.message)||'';if(/rate limit|security purposes/i.test(m))return 'Bạn thử lại sau một phút nhé.';if(/at least|weak/i.test(m))return 'Mật khẩu cần ít nhất 8 ký tự.';return LOI[m]||'Chưa vào được, bạn thử lại sau ít phút. Vẫn lỗi thì gọi hotline 0868 666 581.'}
+function dichLoi(e){var m=(e&&e.message)||'';if(/rate limit|security purposes/i.test(m))return 'Bạn thử lại sau một phút nhé.';if(/at least|weak/i.test(m))return 'Mật khẩu cần ít nhất 8 ký tự.';return LOI[m]||'Chưa vào được, bạn thử lại sau ít phút. Vẫn lỗi thì gọi hotline 0348 264 003.'}
 
 // Hỏi cấp trong bảng thành viên rồi mở cổng đúng cấp
 async function vaoTheoPhien(phien){
