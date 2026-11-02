@@ -69,6 +69,8 @@ MENU = [
     ("cong-cu/", "Công cụ", None),
     ("podcast.html", "Podcast", None),
     ("lien-he.html", "Liên hệ", None),
+    # Bản chốt 87, A2 (02/11/2026): cổng thành viên NGF nằm trên menu, Google tìm thấy.
+    ("thanh-vien/", "Thành viên", None),
 ]
 
 # Logo chính thức của Coach Duy Nguyễn: khiên chia bốn ô, chữ D và chữ N.

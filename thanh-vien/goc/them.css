@@ -1,0 +1,42 @@
+/* Bản mẫu: chế độ tối, chọn cấp xem thử, màn đăng nhập */
+html[data-theme=dark] body.welcome-page.portal-page{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark;--cd-bg:#17120f;--cd-bg-2:#1e1815;--cd-bg-3:#241d18;--cd-panel:#241d19;--cd-panel-2:#2e2620;--cd-panel-3:#392f27;--cd-line:#3d332c;--cd-line-2:#514539;--cd-ink:#f9f5f0;--cd-ink-2:#cdc2b6;--cd-ink-3:#a2968a;--cd-vang:#f2b14a;--cd-vang-2:#ffcb74;--cd-vang-3:#d98f2e;--cd-vang-mo:#f2b14a21;--cd-on-vang:#17120f;--cd-paper:linear-gradient(180deg, #282019 0%, #201a16 100%);--cd-shadow-s:0 1px 2px #00000080, 0 14px 30px -18px #000000e6;--cd-shadow:0 2px 6px #00000080, 0 34px 66px -30px #000;--cd-shadow-h:0 3px 8px #0000008c, 0 26px 50px -22px #000000f2;--cd-r:14px;--cd-r-s:10px;--cd-f-tit:"Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif;--cd-f-than:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--cd-f-mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;--cd-ease:cubic-bezier(.23, 1, .32, 1);--focus-ring:3px solid var(--cd-vang);background:var(--cd-bg);color:var(--cd-ink)}
+.doi-mau{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid rgba(249,245,240,.22);background:transparent;color:#F9F5F0;cursor:pointer;flex:none}
+.doi-mau:hover{border-color:#F2B14A;color:#F2B14A}
+.doi-mau svg{width:18px;height:18px}.doi-mau .tr{display:none}
+html[data-theme=dark] .doi-mau .tr{display:block}html[data-theme=dark] .doi-mau .mt2{display:none}
+.xem-nhu{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;gap:4px;align-items:center;padding:6px;border-radius:999px;background:#17120F;color:#CDC2B6;font:600 12px/1 "Be Vietnam Pro",sans-serif;box-shadow:0 10px 30px -10px #000}
+.xem-nhu span{padding:0 8px}
+.xem-nhu button{border:0;border-radius:999px;padding:8px 12px;background:transparent;color:#F9F5F0;font:inherit;cursor:pointer}
+.xem-nhu button.on{background:linear-gradient(180deg,#FFCB74,#F2B14A 52%,#D98F2E);color:#17120F}
+body.cap-mc .course-intro,body.cap-mc .course-card__lock,body.cap-mc [data-chi-tv]{display:none!important}
+.cua-vao{position:fixed;inset:0;z-index:150;display:none;place-items:center;padding:24px 16px;overflow:auto;background:var(--cd-bg)}
+body.cap-khach .cua-vao{display:grid}body.cap-khach{overflow:hidden}
+.cua-vao::before{content:"";position:absolute;inset:0;background:url(brand/checker-gold.svg) center/48px;opacity:.06;pointer-events:none}
+.the-vao{position:relative;width:100%;max-width:440px;padding:36px 32px;border:1px solid var(--cd-line);border-radius:18px;background:var(--cd-paper);box-shadow:var(--cd-shadow);color:var(--cd-ink)}
+.the-vao img.logo-vao{height:44px;width:auto;display:block;margin-bottom:24px}
+html:not([data-theme=dark]) .the-vao img.logo-vao{filter:none}
+.the-vao .nhan{font:600 11px/1 var(--cd-f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cd-vang)}
+.the-vao h1{font:800 32px/1.15 var(--cd-f-tit);margin:12px 0 8px;letter-spacing:-.01em}
+.the-vao p{margin:0 0 20px;color:var(--cd-ink-2);font-size:15px}
+.the-vao label{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+.the-vao input{width:100%;height:50px;padding:0 16px;border:1px solid var(--cd-line-2);border-radius:12px;background:var(--cd-panel);color:var(--cd-ink);font:500 16px var(--cd-f-than)}
+.the-vao input:focus{outline:var(--focus-ring);outline-offset:1px}
+.the-vao .button{width:100%;margin-top:16px;justify-content:center}
+.the-vao .phu{margin:20px 0 0;padding-top:20px;border-top:1px solid var(--cd-line);font-size:14px;color:var(--cd-ink-3)}
+.the-vao .phu a{color:var(--cd-vang);font-weight:600}
+.o-ma{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.o-ma input{padding:0;text-align:center;font:700 22px var(--cd-f-tit)}
+@media (max-width:520px){.xem-nhu span{display:none}.the-vao{padding:28px 22px}.the-vao h1{font-size:27px}}
+/* Chế độ sáng nền trắng: giữ bố cục của đội ngũ, chỉ đổi bộ màu sang bảng màu trang /cong-dong/ */
+html:not([data-theme=dark]) body.welcome-page.portal-page,html:not([data-theme=dark]) .portal-page .welcome-band--paper{--cd-bg:#fff;--cd-bg-2:#f6f7f9;--cd-bg-3:#edeff3;--cd-panel:#fff;--cd-panel-2:#f6f7f9;--cd-panel-3:#edeff3;--cd-ink:#0f1218;--cd-ink-2:#3d4451;--cd-ink-3:#646c79;--cd-line:#e3e6eb;--cd-line-2:#cbd0d8;--cd-vang:#8a5a0f;--cd-vang-2:#6f4708;--cd-vang-3:#5c3b06;--cd-vang-mo:rgba(242,177,74,.18);--cd-paper:linear-gradient(180deg,#fff,#f9fafb);--cd-shadow-s:0 1px 2px rgba(15,18,24,.06),0 10px 24px -16px rgba(15,18,24,.18);--cd-shadow:0 2px 6px rgba(15,18,24,.06),0 28px 56px -30px rgba(15,18,24,.28);--cd-shadow-h:0 3px 8px rgba(15,18,24,.08),0 24px 44px -22px rgba(15,18,24,.3);--focus-ring:3px solid #c98a28}
+html:not([data-theme=dark]) body.welcome-page.portal-page{background:#fff}
+html:not([data-theme=dark]) .portal-page .welcome-band--paper{background:#f6f7f9}
+html:not([data-theme=dark]) .portal-page .portal-topbar{color-scheme:light;--cd-ink:#0f1218;--cd-ink-2:#3d4451;--cd-ink-3:#646c79;--cd-line:#e3e6eb;--cd-line-2:#cbd0d8;--cd-vang:#8a5a0f;--cd-vang-2:#6f4708;--focus-ring:3px solid #c98a28;background:rgba(255,255,255,.92);border-bottom:1px solid #e3e6eb}
+html:not([data-theme=dark]) .portal-page .portal-topbar .doi-mau{border-color:#cbd0d8;color:#0f1218}
+html:not([data-theme=dark]) .portal-page .portal-sidebar .portal-nav__master{color:#6f4708;background:#fbf1dc;border-color:#f0d9a8}
+html:not([data-theme=dark]) .portal-page .portal-calendar__programs{background:#fbf1dc;border-color:#f0d9a8}
+/* Logo: chữ đen trên nền trắng, chữ vàng trên nền tối */
+.portal-topbar .brand .logo-sang{display:none;width:140px}
+html:not([data-theme=dark]) .portal-topbar .brand .logo-toi{display:none}
+html:not([data-theme=dark]) .portal-topbar .brand .logo-sang{display:block}
+
+.loi-vao{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:#fdecea;color:#9b1c1c;font-size:14px;line-height:1.45}
