@@ -1007,7 +1007,7 @@ body.cap-gm .tr-khoa-gm .tr-card__anh .tr-khoa,body.cap-dn .tr-khoa-gm .tr-card_
 /* Safari dàn lại cả đoạn khi gặp text-wrap:pretty nên dòng ngắn, hở bên phải. Chữ thường xuống dòng kiểu thường. */
 p,li,.feed-post__text,.feed-comment__text{text-wrap:wrap}
 /* Thanh cuộn ngang chỉ cho kéo trái phải, không kéo lên xuống hay nảy theo trục dọc. */
-.portal-tabs,.portal-rail,.bt-sap-toi__ds,.dd-phong,.pc-tabs,.xh-cap,.xh-hop,.dnv-luoi,.cua-vao,.tr-bang-boc{overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+.portal-tabs,.portal-rail,.bt-sap-toi__ds,.dd-phong,.pc-tabs,.xh-cap,.xh-hop,.dnv-luoi,.tr-bang-boc{overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
 
 /* Học tập: thẻ video mở cho mọi thành viên */
 .tr-video .tr-card__anh{aspect-ratio:16/9}
