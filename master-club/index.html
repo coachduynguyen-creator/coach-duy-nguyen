@@ -156,6 +156,20 @@ h3{font-size:21px;margin-bottom:8px}
 .chu-de .noi-dau{font-size:15px;line-height:1.55;color:var(--ink);margin:0 0 10px}
 .chu-de .lam{font-size:14.5px;line-height:1.55;color:var(--ink-3);margin:0;padding-top:10px;border-top:1px solid rgba(138,90,15,.18)}
 .chu-de .lam b{color:var(--cam-dam)}
+.chu-de article{background:var(--cam-mo);border-radius:var(--r-s);overflow:hidden;display:flex;flex-direction:column}
+.chu-de article img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.chu-de .cd-chu{padding:20px 22px 22px}
+.chu-de .cd-chu i{font:700 13px/1.3 var(--than,inherit);font-style:normal;letter-spacing:.04em;text-transform:uppercase;color:var(--cam-dam)}
+.chu-de .cd-chu h3{font-size:18px;line-height:1.35;margin:8px 0 12px}
+.chu-de .cd-chu p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
+.chu-de .cd-chu p b{color:var(--ink)}
+.cach-di{margin:0 0 8px;padding-left:20px;max-width:760px}
+.cach-di li{font-size:16px;line-height:1.6;color:var(--ink-2);margin-bottom:10px}
+.cach-di li b{color:var(--ink)}
+.dac-biet{margin-top:12px;background:var(--bg-2);border:1px dashed var(--line-2);border-radius:var(--r-s);padding:22px}
+.dac-biet i{font:700 13px/1.3 inherit;font-style:normal;letter-spacing:.04em;text-transform:uppercase;color:var(--cam-dam)}
+.dac-biet h3{font-size:18px;margin:8px 0 10px}
+.dac-biet p{font-size:15px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
 .chuyen-gia{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
 .cg img{border-radius:var(--r-s);aspect-ratio:1;object-fit:cover;margin-bottom:12px;background:var(--bg-3)}
 .cg b{display:block;font:700 17px/1.3 var(--tieu-de)}
@@ -390,23 +404,36 @@ form [aria-invalid="true"]{border-color:#C0412B}
     <h2>Trong 12 tháng, bạn có những buổi này</h2>
     <div class="so-lieu">
       <div class="o-so"><b>48</b><span>buổi coaching nhóm qua Zoom, Duy dẫn trực tiếp</span></div>
-      <div class="o-so"><b>12</b><span>chuyên đề, mỗi tháng một chủ đề</span></div>
+      <div class="o-so"><b>12</b><span>chuyên đề, mỗi tháng một chuyên đề: 9 chủ đề trọng tâm và 3 chuyên đề theo mùa</span></div>
       <div class="o-so"><b>12</b><span>buổi workshop về AI, mỗi tháng một buổi</span></div>
       <div class="o-so"><b>4</b><span>buổi nhìn lại kết quả cùng Duy, cứ 90 ngày một buổi</span></div>
     </div>
-    <h3 style="font-size:22px;margin-bottom:18px">Chín chủ đề đi qua trong năm</h3>
+    <h3 style="font-size:22px;margin-bottom:18px">Một năm ở Master Club đi như thế nào</h3>
+    <ul class="cach-di">
+      <li><b>Mỗi tháng có một chủ đề trọng tâm.</b> Các buổi coaching trong tháng ưu tiên bàn chủ đề đó, và Duy đề xuất cả nhóm cùng tập trung vào chủ đề đó trong tháng. Việc riêng đang vướng ở công ty bạn vẫn được đem ra bàn như thường.</li>
+      <li><b>Cả nhóm đi chung một lịch theo năm dương lịch,</b> nên bạn vào tháng nào cũng bắt kịp được ngay chủ đề đang diễn ra.</li>
+      <li><b>Chuyên đề nào đã diễn ra cũng có bản ghi hình để bạn xem lại,</b> kể cả chuyên đề diễn ra trước khi bạn vào. Bạn xem được ngay từ tháng đầu tiên, không phải chờ tới lượt sau.</li>
+      <li><b>Chuyên đề còn lại trong 12 tháng của bạn, bạn tham gia trực tiếp</b> cùng cả nhóm khi tới tháng của chuyên đề đó.</li>
+    </ul>
+    <h3 style="font-size:22px;margin:40px 0 18px">Chín chủ đề trọng tâm trong năm</h3>
     <div class="chu-de">
-      <div><i>01</i><h3>Quy trình cho nhân viên</h3><p class="noi-dau">Người mới vào, việc gì cũng chạy lên hỏi bạn. Bạn nghỉ hai ngày là việc ở công ty chững lại.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Ghi lại từng bước bạn đang làm trong đầu thành quy trình, để người mới đọc là làm được.</p></div>
-      <div><i>02</i><h3>Có khách đều</h3><p class="noi-dau">Tháng này khách đông, tháng sau vắng hẳn mà bạn không biết vì sao. Khách cũ mua một lần rồi thôi.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Xác định nhóm khách hợp với công ty mình, và chăm khách cũ để họ quay lại, giới thiệu thêm người.</p></div>
-      <div><i>03</i><h3>Gói và giá</h3><p class="noi-dau">Khách hỏi giá xong là im lặng, hoặc chỉ mua gói rẻ nhất. Bán được nhiều mà cuối tháng vẫn không còn lãi.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Sắp xếp lại sản phẩm thành từng gói, đặt giá cho đúng với nhóm khách bạn phục vụ.</p></div>
-      <div><i>04</i><h3>Nhân viên tư vấn</h3><p class="noi-dau">Đơn nhỏ thì nhân viên tự chốt được. Đơn lớn thì lần nào khách cũng đòi gặp bạn.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Dựng cách tư vấn chung cho cả phòng, để đơn hàng lớn không phải chờ bạn ra mặt.</p></div>
-      <div><i>05</i><h3>Tuyển và giữ người</h3><p class="noi-dau">Tuyển mãi mới được một người, vừa dạy xong thì người đó nghỉ. Người giỏi còn ở lại thì nơi khác cũng đang mời.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Tuyển đúng người ngay từ buổi phỏng vấn, và cho người giỏi thấy con đường của họ ở công ty.</p></div>
-      <div><i>06</i><h3>Giao quyền</h3><p class="noi-dau">Bạn đã giao việc cho quản lý, nhưng chuyện gì cuối cùng cũng quay về bàn của bạn.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Chia rõ việc nào người quản lý tự quyết, việc nào mới cần hỏi bạn.</p></div>
-      <div><i>07</i><h3>Dòng tiền</h3><p class="noi-dau">Doanh thu năm nào cũng tăng, nhưng bạn không chắc công ty lãi thật bao nhiêu. Tiền nhà và tiền công ty vẫn đi chung một tài khoản.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Tách tiền nhà khỏi tiền công ty, đọc được số lãi thật, học cùng chuyên gia tài chính.</p></div>
-      <div><i>08</i><h3>Thương hiệu người chủ</h3><p class="noi-dau">Bạn làm nghề giỏi, nhưng khách chỉ biết tới bạn khi có người quen giới thiệu.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Kể kinh nghiệm của bạn ra bên ngoài, để khách biết tới bạn trước cả khi gặp bạn.</p></div>
-      <div><i>09</i><h3>Nhìn lại năm</h3><p class="noi-dau">Hết năm, bạn thấy mình bận suốt mười hai tháng nhưng không nhớ rõ công ty đã khác đi ở chỗ nào.</p><p class="lam"><b>Cả nhóm cùng làm:</b> Xem lại khách, nhân sự, tiền và thời gian của bạn, rồi chọn một hai việc cho năm sau.</p></div>
+      <article><img src="/img/mc-chu-de-chien-luoc.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 12 · Chiến lược</i><h3>Lập chiến lược và kế hoạch kinh doanh cho năm mới, để việc gấp mỗi ngày không cuốn bạn đi</h3><p><b>Nội dung chính:</b> nhìn lại năm cũ bằng số liệu về khách, doanh thu, tiền lãi và con người, rồi chọn hai ba mục tiêu cho năm mới và chia thành việc của từng quý.</p><p><b>Bạn mang về:</b> một bản kế hoạch kinh doanh một trang cho năm mới, ghi rõ mục tiêu và việc chính của từng quý.</p><p><b>Công ty được gì:</b> cả công ty cùng biết năm nay ưu tiên việc gì, và khi có việc gấp chen vào thì bạn biết việc nào để sau được.</p></div></article>
+      <article><img src="/img/mc-chu-de-doi-ngu.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 3 · Đội ngũ</i><h3>Tuyển đúng người, giữ được người giỏi, và giao việc xong không bị đẩy ngược về bàn bạn</h3><p><b>Nội dung chính:</b> đặt tiêu chí tuyển cho vị trí đang thiếu, tìm ra vì sao người giỏi muốn ở lại hay muốn đi, và chia rõ việc nào người quản lý tự quyết, việc nào mới cần hỏi bạn.</p><p><b>Bạn mang về:</b> bộ câu hỏi phỏng vấn cho một vị trí đang tuyển, và danh sách việc người quản lý được tự quyết.</p><p><b>Công ty được gì:</b> bớt tuyển sai rồi phải tuyển lại, và người được giao việc dám tự quyết những việc đó.</p></div></article>
+      <article><img src="/img/mc-chu-de-van-hanh.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 4 · Vận hành</i><h3>Biến cách làm trong đầu người chủ thành quy trình, để người mới vào đọc là làm được</h3><p><b>Nội dung chính:</b> chọn những việc hay chờ bạn nhất, ghi lại từng bước bạn đang làm, và đặt tiêu chuẩn thế nào là làm đúng.</p><p><b>Bạn mang về:</b> quy trình viết sẵn cho một hai việc hay chờ bạn nhất, kèm cách kiểm tra nhân viên làm đúng hay chưa.</p><p><b>Công ty được gì:</b> người mới học việc nhanh hơn, và những việc đã có quy trình thì nhân viên làm đều tay hơn, không còn mỗi người làm một kiểu.</p></div></article>
+      <article><img src="/img/mc-chu-de-san-pham-gia.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 5 · Sản phẩm và giá</i><h3>Sắp xếp lại gói sản phẩm và giá, để bán được giá tốt mà vẫn có lãi</h3><p><b>Nội dung chính:</b> nhìn lại từng sản phẩm đang bán, sắp thành bước bắt đầu, phần chính và phần chăm sóc lâu dài, rồi đặt giá theo thay đổi khách nhận được.</p><p><b>Bạn mang về:</b> bảng gói sản phẩm và giá mới, kèm vài câu giải thích giá để nhân viên nói với khách.</p><p><b>Công ty được gì:</b> khách dễ chọn được gói hợp với nhu cầu hơn, và bạn biết gói nào đang mang lại lãi cho công ty.</p></div></article>
+      <article><img src="/img/mc-chu-de-tai-chinh.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 6 · Tài chính</i><h3>Biết công ty lãi thật bao nhiêu, và không bị thiếu tiền bất ngờ</h3><p><b>Nội dung chính:</b> học cùng chuyên gia tài chính cách đọc tiền lãi thật, tách tiền cá nhân khỏi tiền công ty, và dự trù tiền cho sáu tháng cuối năm.</p><p><b>Bạn mang về:</b> bảng theo dõi tiền vào, tiền ra hằng tuần, và bảng dự trù tiền cho sáu tháng cuối năm.</p><p><b>Công ty được gì:</b> bạn quyết chuyện chi tiêu, tuyển người hay mở rộng dựa trên số liệu, và thấy trước tháng nào có thể thiếu tiền.</p></div></article>
+      <article><img src="/img/mc-chu-de-marketing.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 7 · Marketing</i><h3>Tìm kiếm và thu hút khách hàng đều đặn, bớt cảnh tháng đông tháng vắng</h3><p><b>Nội dung chính:</b> xác định nhóm khách hợp nhất với công ty, tìm ra nơi nào đang mang khách tốt về, và lên lịch tìm khách cho mùa bán cuối năm.</p><p><b>Bạn mang về:</b> chân dung nhóm khách chính, và lịch tìm khách cho bốn tháng cuối năm.</p><p><b>Công ty được gì:</b> bạn biết nguồn khách nào đáng bỏ thêm tiền và công sức, thay vì thử mỗi tháng một kiểu.</p></div></article>
+      <article><img src="/img/mc-chu-de-ban-hang.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 8 · Bán hàng</i><h3>Chuyển khách đang quan tâm thành hợp đồng, để nhân viên tự chốt được đơn mà không phải chờ bạn</h3><p><b>Nội dung chính:</b> dựng cách tư vấn chung cho nhân viên bán hàng, từ lúc hỏi hoàn cảnh của khách tới lúc hẹn lần gặp sau, và tập trả lời những lúc khách còn băn khoăn.</p><p><b>Bạn mang về:</b> kịch bản tư vấn để nhân viên bán hàng dùng chung.</p><p><b>Công ty được gì:</b> nhân viên tự tư vấn được nhiều khách hơn mà không cần bạn ra mặt, và bạn biết khách hay dừng lại ở chỗ nào.</p></div></article>
+      <article><img src="/img/mc-chu-de-trai-nghiem.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 9 · Trải nghiệm khách hàng</i><h3>Giữ chân khách cũ, để khách quay lại mua tiếp và giới thiệu thêm người</h3><p><b>Nội dung chính:</b> đi theo một lượt khách từ lúc mua tới sau khi dùng xong, tìm ra chỗ khách thấy chưa hài lòng, và đặt lịch chăm sóc khách cũ.</p><p><b>Bạn mang về:</b> lịch chăm sóc khách sau khi mua, và cách xin khách giới thiệu mà khách không thấy ngại.</p><p><b>Công ty được gì:</b> khách cũ có lý do quay lại trước mùa mua sắm cuối năm, và công ty có thêm một nguồn khách đến từ lời giới thiệu.</p></div></article>
+      <article><img src="/img/mc-chu-de-thuong-hieu.webp" alt="" width="900" height="600" loading="lazy" decoding="async"><div class="cd-chu"><i>Tháng 10 · Thương hiệu người chủ</i><h3>Để khách tự tìm tới bạn, không chỉ chờ người quen giới thiệu</h3><p><b>Nội dung chính:</b> chọn điều bạn muốn khách nhớ về mình, ghi lại những câu chuyện và kinh nghiệm thật trong nghề, rồi kể ra trên một kênh mà khách của bạn hay xem.</p><p><b>Bạn mang về:</b> vài câu nói rõ bạn muốn khách nhớ tới mình vì điều gì, và lịch đăng bài cho ba tháng.</p><p><b>Công ty được gì:</b> ngoài người quen giới thiệu, khách còn tìm tới bạn qua những gì bạn chia sẻ.</p></div></article>
     </div>
-    <p class="nguon">Thứ tự các chủ đề có thể đổi theo tình hình thực tế của doanh nghiệp thành viên.</p>
+    <div class="dac-biet">
+      <i>Tháng 1, tháng 2 và tháng 11</i>
+      <h3>Chuyên đề đặc biệt theo mùa</h3>
+      <p>Ba tháng này dành cho chuyên đề đặc biệt, Duy sẽ thông báo khi tới tháng đó. Ví dụ bán hàng dịp Tết, khởi động lại công ty sau Tết, bán hàng dịp cuối năm.</p>
+      <p>Tháng nào cũng có thêm một buổi workshop AI trong kinh doanh, gắn với chủ đề của tháng. Khi nhiều thành viên cùng gặp một việc mà chín chủ đề chưa có, Duy mở thêm chủ đề theo nhu cầu.</p>
+    </div>
+    <p class="nguon">Thứ tự và nội dung các chủ đề có thể thay đổi theo tình hình thực tế của doanh nghiệp thành viên.</p>
 
     <h3 style="font-size:22px;margin:56px 0 0">Những người dẫn chuyên đề cùng Duy</h3>
     <div class="chuyen-gia">
