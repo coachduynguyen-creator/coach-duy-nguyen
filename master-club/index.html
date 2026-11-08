@@ -163,7 +163,7 @@ h3{font-size:21px;margin-bottom:8px}
 .chu-de .cd-chu h3{font-size:18px;line-height:1.35;margin:8px 0 12px}
 .chu-de .cd-chu p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
 .chu-de .cd-chu p b{color:var(--ink)}
-.cach-di{margin:0 0 8px;padding-left:20px;max-width:760px}
+.cach-di{margin:0 0 8px;padding-left:20px}
 .cach-di li{font-size:16px;line-height:1.6;color:var(--ink-2);margin-bottom:10px}
 .cach-di li b{color:var(--ink)}
 .dac-biet{margin-top:12px;background:var(--bg-2);border:1px dashed var(--line-2);border-radius:var(--r-s);padding:22px}
@@ -172,8 +172,13 @@ h3{font-size:21px;margin-bottom:8px}
 .dac-biet p{font-size:15px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
 .chuyen-gia{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
 .cg img{border-radius:var(--r-s);aspect-ratio:1;object-fit:cover;margin-bottom:12px;background:var(--bg-3)}
+.cg{display:flex;flex-direction:column;color:inherit;text-decoration:none}
+.cg i{font:600 12px/1.4 var(--mono,monospace);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--cam-dam,#8A5A0F);margin-bottom:6px}
 .cg b{display:block;font:700 17px/1.3 var(--tieu-de)}
-.cg span{font-size:14px;color:var(--ink-3)}
+.cg span{font-size:14px;color:var(--ink-2);margin-top:4px}
+.cg p{font-size:14px;line-height:1.55;color:var(--ink-3);margin:8px 0 10px}
+.cg u{text-decoration:none;font-size:14px;font-weight:600;color:var(--cam-dam,#8A5A0F);margin-top:auto}
+.cg:hover u{text-decoration:underline}
 
 /* Người thật */
 .nguoi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
@@ -437,10 +442,10 @@ form [aria-invalid="true"]{border-color:#C0412B}
 
     <h3 style="font-size:22px;margin:56px 0 0">Những người dẫn chuyên đề cùng Duy</h3>
     <div class="chuyen-gia">
-      <div class="cg"><img src="../img/chuyen-gia/mc-coach-duy.webp" alt="" loading="lazy"><b>Coach Duy Nguyễn</b><span>Dẫn các buổi coaching nhóm hằng tuần</span></div>
-      <div class="cg"><img src="../img/chuyen-gia/mc-thanh-bui.webp" alt="" loading="lazy"><b>Thanh Bùi</b><span>Kế toán và thuế, 20 năm trong nghề</span></div>
-      <div class="cg"><img src="../img/chuyen-gia/mc-cherry-nguyen.webp" alt="" loading="lazy"><b>Cherry Nguyễn</b><span>FIDT, tài chính</span></div>
-      <div class="cg"><img src="../img/chuyen-gia/mc-le-phuong.webp" alt="" loading="lazy"><b>Coach Lê Phương</b><span>Phong thủy</span></div>
+      <a class="cg" href="/ve-toi.html"><img src="../img/chuyen-gia/mc-coach-duy.webp" alt="Chân dung Coach Duy Nguyễn" loading="lazy"><i>Bán hàng và thương hiệu</i><b>Coach Duy Nguyễn</b><span>Dẫn các buổi coaching nhóm hằng tuần</span><p>Huấn luyện kỹ năng bán hàng và xây thương hiệu cho chủ doanh nghiệp, để nâng tầm vị thế doanh nhân.</p><u>Xem hồ sơ &rarr;</u></a>
+      <a class="cg" href="/doi-ngu-chuyen-gia.html#thanh-bui"><img src="../img/chuyen-gia/mc-thanh-bui.webp" alt="Chân dung Thanh Bùi" loading="lazy"><i>Kế toán và thuế</i><b>Thanh Bùi</b><span>Chuyên gia tư vấn kế toán và thuế</span><p>20 năm tư vấn, đào tạo và xây dựng hệ thống kế toán chuẩn cho doanh nghiệp và các dự án FDI.</p><u>Xem hồ sơ &rarr;</u></a>
+      <a class="cg" href="/doi-ngu-chuyen-gia.html#tai-chinh-ca-nhan"><img src="../img/chuyen-gia/mc-cherry-nguyen.webp" alt="Chân dung Cherry Nguyễn" loading="lazy"><i>Tài chính cá nhân</i><b>Cherry Nguyễn</b><span>Cố vấn tài chính tại FIDT, tư vấn đầu tư và quản lý tài sản</span><p>Tách tiền gia đình khỏi tiền doanh nghiệp, để những tháng kinh doanh đi xuống không kéo cả nhà đi theo.</p><u>Xem hồ sơ &rarr;</u></a>
+      <a class="cg" href="/doi-ngu-chuyen-gia.html#phong-thuy"><img src="../img/chuyen-gia/mc-le-phuong.webp" alt="Chân dung Coach Lê Phương" loading="lazy"><i>Phong thủy và tử vi</i><b>Coach Lê Phương</b><span>Chuyên gia phong thủy và tử vi cho doanh nghiệp</span><p>Xem phong thủy văn phòng, cửa hàng và chọn thời điểm cho những việc lớn của doanh nghiệp.</p><u>Xem hồ sơ &rarr;</u></a>
     </div>
   </div>
 </section>
