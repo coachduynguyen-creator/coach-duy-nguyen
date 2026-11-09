@@ -70,9 +70,9 @@ async function noiTuongTac(toi,ten){
 
   // Bình luận: khung có data-bl. Bỏ bình luận mẫu, hiện bình luận thật, mới nhất lên đầu.
   document.querySelectorAll('[data-bl]').forEach(async function(k){
-    var muc=k.dataset.bl,o=k.querySelector('input'),gui=k.querySelector('.bt-viet button'),ds=tao('div');
+    var muc=k.dataset.bl,o=k.querySelector('input,textarea'),gui=k.querySelector('[data-gui]')||k.querySelector('.bt-viet button'),ds=tao('div');
     k.querySelectorAll('.hc-cau').forEach(function(c){c.remove()});k.appendChild(ds);
-    var dem=k.closest('article')&&k.closest('article').querySelector('.bv-hanh > span');
+    var dem=k.querySelector('[data-bl-dem]')||(k.closest('article')&&k.closest('article').querySelector('.bv-hanh > span'));
     function mot(b){
       var c=tao('div','hc-cau'),h=tao('div','bt-viet'),p=tao('p');h.style.margin='0';
       p.append(tao('b',null,b.ten),' ',tao('small',null,'· '+new Date(b.tao_luc).toLocaleString('vi-VN',{dateStyle:'short',timeStyle:'short'})),tao('br'),b.noi_dung);
@@ -80,7 +80,7 @@ async function noiTuongTac(toi,ten){
         x.onclick=async function(){if(confirm('Xoá bình luận này?')&&!(await sb.from('binh_luan').delete().eq('id',b.id)).error){c.remove();dat(-1)}};}
       h.append(anhCua(b.nguoi,b.ten),p);if(x)h.append(x);c.append(h);return c;
     }
-    var so=0;function dat(d){so+=d;if(dem)dem.textContent=so+' bình luận'}
+    var so=0;function dat(d){so+=d;if(dem)dem.textContent=so+' '+(dem.dataset.blDem||'bình luận')}
     var r=await sb.from('binh_luan').select('id,nguoi,ten,noi_dung,tao_luc').eq('muc',muc).order('tao_luc',{ascending:false}).limit(100);
     (r.data||[]).forEach(function(b){ds.append(mot(b))});dat((r.data||[]).length);
     async function guiBl(){
@@ -89,7 +89,7 @@ async function noiTuongTac(toi,ten){
       gui.disabled=false;if(x.error)return alert('Chưa gửi được bình luận, bạn thử lại sau ít phút.');
       o.value='';ds.prepend(mot(x.data));dat(1);
     }
-    gui.onclick=guiBl;o.onkeydown=function(e){if(e.key==='Enter')guiBl()};
+    gui.onclick=guiBl;o.onkeydown=function(e){if(e.key==='Enter'&&o.tagName==='INPUT')guiBl()};
   });
 }
 
