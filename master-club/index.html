@@ -80,6 +80,17 @@ h3{font-size:21px;margin-bottom:8px}
 /* Bốn câu */
 .cau-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
 .nen-cam{background:var(--cam-mo)}
+.thu-vien{background:var(--bg-2)}
+.tv-luoi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.tv-luoi article{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.tv-anh{position:relative}
+.tv-anh img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tv-anh span{position:absolute;left:14px;top:14px;background:rgba(15,18,24,.82);color:#E2B654;font:600 12px/1 var(--mono);letter-spacing:.06em;padding:7px 11px;border-radius:999px}
+.tv-chu{padding:18px 20px 22px}
+.tv-chu h3{font-size:18px;line-height:1.35;margin-bottom:8px}
+.tv-chu p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:900px){.tv-luoi{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.tv-luoi{grid-template-columns:1fr}}
 .nen-toi{background:var(--toi);color:#fff}
 .nen-toi .nhan{color:var(--cam)}
 .nen-toi .dan,.nen-toi .nguon{color:var(--toi-chu)}
@@ -450,6 +461,22 @@ form [aria-invalid="true"]{border-color:#C0412B}
       <a class="cg" href="/doi-ngu-chuyen-gia.html#thanh-bui"><img src="../img/chuyen-gia/mc-thanh-bui.webp" alt="Chân dung Thanh Bùi" loading="lazy"><i>Kế toán và thuế</i><b>Thanh Bùi</b><span>Chuyên gia tư vấn kế toán và thuế</span><p>20 năm tư vấn, đào tạo và xây dựng hệ thống kế toán chuẩn cho doanh nghiệp và các dự án FDI.</p><u>Xem hồ sơ &rarr;</u></a>
       <a class="cg" href="/doi-ngu-chuyen-gia.html#tai-chinh-ca-nhan"><img src="../img/chuyen-gia/mc-cherry-nguyen.webp" alt="Chân dung Cherry Nguyễn" loading="lazy"><i>Tài chính cá nhân</i><b>Cherry Nguyễn</b><span>Cố vấn tài chính tại FIDT, tư vấn đầu tư và quản lý tài sản</span><p>Tách tiền gia đình khỏi tiền doanh nghiệp, để những tháng kinh doanh đi xuống không kéo cả nhà đi theo.</p><u>Xem hồ sơ &rarr;</u></a>
       <a class="cg" href="/doi-ngu-chuyen-gia.html#phong-thuy"><img src="../img/chuyen-gia/mc-le-phuong.webp" alt="Chân dung Coach Lê Phương" loading="lazy"><i>Phong thủy và tử vi</i><b>Coach Lê Phương</b><span>Chuyên gia phong thủy và tử vi cho doanh nghiệp</span><p>Xem phong thủy văn phòng, cửa hàng và chọn thời điểm cho những việc lớn của doanh nghiệp.</p><u>Xem hồ sơ &rarr;</u></a>
+    </div>
+  </div>
+</section>
+
+<section class="thu-vien" id="thu-vien">
+  <div class="khung">
+    <span class="nhan">Thư viện khóa học</span>
+    <h2>Vào là học được ngay, không phải chờ tới tháng có chuyên đề</h2>
+    <p class="dan">Ngay khi trở thành thành viên, bạn mở được sáu bộ khóa học Duy đã quay sẵn. Phần nhiều nhất là tìm khách, bán hàng và đưa khách đang quan tâm tới quyết định mua. Bạn học lúc nào tiện, rồi mang chỗ còn vướng vào buổi coaching hằng tuần để hỏi tiếp.</p>
+    <div class="tv-luoi">
+      <article><div class="tv-anh"><img src="../img/cd-giang-slide.webp" alt="" loading="lazy" decoding="async"><span>Bán hàng</span></div><div class="tv-chu"><h3>Bộ khóa học nâng cấp quy trình cho đội ngũ bán hàng</h3><p>Chuẩn hóa quy trình tư vấn, chăm sóc và chốt đơn để cả đội ngũ bán theo cùng một chuẩn, không còn phụ thuộc vào Founder.</p></div></article>
+      <article><div class="tv-anh"><img src="../img/cd-quay-video.webp" alt="" loading="lazy" decoding="async"><span>Thương hiệu</span></div><div class="tv-chu"><h3>Bộ khóa học chiến lược xây dựng thương hiệu cá nhân</h3><p>Định vị, câu chuyện và hệ thống nội dung giúp bạn xây uy tín cá nhân bền vững để khách hàng tìm đến và tin tưởng.</p></div></article>
+      <article><div class="tv-anh"><img src="../img/v5-soi-dung.webp" alt="" loading="lazy" decoding="async"><span>Doanh thu</span></div><div class="tv-chu"><h3>Bộ khóa học Hệ thống phát triển doanh thu</h3><p>Thiết kế phễu, chỉ số và nhịp vận hành giúp doanh thu tăng đều, đo được và lặp lại được.</p></div></article>
+      <article><div class="tv-anh"><img src="../img/cd-workshop.webp" alt="" loading="lazy" decoding="async"><span>Marketing</span></div><div class="tv-chu"><h3>Bộ khóa học chiến lược kế hoạch Marketing bài bản</h3><p>Lập kế hoạch Marketing từ mục tiêu kinh doanh: chọn kênh, thông điệp, ngân sách và lịch triển khai rõ ràng.</p></div></article>
+      <article><div class="tv-anh"><img src="../img/v5-chi-duong.webp" alt="" loading="lazy" decoding="async"><span>Chiến lược</span></div><div class="tv-chu"><h3>Xây dựng chiến lược kinh doanh</h3><p>Nhìn rõ vị thế hiện tại, chọn hướng đi và biến chiến lược thành kế hoạch hành động cho từng quý.</p></div></article>
+      <article><div class="tv-anh"><img src="../img/dh-phong-lon.webp" alt="" loading="lazy" decoding="async"><span>AI</span></div><div class="tv-chu"><h3>Bộ công cụ AI</h3><p>Bộ công cụ AI ứng dụng ngay vào công việc hằng ngày của doanh nghiệp.</p></div></article>
     </div>
   </div>
 </section>
