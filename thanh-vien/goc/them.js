@@ -91,6 +91,42 @@ async function noiTuongTac(toi,ten){
     }
     gui.onclick=guiBl;o.onkeydown=function(e){if(e.key==='Enter'&&o.tagName==='INPUT')guiBl()};
   });
+
+  // Gửi từ thành viên: khung có data-gui-vao="loai" ghi mọi ô trong khung vào gui_tu_thanh_vien.
+  // data-nap: điền lại lần lưu gần nhất (theo thứ tự ô). data-tu-luu: lưu khi đổi lựa chọn.
+  document.querySelectorAll('[data-gui-vao]').forEach(async function(k){
+    var loai=k.dataset.guiVao,o=[].slice.call(k.querySelectorAll('input:not([type=file]):not([type=search]),textarea,select'));
+    var nut=k.querySelector('[data-gui]')||k.querySelector('[type=submit]'),bao=tao('p','tr-phu');bao.hidden=true;bao.setAttribute('role','status');
+    if(nut)(nut.closest('.tr-nut-hang')||nut).after(bao);else k.append(bao);
+    function nhan(x){var l=(x.id&&k.querySelector('label[for="'+x.id+'"]'))||(x.closest('.tr-truong')&&x.closest('.tr-truong').querySelector('label'))||x.closest('label');
+      if(l){l=l.cloneNode(true);l.querySelectorAll('small,input,select,textarea').forEach(function(z){z.remove()})}return (l?l.textContent:x.getAttribute('aria-label')||'').trim()}
+    if('nap' in k.dataset){
+      var r=await sb.from('gui_tu_thanh_vien').select('noi_dung').eq('loai',loai).order('tao_luc',{ascending:false}).limit(1);
+      var d=r.data&&r.data[0]&&r.data[0].noi_dung.truong;
+      if(d)o.forEach(function(x,i){if(!d[i])return;if(x.type==='checkbox')x.checked=!!d[i].gia_tri;else x.value=d[i].gia_tri});
+    }
+    var dang=false;
+    async function gui(){
+      if(dang)return;
+      var chu=o.filter(function(x){return x.tagName!=='SELECT'&&x.type!=='checkbox'});
+      if(chu.length&&!('nap' in k.dataset)&&!chu.some(function(x){return x.value.trim()})){bao.textContent='Bạn viết vài chữ rồi gửi nhé.';bao.hidden=false;return}
+      dang=true;if(nut)nut.disabled=true;
+      var truong=o.map(function(x){return {nhan:nhan(x),gia_tri:x.type==='checkbox'?x.checked:x.value.trim().slice(0,4000)}});
+      var x=await sb.from('gui_tu_thanh_vien').insert({loai:loai,noi_dung:{truong:truong,trang:location.hash}});
+      dang=false;if(nut)nut.disabled=false;
+      bao.textContent=x.error?'Chưa gửi được, bạn thử lại sau ít phút.':(k.dataset.xong||'Đã gửi.');bao.hidden=false;
+      if(!x.error&&!('nap' in k.dataset))chu.forEach(function(x){x.value=''});
+    }
+    var f=k.querySelector('form');if(f)f.addEventListener('submit',function(e){e.preventDefault();gui()});
+    if(nut&&nut.type!=='submit')nut.onclick=gui;
+    if('tuLuu' in k.dataset)o.forEach(function(x){x.addEventListener('change',gui)});
+  });
+
+  // Phần chưa làm xong: báo rõ, không đóng hộp như đã gửi.
+  document.querySelectorAll('[data-chua-mo]').forEach(function(f){
+    var b=tao('p','tr-phu','Phần này đang hoàn thiện, chưa gửi đi được.');b.hidden=true;f.append(b);
+    f.addEventListener('submit',function(e){e.preventDefault();b.hidden=false});
+  });
 }
 
 async function vaoCong(e){
