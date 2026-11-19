@@ -44,6 +44,13 @@
  * Sau khi dán: lưu, chạy `khoiTao` (tạo trang tính Master Club), rồi Triển khai một
  * PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
+ * BỔ SUNG 19/11/2026: PHIẾU TỰ CHẤM 7M (CHƯA TRIỂN KHAI)
+ * Thêm nguồn `tu-cham-7m` cho trang /tu-cham-7m/: trang tính riêng, một dòng một khách,
+ * 7 cột điểm trụ cột, cột tóm tắt cho người tư vấn đọc nhanh. Không gửi thư cho khách
+ * (khách đã thấy kết quả trên trang), vẫn gửi thư báo đội ngũ. Ai nhận báo và có
+ * Telegram hay không còn chờ Coach Duy chốt. Sau khi dán: lưu, chạy `khoiTao` (tạo
+ * trang tính Tự chấm 7M), rồi Triển khai một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
+ *
  * LƯU Ý CHO THỢ SAU
  * Trang gửi bằng Content-Type: text/plain, KHÔNG phải application/json. Đây là
  * cố ý. Apps Script không trả về header cho phép gọi chéo miền đối với yêu cầu
@@ -91,6 +98,22 @@ var NGUON = {
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
       return [d.ten, d.dienthoai, d.email, d.cap, d.doanhnghiep, d.nhansu, d.vuong,
+              d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
+    }
+  },
+  /* Phiếu tự chấm phòng kinh doanh 7M, thêm 19/11/2026. Email đứng cột 4 vì daCo() đọc cột đó. */
+  'tu-cham-7m': {
+    tab: 'Tự chấm 7M',
+    ten_chuong_trinh: 'Phiếu tự chấm phòng kinh doanh 7M',
+    khong_thu_khach: true,
+    cot: ['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Đồng ý liên hệ',
+          'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56',
+          'Thị trường', 'Quy trình', 'Nhân sự', 'Thu nhập và chi phí', 'Công cụ', 'Chỉ số', 'Quản lý',
+          'Nên sửa trước', 'Tóm tắt cho người tư vấn',
+          'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
+    lay: function (d) {
+      return [d.ten, d.dienthoai, d.email, d.dongy, d.nganh, d.so_nguoi_ban, d.nguoi_cham, d.tong_diem,
+              d.d1, d.d2, d.d3, d.d4, d.d5, d.d6, d.d7, d.nen_sua, d.tom_tat,
               d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
     }
   },
@@ -202,7 +225,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, ver: 'master-club-23-10-so0', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'tu-cham-7m-19-11', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -246,7 +269,7 @@ function doPost(e) {
     dong[2] = "'" + dong[2]; /* cột số Zalo ghi dạng chữ, không thì Sheets bỏ số 0 đầu */
     t.appendRow(dong);
 
-    guiThuChoKhach(lamSach(d), c);
+    if (!c.khong_thu_khach) guiThuChoKhach(lamSach(d), c);
     if (d.nguon === 'nguoi-dan-duong') guiBaoRieng(lamSach(d), c);
     else guiThuChoDoiNgu(lamSach(d), c);
     if (d.nguon === 'master-club') {
@@ -282,7 +305,7 @@ function daCo(t, email) {
 
 function lamSach(d) {
   var r = {};
-  Object.keys(d).forEach(function (k) { r[k] = chuoi(d[k]).slice(0, 2000); });
+  Object.keys(d).forEach(function (k) { r[k] = chuoi(d[k]).slice(0, k === 'tom_tat' ? 6000 : 2000); });
   return r;
 }
 
