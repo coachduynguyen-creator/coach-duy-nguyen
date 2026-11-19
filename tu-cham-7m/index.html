@@ -116,7 +116,7 @@ Trả lời xong 28 câu, anh chị điền họ tên, số điện thoại và 
    <label>Email<input id="email" type="email" autocomplete="email"></label>
   </div>
   <input id="bay" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-  <label class="dongy"><input type="checkbox" id="dongy"> Tôi đồng ý để Next Step Group dùng thông tin này để gửi kết quả và liên hệ tư vấn.</label>
+  <label class="dongy"><input type="checkbox" id="dongy"> Tôi đồng ý để Next Step Group dùng thông tin này để gửi kết quả và liên hệ tư vấn. Xem <a href="/chinh-sach-du-lieu/" target="_blank" rel="noopener">chính sách dữ liệu cá nhân</a>.</label>
   <p class="loi" id="loi" role="alert"></p>
   <div class="btns"><button type="submit" id="nut">Xem kết quả</button></div>
  </form>
@@ -256,7 +256,7 @@ function nhanXet(ds) {
   const tong = ds.reduce((s, x) => s + x.d, 0);
   const lam = truocTien(ds);
   const sn = document.getElementById("songuoi").value;
-  let h = `<p><b>Tổng điểm: ${tong}/56.</b> Mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, 4 tới 6 là đã có nhưng chưa đều, 7 tới 8 là tốt. Tổng điểm không có mức đạt hay trượt, chỉ để so khi anh chị chấm lại sau vài tuần.</p>`;
+  let h = `<p><b>Tổng điểm: ${tong}/56.</b> Mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, 4 tới 6 là đã có nhưng chưa đều, 7 tới 8 là tốt. Tổng điểm không có mức đạt hay trượt, chỉ để so sánh khi anh chị chấm lại sau vài tuần.</p>`;
   if (ds.every(x => mucDo(x.d) === 2)) {
     h += `<div class="first"><h3>Phòng kinh doanh đang chạy đều ở cả 7 trụ cột</h3><p class="note">Việc tiếp theo là giữ cho mọi thứ chạy đều. Muốn làm tốt hơn nữa thì bắt đầu từ trụ cột ít điểm nhất: ${TRU[lam[0].i].ten}.</p></div>`;
   } else {

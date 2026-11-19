@@ -47,8 +47,8 @@
  * BỔ SUNG 19/11/2026: PHIẾU TỰ CHẤM 7M (CHƯA TRIỂN KHAI)
  * Thêm nguồn `tu-cham-7m` cho trang /tu-cham-7m/: trang tính riêng, một dòng một khách,
  * 7 cột điểm trụ cột, cột tóm tắt cho người tư vấn đọc nhanh. Không gửi thư cho khách
- * (khách đã thấy kết quả trên trang), vẫn gửi thư báo đội ngũ. Ai nhận báo và có
- * Telegram hay không còn chờ Coach Duy chốt. Sau khi dán: lưu, chạy `khoiTao` (tạo
+ * (khách đã thấy kết quả trên trang). Báo khách mới bằng thư đội ngũ và tin Telegram
+ * vào cùng bot với Master Club (bản chốt B1 ngày 19/11/2026). Sau khi dán: lưu, chạy `khoiTao` (tạo
  * trang tính Tự chấm 7M), rồi Triển khai một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
  * LƯU Ý CHO THỢ SAU
@@ -225,7 +225,7 @@ function layBang() {
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return tra({ ok: true, ver: 'tu-cham-7m-19-11', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
+  return tra({ ok: true, ver: 'tu-cham-7m-telegram-19-11', thong_diep: 'Nơi nhận đăng ký coachduynguyen.vn đang chạy.' });
 }
 
 function doPost(e) {
@@ -279,6 +279,14 @@ function doPost(e) {
         '\nĐang vướng: ' + chuoi(m.vuong).slice(0, 500) +
         '\nNguồn: ' + (chuoi(m.nguon_chien_dich) || 'không ghi') +
         '\nĐọc đủ ở trang tính Master Club trong bảng đăng ký.', m);
+    }
+    if (d.nguon === 'tu-cham-7m') { /* bản chốt B1 ngày 19/11/2026: thư đội ngũ và Telegram như Master Club */
+      var k = lamSach(d);
+      baoTelegram('Phiếu tự chấm 7M mới\n' + chuoi(k.ten) + ' · ' + chuoi(k.dienthoai) + ' · ' + chuoi(k.email) +
+        '\nNgành: ' + chuoi(k.nganh) + ' · Số người bán: ' + chuoi(k.so_nguoi_ban) +
+        '\nTổng điểm: ' + chuoi(k.tong_diem) + '/56 · Nên sửa trước: ' + chuoi(k.nen_sua) +
+        '\nNguồn: ' + (chuoi(k.nguon_chien_dich) || 'không ghi') +
+        '\nĐọc tóm tắt ở trang tính Tự chấm 7M trước khi gọi.', k);
     }
 
     return tra({ ok: true });
