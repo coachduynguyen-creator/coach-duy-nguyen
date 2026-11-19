@@ -45,7 +45,7 @@
  * PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
  * BỔ SUNG 19/11/2026: PHIẾU TỰ CHẤM 7M (CHƯA TRIỂN KHAI)
- * Thêm nguồn `tu-cham-7m` cho trang /tu-cham-7m/: trang tính riêng, một dòng một khách,
+ * Thêm nguồn `tu-cham-7m` cho trang /danh-gia-phong-kinh-doanh/: trang tính riêng, một dòng một khách,
  * 7 cột điểm trụ cột, cột tóm tắt cho người tư vấn đọc nhanh. Không gửi thư cho khách
  * (khách đã thấy kết quả trên trang). Báo khách mới bằng thư đội ngũ và tin Telegram
  * vào cùng bot với Master Club (bản chốt B1 ngày 19/11/2026). Sau khi dán: lưu, chạy `khoiTao` (tạo
@@ -107,12 +107,12 @@ var NGUON = {
     ten_chuong_trinh: 'Phiếu tự chấm phòng kinh doanh 7M',
     khong_thu_khach: true,
     cot: ['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Đồng ý liên hệ',
-          'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56',
+          'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56', 'Kiểu kết quả',
           'Thị trường', 'Quy trình', 'Nhân sự', 'Thu nhập và chi phí', 'Công cụ', 'Chỉ số', 'Quản lý',
           'Nên sửa trước', 'Tóm tắt cho người tư vấn',
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
-      return [d.ten, d.dienthoai, d.email, d.dongy, d.nganh, d.so_nguoi_ban, d.nguoi_cham, d.tong_diem,
+      return [d.ten, d.dienthoai, d.email, d.dongy, d.nganh, d.so_nguoi_ban, d.nguoi_cham, d.tong_diem, d.kieu_ket_qua,
               d.d1, d.d2, d.d3, d.d4, d.d5, d.d6, d.d7, d.nen_sua, d.tom_tat,
               d.trang_nguon || '', d.nguon_chien_dich || '', 'Chưa liên hệ', ''];
     }
