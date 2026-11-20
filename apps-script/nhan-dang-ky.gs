@@ -108,7 +108,7 @@ var NGUON = {
     khong_thu_khach: true,
     cot: ['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Đồng ý liên hệ',
           'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56', 'Kiểu kết quả',
-          'Thị trường', 'Quy trình', 'Nhân sự', 'Thu nhập và chi phí', 'Công cụ', 'Chỉ số', 'Quản lý',
+          'Thị trường', 'Quy trình', 'Nhân sự', 'Tài chính', 'Công cụ', 'Chỉ số', 'Quản lý',
           'Nên sửa trước', 'Tóm tắt cho người tư vấn',
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
