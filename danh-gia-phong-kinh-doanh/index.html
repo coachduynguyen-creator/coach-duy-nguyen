@@ -175,7 +175,7 @@ button{font:inherit;cursor:pointer}
  <div class="bia">
   <div class="wrap">
    <div>
-    <div class="kick">Next Step Group · Mô hình Phòng kinh doanh tiêu chuẩn 7M</div>
+    <div class="kick">Next Step Group · Mô hình Phòng kinh doanh <span style="white-space:nowrap">tiêu chuẩn 7M</span></div>
     <h1>Phòng kinh doanh của anh chị <em>đang vướng ở đâu?</em></h1>
     <p class="lead">Tự đánh giá theo 7 trụ cột mà Coach Duy Nguyễn dùng khi thiết kế phòng kinh doanh cho doanh nghiệp. Đánh giá xong, anh chị biết chỗ nào đang tốt, chỗ nào cần sửa, và nên sửa chỗ nào trước.</p>
     <button class="btn" data-di="1">Bắt đầu đánh giá</button>
@@ -418,7 +418,7 @@ $("cham").innerHTML = TRU.map(() => "<i></i>").join("");
 $("cacbuoc").innerHTML = TRU.map((p, i) => `
 <section class="man" id="m${i+1}">
  <div class="wrap buoc">
-  <div class="dau"><div class="mso">M${i+1}</div><div><div class="kick">Bước ${i+1}/7</div><h2>${p.ten}</h2><p class="hoi">${p.hoi}</p></div></div>
+  <div class="dau"><div class="mso">M${i+1}</div><div><h2>${p.ten}</h2><p class="hoi">${p.hoi}</p></div></div>
   <div class="giai"><div><b>Phần này đánh giá</b>${p.danhGia}</div><div><b>Vì sao cần đánh giá</b>${p.viSao}</div></div>
   ${i === 0 ? `<p class="nhac">Trả lời theo việc đội ngũ đang làm thật trong tháng này, không theo việc định làm. Câu nào không chắc, anh chị hỏi nhanh 1 tới 2 người bán; không hỏi được thì chọn <b>Chưa đúng</b>.</p>` : ""}
   ${p.cau.map((q, j) => `<div class="cau"><p><small>${j+1}.</small>${q}</p><div class="opts">${MUC.map((m, k) => `<label class="opt o${k}"><input type="radio" name="q${i}_${j}" value="${k}" data-k="${i}_${j}"><span>${m}</span></label>`).join("")}</div></div>`).join("")}
