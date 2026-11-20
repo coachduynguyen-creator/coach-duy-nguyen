@@ -367,7 +367,7 @@ function thuCongDong(d) {
 
 /** Thư kết quả cho khách làm phiếu đánh giá 7M (thêm 20/11/2026). Ký tên Next Step Group, gọi khách là anh chị. */
 function thuDanhGia7M(d) {
-  var tru = ['Thị trường', 'Quy trình', 'Nhân sự', 'Tài chính', 'Công cụ', 'Chỉ số', 'Quản lý'];
+  var tru = ['Market · Thị trường', 'Method · Quy trình', 'Manpower · Nhân sự', 'Money · Tài chính', 'Material · Công cụ', 'Measure · Chỉ số', 'Management · Quản lý'];
   var hang = tru.map(function (ten, i) {
     var p = Number(d['d' + (i + 1)]), muc = p <= 3 ? 'Cần sửa' : p <= 6 ? 'Đã có, chưa đều' : 'Tốt';
     return '<tr><td style="padding:3px 16px 3px 0">M' + (i + 1) + ' · ' + ten + '</td><td style="padding:3px 16px 3px 0"><b>' + escape_(d['d' + (i + 1)]) + '/8</b></td><td style="padding:3px 0;color:#6B6B6B">' + muc + '</td></tr>';

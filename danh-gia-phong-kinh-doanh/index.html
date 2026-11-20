@@ -90,6 +90,7 @@ button{font:inherit;cursor:pointer}
 .cau p.vd{font-weight:400;font-size:14px;color:var(--muted);background:var(--bg);border-radius:10px;padding:8px 12px;margin:-4px 0 12px}
 .cau p.vd b{color:var(--ink,inherit);font-weight:700}
 .goiy{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:6px}
+.hang b small.en{display:block;font-size:12px;font-weight:500;color:var(--muted)}
 .cau p small{color:var(--muted);font-weight:700;margin-right:6px}
 .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .opt{position:relative;border:1.5px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center;font-size:14px;font-weight:600;background:var(--bg);cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:center}
@@ -200,7 +201,7 @@ button{font:inherit;cursor:pointer}
   </div>
   <div class="sec">
    <h2>7 trụ cột của một phòng kinh doanh</h2>
-   <p class="sub">Thứ tự trụ cột cũng là thứ tự xây dựng, vì trụ cột sau dựa vào trụ cột trước.</p>
+   <p class="sub">Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. Thứ tự trụ cột cũng là thứ tự xây dựng, vì trụ cột sau dựa vào trụ cột trước.</p>
    <div class="tru7" id="tru7"></div>
   </div>
   <div class="sec">
@@ -451,12 +452,12 @@ try { st = Object.assign(st, JSON.parse(localStorage.getItem(KEY)) || {}); } cat
 const luu = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
 
 // Dựng 7 trụ cột ở trang bìa và 7 màn câu hỏi
-$("tru7").innerHTML = TRU.map((p, i) => `<div><small>M${i+1}</small><b>${p.ten}</b></div>`).join("");
+$("tru7").innerHTML = TRU.map((p, i) => `<div><small>M${i+1}<br>${p.anh}</small><b>${p.ten}</b></div>`).join("");
 $("cham").innerHTML = TRU.map(() => "<i></i>").join("");
 $("cacbuoc").innerHTML = TRU.map((p, i) => `
 <section class="man" id="m${i+1}">
  <div class="wrap buoc">
-  <div class="dau"><div class="mso">M${i+1}</div><div><h2>${p.ten}</h2><p class="hoi">${p.hoi}</p></div></div>
+  <div class="dau"><div class="mso">M${i+1}</div><div><div class="kick">M${i+1} · ${p.anh}</div><h2>${p.ten}</h2><p class="hoi">${p.hoi}</p></div></div>
   <div class="giai"><div><b>Phần này đánh giá</b>${p.danhGia}</div><div><b>Vì sao cần đánh giá</b>${p.viSao}</div></div>
   ${i === 0 ? `<p class="nhac">Trả lời theo việc đội ngũ đang làm thật trong tháng này, không theo việc định làm. Mỗi câu có một ví dụ về trường hợp đúng hoàn toàn để anh chị so sánh. Chỗ nào ghi quản lý mà công ty chưa có quản lý riêng thì hiểu là người chủ. Việc công ty chưa làm thì chọn <b>Chưa đúng</b>. Câu nào không chắc, anh chị hỏi nhanh 1 tới 2 người bán; không hỏi được thì chọn <b>Chưa đúng</b>.</p>` : ""}
   ${p.cau.map((q, j) => `<div class="cau"><p><small>${j+1}.</small>${q}</p><p class="vd"><b>Ví dụ đúng hoàn toàn:</b> ${p.vd[j]}</p><div class="opts">${MUC.map((m, k) => `<label class="opt o${k}"><input type="radio" name="q${i}_${j}" value="${k}" data-k="${i}_${j}"><span>${m}</span></label>`).join("")}</div></div>`).join("")}
@@ -503,12 +504,12 @@ function veKetQua() {
   $("tenkq").textContent = st.ten || "anh chị";
   $("hstieude").textContent = hs.t;
   $("hsmota").textContent = hs.m;
-  $("hang").innerHTML = ds.map(x => { const m = mucDo(x.d); return `<div class="hang"><b>M${x.i+1} · ${TRU[x.i].ten}</b><div class="t"><i style="width:${x.d/8*100}%;background:${MAU[m]}"></i></div><span class="muc m${m}">${x.d}/8 · ${TEN_MUC[m]}</span></div>`; }).join("");
+  $("hang").innerHTML = ds.map(x => { const m = mucDo(x.d); return `<div class="hang"><b>M${x.i+1} · ${TRU[x.i].ten}<small class="en">${TRU[x.i].anh}</small></b><div class="t"><i style="width:${x.d/8*100}%;background:${MAU[m]}"></i></div><span class="muc m${m}">${x.d}/8 · ${TEN_MUC[m]}</span></div>`; }).join("");
   const lam = truocTien(ds), coYeu = ds.some(x => mucDo(x.d) < 2);
   $("thutu").textContent = coYeu
     ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột chưa đều. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì trụ cột sau dựa vào trụ cột trước."
     : "Cả 7 trụ cột đều tốt. Nếu muốn làm tốt hơn nữa, bắt đầu từ trụ cột ít điểm nhất.";
-  $("uutien").innerHTML = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
+  $("uutien").innerHTML = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.anh} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
   const sn = $("songuoi").value;
   $("nhonho").innerHTML = (sn === "0" || sn === "1")
     ? `<p class="ghichu">${sn === "0" ? "Người chủ đang tự bán" : "Công ty có 1 người bán ngoài người chủ"}. Với quy mô này, nhiều câu về nhân sự và quản lý chưa cần làm ngay. Anh chị nên tập trung vào Thị trường và Quy trình trước.</p>` : "";
