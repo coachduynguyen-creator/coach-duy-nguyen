@@ -17,7 +17,7 @@ function tra(origin, status, body) {
 }
 
 // ---- Phiếu tự đánh giá 7M (/api/danh-gia-7m), thêm 20/11/2026 ----
-// Bí mật cần cất: RESEND_KEY, TELEGRAM_TOKEN (PANCAKE_KEY đã có). Biến thường: MAIL_FROM, MAIL_REPLY, TELEGRAM_CHAT.
+// Bí mật cần cất: RESEND_KEY (PANCAKE_KEY đã có). Biến thường: MAIL_FROM, MAIL_REPLY.
 const TRANG = "https://coachduynguyen.vn";
 const gioVN = () => new Date(Date.now() + 7 * 3600 * 1000);   // ngày theo giờ Việt Nam
 const cat = (v, n) => (typeof v === "string" ? v.trim().slice(0, n) : "");
@@ -69,16 +69,9 @@ async function danhGia7M(req, env, origin) {
     });
     if (!r.ok) throw new Error("resend " + r.status);
   };
-  const tele = async () => {
-    const text = ["Phiếu 7M mới · " + ma, ten + " · " + sdt, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
-      "Số người bán: " + soNguoiBan, "Người đánh giá: " + nguoiCham, "Tổng điểm: " + tong + "/56", "Hồ sơ gọi: " + linkHoSo, "Báo cáo: " + linkBaoCao].join("\n");
-    const r = await fetch("https://api.telegram.org/bot" + env.TELEGRAM_TOKEN + "/sendMessage", {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT, text, disable_web_page_preview: true }) });
-    if (!r.ok) throw new Error("telegram " + r.status);
-  };
-  const kq = await Promise.allSettled([pancake(), thu(), tele()]);
-  kq.forEach((x, i) => { if (x.status === "rejected") console.error(["pancake", "thu", "telegram"][i], String(x.reason)); });
-  // Cả ba lỗi thì khách chưa để lại được gì: báo lỗi để trang cho bấm lại. Một việc chạy được là đủ để sales biết.
+  const kq = await Promise.allSettled([pancake(), thu()]);
+  kq.forEach((x, i) => { if (x.status === "rejected") console.error(["pancake", "thu"][i], String(x.reason)); });
+  // Cả hai lỗi thì khách chưa để lại được gì: báo lỗi để trang cho bấm lại. Một việc chạy được là đủ: Pancake có thì sales thấy, thư đi thì khách có báo cáo.
   if (kq.every(x => x.status === "rejected")) return tra(origin, 502, { success: false });
   return tra(origin, 200, { success: true, ma, k });
 }

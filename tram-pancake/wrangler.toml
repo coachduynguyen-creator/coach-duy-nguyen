@@ -9,4 +9,3 @@ routes = [
 [vars]
 MAIL_FROM = "Coach Duy Nguyễn <TODO@coachduynguyen.vn>"
 MAIL_REPLY = "TODO@coachduynguyen.vn"
-TELEGRAM_CHAT = "TODO"
