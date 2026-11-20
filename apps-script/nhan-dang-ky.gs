@@ -46,8 +46,8 @@
  *
  * BỔ SUNG 19/11/2026: PHIẾU TỰ CHẤM 7M (CHƯA TRIỂN KHAI)
  * Thêm nguồn `tu-cham-7m` cho trang /danh-gia-phong-kinh-doanh/: trang tính riêng, một dòng một khách,
- * 7 cột điểm trụ cột, cột tóm tắt cho người tư vấn đọc nhanh. Không gửi thư cho khách
- * (khách đã thấy kết quả trên trang). Báo khách mới bằng thư đội ngũ và tin Telegram
+ * 7 cột điểm trụ cột, cột tóm tắt cho người tư vấn đọc nhanh. Từ 20/11/2026 có gửi thư kết quả
+ * cho khách (hàm thuDanhGia7M), vì trang hứa gửi kết quả và tài liệu qua email. Báo khách mới bằng thư đội ngũ và tin Telegram
  * vào cùng bot với Master Club (bản chốt B1 ngày 19/11/2026). Sau khi dán: lưu, chạy `khoiTao` (tạo
  * trang tính Tự chấm 7M), rồi Triển khai một PHIÊN BẢN MỚI. Địa chỉ /exec không đổi.
  *
@@ -105,7 +105,7 @@ var NGUON = {
   'tu-cham-7m': {
     tab: 'Tự chấm 7M',
     ten_chuong_trinh: 'Phiếu tự chấm phòng kinh doanh 7M',
-    khong_thu_khach: true,
+    tieu_de_thu: 'Kết quả đánh giá phòng kinh doanh của anh chị · Next Step Group',
     cot: ['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Đồng ý liên hệ',
           'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56', 'Kiểu kết quả',
           'Thị trường', 'Quy trình', 'Nhân sự', 'Tài chính', 'Công cụ', 'Chỉ số', 'Quản lý',
@@ -338,13 +338,14 @@ function ghiLoi(loi, d) {
 function guiThuChoKhach(d, c) {
   var than = d.nguon === 'founder-brand' ? thuFounderBrand(d)
     : d.nguon === 'nguoi-dan-duong' ? thuNguoiDanDuong(d)
-    : d.nguon === 'master-club' ? thuMasterClub(d) : thuCongDong(d);
+    : d.nguon === 'master-club' ? thuMasterClub(d)
+    : d.nguon === 'tu-cham-7m' ? thuDanhGia7M(d) : thuCongDong(d);
   try {
     MailApp.sendEmail({
       to: d.email,
       subject: c.tieu_de_thu || ('Duy đã nhận đăng ký của bạn · ' + (d.cap || c.ten_chuong_trinh)),
       htmlBody: than,
-      name: 'Coach Duy Nguyễn',
+      name: d.nguon === 'tu-cham-7m' ? 'Next Step Group' : 'Coach Duy Nguyễn',
       replyTo: d.nguon === 'nguoi-dan-duong' ? EMAIL_RIENG : THU_DOI_NGU
     });
   } catch (loi) {
@@ -362,6 +363,31 @@ function thuCongDong(d) {
     '<p>Bạn không cần làm gì thêm lúc này. Có gì muốn nói trước thì trả lời thẳng thư này.</p>',
     d
   );
+}
+
+/** Thư kết quả cho khách làm phiếu đánh giá 7M (thêm 20/11/2026). Ký tên Next Step Group, gọi khách là anh chị. */
+function thuDanhGia7M(d) {
+  var tru = ['Thị trường', 'Quy trình', 'Nhân sự', 'Tài chính', 'Công cụ', 'Chỉ số', 'Quản lý'];
+  var hang = tru.map(function (ten, i) {
+    var p = Number(d['d' + (i + 1)]), muc = p <= 3 ? 'Cần sửa' : p <= 6 ? 'Đã có, chưa đều' : 'Tốt';
+    return '<tr><td style="padding:3px 16px 3px 0">M' + (i + 1) + ' · ' + ten + '</td><td style="padding:3px 16px 3px 0"><b>' + escape_(d['d' + (i + 1)]) + '/8</b></td><td style="padding:3px 0;color:#6B6B6B">' + muc + '</td></tr>';
+  }).join('');
+  var sua = chuoi(d.nen_sua).split(',').map(function (x) { return x.trim(); }).filter(Boolean)
+    .map(function (x) { return '<li>' + escape_(x) + '</li>'; }).join('');
+  return '<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#1E1E1E;max-width:560px">' +
+    '<p>Chào anh chị ' + escape_(d.ten) + ',</p>' +
+    '<p>Cảm ơn anh chị đã đánh giá phòng kinh doanh theo mô hình Phòng kinh doanh tiêu chuẩn 7M. Anh chị giữ thư này để đọc lại và đọc cùng đội ngũ.</p>' +
+    '<p><b>Kiểu kết quả:</b> ' + escape_(d.kieu_ket_qua) + '<br><b>Tổng điểm:</b> ' + escape_(d.tong_diem) + '/56</p>' +
+    '<table style="border-collapse:collapse;font-size:14px;margin:0 0 16px">' + hang + '</table>' +
+    '<p style="margin:0 0 4px"><b>Nên sửa trước</b> (xếp theo thứ tự trụ cột, vì trụ cột sau dựa vào trụ cột trước):</p>' +
+    '<ul style="margin:0 0 16px;padding-left:20px">' + sua + '</ul>' +
+    '<p>Tài liệu giới thiệu mô hình 7M, 12 trang, giải thích từng trụ cột: <a href="https://coachduynguyen.vn/tai-lieu/gioi-thieu-mo-hinh-7m.pdf">tải tại đây</a>.</p>' +
+    '<p>Tư vấn viên của Next Step Group sẽ liên hệ theo số điện thoại anh chị để lại, để cùng xem cách sửa những chỗ trên cho đúng với công ty mình. Có gì muốn hỏi trước thì anh chị trả lời thẳng thư này.</p>' +
+    '<p style="margin-top:22px">Next Step Group</p>' +
+    '<hr style="border:0;border-top:1px solid #E6E1D8;margin:22px 0">' +
+    '<p style="font-size:12px;color:#8A8A8A">Anh chị nhận thư này vì vừa làm phiếu đánh giá trên coachduynguyen.vn bằng địa chỉ ' + escape_(d.email) +
+    '. Không phải anh chị làm thì trả lời thư này để đội ngũ xoá thông tin.</p>' +
+    '</div>';
 }
 
 function thuMasterClub(d) {
