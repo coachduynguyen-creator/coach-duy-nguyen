@@ -5,7 +5,7 @@ routes = [
   { pattern = "coachduynguyen.vn/api/dang-ky", zone_name = "coachduynguyen.vn" },
   { pattern = "coachduynguyen.vn/api/danh-gia-7m", zone_name = "coachduynguyen.vn" },
 ]
-# Biến thường (không phải bí mật). Điền giá trị thật trước khi triển khai.
+# Biến thường (không phải bí mật). Tên miền coachduynguyen.vn đã xác thực trên Resend; thư đăng nhập cổng thành viên gửi từ thanhvien@.
 [vars]
-MAIL_FROM = "Coach Duy Nguyễn <TODO@coachduynguyen.vn>"
-MAIL_REPLY = "TODO@coachduynguyen.vn"
+MAIL_FROM = "Coach Duy Nguyễn <ketqua@coachduynguyen.vn>"
+MAIL_REPLY = "coachduynguyen@gmail.com"
