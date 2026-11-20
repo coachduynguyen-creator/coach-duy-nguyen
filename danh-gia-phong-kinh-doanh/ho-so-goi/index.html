@@ -644,7 +644,7 @@ function ve() {
   document.getElementById("hs").innerHTML = `
 <div class="noibo"><span>Chỉ dùng nội bộ · Không gửi khách</span><span>${KHACH.ma}</span></div>
 <div class="dau"><h1>${KHACH.congTy}</h1></div>
-<p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · ${KHACH.soNguoiBan} bán hàng · ${tong}/56 điểm${yeu.length ? ` · Cần sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
+<p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · Nhân viên kinh doanh: ${KHACH.soNguoiBan}${KHACH.doanhThu ? ` · Doanh thu ${KHACH.doanhThu}/tháng` : ""} · ${tong}/56 điểm${yeu.length ? ` · Cần sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
 
 <h3>Mời 1 bước: ${dx.ten}</h3>
 <p class="muted">${dx.phi}. ${dx.viSao} Gọi theo 3 Điểm Chạm của The Trusted Advisor, khoảng 15 phút, mỗi lần 1 câu. Ngoặc vuông thay bằng chính lời khách. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi hoặc phản ứng khác: xem trang sau.</p>

@@ -214,7 +214,7 @@ button{font:inherit;cursor:pointer}
    <div class="ai"><b>Ai nên đánh giá</b>
     <ul>
      <li>Người chủ hoặc quản lý kinh doanh. 2 người cùng ngồi đánh giá thì kết quả sát hơn, vì mỗi người thường chỉ thấy một phần.</li>
-     <li>Chỗ nào ghi "quản lý" mà công ty chưa có quản lý kinh doanh riêng, anh chị hiểu đó là người chủ. Công ty chưa có người bán riêng thì anh chị đánh giá theo cách mình đang tự bán.</li>
+     <li>Chỗ nào ghi "quản lý" mà công ty chưa có quản lý kinh doanh riêng, anh chị hiểu đó là người chủ. Công ty chưa có nhân viên kinh doanh riêng thì anh chị đánh giá theo cách mình đang tự bán.</li>
     </ul>
    </div>
   </div>
@@ -248,10 +248,11 @@ button{font:inherit;cursor:pointer}
     <div class="luoi">
      <label class="ca">Tên công ty (không bắt buộc)<input id="congty" autocomplete="organization"></label>
      <label>Ngành kinh doanh<input id="nganh" placeholder="Ví dụ: nội thất, spa, giáo dục"></label>
-     <label>Số người bán, không tính người chủ
+     <label>Số nhân viên kinh doanh, không tính người chủ
       <select id="songuoi"><option value="">Chọn</option><option value="0">0, người chủ tự bán</option><option value="1">1 người</option><option value="2">2 tới 5 người</option><option value="6">6 tới 15 người</option><option value="16">Trên 15 người</option></select>
      </label>
-     <label class="ca">Người đánh giá<select id="nguoicham"><option value="">Chọn</option><option>Người chủ</option><option>Quản lý kinh doanh</option><option>Người chủ và quản lý cùng đánh giá</option></select></label>
+     <label>Doanh thu trung bình mỗi tháng<select id="doanhthu"><option value="">Chọn</option><option>Dưới 300 triệu</option><option>300 triệu tới 1 tỷ</option><option>1 tới 3 tỷ</option><option>Trên 3 tỷ</option><option>Chưa muốn chia sẻ</option></select></label>
+     <label>Người đánh giá<select id="nguoicham"><option value="">Chọn</option><option>Người chủ</option><option>Quản lý kinh doanh</option><option>Người chủ và quản lý cùng đánh giá</option></select></label>
     </div>
    </div>
    <label class="dongy"><input type="checkbox" id="dongy"> <span>Tôi đồng ý để Next Step Group dùng thông tin này để gửi kết quả và liên hệ tư vấn. Xem <a href="/chinh-sach-du-lieu/" target="_blank" rel="noopener">chính sách dữ liệu cá nhân</a>.</span></label>
@@ -527,7 +528,7 @@ function veKetQua() {
   $("uutien").innerHTML = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.anh} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
   const sn = $("songuoi").value;
   $("nhonho").innerHTML = (sn === "0" || sn === "1")
-    ? `<p class="ghichu">${sn === "0" ? "Người chủ đang tự bán" : "Công ty có 1 người bán ngoài người chủ"}. Với quy mô này, nhiều câu về nhân sự và quản lý chưa cần làm ngay. Anh chị nên tập trung vào Thị trường và Quy trình trước.</p>` : "";
+    ? `<p class="ghichu">${sn === "0" ? "Người chủ đang tự bán" : "Công ty có 1 nhân viên kinh doanh ngoài người chủ"}. Với quy mô này, nhiều câu về nhân sự và quản lý chưa cần làm ngay. Anh chị nên tập trung vào Thị trường và Quy trình trước.</p>` : "";
 }
 
 function banChep() {
@@ -595,6 +596,7 @@ function layDuLieu() {
     dongYLienHe: $("dongy").checked,
     nganh: get("nganh"),
     soNguoiBan: sel.value ? sel.options[sel.selectedIndex].text : "",
+    doanhThu: get("doanhthu"),
     nguoiCham: get("nguoicham"),
     kieuKetQua: HO_SO[hoSo(ds)].t,
     diemTruCot: ds.map(x => ({truCot: TRU[x.i].ten, diem: x.d, toiDa: 8, mucDo: TEN_MUC[mucDo(x.d)]})),
@@ -613,7 +615,8 @@ $("form").addEventListener("submit", async e => {
   if (!/^(0|\+84)\d{9}$/.test(d.dienThoai)) return loi.textContent = "Số điện thoại chưa đúng. Ví dụ: 0912345678.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return loi.textContent = "Email chưa đúng.";
   if (!d.nganh) return loi.textContent = "Anh chị điền ngành kinh doanh.";
-  if (!d.soNguoiBan) return loi.textContent = "Anh chị chọn số người bán.";
+  if (!d.soNguoiBan) return loi.textContent = "Anh chị chọn số nhân viên kinh doanh.";
+  if (!d.doanhThu) return loi.textContent = "Anh chị chọn doanh thu trung bình mỗi tháng.";
   if (!d.nguoiCham) return loi.textContent = "Anh chị chọn người đánh giá.";
   if (!d.dongYLienHe) return loi.textContent = "Anh chị đánh dấu ô đồng ý để nhận kết quả.";
   loi.textContent = ""; nut.disabled = true; nut.textContent = "Đang gửi...";
