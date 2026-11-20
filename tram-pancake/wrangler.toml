@@ -1,4 +1,12 @@
 name = "tram-pancake"
 main = "worker.js"
 compatibility_date = "2026-09-01"
-routes = [{ pattern = "coachduynguyen.vn/api/dang-ky", zone_name = "coachduynguyen.vn" }]
+routes = [
+  { pattern = "coachduynguyen.vn/api/dang-ky", zone_name = "coachduynguyen.vn" },
+  { pattern = "coachduynguyen.vn/api/danh-gia-7m", zone_name = "coachduynguyen.vn" },
+]
+# Biến thường (không phải bí mật). Điền giá trị thật trước khi triển khai.
+[vars]
+MAIL_FROM = "Coach Duy Nguyễn <TODO@coachduynguyen.vn>"
+MAIL_REPLY = "TODO@coachduynguyen.vn"
+TELEGRAM_CHAT = "TODO"

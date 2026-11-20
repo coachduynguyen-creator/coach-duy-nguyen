@@ -240,6 +240,7 @@ button{font:inherit;cursor:pointer}
    <div class="them">
     <div style="font-size:14px;font-weight:700">Về phòng kinh doanh của anh chị</div>
     <div class="luoi">
+     <label class="ca">Tên công ty (không bắt buộc)<input id="congty" autocomplete="organization"></label>
      <label>Ngành kinh doanh<input id="nganh" placeholder="Ví dụ: nội thất, spa, giáo dục"></label>
      <label>Số người bán, không tính người chủ
       <select id="songuoi"><option value="">Chọn</option><option value="0">0, người chủ tự bán</option><option value="1">1 người</option><option value="2">2 tới 5 người</option><option value="6">6 tới 15 người</option><option value="16">Trên 15 người</option></select>
@@ -274,6 +275,7 @@ button{font:inherit;cursor:pointer}
     <h3>Tư vấn viên sẽ gọi cho anh chị</h3>
     <p>Tư vấn viên của Next Step Group sẽ liên hệ theo số điện thoại anh chị để lại, để cùng xem cách sửa những chỗ trên cho đúng với công ty mình. Trong lúc chờ, anh chị đọc trước tài liệu 7M cùng đội ngũ.</p>
     <div class="nut">
+     <a class="btn" id="baocao" href="#" target="_blank" rel="noopener" hidden>Mở báo cáo chi tiết</a>
      <a class="btn" id="tailieu" href="/tai-lieu/gioi-thieu-mo-hinh-7m.pdf" download>Tải tài liệu 7M</a>
      <a class="btn phu" id="zalo" href="#" target="_blank" rel="noopener" hidden>Vào nhóm Zalo của workshop 7M</a>
     </div>
@@ -546,32 +548,27 @@ function di(n) {
 }
 document.addEventListener("click", e => { const b = e.target.closest("[data-di]"); if (b && !b.disabled) { e.preventDefault(); di(+b.dataset.di); } });
 
-// Nơi nhận đăng ký của website (apps-script/nhan-dang-ky.gs, nguồn nội bộ tu-cham-7m). Cần triển khai phiên bản mới của Apps Script có nguồn này thì mới nhận.
-const DIA_CHI_GUI = "https://script.google.com/macros/s/AKfycbxudfhmk7GPvkply1UPqCZNw1CHf0oMvNWvO5K-dn2TfEJK-pY-TwArGMVkoUh7dhc/exec";
+// Trạm nhận phiếu (tram-pancake): ghi Pancake, gửi thư kèm đường dẫn báo cáo, báo Telegram cho sales.
+const DIA_CHI_GUI = "/api/danh-gia-7m";
 // Đường dẫn nhóm Zalo của workshop. Để trống thì ẩn nút.
 const ZALO = "";
 if (ZALO) { $("zalo").href = ZALO; $("zalo").hidden = false; }
 
-// Apps Script ghi mỗi ô là một chuỗi, nên gửi dạng phẳng: 7 điểm thành d1 tới d7.
-function choBangTinh(d) {
+function goiTram(d) {
   const q = new URLSearchParams(location.search), r = {
-    nguon: "tu-cham-7m", bay: $("bay").value,
-    ten: d.hoTen, dienthoai: d.dienThoai, email: d.email, dongy: d.dongYLienHe ? "Có" : "Không",
-    nganh: d.nganh, so_nguoi_ban: d.soNguoiBan, nguoi_cham: d.nguoiCham, tong_diem: d.tongDiem,
-    kieu_ket_qua: d.kieuKetQua, nen_sua: d.nenSuaTruoc.join(", "), tom_tat: d.tomTat,
-    trang_nguon: location.pathname, nguon_chien_dich: q.get("utm_source") || q.get("nguon") || ""
+    ten: d.hoTen, sdt: d.dienThoai, email: d.email, congTy: d.congTy, nganh: d.nganh,
+    soNguoiBan: d.soNguoiBan, nguoiCham: d.nguoiCham,
+    a: TRU.flatMap((p, i) => p.cau.map((_, j) => st.a[i + "_" + j])).join(""),
+    bay: $("bay").value, url_page: location.href.slice(0, 500)
   };
-  d.diemTruCot.forEach((x, i) => r["d" + (i + 1)] = x.diem);
+  ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(k => { if (q.get(k)) r[k] = q.get(k).slice(0, 200); });
   return r;
 }
 
-// Gửi thêm vào Pancake CRM qua trạm /api/dang-ky như phiếu Master Club. Chạy ngầm: lỗi ở đây không chặn khách xem kết quả.
-function guiPancake(d) {
-  const q = new URLSearchParams(location.search);
-  const pk = {Name: d.hoTen, Phone: d.dienThoai, url_page: location.href.slice(0, 500),
-    Note: ("Phiếu tự đánh giá 7M · Email: " + d.email + " · Tổng " + d.tongDiem + "/56 · " + d.kieuKetQua + " · Nên sửa trước: " + d.nenSuaTruoc.join(", ") + "\n" + d.tomTat).slice(0, 4000)};
-  ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(k => { if (q.get(k)) pk[k] = q.get(k).slice(0, 200); });
-  fetch("/api/dang-ky", {method: "POST", headers: {"Content-Type": "application/json"}, keepalive: true, body: JSON.stringify({data: pk})}).catch(() => {});
+function hienBaoCao() {
+  if (!st.k) return;
+  $("baocao").href = "/danh-gia-phong-kinh-doanh/ket-qua/#k=" + st.k;
+  $("baocao").hidden = false;
 }
 
 function layDuLieu() {
@@ -580,6 +577,7 @@ function layDuLieu() {
     nguon: "phieu-tu-cham-7m",
     thoiGian: new Date().toISOString(),
     trang: location.href,
+    congTy: get("congty"),
     hoTen: get("ten"), dienThoai: get("sdt").replace(/[\s.\-]/g, ""), email: get("email"),
     dongYLienHe: $("dongy").checked,
     nganh: get("nganh"),
@@ -607,29 +605,26 @@ $("form").addEventListener("submit", async e => {
   if (!d.dongYLienHe) return loi.textContent = "Anh chị đánh dấu ô đồng ý để nhận kết quả.";
   loi.textContent = ""; nut.disabled = true; nut.textContent = "Đang gửi...";
   try {
-    if (DIA_CHI_GUI) {
-      // text/plain là cố ý: Apps Script không qua được bước kiểm tra CORS của application/json. Bên trong vẫn là JSON.
-      const bt = choBangTinh(d);
-      if (!bt.bay) guiPancake(d);
-      const r = await fetch(DIA_CHI_GUI, {method: "POST", headers: {"Content-Type": "text/plain;charset=utf-8"}, body: JSON.stringify(bt)});
-      const kq = await r.json();
-      if (!kq.ok) throw new Error(kq.loi || r.status);
-    }
+    const r = await fetch(DIA_CHI_GUI, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(goiTram(d))});
+    const kq = await r.json();
+    if (!kq.success) throw new Error(r.status);
+    st.k = kq.k || "";
   } catch (err) {
     nut.disabled = false; nut.textContent = "Xem kết quả";
     return loi.textContent = "Chưa gửi được thông tin. Anh chị kiểm tra mạng rồi bấm lại.";
   }
-  st.daGui = true; st.ten = d.hoTen; luu(); di(9);
+  st.daGui = true; st.ten = d.hoTen; luu(); hienBaoCao(); di(9);
 });
 
 $("xoa").addEventListener("click", () => {
   if (!confirm("Xoá toàn bộ câu trả lời và đánh giá lại từ đầu?")) return;
-  st = {a:{}, man:0, daGui:false, ten:""}; luu();
+  st = {a:{}, man:0, daGui:false, ten:"", k:""}; luu(); $("baocao").hidden = true;
   document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
   $("form").reset(); $("nut").disabled = false; $("nut").textContent = "Xem kết quả";
   capNhat(); di(0);
 });
 
+hienBaoCao();
 capNhat();
 di(st.man || 0);
 </script>

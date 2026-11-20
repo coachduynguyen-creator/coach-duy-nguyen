@@ -16,11 +16,79 @@ function tra(origin, status, body) {
   } });
 }
 
+// ---- Phiếu tự đánh giá 7M (/api/danh-gia-7m), thêm 20/11/2026 ----
+// Bí mật cần cất: RESEND_KEY, TELEGRAM_TOKEN (PANCAKE_KEY đã có). Biến thường: MAIL_FROM, MAIL_REPLY, TELEGRAM_CHAT.
+const TRANG = "https://coachduynguyen.vn";
+const gioVN = () => new Date(Date.now() + 7 * 3600 * 1000);   // ngày theo giờ Việt Nam
+const cat = (v, n) => (typeof v === "string" ? v.trim().slice(0, n) : "");
+const thoat = t => t.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const b64url = t => { let b = ""; for (const x of new TextEncoder().encode(t)) b += String.fromCharCode(x); return btoa(b).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); };
+function b64(buf) { let b = ""; const u = new Uint8Array(buf); for (let i = 0; i < u.length; i += 8192) b += String.fromCharCode(...u.subarray(i, i + 8192)); return btoa(b); }
+
+async function danhGia7M(req, env, origin) {
+  let d;
+  try { d = JSON.parse((await req.text()).slice(0, 8000)); } catch (e) { return tra(origin, 400, { success: false }); }
+  if (d.bay) return tra(origin, 200, { success: true });   // bẫy máy: trả ok mà không làm gì
+  const ten = cat(d.ten, 100), sdt = cat(d.sdt, 20), email = cat(d.email, 120), a = cat(d.a, 28);
+  if (ten.length < 2 || !/^(0\d{9}|\+?84\d{9})$/.test(sdt) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^[012]{28}$/.test(a))
+    return tra(origin, 400, { success: false });
+  const congTy = cat(d.congTy, 120), nganh = cat(d.nganh, 120), soNguoiBan = cat(d.soNguoiBan, 60), nguoiCham = cat(d.nguoiCham, 80);
+  const g = gioVN(), p2 = n => String(n).padStart(2, "0");
+  const ngay = p2(g.getUTCDate()) + "/" + p2(g.getUTCMonth() + 1) + "/" + g.getUTCFullYear();
+  const ma = "7M-" + p2(g.getUTCDate()) + p2(g.getUTCMonth() + 1) + String(g.getUTCFullYear()).slice(2) + "-" +
+    Array.from(crypto.getRandomValues(new Uint8Array(4)), x => "abcdefghjkmnpqrstuvwxyz23456789"[x % 31]).join("");
+  const tong = [...a].reduce((s, x) => s + +x, 0);
+  const k = b64url(JSON.stringify({ hoTen: ten, congTy, nganh, soNguoiBan, nguoiCham, ngay, ma, a }));
+  const linkBaoCao = TRANG + "/danh-gia-phong-kinh-doanh/ket-qua/#k=" + k;
+  const linkHoSo = TRANG + "/danh-gia-phong-kinh-doanh/ho-so-goi/#k=" + k;
+
+  const pancake = async () => {
+    const q = {
+      Name: ten, Phone: sdt, url_page: cat(d.url_page, 500), nguon_khach_hang: ["Web Lead Magnet"],
+      Note: ["Phiếu tự đánh giá 7M · Mã " + ma, "Email: " + email, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
+        "Số người bán: " + soNguoiBan, "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
+    };
+    for (const u of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) if (cat(d[u], 200)) q[u] = cat(d[u], 200);
+    const r = await fetch(PANCAKE + "?api_key=" + env.PANCAKE_KEY, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });
+    const j = await r.json().catch(() => ({}));
+    if (!j.success) throw new Error("pancake " + r.status);
+  };
+  const thu = async () => {
+    const pdf = await fetch(TRANG + "/tai-lieu/gioi-thieu-mo-hinh-7m.pdf");
+    const html = `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;max-width:560px">
+<p>Chào anh/chị ${thoat(ten)},</p>
+<p>Kết quả đánh giá phòng kinh doanh của anh chị đã sẵn sàng. Tổng điểm là ${tong}/56. Anh chị mở báo cáo chi tiết ở đường dẫn dưới đây, trong báo cáo có nút tải bản PDF:</p>
+<p><a href="${linkBaoCao}" style="display:inline-block;background:#111;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px">Mở báo cáo của anh chị</a></p>
+<p>Thư này có đính kèm tài liệu giới thiệu mô hình 7M để anh chị đọc cùng lúc.</p>
+<p>Đội ngũ sẽ gọi cho anh chị để cùng xem kết quả. Anh chị cần hỏi gì trước thì trả lời thư này.</p>
+<p>Coach Duy Nguyễn</p></div>`;
+    const r = await fetch("https://api.resend.com/emails", {
+      method: "POST", headers: { "Authorization": "Bearer " + env.RESEND_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: env.MAIL_FROM, to: [email], reply_to: env.MAIL_REPLY, subject: "Kết quả đánh giá phòng kinh doanh của anh chị", html,
+        attachments: pdf.ok ? [{ filename: "Giới thiệu mô hình 7M.pdf", content: b64(await pdf.arrayBuffer()) }] : [] }),
+    });
+    if (!r.ok) throw new Error("resend " + r.status);
+  };
+  const tele = async () => {
+    const text = ["Phiếu 7M mới · " + ma, ten + " · " + sdt, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
+      "Số người bán: " + soNguoiBan, "Người đánh giá: " + nguoiCham, "Tổng điểm: " + tong + "/56", "Hồ sơ gọi: " + linkHoSo, "Báo cáo: " + linkBaoCao].join("\n");
+    const r = await fetch("https://api.telegram.org/bot" + env.TELEGRAM_TOKEN + "/sendMessage", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT, text, disable_web_page_preview: true }) });
+    if (!r.ok) throw new Error("telegram " + r.status);
+  };
+  const kq = await Promise.allSettled([pancake(), thu(), tele()]);
+  kq.forEach((x, i) => { if (x.status === "rejected") console.error(["pancake", "thu", "telegram"][i], String(x.reason)); });
+  // Cả ba lỗi thì khách chưa để lại được gì: báo lỗi để trang cho bấm lại. Một việc chạy được là đủ để sales biết.
+  if (kq.every(x => x.status === "rejected")) return tra(origin, 502, { success: false });
+  return tra(origin, 200, { success: true, ma, k });
+}
+
 export default {
   async fetch(req, env) {
     const origin = req.headers.get("Origin") || "";
     if (req.method === "OPTIONS") return tra(origin, 204, null);
     if (req.method !== "POST" || !NGUON.includes(origin)) return tra(origin, 403, { success: false });
+    if (new URL(req.url).pathname === "/api/danh-gia-7m") return danhGia7M(req, env, origin);
     let vao;
     try { vao = JSON.parse((await req.text()).slice(0, 8000)); } catch (e) { return tra(origin, 400, { success: false }); }
     const d = (vao && vao.data) || vao || {};
