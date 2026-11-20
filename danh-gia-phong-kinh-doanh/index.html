@@ -92,8 +92,8 @@ button{font:inherit;cursor:pointer}
 .goiy{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:6px}
 .hang b small.en{display:block;font-size:12px;font-weight:500;color:var(--muted)}
 .cau p small{color:var(--muted);font-weight:700;margin-right:6px}
-.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.opt{position:relative;border:1.5px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center;font-size:14px;font-weight:600;background:var(--bg);cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:center}
+.opts{display:grid;grid-template-columns:1fr;gap:8px}
+.opt{position:relative;border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;text-align:left;font-size:15px;font-weight:500;line-height:1.45;background:var(--bg);cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:flex-start}
 .opt input{position:absolute;opacity:0;pointer-events:none}
 .opt.o0:has(input:checked){background:var(--r0s);border-color:var(--r0);color:var(--r0)}
 .opt.o1:has(input:checked){background:var(--r1s);border-color:var(--r1);color:var(--r1)}
@@ -157,8 +157,14 @@ button{font:inherit;cursor:pointer}
  .anhbia{aspect-ratio:16/10;order:-1}
  .nhan,.giai,.luoi{grid-template-columns:1fr}
  .tru7{grid-template-columns:repeat(4,1fr)}
- .opts{grid-template-columns:1fr}
- .opt{justify-content:flex-start;text-align:left;padding:12px 14px}
+ body{font-size:17px}
+ .cau{padding:18px 16px}
+ .cau p{font-size:18px;line-height:1.45}
+ .goiy{font-size:15px}
+ .opt{font-size:17px;padding:14px 16px;min-height:54px}
+ .nhac{font-size:16px}
+ .dau .hoi,.giai div{font-size:16px}
+ .luoi label,.dongy{font-size:16px}
  .dau h2{font-size:22px}.mso{width:52px;height:52px;font-size:18px}
  .hoso{grid-template-columns:1fr;justify-items:start}
  .hang{grid-template-columns:1fr auto;gap:6px 10px}
@@ -295,15 +301,16 @@ const TRU = [
   danhGia:"Đội ngũ bán hàng có hiểu giống nhau về khách hàng mục tiêu, lý do khách chọn công ty, và chính sách giảm giá không.",
   viSao:"Trụ cột này chưa rõ thì đội ngũ dễ dồn sức vào khách không hợp: thời gian trôi đi mà doanh số không lên, còn giá thì mỗi người giảm một kiểu.",
   cau:[
-  "Tất cả nhân viên kinh doanh đều nắm rõ chân dung khách hàng mục tiêu của công ty và biết cách phân loại khách.",
-  "Tất cả nhân viên kinh doanh đều nói được điểm khác biệt của công ty so với đối thủ, và nói giống nhau.",
-  "Công ty có chính sách giảm giá chung, nhân viên kinh doanh không tự quyết mức giảm.",
-  "Công ty có quy tắc chia khách mới rõ ràng, nhân viên kinh doanh nào cũng biết."],
-  vd:[
-  "Hỏi riêng 3 nhân viên, cả 3 đều mô tả khách mục tiêu giống nhau, ví dụ với spa là “nữ 30 tới 45 tuổi, làm văn phòng, thu nhập ổn định”, và biết khách nào nên ưu tiên, khách nào không nên mất thời gian.",
-  "Khách hỏi “bên em khác gì chỗ khác?”, nhân viên nào cũng trả lời cùng một ý, ví dụ “bên em bảo hành tận nhà 5 năm”.",
-  "Gói từ 10 buổi được giảm tối đa 10%, muốn giảm hơn phải được người chủ duyệt. 2 khách giống nhau thì được giảm như nhau, dù gặp nhân viên nào.",
-  "Khách từ quảng cáo được chia lần lượt cho từng người, khách cũ giới thiệu thì giao cho người đang chăm sóc khách cũ đó. Không ai phải giành khách."],
+  "Nhân viên kinh doanh nắm chân dung khách hàng mục tiêu của công ty tới đâu?",
+  "Khi khách hỏi “bên em khác gì chỗ khác?”, nhân viên kinh doanh trả lời thế nào?",
+  "Mức giảm giá, tặng thêm cho khách do ai quyết định?",
+  "Khách mới được chia cho nhân viên kinh doanh thế nào?"],
+  dap:[
+  ["Chưa thống nhất, mỗi người hiểu một kiểu", "Một số người nắm rõ, số còn lại hiểu chưa đúng", "Ai cũng mô tả giống nhau và biết khách nào nên ưu tiên"],
+  ["Phần lớn lúng túng, hoặc mỗi người nói một kiểu", "Một số người nói rõ được, số còn lại nói chưa đúng ý", "Ai cũng nói rõ cùng một điểm khác biệt"],
+  ["Nhân viên tự quyết, mỗi người làm một kiểu", "Có chính sách chung, nhưng nhân viên vẫn hay xin ngoại lệ", "Theo chính sách chung, vượt mức quy định phải được người chủ duyệt"],
+  ["Ai nhận được trước thì giữ, hoặc chia theo cảm tính", "Có quy tắc chia khách, nhưng chưa rõ hoặc chưa phải ai cũng biết", "Có quy tắc chia khách rõ ràng, nhân viên nào cũng biết"]],
+  goi:["", "", "", "Tính cả trường hợp khách quen muốn chọn nhân viên tư vấn."],
   lam:"thống nhất khách hàng mục tiêu, chính sách giá và lý do khách chọn công ty",
   kq:["Nhiều khả năng đội ngũ đang tự chọn khách theo cảm nhận, nên thời gian dồn vào những khách khó mua. Nếu mỗi người giảm giá một kiểu, công ty dễ mất lợi nhuận, còn khách cũ biết được dễ thấy không công bằng.",
       "Đã có hình dung chung về khách hàng mục tiêu và chính sách giá, nhưng chưa viết ra, nên mỗi người bán hiểu hơi khác nhau.",
@@ -314,15 +321,16 @@ const TRU = [
   danhGia:"Các bước bán từ lúc khách hỏi tới lúc khách mua đã được viết ra chưa, và cả nhóm có làm theo không.",
   viSao:"Không có quy trình chung thì doanh số dựa vào vài người giỏi. Người mới học rất lâu, còn khách nói “để suy nghĩ thêm” mà không ai hỏi lại thì dễ mất khách.",
   cau:[
-  "Công ty có quy trình bán hàng viết thành văn bản, từ lúc khách hỏi tới khi khách mua.",
-  "Tất cả nhân viên kinh doanh đều làm đúng quy trình bán hàng đã viết.",
-  "Khi khách nói “để chị suy nghĩ thêm”, nhân viên kinh doanh luôn hẹn ngày cụ thể để liên hệ lại.",
-  "Công ty có lịch chăm sóc khách sau bán, nhân viên kinh doanh làm đúng lịch."],
-  vd:[
-  "Quy trình của một spa: trả lời tin nhắn trong 15 phút, mời khách tới kiểm tra da, tư vấn liệu trình, báo giá, 2 ngày sau gọi lại.",
-  "Xem lại 5 khách bất kỳ trong tuần, khách nào cũng được làm đủ các bước. Không ai bỏ bước báo giá hay bỏ bước gọi lại.",
-  "Nhân viên nói “Vậy thứ Năm em gọi lại chị nhé”, ghi vào lịch và đúng thứ Năm gọi lại.",
-  "Spa nhắn hỏi thăm 3 ngày sau buổi đầu và nhắc lịch buổi sau. Cửa hàng nội thất gọi hỏi thăm 1 tuần sau khi giao hàng."],
+  "Quy trình bán hàng của công ty đang ở mức nào?",
+  "Nhân viên kinh doanh làm theo quy trình bán hàng tới đâu?",
+  "Khi khách nói “để chị suy nghĩ thêm”, nhân viên kinh doanh làm gì?",
+  "Sau khi khách mua, công ty chăm sóc khách thế nào?"],
+  dap:[
+  ["Chưa có, mỗi người bán theo cách riêng", "Có, nhưng chủ yếu nói miệng hoặc viết chưa đủ bước", "Có văn bản đủ các bước, từ lúc khách hỏi tới khi khách mua"],
+  ["Chưa có quy trình, hoặc có nhưng ít ai làm theo", "Một số người làm theo, hoặc hay bỏ bước", "Tất cả làm đủ các bước với mọi khách"],
+  ["Chờ khách tự liên hệ lại", "Có gọi lại, nhưng không hẹn ngày cụ thể", "Hẹn ngày cụ thể, ghi lại và liên hệ đúng hẹn"],
+  ["Chưa có lịch chăm sóc, khách cần gì thì tự liên hệ", "Có chăm sóc, nhưng tùy từng nhân viên", "Có lịch chăm sóc định sẵn, nhân viên làm đúng lịch"]],
+  goi:["", "Xem lại 5 khách bất kỳ trong tuần vừa rồi để chấm.", "", ""],
   lam:"viết các bước bán hàng và cách tư vấn chung, rồi hướng dẫn tới khi cả nhóm làm theo",
   kq:["Nhiều khả năng mỗi người đang bán một kiểu, nên kết quả phụ thuộc vào vài người giỏi. Khách nói “để suy nghĩ thêm” thường không ai hỏi lại, và khách đã mua cũng ít được liên lạc lại.",
       "Các bước đã có nhưng chưa phải ai cũng làm theo, nhất là bước hỏi lại khách đang cân nhắc và bước chăm sóc khách đã mua.",
@@ -333,15 +341,16 @@ const TRU = [
   danhGia:"Tuyển nhân viên kinh doanh theo tiêu chí nào, người mới được kèm cặp ra sao, và người giỏi có thấy lộ trình thăng tiến không.",
   viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy lộ trình thăng tiến thì cũng nghỉ.",
   cau:[
-  "Công ty có tiêu chí tuyển dụng nhân viên kinh doanh viết thành văn bản.",
-  "Nhân viên kinh doanh mới có người kèm cặp cụ thể trong 90 ngày đầu.",
-  "Công ty có danh sách kỹ năng nhân viên kinh doanh cần có và đào tạo theo danh sách đó.",
-  "Nhân viên kinh doanh biết rõ lộ trình thăng tiến: đạt kết quả nào thì được tăng lương, lên chức."],
-  vd:[
-  "Tiêu chí ghi rõ: có ít nhất 1 năm kinh nghiệm bán hàng, giao tiếp rõ ràng, chịu được áp lực doanh số. Người phỏng vấn dựa vào đó để quyết định.",
-  "Tuần đầu nhân viên mới ngồi nghe người cũ tư vấn, sau đó tự tư vấn và được người kèm góp ý. Không để nhân viên mới tự mày mò.",
-  "Danh sách gồm hỏi nhu cầu, tư vấn sản phẩm, xử lý khi khách chê đắt, giúp khách ra quyết định. Nhân viên mới được đào tạo lần lượt từng kỹ năng, người kèm kiểm tra từng kỹ năng.",
-  "Đạt chỉ tiêu 6 tháng liền thì tăng lương cứng, kèm được nhân viên mới thì lên trưởng nhóm."],
+  "Công ty tuyển nhân viên kinh doanh dựa vào đâu?",
+  "Nhân viên kinh doanh mới được kèm cặp thế nào?",
+  "Công ty đào tạo kỹ năng cho nhân viên kinh doanh thế nào?",
+  "Nhân viên kinh doanh biết lộ trình thăng tiến của mình tới đâu?"],
+  dap:[
+  ["Chủ yếu theo cảm nhận lúc phỏng vấn", "Có tiêu chí trong đầu người phỏng vấn, chưa viết ra", "Có tiêu chí tuyển dụng viết thành văn bản và dùng khi phỏng vấn"],
+  ["Tự mày mò, ai rảnh thì chỉ", "Có người chỉ dẫn, nhưng không cố định hoặc chỉ vài tuần", "Có người kèm cặp cố định trong 2 tới 3 tháng đầu"],
+  ["Chưa đào tạo, nhân viên tự rút kinh nghiệm", "Có đào tạo, nhưng chưa theo danh sách kỹ năng cụ thể", "Có nội dung đào tạo rõ cho từng kỹ năng, nhân viên mới được đào tạo lần lượt"],
+  ["Chưa có lộ trình, tăng lương tùy người chủ quyết", "Có lộ trình, nhưng chưa rõ cần đạt kết quả gì", "Biết rõ đạt kết quả nào thì được tăng lương, lên chức"]],
+  goi:["", "", "", ""],
   lam:"đặt tiêu chí tuyển, kế hoạch kèm cặp người mới và bảng năng lực người bán",
   kq:["Nhiều khả năng công ty đang tuyển theo cảm nhận và để người mới tự mày mò, nên người mới dễ nghỉ sớm và công ty phải tuyển lại liên tục.",
       "Đã có tiêu chí tuyển hoặc người kèm cặp, nhưng chưa đều. Người mới vẫn học mỗi người một kiểu.",
@@ -352,15 +361,16 @@ const TRU = [
   danhGia:"Người bán có tự tính được thu nhập không, thưởng có giữ đúng như đã báo không, và người chủ có biết tốn bao nhiêu để có một khách mua.",
   viSao:"Cách trả lương thưởng quyết định người bán dồn sức vào việc gì. Trả lương thưởng không rõ thì người bán chạy theo đơn dễ, bỏ qua khách khó, còn người chủ không biết mình lãi hay lỗ ở từng khách.",
   cau:[
-  "Tất cả nhân viên kinh doanh đều tự tính được thu nhập tháng của mình.",
-  "Chính sách thưởng được công bố từ đầu kỳ và không thay đổi giữa chừng.",
-  "Công ty có quy định bàn giao khách và hoa hồng khi nhân viên kinh doanh nghỉ việc.",
-  "Người chủ biết trung bình tốn bao nhiêu tiền để có một khách mua."],
-  vd:[
-  "Giữa tháng hỏi “tháng này em được bao nhiêu?”, nhân viên tự cộng lương cứng, hoa hồng và thưởng, ra gần đúng số công ty tính.",
-  "Đầu quý công bố vượt chỉ tiêu thì thưởng thêm 2% doanh số, cuối quý trả đúng như vậy.",
-  "Khách của người nghỉ được giao lại cho người khác trong 3 ngày. Khách mua sau đó thì người nhận bàn giao hưởng hoa hồng.",
-  "Tháng trước chi 30 triệu cho quảng cáo, có 15 khách mua, vậy mỗi khách tốn khoảng 2 triệu."],
+  "Nhân viên kinh doanh có tự tính được thu nhập tháng của mình không?",
+  "Chính sách thưởng của công ty có ổn định không?",
+  "Khi nhân viên kinh doanh nghỉ việc, khách của người đó được bàn giao thế nào?",
+  "Người chủ có biết chi phí để có một khách mua không?"],
+  dap:[
+  ["Không, phải chờ công ty báo", "Tính được lương và hoa hồng, phần thưởng thì chưa chắc", "Tự tính được, ra gần đúng số công ty trả"],
+  ["Chưa có chính sách rõ, thưởng tùy từng tháng", "Có chính sách, nhưng hay thay đổi giữa kỳ", "Công bố từ đầu kỳ và giữ nguyên tới cuối kỳ"],
+  ["Chưa có quy định, xử lý tùy lúc", "Có cách làm quen thuộc, nhưng chưa thành quy định", "Có quy định bàn giao khách rõ ràng, kể cả hoa hồng nếu có"],
+  ["Chưa tính bao giờ", "Ước chừng được, nhưng chưa có con số rõ", "Biết con số cụ thể và theo dõi hằng tháng"]],
+  goi:["Có thưởng, hoa hồng thì tính cả phần đó.", "", "", "Ví dụ: tháng trước chi 30 triệu cho quảng cáo, có 15 khách mua, vậy mỗi khách tốn khoảng 2 triệu."],
   lam:"sửa cách tính thu nhập để người bán dồn sức vào đúng khách và đúng việc",
   kq:["Nhiều khả năng người bán chưa tự tính được thu nhập, hoặc thưởng đổi giữa chừng, nên dễ mất niềm tin vào chính sách. Người chủ chưa biết tốn bao nhiêu để có một khách mua.",
       "Cách trả lương thưởng đã có nhưng còn chỗ chưa rõ, ví dụ khách giao cho ai khi một người bán nghỉ việc.",
@@ -371,15 +381,16 @@ const TRU = [
   danhGia:"Thông tin khách có nằm ở một nơi chung của công ty không, và báo giá có dùng mẫu chung không.",
   viSao:"Thông tin khách nằm trong Zalo cá nhân thì một người bán nghỉ là công ty mất luôn nhóm khách người đó đang chăm sóc. Mua phần mềm khi cách bán chưa rõ thì phần mềm cũng chỉ ghi lại cảnh mỗi người một kiểu.",
   cau:[
-  "Thông tin khách hàng được lưu tập trung ở một nơi chung của công ty, không nằm trong Zalo cá nhân của nhân viên.",
-  "Khi nhân viên kinh doanh nghỉ việc, công ty vẫn nắm được lịch sử trao đổi với từng khách.",
-  "Công ty có mẫu báo giá chung, nhân viên kinh doanh nào cũng dùng.",
-  "Quản lý nắm được số khách mới mỗi ngày mà không phải hỏi từng nhân viên."],
-  vd:[
-  "Khách nào cũng có trong phần mềm hoặc bảng tính chung: tên, số điện thoại, đã tư vấn gì, hẹn ngày nào.",
-  "Người nhận bàn giao xem được khách đã hỏi gì, được báo giá bao nhiêu, đã hẹn gì, không phải hỏi lại khách từ đầu.",
-  "Báo giá ai gửi cũng cùng một mẫu, giá lấy từ bảng giá chung, kể cả khi gửi qua Zalo.",
-  "Cuối ngày mở phần mềm là biết hôm nay có 12 khách mới, ai đang giữ khách nào."],
+  "Thông tin khách hàng đang được lưu ở đâu?",
+  "Khi nhân viên nghỉ việc, công ty có nắm được lịch sử trao đổi với khách không?",
+  "Báo giá gửi khách đang làm thế nào?",
+  "Quản lý biết số khách mới mỗi ngày bằng cách nào?"],
+  dap:[
+  ["Trong Zalo, điện thoại hoặc sổ riêng của từng nhân viên", "Có nơi lưu chung, nhưng nhiều khách vẫn chỉ nằm ở chỗ riêng", "Tất cả khách nằm ở một nơi chung của công ty"],
+  ["Không, phải hỏi lại khách từ đầu", "Nắm được một phần, phần lớn vẫn mất", "Người nhận bàn giao xem được khách đã hỏi gì, được báo giá bao nhiêu"],
+  ["Mỗi người tự nhắn giá theo cách của mình", "Có mẫu báo giá, nhưng không phải ai cũng dùng", "Ai cũng dùng mẫu chung, giá lấy từ bảng giá chung"],
+  ["Không biết, hoặc phải hỏi từng người", "Có tổng hợp, nhưng cuối tuần hoặc cuối tháng mới có", "Mở phần mềm hoặc bảng tính là thấy ngay trong ngày"]],
+  goi:["Nơi chung có thể là phần mềm quản lý khách hàng hoặc một bảng tính chung.", "", "", ""],
   lam:"đưa thông tin khách và báo giá về một nơi chung, chọn công cụ theo cách bán của công ty",
   kq:["Nhiều khả năng thông tin khách đang nằm trong Zalo và điện thoại của từng người, nên người bán nghỉ là công ty dễ mất khách. Quản lý muốn biết số khách mới thì phải đi hỏi.",
       "Đã có nơi lưu chung nhưng chưa phải ai cũng ghi đủ, báo giá vẫn mỗi người một mẫu.",
@@ -390,15 +401,16 @@ const TRU = [
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
   viSao:"Chỉ nhìn doanh số cuối tháng thì biết hụt khi đã muộn. Xem vài con số mỗi tuần thì còn kịp sửa.",
   cau:[
-  "Chỉ tiêu doanh số từng tháng được đặt theo mùa vụ của ngành, không chia đều cho 12 tháng.",
-  "Ngay giữa tháng, quản lý đã dự báo được tháng này có đạt chỉ tiêu hay không.",
-  "Hằng tuần, quản lý theo dõi số khách ở từng bước của quy trình bán hàng.",
-  "Hằng tuần, quản lý theo dõi thời gian phản hồi khách mới."],
-  vd:[
-  "Spa đặt chỉ tiêu tháng Chạp cao nhất vì khách làm đẹp trước Tết, tháng Giêng thấp hơn.",
-  "Ngày 15, nhìn số khách đang tư vấn và số khách đã mua, quản lý biết tháng này dự kiến đạt khoảng 80% chỉ tiêu và cần làm thêm gì.",
-  "Tuần này 40 khách hỏi, 15 khách hẹn gặp, 8 khách nhận báo giá, 3 khách mua. Nhìn là biết khách rớt nhiều ở bước nào.",
-  "Tuần này khách được trả lời trung bình sau 10 phút, có 5 khách phải chờ quá 2 tiếng."],
+  "Chỉ tiêu doanh số từng tháng được đặt thế nào?",
+  "Quản lý biết tháng này có đạt chỉ tiêu không từ lúc nào?",
+  "Quản lý có theo dõi số khách ở từng bước bán hàng không?",
+  "Quản lý có theo dõi thời gian trả lời khách mới không?"],
+  dap:[
+  ["Chưa đặt chỉ tiêu theo tháng", "Chia đều chỉ tiêu năm cho 12 tháng", "Đặt theo mùa vụ của ngành, dựa trên số bán năm trước"],
+  ["Hết tháng mới biết", "Gần cuối tháng, khi đã khó xoay xở", "Ngay giữa tháng đã dự báo được và biết cần làm thêm gì"],
+  ["Chưa theo dõi", "Có xem, nhưng không đều", "Xem hằng tuần, biết khách rớt nhiều ở bước nào"],
+  ["Chưa theo dõi", "Thỉnh thoảng kiểm tra, thường khi có khách phàn nàn", "Xem hằng tuần, biết khách chờ trung bình bao lâu"]],
+  goi:["Theo mùa vụ: tháng đông khách đặt cao hơn, tháng vắng đặt thấp hơn.", "", "Ví dụ: tuần này 40 khách hỏi, 15 khách hẹn gặp, 8 khách nhận báo giá, 3 khách mua.", ""],
   lam:"chọn vài con số xem mỗi tuần để sửa kịp trước cuối tháng",
   kq:["Nhiều khả năng quản lý chỉ thấy doanh số khi tháng đã hết, nên biết hụt chỉ tiêu thì đã muộn.",
       "Đã xem số liệu nhưng chưa đều đặn hằng tuần, hoặc chỉ tiêu vẫn chia đều cho 12 tháng.",
@@ -409,15 +421,16 @@ const TRU = [
   danhGia:"Quản lý dành thời gian cho việc gì, họp tuần có ra việc cụ thể không, và việc nào quản lý được tự quyết.",
   viSao:"Trụ cột này giữ cho 6 trụ cột kia không bị bỏ dở. Thiếu nó thì mọi việc lại dồn về người chủ, và cách làm mới bỏ dở sau vài tuần.",
   cau:[
-  "Quản lý dành thời gian kèm cặp nhân viên kinh doanh nhiều hơn thời gian tự đi bán.",
-  "Họp tuần kết thúc bằng việc giao việc cụ thể cho từng người, có thời hạn.",
-  "Công ty phân quyền rõ: việc nào quản lý được tự quyết, việc nào phải hỏi người chủ.",
-  "Khi áp dụng cách làm mới, quản lý theo sát tới khi tất cả nhân viên đều làm theo."],
-  vd:[
-  "Trong tuần, quản lý ngồi nghe nhân viên tư vấn, góp ý sau từng cuộc gọi, cùng xử lý khách khó.",
-  "Một nhân viên nhận gọi lại 10 khách đã nhận báo giá trước thứ Sáu. Họp tuần sau kiểm tra lại đúng việc đó.",
-  "Quản lý được tự duyệt giảm giá tới 5% và xếp lịch trực. Giảm hơn 5% hay tặng quà ngoài chính sách thì phải hỏi người chủ.",
-  "Chuyển sang ghi khách vào phần mềm, quản lý kiểm tra mỗi ngày, ai chưa ghi thì hướng dẫn lại, tới khi ai cũng ghi đủ."],
+  "Thời gian của quản lý đang dành cho việc gì nhiều nhất?",
+  "Họp tuần của phòng kinh doanh kết thúc thế nào?",
+  "Việc nào quản lý được tự quyết, việc nào phải hỏi người chủ?",
+  "Khi công ty áp dụng cách làm mới, chuyện gì thường xảy ra?"],
+  dap:[
+  ["Chủ yếu tự bán hàng", "Vừa bán vừa kèm, chưa có thời gian cố định để kèm", "Kèm cặp nhân viên nhiều hơn tự bán hàng"],
+  ["Không họp tuần, hoặc họp xong không ai nhận việc gì", "Có giao việc, nhưng không có hạn hoặc tuần sau không ai kiểm tra", "Mỗi người nhận việc cụ thể có hạn, tuần sau kiểm tra lại"],
+  ["Chưa phân, việc gì cũng hỏi người chủ", "Có phân quyền, nhưng chưa rõ, hay phải hỏi lại", "Phân quyền rõ ràng, ai cũng biết"],
+  ["Vài tuần sau mọi người lại làm như cũ", "Một số người làm theo, một số không", "Quản lý theo sát tới khi tất cả cùng làm theo"]],
+  goi:["", "", "Công ty chưa có quản lý riêng: chấm theo việc nào nhân viên được tự quyết.", "Ví dụ: chuyển sang ghi khách vào phần mềm, đổi mẫu báo giá."],
   lam:"sắp lịch họp tuần, lịch kèm cặp người bán và phân quyền để việc không dồn về người chủ",
   kq:["Nhiều khả năng quản lý vẫn phải tự bán là chính, họp tuần chưa ra việc cụ thể, nên việc lại dồn về người chủ. Thường đây không phải lỗi của riêng ai, mà vì công ty chưa sắp lịch và chưa phân quyền rõ.",
       "Đã có họp và kèm cặp người bán, nhưng chưa đều, và quyền quyết định của quản lý chưa rõ.",
@@ -461,8 +474,8 @@ $("cacbuoc").innerHTML = TRU.map((p, i) => `
  <div class="wrap buoc">
   <div class="dau"><div class="mso">M${i+1}</div><div><div class="kick">M${i+1} · ${p.anh}</div><h2>${p.ten}</h2><p class="hoi">${p.hoi}</p></div></div>
   <div class="giai"><div><b>Phần này đánh giá</b>${p.danhGia}</div><div><b>Vì sao cần đánh giá</b>${p.viSao}</div></div>
-  ${i === 0 ? `<p class="nhac">Phiếu dành cho <b>người chủ hoặc quản lý kinh doanh</b>, chấm cho cả phòng kinh doanh. Chọn theo việc đang làm thật trong tháng này, không theo việc định làm. Ví dụ dưới mỗi câu là trường hợp <b>Đúng hoàn toàn</b>. Có làm nhưng chưa viết thành văn bản, chỉ một số nhân viên làm, hoặc lúc làm lúc không thì chọn <b>Đúng một phần</b>. Chưa làm, hoặc chưa gặp tình huống đó, thì chọn <b>Chưa đúng</b>. Công ty chưa có quản lý riêng thì chữ “quản lý” hiểu là người chủ.</p>` : ""}
-  ${p.cau.map((q, j) => `<div class="cau"><p><small>${j+1}.</small>${q}</p><p class="vd"><b>Ví dụ đúng hoàn toàn:</b> ${p.vd[j]}</p><div class="opts">${MUC.map((m, k) => `<label class="opt o${k}"><input type="radio" name="q${i}_${j}" value="${k}" data-k="${i}_${j}"><span>${m}</span></label>`).join("")}</div></div>`).join("")}
+  ${i === 0 ? `<p class="nhac">Phiếu dành cho <b>người chủ hoặc quản lý kinh doanh</b>, chấm cho cả phòng kinh doanh. Mỗi câu chọn 1 đáp án giống công ty mình nhất, theo việc đang làm thật trong tháng này, không theo việc định làm. Công ty chưa có quản lý riêng thì chữ “quản lý” hiểu là người chủ.</p>` : ""}
+  ${p.cau.map((q, j) => `<div class="cau"><p><small>${j+1}.</small>${q}${p.goi[j] ? `<span class="goiy">${p.goi[j]}</span>` : ""}</p><div class="opts">${p.dap[j].map((m, k) => `<label class="opt o${k}"><input type="radio" name="q${i}_${j}" value="${k}" data-k="${i}_${j}"><span>${m}</span></label>`).join("")}</div></div>`).join("")}
   <div class="dieu">
    <button class="btn phu" data-di="${i}">Quay lại</button>
    <span class="goi" id="goi${i+1}"></span>
@@ -587,7 +600,7 @@ function layDuLieu() {
     diemTruCot: ds.map(x => ({truCot: TRU[x.i].ten, diem: x.d, toiDa: 8, mucDo: TEN_MUC[mucDo(x.d)]})),
     tongDiem: ds.reduce((s, x) => s + x.d, 0),
     nenSuaTruoc: truocTien(ds).map(x => TRU[x.i].ten),
-    traLoi: TRU.flatMap((p, i) => p.cau.map((q, j) => ({truCot: p.ten, cau: q, traLoi: MUC[st.a[i+"_"+j]]}))),
+    traLoi: TRU.flatMap((p, i) => p.cau.map((q, j) => ({truCot: p.ten, cau: q, traLoi: p.dap[j][st.a[i+"_"+j]]}))),
     tomTat: banChep()
   };
 }
