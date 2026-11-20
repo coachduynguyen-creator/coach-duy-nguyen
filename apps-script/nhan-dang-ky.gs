@@ -375,14 +375,14 @@ function thuDanhGia7M(d) {
   var sua = chuoi(d.nen_sua).split(',').map(function (x) { return x.trim(); }).filter(Boolean)
     .map(function (x) { return '<li>' + escape_(x) + '</li>'; }).join('');
   return '<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.65;color:#1E1E1E;max-width:560px">' +
-    '<p>Chào anh chị ' + escape_(d.ten) + ',</p>' +
+    '<p>Chào anh/chị ' + escape_(d.ten) + ',</p>' +
     '<p>Cảm ơn anh chị đã đánh giá phòng kinh doanh theo mô hình Phòng kinh doanh tiêu chuẩn 7M. Anh chị giữ thư này để đọc lại và đọc cùng đội ngũ.</p>' +
     '<p><b>Kiểu kết quả:</b> ' + escape_(d.kieu_ket_qua) + '<br><b>Tổng điểm:</b> ' + escape_(d.tong_diem) + '/56</p>' +
     '<table style="border-collapse:collapse;font-size:14px;margin:0 0 16px">' + hang + '</table>' +
     '<p style="margin:0 0 4px"><b>Nên sửa trước</b> (xếp theo thứ tự trụ cột, vì trụ cột sau dựa vào trụ cột trước):</p>' +
     '<ul style="margin:0 0 16px;padding-left:20px">' + sua + '</ul>' +
     '<p>Tài liệu giới thiệu mô hình 7M, 12 trang, giải thích từng trụ cột: <a href="https://coachduynguyen.vn/tai-lieu/gioi-thieu-mo-hinh-7m.pdf">tải tại đây</a>.</p>' +
-    '<p>Tư vấn viên của Next Step Group sẽ liên hệ theo số điện thoại anh chị để lại, để cùng xem cách sửa những chỗ trên cho đúng với công ty mình. Có gì muốn hỏi trước thì anh chị trả lời thẳng thư này.</p>' +
+    '<p>Tư vấn viên của Next Step Group sẽ liên hệ theo số điện thoại anh chị để lại, để cùng xem cách sửa những chỗ trên cho đúng với công ty mình. Anh chị cần hỏi gì trước thì trả lời thư này.</p>' +
     '<p style="margin-top:22px">Next Step Group</p>' +
     '<hr style="border:0;border-top:1px solid #E6E1D8;margin:22px 0">' +
     '<p style="font-size:12px;color:#8A8A8A">Anh chị nhận thư này vì vừa làm phiếu đánh giá trên coachduynguyen.vn bằng địa chỉ ' + escape_(d.email) +
