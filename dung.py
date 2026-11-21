@@ -267,10 +267,10 @@ INDEX = """
         <p class="danh-xung">Coach. Trainer. Entrepreneur.</p>
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
       </div>
-      <h1>Duy đang xây Cộng đồng Next Gen Founder, với một đích đến năm 2031: góp phần tạo nên <b>10.000 Next Gen Founder</b> biết xây uy tín được tin cậy, tư vấn có trách nhiệm, chuyển kinh nghiệm thành hệ thống, và kiến tạo cộng đồng cùng tạo ra giá trị.</h1>
+      <h1>Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và nâng cấp từ đó.</h1>
       <div class="hero-nut">
-        <a class="nut nut-v" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a>
-        <a class="nut nut-vien" href="blog.html">Đọc blog</a>
+        <a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
+        <a class="nut nut-vien" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder</a>
       </div>
     </div>
     <div class="hero-so">{SO_LIEU}</div>
@@ -279,7 +279,7 @@ INDEX = """
 </header>
 
 <section class="kh">
-  <div class="bd"><p class="kh-dan">Ba mươi doanh nghiệp đã mời Duy đào tạo và tư vấn</p></div>
+  <div class="bd"><p class="kh-dan">30 doanh nghiệp đã mời Duy tư vấn và huấn luyện đội ngũ</p></div>
   {KHACH}
 </section>
 
@@ -381,7 +381,7 @@ INDEX = """
     <p class="mono">Cộng đồng Next Gen Founder · đang nhận đăng ký</p>
     <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
     <p>Người chủ đã có đội ngũ, hoặc chuyên gia đang xây doanh nghiệp từ chuyên môn. Cùng một điểm chung: <span class="nhan">khách tin bạn trước khi tin công ty bạn.</span></p>
-    <p style="margin-top:14px">Cộng đồng là nơi luyện bốn năng lực dưới đây trong công việc thật, cùng <span class="nhan">những người hiểu chuyện bạn đang gặp vì họ cũng đang đi qua.</span> Duy ở bên cạnh bạn suốt chặng đó.</p>
+    <p style="margin-top:14px">Cộng đồng là nơi bạn gặp <span class="nhan">những người chủ đang đi cùng đường,</span> nghe chuyên gia và mentor kể lại chặng họ đã qua. Bốn năng lực dưới đây là hình mẫu của một Next Gen Founder. Khi làm việc trực tiếp với từng doanh nghiệp, Duy bắt đầu từ năng lực thứ 2, chuyên gia tư vấn được tin cậy: đưa cách tư vấn của người chủ vào cả phòng kinh doanh.</p>
   </div>
   <div class="cd-nl hien">
     {BANG_NL}
@@ -401,26 +401,26 @@ INDEX = """
 {CHUYEN_GIA}<section class="phan bd phan-vang" id="hanh-trinh">
   <div class="phan-dau hien">
     <p class="mono">Hành trình ba chặng</p>
-    <h2>Đi với Next Gen Founder theo thứ tự nào</h2>
-    <p>Không ai phải cam kết lớn ngay từ đầu. Mỗi chặng là một cánh cửa riêng, và bạn dừng ở chặng nào cũng được.</p>
+    <h2>Đi cùng Duy theo thứ tự nào?</h2>
+    <p>Không ai phải cam kết lớn ngay từ đầu, và bạn dừng ở chặng nào cũng được.</p>
   </div>
   <div class="ht-luoi tre hien">
-    <a class="ht" href="cong-dong/#ba-cap">
-      <em>Chặng 01</em><h3>Thành viên</h3>
-      <p>Cửa vào rộng nhất, miễn phí, có đăng ký tham gia. Bạn xem cách Duy làm việc trước khi quyết định đi tiếp.</p>
-      <i>Miễn phí &middot; có đăng ký tham gia</i>
+    <a class="ht" href="danh-gia-phong-kinh-doanh/">
+      <em>Chặng 01</em><h3>Tự chấm phòng kinh doanh</h3>
+      <p>Trả lời 28 câu về việc phòng kinh doanh đang làm thật trong tháng này. Miễn phí, xong bạn có báo cáo cho biết phần nào của phòng kinh doanh đang yếu.</p>
+      <i>Miễn phí &middot; 28 câu</i>
+    </a>
+    <span class="ht-mui" aria-hidden="true">&rarr;</span>
+    <a class="ht" href="lien-he.html">
+      <em>Chặng 02</em><h3>30 ngày thiết kế phòng kinh doanh</h3>
+      <p>Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc trong 30 ngày. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, từ khách mục tiêu, quy trình bán tới lương thưởng và cách quản lý, và áp dụng thật 2 tới 3 việc trong đó.</p>
+      <i>8 buổi làm việc &middot; 30 ngày</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="master-club/">
-      <em>Chặng 02</em><h3>Master Club</h3>
-      <p>Mức đồng hành hằng tuần cùng Duy. Mỗi tuần bạn mang một việc đang vướng thật tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó.</p>
-      <i>Mỗi tuần một buổi &middot; gói năm</i>
-    </a>
-    <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="cong-dong/#ba-cap">
-      <em>Chặng 03</em><h3>Đi sâu hơn</h3>
-      <p>Grand Master Club, nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.</p>
-      <i>Theo lời mời &middot; nhận giới hạn</i>
+      <em>Chặng 03</em><h3>Sau 30 ngày</h3>
+      <p>Nếu bạn muốn có người dựng hộ, chọn tư vấn setup 3 tháng: đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý. Nếu bạn muốn tự làm và có người đi cùng, chọn Master Club: mỗi tuần một buổi coaching nhóm trong 12 tháng.</p>
+      <i>Tư vấn setup 3 tháng &middot; hoặc Master Club</i>
     </a>
   </div>
 </section>

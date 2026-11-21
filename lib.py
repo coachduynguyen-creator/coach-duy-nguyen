@@ -47,7 +47,7 @@ CT_MENU = [
     # Coach Duy chốt 12/10/2026: trang Chương trình chỉ có Cộng đồng ba mức và Người Dẫn Đường.
     # Mười trang chương trình cũ trong chuong-trinh/ vẫn giữ nhưng ẩn khỏi Google.
     ("cong-dong/", "Cộng đồng Next Gen Founder", "Ba mức: Thành viên, Master Club, Grand Master Club"),
-    ("nguoi-dan-duong/", "Người Dẫn Đường", "Đào tạo huấn luyện viên kinh doanh, theo thư mời"),
+    ("nguoi-dan-duong/", "Người Dẫn Đường", "Chương trình chứng nhận huấn luyện viên kinh doanh, theo thư mời"),
     ("SEP", "", ""),
     ("chuong-trinh.html", "Xem tất cả chương trình", ""),
 ]
@@ -149,10 +149,10 @@ def khoi_cuoi(p=""):
     </div>
     <div class="ba-loi tre hien">
       <article class="loi vang">
-        <span class="so">Lối 01 · Đi cùng nhau</span>
-        <h3>Vào Cộng đồng Next Gen Founder</h3>
-        <p>Nơi bạn luyện bốn năng lực ngay trong công việc thật, đều đặn, bên cạnh những người hiểu chuyện bạn đang gặp. Điền biểu mẫu hai phút, đội ngũ Next Gen Founder sẽ trao đổi để xem bạn có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.</p>
-        <a class="nut nut-toi" href="%s">Đăng ký tham gia <span class="mt" aria-hidden="true">&rarr;</span></a>
+        <span class="so">Lối 01 · Bắt đầu từ phòng kinh doanh</span>
+        <h3>Tự chấm điểm phòng kinh doanh của bạn</h3>
+        <p>Làm phiếu tự chấm điểm phòng kinh doanh theo mô hình 7M, 28 câu, khoảng 10 phút. Làm xong bạn xem kết quả để biết điều gì đang khiến phòng kinh doanh của bạn không đạt kết quả như mong muốn.</p>
+        <a class="nut nut-toi" href="%s">Làm phiếu tự chấm <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
       <article class="loi">
         <span class="so">Lối 02 · Đọc trước đã</span>
@@ -173,7 +173,7 @@ def khoi_cuoi(p=""):
       </article>
     </div>
   </div>
-</section>""" % (BASE + "/tham-gia/", dd("lien-he.html", p))
+</section>""" % (BASE + "/danh-gia-phong-kinh-doanh/", dd("lien-he.html", p))
 
 def footer(p=""):
     ct_links = "".join('<a href="%s">%s</a>' % (dd(h, p), t) for h, t, _ in

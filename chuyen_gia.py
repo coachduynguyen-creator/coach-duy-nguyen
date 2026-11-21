@@ -10,8 +10,8 @@ from lib import trang, dau_trang, GOC
 
 CG = [
     {"ma": "coach-duy", "linh_vuc": "Bán hàng và thương hiệu", "danh": "Coach",
-     "ten": "Duy Nguyễn", "chuc": "Bán hàng, thương hiệu và huấn luyện kỹ năng cho chủ doanh nghiệp",
-     "mot_cau": "Huấn luyện kỹ năng bán hàng và xây thương hiệu cho chủ doanh nghiệp, để nâng tầm vị thế doanh nhân.",
+     "ten": "Duy Nguyễn", "chuc": "Phòng kinh doanh và thương hiệu người chủ",
+     "mot_cau": "Tư vấn chủ doanh nghiệp xây dựng phòng kinh doanh, kể cả thương hiệu của người chủ, cách chia sản phẩm thành từng gói và đặt giá.",
      "link": "ve-toi.html", "anh": "cd-chan-dung-vuong"},
     {"ma": "thanh-bui", "linh_vuc": "Kế toán và thuế", "danh": "",
      "ten": "Thanh Bùi", "chuc": "Chuyên gia tư vấn kế toán và thuế",
