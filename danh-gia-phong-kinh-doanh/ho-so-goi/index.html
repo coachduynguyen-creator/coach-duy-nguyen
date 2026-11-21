@@ -582,7 +582,7 @@ const HOI_DAP = [
  ["Ai tham gia?", "Người chủ cùng 1 quản lý kinh doanh."],
  ["Xong được gì?", "Bản thiết kế 7 trụ cột của phòng mình, và đã áp dụng thật 2 tới 3 việc như các bước tư vấn, bảng chỉ số, lịch họp tuần."],
  ["Khác gì nơi khác?", "Thiết kế theo đúng phòng kinh doanh của doanh nghiệp, doanh nghiệp tự vận hành sau chương trình. Giữa các buổi có bài thực hành, Coach Duy xem và góp ý."],
- ["Ai xem bài thực hành?", "Lớp đầu Coach Duy trực tiếp xem và góp ý bài thực hành, cùng một người trong đội ngũ của Coach."],
+ ["Ai xem bài thực hành?", "Đợt đầu Coach Duy trực tiếp xem và góp ý bài thực hành, cùng một người trong đội ngũ của Coach."],
  ["Có làm phần mềm không?", "Có thiết kế trụ cột Công cụ: thông tin khách để ở đâu, ghi gì, báo giá theo mẫu nào. Không cài phần mềm."],
  ["Đóng phí khi nào?", "Hỏi quản lý kinh doanh của mình trước. Nói với khách: “Phần này em xác nhận lại rồi nhắn anh trong hôm nay ạ.”"],
  ["Chưa có quản lý thì sao?", "Vẫn tham gia được. Người chủ dự đủ 8 buổi và làm luôn phần việc của quản lý. Người chủ đang tự bán một mình cũng vào được, có bài thực hành riêng."]
@@ -597,6 +597,7 @@ const NHANH = [
  ["Từ chối thẳng", "Dạ vâng, em cảm ơn anh đã dành thời gian. Báo cáo anh cứ giữ để tự làm theo lộ trình 30 ngày ạ. <i>Không REFLECT tiếp. Ghi lại lý do.</i>"]
 ];
 const KHONG_NEN = [
+  "Không hỏi lại điều khách đã điền trong phiếu, như vai trò, số nhân viên kinh doanh, câu trả lời từng phần.",
  "Không nói rủi ro trong báo cáo trước khi khách nói mục tiêu. Động lực trước, Điểm nghẽn sau.",
  "Không nói thẳng vấn đề thay khách. Hỏi để khách tự nói ra chỗ vướng và cái giá.",
  "Không nêu tên chương trình trước khi khách xác nhận hướng tiếp cận là hợp.",
@@ -639,6 +640,8 @@ const tenM = i => `M${i+1} ${TRU[i].ten}`;
 function ve() {
   const ds = diem(), tong = ds.reduce((s, x) => s + x.d, 0), uu = truocTien(ds);
   const rr = ruiRo(), ba = rr.slice(0, 3), kh = khop().slice(0, 2), dx = deXuat(KHACH.soNguoiBan, hoSo(ds));
+  const cd = ba.length ? ba[0].can.map(c => ({c, d: tl(c)})).sort((x, y) => x.d - y.d)[0].c.split(".") : null;
+  const cauDau = cd ? TRU[cd[0]-1].cau[cd[1]-1].replace(/\.$/, "").replace(/“/g, "‘").replace(/”/g, "’") : "[câu khách chọn ở rủi ro đứng đầu]";
   const ten = KHACH.hoTen.split(" ").pop(), yeu = uu.filter(x => mucDo(x.d) < 2).map(x => tenM(x.i));
   const bang = (dong, w) => `<table class="bang"><tbody>${dong.map(h => `<tr><td style="width:${w}"><b>${h[0]}</b></td><td>${h[1]}</td></tr>`).join("")}</tbody></table>`;
 
@@ -648,24 +651,27 @@ function ve() {
 <p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · Nhân viên kinh doanh: ${KHACH.soNguoiBan}${KHACH.doanhThu ? ` · Doanh thu ${KHACH.doanhThu}/tháng` : ""} · ${tong}/56 điểm${yeu.length ? ` · Cần sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
 
 <h3>Mời 1 bước: ${dx.ten}</h3>
-<p class="muted">${dx.phi}. ${dx.viSao} Gọi theo 3 Điểm Chạm của The Trusted Advisor, khoảng 15 phút, mỗi lần 1 câu. Ngoặc vuông thay bằng chính lời khách. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi hoặc phản ứng khác: xem trang sau.</p>
+<p class="muted">${dx.phi}. ${dx.viSao} Gọi khoảng 15 phút: đi sâu vào khó khăn khách đã chọn trong phiếu, rồi mới nối sang con đường. Mỗi lần 1 câu. Ngoặc vuông thay bằng chính lời khách. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi hoặc phản ứng khác: xem trang sau.</p>
 
 <h3>Mở cuộc gọi</h3>
 <div class="loi">Dạ em chào anh ${ten}, em là [tên], tư vấn viên trong đội ngũ của Coach Duy Nguyễn. Em đã đọc kết quả đánh giá phòng kinh doanh anh làm ngày ${KHACH.ngay}. Em gọi khoảng 15 phút để hiểu mục tiêu của anh và tình hình phòng kinh doanh bên mình, rồi mình cùng xem hướng nào hợp. Anh không cần quyết định gì trong cuộc gọi này, nếu em thấy chưa hợp thì em cũng nói thẳng với anh. Anh đang tiện nghe máy không ạ?</div>
 
-<h3>1. Chạm Động lực, khoảng 5 phút: khách nói mục tiêu</h3>
-<div class="loi">Anh làm đánh giá này lúc này là vì đang muốn thay đổi điều gì ở phòng kinh doanh ạ?<br>Nếu phòng kinh doanh chạy đúng như anh muốn, một ngày làm việc của anh sẽ khác bây giờ ở chỗ nào?<br>Em tóm lại, anh đang muốn [mục tiêu anh vừa nói]. Em hiểu vậy đúng chưa ạ?</div>
+<h3>1. Đi sâu, khoảng 10 phút: bắt đầu từ khó khăn khách đã chọn trong phiếu</h3>
+<p class="muted">Khách đã điền phiếu nên không hỏi lại vai trò, quy mô hay câu trả lời từng phần. Nói lại đúng lời trong phiếu, không đọc tên rủi ro.</p>
+<div class="loi">Em đọc phiếu thấy anh có chọn câu “${cauDau}”. Chuyện này đang diễn ra thế nào ở công ty mình ạ?<br>Gần đây có trường hợp nào làm anh thấy rõ chuyện này nhất không ạ? <span style="font-style:normal;color:var(--phu)">(Chỉ hỏi khi khách trả lời chung chung.)</span></div>
+<p class="muted">Khách nói chuyện đó không còn khó nhất thì hỏi: “Dạ, vậy lúc này chỗ nào ở phòng kinh doanh làm anh vướng nhất ạ?” Khách không thấy chỗ nào khó thì xem “Không thấy rủi ro nào đúng” ở trang sau.</p>
+<div class="loi">Giả sử chuyện này ổn rồi, anh muốn phòng kinh doanh của mình thay đổi ra sao ạ?<br>Em tóm lại, anh đang vướng ở [chỗ vướng], và anh muốn [điều anh vừa nói]. Em hiểu vậy đúng chưa ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi lại chỗ vướng nhất.)</span></div>
+<div class="loi">Dạ, vậy em hỏi thêm một chút về chuyện này nhé. Trước giờ anh đã thử cách nào để sửa rồi ạ?<br>Nếu chuyện này cứ vậy tới hết tháng 3 năm 2027, anh nghĩ điều gì sẽ xảy ra với phòng kinh doanh ạ?<br>Lúc đó [điều anh muốn] sẽ ra sao ạ?<br>Nếu chấm từ 1 tới 10, mức cần sửa [chỗ vướng anh vừa nói] lúc này là bao nhiêu ạ?</div>
+<p class="muted">Mỗi lần hỏi 1 câu, chờ khách nói hết. Ghi lại cách khách đã thử, dùng ở bước 2. Dưới 7 thì chưa mời, nói: “Anh làm trước mấy việc trong lộ trình 30 ngày ở cuối báo cáo, 2 tuần nữa em gọi hỏi anh làm tới đâu nhé.”</p>
+<div class="loi">Nếu có cách gỡ được chuyện này, anh có muốn em chia sẻ không ạ?</div>
 
-<h3>2. Chạm Điểm nghẽn, khoảng 5 phút: khách tự nói ra chỗ vướng</h3>
-<div class="loi">Để đạt được điều đó, hiện tại phòng kinh doanh đang vướng ở đâu nhiều nhất ạ?</div>
-<table class="bang"><thead><tr><th>Khách chưa nói ra thì hỏi lần lượt</th><th>Rủi ro (không đọc cho khách), có thật khi</th><th>Hướng tiếp cận, dùng ở bước 3</th></tr></thead><tbody>
-${ba.map((r, k) => `<tr><td class="ten"><i>${GOI[r.ten].mo}</i></td><td><b>${k+1}. ${r.ten}.</b> ${GOI[r.ten].nghe}</td><td>${GOI[r.ten].huong}</td></tr>`).join("")}
+<h3>Cách sửa theo rủi ro của khách này, dùng ở bước 2</h3>
+<table class="bang"><thead><tr><th>Rủi ro (không đọc cho khách), có thật khi</th><th>Hướng tiếp cận</th></tr></thead><tbody>
+${ba.map((r, k) => `<tr><td><b>${k+1}. ${r.ten}.</b> ${GOI[r.ten].nghe}</td><td>${GOI[r.ten].huong}</td></tr>`).join("")}
 </tbody></table>
-<div class="loi">Trước giờ anh đã thử cách nào để sửa chuyện này rồi ạ?<br>Nếu chỗ vướng này giữ nguyên tới hết quý 1 năm sau, anh nghĩ điều gì sẽ xảy ra?<br>Lúc đó [mục tiêu anh nói lúc đầu] sẽ ra sao ạ?<br>Nếu chấm từ 1 tới 10, mức cần sửa [chỗ vướng anh vừa nói] lúc này là bao nhiêu ạ?</div>
-<p class="muted">Từ 7 trở lên và khách tự nói được cái giá thì hỏi: “Nếu có hướng tháo được chỗ vướng này, anh có muốn nghe không ạ?” Dưới 7 thì chưa mời, nói: “Anh làm trước mấy việc trong lộ trình 30 ngày ở cuối báo cáo, 2 tuần nữa em gọi hỏi anh làm tới đâu nhé.”</p>
 
-<h3>3. Chạm Con đường, khoảng 4 phút: khách tự thấy hướng đi hợp</h3>
-<div class="loi">Từ những gì anh chia sẻ, anh đang muốn [mục tiêu], nhưng đang vướng ở [chỗ vướng]. Những công ty có tình trạng giống vậy thường sửa bằng cách [hướng tiếp cận ở bảng trên], thay vì [cách anh đã thử]. Anh thấy hướng này có đúng chỗ công ty mình đang vướng không ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi chỗ nào chưa đúng, quay lại bước 2.)</span><br>Anh thấy bước tiếp theo nên thế nào ạ?<br>${dx.ct30
+<h3>2. Chạm Con đường, khoảng 4 phút: khách tự thấy hướng đi hợp</h3>
+<div class="loi">Từ những gì anh chia sẻ, anh đang muốn [mục tiêu], nhưng đang vướng ở [chỗ vướng]. Những công ty có tình trạng giống vậy thường sửa bằng cách [hướng tiếp cận ở bảng trên], thay vì [cách anh đã thử]. Anh thấy hướng này có đúng chỗ công ty mình đang vướng không ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi chỗ nào chưa đúng, rồi quay về hỏi chỗ vướng nhất.)</span><br>Anh thấy bước tiếp theo nên thế nào ạ?<br>${dx.ct30
  ? `Nếu anh thấy hợp thì em nói cụ thể nhé. Bên em có chương trình huấn luyện 30 ngày thiết kế phòng kinh doanh theo mô hình 7M: 8 buổi làm việc online, mỗi tuần 2 buổi, Coach Duy dẫn dắt trực tiếp. Anh cùng quản lý thiết kế lại 7 trụ cột và áp dụng thật 2 tới 3 việc ngay trong chương trình. Anh có dành được 2 buổi mỗi tuần cho việc này không ạ? Còn quản lý của anh thì sao ạ?`
  : `Nếu anh thấy hợp thì em nói cụ thể nhé. Bên em có chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027, để anh có kế hoạch bán hàng cả năm trước khi mở rộng đội ngũ. Anh có dành được 4 buổi cho việc này không ạ?`}<br>Sau cuộc gọi em nhắn anh thông tin chương trình, rồi gọi lại nghe anh quyết. Anh tiện chiều thứ Hai hay sáng thứ Ba ạ?</div>
 
