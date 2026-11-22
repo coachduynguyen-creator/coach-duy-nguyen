@@ -594,7 +594,8 @@ def than_trang(cc):
   <div class="tran-nen" aria-hidden="true"><img src="../img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd"><div class="cc-doc">
     %(moi)s
-    <a class="nut nut-v" id="cc-dang-ky" href="../tham-gia/?cong-cu=%(ma)s">Đăng ký tham gia cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <div class="moi-nut"><a class="nut nut-v" id="cc-dang-ky" href="../tham-gia/?cong-cu=%(ma)s">Đăng ký tham gia cộng đồng <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <a class="nut nut-vien" href="../danh-gia-phong-kinh-doanh/">Tự chấm phòng kinh doanh</a></div>
   </div></div>
 </section>
 

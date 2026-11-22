@@ -344,7 +344,7 @@ dict(tep="cai-gia-cua-nguoi-lam-duoc-moi-viec.html", chu_de="Điểm nghẽn c�
 <p>Anh chủ ngoài sáu mươi hôm đó không nói thêm gì nhiều. Nhưng có một câu Duy nghĩ đáng để bất kỳ người chủ nào giữ lại: cơ nghiệp không cần phải bán, nếu nó có thể được chuyển giao.</p>"""),
 dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Xây uy tín để được tin, không phải để được biết",
- mo="Nhiều người xây thương hiệu cá nhân để được biết tới. Chủ doanh nghiệp cần điều khác: được đúng người tin, đủ để họ chủ động tìm đến.",
+ mo="Chủ doanh nghiệp không cần được nhiều người biết. Cần được đúng người tin, đủ để họ chủ động tìm đến, và phòng kinh doanh tiếp được những người đó.",
  ngay="2026-08-08", ngay_viet="8 tháng 8, 2026", doc="5 phút đọc",
  anh="img/bl-nhin-thang.webp", alt="Coach Duy Nguyễn nhìn thẳng vào người đối diện trong một buổi trao đổi",
  than="""
@@ -427,6 +427,8 @@ dict(tep="uy-tin-khong-phai-de-noi-tieng.html", chu_de="Thương hiệu của ng
 <p><b>Ba:</b> người vừa làm việc với bạn xong có kể lại được cách bạn làm việc cho người thứ ba không, vì nếu không thì bạn chưa có phương pháp, mới chỉ có phong độ.</p>
 
 <p>Ba câu này Duy tự hỏi mình mỗi quý, và câu thứ ba là câu khó nhất. Phong độ thì hôm nay có ngày mai mất, còn phương pháp thì gọi tên được, dạy lại được, và người khác nhắc lại được khi bạn không có mặt.</p>
+
+<p>Uy tín của người chủ chỉ thành doanh số khi có người tiếp được những khách tìm tới. Nếu ai tìm tới cũng phải gặp đích thân bạn mới chịu mua, thì việc tiếp theo là xây phòng kinh doanh, để nhân viên kinh doanh nói được đúng câu bạn vẫn nói.</p>
 """),
 
 dict(tep="cai-nut-that-mang-ten-ban.html", chu_de="Hệ thống tăng trưởng",
@@ -747,7 +749,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI cho người chủ",
 
 dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Đăng nhiều không làm nên thương hiệu cá nhân",
- mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần.",
+ mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần, rồi phòng kinh doanh bán tiếp được từ niềm tin đó.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
  than="""
@@ -817,6 +819,8 @@ dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu 
 <p>Nếu bạn đang ở mức một thì thứ đáng bắt chước là cách họ làm hồi còn ở mức một. Chuyện này khó ở chỗ cách làm cũ của họ thường không còn ai lưu lại, còn cách làm mới thì hiện ra trước mắt bạn mỗi ngày.</p>
 
 <p><span class="nhan">Cách gần đúng nhất là tìm nội dung đầu tiên của họ, nội dung mới nhất thì để sau.</span> Đọc mười bài đầu tiên của một người bạn ngưỡng mộ sẽ cho bạn nhiều thứ dùng được hơn là đọc mười bài gần nhất.</p>
+
+<p>Thương hiệu làm khách nhớ tới bạn. Còn bán được hay không lại nằm ở phòng kinh doanh: khách tìm tới thì ai tiếp, tư vấn theo cách nào, và có ai theo khách tới lúc khách quyết định. Thiếu phần đó thì thương hiệu càng lớn, người chủ càng bận.</p>
 """),
 
 dict(tep="khi-nao-nen-noi-khong.html", chu_de="Bán hàng và phòng kinh doanh",
@@ -2199,7 +2203,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn củ
 
 <p>Nghề này rẻ nhất tính trên đầu người và cũng là nghề dễ đo nhất trong ngắn hạn. Sau một buổi đào tạo tốt, đội ngũ của bạn biết thêm một cách làm mà trước đó chưa biết.</p>
 
-<p>Nhưng biết thêm một cách làm không có nghĩa là làm được. Duy đã đứng lớp cho khoảng ba mươi doanh nghiệp và thấy đi thấy lại đúng một chuyện. Ba tuần sau buổi học, phần lớn đội ngũ quay về đúng thói quen cũ, trừ khi có người ở lại nhắc mọi người làm đều.</p>
+<p>Nhưng biết thêm một cách làm không có nghĩa là làm được. Duy đã được hơn 30 doanh nghiệp mời huấn luyện đội ngũ kinh doanh và thấy đi thấy lại đúng một chuyện. 3 tuần sau buổi huấn luyện, phần lớn đội ngũ quay về đúng thói quen cũ, trừ khi có người ở lại nhắc mọi người làm đều.</p>
 
 <div class="dan-manh">Đào tạo giải quyết chuyện không biết. Chuyện biết rồi mà không làm thì nó chưa giải quyết được.</div>
 
@@ -2255,7 +2259,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn củ
 
 <p>Duy nói ra chuyện này vì hai lý do. Thứ nhất, để bạn biết mình sắp mua thứ gì trước khi trả tiền. Thứ hai, vì trong nghề này có không ít người bán một chữ mà giao một thứ khác, và Duy không muốn nằm trong nhóm đó.</p>
 
-<p>Trên thực tế, một quãng đồng hành tử tế thường trộn nhiều nghề. Có tháng Duy phải đứng lớp cho cả đội ngũ, có tháng chỉ ngồi hỏi bạn năm câu rồi im lặng. Điều quan trọng là người ngồi cùng bạn nói rõ họ đang đóng vai nào ở buổi này và vì sao.</p>
+<p>Trên thực tế, một quãng đồng hành tử tế thường trộn nhiều nghề. Có tháng Duy phải huấn luyện cả đội ngũ kinh doanh, có tháng chỉ ngồi hỏi bạn 5 câu rồi im lặng. Điều quan trọng là người ngồi cùng bạn nói rõ họ đang đóng vai nào ở buổi này và vì sao.</p>
 
 <h2>Ba câu tự hỏi trước khi bỏ tiền</h2>
 
@@ -2264,12 +2268,6 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn củ
 <p><b>Vấn đề của mình là không biết, hay biết mà không làm:</b> không biết thì cần đào tạo hoặc cố vấn. Biết mà không làm thì thêm một khoá học nữa cũng không đổi được gì, chỗ hỏng nằm ở việc làm đều và ở người nhắc mọi người làm đều.</p>
 
 <p><b>Người này đã làm việc mình đang làm bao giờ chưa:</b> câu hỏi này lọc rất nhanh. Người đã làm sẽ kể được chi tiết bạn kiểm chứng được, còn người chưa làm sẽ chỉ nói được nguyên tắc chung.</p>
-
-<h2>Chuyện này nằm ở đâu trong bốn năng lực</h2>
-
-<p>Trong cách Duy làm việc với nhà sáng lập thế hệ mới, bốn năng lực phải đi cùng nhau. Chọn đúng người để học là một phép thử của năng lực thứ hai, Chuyên gia tư vấn được tin cậy.</p>
-
-<p>Người tư vấn có trách nhiệm là người nói thẳng khi mình không phải lựa chọn phù hợp. Nên khi bạn đi tìm người giúp, hãy để ý xem họ có bao giờ từ chối bạn không. Một người nhận mọi khách là một người chưa có gì để mất.</p>
 
 <h2>Một việc làm được trong tuần này</h2>
 
@@ -2281,7 +2279,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn củ
 
 dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", tieu_seo="Thương hiệu cá nhân của chủ doanh nghiệp là gì", chu_de="Thương hiệu của người sáng lập",
  tieu="Thương hiệu cá nhân của chủ doanh nghiệp là gì, và khác thương hiệu doanh nghiệp ở đâu",
- mo="Hai việc khác nhau về bản chất, cần cách làm khác nhau. Nhầm chúng là lý do nhiều người chủ đổ tiền vào chỗ không giải quyết được vấn đề của mình.",
+ mo="Đây là 2 việc khác nhau về bản chất, cần cách làm khác nhau. Hiểu đúng thì thương hiệu của người chủ giúp phòng kinh doanh bán được, thay vì kéo mọi khách về phía người chủ.",
  ngay="2026-08-28", ngay_viet="28 tháng 8, 2026", doc="7 phút đọc",
  anh="img/v5-giu-chuan.webp", alt="Coach Duy Nguyễn trao đổi với một nhóm chủ doanh nghiệp",
  than="""
@@ -2368,6 +2366,8 @@ dict(tep="thuong-hieu-ca-nhan-chu-doanh-nghiep-la-gi.html", tieu_seo="Thương h
 <p>Viết một câu theo mẫu: tôi giúp ai, giải quyết vấn đề gì, bằng cách nào khác với cách phổ biến. Viết xong gửi cho ba khách cũ và hỏi họ một câu duy nhất, rằng câu này có đúng với trải nghiệm của anh chị khi làm việc với tôi không.</p>
 
 <p>Nếu cả ba đều nói đúng thì bạn đã có phiên bản đầu của định vị. Nếu có người ngập ngừng, chỗ ngập ngừng đó chính là phần bạn đang tự nghĩ về mình mà thị trường chưa thấy.</p>
+
+<p>Câu định vị bạn vừa viết cũng là câu nhân viên kinh doanh của bạn cần nói được. Khi phòng kinh doanh nói đúng câu đó với khách, thương hiệu của người chủ bắt đầu giúp doanh nghiệp bán được mà không phải chờ bạn có mặt.</p>
 """),
 
 ]

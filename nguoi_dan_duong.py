@@ -18,7 +18,7 @@ _index = open(os.path.join(GOC, "index.html"), encoding="utf-8").read()
 _kh = re.search(r'<div class="kh-chay">.*?</div>\s*</section>', _index, re.S).group(0)[:-len("</section>")]
 _kh = re.sub(r'<span class="kh-l"><img src="img/doi-tac/mono/acb\.png".*?</span>', "", _kh, flags=re.S)
 KHACH_HTML = _kh.replace('src="img/', 'src="../img/')
-KHACH_SEC = ('<section class="kh">\n  <div class="bd"><p class="kh-dan">Các doanh nghiệp đã mời Duy đào tạo và tư vấn</p></div>\n  '
+KHACH_SEC = ('<section class="kh">\n  <div class="bd"><p class="kh-dan">Các doanh nghiệp đã mời Duy huấn luyện đội ngũ kinh doanh</p></div>\n  '
              + KHACH_HTML + '\n</section>\n')
 SO_LIEU_HTML = re.search(r'<div class="hero-so">(.*?)</div>\s*<p class="hero-ghi">', _index, re.S).group(1)
 
@@ -28,8 +28,8 @@ P = "../"
 # Coach Duy xác nhận 12/10/2026, đồng ý công bố. Không thêm câu tự bảo đảm (Coach Duy dặn cùng ngày).
 SO = [
     ("1 tỷ đồng", "một năm", "Mức cao nhất khách trả cho gói coaching kèm riêng với Duy"),
-    ("120 triệu đồng", "một giờ", "Mức một ngân hàng thương mại lớn trả để mời Duy đào tạo"),
-    ("50 tới 80 triệu đồng", "một buổi", "Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi đào tạo của Duy"),
+    ("120 triệu đồng", "một giờ", "Mức một ngân hàng thương mại lớn trả để mời Duy huấn luyện đội ngũ"),
+    ("50 tới 80 triệu đồng", "một buổi", "Mức các thương hiệu bảo hiểm, bất động sản trả cho một buổi huấn luyện của Duy"),
 ]
 
 # ------------------------------------------------------------ BẠN LÀ AI
@@ -58,22 +58,22 @@ AI = [
      "Doanh nghiệp đã chạy được. Bạn trả lời mãi cùng một câu hỏi trong những buổi gặp không tên, và muốn biến những gì mình đã trả giá để biết thành một con đường cho người đi sau."),
     ("ngf-chuyen-gia", "Chuyên gia hành nghề lâu năm", "Luật, tài chính, y, giáo dục, kỹ thuật",
      "Nghỉ một tuần là thu nhập đứng lại.",
-     "Bạn giỏi nghề, khách quý bạn, nhưng mọi đồng thu nhập đều đổi bằng giờ của chính bạn. Bạn muốn đóng gói chuyên môn thành chương trình mang tên mình, có người theo, có người học."),
-    ("ngf-dan-doi", "Người dẫn đội ngũ", "Quản lý, người đào tạo nội bộ ở doanh nghiệp lớn",
+     "Bạn giỏi nghề, khách quý bạn, nhưng mọi đồng thu nhập đều đổi bằng giờ của chính bạn. Bạn muốn đóng gói chuyên môn thành chương trình mang tên mình, có người theo, có khách tìm tới."),
+    ("ngf-dan-doi", "Người dẫn đội ngũ", "Quản lý, người huấn luyện nội bộ ở doanh nghiệp lớn",
      "Mình đã dẫn hàng trăm người, nhưng ngoài công ty chưa ai biết tên mình.",
-     "Bạn đã dẫn đội ngũ, đào tạo người mới, gỡ chuyện khó cho người khác suốt nhiều năm. Bạn muốn làm việc đó cho chính mình, dưới tên của chính mình."),
+     "Bạn đã dẫn đội ngũ, kèm người mới, gỡ chuyện khó cho người khác suốt nhiều năm. Bạn muốn làm việc đó cho chính mình, dưới tên của chính mình."),
 ]
 
 # ------------------------------------------------------------ BẠN SẼ CÓ MẶT Ở ĐÓ
 # Coach Duy chốt 12/10/2026: chưa công bố lịch theo tháng vì chương trình chưa chốt.
-# Trang cho thấy người học được làm gì cùng Duy, bằng ảnh thật. (ảnh, nhãn, tiêu đề, chữ)
+# Trang cho thấy người tham gia được làm gì cùng Duy, bằng ảnh thật. (ảnh, nhãn, tiêu đề, chữ)
 KHOANH_KHAC = [
     ("v5-chi-duong", "Trên sân khấu", "Khi Duy bước lên sân khấu trước hàng trăm người",
      "Bạn xem Duy chuẩn bị một bài nói, đứng ở cánh gà lúc Duy bước ra, rồi ngồi lại sau buổi để nghe Duy nói chỗ nào đã chạm tới người nghe, chỗ nào chưa. Tới lúc bạn sẵn sàng, bạn đứng trên sân khấu đó với phần của riêng mình."),
     ("cd-workshop", "Cùng khách hàng", "Khi một người chủ ngồi đối diện Duy và kể chuyện đang kẹt",
      "Bạn ngồi cùng bàn trong những buổi coaching và tư vấn thật. Bạn nghe Duy hỏi câu thứ hai, câu thứ ba, và thấy người chủ tự nhìn ra điều họ đã né suốt nhiều tháng."),
     ("v5-giu-chuan", "Gặp đối tác", "Khi Duy đi gặp đối tác và doanh nghiệp",
-     "Bạn đi cùng Duy tới những buổi gặp doanh nghiệp mời đào tạo, đối tác và người trong mạng lưới của Duy. Bạn học cách mở lời, cách giữ vị thế, và được giới thiệu như một người Duy tin."),
+     "Bạn đi cùng Duy tới những buổi gặp doanh nghiệp mời Duy huấn luyện đội ngũ, đối tác và người trong mạng lưới của Duy. Bạn thấy cách mở lời, cách giữ vị thế, và được giới thiệu như một người Duy tin."),
     ("v5-lam-mau", "Trước máy quay", "Khi máy quay bật lên",
      "Bạn xem Duy làm một video từ ý tưởng tới lúc đăng, rồi làm kênh của mình theo đúng cách đó. Thương hiệu cá nhân của bạn lớn lên cạnh thương hiệu của Duy, qua những lần hai người cùng xuất hiện."),
     ("bl-ban-lam-viec", "Ở hậu trường", "Khi công ty của Duy vận hành mỗi ngày",
@@ -82,12 +82,12 @@ KHOANH_KHAC = [
      "Lúc đó bạn không còn là người ngồi nghe. Bạn đã dẫn một nhóm của riêng mình, và có những người gọi bạn là người dẫn đường."),
 ]
 HOAT_DONG = [
-    ("mc/mc-thuyettrinh", "Học tập và chuyển nghề", ["Phương pháp Next Gen Founder: Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder", "The Trusted Advisor, bán hàng tư vấn bằng niềm tin", "Từ người giỏi nghề thành người dẫn nghề"]),
+    ("mc/mc-thuyettrinh", "Phương pháp và chuyển nghề", ["Phương pháp Next Gen Founder: Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder", "The Trusted Advisor, bán hàng tư vấn bằng niềm tin", "Từ người giỏi nghề thành người dẫn nghề"]),
     ("v5-soi-dung", "Tư duy và kỹ năng", ["Tư duy của người dẫn đường: nhìn đúng chỗ kẹt, chỉ đường, giữ chuẩn", "Hỏi, lắng nghe và dẫn một nhóm", "Đứng trước đám đông và nói cho người ta nhớ"]),
     ("bl-may-tinh", "Hệ thống, phương pháp, công cụ", ["Mẫu, kịch bản, bảng chấm điểm Duy đang dùng", "Bộ công cụ AI cho nội dung, tư vấn và vận hành", "Cách đóng gói chuyên môn thành sản phẩm có giá"]),
     ("mc/mc-sankhau", "Đồng hành trực tiếp", ["Dự, đồng dẫn, rồi tự dẫn buổi coaching có Duy ngồi cùng", "Làm việc với khách hàng thật", "Đi gặp đối tác, đứng trên sân khấu cùng Duy"]),
     ("bl-noi-2", "Thương hiệu cá nhân", ["Câu chuyện gốc và lời hứa của bạn", "Một kênh chạy đều theo cách Duy đang làm", "Những lần cùng xuất hiện với Duy"]),
-    ("mc/mc-daotao", "Cộng đồng", ["Sinh hoạt cùng Master Club và Grand Master Club", "Một nhóm của riêng bạn trong cộng đồng", "Những người cùng khóa đi tiếp với nhau sau chương trình"]),
+    ("mc/mc-daotao", "Cộng đồng", ["Sinh hoạt cùng Master Club và Grand Master Club", "Một nhóm của riêng bạn trong cộng đồng", "Những người cùng đợt đi tiếp với nhau sau chương trình"]),
 ]
 
 CSS = """<style>
@@ -206,10 +206,10 @@ THAN = CSS + """<div class="ndd">
   <img src="%simg/dh-phong-lon.webp" alt="" aria-hidden="true">
   <div class="bd">
     <div class="tren"><div>
-    <p class="ndd-nhan"><i aria-hidden="true"></i>Theo thư mời · Khóa đầu sáu tới mười người</p>
+    <p class="ndd-nhan"><i aria-hidden="true"></i>Theo thư mời · Đợt đầu 6 tới 10 người</p>
     <h1><span>Những gì bạn đã trả giá để biết,</span> <span>đừng để nó dừng lại ở bạn.</span></h1>
-    <p class="ndd-phu">Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh (business coach)</p>
-    <p class="dan">Mười hai tháng Duy kèm bạn trở thành một huấn luyện viên kinh doanh: người ngồi cùng chủ doanh nghiệp, giúp họ nhìn ra chỗ đang kẹt và tự đi tiếp. Bạn học bằng cách ngồi cạnh Duy trong những buổi coaching thật, với khách hàng thật.</p>
+    <p class="ndd-phu">Người Dẫn Đường · Chương trình chứng nhận huấn luyện viên kinh doanh (business coach)</p>
+    <p class="dan">12 tháng Duy kèm bạn trở thành một huấn luyện viên kinh doanh: người ngồi cùng chủ doanh nghiệp, giúp họ nhìn ra chỗ đang kẹt và tự đi tiếp. Bạn làm nghề ngay từ đầu, ngồi cạnh Duy trong những buổi coaching thật, với khách hàng thật.</p>
     <p class="ndd-nut-dau"><a class="nut nut-v" href="dang-ky/">Gửi đơn trở thành Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></p>
     </div><img src="%simg/cd-san-khau.webp" alt="Coach Duy Nguyễn trên sân khấu" fetchpriority="high"></div>
     <div class="ndd-so">%s</div>
@@ -230,19 +230,19 @@ THAN = CSS + """<div class="ndd">
     <div class="hien">
       <p class="mono">Vì sao có chương trình này</p>
       <h2>Duy chỉ nhận ít người, để kèm cho tới nơi tới chốn</h2>
-      <p>Mỗi khóa Duy nhận sáu tới mười người. Duy dành cho mỗi người thời gian của mình, giới thiệu bạn với những người Duy quen, và cho bạn dùng đúng cách làm Duy đang dùng với khách trả tới một tỷ đồng một năm.</p>
+      <p>Mỗi đợt Duy nhận 6 tới 10 người. Duy dành cho mỗi người thời gian của mình, giới thiệu bạn với những người Duy quen, và cho bạn dùng đúng cách làm Duy đang dùng với khách trả tới 1 tỷ đồng một năm.</p>
       <p>Đổi lại, Duy mong bạn làm ra kết quả thật cho những người bạn dẫn dắt, để Cộng đồng Next Gen Founder có thêm những người dẫn đường đáng tin.</p>
-      <p class="ndd-trich">Duy không tìm thêm học viên. Duy tìm người sẽ dẫn người khác tới kết quả thật.</p>
+      <p class="ndd-trich">Duy không tìm thêm người ngồi nghe. Duy tìm người sẽ dẫn người khác tới kết quả thật.</p>
     </div>
-    """ + anh("mc/mc-chungnhan", "Một lớp học viên nhận chứng nhận cùng Coach Duy") + """
+    """ + anh("mc/mc-chungnhan", "Một nhóm thành viên nhận chứng nhận cùng Coach Duy") + """
   </div>
 </section>
 
 <section class="phan bd">
   <div class="phan-dau hien">
     <p class="mono">Bạn nhận được gì</p>
-    <h2>Sau mười hai tháng, bạn cầm về sáu thứ</h2>
-    <p>Mỗi thứ dưới đây là thứ bạn mang về được, không phải cảm giác đã học xong.</p>
+    <h2>Sau 12 tháng, bạn cầm về 6 thứ</h2>
+    <p>Mỗi thứ dưới đây là thứ bạn mang về được, không phải cảm giác đã nghe xong.</p>
   </div>
   <div class="ndd-bon">""" + "".join('<figure class="hien">%s<figcaption><b>%s</b><span>%s</span><em>Bạn cầm về: %s</em></figcaption></figure>' % (anh(a, t), t, c, d) for a, t, c, d in BON) + """</div>
 </section>
@@ -250,7 +250,7 @@ THAN = CSS + """<div class="ndd">
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="../img/dh-phong-lon.webp" alt="" loading="lazy"></div>
   <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Thương hiệu bạn sẽ học cách xây</p><h2>Duy đã tự xây đúng thứ bạn sẽ học</h2>
+    <div class="phan-dau hien"><p class="mono">Thương hiệu bạn sẽ xây</p><h2>Duy đã tự xây đúng thứ bạn sẽ xây</h2>
     <p>Tháng 5 năm 2021, trang Facebook của Duy chưa có một người theo dõi, kênh YouTube chưa có một người đăng ký. Đây là con số hôm nay.</p></div>
     <div class="hero-so hien" style="border-top:0;margin-top:0;padding-top:0">""" + SO_LIEU_HTML + """</div>
     <p class="hero-ghi" style="margin-top:20px">Tính tới tháng 8 năm 2026, đọc từ trang công khai của từng kênh.</p>
@@ -259,18 +259,18 @@ THAN = CSS + """<div class="ndd">
 
 <section class="phan bd" id="co-mat">
   <div class="phan-dau hien">
-    <p class="mono">Đi cùng Duy, không học từ xa</p>
+    <p class="mono">Đi cùng Duy, không ngồi nghe từ xa</p>
     <h2>Bạn sẽ có mặt ở những nơi Duy đang làm việc</h2>
-    <p>Mười hai tháng, bạn không ngồi nghe Duy kể lại. Bạn ở ngay đó, nhìn Duy làm, làm cùng Duy, rồi tự làm khi Duy ngồi phía sau.</p>
+    <p>12 tháng, bạn không ngồi nghe Duy kể lại. Bạn ở ngay đó, nhìn Duy làm, làm cùng Duy, rồi tự làm khi Duy ngồi phía sau.</p>
   </div>
   <div class="ndd-kks">""" + "".join(dong_kk(k, i) for i, k in enumerate(KHOANH_KHAC)) + """</div>
 </section>
 
 <section class="phan bd phan-sang" id="hoat-dong">
   <div class="phan-dau hien">
-    <p class="mono">Trong mười hai tháng</p>
+    <p class="mono">Trong 12 tháng</p>
     <h2>Những gì bạn được làm cùng Duy</h2>
-    <p>Lịch cụ thể Duy sắp xếp cùng khóa đầu. Đây là những việc bạn sẽ làm.</p>
+    <p>Lịch cụ thể Duy sắp xếp cùng đợt đầu. Đây là những việc bạn sẽ làm.</p>
   </div>
   <div class="ndd-hd">""" + "".join(the_hd(h) for h in HOAT_DONG) + """</div>
 </section>
@@ -288,14 +288,14 @@ THAN = CSS + """<div class="ndd">
     <div class="ndd-o hien"><h3>Bạn cần có</h3>""" + ds([
         "Kết quả thật trong kinh doanh hoặc chuyên môn, nói ra được và người khác kiểm chứng được",
         "Tin giá trị đi trước, tiền bạc đến sau",
-        "Ít nhất tám giờ mỗi tuần trong mười hai tháng",
+        "Ít nhất 8 giờ mỗi tuần trong 12 tháng",
         "Sẵn sàng để Duy nhận xét thẳng sau mỗi buổi mình dẫn",
         "Cam kết dẫn lại người đi sau, như Duy đã dẫn bạn",
     ]) + """</div>
     <div class="ndd-o hien"><h3>Chương trình chưa hợp với bạn nếu</h3>""" + ds([
         "Bạn đang tìm một tấm chứng nhận để treo lên tường",
-        "Bạn muốn có ngay kịch bản để mở một khóa học",
-        "Bạn chưa có chuyện thật nào của chính mình để kể cho người học",
+        "Bạn muốn có ngay kịch bản để bán một chương trình của riêng mình",
+        "Bạn chưa có chuyện thật nào của chính mình để kể cho người nghe",
     ], "ndd-ds ndd-khong") + """</div>
   </div>
 </section>
@@ -312,7 +312,7 @@ THAN = CSS + """<div class="ndd">
         "Chứng nhận có hạn một năm, gia hạn khi bạn vẫn dẫn nhóm và vẫn giữ chuẩn",
     ]) + """
     </div>
-    """ + anh("dh-giua-doan", "Coach Duy Nguyễn giữa học viên trong một buổi đào tạo") + """
+    """ + anh("dh-giua-doan", "Coach Duy Nguyễn giữa các thành viên trong một buổi làm việc") + """
   </div>
   <div class="ndd-hai" style="margin-top:28px">
     <div class="ndd-o hien"><p class="ndd-nho">Con đường 1</p><h3>Mentor trong Cộng đồng Next Gen Founder</h3><p>Bạn dẫn nhóm thành viên, cùng dẫn các buổi coaching của cộng đồng, nhận khách kèm riêng do cộng đồng giới thiệu và được chia doanh thu từ nhóm mình dẫn. Tỷ lệ chia Duy nói rõ ở buổi gặp riêng.</p></div>
@@ -323,7 +323,7 @@ THAN = CSS + """<div class="ndd">
 <section class="phan bd">
   <div class="phan-dau hien">
     <p class="mono">Cách vào</p>
-    <h2>Chỉ nhận theo thư mời, khóa đầu sáu tới mười người</h2>
+    <h2>Chỉ nhận theo thư mời, đợt đầu 6 tới 10 người</h2>
     <p>Duy mời trước thành viên Master Club và Grand Master Club, vì đã thấy cách các bạn làm việc. Người ngoài cộng đồng vào qua lời giới thiệu của một thành viên.</p>
   </div>
   <ol class="ndd-vao hien">
@@ -338,8 +338,8 @@ THAN = CSS + """<div class="ndd">
   <div class="tran-nen" aria-hidden="true"><img src="../img/v5-di-cung.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
-      <p class="mono">Khóa đầu, sáu tới mười người</p>
-      <h2>Bạn muốn là một trong sáu tới mười người đầu tiên?</h2>
+      <p class="mono">Đợt đầu, 6 tới 10 người</p>
+      <h2>Bạn muốn là một trong 6 tới 10 người đầu tiên?</h2>
       <p>Gửi đơn kể về kết quả bạn đã làm ra và người bạn muốn dẫn dắt. Duy đọc từng đơn và trả lời trong 7 ngày.</p>
     </div>
     <div class="ndd-nut hien">
@@ -352,8 +352,8 @@ THAN = CSS + """<div class="ndd">
 """
 
 TEP = "nguoi-dan-duong/index.html"
-trang(TEP, "Người Dẫn Đường · Chương trình đào tạo huấn luyện viên kinh doanh",
-      "Mười hai tháng Coach Duy Nguyễn kèm bạn trở thành huấn luyện viên kinh doanh (business coach): ngồi cạnh Duy trong những buổi coaching thật, rồi làm mentor trong Cộng đồng Next Gen Founder hoặc mở dịch vụ coaching của riêng bạn.",
+trang(TEP, "Người Dẫn Đường · Chương trình chứng nhận huấn luyện viên kinh doanh",
+      "12 tháng Coach Duy Nguyễn kèm bạn trở thành huấn luyện viên kinh doanh (business coach): ngồi cạnh Duy trong những buổi coaching thật, rồi làm mentor trong Cộng đồng Next Gen Founder hoặc mở dịch vụ coaching của riêng bạn.",
       THAN, "", cuoi=False)
 
 # Coach Duy chốt 12/10/2026: đưa vào menu Chương trình, mở cho Google (bỏ noindex), có trong sitemap.

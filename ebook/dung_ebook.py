@@ -63,7 +63,7 @@ def nguoi_soan():
     b1 = t[t.index("## Bản 1."):t.index("## Bản 2.")]
     doan = [x.strip() for x in b1.split("\n\n") if x.strip().startswith(("Duy học", "Bây giờ Duy"))]
     # Câu cuối nói về e-book thay vì công cụ.
-    doan[-1] = doan[-1][:doan[-1].rindex("Mỗi công cụ")] + "Cuốn e-book này là một phần của cách làm đó, viết lại để bạn tự làm được với chính doanh nghiệp mình."
+    doan[-1] = doan[-1][:doan[-1].rindex("Mỗi công cụ")] + "Cuốn e-book này là một phần việc của phòng kinh doanh, viết lại để bạn tự làm được với chính doanh nghiệp mình."
     return doan
 
 
@@ -210,6 +210,7 @@ def dung(ma):
   <p>Cộng đồng là nơi những người chủ cùng nhau gỡ điểm nghẽn trong kinh doanh và doanh nghiệp. Nếu bạn muốn có những người chủ khác đi cùng mình trên đoạn đường này, Duy mời bạn đăng ký tham gia Cộng đồng Next Gen Founder.</p>
   <a class="moi-link" href="https://coachduynguyen.vn/tham-gia/?nguon=ebook-%(ma_nho)s">Đăng ký tham gia cộng đồng</a>
   <p class="moi-web">coachduynguyen.vn/tham-gia</p>
+  <p class="moi-web">Muốn biết phòng kinh doanh của bạn đang yếu ở phần nào: làm phiếu tự chấm tại <a href="https://coachduynguyen.vn/danh-gia-phong-kinh-doanh/">coachduynguyen.vn/danh-gia-phong-kinh-doanh</a></p>
   <div class="moi-cdn"><img src="../img/cdn-khien.png" alt=""><span>Coach Duy Nguyễn · Next Gen Founder</span></div>
 </section>
 </body></html>""" % dict(ten=e(ten), ten_ngan=ten.replace('"', ''), font=FONT, chu_de=e(chu_de), gt=e(gt), mt=e(mt), ma_nho=ma.lower(),

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys; sys.exit("landing.py ngừng từ 22/11/2026: 4 trang chương trình cũ đã chuyển hướng về phiếu tự chấm 7M (bản chốt rà soát D116 mục D5).")
 """landing.py: sinh trang riêng cho từng chương trình, dùng chung khung của
 trang sales-team.
 

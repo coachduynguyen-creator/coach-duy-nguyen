@@ -7,7 +7,8 @@ BASE = "https://coachduynguyen.vn"
 # Trang Cộng đồng nay là trang con của chính tên miền này, không còn kho riêng.
 CONG_DONG = BASE + "/cong-dong/"
 CO_MAY = "https://coachduynguyen-creator.github.io/co-may-noi-dung/"
-PHIEU = "https://coachduynguyen-creator.github.io/co-may-noi-dung/phieu.html"
+# Phiếu tự chấm phòng kinh doanh theo Mô hình 7M (D116, bản chốt rà soát A1 ngày 22/11/2026).
+PHIEU = BASE + "/danh-gia-phong-kinh-doanh/"
 EMAIL = "nextstepacademyvietnam@gmail.com"
 # Trang bán Trusted Founder Brand Challenge, nguồn ở ~/Codex_Projects/trusted-founder-brand.
 # Đây là nơi duy nhất công bố giá và mốc đăng ký của chương trình này. Trang chính
@@ -168,7 +169,7 @@ def khoi_cuoi(p=""):
       <article class="loi">
         <span class="so">Lối 03 · Hỏi thẳng</span>
         <h3>Liên hệ với Duy</h3>
-        <p>Chưa rõ mình đang kẹt ở đâu thì làm phiếu chẩn đoán bảy phút trước. Muốn mời nói chuyện, hợp tác truyền thông hay hỏi về cố vấn riêng thì vào trang liên hệ, ở đó có đúng bốn cửa.</p>
+        <p>Chưa rõ phòng kinh doanh đang kẹt ở đâu thì làm phiếu tự chấm ở Lối 01 trước. Muốn mời nói chuyện, hợp tác truyền thông hay hỏi về tư vấn phòng kinh doanh thì vào trang liên hệ, ở đó có đúng bốn cửa.</p>
         <a class="nut nut-vien" href="%s">Xem cách liên hệ <span class="mt" aria-hidden="true">&rarr;</span></a>
       </article>
     </div>
@@ -185,7 +186,7 @@ def footer(p=""):
   <div class="bd ct">
     <div class="ct-gioi">
       <a class="logo" href="%s" aria-label="Coach Duy Nguyễn">%s<span><b>Coach Duy Nguyễn</b><i>Next Gen Founder</i></span></a>
-      <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Đi trước vài chặng để nhìn đúng vấn đề và giữ chuẩn, rồi trả lại quyền tự chủ.</p></p>
+      <p>Coach Duy Nguyễn tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý.</p>
     </div>
     <div class="ct-cot">
       <!-- Tạm ẩn từ 10/10/2026, dồn người xem vào Cộng đồng. Mở lại thì bỏ thẻ chú thích.
@@ -201,8 +202,7 @@ def footer(p=""):
       <div>
         <b>Đi tiếp</b>
         <a href="%s">Cộng đồng Next Gen Founder</a>
-        <a href="%s" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
-        <a href="%s" target="_blank" rel="noopener">Cỗ máy Nội dung Một người</a>
+        <a href="%s">Phiếu tự chấm phòng kinh doanh</a>
         <a href="%s">Về Duy</a><a href="%s">Liên hệ</a>
       </div>
     </div>
@@ -212,17 +212,17 @@ def footer(p=""):
     <span>Nội dung trên trang thuộc về Coach Duy Nguyễn</span>
   </div>
 </footer>""" % (dd("index.html", p), dau_hieu(p), ct_links, dd("blog.html", p), dd("phuong-phap.html", p),
-                dd("cong-cu/", p), dd("podcast.html", p), dd("cau-chuyen-hoc-vien.html", p), CONG_DONG, PHIEU, CO_MAY,
+                dd("cong-cu/", p), dd("podcast.html", p), dd("cau-chuyen-hoc-vien.html", p), CONG_DONG, PHIEU,
                 dd("ve-toi.html", p), dd("lien-he.html", p), EMAIL, EMAIL)
 
 JSONLD_NGUOI = json.dumps({
     "@context": "https://schema.org", "@type": "Person",
     "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn",
     "jobTitle": "Người cố vấn cho chủ doanh nghiệp",
-    "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành.",
+    "description": "Coach Duy Nguyễn tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý.",
     "url": BASE + "/",
-    "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",
-                   "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
+    "knowsAbout": ["Tư vấn phòng kinh doanh", "Mô hình Phòng kinh doanh tiêu chuẩn 7M", "Huấn luyện đội ngũ kinh doanh",
+                   "Thương hiệu người chủ", "Next Gen Founder"],
 }, ensure_ascii=False)
 
 # Trang này là trang thương hiệu cá nhân. Coach Duy chốt ngày 30/08/2026: pháp nhân

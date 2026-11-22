@@ -16,6 +16,10 @@ def _phut_doc(than):
 
 for _b in BAI:
     _b["doc"] = "%d phút đọc" % _phut_doc(_b["than"])
+# Bản chốt rà soát D116 mục E1 (22/11/2026): 3 bài dạy dựng cộng đồng ẩn khỏi danh sách
+# blog, trang chủ, sơ đồ trang và Google. Trang vẫn dựng để đường dẫn cũ không ra trang lỗi.
+AN_BAI = {"cong-dong-khong-phai-nhom-dang-bai.html", "do-cong-dong-bang-gi.html", "muoi-bon-ngay-dau.html"}
+BAI_HIEN = [b for b in BAI if b["tep"] not in AN_BAI]
 from chuong_trinh import CT
 import cong_cu_ai
 import so_do
@@ -261,10 +265,10 @@ INDEX = """
     <div class="hero-nguoi" aria-hidden="true"><img src="img/cd-chan-dung.webp" alt="" width="485" height="760" fetchpriority="high"></div>
     <div class="hero-giua">
       <div class="hero-avt"><img src="img/cd-avatar.webp" alt="Chân dung Coach Duy Nguyễn" width="256" height="256"></div>
-      <p class="mono mono-dai">Nhà sáng lập Cộng đồng Next Gen Founder</p>
+      <p class="mono mono-dai">Sales Mentor · Cố vấn thiết lập hệ thống kinh doanh tiêu chuẩn · Sáng lập Cộng đồng Next Gen Founder</p>
       <div class="ten">Duy <em>Nguyễn</em></div>
       <div class="bang-hieu">
-        <p class="danh-xung">Coach. Trainer. Entrepreneur.</p>
+        <p class="danh-xung">Coach. Mentor. Entrepreneur.</p>
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
       </div>
       <h1>Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và nâng cấp từ đó.</h1>
@@ -291,7 +295,7 @@ INDEX = """
       <p>Đó là những chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đông nhất ở ngành dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
       <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so sánh giá. Người giỏi cũng tìm tới xin một chỗ ngồi, vì đó là một tên tuổi khách nhớ và dám tin.</p>
       <p>Xa hơn nữa là di sản, thứ không đo được bằng một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật và bài học thật, kể cả những lần vấp. Mình gói lại cho rõ ràng và kể thật lòng, rồi trao cho đội ngũ của mình và những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
-      <p>Duy làm việc đó cùng bạn. Đi trước bạn vài chặng nên biết đoạn nào dễ vấp, và ở bên cạnh lúc bạn tập cách làm mới.</p>
+      <p>Phần Duy làm cùng bạn bắt đầu từ phòng kinh doanh: để nhân viên kinh doanh nói được đúng điều khách tin ở bạn, và bán được mà không phải chờ bạn có mặt.</p>
       <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
@@ -532,8 +536,8 @@ MAT_NGUOI = _mn()
 INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
          .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
          .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
-         .replace("{BAI_LON}", the_bai_lon(BAI[0])).replace("{KHO}", KHO_TRANG_CHU)
-         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI[1:5]))
+         .replace("{BAI_LON}", the_bai_lon(BAI_HIEN[0])).replace("{KHO}", KHO_TRANG_CHU)
+         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI_HIEN[1:5]))
          .replace("{CHUYEN_GIA}", chuyen_gia.KHOI_TRANG_CHU))
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
@@ -543,44 +547,50 @@ LD_CHU = json.dumps({"@context": "https://schema.org", "@graph": [
     {"@type": "Person", "@id": BASE + "/#duy",
      "name": "Coach Duy Nguyễn", "alternateName": "Duy Nguyễn",
      "jobTitle": "Người cố vấn cho chủ doanh nghiệp",
-     "description": "Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín "
-                    "cá nhân thành hệ thống mà đội ngũ cùng vận hành.",
+     "description": "Coach Duy Nguyễn tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng "
+                    "kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý.",
      "url": BASE + "/", "image": BASE + "/img/cd-chan-dung.webp",
-     "knowsAbout": ["Thương hiệu nhà sáng lập", "Tư vấn có trách nhiệm", "Hệ thống tăng trưởng",
-                    "Kiến tạo cộng đồng", "CDN Trust Orbit", "Next Gen Founder"],
+     "knowsAbout": ["Tư vấn phòng kinh doanh", "Mô hình Phòng kinh doanh tiêu chuẩn 7M", "Huấn luyện đội ngũ kinh doanh",
+                    "Thương hiệu người chủ", "Next Gen Founder"],
      "sameAs": [YOUTUBE, TIKTOK, FACEBOOK]},
     {"@type": "WebSite", "@id": BASE + "/#trang",
      "url": BASE + "/", "name": "Coach Duy Nguyễn",
      "inLanguage": "vi", "publisher": {"@id": BASE + "/#duy"}},
 ]}, ensure_ascii=False)
 
-trang("index.html", "Coach Duy Nguyễn · Người cố vấn cho nhà sáng lập thế hệ mới",
-      "Coach Duy Nguyễn đi cùng các chủ doanh nghiệp biến uy tín cá nhân thành hệ thống mà đội ngũ cùng vận hành. Bốn năng lực, quỹ đạo niềm tin, và cộng đồng Next Gen Founder.",
+trang("index.html", "Coach Duy Nguyễn · Tư vấn phòng kinh doanh tiêu chuẩn cho chủ doanh nghiệp",
+      "Coach Duy Nguyễn tư vấn, setup và coaching phòng kinh doanh theo Mô hình 7M, để nhân viên kinh doanh bán được hàng mà không phải việc gì cũng chờ người chủ.",
       INDEX, "index.html", jsonld=LD_CHU)
 print("  index.html")
 
 # ---------------------------------------------------------------- VỀ TÔI
 # Dòng thời gian có ngày tháng và con số thật.
 # Nguồn: slide "Kỷ nguyên của giá trị cá nhân" và PROFILE COACH DUY NGUYỄN.
-# Không nhắc tên Next Step Group theo yêu cầu của Coach Duy.
+# Bản chốt rà soát D116 ngày 22/11/2026: mục C6 thêm Veritag, Next Step Group, Kiến Tạo
+# Doanh Nghiệp Việt, Golden Homes theo tiểu sử chuẩn, không ghi năm; C2 ghi cả số doanh
+# nghiệp lẫn số học viên theo ghi chú của Coach Duy; C3 thêm mốc tháng 11/2026.
 MOC = [
- ("Trước 2021", "Làm nghề, chưa dạy nghề", "", "",
-  "Phân tích và phát triển thị trường khối ô tô, phòng marketing Honda Việt Nam. Sang Úc, đồng sáng lập Gia Binh Group, hệ thống nhà hàng và dịch vụ tiệc cưới, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
+ ("Trước 2021", "Làm nghề ở Việt Nam, Anh và Úc", "", "",
+  "Phân tích và phát triển thị trường khối ô tô, phòng marketing Honda Việt Nam. Ở Anh, đồng sáng lập Veritag, công ty khởi nghiệp công nghệ được chính phủ Anh tài trợ. Sang Úc, đồng sáng lập Flexi Mortgage và Gia Binh Group, hệ thống nhà hàng và dịch vụ tiệc cưới, rồi làm giám đốc phát triển thị trường cho một công ty môi giới tài chính bất động sản."),
  ("Tháng 5 năm 2021", "Bắt đầu từ con số không, ở Úc", "img/mc/mc-banlamviec.webp",
   "Facebook 0 · YouTube 0",
-  "Duy bắt tay xây thương hiệu cá nhân của chính mình, đúng thứ đang dạy người khác bây giờ, và làm khi trong tay chưa có gì."),
- ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời vào dạy", "img/mc/mc-phongnho.webp",
+  "Duy bắt tay xây thương hiệu cá nhân của chính mình, khi trong tay chưa có gì."),
+ ("Tháng 10 năm 2021", "Doanh nghiệp bắt đầu mời Duy huấn luyện đội ngũ", "img/mc/mc-phongnho.webp",
   "Facebook 60.000 · YouTube 50.000",
-  "MobiFone, AIA và KB Securities mời đào tạo nội bộ cho đội ngũ của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
+  "MobiFone, AIA và KB Securities mời Duy huấn luyện đội ngũ kinh doanh của họ. Lần đầu uy tín trên mạng đổi được thành một hợp đồng thật."),
  ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người", "img/mc/mc-sankhau.webp",
   "Facebook 120.000 · YouTube 130.000 · TikTok 21.000",
   "Hơn 500 học viên. Duy bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của Duy."),
- ("Năm năm sau", "Hơn ba nghìn học viên và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
-  "Hơn 3.000 học viên",
-  "Dạy hàng nghìn người bán hàng, Duy thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ."),
- ("Tháng 8 năm 2026", "Chuyển trọng tâm sang Next Gen Founder", "img/mc/mc-banlam.webp",
+ ("Năm năm sau", "Hơn 30 doanh nghiệp và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
+  "Hơn 30 doanh nghiệp · Hơn 3.000 học viên · Sales Bứt Phá hơn 20.000 thành viên",
+  "Hơn 30 doanh nghiệp mời Duy huấn luyện đội ngũ kinh doanh. Làm việc với hàng nghìn người bán hàng, Duy thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu phòng kinh doanh không có quy trình, không có chỉ số và không có người quản lý."),
+ ("Ở Việt Nam", "Điều hành doanh nghiệp của chính mình", "", "",
+  "CEO của Next Step Group, công ty đào tạo, và của Kiến Tạo Doanh Nghiệp Việt, công ty dịch vụ marketing. Đồng sáng lập công ty bất động sản Golden Homes."),
+ ("Tháng 8 năm 2026", "Lập Cộng đồng Next Gen Founder", "img/mc/mc-banlam.webp",
   "Đích tới năm 2031: 10.000 Next Gen Founder",
-  "Từ đào tạo người bán sang phát triển người chủ, với bốn năng lực làm bản đồ. Và chọn cộng đồng làm nơi luyện chính."),
+  "Từ huấn luyện người bán sang làm việc với người chủ, với bốn năng lực làm bản đồ, và lập Cộng đồng Next Gen Founder."),
+ ("Tháng 11 năm 2026", "Tư vấn phòng kinh doanh theo Mô hình 7M", "", "Mô hình Phòng kinh doanh tiêu chuẩn 7M",
+  "Duy chuyển sang tư vấn, setup và coaching phòng kinh doanh cho doanh nghiệp. Cộng đồng Next Gen Founder thành nơi các chủ doanh nghiệp gặp gỡ và chia sẻ kinh nghiệm thật."),
 ]
 def the_moc(m, i):
     ngay, tieu, anh, so, mo = m
@@ -618,16 +628,16 @@ NIEM_TIN = [
 niem_tin_html = "".join('<article><h3>%s</h3><p>%s</p></article>' % n for n in NIEM_TIN)
 
 VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ để biết đoạn nào dễ vấp",
-  "Duy đi cùng các chủ doanh nghiệp biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.", anh="img/dau-trang/ve-duy.webp", vi_tri="60% 45%") + """
+  "Duy tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý. Trang này viết đủ để bạn quyết định có nên nghe Duy hay không.", anh="img/dau-trang/ve-duy.webp", vi_tri="60% 45%") + """
 <section class="phan bd">
   <div class="vt">
     <div class="vt-chu hien">
       <p class="mono">Duy làm gì</p>
-      <h2>Doanh nghiệp của bạn bớt phụ thuộc vào chính bạn</h2>
-      <p>Duy làm việc với người mà khách mua vì tin ở chính họ. Với những người này, uy tín cá nhân đứng ngay trước quyết định mua của khách và trước lời đồng ý của một nhân sự giỏi. Đó vừa là lợi thế lớn nhất, vừa là giới hạn lớn nhất.</p>
-      <p>Duy bắt đầu nghề bằng việc dạy bán hàng. Suốt năm năm, Duy làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu nội dung, tư vấn, hệ thống và đội ngũ đều chờ họ. Vì vậy Duy chuyển trọng tâm từ đào tạo người bán sang phát triển người chủ.</p>
-      <p>Duy không rời bỏ phần bán hàng. Duy dùng chính nền tảng bán bằng niềm tin đó để giải một bài toán sâu hơn: làm sao để cách bán và cách ra quyết định của người chủ trở thành năng lực của cả đội ngũ.</p>
-      <a class="lk-v" href="phuong-phap.html">Xem phương pháp Duy dùng <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <h2>Phòng kinh doanh bán được mà không phải việc gì cũng chờ bạn</h2>
+      <p>Duy làm việc với chủ doanh nghiệp mà khách mua vì tin ở chính họ. Uy tín của người chủ đưa khách tới. Nhưng khi cuộc tư vấn quan trọng nào cũng chờ người chủ ra mặt, doanh nghiệp chỉ lớn tới mức sức một người chịu được.</p>
+      <p>Duy bắt đầu nghề bằng việc huấn luyện người bán hàng. Suốt 5 năm, Duy làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu phòng kinh doanh không có quy trình, không có chỉ số và không có người quản lý.</p>
+      <p>Vì vậy bây giờ Duy tư vấn và đồng hành cùng người chủ xây dựng phòng kinh doanh tiêu chuẩn theo Mô hình Phòng kinh doanh tiêu chuẩn 7M. Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và nâng cấp từ đó.</p>
+      <a class="lk-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
       <div class="quang" aria-hidden="true"></div>
@@ -645,7 +655,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Đường đi</p>
     <h2>Duy đi từ đâu tới đây</h2>
-    <p>Duy để cả phần đầu, khi còn làm nghề chứ chưa dạy nghề. Vì phần lớn những gì dạy về sau đến từ giai đoạn đó.</p>
+    <p>Duy để cả phần đầu, khi còn làm nghề ở doanh nghiệp. Vì phần lớn những gì Duy làm với doanh nghiệp về sau đến từ giai đoạn đó.</p>
   </div>
   <div class="moc-tg hien">%s</div>
 </section>
@@ -663,18 +673,17 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
     <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
-    <p>Phần này lấy nguyên văn từ bộ chiến lược Next Gen Founder, nên bạn đọc được đúng thứ Duy và đội ngũ dùng để tự đánh giá mỗi quý.</p>
+    <p>Đây là tầm nhìn và sứ mệnh của Cộng đồng Next Gen Founder, lấy nguyên văn từ bộ chiến lược, nên bạn đọc được đúng thứ Duy và đội ngũ dùng để tự đánh giá mỗi quý.</p>
   </div>
   <div class="tn-khoi hien">
     <div class="tn-so"><b>10.000</b><span>Next Gen Founder · đến năm 2031</span></div>
     <div class="tn-loi">
-      <p>Họ xây doanh nghiệp dựa trên niềm tin, hệ thống và con người, đồng thời tiếp tục chia sẻ kinh nghiệm, cơ hội và sự nâng đỡ cho những người đi sau.</p>
-      <p>Con số này vừa là mục tiêu kinh doanh, vừa là cam kết về tác động. Chương trình và cộng đồng chỉ là phương tiện, đích đến là 10.000 người chủ thay đổi được cách họ xây doanh nghiệp.</p>
+      <p>Góp phần tạo nên một thế hệ Founder Việt Nam biết biến uy tín, kinh nghiệm và năng lực của mình thành những doanh nghiệp được tin cậy, có hệ thống, có đội ngũ và có khả năng phát triển vượt ra ngoài giới hạn của chính người sáng lập.</p>
     </div>
   </div>
   <div class="sm-khoi hien">
     <b>Sứ mệnh</b>
-    <p>Trở thành chỗ dựa và môi trường phát triển để nhà sáng lập Việt Nam trở thành phiên bản tốt hơn của chính mình, xây doanh nghiệp tốt hơn và tiếp tục nâng đỡ những người đi sau.</p>
+    <p>Xây một cộng đồng phát triển dài hạn, nơi Founder mang những vấn đề thật của doanh nghiệp vào để cùng giải quyết, được học đúng điều mình cần, thực hành trên chính công việc của mình, nhận phản hồi từ người phù hợp và từng bước biến những gì trước đây chỉ mình làm được thành năng lực của doanh nghiệp.</p>
   </div>
   <div class="gt-luoi tre hien">
     <article class="gt"><em>Giá trị 01</em><h3>Chất lượng</h3><p>Đặt chất lượng tri thức, phương pháp và kết quả khách hàng lên trước việc làm nhiều hoặc mở rộng nhanh.</p></article>
@@ -751,14 +760,26 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
             "Không giữ ai ở lại bằng cảm giác lệ thuộc."], khong=True),
        so_lieu_html)
 
-trang("ve-toi.html", "Về Coach Duy Nguyễn · Cố vấn cho chủ doanh nghiệp",
+trang("ve-toi.html", "Về Coach Duy Nguyễn · Tư vấn phòng kinh doanh cho chủ doanh nghiệp",
       "Coach Duy Nguyễn là ai, đến chỗ này bằng con đường nào, tin điều gì, nói với ai, làm việc theo cách nào, và số liệu công khai kèm giới hạn của nó.",
       VE_TOI, "ve-toi.html")
 print("  ve-toi.html")
 
 # ---------------------------------------------------------------- PHƯƠNG PHÁP
-PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn và quỹ đạo niềm tin",
-  "Duy dùng ba bản đồ mỗi ngày khi đi cùng một chủ doanh nghiệp. Bản đầu là năm việc người cố vấn phải làm được, bản hai là bốn năng lực cần có, bản ba là quỹ đạo niềm tin, cách giữ quan hệ với khách lâu dài thay cho phễu bán hàng.", anh="img/dau-trang/phuong-phap.webp", vi_tri="50% 40%") + """
+# Bản chốt rà soát D116 mục G3 (22/11/2026): thêm Mô hình 7M lên đầu trang, giữ phần cũ phía sau.
+# Tên 7 trụ cột lấy từ tai-lieu/gioi-thieu-mo-hinh-7m.pdf.
+PHUONG_PHAP = dau_trang("Phương pháp", "Mô hình Phòng kinh doanh tiêu chuẩn 7M",
+  "Đây là mô hình Duy dùng khi làm việc với doanh nghiệp. Phía dưới là những bản đồ Duy vẫn dùng khi đi cùng một chủ doanh nghiệp: 4 năng lực, 5 việc của người cố vấn và quỹ đạo niềm tin.", anh="img/dau-trang/phuong-phap.webp", vi_tri="50% 40%") + """
+<section class="phan bd" id="mo-hinh-7m">
+  <div class="phan-dau hien">
+    <p class="mono">Giải pháp</p>
+    <h2>7 trụ cột để phòng kinh doanh chạy được mà không phải việc gì cũng chờ người chủ</h2>
+    <p>Phòng kinh doanh không chạy bằng một thứ. Nó chạy bằng nhiều thứ nối vào nhau, và một chỗ lỏng thì cả phòng chậm theo. Mô hình xếp những thứ đó thành 7 trụ cột, tên tiếng Anh đều bắt đầu bằng chữ M. Thứ tự đi theo đúng trình tự dựng một phòng kinh doanh.</p>
+  </div>
+  <div class="luoi c4 tre hien"><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>1 · Market</span><h3>Thị trường</h3><p style="text-align:left"><b>Bán gì, cho ai?</b> Khách mục tiêu, gói bán, giá, nguồn khách</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>2 · Method</span><h3>Quy trình</h3><p style="text-align:left"><b>Bán thế nào?</b> Các chặng bán, chuẩn tư vấn, sau bán</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>3 · Manpower</span><h3>Nhân sự</h3><p style="text-align:left"><b>Ai bán?</b> Tuyển, người mới, kèm, thăng tiến</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>4 · Money</span><h3>Tài chính</h3><p style="text-align:left"><b>Trả và chi thế nào?</b> Lương, hoa hồng, thưởng, chi phí phòng</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>5 · Material</span><h3>Công cụ</h3><p style="text-align:left"><b>Bán bằng công cụ nào?</b> Dữ liệu khách, biểu mẫu, trợ lý AI</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>6 · Measure</span><h3>Chỉ số</h3><p style="text-align:left"><b>Đo chỉ số nào?</b> Mục tiêu, chỉ số, dự báo, báo cáo</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>7 · Management</span><h3>Quản lý</h3><p style="text-align:left"><b>Điều hành ra sao?</b> Vai quản lý, nhịp họp, văn hóa, thay đổi</p></article></div>
+  <div class="blog-them moi-nut" style="justify-content:center"><a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <a class="nut nut-vien" href="tai-lieu/gioi-thieu-mo-hinh-7m.pdf" download>Tải PDF giới thiệu Mô hình 7M</a></div>
+</section>
 <section class="phan bd hoa-van">
   <div class="doi-cot">
     <div class="hien">
@@ -1050,8 +1071,8 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Năm việc của người cố vấn
                                 "Không hứa một con số doanh thu khi chưa đủ điều kiện. Điều Duy hứa là điểm nghẽn được gọi đúng tên và một năng lực được xây.",
                                 "Không giữ ai ở lại bằng cảm giác lệ thuộc. Mỗi lần làm việc phải để lại cho bạn một tiêu chí tự đánh giá."], khong=True))
 
-trang("phuong-phap.html", "Bốn năng lực và quỹ đạo niềm tin · Coach Duy Nguyễn",
-      "Bốn năng lực của nhà sáng lập thế hệ mới và năm việc của một người cố vấn. Kèm CDN Trust Orbit, cách giữ quan hệ với khách lâu dài thay cho phễu bán hàng.",
+trang("phuong-phap.html", "Mô hình Phòng kinh doanh tiêu chuẩn 7M · Coach Duy Nguyễn",
+      "7 trụ cột của một phòng kinh doanh tiêu chuẩn: thị trường, quy trình, nhân sự, tài chính, công cụ, chỉ số và quản lý. Kèm 4 năng lực, 5 việc của người cố vấn và quỹ đạo niềm tin.",
       PHUONG_PHAP, "phuong-phap.html")
 print("  phuong-phap.html")
 
@@ -1069,13 +1090,30 @@ CAP = [
     ("Cấp 3 · Theo lời mời", "Grand Master Club", "Nhóm nhỏ chủ doanh nghiệp đã có kết quả, đi cùng nhau trong cả năm.",
      "Người đã có ít nhất một thay đổi thật trong doanh nghiệp và một vấn đề cụ thể cần giải trong mười hai tháng."),
 ]
+# Bản chốt rà soát D116 mục D1 (22/11/2026): 3 thẻ, Mô hình 7M, Cộng đồng ba mức, khóa
+# e-learning tự học. Người Dẫn Đường giữ theo mục D2, gọi là chương trình chứng nhận.
+# Chữ thẻ 7M lấy từ chặng 02 và 03 trên trang chủ (D118).
 CHUONG_TRINH = dau_trang("Chương trình",
-  "Hai con đường đi cùng Duy",
-  "Cộng đồng Next Gen Founder là nơi mọi người bắt đầu, với ba mức đi từ miễn phí tới theo lời mời. Người Dẫn Đường dành cho những người Duy mời để đào tạo thành huấn luyện viên kinh doanh.", anh="img/dau-trang/chuong-trinh.webp", vi_tri="right 40%") + """
+  "Một giải pháp, một cộng đồng",
+  "Mô hình Phòng kinh doanh tiêu chuẩn 7M là giải pháp Duy dùng khi làm việc với doanh nghiệp. Cộng đồng Next Gen Founder là nơi các chủ doanh nghiệp gặp nhau và chia sẻ kinh nghiệm thật.", anh="img/dau-trang/chuong-trinh.webp", vi_tri="right 40%") + """
 
 <section class="phan bd" style="padding-top:0">
   <div class="phan-dau hien">
-    <p class="mono">Con đường 1 · Mọi người bắt đầu ở đây</p>
+    <p class="mono">01 · Giải pháp cho doanh nghiệp</p>
+    <h2>Mô hình Phòng kinh doanh tiêu chuẩn 7M</h2>
+    <p>Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và nâng cấp từ đó. Bạn bắt đầu bằng phiếu tự chấm 28 câu, khoảng 10 phút, miễn phí.</p>
+  </div>
+  <div class="luoi c2 tre hien">
+    <article class="the"><span class="trang-thai"><i aria-hidden="true"></i>8 buổi làm việc · 30 ngày</span><h3>30 ngày thiết kế phòng kinh doanh</h3><p style="text-align:left">Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc trong 30 ngày. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, từ khách mục tiêu, quy trình bán tới lương thưởng và cách quản lý, và áp dụng thật 2 tới 3 việc trong đó.</p></article>
+    <article class="the"><span class="trang-thai"><i aria-hidden="true"></i>Sau 30 ngày · 3 tháng</span><h3>Tư vấn setup 3 tháng</h3><p style="text-align:left">Nếu bạn muốn có người dựng hộ, đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý.</p></article>
+  </div>
+  <div class="blog-them moi-nut" style="justify-content:center"><a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
+    <a class="nut nut-vien" href="lien-he.html">Hỏi về 30 ngày thiết kế</a></div>
+</section>
+
+<section class="phan bd hoa-van">
+  <div class="phan-dau hien">
+    <p class="mono">02 · Nơi các chủ doanh nghiệp gặp nhau</p>
     <h2>Cộng đồng Next Gen Founder, ba mức</h2>
     <p>Bạn bắt đầu ở mức hợp với vấn đề và sự sẵn sàng của mình. Grand Master Club luôn theo lời mời.</p>
   </div>
@@ -1083,13 +1121,22 @@ CHUONG_TRINH = dau_trang("Chương trình",
   <div class="blog-them"><a class="nut nut-v" href="cong-dong/">Xem Cộng đồng Next Gen Founder <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
+<section class="phan bd">
+  <div class="phan-dau hien">
+    <p class="mono">03 · Tự học lúc nào tiện</p>
+    <h2>Khóa e-learning tự học</h2>
+    <p>6 bộ khóa học Duy đã quay sẵn, phần nhiều nhất là tìm khách, bán hàng và đưa khách đang quan tâm tới quyết định mua. Thành viên Master Club mở được ngay khi tham gia.</p>
+  </div>
+  <div class="blog-them"><a class="nut nut-vien" href="master-club/">Xem Master Club <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+</section>
+
 <section class="phan tran">
   <div class="tran-nen" aria-hidden="true"><img src="img/cd-san-khau.webp" alt="" loading="lazy"></div>
   <div class="bd">
     <div class="phan-dau hien">
-      <p class="mono">Con đường 2 · Theo thư mời</p>
+      <p class="mono">Theo thư mời</p>
       <h2>Người Dẫn Đường</h2>
-      <p>Chương trình đào tạo huấn luyện viên kinh doanh (business coach). Mười hai tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn, có thương hiệu cá nhân, mô hình kinh doanh từ chuyên môn và cộng đồng đi theo bạn. Khóa đầu nhận sáu tới mười người, mời trước từ Master Club và Grand Master Club.</p>
+      <p>Chương trình chứng nhận huấn luyện viên kinh doanh. 12 tháng ngồi cạnh Duy trong những buổi coaching thật, để tự dẫn một nhóm của riêng bạn. Đợt đầu nhận 6 tới 10 người, mời trước từ Master Club và Grand Master Club.</p>
     </div>
     <div class="blog-them"><a class="nut nut-v" href="nguoi-dan-duong/">Xem chương trình Người Dẫn Đường <span class="mt" aria-hidden="true">&rarr;</span></a></div>
   </div>
@@ -1099,172 +1146,12 @@ CHUONG_TRINH = dau_trang("Chương trình",
     % (c + ('<p style="margin-top:16px;text-align:left"><a class="nut nut-v" href="master-club/">Xem chi tiết Master Club <span class="mt" aria-hidden="true">&rarr;</span></a></p>' if c[1] == "Master Club" else "",)) for c in CAP))
 
 trang("chuong-trinh.html", "Chương trình · Coach Duy Nguyễn",
-      "Hai con đường đi cùng Coach Duy Nguyễn: Cộng đồng Next Gen Founder ba mức, và Người Dẫn Đường, chương trình đào tạo huấn luyện viên kinh doanh theo thư mời.",
+      "Mô hình Phòng kinh doanh tiêu chuẩn 7M: 30 ngày thiết kế phòng kinh doanh và tư vấn setup 3 tháng. Kèm Cộng đồng Next Gen Founder 3 mức và khóa e-learning tự học.",
       CHUONG_TRINH, "chuong-trinh.html")
 print("  chuong-trinh.html")
 
-# ---------------------------------------------------------------- CHƯƠNG TRÌNH: từng trang
-for c in CT:
-    p = "../"
-    khac = [x for x in CT if x is not c and x["nhom"] == c["nhom"]][:2] or [x for x in CT if x is not c][:2]
-    if c.get("anh_tach_nen"):
-        hinh = ('<div class="vt-anh"><div class="quang" aria-hidden="true"></div>'
-                '<div class="nguoi"><img src="%s%s" alt="%s" loading="lazy" width="542" height="1038"></div>'
-                '<div class="manh" style="min-height:300px"></div></div>' % (p, c["anh"], c["alt"]))
-    else:
-        hinh = '<div class="anh anh-khung ngang"><img src="%s%s" alt="%s" loading="lazy"></div>' % (p, c["anh"], c["alt"])
-
-    # Trang không đăng giá, nên phải đăng điều kiện. Khách tự kiểm tra được mình có hợp
-    # hay chưa trước khi mất công hỏi, và bộ trả lời của AI cũng trả lời được câu
-    # "tôi có tham gia được không" thay vì im lặng vì trang không có dữ liệu nào.
-    dk_html = ""
-    if c.get("dieu_kien"):
-        muc = "".join("<li>%s</li>" % x for x in c["dieu_kien"])
-        dk_html = """<section class="phan bd hoa-van" id="dieu-kien">
-  <div class="phan-dau hien"><p class="mono">Trước khi tham gia</p><h2>Điều kiện tham gia</h2>
-  <p>Duy ghi phần này ra để bạn tự kiểm tra trước, khỏi mất một buổi trao đổi mới biết chưa hợp. Thiếu một điều kiện thì thường là chưa tới lúc, không phải là không bao giờ.</p></div>
-  <div class="hien" style="max-width:800px;margin-inline:auto">
-    <ul class="dk-ds">%s</ul>
-    <div class="ghi-mau" style="margin-top:24px"><b>Chương trình này dành cho ai</b><p>%s</p></div>
-  </div>
-</section>""" % (muc, c["cho_ai"])
-
-    gia_html = ""
-    if c.get("gia"):
-        hang = "".join('<div><b>%s</b><span><strong>%s</strong><br>%s</span></div>' % g for g in c["gia"])
-        gia_html = """<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Hai mức theo thời điểm đăng ký</h2></div>
-  <div class="hien" style="max-width:800px;margin-inline:auto">
-    <div class="bang-tt">%s</div>
-    <div class="ghi-mau" style="margin-top:26px"><b>Lưu ý</b><p>%s</p></div>
-  </div>
-</section>""" % (hang, c["gia_ghi"])
-    elif c.get("mo_ban"):
-        # Chương trình đang mở bán có trang bán riêng. Giá chỉ công bố ở đó, một
-        # nguồn duy nhất, để không bao giờ có hai con số lệch nhau trên hai trang.
-        gia_html = """<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Giá và mốc đăng ký nằm ở trang chương trình</h2>
-  <p>Chương trình này đang mở bán nên có trang riêng, ở đó ghi đủ hai mức giá, số suất của mức sớm và hạn đăng ký. Duy để giá ở một chỗ duy nhất để bạn không bao giờ đọc phải hai con số khác nhau.</p></div>
-  <div class="moi-nut hien" style="justify-content:center">
-    <a class="nut" href="%s" target="_blank" rel="noopener">Xem mức đầu tư và mốc đăng ký <span class="mt" aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>""" % TTC_LANDING
-    else:
-        gia_html = """<section class="phan bd hoa-van duoi">
-  <div class="phan-dau hien"><p class="mono">Mức đầu tư</p><h2>Trao đổi trước, nói giá sau</h2>
-  <p>Duy không đặt giá lên trang, vì phạm vi phù hợp với bạn phải được xác định trước. Trong buổi trao đổi, chúng ta làm rõ điểm nghẽn, điều kiện và phạm vi, rồi mới nói tới mức đầu tư. Nếu chưa phải lúc, Duy và đội ngũ sẽ nói rõ vì sao và chỉ bạn bước hợp hơn.</p></div>
-</section>"""
-
-    chang_html = ""
-    if c["tep"] == "trusted-founder-brand.html":
-        chang_html = """<section class="phan bd hoa-van">
-  <div class="phan-dau hien"><p class="mono">Cơ chế</p><h2>Năm chặng trong ba tuần</h2>
-  <p>Không phải năm bài giảng. Là năm chặng, mỗi chặng có kết quả riêng, và chặng sau chỉ chạy được khi chặng trước đã xong.</p></div>
-  <div class="hien">%s</div>
-</section>""" % so_do.chang_5()
-
-    if c["tep"] in ("founder-growth-system.html", "community-growth-system.html"):
-        # hai chương trình này có trang riêng nhưng đang thiết kế chi tiết, nên trang
-        # riêng chỉ ghi phần đã chốt và mời trao đổi, không có giá và không có lịch
-        dich = FGS_LANDING if c["tep"].startswith("founder") else CGS_LANDING
-        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang được thiết kế chi tiết",
-            "Hướng đi, đối tượng và kết quả nhắm tới đã rõ, còn lộ trình theo buổi và mức đầu tư thì chưa. Trang riêng ghi đủ phần đã chốt, phần chưa chốt và những việc chương trình không nhận.")
-    elif c["tep"] == "trusted-sales-team-system.html":
-        # chương trình có trang riêng nhưng chưa chốt giá và lịch, nên mời trao đổi chứ không mời đăng ký
-        dich = TSTS_LANDING
-        nhan_nut, tieu_cta, dan_cta = ("Xem trang chương trình", "Chương trình đang chuẩn bị khoá đầu",
-            "Lời hứa, phạm vi và cách chấm đã chốt, còn giá, lịch tổ chức và số ghế nhân sự thì chưa. Trang riêng ghi đủ bảy cấu phần của bản thiết kế, ba giai đoạn, bốn vai tham gia và ranh giới phạm vi.")
-    elif c.get("mo_ban"):
-        dich = TTC_LANDING or dd("lien-he.html", p)
-        nhan_nut, tieu_cta, dan_cta = ("Đăng ký khoá đầu tiên", "Khoá đầu tiên khai giảng 28 tháng 9 năm 2026",
-            "Đăng ký sớm áp dụng tới hết ngày 20 tháng 9. Nếu bạn còn phân vân mình có hợp không, làm phiếu chẩn đoán bảy phút trước, rồi quyết.")
-    else:
-        dich = CONG_DONG
-        nhan_nut, tieu_cta, dan_cta = ("Trao đổi trước khi quyết", "Bắt đầu bằng một buổi trao đổi ngắn",
-            "Chương trình này chỉ mở khi phạm vi phù hợp với điều bạn đang kẹt. Để lại vài dòng, đội ngũ Next Gen Founder sẽ trao đổi để xem có hợp không. Nếu chưa phải lúc, Duy và đội ngũ sẽ chỉ bạn bước hợp hơn.")
-    ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
-    cta_ct = """<section class="dai-vang">
-  <div class="bd moi">
-    <div class="hien">
-      <p class="mono">Bước tiếp theo</p>
-      <h2>%s</h2>
-      <p>%s</p>
-    </div>
-    <div class="moi-nut hien">
-      <a class="nut nut-toi" href="%s"%s>%s <span class="mt" aria-hidden="true">&rarr;</span></a>
-      <a class="nut nut-vien-toi" href="%s" target="_blank" rel="noopener">Phiếu chẩn đoán 7 phút</a>
-    </div>
-  </div>
-</section>""" % (tieu_cta, dan_cta, dich, ngoai, nhan_nut, PHIEU)
-
-    tt = [("Dành cho", c["cho_ai"]), ("Hình thức", c["hinh_thuc"])]
-    if c.get("khai_giang"): tt.insert(1, ("Khai giảng", c["khai_giang"]))
-    # Tên chương trình sẽ đổi thì người mua có quyền biết trước.
-    if c.get("chuyen_tiep"): tt.append(("Tên chương trình", c["chuyen_tiep"]))
-    bang_tt = "".join('<div><b>%s</b><span>%s</span></div>' % t for t in tt)
-
-    than = dau_trang(c["nang_luc"], c["ten"], c["tom"], anh="../img/dau-trang/" + ("ct-" + c["tep"].replace(".html", ".webp") if os.path.exists("img/dau-trang/ct-" + c["tep"].replace(".html", ".webp")) else "chuong-trinh-rieng.webp"), vi_tri="50% 45%") + """
-<section class="phan bd hoa-van">
-  <div class="doi-cot">
-    <div class="hien">
-      <p class="mono">Chương trình</p>
-      <h2>%s</h2>
-      <p>%s</p>
-      <div class="bang-tt" style="margin-top:26px">%s</div>
-    </div>
-    <div class="hien">%s</div>
-  </div>
-</section>
-
-<section class="phan bd hoa-van duoi" style="padding-top:0">
-  <div class="phan-dau hien"><p class="mono">Kết quả</p><h2>Học xong, bạn có gì trong tay</h2></div>
-  <div class="hien" style="max-width:800px;margin-inline:auto">%s</div>
-</section>
-
-%s
-
-%s
-
-<section class="phan tran">
-  <div class="tran-nen" aria-hidden="true"><img src="%simg/cd-dung-lop.webp" alt="" loading="lazy"></div>
-  <div class="bd">
-    <div class="phan-dau hien"><p class="mono">Ranh giới</p><h2>Điều chương trình này chưa làm được cho bạn</h2>
-    <p>Duy ghi phần này rõ như phần kết quả. Biết trước điều gì không có sẽ giúp bạn quyết đúng hơn.</p></div>
-    <div class="hien" style="max-width:800px;margin-inline:auto">%s</div>
-  </div>
-</section>
-
-%s
-
-<section class="phan bd hoa-van">
-  <div class="phan-dau hien"><p class="mono">Xem thêm</p><h2>Hai chương trình liên quan</h2></div>
-  <div class="luoi-ct tre hien">%s</div>
-</section>
-""" % (c["ten_vi"], c["luan_diem"], bang_tt, hinh,
-       dsk(c["ket_qua"]), chang_html, dk_html + gia_html, p, dsk(c["khong_gom"], khong=True),
-       cta_ct, "".join(the_ct(x, p) for x in khac))
-
-    ld_ct = {"@context":"https://schema.org","@type":"Course","name":c["ten"],
-             "description":c["tom"],"inLanguage":"vi",
-             "url":BASE+"/chuong-trinh/"+c["tep"],
-             "provider":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/"},
-             "author":{"@type":"Person","name":"Coach Duy Nguyễn","url":BASE+"/ve-toi.html"},
-             "audience":{"@type":"Audience","audienceType":c["cho_ai"]},
-             "teaches":c["ket_qua"]}
-    # coursePrerequisites là trường chuẩn của schema.org. Khai ở đây để bộ trả lời
-    # của AI đáp được câu hỏi tham gia được hay chưa mà không cần trang có giá.
-    if c.get("dieu_kien"):
-        ld_ct["coursePrerequisites"] = c["dieu_kien"]
-    ld = json.dumps(ld_ct, ensure_ascii=False)
-    trang("chuong-trinh/" + c["tep"], tieu_de_trang(c["ten"]), c["tom"], than, "chuong-trinh.html", jsonld=ld)
-    # Coach Duy chốt 12/10/2026: giữ trang để link cũ vẫn mở được, nhưng ẩn khỏi Google.
-    _d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chuong-trinh", c["tep"]); _s = open(_d, encoding="utf-8").read()
-    if 'name="robots"' not in _s:
-        open(_d, "w", encoding="utf-8").write(_s.replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"', 1))
-    print("  chuong-trinh/" + c["tep"])
-
 # ---------------------------------------------------------------- BLOG
-CHU_DE = ["Tất cả"] + sorted({b["chu_de"] for b in BAI})
+CHU_DE = ["Tất cả"] + sorted({b["chu_de"] for b in BAI_HIEN})
 chu_de_html = "".join('<button type="button" data-cd="%s"%s>%s</button>' % (t, ' class="on"' if i == 0 else '', t) for i, t in enumerate(CHU_DE))
 
 BLOG = dau_trang("Blog", "Chỗ chủ doanh nghiệp hay vấp nhất, và cách gỡ",
@@ -1282,8 +1169,8 @@ BLOG = dau_trang("Blog", "Chỗ chủ doanh nghiệp hay vấp nhất, và cách
   <div class="chu-de hien">%s</div>
   <div class="luoi-bai tre hien">%s</div>
 </section>
-""" % (BAI[0]["tieu"], the_bai_lon(BAI[0]), "".join(the_bai_nho(b) for b in BAI[1:5]),
-       len(BAI), chu_de_html, "".join(the_bai_luoi(b) for b in BAI))
+""" % (BAI_HIEN[0]["tieu"], the_bai_lon(BAI_HIEN[0]), "".join(the_bai_nho(b) for b in BAI_HIEN[1:5]),
+       len(BAI_HIEN), chu_de_html, "".join(the_bai_luoi(b) for b in BAI_HIEN))
 
 # Trang blog khai đúng danh sách bài đang có, kèm ngày và mô tả từng bài. Bộ trả
 # lời của AI đọc khối này là biết ngay trang có gì mà không phải mò từng thẻ.
@@ -1295,7 +1182,7 @@ LD_BLOG = json.dumps({"@context": "https://schema.org", "@graph": [
      "author": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/ve-toi.html"},
      "publisher": {"@type": "Person", "name": "Coach Duy Nguyễn", "url": BASE + "/"}},
     {"@type": "ItemList", "name": "Bài viết trên blog Coach Duy Nguyễn",
-     "numberOfItems": len(BAI),
+     "numberOfItems": len(BAI_HIEN),
      "itemListElement": [
         {"@type": "ListItem", "position": n + 1,
          "url": BASE + "/bai-viet/" + b["tep"],
@@ -1304,11 +1191,11 @@ LD_BLOG = json.dumps({"@context": "https://schema.org", "@graph": [
                   "datePublished": b["ngay"], "dateModified": b.get("sua", NGAY_SUA),
                   "articleSection": b["chu_de"], "inLanguage": "vi",
                   "author": {"@type": "Person", "name": "Coach Duy Nguyễn"}}}
-        for n, b in enumerate(BAI)]},
+        for n, b in enumerate(BAI_HIEN)]},
 ]}, ensure_ascii=False)
 
 trang("blog.html", "Blog của Coach Duy Nguyễn · Bài viết cho chủ doanh nghiệp",
-      "Bài viết về điểm nghẽn của người chủ, quỹ đạo niềm tin, thương hiệu cá nhân và cách biến kinh nghiệm thành hệ thống. Viết bởi Coach Duy Nguyễn.",
+      "Bài viết cho chủ doanh nghiệp về bán hàng, đội ngũ, vận hành và cách xây phòng kinh doanh không phải việc gì cũng chờ người chủ.",
       BLOG, "blog.html", jsonld=LD_BLOG)
 print("  blog.html")
 
@@ -1337,7 +1224,7 @@ HOP_TAC_GIA = """<div class="tac-gia hien">
   <div class="anh-tg"><img src="../img/cd-avatar.webp" alt="Coach Duy Nguyễn" loading="lazy" width="256" height="256"></div>
   <div>
     <b>Coach Duy Nguyễn</b>
-    <p>Người cố vấn đi cùng nhà sáng lập thế hệ mới. Sáu năm làm nội dung, hơn 20 năm bán hàng và kinh doanh, đồng hành cùng người chủ doanh nghiệp dịch vụ. Tác giả phương pháp CDN Trust Orbit và bộ bốn năng lực của nhà sáng lập thế hệ mới.</p>
+    <p>Coach Duy Nguyễn tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý.</p>
     <a class="lk-v" href="../ve-toi.html">Xem hồ sơ đầy đủ <span class="mt" aria-hidden="true">&rarr;</span></a>
   </div>
 </div>"""
@@ -1398,12 +1285,12 @@ PD_TAP = [
   tieu="Nếu phải khởi nghiệp lại, Duy sẽ làm gì trước",
   mo="Câu trả lời thẳng cho câu hỏi Duy hay được hỏi: bắt đầu lại từ đầu vào lúc này thì đi đường nào trước, và bỏ hẳn bước nào.",
   lydo="Nghe để xem lại thứ tự ưu tiên của chính mình, nhất là khi bạn đang tính làm lại một mảng.",
-  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="yFz8MHt20vQ", muc=1,
   tieu="Hai chữ giữ việc kinh doanh vững trong năm khó",
   mo="Hai từ khoá Duy chọn cho năm 2026, và cách chúng đổi tiêu chí bạn dùng để chọn việc đáng làm.",
   lydo="Tập ngắn, nhưng đủ để bạn kiểm lại kế hoạch năm của mình trong một buổi cà phê.",
-  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="yh_u6x1-qCo", muc=1,
   tieu="Bốn bước đi lên từ hai bàn tay trắng",
   mo="Con đường người mới hay bỏ qua vì nóng vội, kể theo đúng thứ tự Duy đã đi từ lúc chưa có gì trong tay.",
@@ -1413,14 +1300,14 @@ PD_TAP = [
   tieu="Bỏ một thói quen này trước khi mong bứt doanh số",
   mo="Một thói quen tư vấn rất phổ biến đang âm thầm phá buổi bán hàng, và cách thay nó bằng một việc làm được ngay.",
   lydo="Đối chiếu được ngay với buổi tư vấn gần nhất của bạn, không cần chờ.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
 
  # ---- Chuyên mục 02 · Bán hàng và phòng kinh doanh
  dict(yt="eGQbItur-co", muc=2,
   tieu="Càng bán nhiều thứ, khách càng khó mua",
   mo="Vì sao bày ra nhiều lựa chọn lại làm khách chậm quyết định, và cách thu hẹp lời chào để đúng người thấy đúng thứ mình cần.",
   lydo="Nếu bạn đang nghĩ thêm gói, thêm dịch vụ là thêm doanh thu, tập này cho bạn thấy chiều ngược lại trước khi bạn tốn tiền vào nó.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="7aCWr74vWkI", muc=2,
   tieu="Không phải do giá. Đây là lý do khách rời bỏ bạn",
   mo="Khách nói đắt rồi đi, nhưng phần lớn không đi vì giá. Tập này lần ngược về chỗ niềm tin bị hụt trong buổi tư vấn, trước cả khi con số được nói ra.",
@@ -1435,17 +1322,17 @@ PD_TAP = [
   tieu="Giá có thật là điều khách quan tâm nhất?",
   mo="Khách nói đắt, nhưng hành vi mua lại nói một điều khác. Tập này tách hai chuyện đó ra để bạn nhìn cho rõ.",
   lydo="Giúp bạn thôi sửa giá trong khi chỗ hỏng nằm ở niềm tin.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="r_Hj2t1mS8M", muc=2,
   tieu="Ba yếu tố quyết định việc khách xuống tiền",
   mo="Ba thứ chạy trong đầu khách trước khi quyết, và thứ tự chúng xuất hiện trong buổi tư vấn.",
   lydo="Nắm được thứ tự này thì buổi tư vấn đi đúng trình tự, không đốt cháy giai đoạn.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="bANYQ5imP3Y", muc=2,
   tieu="Tâm lý mua của khách hàng cao cấp",
   mo="Người trả tiền lớn quyết định theo cách khác hẳn người mua phổ thông, mà phần lớn người bán chưa từng được dạy điều đó.",
   lydo="Cần cho ai đang nâng phân khúc và thấy cách bán cũ không còn chạy.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="2VRKnLdYFuU", muc=2,
   tieu="Làm chủ cuộc trò chuyện với khách cao cấp",
   mo="Cách điều hành buổi nói chuyện mà không lấn át, để khách thấy mình được dẫn dắt chứ không bị ép.",
@@ -1455,7 +1342,7 @@ PD_TAP = [
   tieu="Bán giá cao giữa thị trường biến động",
   mo="Ghi từ giai đoạn thị trường khó, nói về việc chọn khách và giữ chuẩn khi xung quanh ai cũng vội hạ giá.",
   lydo="Ví dụ lấy từ bất động sản, nhưng cách nghĩ dùng được cho mọi ngành bán giá cao.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="iej3kmn7l1Q", muc=2,
   tieu="Vượt qua giai đoạn thị trường trầm lắng",
   mo="Khi thị trường chậm lại, việc gì đáng làm và việc gì chỉ đốt sức. Tập này xếp lại danh sách việc của người bán trong mùa khó.",
@@ -1465,66 +1352,66 @@ PD_TAP = [
   tieu="Ba bước dẫn một buổi bán cho bất kỳ khách nào",
   mo="Một khung ba bước đơn giản để buổi tư vấn nào cũng có phần mở đầu, phần dẫn chuyện chính, và phần chốt lại rõ ràng, thay vì trôi theo khách.",
   lydo="Dễ áp nhất trong các tập, dùng được ngay buổi hẹn kế tiếp.",
-  cta_nhan="Xem Trusted Sales Team System", cta="chuong-trinh/trusted-sales-team-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
 
  # ---- Chuyên mục 03 · Thương hiệu của người sáng lập
  dict(yt="s1UF9mSxM0s", muc=3,
   tieu="Nâng vị thế chuyên gia trong mắt khách",
   mo="Vị thế không đến từ chức danh tự xưng, mà từ những dấu hiệu rất cụ thể khách đọc được khi làm việc với bạn. Tập này liệt kê các dấu hiệu đó.",
   lydo="Bạn kiểm tra được ngay mình đang phát ra dấu hiệu nào, thiếu dấu hiệu nào.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="sBaDKQOxRZw", muc=3,
   tieu="Vì sao nói nhiều làm mất vị thế",
   mo="Người bán hay lấp khoảng lặng bằng lời, và mỗi câu thừa là một lần tự hạ giá mình. Tập này nói về sức nặng của việc nói ít lại.",
   lydo="Nghe xong bạn sẽ để ý được chính mình trong buổi nói chuyện kế tiếp.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="Jgc233EB_H4", muc=3,
   tieu="Nói ít lại để được lắng nghe nhiều hơn",
   mo="Phần tiếp của chủ đề vị thế trong lời nói: cách đặt câu hỏi và giữ khoảng lặng để lời mình nói ra có trọng lượng.",
   lydo="Xem cùng tập trên thành một cặp: một tập chỉ ra vấn đề, một tập chỉ cách sửa.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="CIyxENto-7Y", muc=3,
   tieu="Khách khó tính, hay mình chưa biết cách hiện diện?",
   mo="Nhiều người than gặp toàn khách khó. Tập này lật lại: cách bạn xuất hiện đang mời kiểu khách nào tới, và đổi cách hiện diện thì tệp khách đổi theo.",
   lydo="Đáng xem nếu bạn thấy mình cứ gặp mãi một kiểu khách mệt mỏi.",
-  cta_nhan="Làm phiếu chẩn đoán 7 phút", cta=PHIEU),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="ToQMhBlWhyw", muc=3,
   tieu="Gây ấn tượng với khách cao cấp ngay lần đầu",
   mo="Ấn tượng đầu với người có tiền không nằm ở bộ vest hay lời chào khéo, mà ở vài chi tiết chuẩn bị mà rất ít người làm.",
   lydo="Danh sách chi tiết đủ cụ thể để soát lại trước buổi gặp quan trọng.",
-  cta_nhan="Xem Trusted Founder Brand Challenge", cta="founder-brand/"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
 
  # ---- Chuyên mục 04 · Hệ thống tăng trưởng
  dict(yt="IUNdDgUxGWM", muc=4,
   tieu="Mười bước biến doanh nghiệp thành cỗ máy bán hàng",
   mo="Bức tranh đầy đủ nhất Duy từng trình bày về một hệ thống bán hàng chạy được mà không cần người chủ đứng cạnh từng bước.",
   lydo="Tập dài và nặng nhất danh sách này, xem khi bạn thật sự định xây.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="r_yjjvexSVA", muc=4,
   tieu="Tăng tỷ lệ chốt sau một tuần: sửa quy trình, không sửa người",
   mo="Chỗ tăng nhanh nhất không nằm ở việc ép đội ngũ cố thêm, mà ở vài điểm hở trong quy trình mà tuần nào cũng rò khách.",
   lydo="Có việc làm được trong bảy ngày, đo được bằng số.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="MOCQeUnyFak", muc=4,
   tieu="Kỹ năng lõi của một người bán chuyên nghiệp",
   mo="Nếu chỉ được luyện cho đội ngũ một kỹ năng, Duy chọn kỹ năng này. Tập này giải thích vì sao và luyện nó thế nào.",
   lydo="Dùng làm bài mở đầu khi đào tạo người mới trong đội ngũ.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="7lZvXC4baY8", muc=4,
   tieu="30 phút luyện nhận diện khách tiềm năng",
   mo="Một bài luyện ngắn giúp đội ngũ phân biệt người hỏi chơi với người sắp mua, để dồn giờ vào đúng khách.",
   lydo="Cho cả đội ngũ xem chung được, có bài tập làm ngay trong buổi họp.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="5vLoXS0WjHw", muc=4,
   tieu="Bán thêm đúng thời điểm mà không làm hỏng quan hệ",
   mo="Bán thêm sai lúc thì mất cả đơn đầu. Tập này chỉ ra thời điểm đúng và câu dẫn tự nhiên để giá trị đơn tăng mà khách vẫn thoải mái.",
   lydo="Một quy trình nhỏ nhưng cộng thẳng vào doanh thu mỗi tháng.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
  dict(yt="qqbdg4g7HUc", muc=4,
   tieu="Thiết kế trải nghiệm cho khách hàng giá cao",
   mo="Khách trả giá cao đang mua cả hành trình chứ không chỉ món hàng. Tập này đi qua từng chặng của hành trình đó và chỗ hay bị bỏ quên.",
   lydo="Xem để viết lại hành trình khách của chính bạn thành các bước giao được cho đội ngũ.",
-  cta_nhan="Xem Founder Growth System", cta="chuong-trinh/founder-growth-system.html"),
+  cta_nhan="Làm phiếu tự chấm phòng kinh doanh", cta=PHIEU),
 
  # ---- Chuyên mục 05 · Kiến tạo cộng đồng
  # Kênh chưa có video đúng chủ đề này. Tạm xếp câu chuyện học viên vào đây,
@@ -1551,34 +1438,24 @@ CHU_DE_MUC = {"Điểm nghẽn của người sáng lập": 1, "Bán hàng và p
               "Thương hiệu của người sáng lập": 3, "Hệ thống tăng trưởng": 4,
               "Kiến tạo cộng đồng": 5, "AI cho người chủ": 6}
 
-# Mỗi nhóm nội dung dẫn sang đúng một chương trình. Trước đây người đọc hết một
-# bài thì không có lối đi tiếp nào ngoài trang liên hệ chung. Nhóm cửa vào dẫn sang
-# phiếu chẩn đoán vì người ở đó chưa biết mình kẹt chỗ nào. Nhóm AI không có chương
-# trình riêng nên dẫn sang trang phương pháp, nơi có đủ bốn năng lực.
-CHU_DE_CT = {
- "Điểm nghẽn của người sáng lập": ("Chưa rõ mình đang kẹt ở đâu",
-   "Làm phiếu chẩn đoán bảy phút", PHIEU),
- "Thương hiệu của người sáng lập": ("Chương trình của trụ cột này",
-   "Trusted Founder Brand Challenge", TTC_LANDING),
- "Bán hàng và phòng kinh doanh": ("Chương trình của trụ cột này",
-   "Trusted Sales Team System", TSTS_LANDING),
- "Hệ thống tăng trưởng": ("Chương trình của trụ cột này",
-   "Founder Growth System", FGS_LANDING),
- "Kiến tạo cộng đồng": ("Chương trình của trụ cột này",
-   "Community Growth System", CGS_LANDING),
+# Cuối mỗi bài: một đoạn nối về phòng kinh doanh theo chuyên mục, nút chính phiếu tự chấm 7M,
+# nút phụ Cộng đồng Next Gen Founder (bản chốt rà soát D116, mục A3 và A4, ngày 22/11/2026).
+CHU_DE_NOI = {
+ "Điểm nghẽn của người sáng lập": "Phần lớn điểm nghẽn của người chủ quay về một chỗ: việc bán hàng vẫn phải đi qua tay mình. Muốn biết phòng kinh doanh của bạn đang kẹt ở phần nào, bạn làm phiếu tự chấm 28 câu, khoảng 10 phút.",
+ "Bán hàng và phòng kinh doanh": "Chuyện trong bài này là một phần việc của phòng kinh doanh. Khi phòng kinh doanh có quy trình, có chỉ số và có người quản lý, nhân viên tự xử lý được mà không phải chờ người chủ. Bạn làm phiếu tự chấm để biết phòng kinh doanh của mình đang yếu ở phần nào.",
+ "Thương hiệu của người sáng lập": "Uy tín của người chủ là thứ đưa khách tới. Nhưng khách tới rồi thì phòng kinh doanh phải bán được, không phải cuộc tư vấn nào cũng chờ người chủ ra mặt. Bạn làm phiếu tự chấm để xem phòng kinh doanh của mình đã nhận được phần việc đó chưa.",
+ "Hệ thống tăng trưởng": "Doanh nghiệp tăng trưởng bền khi doanh số không còn phụ thuộc vào một người. Chỗ đầu tiên cần có quy trình, chỉ số và người quản lý là phòng kinh doanh. Bạn làm phiếu tự chấm để biết nên bắt đầu từ phần nào.",
+ "Kiến tạo cộng đồng": "Cộng đồng giúp khách quay lại và giới thiệu thêm người. Nhưng người được giới thiệu tới vẫn cần một phòng kinh doanh biết tiếp và tư vấn tới nơi. Bạn làm phiếu tự chấm để xem phần đó đang ở mức nào.",
+ "AI cho người chủ": "AI làm nhanh những việc đã rõ cách làm. Phòng kinh doanh chưa có quy trình thì AI chỉ làm nhanh thêm sự lộn xộn. Bạn làm phiếu tự chấm trước để biết phần nào trong phòng kinh doanh đã đủ rõ để giao cho AI.",
 }
 
 def khoi_chuong_trinh(b, p=""):
-    """Một dòng dẫn từ nhóm nội dung sang chương trình tương ứng."""
-    m = CHU_DE_CT.get(b["chu_de"])
-    if not m:
-        return ('<div class="di-ct hien"><span>Chuyên mục này áp dụng vào cả bốn năng lực</span>'
-                '<a href="%sphuong-phap.html">Xem bốn năng lực <span class="mt" aria-hidden="true">&rarr;</span></a></div>' % p)
-    nhan, ten, dich = m
-    ngoai = ' target="_blank" rel="noopener"' if dich.startswith("http") else ""
-    return ('<div class="di-ct hien"><span>%s</span>'
-            '<a href="%s"%s>%s <span class="mt" aria-hidden="true">&rarr;</span></a></div>'
-            % (nhan, dich, ngoai, ten))
+    """Khối nối cuối bài về phòng kinh doanh và phiếu tự chấm 7M."""
+    noi = CHU_DE_NOI.get(b["chu_de"], CHU_DE_NOI["Điểm nghẽn của người sáng lập"])
+    return ('<div class="di-ct di-pkd hien"><p>%s</p><div class="moi-nut">'
+            '<a class="nut nut-v" href="%s">Làm phiếu tự chấm <span class="mt" aria-hidden="true">&rarr;</span></a>'
+            '<a class="nut nut-vien" href="%s">Vào Cộng đồng Next Gen Founder</a></div></div>'
+            % (noi, PHIEU, CONG_DONG))
 
 def khoi_podcast(b, p=""):
     muc = CHU_DE_MUC.get(b["chu_de"], 1)
@@ -1627,11 +1504,11 @@ for i, b in enumerate(BAI):
     bs = BO_SUNG.get(b["tep"], {})
     # Ba bài cho kín hàng lưới ba cột. Thiếu bài cùng chủ đề thì lấy bù bài
     # mới nhất ở chủ đề khác, để hàng không bị hụt ô.
-    khac = [x for x in BAI if x is not b and x["chu_de"] == b["chu_de"]][:3]
+    khac = [x for x in BAI_HIEN if x is not b and x["chu_de"] == b["chu_de"]][:3]
     if len(khac) < 3:
-        khac += [x for x in BAI if x is not b and x not in khac][:3 - len(khac)]
+        khac += [x for x in BAI_HIEN if x is not b and x not in khac][:3 - len(khac)]
     if len(khac) < 2:
-        khac += [x for x in BAI if x is not b and x not in khac][:2 - len(khac)]
+        khac += [x for x in BAI_HIEN if x is not b and x not in khac][:2 - len(khac)]
     faq = bs.get("faq", [])
     ml, than_bai = muc_luc(b["than"])
     tra_loi = ('<div class="tra-loi"><b>Tóm tắt</b><p>%s</p></div>' % bs["tra_loi"]) if bs.get("tra_loi") else ""
@@ -1688,6 +1565,9 @@ for i, b in enumerate(BAI):
        ngay_sua, ngay_sua_viet, p, khoi_podcast(b, p),
        "".join(the_bai_luoi(x, p) for x in khac))
     trang("bai-viet/" + b["tep"], tieu_de_trang(b.get("tieu_seo") or b["tieu"]), b["mo"], than, "blog.html", jsonld=ld, lop_body="giay")
+    if b["tep"] in AN_BAI:
+        _d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bai-viet", b["tep"]); _s = open(_d, encoding="utf-8").read()
+        open(_d, "w", encoding="utf-8").write(_s.replace('<link rel="canonical"', '<meta name="robots" content="noindex, follow">\n<link rel="canonical"', 1))
     print("  bai-viet/" + b["tep"])
 
 # ---------------------------------------------------------------- SÁCH
@@ -2112,8 +1992,8 @@ KHU_BAN_HANG = """
 TUONG_VIDEO = """
 <section class="phan bd phan-sang" id="tuong-video">
   <div class="phan-dau hien">
-    <p class="mono">Video học viên</p>
-    <h2>Nghe chính học viên kể lại</h2>
+    <p class="mono">Video khách hàng</p>
+    <h2>Nghe chính khách hàng kể lại</h2>
     <p>Bấm vào ảnh để xem video.</p>
   </div>
   <div class="vd-ke">%s</div>
@@ -2139,8 +2019,8 @@ ANH_TIN_NHAN = [
 KHU_ANH = """
 <section class="phan bd hoa-van duoi">
   <div class="phan-dau hien">
-    <p class="mono">Tin nhắn học viên</p>
-    <h2>Tin nhắn học viên gửi lại cho Duy</h2>
+    <p class="mono">Tin nhắn khách hàng</p>
+    <h2>Tin nhắn khách hàng gửi lại cho Duy</h2>
   </div>
   <div class="anh-luoi">%s</div>
   <dialog class="anh-phong" aria-label="Ảnh tin nhắn phóng to"><button class="ch-dong" type="button" aria-label="Đóng">×</button><img alt=""></dialog>
@@ -2308,6 +2188,7 @@ def trang_ebook(ma):
         <h2>E&#8209;book của bạn</h2>
         <a class="nut nut-v" id="eb-nut-tai" href="../tai-lieu/%(pdf)s" download>Tải e&#8209;book PDF, %(st)d trang <span class="mt" aria-hidden="true">&darr;</span></a>
         %(cc_khoi)s
+        <p class="eb-cc-dan">Muốn biết phòng kinh doanh của bạn đang yếu ở phần nào: <a href="../danh-gia-phong-kinh-doanh/">làm phiếu tự chấm, 28 câu, khoảng 10 phút</a>.</p>
       </div>
     </div>
   </div>
@@ -2466,95 +2347,25 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "kenh-youtube.html
 <script>location.replace('podcast.html');</script></body></html>""" % BASE)
 print("  kenh-youtube.html (chuyen huong)")
 
-# Chương trình đổi tên ngày 24/08/2026 nên trang đổi theo. Địa chỉ cũ đã được chia
-# sẻ ra ngoài, giữ lại một trang chuyển hướng để không gãy liên kết và không mất
-# thứ hạng đã có. Đặt noindex để máy tìm kiếm dồn về địa chỉ mới.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "the-trusted-creator.html"), "w", encoding="utf-8").write(
+# Bản chốt rà soát D116 ngày 22/11/2026: 14 trang trong chuong-trinh/ chuyển hướng về trang
+# tổng (mục D6, thôi dựng từ chuong_trinh.py); 4 trang chương trình cũ chuyển hướng về phiếu
+# tự chấm 7M (mục D5, landing.py ngừng chạy). Giữ địa chỉ để liên kết đã chia sẻ không gãy.
+def chuyen_huong(tep, dich, ten):
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), tep), "w", encoding="utf-8").write(
 """<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Trusted Founder Brand Challenge</title>
-<link rel="canonical" href="%s/founder-brand/">
+<title>%s</title>
+<link rel="canonical" href="%s">
 <meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=../founder-brand/">
+<meta http-equiv="refresh" content="0; url=%s">
 </head>
-<body><p>Chương trình này đã đổi tên thành
-<a href="../founder-brand/">Trusted Founder Brand Challenge</a>.</p>
-<script>location.replace('../founder-brand/');</script></body></html>""" % BASE)
-print("  chuong-trinh/the-trusted-creator.html (chuyen huong)")
-
-# Chương trình đổi tên ngày 30/08/2026 theo quyết định D31. Giữ trang chuyển hướng
-# ở địa chỉ cũ để không gãy liên kết đã chia sẻ.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "the-trusted-advisor.html"), "w", encoding="utf-8").write(
-"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Trusted Sales Team System</title>
-<link rel="canonical" href="%s/chuong-trinh/trusted-sales-team-system.html">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=trusted-sales-team-system.html">
-</head>
-<body><p>Chương trình này đã đổi tên thành
-<a href="trusted-sales-team-system.html">Trusted Sales Team System</a>.</p>
-<script>location.replace('trusted-sales-team-system.html');</script></body></html>""" % BASE)
-print("  chuong-trinh/the-trusted-advisor.html (chuyen huong)")
-
-# Ba mức cộng đồng đổi tên ngày 08/10/2026 theo DEC-C03: Thành viên, Pro, Diamond.
-# Cộng đồng Mở cũ nay là mức Thành viên (D84). Giữ địa chỉ cũ chuyển hướng sang trang mới.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "cong-dong-mo.html"), "w", encoding="utf-8").write(
-"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Thành viên Next Gen Founder</title>
-<link rel="canonical" href="%s/chuong-trinh/cong-dong-thanh-vien.html">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=cong-dong-thanh-vien.html">
-</head>
-<body><p>Cộng đồng Mở nay là
-<a href="cong-dong-thanh-vien.html">mức Thành viên của Next Gen Founder</a>.</p>
-<script>location.replace('cong-dong-thanh-vien.html');</script></body></html>""" % BASE)
-print("  chuong-trinh/cong-dong-mo.html (chuyen huong)")
-
-# D84 ngày 22/10/2026: Cộng đồng Pro đổi tên thành Master Club, trang chi tiết ở /master-club/.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "cong-dong-pro.html"), "w", encoding="utf-8").write(
-"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Master Club Next Gen Founder</title>
-<link rel="canonical" href="%s/master-club/">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=../master-club/">
-</head>
-<body><p>Cộng đồng Pro nay là
-<a href="../master-club/">Master Club Next Gen Founder</a>.</p>
-<script>location.replace('../master-club/');</script></body></html>""" % BASE)
-print("  chuong-trinh/cong-dong-pro.html (chuyen huong)")
-
-# Coach Duy chốt 23/10/2026: Diamond Founder Club đổi tên thành Grand Master Club.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "diamond-founder-club.html"), "w", encoding="utf-8").write(
-"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Grand Master Club Next Gen Founder</title>
-<link rel="canonical" href="%s/chuong-trinh/grand-master-club.html">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=grand-master-club.html">
-</head>
-<body><p>Diamond Founder Club nay là
-<a href="grand-master-club.html">Grand Master Club Next Gen Founder</a>.</p>
-<script>location.replace('grand-master-club.html');</script></body></html>""" % BASE)
-print("  chuong-trinh/diamond-founder-club.html (chuyen huong)")
-
-# Trang chương trình trong chuong-trinh/ chỉ là bản tạm. Trang bán ở /founder-brand/
-# mới là trang chính, nên bản tạm chuyển hướng sang đó và đặt noindex để máy tìm
-# kiếm dồn thứ hạng về một địa chỉ duy nhất.
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                  "chuong-trinh", "trusted-founder-brand.html"), "w", encoding="utf-8").write(
-"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
-<title>Trusted Founder Brand Challenge</title>
-<link rel="canonical" href="%s/founder-brand/">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=../founder-brand/">
-</head>
-<body><p>Trang chương trình đã chuyển sang
-<a href="../founder-brand/">Trusted Founder Brand Challenge</a>.</p>
-<script>location.replace('../founder-brand/');</script></body></html>""" % BASE)
-print("  chuong-trinh/trusted-founder-brand.html (chuyen huong ve /founder-brand/)")
+<body><p>Trang này đã chuyển sang <a href="%s">%s</a>.</p>
+<script>location.replace('%s');</script></body></html>""" % (ten, BASE + "/" + dich.lstrip("./"), dich, dich, ten, dich))
+for _t in sorted(os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "chuong-trinh"))):
+    if _t.endswith(".html"):
+        chuyen_huong("chuong-trinh/" + _t, "../chuong-trinh.html", "Chương trình của Coach Duy Nguyễn")
+for _d in ("founder-brand", "sales-team", "founder-growth", "community-growth"):
+    chuyen_huong(_d + "/index.html", "../danh-gia-phong-kinh-doanh/", "Phiếu tự chấm phòng kinh doanh")
+print("  chuong-trinh/*.html, founder-brand, sales-team, founder-growth, community-growth (chuyen huong)")
 
 # ---------------------------------------------------------------- LIÊN HỆ
 LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
@@ -2567,9 +2378,9 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
       <a class="lk-v" href="tham-gia/">Đăng ký tham gia <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
-      <h3>Chưa rõ mình đang kẹt ở đâu</h3>
-      <p>Làm phiếu chẩn đoán bảy phút trước. Bạn sẽ tự nhìn ra điểm nghẽn đang chặn mình nhiều nhất, trước khi nói chuyện với bất kỳ ai, kể cả Duy.</p>
-      <a class="lk-v" href="{PHIEU}" target="_blank" rel="noopener">Làm phiếu chẩn đoán <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <h3>Chưa rõ phòng kinh doanh đang kẹt ở đâu</h3>
+      <p>Làm phiếu tự chấm phòng kinh doanh trước, 28 câu, khoảng 10 phút. Bạn sẽ thấy phần nào trong 7 phần của phòng kinh doanh đang yếu nhất, trước khi nói chuyện với bất kỳ ai, kể cả Duy.</p>
+      <a class="lk-v" href="{PHIEU}">Làm phiếu tự chấm <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
       <h3>Mời nói chuyện hoặc hợp tác truyền thông</h3>
@@ -2577,9 +2388,9 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
       <a class="lk-v" href="mailto:{EMAIL}">{EMAIL} <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
-      <h3>Cố vấn riêng và giải pháp doanh nghiệp</h3>
-      <p>Đây là hợp đồng riêng, Duy nhận rất giới hạn và chỉ mở sau khi đã trao đổi đủ. Bắt đầu bằng việc đăng ký tham gia cộng đồng, không bắt đầu bằng một cuộc gọi bán hàng.</p>
-      <a class="lk-v" href="chuong-trinh/co-van-rieng.html">Xem phạm vi cố vấn riêng <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <h3>Tư vấn phòng kinh doanh cho doanh nghiệp</h3>
+      <p>Bắt đầu bằng phiếu tự chấm phòng kinh doanh. Làm xong, bạn nhắn Zalo cho đội ngũ Next Gen Founder để hẹn buổi trao đổi về 30 ngày thiết kế phòng kinh doanh hoặc tư vấn setup 3 tháng.</p>
+      <a class="lk-v" href="https://zalo.me/0348264003" target="_blank" rel="noopener">Nhắn Zalo 0348&nbsp;264&nbsp;003 <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
   <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
@@ -2600,7 +2411,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
 """.replace("{CONG_DONG}", CONG_DONG).replace("{PHIEU}", PHIEU).replace("{EMAIL}", EMAIL).replace("{SO_LIEU}", so_lieu_html)
 
 trang("lien-he.html", "Liên hệ Coach Duy Nguyễn",
-      "Bốn cửa liên hệ với Coach Duy Nguyễn: tham gia cộng đồng, làm phiếu chẩn đoán, mời nói chuyện, và cố vấn riêng.",
+      "Bốn cửa liên hệ với Coach Duy Nguyễn: tham gia cộng đồng, làm phiếu tự chấm phòng kinh doanh, mời nói chuyện, và tư vấn phòng kinh doanh cho doanh nghiệp.",
       LIEN_HE, "lien-he.html")
 print("  lien-he.html")
 
@@ -2611,14 +2422,14 @@ BON04 = dau_trang("Không tìm thấy", "Không tìm thấy trang này",
   <div class="luoi c3 tre hien">
     <article class="the"><h3>Trang chủ</h3><p>Bắt đầu lại từ đầu.</p>
       <p style="margin-top:14px"><a class="lk-v" href="index.html">Về trang chủ <span class="mt" aria-hidden="true">&rarr;</span></a></p></article>
-    <article class="the"><h3>Blog</h3><p>Mười bài viết về điểm nghẽn của người chủ doanh nghiệp.</p>
+    <article class="the"><h3>Blog</h3><p>{SO_BAI} bài viết cho chủ doanh nghiệp về bán hàng, đội ngũ và vận hành.</p>
       <p style="margin-top:14px"><a class="lk-v" href="blog.html">Đọc blog <span class="mt" aria-hidden="true">&rarr;</span></a></p></article>
-    <article class="the"><h3>Chương trình</h3><p>Hệ sinh thái Next Gen Founder, tám chương trình.</p>
+    <article class="the"><h3>Chương trình</h3><p>Mô hình Phòng kinh doanh tiêu chuẩn 7M và Cộng đồng Next Gen Founder.</p>
       <p style="margin-top:14px"><a class="lk-v" href="chuong-trinh.html">Xem chương trình <span class="mt" aria-hidden="true">&rarr;</span></a></p></article>
   </div>
-</section>"""
+</section>""".replace("{SO_BAI}", str(len(BAI_HIEN)))
 trang("404.html", "Không tìm thấy trang · Coach Duy Nguyễn",
-      "Trang bạn tìm không có ở đây. Xem trang chủ, blog hoặc danh sách chương trình.", BON04, "index.html")
+      "Trang bạn tìm không có ở đây. Xem trang chủ, blog hoặc trang chương trình.", BON04, "index.html")
 print("  404.html")
 
 # ---------------------------------------------------------------- sitemap, robots, llms
@@ -2627,7 +2438,7 @@ URLS = ["", "cong-dong/", "master-club/", "thanh-vien/", "ve-toi.html", "chuong-
         "cong-cu/tu-kiem-ba-diem-cham.html", "doi-ngu-chuyen-gia.html"] \
      + ["cong-cu/%s.html" % c["ma"] for c in cong_cu_ai.DS] \
      + ["nguoi-dan-duong/"] \
-     + ["bai-viet/" + b["tep"] for b in BAI]
+     + ["bai-viet/" + b["tep"] for b in BAI_HIEN] + ["danh-gia-phong-kinh-doanh/"]
 # Trang tạm chuong-trinh/trusted-founder-brand.html đã thành trang chuyển hướng
 # noindex, nên bỏ khỏi sơ đồ trang và khai founder-brand/ thay vào. Khai một địa
 # chỉ chuyển hướng trong sơ đồ trang là tự tay gửi máy tìm kiếm tới ngõ cụt.
@@ -2647,75 +2458,42 @@ open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml"), "w
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "robots.txt"), "w", encoding="utf-8").write(
     "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE)
 
-# Tệp điều kiện tham gia, viết cho máy đọc. Trang không đăng giá, nên nếu không có
-# tệp này thì trợ lý AI được hỏi "tôi tham gia được chương trình nào" sẽ không có
-# gì để trả lời. Đây là bản gọn của đúng những gì đã in trên từng trang chương
-# trình, không phải nội dung riêng viết cho máy.
-dk = ["# Điều kiện tham gia các chương trình của Coach Duy Nguyễn", "",
-      "> Cập nhật %s. Trang không công khai giá. Mức đầu tư chỉ nói sau một buổi "
-      "trao đổi ngắn, vì phạm vi phù hợp với từng người phải được xác định trước. "
-      "Phần dưới đây là điều kiện tham gia, đủ để bạn tự kiểm tra xem mình có hợp hay chưa." % NGAY_SUA, ""]
-for c in CT:
-    ten = c["ten"].replace("&nbsp;", " ")
-    dk.append("## %s" % ten)
-    dk.append("")
-    dk.append("- Trang: %s/chuong-trinh/%s" % (BASE, c["tep"]))
-    dk.append("- Dành cho: %s" % c["cho_ai"])
-    dk.append("- Hình thức: %s" % c["hinh_thuc"])
-    if c.get("khai_giang"):
-        dk.append("- Thời điểm: %s" % c["khai_giang"])
-    dk.append("- Điều kiện tham gia:")
-    for x in c.get("dieu_kien", []):
-        dk.append("  - %s" % x)
-    if c.get("mo_ban"):
-        dk.append("- Giá: công bố đầy đủ trên trang chương trình %s" % TTC_LANDING)
-    else:
-        dk.append("- Giá: không công khai, trao đổi trước rồi mới nói mức đầu tư")
-    dk.append("")
-dk += ["## Cách bắt đầu", "",
-       "- Chưa rõ mình kẹt ở đâu: làm Phiếu chẩn đoán 7 phút tại %s" % PHIEU,
-       "- Muốn tìm hiểu trước khi cam kết: đăng ký tham gia Cộng đồng Next Gen Founder tại %s/tham-gia/" % BASE,
-       "- Muốn trao đổi trực tiếp: %s/lien-he.html" % BASE, ""]
-open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dieu-kien-tham-gia.md"),
-     "w", encoding="utf-8").write("\n".join(dk))
+# dieu-kien-tham-gia.md đã gỡ theo bản chốt rà soát D116 mục A10 (22/11/2026).
 
 # GitHub Pages đọc tệp này để biết tên miền riêng. Sinh cùng lúc với robots.txt
 # nên không bao giờ bị mất khi dựng lại trang.
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w",
      encoding="utf-8").write(BASE.split("//")[1] + "\n")
 
+# Viết lại theo D116, bản chốt rà soát mục A9 ngày 22/11/2026: 7M là giải pháp duy nhất,
+# cộng đồng là tầng riêng, rồi tới công cụ và blog. Không liệt kê chương trình cũ.
 llms = """# Coach Duy Nguyễn
 
-> Người cố vấn đi cùng nhà sáng lập thế hệ mới. Giúp người chủ biến uy tín cá nhân thành một hệ thống mà đội ngũ có thể cùng vận hành. Phương pháp riêng: bốn năng lực của nhà sáng lập thế hệ mới và CDN Trust Orbit, hệ thống quỹ đạo niềm tin.
+> Coach Duy Nguyễn tư vấn và đồng hành cùng các chủ doanh nghiệp xây dựng một phòng kinh doanh tiêu chuẩn, có quy trình, có chỉ số và có người quản lý, để nhân viên kinh doanh bán được hàng mà không phải việc gì cũng chờ người chủ.
 
-## Trang chính
-- [Về Duy](%(b)s/ve-toi.html): nói với ai, nhìn thấy vấn đề gì, số liệu công khai và giới hạn của nó
-- [Phương pháp](%(b)s/phuong-phap.html): bốn năng lực, năm việc của người cố vấn, CDN Trust Orbit
-- [Chương trình](%(b)s/chuong-trinh.html): hệ sinh thái Next Gen Founder, tám chương trình
-- [Điều kiện tham gia](%(b)s/dieu-kien-tham-gia.md): điều kiện của từng chương trình, dạng máy đọc được. Trang không công khai giá, mức đầu tư chỉ nói sau một buổi trao đổi.
-- [Trusted Founder Brand Challenge, trang chương trình](%(b)s/founder-brand/): thử thách ba tuần xây thương hiệu nhà sáng lập được tin cậy, có giá và mốc đăng ký
-- [Trusted Sales Team System, trang chương trình](%(b)s/sales-team/): người chủ xây Bản thiết kế Hệ thống Phòng Kinh doanh phiên bản 1 trong hai ngày tập trung và khoảng ba mươi ngày hoàn thiện, đang chuẩn bị khoá đầu, chưa có giá và chưa có lịch
-- [Founder Growth System, trang chương trình](%(b)s/founder-growth/): đưa một luồng công việc ra khỏi đầu người chủ, bản mẫu, chưa có lịch và chưa có giá
-- [Community Growth System, trang chương trình](%(b)s/community-growth/): thiết kế cộng đồng mà thành viên tạo giá trị cho nhau, bản mẫu, chưa có lịch và chưa có giá
-- [Blog](%(b)s/blog.html): %(n)d bài viết cho chủ doanh nghiệp
-- [Công cụ và tài liệu](%(b)s/cong-cu/): Bán Bằng Vị Thế, đang viết, dự kiến quý 4 năm 2026
-- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, sáu chuyên mục, {SO_YT} người đăng ký
-- [Cộng đồng Next Gen Founder](%(cd)s): cộng đồng cho nhà sáng lập thế hệ mới, ba cấp độ, đang nhận đăng ký
-- [Master Club](%(b)s/master-club/): nhóm nhỏ trong cộng đồng Next Gen Founder. Mỗi tuần, các chủ doanh nghiệp mang một việc đang vướng thật trong doanh nghiệp mình tới, cùng Duy mổ xẻ cho ra cách làm, rồi về làm ngay trong tuần đó
+## Giải pháp: Mô hình Phòng kinh doanh tiêu chuẩn 7M
+- [Phiếu tự chấm phòng kinh doanh](%(ph)s): 28 câu, khoảng 10 phút, miễn phí. Người chủ tự chấm phòng kinh doanh theo 7 phần của Mô hình 7M để biết phần nào đang yếu.
+- [Giới thiệu Mô hình 7M, bản PDF](%(b)s/tai-lieu/gioi-thieu-mo-hinh-7m.pdf): 7 phần của một phòng kinh doanh tiêu chuẩn
+- [Phương pháp](%(b)s/phuong-phap.html): Mô hình 7M và cách Duy làm việc với doanh nghiệp
+- [Chương trình](%(b)s/chuong-trinh.html): 30 ngày thiết kế phòng kinh doanh, tư vấn setup 3 tháng, Cộng đồng Next Gen Founder và khóa e-learning tự học. Trang không công khai giá, mức đầu tư nói sau buổi trao đổi.
 - [Liên hệ](%(b)s/lien-he.html)
 
-## Chương trình
-%(ct)s
+## Cộng đồng Next Gen Founder
+- [Cộng đồng Next Gen Founder](%(cd)s): nơi các chủ doanh nghiệp gặp nhau, nghe chuyên gia khách mời và chia sẻ kinh nghiệm thật, 3 mức tham gia
+- [Master Club](%(b)s/master-club/): nhóm nhỏ trong cộng đồng. Mỗi tuần các chủ doanh nghiệp mang một việc đang vướng thật tới, cùng Duy tìm cách làm rồi về làm ngay trong tuần
+
+## Về Duy
+- [Về Duy](%(b)s/ve-toi.html): tiểu sử, các mốc làm nghề, số liệu công khai và giới hạn của nó
+
+## Nội dung miễn phí
+- [Công cụ và tài liệu](%(b)s/cong-cu/): công cụ và sách điện tử miễn phí cho người chủ doanh nghiệp
+- [Podcast Next Gen Founder](%(b)s/podcast.html): video podcast trên YouTube, {SO_YT} người đăng ký
+- [Blog](%(b)s/blog.html): %(n)d bài viết cho chủ doanh nghiệp
 
 ## Bài viết
 %(bv)s
-
-## Trang liên quan cùng hệ sinh thái
-- [Phiếu chẩn đoán 7 phút](%(ph)s): công cụ tự đánh giá điểm nghẽn
-- [Cỗ máy Nội dung Một người](%(cm)s): bản đồ hệ thống nội dung một người vận hành
-""" % dict(b=BASE, n=len(BAI), cd=CONG_DONG, ph=PHIEU, cm=CO_MAY,
-           ct="\n".join("- [%s](%s/chuong-trinh/%s): %s" % (c["ten"], BASE, c["tep"], c["tom"]) for c in CT),
-           bv="\n".join("- [%s](%s/bai-viet/%s): %s" % (b["tieu"], BASE, b["tep"], b["mo"]) for b in BAI))
+""" % dict(b=BASE, n=len(BAI_HIEN), cd=CONG_DONG, ph=PHIEU,
+           bv="\n".join("- [%s](%s/bai-viet/%s): %s" % (b["tieu"], BASE, b["tep"], b["mo"]) for b in BAI_HIEN))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "llms.txt"), "w", encoding="utf-8").write(so_chung(llms))
 
 # Trang Cộng đồng viết tay, nhưng khối sáu ô số lấy từ nguồn chung ở đầu tệp này.

@@ -2833,3 +2833,10 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 }
 /* Khối nền sáng: ô đánh dấu và ô chọn gốc của trình duyệt theo bảng màu sáng, không hiện ô đen đặc như đã tích (13/10/2026) */
 .phan-sang{color-scheme:light}
+/* Khối nối cuối bài về phòng kinh doanh (rà soát D116, 22/11/2026) */
+.di-pkd{display:block}
+.di-pkd p{margin:0 0 14px;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.di-pkd .moi-nut a{border-bottom:1px solid transparent;font-size:15px}
+.di-pkd .nut-vien{border-color:var(--line-2)}
+@media(min-width:760px){.luoi.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.luoi.c4{grid-template-columns:repeat(4,minmax(0,1fr))}}
