@@ -89,7 +89,7 @@ KENH = [("Facebook", "334.000", "theo dõi"),
         ("YouTube",  "230.000", "đăng ký"),
         ("TikTok",   "231.000", "theo dõi"),
         ("Zalo",      "22.000", "theo dõi")]
-THEM = [("26.600", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
+THEM = [("Hơn 20.000", "thành viên Sales Bứt Phá"), ("6 năm", "đăng đều, không nghỉ quãng nào")]
 
 # Con số tổng làm đầu, bốn kênh làm phần chia nhỏ bên dưới.
 # Coach Duy chốt ngày 25/08/2026 dùng con số tổng 800.000+, theo slide của mình.
@@ -2504,7 +2504,8 @@ _CD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cong-dong", "ind
 _cd = open(_CD, encoding="utf-8").read()
 _o = "".join('\n          <div><b>%s<small>nghìn</small></b><span>%s %s%s</span></div>'
              % (_nghin(n), dv, ten, ", hai kênh" if ten == "TikTok" else "") for ten, n, dv in SO_KENH)
-_o += '\n          <div><b>%s<small>nghìn</small></b><span>%s</span></div>' % (_nghin(THEM[0][0]), THEM[0][1])
+_sbp = THEM[0][0].replace("Hơn ", "")  # "Hơn 20.000" hiện thành 20+ nghìn
+_o += '\n          <div><b>%s%s<small>nghìn</small></b><span>%s</span></div>' % (_nghin(_sbp), "+" if _sbp != THEM[0][0] else "", THEM[0][1])
 _so, _dv = THEM[1][0].split(" ", 1)
 _o += '\n          <div><b>%s<small>%s</small></b><span>làm nội dung đều đặn</span></div>\n        ' % (_so, _dv)
 _cd2 = re.sub(r'(<div class="so-lieu">).*?(</div>\s*<p class="so-ghi">Số liệu tính tới )[^,]*,',
