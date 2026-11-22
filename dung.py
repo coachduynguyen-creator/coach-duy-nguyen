@@ -271,7 +271,7 @@ INDEX = """
         <p class="danh-xung">Coach. Mentor. Entrepreneur.</p>
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
       </div>
-      <h1>Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và nâng cấp từ đó.</h1>
+      <h1>Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và bắt đầu sửa từ phần đó.</h1>
       <div class="hero-nut">
         <a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
         <a class="nut nut-vien" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder</a>
@@ -423,7 +423,7 @@ INDEX = """
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="master-club/">
       <em>Chặng 03</em><h3>Sau 30 ngày</h3>
-      <p>Nếu bạn muốn có người dựng hộ, chọn tư vấn setup 3 tháng: đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý. Nếu bạn muốn tự làm và có người đi cùng, chọn Master Club: mỗi tuần một buổi coaching nhóm trong 12 tháng.</p>
+      <p>Nếu bạn muốn có người làm cùng tới khi phòng kinh doanh chạy được, chọn tư vấn setup 3 tháng: đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý. Nếu bạn muốn tự làm và có người đi cùng, chọn Master Club: mỗi tuần một buổi coaching nhóm trong 12 tháng.</p>
       <i>Tư vấn setup 3 tháng &middot; hoặc Master Club</i>
     </a>
   </div>
@@ -581,14 +581,14 @@ MOC = [
  ("Tháng 7 năm 2022", "Đứng trước những phòng vài trăm người", "img/mc/mc-sankhau.webp",
   "Facebook 120.000 · YouTube 130.000 · TikTok 21.000",
   "Hơn 500 học viên. Duy bắt đầu được mời làm diễn giả thay vì tự tổ chức lớp của Duy."),
- ("Năm năm sau", "Hơn 30 doanh nghiệp và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
+ ("5 năm sau", "Hơn 30 doanh nghiệp và một cách nghĩ khác", "img/mc/mc-hoitruong.webp",
   "Hơn 30 doanh nghiệp · Hơn 3.000 học viên · Sales Bứt Phá hơn 20.000 thành viên",
   "Hơn 30 doanh nghiệp mời Duy huấn luyện đội ngũ kinh doanh. Làm việc với hàng nghìn người bán hàng, Duy thấy một điều lặp lại: người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt, nếu phòng kinh doanh không có quy trình, không có chỉ số và không có người quản lý."),
  ("Ở Việt Nam", "Điều hành doanh nghiệp của chính mình", "", "",
   "CEO của Next Step Group, công ty đào tạo, và của Kiến Tạo Doanh Nghiệp Việt, công ty dịch vụ marketing. Đồng sáng lập công ty bất động sản Golden Homes."),
  ("Tháng 8 năm 2026", "Lập Cộng đồng Next Gen Founder", "img/mc/mc-banlam.webp",
   "Đích tới năm 2031: 10.000 Next Gen Founder",
-  "Từ huấn luyện người bán sang làm việc với người chủ, với bốn năng lực làm bản đồ, và lập Cộng đồng Next Gen Founder."),
+  "Duy chuyển từ huấn luyện người bán sang làm việc cùng người chủ doanh nghiệp, và lập Cộng đồng Next Gen Founder."),
  ("Tháng 11 năm 2026", "Tư vấn phòng kinh doanh theo Mô hình 7M", "", "Mô hình Phòng kinh doanh tiêu chuẩn 7M",
   "Duy chuyển sang tư vấn, setup và coaching phòng kinh doanh cho doanh nghiệp. Cộng đồng Next Gen Founder thành nơi các chủ doanh nghiệp gặp gỡ và chia sẻ kinh nghiệm thật."),
 ]
@@ -634,9 +634,9 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
     <div class="vt-chu hien">
       <p class="mono">Duy làm gì</p>
       <h2>Phòng kinh doanh bán được mà không phải việc gì cũng chờ bạn</h2>
-      <p>Duy làm việc với chủ doanh nghiệp mà khách mua vì tin ở chính họ. Uy tín của người chủ đưa khách tới. Nhưng khi cuộc tư vấn quan trọng nào cũng chờ người chủ ra mặt, doanh nghiệp chỉ lớn tới mức sức một người chịu được.</p>
+      <p>Duy làm việc với chủ doanh nghiệp mà khách mua vì tin chính người chủ. Uy tín của người chủ đưa khách tới. Nhưng khi cuộc tư vấn quan trọng nào cũng chờ người chủ ra mặt, doanh nghiệp chỉ lớn tới mức sức một người chịu được.</p>
       <p>Duy bắt đầu nghề bằng việc huấn luyện người bán hàng. Suốt 5 năm, Duy làm việc với hàng nghìn người bán và nhận ra một điều lặp đi lặp lại: <span class="nhan">người chủ có thể bán rất giỏi mà doanh nghiệp vẫn kẹt</span>, nếu phòng kinh doanh không có quy trình, không có chỉ số và không có người quản lý.</p>
-      <p>Vì vậy bây giờ Duy tư vấn và đồng hành cùng người chủ xây dựng phòng kinh doanh tiêu chuẩn theo Mô hình Phòng kinh doanh tiêu chuẩn 7M. Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và nâng cấp từ đó.</p>
+      <p>Vì vậy bây giờ Duy tư vấn và đồng hành cùng người chủ xây dựng phòng kinh doanh tiêu chuẩn theo Mô hình Phòng kinh doanh tiêu chuẩn 7M. Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và bắt đầu sửa từ phần đó.</p>
       <a class="lk-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="vt-anh hien">
@@ -655,7 +655,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Đường đi</p>
     <h2>Duy đi từ đâu tới đây</h2>
-    <p>Duy để cả phần đầu, khi còn làm nghề ở doanh nghiệp. Vì phần lớn những gì Duy làm với doanh nghiệp về sau đến từ giai đoạn đó.</p>
+    <p>Các mốc dưới đây có cả những năm Duy còn đi làm ở doanh nghiệp, vì phần lớn cách Duy làm việc với doanh nghiệp bây giờ học được từ giai đoạn đó.</p>
   </div>
   <div class="moc-tg hien">%s</div>
 </section>
@@ -673,7 +673,7 @@ VE_TOI = dau_trang("Về Duy", "Người đi trước bạn vài chặng, đủ 
   <div class="phan-dau hien">
     <p class="mono">Tầm nhìn · Sứ mệnh · Giá trị</p>
     <h2>Đích Duy đang đi tới, và thứ không đổi trên đường đi</h2>
-    <p>Đây là tầm nhìn và sứ mệnh của Cộng đồng Next Gen Founder, lấy nguyên văn từ bộ chiến lược, nên bạn đọc được đúng thứ Duy và đội ngũ dùng để tự đánh giá mỗi quý.</p>
+    <p>Đây là tầm nhìn và sứ mệnh của Cộng đồng Next Gen Founder, chép nguyên văn, để bạn đọc đúng điều Duy và đội ngũ dùng để tự soát lại việc mình làm.</p>
   </div>
   <div class="tn-khoi hien">
     <div class="tn-so"><b>10.000</b><span>Next Gen Founder · đến năm 2031</span></div>
@@ -774,7 +774,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Mô hình Phòng kinh doanh tiêu chu
   <div class="phan-dau hien">
     <p class="mono">Giải pháp</p>
     <h2>7 trụ cột để phòng kinh doanh chạy được mà không phải việc gì cũng chờ người chủ</h2>
-    <p>Phòng kinh doanh không chạy bằng một thứ. Nó chạy bằng nhiều thứ nối vào nhau, và một chỗ lỏng thì cả phòng chậm theo. Mô hình xếp những thứ đó thành 7 trụ cột, tên tiếng Anh đều bắt đầu bằng chữ M. Thứ tự đi theo đúng trình tự dựng một phòng kinh doanh.</p>
+    <p>Một phòng kinh doanh chạy được nhờ nhiều phần ăn khớp với nhau. Một phần yếu thì cả phòng chậm theo. Mô hình chia những phần đó thành 7 trụ cột, tên tiếng Anh đều bắt đầu bằng chữ M, xếp theo đúng thứ tự dựng một phòng kinh doanh.</p>
   </div>
   <div class="luoi c4 tre hien"><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>1 · Market</span><h3>Thị trường</h3><p style="text-align:left"><b>Bán gì, cho ai?</b> Khách mục tiêu, gói bán, giá, nguồn khách</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>2 · Method</span><h3>Quy trình</h3><p style="text-align:left"><b>Bán thế nào?</b> Các chặng bán, chuẩn tư vấn, sau bán</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>3 · Manpower</span><h3>Nhân sự</h3><p style="text-align:left"><b>Ai bán?</b> Tuyển, người mới, kèm, thăng tiến</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>4 · Money</span><h3>Tài chính</h3><p style="text-align:left"><b>Trả và chi thế nào?</b> Lương, hoa hồng, thưởng, chi phí phòng</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>5 · Material</span><h3>Công cụ</h3><p style="text-align:left"><b>Bán bằng công cụ nào?</b> Dữ liệu khách, biểu mẫu, trợ lý AI</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>6 · Measure</span><h3>Chỉ số</h3><p style="text-align:left"><b>Đo chỉ số nào?</b> Mục tiêu, chỉ số, dự báo, báo cáo</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>7 · Management</span><h3>Quản lý</h3><p style="text-align:left"><b>Điều hành ra sao?</b> Vai quản lý, nhịp họp, văn hóa, thay đổi</p></article></div>
   <div class="blog-them moi-nut" style="justify-content:center"><a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
@@ -1101,11 +1101,11 @@ CHUONG_TRINH = dau_trang("Chương trình",
   <div class="phan-dau hien">
     <p class="mono">01 · Giải pháp cho doanh nghiệp</p>
     <h2>Mô hình Phòng kinh doanh tiêu chuẩn 7M</h2>
-    <p>Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và nâng cấp từ đó. Bạn bắt đầu bằng phiếu tự chấm 28 câu, khoảng 10 phút, miễn phí.</p>
+    <p>Mô hình chia phòng kinh doanh thành 7 phần, để biết phần nào đang yếu và bắt đầu sửa từ phần đó. Bạn bắt đầu bằng phiếu tự chấm 28 câu, khoảng 10 phút, miễn phí.</p>
   </div>
   <div class="luoi c2 tre hien">
     <article class="the"><span class="trang-thai"><i aria-hidden="true"></i>8 buổi làm việc · 30 ngày</span><h3>30 ngày thiết kế phòng kinh doanh</h3><p style="text-align:left">Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc trong 30 ngày. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, từ khách mục tiêu, quy trình bán tới lương thưởng và cách quản lý, và áp dụng thật 2 tới 3 việc trong đó.</p></article>
-    <article class="the"><span class="trang-thai"><i aria-hidden="true"></i>Sau 30 ngày · 3 tháng</span><h3>Tư vấn setup 3 tháng</h3><p style="text-align:left">Nếu bạn muốn có người dựng hộ, đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý.</p></article>
+    <article class="the"><span class="trang-thai"><i aria-hidden="true"></i>Sau 30 ngày · 3 tháng</span><h3>Tư vấn setup 3 tháng</h3><p style="text-align:left">Nếu bạn muốn có người làm cùng tới khi phòng kinh doanh chạy được, đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý.</p></article>
   </div>
   <div class="blog-them moi-nut" style="justify-content:center"><a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
     <a class="nut nut-vien" href="lien-he.html">Hỏi về 30 ngày thiết kế</a></div>
@@ -1441,12 +1441,12 @@ CHU_DE_MUC = {"Điểm nghẽn của người sáng lập": 1, "Bán hàng và p
 # Cuối mỗi bài: một đoạn nối về phòng kinh doanh theo chuyên mục, nút chính phiếu tự chấm 7M,
 # nút phụ Cộng đồng Next Gen Founder (bản chốt rà soát D116, mục A3 và A4, ngày 22/11/2026).
 CHU_DE_NOI = {
- "Điểm nghẽn của người sáng lập": "Phần lớn điểm nghẽn của người chủ quay về một chỗ: việc bán hàng vẫn phải đi qua tay mình. Muốn biết phòng kinh doanh của bạn đang kẹt ở phần nào, bạn làm phiếu tự chấm 28 câu, khoảng 10 phút.",
+ "Điểm nghẽn của người sáng lập": "Phần lớn điểm nghẽn của người chủ quay về một chỗ: việc bán hàng vẫn phải đi qua tay người chủ. Muốn biết phòng kinh doanh của bạn đang kẹt ở phần nào, bạn làm phiếu tự chấm 28 câu, khoảng 10 phút.",
  "Bán hàng và phòng kinh doanh": "Chuyện trong bài này là một phần việc của phòng kinh doanh. Khi phòng kinh doanh có quy trình, có chỉ số và có người quản lý, nhân viên tự xử lý được mà không phải chờ người chủ. Bạn làm phiếu tự chấm để biết phòng kinh doanh của mình đang yếu ở phần nào.",
- "Thương hiệu của người sáng lập": "Uy tín của người chủ là thứ đưa khách tới. Nhưng khách tới rồi thì phòng kinh doanh phải bán được, không phải cuộc tư vấn nào cũng chờ người chủ ra mặt. Bạn làm phiếu tự chấm để xem phòng kinh doanh của mình đã nhận được phần việc đó chưa.",
+ "Thương hiệu của người sáng lập": "Uy tín của người chủ là thứ đưa khách tới. Nhưng khách tới rồi thì phòng kinh doanh phải bán được, không phải cuộc tư vấn nào cũng chờ người chủ ra mặt. Bạn làm phiếu tự chấm để xem phòng kinh doanh của mình đã bán được khi không có bạn ngồi cùng chưa.",
  "Hệ thống tăng trưởng": "Doanh nghiệp tăng trưởng bền khi doanh số không còn phụ thuộc vào một người. Chỗ đầu tiên cần có quy trình, chỉ số và người quản lý là phòng kinh doanh. Bạn làm phiếu tự chấm để biết nên bắt đầu từ phần nào.",
  "Kiến tạo cộng đồng": "Cộng đồng giúp khách quay lại và giới thiệu thêm người. Nhưng người được giới thiệu tới vẫn cần một phòng kinh doanh biết tiếp và tư vấn tới nơi. Bạn làm phiếu tự chấm để xem phần đó đang ở mức nào.",
- "AI cho người chủ": "AI làm nhanh những việc đã rõ cách làm. Phòng kinh doanh chưa có quy trình thì AI chỉ làm nhanh thêm sự lộn xộn. Bạn làm phiếu tự chấm trước để biết phần nào trong phòng kinh doanh đã đủ rõ để giao cho AI.",
+ "AI cho người chủ": "AI làm nhanh những việc đã rõ cách làm. Phòng kinh doanh chưa có quy trình thì AI chỉ giúp làm sai nhanh hơn. Bạn làm phiếu tự chấm trước để biết phần nào trong phòng kinh doanh đã đủ rõ để giao cho AI.",
 }
 
 def khoi_chuong_trinh(b, p=""):

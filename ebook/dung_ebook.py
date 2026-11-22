@@ -63,7 +63,7 @@ def nguoi_soan():
     b1 = t[t.index("## Bản 1."):t.index("## Bản 2.")]
     doan = [x.strip() for x in b1.split("\n\n") if x.strip().startswith(("Duy học", "Bây giờ Duy"))]
     # Câu cuối nói về e-book thay vì công cụ.
-    doan[-1] = doan[-1][:doan[-1].rindex("Mỗi công cụ")] + "Cuốn e-book này là một phần việc của phòng kinh doanh, viết lại để bạn tự làm được với chính doanh nghiệp mình."
+    doan[-1] = doan[-1][:doan[-1].rindex("Mỗi công cụ")] + "Cuốn e-book này viết lại một phần việc Duy làm cùng doanh nghiệp, để bạn tự làm được với chính doanh nghiệp mình."
     return doan
 
 

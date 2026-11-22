@@ -73,7 +73,7 @@ KHOANH_KHAC = [
     ("cd-workshop", "Cùng khách hàng", "Khi một người chủ ngồi đối diện Duy và kể chuyện đang kẹt",
      "Bạn ngồi cùng bàn trong những buổi coaching và tư vấn thật. Bạn nghe Duy hỏi câu thứ hai, câu thứ ba, và thấy người chủ tự nhìn ra điều họ đã né suốt nhiều tháng."),
     ("v5-giu-chuan", "Gặp đối tác", "Khi Duy đi gặp đối tác và doanh nghiệp",
-     "Bạn đi cùng Duy tới những buổi gặp doanh nghiệp mời Duy huấn luyện đội ngũ, đối tác và người trong mạng lưới của Duy. Bạn thấy cách mở lời, cách giữ vị thế, và được giới thiệu như một người Duy tin."),
+     "Bạn đi cùng Duy tới gặp các doanh nghiệp mời Duy huấn luyện đội ngũ, gặp đối tác và người quen của Duy. Bạn thấy cách mở lời, cách giữ vị thế, và được giới thiệu như một người Duy tin."),
     ("v5-lam-mau", "Trước máy quay", "Khi máy quay bật lên",
      "Bạn xem Duy làm một video từ ý tưởng tới lúc đăng, rồi làm kênh của mình theo đúng cách đó. Thương hiệu cá nhân của bạn lớn lên cạnh thương hiệu của Duy, qua những lần hai người cùng xuất hiện."),
     ("bl-ban-lam-viec", "Ở hậu trường", "Khi công ty của Duy vận hành mỗi ngày",
@@ -82,7 +82,7 @@ KHOANH_KHAC = [
      "Lúc đó bạn không còn là người ngồi nghe. Bạn đã dẫn một nhóm của riêng mình, và có những người gọi bạn là người dẫn đường."),
 ]
 HOAT_DONG = [
-    ("mc/mc-thuyettrinh", "Phương pháp và chuyển nghề", ["Phương pháp Next Gen Founder: Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder", "The Trusted Advisor, bán hàng tư vấn bằng niềm tin", "Từ người giỏi nghề thành người dẫn nghề"]),
+    ("mc/mc-thuyettrinh", "Phương pháp và chuyển nghề", ["Phương pháp Next Gen Founder: Founder Heart Brand OS, Hệ thống 7 bước xây thương hiệu Founder", "The Trusted Advisor, bán hàng tư vấn bằng niềm tin", "Từ người giỏi nghề thành người kèm được người khác làm nghề"]),
     ("v5-soi-dung", "Tư duy và kỹ năng", ["Tư duy của người dẫn đường: nhìn đúng chỗ kẹt, chỉ đường, giữ chuẩn", "Hỏi, lắng nghe và dẫn một nhóm", "Đứng trước đám đông và nói cho người ta nhớ"]),
     ("bl-may-tinh", "Hệ thống, phương pháp, công cụ", ["Mẫu, kịch bản, bảng chấm điểm Duy đang dùng", "Bộ công cụ AI cho nội dung, tư vấn và vận hành", "Cách đóng gói chuyên môn thành sản phẩm có giá"]),
     ("mc/mc-sankhau", "Đồng hành trực tiếp", ["Dự, đồng dẫn, rồi tự dẫn buổi coaching có Duy ngồi cùng", "Làm việc với khách hàng thật", "Đi gặp đối tác, đứng trên sân khấu cùng Duy"]),

@@ -749,7 +749,7 @@ dict(tep="ai-lam-nhanh-phan-da-dung.html", chu_de="AI cho người chủ",
 
 dict(tep="thuong-hieu-khong-xay-bang-so-bai-dang.html", chu_de="Thương hiệu của người sáng lập",
  tieu="Đăng nhiều không làm nên thương hiệu cá nhân",
- mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Thứ làm họ nhớ là cùng một chuyên môn được nhận ra nhiều lần, rồi phòng kinh doanh bán tiếp được từ niềm tin đó.",
+ mo="Đăng nhiều hơn không làm thị trường nhớ bạn rõ hơn. Khách nhớ bạn khi thấy cùng một chuyên môn của bạn lặp lại nhiều lần, rồi phòng kinh doanh bán tiếp được từ niềm tin đó.",
  ngay="2026-07-12", ngay_viet="12 tháng 7, 2026", doc="5 phút đọc",
  anh="img/bl-phong-thu.webp", alt="Phòng thu của Coach Duy Nguyễn lúc chuẩn bị ghi hình",
  than="""
@@ -2259,7 +2259,7 @@ dict(tep="bon-nghe-hay-bi-goi-chung-la-coach.html", chu_de="Điểm nghẽn củ
 
 <p>Duy nói ra chuyện này vì hai lý do. Thứ nhất, để bạn biết mình sắp mua thứ gì trước khi trả tiền. Thứ hai, vì trong nghề này có không ít người bán một chữ mà giao một thứ khác, và Duy không muốn nằm trong nhóm đó.</p>
 
-<p>Trên thực tế, một quãng đồng hành tử tế thường trộn nhiều nghề. Có tháng Duy phải huấn luyện cả đội ngũ kinh doanh, có tháng chỉ ngồi hỏi bạn 5 câu rồi im lặng. Điều quan trọng là người ngồi cùng bạn nói rõ họ đang đóng vai nào ở buổi này và vì sao.</p>
+<p>Trên thực tế, người đồng hành tử tế thường phải làm nhiều nghề cùng lúc. Có tháng Duy phải huấn luyện cả đội ngũ kinh doanh, có tháng chỉ ngồi hỏi bạn 5 câu rồi im lặng. Điều quan trọng là người ngồi cùng bạn nói rõ họ đang đóng vai nào ở buổi này và vì sao.</p>
 
 <h2>Ba câu tự hỏi trước khi bỏ tiền</h2>
 
