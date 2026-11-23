@@ -321,7 +321,7 @@ const TRU = [
 const HO_SO = {
   goc:{t:"Việc bán hàng đang dồn vào người chủ và vài người giỏi",
    m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
-  nguoi:{t:"Đã có cách bán, nhưng khó giữ người giỏi và đào tạo người mới",
+  nguoi:{t:"Khó giữ người giỏi và đào tạo người mới",
    m:"Bán cho ai và bán thế nào chưa phải chỗ yếu nhất. Chỗ cần sửa trước là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
   so:{t:"Có người bán, nhưng chưa có số liệu để thấy khách đang kẹt ở đâu",
    m:"Cách bán và đội ngũ chưa phải chỗ yếu nhất. Chỗ cần sửa trước là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
@@ -388,7 +388,7 @@ const CAU = {
   rr:"Khi nhân viên kinh doanh nghỉ, khách của người nghỉ không có ai nhận rõ ràng. Khách bị bỏ rơi, hoặc người ở lại tranh nhau hoa hồng.",
   hoi:"Nhân viên kinh doanh nghỉ gần nhất đang chăm sóc bao nhiêu khách? Những khách đó bây giờ ai chăm sóc?"},
  "4.4":{ngan:"Biết chi phí để có một khách mua",
-  rr:"Không biết tốn bao nhiêu để có một khách mua thì không biết tăng quảng cáo là lãi hay lỗ, cũng không biết mỗi khách bị bỏ quên làm công ty mất bao nhiêu tiền.",
+  rr:"Không biết tốn bao nhiêu để có một khách mua thì không biết tăng quảng cáo là lãi hay lỗ.",
   hoi:"Tháng trước công ty chi bao nhiêu cho quảng cáo và hoa hồng, và có bao nhiêu khách mua?"},
  "5.1":{ngan:"Thông tin khách lưu trong bảng tính hoặc phần mềm chung",
   rr:"Thông tin khách nằm trong Zalo và điện thoại cá nhân thì nhân viên kinh doanh nghỉ là công ty có thể mất luôn những khách đó.",
@@ -442,7 +442,7 @@ const RR1 = {
  "3.2":"Người mới mới được kèm một phần. Phần phải tự mò một mình là chỗ dễ khiến họ bỏ việc sớm.",
  "3.3":"Đã có danh sách kỹ năng cần có, nhưng không phải người mới nào cũng được dạy theo danh sách đó. Vì vậy có người mới vẫn thiếu vài kỹ năng.",
  "3.4":"Đường lên lương, lên chức đã có nhưng chưa rõ. Người giỏi chưa biết mình phải đạt con số nào thì được lên, nên dễ đi tìm chỗ khác rõ hơn.",
- "4.1":"Một số nhân viên kinh doanh tự tính được thu nhập, số còn lại phải chờ công ty báo. Với nhóm này, nhân viên chưa biết bán thêm 1 đơn thì được thêm bao nhiêu tiền.",
+ "4.1":"Một số nhân viên kinh doanh tự tính được thu nhập, số còn lại phải chờ công ty báo. Với số nhân viên còn lại, họ chưa biết bán thêm 1 đơn thì được thêm bao nhiêu tiền.",
  "4.2":"Cách thưởng đã báo trước nhưng có lúc vẫn đổi giữa kỳ. Chỉ cần vài lần như vậy, nhân viên kinh doanh sẽ bớt tin vào thưởng.",
  "4.3":"Đã có cách xử lý khi nhân viên kinh doanh nghỉ nhưng chưa thành quy định rõ, nên dễ phát sinh tranh cãi về khách và hoa hồng.",
  "4.4":"Người chủ mới biết được một phần số tiền bỏ ra cho mỗi khách mua hàng. Số chưa đủ nên khi quyết định chi thêm hay bớt tiền tìm khách, người chủ vẫn phải đoán.",
@@ -494,7 +494,7 @@ const RUI_RO = [
  {ten:"Đổi cách làm rồi vài tuần sau lại quay về như cũ", can:["7.4","2.2","5.1"],
   ht:"Cách làm mới bị bỏ sau vài tuần, mọi người quay lại cách cũ. Công ty đã bỏ tiền mua phần mềm hay công cụ, mà mỗi người vẫn bán một kiểu.",
   dh:["Công ty đã từng dùng phần mềm hoặc bảng tính chung nhưng giờ ít người cập nhật","Nhân viên kinh doanh ghi khách vào bảng tính chung cho có, thông tin thật vẫn ở Zalo","Mỗi lần đổi cách làm chỉ giữ được vài tuần"],
-  hoi:"Lần gần nhất công ty đổi một cách làm, sau 2 tuần còn bao nhiêu người làm theo? Ai là người theo dõi?"},
+  hoi:"Lần gần nhất công ty đổi một cách làm, sau 2 tháng còn bao nhiêu người làm theo? Ai là người theo dõi?"},
  {ten:"Thưởng chưa tạo được động lực", can:["4.1","4.2","6.1"],
   ht:"Khi không thấy rõ bán thêm 1 đơn thì mình được thêm bao nhiêu, nhiều người chỉ bán vừa đủ để giữ mức thu nhập đang có.",
   dh:["Nhân viên kinh doanh ít hỏi về chỉ tiêu và thưởng","Cuối tháng hay có thắc mắc về cách tính lương","Người giỏi và người trung bình nhận thu nhập gần bằng nhau"],
@@ -599,7 +599,7 @@ const GOI = {
   huong:"có một chính sách giảm giá chung, và tính rõ chi phí để có một khách mua"},
  "Khách mới phải chờ lâu mới được trả lời":{mo:"Khách nhắn hỏi giá ngoài giờ làm thì bên anh trả lời thế nào ạ?",
   nghe:"Không ai biết khách mới phải chờ bao lâu, và có tin nhắn để qua đêm.",
-  huong:"có quy tắc chia khách mới, có người trực ngoài giờ, và xem thời gian trả lời mỗi tuần"},
+  huong:"làm rõ quy tắc chia khách mới, giao người xem tin nhắn ngoài giờ, và xem thời gian trả lời mỗi tuần"},
  "Đổi cách làm rồi vài tuần sau lại quay về như cũ":{mo:"Trước giờ bên anh đã dùng cách nào để quản lý khách rồi ạ?",
   nghe:"Đã từng dùng phần mềm hoặc bảng tính chung rồi bỏ.",
   huong:"thống nhất các bước bán trước, rồi mới chọn công cụ"},
@@ -609,6 +609,45 @@ const GOI = {
 };
 
 // Chọn 1 bước mời theo số nhân viên kinh doanh và kiểu kết quả. Mỗi cuộc gọi chỉ mời 1 bước.
+// Hướng nói theo từng trụ cột, dùng khi khách kể chuyện thuộc trụ cột đó (đủ 7 trụ cột).
+const GOI_TRU = [
+ {
+  "mo": "Khách nào bên anh mua nhiều nhất, và khách nào anh muốn nhận thêm ạ?",
+  "nghe": "Nhận cả khách không hợp, hoặc không rõ khách nào nên nhận, khách phân vân thì giảm giá.",
+  "huong": "viết 1 trang kiểu khách nên nhận và kiểu không nên nhận. Nếu mỗi người còn nói một kiểu về lý do nên mua thì chốt thêm 1 câu chung"
+ },
+ {
+  "mo": "Một khách từ lúc hỏi tới lúc mua thường đi qua những việc gì bên anh ạ?",
+  "nghe": "Mỗi nhân viên bán một kiểu, cách bán nằm trong đầu người giỏi, khách đã nhận báo giá không ai hẹn gọi lại.",
+  "huong": "viết các bước bán từ lời người bán giỏi nhất, rồi cả nhóm làm thử và hẹn ngày hỏi lại từng khách"
+ },
+ {
+  "mo": "Người mới vào thì sau bao lâu tự bán được ạ, và ai kèm họ?",
+  "nghe": "Người mới nghỉ sớm, người giỏi nhất đang tính nghỉ, tuyển thêm mà doanh số không tăng.",
+  "huong": "giao 1 người kèm người mới trong 90 ngày, lập danh sách kỹ năng, và nói rõ người giỏi phải đạt gì thì được lên"
+ },
+ {
+  "mo": "Nhân viên giỏi và người trung bình bên anh nhận thu nhập khác nhau thế nào ạ?",
+  "nghe": "Nhân viên hay thắc mắc lương thưởng, cách tính đổi giữa kỳ, người chủ không rõ mỗi khách mua tốn bao nhiêu tiền.",
+  "huong": "viết cách tính thu nhập trên 1 trang, báo từ đầu kỳ, và tính chi phí để có một khách mua"
+ },
+ {
+  "mo": "Thông tin khách bên anh đang để ở đâu ạ?",
+  "nghe": "Thông tin khách nằm trong Zalo và điện thoại từng người, người khác tiếp khách phải hỏi lại từ đầu, đã từng dùng phần mềm rồi bỏ.",
+  "huong": "đưa thông tin khách về một bảng tính chung, chốt 3 mục phải ghi, rồi mới tính chuyện phần mềm"
+ },
+ {
+  "mo": "Giữa tháng, anh biết tháng đó có đạt chỉ tiêu không bằng cách nào ạ?",
+  "nghe": "Chỉ nói được doanh số khi hết tháng, cuối tháng hay giảm giá gấp cho kịp chỉ tiêu.",
+  "huong": "chọn vài con số xem mỗi tuần, chia lại chỉ tiêu theo mùa bán của ngành, và ước kết quả vào giữa tháng"
+ },
+ {
+  "mo": "Trong một tuần, phòng kinh doanh phải chờ anh quyết những việc gì ạ?",
+  "nghe": "Việc gì cũng hỏi chủ, chủ đi vắng là việc đứng lại, họp tuần chưa chốt rõ ai làm gì.",
+  "huong": "cho quản lý biết việc nào được tự quyết, và họp tuần có người ghi ai làm gì, bao giờ xong"
+ }
+];
+
 function deXuat(soNguoiBan, kieu) {
   const itNguoi = /^(0|1 )/.test(soNguoiBan);
   if (kieu === "vung" || itNguoi) return {ct30:false, ten:"Chương trình Lập kế hoạch kinh doanh và bán hàng 2027", phi:"990.000 đồng",
@@ -627,25 +666,25 @@ const HOI_DAP = [
  ["Khác gì nơi khác?", "Thiết kế theo đúng phòng kinh doanh của khách, và sau chương trình khách tự vận hành được. Giữa các buổi có bài thực hành, Coach Duy xem và góp ý."],
  ["Ai xem bài thực hành?", "Đợt đầu Coach Duy trực tiếp xem và góp ý bài thực hành, cùng một người trong đội ngũ của Coach."],
  ["Có làm phần mềm không?", "Không cài phần mềm. Chương trình thiết kế phần Công cụ: thông tin khách để ở đâu, ghi gì, báo giá theo mẫu nào."],
- ["Đóng phí khi nào?", "Hỏi quản lý của tư vấn viên trước. Rồi nói với khách: “Phần này em xác nhận lại rồi nhắn anh trong hôm nay ạ.”"],
+ ["Đóng phí khi nào?", "Nói với khách: “Phần này em xác nhận lại rồi nhắn anh trong hôm nay ạ.” Sau cuộc gọi, hỏi người phụ trách bên em rồi nhắn khách."],
  ["Chưa có quản lý thì sao?", "Vẫn tham gia được. Chủ doanh nghiệp dự đủ 8 buổi và làm luôn phần việc của quản lý."]
 ];
 // Phản ứng khác: Mini REFLECT (Lặp lại, Đồng cảm, Tìm gốc), rồi quay về Điểm Chạm còn thiếu.
 const NHANH = [
  ["Đang bận", "Dạ, vậy em gọi lại anh lúc khác ạ. Anh tiện chiều thứ Hai hay sáng thứ Ba ạ?"],
- ["Khách nói không có chỗ nào vướng", "Dạ, vậy phòng kinh doanh bên anh đang khá ổn rồi. Sắp tới anh muốn làm thêm được việc gì ạ? <i>Nếu khách vẫn không thấy vướng thì cảm ơn và hẹn gọi lại sau 1 tháng.</i>"],
- ["Để suy nghĩ thêm", "Dạ, anh vừa nói là muốn suy nghĩ thêm. Việc này liên quan tới cả phòng kinh doanh nên anh muốn chắc chắn, em hiểu. Điều anh đang phân vân nhất lúc này là gì ạ? <i>Nếu khách chưa chắc hướng sửa có hợp không thì hỏi lại câu “Anh thấy hướng này có đúng chỗ công ty anh đang vướng không ạ?” ở bước Đưa hướng sửa.</i>"],
+ ["Khách nói không có chỗ nào vướng", "Dạ, vậy là anh chưa thấy chỗ nào vướng. Sắp tới anh muốn làm thêm được việc gì ạ? <i>Nếu khách vẫn không thấy vướng thì cảm ơn, mời khách vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027 (zalo.me/g/gadxc2qxwa1cuqx5op7t), và hẹn gọi lại sau 1 tháng.</i>"],
+ ["Để suy nghĩ thêm", "Dạ, anh vừa nói là muốn suy nghĩ thêm. Việc này liên quan tới cả phòng kinh doanh nên anh muốn chắc chắn, em hiểu. Điều anh đang phân vân nhất lúc này là gì ạ? Em gọi lại anh vào chiều thứ Hai hay sáng thứ Ba để nghe anh quyết định được không ạ? <i>Nếu khách chưa chắc cách làm có hợp không thì hỏi lại câu “Anh thấy hướng này có đúng chỗ công ty anh đang vướng không ạ?” ở bước Nói cách làm.</i>"],
  ["Chê đắt", "Dạ, anh vừa nói là phí cao hơn anh dự tính. Bỏ ra một khoản phí thì ai cũng muốn chắc là khoản đó đáng. Anh đang so sánh khoản phí này với điều gì ạ? <i>Tư vấn viên dừng lại, chờ khách nói hết, rồi hẹn ngày gọi lại.</i>"],
  ["Phải hỏi người khác", "Dạ, ngoài anh còn ai cùng quyết việc này ạ? Mình hẹn 1 cuộc gọi có cả anh và người đó nhé, chiều thứ Hai hay sáng thứ Ba ạ?"],
- ["Từ chối thẳng", "Dạ vâng, em cảm ơn anh đã dành thời gian. Báo cáo anh cứ giữ để tự làm theo kế hoạch tự làm 30 ngày ạ. <i>Tư vấn viên không hỏi thêm, chỉ ghi lại lý do khách từ chối.</i>"]
+ ["Từ chối thẳng", "Dạ vâng, em cảm ơn anh đã dành thời gian. Báo cáo anh cứ giữ để tự làm theo kế hoạch 30 ngày ở Mục 5 của báo cáo ạ. <i>Tư vấn viên không hỏi thêm, chỉ ghi lại lý do khách từ chối, rồi mời khách vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027 (zalo.me/g/gadxc2qxwa1cuqx5op7t).</i>"]
 ];
 const KHONG_NEN = [
   "Không hỏi lại điều khách đã điền trong phiếu, như vai trò và số nhân viên kinh doanh.",
  "Không nói tên rủi ro trong báo cáo. Hỏi điều khách muốn trước, rồi mới hỏi chỗ vướng.",
  "Không nói thẳng vấn đề thay khách. Hỏi để khách tự nói ra chỗ vướng và cái giá.",
- "Không nêu tên chương trình trước khi khách nói hướng sửa là hợp.",
+ "Không nêu tên chương trình trước khi khách nói cách làm đó hợp.",
  "Không nói “lớp”, “học”, “khóa học”, “học phí”, “xin phép”. Nói chương trình huấn luyện, buổi làm việc, phí tham gia.",
- "Không đọc lại điểm, không nói khách chấm sai, không nói nhân viên của khách làm chưa tốt. Chỉ nhắc đúng 1 câu khách đã chọn ở bước Hỏi kỹ.",
+ "Không đọc điểm, không nói khách chấm sai, không nói nhân viên của khách làm chưa tốt. Chỉ nhắc đúng 1 câu khách đã chọn ở bước Hỏi kỹ.",
  "Không chào bán chương trình 3 tháng và Master Club trong cuộc gọi này, dù báo cáo gửi khách có nhắc. Khách hỏi thì trả lời ngắn đúng theo báo cáo, rồi nói đội ngũ sẽ trao đổi riêng sau.",
  "Không hứa xây xong phòng kinh doanh trong 30 ngày.",
  "Khách nói “để suy nghĩ thêm” thì không dừng ở đó. Luôn hẹn ngày gọi lại."
@@ -685,7 +724,7 @@ function ve() {
   const rr = ruiRo(), ba = rr.slice(0, 3), kh = khop().slice(0, 2), dx = deXuat(KHACH.soNguoiBan, hoSo(ds));
   const cdx = ba.length ? ba[0].can.map(c => ({c, d: tl(c)})).sort((x, y) => x.d - y.d)[0] : null;
   const cd = cdx ? cdx.c.split(".") : null, cdChua = !cdx || cdx.d === 0;
-  const cauDau = cd ? TRU[cd[0]-1].cau[cd[1]-1].replace(/\.$/, "").replace(/[“”]/g, "").replace("để chị suy nghĩ", "để suy nghĩ") : "[câu khách chọn ở rủi ro đứng đầu]";
+  const cauDau = cd ? TRU[cd[0]-1].cau[cd[1]-1].replace(/\.$/, "").replace(/[“”]/g, "").replace("để chị suy nghĩ", "để suy nghĩ").replace(/người chủ/g, "anh") : "[câu khách chọn ở rủi ro đứng đầu]";
   const ten = KHACH.hoTen.split(" ").pop(), yeu = uu.filter(x => mucDo(x.d) < 2).map(x => tenM(x.i));
   const bang = (dong, w) => `<table class="bang"><tbody>${dong.map(h => `<tr><td style="width:${w}"><b>${h[0]}</b></td><td>${h[1]}</td></tr>`).join("")}</tbody></table>`;
 
@@ -695,7 +734,7 @@ function ve() {
 <p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · Nhân viên kinh doanh: ${KHACH.soNguoiBan}${KHACH.kenh ? ` · Kênh: ${KHACH.kenh}` : ""}${KHACH.doanhThu ? ` · Doanh thu ${KHACH.doanhThu}/tháng` : ""} · ${tong}/56 điểm${yeu.length ? ` · Nên sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
 
 <h3>Chương trình mời lần này: ${dx.ten}</h3>
-<p class="muted">${dx.phi}. ${dx.viSao} Gọi khoảng 15 phút, đi 2 bước. Bước 1, Hỏi kỹ: hỏi điều khách muốn trước, rồi để khách tự nói ra chỗ vướng và chuyện gì xảy ra nếu để yên. Bước 2, Đưa hướng sửa: cho khách thấy hướng sửa, khách thấy hợp mới nói tới chương trình. Các dòng trong một khung là câu hỏi nối tiếp nhau: hỏi từng câu một, chờ khách trả lời rồi mới hỏi câu sau. Chỗ trong ngoặc vuông thay bằng chính lời khách vừa nói. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi về chương trình hoặc phản ứng khác: xem phần Tra cứu ở cuối hồ sơ.</p>
+<p class="muted">${dx.phi}. ${dx.viSao} Gọi khoảng 15 phút, đi 2 bước. Bước 1, Hỏi kỹ: hỏi điều khách muốn trước, rồi để khách tự nói ra chỗ vướng và chuyện gì xảy ra nếu để yên. Bước 2, Nói cách làm: cho khách thấy cách làm, khách thấy hợp mới nói tới chương trình. Các dòng trong một khung là câu hỏi nối tiếp nhau: hỏi từng câu một, chờ khách trả lời rồi mới hỏi câu sau. Chỗ trong ngoặc vuông thay bằng chính lời khách vừa nói. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi về chương trình hoặc phản ứng khác: xem phần Tra cứu ở cuối hồ sơ.</p>
 
 <h3>Mở cuộc gọi</h3>
 <div class="loi">Dạ em chào anh ${ten}, em là [tên], tư vấn viên trong đội ngũ của Coach Duy Nguyễn. Em đã đọc kết quả đánh giá phòng kinh doanh anh làm ngày ${KHACH.ngay}. Em gọi khoảng 15 phút để hiểu mục tiêu của anh và tình hình phòng kinh doanh bên anh, rồi mình cùng xem hướng nào hợp. Anh không cần quyết định gì trong cuộc gọi này, nếu em thấy chưa hợp thì em cũng nói thẳng với anh. Anh đang tiện nghe máy không ạ?</div>
@@ -705,31 +744,37 @@ function ve() {
 <div class="loi">Anh muốn phòng kinh doanh của mình thay đổi ra sao trong 6 tháng tới ạ?</div>
 <div class="loi">Điều gì đang cản anh đạt được điều đó ạ?</div>
 <p class="muted">Khách trả lời chung chung hoặc chưa nói được thì nhắc đúng 1 câu khách đã chọn trong phiếu:</p>
-<div class="loi">Em thấy trong phiếu, ở câu “${cauDau}”, anh chọn là ${cdChua ? "chưa làm được" : "mới làm được một phần"}. Chuyện này đang diễn ra thế nào ạ?<br>Gần đây có trường hợp nào làm anh thấy rõ chuyện này nhất không ạ? <span style="font-style:normal;color:var(--phu)">(Chỉ hỏi khi khách chưa kể được trường hợp cụ thể.)</span></div>
+<div class="loi">Em thấy trong phiếu, ở câu “${cauDau}”, anh chưa chọn là đã làm đủ. Chuyện này đang diễn ra thế nào ạ?<br>Gần đây có trường hợp nào làm anh thấy rõ chuyện này nhất không ạ? <span style="font-style:normal;color:var(--phu)">(Chỉ hỏi khi khách chưa kể được trường hợp cụ thể.)</span></div>
 <p class="muted">Nếu khách nói chuyện đó không còn khó nhất thì hỏi: “Dạ, vậy lúc này chỗ nào ở phòng kinh doanh làm anh vướng nhất ạ?” Nếu khách không thấy chỗ nào khó thì xem “Khách nói không có chỗ nào vướng” ở phần Tra cứu.</p>
 <div class="loi">Em tóm lại, anh muốn [điều anh vừa nói] và đang vướng ở [chỗ vướng]. Em hiểu vậy đúng chưa ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi lại chỗ vướng nhất.)</span></div>
 <div class="loi">Dạ, vậy em hỏi thêm một chút về chuyện này nhé. Trước giờ anh đã thử cách nào để sửa rồi ạ?<br>Nếu chuyện này cứ giữ như bây giờ thêm 3 tháng nữa, anh nghĩ phòng kinh doanh sẽ ra sao ạ?<br>Lúc đó [điều anh muốn] sẽ ra sao ạ?<br>Anh chấm từ 1 tới 10, chuyện [chỗ vướng anh vừa nói] đang gấp tới mức nào ạ? 1 là chưa gấp, 10 là phải sửa ngay.</div>
-<p class="muted">Ghi lại cách khách đã thử. Khách chấm dưới 7 thì chưa mời chương trình, nói: “Anh làm trước mấy việc trong kế hoạch tự làm 30 ngày ở cuối báo cáo, 2 tuần nữa em gọi hỏi anh làm tới đâu nhé.”</p>
+<p class="muted">Ghi lại cách khách đã thử. Khách chấm dưới 7 thì chưa mời chương trình, nói: “Anh làm trước mấy việc trong kế hoạch 30 ngày ở Mục 5 của báo cáo, 2 tuần nữa em gọi hỏi anh làm tới đâu nhé.”</p>
 <p class="muted">Khách chấm từ 7 trở lên thì hỏi:</p>
 <div class="loi">Nếu có cách gỡ được chuyện này, anh có muốn em kể cho anh nghe không ạ?</div>
 
 <h3>Cách sửa theo rủi ro của khách này, dùng ở bước 2</h3>
-<table class="bang"><thead><tr><th>Rủi ro (không đọc cho khách), có thật khi khách kể</th><th>Hướng tiếp cận</th></tr></thead><tbody>
+<table class="bang"><thead><tr><th>Rủi ro (không đọc cho khách), có thật khi khách kể</th><th>Cách làm</th></tr></thead><tbody>
 ${ba.map((r, k) => `<tr><td><b>${k+1}. ${r.ten}.</b> ${GOI[r.ten].nghe}</td><td>${GOI[r.ten].huong}</td></tr>`).join("")}
 </tbody></table>
+${uu.filter(x => mucDo(x.d) < 2).length ? `<h3>Câu hỏi và cách làm theo trụ cột cần sửa trước</h3>
+<table class="bang"><thead><tr><th>Trụ cột (không đọc cho khách), có thật khi khách kể</th><th>Câu hỏi mở</th><th>Cách làm</th></tr></thead><tbody>
+${uu.filter(x => mucDo(x.d) < 2).map(x => `<tr><td><b>${tenM(x.i)}.</b> ${GOI_TRU[x.i].nghe}</td><td>${GOI_TRU[x.i].mo}</td><td>${GOI_TRU[x.i].huong}</td></tr>`).join("")}
+</tbody></table>` : ""}
 
-<h3>2. Đưa hướng sửa, khoảng 4 phút: khách tự thấy hướng đi hợp</h3>
-<div class="loi">Từ những gì anh chia sẻ, anh đang muốn [mục tiêu], nhưng đang vướng ở [chỗ vướng]. Nhiều công ty cũng vướng như vậy thường sửa bằng cách [hướng sửa ở bảng trên]. Anh thấy hướng này có đúng chỗ công ty anh đang vướng không ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi chỗ nào chưa đúng, rồi quay về hỏi chỗ vướng nhất.)</span><br>Anh thấy bước tiếp theo nên thế nào ạ?</div>
-<p class="muted">Chỉ khi khách nói hướng sửa là hợp thì nói tiếp:</p>
+<h3>2. Nói cách làm, khoảng 4 phút: khách tự thấy hướng đi hợp</h3>
+<div class="loi">Từ những gì anh chia sẻ, anh đang muốn [mục tiêu], nhưng đang vướng ở [chỗ vướng]. Nhiều công ty cũng vướng như vậy thường sửa bằng cách [cách làm ở bảng trên]. Anh thấy hướng này có đúng chỗ công ty anh đang vướng không ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi chỗ nào chưa đúng, rồi quay về hỏi chỗ vướng nhất.)</span><br>Anh thấy bước tiếp theo nên thế nào ạ?</div>
+<p class="muted">Chỉ khi khách nói cách làm đó hợp thì nói tiếp:</p>
 <div class="loi">${dx.ct30
  ? `Bên em có chương trình huấn luyện 30 ngày thiết kế phòng kinh doanh theo mô hình 7M: 8 buổi làm việc online, mỗi tuần 2 buổi, Coach Duy dẫn dắt trực tiếp. Anh cùng quản lý thiết kế lại 7 trụ cột của phòng kinh doanh và áp dụng thật 2 tới 3 việc ngay trong chương trình. Anh và quản lý của anh có dành được 2 buổi mỗi tuần cho việc này không ạ?`
  : `Bên em có chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027, để anh có kế hoạch bán hàng cả năm trước khi mở rộng đội ngũ. Anh có dành được 4 buổi cho việc này không ạ?`}<br>Sau cuộc gọi em nhắn anh thông tin chương trình, rồi gọi lại để anh cho em biết anh quyết định thế nào. Anh tiện chiều thứ Hai hay sáng thứ Ba ạ?</div>
+<p class="muted">Cuối cuộc gọi, dù khách đã quyết hay chưa, mời khách vào nhóm Zalo workshop:</p>
+<div class="loi">Em cũng mời anh vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027, ở zalo.me/g/gadxc2qxwa1cuqx5op7t, để nhận lịch và tài liệu của workshop. Anh vào xem trước cũng được ạ.</div>
 
 <section class="tra">
 <div class="noibo"><span>Tra cứu · Chỉ mở khi cần</span><span></span></div>
 ${dx.ct30 ? `<h3>Khách hỏi</h3>${bang(HOI_DAP, "48mm")}` : ""}
-${kh.length ? `<h3>Câu hỏi thêm cho khách này: chỉ hỏi khi khách tự nhắc tới chuyện đó ở bước Đưa hướng sửa</h3><p>${kh.map(k => `<i>${HOI_KHOP[k.a + "|" + k.b]}</i>`).join(" ")}</p>` : ""}
-<h3>Khách phản ứng khác: lặp lại lời khách, đồng cảm, hỏi điều khách phân vân nhất</h3>${bang(NHANH, "40mm")}
+${kh.length ? `<h3>Câu hỏi thêm cho khách này: hỏi 1 câu khi khách kể chuyện đúng với nội dung câu đó, ở bước Nói cách làm</h3><p>${kh.map(k => `<i>${HOI_KHOP[k.a + "|" + k.b]}</i>`).join(" ")}</p>` : ""}
+<h3>Khi khách phản ứng khác dự kiến: nhắc lại lời khách, nói em hiểu, rồi hỏi điều khách phân vân nhất. Tra theo từng tình huống</h3>${bang(NHANH, "40mm")}
 <h3>Không nên</h3><ul style="margin:0;padding-left:13pt">${KHONG_NEN.map(k => `<li>${k}</li>`).join("")}</ul>
 </section>`;
 }
