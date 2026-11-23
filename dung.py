@@ -291,14 +291,17 @@ INDEX = """
   {KHACH}
 </section>
 
-<section class="phan bd hoa-van" id="mo-hinh-7m">
-  <div class="phan-dau hien">
-    <p class="mono">Mô hình 7M</p>
-    <h2>7 trụ cột để phòng kinh doanh chạy được mà không phải việc gì cũng chờ người chủ</h2>
-    <p>Một phòng kinh doanh chạy được nhờ nhiều phần ăn khớp với nhau. Một phần yếu thì cả phòng chậm theo. Duy chia những phần đó thành 7 trụ cột, xếp theo đúng thứ tự dựng một phòng kinh doanh.</p>
+<section class="phan bd phan-sang" id="mo-hinh-7m">
+  <div class="m7 hien">
+    <div class="m7-hinh">{BANH_XE}</div>
+    <div>
+      <p class="mono">Mô hình 7M</p>
+      <h2>7 trụ cột của một phòng kinh doanh tiêu chuẩn</h2>
+      <p class="m7-dan">Có quy trình, có chỉ số và có người quản lý, để nhân viên kinh doanh bán được hàng mà không phải việc gì cũng chờ người chủ.</p>
+      <div class="m7-nhom"><article class="n0"><h3><i aria-hidden="true"></i>Bán đúng cách</h3><p>Bán gì, cho ai, bán thế nào</p><ul><li><b>1. Thị trường</b> 7 chuẩn</li><li><b>2. Quy trình</b> 9 chuẩn</li></ul></article><article class="n1"><h3><i aria-hidden="true"></i>Đúng người bán</h3><p>Ai bán, được trả thế nào</p><ul><li><b>3. Nhân sự</b> 7 chuẩn</li><li><b>4. Tài chính</b> 6 chuẩn</li></ul></article><article class="n2"><h3><i aria-hidden="true"></i>Quản lý đúng</h3><p>Ai quản lý, theo dõi số nào, dùng công cụ gì</p><ul><li><b>5. Công cụ</b> 7 chuẩn</li><li><b>6. Chỉ số</b> 7 chuẩn</li><li><b>7. Quản lý</b> 8 chuẩn</li></ul></article></div>
+      <p class="m7-nut"><a class="nut nut-vien" href="phuong-phap.html">Xem 51 chuẩn của Mô hình 7M <span class="mt" aria-hidden="true">&rarr;</span></a></p>
+    </div>
   </div>
-{LUOI_7M}
-  <div class="blog-them"><a class="nut nut-vien" href="phuong-phap.html">Xem Mô hình 7M <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="chuyen-gia">
@@ -370,7 +373,7 @@ INDEX = """
     <h2>Phòng kinh doanh của bạn đang ở bậc nào?</h2>
     <p>Phòng kinh doanh càng đông người thì người đứng đầu càng phải đổi cách làm, và chỗ hay kẹt cũng đổi theo.</p>
   </div>
-  <div class="luoi bac5 tre hien"><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 1</span><h3>Hộ kinh doanh</h3><p><b>Phòng trông thế nào.</b> Chủ tự bán, chưa có nhân viên kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Cách bán nằm trong đầu người chủ, chưa viết ra được.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 2</span><h3>Doanh nghiệp siêu nhỏ</h3><p><b>Phòng trông thế nào.</b> Chủ dẫn dắt đội ngũ kinh doanh, có thể có trưởng nhóm.</p><p><b>Chỗ hay kẹt.</b> Người mới bán không ra kết quả như chủ, và chủ chưa dám giao khách.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 3</span><h3>Doanh nghiệp nhỏ</h3><p><b>Phòng trông thế nào.</b> Trưởng phòng kinh doanh chuyên trách dẫn dắt đội ngũ.</p><p><b>Chỗ hay kẹt.</b> Kết quả mỗi người một khác và chủ không biết vì sao.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 4</span><h3>Doanh nghiệp vừa</h3><p><b>Phòng trông thế nào.</b> Giám đốc kinh doanh quản lý nhiều phòng hoặc nhiều nhóm.</p><p><b>Chỗ hay kẹt.</b> Phòng chạy nhờ vài người giỏi và người quản lý, ai nghỉ là doanh số giảm theo.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 5</span><h3>Doanh nghiệp lớn</h3><p><b>Phòng trông thế nào.</b> Giám đốc vùng ở từng vùng, trên cùng là phó tổng giám đốc kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Mỗi vùng làm theo một kiểu, khách bị chuyển qua lại giữa các vùng.</p></article></div>
+  <div class="luoi bac5 tre hien"><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 1</span><h3>Chủ bán một mình</h3><p><b>Phòng trông thế nào.</b> Chủ tự tìm khách, tư vấn và chốt, chưa có nhân viên kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Cách bán nằm trong đầu người chủ, chưa viết ra được.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 2</span><h3>Chủ bán chính, có người hỗ trợ</h3><p><b>Phòng trông thế nào.</b> Chủ vẫn chốt phần lớn khách, nhân viên kinh doanh đỡ việc và học dần.</p><p><b>Chỗ hay kẹt.</b> Người mới bán không ra kết quả như chủ, và chủ chưa dám giao khách.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 3</span><h3>Nhóm kinh doanh bán chính, có trưởng nhóm</h3><p><b>Phòng trông thế nào.</b> Trưởng nhóm điều hành hằng ngày, chủ hỗ trợ khi cần.</p><p><b>Chỗ hay kẹt.</b> Kết quả mỗi người một khác và chủ không biết vì sao.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 4</span><h3>Nhiều nhóm, có giám đốc kinh doanh</h3><p><b>Phòng trông thế nào.</b> Giám đốc kinh doanh quản lý các trưởng nhóm hoặc trưởng phòng.</p><p><b>Chỗ hay kẹt.</b> Phòng chạy nhờ vài người giỏi và người quản lý, ai nghỉ là tuột.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 5</span><h3>Nhiều vùng, có giám đốc vùng</h3><p><b>Phòng trông thế nào.</b> Mỗi vùng một giám đốc, trên cùng là phó tổng giám đốc kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Mỗi vùng làm theo một kiểu, khách bị chuyển qua lại giữa các vùng.</p></article></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="blog">
@@ -497,7 +500,7 @@ MAT_NGUOI = _mn()
 SO_LIEU_4 = '<div class="kenh-them so-4o">%s</div>' % "".join('<div><b>%s</b><span>%s</span></div>' % x for x in [
     ("30", "doanh nghiệp đã mời Duy tư vấn và huấn luyện đội ngũ"), THEM[0], ("%s+" % TONG[0], TONG[1]), THEM[1]])
 _BAI_PKD = [b for b in BAI_HIEN if b["chu_de"] == "Bán hàng và phòng kinh doanh"]
-INDEX = (INDEX.replace("{SO_LIEU_4}", SO_LIEU_4).replace("{LUOI_7M}", LUOI_7M)
+INDEX = (INDEX.replace("{SO_LIEU_4}", SO_LIEU_4).replace("{BANH_XE}", open("assets/banh-xe-7m.svg").read())
          .replace("{KHACH}", khach_html)
          .replace("{BAI_LON}", the_bai_lon(_BAI_PKD[0])).replace("{KHO}", KHO_TRANG_CHU)
          .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in _BAI_PKD[1:5])))
