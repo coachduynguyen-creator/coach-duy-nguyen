@@ -704,43 +704,43 @@ function ve() {
  <div class="phanlon"><div class="kic">Phần I · Tổng quan</div><h2>Công ty đang ở đâu</h2><p>Kết quả chung, điểm từng trụ cột và 3 trụ cột nên sửa trước.</p></div>
  ${dau(1, "Tóm tắt kết quả")}
  <div class="ghi"><div class="nhan">Nhận định chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
- <p>Trong 28 việc của một phòng kinh doanh tiêu chuẩn, công ty đã làm đúng hoàn toàn <b>${demTL(2)} việc</b>, làm được một phần <b>${demTL(1)} việc</b>, và chưa làm <b>${demTL(0)} việc</b>. Có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột đã có nhưng chưa đều</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}. Trụ cột vững nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.</p>
+ <p>Phòng kinh doanh tiêu chuẩn có 28 việc cần làm. Công ty anh chị đã làm trọn <b>${demTL(2)} việc</b>, làm được một phần <b>${demTL(1)} việc</b>, và chưa làm <b>${demTL(0)} việc</b>. Về trụ cột thì có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột đã có nhưng chưa đều</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}. Chỗ vững nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.</p>
  ${rr.length ? `<h3>Những rủi ro lớn nhất</h3>
- <div class="sodo">${rr.slice(0, 3).map((r, k) => `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><b>${r.ten}</b>${caBang ? "" : `<span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span>`}</div><div class="muted nho">Dựa trên ${r.can.length} câu trả lời của anh chị, xem kỹ ở Mục 3.</div></div></div>`).join("")}</div>${caBang ? `<p class="muted nho">${Math.min(3, rr.length)} rủi ro trên xếp theo mức chưa làm, rủi ro đầu tiên gấp nhất.</p>` : ""}` : ""}
+ <div class="sodo">${rr.slice(0, 3).map((r, k) => `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><b>${r.ten}</b>${caBang ? "" : `<span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span>`}</div><div class="muted nho">Từ ${r.can.length} câu anh chị đã trả lời. Giải thích kỹ ở Mục 3.</div></div></div>`).join("")}</div>${caBang ? `<p class="muted nho">${Math.min(3, rr.length)} rủi ro này xếp theo số việc chưa làm, nên lo rủi ro đầu tiên trước.</p>` : ""}` : ""}
  <h3>Điểm từng trụ cột</h3>
  <table class="bang diem"><thead><tr><th>Mã</th><th>Trụ cột</th><th>Điểm</th><th>Mức</th></tr></thead><tbody>
  ${ds.map(x => { const m = mucDo(x.d); return `<tr><td class="ma">M${x.i+1}</td><td class="ten">${TRU[x.i].ten} <span class="muted" style="font-weight:400">· ${TRU[x.i].hoi}</span></td><td class="so"><span class="thanh"><i style="width:${x.d/8*100}%;background:${MAU_MUC[m]}"></i></span>${x.d}/8</td><td>${nhan(m)}</td></tr>`; }).join("")}
  </tbody></table>
  <h3>3 trụ cột nên sửa trước</h3>
  <div class="sodo">${uu.map((x, k) => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><span class="en">M${x.i+1}</span><b>${p.ten}</b>${nhan(m)}</div><div class="muted nho">${viecDau(x)}</div></div></div>`; }).join("")}</div>
- <p class="muted nho">Kết quả lập từ câu trả lời của 1 người, nên có thể khác với cách nhân viên kinh doanh nhìn. Cuối Mục 5 có gợi ý cách đối chiếu.</p>
+ <p class="muted nho">Báo cáo này chỉ dựa trên câu trả lời của 1 người, nên có thể khác với cách nhân viên kinh doanh nhìn. Cuối Mục 5 có gợi ý cách đối chiếu.</p>
 </section>
 
 <section style="margin-top:9mm">
  ${dau(2, "Bức tranh 7 trụ cột")}
  <div class="tranh giu">${radar(ds)}</div>
- <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Mỗi câu chấm Đúng được 2 điểm, Đúng một phần được 1 điểm, Chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là đã có nhưng chưa đều, từ 7 tới 8 điểm là tốt. Tổng điểm không có mức đạt hay trượt, chỉ để so sánh khi anh chị đánh giá lại. Mã câu như 2.3 nghĩa là trụ cột 2, câu thứ 3 trên phiếu.</p>
+ <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Đúng được 2 điểm, đúng một phần được 1 điểm, chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là đã có nhưng chưa đều, từ 7 tới 8 điểm là tốt. Tổng điểm không phải điểm đỗ hay trượt, chỉ để anh chị so với lần đánh giá sau. Mã như 2.3 là câu thứ 3 của trụ cột 2 trên phiếu.</p>
  <h3>Vì sao thứ tự sửa không theo điểm thấp nhất</h3>
- <p>7 trụ cột xây theo thứ tự từ M1 tới M7, trụ cột sau dựa vào trụ cột trước. Ví dụ, chưa rõ bán cho ai và bán thế nào thì tuyển thêm người hay mua phần mềm đều khó ra kết quả. Vì vậy trụ cột cần sửa đi trước, trụ cột chưa đều đi sau, và trong mỗi nhóm đi từ M1 tới M7 như dưới đây.</p>
+ <p>7 trụ cột đi theo thứ tự từ M1 tới M7, trụ cột sau dựa vào trụ cột trước. Chưa rõ bán cho ai, bán thế nào thì tuyển thêm người hay mua phần mềm cũng khó có kết quả. Nên Duy xếp trụ cột cần sửa lên trước, trụ cột chưa đều sau, và trong mỗi nhóm đi từ M1 tới M7 như dưới đây.</p>
  <div class="chuoi giu">${ds.map((x, k) => `${k ? "<em>›</em>" : ""}<div class="m${mucDo(x.d)}"><b>M${x.i+1}</b>${TRU[x.i].ten}<br>${x.d}/8</div>`).join("")}</div>
 </section>
 
 <section style="margin-top:9mm">
- <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Từng rủi ro và từng trụ cột: điều ghi nhận được, điều có thể đang xảy ra, cách kiểm tra, và việc nên làm trước.</p></div>
+ <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Với từng rủi ro và từng trụ cột, Duy ghi lại điều đã thấy trong câu trả lời, điều có thể đang xảy ra, cách tự kiểm tra và việc nên làm trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Mỗi câu trả lời riêng lẻ chỉ cho thấy một việc chưa làm. Đặt vài câu trả lời cạnh nhau thì thấy được rủi ro mà từng câu không nói ra. Phiếu cho thấy ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro nặng nhất, xếp từ mức cao xuống. Rủi ro ở mức cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho biết việc nào chưa làm, nên đây là những điều có thể đang xảy ra. Anh chị đọc phần dấu hiệu đi kèm: thấy dấu hiệu nào trong công ty mình thì rủi ro đó nhiều khả năng đang xảy ra thật. Phần nguyên nhân và cách làm là điều thường gặp, chưa phải kết luận về riêng công ty anh chị. Anh chị đối chiếu với thực tế, chỗ nào không đúng thì bỏ qua.</p>
+ <p>Một câu trả lời đứng riêng chỉ cho Duy biết một việc chưa làm. Nhưng đặt vài câu cạnh nhau thì hiện ra chuyện lớn hơn mà từng câu không nói. Phiếu của anh chị có ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro nặng nhất, nặng nhất đứng đầu. Rủi ro tính là cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho Duy biết việc nào chưa làm, không cho biết chuyện gì đã xảy ra, nên đây là những điều có thể đang xảy ra. Anh chị xem phần dấu hiệu đi kèm. Thấy dấu hiệu nào ở công ty mình thì rủi ro đó nhiều khả năng đang có thật. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chưa phải kết luận về công ty anh chị. Chỗ nào không đúng với thực tế thì anh chị cứ bỏ qua.</p>
  ${rr.slice(0, SO_RR_HIEN).map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten} <span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span></h4>
-  <p><b>Điều đã ghi nhận.</b> Qua các câu trả lời, anh chị cho biết: ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
+  <p><b>Điều đã ghi nhận.</b> Anh chị cho biết: ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
   <p><b>Vấn đề và hậu quả.</b> ${r.ht}</p>
   ${NN_GP[r.ten] ? (g => `<p><b>Nguyên nhân thường gặp.</b> ${g.nn}</p>
   <p><b>Nên làm.</b></p>
   <ol class="gp">${g.gp.map(x => `<li>${x}</li>`).join("")}</ol>
   ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Riêng với công ty của anh chị.</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
-  <p><b>Để xác nhận với đội ngũ.</b> Nếu thấy ít nhất 1 trong những dấu hiệu này thì rủi ro đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}. Câu hỏi nên đặt ra: ${r.hoi}</p>
+  <p><b>Hỏi lại đội ngũ.</b> Anh chị xem công ty có dấu hiệu nào dưới đây không. Chỉ cần thấy 1 là rủi ro này đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}. Câu nên hỏi đội ngũ: ${r.hoi}</p>
  </div>`).join("")}
  ${kh.length ? `<h3>Chỗ 2 câu trả lời đang lệch nhau</h3>
- <p>Mỗi cặp dưới đây là 2 việc thường đi cùng nhau nhưng được chấm khác nhau. Đây không phải lỗi khi trả lời, mà là chỗ nên hỏi thêm đội ngũ trước khi sửa, vì thường có một lý do cụ thể phía sau.</p>
+ <p>Mỗi cặp dưới đây là 2 việc thường đi cùng nhau mà anh chị chấm khác nhau. Không phải anh chị trả lời sai. Đây là chỗ nên hỏi thêm đội ngũ trước khi sửa, vì thường có lý do cụ thể phía sau.</p>
  ${kh.map(k => `<div class="khop">${chip(k.a)}${chip(k.b)}<p>${k.t}</p></div>`).join("")}` : ""}
 </section>
 
@@ -755,7 +755,7 @@ function ve() {
   <p class="hoi">${p.hoi}</p>
   ${tot.length ? `<p><b>Anh chị đã làm tốt:</b> ${tot.map(thuong).join("; ")}.</p>` : ""}
   ${thieu.length ? `<p><b>Chỗ còn thiếu.</b> ${thieu.length > 1 ? "Có " + thieu.length + " việc chưa làm đủ." : "Có 1 việc chưa làm đủ."}</p>
-  <ul class="thieu">${thieu.map(c => `<li><b>${CAU[c].ngan}</b> (${MUC[tl(c)].toLowerCase()}). ${tl(c) === 1 ? RR1[c] : CAU[c].rr} Câu hỏi nên đặt ra: ${CAU[c].hoi}${soRR(c) ? ` <em class="lq">Việc này nằm trong rủi ro số ${soRR(c)} ở Mục 3.</em>` : ""}</li>`).join("")}</ul>` : ""}
+  <ul class="thieu">${thieu.map(c => `<li><b>${CAU[c].ngan}</b> (${MUC[tl(c)].toLowerCase()}). ${tl(c) === 1 ? RR1[c] : CAU[c].rr} Câu nên hỏi đội ngũ: ${CAU[c].hoi}${soRR(c) ? ` <em class="lq">Việc này nằm trong rủi ro số ${soRR(c)} ở Mục 3.</em>` : ""}</li>`).join("")}</ul>` : ""}
   ${m < 2 ? `<p><b>Việc nên làm trước.</b> ${viecDau(x)}</p>` : ""}
  </div>`; }).join("")}
 </section>
