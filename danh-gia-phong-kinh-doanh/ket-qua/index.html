@@ -736,12 +736,10 @@ function ve() {
   const ruiHtml = (r, k0) => { const k = (k0 === undefined ? rr.indexOf(r) : k0); return `<div class="rui">
   <h4>${k+1}. ${r.ten}${caBang ? "" : ` <span class="muc ${r.cao ? "m0" : "m1"}">${r.cao ? "Nặng" : "Vừa"}</span>`}</h4>
   <p><b>Nếu để vậy thì sao.</b> ${r.ht}</p>
-  ${NN_GP[r.ten] ? (g => `<p><b>Vì sao chuyện này hay xảy ra.</b></p>
-  <ul class="gp">${r.can.filter(c => tl(c) < 2).slice(0, 2).map(c => `<li>${NN_Q[c][tl(c)]}</li>`).join("")}</ul>
-  <p><b>Anh chị làm như sau.</b></p>
-  <ol class="gp">${g.gp.slice(0, 3).map(x => `<li>${x}</li>`).join("")}</ol>
-  ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).slice(0, 0).map(x => `<p class="rieng"><b>Thêm theo công ty anh chị:</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
-  <p>Nếu anh chị thấy ${r.dh.slice(0, 2).map(d => d.charAt(0).toLowerCase() + d.slice(1)).join(", hoặc ")}, thì rủi ro này nhiều khả năng đang có.</p>
+  ${NN_GP[r.ten] ? `<p><b>Vì sao chuyện này hay xảy ra.</b></p>
+  <ul class="gp">${r.can.filter(c => tl(c) < 2).slice(0, 3).map(c => `<li>${NN_Q[c][tl(c)]}</li>`).join("")}</ul>` : ""}
+  <p><b>Dấu hiệu dễ thấy trong phòng:</b> ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
+  <p><b>Anh chị tự hỏi 1 câu này.</b> ${r.hoi}</p>
  </div>`; };
   let H = `
 <div class="bia">
@@ -765,7 +763,7 @@ function ve() {
  <ul class="nhanh">
   <li>${dongDeu ? `Cả 7 trụ cột đều ${manh.d} trên 8 điểm, nên chưa có trụ cột nào nổi hơn.` : manh.d >= 7 ? `Phần anh chị làm tốt nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.` : manh.d >= 4 ? `Phần khá nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm. Cách làm đã có, giờ cần làm đều hơn.` : `Phần cao điểm nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm. Nhưng đó vẫn là mức cần sửa, nên chưa có phần nào anh chị yên tâm giữ nguyên.`}</li>
   ${rr.length ? `<li>Rủi ro Duy lo nhất là <b>${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}</b>. Phần phân tích Duy nói rõ chuyện gì có thể xảy ra.</li>` : ""}
-  <li>Việc nên làm trước là <b>${tenM(uu[0].i)}</b>. ${viecDau(uu[0])}</li>
+  <li>Trụ cột Duy thấy cần xem kỹ trước là <b>${tenM(uu[0].i)}</b>.</li>
  </ul></div>
  <div class="ghi"><div class="nhan">Duy nhận xét chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
  <h3 style="margin-top:5mm">Điểm từng trụ cột</h3>
@@ -776,19 +774,20 @@ function ve() {
 </section>
 
 ${(() => {
-  const ds2 = ds, trang = [];
-  trang.push([rr.length > 1 ? "Rủi ro có thể đang xảy ra" : "Rủi ro anh chị cần để ý", rr.length ? `<p>Đây là ${Math.min(3, rr.length)} rủi ro Duy lo nhất${caBang ? ", xếp theo tổng điểm các câu liên quan" : ""}. Với mỗi rủi ro, Duy nói chuyện gì có thể xảy ra, vì sao, và anh chị nên làm gì.</p>${rr.slice(0, 2).map(ruiHtml).join("")}` : `<p>Từ các câu anh chị trả lời, Duy chưa thấy rủi ro nào nổi lên rõ. Anh chị xem chi tiết từng trụ cột ở trang sau.</p>`]);
-  if (rr.length > 2 || kh.length) trang.push([rr.length > 2 ? "Rủi ro thứ ba, và những câu chấm lệch nhau" : "Những câu chấm lệch nhau", `${rr.slice(2, 3).map(r => ruiHtml(r, 2)).join("")}${kh.length ? `<h3>${kh.length > 1 ? "Những cặp câu anh chị chấm lệch nhau" : "2 câu anh chị chấm lệch nhau"}</h3><p>${kh.length > 1 ? "Mỗi cặp dưới đây gồm 2 việc" : "2 việc dưới đây"} thường đi cùng nhau, nhưng anh chị chấm khác nhau. Không phải anh chị trả lời sai. Trước khi sửa, anh chị thử hỏi lại vì sao hai việc này chấm khác nhau, thường sẽ có lý do cụ thể.</p>${kh.slice(0, 2).map(k => `<div class="khop">${chip(k.a)}${chip(k.b)}<p>${k.t}</p></div>`).join("")}` : ""}`]);
-  trang.push(["Chi tiết từng trụ cột", `<p>Mỗi trụ cột, Duy ghi việc anh chị đã làm tốt, việc còn thiếu, và một câu để anh chị hỏi nhân viên.</p>${ds2.map(x => { const p = TRU[x.i], m = mucDo(x.d);
-  const cs = p.cau.map((q, j) => (x.i+1)+"."+(j+1)), thieu = cs.filter(c => tl(c) < 2), tot = cs.filter(c => tl(c) === 2);
-  const th = c => CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1);
-  return `<div class="tru2"><h4>${tenM(x.i)}: ${x.d}/8, ${TEN_MUC[m].toLowerCase()}</h4>${tot.length ? `<p><b>Đã làm tốt:</b> ${tot.slice(0, 2).map(th).join("; ")}.</p>` : ""}${thieu.length ? `<p><b>Còn thiếu:</b> ${thieu.slice(0, 2).map(c => th(c) + " (" + MUC[tl(c)].toLowerCase() + ")").join("; ")}.${m === 0 ? ` <b>Hỏi nhân viên:</b> ${CAU[thieu[0]].hoi}` : ""}</p>` : ""}</div>`; }).join("")}`]);
+  const trang = [], top = rr.slice(0, 5), tieuDe = ["Rủi ro có thể đang xảy ra", "Thêm những rủi ro tiếp theo", "Rủi ro cuối, và những câu chấm lệch nhau"];
+  const khHtml = kh.length ? `<h3>${kh.length > 1 ? "Những cặp câu anh chị chấm lệch nhau" : "2 câu anh chị chấm lệch nhau"}</h3><p>${kh.length > 1 ? "Mỗi cặp dưới đây gồm 2 việc" : "2 việc dưới đây"} thường đi cùng nhau, nhưng anh chị chấm khác nhau. Không phải anh chị trả lời sai. Trước khi sửa, anh chị thử hỏi lại vì sao 2 việc này chấm khác nhau, thường sẽ có lý do cụ thể.</p>${kh.slice(0, 2).map(k => `<div class="khop">${chip(k.a)}${chip(k.b)}<p>${k.t}</p></div>`).join("")}` : "";
+  if (!top.length) trang.push([tieuDe[0], `<p>Từ các câu anh chị trả lời, Duy chưa thấy rủi ro nào nổi lên rõ.</p>${khHtml}`]);
+  for (let i = 0; i < top.length; i += 2) {
+    const ch = top.slice(i, i + 2), cuoi = i + 2 >= top.length;
+    trang.push([i === 0 ? (top.length > 1 ? tieuDe[0] : "Rủi ro anh chị cần để ý") : cuoi ? tieuDe[2] : tieuDe[1],
+      (i === 0 ? `<p>Đây là ${top.length} rủi ro Duy lo nhất${caBang ? ", xếp theo tổng điểm các câu liên quan" : ""}. Với mỗi rủi ro, Duy nói chuyện gì có thể xảy ra, vì sao hay xảy ra, và làm sao để anh chị tự thấy nó có đang xảy ra thật không.</p>` : "") + ch.map((r, j) => ruiHtml(r, i + j)).join("") + (cuoi ? khHtml : "")]);
+  }
   return trang.map((t, i) => `<section class="phan pt">${dau3("Phân tích " + (i + 1) + " trên " + trang.length, t[0])}${t[1]}</section>`).join("\n");
  })()}
 
 <section class="phan">
  ${dau3("Kế hoạch 30 ngày", "Kế hoạch tự làm trong 30 ngày")}
- <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự của phòng kinh doanh, vì trụ cột trước là nền cho trụ cột sau." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Anh chị làm trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>${rrNgoai.length ? `<p>Ngoài ra, rủi ro ở phần phân tích còn một việc nhỏ mà các trụ cột dưới đây chưa có, anh chị làm thêm luôn:</p><ul>${rrNgoai.map(r => `<li>Với rủi ro “${r.ten.charAt(0).toLowerCase() + r.ten.slice(1)}”, anh chị ${NN_GP[r.ten].gp[0].charAt(0).toLowerCase() + NN_GP[r.ten].gp[0].slice(1)}</li>`).join("")}</ul>` : ""}
+ <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự của phòng kinh doanh, vì trụ cột trước là nền cho trụ cột sau." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Anh chị làm trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>
  <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột và việc làm đầu tiên</th><th>Khi cả trụ cột này tốt, anh chị sẽ thấy</th><th>Ai phụ trách</th></tr></thead><tbody>
  ${uu.map((x, k) => { const p = TRU[x.i]; return `<tr><td class="ma" style="width:24mm;white-space:nowrap">${moc[k]}</td><td><b>${tenM(x.i)}</b><br>${viecDau(x)}</td><td>${p.kq[2]}</td><td class="trong">....................</td></tr>`; }).join("")}
  <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Anh chị chấm lại</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh. Người đã chấm lần này làm lại phiếu, rồi đối chiếu với điểm trong báo cáo.</td></tr>
