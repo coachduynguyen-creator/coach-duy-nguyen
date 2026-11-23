@@ -218,8 +218,8 @@ h4{font-family:var(--tit);font-weight:700;font-size:12.5pt;color:var(--nv);margi
 <script>
 const TRU = [
  {ten:"Thị trường", anh:"Market", hoi:"Bán gì, cho ai?",
-  danhGia:"Đội ngũ bán hàng có hiểu giống nhau về khách hàng mục tiêu, lý do khách chọn công ty, và chính sách giảm giá không.",
-  viSao:"Trụ cột này chưa rõ thì đội ngũ dễ dồn sức vào khách không hợp: thời gian trôi đi mà doanh số không lên, còn giá thì mỗi người giảm một kiểu.",
+  danhGia:"Hỏi 3 nhân viên bán hàng: khách của công ty là ai, vì sao khách chọn công ty, giảm giá tới đâu. Ba người có trả lời giống nhau không?",
+  viSao:"Chưa rõ bán cho ai thì nhân viên dễ mất cả tuần chạy theo khách không mua, doanh số không lên. Giá thì mỗi người giảm một kiểu.",
   cau:[
   "Nhân viên kinh doanh nắm chân dung khách hàng mục tiêu của công ty tới đâu?",
   "Khi khách hỏi “bên em khác gì chỗ khác?”, nhân viên kinh doanh trả lời thế nào?",
@@ -231,15 +231,15 @@ const TRU = [
   ["Nhân viên tự quyết, mỗi người làm một kiểu", "Có chính sách chung, nhưng nhân viên vẫn hay xin ngoại lệ", "Theo chính sách chung, vượt mức quy định phải được người chủ duyệt"],
   ["Ai nhận được trước thì giữ, hoặc chia theo cảm tính", "Có quy tắc chia khách, nhưng chưa rõ hoặc chưa phải ai cũng biết", "Có quy tắc chia khách rõ ràng, nhân viên nào cũng biết"]],
   goi:["", "", "", "Tính cả trường hợp khách quen muốn chọn nhân viên tư vấn."],
-  lam:"thống nhất khách hàng mục tiêu, chính sách giá và lý do khách chọn công ty",
-  kq:["Nhiều khả năng đội ngũ đang tự chọn khách theo cảm nhận, nên thời gian dồn vào những khách khó mua. Nếu mỗi người giảm giá một kiểu, công ty dễ mất lợi nhuận, còn khách cũ biết được dễ thấy không công bằng.",
-      "Đã có hình dung chung về khách hàng mục tiêu và chính sách giá, nhưng chưa viết ra, nên mỗi nhân viên kinh doanh hiểu hơi khác nhau.",
-      "Đội ngũ đã thống nhất khách hàng mục tiêu, lý do khách chọn công ty và chính sách giá."],
-  dau:["Ngồi với đội ngũ viết ra 1 trang: khách hàng mục tiêu, khách hàng không phù hợp, và chính sách giảm giá chung.",
-       "Viết ra những gì cả nhóm đang hiểu ngầm về khách và giá, rồi để mọi người cùng sửa cho tới khi khớp."]},
+  lam:"để cả nhóm cùng nói được khách của công ty là ai, giảm giá tới đâu và vì sao khách chọn công ty",
+  kq:["Nhiều khả năng mỗi nhân viên đang tự chọn khách theo cảm giác, nên mất thời gian với những khách khó mua. Mỗi người giảm giá một kiểu thì công ty mất lãi, và khách cũ biết mình mua giá cao hơn sẽ thấy bất công.",
+      "Cả nhóm đã nghĩ về khách và giá khá giống nhau, nhưng chưa ai viết ra giấy, nên mỗi người hiểu lệch một chút.",
+      "Cả nhóm cùng nói được khách của công ty là ai, vì sao khách chọn công ty và giảm giá tới đâu."],
+  dau:["Ngồi với cả nhóm viết ra 1 trang: khách nào nên bán, khách nào không nên bán, và giảm giá tối đa bao nhiêu.",
+       "Mỗi người viết ra điều mình đang nghĩ về khách và giá. Đem ra so sánh rồi sửa chung tới khi ai cũng đồng ý."]},
  {ten:"Quy trình", anh:"Method", hoi:"Bán thế nào?",
   danhGia:"Các bước bán từ lúc khách hỏi tới lúc khách mua đã được viết ra chưa, và cả nhóm có làm theo không.",
-  viSao:"Không có quy trình chung thì doanh số dựa vào vài người giỏi. Người mới học rất lâu, còn khách nói “để suy nghĩ thêm” mà không ai hỏi lại thì dễ mất khách.",
+  viSao:"Mỗi người bán một kiểu thì doanh số trông chờ vào vài người giỏi. Người mới học rất lâu. Khách nói “để suy nghĩ thêm” mà không ai gọi lại thì mất khách.",
   cau:[
   "Quy trình bán hàng của công ty đang ở mức nào?",
   "Nhân viên kinh doanh làm theo quy trình bán hàng tới đâu?",
@@ -251,14 +251,14 @@ const TRU = [
   ["Chờ khách tự liên hệ lại", "Có gọi lại, nhưng không hẹn ngày cụ thể", "Hẹn ngày cụ thể, ghi lại và liên hệ đúng hẹn"],
   ["Chưa có lịch chăm sóc, khách cần gì thì tự liên hệ", "Có chăm sóc, nhưng tùy từng nhân viên", "Có lịch chăm sóc định sẵn, nhân viên làm đúng lịch"]],
   goi:["", "Xem lại 5 khách bất kỳ trong tuần vừa rồi để chấm.", "", ""],
-  lam:"viết các bước bán hàng và cách tư vấn chung, rồi hướng dẫn tới khi cả nhóm làm theo",
-  kq:["Nhiều khả năng mỗi người đang bán một kiểu, nên kết quả phụ thuộc vào vài người giỏi. Khách nói “để suy nghĩ thêm” thường không ai hỏi lại, và khách đã mua cũng ít được liên lạc lại.",
+  lam:"viết ra từng bước bán hàng, rồi kèm từng người cho tới khi cả nhóm bán theo đúng các bước đó",
+  kq:["Nhiều khả năng mỗi nhân viên bán một kiểu, nên doanh thu trông vào vài người giỏi. Khách nói “để suy nghĩ thêm” thường không ai gọi lại, và khách đã mua cũng ít được hỏi thăm.",
       "Các bước đã có nhưng chưa phải ai cũng làm theo, nhất là bước hỏi lại khách đang cân nhắc và bước chăm sóc khách đã mua.",
-      "Cả nhóm đang bán theo cùng các bước, khách đang cân nhắc và khách đã mua đều được liên lạc lại."],
-  dau:["Lấy cách bán của người giỏi nhất, viết thành các bước từ lúc khách hỏi tới lúc khách mua, rồi cho cả nhóm làm thử.",
+      "Cả nhóm bán theo cùng các bước. Khách đang cân nhắc và khách đã mua đều được gọi lại đúng hẹn."],
+  dau:["Hỏi người bán giỏi nhất làm từng việc gì, từ lúc khách hỏi tới lúc khách mua. Viết thành các bước rồi cho cả nhóm làm thử.",
        "Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần."]},
  {ten:"Nhân sự", anh:"Manpower", hoi:"Ai bán?",
-  danhGia:"Tuyển nhân viên kinh doanh dựa vào điều gì, người mới được kèm cặp ra sao, và người giỏi có thấy lộ trình thăng tiến không.",
+  danhGia:"Công ty chọn nhân viên kinh doanh dựa vào gì, ai kèm người mới, và người giỏi có biết mình làm tới đâu thì được lên chức không.",
   viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy lộ trình thăng tiến thì cũng nghỉ.",
   cau:[
   "Công ty tuyển nhân viên kinh doanh dựa vào đâu?",
@@ -271,15 +271,15 @@ const TRU = [
   ["Chưa đào tạo, nhân viên tự rút kinh nghiệm", "Có đào tạo, nhưng chưa theo danh sách kỹ năng cụ thể", "Có nội dung đào tạo rõ cho từng kỹ năng, nhân viên mới được đào tạo lần lượt"],
   ["Chưa có lộ trình, tăng lương tùy người chủ quyết", "Có lộ trình, nhưng chưa rõ cần đạt kết quả gì", "Biết rõ đạt kết quả nào thì được tăng lương, lên chức"]],
   goi:["", "", "", ""],
-  lam:"đặt tiêu chí tuyển, kế hoạch kèm cặp người mới và bảng năng lực nhân viên kinh doanh",
+  lam:"viết ra kiểu người cần tuyển, ai kèm người mới trong bao lâu, và danh sách kỹ năng mỗi nhân viên cần có",
   kq:["Nhiều khả năng công ty đang tuyển theo cảm nhận và để người mới tự mày mò, nên người mới dễ nghỉ sớm và công ty phải tuyển lại liên tục.",
-      "Đã có bản mô tả người cần tuyển hoặc người kèm cặp, nhưng mới làm được một phần. Người mới vẫn học mỗi người một kiểu.",
-      "Cách tuyển, cách kèm cặp người mới và lộ trình thăng tiến đã rõ."],
+      "Đã có bản mô tả người cần tuyển hoặc người kèm cặp, nhưng làm chưa đủ. Người mới vẫn học mỗi người một kiểu.",
+      "Công ty biết tuyển người thế nào, ai kèm người mới, và nhân viên biết làm được gì thì lên chức."],
   dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cặp cụ thể trong 90 ngày đầu.",
-       "Lập bảng năng lực nhân viên kinh doanh để biết mỗi người mới còn thiếu phần nào mà kèm cặp đúng chỗ."]},
+       "Liệt kê các kỹ năng một nhân viên bán hàng cần có, rồi đánh dấu từng người mới còn thiếu kỹ năng nào để kèm đúng chỗ đó."]},
  {ten:"Tài chính", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
-  danhGia:"Nhân viên kinh doanh có tự tính được thu nhập không, thưởng có giữ đúng như đã báo không, và người chủ có biết tốn bao nhiêu để có một khách mua.",
-  viSao:"Cách trả lương thưởng quyết định nhân viên kinh doanh dồn sức vào việc gì. Trả lương thưởng không rõ thì nhân viên kinh doanh chạy theo đơn dễ, bỏ qua khách khó, còn người chủ không biết mình lãi hay lỗ ở từng khách.",
+  danhGia:"Nhân viên có tự tính được tháng này mình nhận bao nhiêu không? Thưởng có trả đúng như đã báo không? Người chủ có biết mất bao nhiêu tiền để có 1 khách mua không?",
+  viSao:"Nhân viên làm việc gì nhiều là do tiền thưởng trả cho việc đó. Cách trả không rõ thì nhân viên chạy theo đơn dễ, bỏ khách khó, còn người chủ không biết khách nào lãi, khách nào lỗ.",
   cau:[
   "Nhân viên kinh doanh có tự tính được thu nhập tháng của mình không?",
   "Chính sách thưởng của công ty có ổn định không?",
@@ -291,15 +291,15 @@ const TRU = [
   ["Chưa có quy định, xử lý tùy lúc", "Có cách làm quen thuộc, nhưng chưa thành quy định", "Có quy định bàn giao khách rõ ràng, kể cả hoa hồng nếu có"],
   ["Chưa tính bao giờ", "Ước chừng được, nhưng chưa có con số rõ", "Biết con số cụ thể và theo dõi hằng tháng"]],
   goi:["Có thưởng, hoa hồng thì tính cả phần đó.", "", "", "Ví dụ: tháng trước chi 30 triệu cho quảng cáo, có 15 khách mua, vậy mỗi khách tốn khoảng 2 triệu."],
-  lam:"sửa cách tính thu nhập để nhân viên kinh doanh dồn sức vào đúng khách và đúng việc",
-  kq:["Nhiều khả năng nhân viên kinh doanh chưa tự tính được thu nhập, hoặc thưởng đổi giữa chừng, nên dễ mất niềm tin vào chính sách. Người chủ chưa biết tốn bao nhiêu để có một khách mua.",
+  lam:"sửa cách tính lương thưởng để nhân viên dành thời gian cho đúng khách và đúng việc",
+  kq:["Nhiều khả năng nhân viên chưa tự tính được mình nhận bao nhiêu, hoặc thưởng bị đổi giữa chừng, nên không còn tin lời công ty hứa. Người chủ chưa biết mất bao nhiêu tiền để có 1 khách mua.",
       "Cách trả lương thưởng đã có nhưng còn chỗ chưa rõ, ví dụ khách giao cho ai khi một nhân viên kinh doanh nghỉ việc.",
-      "Cách tính thu nhập rõ, người chủ nắm được chi phí để có một khách mua."],
+      "Nhân viên tự tính được thu nhập của mình, và người chủ biết mất bao nhiêu tiền để có 1 khách mua."],
   dau:["Viết lại cách tính thu nhập trên 1 trang, báo từ đầu kỳ và giữ nguyên tới cuối kỳ.",
        "Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất."]},
  {ten:"Công cụ", anh:"Material", hoi:"Bán bằng công cụ nào?",
   danhGia:"Thông tin khách có nằm ở một bảng tính hoặc phần mềm chung của công ty không, và báo giá có dùng mẫu chung không.",
-  viSao:"Thông tin khách nằm trong Zalo cá nhân thì một nhân viên kinh doanh nghỉ là công ty mất luôn nhóm khách người đó đang chăm sóc. Mua phần mềm khi cách bán chưa rõ thì phần mềm cũng chỉ ghi lại cảnh mỗi người một kiểu.",
+  viSao:"Thông tin khách nằm trong Zalo cá nhân thì một nhân viên kinh doanh nghỉ là công ty mất luôn nhóm khách người đó đang chăm sóc. Mua phần mềm khi mỗi người vẫn bán một kiểu thì phần mềm chỉ lưu lại đúng cảnh lộn xộn đó.",
   cau:[
   "Thông tin khách hàng đang được lưu ở đâu?",
   "Khi nhân viên nghỉ việc, công ty có nắm được lịch sử trao đổi với khách không?",
@@ -319,7 +319,7 @@ const TRU = [
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
  {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
-  viSao:"Chỉ nhìn doanh số cuối tháng thì biết hụt khi đã muộn. Xem vài con số mỗi tuần thì còn kịp sửa.",
+  viSao:"Tới cuối tháng mới xem doanh số thì hụt rồi, không kịp làm gì. Mỗi tuần xem vài con số thì còn kịp sửa.",
   cau:[
   "Chỉ tiêu doanh số từng tháng được đặt thế nào?",
   "Quản lý biết tháng này có đạt chỉ tiêu không từ lúc nào?",
@@ -339,7 +339,7 @@ const TRU = [
        "Chia lại chỉ tiêu theo tháng cao điểm, tháng thấp điểm, rồi xem số liệu vào một buổi cố định mỗi tuần."]},
  {ten:"Quản lý", anh:"Management", hoi:"Điều hành ra sao?",
   danhGia:"Quản lý dành thời gian cho việc gì, họp tuần có ra việc cụ thể không, và việc nào quản lý được tự quyết.",
-  viSao:"Trụ cột này giữ cho 6 trụ cột kia không bị bỏ dở. Thiếu nó thì mọi việc lại dồn về người chủ, và cách làm mới bỏ dở sau vài tuần.",
+  viSao:"Quản lý là người nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
   cau:[
   "Thời gian của quản lý đang dành cho việc gì nhiều nhất?",
   "Họp tuần của phòng kinh doanh kết thúc thế nào?",
@@ -352,7 +352,7 @@ const TRU = [
   ["Vài tuần sau mọi người lại làm như cũ", "Một số người làm theo, một số không", "Quản lý theo sát tới khi tất cả cùng làm theo"]],
   goi:["", "", "Công ty chưa có quản lý riêng: chấm theo việc nào nhân viên được tự quyết.", "Ví dụ: chuyển sang ghi khách vào phần mềm, đổi mẫu báo giá."],
   lam:"sắp lịch họp tuần, lịch kèm cặp nhân viên kinh doanh và phân quyền để việc không dồn về người chủ",
-  kq:["Nhiều khả năng quản lý vẫn phải tự bán là chính, họp tuần chưa ra việc cụ thể, nên việc lại dồn về người chủ. Thường đây không phải lỗi của riêng ai, mà vì công ty chưa sắp lịch và chưa phân quyền rõ.",
+  kq:["Nhiều khả năng quản lý vẫn phải tự đi bán là chính, họp tuần xong không ai nhận việc, nên việc lại dồn về người chủ. Thường đây không phải lỗi của ai, mà vì công ty chưa xếp lịch kèm nhân viên và chưa nói rõ việc nào quản lý được tự quyết.",
       "Đã có họp và kèm cặp nhân viên kinh doanh, nhưng lúc có lúc không, và quyền quyết định của quản lý chưa rõ.",
       "Quản lý đang kèm cặp nhân viên kinh doanh, họp tuần ra việc cụ thể, phân quyền rõ."],
   dau:["Đặt lịch họp tuần 30 phút, kết thúc bằng việc giao cho từng người, và tuần sau xem lại việc đó.",
@@ -362,15 +362,15 @@ const TRU = [
 // Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
 const HO_SO = {
   goc:{t:"Việc bán hàng đang dồn vào người chủ và vài người giỏi",
-   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên làm rõ chuyện bán cho ai, bán thế nào trước."},
+   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
   nguoi:{t:"Đã có cách bán, nhưng khó giữ người giỏi và đào tạo người mới",
    m:"Công ty đã rõ bán cho ai và bán thế nào. Chỗ còn thiếu là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
   so:{t:"Có người bán, nhưng chưa có số liệu để thấy khách đang kẹt ở đâu",
-   m:"Cách bán và đội ngũ đã có nền. Chỗ còn thiếu là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
-  dieuhanh:{t:"Đã có nền, nhưng quản lý chưa theo sát hằng tuần",
-   m:"6 trụ cột đầu đã có nền, nhưng quản lý chưa theo sát hằng tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
-  chuadeu:{t:"Đã có nền, nhưng mỗi người làm một mức",
-   m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc mới làm được một phần hoặc mới vài người làm. Việc tiếp theo là để cả phòng làm giống nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
+   m:"Cách bán và đội ngũ đã đủ dùng. Chỗ còn thiếu là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
+  dieuhanh:{t:"Cách làm đã có, nhưng quản lý chưa kiểm tra mỗi tuần",
+   m:"6 trụ cột đầu đã có cách làm, nhưng quản lý chưa kiểm tra mỗi tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
+  chuadeu:{t:"Đã có cách làm, nhưng mỗi người làm một mức",
+   m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc làm chưa đủ hoặc mới vài người làm. Việc tiếp theo là để ai trong phòng cũng làm đúng như nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
   vung:{t:"Phòng kinh doanh đã có nền tốt",
    m:"Cả 7 trụ cột đều ở mức tốt. Việc tiếp theo là giữ như vậy, và làm lại phiếu sau vài tuần để xem có chỗ nào tụt không."}
 };
@@ -384,7 +384,7 @@ const mucDo = d => d <= 3 ? 0 : d <= 6 ? 1 : 2;
 // Mã câu "x.y" = trụ cột x, câu y, theo thứ tự TRU trên trang đánh giá.
 // Mỗi câu: ngan = tên ngắn, rr = điều có thể đang xảy ra khi chưa làm tốt, hoi = câu hỏi để làm rõ.
 const CAU = {
- "1.1":{ngan:"Cùng hiểu khách hàng mục tiêu",
+ "1.1":{ngan:"Cùng biết khách của công ty là ai",
   rr:"Mỗi nhân viên kinh doanh đang tự chọn khách theo cảm nhận. Thời gian và tiền quảng cáo dễ dồn vào khách không có nhu cầu thật, hoặc không đủ khả năng chi trả.",
   hoi:"Trong 10 khách mua gần nhất, bao nhiêu khách đúng là kiểu khách công ty muốn có?"},
  "1.2":{ngan:"Cùng nói một lý do khách chọn công ty",
@@ -415,7 +415,7 @@ const CAU = {
   rr:"Người mới tự mày mò thì học theo người ngồi gần nhất, kể cả thói quen chưa tốt. Người mới dễ nghỉ sớm, công ty mất cả công tuyển lẫn những khách đã giao cho người mới.",
   hoi:"Người mới vào gần nhất mất bao lâu mới có đơn đầu tiên, và ai đã kèm người đó?"},
  "3.3":{ngan:"Có danh sách kỹ năng để đào tạo",
-  rr:"Không có danh sách kỹ năng thì đào tạo theo ý từng lúc, và không biết nhân viên kinh doanh yếu ở đâu để kèm đúng chỗ.",
+  rr:"Không có danh sách kỹ năng thì dạy theo hứng từng lúc, và không biết nhân viên kinh doanh yếu ở đâu để kèm đúng chỗ.",
   hoi:"Nhân viên kinh doanh yếu nhất hiện nay đang thiếu kỹ năng nào? Quản lý và chính người đó có nói giống nhau không?"},
  "3.4":{ngan:"Người giỏi thấy lộ trình thăng tiến",
   rr:"Người giỏi chưa thấy đường đi lên ở công ty thì có thể sẽ tìm ở nơi khác. Nếu khách của người giỏi chưa nằm ở bảng tính hoặc phần mềm chung của công ty, công ty có thể mất cả người lẫn khách.",
@@ -472,85 +472,85 @@ const CAU = {
 
 // Khi câu chỉ đúng một phần: điều có thể đang xảy ra ở phần chưa làm.
 const RR1 = {
- "1.1":"Đã có hình dung chung về khách hàng mục tiêu, nhưng chưa phải ai cũng hiểu giống nhau. Ở những người hiểu khác, thời gian vẫn có thể dồn vào khách khó mua.",
- "1.2":"Một số nhân viên kinh doanh đã nói được lý do khách chọn công ty, số còn lại chưa. Với những người này, khách dễ quay về so sánh giá.",
- "1.3":"Đã có chính sách giảm giá nhưng vẫn còn trường hợp nhân viên kinh doanh tự quyết. Mỗi trường hợp như vậy có thể làm công ty mất một phần lợi nhuận mà không biết.",
+ "1.1":"Công ty đã có ý về khách hàng mục tiêu, nhưng mỗi người hiểu mỗi kiểu. Người nào hiểu lệch thì vẫn mất nhiều thời gian chạy theo khách khó mua.",
+ "1.2":"Có nhân viên nói được vì sao khách chọn công ty mình, có người chưa nói được. Khách của những người này dễ quay lại so giá.",
+ "1.3":"Đã có chính sách giảm giá nhưng vẫn còn trường hợp nhân viên kinh doanh tự quyết. Mỗi lần nhân viên tự giảm như vậy, công ty có thể mất một phần tiền lãi mà không ai hay.",
  "1.4":"Đã có cách chia khách nhưng chưa phải ai cũng biết hoặc làm theo, nên vẫn có lúc khách mới không rõ ai nhận.",
- "2.1":"Cách bán mới viết ra được một phần, phần còn lại vẫn nằm trong kinh nghiệm của từng người. Người mới học được phần đã viết, phần kia phải tự đoán.",
- "2.2":"Một số người làm theo các bước, số còn lại chưa. Khi kết quả chênh nhau, khó biết là do cách bán hay do nhân viên kinh doanh làm thiếu bước.",
- "2.3":"Việc hẹn ngày hỏi lại mới làm được một phần. Với những khách chưa được hẹn, khả năng bị bỏ quên vẫn còn.",
+ "2.1":"Mới có một phần cách bán được viết ra giấy, phần còn lại nằm trong đầu từng người. Người mới học được phần đã viết, còn phần kia phải tự mò.",
+ "2.2":"Một số người làm theo các bước, số còn lại chưa. Khi 2 nhân viên bán được số đơn chênh nhau, khó biết lỗi nằm ở cách bán hay ở chỗ 1 người bỏ sót bước.",
+ "2.3":"Việc hẹn ngày hỏi lại làm chưa đủ. Với những khách chưa được hẹn, khả năng bị bỏ quên vẫn còn.",
  "2.4":"Có liên lạc lại khách đã mua nhưng chưa theo lịch cố định, nên phụ thuộc vào việc nhân viên kinh doanh có nhớ hay không.",
- "3.1":"Đã có tiêu chí tuyển nhưng chưa viết đủ hoặc chưa dùng đều, nên quyết định tuyển vẫn dựa một phần vào cảm giác.",
- "3.2":"Việc kèm cặp người mới chỉ làm được một phần. Phần phải tự học là phần dễ làm người mới nghỉ sớm.",
- "3.3":"Đã có danh sách kỹ năng nhưng chưa dùng đều để đào tạo, nên người mới vẫn học thiếu ở một vài phần.",
- "3.4":"Lộ trình thăng tiến đã có nhưng chưa rõ, người giỏi chưa chắc phải đạt gì mới được lên. Điều chưa rõ dễ thành lý do để nhìn sang nơi khác.",
- "4.1":"Một số nhân viên kinh doanh tự tính được thu nhập, số còn lại phải chờ công ty báo. Với nhóm này, chính sách thưởng chưa tạo được động lực.",
+ "3.1":"Đã có tiêu chí tuyển nhưng viết chưa đủ, và không phải lần phỏng vấn nào cũng dùng. Nên có lần người chủ vẫn chọn người theo cảm giác.",
+ "3.2":"Người mới mới được kèm một phần. Phần phải tự mò một mình là chỗ dễ khiến họ bỏ việc sớm.",
+ "3.3":"Đã có danh sách kỹ năng cần có, nhưng không phải người mới nào cũng được dạy theo danh sách đó. Nên có người mới vẫn thiếu vài kỹ năng.",
+ "3.4":"Đường lên lương, lên chức đã có nhưng chưa rõ. Người giỏi chưa biết mình phải đạt con số nào thì được lên, nên dễ đi tìm chỗ khác rõ hơn.",
+ "4.1":"Một số nhân viên kinh doanh tự tính được thu nhập, số còn lại phải chờ công ty báo. Với nhóm này, chính sách thưởng chưa khiến họ muốn bán thêm.",
  "4.2":"Cách thưởng đã báo trước nhưng có lúc vẫn đổi giữa kỳ. Chỉ cần vài lần như vậy, nhân viên kinh doanh sẽ bớt tin vào thưởng.",
  "4.3":"Đã có cách xử lý khi nhân viên kinh doanh nghỉ nhưng chưa thành quy định rõ, nên dễ phát sinh tranh cãi về khách và hoa hồng.",
- "4.4":"Người chủ mới nắm được một phần chi phí để có một khách mua. Khi con số chưa đủ, quyết định tăng hay giảm tiền chi để tìm khách vẫn dựa một phần vào cảm giác.",
- "5.1":"Một phần thông tin khách đã ở bảng tính hoặc phần mềm chung của công ty, như bảng tính chung hoặc phần mềm quản lý khách, phần còn lại vẫn nằm trong Zalo và điện thoại riêng. Phần nằm ngoài là phần công ty có thể mất.",
+ "4.4":"Người chủ mới biết được một phần số tiền bỏ ra cho mỗi khách mua hàng. Số chưa đủ nên khi quyết định chi thêm hay bớt tiền tìm khách, người chủ vẫn phải đoán.",
+ "5.1":"Một phần thông tin khách đã nằm trong bảng tính hoặc phần mềm chung của công ty. Phần còn lại vẫn nằm trong Zalo và điện thoại riêng của từng người, và đây là phần công ty có thể mất.",
  "5.2":"Có lúc biết nhân viên kinh doanh đã trao đổi gì với khách, có lúc không. Người nhận lại khách vẫn có thể phải hỏi lại từ đầu.",
  "5.3":"Đã có mẫu báo giá chung nhưng chưa phải ai cũng dùng, nên vẫn có báo giá lệch giá hoặc lệch điều khoản.",
  "5.4":"Quản lý xem được một phần, phần còn lại vẫn phải hỏi, nên con số về khách mới dễ thiếu.",
- "6.1":"Chỉ tiêu đã tính tới mùa bán nhưng chưa sát số thật, nên vẫn có tháng chỉ tiêu quá dễ hoặc quá khó.",
+ "6.1":"Chỉ tiêu đã tính tới mùa cao điểm, mùa thấp điểm nhưng chưa sát với số bán thật. Nên có tháng đặt quá dễ, có tháng đặt quá khó.",
  "6.2":"Giữa tháng có ước được kết quả nhưng chưa chắc, nên có lúc vẫn biết hụt khi đã muộn.",
- "6.3":"Có xem khách ở từng bước nhưng chưa đều mỗi tuần, nên có tuần không biết khách đang dừng ở đâu.",
- "6.4":"Thời gian trả lời khách mới có được xem nhưng lúc có lúc không, nên không chắc khách ngoài giờ được trả lời lúc nào.",
+ "6.3":"Có xem khách đang ở bước nào, nhưng không tuần nào cũng xem. Tuần bỏ xem thì không ai biết khách đang kẹt ở đâu.",
+ "6.4":"Có lúc quản lý xem khách mới được trả lời sau bao lâu, có lúc không. Nên khách nhắn ngoài giờ thì không ai chắc bao giờ khách được trả lời.",
  "7.1":"Quản lý có kèm nhân viên kinh doanh nhưng vẫn dành nhiều thời gian tự bán. Khi bận, việc kèm cặp là việc bị bỏ trước.",
- "7.2":"Họp tuần mới ra việc cụ thể ở mức một phần. Việc nào chưa rõ người làm và hạn xong thì dễ bị bàn lại ở buổi sau.",
+ "7.2":"Họp tuần mới chốt được một phần việc cụ thể. Việc nào chưa rõ ai làm, bao giờ xong thì tuần sau lại phải bàn lại.",
  "7.3":"Một số việc đã rõ quản lý tự quyết, số còn lại vẫn phải hỏi người chủ.",
- "7.4":"Việc theo sát khi đổi cách làm mới làm được một phần. Cách làm mới vẫn có thể bị bỏ dở trước khi cả nhóm quen."
+ "7.4":"Khi đổi cách làm, mới có người theo sát một phần. Cách mới vẫn có thể bị bỏ dở trước khi cả nhóm làm quen."
 };
 
 // Rủi ro có thể đang xảy ra: bật khi mọi câu căn cứ đều chưa đúng hoàn toàn.
 // Mức cao khi từ 2 câu căn cứ trở lên chấm Chưa đúng. Câu trong ht viết ở dạng "có thể", vì phiếu chỉ cho biết việc chưa làm.
 const RUI_RO = [
  {ten:"Khách đang cân nhắc bị bỏ quên", can:["2.3","6.3","5.4"],
-  ht:"Khách đã nhận báo giá mà chưa mua thường chưa từ chối. Họ đang cân nhắc. Nếu không ai hẹn ngày hỏi lại, và quản lý không thấy khách đang dừng ở bước nào, số khách này lặng lẽ biến mất. Lúc đó công ty hay nghĩ là thiếu khách mới, rồi chi thêm tiền tìm khách, trong khi khách mới cũng rơi đúng chỗ đó.",
+  ht:"Khách đã nhận báo giá mà chưa mua thường chưa từ chối. Họ đang cân nhắc. Nếu không ai hẹn ngày nhắn hỏi lại, và quản lý không biết khách đang kẹt ở bước nào, số khách này cứ thế biến mất. Công ty lại tưởng thiếu khách, đem thêm tiền đi tìm khách mới, rồi khách mới cũng rơi mất đúng chỗ đó.",
   dh:["Đã tăng chi phí tìm khách mới mà doanh số không tăng theo","Nhân viên kinh doanh hay nói “khách hỏi xong rồi im lặng”","Không ai trả lời chắc được tháng này có bao nhiêu khách đang cân nhắc"],
   hoi:"Mở danh sách khách đã nhận báo giá trong 30 ngày qua mà chưa mua. Bao nhiêu người trong đó có ngày hẹn hỏi lại?"},
  {ten:"Mất khách khi nhân viên kinh doanh nghỉ việc", can:["5.1","5.2","4.3","3.4"],
-  ht:"Khi một nhân viên kinh doanh nghỉ, phần khách nằm trong Zalo và điện thoại riêng đi theo họ. Người nhận lại khách không biết đã hứa gì, báo giá bao nhiêu, nên khách phải kể lại từ đầu. Nếu lộ trình lên lương của người giỏi cũng chưa rõ, họ dễ nhìn sang chỗ khác, mà người giỏi thường là người giữ nhiều khách nhất.",
+  ht:"Khi một nhân viên kinh doanh nghỉ, phần khách nằm trong Zalo và điện thoại riêng đi theo họ. Người nhận lại khách không biết đã hứa gì, báo giá bao nhiêu, nên khách phải kể lại từ đầu. Nếu người giỏi cũng chưa biết phải đạt gì để được tăng lương, họ dễ đi chỗ khác. Mà người giỏi thường là người đang giữ nhiều khách nhất.",
   dh:["Sau khi có người nghỉ, doanh số từ nhóm khách người đó chăm sóc giảm rõ","Khách gọi tới hỏi nhân viên kinh doanh cũ, người nhận không biết chuyện trước đó","Nhân viên kinh doanh giỏi nhất giữ phần lớn thông tin khách trong điện thoại riêng"],
   hoi:"Lần gần nhất có người nghỉ, công ty giữ lại được bao nhiêu khách của người đó? Người nhận lại có đọc được lịch sử trao đổi không?"},
  {ten:"Tuyển thêm người mà doanh số không tăng theo", can:["2.1","3.2","3.3"],
-  ht:"Tuyển thêm lúc này chủ yếu làm quỹ lương tăng trước, doanh số tăng sau. Người mới mất nhiều tháng mới bán được, trong khi người lâu năm phải bớt giờ bán để chỉ dẫn, nên doanh số cả phòng có thể còn chậm đi một thời gian.",
+  ht:"Tuyển thêm lúc này thì tiền lương tăng ngay, còn doanh số phải đợi sau. Người mới mất vài tháng mới bán được, người lâu năm thì phải bớt giờ bán để cầm tay chỉ việc. Doanh số cả phòng có thể còn chậm lại một thời gian.",
   dh:["Người mới thường nghỉ trong 3 tháng đầu","Doanh số tập trung ở 1 hoặc 2 người lâu năm","Quản lý ngại tuyển vì “tuyển về lại phải dạy từ đầu”"],
   hoi:"Người mới tuyển gần nhất, sau 3 tháng đã bán được đơn nào chưa? Ai là người kèm họ, và kèm bao nhiêu buổi?"},
  {ten:"Việc khó vẫn dồn về người chủ", can:["7.1","7.3","7.2"],
-  ht:"Những việc khó như giảm giá, quà tặng, khách khó đều vòng về bàn người chủ, và cả phòng đứng chờ. Người chủ càng bận thì phòng kinh doanh càng chậm, và quản lý càng khó lớn lên thành người tự quyết.",
+  ht:"Giảm giá, tặng quà, khách khó, việc nào cũng chuyển lên bàn người chủ, và cả phòng đứng chờ. Người chủ càng bận thì phòng kinh doanh càng chậm, và quản lý cũng không có dịp tập tự quyết.",
   dh:["Người chủ nhận câu hỏi xin duyệt giảm giá, duyệt quà tặng gần như mỗi ngày","Người chủ vắng mặt vài ngày là việc chậm lại","Quản lý bán giỏi nhưng ít khi ngồi kèm nhân viên kinh doanh"],
   hoi:"Trong tuần vừa rồi, người chủ đã duyệt bao nhiêu việc cho phòng kinh doanh? Có việc nào quản lý đủ sức tự quyết không?"},
  {ten:"Biết hụt chỉ tiêu khi đã muộn", can:["6.1","6.2","6.3"],
-  ht:"Chỉ tiêu chưa sát mùa bán, giữa tháng chưa ai ước được tháng này đạt bao nhiêu, và khách ở từng bước chưa được xem đều. Công ty chỉ biết kết quả khi tháng đã hết. Lúc đó cách nhanh nhất để kịp chỉ tiêu là giảm giá gấp, và tiền lãi chịu thiệt.",
+  ht:"Chỉ tiêu đặt chưa sát mùa bán, giữa tháng chưa ai ước được tháng này sẽ đạt bao nhiêu, và không tuần nào cũng xem khách đang ở bước nào. Đến hết tháng công ty mới biết kết quả. Lúc đó cách nhanh nhất để kịp chỉ tiêu là giảm giá gấp, và tiền lãi mất theo.",
   dh:["Cuối tháng hay có đợt giảm giá gấp cho kịp chỉ tiêu","Có tháng vượt xa chỉ tiêu, có tháng hụt nhiều mà không rõ vì sao","Họp cuối tháng chủ yếu để tìm lý do hụt"],
   hoi:"Vào ngày 15 của tháng vừa rồi, quản lý có nói được tháng đó sẽ đạt khoảng bao nhiêu phần chỉ tiêu không? Con số đó dựa vào đâu?"},
  {ten:"Lợi nhuận hao hụt qua giảm giá", can:["1.3","1.2","4.4"],
-  ht:"Mỗi nhân viên có một lý do riêng để nói với khách, giảm giá còn tùy từng người, và người chủ chưa chắc mỗi khách mua tốn bao nhiêu chi phí. Khi khách phân vân, giảm giá là cách dễ nhất. Doanh số có thể tăng mà tiền lãi không tăng theo.",
+  ht:"Mỗi nhân viên nói với khách một kiểu về lý do nên mua chỗ mình, giảm giá cũng tùy từng người, và người chủ chưa chắc biết mỗi khách mua tốn bao nhiêu tiền. Khách còn phân vân thì giảm giá là cách dễ nhất. Doanh số có thể tăng mà tiền lãi không tăng.",
   dh:["Doanh số tăng nhưng tiền lãi không tăng theo","Khách quen nói “lần trước bạn kia giảm cho em nhiều hơn”","Nhân viên kinh doanh hay xin thêm quyền giảm giá để khách đồng ý mua"],
   hoi:"Trong 10 đơn gần nhất, bao nhiêu đơn có giảm giá? Ai quyết định, và dựa vào đâu?"},
  {ten:"Khách mới phải chờ lâu mới được trả lời", can:["6.4","1.4","5.4"],
-  ht:"Cách chia khách mới chưa ai cũng rõ, thời gian trả lời chưa được đo đều, và quản lý chưa tự mở được danh sách khách mới. Khách vừa hỏi có thể phải chờ vì mỗi người nghĩ người kia đã nhận. Khách hỏi giá thường hỏi nhiều nơi cùng lúc, nên nơi trả lời sau dễ mất khách.",
+  ht:"Không phải ai cũng rõ khách mới chia cho ai, thời gian trả lời khách không được xem đều, và quản lý không tự mở được danh sách khách mới. Khách vừa hỏi có thể phải chờ vì ai cũng nghĩ người kia đã nhận. Khách hỏi giá thường hỏi nhiều nơi cùng lúc, nên nơi trả lời sau dễ mất khách.",
   dh:["Có tin nhắn của khách để qua đêm mới trả lời","Nhân viên kinh doanh nói “em tưởng anh ấy nhận rồi”","Số khách hỏi tăng nhưng số khách hẹn gặp không tăng theo"],
   hoi:"Lấy 10 khách hỏi giá gần nhất. Từ lúc khách nhắn đến lúc có người trả lời là bao lâu, và ai là người nhận?"},
  {ten:"Cách làm mới khó giữ được lâu", can:["7.4","2.2","5.1"],
-  ht:"Khi đổi cách làm, chưa có ai theo sát tới cùng. Cả nhóm chưa làm theo cùng các bước, và thông tin khách còn rải rác. Lúc này mua phần mềm quản lý khách có thể chỉ ghi lại cảnh mỗi người một kiểu, rồi sau vài tuần mọi người quay về cách cũ.",
+  ht:"Khi đổi cách làm, không ai theo sát đến cùng. Mỗi người đang làm một kiểu, và thông tin khách nằm rải rác nhiều nơi. Lúc này mua phần mềm quản lý khách về, mỗi người vẫn nhập một kiểu, và sau vài tuần cả nhóm quay lại cách cũ.",
   dh:["Công ty đã từng dùng phần mềm hoặc bảng tính chung nhưng giờ ít người cập nhật","Nhân viên kinh doanh ghi khách vào bảng tính chung cho có, thông tin thật vẫn ở Zalo","Mỗi lần đổi cách làm chỉ giữ được vài tuần"],
   hoi:"Lần gần nhất công ty đổi một cách làm, sau 2 tuần còn bao nhiêu người làm theo? Ai là người theo dõi?"},
  {ten:"Thưởng chưa tạo được động lực", can:["4.1","4.2","6.1"],
-  ht:"Nhân viên chưa tự tính được thu nhập, cách thưởng có lúc đổi giữa kỳ, và chỉ tiêu chưa sát mùa bán. Khi không thấy rõ làm thêm thì được thêm gì, nhiều người chỉ làm vừa đủ để giữ mức hiện tại.",
+  ht:"Nhân viên chưa tự tính được thu nhập, cách thưởng có lúc đổi giữa kỳ, và chỉ tiêu chưa sát mùa bán. Khi không thấy rõ bán thêm 1 đơn thì mình được thêm bao nhiêu, nhiều người chỉ bán vừa đủ để giữ mức thu nhập đang có.",
   dh:["Nhân viên kinh doanh ít hỏi về chỉ tiêu và thưởng","Cuối tháng hay có thắc mắc về cách tính lương","Người giỏi và người trung bình nhận thu nhập gần bằng nhau"],
   hoi:"Tháng vừa rồi, người bán giỏi nhất và người bán trung bình chênh nhau bao nhiêu tiền thu nhập?"}
 ];
 
 // Chỗ câu trả lời chưa khớp: 2 việc thường đi cùng nhau nhưng được chấm khác nhau.
 const KHOP = [
- {a:"2.1", b:"2.2", t:"Các bước bán đã viết ra nhiều hơn mức cả nhóm làm theo. Có thể quy trình chưa hợp với cách khách thật mua, nên nhân viên kinh doanh tự bỏ bớt bước. Nên hỏi nhân viên kinh doanh xem bước nào thấy không cần, và vì sao."},
+ {a:"2.1", b:"2.2", t:"Các bước bán đã viết ra nhiều hơn mức cả nhóm làm theo. Có thể các bước bán chưa sát với cách khách thật sự mua, nên nhân viên kinh doanh tự bỏ bớt bước. Nên hỏi nhân viên kinh doanh xem bước nào thấy không cần, và vì sao."},
  {a:"5.1", b:"5.2", t:"Đã có nơi lưu thông tin khách, nhưng khi một nhân viên kinh doanh nghỉ, người nhận lại khách vẫn chưa biết người nghỉ đã trao đổi gì với khách. Nên kiểm tra bảng tính chung đã ghi nội dung đã tư vấn và đã báo giá chưa, hay mới có tên và số điện thoại."},
  {a:"6.2", b:"6.3", t:"Giữa tháng đã ước được đạt hay hụt, nhưng chưa xem đều khách ở từng bước. Nên kiểm tra con số ước giữa tháng đang dựa vào đâu."},
  {a:"6.3", b:"5.4", t:"Có xem khách ở từng bước, nhưng chưa tự xem được số khách mới mà không hỏi từng người. Có thể con số đang có được nhờ đi hỏi từng người, nên dễ thiếu và chậm."},
  {a:"7.2", b:"7.4", t:"Họp tuần đã ra việc cụ thể, nhưng khi đổi cách làm thì chưa theo sát tới cùng. Việc giao trong họp có thể xong từng lần, còn thói quen mới thì chưa giữ được."},
- {a:"2.1", b:"3.2", t:"Các bước bán đã viết ra, nhưng người mới chưa có người kèm rõ ràng. Người mới đọc được quy trình nhưng chưa có ai chỉ cách làm cho đúng."}
+ {a:"2.1", b:"3.2", t:"Các bước bán đã viết ra, nhưng người mới chưa có người kèm rõ ràng. Người mới đọc được quy trình nhưng chưa có ai ngồi cạnh chỉ từng bước."}
 ];
 
 // Hàm chung cho báo cáo khách và hồ sơ gọi của sales. Cần st.a = {"i_j": điểm} trước khi gọi.
@@ -576,37 +576,37 @@ const khop = () => KHOP.filter(k => tl(k.a) > tl(k.b));
 const NN_GP = {
  "Khách đang cân nhắc bị bỏ quên":{
   nn:"Thường là vì không ai được giao việc nhắn hoặc gọi lại cho khách đã nhận báo giá. Mỗi nhân viên kinh doanh tự nhớ, nên khách nào đến lúc bận thì bị quên. Công ty cũng chưa có con số khách đang dừng ở bước nào, nên không ai thấy khách rơi ở đâu.",
-  gp:["Lập danh sách khách đã nhận báo giá mà chưa mua, mỗi khách có 1 ngày hẹn hỏi lại.","Cuối mỗi tuần, quản lý xem có bao nhiêu khách ở từng bước và khách nào đã quá hạn hỏi lại.","Sau 4 tuần, xem trong số khách được hỏi lại có bao nhiêu khách quay lại mua."],
+  gp:["Lập danh sách khách đã nhận báo giá mà chưa mua, mỗi khách có 1 ngày hẹn hỏi lại.","Cuối mỗi tuần, quản lý mở danh sách ra xem mỗi bước đang có bao nhiêu khách, và khách nào đã quá ngày hẹn mà chưa ai hỏi lại.","Sau 4 tuần, xem trong số khách được hỏi lại có bao nhiêu khách quay lại mua."],
   kenh:{nhan:"Ở kênh nhắn tin, khách xem giá rồi im lặng là chuyện thường, nên ngày hẹn nhắn lại cần ghi cụ thể cho từng khách.",cuahang:"Khách tới cửa hàng xem rồi về mà chưa để lại số điện thoại thì công ty không còn cách nào hỏi lại. Nên xin số điện thoại hoặc Zalo của khách trước khi khách ra về.",goi:"Khách gọi điện thường cần vài lần liên lạc mới quyết. Nên hẹn luôn lần gọi kế tiếp ngay trước khi kết thúc cuộc gọi.",gap:"Khách gặp trực tiếp thường cần vài lần gặp mới quyết. Nên hẹn luôn lần gặp hoặc lần gọi kế tiếp ngay trước khi kết thúc buổi gặp."}},
  "Mất khách khi nhân viên kinh doanh nghỉ việc":{
   nn:"Thông tin khách nằm trong điện thoại và Zalo của từng người, và chưa có quy định giao lại khách khi người đó nghỉ. Người giỏi chưa thấy lộ trình tăng lương hoặc lên chức thì cũng dễ tìm nơi khác.",
-  gp:["Đưa thông tin khách về một bảng tính chung. Bắt đầu bằng một bảng tính chung cũng được.","Thống nhất những mục phải ghi sau mỗi lần trao đổi: khách hỏi gì, đã báo giá bao nhiêu, hẹn gì.","Viết quy định giao lại khách khi nhân viên nghỉ, kể cả hoa hồng của những khách đó.","Nói chuyện riêng với từng người giỏi về điều họ cần đạt để tăng lương hoặc lên chức."],
+  gp:["Đưa thông tin khách về một bảng tính chung. Bắt đầu bằng một bảng tính chung cũng được.","Cả nhóm chốt 3 mục phải ghi lại sau mỗi lần nói chuyện với khách: khách hỏi gì, đã báo giá bao nhiêu, hẹn gì.","Viết quy định giao lại khách khi nhân viên nghỉ, kể cả hoa hồng của những khách đó.","Nói chuyện riêng với từng người giỏi về điều họ cần đạt để tăng lương hoặc lên chức."],
   kenh:{nhan:"Khách nhắn qua Zalo cá nhân của từng người thì khi người đó nghỉ, lịch sử trò chuyện đi theo điện thoại của họ. Nên chuyển khách sang tài khoản chung của công ty hoặc ghi lại nội dung trao đổi vào bảng tính chung.",goi:"Số điện thoại khách nằm trong danh bạ riêng của từng người thì người nghỉ mang theo được. Nên ghi số khách vào bảng tính chung ngay sau cuộc gọi đầu."}},
  "Tuyển thêm người mà doanh số không tăng theo":{
-  nn:"Cách bán nằm trong kinh nghiệm của vài người lâu năm nên người mới không có gì để làm theo, và chưa ai được giao kèm người mới. Người mới vì vậy mất lâu mới bán được, còn người lâu năm phải bớt giờ bán để chỉ dẫn.",
-  gp:["Lấy cách bán của người giỏi nhất, viết thành các bước từ lúc khách hỏi tới lúc khách mua.","Giao mỗi người mới một người kèm cụ thể trong 90 ngày đầu.","Lập bảng năng lực để biết người mới còn thiếu phần nào, rồi mới tuyển thêm."],
+  nn:"Cách bán chỉ nằm trong đầu vài người lâu năm nên người mới không có gì để làm theo, và chưa ai được giao việc kèm người mới. Người mới vì vậy lâu bán được, còn người lâu năm phải bớt giờ bán để chỉ việc.",
+  gp:["Ngồi với người bán giỏi nhất, ghi lại từng bước họ làm từ lúc khách hỏi tới lúc khách mua.","Chọn sẵn tên 1 nhân viên có kinh nghiệm để kèm mỗi người mới trong 90 ngày đầu.","Lập bảng liệt kê từng kỹ năng cần có, đánh dấu người mới đã làm được và chưa làm được kỹ năng nào, rồi mới tuyển thêm."],
   it:"Công ty đang bán một mình hoặc mới có 1 người, nên chưa có người giỏi nào để lấy mẫu. Việc đầu tiên là chính người chủ viết cách bán của mình ra."},
  "Việc khó vẫn dồn về người chủ":{
-  nn:"Chưa có văn bản nói việc nào quản lý được tự quyết, nên quản lý chọn hỏi cho chắc. Quản lý lại mải tự bán nên ít thời gian ngồi với từng nhân viên, và họp tuần chưa chốt việc cụ thể nên vấn đề cũ cứ quay lại.",
+  nn:"Chưa có giấy nào ghi việc nào quản lý được tự quyết, nên quản lý cứ hỏi người chủ cho chắc. Quản lý lại mải tự bán nên ít khi ngồi kèm từng nhân viên, và họp tuần không chốt ai làm gì nên chuyện cũ cứ quay lại.",
   gp:["Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm.","Đặt họp tuần 30 phút, kết thúc bằng việc giao cho từng người, tuần sau xem lại.","Dành lịch cố định mỗi tuần để quản lý ngồi nghe và góp ý cho từng nhân viên kinh doanh."],
-  it:"Công ty chưa có quản lý riêng, nên có thể chọn 1 người bán có kinh nghiệm nhất và viết rõ phạm vi người đó được tự quyết."},
+  it:"Công ty chưa có quản lý riêng, nên có thể chọn 1 người bán có kinh nghiệm nhất và viết ra những việc người đó được tự quyết mà không cần hỏi người chủ."},
  "Biết hụt chỉ tiêu khi đã muộn":{
-  nn:"Chỉ tiêu chia đều các tháng nên không khớp tháng cao điểm và tháng thấp điểm của ngành, và giữa tháng chưa ai ước được tháng đó đạt bao nhiêu. Công ty chỉ nhìn doanh số cuối tháng nên khi biết hụt thì đã hết thời gian sửa.",
+  nn:"Chỉ tiêu chia đều cho các tháng, trong khi ngành có tháng bán chạy, có tháng bán chậm. Giữa tháng cũng chưa ai ước được tháng đó sẽ đạt bao nhiêu. Công ty chỉ nhìn doanh số lúc hết tháng, nên đến khi biết hụt thì không còn thời gian sửa.",
   gp:["Chia lại chỉ tiêu theo tháng cao điểm và tháng thấp điểm của ngành.","Chọn một ngày giữa tháng để ước tháng đó đạt bao nhiêu phần chỉ tiêu.","Mỗi tuần xem số khách ở từng bước vào một giờ cố định."]},
  "Lợi nhuận hao hụt qua giảm giá":{
-  nn:"Mỗi nhân viên có một lý do riêng để nói với khách, và chưa có chính sách giảm giá chung, nên khi khách phân vân thì giảm giá là cách dễ nhất. Người chủ cũng chưa biết rõ mỗi khách mua tốn bao nhiêu chi phí, nên khó nói mức giảm nào còn lãi.",
-  gp:["Hỏi 5 khách mua gần nhất vì sao chọn công ty, rồi thống nhất 1 câu cả nhóm cùng nói.","Viết chính sách giảm giá chung: ai được giảm, giảm tới đâu, mức nào phải hỏi người chủ.","Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất."]},
+  nn:"Mỗi nhân viên nói với khách một kiểu về lý do nên mua chỗ mình, và công ty chưa có quy định giảm giá chung, nên khách phân vân là nhân viên giảm giá cho nhanh. Người chủ cũng chưa biết mỗi khách mua tốn bao nhiêu tiền, nên khó nói giảm tới mức nào thì còn lãi.",
+  gp:["Hỏi 5 khách mua gần nhất vì sao chọn công ty, rồi cả nhóm chốt 1 câu để ai cũng nói giống nhau với khách.","Viết chính sách giảm giá chung: ai được giảm, giảm tới đâu, mức nào phải hỏi người chủ.","Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất."]},
  "Khách mới phải chờ lâu mới được trả lời":{
   nn:"Chưa ai nhận việc đo thời gian trả lời, và cách chia khách mới chưa rõ, nên khách vừa hỏi đôi khi không có ai nhận. Quản lý cũng chưa tự mở được danh sách khách mới để xem ai đang chờ.",
   gp:["Viết quy tắc chia khách mới và báo cho cả nhóm, kể cả khách hỏi ngoài giờ thì giao cho ai.","Ghi mọi khách mới vào bảng tính chung ngay trong ngày.","Mỗi tuần xem thời gian trả lời khách mới."],
   kenh:{nhan:"Khách nhắn tin thường hỏi vài nơi cùng lúc, nên nơi trả lời chậm dễ bị bỏ qua. Có thể đặt lời chào tự động ngoài giờ và giao 1 người trực tin nhắn theo ca.",cuahang:"Với khách tới cửa hàng, chờ lâu là khách đứng ở quầy mà chưa ai ra tiếp. Nên có quy tắc ai tiếp khách theo lượt.",goi:"Với khách gọi điện, cuộc gọi nhỡ mà không được gọi lại trong ngày cũng là khách chờ lâu. Nên giao 1 người xem cuộc gọi nhỡ mỗi buổi."}},
  "Cách làm mới khó giữ được lâu":{
-  nn:"Việc đổi cách làm được thông báo trong buổi họp rồi để đó, không ai theo sát tới khi cả nhóm làm theo. Khi cách bán còn mỗi người một kiểu, công cụ mới chỉ ghi lại sự không đồng đều.",
-  gp:["Thống nhất các bước bán trước, rồi mới chọn công cụ.","Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần.","Giao 1 người theo sát và báo lại mỗi tuần ai chưa làm theo."],
+  nn:"Việc đổi cách làm được thông báo trong buổi họp rồi để đó, không ai theo sát tới khi cả nhóm làm theo. Khi mỗi nhân viên bán một kiểu, mua công cụ mới về cũng chỉ ghi lại đúng cảnh mỗi người một kiểu đó.",
+  gp:["Cả nhóm ngồi lại chốt các bước bán trước, rồi mới chọn phần mềm hay bảng tính.","Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần.","Giao 1 người theo sát và báo lại mỗi tuần ai chưa làm theo."],
   it:"Với 1 tới 2 người bán, một bảng tính chung là đủ ở giai đoạn này, chưa cần phần mềm quản lý khách.",
   dong:"Từ 6 người bán trở lên, nên giao 1 người kiểm tra mỗi tuần xem thông tin khách đã được ghi đủ chưa."},
  "Thưởng chưa tạo được động lực":{
-  nn:"Cách tính thưởng chưa viết ra rõ nên nhân viên không tự tính được mình nhận bao nhiêu, và việc đổi giữa kỳ làm họ mất tin. Chỉ tiêu không sát mùa bán cũng làm tháng thấp điểm trông như thất bại.",
+  nn:"Cách tính thưởng chưa viết ra rõ nên nhân viên không tự tính được mình nhận bao nhiêu, và việc đổi giữa kỳ làm họ mất tin. Chỉ tiêu không tính tới mùa bán chậm, nên tháng bán chậm nào nhân viên cũng thấy như mình thất bại.",
   gp:["Viết cách tính thu nhập trên 1 trang để mỗi người tự tính được.","Báo cách tính thưởng từ đầu kỳ và giữ nguyên tới cuối kỳ.","Chia lại chỉ tiêu theo tháng cao điểm và tháng thấp điểm."]}
 };
 const kenhKey = t => /Nhắn tin/.test(t || "") ? "nhan" : /cửa hàng|showroom/.test(t || "") ? "cuahang" : /Gọi điện/.test(t || "") ? "goi" : /Đi gặp/.test(t || "") ? "gap" : "";
@@ -620,23 +620,23 @@ const DICH = [[["1.1","1.3"],["1.3"]], [["2.1"],["2.2"]], [["3.1","3.2"],["3.3"]
   [["5.1"],["5.2","5.3"]], [["6.3","6.4"],["6.1"]], [["7.2"],["7.3"]]];
 const LAM = {
  "1.1":"Ngồi với đội ngũ viết ra chân dung khách hàng mục tiêu và kiểu khách không nên nhận, gọn trong 1 trang.",
- "1.2":"Hỏi 5 khách mua gần nhất vì sao chọn công ty, rồi thống nhất 1 câu cả nhóm cùng nói với khách.",
+ "1.2":"Hỏi 5 khách mua gần nhất vì sao chọn công ty, rồi cả nhóm chốt 1 câu để ai cũng nói giống nhau với khách.",
  "1.3":"Viết chính sách giảm giá chung: ai được giảm, giảm tới đâu, mức nào phải hỏi người chủ.",
  "1.4":"Viết quy tắc chia khách mới và báo cho cả nhóm, kể cả khách hỏi ngoài giờ thì giao cho ai.",
- "2.1":"Lấy cách bán của người giỏi nhất, viết thành các bước từ lúc khách hỏi tới lúc khách mua, rồi cho cả nhóm làm thử.",
+ "2.1":"Hỏi người bán giỏi nhất làm từng việc gì, từ lúc khách hỏi tới lúc khách mua. Viết thành các bước rồi cho cả nhóm làm thử.",
  "2.2":"Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần.",
  "2.3":"Lập danh sách khách đang cân nhắc, mỗi khách có một ngày hẹn gọi lại.",
  "2.4":"Đặt lịch liên lạc lại khách đã mua, ví dụ sau 1 tuần, 1 tháng và 3 tháng.",
  "3.1":"Viết ra trên 1 trang kiểu người cần tuyển làm nhân viên kinh doanh, dùng cho lần tuyển tới.",
- "3.2":"Giao cho mỗi người mới một người kèm cặp cụ thể trong 90 ngày đầu.",
- "3.3":"Lập bảng năng lực nhân viên kinh doanh để biết mỗi người mới còn thiếu phần nào mà kèm cặp đúng chỗ.",
+ "3.2":"Chọn sẵn tên 1 nhân viên có kinh nghiệm để kèm mỗi người mới trong 90 ngày đầu.",
+ "3.3":"Liệt kê các kỹ năng một nhân viên bán hàng cần có, rồi đánh dấu từng người mới còn thiếu kỹ năng nào để kèm đúng chỗ đó.",
  "3.4":"Viết ra nhân viên kinh doanh phải đạt gì thì được tăng lương hoặc lên chức, rồi nói chuyện riêng với từng người giỏi.",
  "4.1":"Viết lại cách tính thu nhập trên 1 trang để mỗi nhân viên kinh doanh tự tính được.",
  "4.2":"Báo cách tính thưởng từ đầu kỳ và giữ nguyên tới cuối kỳ.",
  "4.3":"Viết quy định giao lại khách khi nhân viên kinh doanh nghỉ, kể cả hoa hồng của những khách đó.",
  "4.4":"Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất.",
  "5.1":"Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Bắt đầu bằng một bảng tính chung cũng được.",
- "5.2":"Thống nhất những mục phải ghi sau mỗi lần trao đổi với khách: khách hỏi gì, đã báo giá bao nhiêu, hẹn gì.",
+ "5.2":"Cả nhóm chốt 3 mục phải ghi lại sau mỗi lần nói chuyện với khách: khách hỏi gì, đã báo giá bao nhiêu, hẹn gì.",
  "5.3":"Làm một mẫu báo giá chung cho cả nhóm.",
  "5.4":"Ghi mọi khách mới vào bảng tính chung ngay trong ngày, để quản lý tự mở ra xem mà không phải hỏi.",
  "6.1":"Chia lại chỉ tiêu theo tháng cao điểm và tháng thấp điểm của ngành.",
@@ -704,7 +704,7 @@ function ve() {
   const manh = [...ds].sort((a, b) => b.d - a.d || a.i - b.i)[0];
   const sau = ds.filter(x => mucDo(x.d) < 2 && !uu.includes(x));
   const lk = a => a.map(x => tenM(x.i)).join(", ");
-  const cau5 = [sau.filter(x => mucDo(x.d) === 0), sau.filter(x => mucDo(x.d) === 1)].map((a, k) => a.length ? lk(a) + (k ? " mới làm được một phần" : " cũng cần sửa") : "").filter(Boolean).join(", còn ");
+  const cau5 = [sau.filter(x => mucDo(x.d) === 0), sau.filter(x => mucDo(x.d) === 1)].map((a, k) => a.length ? lk(a) + (k ? " làm chưa đủ" : " cũng cần sửa") : "").filter(Boolean).join(", còn ");
   const moc = ["Tuần 1 và 2", "Tuần 3", "Tuần 4"];
   const dau = (so, ten) => `<div class="dau"><div class="kic">Mục ${so}</div><h1>${ten}</h1></div>`;
 
@@ -714,8 +714,8 @@ function ve() {
  
  <div class="kic">Báo cáo đánh giá</div>
  <h1>Phòng kinh doanh<br>tiêu chuẩn 7M</h1>
- <div class="phu">Trụ cột nào đang vững, trụ cột nào cần sửa trước, và phòng kinh doanh nên bắt đầu từ việc gì</div>
- <div class="ba"><div><b>${tong}/56</b><span>Tổng điểm</span></div><div><b>${dem(0)} trụ cột</b><span>Cần sửa</span></div><div><b>30 ngày</b><span>Lộ trình gợi ý</span></div></div>
+ <div class="phu">Phòng kinh doanh đang làm tốt khâu nào, khâu nào cần sửa trước, và nên bắt tay vào việc gì trước</div>
+ <div class="ba"><div><b>${tong}/56</b><span>Tổng điểm</span></div><div><b>${dem(0)} trụ cột</b><span>Trụ cột cần sửa</span></div><div><b>30 ngày</b><span>Kế hoạch sửa</span></div></div>
  <div class="lap">
   <div><span>Lập cho</span>${KHACH.congTy}</div><div><span>Người đánh giá</span>${KHACH.hoTen} · ${KHACH.nguoiCham}</div>
   <div><span>Ngành · Số nhân viên kinh doanh</span>${KHACH.nganh} · ${KHACH.soNguoiBan}</div><div><span>Ngày · Mã báo cáo</span>${KHACH.ngay} · ${KHACH.ma}</div>
@@ -724,21 +724,21 @@ function ve() {
 </div>
 
 <section>
- <div class="phanlon"><div class="kic">Phần I · Tổng quan</div><h2>Công ty đang ở đâu</h2><p>Kết quả chung, điểm từng trụ cột và 3 trụ cột nên sửa trước.</p></div>
+ <div class="phanlon"><div class="kic">Phần I · Tổng quan</div><h2>Phòng kinh doanh đang làm được gì, thiếu gì</h2><p>Tổng điểm, điểm từng trụ cột và 3 trụ cột nên sửa trước.</p></div>
  ${dau(1, "Tóm tắt kết quả")}
  <p class="chao">Chào ${KHACH.hoTen.trim()},</p>
  <p>Đây là kết quả từ 28 câu anh chị đã trả lời cho ${KHACH.congTy}. Duy nói gọn trước, phần chi tiết nằm ở các mục sau.</p>
  <div class="ghi"><div class="nhan">Đọc nhanh trong một phút</div>
  <ul class="nhanh">
-  <li><b>Chỗ vững nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Chỗ này anh chị đang làm tốt.</li>
-  ${rr.length ? `<li><b>Rủi ro đáng lo nhất:</b> ${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}. Mục 3 nói rõ vì sao và cách tự kiểm tra.</li>` : ""}
+  <li><b>Làm tốt nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Phần này anh chị đang làm tốt, cứ giữ như vậy.</li>
+  ${rr.length ? `<li><b>Rủi ro đáng lo nhất:</b> ${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}. Mục 3 giải thích vì sao và chỉ anh chị cách tự kiểm tra trong phòng mình.</li>` : ""}
   <li><b>Việc nên làm trước:</b> ${tenM(uu[0].i)}. ${viecDau(uu[0])}</li>
  </ul>
- <p class="muted nho" style="margin:2mm 0 0">Đây là điểm anh chị tự chấm. Nó cho thấy cách làm hiện tại, chưa phải số đo doanh thu hay kết quả bán hàng.</p></div>
- <div class="ghi"><div class="nhan">Nhận định chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
- <p>Phòng kinh doanh tiêu chuẩn có 28 việc cần làm. Công ty anh chị đã làm trọn <b>${demTL(2)} việc</b>, làm được một phần <b>${demTL(1)} việc</b>, và chưa làm <b>${demTL(0)} việc</b>. Về trụ cột thì có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột mới làm được một phần</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}. Chỗ vững nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.</p>
+ <p class="muted nho" style="margin:2mm 0 0">Đây là điểm anh chị tự chấm. Điểm này cho biết phòng kinh doanh đang làm việc thế nào, chứ không đo được doanh thu hay số đơn chốt.</p></div>
+ <div class="ghi"><div class="nhan">Duy nhận xét chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
+ <p>Phòng kinh doanh tiêu chuẩn có 28 việc cần làm. Công ty anh chị đã làm trọn <b>${demTL(2)} việc</b>, làm được một phần <b>${demTL(1)} việc</b>, và chưa làm <b>${demTL(0)} việc</b>. Về trụ cột thì có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột làm chưa đủ</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}. Chỗ vững nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.</p>
  ${rr.length ? `<h3>Những rủi ro lớn nhất</h3>
- <div class="sodo">${rr.slice(0, 3).map((r, k) => `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><b>${r.ten}</b>${caBang ? "" : `<span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span>`}</div><div class="muted nho">Từ ${r.can.length} câu anh chị đã trả lời. Giải thích kỹ ở Mục 3.</div></div></div>`).join("")}</div>${caBang ? `<p class="muted nho">${Math.min(3, rr.length)} rủi ro này xếp theo số việc chưa làm, nên lo rủi ro đầu tiên trước.</p>` : ""}` : ""}
+ <div class="sodo">${rr.slice(0, 3).map((r, k) => `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><b>${r.ten}</b>${caBang ? "" : `<span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span>`}</div><div class="muted nho">Duy rút ra từ ${r.can.length} câu anh chị trả lời chưa làm hoặc làm chưa đủ. Mục 3 giải thích kỹ.</div></div></div>`).join("")}</div>${caBang ? `<p class="muted nho">${Math.min(3, rr.length)} rủi ro này xếp theo số việc chưa làm. Rủi ro nào có nhiều việc chưa làm nhất thì đứng đầu, anh chị lo rủi ro đó trước.</p>` : ""}` : ""}
  <h3>Điểm từng trụ cột</h3>
  <table class="bang diem"><thead><tr><th>Mã</th><th>Trụ cột</th><th>Điểm</th><th>Mức</th></tr></thead><tbody>
  ${ds.map(x => { const m = mucDo(x.d); return `<tr><td class="ma">M${x.i+1}</td><td class="ten">${TRU[x.i].ten} <span class="muted" style="font-weight:400">· ${TRU[x.i].hoi}</span></td><td class="so"><span class="thanh"><i style="width:${x.d/8*100}%;background:${MAU_MUC[m]}"></i></span>${x.d}/8</td><td>${nhan(m)}</td></tr>`; }).join("")}
@@ -751,35 +751,35 @@ function ve() {
 <section class="phan">
  ${dau(2, "Bức tranh 7 trụ cột")}
  <div class="tranh giu">${radar(ds)}</div>
- <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Đúng được 2 điểm, đúng một phần được 1 điểm, chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là mới làm được một phần, từ 7 tới 8 điểm là tốt. Tổng điểm không phải điểm đỗ hay trượt, chỉ để anh chị so với lần đánh giá sau. Mã như 2.3 là câu thứ 3 của trụ cột 2 trên phiếu.</p>
+ <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Đúng được 2 điểm, đúng một phần được 1 điểm, chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là làm chưa đủ, từ 7 tới 8 điểm là tốt. Tổng điểm không để đậu hay rớt, chỉ để anh chị đem so sánh với lần chấm sau. Mã 2.3 nghĩa là câu thứ 3 của trụ cột 2 trên phiếu anh chị đã điền.</p>
  <h3>Vì sao thứ tự sửa không theo điểm thấp nhất</h3>
- <p>Điểm thấp nhất chưa chắc là chỗ nên sửa đầu tiên. Chưa rõ bán cho ai, bán thế nào thì tuyển thêm người hay mua phần mềm cũng khó ra kết quả, vì nền chưa vững. Nên Duy xếp việc nền làm trước, việc sau dựa vào đó: trụ cột cần sửa đi trước, trụ cột mới làm một phần đi sau, và trong mỗi nhóm đi từ M1 tới M7 như dưới đây.</p>
+ <p>Trụ cột điểm thấp nhất chưa chắc nên sửa đầu tiên. Nếu chưa rõ bán cho ai và bán thế nào thì tuyển thêm người hay mua phần mềm cũng khó ra kết quả. Vì vậy Duy xếp việc làm gốc lên trước, việc dựa vào đó xếp sau: trụ cột cần sửa đi trước, trụ cột làm chưa đủ đi sau, và trong mỗi nhóm đi từ M1 tới M7 như dưới đây.</p>
  <div class="chuoi giu">${ds.map((x, k) => `${k ? "<em>›</em>" : ""}<div class="m${mucDo(x.d)}"><b>M${x.i+1}</b>${TRU[x.i].ten}<br>${x.d}/8</div>`).join("")}</div>
 </section>
 
 <section class="phan">
- <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Với từng rủi ro và từng trụ cột, Duy ghi lại điều đã thấy trong câu trả lời, điều có thể đang xảy ra, cách tự kiểm tra và việc nên làm trước.</p></div>
+ <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao có chuyện này, và làm gì</h2><p>Với mỗi rủi ro và mỗi trụ cột, Duy ghi 4 thứ: Duy thấy gì trong câu trả lời của anh chị, chuyện gì có thể đang xảy ra trong phòng, anh chị tự kiểm tra bằng cách nào, và nên làm việc gì trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Mỗi câu trả lời cho Duy biết một việc chưa làm. Đem vài câu trả lời ra so sánh với nhau thì thấy chuyện đang xảy ra trong phòng kinh doanh. Từ câu trả lời của anh chị, Duy thấy ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro đáng lo nhất, xếp từ nặng xuống nhẹ. Rủi ro nặng là rủi ro có từ 2 câu trả lời trở lên ở mức "chưa đúng". Phiếu chỉ cho biết việc nào chưa làm, chưa cho biết chuyện gì đã xảy ra, nên anh chị cứ xem điều nào đúng với công ty mình. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chỗ nào chưa đúng với công ty anh chị thì bỏ qua.</p>
+ <p>Mỗi câu anh chị trả lời cho Duy biết 1 việc chưa làm. Khi Duy đem vài câu ra so sánh với nhau, Duy thấy chuyện có thể đang xảy ra trong phòng kinh doanh. Từ câu trả lời của anh chị, Duy thấy ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro đáng lo nhất, xếp từ nặng xuống nhẹ. Rủi ro nặng là rủi ro có từ 2 câu trả lời trở lên ở mức "chưa đúng". Phiếu chỉ cho biết việc nào chưa làm, chưa cho biết chuyện gì đã xảy ra, nên anh chị cứ xem điều nào đúng với công ty mình. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chỗ nào chưa đúng với công ty anh chị thì bỏ qua.</p>
  ${rr.slice(0, SO_RR_HIEN).map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten} <span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span></h4>
   <p><b>Anh chị đã trả lời:</b> ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
-  <p><b>Vấn đề và hậu quả.</b> ${r.ht}</p>
-  ${NN_GP[r.ten] ? (g => `<p><b>Nguyên nhân thường gặp.</b> ${g.nn}</p>
-  <p><b>Nên làm.</b></p>
+  <p><b>Chuyện gì xảy ra, và thiệt hại gì.</b> ${r.ht}</p>
+  ${NN_GP[r.ten] ? (g => `<p><b>Vì sao hay xảy ra.</b> ${g.nn}</p>
+  <p><b>Anh chị làm như sau.</b></p>
   <ol class="gp">${g.gp.map(x => `<li>${x}</li>`).join("")}</ol>
-  ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Riêng với công ty của anh chị.</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
-  <p><b>Thử nhìn quanh phòng kinh doanh.</b> Anh chị có thấy chuyện nào dưới đây không? Thấy chuyện nào thì rủi ro này nhiều khả năng đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
-  <p><b>Một câu để anh chị tự kiểm tra.</b> ${r.hoi}</p>
+  ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Với công ty anh chị thì sao.</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
+  <p><b>Anh chị có thấy cảnh nào dưới đây trong phòng mình không?</b> Thấy cảnh nào thì rủi ro này nhiều khả năng đang xảy ra thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
+  <p><b>Anh chị tự hỏi 1 câu này.</b> ${r.hoi}</p>
  </div>`).join("")}
- ${kh.length ? `<h3>Chỗ 2 câu trả lời đang lệch nhau</h3>
- <p>Mỗi cặp dưới đây là 2 việc thường đi cùng nhau mà anh chị chấm khác nhau. Không phải anh chị trả lời sai. Đây là chỗ nên hỏi thêm đội ngũ trước khi sửa, vì thường có lý do cụ thể phía sau.</p>
+ ${kh.length ? `<h3>Chỗ 2 câu trả lời của anh chị nghe mâu thuẫn</h3>
+ <p>Mỗi cặp dưới đây gồm 2 việc thường đi cùng nhau, nhưng anh chị chấm điểm khác nhau. Anh chị không trả lời sai. Trước khi sửa, anh chị hỏi nhân viên trong đội ngũ vì sao lại như vậy, thường sẽ có lý do cụ thể.</p>
  ${kh.map(k => `<div class="khop">${chip(k.a)}${chip(k.b)}<p>${k.t}</p></div>`).join("")}` : ""}
 </section>
 
 <section class="phan">
  ${dau(4, "Chi tiết từng trụ cột")}
- <p>Mỗi trụ cột có 3 phần: việc anh chị đã làm tốt, chỗ còn thiếu kèm điều có thể đang xảy ra và câu hỏi nên đặt ra, và việc nên làm trước. Việc nào nằm trong một rủi ro ở Mục 3 thì có ghi số rủi ro đó.</p>
+ <p>Mỗi trụ cột có 3 phần: việc anh chị đã làm tốt, việc còn thiếu (kèm câu hỏi để anh chị hỏi lại đội ngũ), và việc nên làm trước. Việc nào dính tới một rủi ro ở Mục 3 thì Duy ghi số của rủi ro đó.</p>
  ${ds.map(x => { const p = TRU[x.i], m = mucDo(x.d);
   const thieu = p.cau.map((q, j) => (x.i+1)+"."+(j+1)).filter(c => tl(c) < 2), tot = p.cau.map((q, j) => (x.i+1)+"."+(j+1)).filter(c => tl(c) === 2);
   const thuong = c => CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1);
@@ -787,27 +787,27 @@ function ve() {
   <h3>${tenM(x.i)}: ${x.d}/8, ${TEN_MUC[m].toLowerCase()}</h3>
   <p class="hoi">${p.hoi}</p>
   ${tot.length ? `<p><b>Anh chị đã làm tốt:</b> ${tot.map(thuong).join("; ")}.</p>` : ""}
-  ${thieu.length ? `<p><b>Chỗ còn thiếu.</b> ${thieu.length > 1 ? "Có " + thieu.length + " việc chưa làm đủ." : "Có 1 việc chưa làm đủ."}</p>
-  <ul class="thieu">${thieu.map(c => `<li><b>${CAU[c].ngan}</b> (${MUC[tl(c)].toLowerCase()}). ${tl(c) === 1 ? RR1[c] : CAU[c].rr} Câu nên hỏi đội ngũ: ${CAU[c].hoi}${soRR(c) ? ` <em class="lq">Việc này nằm trong rủi ro số ${soRR(c)} ở Mục 3.</em>` : ""}</li>`).join("")}</ul>` : ""}
+  ${thieu.length ? `<p><b>Việc còn thiếu.</b> ${thieu.length > 1 ? "Có " + thieu.length + " việc chưa làm đủ." : "Có 1 việc chưa làm đủ."}</p>
+  <ul class="thieu">${thieu.map(c => `<li><b>${CAU[c].ngan}</b> (${MUC[tl(c)].toLowerCase()}). ${tl(c) === 1 ? RR1[c] : CAU[c].rr} Anh chị hỏi đội ngũ: ${CAU[c].hoi}${soRR(c) ? ` <em class="lq">Việc này liên quan rủi ro số ${soRR(c)} ở Mục 3.</em>` : ""}</li>`).join("")}</ul>` : ""}
   ${m < 2 ? `<p><b>Việc nên làm trước.</b> ${viecDau(x)}</p>` : ""}
  </div>`; }).join("")}
 </section>
 
 <section class="phan">
  ${dau(5, "Lộ trình 30 ngày")}
- <p>Trụ cột cần sửa đi trước trụ cột mới làm được một phần. Trong mỗi nhóm, làm theo thứ tự từ M1 tới M7.${cau5 ? " " + cau5 + ". Các trụ cột này để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>
- <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột và việc đầu tiên</th><th>Trụ cột tốt khi</th><th>Người phụ trách</th></tr></thead><tbody>
+ <p>Trụ cột cần sửa đi trước trụ cột làm chưa đủ. Trong mỗi nhóm, làm theo thứ tự từ M1 tới M7.${cau5 ? " " + cau5 + ". Các trụ cột này để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>
+ <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột và việc làm đầu tiên</th><th>Làm xong khi thấy</th><th>Ai phụ trách</th></tr></thead><tbody>
  ${uu.map((x, k) => { const p = TRU[x.i], m = mucDo(x.d); return `<tr><td class="ma" style="width:20mm">${moc[k]}</td><td><b>${tenM(x.i)}</b><br>${viecDau(x)}</td><td>${p.kq[2]}</td><td class="trong">....................</td></tr>`; }).join("")}
- <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Đánh giá lại.</b> Làm lại phiếu đánh giá với cùng người đánh giá, rồi so sánh điểm từng trụ cột với báo cáo này.</td></tr>
+ <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Chấm lại.</b> Cùng người đã chấm lần này làm lại phiếu, rồi đem điểm từng trụ cột so sánh với báo cáo này.</td></tr>
  </tbody></table>
  <h3>Anh chị làm gì sau khi đọc báo cáo</h3>
  <ol class="buoc">
-  <li><b>Họp với đội ngũ.</b> Đọc tài liệu Giới thiệu mô hình Phòng kinh doanh tiêu chuẩn 7M gửi kèm trong thư báo kết quả, rồi mang Mục 3 và Mục 4 vào buổi họp đội ngũ bán hàng. Các câu hỏi để làm rõ là chỗ nên bắt đầu.</li>
+  <li><b>Họp với đội ngũ bán hàng.</b> Đọc tài liệu Giới thiệu mô hình Phòng kinh doanh tiêu chuẩn 7M gửi kèm trong thư báo kết quả, rồi mang Mục 3 và Mục 4 vào buổi họp. Anh chị bắt đầu bằng việc hỏi từng câu hỏi trong Mục 4.</li>
   <li><b>Hỏi khi cần.</b> Đội ngũ tư vấn của Coach Duy Nguyễn sẽ gọi theo số điện thoại anh chị để lại. Anh chị có thể hỏi cách làm những việc trên cho hợp với công ty mình.</li>
   <li><b>Vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027</b> tại <a href="https://zalo.me/g/gadxc2qxwa1cuqx5op7t">zalo.me/g/gadxc2qxwa1cuqx5op7t</a> để nhận lịch và tài liệu của workshop.</li>
   <li><b>Đánh giá lại sau 30 ngày</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh, rồi so sánh điểm với báo cáo này.</li>
  </ol>
- <div class="ghi"><div class="nhan">Về báo cáo này</div><p>Báo cáo lập từ 28 câu trả lời của người đánh giá, nên cho thấy phòng kinh doanh qua cách nhìn của người đánh giá vào ngày đánh giá. Để kết quả sát hơn, anh chị có thể mời quản lý và 1 tới 2 nhân viên kinh doanh cùng đánh giá rồi so sánh với nhau. Chỗ nào mọi người trả lời khác nhau thường là chỗ cần nói chuyện trước.</p></div>
+ <div class="ghi"><div class="nhan">Về báo cáo này</div><p>Báo cáo này dựa trên 28 câu của 1 người chấm, vào đúng ngày chấm. Để sát thực tế hơn, anh chị mời thêm quản lý và 1 đến 2 nhân viên kinh doanh cùng chấm, rồi so sánh điểm. Câu nào mỗi người chấm một kiểu thì anh chị nói chuyện với nhau về câu đó trước.</p></div>
 </section>
 
 <section class="tc">
@@ -816,14 +816,14 @@ function ve() {
   ${CDN}
   <div class="kic">Giải pháp cho đội ngũ kinh doanh</div>
   <h2>Nâng chuẩn đội ngũ kinh doanh cùng Coach Duy Nguyễn</h2>
-  <p class="tcphu">Tùy kết quả của anh chị và quy mô đội ngũ, một trong các giải pháp dưới đây có thể hợp với công ty mình.</p>
+  <p class="tcphu">Tùy điểm của anh chị và số người bán hàng đang có, một trong 4 chương trình dưới đây có thể hợp với công ty mình.</p>
   <div class="gl">
-  <div class="gc"><div class="gn">1</div><b>Chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027</b><p><em>Dành cho</em> Người chủ ở mọi quy mô cần kế hoạch cho năm mới.</p><p><em>Giúp giải quyết</em> Cuối năm chưa có kế hoạch, hoặc có chỉ tiêu nhưng chưa gắn với việc đội ngũ bán phải làm mỗi tháng.</p><p><em>Kết quả</em> Kế hoạch kinh doanh năm 2027 gói trong 1 trang và kế hoạch bán hàng cho doanh nghiệp mình.</p></div>
-  <div class="gc"><div class="gn">2</div><b>30 ngày thiết kế phòng kinh doanh theo mô hình 7M</b><p><em>Dành cho</em> Người chủ có từ 2 người bán trở lên, cùng học với 1 quản lý kinh doanh.</p><p><em>Giúp giải quyết</em> Mỗi người tư vấn một kiểu, giao dịch lớn phải kéo người chủ vào, quản lý chỉ thấy doanh số cuối tháng mà không biết khách rơi ở bước nào.</p><p><em>Kết quả</em> Bản thiết kế 7 trụ cột cho phòng kinh doanh của mình, và 2 tới 3 việc đã áp dụng thật như quy trình tư vấn, bảng chỉ số, lịch họp tuần.</p></div>
-  <div class="gc"><div class="gn">3</div><b>Đồng hành dựng phòng kinh doanh trong 3 tháng</b><p><em>Dành cho</em> Doanh nghiệp đã có bản thiết kế phòng kinh doanh nhưng thiếu người hoặc thiếu thời gian tự dựng.</p><p><em>Giúp giải quyết</em> Có thiết kế rồi mà phòng kinh doanh vẫn chưa chạy được.</p><p><em>Kết quả</em> Phòng kinh doanh có tài liệu quy trình, bảng chỉ số và công cụ chạy được, đội ngũ được hướng dẫn dùng.</p></div>
-  <div class="gc"><div class="gn">4</div><b>Master Club, đồng hành 1 năm với Coach Duy Nguyễn</b><p><em>Dành cho</em> Người chủ đã làm việc thử với Coach Duy Nguyễn và muốn có người đi cùng mỗi tuần.</p><p><em>Giúp giải quyết</em> Một mình gánh mọi quyết định kinh doanh, biết phải làm gì nhưng khó làm đều mỗi tuần.</p><p><em>Kết quả</em> Mỗi tuần mổ xẻ một bài toán kinh doanh thật, chọn 1 việc để làm, tuần sau báo lại, có nhóm cùng chủ doanh nghiệp đồng hành.</p></div>
+  <div class="gc"><div class="gn">1</div><b>Chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027</b><p><em>Dành cho</em> Người chủ ở mọi quy mô cần kế hoạch cho năm mới.</p><p><em>Giúp giải quyết</em> Sắp hết năm mà chưa có kế hoạch, hoặc có chỉ tiêu doanh số nhưng chưa biết mỗi tháng đội ngũ bán hàng phải làm những việc gì để đạt.</p><p><em>Kết quả</em> Kế hoạch kinh doanh năm 2027 gói trong 1 trang và kế hoạch bán hàng cho doanh nghiệp mình.</p></div>
+  <div class="gc"><div class="gn">2</div><b>30 ngày thiết kế phòng kinh doanh theo mô hình 7M</b><p><em>Dành cho</em> Người chủ có từ 2 người bán trở lên, cùng học với 1 quản lý kinh doanh.</p><p><em>Giúp giải quyết</em> Mỗi người tư vấn một kiểu. Đơn lớn nào cũng phải kéo người chủ vào chốt. Quản lý đến cuối tháng mới thấy doanh số, không biết khách rớt ở bước nào.</p><p><em>Kết quả</em> Bản thiết kế 7 trụ cột cho phòng kinh doanh của mình, và 2 tới 3 việc đã làm thật, như quy trình tư vấn khách, bảng số theo dõi, lịch họp tuần.</p></div>
+  <div class="gc"><div class="gn">3</div><b>Đồng hành dựng phòng kinh doanh trong 3 tháng</b><p><em>Dành cho</em> Doanh nghiệp đã có bản thiết kế phòng kinh doanh nhưng thiếu người hoặc thiếu thời gian tự dựng.</p><p><em>Giúp giải quyết</em> Có bản thiết kế rồi nhưng cả đội ngũ vẫn chưa làm theo được.</p><p><em>Kết quả</em> Phòng kinh doanh có quy trình viết sẵn, bảng số theo dõi và công cụ dùng được. Đội ngũ bán hàng được cầm tay chỉ việc cách dùng.</p></div>
+  <div class="gc"><div class="gn">4</div><b>Master Club, đồng hành 1 năm với Coach Duy Nguyễn</b><p><em>Dành cho</em> Người chủ đã làm việc thử với Coach Duy Nguyễn và muốn có người đi cùng mỗi tuần.</p><p><em>Giúp giải quyết</em> Một mình quyết mọi việc kinh doanh, biết cần làm gì nhưng không giữ được nhịp làm đều mỗi tuần.</p><p><em>Kết quả</em> Mỗi tuần mổ xẻ một bài toán kinh doanh thật, chọn 1 việc để làm, tuần sau báo lại, có nhóm cùng chủ doanh nghiệp đồng hành.</p></div>
   </div>
-  <div class="tccta"><b>Trao đổi với đội ngũ hỗ trợ</b><p>Đội ngũ hỗ trợ sẽ gọi cho anh chị theo số điện thoại đã để lại. Anh chị cùng đội ngũ nhìn lại kết quả này và chọn giải pháp phù hợp nhất, để đội ngũ bán hàng của công ty bán đều hơn, hiệu suất tốt hơn và tỷ lệ thành công cao hơn.</p></div>
+  <div class="tccta"><b>Trao đổi với đội ngũ hỗ trợ</b><p>Đội ngũ hỗ trợ sẽ gọi cho anh chị theo số điện thoại đã để lại. Anh chị cùng đội ngũ hỗ trợ xem lại kết quả này và chọn chương trình hợp nhất, để đội ngũ bán hàng của công ty bán được đều hơn.</p></div>
   <small class="tcfoot">coachduynguyen.vn · ${KHACH.ma}</small>
  </div>
 </section>`;
