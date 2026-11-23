@@ -199,7 +199,7 @@ button{font:inherit;cursor:pointer}
    <h2>Đánh giá xong, anh chị nhận được</h2>
    <p class="sub">Kết quả hiện ngay sau khi anh chị để lại họ tên và số điện thoại ở bước cuối. Sau đó tư vấn viên trong đội ngũ của Coach Duy Nguyễn sẽ gọi để cùng anh chị xem kết quả.</p>
    <div class="nhan">
-    <div><span class="so">1</span><b>Điểm của từng trụ cột</b><span>Thấy rõ trụ cột nào tốt, trụ cột nào đã có nhưng chưa đều, trụ cột nào cần sửa.</span></div>
+    <div><span class="so">1</span><b>Điểm của từng trụ cột</b><span>Thấy rõ trụ cột nào tốt, trụ cột nào mới làm được một phần, trụ cột nào cần sửa.</span></div>
     <div><span class="so">2</span><b>Tối đa 3 việc nên sửa trước</b><span>Xếp theo thứ tự nên làm, kèm việc đầu tiên cụ thể cho từng trụ cột.</span></div>
     <div><span class="so">3</span><b>Nhận xét theo điểm của anh chị</b><span>Có 6 nhóm kết quả, mỗi nhóm một lời nhận xét, kèm nhận xét cho từng trụ cột.</span></div>
     <div><span class="so">4</span><b>Tài liệu giới thiệu mô hình 7M</b><span>12 trang, giải thích từng trụ cột để anh chị đọc cùng đội ngũ.</span></div>
@@ -274,7 +274,7 @@ button{font:inherit;cursor:pointer}
    <div><div class="kick">Kết quả của <span id="tenkq"></span></div><h2 id="hstieude"></h2><p id="hsmota"></p></div>
   </div>
   <div class="bang"><h3>Điểm từng trụ cột</h3><div id="hang"></div>
-   <p class="ghichu">Mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 là cần sửa, 4 tới 6 là đã có nhưng chưa đều, 7 tới 8 là tốt. Tổng điểm không có mức đạt hay trượt, chỉ để so sánh khi anh chị đánh giá lại sau vài tuần.</p>
+   <p class="ghichu">Mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 là cần sửa, 4 tới 6 là mới làm được một phần, 7 tới 8 là tốt. Tổng điểm không có mức đạt hay trượt, chỉ để so sánh khi anh chị đánh giá lại sau vài tuần.</p>
   </div>
   <div class="uu"><h3>Nên sửa trước</h3><p class="ghichu" id="thutu" style="margin:0"></p><div id="uutien"></div><div id="nhonho"></div></div>
   <div class="tiep">
@@ -340,7 +340,7 @@ const TRU = [
   dau:["Lấy cách bán của người giỏi nhất, viết thành các bước từ lúc khách hỏi tới lúc khách mua, rồi cho cả nhóm làm thử.",
        "Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần."]},
  {ten:"Nhân sự", anh:"Manpower", hoi:"Ai bán?",
-  danhGia:"Tuyển nhân viên kinh doanh theo tiêu chí nào, người mới được kèm cặp ra sao, và người giỏi có thấy lộ trình thăng tiến không.",
+  danhGia:"Tuyển nhân viên kinh doanh dựa vào điều gì, người mới được kèm cặp ra sao, và người giỏi có thấy lộ trình thăng tiến không.",
   viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy lộ trình thăng tiến thì cũng nghỉ.",
   cau:[
   "Công ty tuyển nhân viên kinh doanh dựa vào đâu?",
@@ -348,14 +348,14 @@ const TRU = [
   "Công ty đào tạo kỹ năng cho nhân viên kinh doanh thế nào?",
   "Nhân viên kinh doanh biết lộ trình thăng tiến của mình tới đâu?"],
   dap:[
-  ["Chủ yếu theo cảm nhận lúc phỏng vấn", "Có tiêu chí trong đầu người phỏng vấn, chưa viết ra", "Có tiêu chí tuyển dụng viết thành văn bản và dùng khi phỏng vấn"],
+  ["Chủ yếu theo cảm nhận lúc phỏng vấn", "Có kiểu người cần tuyển trong đầu người phỏng vấn, chưa viết ra", "Có bản mô tả người cần tuyển viết ra giấy và dùng khi phỏng vấn"],
   ["Tự mày mò, ai rảnh thì chỉ", "Có người chỉ dẫn, nhưng không cố định hoặc chỉ vài tuần", "Có người kèm cặp cố định trong 2 tới 3 tháng đầu"],
   ["Chưa đào tạo, nhân viên tự rút kinh nghiệm", "Có đào tạo, nhưng chưa theo danh sách kỹ năng cụ thể", "Có nội dung đào tạo rõ cho từng kỹ năng, nhân viên mới được đào tạo lần lượt"],
   ["Chưa có lộ trình, tăng lương tùy người chủ quyết", "Có lộ trình, nhưng chưa rõ cần đạt kết quả gì", "Biết rõ đạt kết quả nào thì được tăng lương, lên chức"]],
   goi:["", "", "", ""],
   lam:"đặt tiêu chí tuyển, kế hoạch kèm cặp người mới và bảng năng lực nhân viên kinh doanh",
   kq:["Nhiều khả năng công ty đang tuyển theo cảm nhận và để người mới tự mày mò, nên người mới dễ nghỉ sớm và công ty phải tuyển lại liên tục.",
-      "Đã có tiêu chí tuyển hoặc người kèm cặp, nhưng chưa đều. Người mới vẫn học mỗi người một kiểu.",
+      "Đã có bản mô tả người cần tuyển hoặc người kèm cặp, nhưng mới làm được một phần. Người mới vẫn học mỗi người một kiểu.",
       "Cách tuyển, cách kèm cặp người mới và lộ trình thăng tiến đã rõ."],
   dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cặp cụ thể trong 90 ngày đầu.",
        "Lập bảng năng lực nhân viên kinh doanh để biết mỗi người mới còn thiếu phần nào mà kèm cặp đúng chỗ."]},
@@ -380,7 +380,7 @@ const TRU = [
   dau:["Viết lại cách tính thu nhập trên 1 trang, báo từ đầu kỳ và giữ nguyên tới cuối kỳ.",
        "Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất."]},
  {ten:"Công cụ", anh:"Material", hoi:"Bán bằng công cụ nào?",
-  danhGia:"Thông tin khách có nằm ở một nơi chung của công ty không, và báo giá có dùng mẫu chung không.",
+  danhGia:"Thông tin khách có nằm ở một bảng tính hoặc phần mềm chung của công ty không, và báo giá có dùng mẫu chung không.",
   viSao:"Thông tin khách nằm trong Zalo cá nhân thì một nhân viên kinh doanh nghỉ là công ty mất luôn nhóm khách người đó đang chăm sóc. Mua phần mềm khi cách bán chưa rõ thì phần mềm cũng chỉ ghi lại cảnh mỗi người một kiểu.",
   cau:[
   "Thông tin khách hàng đang được lưu ở đâu?",
@@ -388,16 +388,16 @@ const TRU = [
   "Báo giá gửi khách đang làm thế nào?",
   "Quản lý biết số khách mới mỗi ngày bằng cách nào?"],
   dap:[
-  ["Trong Zalo, điện thoại hoặc sổ riêng của từng nhân viên", "Có nơi lưu chung, nhưng nhiều khách vẫn chỉ nằm ở chỗ riêng", "Tất cả khách nằm ở một nơi chung của công ty"],
+  ["Trong Zalo, điện thoại hoặc sổ riêng của từng nhân viên", "Có bảng tính hoặc phần mềm chung, nhưng nhiều khách vẫn chỉ nằm ở chỗ riêng", "Tất cả khách nằm ở một bảng tính hoặc phần mềm chung của công ty"],
   ["Không, phải hỏi lại khách từ đầu", "Nắm được một phần, phần lớn vẫn mất", "Người nhận bàn giao xem được khách đã hỏi gì, được báo giá bao nhiêu"],
   ["Mỗi người tự nhắn giá theo cách của mình", "Có mẫu báo giá, nhưng không phải ai cũng dùng", "Ai cũng dùng mẫu chung, giá lấy từ bảng giá chung"],
   ["Không biết, hoặc phải hỏi từng người", "Có tổng hợp, nhưng cuối tuần hoặc cuối tháng mới có", "Mở phần mềm hoặc bảng tính là thấy ngay trong ngày"]],
   goi:["Nơi chung có thể là phần mềm quản lý khách hàng hoặc một bảng tính chung.", "", "", ""],
-  lam:"đưa thông tin khách và báo giá về một nơi chung, chọn công cụ theo cách bán của công ty",
+  lam:"đưa thông tin khách và báo giá về một bảng tính chung, chọn công cụ theo cách bán của công ty",
   kq:["Nhiều khả năng thông tin khách đang nằm trong Zalo và điện thoại của từng người, nên nhân viên kinh doanh nghỉ là công ty dễ mất khách. Quản lý muốn biết số khách mới thì phải đi hỏi.",
       "Đã có nơi lưu chung nhưng chưa phải ai cũng ghi đủ, báo giá vẫn mỗi người một mẫu.",
-      "Thông tin khách và báo giá đã nằm ở nơi chung, quản lý tự xem được."],
-  dau:["Đưa thông tin khách về một nơi chung của công ty. Bắt đầu bằng một bảng tính chung cũng được.",
+      "Thông tin khách và báo giá đã nằm ở bảng tính chung, quản lý tự xem được."],
+  dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Bắt đầu bằng một bảng tính chung cũng được.",
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
  {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
@@ -435,7 +435,7 @@ const TRU = [
   goi:["", "", "Công ty chưa có quản lý riêng: chấm theo việc nào nhân viên được tự quyết.", "Ví dụ: chuyển sang ghi khách vào phần mềm, đổi mẫu báo giá."],
   lam:"sắp lịch họp tuần, lịch kèm cặp nhân viên kinh doanh và phân quyền để việc không dồn về người chủ",
   kq:["Nhiều khả năng quản lý vẫn phải tự bán là chính, họp tuần chưa ra việc cụ thể, nên việc lại dồn về người chủ. Thường đây không phải lỗi của riêng ai, mà vì công ty chưa sắp lịch và chưa phân quyền rõ.",
-      "Đã có họp và kèm cặp nhân viên kinh doanh, nhưng chưa đều, và quyền quyết định của quản lý chưa rõ.",
+      "Đã có họp và kèm cặp nhân viên kinh doanh, nhưng lúc có lúc không, và quyền quyết định của quản lý chưa rõ.",
       "Quản lý đang kèm cặp nhân viên kinh doanh, họp tuần ra việc cụ thể, phân quyền rõ."],
   dau:["Đặt lịch họp tuần 30 phút, kết thúc bằng việc giao cho từng người, và tuần sau xem lại việc đó.",
        "Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm."]}
@@ -443,22 +443,22 @@ const TRU = [
 
 // Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
 const HO_SO = {
- goc:{t:"Phòng kinh doanh đang dựa nhiều vào người chủ và vài người giỏi",
-  m:"Gốc của phòng kinh doanh là bán cho ai và bán thế nào. 2 chỗ này chưa rõ thì tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả, vì mỗi người vẫn bán theo một kiểu. Nên sửa từ gốc trước."},
- nguoi:{t:"Đã có cách bán, chưa giữ được nhân viên bán hàng",
-  m:"Công ty đã rõ bán cho ai và bán thế nào. Chỗ còn thiếu là con người: cách tuyển, cách kèm cặp, hoặc cách trả lương thưởng. Để lâu, công ty dễ mất người giỏi và phải dạy lại người mới liên tục."},
- so:{t:"Có đội ngũ bán, thiếu công cụ và số liệu để theo dõi",
-  m:"Cách bán và đội ngũ đã có nền. Chỗ còn thiếu là thông tin khách và số liệu. Người chủ vẫn phải hỏi từng người mới biết tình hình, và biết hụt chỉ tiêu khi đã muộn."},
- dieuhanh:{t:"Đã có nền, việc điều hành chưa đều",
-  m:"6 trụ cột đầu đã có nền, nhưng việc điều hành chưa đều. Đây là lúc dễ quay lại cảnh mọi việc dồn về người chủ, và những gì đã xây dựng dễ bị bỏ dở."},
- chuadeu:{t:"Đã có nền, chưa chạy đều",
-  m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc mới làm được một phần hoặc mới vài người làm. Việc tiếp theo là làm cho đều, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
- vung:{t:"Phòng kinh doanh đã có nền tốt",
-  m:"Cả 7 trụ cột đều ở mức tốt. Việc tiếp theo là giữ cho đều, và đánh giá lại sau vài tuần để xem có chỗ nào tụt không."}
+  goc:{t:"Việc bán hàng đang dồn vào người chủ và vài người giỏi",
+   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên làm rõ chuyện bán cho ai, bán thế nào trước."},
+  nguoi:{t:"Đã có cách bán, nhưng khó giữ người giỏi và đào tạo người mới",
+   m:"Công ty đã rõ bán cho ai và bán thế nào. Chỗ còn thiếu là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
+  so:{t:"Có người bán, nhưng chưa có số liệu để thấy khách đang kẹt ở đâu",
+   m:"Cách bán và đội ngũ đã có nền. Chỗ còn thiếu là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
+  dieuhanh:{t:"Đã có nền, nhưng quản lý chưa theo sát hằng tuần",
+   m:"6 trụ cột đầu đã có nền, nhưng quản lý chưa theo sát hằng tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
+  chuadeu:{t:"Đã có nền, nhưng mỗi người làm một mức",
+   m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc mới làm được một phần hoặc mới vài người làm. Việc tiếp theo là để cả phòng làm giống nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
+  vung:{t:"Phòng kinh doanh đã có nền tốt",
+   m:"Cả 7 trụ cột đều ở mức tốt. Việc tiếp theo là giữ như vậy, và làm lại phiếu sau vài tuần để xem có chỗ nào tụt không."}
 };
 
 const MUC = ["Chưa đúng","Đúng một phần","Đúng hoàn toàn"];
-const TEN_MUC = ["Cần sửa","Đã có, chưa đều","Tốt"];
+const TEN_MUC = ["Cần sửa","Mới làm một phần","Tốt"];
 const MAU = ["var(--r0)","var(--r1)","var(--r2)"];
 const KEY = "phieu-danh-gia-7m-v3";
 const mucDo = d => d <= 3 ? 0 : d <= 6 ? 1 : 2;
@@ -503,7 +503,7 @@ function capNhat() {
 function diem() { return TRU.map((p, i) => ({i, d: p.cau.reduce((s, q, j) => s + (st.a[i+"_"+j] || 0), 0)})); }
 
 function truocTien(ds) {
-  // Trụ cột sau dựa vào trụ cột trước: lấy trụ cột cần sửa theo thứ tự, thiếu thì thêm trụ cột chưa đều, đủ 3.
+  // Trụ cột sau dựa vào trụ cột trước: lấy trụ cột cần sửa theo thứ tự, thiếu thì thêm trụ cột mới làm được một phần, đủ 3.
   const chon = [...ds.filter(x => mucDo(x.d) === 0), ...ds.filter(x => mucDo(x.d) === 1)];
   return (chon.length ? chon : [...ds].sort((a, b) => a.d - b.d || a.i - b.i)).slice(0, 3);
 }
@@ -524,7 +524,7 @@ function veKetQua() {
   $("hang").innerHTML = ds.map(x => { const m = mucDo(x.d); return `<div class="hang"><b>M${x.i+1} · ${TRU[x.i].ten}<small class="en">${TRU[x.i].anh}</small></b><div class="t"><i style="width:${x.d/8*100}%;background:${MAU[m]}"></i></div><span class="muc m${m}">${x.d}/8 · ${TEN_MUC[m]}</span></div>`; }).join("");
   const lam = truocTien(ds), coYeu = ds.some(x => mucDo(x.d) < 2);
   $("thutu").textContent = coYeu
-    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột chưa đều. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì trụ cột sau dựa vào trụ cột trước."
+    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột mới làm được một phần. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì trụ cột sau dựa vào trụ cột trước."
     : "Cả 7 trụ cột đều tốt. Nếu muốn làm tốt hơn nữa, bắt đầu từ trụ cột ít điểm nhất.";
   $("uutien").innerHTML = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.anh} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
   const sn = $("songuoi").value;
