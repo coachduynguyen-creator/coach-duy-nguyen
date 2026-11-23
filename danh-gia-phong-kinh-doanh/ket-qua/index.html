@@ -548,7 +548,7 @@ const ruiRo = () => RUI_RO.filter(r => r.can.every(c => tl(c) < 2))
   .sort((a, b) => b.cao - a.cao || tongCan(a) - tongCan(b));
 const khop = () => KHOP.filter(k => tl(k.a) > tl(k.b));
 
-// Nguyên nhân và giải pháp cho từng rủi ro. BẢN NHÁP 23/11/2026, Claude soạn từ hồ sơ gọi (cột Hướng tiếp cận) và các câu LAM, chờ Coach Duy duyệt.
+// Nguyên nhân và giải pháp cho từng rủi ro. Coach Duy duyệt 23/11/2026 (phiếu chốt nguyên nhân giải pháp 7M): giữ nguyên toàn bộ đề xuất, hiện 5 rủi ro nặng nhất, ô kênh bắt buộc. Soạn từ hồ sơ gọi (cột Hướng tiếp cận) và các câu LAM.
 // nn = nguyên nhân thường gặp, gp = các việc nên làm. Biến thể: kenh (theo kênh bán chính), it (0 tới 1 người bán), dong (từ 6 người bán).
 const NN_GP = {
  "Khách đang cân nhắc bị bỏ quên":{
@@ -675,8 +675,8 @@ function radar(ds) {
 function ve() {
   const ds = diem(), tong = ds.reduce((s, x) => s + x.d, 0), hs = {...HO_SO[hoSo(ds)]}, uu = truocTien(ds);
   const dem = m => ds.filter(x => mucDo(x.d) === m).length;
-  const tlv = Object.values(st.a), demTL = k => tlv.filter(v => v === k).length, rr = ruiRo(), kh = khop(), caBang = rr.length > 1 && rr.slice(0, 3).every(r => r.cao === rr[0].cao);
-  const soRR = c => rr.findIndex(r => r.can.includes(c)) + 1;
+  const SO_RR_HIEN = 5; const tlv = Object.values(st.a), demTL = k => tlv.filter(v => v === k).length, rr = ruiRo(), kh = khop(), caBang = rr.length > 1 && rr.slice(0, 3).every(r => r.cao === rr[0].cao);
+  const soRR = c => { const i = rr.findIndex(r => r.can.includes(c)) + 1; return i <= SO_RR_HIEN ? i : 0; };
   if (hoSo(ds) === "goc" && mucDo(ds[0].d) > 0) { hs.t = "Cách bán chưa thống nhất, kết quả còn dựa vào từng người"; hs.m = "Công ty đã khá rõ bán cho ai. Chỗ yếu nằm ở cách bán: các bước chưa viết đủ hoặc chưa được làm theo đều. Cách bán chưa rõ thì tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả, vì mỗi người vẫn bán theo một kiểu. Nên sửa cách bán trước."; }
   const manh = [...ds].sort((a, b) => b.d - a.d || a.i - b.i)[0];
   const sau = ds.filter(x => mucDo(x.d) < 2 && !uu.includes(x));
@@ -728,8 +728,8 @@ function ve() {
 <section style="margin-top:9mm">
  <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Từng rủi ro và từng trụ cột: điều ghi nhận được, điều có thể đang xảy ra, cách kiểm tra, và việc nên làm trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Mỗi câu trả lời riêng lẻ chỉ cho thấy một việc chưa làm. Đặt vài câu trả lời cạnh nhau thì thấy được rủi ro mà từng câu không nói ra. Dưới đây là ${rr.length} rủi ro, xếp từ mức cao xuống. Rủi ro ở mức cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho biết việc nào chưa làm, nên đây là những điều có thể đang xảy ra. Anh chị đọc phần dấu hiệu đi kèm: thấy dấu hiệu nào trong công ty mình thì rủi ro đó nhiều khả năng đang xảy ra thật. Phần nguyên nhân và cách làm là điều thường gặp, chưa phải kết luận về riêng công ty anh chị. Anh chị đối chiếu với thực tế, chỗ nào không đúng thì bỏ qua.</p>
- ${rr.map((r, k) => `<div class="rui">
+ <p>Mỗi câu trả lời riêng lẻ chỉ cho thấy một việc chưa làm. Đặt vài câu trả lời cạnh nhau thì thấy được rủi ro mà từng câu không nói ra. Phiếu cho thấy ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro nặng nhất, xếp từ mức cao xuống. Rủi ro ở mức cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho biết việc nào chưa làm, nên đây là những điều có thể đang xảy ra. Anh chị đọc phần dấu hiệu đi kèm: thấy dấu hiệu nào trong công ty mình thì rủi ro đó nhiều khả năng đang xảy ra thật. Phần nguyên nhân và cách làm là điều thường gặp, chưa phải kết luận về riêng công ty anh chị. Anh chị đối chiếu với thực tế, chỗ nào không đúng thì bỏ qua.</p>
+ ${rr.slice(0, SO_RR_HIEN).map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten} <span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span></h4>
   <p><b>Điều đã ghi nhận.</b> Qua các câu trả lời, anh chị cho biết: ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
   <p><b>Vấn đề và hậu quả.</b> ${r.ht}</p>
