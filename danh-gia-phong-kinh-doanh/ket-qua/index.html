@@ -150,6 +150,7 @@ ol.buoc{margin:2pt 0 8pt;padding-left:16pt} ol.buoc li{margin:0 0 6pt}
 .cuoi .ngf{height:24mm;display:block;margin-left:auto}
 .cuoi .cdn img{height:10mm}
 .cuoi small{display:block;font-family:var(--mono);font-size:9pt;letter-spacing:.12em;color:var(--vgn);margin-top:2mm;text-align:right}
+.chao{font-weight:700;margin:0 0 1mm}.nhanh{margin:2mm 0 0;padding-left:5mm}.nhanh li{margin:0 0 1.5mm}
 </style>
 <style>
 .gpkd{break-inside:avoid;border-top:1px solid var(--ke);padding:3mm 0} .gpkd b{color:var(--nv)} .gpkd dl{display:grid;grid-template-columns:30mm 1fr;gap:1.5mm 4mm;margin:2mm 0 0} .gpkd dt{font-weight:700;color:var(--vgd)} .gpkd dd{margin:0}
@@ -505,41 +506,41 @@ const RR1 = {
 // Mức cao khi từ 2 câu căn cứ trở lên chấm Chưa đúng. Câu trong ht viết ở dạng "có thể", vì phiếu chỉ cho biết việc chưa làm.
 const RUI_RO = [
  {ten:"Khách đang cân nhắc bị bỏ quên", can:["2.3","6.3","5.4"],
-  ht:"Khách đang cân nhắc chưa được hẹn ngày hỏi lại, và quản lý chưa có con số cho thấy khách dừng ở bước nào. Khi doanh số không lên, công ty dễ nghĩ là thiếu khách mới, trong khi có thể khách đang rơi ở bước hỏi lại. Nếu vậy, thêm khách mới mà không sửa bước hỏi lại thì khách mới cũng rơi ở đúng chỗ đó.",
+  ht:"Khách đã nhận báo giá mà chưa mua thường chưa từ chối. Họ đang cân nhắc. Nếu không ai hẹn ngày hỏi lại, và quản lý không thấy khách đang dừng ở bước nào, số khách này lặng lẽ biến mất. Lúc đó công ty hay nghĩ là thiếu khách mới, rồi chi thêm tiền tìm khách, trong khi khách mới cũng rơi đúng chỗ đó.",
   dh:["Đã tăng chi phí tìm khách mới mà doanh số không tăng theo","Nhân viên kinh doanh hay nói “khách hỏi xong rồi im lặng”","Không ai trả lời chắc được tháng này có bao nhiêu khách đang cân nhắc"],
-  hoi:"Công ty có danh sách những khách đã nhận báo giá trong 30 ngày qua mà chưa mua không?"},
+  hoi:"Mở danh sách khách đã nhận báo giá trong 30 ngày qua mà chưa mua. Bao nhiêu người trong đó có ngày hẹn hỏi lại?"},
  {ten:"Mất khách khi nhân viên kinh doanh nghỉ việc", can:["5.1","5.2","4.3","3.4"],
-  ht:"Khi một nhân viên kinh doanh nghỉ, phần khách chưa nằm ở nơi chung của công ty, như bảng tính chung hoặc phần mềm quản lý khách, có thể đi theo người đó, còn người nhận lại khách không biết đã trao đổi gì. Lộ trình thăng tiến chưa rõ làm khả năng người giỏi nghỉ cao hơn, và người giỏi thường là người đang giữ nhiều khách.",
+  ht:"Khi một nhân viên kinh doanh nghỉ, phần khách nằm trong Zalo và điện thoại riêng đi theo họ. Người nhận lại khách không biết đã hứa gì, báo giá bao nhiêu, nên khách phải kể lại từ đầu. Nếu lộ trình lên lương của người giỏi cũng chưa rõ, họ dễ nhìn sang chỗ khác, mà người giỏi thường là người giữ nhiều khách nhất.",
   dh:["Sau khi có người nghỉ, doanh số từ nhóm khách người đó chăm sóc giảm rõ","Khách gọi tới hỏi nhân viên kinh doanh cũ, người nhận không biết chuyện trước đó","Nhân viên kinh doanh giỏi nhất giữ phần lớn thông tin khách trong điện thoại riêng"],
-  hoi:"Lần gần nhất có nhân viên kinh doanh nghỉ, công ty giữ lại được những khách nào của người đó?"},
+  hoi:"Lần gần nhất có người nghỉ, công ty giữ lại được bao nhiêu khách của người đó? Người nhận lại có đọc được lịch sử trao đổi không?"},
  {ten:"Tuyển thêm người mà doanh số không tăng theo", can:["2.1","3.2","3.3"],
-  ht:"Cách bán chưa viết đủ, người mới chưa có người kèm rõ ràng, và chưa đào tạo theo danh sách kỹ năng. Tuyển thêm người lúc này có thể chủ yếu làm tăng chi phí lương, vì người mới mất nhiều thời gian mới bán được, và người lâu năm phải bớt thời gian bán để chỉ dẫn người mới.",
+  ht:"Tuyển thêm lúc này chủ yếu làm quỹ lương tăng trước, doanh số tăng sau. Người mới mất nhiều tháng mới bán được, trong khi người lâu năm phải bớt giờ bán để chỉ dẫn, nên doanh số cả phòng có thể còn chậm đi một thời gian.",
   dh:["Người mới thường nghỉ trong 3 tháng đầu","Doanh số tập trung ở 1 hoặc 2 người lâu năm","Quản lý ngại tuyển vì “tuyển về lại phải dạy từ đầu”"],
-  hoi:"Nhân viên kinh doanh tuyển gần nhất sau 3 tháng đã bán được chưa?"},
+  hoi:"Người mới tuyển gần nhất, sau 3 tháng đã bán được đơn nào chưa? Ai là người kèm họ, và kèm bao nhiêu buổi?"},
  {ten:"Việc khó vẫn dồn về người chủ", can:["7.1","7.3","7.2"],
-  ht:"Quản lý chưa dành đủ thời gian kèm nhân viên kinh doanh, chưa rõ việc nào được tự quyết, và họp tuần chưa đều ra việc cụ thể. Khi 3 chỗ này cùng chưa rõ, quyết định khó thường vòng về người chủ, và người chủ trở thành chỗ cả phòng kinh doanh phải chờ.",
+  ht:"Những việc khó như giảm giá, quà tặng, khách khó đều vòng về bàn người chủ, và cả phòng đứng chờ. Người chủ càng bận thì phòng kinh doanh càng chậm, và quản lý càng khó lớn lên thành người tự quyết.",
   dh:["Người chủ nhận câu hỏi xin duyệt giảm giá, duyệt quà tặng gần như mỗi ngày","Người chủ vắng mặt vài ngày là việc chậm lại","Quản lý bán giỏi nhưng ít khi ngồi kèm nhân viên kinh doanh"],
-  hoi:"Trong một tuần, có những việc gì phòng kinh doanh phải chờ người chủ duyệt?"},
+  hoi:"Trong tuần vừa rồi, người chủ đã duyệt bao nhiêu việc cho phòng kinh doanh? Có việc nào quản lý đủ sức tự quyết không?"},
  {ten:"Biết hụt chỉ tiêu khi đã muộn", can:["6.1","6.2","6.3"],
-  ht:"Chỉ tiêu chưa sát mùa bán, giữa tháng chưa chắc đạt hay hụt, và chưa xem đều khách ở từng bước. Khi đó công ty điều hành chủ yếu bằng doanh số cuối tháng, nên khi biết hụt thì thường phải giảm giá gấp, và lợi nhuận bị ảnh hưởng.",
+  ht:"Chỉ tiêu chưa sát mùa bán, giữa tháng chưa ai ước được tháng này đạt bao nhiêu, và khách ở từng bước chưa được xem đều. Công ty chỉ biết kết quả khi tháng đã hết. Lúc đó cách nhanh nhất để kịp chỉ tiêu là giảm giá gấp, và tiền lãi chịu thiệt.",
   dh:["Cuối tháng hay có đợt giảm giá gấp cho kịp chỉ tiêu","Có tháng vượt xa chỉ tiêu, có tháng hụt nhiều mà không rõ vì sao","Họp cuối tháng chủ yếu để tìm lý do hụt"],
-  hoi:"Vào giữa tháng, quản lý có ước được tháng đó đạt khoảng bao nhiêu phần chỉ tiêu không?"},
+  hoi:"Vào ngày 15 của tháng vừa rồi, quản lý có nói được tháng đó sẽ đạt khoảng bao nhiêu phần chỉ tiêu không? Con số đó dựa vào đâu?"},
  {ten:"Lợi nhuận hao hụt qua giảm giá", can:["1.3","1.2","4.4"],
-  ht:"Giảm giá còn tùy nhân viên kinh doanh, nhân viên kinh doanh chưa nói cùng một lý do khách chọn công ty, và người chủ chưa chắc chi phí để có một khách mua. Khi chưa thuyết phục được khách, giảm giá là cách dễ nhất, nên doanh số có thể tăng trong khi tiền lãi không tăng theo.",
+  ht:"Mỗi nhân viên có một lý do riêng để nói với khách, giảm giá còn tùy từng người, và người chủ chưa chắc mỗi khách mua tốn bao nhiêu chi phí. Khi khách phân vân, giảm giá là cách dễ nhất. Doanh số có thể tăng mà tiền lãi không tăng theo.",
   dh:["Doanh số tăng nhưng tiền lãi không tăng theo","Khách quen nói “lần trước bạn kia giảm cho em nhiều hơn”","Nhân viên kinh doanh hay xin thêm quyền giảm giá để khách đồng ý mua"],
-  hoi:"Trong 10 đơn gần nhất, có bao nhiêu đơn phải giảm giá?"},
+  hoi:"Trong 10 đơn gần nhất, bao nhiêu đơn có giảm giá? Ai quyết định, và dựa vào đâu?"},
  {ten:"Khách mới phải chờ lâu mới được trả lời", can:["6.4","1.4","5.4"],
-  ht:"Thời gian trả lời khách mới chưa được xem đều, cách chia khách chưa ai cũng rõ, và quản lý chưa tự xem được khách mới. Khách vừa hỏi có thể phải chờ vì chưa rõ ai nhận, nhất là ngoài giờ hành chính, trong khi khách hỏi giá thường hỏi nhiều nơi cùng lúc.",
+  ht:"Cách chia khách mới chưa ai cũng rõ, thời gian trả lời chưa được đo đều, và quản lý chưa tự mở được danh sách khách mới. Khách vừa hỏi có thể phải chờ vì mỗi người nghĩ người kia đã nhận. Khách hỏi giá thường hỏi nhiều nơi cùng lúc, nên nơi trả lời sau dễ mất khách.",
   dh:["Có tin nhắn của khách để qua đêm mới trả lời","Nhân viên kinh doanh nói “em tưởng anh ấy nhận rồi”","Số khách hỏi tăng nhưng số khách hẹn gặp không tăng theo"],
-  hoi:"Khách nhắn tin hỏi giá lúc 9 giờ tối thứ Bảy thì bao lâu sau có người trả lời?"},
+  hoi:"Lấy 10 khách hỏi giá gần nhất. Từ lúc khách nhắn đến lúc có người trả lời là bao lâu, và ai là người nhận?"},
  {ten:"Cách làm mới khó giữ được lâu", can:["7.4","2.2","5.1"],
-  ht:"Khi đổi cách làm, quản lý chưa theo sát tới cùng, cả nhóm chưa làm theo cùng các bước, và thông tin khách còn rải rác. Nếu công ty đổi cách làm hoặc dùng phần mềm quản lý khách lúc này, phần mềm có thể chỉ ghi lại cảnh mỗi người một kiểu, rồi sau vài tuần mọi người quay về cách cũ.",
+  ht:"Khi đổi cách làm, chưa có ai theo sát tới cùng. Cả nhóm chưa làm theo cùng các bước, và thông tin khách còn rải rác. Lúc này mua phần mềm quản lý khách có thể chỉ ghi lại cảnh mỗi người một kiểu, rồi sau vài tuần mọi người quay về cách cũ.",
   dh:["Công ty đã từng dùng phần mềm hoặc bảng tính chung nhưng giờ ít người cập nhật","Nhân viên kinh doanh ghi khách vào nơi chung cho có, thông tin thật vẫn ở Zalo","Mỗi lần đổi cách làm chỉ giữ được vài tuần"],
-  hoi:"Công ty đã từng dùng phần mềm hay bảng tính chung nào để quản lý khách chưa?"},
+  hoi:"Lần gần nhất công ty đổi một cách làm, sau 2 tuần còn bao nhiêu người làm theo? Ai là người theo dõi?"},
  {ten:"Thưởng chưa tạo được động lực", can:["4.1","4.2","6.1"],
-  ht:"Nhân viên kinh doanh chưa tự tính được thu nhập, cách thưởng có lúc đổi giữa kỳ, và chỉ tiêu chưa sát mùa bán. Khi nhân viên kinh doanh không thấy rõ làm thêm thì được thêm gì, nhiều người sẽ chỉ làm đủ để giữ thu nhập hiện tại.",
+  ht:"Nhân viên chưa tự tính được thu nhập, cách thưởng có lúc đổi giữa kỳ, và chỉ tiêu chưa sát mùa bán. Khi không thấy rõ làm thêm thì được thêm gì, nhiều người chỉ làm vừa đủ để giữ mức hiện tại.",
   dh:["Nhân viên kinh doanh ít hỏi về chỉ tiêu và thưởng","Cuối tháng hay có thắc mắc về cách tính lương","Người giỏi và người trung bình nhận thu nhập gần bằng nhau"],
-  hoi:"Tháng vừa rồi, thu nhập của nhân viên kinh doanh giỏi nhất và người trung bình chênh nhau bao nhiêu?"}
+  hoi:"Tháng vừa rồi, người bán giỏi nhất và người bán trung bình chênh nhau bao nhiêu tiền thu nhập?"}
 ];
 
 // Chỗ câu trả lời chưa khớp: 2 việc thường đi cùng nhau nhưng được chấm khác nhau.
@@ -725,6 +726,15 @@ function ve() {
 <section>
  <div class="phanlon"><div class="kic">Phần I · Tổng quan</div><h2>Công ty đang ở đâu</h2><p>Kết quả chung, điểm từng trụ cột và 3 trụ cột nên sửa trước.</p></div>
  ${dau(1, "Tóm tắt kết quả")}
+ <p class="chao">Chào ${KHACH.hoTen.trim()},</p>
+ <p>Đây là kết quả từ 28 câu anh chị đã trả lời cho ${KHACH.congTy}. Duy nói gọn trước, phần chi tiết nằm ở các mục sau.</p>
+ <div class="ghi"><div class="nhan">Đọc nhanh trong một phút</div>
+ <ul class="nhanh">
+  <li><b>Chỗ vững nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Chỗ này anh chị đang làm tốt.</li>
+  ${rr.length ? `<li><b>Rủi ro đáng lo nhất:</b> ${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}. Mục 3 nói rõ vì sao và cách tự kiểm tra.</li>` : ""}
+  <li><b>Việc nên làm trước:</b> ${tenM(uu[0].i)}. ${viecDau(uu[0])}</li>
+ </ul>
+ <p class="muted nho" style="margin:2mm 0 0">Đây là điểm anh chị tự chấm. Nó cho thấy cách làm hiện tại, chưa phải số đo doanh thu hay kết quả bán hàng.</p></div>
  <div class="ghi"><div class="nhan">Nhận định chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
  <p>Phòng kinh doanh tiêu chuẩn có 28 việc cần làm. Công ty anh chị đã làm trọn <b>${demTL(2)} việc</b>, làm được một phần <b>${demTL(1)} việc</b>, và chưa làm <b>${demTL(0)} việc</b>. Về trụ cột thì có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột đã có nhưng chưa đều</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}. Chỗ vững nhất là <b>${tenM(manh.i)}</b>, ${manh.d} trên 8 điểm.</p>
  ${rr.length ? `<h3>Những rủi ro lớn nhất</h3>
@@ -750,16 +760,17 @@ function ve() {
 <section class="phan">
  <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Với từng rủi ro và từng trụ cột, Duy ghi lại điều đã thấy trong câu trả lời, điều có thể đang xảy ra, cách tự kiểm tra và việc nên làm trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Một câu trả lời đứng riêng chỉ cho Duy biết một việc chưa làm. Nhưng đặt vài câu cạnh nhau thì hiện ra chuyện lớn hơn mà từng câu không nói. Phiếu của anh chị có ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro nặng nhất, nặng nhất đứng đầu. Rủi ro tính là cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho Duy biết việc nào chưa làm, không cho biết chuyện gì đã xảy ra, nên đây là những điều có thể đang xảy ra. Anh chị xem phần dấu hiệu đi kèm. Thấy dấu hiệu nào ở công ty mình thì rủi ro đó nhiều khả năng đang có thật. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chưa phải kết luận về công ty anh chị. Chỗ nào không đúng với thực tế thì anh chị cứ bỏ qua.</p>
+ <p>Một câu trả lời đứng riêng chỉ cho Duy biết một việc chưa làm. Đặt vài câu cạnh nhau thì thấy được chuyện lớn hơn. Từ câu trả lời của anh chị, Duy thấy ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro đáng lo nhất, xếp từ nặng xuống nhẹ. Rủi ro nặng là rủi ro có từ 2 câu trả lời trở lên ở mức "chưa đúng". Phiếu chỉ cho biết việc nào chưa làm, chưa cho biết chuyện gì đã xảy ra, nên anh chị cứ đối chiếu với thực tế của công ty. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chỗ nào chưa đúng với công ty anh chị thì bỏ qua.</p>
  ${rr.slice(0, SO_RR_HIEN).map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten} <span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span></h4>
-  <p><b>Điều đã ghi nhận.</b> Anh chị cho biết: ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
+  <p><b>Anh chị đã trả lời:</b> ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
   <p><b>Vấn đề và hậu quả.</b> ${r.ht}</p>
   ${NN_GP[r.ten] ? (g => `<p><b>Nguyên nhân thường gặp.</b> ${g.nn}</p>
   <p><b>Nên làm.</b></p>
   <ol class="gp">${g.gp.map(x => `<li>${x}</li>`).join("")}</ol>
   ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Riêng với công ty của anh chị.</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
-  <p><b>Hỏi lại đội ngũ.</b> Anh chị xem công ty có dấu hiệu nào dưới đây không. Chỉ cần thấy 1 là rủi ro này đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}. Câu nên hỏi đội ngũ: ${r.hoi}</p>
+  <p><b>Thử nhìn quanh phòng kinh doanh.</b> Anh chị có thấy chuyện nào dưới đây không? Thấy chuyện nào thì rủi ro này nhiều khả năng đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
+  <p><b>Một câu để anh chị tự kiểm tra.</b> ${r.hoi}</p>
  </div>`).join("")}
  ${kh.length ? `<h3>Chỗ 2 câu trả lời đang lệch nhau</h3>
  <p>Mỗi cặp dưới đây là 2 việc thường đi cùng nhau mà anh chị chấm khác nhau. Không phải anh chị trả lời sai. Đây là chỗ nên hỏi thêm đội ngũ trước khi sửa, vì thường có lý do cụ thể phía sau.</p>
