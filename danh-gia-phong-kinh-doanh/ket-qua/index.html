@@ -157,6 +157,7 @@ ol.buoc{margin:2pt 0 8pt;padding-left:16pt} ol.buoc li{margin:0 0 6pt}
 .nut-pdf{position:fixed;right:16px;bottom:16px;z-index:9;background:#0C1628;color:#F4F1EA;border:0;border-radius:999px;padding:12px 20px;font:600 15px 'Be Vietnam Pro',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 @media screen{body{background:#E9E5DC}.giay{background:#fff;margin:16px auto}.bia{max-width:100%;height:auto;min-height:297mm}}
 @media print{.nut-pdf{display:none}}
+.gp{margin:0 0 7pt;padding-left:18pt}.gp li{margin:0 0 3pt}.rieng{background:var(--nga);border-left:3px solid var(--vg);padding:6pt 10pt;border-radius:0 2mm 2mm 0;break-inside:avoid}
 /* Bản 23/11/2026: một họ chữ, 4 cỡ chữ, đọc như văn bản báo cáo */
 :root{--c1:11pt;--c2:9.5pt}
 body{font-size:var(--c1);line-height:1.65}
@@ -547,6 +548,48 @@ const ruiRo = () => RUI_RO.filter(r => r.can.every(c => tl(c) < 2))
   .sort((a, b) => b.cao - a.cao || tongCan(a) - tongCan(b));
 const khop = () => KHOP.filter(k => tl(k.a) > tl(k.b));
 
+// Nguyên nhân và giải pháp cho từng rủi ro. BẢN NHÁP 23/11/2026, Claude soạn từ hồ sơ gọi (cột Hướng tiếp cận) và các câu LAM, chờ Coach Duy duyệt.
+// nn = nguyên nhân thường gặp, gp = các việc nên làm. Biến thể: kenh (theo kênh bán chính), it (0 tới 1 người bán), dong (từ 6 người bán).
+const NN_GP = {
+ "Khách đang cân nhắc bị bỏ quên":{
+  nn:"Thường là vì không ai được giao việc nhắn hoặc gọi lại cho khách đã nhận báo giá. Mỗi nhân viên kinh doanh tự nhớ, nên khách nào đến lúc bận thì bị quên. Công ty cũng chưa có con số khách đang dừng ở bước nào, nên không ai thấy khách rơi ở đâu.",
+  gp:["Lập danh sách khách đã nhận báo giá mà chưa mua, mỗi khách có 1 ngày hẹn hỏi lại.","Cuối mỗi tuần, quản lý xem có bao nhiêu khách ở từng bước và khách nào đã quá hạn hỏi lại.","Sau 4 tuần, xem trong số khách được hỏi lại có bao nhiêu khách quay lại mua."],
+  kenh:{nhan:"Ở kênh nhắn tin, khách xem giá rồi im lặng là chuyện thường, nên ngày hẹn nhắn lại cần ghi cụ thể cho từng khách.",cuahang:"Khách tới cửa hàng xem rồi về mà chưa để lại số điện thoại thì công ty không còn cách nào hỏi lại. Nên xin số điện thoại hoặc Zalo của khách trước khi khách ra về.",goi:"Khách gọi điện thường cần vài lần liên lạc mới quyết. Nên hẹn luôn lần gọi kế tiếp ngay trước khi kết thúc cuộc gọi.",gap:"Khách gặp trực tiếp thường cần vài lần gặp mới quyết. Nên hẹn luôn lần gặp hoặc lần gọi kế tiếp ngay trước khi kết thúc buổi gặp."}},
+ "Mất khách khi nhân viên kinh doanh nghỉ việc":{
+  nn:"Thông tin khách nằm trong điện thoại và Zalo của từng người, và chưa có quy định giao lại khách khi người đó nghỉ. Người giỏi chưa thấy lộ trình tăng lương hoặc lên chức thì cũng dễ tìm nơi khác.",
+  gp:["Đưa thông tin khách về một nơi chung. Bắt đầu bằng một bảng tính chung cũng được.","Thống nhất những mục phải ghi sau mỗi lần trao đổi: khách hỏi gì, đã báo giá bao nhiêu, hẹn gì.","Viết quy định giao lại khách khi nhân viên nghỉ, kể cả hoa hồng của những khách đó.","Nói chuyện riêng với từng người giỏi về điều họ cần đạt để tăng lương hoặc lên chức."],
+  kenh:{nhan:"Khách nhắn qua Zalo cá nhân của từng người thì khi người đó nghỉ, lịch sử trò chuyện đi theo điện thoại của họ. Nên chuyển khách sang tài khoản chung của công ty hoặc ghi lại nội dung trao đổi vào nơi lưu chung.",goi:"Số điện thoại khách nằm trong danh bạ riêng của từng người thì người nghỉ mang theo được. Nên ghi số khách vào nơi lưu chung ngay sau cuộc gọi đầu."}},
+ "Tuyển thêm người mà doanh số không tăng theo":{
+  nn:"Cách bán nằm trong kinh nghiệm của vài người lâu năm nên người mới không có gì để làm theo, và chưa ai được giao kèm người mới. Người mới vì vậy mất lâu mới bán được, còn người lâu năm phải bớt giờ bán để chỉ dẫn.",
+  gp:["Lấy cách bán của người giỏi nhất, viết thành các bước từ lúc khách hỏi tới lúc khách mua.","Giao mỗi người mới một người kèm cụ thể trong 90 ngày đầu.","Lập bảng năng lực để biết người mới còn thiếu phần nào, rồi mới tuyển thêm."],
+  it:"Công ty đang bán một mình hoặc mới có 1 người, nên chưa có người giỏi nào để lấy mẫu. Việc đầu tiên là chính người chủ viết cách bán của mình ra."},
+ "Việc khó vẫn dồn về người chủ":{
+  nn:"Chưa có văn bản nói việc nào quản lý được tự quyết, nên quản lý chọn hỏi cho chắc. Quản lý lại mải tự bán nên ít thời gian ngồi với từng nhân viên, và họp tuần chưa chốt việc cụ thể nên vấn đề cũ cứ quay lại.",
+  gp:["Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm.","Đặt họp tuần 30 phút, kết thúc bằng việc giao cho từng người, tuần sau xem lại.","Dành lịch cố định mỗi tuần để quản lý ngồi nghe và góp ý cho từng nhân viên kinh doanh."],
+  it:"Công ty chưa có quản lý riêng, nên có thể chọn 1 người bán có kinh nghiệm nhất và viết rõ phạm vi người đó được tự quyết."},
+ "Biết hụt chỉ tiêu khi đã muộn":{
+  nn:"Chỉ tiêu chia đều các tháng nên không khớp tháng cao điểm và tháng thấp điểm của ngành, và giữa tháng chưa ai ước được tháng đó đạt bao nhiêu. Công ty chỉ nhìn doanh số cuối tháng nên khi biết hụt thì đã hết thời gian sửa.",
+  gp:["Chia lại chỉ tiêu theo tháng cao điểm và tháng thấp điểm của ngành.","Chọn một ngày giữa tháng để ước tháng đó đạt bao nhiêu phần chỉ tiêu.","Mỗi tuần xem số khách ở từng bước vào một giờ cố định."]},
+ "Lợi nhuận hao hụt qua giảm giá":{
+  nn:"Mỗi nhân viên có một lý do riêng để nói với khách, và chưa có chính sách giảm giá chung, nên khi khách phân vân thì giảm giá là cách dễ nhất. Người chủ cũng chưa biết rõ mỗi khách mua tốn bao nhiêu chi phí, nên khó nói mức giảm nào còn lãi.",
+  gp:["Hỏi 5 khách mua gần nhất vì sao chọn công ty, rồi thống nhất 1 câu cả nhóm cùng nói.","Viết chính sách giảm giá chung: ai được giảm, giảm tới đâu, mức nào phải hỏi người chủ.","Tính chi phí để có một khách mua từ số liệu 3 tháng gần nhất."]},
+ "Khách mới phải chờ lâu mới được trả lời":{
+  nn:"Chưa ai nhận việc đo thời gian trả lời, và cách chia khách mới chưa rõ, nên khách vừa hỏi đôi khi không có ai nhận. Quản lý cũng chưa tự mở được danh sách khách mới để xem ai đang chờ.",
+  gp:["Viết quy tắc chia khách mới và báo cho cả nhóm, kể cả khách hỏi ngoài giờ thì giao cho ai.","Ghi mọi khách mới vào nơi chung ngay trong ngày.","Mỗi tuần xem thời gian trả lời khách mới."],
+  kenh:{nhan:"Khách nhắn tin thường hỏi vài nơi cùng lúc, nên nơi trả lời chậm dễ bị bỏ qua. Có thể đặt lời chào tự động ngoài giờ và giao 1 người trực tin nhắn theo ca.",cuahang:"Với khách tới cửa hàng, chờ lâu là khách đứng ở quầy mà chưa ai ra tiếp. Nên có quy tắc ai tiếp khách theo lượt.",goi:"Với khách gọi điện, cuộc gọi nhỡ mà không được gọi lại trong ngày cũng là khách chờ lâu. Nên giao 1 người xem cuộc gọi nhỡ mỗi buổi."}},
+ "Cách làm mới khó giữ được lâu":{
+  nn:"Việc đổi cách làm được thông báo trong buổi họp rồi để đó, không ai theo sát tới khi cả nhóm làm theo. Khi cách bán còn mỗi người một kiểu, công cụ mới chỉ ghi lại sự không đồng đều.",
+  gp:["Thống nhất các bước bán trước, rồi mới chọn công cụ.","Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần.","Giao 1 người theo sát và báo lại mỗi tuần ai chưa làm theo."],
+  it:"Với 1 tới 2 người bán, một bảng tính chung là đủ ở giai đoạn này, chưa cần phần mềm quản lý khách.",
+  dong:"Từ 6 người bán trở lên, nên giao 1 người kiểm tra mỗi tuần xem thông tin khách đã được ghi đủ chưa."},
+ "Thưởng chưa tạo được động lực":{
+  nn:"Cách tính thưởng chưa viết ra rõ nên nhân viên không tự tính được mình nhận bao nhiêu, và việc đổi giữa kỳ làm họ mất tin. Chỉ tiêu không sát mùa bán cũng làm tháng thấp điểm trông như thất bại.",
+  gp:["Viết cách tính thu nhập trên 1 trang để mỗi người tự tính được.","Báo cách tính thưởng từ đầu kỳ và giữ nguyên tới cuối kỳ.","Chia lại chỉ tiêu theo tháng cao điểm và tháng thấp điểm."]}
+};
+const kenhKey = t => /Nhắn tin/.test(t || "") ? "nhan" : /cửa hàng|showroom/.test(t || "") ? "cuahang" : /Gọi điện/.test(t || "") ? "goi" : /Đi gặp/.test(t || "") ? "gap" : "";
+const itNguoi = t => /^(0|1 )/.test(t || "");
+const dongNguoi = t => /^(6|Trên)/.test(t || "");
+
 // Việc đầu tiên của một trụ cột. Câu dau[m] trên trang đánh giá nhắm vào vài câu hỏi (DICH).
 // Nếu khách đã làm tốt một trong các câu đó, báo cáo không bảo làm lại việc đã xong,
 // mà lấy việc nên làm (LAM) của câu yếu nhất còn lại trong trụ cột.
@@ -685,13 +728,16 @@ function ve() {
 <section style="margin-top:9mm">
  <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Từng rủi ro và từng trụ cột: điều ghi nhận được, điều có thể đang xảy ra, cách kiểm tra, và việc nên làm trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Mỗi câu trả lời riêng lẻ chỉ cho thấy một việc chưa làm. Đặt vài câu trả lời cạnh nhau thì thấy được rủi ro mà từng câu không nói ra. Dưới đây là ${rr.length} rủi ro, xếp từ mức cao xuống. Rủi ro ở mức cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho biết việc nào chưa làm, nên đây là những điều có thể đang xảy ra. Anh chị đọc phần dấu hiệu đi kèm: thấy dấu hiệu nào trong công ty mình thì rủi ro đó nhiều khả năng đang xảy ra thật.</p>
+ <p>Mỗi câu trả lời riêng lẻ chỉ cho thấy một việc chưa làm. Đặt vài câu trả lời cạnh nhau thì thấy được rủi ro mà từng câu không nói ra. Dưới đây là ${rr.length} rủi ro, xếp từ mức cao xuống. Rủi ro ở mức cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho biết việc nào chưa làm, nên đây là những điều có thể đang xảy ra. Anh chị đọc phần dấu hiệu đi kèm: thấy dấu hiệu nào trong công ty mình thì rủi ro đó nhiều khả năng đang xảy ra thật. Phần nguyên nhân và cách làm là điều thường gặp, chưa phải kết luận về riêng công ty anh chị. Anh chị đối chiếu với thực tế, chỗ nào không đúng thì bỏ qua.</p>
  ${rr.map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten} <span class="muc ${r.cao ? "m0" : "m1"}">Mức ${r.cao ? "cao" : "trung bình"}</span></h4>
   <p><b>Điều đã ghi nhận.</b> Qua các câu trả lời, anh chị cho biết: ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
-  <p><b>Vì sao đáng để ý.</b> ${r.ht}</p>
-  <p><b>Cách tự kiểm tra.</b> Nếu thấy ít nhất 1 trong những dấu hiệu này ở công ty mình thì rủi ro này đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
-  <p><b>Nên hỏi đội ngũ.</b> ${r.hoi}</p>
+  <p><b>Vấn đề và hậu quả.</b> ${r.ht}</p>
+  ${NN_GP[r.ten] ? (g => `<p><b>Nguyên nhân thường gặp.</b> ${g.nn}</p>
+  <p><b>Nên làm.</b></p>
+  <ol class="gp">${g.gp.map(x => `<li>${x}</li>`).join("")}</ol>
+  ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Riêng với công ty của anh chị.</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
+  <p><b>Để xác nhận với đội ngũ.</b> Nếu thấy ít nhất 1 trong những dấu hiệu này thì rủi ro đang có thật: ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}. Câu hỏi nên đặt ra: ${r.hoi}</p>
  </div>`).join("")}
  ${kh.length ? `<h3>Chỗ 2 câu trả lời đang lệch nhau</h3>
  <p>Mỗi cặp dưới đây là 2 việc thường đi cùng nhau nhưng được chấm khác nhau. Đây không phải lỗi khi trả lời, mà là chỗ nên hỏi thêm đội ngũ trước khi sửa, vì thường có một lý do cụ thể phía sau.</p>
