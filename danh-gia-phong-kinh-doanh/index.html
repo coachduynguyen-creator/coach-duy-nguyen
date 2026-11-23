@@ -341,12 +341,12 @@ const TRU = [
        "Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần."]},
  {ten:"Nhân sự", anh:"Manpower", hoi:"Ai bán?",
   danhGia:"Công ty chọn nhân viên kinh doanh dựa vào gì, ai kèm người mới, và người giỏi có biết mình làm tới đâu thì được lên chức không.",
-  viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy lộ trình thăng tiến thì cũng nghỉ.",
+  viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy mình lên được vị trí nào thì cũng nghỉ.",
   cau:[
   "Công ty tuyển nhân viên kinh doanh dựa vào đâu?",
   "Nhân viên kinh doanh mới được kèm cặp thế nào?",
   "Công ty đào tạo kỹ năng cho nhân viên kinh doanh thế nào?",
-  "Nhân viên kinh doanh biết lộ trình thăng tiến của mình tới đâu?"],
+  "Nhân viên kinh doanh biết mình có thể lên vị trí nào, và cần làm được gì để lên?"],
   dap:[
   ["Chủ yếu theo cảm nhận lúc phỏng vấn", "Có kiểu người cần tuyển trong đầu người phỏng vấn, chưa viết ra", "Có bản mô tả người cần tuyển viết ra giấy và dùng khi phỏng vấn"],
   ["Tự mày mò, ai rảnh thì chỉ", "Có người chỉ dẫn, nhưng không cố định hoặc chỉ vài tuần", "Có người kèm cặp cố định trong 2 tới 3 tháng đầu"],
@@ -397,7 +397,7 @@ const TRU = [
   kq:["Nhiều khả năng thông tin khách đang nằm trong Zalo và điện thoại của từng người, nên nhân viên kinh doanh nghỉ là công ty dễ mất khách. Quản lý muốn biết số khách mới thì phải đi hỏi.",
       "Đã có bảng tính hoặc phần mềm chung nhưng chưa phải ai cũng ghi đủ, báo giá vẫn mỗi người một mẫu.",
       "Thông tin khách và báo giá đã nằm trong bảng tính chung, quản lý tự xem được."],
-  dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Bắt đầu bằng một bảng tính chung cũng được.",
+  dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Chưa có phần mềm thì dùng bảng tính chung trước.",
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
  {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
@@ -444,15 +444,15 @@ const TRU = [
 // Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
 const HO_SO = {
   goc:{t:"Việc bán hàng đang dồn vào người chủ và vài người giỏi",
-   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên làm rõ chuyện bán cho ai, bán thế nào trước."},
+   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
   nguoi:{t:"Đã có cách bán, nhưng khó giữ người giỏi và đào tạo người mới",
-   m:"Công ty đã rõ bán cho ai và bán thế nào. Chỗ còn thiếu là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
+   m:"Bán cho ai và bán thế nào chưa phải chỗ yếu nhất. Chỗ cần sửa trước là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
   so:{t:"Có người bán, nhưng chưa có số liệu để thấy khách đang kẹt ở đâu",
-   m:"Cách bán và đội ngũ đã có nền. Chỗ còn thiếu là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
-  dieuhanh:{t:"Đã có nền, nhưng quản lý chưa theo sát hằng tuần",
-   m:"6 trụ cột đầu đã có nền, nhưng quản lý chưa theo sát hằng tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
-  chuadeu:{t:"Đã có nền, nhưng mỗi người làm một mức",
-   m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc mới làm được một phần hoặc mới vài người làm. Việc tiếp theo là để cả phòng làm giống nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
+   m:"Cách bán và đội ngũ chưa phải chỗ yếu nhất. Chỗ cần sửa trước là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
+  dieuhanh:{t:"Cách làm đã có, nhưng quản lý chưa kiểm tra mỗi tuần",
+   m:"6 trụ cột đầu đã có cách làm, nhưng quản lý chưa kiểm tra mỗi tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
+  chuadeu:{t:"Đã có cách làm, nhưng mỗi người làm một mức",
+   m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc làm chưa đủ hoặc mới vài người làm. Việc tiếp theo là để ai trong phòng cũng làm đúng như nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
   vung:{t:"Phòng kinh doanh đã có nền tốt",
    m:"Cả 7 trụ cột đều ở mức tốt. Việc tiếp theo là giữ như vậy, và làm lại phiếu sau vài tuần để xem có chỗ nào tụt không."}
 };
