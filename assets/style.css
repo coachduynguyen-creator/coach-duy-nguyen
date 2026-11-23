@@ -2840,3 +2840,29 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .di-pkd .nut-vien{border-color:var(--line-2)}
 @media(min-width:760px){.luoi.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1080px){.luoi.c4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ===== Trang chủ theo bản chốt 23/11/2026: câu hỏi tiêu đề, 4 ô số, 4 chặng, 5 bậc, hỏi đáp ===== */
+#hero h1.hero-hoi{font-family:var(--f-tit);font-weight:800;font-size:clamp(26px,3.3vw,42px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);max-width:24ch}
+#hero .hero-phu{font-size:clamp(15px,1.4vw,17.5px);line-height:1.62;color:var(--ink-2);max-width:62ch;margin:18px auto 0}
+.kenh-them.so-4o{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:0}
+.so-4o div{flex-direction:column;align-items:center;gap:6px;padding:6px 14px;border-left:1px solid rgba(249,245,240,.13);text-align:center}
+.so-4o div:first-child{border-left:0}
+.so-4o b{font-size:clamp(26px,2.8vw,36px)}
+.so-4o span{font-size:13.5px;line-height:1.4;text-align:center!important}
+@media(max-width:760px){.so-4o b{font-size:24px;white-space:nowrap}.kenh-them.so-4o{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}.so-4o div:nth-child(3){border-left:0}}
+.ht-luoi.ht4{grid-template-columns:1fr auto 1fr auto 1fr auto 1fr}
+@media(max-width:1080px){.ht-luoi.ht4{grid-template-columns:1fr auto 1fr}.ht-luoi.ht4 .ht-mui:nth-of-type(2){display:none}}
+@media(max-width:860px){.ht-luoi.ht4{grid-template-columns:1fr}.ht-luoi.ht4 .ht-mui:nth-of-type(2){display:inline-block}}
+.luoi.bac5{margin-top:32px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.luoi.bac5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.luoi.bac5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.the.bac p{text-align:left;font-size:13.5px;margin-top:8px}
+.hd-ds{max-width:76ch;margin:30px auto 0;display:grid;gap:10px}
+.hd-cau{border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);padding:16px 20px}
+.hd-cau summary{cursor:pointer;font-family:var(--f-tit);font-weight:700;font-size:16.5px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px}
+.hd-cau summary::-webkit-details-marker{display:none}
+.hd-cau summary::after{content:"+";color:var(--vang);font-weight:700}
+.hd-cau[open] summary::after{content:"\2212"}
+.hd-cau p{margin-top:10px;font-size:15px;line-height:1.65;color:var(--ink-2)}
+@media(min-width:640px){.tv-luoi.tv4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.tv-luoi.tv4{grid-template-columns:repeat(4,minmax(0,1fr))}}

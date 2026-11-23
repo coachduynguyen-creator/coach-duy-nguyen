@@ -1136,7 +1136,7 @@ dict(tep="nhip-lam-noi-dung.html", chu_de="Thương hiệu của người sáng 
 
 dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khám trước rồi mới kê đơn: một buổi tư vấn nên đi thế nào",
- mo="Phần lớn buổi tư vấn hỏng ở mười phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.",
+ mo="Phần lớn buổi tư vấn hỏng ở 10 phút đầu, vì người bán bắt đầu trình bày giải pháp trước khi hiểu bối cảnh.",
  ngay="2026-08-10", ngay_viet="10 tháng 8, 2026", doc="7 phút đọc",
  anh="img/cd-giang-slide.webp", alt="Coach Duy Nguyễn giảng trước màn chiếu",
  nguon=[
@@ -1237,7 +1237,7 @@ dict(tep="chan-doan-truoc-khi-ke-don.html", chu_de="Bán hàng và phòng kinh d
 
 dict(tep="de-toi-suy-nghi-them.html", chu_de="Bán hàng và phòng kinh doanh",
  tieu="Khách nói để tôi suy nghĩ thêm, thật ra họ đang nói gì",
- mo="Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có bốn nghĩa khác, và cách xử lý mỗi nghĩa một khác.",
+ mo="Câu này gần như không bao giờ có nghĩa là họ cần thêm thời gian. Nó có 4 nghĩa khác, và cách xử lý mỗi nghĩa một khác.",
  ngay="2026-08-06", ngay_viet="6 tháng 8, 2026", doc="6 phút đọc",
  anh="img/bl-noi-1.webp", alt="Coach Duy Nguyễn đang trao đổi với người đối diện",
  than="""
