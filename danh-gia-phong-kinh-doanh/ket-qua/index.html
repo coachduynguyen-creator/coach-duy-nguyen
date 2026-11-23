@@ -68,7 +68,7 @@ body.chi-bia .giay{padding:0;max-width:none}
 .bia .mat{font-size:8pt;color:#A9B0BE;margin-top:4mm}
 
 /* Trang trong */
-.phan{break-before:page}
+.phan{break-before:page} table.bang.diem{break-inside:avoid} .dau{break-after:avoid} p,li{orphans:3;widows:3} .rui h4+p,.tranh{break-before:avoid}
 .dau{margin:0 0 6mm}
 .dau .kic{font-family:var(--mono);font-size:9pt;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--vgd)}
 .dau h1{font-family:var(--tit);font-weight:800;font-size:22pt;line-height:1.15;color:var(--nv);margin:1mm 0 3mm;letter-spacing:-.01em}
@@ -716,7 +716,7 @@ function ve() {
  <p class="muted nho">Báo cáo này chỉ dựa trên câu trả lời của 1 người, nên có thể khác với cách nhân viên kinh doanh nhìn. Cuối Mục 5 có gợi ý cách đối chiếu.</p>
 </section>
 
-<section style="margin-top:9mm">
+<section class="phan">
  ${dau(2, "Bức tranh 7 trụ cột")}
  <div class="tranh giu">${radar(ds)}</div>
  <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Đúng được 2 điểm, đúng một phần được 1 điểm, chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là đã có nhưng chưa đều, từ 7 tới 8 điểm là tốt. Tổng điểm không phải điểm đỗ hay trượt, chỉ để anh chị so với lần đánh giá sau. Mã như 2.3 là câu thứ 3 của trụ cột 2 trên phiếu.</p>
@@ -725,7 +725,7 @@ function ve() {
  <div class="chuoi giu">${ds.map((x, k) => `${k ? "<em>›</em>" : ""}<div class="m${mucDo(x.d)}"><b>M${x.i+1}</b>${TRU[x.i].ten}<br>${x.d}/8</div>`).join("")}</div>
 </section>
 
-<section style="margin-top:9mm">
+<section class="phan">
  <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao, và làm gì</h2><p>Với từng rủi ro và từng trụ cột, Duy ghi lại điều đã thấy trong câu trả lời, điều có thể đang xảy ra, cách tự kiểm tra và việc nên làm trước.</p></div>
  ${dau(3, "Rủi ro có thể đang xảy ra")}
  <p>Một câu trả lời đứng riêng chỉ cho Duy biết một việc chưa làm. Nhưng đặt vài câu cạnh nhau thì hiện ra chuyện lớn hơn mà từng câu không nói. Phiếu của anh chị có ${rr.length} rủi ro. Dưới đây là ${Math.min(rr.length, SO_RR_HIEN)} rủi ro nặng nhất, nặng nhất đứng đầu. Rủi ro tính là cao khi có ít nhất 2 câu căn cứ bị chấm Chưa đúng. Phiếu chỉ cho Duy biết việc nào chưa làm, không cho biết chuyện gì đã xảy ra, nên đây là những điều có thể đang xảy ra. Anh chị xem phần dấu hiệu đi kèm. Thấy dấu hiệu nào ở công ty mình thì rủi ro đó nhiều khả năng đang có thật. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chưa phải kết luận về công ty anh chị. Chỗ nào không đúng với thực tế thì anh chị cứ bỏ qua.</p>
