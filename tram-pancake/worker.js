@@ -32,13 +32,13 @@ async function danhGia7M(req, env, origin) {
   const ten = cat(d.ten, 100), sdt = cat(d.sdt, 20), email = cat(d.email, 120), a = cat(d.a, 28);
   if (ten.length < 2 || !/^(0\d{9}|\+?84\d{9})$/.test(sdt) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^[012]{28}$/.test(a))
     return tra(origin, 400, { success: false });
-  const congTy = cat(d.congTy, 120), nganh = cat(d.nganh, 120), soNguoiBan = cat(d.soNguoiBan, 60), doanhThu = cat(d.doanhThu, 40), nguoiCham = cat(d.nguoiCham, 80);
+  const congTy = cat(d.congTy, 120), nganh = cat(d.nganh, 120), soNguoiBan = cat(d.soNguoiBan, 60), doanhThu = cat(d.doanhThu, 40), nguoiCham = cat(d.nguoiCham, 80), kenh = cat(d.kenh, 80);
   const g = gioVN(), p2 = n => String(n).padStart(2, "0");
   const ngay = p2(g.getUTCDate()) + "/" + p2(g.getUTCMonth() + 1) + "/" + g.getUTCFullYear();
   const ma = "7M-" + p2(g.getUTCDate()) + p2(g.getUTCMonth() + 1) + String(g.getUTCFullYear()).slice(2) + "-" +
     Array.from(crypto.getRandomValues(new Uint8Array(4)), x => "abcdefghjkmnpqrstuvwxyz23456789"[x % 31]).join("");
   const tong = [...a].reduce((s, x) => s + +x, 0);
-  const k = b64url(JSON.stringify({ hoTen: ten, congTy, nganh, soNguoiBan, doanhThu, nguoiCham, ngay, ma, a }));
+  const k = b64url(JSON.stringify({ hoTen: ten, congTy, nganh, soNguoiBan, doanhThu, nguoiCham, kenh, ngay, ma, a }));
   const linkBaoCao = TRANG + "/danh-gia-phong-kinh-doanh/ket-qua/#k=" + k;
   const linkHoSo = TRANG + "/danh-gia-phong-kinh-doanh/ho-so-goi/#k=" + k;
 
@@ -46,7 +46,7 @@ async function danhGia7M(req, env, origin) {
     const q = {
       Name: ten, Phone: sdt, url_page: cat(d.url_page, 500), nguon_khach_hang: ["Web Lead Magnet"],
       Note: ["Phiếu tự đánh giá 7M · Mã " + ma, "Email: " + email, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
-        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
+        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Kênh bán chính: " + (kenh || "không ghi"), "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
     };
     for (const u of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) if (cat(d[u], 200)) q[u] = cat(d[u], 200);
     const r = await fetch(PANCAKE + "?api_key=" + env.PANCAKE_KEY, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });
