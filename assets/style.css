@@ -2840,3 +2840,51 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .di-pkd .nut-vien{border-color:var(--line-2)}
 @media(min-width:760px){.luoi.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1080px){.luoi.c4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ===== Trang chủ theo bản chốt 23/11/2026: câu hỏi tiêu đề, 4 ô số, 4 chặng, 5 bậc, hỏi đáp ===== */
+#hero h1.hero-hoi{font-family:var(--f-tit);font-weight:800;font-size:clamp(26px,3.3vw,42px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);max-width:24ch}
+#hero .hero-phu{font-size:clamp(15px,1.4vw,17.5px);line-height:1.62;color:var(--ink-2);max-width:62ch;margin:18px auto 0}
+.kenh-them.so-4o{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:0}
+.so-4o div{flex-direction:column;align-items:center;gap:6px;padding:6px 14px;border-left:1px solid rgba(249,245,240,.13);text-align:center}
+.so-4o div:first-child{border-left:0}
+.so-4o b{font-size:clamp(26px,2.8vw,36px)}
+.so-4o span{font-size:13.5px;line-height:1.4;text-align:center!important}
+@media(max-width:760px){.so-4o b{font-size:24px;white-space:nowrap}.kenh-them.so-4o{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}.so-4o div:nth-child(3){border-left:0}}
+.ht-luoi.ht4{grid-template-columns:1fr auto 1fr auto 1fr auto 1fr}
+@media(max-width:1080px){.ht-luoi.ht4{grid-template-columns:1fr auto 1fr}.ht-luoi.ht4 .ht-mui:nth-of-type(2){display:none}}
+@media(max-width:860px){.ht-luoi.ht4{grid-template-columns:1fr}.ht-luoi.ht4 .ht-mui:nth-of-type(2){display:inline-block}}
+.luoi.bac5{margin-top:32px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.luoi.bac5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.luoi.bac5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.the.bac p{text-align:left;font-size:13.5px;margin-top:8px}
+.hd-ds{max-width:76ch;margin:30px auto 0;display:grid;gap:10px}
+.hd-cau{border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);padding:16px 20px}
+.hd-cau summary{cursor:pointer;font-family:var(--f-tit);font-weight:700;font-size:16.5px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px}
+.hd-cau summary::-webkit-details-marker{display:none}
+.hd-cau summary::after{content:"+";color:var(--vang);font-weight:700}
+.hd-cau[open] summary::after{content:"\2212"}
+.hd-cau p{margin-top:10px;font-size:15px;line-height:1.65;color:var(--ink-2)}
+@media(min-width:640px){.tv-luoi.tv4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.tv-luoi.tv4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.m7{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
+@media(max-width:860px){.m7{grid-template-columns:minmax(0,1fr);gap:24px}}
+.m7 p{text-align:left}.m7 h2{font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:12px 0 14px;text-wrap:balance}.m7-dan{font-size:18px;color:var(--ink-2);margin:0 0 24px}
+.m7-hinh svg{display:block;width:100%;height:auto}
+.m7-nhom{display:grid;gap:14px}.m7-nhom article{border-top:1px solid var(--line);padding-top:14px}
+.m7-nhom h3{display:flex;align-items:center;gap:10px;margin:0 0 2px;font-size:20px}
+.m7-nhom h3 i{width:12px;height:12px;border-radius:3px;flex:none}
+.m7-nhom .n0 i{background:#8F5808}.m7-nhom .n1 i{background:#4F6B5D}.m7-nhom .n2 i{background:#C98A28}
+.m7-nhom p{margin:0 0 6px;color:var(--ink-2)}
+.m7-nhom ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px;color:var(--ink-3)}
+.m7-nhom ul b{color:var(--ink);font-weight:600}.m7-nut{margin:24px 0 0}
+.bx .vanh.n0{fill:#8F5808}.bx .vanh.n1{fill:#4F6B5D}.bx .vanh.n2{fill:#C98A28}
+.bx .vanh-ten{font-family:var(--f-mono);font-size:17px;font-weight:700;letter-spacing:.02em}
+.bx .vanh-ten.n0{fill:#8F5808}.bx .vanh-ten.n1{fill:#4F6B5D}.bx .vanh-ten.n2{fill:#B8761E}
+.bx .tru path{stroke-width:1.5}
+.bx .tru.n0 path{fill:rgba(143,88,8,.12);stroke:#8F5808}.bx .tru.n1 path{fill:rgba(79,107,93,.10);stroke:#4F6B5D}.bx .tru.n2 path{fill:rgba(184,118,30,.10);stroke:#C98A28}
+.bx .t-so{font-family:var(--f-mono);font-size:14px;font-weight:600;fill:#8F5808}
+.bx .t-ten{font-family:var(--f-tit);font-size:22px;font-weight:700;fill:var(--ink)}
+.bx .t-dem{font-family:var(--f-than);font-size:14px;fill:var(--ink-3)}
+.bx .loi{fill:rgba(143,88,8,.10);stroke:#8F5808;stroke-width:1.5}
+.bx .loi-1{font-family:var(--f-tit);font-size:22px;font-weight:800;fill:var(--ink)}
+.bx .loi-2{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;fill:#8F5808}

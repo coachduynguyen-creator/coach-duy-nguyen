@@ -252,10 +252,14 @@ def dong_sap(t, p=""):
         t["loai"], _LOAI[t["loai"]], t["ten"], t["tt"], p, t["href"], t["nut"])
 
 # Trang chủ chỉ hiện 6 công cụ tiêu biểu, mỗi công cụ một nỗi lo lớn của người chủ (11/10/2026), phần còn lại ở /cong-cu/.
-TIEU_BIEU = ["du-bao-dong-tien-13-tuan", "so-khach-du-luong-co-lai", "chi-phi-quang-cao-moi-khach",
-             "danh-gia-ke-hoach-2027", "giao-viec-cho-quan-ly", "ket-qua-tung-vi-tri"]
+# Bản chốt 23/11/2026 (D2): chỉ giữ 4 công cụ về phòng kinh doanh.
+TIEU_BIEU = ["so-khach-du-luong-co-lai", "chi-phi-quang-cao-moi-khach",
+             "giao-viec-cho-quan-ly", "ket-qua-tung-vi-tri"]
 _tv_theo_ma = {t["href"][len("cong-cu/"):-len(".html")]: t for t in TAI_LIEU if dung_ngay(t)}
 KHO_TRANG_CHU = "".join(the_tv(_tv_theo_ma[m]) for m in TIEU_BIEU)
+
+# Lưới 7 trụ cột, dùng chung cho trang chủ và trang Phương pháp.
+LUOI_7M = '  <div class="luoi c4 tre hien"><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>1 · Market</span><h3>Thị trường</h3><p style="text-align:left"><b>Bán gì, cho ai?</b> Khách mục tiêu, gói bán, giá, nguồn khách</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>2 · Method</span><h3>Quy trình</h3><p style="text-align:left"><b>Bán thế nào?</b> Các chặng bán, chuẩn tư vấn, sau bán</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>3 · Manpower</span><h3>Nhân sự</h3><p style="text-align:left"><b>Ai bán?</b> Tuyển, người mới, kèm, thăng tiến</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>4 · Money</span><h3>Tài chính</h3><p style="text-align:left"><b>Trả và chi thế nào?</b> Lương, hoa hồng, thưởng, chi phí phòng</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>5 · Material</span><h3>Công cụ</h3><p style="text-align:left"><b>Bán bằng công cụ nào?</b> Dữ liệu khách, biểu mẫu, trợ lý AI</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>6 · Measure</span><h3>Chỉ số</h3><p style="text-align:left"><b>Đo chỉ số nào?</b> Mục tiêu, chỉ số, dự báo, báo cáo</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>7 · Management</span><h3>Quản lý</h3><p style="text-align:left"><b>Điều hành ra sao?</b> Vai quản lý, nhịp họp, văn hóa, thay đổi</p></article></div>'
 
 # ---------------------------------------------------------------- TRANG CHỦ
 INDEX = """
@@ -271,13 +275,13 @@ INDEX = """
         <p class="danh-xung">Coach. Mentor. Entrepreneur.</p>
         <div class="vach" aria-hidden="true"><i></i><b></b><i></i></div>
       </div>
-      <h1>Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và bắt đầu sửa từ phần đó.</h1>
+      <h1 class="hero-hoi">Nhân viên kinh doanh của bạn đã tự bán được chưa?</h1>
+      <p class="hero-phu">Duy tư vấn và đồng hành cùng chủ doanh nghiệp xây dựng <b>phòng kinh doanh tiêu chuẩn</b> phù hợp với giai đoạn kinh doanh hiện tại, để nhân viên kinh doanh tự bán được mà không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình Phòng kinh doanh tiêu chuẩn 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và bắt đầu sửa từ phần đó.</p>
       <div class="hero-nut">
         <a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
-        <a class="nut nut-vien" href="{CONG_DONG}">Vào Cộng đồng Next Gen Founder</a>
       </div>
     </div>
-    <div class="hero-so">{SO_LIEU}</div>
+    <div class="hero-so">{SO_LIEU_4}</div>
     <p class="hero-ghi">Tính tới {NGAY_SO}, đọc từ trang công khai của từng kênh.</p>
   </div>
 </header>
@@ -287,67 +291,17 @@ INDEX = """
   {KHACH}
 </section>
 
-<section class="phan bd hoa-van" id="ve-toi">
-  <div class="vt">
-    <div class="vt-chu hien">
-      <p class="mono">Về Duy</p>
-      <h2>Duy đi cùng những người muốn tự nâng chuẩn của chính mình</h2>
-      <p>Đó là những chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đông nhất ở ngành dịch vụ. Có người đã có một đội ngũ; có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật. Điểm chung của họ: khách mua vì tin ở chính con người họ trước khi tin vào công ty. Nên chuẩn của họ cũng là chuẩn của cả việc kinh doanh.</p>
-      <p>Điều họ muốn không dừng ở doanh thu tháng này. Họ muốn mình trở thành một <span class="nhan">điểm đến đáng tin</span>: đối tác tìm tới khi có việc lớn, khách tìm tới trước khi đi so sánh giá. Người giỏi cũng tìm tới xin một chỗ ngồi, vì đó là một tên tuổi khách nhớ và dám tin.</p>
-      <p>Xa hơn nữa là di sản, thứ không đo được bằng một toà nhà hay một con số. <span class="nhan">Di sản của người sáng lập thế hệ mới là những gì mình đã đi qua</span>: kinh nghiệm thật và bài học thật, kể cả những lần vấp. Mình gói lại cho rõ ràng và kể thật lòng, rồi trao cho đội ngũ của mình và những người đi sau. Đó là thứ còn ở lại khi mình không còn ngồi ở ghế đó nữa.</p>
-      <p>Phần Duy làm cùng bạn bắt đầu từ phòng kinh doanh: để nhân viên kinh doanh nói được đúng điều khách tin ở bạn, và bán được mà không phải chờ bạn có mặt.</p>
-      <a class="lk-v" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a>
-    </div>
-    <div class="vt-anh hien">
-      <div class="quang" aria-hidden="true"></div>
-      <div class="nguoi"><img src="img/cd-cat-noi.webp" alt="Coach Duy Nguyễn đang nói trước một phòng chủ doanh nghiệp" loading="lazy" width="462" height="1022"></div>
-      <div class="manh">
-        <div class="anh m1"><img src="img/dh-giua-doan.webp" alt="Coach Duy Nguyễn đi giữa hàng ghế trong một hội trường đông người" loading="lazy"></div>
-        <div class="anh m2"><img src="img/cd-workshop.webp" alt="Coach Duy Nguyễn đưa micro cho một học viên" loading="lazy"></div>
-        <div class="anh m3"><img src="img/cd-giang-slide.webp" alt="Coach Duy Nguyễn giảng trước màn chiếu" loading="lazy"></div>
-      </div>
+<section class="phan bd phan-sang" id="mo-hinh-7m">
+  <div class="m7 hien">
+    <div class="m7-hinh">{BANH_XE}</div>
+    <div>
+      <p class="mono">Mô hình 7M</p>
+      <h2>7 trụ cột của một phòng kinh doanh tiêu chuẩn</h2>
+      <p class="m7-dan">Có quy trình, có chỉ số và có người quản lý, để nhân viên kinh doanh bán được hàng mà không phải việc gì cũng chờ người chủ.</p>
+      <div class="m7-nhom"><article class="n0"><h3><i aria-hidden="true"></i>Bán đúng cách</h3><p>Bán gì, cho ai, bán thế nào</p><ul><li><b>1. Thị trường</b> 7 chuẩn</li><li><b>2. Quy trình</b> 9 chuẩn</li></ul></article><article class="n1"><h3><i aria-hidden="true"></i>Đúng người bán</h3><p>Ai bán, được trả thế nào</p><ul><li><b>3. Nhân sự</b> 7 chuẩn</li><li><b>4. Tài chính</b> 6 chuẩn</li></ul></article><article class="n2"><h3><i aria-hidden="true"></i>Quản lý đúng</h3><p>Ai quản lý, theo dõi số nào, dùng công cụ gì</p><ul><li><b>5. Công cụ</b> 7 chuẩn</li><li><b>6. Chỉ số</b> 7 chuẩn</li><li><b>7. Quản lý</b> 8 chuẩn</li></ul></article></div>
+      <p class="m7-nut"><a class="nut nut-vien" href="phuong-phap.html">Xem 51 chuẩn của Mô hình 7M <span class="mt" aria-hidden="true">&rarr;</span></a></p>
     </div>
   </div>
-</section>
-
-<section class="phan bd hoa-van duoi" id="cach-lam">
-  <div class="phan-dau hien">
-    <p class="mono">Cách Duy làm việc</p>
-    <h2>Năm điều bạn nhận được mỗi lần chúng ta làm việc</h2>
-    <p>Người cố vấn không phải là chức danh tự đặt. <span class="nhan">Nó là năm việc phải làm được.</span> Bạn có quyền lấy năm điều này ra kiểm tra Duy.</p>
-  </div>
-  <div class="hien">{VONG5}</div>
-  <div class="khong hien" style="max-width:70ch;margin:34px auto 0">
-    <b>3 việc Duy không làm</b>
-    <p>Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p>
-  </div>
-</section>
-
-<section class="phan bd phan-sang" id="khung">
-  <div class="phan-dau hien">
-    <p class="mono">Triết lý làm nghề của Duy</p>
-    <h2>Những khung tư duy Duy đúc kết qua nhiều năm làm nghề</h2>
-    <p>Có khung Duy tự rút ra từ những buổi tư vấn thật, có khung Duy chọn lọc từ người đi trước rồi kiểm chứng lại trên chính khách hàng của mình. Duy không muốn chia sẻ những thủ thuật ngắn hạn. Mọi thứ Duy làm đều dựa trên tư duy gốc, và bạn có thể tìm hiểu những phương pháp luận cùng khung tư duy cốt lõi trong công việc của Duy ở đây.</p>
-  </div>
-  <div class="kh-luoi tre hien">
-    <a class="kh-o" href="phuong-phap.html#pp-2" aria-label="Tam giác vàng">
-      <svg viewBox="0 0 84 74" aria-hidden="true"><polygon points="42,7 78,67 6,67" fill="none" stroke="var(--vang)" stroke-width="1.3" opacity=".85"></polygon><circle cx="42" cy="7" r="3" fill="var(--vang)"></circle><circle cx="78" cy="67" r="3" fill="var(--vang)"></circle><circle cx="6" cy="67" r="3" fill="var(--vang)"></circle></svg>
-      <b>Tam giác vàng</b><i>Vì sao người giỏi vẫn chưa được tin</i>
-    </a>
-    <a class="kh-o" href="phuong-phap.html#pp-4" aria-label="Ba Điểm Chạm">
-      <svg viewBox="0 0 84 74" aria-hidden="true"><circle cx="14" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><circle cx="42" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><circle cx="70" cy="37" r="9" fill="none" stroke="var(--vang)" stroke-width="1.3"></circle><line x1="23" y1="37" x2="33" y2="37" stroke="var(--vang)" stroke-width="1.2" opacity=".6"></line><line x1="51" y1="37" x2="61" y2="37" stroke="var(--vang)" stroke-width="1.2" opacity=".6"></line></svg>
-      <b>Ba Điểm Chạm</b><i>Khi buổi trao đổi tốt mà không đi tới đâu</i>
-    </a>
-    <a class="kh-o" href="phuong-phap.html#pp-3" aria-label="Công thức tin cậy">
-      <svg viewBox="0 0 84 74" aria-hidden="true"><rect x="10" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><rect x="34" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><rect x="58" y="12" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.2"></rect><line x1="10" y1="38" x2="74" y2="38" stroke="var(--vang)" stroke-width="1.4"></line><rect x="34" y="48" width="16" height="14" rx="3" fill="none" stroke="var(--vang)" stroke-width="1.6"></rect></svg>
-      <b>Công thức tin cậy</b><i>Khi mọi thứ đều đúng mà khách vẫn chưa tin</i>
-    </a>
-    <a class="kh-o" href="phuong-phap.html#pp-8" aria-label="Năm tầng doanh nghiệp">
-      <svg viewBox="0 0 84 74" aria-hidden="true"><polygon points="42,6 76,68 8,68" fill="none" stroke="var(--vang)" stroke-width="1.3" opacity=".85"></polygon><line x1="34" y1="21" x2="50" y2="21" stroke="var(--vang)" stroke-width="1" opacity=".5"></line><line x1="27" y1="35" x2="57" y2="35" stroke="var(--vang)" stroke-width="1" opacity=".5"></line><line x1="20" y1="49" x2="64" y2="49" stroke="var(--vang)" stroke-width="1" opacity=".5"></line></svg>
-      <b>Năm tầng</b><i>Khi mọi việc vẫn quay về bàn người chủ</i>
-    </a>
-  </div>
-  <div class="blog-them"><a class="nut nut-vien" href="phuong-phap.html">Xem các triết lý và phương pháp <span class="mt" aria-hidden="true">&rarr;</span></a></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="chuyen-gia">
@@ -380,66 +334,58 @@ INDEX = """
   </div>
 </section>
 
-<section class="phan bd hoa-van" id="cong-dong">
+<section class="phan bd phan-vang" id="hanh-trinh">
   <div class="phan-dau hien">
-    <p class="mono">Cộng đồng Next Gen Founder · đang nhận đăng ký</p>
-    <h2>Nơi uy tín cá nhân trở thành điểm tựa</h2>
-    <p>Người chủ đã có đội ngũ, hoặc chuyên gia đang xây doanh nghiệp từ chuyên môn. Cùng một điểm chung: <span class="nhan">khách tin bạn trước khi tin công ty bạn.</span></p>
-    <p style="margin-top:14px">Cộng đồng là nơi bạn gặp <span class="nhan">những người chủ đang đi cùng đường,</span> nghe chuyên gia và mentor kể lại chặng họ đã qua. Bốn năng lực dưới đây là hình mẫu của một Next Gen Founder. Khi làm việc trực tiếp với từng doanh nghiệp, Duy bắt đầu từ năng lực thứ 2, chuyên gia tư vấn được tin cậy: đưa cách tư vấn của người chủ vào cả phòng kinh doanh.</p>
-  </div>
-  <div class="cd-nl hien">
-    {BANG_NL}
-    <div class="nl-ai"><b>AI</b><p>AI là năng lực nền của cả bốn năng lực trên. Nó làm nhanh hơn phần nghiên cứu, chuẩn bị và tóm tắt. Phán đoán, quan hệ và quyết định có trách nhiệm vẫn là phần của con người.</p></div>
-  </div>
-
-  <div class="cd-mat hien">
-    {MAT_NGUOI}
-    <p class="cd-ghi">Ảnh minh hoạ. Mỗi người đều qua một buổi trao đổi trước khi vào.</p>
-  </div>
-
-  <div class="blog-them">
-    <a class="nut nut-v" href="tham-gia/">Đăng ký tham gia <span class="mt" aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>
-
-{CHUYEN_GIA}<section class="phan bd phan-vang" id="hanh-trinh">
-  <div class="phan-dau hien">
-    <p class="mono">Hành trình ba chặng</p>
+    <p class="mono">Hành trình 4 chặng</p>
     <h2>Đi cùng Duy theo thứ tự nào?</h2>
     <p>Không ai phải cam kết lớn ngay từ đầu, và bạn dừng ở chặng nào cũng được.</p>
   </div>
-  <div class="ht-luoi tre hien">
+  <div class="ht-luoi ht4 tre hien">
     <a class="ht" href="danh-gia-phong-kinh-doanh/">
-      <em>Chặng 01</em><h3>Tự chấm phòng kinh doanh</h3>
-      <p>Trả lời 28 câu về việc phòng kinh doanh đang làm thật trong tháng này. Miễn phí, xong bạn có báo cáo cho biết phần nào của phòng kinh doanh đang yếu.</p>
-      <i>Miễn phí &middot; 28 câu</i>
+      <em>Chặng 01 &middot; Miễn phí</em><h3>Tự chấm phòng kinh doanh</h3>
+      <p>Trả lời 28 câu về việc phòng kinh doanh đang làm thật trong tháng này. Xong bạn có báo cáo cho biết phần nào của phòng kinh doanh đang yếu.</p>
+      <i>Tự chấm điểm</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
-    <a class="ht" href="lien-he.html">
-      <em>Chặng 02</em><h3>30 ngày thiết kế phòng kinh doanh</h3>
-      <p>Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc trong 30 ngày. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, từ khách mục tiêu, quy trình bán tới lương thưởng và cách quản lý, và áp dụng thật 2 tới 3 việc trong đó.</p>
-      <i>8 buổi làm việc &middot; 30 ngày</i>
+    <a class="ht" href="chuong-trinh.html">
+      <em>Chặng 02 &middot; 30 ngày</em><h3>Thiết kế phòng kinh doanh</h3>
+      <p>Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, và áp dụng thật 2 tới 3 việc trong đó.</p>
+      <i>Xem 30 ngày thiết kế</i>
+    </a>
+    <span class="ht-mui" aria-hidden="true">&rarr;</span>
+    <a class="ht" href="chuong-trinh.html">
+      <em>Chặng 03 &middot; 3 tháng</em><h3>Tư vấn setup phòng kinh doanh</h3>
+      <p>Đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế. Duy làm việc trực tiếp với người chủ và quản lý tới khi phòng kinh doanh chạy được.</p>
+      <i>Xem tư vấn setup</i>
     </a>
     <span class="ht-mui" aria-hidden="true">&rarr;</span>
     <a class="ht" href="master-club/">
-      <em>Chặng 03</em><h3>Sau 30 ngày</h3>
-      <p>Nếu bạn muốn có người làm cùng tới khi phòng kinh doanh chạy được, chọn tư vấn setup 3 tháng: đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý. Nếu bạn muốn tự làm và có người đi cùng, chọn Master Club: mỗi tuần một buổi coaching nhóm trong 12 tháng.</p>
-      <i>Tư vấn setup 3 tháng &middot; hoặc Master Club</i>
+      <em>Chặng 04 &middot; 12 tháng</em><h3>Master Club</h3>
+      <p>Mỗi tuần một buổi coaching nhóm. Bạn mang một việc đang vướng thật tới, cùng Duy tìm ra cách làm, rồi về làm ngay trong tuần đó.</p>
+      <i>Xem Master Club</i>
     </a>
   </div>
+</section>
+
+<section class="phan bd hoa-van" id="bac">
+  <div class="phan-dau hien">
+    <p class="mono">5 bậc phòng kinh doanh</p>
+    <h2>Phòng kinh doanh của bạn đang ở bậc nào?</h2>
+    <p>Phòng kinh doanh càng đông người thì người đứng đầu càng phải đổi cách làm, và chỗ hay kẹt cũng đổi theo.</p>
+  </div>
+  <div class="luoi bac5 tre hien"><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 1</span><h3>Chủ bán một mình</h3><p><b>Phòng trông thế nào.</b> Chủ tự tìm khách, tư vấn và chốt, chưa có nhân viên kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Cách bán nằm trong đầu người chủ, chưa viết ra được.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 2</span><h3>Chủ bán chính, có người hỗ trợ</h3><p><b>Phòng trông thế nào.</b> Chủ vẫn chốt phần lớn khách, nhân viên kinh doanh đỡ việc và học dần.</p><p><b>Chỗ hay kẹt.</b> Người mới bán không ra kết quả như chủ, và chủ chưa dám giao khách.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 3</span><h3>Nhóm kinh doanh bán chính, có trưởng nhóm</h3><p><b>Phòng trông thế nào.</b> Trưởng nhóm điều hành hằng ngày, chủ hỗ trợ khi cần.</p><p><b>Chỗ hay kẹt.</b> Kết quả mỗi người một khác và chủ không biết vì sao.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 4</span><h3>Nhiều nhóm, có giám đốc kinh doanh</h3><p><b>Phòng trông thế nào.</b> Giám đốc kinh doanh quản lý các trưởng nhóm hoặc trưởng phòng.</p><p><b>Chỗ hay kẹt.</b> Phòng chạy nhờ vài người giỏi và người quản lý, ai nghỉ là tuột.</p></article><article class="the bac"><span class="trang-thai"><i aria-hidden="true"></i>Bậc 5</span><h3>Nhiều vùng, có giám đốc vùng</h3><p><b>Phòng trông thế nào.</b> Mỗi vùng một giám đốc, trên cùng là phó tổng giám đốc kinh doanh.</p><p><b>Chỗ hay kẹt.</b> Mỗi vùng làm theo một kiểu, khách bị chuyển qua lại giữa các vùng.</p></article></div>
 </section>
 
 <section class="phan bd hoa-van duoi" id="blog">
   <div class="phan-dau hien">
     <p class="mono">Blog</p>
     <h2>Chỗ chủ doanh nghiệp hay vấp nhất, và cách gỡ</h2>
-    <p>Bốn câu dưới đây Duy nghe đi nghe lại từ các chủ doanh nghiệp, tới mức nghe nửa câu đầu là biết nửa sau. Thấy mình trong câu nào, bấm vào câu đó.</p>
+    <p>3 câu dưới đây Duy nghe đi nghe lại từ các chủ doanh nghiệp, tới mức nghe nửa câu đầu là biết nửa sau. Thấy mình trong câu nào, bấm vào câu đó.</p>
   </div>
   <div class="tc-luoi tre hien">
-    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>01</i><span>Tôi đăng nội dung nhiều nhưng không ra đúng khách.</span></a>
-    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>02</i><span>Đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</span></a>
-    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>03</i><span>Tuyển thêm người mà tôi lại bận hơn trước.</span></a>
-    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>04</i><span>Tháng tốt tháng kém mà không rõ vì sao.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>01</i><span>Đội ngũ bán hàng vẫn phải chờ tôi xuất hiện mới chốt được.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>02</i><span>Tuyển thêm người mà tôi lại bận hơn trước.</span></a>
+    <a class="tc" href="bai-viet/bon-cau-toi-nghe-nhieu-nhat.html"><i>03</i><span>Tháng tốt tháng kém mà không rõ vì sao.</span></a>
   </div>
   <div class="blog hien">
     {BAI_LON}
@@ -452,10 +398,27 @@ INDEX = """
   <div class="phan-dau hien">
     <p class="mono">Công cụ và tài liệu</p>
     <h2>Công cụ dùng được ngay</h2>
-    <p>Bảng tự kiểm tra dùng ngay trên trang. Các bộ câu lệnh AI thì bạn chép sang ChatGPT, chạy với chính số liệu doanh nghiệp mình.</p>
+    <p>4 bộ câu lệnh AI cho phòng kinh doanh. Bạn chép sang ChatGPT và chạy với chính số liệu doanh nghiệp mình.</p>
   </div>
-  <div class="tv-luoi tre hien">{KHO}</div>
+  <div class="tv-luoi tv4 tre hien">{KHO}</div>
   <div class="blog-them"><a class="nut nut-vien" href="cong-cu/">Xem tất cả công cụ <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+</section>
+
+<section class="phan bd hoa-van" id="ve-toi">
+  <div class="phan-dau hien">
+    <p class="mono">Về Duy</p>
+    <h2>Về Coach Duy Nguyễn</h2>
+    <p>Duy làm việc cùng những chủ doanh nghiệp mà uy tín cá nhân ảnh hưởng tới việc khách chọn, đông nhất ở ngành dịch vụ. Có người đã có một đội ngũ, có người là chuyên gia đang biến chuyên môn thành một doanh nghiệp thật.</p>
+  </div>
+  <div class="blog-them"><a class="nut nut-vien" href="ve-toi.html">Đọc đầy đủ về Duy <span class="mt" aria-hidden="true">&rarr;</span></a></div>
+</section>
+
+<section class="phan bd phan-sang" id="hoi-dap">
+  <div class="phan-dau hien">
+    <p class="mono">Câu hỏi thường gặp</p>
+    <h2>Những câu chủ doanh nghiệp hay hỏi trước khi bắt đầu</h2>
+  </div>
+  <div class="hd-ds hien"><details class="hd-cau"><summary>Phòng kinh doanh tiêu chuẩn là gì?</summary><p>Là phòng kinh doanh mà nhân viên kinh doanh tự bán được, không phải việc gì cũng chờ người chủ. Duy làm theo Mô hình 7M, chia phòng kinh doanh thành 7 phần để biết phần nào đang yếu và bắt đầu sửa từ phần đó.</p></details><details class="hd-cau"><summary>Nên bắt đầu từ đâu?</summary><p>Từ phiếu tự chấm. Bạn trả lời 28 câu về việc phòng kinh doanh đang làm thật trong tháng này. Miễn phí, xong bạn có báo cáo cho biết phần nào của phòng kinh doanh đang yếu.</p></details><details class="hd-cau"><summary>30 ngày thiết kế phòng kinh doanh gồm những gì?</summary><p>Người chủ và 1 quản lý kinh doanh cùng tham gia 8 buổi làm việc trong 30 ngày. Mỗi doanh nghiệp ra về với bản thiết kế 7 phần của phòng kinh doanh mình, từ khách mục tiêu, quy trình bán tới lương thưởng và cách quản lý, và áp dụng thật 2 tới 3 việc trong đó.</p></details><details class="hd-cau"><summary>Tư vấn setup 3 tháng khác Master Club ở đâu?</summary><p>Tư vấn setup 3 tháng: đội ngũ của Duy dựng phòng kinh doanh theo bản thiết kế, Duy làm việc trực tiếp với người chủ và quản lý. Master Club: mỗi tuần một buổi coaching nhóm trong 12 tháng. Mỗi tuần bạn mang một việc đang vướng thật tới, cùng Duy tìm ra cách làm, rồi về làm ngay trong tuần đó.</p></details><details class="hd-cau"><summary>AI giúp được gì trong phòng kinh doanh?</summary><p>AI làm nhanh hơn phần nghiên cứu, chuẩn bị và tóm tắt. Phán đoán, quan hệ và quyết định có trách nhiệm vẫn là phần của con người.</p></details><details class="hd-cau"><summary>Duy có cam kết doanh thu không?</summary><p>Không. Duy không làm thay phần việc của bạn, và không cam kết một con số doanh thu. Nếu Duy thấy mình chưa giúp được bạn lúc này, Duy sẽ nói thẳng và ngồi lại chỉ bạn chỗ hợp hơn.</p></details></div>
 </section>
 """
 # Logo doanh nghiệp đã mời Coach Duy đào tạo hoặc tư vấn.
@@ -533,12 +496,14 @@ def _mn():
 
 MAT_NGUOI = _mn()
 
-INDEX = (INDEX.replace("{CONG_DONG}", CONG_DONG).replace("{SO_LIEU}", so_lieu_html)
-         .replace("{VONG5}", so_do.vong_5()).replace("{BANG_NL}", so_do.bang_nang_luc())
-         .replace("{MAT_NGUOI}", MAT_NGUOI).replace("{KHACH}", khach_html)
-         .replace("{BAI_LON}", the_bai_lon(BAI_HIEN[0])).replace("{KHO}", KHO_TRANG_CHU)
-         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in BAI_HIEN[1:5]))
-         .replace("{CHUYEN_GIA}", chuyen_gia.KHOI_TRANG_CHU))
+# Bản chốt 23/11/2026: trang chủ chỉ nói phòng kinh doanh. 4 ô số (A3), bài nhóm Bán hàng và phòng kinh doanh (D1).
+SO_LIEU_4 = '<div class="kenh-them so-4o">%s</div>' % "".join('<div><b>%s</b><span>%s</span></div>' % x for x in [
+    ("30", "doanh nghiệp đã mời Duy tư vấn và huấn luyện đội ngũ"), THEM[0], ("%s+" % TONG[0], TONG[1]), THEM[1]])
+_BAI_PKD = [b for b in BAI_HIEN if b["chu_de"] == "Bán hàng và phòng kinh doanh"]
+INDEX = (INDEX.replace("{SO_LIEU_4}", SO_LIEU_4).replace("{BANH_XE}", open("assets/banh-xe-7m.svg").read())
+         .replace("{KHACH}", khach_html)
+         .replace("{BAI_LON}", the_bai_lon(_BAI_PKD[0])).replace("{KHO}", KHO_TRANG_CHU)
+         .replace("{BAI_NHO}", "".join(the_bai_nho(b) for b in _BAI_PKD[1:5])))
 
 # Trang chủ khai ba thực thể nối với nhau bằng @id: người, tổ chức đứng sau, và
 # chính website. Trước đây chỉ khai mỗi Person, nên máy thấy một tên người mà
@@ -776,7 +741,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Mô hình Phòng kinh doanh tiêu chu
     <h2>7 trụ cột để phòng kinh doanh chạy được mà không phải việc gì cũng chờ người chủ</h2>
     <p>Một phòng kinh doanh chạy được nhờ nhiều phần ăn khớp với nhau. Một phần yếu thì cả phòng chậm theo. Mô hình chia những phần đó thành 7 trụ cột, tên tiếng Anh đều bắt đầu bằng chữ M, xếp theo đúng thứ tự dựng một phòng kinh doanh.</p>
   </div>
-  <div class="luoi c4 tre hien"><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>1 · Market</span><h3>Thị trường</h3><p style="text-align:left"><b>Bán gì, cho ai?</b> Khách mục tiêu, gói bán, giá, nguồn khách</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>2 · Method</span><h3>Quy trình</h3><p style="text-align:left"><b>Bán thế nào?</b> Các chặng bán, chuẩn tư vấn, sau bán</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>3 · Manpower</span><h3>Nhân sự</h3><p style="text-align:left"><b>Ai bán?</b> Tuyển, người mới, kèm, thăng tiến</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>4 · Money</span><h3>Tài chính</h3><p style="text-align:left"><b>Trả và chi thế nào?</b> Lương, hoa hồng, thưởng, chi phí phòng</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>5 · Material</span><h3>Công cụ</h3><p style="text-align:left"><b>Bán bằng công cụ nào?</b> Dữ liệu khách, biểu mẫu, trợ lý AI</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>6 · Measure</span><h3>Chỉ số</h3><p style="text-align:left"><b>Đo chỉ số nào?</b> Mục tiêu, chỉ số, dự báo, báo cáo</p></article><article class="the"><span class="trang-thai"><i aria-hidden="true"></i>7 · Management</span><h3>Quản lý</h3><p style="text-align:left"><b>Điều hành ra sao?</b> Vai quản lý, nhịp họp, văn hóa, thay đổi</p></article></div>
+{LUOI_7M}
   <div class="blog-them moi-nut" style="justify-content:center"><a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>
     <a class="nut nut-vien" href="tai-lieu/gioi-thieu-mo-hinh-7m.pdf" download>Tải PDF giới thiệu Mô hình 7M</a></div>
 </section>
@@ -1064,7 +1029,7 @@ PHUONG_PHAP = dau_trang("Phương pháp", "Mô hình Phòng kinh doanh tiêu chu
   </div>
   <p class="ket">Khi niềm tin đã đủ, lời mời chỉ cần một câu.</p>
 </section>
-""".replace("{BANH_XE}", so_do.banh_xe()).replace("{BANG_NL}", so_do.bang_nang_luc()) \
+""".replace("{LUOI_7M}", LUOI_7M).replace("{BANH_XE}", so_do.banh_xe()).replace("{BANG_NL}", so_do.bang_nang_luc()) \
    .replace("{VONG5}", so_do.vong_5()).replace("{QUY_DAO}", so_do.quy_dao()) \
    .replace("{VIEC5}", khoi_viec5()) \
    .replace("{KHONG_LAM}", dsk(["Không làm thay phần việc của bạn. Duy chỉ đường và giữ chuẩn, bạn tự bước.",
