@@ -2909,3 +2909,7 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .hoi7 li{counter-increment:h7;display:grid;grid-template-columns:24px minmax(0,1fr);gap:4px 10px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.5}
 .hoi7 li:before{content:counter(h7);grid-row:span 2;font-family:var(--f-mono);font-weight:600;color:var(--vang);font-size:18px}
 .hoi7 li b{color:var(--ink)}
+.tru7-hai h4{font-family:var(--f-tit);font-size:18px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:700}
+.tru7-hai ol,.tru7-hai ul{font-size:16.5px;gap:10px}
+.tru7-hai ul li{color:var(--ink-2)}
+.tru7-than p{font-size:17px}

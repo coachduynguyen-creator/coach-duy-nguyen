@@ -105,7 +105,7 @@ def trang(dau_trang, banh_xe, nhom_html):
     </div>
   </div>
 </section>
-<section class="phan bd hoa-van" id="tung-tru-cot">
+<section class="phan bd phan-sang" id="tung-tru-cot">
   <div class="phan-dau hien">
     <p class="mono">Từng trụ cột</p>
     <h2>Mỗi trụ cột trả lời một câu hỏi</h2>
