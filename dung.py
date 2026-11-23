@@ -2385,7 +2385,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
     <div class="hop">
       <h3>Mời nói chuyện hoặc hợp tác truyền thông</h3>
       <p>Gửi thư nêu rõ chủ đề, đối tượng người nghe, thời gian và địa điểm. Duy trả lời trong vòng vài ngày làm việc.</p>
-      <a class="lk-v" href="mailto:{EMAIL}">{EMAIL} <span class="mt" aria-hidden="true">&rarr;</span></a>
+      <a class="lk-v" href="mailto:{EMAIL}">{EMAIL_NGAT} <span class="mt" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="hop">
       <h3>Tư vấn phòng kinh doanh cho doanh nghiệp</h3>
@@ -2408,7 +2408,7 @@ LIEN_HE = dau_trang("Liên hệ", "Bốn cách liên hệ với Duy",
     <p class="hero-ghi" style="margin-top:20px">Tính tới {NGAY_SO}, đọc từ trang công khai của từng kênh.</p>
   </div>
 </section>
-""".replace("{CONG_DONG}", CONG_DONG).replace("{PHIEU}", PHIEU).replace("{EMAIL}", EMAIL).replace("{SO_LIEU}", so_lieu_html)
+""".replace("{CONG_DONG}", CONG_DONG).replace("{PHIEU}", PHIEU).replace("{EMAIL_NGAT}", EMAIL.replace("@", "<wbr>@")).replace("{EMAIL}", EMAIL).replace("{SO_LIEU}", so_lieu_html)
 
 trang("lien-he.html", "Liên hệ Coach Duy Nguyễn",
       "Bốn cửa liên hệ với Coach Duy Nguyễn: tham gia cộng đồng, làm phiếu tự chấm phòng kinh doanh, mời nói chuyện, và tư vấn phòng kinh doanh cho doanh nghiệp.",
