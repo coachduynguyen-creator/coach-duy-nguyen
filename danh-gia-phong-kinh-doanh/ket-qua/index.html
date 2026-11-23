@@ -213,7 +213,7 @@ h4{font-family:var(--tit);font-weight:700;font-size:12.5pt;color:var(--nv);margi
  .thanh{width:90px}.dai{flex-wrap:wrap}.dai .ten{min-width:40%}
 }
 
-@media screen and (max-width:600px){table.bang{display:block;overflow-x:auto}.giay{padding:8px}.bia{padding:10mm 5mm;min-height:auto}.bia h1{font-size:30px}.cdn{white-space:nowrap}}
+@media screen and (max-width:600px){body{font-size:17px}.nho,.muted.nho,.lq,.tot,.lamro,.can,table.bang,table.bang td,table.bang th,.chuoi div,.nhan,.muc,.sodo .t .en,.can .ma,table.bang .ma{font-size:15.5px}.dau .kic,.bia .kic,.bia .ba span,.bia .lap span{font-size:14px}.dau h1{font-size:26px}h4{font-size:19px}table.bang{display:block;overflow-x:auto}.giay{padding:8px}.bia{padding:10mm 5mm;min-height:auto}.bia h1{font-size:30px}.cdn{white-space:nowrap}}
 </style><meta name="robots" content="noindex,nofollow"></head>
 <body><button class="nut-pdf" onclick="print()">Tải bản PDF</button>
 <div class="giay" id="bc"></div>
@@ -786,11 +786,11 @@ ${(() => {
  })()}
 
 <section class="phan">
- ${dau3("Kế hoạch 30 ngày", "Kế hoạch tự làm trong 30 ngày")}
- <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự của phòng kinh doanh, vì trụ cột trước là nền cho trụ cột sau." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Anh chị làm trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>
- <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột và việc làm đầu tiên</th><th>Khi cả trụ cột này tốt, anh chị sẽ thấy</th><th>Ai phụ trách</th></tr></thead><tbody>
- ${uu.map((x, k) => { const p = TRU[x.i]; return `<tr><td class="ma" style="width:24mm;white-space:nowrap">${moc[k]}</td><td><b>${tenM(x.i)}</b><br>${viecDau(x)}</td><td>${p.kq[2]}</td><td class="trong">....................</td></tr>`; }).join("")}
- <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Anh chị chấm lại</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh. Người đã chấm lần này làm lại phiếu, rồi đối chiếu với điểm trong báo cáo.</td></tr>
+ ${dau3("Thứ tự ưu tiên", "Nên xem trụ cột nào trước trong 30 ngày")}
+ <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự của phòng kinh doanh, vì trụ cột trước là nền cho trụ cột sau." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Duy gợi ý anh chị xem kỹ trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>
+ <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột</th><th>Khi cả trụ cột này tốt, anh chị sẽ thấy</th></tr></thead><tbody>
+ ${uu.map((x, k) => { const p = TRU[x.i]; return `<tr><td class="ma" style="width:24mm;white-space:nowrap">${moc[k]}</td><td><b>${tenM(x.i)}</b></td><td>${p.kq[2]}</td></tr>`; }).join("")}
+ <tr><td class="ma">Ngày 30</td><td colspan="2"><b>Anh chị chấm lại</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh. Người đã chấm lần này làm lại phiếu, rồi đối chiếu với điểm trong báo cáo.</td></tr>
  </tbody></table>
  <h3>Sau khi đọc báo cáo</h3>
  <ol class="buoc">
