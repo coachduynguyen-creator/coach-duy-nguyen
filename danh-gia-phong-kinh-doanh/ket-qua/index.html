@@ -724,9 +724,10 @@ function ve() {
   const lk = a => a.map(x => tenM(x.i)).join(", ");
   const yeuTruoc = uu.filter(x => mucDo(x.d) < 2);
   if (yeuTruoc.length && !dongDeu) hs.m += ` Theo điểm của anh chị, ${yeuTruoc.length} trụ cột nên sửa trước là ${lk(yeuTruoc)}.`;
-  const cau5 = [sau.filter(x => mucDo(x.d) === 0), sau.filter(x => mucDo(x.d) === 1)].map((a, k) => a.length ? lk(a) + (k ? " làm chưa đủ" : " cũng cần sửa") : "").filter(Boolean).join(", còn ");
+  const cau5 = [sau.filter(x => mucDo(x.d) === 0), sau.filter(x => mucDo(x.d) === 1)].map((a, k) => a.length ? lk(a) + (k ? " mới làm một phần" : " cũng cần sửa") : "").filter(Boolean).join(", còn ");
   const moc = ["Tuần 1 và 2", "Tuần 3", "Tuần 4"];
   const rrNgoai = rr.slice(0, 3).filter((r, k) => NN_GP[r.ten] && (k === 0 || !r.can.some(c => uu.some(x => x.i === +c.split(".")[0] - 1))));
+  const dau3 = (so, ten) => `<div class="dau"><div class="kic">Trang ${so} trên 3</div><h1>${ten}</h1></div>`;
   const dau = (so, ten) => `<div class="dau"><div class="kic">Mục ${so}</div><h1>${ten}</h1></div>`;
 
   let H = `
@@ -735,7 +736,7 @@ function ve() {
  
  <div class="kic">Báo cáo đánh giá</div>
  <h1>Phòng kinh doanh<br>tiêu chuẩn 7M</h1>
- <div class="phu">Phòng kinh doanh đang làm tốt khâu nào, khâu nào cần sửa trước, và nên bắt tay vào việc gì trước</div>
+ <div class="phu">Điểm từng khâu của phòng kinh doanh, khâu nào cần sửa trước, và nên bắt tay vào việc gì trước</div>
  <div class="ba"><div><b>${tong}/56</b><span>Tổng điểm</span></div><div><b>${dem(0)} trụ cột</b><span>cần sửa</span></div><div><b>30 ngày</b><span>Kế hoạch sửa</span></div></div>
  <div class="lap">
   <div><span>Lập cho</span>${KHACH.congTy}</div><div><span>Người đánh giá</span>${KHACH.hoTen}, ${(KHACH.nguoiCham || "").toLowerCase()}</div>
@@ -745,90 +746,46 @@ function ve() {
 </div>
 
 <section>
- <div class="phanlon"><div class="kic">Phần I · Tổng quan</div><h2>Phòng kinh doanh đang làm được gì, thiếu gì</h2><p>Tổng điểm, điểm từng trụ cột và 3 trụ cột nên sửa trước.</p></div>
- ${dau(1, "Tóm tắt kết quả")}
- <p class="chao">Chào ${KHACH.hoTen.trim()},</p>
- <p>Đây là kết quả từ 28 câu anh chị đã trả lời cho ${KHACH.congTy}. Duy nói gọn trước, phần chi tiết nằm ở các mục sau.</p>
+ ${dau3(1, "Kết quả của anh chị")}
+ <p><b>Chào ${KHACH.hoTen.trim()},</b> đây là kết quả từ 28 câu anh chị đã trả lời cho ${KHACH.congTy}.</p>
  <div class="ghi"><div class="nhan">Đọc nhanh trong một phút</div>
  <ul class="nhanh">
   <li>${dongDeu ? `<b>Điểm các trụ cột:</b> cả 7 trụ cột đều ${manh.d} trên 8 điểm, chưa trụ cột nào nổi hơn trụ cột nào.` : manh.d >= 7 ? `<b>Làm tốt nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Phần này anh chị đang làm tốt.` : manh.d >= 4 ? `<b>Khá nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Phần này đã có cách làm, cần làm đều hơn.` : `<b>Điểm cao nhất:</b> ${tenM(manh.i)}, ${manh.d} trên 8 điểm. Đây vẫn là mức cần sửa, nên chưa có phần nào anh chị có thể yên tâm giữ nguyên.`}</li>
-  ${rr.length ? `<li><b>Rủi ro đáng lo nhất:</b> ${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}. Mục 3 giải thích vì sao, và hướng dẫn anh chị cách tự kiểm tra trong phòng mình.</li>` : ""}
+  ${rr.length ? `<li><b>Rủi ro đáng lo nhất:</b> ${rr[0].ten.charAt(0).toLowerCase() + rr[0].ten.slice(1)}. Trang 2 nói rõ chuyện gì có thể xảy ra.</li>` : ""}
   <li><b>Việc nên làm trước:</b> ${tenM(uu[0].i)}. ${viecDau(uu[0])}</li>
- </ul>
- <p class="muted nho" style="margin:2mm 0 0">Điểm trên do anh chị tự chấm. Điểm đó cho biết phòng kinh doanh đang làm việc thế nào, không đo được doanh thu hay số đơn chốt.</p></div>
+ </ul></div>
  <div class="ghi"><div class="nhan">Duy nhận xét chung</div><p><b>${hs.t}.</b> ${hs.m}</p></div>
- <p>Phiếu có 28 câu. Anh chị chấm đúng hoàn toàn <b>${demTL(2)} câu</b>, đúng một phần <b>${demTL(1)} câu</b>, và chưa đúng <b>${demTL(0)} câu</b>. Về trụ cột thì có <b>${dem(0)} trụ cột cần sửa</b>, <b>${dem(1)} trụ cột làm chưa đủ</b>, ${dem(2) ? `và <b>${dem(2)} trụ cột tốt</b>` : "và chưa có trụ cột nào tốt"}.</p>
- ${rr.length ? `<h3>${rr.length > 3 ? "3 rủi ro đáng lo nhất" : "Rủi ro anh chị cần để ý"}</h3>
- <div class="sodo">${rr.slice(0, 3).map((r, k) => `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><b>${r.ten}</b>${caBang ? "" : `<span class="muc ${r.cao ? "m0" : "m1"}">${r.cao ? "Nặng" : "Vừa"}</span>`}</div><div class="muted nho">Từ các câu ${r.can.join(", ")}. Mục 3 giải thích kỹ.</div></div></div>`).join("")}</div>${caBang ? `<p class="muted nho">${Math.min(3, rr.length)} rủi ro này xếp theo tổng điểm của các câu liên quan. Rủi ro có tổng điểm thấp nhất đứng đầu, anh chị lo rủi ro đó trước.</p>` : ""}` : ""}
  <h3>Điểm từng trụ cột</h3>
  <table class="bang diem"><thead><tr><th>Mã</th><th>Trụ cột</th><th>Điểm</th><th>Mức</th></tr></thead><tbody>
- ${ds.map(x => { const m = mucDo(x.d); return `<tr><td class="ma">M${x.i+1}</td><td class="ten">${TRU[x.i].ten} <span class="muted" style="font-weight:400">· ${TRU[x.i].hoi}</span></td><td class="so"><span class="thanh"><i style="width:${x.d/8*100}%;background:${MAU_MUC[m]}"></i></span>${x.d}/8</td><td>${nhan(m)}</td></tr>`; }).join("")}
+ ${ds.map(x => { const m = mucDo(x.d); return `<tr><td class="ma">M${x.i+1}</td><td class="ten">${TRU[x.i].ten}</td><td class="so"><span class="thanh"><i style="width:${x.d/8*100}%;background:${MAU_MUC[m]}"></i></span>${x.d}/8</td><td>${nhan(m)}</td></tr>`; }).join("")}
  </tbody></table>
- <h3>3 trụ cột nên sửa trước (việc làm đầu tiên ở Mục 5)</h3>
- <div class="sodo">${uu.map((x, k) => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="h"><div class="n">${k+1}</div><div class="c"><div class="t"><span class="en">M${x.i+1}</span><b>${p.ten}</b>${nhan(m)}</div><div class="muted nho">${x.d} trên 8 điểm.</div></div></div>`; }).join("")}</div>
+ <p class="muted nho">Mỗi trụ cột tối đa 8 điểm: 0 tới 3 là cần sửa, 4 tới 6 là mới làm một phần, 7 tới 8 là tốt. Điểm do anh chị tự chấm, không đo doanh thu.</p>
 </section>
 
 <section class="phan">
- ${dau(2, "Bức tranh 7 trụ cột")}
- <div class="tranh giu">${radar(ds)}</div>
- <p class="muted nho" style="text-align:center">Mỗi trụ cột có 4 câu. Đúng được 2 điểm, đúng một phần được 1 điểm, chưa đúng được 0 điểm, nên mỗi trụ cột tối đa 8 điểm. Từ 0 tới 3 điểm là cần sửa, từ 4 tới 6 điểm là làm chưa đủ, từ 7 tới 8 điểm là tốt. Tổng điểm không để đậu hay rớt, chỉ để anh chị đem so sánh với lần chấm sau. Mã 2.3 nghĩa là câu thứ 3 của trụ cột 2 trên phiếu anh chị đã điền.</p>
- <h3>Vì sao sửa theo thứ tự này</h3>
- <p>Phòng kinh doanh được dựng theo thứ tự từ trụ cột 1 tới trụ cột 7, và trụ cột sau dựa vào trụ cột trước. Báo cáo này xếp trụ cột cần sửa trước, trụ cột làm chưa đủ sau, vì chỗ yếu nhất kéo cả phòng chậm lại. Trong mỗi nhóm đi từ trụ cột 1 tới trụ cột 7. Sơ đồ dưới đây là thứ tự các trụ cột trong phòng kinh doanh. Thứ tự anh chị làm nằm ở Mục 5.</p>
- <div class="chuoi giu">${ds.map((x, k) => `${k ? "<em>›</em>" : ""}<div class="m${mucDo(x.d)}"><b>M${x.i+1}</b>${TRU[x.i].ten}<br>${x.d}/8</div>`).join("")}</div>
-</section>
-
-<section class="phan">
- <div class="phanlon"><div class="kic">Phần II · Chi tiết</div><h2>Vì sao có chuyện này, và làm gì</h2><p>Với mỗi rủi ro và mỗi trụ cột, Duy ghi: anh chị đã trả lời gì, chuyện gì có thể đang xảy ra trong phòng, vì sao hay xảy ra, nên làm việc gì, và anh chị tự kiểm tra bằng câu nào.</p></div>
- ${dau(3, "Rủi ro có thể đang xảy ra")}
- <p>Duy đem các câu anh chị trả lời ra so sánh với nhau để thấy chuyện có thể đang xảy ra trong phòng kinh doanh. Từ phiếu, Duy thấy ${rr.length} rủi ro. ${rr.length > SO_RR_HIEN ? `Dưới đây là ${SO_RR_HIEN} rủi ro đứng đầu` : rr.length > 1 ? `Dưới đây là cả ${rr.length} rủi ro` : "Dưới đây là rủi ro đó"}, xếp theo tổng điểm của các câu liên quan, ít điểm nhất đứng đầu. ${caBang ? "" : "Nhãn Nặng là rủi ro có từ 2 câu ở mức chưa đúng, nhãn Vừa là các rủi ro còn lại. "}Phần “Vì sao hay xảy ra” chỉ nêu các câu anh chị chưa chấm đúng hoàn toàn, theo đúng mức anh chị chấm. Mỗi rủi ro có mục “Dấu hiệu dễ thấy trong phòng”: thấy dấu hiệu nào thì rủi ro đó nhiều khả năng đang xảy ra thật. Phiếu chỉ cho biết việc nào chưa làm, chưa cho biết chuyện gì đã xảy ra, nên anh chị xem điều nào đúng với công ty mình. Phần nguyên nhân và cách làm là chuyện hay gặp ở nhiều công ty, chỗ nào chưa đúng với công ty anh chị thì bỏ qua.</p>
- ${rr.slice(0, SO_RR_HIEN).map((r, k) => `<div class="rui">
+ ${dau3(2, rr.length > 1 ? "Rủi ro có thể đang xảy ra" : "Rủi ro anh chị cần để ý")}
+ ${rr.length ? `<p>Duy đem các câu anh chị trả lời ra so sánh với nhau để thấy chuyện có thể đang xảy ra trong phòng. Dưới đây là ${Math.min(3, rr.length)} rủi ro đáng lo nhất${caBang ? ", xếp theo tổng điểm các câu liên quan, ít điểm nhất đứng đầu" : ""}. Thấy dấu hiệu nào ghi ở rủi ro đó thì nhiều khả năng chuyện đang xảy ra thật.</p>
+ ${rr.slice(0, 3).map((r, k) => `<div class="rui">
   <h4>${k+1}. ${r.ten}${caBang ? "" : ` <span class="muc ${r.cao ? "m0" : "m1"}">${r.cao ? "Nặng" : "Vừa"}</span>`}</h4>
-  <p><b>Anh chị đã trả lời:</b> ${r.can.map(c => `${CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1)} (${MUC[tl(c)].toLowerCase()})`).join("; ")}.</p>
-  <p><b>Nếu để như vậy, chuyện gì có thể xảy ra, và công ty mất gì.</b> ${r.ht}</p>
-  ${NN_GP[r.ten] ? (g => `<p><b>Vì sao hay xảy ra.</b></p>
-  <ul class="gp">${r.can.filter(c => tl(c) < 2).map(c => `<li>${NN_Q[c][tl(c)]}</li>`).join("")}</ul>
-  <p><b>Anh chị làm như sau.</b></p>
-  <ol class="gp">${g.gp.map(x => `<li>${x}</li>`).join("")}</ol>
-  ${[g.kenh && g.kenh[kenhKey(KHACH.kenh)], itNguoi(KHACH.soNguoiBan) && g.it, dongNguoi(KHACH.soNguoiBan) && g.dong].filter(Boolean).map(x => `<p class="rieng"><b>Thêm theo công ty anh chị:</b> ${x}</p>`).join("")}`)(NN_GP[r.ten]) : ""}
-  <p><b>Dấu hiệu dễ thấy trong phòng:</b> ${r.dh.map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
-  <p><b>Anh chị tự hỏi 1 câu này.</b> ${r.hoi}</p>
- </div>`).join("")}
- ${kh.length ? `<h3>${kh.length > 1 ? "Những cặp câu anh chị chấm lệch nhau" : "2 câu anh chị chấm lệch nhau"}</h3>
- <p>${kh.length > 1 ? "Mỗi cặp dưới đây gồm 2 việc" : "2 việc dưới đây"} thường đi cùng nhau, nhưng anh chị chấm điểm khác nhau. Anh chị không trả lời sai. Trước khi sửa, anh chị tự hỏi lại vì sao 2 việc này chấm khác nhau, rồi hỏi nhân viên nếu cần, thường sẽ có lý do cụ thể.</p>
- ${kh.map(k => `<div class="khop">${chip(k.a)}${chip(k.b)}<p>${k.t}</p></div>`).join("")}` : ""}
+  <p><b>Nếu để như vậy, chuyện gì có thể xảy ra.</b> ${r.ht}</p>
+  <p><b>Dấu hiệu dễ thấy:</b> ${r.dh.slice(0, 2).map(d => d.charAt(0).toLowerCase() + d.slice(1)).join("; ")}.</p>
+  ${NN_GP[r.ten] ? `<p><b>Việc đầu tiên.</b> ${NN_GP[r.ten].gp[0]}</p>` : ""}
+ </div>`).join("")}` : `<p>Từ các câu anh chị trả lời, Duy chưa thấy rủi ro nào nổi lên rõ. Anh chị xem kế hoạch ở trang 3.</p>`}
 </section>
 
 <section class="phan">
- ${dau(4, "Chi tiết từng trụ cột")}
- <p>Mỗi trụ cột ghi việc anh chị đã làm tốt (nếu có), việc còn thiếu kèm câu để anh chị hỏi lại nhân viên, và việc nên làm trước. Việc nào dính tới một rủi ro ở Mục 3 thì Duy ghi số của rủi ro đó.</p>
- ${ds.map(x => { const p = TRU[x.i], m = mucDo(x.d);
-  const thieu = p.cau.map((q, j) => (x.i+1)+"."+(j+1)).filter(c => tl(c) < 2), tot = p.cau.map((q, j) => (x.i+1)+"."+(j+1)).filter(c => tl(c) === 2);
-  const thuong = c => CAU[c].ngan.charAt(0).toLowerCase() + CAU[c].ngan.slice(1);
-  return `<div class="tru2">
-  <h3>${tenM(x.i)}: ${x.d}/8, ${TEN_MUC[m].toLowerCase()}</h3>
-  <p class="hoi">${p.hoi}</p>
-  ${tot.length ? `<p><b>Anh chị đã làm tốt:</b> ${tot.map(thuong).join("; ")}.</p>` : ""}
-  ${thieu.length ? `<p><b>Việc còn thiếu.</b> ${thieu.length > 1 ? "Có " + thieu.length + " câu chưa chấm đúng hoàn toàn." : "Có 1 câu chưa chấm đúng hoàn toàn."}</p>
-  <ul class="thieu">${thieu.map(c => `<li><b>${CAU[c].ngan}</b> (${MUC[tl(c)].toLowerCase()}). ${tl(c) === 1 ? RR1[c] : CAU[c].rr} Anh chị hỏi nhân viên: ${CAU[c].hoi}${soRR(c) ? ` <em class="lq">Việc này liên quan rủi ro số ${soRR(c)} ở Mục 3.</em>` : ""}</li>`).join("")}</ul>` : ""}
-  ${m < 2 ? `<p><b>Việc nên làm trước.</b> ${viecDau(x)}</p>` : ""}
- </div>`; }).join("")}
-</section>
-
-<section class="phan">
- ${dau(5, "Kế hoạch tự làm trong 30 ngày")}
- <p>Thứ tự như ở Mục 2: trụ cột cần sửa làm trước, trụ cột làm chưa đủ làm sau, trong mỗi nhóm đi từ trụ cột 1 tới trụ cột 7.${cau5 ? " " + cau5 + " sẽ làm sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>${rrNgoai.length ? `<p>Ngoài 3 trụ cột trên, anh chị làm thêm việc đầu tiên của rủi ro đứng đầu, và của những rủi ro trong 3 rủi ro đầu mà chưa nằm trong 3 trụ cột này. Đó là việc nhỏ, làm được ngay:</p><ul>${rrNgoai.map(r => `<li>Rủi ro “${r.ten.charAt(0).toLowerCase() + r.ten.slice(1)}”: ${NN_GP[r.ten].gp[0].charAt(0).toLowerCase() + NN_GP[r.ten].gp[0].slice(1)}</li>`).join("")}</ul>` : ""}
+ ${dau3(3, "Kế hoạch tự làm trong 30 ngày")}
+ <p>Trụ cột cần sửa làm trước, trụ cột mới làm một phần làm sau.${cau5 ? " " + cau5.charAt(0).toUpperCase() + cau5.slice(1) + " sẽ làm sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã chạy." : ""}</p>${rrNgoai.length ? `<p>Làm thêm việc đầu tiên của các rủi ro ở trang 2 mà chưa nằm trong 3 trụ cột này:</p><ul>${rrNgoai.map(r => `<li>Rủi ro “${r.ten.charAt(0).toLowerCase() + r.ten.slice(1)}”: ${NN_GP[r.ten].gp[0].charAt(0).toLowerCase() + NN_GP[r.ten].gp[0].slice(1)}</li>`).join("")}</ul>` : ""}
  <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột và việc làm đầu tiên</th><th>Khi cả trụ cột này tốt, anh chị sẽ thấy</th><th>Ai phụ trách</th></tr></thead><tbody>
- ${uu.map((x, k) => { const p = TRU[x.i], m = mucDo(x.d); return `<tr><td class="ma" style="width:20mm">${moc[k]}</td><td><b>${tenM(x.i)}</b><br>${viecDau(x)}</td><td>${p.kq[2]}</td><td class="trong">....................</td></tr>`; }).join("")}
- <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Chấm lại.</b> Cùng người đã chấm lần này làm lại phiếu, rồi đem điểm từng trụ cột so sánh với báo cáo này.</td></tr>
+ ${uu.map((x, k) => { const p = TRU[x.i]; return `<tr><td class="ma" style="width:20mm">${moc[k]}</td><td><b>${tenM(x.i)}</b><br>${viecDau(x)}</td><td>${p.kq[2]}</td><td class="trong">....................</td></tr>`; }).join("")}
+ <tr><td class="ma">Ngày 30</td><td colspan="3"><b>Chấm lại.</b> Cùng người đã chấm lần này làm lại phiếu, rồi đối chiếu với điểm trong báo cáo.</td></tr>
  </tbody></table>
- <h3>Anh chị làm gì sau khi đọc báo cáo</h3>
+ <h3>Sau khi đọc báo cáo</h3>
  <ol class="buoc">
-  <li><b>Họp với cả phòng bán hàng.</b> Đọc tài liệu Giới thiệu mô hình Phòng kinh doanh tiêu chuẩn 7M gửi kèm trong thư báo kết quả, rồi mang Mục 3 và Mục 4 vào buổi họp. Anh chị bắt đầu bằng việc hỏi từng câu hỏi trong Mục 4.</li>
-  <li><b>Hỏi khi cần.</b> Khi đội ngũ Coach Duy Nguyễn gọi, anh chị hỏi cách làm những việc trên cho hợp với công ty mình.</li>
+  <li><b>Họp với cả phòng bán hàng</b>, đọc tài liệu Giới thiệu mô hình 7M gửi kèm thư. Đội ngũ Coach Duy Nguyễn sẽ gọi anh chị theo số đã để lại để cùng xem kết quả.</li>
   <li><b>Vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027</b> tại <a href="https://zalo.me/g/gadxc2qxwa1cuqx5op7t">zalo.me/g/gadxc2qxwa1cuqx5op7t</a> để nhận lịch và tài liệu của workshop.</li>
-  <li><b>Đánh giá lại sau 30 ngày</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh, rồi so sánh điểm với báo cáo này.</li>
+  <li><b>Chấm lại sau 30 ngày</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh.</li>
  </ol>
- <div class="ghi"><div class="nhan">Về báo cáo này</div><p>Báo cáo này dựa trên 28 câu của 1 người chấm, vào đúng ngày chấm. Để sát thực tế hơn, anh chị mời thêm quản lý và 1 đến 2 nhân viên kinh doanh cùng chấm, rồi so sánh điểm. Câu nào mỗi người chấm một kiểu thì anh chị nói chuyện với nhau về câu đó trước.</p></div>
 </section>
 
 <section class="tc">
