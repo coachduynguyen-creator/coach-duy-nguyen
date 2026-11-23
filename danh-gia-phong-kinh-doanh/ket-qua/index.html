@@ -152,6 +152,9 @@ ol.buoc{margin:2pt 0 8pt;padding-left:16pt} ol.buoc li{margin:0 0 6pt}
 .cuoi small{display:block;font-family:var(--mono);font-size:9pt;letter-spacing:.12em;color:var(--vgn);margin-top:2mm;text-align:right}
 </style>
 <style>
+.gpkd{break-inside:avoid;border-top:1px solid var(--ke);padding:3mm 0} .gpkd b{color:var(--nv)} .gpkd dl{display:grid;grid-template-columns:30mm 1fr;gap:1.5mm 4mm;margin:2mm 0 0} .gpkd dt{font-weight:700;color:var(--vgd)} .gpkd dd{margin:0}
+@media (max-width:600px){.gpkd dl{grid-template-columns:1fr;gap:0} .gpkd dt{margin-top:2mm}}
+.ghi.cta{background:var(--nv);color:var(--nga);border-left-color:var(--vg);margin-top:8mm} .ghi.cta .nhan{color:var(--vg)}
 @page{size:A4;margin:18mm 15mm} @page:first{margin:0}
 .bia{break-after:page}
 .nut-pdf{position:fixed;right:16px;bottom:16px;z-index:9;background:#0C1628;color:#F4F1EA;border:0;border-radius:999px;padding:12px 20px;font:600 15px 'Be Vietnam Pro',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
@@ -774,11 +777,13 @@ function ve() {
   <li><b>Vào nhóm Zalo của workshop 7M</b> tại <a href="https://zalo.me/g/gadxc2qxwa1cuqx5op7t">zalo.me/g/gadxc2qxwa1cuqx5op7t</a> để nhận lịch và tài liệu của buổi workshop.</li>
   <li><b>Đánh giá lại sau 30 ngày</b> tại coachduynguyen.vn/danh-gia-phong-kinh-doanh, rồi so sánh điểm với báo cáo này.</li>
  </ol>
- <h3>Nếu anh chị muốn có người đi cùng</h3>
- ${itNguoi(KHACH.soNguoiBan)
-  ? `<p>Công ty anh chị ${/^0/.test(KHACH.soNguoiBan) ? "đang tự bán một mình" : "mới có 1 người bán"}, nên chương trình hợp nhất lúc này là <b>chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027</b>. Anh chị mang số liệu bán hàng thật của năm nay vào buổi làm việc, và ra về với kế hoạch kinh doanh năm 2027 gói trong 1 trang, cùng kế hoạch bán hàng cho doanh nghiệp mình. Nếu anh chị muốn tự học theo nhịp riêng thì có các chương trình trực tuyến theo từng chủ đề như bán hàng, quản lý, thương hiệu cá nhân.</p>`
-  : `<p>Công ty anh chị có ${KHACH.soNguoiBan.toLowerCase()}, nên chương trình hợp nhất là <b>30 ngày thiết kế phòng kinh doanh theo mô hình 7M</b>. Anh chị và 1 quản lý kinh doanh cùng làm trong 8 buổi, mỗi tuần 2 buổi, thiết kế lại phòng kinh doanh theo 7 trụ cột và bắt đầu từ <b>${tenM(uu[0].i)}</b>. Cuối chương trình, anh chị có bản thiết kế riêng cho phòng của mình và đã áp dụng thật 2 tới 3 việc như quy trình tư vấn, bảng chỉ số, lịch họp tuần. Chương trình không hứa xây xong cả phòng kinh doanh trong 30 ngày, vì việc đó cần lâu hơn.</p>`}
- <p>Khi đội ngũ gọi cho anh chị, anh chị cứ hỏi thêm về lịch, ai nên tham gia và chương trình này có hợp với công ty mình không.</p>
+ <h3>Giải pháp Coach Duy Nguyễn đang có để nâng chuẩn đội ngũ kinh doanh</h3>
+ <p>Tùy kết quả của anh chị và quy mô đội ngũ, một trong các giải pháp dưới đây có thể hợp với công ty mình.</p>
+  <div class="gpkd"><b>Chương trình 4 buổi Lập kế hoạch kinh doanh và bán hàng 2027</b><dl><dt>Dành cho</dt><dd>Người chủ ở mọi quy mô cần kế hoạch cho năm mới.</dd><dt>Giúp giải quyết</dt><dd>Cuối năm chưa có kế hoạch, hoặc có chỉ tiêu nhưng chưa gắn với việc đội ngũ bán phải làm mỗi tháng.</dd><dt>Kết quả</dt><dd>Kế hoạch kinh doanh năm 2027 gói trong 1 trang và kế hoạch bán hàng cho doanh nghiệp mình.</dd></dl></div>
+  <div class="gpkd"><b>30 ngày thiết kế phòng kinh doanh theo mô hình 7M</b><dl><dt>Dành cho</dt><dd>Người chủ có từ 2 người bán trở lên, cùng học với 1 quản lý kinh doanh.</dd><dt>Giúp giải quyết</dt><dd>Mỗi người tư vấn một kiểu, giao dịch lớn phải kéo người chủ vào, quản lý chỉ thấy doanh số cuối tháng mà không biết khách rơi ở bước nào.</dd><dt>Kết quả</dt><dd>Bản thiết kế 7 trụ cột cho phòng kinh doanh của mình, và 2 tới 3 việc đã áp dụng thật như quy trình tư vấn, bảng chỉ số, lịch họp tuần.</dd></dl></div>
+  <div class="gpkd"><b>Đồng hành dựng phòng kinh doanh trong 3 tháng</b><dl><dt>Dành cho</dt><dd>Doanh nghiệp đã có bản thiết kế phòng kinh doanh nhưng thiếu người hoặc thiếu thời gian tự dựng.</dd><dt>Giúp giải quyết</dt><dd>Có thiết kế rồi mà phòng kinh doanh vẫn chưa chạy được.</dd><dt>Kết quả</dt><dd>Phòng kinh doanh có tài liệu quy trình, bảng chỉ số và công cụ chạy được, đội ngũ được hướng dẫn dùng.</dd></dl></div>
+  <div class="gpkd"><b>Master Club, đồng hành 1 năm với Coach Duy Nguyễn</b><dl><dt>Dành cho</dt><dd>Người chủ đã làm việc thử với Coach Duy Nguyễn và muốn có người đi cùng mỗi tuần.</dd><dt>Giúp giải quyết</dt><dd>Một mình gánh mọi quyết định kinh doanh, biết phải làm gì nhưng khó làm đều mỗi tuần.</dd><dt>Kết quả</dt><dd>Mỗi tuần mổ xẻ một bài toán kinh doanh thật, chọn 1 việc để làm, tuần sau báo lại, có nhóm cùng chủ doanh nghiệp đồng hành.</dd></dl></div>
+ <div class="ghi cta"><div class="nhan">Trao đổi với đội ngũ hỗ trợ</div><p>Đội ngũ hỗ trợ sẽ gọi cho anh chị theo số điện thoại đã để lại. Anh chị cùng đội ngũ nhìn lại kết quả này và chọn giải pháp phù hợp nhất, để đội ngũ bán hàng của công ty bán đều hơn, hiệu suất tốt hơn và tỷ lệ thành công cao hơn.</p></div>
  <div class="ghi"><div class="nhan">Về báo cáo này</div><p>Báo cáo lập từ 28 câu trả lời của người đánh giá, nên cho thấy phòng kinh doanh qua cách nhìn của người đánh giá vào ngày đánh giá. Để kết quả sát hơn, anh chị có thể mời quản lý và 1 tới 2 nhân viên kinh doanh cùng đánh giá rồi so sánh với nhau. Chỗ nào mọi người trả lời khác nhau thường là chỗ cần nói chuyện trước.</p></div>
  <div class="cuoi">${CDN}<div><small>coachduynguyen.vn · ${KHACH.ma}</small></div></div>
 </section>`;
