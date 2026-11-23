@@ -2905,3 +2905,7 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .tru7-hai ul li{padding-left:18px;position:relative;color:var(--ink-2)}
 .tru7-hai ul li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--vang);opacity:.7}
 .tru7 p,.tru7 h3,.tru7 li,.doc7 p,.doc7 li,.m7 p{text-align:left!important}
+.hoi7{list-style:none;padding:0!important;counter-reset:h7}
+.hoi7 li{counter-increment:h7;display:grid;grid-template-columns:24px minmax(0,1fr);gap:4px 10px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.5}
+.hoi7 li:before{content:counter(h7);grid-row:span 2;font-family:var(--f-mono);font-weight:600;color:var(--vang);font-size:18px}
+.hoi7 li b{color:var(--ink)}

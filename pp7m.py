@@ -113,7 +113,7 @@ def trang(dau_trang, banh_xe, nhom_html):
   </div>
   <div class="tru7-bo">{tru}</div>
 </section>
-<section class="phan bd phan-vang" id="tu-kiem-tra">
+<section class="phan bd phan-sang" id="tu-kiem-tra">
   <div class="doc7 hien">
     <p class="mono">Tự kiểm tra nhanh trong 5 phút</p>
     <h2>7 câu, mỗi câu ứng với một trụ cột</h2>
