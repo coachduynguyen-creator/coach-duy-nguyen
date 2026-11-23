@@ -2888,3 +2888,24 @@ mark.cc-da{background:#F8DFA6;color:#241B14;border-radius:3px;padding:0 3px;font
 .bx .loi{fill:rgba(143,88,8,.10);stroke:#8F5808;stroke-width:1.5}
 .bx .loi-1{font-family:var(--f-tit);font-size:22px;font-weight:800;fill:var(--ink)}
 .bx .loi-2{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;fill:#8F5808}
+.doc7{max-width:760px;margin:0 auto}.doc7 h2{font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:12px 0 18px;text-wrap:balance}
+.doc7 h3{margin:36px 0 10px;font-size:22px}.doc7 p{text-align:left;margin:0 0 14px}
+.doc7 ol{margin:18px 0 22px;padding-left:22px;display:grid;gap:10px}
+.doc7-nut{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.tru7-bo{display:grid;gap:28px;max-width:1080px;margin:0 auto}
+.tru7{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--panel)}
+.tru7-dau h3{margin:14px 0 4px;font-size:clamp(22px,2.4vw,28px)}
+.tru7-hoi{font-weight:600;color:var(--vang);margin:0 0 14px}
+.tru7-than p{text-align:left;margin:0 0 12px;color:var(--ink-2)}
+.tru7-hai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:760px){.tru7{padding:20px}.tru7-hai{grid-template-columns:minmax(0,1fr);gap:20px}}
+.tru7-hai h4{margin:0 0 10px;font-size:15px;font-family:var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tru7-hai ol,.tru7-hai ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.tru7-hai ol b{font-family:var(--f-mono);color:var(--vang);font-weight:600;margin-right:10px}
+.tru7-hai ul li{padding-left:18px;position:relative;color:var(--ink-2)}
+.tru7-hai ul li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--vang);opacity:.7}
+.tru7 p,.tru7 h3,.tru7 li,.doc7 p,.doc7 li,.m7 p{text-align:left!important}
+.hoi7{list-style:none;padding:0!important;counter-reset:h7}
+.hoi7 li{counter-increment:h7;display:grid;grid-template-columns:24px minmax(0,1fr);gap:4px 10px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.5}
+.hoi7 li:before{content:counter(h7);grid-row:span 2;font-family:var(--f-mono);font-weight:600;color:var(--vang);font-size:18px}
+.hoi7 li b{color:var(--ink)}
