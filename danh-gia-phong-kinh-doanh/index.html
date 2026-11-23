@@ -252,6 +252,7 @@ button{font:inherit;cursor:pointer}
       <select id="songuoi"><option value="">Chọn</option><option value="0">0, người chủ tự bán</option><option value="1">1 người</option><option value="2">2 tới 5 người</option><option value="6">6 tới 15 người</option><option value="16">Trên 15 người</option></select>
      </label>
      <label>Doanh thu trung bình mỗi tháng<select id="doanhthu"><option value="">Chọn</option><option>Dưới 300 triệu</option><option>300 triệu tới 1 tỷ</option><option>1 tới 3 tỷ</option><option>Trên 3 tỷ</option><option>Chưa muốn chia sẻ</option></select></label>
+     <label class="ca">Kênh bán hàng chính<select id="kenh"><option value="">Chọn</option><option>Nhắn tin online (Zalo, Facebook, website)</option><option>Khách tới cửa hàng hoặc showroom</option><option>Gọi điện cho khách</option><option>Đi gặp khách tại công ty hoặc nhà khách</option><option>Nhiều kênh như nhau</option></select></label>
      <label>Người đánh giá<select id="nguoicham"><option value="">Chọn</option><option>Người chủ</option><option>Quản lý kinh doanh</option><option>Người chủ và quản lý cùng đánh giá</option></select></label>
     </div>
    </div>
@@ -284,7 +285,7 @@ button{font:inherit;cursor:pointer}
     <div class="nut">
      <a class="btn" id="baocao" href="#" target="_blank" rel="noopener" hidden>Mở báo cáo chi tiết</a>
      <a class="btn" id="tailieu" href="/tai-lieu/gioi-thieu-mo-hinh-7m.pdf" download>Tải tài liệu 7M</a>
-     <a class="btn phu" id="zalo" href="#" target="_blank" rel="noopener" hidden>Vào nhóm Zalo của workshop 7M</a>
+     <a class="btn phu" id="zalo" href="#" target="_blank" rel="noopener" hidden>Vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027</a>
     </div>
    </div>
   </div>
@@ -292,7 +293,7 @@ button{font:inherit;cursor:pointer}
    <button class="btn phu" onclick="window.print()">In kết quả</button>
    <button class="btn phu" id="xoa">Đánh giá lại từ đầu</button>
   </div>
-  <p class="foot">Coach Duy Nguyễn · Next Gen Founder · Phiếu tự đánh giá theo mô hình Phòng kinh doanh tiêu chuẩn 7M</p>
+  <p class="foot">Coach Duy Nguyễn · Phiếu tự đánh giá theo mô hình Phòng kinh doanh tiêu chuẩn 7M</p>
  </div>
 </section>
 
@@ -564,14 +565,14 @@ document.addEventListener("click", e => { const b = e.target.closest("[data-di]"
 
 // Trạm nhận phiếu (tram-pancake): ghi Pancake, gửi thư kèm đường dẫn báo cáo, báo Telegram cho sales.
 const DIA_CHI_GUI = "/api/danh-gia-7m";
-// Đường dẫn nhóm Zalo của workshop. Để trống thì ẩn nút.
+// Đường dẫn nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027. Để trống thì ẩn nút.
 const ZALO = "https://zalo.me/g/gadxc2qxwa1cuqx5op7t";
 if (ZALO) { $("zalo").href = ZALO; $("zalo").hidden = false; }
 
 function goiTram(d) {
   const q = new URLSearchParams(location.search), r = {
     ten: d.hoTen, sdt: d.dienThoai, email: d.email, congTy: d.congTy, nganh: d.nganh,
-    soNguoiBan: d.soNguoiBan, nguoiCham: d.nguoiCham,
+    soNguoiBan: d.soNguoiBan, doanhThu: d.doanhThu, kenh: d.kenh, nguoiCham: d.nguoiCham,
     a: TRU.flatMap((p, i) => p.cau.map((_, j) => st.a[i + "_" + j])).join(""),
     bay: $("bay").value, url_page: location.href.slice(0, 500)
   };
@@ -598,6 +599,7 @@ function layDuLieu() {
     soNguoiBan: sel.value ? sel.options[sel.selectedIndex].text : "",
     doanhThu: get("doanhthu"),
     nguoiCham: get("nguoicham"),
+    kenh: get("kenh"),
     kieuKetQua: HO_SO[hoSo(ds)].t,
     diemTruCot: ds.map(x => ({truCot: TRU[x.i].ten, diem: x.d, toiDa: 8, mucDo: TEN_MUC[mucDo(x.d)]})),
     tongDiem: ds.reduce((s, x) => s + x.d, 0),
@@ -617,6 +619,7 @@ $("form").addEventListener("submit", async e => {
   if (!d.nganh) return loi.textContent = "Anh chị điền ngành kinh doanh.";
   if (!d.soNguoiBan) return loi.textContent = "Anh chị chọn số nhân viên kinh doanh.";
   if (!d.doanhThu) return loi.textContent = "Anh chị chọn doanh thu trung bình mỗi tháng.";
+  if (!d.kenh) return loi.textContent = "Anh chị chọn kênh bán hàng chính.";
   if (!d.nguoiCham) return loi.textContent = "Anh chị chọn người đánh giá.";
   if (!d.dongYLienHe) return loi.textContent = "Anh chị đánh dấu ô đồng ý để nhận kết quả.";
   loi.textContent = ""; nut.disabled = true; nut.textContent = "Đang gửi...";
