@@ -4,68 +4,154 @@
 import json
 
 TRU = [
- ("1", "Thị trường", "Market", "Bán gì, cho ai?",
-  ["Trụ cột này đứng đầu vì mọi việc phía sau đều dựa vào nó. Chưa rõ khách mục tiêu là ai thì không viết được cách tư vấn, không biết tuyển người thế nào, cũng không đặt được chỉ tiêu hợp lý.",
-   "Thị trường trả lời 4 việc: khách nào nên nhận và khách nào nên từ chối; bán gói nào, với lời hứa gì và giá bao nhiêu; vì sao khách chọn công ty thay vì nơi khác; khách đến từ đâu và được giao cho nhân viên kinh doanh nào."],
-  ["Nhân viên kinh doanh nhận mọi khách hỏi, kể cả khách không hợp, rồi mất nhiều ngày theo một khách không bao giờ mua.",
+ [
+  "1",
+  "Thị trường",
+  "Market",
+  "Bán gì, cho ai?",
+  [
+   "Trụ cột này đứng đầu vì mọi việc phía sau đều dựa vào nó. Chưa rõ khách mục tiêu là ai thì không viết được cách tư vấn, không biết tuyển người thế nào, cũng không đặt được chỉ tiêu hợp lý.",
+   "Thị trường trả lời 5 việc: khách nào nên nhận và khách nào nên từ chối; bán gói nào, với lời hứa gì và giá bao nhiêu; vì sao khách chọn công ty thay vì nơi khác; khách đến từ đâu; và nếu bán qua đại lý hay cộng tác viên thì chọn ai, giá theo cấp ra sao."
+  ],
+  [
+   "Nhân viên kinh doanh nhận mọi khách hỏi, kể cả khách không hợp, rồi mất nhiều ngày theo một khách không bao giờ mua.",
    "Mỗi người báo một mức giá, giảm giá theo ý mình để chốt cho kịp.",
    "Hỏi 3 nhân viên kinh doanh vì sao khách nên chọn công ty thì nhận về 3 câu trả lời khác nhau.",
-   "2 người cùng chăm một khách, rồi tranh nhau khi khách đóng phí."]),
- ("2", "Quy trình", "Method", "Bán thế nào?",
-  ["Quy trình là các chặng khách đi qua, từ tin nhắn đầu tiên tới khi đóng phí, rồi quay lại mua tiếp và giới thiệu người khác. Mỗi chặng ghi rõ khi nào khách được chuyển sang chặng sau, nhân viên kinh doanh làm gì và nói gì ở chặng đó.",
-   "Quy trình chỉ có giá trị khi cả phòng làm theo hằng ngày. Bản quy trình in đẹp mà không ai dùng thì phòng vẫn bán theo thói quen của từng người. Vì vậy trụ cột này đi kèm quy tắc khi tư vấn khách: nhân viên kinh doanh được nói gì, không được hứa gì, và giữ vai người cố vấn cho khách thế nào thay vì nài khách mua."],
-  ["Khách nhắn tin buổi tối, sáng hôm sau mới có người trả lời.",
+   "2 người cùng chăm một khách, rồi tranh nhau khi khách đóng phí."
+  ]
+ ],
+ [
+  "2",
+  "Quy trình",
+  "Method",
+  "Bán thế nào?",
+  [
+   "Quy trình là các chặng khách đi qua, từ tin nhắn đầu tiên tới khi thu đủ tiền, rồi quay lại mua tiếp và giới thiệu người khác. Mỗi chặng ghi rõ khi nào khách được chuyển sang chặng sau, nhân viên kinh doanh làm gì và nói gì ở chặng đó.",
+   "Quy trình chỉ có giá trị khi cả phòng làm theo hằng ngày. Bản quy trình in đẹp mà không ai dùng thì phòng vẫn bán theo thói quen của từng người. Vì vậy trụ cột này đi kèm quy tắc khi tư vấn khách: nhân viên kinh doanh được nói gì, không được hứa gì, và giữ vai người cố vấn cho khách thế nào thay vì nài khách mua."
+  ],
+  [
+   "Khách nhắn tin buổi tối, sáng hôm sau mới có người trả lời.",
    "Người giỏi bán được, nhưng không ai nói được người đó làm khác người khác ở đâu.",
-   "Khách nói “để suy nghĩ thêm” là nhân viên kinh doanh dừng, không ai hỏi lại.",
-   "Khách đã đóng phí thì không ai liên lạc nữa, cho tới khi khách tự quay lại hoặc không bao giờ quay lại."]),
- ("3", "Nhân sự", "Manpower", "Ai bán?",
-  ["Trụ cột này lo cho từng người trong phòng: tuyển ai, người mới làm gì trong 90 ngày đầu, ai kèm, năng lực được chấm thế nào, người giỏi đi lên đâu và vì sao họ ở lại.",
-   "Nhân sự rất dễ nhầm với trụ cột Quản lý. Cách phân biệt: Nhân sự nhìn từng người được tuyển, được dạy, được kèm và đi lên thế nào. Quản lý nhìn cả phòng được điều hành ra sao."],
-  ["Tuyển theo cảm giác sau một buổi nói chuyện.",
+   "Khách nói \"để suy nghĩ thêm\" là nhân viên kinh doanh dừng, không ai hỏi lại.",
+   "Khách đã đóng phí thì không ai liên lạc nữa, cho tới khi khách tự quay lại hoặc không bao giờ quay lại."
+  ]
+ ],
+ [
+  "3",
+  "Nhân sự",
+  "Manpower",
+  "Ai bán?",
+  [
+   "Trụ cột này lo cho từng người trong phòng: tuyển ai, người mới làm gì trong 90 ngày đầu, ai kèm, năng lực được chấm thế nào, người giỏi đi lên đâu và vì sao họ ở lại.",
+   "Nhân sự rất dễ nhầm với trụ cột Điều hành. Cách phân biệt: Nhân sự nhìn từng người được tuyển, được dạy, được kèm và đi lên thế nào. Điều hành nhìn cả phòng được điều hành ra sao."
+  ],
+  [
+   "Tuyển theo cảm giác sau một buổi nói chuyện.",
    "Người mới được giao khách ngay tuần đầu, tự học bằng cách ngồi nghe người cũ.",
    "Không ai nói được một nhân viên kinh doanh giỏi cần những năng lực nào, nên đánh giá cuối năm chỉ dựa vào doanh số.",
-   "Người giỏi nghỉ việc vì không thấy đường đi lên."]),
- ("4", "Tài chính", "Money", "Trả và chi thế nào?",
-  ["Cách trả tiền quyết định nhân viên kinh doanh ưu tiên việc gì. Hoa hồng chỉ tính trên đơn chốt thì nhân viên kinh doanh dồn sức vào khách sắp mua, ít ai chăm khách cần theo lâu. Chỉ tiêu đặt quá cao thì cả phòng biết trước là không đạt, và thôi cố gắng từ giữa tháng.",
-   "Trụ cột này có 2 phần. Phần thứ nhất là thu nhập của nhân viên kinh doanh: lương cứng và phần thay đổi, hoa hồng và thưởng, thu nhập theo mức đạt chỉ tiêu, khen thưởng ngoài tiền, quy chế khi 2 người cùng chăm một khách hoặc khi có người nghỉ. Phần thứ hai là chi phí của cả phòng: phòng tiêu bao nhiêu, vào đâu, để có một khách đóng phí.",
-   "Giá bán và chính sách bán hàng không nằm ở trụ cột này. Giá là một phần của gói bán nên thuộc trụ cột Thị trường."],
-  ["Nhân viên kinh doanh không tự tính được tháng này mình nhận bao nhiêu.",
+   "Người giỏi nghỉ việc vì không thấy đường đi lên."
+  ]
+ ],
+ [
+  "4",
+  "Ngân sách",
+  "Money",
+  "Trả và chi thế nào?",
+  [
+   "Cách trả tiền quyết định nhân viên kinh doanh ưu tiên việc gì. Hoa hồng chỉ tính trên đơn chốt thì nhân viên kinh doanh dồn sức vào khách sắp mua, ít ai chăm khách cần theo lâu. Chỉ tiêu đặt quá cao thì cả phòng biết trước là không đạt, và thôi cố gắng từ giữa tháng.",
+   "Trụ cột này có 2 phần. Phần thứ nhất là thu nhập của nhân viên kinh doanh: lương cứng và phần thay đổi, hoa hồng và thưởng, thu nhập theo mức đạt chỉ tiêu, khen thưởng ngoài tiền, quy chế khi 2 người cùng chăm một khách hoặc khi có người nghỉ. Phần thứ hai là chi phí của cả phòng, gồm cả khuyến mãi: phòng tiêu bao nhiêu, vào đâu, để có một khách đóng phí.",
+   "Giá bán và chính sách bán hàng không nằm ở trụ cột này. Giá là một phần của gói bán nên thuộc trụ cột Thị trường. Ngân sách chỉ giữ phần tiền phòng kinh doanh được chi: trả cho nhân viên kinh doanh và chi phí của phòng."
+  ],
+  [
+   "Nhân viên kinh doanh không tự tính được tháng này mình nhận bao nhiêu.",
    "Chính sách thưởng đổi giữa chừng mà không báo trước.",
    "Người chủ không biết mỗi khách đóng phí tốn bao nhiêu chi phí bán hàng.",
-   "Có người nghỉ việc là có tranh chấp: khách đang chăm giao cho ai, hoa hồng đơn sau tính cho ai."]),
- ("5", "Công cụ", "Material", "Bán bằng công cụ nào?",
-  ["Công cụ gồm nơi giữ dữ liệu khách (thường gọi là CRM), các kênh liên lạc, biểu mẫu, tài liệu gửi khách, trợ lý AI, bàn điều khiển cho quản lý và quyền truy cập.",
-   "Công cụ đứng thứ 5, sau Thị trường, Quy trình, Nhân sự và Tài chính. Lý do: công cụ chạy theo cách bán, không phải ngược lại. Chọn phần mềm trước rồi bắt cả phòng bán theo phần mềm là cách tốn tiền nhất mà vẫn không ra kết quả.",
-   "Đội ngũ Coach Duy Nguyễn có một công cụ riêng tên Sales OS, dùng để theo dõi khách và việc của phòng kinh doanh. Sales OS chỉ là một phần của trụ cột này, không phải cả mô hình. Doanh nghiệp dùng phần mềm khác vẫn đạt được chuẩn của 7M."],
-  ["Thông tin khách nằm rải rác trong Zalo cá nhân của từng nhân viên kinh doanh.",
+   "Có người nghỉ việc là có tranh chấp: khách đang chăm giao cho ai, hoa hồng đơn sau tính cho ai."
+  ]
+ ],
+ [
+  "5",
+  "Công cụ",
+  "Material",
+  "Bán bằng công cụ nào?",
+  [
+   "Công cụ gồm nơi giữ dữ liệu khách (thường gọi là CRM), các kênh liên lạc, biểu mẫu, tài liệu gửi khách, trợ lý AI, bàn điều khiển cho quản lý và quyền truy cập.",
+   "Công cụ nằm sau Thị trường và Quy trình. Lý do: công cụ chạy theo cách bán, không phải ngược lại. Chọn phần mềm trước rồi bắt cả phòng bán theo phần mềm là cách tốn tiền nhất mà vẫn không ra kết quả.",
+   "Đội ngũ Coach Duy Nguyễn có một công cụ riêng tên Sales OS, dùng để theo dõi khách và việc của phòng kinh doanh. Sales OS chỉ là một phần của trụ cột này, không phải cả mô hình. Doanh nghiệp dùng phần mềm khác vẫn đạt được chuẩn của 7M."
+  ],
+  [
+   "Thông tin khách nằm rải rác trong Zalo cá nhân của từng nhân viên kinh doanh.",
    "Nhân viên kinh doanh nghỉ là mất luôn lịch sử trao đổi với khách.",
    "Mỗi người tự soạn báo giá theo một mẫu riêng.",
-   "Quản lý muốn biết hôm nay có bao nhiêu khách mới thì phải hỏi từng người."]),
- ("6", "Chỉ số", "Measure", "Đo chỉ số nào?",
-  ["Có 2 loại chỉ số. Chỉ số kết quả cho biết chuyện đã xảy ra: doanh thu, tỷ lệ chốt, giá trị đơn, khách quay lại. Số liệu theo dõi hằng tuần cho biết chuyện sắp xảy ra: khách được trả lời nhanh hay chậm, bao nhiêu khách qua được từng chặng, việc hẹn với khách có làm đúng hạn không.",
+   "Quản lý muốn biết hôm nay có bao nhiêu khách mới thì phải hỏi từng người."
+  ]
+ ],
+ [
+  "6",
+  "Đo lường",
+  "Measure",
+  "Đo chỉ số nào?",
+  [
+   "Có 2 loại chỉ số. Chỉ số kết quả cho biết chuyện đã xảy ra: doanh thu, tỷ lệ chốt, giá trị đơn, khách quay lại. Số liệu theo dõi hằng tuần cho biết chuyện sắp xảy ra: khách được trả lời nhanh hay chậm, bao nhiêu khách qua được từng chặng, việc hẹn với khách có làm đúng hạn không.",
    "Đợi cuối tháng nhìn doanh thu thì đã muộn để sửa. Nhìn số liệu theo dõi hằng tuần thì vẫn còn kịp.",
-   "Ngoài 2 loại chỉ số, trụ cột này còn gồm mục tiêu doanh số và cách chia, chỉ số riêng của từng vị trí (KPI), mục tiêu cải tiến của cả phòng trong quý (OKR), dự báo doanh thu và báo cáo."],
-  ["Chỉ tiêu năm chia đều cho 12 tháng, không theo mùa bán và năng lực thật của phòng.",
+   "Ngoài 2 loại chỉ số, trụ cột này còn gồm mục tiêu doanh số và cách chia, chỉ số riêng của từng vị trí (KPI), mục tiêu cải tiến của quý, dự báo doanh thu và báo cáo."
+  ],
+  [
+   "Chỉ tiêu năm chia đều cho 12 tháng, không theo mùa bán và năng lực thật của phòng.",
    "Cuối tháng mới biết thiếu doanh số.",
    "Báo cáo nộp đều nhưng không ai dùng để ra quyết định.",
-   "Người chủ hỏi tháng này thu về bao nhiêu thì không ai trả lời được bằng một con số."]),
- ("7", "Quản lý", "Management", "Điều hành ra sao?",
-  ["Quản lý là trụ cột giữ cho 6 trụ cột trước chạy cùng nhau mỗi ngày. Trụ cột này trả lời: quản lý trực tiếp làm gì mỗi ngày, họp những buổi nào và mỗi buổi gồm gì, ai lo cho cả phòng được kèm đều đặn, quyết định nào quản lý tự làm và quyết định nào phải lên người chủ, phòng giữ những chuẩn gì.",
-   "Trụ cột này còn một việc hay bị bỏ qua: đưa cách làm mới vào dùng thật. Viết quy trình mới, mua công cụ mới thì dễ. Khó là sang tuần thứ 6 cả phòng vẫn làm theo. Vì vậy mỗi lần đổi cách làm, quản lý đếm xem mỗi tuần có bao nhiêu người đang làm theo, và kèm từng người tới khi phần lớn phòng làm theo."],
-  ["Quản lý là nhân viên kinh doanh giỏi nhất phòng, và dành phần lớn thời gian đi bán thay cho các nhân viên khác.",
+   "Người chủ hỏi tháng này thu về bao nhiêu thì không ai trả lời được bằng một con số."
+  ]
+ ],
+ [
+  "7",
+  "Điều hành",
+  "Management",
+  "Điều hành ra sao?",
+  [
+   "Điều hành là trụ cột giữ cho 6 trụ cột trước chạy cùng nhau mỗi ngày. Trụ cột này trả lời: quản lý trực tiếp làm gì mỗi ngày, họp những buổi nào và mỗi buổi gồm gì, quyết định nào quản lý tự làm và quyết định nào phải lên người chủ, phòng giữ những chuẩn gì, và khách được chia cho ai khi 2 người cùng muốn nhận.",
+   "Trụ cột này còn một việc hay bị bỏ qua: đưa cách làm mới vào dùng thật. Viết quy trình mới, mua công cụ mới thì dễ. Khó là sang tuần thứ 6 cả phòng vẫn làm theo. Vì vậy mỗi lần đổi cách làm, quản lý đếm xem mỗi tuần có bao nhiêu người đang làm theo, và kèm từng người tới khi phần lớn phòng làm theo."
+  ],
+  [
+   "Quản lý là nhân viên kinh doanh giỏi nhất phòng, và dành phần lớn thời gian đi bán thay cho các nhân viên khác.",
    "Họp tuần chỉ để đọc lại số, họp xong không ai nhận việc gì.",
    "Việc gì cũng chờ người chủ quyết.",
    "Quy trình mới áp dụng được 2 tuần rồi mọi người quay lại cách cũ.",
-   "Phòng kinh doanh và bộ phận làm dịch vụ đổ lỗi cho nhau khi khách phàn nàn."]),
+   "Phòng kinh doanh và bộ phận làm dịch vụ đổ lỗi cho nhau khi khách phàn nàn."
+  ]
+ ]
 ]
-NHOM = {"1": "n0", "2": "n0", "3": "n1", "4": "n1", "5": "n2", "6": "n2", "7": "n2"}
-HOI7 = [("Thị trường", "hỏi riêng từng nhân viên kinh doanh khách nào không nên nhận, mọi người có trả lời giống nhau không?"),
- ("Quy trình", "tuần này cả phòng có đang làm theo một quy trình bán chung không?"),
- ("Nhân sự", "người mới có được một người cụ thể kèm trong 90 ngày đầu không?"),
- ("Tài chính", "mỗi nhân viên kinh doanh có tự tính được thu nhập tháng này của mình không?"),
- ("Công cụ", "một nhân viên kinh doanh nghỉ việc, công ty có giữ được toàn bộ thông tin khách người đó đang chăm không?"),
- ("Chỉ số", "giữa tháng, phòng đã biết tháng này đủ hay thiếu doanh số chưa?"),
- ("Quản lý", "họp tuần của phòng có kết thúc bằng việc giao cho từng người không?")]
+NHOM = {"1": "n0", "2": "n0", "3": "n1", "4": "n1", "5": "n1", "6": "n2", "7": "n2"}
+HOI7 = [
+ [
+  "Thị trường",
+  "hỏi riêng từng nhân viên kinh doanh khách nào không nên nhận, mọi người có trả lời giống nhau không?"
+ ],
+ [
+  "Quy trình",
+  "tuần này cả phòng có đang làm theo một quy trình bán chung không?"
+ ],
+ [
+  "Nhân sự",
+  "người mới có được một người cụ thể kèm trong 90 ngày đầu không?"
+ ],
+ [
+  "Ngân sách",
+  "mỗi nhân viên kinh doanh có tự tính được thu nhập tháng này của mình không?"
+ ],
+ [
+  "Công cụ",
+  "một nhân viên kinh doanh nghỉ việc, công ty có giữ được toàn bộ thông tin khách người đó đang chăm không?"
+ ],
+ [
+  "Đo lường",
+  "giữa tháng, phòng đã biết tháng này đủ hay thiếu doanh số chưa?"
+ ],
+ [
+  "Điều hành",
+  "họp tuần của phòng có kết thúc bằng việc giao cho từng người không?"
+ ]
+]
 PDF = '<a class="nut nut-vien" href="tai-lieu/gioi-thieu-mo-hinh-7m.pdf" download>Tải PDF đầy đủ về Mô hình 7M <span class="mt" aria-hidden="true">&darr;</span></a>'
 CHAM = '<a class="nut nut-v" href="danh-gia-phong-kinh-doanh/">Tự chấm điểm phòng kinh doanh của bạn <span class="mt" aria-hidden="true">&rarr;</span></a>'
 
@@ -90,7 +176,9 @@ def trang(dau_trang, banh_xe, nhom_html):
     <p>Khi doanh số chững lại, 2 cách dễ nghĩ tới nhất là tuyển thêm nhân viên kinh doanh hoặc mua một phần mềm mới. Cả 2 cách đều tốn tiền, và nhiều khi doanh số vẫn đứng yên.</p>
     <p>Lý do là phòng kinh doanh không chạy bằng một thứ. Nó chạy bằng nhiều thứ nối vào nhau: bán cho ai, bán theo các bước nào, ai bán, nhân viên kinh doanh được trả thế nào, dùng công cụ gì, đo bằng con số nào và ai điều hành. Một chỗ lỏng thì cả phòng chậm theo.</p>
     <p>Mua phần mềm khi chưa có quy trình thì phần mềm chỉ ghi lại sự lộn xộn nhanh hơn. Tuyển thêm người khi chưa có cách kèm thì người mới học lại đúng những thói quen cũ của người cũ. Tăng hoa hồng khi chưa rõ khách mục tiêu thì nhân viên kinh doanh chạy theo mọi khách, kể cả khách không nên nhận.</p>
-    <p>Mô hình Phòng kinh doanh tiêu chuẩn 7M xếp những thứ đó thành 7 trụ cột. Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. Người chủ nhìn cả phòng kinh doanh trên một trang, biết chỗ nào đang lỏng, và sửa đúng những chỗ đó trước.</p>
+    <p>Mô hình Phòng kinh doanh tiêu chuẩn 7M xếp những thứ đó thành 7 trụ cột, chia vào 3 nhóm: Bán đúng cách (trụ cột 1 và 2), Nguồn lực đúng (trụ cột 3, 4 và 5), Quản lý đúng (trụ cột 6 và 7). Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. Người chủ nhìn cả phòng kinh doanh trên một trang, biết chỗ nào đang lỏng, và sửa đúng những chỗ đó trước.</p>
+    <p>7M lấy cảm hứng từ khung 6M (Man, Machine, Method, Material, Measurement, Mother Nature), vốn là khung tìm nguyên nhân lỗi trong sản xuất của Ishikawa. Mô hình giữ 4 chữ hợp với phòng kinh doanh, bỏ 2 chữ không hợp và thêm 3 chữ mà phòng kinh doanh cần: Thị trường, Ngân sách và Điều hành.</p>
+    <p><b>Phạm vi áp dụng.</b> Mô hình dùng được cho bán tư vấn, bán cho doanh nghiệp và bán qua đại lý. Bán đi tuyến hàng tiêu dùng, mở bán bất động sản theo đợt và bán trên sàn với số đơn lớn chỉ dùng được một phần: doanh nghiệp giữ những mục hợp với cách bán của mình và bỏ mục không hợp.</p>
   </div>
 </section>
 <section class="phan bd phan-sang" id="mo-hinh-7m">
@@ -98,8 +186,8 @@ def trang(dau_trang, banh_xe, nhom_html):
     <div class="m7-hinh">{banh_xe}</div>
     <div>
       <p class="mono">7 trụ cột</p>
-      <h2>Xếp theo đúng thứ tự dựng một phòng kinh doanh</h2>
-      <p class="m7-dan">Trước hết phải rõ bán gì, cho ai. Có khách mục tiêu rồi mới viết được cách bán. Có cách bán rồi mới biết cần tuyển người thế nào, trả họ ra sao. Công cụ đến sau, vì công cụ chạy theo cách bán. Chỉ số cho biết cả phòng có đang chạy đúng không. Quản lý giữ cho mọi thứ chạy đều mỗi ngày.</p>
+      <h2>Đọc từ ngoài vào trong: bán gì cho ai, rồi người và nguồn lực, rồi đo và điều hành</h2>
+      <p class="m7-dan">Đây là thứ tự để hiểu mô hình. Trước hết phải rõ bán gì, cho ai. Rồi tới người và nguồn lực để bán. Cuối cùng là cách đo và điều hành cả phòng. Khi dựng phòng thì các trụ cột làm song song, vì mục tiêu doanh số và vai trò quản lý phải có từ đầu, trước cả lúc tuyển người.</p>
       {nhom_html}
       <p class="m7-nut">{PDF}</p>
     </div>
@@ -119,7 +207,7 @@ def trang(dau_trang, banh_xe, nhom_html):
     <h2>7 câu, mỗi câu ứng với một trụ cột</h2>
     <p>Trả lời theo việc phòng đang làm thật trong tháng này, không theo việc phòng định làm.</p>
     <ol class="hoi7">{hoi}</ol>
-    <p>Câu nào trả lời “chưa” thì trụ cột đó cần chấm kỹ trước. Nhiều câu cùng “chưa” thì bắt đầu từ trụ cột có số nhỏ hơn, vì trụ cột sau dựa vào trụ cột trước. Đây chỉ là cách đoán nhanh, chưa thay được việc chấm theo 51 chuẩn.</p>
+    <p>Câu nào trả lời “chưa” thì trụ cột đó cần chấm kỹ trước. Nhiều câu cùng “chưa” thì chọn trước trụ cột đang làm mất khách hoặc mất tiền nhiều nhất. Đây chỉ là cách đoán nhanh, chưa thay được việc chấm theo 51 chuẩn.</p>
   </div>
 </section>
 <section class="phan bd hoa-van" id="bat-dau">

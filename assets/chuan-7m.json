@@ -26,7 +26,7 @@
 ],
 [
 "1.7",
-"Quy tắc chia khách"
+"Đối tác bán hàng"
 ]
 ],
 "2": [
@@ -36,7 +36,7 @@
 ],
 [
 "2.2",
-"Tiếp nhận và phản hồi khách"
+"Tiếp nhận khách và liên hệ lần đầu"
 ],
 [
 "2.3",
@@ -52,7 +52,7 @@
 ],
 [
 "2.6",
-"Khách đồng ý mua, chốt lịch hẹn và theo sát"
+"Giúp khách quyết định và theo sát"
 ],
 [
 "2.7",
@@ -64,7 +64,11 @@
 ],
 [
 "2.9",
-"Quy tắc khi tư vấn khách"
+"Quy tắc khi tư vấn và quy định pháp luật của ngành"
+],
+[
+"2.10",
+"Hợp đồng, thu tiền và công nợ"
 ]
 ],
 "3": [
@@ -108,19 +112,15 @@
 ],
 [
 "4.3",
-"Thu nhập theo mức đạt chỉ tiêu"
+"Thi đua và ghi nhận"
 ],
 [
 "4.4",
-"Khen thưởng ngoài tiền"
-],
-[
-"4.5",
 "Cơ cấu chi phí phòng kinh doanh"
 ],
 [
-"4.6",
-"Quy chế khách chung và khi nhân sự nghỉ"
+"4.5",
+"Chia hoa hồng khi khách chung và khi nhân sự nghỉ"
 ]
 ],
 "5": [
@@ -172,7 +172,7 @@
 ],
 [
 "6.5",
-"OKR của phòng"
+"Mục tiêu cải tiến của quý"
 ],
 [
 "6.6",
@@ -194,27 +194,27 @@
 ],
 [
 "7.3",
-"Lịch kèm cặp cả phòng"
-],
-[
-"7.4",
 "Phân quyền và ra quyết định"
 ],
 [
-"7.5",
+"7.4",
 "Văn hóa phòng kinh doanh"
 ],
 [
-"7.6",
+"7.5",
 "Quản lý sự thay đổi"
 ],
 [
-"7.7",
+"7.6",
 "Phối hợp với phòng ban khác"
 ],
 [
-"7.8",
+"7.7",
 "Cải tiến liên tục"
+],
+[
+"7.8",
+"Quy tắc chia khách"
 ]
 ]
 }

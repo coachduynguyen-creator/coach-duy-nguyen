@@ -202,12 +202,12 @@ button{font:inherit;cursor:pointer}
     <div><span class="so">1</span><b>Điểm của từng trụ cột</b><span>Thấy rõ trụ cột nào tốt, trụ cột nào mới làm được một phần, trụ cột nào cần sửa.</span></div>
     <div><span class="so">2</span><b>Tối đa 3 việc nên sửa trước</b><span>Xếp theo thứ tự nên làm, kèm việc đầu tiên cụ thể cho từng trụ cột.</span></div>
     <div><span class="so">3</span><b>Nhận xét theo điểm của anh chị</b><span>Có 6 nhóm kết quả, mỗi nhóm một lời nhận xét, kèm nhận xét cho từng trụ cột.</span></div>
-    <div><span class="so">4</span><b>Tài liệu giới thiệu mô hình 7M</b><span>12 trang, giải thích từng trụ cột để anh chị đọc cùng đội ngũ.</span></div>
+    <div><span class="so">4</span><b>Tài liệu giới thiệu mô hình 7M</b><span>13 trang, giải thích từng trụ cột để anh chị đọc cùng đội ngũ.</span></div>
    </div>
   </div>
   <div class="sec">
    <h2>7 trụ cột của một phòng kinh doanh</h2>
-   <p class="sub">Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. Thứ tự trụ cột cũng là thứ tự xây dựng, vì trụ cột sau dựa vào trụ cột trước.</p>
+   <p class="sub">Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. 7 trụ cột chia vào 3 nhóm: Bán đúng cách (trụ cột 1 và 2), Nguồn lực đúng (3, 4 và 5), Quản lý đúng (6 và 7). Thứ tự đọc từ ngoài vào trong: bán gì cho ai, rồi người và nguồn lực, rồi cách đo và điều hành.</p>
    <div class="tru7" id="tru7"></div>
   </div>
   <div class="sec">
@@ -314,9 +314,9 @@ const TRU = [
   ["Ai nhận được trước thì giữ, hoặc chia theo cảm tính", "Có quy tắc chia khách, nhưng chưa rõ hoặc chưa phải ai cũng biết", "Có quy tắc chia khách rõ ràng, nhân viên nào cũng biết"]],
   goi:["", "", "", "Tính cả trường hợp khách quen muốn chọn nhân viên tư vấn."],
   lam:"để cả nhóm cùng nói được khách của công ty là ai, giảm giá tới đâu và vì sao khách chọn công ty",
-  kq:["Nhiều khả năng mỗi nhân viên đang tự chọn khách theo cảm giác, nên mất thời gian với những khách khó mua. Mỗi người giảm giá một kiểu thì công ty mất lãi, và khách cũ biết mình mua giá cao hơn sẽ thấy bất công.",
+  kq:["Có vẻ mỗi nhân viên đang tự chọn khách theo cảm giác, nên mất thời gian với những khách khó mua. Mỗi người giảm giá một kiểu thì công ty mất lãi, và khách cũ biết mình mua giá cao hơn sẽ thấy bất công.",
       "Cả nhóm đã nghĩ về khách và giá khá giống nhau, nhưng chưa ai viết ra giấy, nên mỗi người hiểu lệch một chút.",
-      "Cả nhóm cùng nói được khách của công ty là ai, vì sao khách chọn công ty và giảm giá tới đâu."],
+      "Cả nhóm cùng nói được khách của công ty là ai, vì sao khách chọn công ty, và giảm giá tới đâu."],
   dau:["Ngồi với cả nhóm viết ra 1 trang: khách nào nên bán, khách nào không nên bán, và giảm giá tối đa bao nhiêu.",
        "Mỗi người viết ra điều mình đang nghĩ về khách và giá. Đem ra so sánh rồi sửa lại cho giống nhau tới khi ai cũng đồng ý."]},
  {ten:"Quy trình", anh:"Method", hoi:"Bán thế nào?",
@@ -334,32 +334,32 @@ const TRU = [
   ["Chưa có lịch chăm sóc, khách cần gì thì tự liên hệ", "Có chăm sóc, nhưng tùy từng nhân viên", "Có lịch chăm sóc định sẵn, nhân viên làm đúng lịch"]],
   goi:["", "Xem lại 5 khách bất kỳ trong tuần vừa rồi để chấm.", "", ""],
   lam:"viết ra từng bước bán hàng, rồi kèm từng người cho tới khi cả nhóm bán theo đúng các bước đó",
-  kq:["Nhiều khả năng mỗi nhân viên bán một kiểu, nên doanh thu trông vào vài người giỏi. Khách nói “để suy nghĩ thêm” thường không ai gọi lại, và khách đã mua cũng ít được hỏi thăm.",
+  kq:["Có vẻ mỗi nhân viên bán một kiểu, nên doanh thu trông vào vài người giỏi. Khách nói “để suy nghĩ thêm” thường không ai gọi lại, và khách đã mua cũng ít được hỏi thăm.",
       "Các bước đã có nhưng chưa phải ai cũng làm theo, nhất là bước hỏi lại khách đang cân nhắc và bước chăm sóc khách đã mua.",
       "Cả nhóm bán theo cùng các bước. Khách đang cân nhắc và khách đã mua đều được gọi lại đúng hẹn."],
   dau:["Hỏi người bán giỏi nhất làm từng việc gì, từ lúc khách hỏi tới lúc khách mua. Viết thành các bước rồi cho cả nhóm làm thử.",
        "Chọn 1 bước hay bị bỏ nhất, hướng dẫn cả nhóm làm đúng bước đó trong 2 tuần."]},
  {ten:"Nhân sự", anh:"Manpower", hoi:"Ai bán?",
   danhGia:"Công ty chọn nhân viên kinh doanh dựa vào gì, ai kèm người mới, và người giỏi có biết mình làm tới đâu thì được lên chức không.",
-  viSao:"Tuyển sai hoặc không kèm cặp thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy mình lên được vị trí nào thì cũng nghỉ.",
+  viSao:"Tuyển sai hoặc không kèm thì người mới nghỉ sớm, công ty tốn công tuyển lại từ đầu. Người giỏi không thấy mình lên được vị trí nào thì cũng nghỉ.",
   cau:[
   "Công ty tuyển nhân viên kinh doanh dựa vào đâu?",
-  "Nhân viên kinh doanh mới được kèm cặp thế nào?",
+  "Nhân viên kinh doanh mới được kèm thế nào?",
   "Công ty đào tạo kỹ năng cho nhân viên kinh doanh thế nào?",
   "Nhân viên kinh doanh biết mình có thể lên vị trí nào, và cần làm được gì để lên?"],
   dap:[
   ["Chủ yếu theo cảm nhận lúc phỏng vấn", "Có kiểu người cần tuyển trong đầu người phỏng vấn, chưa viết ra", "Có bản mô tả người cần tuyển viết ra giấy và dùng khi phỏng vấn"],
-  ["Tự mày mò, ai rảnh thì chỉ", "Có người chỉ dẫn, nhưng không cố định hoặc chỉ vài tuần", "Có người kèm cặp cố định trong 2 tới 3 tháng đầu"],
+  ["Tự mày mò, ai rảnh thì chỉ", "Có người chỉ dẫn, nhưng không cố định hoặc chỉ vài tuần", "Có người kèm cố định trong 2 tới 3 tháng đầu"],
   ["Chưa đào tạo, nhân viên tự rút kinh nghiệm", "Có đào tạo, nhưng chưa theo danh sách kỹ năng cụ thể", "Có nội dung đào tạo rõ cho từng kỹ năng, nhân viên mới được đào tạo lần lượt"],
   ["Chưa có lộ trình, tăng lương tùy người chủ quyết", "Có lộ trình, nhưng chưa rõ cần đạt kết quả gì", "Biết rõ đạt kết quả nào thì được tăng lương, lên chức"]],
   goi:["", "", "", ""],
   lam:"viết ra kiểu người cần tuyển, ai kèm người mới trong bao lâu, và danh sách kỹ năng mỗi nhân viên cần có",
-  kq:["Nhiều khả năng công ty đang tuyển theo cảm nhận và để người mới tự mày mò, nên người mới dễ nghỉ sớm và công ty phải tuyển lại liên tục.",
-      "Đã có bản mô tả người cần tuyển hoặc người kèm cặp, nhưng làm chưa đủ. Người mới vẫn học mỗi người một kiểu.",
-      "Công ty biết tuyển người thế nào, ai kèm người mới, và nhân viên biết làm được gì thì lên chức."],
-  dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cặp cụ thể trong 90 ngày đầu.",
+  kq:["Có vẻ công ty đang tuyển theo cảm nhận và để người mới tự mày mò, nên người mới dễ nghỉ sớm và công ty phải tuyển lại liên tục.",
+      "Đã có bản mô tả người cần tuyển hoặc người kèm, nhưng làm chưa đủ. Người mới vẫn học mỗi người một kiểu.",
+      "Công ty biết tuyển người thế nào, ai kèm người mới, và nhân viên biết làm được gì thì được lên chức."],
+  dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cụ thể trong 90 ngày đầu.",
        "Liệt kê các kỹ năng một nhân viên bán hàng cần có, rồi đánh dấu từng người mới còn thiếu kỹ năng nào để kèm đúng chỗ đó."]},
- {ten:"Tài chính", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
+ {ten:"Ngân sách", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
   danhGia:"Nhân viên có tự tính được tháng này mình nhận bao nhiêu không? Thưởng có trả đúng như đã báo không? Người chủ có biết mất bao nhiêu tiền để có 1 khách mua không?",
   viSao:"Nhân viên làm việc gì nhiều là do tiền thưởng trả cho việc đó. Cách trả không rõ thì nhân viên chạy theo đơn dễ, bỏ khách khó, còn người chủ không biết khách nào lãi, khách nào lỗ.",
   cau:[
@@ -374,7 +374,7 @@ const TRU = [
   ["Chưa tính bao giờ", "Ước chừng được, nhưng chưa có con số rõ", "Biết con số cụ thể và theo dõi hằng tháng"]],
   goi:["Có thưởng, hoa hồng thì tính cả phần đó.", "", "", "Ví dụ: tháng trước chi 30 triệu cho quảng cáo, có 15 khách mua, vậy mỗi khách tốn khoảng 2 triệu."],
   lam:"sửa cách tính lương thưởng để nhân viên dành thời gian cho đúng khách và đúng việc",
-  kq:["Nhiều khả năng nhân viên chưa tự tính được mình nhận bao nhiêu, hoặc thưởng bị đổi giữa chừng, nên không còn tin lời công ty hứa. Người chủ chưa biết mất bao nhiêu tiền để có 1 khách mua.",
+  kq:["Có vẻ nhân viên chưa tự tính được mình nhận bao nhiêu, hoặc thưởng bị đổi giữa chừng, nên không còn tin lời công ty hứa. Người chủ chưa biết mất bao nhiêu tiền để có 1 khách mua.",
       "Cách trả lương thưởng đã có nhưng còn chỗ chưa rõ, ví dụ khách giao cho ai khi một nhân viên kinh doanh nghỉ việc.",
       "Nhân viên tự tính được thu nhập của mình, và người chủ biết mất bao nhiêu tiền để có 1 khách mua."],
   dau:["Viết lại cách tính thu nhập trên 1 trang, báo từ đầu kỳ và giữ nguyên tới cuối kỳ.",
@@ -394,12 +394,12 @@ const TRU = [
   ["Không biết, hoặc phải hỏi từng người", "Có tổng hợp, nhưng cuối tuần hoặc cuối tháng mới có", "Mở phần mềm hoặc bảng tính là thấy ngay trong ngày"]],
   goi:["Nơi chung có thể là phần mềm quản lý khách hàng hoặc một bảng tính chung.", "", "", ""],
   lam:"đưa thông tin khách và báo giá về một bảng tính chung, chọn công cụ theo cách bán của công ty",
-  kq:["Nhiều khả năng thông tin khách đang nằm trong Zalo và điện thoại của từng người, nên nhân viên kinh doanh nghỉ là công ty dễ mất khách. Quản lý muốn biết số khách mới thì phải đi hỏi.",
+  kq:["Có vẻ thông tin khách đang nằm trong Zalo và điện thoại của từng người, nên nhân viên kinh doanh nghỉ là công ty dễ mất khách. Quản lý muốn biết số khách mới thì phải đi hỏi.",
       "Đã có bảng tính hoặc phần mềm chung nhưng chưa phải ai cũng ghi đủ, báo giá vẫn mỗi người một mẫu.",
-      "Thông tin khách và báo giá đã nằm trong bảng tính chung, quản lý tự xem được."],
+      "Thông tin khách và báo giá nằm trong bảng tính chung, quản lý tự mở ra xem được."],
   dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Chưa có phần mềm thì dùng bảng tính chung trước.",
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
- {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
+ {ten:"Đo lường", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
   viSao:"Tới cuối tháng mới xem doanh số thì hụt rồi, không kịp làm gì. Mỗi tuần xem vài con số thì còn kịp sửa.",
   cau:[
@@ -414,14 +414,14 @@ const TRU = [
   ["Chưa theo dõi", "Thỉnh thoảng kiểm tra, thường khi có khách phàn nàn", "Xem hằng tuần, biết khách chờ trung bình bao lâu"]],
   goi:["Theo mùa vụ: tháng đông khách đặt cao hơn, tháng vắng đặt thấp hơn.", "", "Ví dụ: tuần này 40 khách hỏi, 15 khách hẹn gặp, 8 khách nhận báo giá, 3 khách mua.", ""],
   lam:"chọn vài con số xem mỗi tuần để sửa kịp trước cuối tháng",
-  kq:["Nhiều khả năng quản lý chỉ thấy doanh số khi tháng đã hết, nên biết hụt chỉ tiêu thì đã muộn.",
+  kq:["Có vẻ quản lý chỉ thấy doanh số khi tháng đã hết, nên biết hụt chỉ tiêu thì đã muộn.",
       "Đã xem số liệu nhưng chưa đều đặn hằng tuần, hoặc chỉ tiêu vẫn chia đều cho 12 tháng.",
       "Quản lý xem số liệu mỗi tuần và biết sớm tháng này đạt hay hụt."],
   dau:["Chọn 3 con số xem mỗi tuần, ví dụ số khách mới, số khách tới bước báo giá, và thời gian trả lời khách mới.",
        "Chia lại chỉ tiêu theo tháng cao điểm, tháng thấp điểm, rồi xem số liệu vào một buổi cố định mỗi tuần."]},
- {ten:"Quản lý", anh:"Management", hoi:"Điều hành ra sao?",
+ {ten:"Điều hành", anh:"Management", hoi:"Điều hành ra sao?",
   danhGia:"Quản lý dành thời gian cho việc gì, họp tuần có ra việc cụ thể không, và việc nào quản lý được tự quyết.",
-  viSao:"Quản lý là người nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
+  viSao:"Điều hành là việc nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
   cau:[
   "Thời gian của quản lý đang dành cho việc gì nhiều nhất?",
   "Họp tuần của phòng kinh doanh kết thúc thế nào?",
@@ -433,24 +433,24 @@ const TRU = [
   ["Chưa phân, việc gì cũng hỏi người chủ", "Có phân quyền, nhưng chưa rõ, hay phải hỏi lại", "Phân quyền rõ ràng, ai cũng biết"],
   ["Vài tuần sau mọi người lại làm như cũ", "Một số người làm theo, một số không", "Quản lý theo sát tới khi tất cả cùng làm theo"]],
   goi:["", "", "Công ty chưa có quản lý riêng: chấm theo việc nào nhân viên được tự quyết.", "Ví dụ: chuyển sang ghi khách vào phần mềm, đổi mẫu báo giá."],
-  lam:"sắp lịch họp tuần, lịch kèm cặp nhân viên kinh doanh và phân quyền để việc không dồn về người chủ",
-  kq:["Nhiều khả năng quản lý vẫn phải tự đi bán là chính, họp tuần xong không ai nhận việc, nên việc lại dồn về người chủ. Thường đây không phải lỗi của ai, mà vì công ty chưa xếp lịch kèm nhân viên và chưa nói rõ việc nào quản lý được tự quyết.",
-      "Đã có họp và kèm cặp nhân viên kinh doanh, nhưng lúc có lúc không, và quyền quyết định của quản lý chưa rõ.",
-      "Quản lý đang kèm cặp nhân viên kinh doanh, họp tuần ra việc cụ thể, biết rõ việc nào tự quyết."],
+  lam:"sắp lịch họp tuần, lịch kèm nhân viên kinh doanh và phân quyền để việc không dồn về người chủ",
+  kq:["Có vẻ quản lý vẫn phải tự đi bán là chính, họp tuần xong không ai nhận việc, nên việc lại dồn về người chủ. Thường đây không phải lỗi của ai, mà vì công ty chưa xếp lịch kèm nhân viên và chưa nói rõ việc nào quản lý được tự quyết.",
+      "Đã có họp và kèm nhân viên kinh doanh, nhưng lúc có lúc không, và quyền quyết định của quản lý chưa rõ.",
+      "Quản lý kèm nhân viên, họp tuần ra việc cụ thể, và biết rõ việc nào mình được tự quyết."],
   dau:["Đặt lịch họp tuần 30 phút, kết thúc bằng việc giao cho từng người, và tuần sau xem lại việc đó.",
        "Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm."]}
 ];
 
-// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
+// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự đọc của mô hình.
 const HO_SO = {
-  goc:{t:"Việc bán hàng đang dồn vào người chủ và vài người giỏi",
-   m:"Công ty chưa rõ bán cho ai và bán theo cách nào, nên mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
-  nguoi:{t:"Đã có cách bán, nhưng khó giữ người giỏi và đào tạo người mới",
-   m:"Bán cho ai và bán thế nào chưa phải chỗ yếu nhất. Chỗ cần sửa trước là chuyện tuyển người, kèm người mới và trả lương thưởng. Để lâu, người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
+  goc:{t:"Việc bán hàng có thể đang dồn vào người chủ và vài người giỏi",
+   m:"Theo phiếu, công ty chưa rõ bán cho ai và bán theo cách nào, nên có vẻ mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
+  nguoi:{t:"Công ty có vẻ đang khó giữ người bán giỏi và khó kèm người mới",
+   m:"Chuyện bán cho ai, bán thế nào chưa phải chỗ yếu nhất. Chỗ cần xem trước là tuyển người, kèm người mới và lương thưởng. Để lâu thì người bán giỏi dễ nghỉ, và cứ có người mới là phải dạy lại từ đầu."},
   so:{t:"Có người bán, nhưng chưa có số liệu để thấy khách đang kẹt ở đâu",
-   m:"Cách bán và đội ngũ chưa phải chỗ yếu nhất. Chỗ cần sửa trước là thông tin khách và số liệu. Muốn biết tình hình, người chủ vẫn phải hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
+   m:"Cách bán và đội ngũ chưa phải chỗ yếu nhất. Chỗ cần xem trước là thông tin khách và số liệu. Muốn biết tình hình thì người chủ vẫn phải đi hỏi từng người, và thường biết hụt chỉ tiêu khi đã muộn."},
   dieuhanh:{t:"Cách làm đã có, nhưng quản lý chưa kiểm tra mỗi tuần",
-   m:"6 trụ cột đầu đã có cách làm, nhưng quản lý chưa kiểm tra mỗi tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những gì đã làm dễ bị bỏ dở."},
+   m:"6 trụ cột đầu đã có cách làm, nhưng quản lý chưa kiểm tra mỗi tuần. Lúc này dễ quay lại cảnh việc gì cũng chờ người chủ, và những việc đã làm dễ bị bỏ dở."},
   chuadeu:{t:"Đã có cách làm, nhưng mỗi người làm một mức",
    m:"Không trụ cột nào ở mức cần sửa, nhưng nhiều việc làm chưa đủ hoặc mới vài người làm. Việc tiếp theo là để ai trong phòng cũng làm đúng như nhau, bắt đầu từ trụ cột đầu tiên còn chưa tốt."},
   vung:{t:"Phòng kinh doanh đã có nền tốt",
@@ -503,7 +503,7 @@ function capNhat() {
 function diem() { return TRU.map((p, i) => ({i, d: p.cau.reduce((s, q, j) => s + (st.a[i+"_"+j] || 0), 0)})); }
 
 function truocTien(ds) {
-  // Trụ cột sau dựa vào trụ cột trước: lấy trụ cột cần sửa theo thứ tự, thiếu thì thêm trụ cột mới làm được một phần, đủ 3.
+  // Lấy trụ cột cần sửa theo thứ tự đọc của mô hình, thiếu thì thêm trụ cột mới làm được một phần, đủ 3.
   const chon = [...ds.filter(x => mucDo(x.d) === 0), ...ds.filter(x => mucDo(x.d) === 1)];
   return (chon.length ? chon : [...ds].sort((a, b) => a.d - b.d || a.i - b.i)).slice(0, 3);
 }
@@ -524,7 +524,7 @@ function veKetQua() {
   $("hang").innerHTML = ds.map(x => { const m = mucDo(x.d); return `<div class="hang"><b>M${x.i+1} · ${TRU[x.i].ten}<small class="en">${TRU[x.i].anh}</small></b><div class="t"><i style="width:${x.d/8*100}%;background:${MAU[m]}"></i></div><span class="muc m${m}">${x.d}/8 · ${TEN_MUC[m]}</span></div>`; }).join("");
   const lam = truocTien(ds), coYeu = ds.some(x => mucDo(x.d) < 2);
   $("thutu").textContent = coYeu
-    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột mới làm được một phần. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì trụ cột sau dựa vào trụ cột trước."
+    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột mới làm được một phần. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì thứ tự đó đi từ chuyện bán gì cho ai tới chuyện đo và điều hành."
     : "Cả 7 trụ cột đều tốt. Nếu muốn làm tốt hơn nữa, bắt đầu từ trụ cột ít điểm nhất.";
   let UT = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.anh} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
   if (/chủ/i.test($("nguoicham").value)) UT = UT.replace(/bàn người chủ/g,"bàn của anh chị").replace(/Người chủ/g,"Anh chị").replace(/người chủ/g,"anh chị");
