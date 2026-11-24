@@ -32,13 +32,15 @@ async function danhGia7M(req, env, origin) {
   const ten = cat(d.ten, 100), sdt = cat(d.sdt, 20), email = cat(d.email, 120), a = cat(d.a, 28);
   if (ten.length < 2 || !/^(0\d{9}|\+?84\d{9})$/.test(sdt) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^[012]{28}$/.test(a))
     return tra(origin, 400, { success: false });
+  const NHAN_CT = { nguon: "Nguồn khách nhiều nhất", daiLy: "Bán qua đại lý", baoGia: "Từ hỏi tới báo giá", thuTien: "Từ đồng ý tới thu đủ tiền", nghiViec: "Số người nghỉ 12 tháng", luongCung: "Lương cứng", congCu: "Công cụ lưu khách", chiTieu: "Doanh số so với chỉ tiêu", chuChot: "Người chủ tự chốt" };
+  const ct = {}; for (const x in NHAN_CT) { const v = cat(d.ct && d.ct[x], 80); if (v) ct[x] = v; }
   const congTy = cat(d.congTy, 120), nganh = cat(d.nganh, 120), soNguoiBan = cat(d.soNguoiBan, 60), doanhThu = cat(d.doanhThu, 40), nguoiCham = cat(d.nguoiCham, 80), kenh = cat(d.kenh, 80);
   const g = gioVN(), p2 = n => String(n).padStart(2, "0");
   const ngay = p2(g.getUTCDate()) + "/" + p2(g.getUTCMonth() + 1) + "/" + g.getUTCFullYear();
   const ma = "7M-" + p2(g.getUTCDate()) + p2(g.getUTCMonth() + 1) + String(g.getUTCFullYear()).slice(2) + "-" +
     Array.from(crypto.getRandomValues(new Uint8Array(4)), x => "abcdefghjkmnpqrstuvwxyz23456789"[x % 31]).join("");
   const tong = [...a].reduce((s, x) => s + +x, 0);
-  const k = b64url(JSON.stringify({ hoTen: ten, congTy, nganh, soNguoiBan, doanhThu, nguoiCham, kenh, ngay, ma, a }));
+  const k = b64url(JSON.stringify({ hoTen: ten, congTy, nganh, soNguoiBan, doanhThu, nguoiCham, kenh, ngay, ma, a, ct }));
   const linkBaoCao = TRANG + "/danh-gia-phong-kinh-doanh/ket-qua/#k=" + k;
   const linkHoSo = TRANG + "/danh-gia-phong-kinh-doanh/ho-so-goi/#k=" + k;
 
@@ -46,7 +48,7 @@ async function danhGia7M(req, env, origin) {
     const q = {
       Name: ten, Phone: sdt, url_page: cat(d.url_page, 500), nguon_khach_hang: ["Web Lead Magnet"],
       Note: ["Phiếu tự đánh giá 7M · Mã " + ma, "Email: " + email, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
-        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Kênh bán chính: " + (kenh || "không ghi"), "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
+        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Kênh bán chính: " + (kenh || "không ghi"), "Người đánh giá: " + nguoiCham, ...Object.keys(ct).map(x => NHAN_CT[x] + ": " + ct[x]), "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
     };
     for (const u of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) if (cat(d[u], 200)) q[u] = cat(d[u], 200);
     const r = await fetch(PANCAKE + "?api_key=" + env.PANCAKE_KEY, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });
@@ -57,7 +59,7 @@ async function danhGia7M(req, env, origin) {
     const pdf = await fetch(TRANG + "/tai-lieu/gioi-thieu-mo-hinh-7m.pdf");
     const html = `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#222;max-width:560px">
 <p>Chào anh/chị ${thoat(ten)},</p>
-<p>Kết quả đánh giá phòng kinh doanh của anh chị đã sẵn sàng. Tổng điểm là ${tong}/56. Anh chị mở báo cáo chi tiết ở đường dẫn dưới đây, trong báo cáo có nút tải bản PDF:</p>
+<p>Kết quả đánh giá phòng kinh doanh của anh chị đã sẵn sàng. Tổng điểm là ${tong}/56. Anh chị mở báo cáo ở đường dẫn dưới đây, trong báo cáo có nút tải bản PDF:</p>
 <p><a href="${linkBaoCao}" style="display:inline-block;background:#111;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px">Mở báo cáo của anh chị</a></p>
 <p>Thư này có đính kèm tài liệu giới thiệu mô hình 7M để anh chị đọc cùng lúc.</p>
 <p>Đội ngũ sẽ gọi cho anh chị để cùng xem kết quả. Anh chị cần hỏi gì trước thì trả lời thư này.</p>
@@ -71,7 +73,7 @@ async function danhGia7M(req, env, origin) {
   };
   const kq = await Promise.allSettled([pancake(), thu()]);
   kq.forEach((x, i) => { if (x.status === "rejected") console.error(["pancake", "thu"][i], String(x.reason)); });
-  // Cả hai lỗi thì khách chưa để lại được gì: báo lỗi để trang cho bấm lại. Một việc chạy được là đủ: Pancake có thì sales thấy, thư đi thì khách có báo cáo.
+  // Cả 2 lỗi thì khách chưa để lại được gì: báo lỗi để trang cho bấm lại. Một việc chạy được là đủ: Pancake có thì sales thấy, thư đi thì khách có báo cáo.
   if (kq.every(x => x.status === "rejected")) return tra(origin, 502, { success: false });
   return tra(origin, 200, { success: true, ma, k });
 }

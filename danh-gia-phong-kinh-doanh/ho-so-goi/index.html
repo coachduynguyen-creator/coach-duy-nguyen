@@ -168,7 +168,11 @@ table.bang .ten{width:66mm;font-weight:400} table.bang td{vertical-align:top}
 .bia{break-after:page}
 .nut-pdf{position:fixed;right:16px;bottom:16px;z-index:9;background:#0C1628;color:#F4F1EA;border:0;border-radius:999px;padding:12px 20px;font:600 15px 'Be Vietnam Pro',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 @media screen{body{background:#E9E5DC}.giay{background:#fff;margin:16px auto}.bia{max-width:100%;height:auto;min-height:297mm}}
-@media print{.nut-pdf{display:none}}
+@media print{.nut-pdf,.nut-ai,.ai-hop{display:none}}
+.ai-hop{border:1px solid #cfc9bb;border-radius:6px;padding:8px 10px;margin:8px 0 10px;font-size:10.5pt}
+.ai-hop dl{display:grid;grid-template-columns:48mm 1fr;gap:2px 8px;margin:6px 0 0}.ai-hop dt{font-weight:700}.ai-hop dd{margin:0}
+.nut-ai{background:#0C1628;color:#F4F1EA;border:0;border-radius:999px;padding:9px 16px;font:600 13px 'Be Vietnam Pro',sans-serif;cursor:pointer;margin-top:8px}
+.ai-ban{width:100%;height:120px;margin-top:8px;font:12px/1.4 monospace;display:none}
 @media screen and (max-width:600px){table.bang{display:block;overflow-x:auto}.giay{padding:8px}.bia{padding:10mm 5mm;min-height:auto}.bia h1{font-size:30px}.cdn{white-space:nowrap}}
 </style><meta name="robots" content="noindex,nofollow"></head>
 <body>
@@ -676,7 +680,7 @@ const NHANH = [
  ["Để suy nghĩ thêm", "Dạ, anh vừa nói là muốn suy nghĩ thêm. Việc này liên quan tới cả phòng kinh doanh nên anh muốn chắc chắn, em hiểu. Điều anh đang phân vân nhất lúc này là gì ạ? Em gọi lại anh vào chiều thứ Hai hay sáng thứ Ba để nghe anh quyết định được không ạ? <i>Nếu khách chưa chắc cách làm có hợp không thì hỏi lại câu “Anh thấy hướng này có đúng chỗ công ty anh đang vướng không ạ?” ở bước Nói cách làm.</i>"],
  ["Chê đắt", "Dạ, anh vừa nói là phí cao hơn anh dự tính. Bỏ ra một khoản phí thì ai cũng muốn chắc là khoản đó đáng. Anh đang so sánh khoản phí này với điều gì ạ? <i>Tư vấn viên dừng lại, chờ khách nói hết, rồi hẹn ngày gọi lại.</i>"],
  ["Phải hỏi người khác", "Dạ, ngoài anh còn ai cùng quyết việc này ạ? Mình hẹn 1 cuộc gọi có cả anh và người đó nhé, chiều thứ Hai hay sáng thứ Ba ạ?"],
- ["Từ chối thẳng", "Dạ vâng, em cảm ơn anh đã dành thời gian. Báo cáo anh cứ giữ để tự làm theo kế hoạch 30 ngày ở Mục 5 của báo cáo ạ. <i>Tư vấn viên không hỏi thêm, chỉ ghi lại lý do khách từ chối, rồi mời khách vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027 (zalo.me/g/gadxc2qxwa1cuqx5op7t).</i>"]
+ ["Từ chối thẳng", "Dạ vâng, em cảm ơn anh đã dành thời gian. Báo cáo anh cứ giữ để xem lại các rủi ro trong báo cáo ạ. <i>Tư vấn viên không hỏi thêm, chỉ ghi lại lý do khách từ chối, rồi mời khách vào nhóm Zalo Workshop Chiến lược khác biệt hóa kinh doanh 2027 (zalo.me/g/gadxc2qxwa1cuqx5op7t).</i>"]
 ];
 const KHONG_NEN = [
   "Không hỏi lại điều khách đã điền trong phiếu, như vai trò và số nhân viên kinh doanh.",
@@ -719,6 +723,29 @@ const st = {a: {}};
 
 const tenM = i => `M${i+1} ${TRU[i].ten}`;
 
+const NHAN_CT = { nguon: "Nguồn khách nhiều nhất", daiLy: "Bán qua đại lý hoặc cộng tác viên", baoGia: "Từ lúc khách hỏi tới lúc có báo giá", thuTien: "Từ lúc khách đồng ý tới lúc thu đủ tiền", nghiViec: "Số nhân viên kinh doanh nghỉ trong 12 tháng", luongCung: "Lương cứng so với thu nhập nhân viên", congCu: "Công cụ lưu thông tin khách", chiTieu: "Doanh số tháng gần nhất so với chỉ tiêu", chuChot: "Phần doanh số do người chủ tự chốt" };
+const ctKhach = () => Object.keys(NHAN_CT).filter(x => KHACH.ct && KHACH.ct[x]).map(x => [NHAN_CT[x], KHACH.ct[x]]);
+// Gói dữ liệu để sales dán vào AI viết báo cáo chi tiết cho khách
+function goiAI() {
+  const ds = diem(), rr = ruiRo(), kh = khop(), L = [];
+  L.push("Bạn là chuyên viên tư vấn của Coach Duy Nguyễn. Hãy viết báo cáo chi tiết về phòng kinh doanh của khách dưới đây, chỉ dựa vào dữ liệu bên dưới.",
+    "Luật viết: tiếng Việt đời thường như người nói trong cuộc họp, xưng Duy, gọi khách là anh chị. Không dùng dấu gạch dài. Số đếm viết bằng chữ số. Không bịa số liệu ngoài dữ liệu bên dưới. Điều nào chỉ là suy đoán thì nói rõ là suy đoán. Không hứa kết quả và không bán chương trình trong báo cáo.",
+    "Với mỗi rủi ro, viết 4 phần: chuyện có thể xảy ra, vì sao hay xảy ra, dấu hiệu anh chị có thể thấy ở phòng bán hàng, và 1 câu để anh chị tự kiểm tra.", "",
+    "KHÁCH: " + [KHACH.congTy, KHACH.hoTen, KHACH.nguoiCham, "ngành " + KHACH.nganh, "số nhân viên kinh doanh " + KHACH.soNguoiBan, KHACH.doanhThu ? "doanh thu " + KHACH.doanhThu + " mỗi tháng" : "", KHACH.kenh ? "kênh " + KHACH.kenh : "", "ngày " + KHACH.ngay, "mã " + KHACH.ma].filter(Boolean).join(", "), "",
+    "ĐIỂM 7 TRỤ CỘT (mỗi trụ cột tối đa 8 điểm, dưới 4 cần sửa, 4 tới 6 mới làm một phần, 7 trở lên tốt):", ...ds.map(x => "- " + tenM(x.i) + ": " + x.d + "/8"), "",
+    "28 CÂU TRẢ LỜI:");
+  TRU.forEach((p, i) => p.cau.forEach((c, j) => L.push("- M" + (i + 1) + "." + (j + 1) + " " + c + " → " + p.dap[j][st.a[i + "_" + j]])));
+  L.push("", "RỦI RO MÁY ĐÃ NHẬN RA:", ...(rr.length ? rr.map((r, k) => (k + 1) + ". " + r.ten + ". " + r.ht + " Dấu hiệu: " + r.dh.join("; ") + ".") : ["Chưa có rủi ro rõ ràng."]), "",
+    "CHỖ KHÁCH TRẢ LỜI CHƯA KHỚP NHAU:", ...(kh.length ? kh.map(k => "- " + k.t) : ["Không có."]), "",
+    "THÔNG TIN KHÁCH ĐIỀN THÊM:", ...(ctKhach().length ? ctKhach().map(x => "- " + x[0] + ": " + x[1]) : ["Khách chưa điền. Sales hỏi thêm trong cuộc gọi rồi bổ sung vào đây."]));
+  return L.join("\n");
+}
+function chepAI() {
+  const t = goiAI(), ban = document.getElementById("aiBan"), nut = document.getElementById("nutAI");
+  const chon = () => { ban.value = t; ban.style.display = "block"; ban.select(); nut.textContent = "Chưa chép được, đã chọn sẵn, bấm Cmd+C"; };
+  (navigator.clipboard ? navigator.clipboard.writeText(t).then(() => { nut.textContent = "Đã chép, dán vào AI"; }, chon) : Promise.resolve(chon()));
+}
+
 function ve() {
   const ds = diem(), tong = ds.reduce((s, x) => s + x.d, 0), uu = truocTien(ds);
   const rr = ruiRo(), ba = rr.slice(0, 3), kh = khop().slice(0, 2), dx = deXuat(KHACH.soNguoiBan, hoSo(ds));
@@ -732,6 +759,8 @@ function ve() {
 <div class="noibo"><span>Chỉ dùng nội bộ · Không gửi khách</span><span>${KHACH.ma}</span></div>
 <div class="dau"><h1>${KHACH.congTy}</h1></div>
 <p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · Nhân viên kinh doanh: ${KHACH.soNguoiBan}${KHACH.kenh ? ` · Kênh: ${KHACH.kenh}` : ""}${KHACH.doanhThu ? ` · Doanh thu ${KHACH.doanhThu}/tháng` : ""} · ${tong}/56 điểm${yeu.length ? ` · Nên sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
+<div class="ai-hop"><b>Thông tin khách điền thêm</b>${ctKhach().length ? `<dl>${ctKhach().map(x => `<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join("")}</dl>` : `<p style="margin:4px 0 0">Khách chưa điền phần này. Hỏi thêm trong cuộc gọi.</p>`}
+<button class="nut-ai" id="nutAI" type="button">Chép gói dữ liệu cho AI viết báo cáo</button><textarea class="ai-ban" id="aiBan" readonly></textarea></div>
 
 <h3>Chương trình mời lần này: ${dx.ten}</h3>
 <p class="muted">${dx.phi}. ${dx.viSao} Gọi khoảng 15 phút, đi 2 bước. Bước 1, Hỏi kỹ: hỏi điều khách muốn trước, rồi để khách tự nói ra chỗ vướng và chuyện gì xảy ra nếu để yên. Bước 2, Nói cách làm: cho khách thấy cách làm, khách thấy hợp mới nói tới chương trình. Các dòng trong một khung là câu hỏi nối tiếp nhau: hỏi từng câu một, chờ khách trả lời rồi mới hỏi câu sau. Chỗ trong ngoặc vuông thay bằng chính lời khách vừa nói. Khách là nữ thì đổi “anh” thành “chị”. Khách hỏi về chương trình hoặc phản ứng khác: xem phần Tra cứu ở cuối hồ sơ.</p>
@@ -748,7 +777,7 @@ function ve() {
 <p class="muted">Nếu khách nói chuyện đó không còn khó nhất thì hỏi: “Dạ, vậy lúc này chỗ nào ở phòng kinh doanh làm anh vướng nhất ạ?” Nếu khách không thấy chỗ nào khó thì xem “Khách nói không có chỗ nào vướng” ở phần Tra cứu.</p>
 <div class="loi">Em tóm lại, anh muốn [điều anh vừa nói] và đang vướng ở [chỗ vướng]. Em hiểu vậy đúng chưa ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi lại chỗ vướng nhất.)</span></div>
 <div class="loi">Dạ, vậy em hỏi thêm một chút về chuyện này nhé. Trước giờ anh đã thử cách nào để sửa rồi ạ?<br>Nếu chuyện này cứ giữ như bây giờ thêm 3 tháng nữa, anh nghĩ phòng kinh doanh sẽ ra sao ạ?<br>Lúc đó [điều anh muốn] sẽ ra sao ạ?<br>Anh chấm từ 1 tới 10, chuyện [chỗ vướng anh vừa nói] đang gấp tới mức nào ạ? 1 là chưa gấp, 10 là phải sửa ngay.</div>
-<p class="muted">Ghi lại cách khách đã thử. Khách chấm dưới 7 thì chưa mời chương trình, nói: “Anh làm trước mấy việc trong kế hoạch 30 ngày ở Mục 5 của báo cáo, 2 tuần nữa em gọi hỏi anh làm tới đâu nhé.”</p>
+<p class="muted">Ghi lại cách khách đã thử. Khách chấm dưới 7 thì chưa mời chương trình, nói: “Anh xem lại các rủi ro trong báo cáo, 2 tuần nữa em gọi hỏi anh thấy chỗ nào đúng với công ty mình nhé.”</p>
 <p class="muted">Khách chấm từ 7 trở lên thì hỏi:</p>
 <div class="loi">Nếu có cách gỡ được chuyện này, anh có muốn em kể cho anh nghe không ạ?</div>
 
@@ -777,6 +806,7 @@ ${kh.length ? `<h3>Câu hỏi thêm cho khách này: hỏi 1 câu khi khách k�
 <h3>Khi khách phản ứng khác dự kiến: nhắc lại lời khách, nói em hiểu, rồi hỏi điều khách phân vân nhất. Tra theo từng tình huống</h3>${bang(NHANH, "40mm")}
 <h3>Không nên</h3><ul style="margin:0;padding-left:13pt">${KHONG_NEN.map(k => `<li>${k}</li>`).join("")}</ul>
 </section>`;
+  document.getElementById("nutAI").addEventListener("click", chepAI);
 }
 ve();
 </script>

@@ -256,6 +256,20 @@ button{font:inherit;cursor:pointer}
      <label>Người đánh giá<select id="nguoicham"><option value="">Chọn</option><option>Người chủ</option><option>Quản lý kinh doanh</option><option>Người chủ và quản lý cùng đánh giá</option></select></label>
     </div>
    </div>
+   <div class="them">
+    <div style="font-size:14px;font-weight:700">Cho Duy biết thêm để trao đổi sát hơn (không bắt buộc)</div>
+    <div class="luoi">
+     <label class="ca">Nguồn khách nhiều nhất<input id="ct_nguon" maxlength="80" placeholder="Ví dụ: Facebook, khách giới thiệu"></label>
+     <label>Công ty có bán qua đại lý hoặc cộng tác viên không<select id="ct_daiLy"><option value="">Chọn</option><option>Có</option><option>Chưa, đang tính</option><option>Không</option></select></label>
+     <label>Từ lúc khách hỏi tới lúc có báo giá<select id="ct_baoGia"><option value="">Chọn</option><option>Trong ngày</option><option>1 tới 3 ngày</option><option>Hơn 3 ngày</option><option>Chưa đo</option></select></label>
+     <label>Từ lúc khách đồng ý tới lúc thu đủ tiền<select id="ct_thuTien"><option value="">Chọn</option><option>Thu ngay</option><option>Trong 1 tuần</option><option>Hơn 1 tuần, có công nợ</option><option>Chưa rõ</option></select></label>
+     <label>12 tháng qua, số nhân viên kinh doanh đã nghỉ<select id="ct_nghiViec"><option value="">Chọn</option><option>0</option><option>1</option><option>2 tới 3</option><option>Trên 3</option></select></label>
+     <label>Lương cứng chiếm bao nhiêu phần trăm thu nhập của nhân viên kinh doanh<select id="ct_luongCung"><option value="">Chọn</option><option>Dưới 30%</option><option>30% tới 60%</option><option>Trên 60%</option><option>Chưa rõ</option></select></label>
+     <label class="ca">Công cụ đang dùng để lưu thông tin khách<input id="ct_congCu" maxlength="80" placeholder="Ví dụ: Excel, Zalo, phần mềm quản lý khách"></label>
+     <label>Doanh số tháng gần nhất so với chỉ tiêu<select id="ct_chiTieu"><option value="">Chọn</option><option>Dưới 70%</option><option>70% tới 100%</option><option>Đạt hoặc vượt</option><option>Chưa đặt chỉ tiêu</option></select></label>
+     <label>Phần doanh số do người chủ tự chốt<select id="ct_chuChot"><option value="">Chọn</option><option>Dưới 20%</option><option>20% tới 50%</option><option>Trên 50%</option><option>Chưa rõ</option></select></label>
+    </div>
+   </div>
    <label class="dongy"><input type="checkbox" id="dongy"> <span>Tôi đồng ý để Next Step Group dùng thông tin này để gửi kết quả và liên hệ tư vấn. Xem <a href="/chinh-sach-du-lieu/" target="_blank" rel="noopener">chính sách dữ liệu cá nhân</a>.</span></label>
    <p class="loi" id="loi" role="alert"></p>
    <div class="dieu">
@@ -576,6 +590,7 @@ function goiTram(d) {
     ten: d.hoTen, sdt: d.dienThoai, email: d.email, congTy: d.congTy, nganh: d.nganh,
     soNguoiBan: d.soNguoiBan, doanhThu: d.doanhThu, kenh: d.kenh, nguoiCham: d.nguoiCham,
     a: TRU.flatMap((p, i) => p.cau.map((_, j) => st.a[i + "_" + j])).join(""),
+    ct: Object.fromEntries(["nguon", "daiLy", "baoGia", "thuTien", "nghiViec", "luongCung", "congCu", "chiTieu", "chuChot"].map(k => [k, ($("ct_" + k).value || "").trim()]).filter(x => x[1])),
     bay: $("bay").value, url_page: location.href.slice(0, 500)
   };
   ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(k => { if (q.get(k)) r[k] = q.get(k).slice(0, 200); });
