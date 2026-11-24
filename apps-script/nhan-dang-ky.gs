@@ -381,7 +381,7 @@ function thuDanhGia7M(d) {
     '<table style="border-collapse:collapse;font-size:14px;margin:0 0 16px">' + hang + '</table>' +
     '<p style="margin:0 0 4px"><b>Nên sửa trước</b> (xếp theo thứ tự trụ cột, vì trụ cột sau dựa vào trụ cột trước):</p>' +
     '<ul style="margin:0 0 16px;padding-left:20px">' + sua + '</ul>' +
-    '<p>Tài liệu giới thiệu mô hình 7M, 12 trang, giải thích từng trụ cột: <a href="https://coachduynguyen.vn/tai-lieu/gioi-thieu-mo-hinh-7m.pdf">tải tại đây</a>.</p>' +
+    '<p>Tài liệu giới thiệu mô hình 7M, 13 trang, giải thích từng trụ cột: <a href="https://coachduynguyen.vn/tai-lieu/gioi-thieu-mo-hinh-7m.pdf">tải tại đây</a>.</p>' +
     '<p>Tư vấn viên của Next Step Group sẽ liên hệ theo số điện thoại anh chị để lại, để cùng xem cách sửa những chỗ trên cho đúng với công ty mình. Anh chị cần hỏi gì trước thì trả lời thư này.</p>' +
     '<p style="margin-top:22px">Next Step Group</p>' +
     '<hr style="border:0;border-top:1px solid #E6E1D8;margin:22px 0">' +
