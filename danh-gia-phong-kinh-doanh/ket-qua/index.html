@@ -279,7 +279,7 @@ const TRU = [
       "Công ty biết tuyển người thế nào, ai kèm người mới, và nhân viên biết làm được gì thì được lên chức."],
   dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cụ thể trong 90 ngày đầu.",
        "Liệt kê các kỹ năng một nhân viên bán hàng cần có, rồi đánh dấu từng người mới còn thiếu kỹ năng nào để kèm đúng chỗ đó."]},
- {ten:"Tài chính", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
+ {ten:"Ngân sách", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
   danhGia:"Nhân viên có tự tính được tháng này mình nhận bao nhiêu không? Thưởng có trả đúng như đã báo không? Người chủ có biết mất bao nhiêu tiền để có 1 khách mua không?",
   viSao:"Nhân viên làm việc gì nhiều là do tiền thưởng trả cho việc đó. Cách trả không rõ thì nhân viên chạy theo đơn dễ, bỏ khách khó, còn người chủ không biết khách nào lãi, khách nào lỗ.",
   cau:[
@@ -319,7 +319,7 @@ const TRU = [
       "Thông tin khách và báo giá nằm trong bảng tính chung, quản lý tự mở ra xem được."],
   dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Chưa có phần mềm thì dùng bảng tính chung trước.",
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
- {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
+ {ten:"Đo lường", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
   viSao:"Tới cuối tháng mới xem doanh số thì hụt rồi, không kịp làm gì. Mỗi tuần xem vài con số thì còn kịp sửa.",
   cau:[
@@ -339,9 +339,9 @@ const TRU = [
       "Quản lý xem số liệu mỗi tuần và biết sớm tháng này đạt hay hụt."],
   dau:["Chọn 3 con số xem mỗi tuần, ví dụ số khách mới, số khách tới bước báo giá, và thời gian trả lời khách mới.",
        "Chia lại chỉ tiêu theo tháng cao điểm, tháng thấp điểm, rồi xem số liệu vào một buổi cố định mỗi tuần."]},
- {ten:"Quản lý", anh:"Management", hoi:"Điều hành ra sao?",
+ {ten:"Điều hành", anh:"Management", hoi:"Điều hành ra sao?",
   danhGia:"Quản lý dành thời gian cho việc gì, họp tuần có ra việc cụ thể không, và việc nào quản lý được tự quyết.",
-  viSao:"Quản lý là người nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
+  viSao:"Điều hành là việc nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
   cau:[
   "Thời gian của quản lý đang dành cho việc gì nhiều nhất?",
   "Họp tuần của phòng kinh doanh kết thúc thế nào?",
@@ -361,7 +361,7 @@ const TRU = [
        "Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm."]}
 ];
 
-// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
+// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự đọc của mô hình.
 const HO_SO = {
   goc:{t:"Việc bán hàng có thể đang dồn vào người chủ và vài người giỏi",
    m:"Theo phiếu, công ty chưa rõ bán cho ai và bán theo cách nào, nên có vẻ mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
@@ -787,7 +787,7 @@ ${(() => {
 
 <section class="phan">
  ${dau3("Thứ tự ưu tiên", "Nên xem trụ cột nào trước trong 30 ngày")}
- <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự của phòng kinh doanh, vì trụ cột trước là nền cho trụ cột sau." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Duy gợi ý anh chị xem kỹ trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã làm xong." : ""}</p>
+ <p>${dongDeu ? "Cả 7 trụ cột điểm bằng nhau, nên Duy xếp theo thứ tự đọc của mô hình, từ chuyện bán gì cho ai tới chuyện đo và điều hành." : sau.some(x => mucDo(x.d) === 1) || uu.some(x => mucDo(x.d) === 1) ? "Duy gợi ý anh chị xem kỹ trụ cột cần sửa trước, rồi mới tới trụ cột mới làm một phần." : "Anh chị bắt đầu từ các trụ cột cần sửa dưới đây."}${cau5 ? " Phần còn lại, tức là " + cau5 + ", để sang tháng sau, khi " + uu.length + " trụ cột dưới đây đã làm xong." : ""}</p>
  <table class="bang"><thead><tr><th>Thời gian</th><th>Trụ cột</th><th>Cuối giai đoạn này, anh chị sẽ thấy</th></tr></thead><tbody>
  ${uu.map((x, k) => { const p = TRU[x.i]; return `<tr><td class="ma" style="width:24mm;white-space:nowrap">${moc[k]}</td><td><b>${tenM(x.i)}</b></td><td>${p.kq[2]}</td></tr>`; }).join("")}
  <tr><td class="ma">Ngày 30</td><td colspan="2"><b>Anh chị chấm lại.</b> Anh chị vào coachduynguyen.vn/danh-gia-phong-kinh-doanh làm lại phiếu, rồi so điểm mới với điểm trong báo cáo này.</td></tr>

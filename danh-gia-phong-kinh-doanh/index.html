@@ -207,7 +207,7 @@ button{font:inherit;cursor:pointer}
   </div>
   <div class="sec">
    <h2>7 trụ cột của một phòng kinh doanh</h2>
-   <p class="sub">Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. Thứ tự trụ cột cũng là thứ tự xây dựng, vì trụ cột sau dựa vào trụ cột trước.</p>
+   <p class="sub">Tên tiếng Anh của cả 7 trụ cột đều bắt đầu bằng chữ M, nên mô hình gọi tắt là 7M. 7 trụ cột chia vào 3 nhóm: Bán đúng cách (trụ cột 1 và 2), Nguồn lực đúng (3, 4 và 5), Quản lý đúng (6 và 7). Thứ tự đọc từ ngoài vào trong: bán gì cho ai, rồi người và nguồn lực, rồi cách đo và điều hành.</p>
    <div class="tru7" id="tru7"></div>
   </div>
   <div class="sec">
@@ -359,7 +359,7 @@ const TRU = [
       "Công ty biết tuyển người thế nào, ai kèm người mới, và nhân viên biết làm được gì thì được lên chức."],
   dau:["Viết tiêu chí tuyển nhân viên kinh doanh, và giao cho mỗi người mới một người kèm cụ thể trong 90 ngày đầu.",
        "Liệt kê các kỹ năng một nhân viên bán hàng cần có, rồi đánh dấu từng người mới còn thiếu kỹ năng nào để kèm đúng chỗ đó."]},
- {ten:"Tài chính", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
+ {ten:"Ngân sách", anh:"Money", hoi:"Trả lương thưởng và chi phí ra sao?",
   danhGia:"Nhân viên có tự tính được tháng này mình nhận bao nhiêu không? Thưởng có trả đúng như đã báo không? Người chủ có biết mất bao nhiêu tiền để có 1 khách mua không?",
   viSao:"Nhân viên làm việc gì nhiều là do tiền thưởng trả cho việc đó. Cách trả không rõ thì nhân viên chạy theo đơn dễ, bỏ khách khó, còn người chủ không biết khách nào lãi, khách nào lỗ.",
   cau:[
@@ -399,7 +399,7 @@ const TRU = [
       "Thông tin khách và báo giá nằm trong bảng tính chung, quản lý tự mở ra xem được."],
   dau:["Đưa thông tin khách về một bảng tính hoặc phần mềm chung của công ty. Chưa có phần mềm thì dùng bảng tính chung trước.",
        "Thống nhất những mục bắt buộc phải ghi cho mỗi khách, và một mẫu báo giá chung."]},
- {ten:"Chỉ số", anh:"Measure", hoi:"Đo bằng con số nào?",
+ {ten:"Đo lường", anh:"Measure", hoi:"Đo bằng con số nào?",
   danhGia:"Quản lý xem những con số nào, xem lúc nào, và có biết sớm tháng này đạt hay hụt chỉ tiêu không.",
   viSao:"Tới cuối tháng mới xem doanh số thì hụt rồi, không kịp làm gì. Mỗi tuần xem vài con số thì còn kịp sửa.",
   cau:[
@@ -419,9 +419,9 @@ const TRU = [
       "Quản lý xem số liệu mỗi tuần và biết sớm tháng này đạt hay hụt."],
   dau:["Chọn 3 con số xem mỗi tuần, ví dụ số khách mới, số khách tới bước báo giá, và thời gian trả lời khách mới.",
        "Chia lại chỉ tiêu theo tháng cao điểm, tháng thấp điểm, rồi xem số liệu vào một buổi cố định mỗi tuần."]},
- {ten:"Quản lý", anh:"Management", hoi:"Điều hành ra sao?",
+ {ten:"Điều hành", anh:"Management", hoi:"Điều hành ra sao?",
   danhGia:"Quản lý dành thời gian cho việc gì, họp tuần có ra việc cụ thể không, và việc nào quản lý được tự quyết.",
-  viSao:"Quản lý là người nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
+  viSao:"Điều hành là việc nhắc và kiểm tra để 6 trụ cột kia được làm tới nơi. Không có quản lý thì việc gì cũng dồn về người chủ, và cách làm mới bị bỏ sau vài tuần.",
   cau:[
   "Thời gian của quản lý đang dành cho việc gì nhiều nhất?",
   "Họp tuần của phòng kinh doanh kết thúc thế nào?",
@@ -441,7 +441,7 @@ const TRU = [
        "Viết ra việc nào quản lý tự quyết, việc nào phải hỏi người chủ, rồi báo cho cả nhóm."]}
 ];
 
-// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự xây.
+// Thư viện kiểu kết quả: chọn theo trụ cột cần sửa đầu tiên, tính theo thứ tự đọc của mô hình.
 const HO_SO = {
   goc:{t:"Việc bán hàng có thể đang dồn vào người chủ và vài người giỏi",
    m:"Theo phiếu, công ty chưa rõ bán cho ai và bán theo cách nào, nên có vẻ mỗi người bán một kiểu. Lúc này tuyển thêm người, đổi cách thưởng hay mua phần mềm đều khó ra kết quả. Nên ngồi lại, nói rõ bán cho ai và bán thế nào trước."},
@@ -503,7 +503,7 @@ function capNhat() {
 function diem() { return TRU.map((p, i) => ({i, d: p.cau.reduce((s, q, j) => s + (st.a[i+"_"+j] || 0), 0)})); }
 
 function truocTien(ds) {
-  // Trụ cột sau dựa vào trụ cột trước: lấy trụ cột cần sửa theo thứ tự, thiếu thì thêm trụ cột mới làm được một phần, đủ 3.
+  // Lấy trụ cột cần sửa theo thứ tự đọc của mô hình, thiếu thì thêm trụ cột mới làm được một phần, đủ 3.
   const chon = [...ds.filter(x => mucDo(x.d) === 0), ...ds.filter(x => mucDo(x.d) === 1)];
   return (chon.length ? chon : [...ds].sort((a, b) => a.d - b.d || a.i - b.i)).slice(0, 3);
 }
@@ -524,7 +524,7 @@ function veKetQua() {
   $("hang").innerHTML = ds.map(x => { const m = mucDo(x.d); return `<div class="hang"><b>M${x.i+1} · ${TRU[x.i].ten}<small class="en">${TRU[x.i].anh}</small></b><div class="t"><i style="width:${x.d/8*100}%;background:${MAU[m]}"></i></div><span class="muc m${m}">${x.d}/8 · ${TEN_MUC[m]}</span></div>`; }).join("");
   const lam = truocTien(ds), coYeu = ds.some(x => mucDo(x.d) < 2);
   $("thutu").textContent = coYeu
-    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột mới làm được một phần. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì trụ cột sau dựa vào trụ cột trước."
+    ? "Trụ cột cần sửa đứng trước, rồi tới trụ cột mới làm được một phần. Trong mỗi nhóm, xếp theo thứ tự của trụ cột chứ không theo điểm thấp nhất, vì thứ tự đó đi từ chuyện bán gì cho ai tới chuyện đo và điều hành."
     : "Cả 7 trụ cột đều tốt. Nếu muốn làm tốt hơn nữa, bắt đầu từ trụ cột ít điểm nhất.";
   let UT = lam.map(x => { const m = mucDo(x.d), p = TRU[x.i]; return `<div class="the"><header><b>M${x.i+1} · ${p.anh} · ${p.ten}</b><span class="muc m${m}">${TEN_MUC[m]}</span></header><p>${p.kq[m]}</p>${m < 2 ? `<div class="lam"><b>Việc đầu tiên nên làm:</b> ${p.dau[m]}</div>` : ""}</div>`; }).join("");
   if (/chủ/i.test($("nguoicham").value)) UT = UT.replace(/bàn người chủ/g,"bàn của anh chị").replace(/Người chủ/g,"Anh chị").replace(/người chủ/g,"anh chị");

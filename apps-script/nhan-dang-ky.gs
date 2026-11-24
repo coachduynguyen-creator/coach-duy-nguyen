@@ -108,7 +108,7 @@ var NGUON = {
     tieu_de_thu: 'Kết quả đánh giá phòng kinh doanh của anh chị · Next Step Group',
     cot: ['Thời gian', 'Họ và tên', 'Số điện thoại', 'Email', 'Đồng ý liên hệ',
           'Ngành', 'Số người bán', 'Người chấm', 'Tổng điểm trên 56', 'Kiểu kết quả',
-          'Thị trường', 'Quy trình', 'Nhân sự', 'Tài chính', 'Công cụ', 'Chỉ số', 'Quản lý',
+          'Thị trường', 'Quy trình', 'Nhân sự', 'Ngân sách', 'Công cụ', 'Đo lường', 'Điều hành',
           'Nên sửa trước', 'Tóm tắt cho người tư vấn',
           'Trang nguồn', 'Nguồn chiến dịch', 'Tình trạng liên hệ', 'Ghi chú của đội ngũ'],
     lay: function (d) {
@@ -367,7 +367,7 @@ function thuCongDong(d) {
 
 /** Thư kết quả cho khách làm phiếu đánh giá 7M (thêm 20/11/2026). Ký tên Next Step Group, gọi khách là anh chị. */
 function thuDanhGia7M(d) {
-  var tru = ['Market · Thị trường', 'Method · Quy trình', 'Manpower · Nhân sự', 'Money · Tài chính', 'Material · Công cụ', 'Measure · Chỉ số', 'Management · Quản lý'];
+  var tru = ['Market · Thị trường', 'Method · Quy trình', 'Manpower · Nhân sự', 'Money · Ngân sách', 'Material · Công cụ', 'Measure · Đo lường', 'Management · Điều hành'];
   var hang = tru.map(function (ten, i) {
     var p = Number(d['d' + (i + 1)]), muc = p <= 3 ? 'Cần sửa' : p <= 6 ? 'Đã có, chưa đều' : 'Tốt';
     return '<tr><td style="padding:3px 16px 3px 0">M' + (i + 1) + ' · ' + ten + '</td><td style="padding:3px 16px 3px 0"><b>' + escape_(d['d' + (i + 1)]) + '/8</b></td><td style="padding:3px 0;color:#6B6B6B">' + muc + '</td></tr>';
