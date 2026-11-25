@@ -46,7 +46,7 @@ async function danhGia7M(req, env, origin) {
     const q = {
       Name: ten, Phone: sdt, url_page: cat(d.url_page, 500), nguon_khach_hang: ["Web Lead Magnet"],
       Note: ["Phiếu tự đánh giá 7M · Mã " + ma, "Email: " + email, "Công ty: " + (congTy || "không ghi"), "Ngành: " + nganh,
-        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Kênh bán chính: " + (kenh || "không ghi"), "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi: " + linkHoSo].join("\n"),
+        "Số nhân viên kinh doanh: " + soNguoiBan, "Doanh thu tháng: " + (doanhThu || "không ghi"), "Kênh bán chính: " + (kenh || "không ghi"), "Người đánh giá: " + nguoiCham, "Tổng " + tong + "/56", "Hồ sơ gọi (có 28 câu khách đã trả lời): " + linkHoSo, "Báo cáo khách đã nhận: " + linkBaoCao].join("\n"),
     };
     for (const u of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) if (cat(d[u], 200)) q[u] = cat(d[u], 200);
     const r = await fetch(PANCAKE + "?api_key=" + env.PANCAKE_KEY, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });

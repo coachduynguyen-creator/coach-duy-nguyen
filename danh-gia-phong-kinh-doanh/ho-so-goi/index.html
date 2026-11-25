@@ -731,6 +731,7 @@ function ve() {
   document.getElementById("hs").innerHTML = `
 <div class="noibo"><span>Chỉ dùng nội bộ · Không gửi khách</span><span>${KHACH.ma}</span></div>
 <div class="dau"><h1>${KHACH.congTy}</h1></div>
+<p class="tt"><a href="../ket-qua/${location.hash}" target="_blank" rel="noopener"><b>Mở báo cáo khách đã nhận</b></a> · <a href="#" onclick="document.getElementById('phieu').scrollIntoView({behavior:'smooth'});return false"><b>Xem 28 câu khách đã trả lời</b></a></p>
 <p class="tt">${KHACH.hoTen} · ${KHACH.nguoiCham} · ${KHACH.nganh} · Nhân viên kinh doanh: ${KHACH.soNguoiBan}${KHACH.kenh ? ` · Kênh: ${KHACH.kenh}` : ""}${KHACH.doanhThu ? ` · Doanh thu ${KHACH.doanhThu}/tháng` : ""} · ${tong}/56 điểm${yeu.length ? ` · Nên sửa trước: <b>${yeu.join(", ")}</b>` : ""}</p>
 
 <h3>Chương trình mời lần này: ${dx.ten}</h3>
@@ -776,6 +777,9 @@ ${dx.ct30 ? `<h3>Khách hỏi</h3>${bang(HOI_DAP, "48mm")}` : ""}
 ${kh.length ? `<h3>Câu hỏi thêm cho khách này: hỏi 1 câu khi khách kể chuyện đúng với nội dung câu đó, ở bước Nói cách làm</h3><p>${kh.map(k => `<i>${HOI_KHOP[k.a + "|" + k.b]}</i>`).join(" ")}</p>` : ""}
 <h3>Khi khách phản ứng khác dự kiến: nhắc lại lời khách, nói em hiểu, rồi hỏi điều khách phân vân nhất. Tra theo từng tình huống</h3>${bang(NHANH, "40mm")}
 <h3>Không nên</h3><ul style="margin:0;padding-left:13pt">${KHONG_NEN.map(k => `<li>${k}</li>`).join("")}</ul>
+<div class="noibo" id="phieu"><span>Phiếu khách đã điền · 28 câu</span><span>${KHACH.ngay || ""}</span></div>
+<p class="muted">Đúng lựa chọn khách bấm trên phiếu. Điểm: 2 là làm tốt, 1 là làm được một phần, 0 là chưa làm.</p>
+${TRU.map((p, i) => `<h3>${tenM(i)} · ${ds.find(x => x.i === i).d}/8</h3><table class="bang"><tbody>${p.cau.map((q, j) => { const v = tl((i+1)+"."+(j+1)); return `<tr><td style="width:14mm"><b>${i+1}.${j+1}</b></td><td>${q}<br><i>Khách chọn: ${p.dap[j][v]}</i></td><td style="width:14mm;text-align:right"><b>${v}/2</b></td></tr>`; }).join("")}</tbody></table>`).join("")}
 </section>`;
 }
 ve();
