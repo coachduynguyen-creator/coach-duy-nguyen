@@ -724,7 +724,7 @@ function ve() {
   const rr = ruiRo(), ba = rr.slice(0, 3), kh = khop().slice(0, 2), dx = deXuat(KHACH.soNguoiBan, hoSo(ds));
   const cdx = ba.length ? ba[0].can.map(c => ({c, d: tl(c)})).sort((x, y) => x.d - y.d)[0] : null;
   const cd = cdx ? cdx.c.split(".") : null, cdChua = !cdx || cdx.d === 0;
-  const cauDau = cd ? TRU[cd[0]-1].cau[cd[1]-1].replace(/\.$/, "").replace(/[“”]/g, "").replace("để chị suy nghĩ", "để suy nghĩ").replace(/người chủ/g, "anh") : "[câu khách chọn ở rủi ro đứng đầu]";
+  const cauDau = cd ? CAU[cd.join(".")].ngan : "[việc khách chưa làm ở rủi ro đứng đầu]";
   const ten = KHACH.hoTen.split(" ").pop(), yeu = uu.filter(x => mucDo(x.d) < 2).map(x => tenM(x.i));
   const bang = (dong, w) => `<table class="bang"><tbody>${dong.map(h => `<tr><td style="width:${w}"><b>${h[0]}</b></td><td>${h[1]}</td></tr>`).join("")}</tbody></table>`;
 
@@ -744,7 +744,7 @@ function ve() {
 <div class="loi">Anh muốn phòng kinh doanh của mình thay đổi ra sao trong 6 tháng tới ạ?</div>
 <div class="loi">Điều gì đang cản anh đạt được điều đó ạ?</div>
 <p class="muted">Khách trả lời chung chung hoặc chưa nói được thì nhắc đúng 1 câu khách đã chọn trong phiếu:</p>
-<div class="loi">Em thấy trong phiếu, ở câu “${cauDau}”, anh chưa chọn là đã làm đủ. Chuyện này đang diễn ra thế nào ạ?<br>Gần đây có trường hợp nào làm anh thấy rõ chuyện này nhất không ạ? <span style="font-style:normal;color:var(--phu)">(Chỉ hỏi khi khách chưa kể được trường hợp cụ thể.)</span></div>
+<div class="loi">${cd ? `Em thấy trong phiếu, ở việc “${cauDau}”, anh chưa chọn là đã làm đủ. Chuyện này đang diễn ra thế nào ạ?` : `Em thấy trong phiếu, phòng kinh doanh bên mình đã làm khá đủ các việc. Lúc này anh muốn phòng kinh doanh làm thêm được việc gì ạ?`}<br>Gần đây có trường hợp nào làm anh thấy rõ chuyện này nhất không ạ? <span style="font-style:normal;color:var(--phu)">(Chỉ hỏi khi khách chưa kể được trường hợp cụ thể.)</span></div>
 <p class="muted">Nếu khách nói chuyện đó không còn khó nhất thì hỏi: “Dạ, vậy lúc này chỗ nào ở phòng kinh doanh làm anh vướng nhất ạ?” Nếu khách không thấy chỗ nào khó thì xem “Khách nói không có chỗ nào vướng” ở phần Tra cứu.</p>
 <div class="loi">Em tóm lại, anh muốn [điều anh vừa nói] và đang vướng ở [chỗ vướng]. Em hiểu vậy đúng chưa ạ? <span style="font-style:normal;color:var(--phu)">(Chưa đúng thì hỏi lại chỗ vướng nhất.)</span></div>
 <div class="loi">Dạ, vậy em hỏi thêm một chút về chuyện này nhé. Trước giờ anh đã thử cách nào để sửa rồi ạ?<br>Nếu chuyện này cứ giữ như bây giờ thêm 3 tháng nữa, anh nghĩ phòng kinh doanh sẽ ra sao ạ?<br>Lúc đó [điều anh muốn] sẽ ra sao ạ?<br>Anh chấm từ 1 tới 10, chuyện [chỗ vướng anh vừa nói] đang gấp tới mức nào ạ? 1 là chưa gấp, 10 là phải sửa ngay.</div>
