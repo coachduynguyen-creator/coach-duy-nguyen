@@ -1,0 +1,36 @@
+/* Bản khám phá mô hình 7M. Chỉ biểu đồ M6 dùng số liệu giả định. */
+(()=>{
+ const data=window.SevenMStandards;if(!data)return;
+ const NS='http://www.w3.org/2000/svg';
+ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const titles=['Bản đồ thị trường','Luồng bán hàng và các quy định đi cùng','Các chuẩn về nhân sự','Cơ chế thu nhập và chi phí','Các công cụ cùng kết nối','Chỉ số và kết quả kinh doanh','Nhịp điều hành và cải tiến'];
+ const layouts=['market','process','people','budget','tools','measure','manage'];
+ function node(item,extra=''){return `<article class="sm-standard ${extra}" data-sm-standard="${item.code}"><span>${item.code}</span><strong>${escape(item.title)}</strong></article>`;}
+ function diagram(p,index){const s=p.standards,n=(i,c='')=>node(s[i],c);
+  if(index===0)return `<div class="sm-diagram sm-market"><div>${n(0)}${n(1)}</div><div>${n(2)}${n(3)}${n(4)}</div><div>${n(5)}${n(6)}</div></div>`;
+  if(index===1)return `<div class="sm-diagram sm-process"><div class="sm-process-root">${n(0,'sm-root')}</div><div class="sm-process-flow">${s.slice(1,8).map(x=>node(x)).join('')}</div><div class="sm-process-rules">${n(8)}${n(9)}</div></div>`;
+  if(index===2)return `<div class="sm-diagram sm-people"><div class="sm-people-root"><div class="sm-core" data-sm-core>M3 · Nhân sự<span>7 tiêu chuẩn cùng kết nối</span></div></div><div class="sm-people-track">${s.map(x=>node(x)).join('')}</div></div>`;
+  if(index===3)return `<div class="sm-diagram sm-budget"><div class="sm-budget-root">${n(3,'sm-root')}</div><div class="sm-budget-branches">${n(0)}${n(1)}${n(2)}</div><div class="sm-budget-rule">${n(4)}</div></div>`;
+  if(index===4)return `<div class="sm-diagram sm-tools"><div>${n(1)}${n(2)}</div><div>${n(0,'sm-root')}${n(4,'sm-ai-node')}</div><div>${n(3)}${n(5)}</div><div class="sm-tools-rule">${n(6)}</div></div>`;
+  if(index===5)return `<div class="sm-measure-visual"><figure class="sm-revenue"><figcaption><strong>Doanh thu theo tháng</strong><span>Triệu đồng · Số liệu giả định</span></figcaption><div class="sm-bars" role="img" aria-label="Doanh thu giả định từ tháng 1 đến tháng 6: 130, 165, 145, 220, 240 và 285 triệu đồng.">${[130,165,145,220,240,285].map((v,i)=>`<div style="--ratio:${v/300}"><b>${v}</b><i></i><span>T${i+1}</span></div>`).join('')}</div></figure><figure class="sm-funnel"><figcaption><strong>Cơ hội bán hàng</strong><span>Số lượng · Số liệu giả định</span></figcaption>${[['Mới',24],['Đang tư vấn',12],['Đã đề xuất',8],['Đã mua',5]].map(([t,v])=>`<div><span>${t}</span><b>${v}</b><i style="--amount:${v/24*100}%"></i></div>`).join('')}</figure></div><div class="sm-measure-standards">${s.map(x=>node(x)).join('')}</div>`;
+  return `<div class="sm-diagram sm-manage"><div class="sm-manage-root">${n(0,'sm-root')}</div><div class="sm-manage-row">${n(1)}${n(2)}${n(7)}</div><div class="sm-manage-row">${n(3)}${n(5)}</div><div class="sm-manage-row">${n(4)}${n(6)}</div></div>`;
+ }
+ const mounts=[...document.querySelectorAll('#dashboard-art,#sales-demo-art,[data-sevenm-demo]')];
+ for(const [instance,mount]of mounts.entries()){
+  mount.removeAttribute('role');mount.removeAttribute('aria-label');mount.classList.add('sm-mount');
+  mount.innerHTML=`<div class="sm-demo"><nav class="sm-nav" aria-label="Khám phá 7 trụ cột"><a class="sm-logo" href="/sevenm/"><img src="/sevenm/assets/logo.svg" alt="SevenM" width="160" height="30"></a><p>PHÒNG KINH DOANH<br>TIÊU CHUẨN</p><div class="sm-tabs">${data.map((p,i)=>`<button type="button" data-sm-tab="${i}" aria-controls="sm-panel-${instance}" aria-pressed="false"><span>${p.id}</span><strong>${p.title}</strong><small>${p.standards.length}</small></button>`).join('')}</div><span class="sm-nav-note">7 trụ cột · 51 chuẩn</span></nav><section class="sm-main" id="sm-panel-${instance}" aria-label="Các tiêu chuẩn của trụ cột"><div class="sm-heading"><div><span class="sm-kicker">KHÁM PHÁ MÔ HÌNH 7M</span><h2></h2></div><span class="sm-count"></span></div><p class="sm-summary"></p><div class="sm-chart-head"><h3></h3><a class="sm-all-standards" href="/sevenm/phuong-phap/">Xem các tiêu chuẩn</a></div><div class="sm-visual"></div><aside class="sm-ai"><span>AI HỖ TRỢ</span><p></p></aside><p class="sm-status" role="status" aria-live="polite"></p></section></div>`;
+  const buttons=[...mount.querySelectorAll('[data-sm-tab]')],visual=mount.querySelector('.sm-visual');let active=-1,observer;
+  function render(index,announce=false){if(active===index)return;active=index;const p=data[index];buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));mount.querySelector('.sm-main h2').textContent=p.id+' · '+p.title;mount.querySelector('.sm-count').textContent=p.standards.length+' TIÊU CHUẨN';mount.querySelector('.sm-summary').textContent=p.summary;mount.querySelector('.sm-chart-head h3').textContent=titles[index];mount.querySelector('.sm-all-standards').href='/sevenm/phuong-phap/#m'+(index+1);mount.querySelector('.sm-ai p').textContent=p.ai;visual.className='sm-visual sm-view-'+layouts[index];visual.innerHTML=diagram(p,index);observer?.disconnect();const graph=visual.querySelector('.sm-diagram');if(graph){observer=new ResizeObserver(()=>draw(graph,p,index));observer.observe(graph);document.fonts?.ready.then(()=>{if(graph.isConnected)draw(graph,p,index);});}if(announce)mount.querySelector('.sm-status').textContent='Đang xem '+p.id+' '+p.title+', '+p.standards.length+' tiêu chuẩn.';}
+  buttons.forEach(b=>b.addEventListener('click',()=>render(Number(b.dataset.smTab),true)));render(5);
+ }
+ function draw(graph,p,index){
+  graph.querySelector('svg')?.remove();const box=graph.getBoundingClientRect();if(!box.width)return;const svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);svg.setAttribute('aria-hidden','true');svg.classList.add('sm-wires');const nodes=[...graph.querySelectorAll('[data-sm-standard]')],byCode=new Map(nodes.map(n=>[n.dataset.smStandard,n]));
+  const pairs=index===0?[[0,2],[1,2],[2,3],[3,4],[4,5],[4,6]]:index===1?[[0,1],...Array.from({length:6},(_,i)=>[i+1,i+2]),[0,8],[0,9]]:index===2?Array.from({length:7},(_,i)=>[-1,i]):index===3?[[3,0],[3,1],[3,2],[1,4]]:index===4?[[1,0],[2,0],[0,3],[0,4],[4,5],[0,6]]:[[0,1],[0,2],[0,7],[1,3],[2,5],[3,4],[5,6]];
+  for(const[a,b]of pairs){const A=(a===-1?graph.querySelector('[data-sm-core]'):byCode.get(p.standards[a].code)).getBoundingClientRect(),B=byCode.get(p.standards[b].code).getBoundingClientRect();let x1=A.x+A.width/2-box.x,y1=A.y+A.height/2-box.y,x2=B.x+B.width/2-box.x,y2=B.y+B.height/2-box.y;
+   const mobile=matchMedia('(max-width:760px)').matches;
+   const horizontal=!mobile&&Math.abs(y2-y1)<30;if(horizontal){const s=x2>x1?1:-1;x1+=A.width/2*s;x2-=B.width/2*s;}else{const s=y2>y1?1:-1;y1+=A.height/2*s;y2-=B.height/2*s;}
+   const path=document.createElementNS(NS,'path'),mid=horizontal?(x1+x2)/2:(y1+y2)/2;let d=horizontal?`M${x1},${y1}H${mid}V${y2}H${x2}`:`M${x1},${y1}V${mid}H${x2}V${y2}`;
+   if(mobile&&Math.abs(B.y-A.bottom)>45){const gutter=-7;x1=A.left-box.x;y1=A.y+A.height/2-box.y;x2=B.left-box.x;y2=B.y+B.height/2-box.y;d=`M${x1},${y1}H${gutter}V${y2}H${x2}`;}path.setAttribute('d',d);svg.append(path);
+  }graph.prepend(svg);
+ }
+})();

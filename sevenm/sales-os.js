@@ -4,6 +4,7 @@
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  const touch=matchMedia('(max-width:760px)');
  const NS='http://www.w3.org/2000/svg';
+ function rounded(P,r=8){let d=`M${P[0].join(' ')}`;for(let i=1;i<P.length-1;i++){const[a,b,c]=[P[i-1],P[i],P[i+1]],l1=Math.hypot(b[0]-a[0],b[1]-a[1]),l2=Math.hypot(c[0]-b[0],c[1]-b[1]),k=Math.min(r,l1/2,l2/2);if(!k){d+=`L${b.join(' ')}`;continue;}d+=`L${b[0]-(b[0]-a[0])/l1*k} ${b[1]-(b[1]-a[1])/l1*k}Q${b.join(' ')} ${b[0]+(c[0]-b[0])/l2*k} ${b[1]+(c[1]-b[1])/l2*k}`;}return d+`L${P.at(-1).join(' ')}`;}
  const create=(name,attrs)=>{const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs||{}))e.setAttribute(k,v);return e;};
  document.querySelectorAll('[data-os-network]').forEach((network,index)=>{
   const detailed=network.dataset.detail==='true';
@@ -11,9 +12,10 @@
   const svg=network.querySelector('svg');
   const nodes=new Map([...network.querySelectorAll('[data-os-node]')].map(n=>[n.dataset.osNode,n]));
   const panel=detailed?document.getElementById('os-information'):null;
-  let selected='hub',inView=true,frame;
+  let selected='hub',inView=true,frame,sourceMap;
   const edges=detailed?[['channels','crm'],['crm','channels'],['crm','hub'],['hub','inbox'],['inbox','people'],['ai-intake','hub'],['ai-sales','hub'],['ai-care','hub'],['ai-manager','hub'],['crm','customer-data'],['knowledge','hub'],['rules','hub'],['people','hub']]:[['channels','crm'],['crm','channels'],['crm','hub'],['hub','people'],['ai','hub'],['knowledge','hub']];
   function highlight(preview=selected){
+   sourceMap?.highlight(preview);
    const related=new Set([preview]);for(const [a,b] of edges)if(a===preview||b===preview){related.add(a);related.add(b);}
    nodes.forEach((node,key)=>{node.classList.toggle('is-related',related.has(key));if(detailed)node.setAttribute('aria-pressed',String(key===selected));});
    svg.querySelectorAll('[data-from]').forEach(path=>path.classList.toggle('is-related',path.dataset.from===preview||path.dataset.to===preview));
@@ -44,14 +46,17 @@
      else {x1=a.x+a.width/2-box.x;y1=a.bottom-box.y;x2=b.x+b.width/2-box.x;y2=b.bottom-box.y;d=`M${x1},${y1} C${x1},${gutter} ${x2},${gutter} ${x2},${y2}`;}
     } else if(horizontal){const bend=(x1+x2)/2;d=`M${x1},${y1} C${bend},${y1} ${bend},${y2} ${x2},${y2}`;}
     else {const bend=(y1+y2)/2;d=`M${x1},${y1} C${x1},${bend} ${x2},${bend} ${x2},${y2}`;}
+    const coords=d.match(/-?[\d.]+/g).map(Number);
+    if(coords.length===8)d=rounded([[coords[0],coords[1]],[coords[2],coords[3]],[coords[4],coords[5]],[coords[6],coords[7]]]);
     const path=create('path',{d,'class':'os-edge','data-from':from,'data-to':to,'marker-end':`url(#os-arrow-${index})`});svg.append(path);
+    const flow=create('path',{d,'class':'os-moving-flow'+(from.startsWith('ai')?' is-ai':from==='hub'?' is-hub':'')});svg.append(flow);
     const red=from.startsWith('ai')||from==='rules'||from==='hub';
     // SVG di chuyển điểm sáng theo đường cong, không đổi vị trí thẻ hoặc chữ.
     const packet=create('g',{'class':'os-packet'+(red?' is-red':'')});packet.append(create('circle',{r:5,'class':'os-packet-halo'}),create('circle',{r:2.2}));
     const motion=create('animateMotion',{dur:(5.5+(i%3)*.7)+'s',repeatCount:'indefinite',path:d,begin:(-i*.8)+'s',calcMode:'paced'});packet.append(motion);svg.append(packet);
    });highlight();syncMotion();
   }
-  function syncMotion(){if(reduce.matches||document.hidden||!inView)svg.pauseAnimations?.();else svg.unpauseAnimations?.();}
+  function syncMotion(){network.dataset.inView=String(inView&&!document.hidden);if(reduce.matches||document.hidden||!inView)svg.pauseAnimations?.();else svg.unpauseAnimations?.();}
   function queue(){cancelAnimationFrame(frame);frame=requestAnimationFrame(draw);}
   function select(key,announce=false){
    if(!nodes.has(key)||!content[key]||!panel)return;
@@ -62,6 +67,7 @@
    panel.querySelector('[data-os-picker]').value=key;
    if(announce)panel.querySelector('.os-live-status').textContent='Đang xem: '+item.title+'. '+item.text;
   }
+  sourceMap=window.SevenMMap?.mount(network,select);
   if(detailed){
    nodes.forEach((node,key)=>{
     node.addEventListener('click',()=>{select(key,true);if(touch.matches)panel.scrollIntoView({behavior:reduce.matches?'instant':'smooth',block:'start'});});
