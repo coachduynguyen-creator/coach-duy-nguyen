@@ -16,17 +16,13 @@ const pillars=[
  {id:'M6',title:'Đo lường',group:'Quản lý đúng',position:[16,58],summary:'Biết hoạt động nào đang tạo kết quả và điểm nào cần điều chỉnh.',work:['Thống nhất định nghĩa và cách tính các chỉ số.','Thiết kế báo cáo theo từng vai trò và thời điểm xem.','Xác định cách kiểm tra chất lượng dữ liệu.'],ai:'Tổng hợp báo cáo và gợi ý điểm cần xem xét. Số liệu và nguyên nhân cần được người phụ trách xác minh.',output:'Bộ chỉ số, mẫu báo cáo và hướng dẫn đọc số liệu.'},
  {id:'M7',title:'Điều hành',group:'Quản lý đúng',position:[22,29],summary:'Có người chịu trách nhiệm và nhịp quản lý để hệ thống được thực hiện đều đặn.',work:['Thiết kế lịch họp, nội dung đánh giá và cách giao việc.','Làm rõ quyền quyết định và trách nhiệm xử lý vướng mắc.','Huấn luyện quản lý theo dõi, phản hồi và điều chỉnh.'],ai:'Chuẩn bị nội dung họp, tổng hợp việc đã thống nhất và hỗ trợ theo dõi tiến độ thực hiện.',output:'Nhịp điều hành, mẫu họp và cơ chế theo dõi trách nhiệm.'}
 ];
-const framework=document.querySelector('.framework-groups');
-const allButtons=[];
-for(const [index,p] of pillars.entries()){
- const target=[...framework.querySelectorAll('[data-group]')].find(group=>group.dataset.group===p.group).querySelector('.pillar-list');
- const button=document.createElement('button');button.className='pillar-node';button.type='button';button.dataset.index=index;button.setAttribute('aria-pressed',String(index===0));button.setAttribute('aria-controls','pillar-information');button.setAttribute('aria-label',p.id+' '+p.title+', '+p.group);button.innerHTML='<span>'+p.id+'</span><strong>'+p.title+'</strong><svg class="pillar-selected-mark" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4.5 10 3.5 3.5 7.5-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';target.append(button);allButtons.push(button);
-}
+const wheel=window.SevenMFramework.mount(document.querySelector('[data-framework-wheel]'),pillars);
+const allButtons=wheel.buttons;
 const detail=document.querySelector('.pillar-detail');
 let selected=-1,detailAnimation;
 function selectPillar(index,animate=true){
  if(index===selected)return;selected=index;const p=pillars[index];
- allButtons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+ wheel.setActive(index);
  document.getElementById('pillar-group').textContent=p.group;document.getElementById('pillar-code').textContent=p.id;document.getElementById('pillar-title').textContent=p.title;document.getElementById('pillar-summary').textContent=p.summary;
  document.getElementById('pillar-work').replaceChildren(...p.work.map(text=>{const item=document.createElement('li');item.textContent=text;return item;}));
  document.getElementById('pillar-ai').textContent=p.ai;document.getElementById('pillar-output').textContent=p.output;
@@ -34,3 +30,5 @@ function selectPillar(index,animate=true){
 }
 allButtons.forEach(button=>{const index=Number(button.dataset.index);button.addEventListener('click',()=>{selectPillar(index);if(innerWidth<761)detail.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});});button.addEventListener('focus',()=>selectPillar(index,false));button.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'&&matchMedia('(min-width:761px) and (hover:hover) and (pointer:fine)').matches)selectPillar(index);});});
 selectPillar(0,false);
+
+allButtons.forEach((button,index)=>button.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(index+1)%7;if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(index+6)%7;if(event.key==='Home')next=0;if(event.key==='End')next=6;if(next!==undefined){event.preventDefault();allButtons[next].focus();}}));
