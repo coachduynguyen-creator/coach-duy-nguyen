@@ -444,3 +444,37 @@ dialog{background:var(--brand-navy)}
 /* Chữ AI cùng ngôn ngữ mặt gấp của chữ M trong logo. */
 .hero h1 .ai-lockup{display:inline-block;white-space:nowrap}
 .hero h1 .ai-fold{display:inline-block;width:auto;height:.73em;vertical-align:baseline;margin-right:.025em}
+
+
+/* Ánh đỏ trong không gian phía sau nội dung; mặt kính vẫn xanh than. */
+.content-band::before{
+ top:120px;height:calc(100% - 120px);width:1800px;
+ background:radial-gradient(ellipse at 88% 18%,#ff272638,transparent 40%),radial-gradient(ellipse at 5% 63%,#c9143238,transparent 38%),radial-gradient(ellipse at 82% 89%,#ff3b292e,transparent 40%);
+ mask-image:radial-gradient(ellipse,#000 30%,transparent 73%);
+ animation:sevenm-ambient-breathe 22s ease-in-out infinite alternate
+}
+.content-band .service-grid::before{
+ inset:-170px -230px -130px;
+ background:linear-gradient(90deg,#08111e80,#08111e24 48%,#08111e80),url('assets/horizon.png') center 51%/cover no-repeat;
+ opacity:.72;mask-image:radial-gradient(ellipse,#000 18%,transparent 72%)
+}
+.process-band::before{
+ height:100%;min-height:800px;
+ background:radial-gradient(ellipse at 8% 40%,#ef26372e,transparent 48%),radial-gradient(ellipse at 88% 78%,#b81d3026,transparent 49%);
+ animation:sevenm-ambient-breathe 24s -8s ease-in-out infinite alternate
+}
+.people-band::before{
+ height:100%;
+ background:radial-gradient(ellipse at 15% 28%,#ff27262b,transparent 42%),radial-gradient(ellipse at 93% 73%,#b918302b,transparent 44%);
+ animation:sevenm-ambient-breathe 26s -15s ease-in-out infinite alternate
+}
+.contact::before{background:radial-gradient(ellipse at 75% 60%,#e8322d24,transparent 65%)}
+@keyframes sevenm-ambient-breathe{from{opacity:.68}to{opacity:1}}
+@media(max-width:760px){
+ .content-band::before{top:180px;width:100%;height:calc(100% - 180px);background:radial-gradient(ellipse at 105% 16%,#ff272633,transparent 39%),radial-gradient(ellipse at -10% 60%,#c914323d,transparent 38%),radial-gradient(ellipse at 100% 90%,#ff3b2933,transparent 38%)}
+ .content-band .service-grid::before{inset:-90px -70px -100px;opacity:.6;background-position:center 52%}
+ .process-band::before{background:radial-gradient(ellipse at -10% 36%,#ef26372b,transparent 51%),radial-gradient(ellipse at 110% 86%,#b81d3026,transparent 50%)}
+ .people-band::before{background:radial-gradient(ellipse at 5% 20%,#ff272624,transparent 45%),radial-gradient(ellipse at 100% 76%,#b9183026,transparent 44%)}
+}
+body[data-motion=none] :is(.content-band,.process-band,.people-band)::before{animation:none;opacity:1}
+@media(prefers-reduced-motion:reduce){:is(.content-band,.process-band,.people-band)::before{animation:none;opacity:1}}
