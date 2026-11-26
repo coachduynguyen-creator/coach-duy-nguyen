@@ -16,12 +16,13 @@ const pillars=[
  {id:'M6',title:'Đo lường',group:'Quản lý đúng',position:[16,58],summary:'Biết hoạt động nào đang tạo kết quả và điểm nào cần điều chỉnh.',work:['Thống nhất định nghĩa và cách tính các chỉ số.','Thiết kế báo cáo theo từng vai trò và thời điểm xem.','Xác định cách kiểm tra chất lượng dữ liệu.'],ai:'Tổng hợp báo cáo và gợi ý điểm cần xem xét. Số liệu và nguyên nhân cần được người phụ trách xác minh.',output:'Bộ chỉ số, mẫu báo cáo và hướng dẫn đọc số liệu.'},
  {id:'M7',title:'Điều hành',group:'Quản lý đúng',position:[22,29],summary:'Có người chịu trách nhiệm và nhịp quản lý để hệ thống được thực hiện đều đặn.',work:['Thiết kế lịch họp, nội dung đánh giá và cách giao việc.','Làm rõ quyền quyết định và trách nhiệm xử lý vướng mắc.','Huấn luyện quản lý theo dõi, phản hồi và điều chỉnh.'],ai:'Chuẩn bị nội dung họp, tổng hợp việc đã thống nhất và hỗ trợ theo dõi tiến độ thực hiện.',output:'Nhịp điều hành, mẫu họp và cơ chế theo dõi trách nhiệm.'}
 ];
-const wheel=window.SevenMFramework.mount(document.querySelector('[data-framework-wheel]'),pillars);
+const wheel=window.SevenMFramework.mount(document.querySelector('[data-framework-wheel]'),pillars,{onGroup:selectPillarGroup});
 const allButtons=wheel.buttons;
 const detail=document.querySelector('.pillar-detail');
 let selected=-1,detailAnimation;
 function selectPillar(index,animate=true){
  if(index===selected)return;selected=index;const p=pillars[index];
+ detail.classList.remove('is-group-overview');document.querySelector('.detail-block h4').textContent='Cùng doanh nghiệp xây dựng';
  wheel.setActive(index);
  document.getElementById('pillar-group').textContent=p.group;document.getElementById('pillar-code').textContent=p.id;document.getElementById('pillar-title').textContent=p.title;document.getElementById('pillar-summary').textContent=p.summary;
  document.getElementById('pillar-work').replaceChildren(...p.work.map(text=>{const item=document.createElement('li');item.textContent=text;return item;}));
@@ -32,3 +33,10 @@ allButtons.forEach(button=>{const index=Number(button.dataset.index);button.addE
 selectPillar(0,false);
 
 allButtons.forEach((button,index)=>button.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(index+1)%7;if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(index+6)%7;if(event.key==='Home')next=0;if(event.key==='End')next=6;if(next!==undefined){event.preventDefault();allButtons[next].focus();}}));
+
+function selectPillarGroup(index){
+ selected=-1;const group=wheel.groups[index];detail.classList.add('is-group-overview');
+ document.getElementById('pillar-group').textContent='3 nhóm năng lực';document.getElementById('pillar-code').textContent=group.members.map(i=>pillars[i].id).join(' · ');document.getElementById('pillar-title').textContent=group.title;document.getElementById('pillar-summary').textContent=group.text;document.querySelector('.detail-block h4').textContent='Các trụ cột trong nhóm';
+ document.getElementById('pillar-work').replaceChildren(...group.members.map(i=>{const li=document.createElement('li');li.textContent=pillars[i].id+' · '+pillars[i].title+': '+pillars[i].summary;return li;}));
+ if(innerWidth<761)document.querySelector('.fw-wheel').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});
+}
