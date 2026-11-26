@@ -439,3 +439,8 @@ dialog{background:var(--brand-navy)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  .content-band :is(.framework,.pillar-detail,.service-card),.content-band .service-card:nth-child(2),.dashboard-plane{background:var(--brand-navy)}
 }
+
+
+/* Chữ AI cùng ngôn ngữ mặt gấp của chữ M trong logo. */
+.hero h1 .ai-lockup{display:inline-block;white-space:nowrap}
+.hero h1 .ai-fold{display:inline-block;width:auto;height:.73em;vertical-align:baseline;margin-right:.025em}

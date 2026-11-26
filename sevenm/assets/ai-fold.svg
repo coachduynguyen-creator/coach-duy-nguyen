@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="98" height="64" viewBox="0 0 98 64" fill="none">
+  <defs>
+    <clipPath id="ai-shape"><path clip-rule="evenodd" d="M0 64 23 0H43L66 64H47L42.5 51H23.5L19 64H0ZM28 38H38L33 22 28 38Z"/></clipPath>
+    <linearGradient id="ai-left" x1="23" y1="0" x2="14" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9000B"/><stop offset=".68" stop-color="#FF2726"/><stop offset="1" stop-color="#FF2726"/>
+    </linearGradient>
+    <linearGradient id="ai-diagonal" x1="23" y1="0" x2="60" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF2726"/><stop offset=".55" stop-color="#EC1420"/><stop offset="1" stop-color="#9C000A"/>
+    </linearGradient>
+    <linearGradient id="ai-crossbar" x1="24" y1="39" x2="42" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ED1B23"/><stop offset=".5" stop-color="#FF2726"/><stop offset="1" stop-color="#FF2726"/>
+    </linearGradient>
+    <linearGradient id="ai-stem" x1="88" y1="0" x2="88" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF2726"/><stop offset="1" stop-color="#A70005"/>
+    </linearGradient>
+    <linearGradient id="ai-turn" x1="98" y1="0" x2="78" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF2726"/><stop offset="1" stop-color="#9C000A"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#ai-shape)">
+  <path fill-rule="evenodd" d="M0 64 23 0H43L66 64H47L42.5 51H23.5L19 64H0ZM28 38H38L33 22 28 38Z" fill="url(#ai-left)"/>
+  <path d="M23 0H43L66 64H47L23 0Z" fill="url(#ai-diagonal)"/>
+  <path d="M28 38H38L42.5 51H23.5L28 38Z" fill="url(#ai-crossbar)"/>
+  </g>
+  <path d="M78 0H98V64H78V0Z" fill="url(#ai-stem)"/>
+  <path d="M78 0H98L78 20V0Z" fill="url(#ai-turn)"/>
+</svg>
