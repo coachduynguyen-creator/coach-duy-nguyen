@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="106 826 1228 660" fill="none"><defs>
+<linearGradient id="paint4_linear_316_6003" x1="277.44" y1="872" x2="277.44" y2="894.126" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B9000B" />
+<stop offset="0.68" stop-color="#FF2726" />
+<stop offset="1" stop-color="#FF2726" />
+</linearGradient>
+<linearGradient id="paint5_linear_316_6003" x1="277.44" y1="872" x2="288.378" y2="885.82" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF2726" />
+<stop offset="0.55" stop-color="#EC1420" />
+<stop offset="1" stop-color="#9C000A" />
+</linearGradient>
+<linearGradient id="paint6_linear_316_6003" x1="295.034" y1="872" x2="295.034" y2="894.126" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF2726" />
+<stop offset="1" stop-color="#A70005" />
+</linearGradient>
+<linearGradient id="paint7_linear_316_6003" x1="301.965" y1="872" x2="281.068" y2="886.855" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ED1B23" />
+<stop offset="0.5" stop-color="#FF2726" />
+<stop offset="1" stop-color="#FF2726" />
+</linearGradient>
+</defs>
+<g id="04-Sales-OS-minh-hoa">
+<path id="Vector_17" d="M1312 826H128C115.85 826 106 835.85 106 848V1464C106 1476.15 115.85 1486 128 1486H1312C1324.15 1486 1334 1476.15 1334 1464V848C1334 835.85 1324.15 826 1312 826Z" fill="#0B1726" stroke="#263C51" />
+<path id="Vector_18" d="M1308 834H132C122.059 834 114 842.059 114 852V1460C114 1469.94 122.059 1478 132 1478H1308C1317.94 1478 1326 1469.94 1326 1460V852C1326 842.059 1317.94 834 1308 834Z" fill="#122339" stroke="#3B5168" />
+<path id="Vector_19" d="M1304 842H136C128.268 842 122 848.268 122 856V1456C122 1463.73 128.268 1470 136 1470H1304C1311.73 1470 1318 1463.73 1318 1456V856C1318 848.268 1311.73 842 1304 842Z" fill="#0E1D2E" stroke="#4D6078" />
+<path id="Vector_20" d="M320 842H136C128.268 842 122 848.268 122 856V1456C122 1463.73 128.268 1470 136 1470H320C327.732 1470 334 1463.73 334 1456V856C334 848.268 327.732 842 320 842Z" fill="#101F31" />
+<g id="Logo-SEVENM-7-tron-M-gap_2">
+<g id="Group_3">
+<path id="Vector_21" d="M155.523 872H175.658L171.454 877.31H157.736L156.851 878.417V879.302L157.736 880.187H172.56L175.658 883.727V888.816L171.233 894.126H148L152.425 888.374H168.356L169.463 887.267V886.382L168.578 885.497H153.532L150.213 881.736V877.532L155.523 872Z" fill="white" />
+<path id="Vector_22" d="M177.428 872H197.785L194.466 877.31H182.517V880.187H196.678L193.581 885.276H182.517V888.816H197.785L194.466 894.126H177.428V872Z" fill="white" />
+<path id="Vector_23" d="M199.555 872H205.75L213.494 887.931L210.175 894.126L199.555 872Z" fill="white" />
+<path id="Vector_24" d="M230.974 872H251.33L248.011 877.31H236.063V880.187H250.224L247.126 885.276H236.063V888.816H251.33L248.011 894.126H230.974V872Z" fill="white" />
+<path id="Vector_25" d="M253.101 872H258.411L270.138 885.055V872H275.67V894.126H270.359L258.632 881.072V894.126H253.101V872Z" fill="white" />
+</g>
+<path id="Vector_26" opacity="0.2" d="M212.831 886.382L210.175 894.126L209.29 892.135L211.945 885.94L212.831 886.382Z" fill="#14283F" />
+<path id="Vector_27" d="M212.388 872H229.204L216.371 894.126H210.175L219.69 877.089H209.733L212.388 872Z" fill="#FF2726" />
+<g id="Group_4">
+<path id="Vector_28" d="M277.44 872H284.371V894.126H277.44V872Z" fill="url(#paint4_linear_316_6003)" />
+<path id="Vector_29" d="M277.44 872H284.371L289.969 882.13L286.504 888.528L277.44 872Z" fill="url(#paint5_linear_316_6003)" />
+<path id="Vector_30" d="M295.034 872H301.965V894.126H295.034V872Z" fill="url(#paint6_linear_316_6003)" />
+<path id="Vector_31" d="M295.034 872H301.965L295.034 884.529L289.703 894.126L286.237 887.995L295.034 872Z" fill="url(#paint7_linear_316_6003)" />
+</g>
+</g>
+<path id="Vector_32" d="M146 928H308" stroke="#3E526A" />
+<path id="Vector_33" d="M312 953H144C140.686 953 138 955.686 138 959V995C138 998.314 140.686 1001 144 1001H312C315.314 1001 318 998.314 318 995V959C318 955.686 315.314 953 312 953Z" fill="#4E2331" transform="translate(0 260)" />
+<path id="Vector_34" d="M141 953H138V1001H141V953Z" fill="#FF2726" transform="translate(0 260)" />
+<text id="SevenM-Nav-M1" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="982">M1 · Thị trường</tspan></text>
+<text id="SevenM-Nav-M2" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="1034">M2 · Quy trình</tspan></text>
+<text id="SevenM-Nav-M3" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="1086">M3 · Nhân sự</tspan></text>
+<text id="SevenM-Nav-M4" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="1138">M4 · Ngân sách</tspan></text>
+<text id="SevenM-Nav-M5" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="1190">M5 · Công cụ</tspan></text>
+<text id="SevenM-Nav-M6" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="bold"><tspan x="158" y="1242">M6 · Đo lường</tspan></text>
+<text id="SevenM-Nav-M7" fill="#C5D4E1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="18" letter-spacing="0em" font-weight="500"><tspan x="158" y="1294">M7 · Điều hành</tspan></text>
+<text id="Sales OS" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="28" font-weight="bold" letter-spacing="0em"><tspan x="368" y="896.688">Sales OS</tspan></text>
+<text id="MáºªU MINH Há»A" fill="#FF8A8A" style="white-space: pre" xml:space="preserve" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" font-weight="bold" letter-spacing="0em"><tspan x="1173.27" y="892.25">MẪU MINH HỌA</tspan></text>
+<text id="Hoáº¡t Äá»ng kinh doanh" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="19" letter-spacing="0em"><tspan x="368" y="933.574">M6 · Đo lường hoạt động kinh doanh</tspan></text>
+<text id="Dá»¯ liá»u giáº£ Äá»nh" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="16" letter-spacing="0em"><tspan x="1155.73" y="924.536">Dữ liệu giả định</tspan></text>
+<g id="Chi-so-1">
+<path id="Vector_35" d="M573 964H377C372.029 964 368 968.029 368 973V1061C368 1065.97 372.029 1070 377 1070H573C577.971 1070 582 1065.97 582 1061V973C582 968.029 577.971 964 573 964Z" fill="#172C42" stroke="#31475E" />
+<text id="CÆ¡ há»i má»i" fill="#B9CADC" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="388" y="995.882">Cơ hội mới</tspan></text>
+<text id="24" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="33" font-weight="bold" letter-spacing="0em"><tspan x="388" y="1043.42">24</tspan></text>
+</g>
+<g id="Chi-so-2">
+<path id="Vector_36" d="M803 964H607C602.029 964 598 968.029 598 973V1061C598 1065.97 602.029 1070 607 1070H803C807.971 1070 812 1065.97 812 1061V973C812 968.029 807.971 964 803 964Z" fill="#172C42" stroke="#31475E" />
+<text id="Cuá»c háº¹n" fill="#B9CADC" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="618" y="995.882">Cuộc hẹn</tspan></text>
+<text id="12" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="33" font-weight="bold" letter-spacing="0em"><tspan x="618" y="1043.42">12</tspan></text>
+</g>
+<g id="Chi-so-3">
+<path id="Vector_37" d="M1033 964H837C832.029 964 828 968.029 828 973V1061C828 1065.97 832.029 1070 837 1070H1033C1037.97 1070 1042 1065.97 1042 1061V973C1042 968.029 1037.97 964 1033 964Z" fill="#172C42" stroke="#31475E" />
+<text id="Äá» xuáº¥t" fill="#B9CADC" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="848" y="995.882">Đề xuất</tspan></text>
+<text id="08" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="33" font-weight="bold" letter-spacing="0em"><tspan x="848" y="1043.42">08</tspan></text>
+</g>
+<g id="Chi-so-4">
+<path id="Vector_38" d="M1263 964H1067C1062.03 964 1058 968.029 1058 973V1061C1058 1065.97 1062.03 1070 1067 1070H1263C1267.97 1070 1272 1065.97 1272 1061V973C1272 968.029 1267.97 964 1263 964Z" fill="#172C42" stroke="#31475E" />
+<text id="Doanh thu T6" fill="#B9CADC" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="1078" y="995.882">Doanh thu T6</tspan></text>
+<text id="285 tr" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="33" font-weight="bold" letter-spacing="0em"><tspan x="1078" y="1043.42">285 tr</tspan></text>
+</g>
+<g id="Bieu-do-doanh-thu">
+<path id="Vector_39" d="M902 1094H378C372.477 1094 368 1098.48 368 1104V1420C368 1425.52 372.477 1430 378 1430H902C907.523 1430 912 1425.52 912 1420V1104C912 1098.48 907.523 1094 902 1094Z" fill="#14273C" stroke="#31475E" />
+<text id="Doanh thu theo thÃ¡ng" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="23" font-weight="bold" letter-spacing="0em"><tspan x="392" y="1133.46">Doanh thu theo tháng</tspan></text>
+<text id="Triá»u Äá»ng Â· Dá»¯ liá»u giáº£ Äá»nh" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="392" y="1161.69">Triệu đồng · Dữ liệu giả định</tspan></text>
+<path id="Vector_40" d="M430 1378H886" stroke="#2E455D" />
+<text id="0" fill="#91A8C1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="14" letter-spacing="0em"><tspan x="403.031" y="1382.84">0</tspan></text>
+<path id="Vector_41" d="M430 1323H886" stroke="#2E455D" />
+<text id="100" fill="#91A8C1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="14" letter-spacing="0em"><tspan x="388.211" y="1327.84">100</tspan></text>
+<path id="Vector_42" d="M430 1268H886" stroke="#2E455D" />
+<text id="200" fill="#91A8C1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="14" letter-spacing="0em"><tspan x="385.627" y="1272.84">200</tspan></text>
+<path id="Vector_43" d="M430 1213H886" stroke="#2E455D" />
+<text id="300" fill="#91A8C1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="14" letter-spacing="0em"><tspan x="385.613" y="1217.84">300</tspan></text>
+<path id="Vector_44" d="M488 1306.5H454C451.791 1306.5 450 1308.29 450 1310.5V1374C450 1376.21 451.791 1378 454 1378H488C490.209 1378 492 1376.21 492 1374V1310.5C492 1308.29 490.209 1306.5 488 1306.5Z" fill="#506B88" />
+<text id="T1" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="463.456" y="1407.69">T1</tspan></text>
+<path id="Vector_45" d="M560 1287.25H526C523.791 1287.25 522 1289.04 522 1291.25V1374C522 1376.21 523.791 1378 526 1378H560C562.209 1378 564 1376.21 564 1374V1291.25C564 1289.04 562.209 1287.25 560 1287.25Z" fill="#506B88" />
+<text id="T2" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="534.072" y="1407.69">T2</tspan></text>
+<path id="Vector_46" d="M632 1298.25H598C595.791 1298.25 594 1300.04 594 1302.25V1374C594 1376.21 595.791 1378 598 1378H632C634.209 1378 636 1376.21 636 1374V1302.25C636 1300.04 634.209 1298.25 632 1298.25Z" fill="#506B88" />
+<text id="T3" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="606.064" y="1407.69">T3</tspan></text>
+<path id="Vector_47" d="M704 1257H670C667.791 1257 666 1258.79 666 1261V1374C666 1376.21 667.791 1378 670 1378H704C706.209 1378 708 1376.21 708 1374V1261C708 1258.79 706.209 1257 704 1257Z" fill="#506B88" />
+<text id="T4" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="677.903" y="1407.69">T4</tspan></text>
+<path id="Vector_48" d="M776 1246H742C739.791 1246 738 1247.79 738 1250V1374C738 1376.21 739.791 1378 742 1378H776C778.209 1378 780 1376.21 780 1374V1250C780 1247.79 778.209 1246 776 1246Z" fill="#506B88" />
+<text id="T5" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="750.101" y="1407.69">T5</tspan></text>
+<path id="Vector_49" d="M848 1221.25H814C811.791 1221.25 810 1223.04 810 1225.25V1374C810 1376.21 811.791 1378 814 1378H848C850.209 1378 852 1376.21 852 1374V1225.25C852 1223.04 850.209 1221.25 848 1221.25Z" fill="#FF2726" />
+<text id="T6" fill="#A8BCD1" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="15" letter-spacing="0em"><tspan x="821.999" y="1407.69">T6</tspan></text>
+</g>
+<g id="Bieu-do-co-hoi">
+<path id="Vector_50" d="M1264 1094H946C940.477 1094 936 1098.48 936 1104V1420C936 1425.52 940.477 1430 946 1430H1264C1269.52 1430 1274 1425.52 1274 1420V1104C1274 1098.48 1269.52 1094 1264 1094Z" fill="#14273C" stroke="#31475E" />
+<text id="CÆ¡ há»i bÃ¡n hÃ ng_2" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="23" font-weight="bold" letter-spacing="0em"><tspan x="960" y="1133.46">Cơ hội bán hàng</tspan></text>
+<text id="Má»i" fill="#C4D0DF" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="960" y="1179.88">Mới</tspan></text>
+<text id="24_2" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" font-weight="bold" letter-spacing="0em"><tspan x="1229.38" y="1179.88">24</tspan></text>
+<path id="Vector_51" d="M1245 1190H965C962.239 1190 960 1192.24 960 1195C960 1197.76 962.239 1200 965 1200H1245C1247.76 1200 1250 1197.76 1250 1195C1250 1192.24 1247.76 1190 1245 1190Z" fill="#213B55" />
+<path id="Vector_52" d="M1243 1190H965C962.239 1190 960 1192.24 960 1195C960 1197.76 962.239 1200 965 1200H1243C1245.76 1200 1248 1197.76 1248 1195C1248 1192.24 1245.76 1190 1243 1190Z" fill="#547390" />
+<text id="Äang tÆ° váº¥n" fill="#C4D0DF" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="960" y="1239.88">Đang tư vấn</tspan></text>
+<text id="12_2" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" font-weight="bold" letter-spacing="0em"><tspan x="1232.22" y="1239.88">12</tspan></text>
+<path id="Vector_53" d="M1245 1250H965C962.239 1250 960 1252.24 960 1255C960 1257.76 962.239 1260 965 1260H1245C1247.76 1260 1250 1257.76 1250 1255C1250 1252.24 1247.76 1250 1245 1250Z" fill="#213B55" />
+<path id="Vector_54" d="M1099 1250H965C962.239 1250 960 1252.24 960 1255C960 1257.76 962.239 1260 965 1260H1099C1101.76 1260 1104 1257.76 1104 1255C1104 1252.24 1101.76 1250 1099 1250Z" fill="#547390" />
+<text id="ÄÃ£ Äá» xuáº¥t" fill="#C4D0DF" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="960" y="1299.88">Đã đề xuất</tspan></text>
+<text id="8" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" font-weight="bold" letter-spacing="0em"><tspan x="1239.81" y="1299.88">8</tspan></text>
+<path id="Vector_55" d="M1245 1310H965C962.239 1310 960 1312.24 960 1315C960 1317.76 962.239 1320 965 1320H1245C1247.76 1320 1250 1317.76 1250 1315C1250 1312.24 1247.76 1310 1245 1310Z" fill="#213B55" />
+<path id="Vector_56" d="M1051 1310H965C962.239 1310 960 1312.24 960 1315C960 1317.76 962.239 1320 965 1320H1051C1053.76 1320 1056 1317.76 1056 1315C1056 1312.24 1053.76 1310 1051 1310Z" fill="#547390" />
+<text id="ÄÃ£ mua" fill="#C4D0DF" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" letter-spacing="0em"><tspan x="960" y="1359.88">Đã mua</tspan></text>
+<text id="5" fill="#F4F7FB" style="white-space: pre" xml:space="preserve" font-family="Space Grotesk, system-ui, sans-serif" font-size="17" font-weight="bold" letter-spacing="0em"><tspan x="1239.81" y="1359.88">5</tspan></text>
+<path id="Vector_57" d="M1245 1370H965C962.239 1370 960 1372.24 960 1375C960 1377.76 962.239 1380 965 1380H1245C1247.76 1380 1250 1377.76 1250 1375C1250 1372.24 1247.76 1370 1245 1370Z" fill="#213B55" />
+<path id="Vector_58" d="M1015 1370H965C962.239 1370 960 1372.24 960 1375C960 1377.76 962.239 1380 965 1380H1015C1017.76 1380 1020 1377.76 1020 1375C1020 1372.24 1017.76 1370 1015 1370Z" fill="#FF2726" />
+</g>
+</g>
+</svg>

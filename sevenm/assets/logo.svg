@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="278" height="40" viewBox="1250 58 278 40" fill="none"><defs><linearGradient id="paint1_linear_315_5530" x1="1483.66" y1="58" x2="1483.66" y2="97.9425" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B9000B" />
+<stop offset="0.68" stop-color="#FF2726" />
+<stop offset="1" stop-color="#FF2726" />
+</linearGradient><linearGradient id="paint4_linear_315_5530" x1="1527.94" y1="58" x2="1490.21" y2="84.8158" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ED1B23" />
+<stop offset="0.5" stop-color="#FF2726" />
+<stop offset="1" stop-color="#FF2726" />
+</linearGradient><linearGradient id="paint2_linear_315_5530" x1="1483.66" y1="58" x2="1503.41" y2="82.9486" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF2726" />
+<stop offset="0.55" stop-color="#EC1420" />
+<stop offset="1" stop-color="#9C000A" />
+</linearGradient><linearGradient id="paint3_linear_315_5530" x1="1515.43" y1="58" x2="1515.43" y2="97.9425" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF2726" />
+<stop offset="1" stop-color="#A70005" />
+</linearGradient></defs><g id="Logo-SEVENM-7-tron-M-gap">
+<g id="Group">
+<path id="Vector_2" d="M1263.58 58H1299.93L1292.34 67.5862H1267.57L1265.98 69.5833V71.181L1267.57 72.7787H1294.34L1299.93 79.1695V88.3563L1291.94 97.9425H1250L1257.99 87.5575H1286.75L1288.74 85.5603V83.9626L1287.15 82.3649H1259.99L1253.99 75.5747V67.9856L1263.58 58Z" fill="white" />
+<path id="Vector_3" d="M1303.12 58H1339.87L1333.88 67.5862H1312.31V72.7787H1337.87L1332.28 81.9655H1312.31V88.3563H1339.87L1333.88 97.9425H1303.12V58Z" fill="white" />
+<path id="Vector_4" d="M1343.07 58H1354.25L1368.23 86.7586L1362.24 97.9425L1343.07 58Z" fill="white" />
+<path id="Vector_5" d="M1399.78 58H1436.53L1430.54 67.5862H1408.97V72.7787H1434.53L1428.94 81.9655H1408.97V88.3563H1436.53L1430.54 97.9425H1399.78V58Z" fill="white" />
+<path id="Vector_6" d="M1439.73 58H1449.31L1470.48 81.5661V58H1480.47V97.9425H1470.88L1449.71 74.3764V97.9425H1439.73V58Z" fill="white" />
+</g>
+<path id="Vector_7" opacity="0.2" d="M1367.03 83.9626L1362.24 97.9425L1360.64 94.3477L1365.43 83.1638L1367.03 83.9626Z" fill="#14283F" />
+<path id="Vector_8" d="M1366.23 58H1396.59L1373.42 97.9425H1362.24L1379.41 67.1868H1361.44L1366.23 58Z" fill="#FF2726" />
+<g id="Group_2">
+<path id="Vector_9" d="M1483.66 58H1496.18V97.9425H1483.66V58Z" fill="url(#paint1_linear_315_5530)" />
+<path id="Vector_10" d="M1483.66 58H1496.18L1506.28 76.2869L1500.03 87.8366L1483.66 58Z" fill="url(#paint2_linear_315_5530)" />
+<path id="Vector_11" d="M1515.43 58H1527.94V97.9425H1515.43V58Z" fill="url(#paint3_linear_315_5530)" />
+<path id="Vector_12" d="M1515.43 58H1527.94L1515.43 80.6181L1505.8 97.9425L1499.54 86.8741L1515.43 58Z" fill="url(#paint4_linear_315_5530)" />
+</g>
+</g></svg>
