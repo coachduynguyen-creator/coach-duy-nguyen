@@ -11,6 +11,8 @@ Coach Duy chốt ngày 27/11/2026: hình khối và thông tin phải tách rõ 
 
 ## Chữ theo vai trò
 
+Thang chữ và các giá trị màu trong bản mã hiện tại là phần triển khai do Codex đề xuất theo nguyên tắc đã chốt. Coach Duy chưa duyệt riêng từng con số.
+
 Space Grotesk cho chữ chính, đủ tiếng Việt; IBM Plex Mono chỉ cho mã và nhãn ngắn. Tiêu đề 700, nội dung 500. Không dùng thêm phông cho cùng vai trò.
 
 | Vai trò | Máy tính | Điện thoại |
