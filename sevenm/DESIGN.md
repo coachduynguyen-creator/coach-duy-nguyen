@@ -5,7 +5,7 @@ Coach Duy chốt ngày 27/11/2026: hình khối và thông tin phải tách rõ 
 ## Một nguồn cho mỗi phần
 
 - `design-system.css`: thang chữ và bề mặt dùng chung, nạp cuối trên đủ 12 trang.
-- `framework-wheel.js/css`: 7 trụ thuộc 3 nhóm 2/3/2, chọn nhóm hoặc chọn trụ riêng.
+- `framework-wheel.js/css`: 7 trụ thuộc 3 nhóm 2/3/2, chọn nhóm hoặc chọn trụ riêng. Coach chốt lại ngày 27/11/2026: các múi có góc bằng nhau và khe ngăn đều; phân nhóm bằng màu, không tăng khoảng cách ở ranh giới nhóm.
 - `phuong-phap/index.html`: nguồn 51 chuẩn. Chạy `sync-standards.py` để sinh dữ liệu và `--check` để bắt lệch.
 - `sales-os-map.js`: cách dựng sơ đồ nguồn đã được duyệt, không thay bằng các thẻ lớn đơn điệu.
 
@@ -37,3 +37,7 @@ Slide theo cùng nguyên tắc phân cấp và tương phản; cỡ chữ phải
 ## Cách kiểm trước khi giao
 
 Thử đủ 12 trang ở desktop và mobile, chiều rộng 320 không tràn toàn trang; kiểm 7 trụ/3 nhóm, bàn phím, liên kết mở đúng chuẩn, menu và chân trang. Đo các cặp màu chữ chính. Không thay đổi cách nhận đăng ký thật khi chỉ sửa giao diện. Chưa thử iPhone vật lý, Safari hoặc toàn bộ WCAG thì ghi rõ.
+
+## Dàn hình vẽ trong khổ thực tế
+
+Trang phương pháp đặt giới thiệu phía trên và framework toàn chiều ngang phía dưới. Không lồng bố cục vòng tròn cùng 3 thẻ vào một nửa chiều ngang của hero. Khi khối chứa hẹp, chuyển xếp chồng theo chiều rộng của chính khối chứa. Kiểm chữ trong hình có chồng nhau hoặc chạm tâm không; kiểm tràn ngang toàn trang không đủ để bắt lỗi này.

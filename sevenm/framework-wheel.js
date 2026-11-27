@@ -1,7 +1,7 @@
 /* Framework 7M: giữ bố cục tròn đã chốt, lấy số chuẩn từ nguồn dùng chung. */
 window.SevenMFramework={mount(host,pillars,{links=false,onGroup}={}){
  const NS='http://www.w3.org/2000/svg',make=(tag,attrs)=>{const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);return e;};
- const id='fw-'+(document.querySelectorAll('.fw-wheel').length+1),step=360/7;
+ const id='fw-'+(document.querySelectorAll('.fw-wheel').length+1),step=360/7,gap=1.05;
  const polar=(radius,angle)=>{const a=(angle-90)*Math.PI/180;return[320+radius*Math.cos(a),320+radius*Math.sin(a)];};
  const point=(r,a)=>polar(r,a).map(x=>x.toFixed(2)).join(' ');
  const arc=(r,a,b)=>`M${point(r,a)} A${r} ${r} 0 ${b-a>180?1:0} 1 ${point(r,b)}`;
@@ -15,9 +15,9 @@ window.SevenMFramework={mount(host,pillars,{links=false,onGroup}={}){
  const together=make('linearGradient',{id:`${id}-together`,x1:0,y1:0,x2:1,y2:1});together.append(make('stop',{'stop-color':'#71424c'}),make('stop',{offset:1,'stop-color':'#4a3449'}));defs.append(together);
  svg.append(make('circle',{cx:320,cy:320,r:290,class:'fw-base'}));
  const sectors=[];
- for(let i=0;i<7;i++){const group=i<2?0:i<5?1:2,start=[0,2,5].includes(i)?2.8:1.05,end=[2,5,7].includes(i+1)?2.8:1.05;const path=make('path',{d:sector(i*step+start,(i+1)*step-end),class:'fw-sector',fill:`url(#${id}-group-${group})`});svg.append(path);sectors.push(path);}
+ for(let i=0;i<7;i++){const group=i<2?0:i<5?1:2;const path=make('path',{d:sector(i*step+gap,(i+1)*step-gap),class:'fw-sector',fill:`url(#${id}-group-${group})`});svg.append(path);sectors.push(path);}
  const arcs=[];
- for(const[a,b]of [[0,2],[2,5],[5,7]]){const path=make('path',{d:arc(283,a*step+1.5,b*step-1.5),class:'fw-group-arc'});svg.append(path);arcs.push(path);}
+ for(const[a,b]of [[0,2],[2,5],[5,7]]){const path=make('path',{d:arc(283,a*step+gap,b*step-gap),class:'fw-group-arc'});svg.append(path);arcs.push(path);}
  svg.append(make('circle',{cx:320,cy:320,r:119,fill:`url(#${id}-center)`,class:'fw-center-ring'}));wheel.append(svg);
  const center=document.createElement('div');center.className='fw-center';center.innerHTML='<strong>PHÒNG<br>KINH DOANH</strong><span>51 CHUẨN</span>';wheel.append(center);
  const buttons=[];
