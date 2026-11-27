@@ -478,3 +478,7 @@ dialog{background:var(--brand-navy)}
 }
 body[data-motion=none] :is(.content-band,.process-band,.people-band)::before{animation:none;opacity:1}
 @media(prefers-reduced-motion:reduce){:is(.content-band,.process-band,.people-band)::before{animation:none;opacity:1}}
+
+/* Gom lời mời trao đổi và nút thành một cụm thay vì chia xa 2 đầu. */
+.contact.content{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:25px}.contact.content h2{max-width:760px}.contact.content .button{margin:0;align-self:flex-start}
+@media(max-width:760px){.contact.content{gap:24px}.contact.content .button{width:100%;align-self:stretch}}

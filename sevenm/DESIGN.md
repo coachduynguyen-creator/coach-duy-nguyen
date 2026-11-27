@@ -49,3 +49,11 @@ Coach chốt ngày 27/11/2026: sau Sales OS và thanh logo có section đối ch
 `pain-section.css/js` chỉ nạp trên trang chủ. Số có sẵn khi tắt JS, chuyển động biểu đồ chạy 1 lần khi xuất hiện; ánh nền chậm theo hệ chuyển động đang có. Các tình huống dùng details/summary, mở bằng bàn phím không chạy hiệu ứng. Mobile xếp biểu đồ trước, tình huống sau; giữ khoảng trắng giữa các từ khi ẩn ngắt dòng.
 
 Coach chốt bổ sung ngày 27/11/2026: phần Cách SevenM đồng hành giữ bố cục tiến trình, bỏ nền box của 4 bước. Tách nội dung khỏi nền không đồng nghĩa mọi nội dung đều phải có khung.
+
+## Thứ tự nội dung trang chủ
+
+Coach duyệt ngày 27/11/2026: sau section vấn đề là mô hình 7M, rồi sơ đồ công nghệ với tiêu đề Đưa 7M vào vận hành với công nghệ và AI, sau đó tới dịch vụ. Lời mời trao đổi cuối trang gom câu hỏi và nút thành một cụm, nút ngay dưới câu hỏi.
+
+## Trình bày trang Công nghệ và AI
+
+Coach phản hồi ngày 27/11/2026: 7 hàng chữ và 4 thẻ chữ dài thiếu cảm giác công nghệ, lệch hero. Triển khai mới trong technology-story.css/js: chọn trụ 7M ở một bên, vùng tập trung có luồng minh họa 7M → AI hỗ trợ → người phụ trách, đọc đúng nội dung trụ đã chọn và mở tiêu chuẩn tương ứng. 4 bước triển khai nối bằng đường sáng, chữ đặt trực tiếp trên nền; tablet xếp 2 cột, mobile thành tiến trình dọc. Phần nguyên tắc bên dưới dùng chữ và đường phân cách, không lặp thẻ nền. Không thêm số liệu, không thay nội dung chuyên môn, không dùng 7 thẻ lớn lặp lại. Có chế độ giảm chuyển động; không có JS vẫn đọc được cả 7 trụ.
