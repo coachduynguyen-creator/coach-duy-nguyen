@@ -41,3 +41,11 @@ Thử đủ 12 trang ở desktop và mobile, chiều rộng 320 không tràn to�
 ## Dàn hình vẽ trong khổ thực tế
 
 Trang phương pháp đặt giới thiệu phía trên và framework toàn chiều ngang phía dưới. Không lồng bố cục vòng tròn cùng 3 thẻ vào một nửa chiều ngang của hero. Khi khối chứa hẹp, chuyển xếp chồng theo chiều rộng của chính khối chứa. Kiểm chữ trong hình có chồng nhau hoặc chạm tâm không; kiểm tràn ngang toàn trang không đủ để bắt lỗi này.
+
+## Số liệu và tình huống vận hành
+
+Coach chốt ngày 27/11/2026: sau Sales OS và thanh logo có section đối chiếu vấn đề phòng kinh doanh, gồm biểu đồ lớn 40/60 và 4 tình huống mở rộng. Học cách nhấn số và thanh tỷ lệ từ slide AI, giữ màu SevenM. Dùng Salesforce State of Sales 2026 trang 8, ghi rõ trung bình, năm báo cáo, thời gian khảo sát và phạm vi quốc tế. Không coi 60% công việc khác là lãng phí; không tự tạo tỷ lệ cho 4 tình huống.
+
+`pain-section.css/js` chỉ nạp trên trang chủ. Số có sẵn khi tắt JS, chuyển động biểu đồ chạy 1 lần khi xuất hiện; ánh nền chậm theo hệ chuyển động đang có. Các tình huống dùng details/summary, mở bằng bàn phím không chạy hiệu ứng. Mobile xếp biểu đồ trước, tình huống sau; giữ khoảng trắng giữa các từ khi ẩn ngắt dòng.
+
+Coach chốt bổ sung ngày 27/11/2026: phần Cách SevenM đồng hành giữ bố cục tiến trình, bỏ nền box của 4 bước. Tách nội dung khỏi nền không đồng nghĩa mọi nội dung đều phải có khung.
