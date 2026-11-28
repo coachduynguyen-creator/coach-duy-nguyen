@@ -81,3 +81,19 @@ Coach Duy yêu cầu phần chi tiết 51 chuẩn dùng sơ đồ giống demo t
 Thư viện `/sevenm/blog/`, `/sevenm/podcast/`, `/sevenm/tai-lieu/` lấy nội dung công khai từ cùng website. `library-manifest.json` ghi nguồn và các mục được chọn; `build-library.cjs` dựng HTML tĩnh bằng jsdom 27. Chỉ lấy nội dung phục vụ bán hàng, xây dựng phòng kinh doanh và quản lý. Bản bài viết dùng canonical tới bài gốc; giữ đủ nội dung, chuẩn hóa số và một số cụm theo bảng `library-copy-edits.json`, không sửa trang nguồn. Bìa PDF là trang đầu tài liệu thật. 9 e-book giữ luồng nhận đăng ký trên trang nguồn, PDF giới thiệu 7M mở trực tiếp như trước.
 
 Khi dựng lại thư viện, mỗi CSS/JS chỉ được nạp 1 lần; chặn 4 ảnh khẩu hiệu sales cũ theo AGENTS của website. Đo khoảng nối chân trang: main dùng flow-root để margin khối cuối nằm trong nền trang, không lộ dải đen của body.
+
+## Rà trang con theo loại nội dung, 28/11/2026
+
+Theo yêu cầu của Coach Duy, rà 28 trang con gồm 13 trang chính và 15 bài đọc. Dùng `visual-sections.js/css` để dựng hình từ chính tiêu đề, đoạn giải thích và liên kết trong HTML; không thêm số liệu minh họa kết quả. Trang chủ không nạp lớp này.
+
+- Thiết kế: sơ đồ nhu cầu và bản vẽ kết nối 7 phần.
+- Triển khai: hệ thống 4 thành phần và cầu nối trách nhiệm 2 bên.
+- Huấn luyện: ảnh thực hành theo vai trò, luồng tình huống/cách làm/phản hồi.
+- Tổng quan dịch vụ: các điểm nối trong cách làm cùng doanh nghiệp.
+- Cố vấn: ảnh trao đổi và 3 phần thông tin chuẩn bị.
+- Liên hệ: cây chọn nhu cầu, giữ nguyên liên kết tiếp nhận đang có.
+- Coach Duy: bộ ảnh bối cảnh làm việc, phần kinh nghiệm vẫn dùng đúng câu đã công bố.
+- Thư viện: minh họa luồng biểu mẫu/công cụ; bài dài có sơ đồ mục lục liên kết đúng các đề mục, điện thoại dùng thanh cuộn riêng.
+- Giữ các phần đã có hình phù hợp: 7M/51 chuẩn, Sales OS, mô phỏng tự chấm, ảnh bài viết, podcast và bìa PDF thật.
+
+Đã kiểm trực tiếp 28 trang ở 1280px và 375px tới chân trang; 17 lựa chọn ở 1280/820/375/320px, không tràn ngang hoặc chồng nút với vùng trung tâm. Đã chỉnh khoảng cách, vị trí ảnh và bố cục đọc trên điện thoại qua ảnh trình duyệt thật. Kiểm bàn phím, liên kết tiêu chuẩn và mục lục đạt. Chưa thử thiết bị thật hoặc toàn bộ trình đọc màn hình.
