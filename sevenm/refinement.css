@@ -87,3 +87,6 @@
 @media(max-width:760px){.subpage .page-section:before{inset:-2% -20%;background:radial-gradient(ellipse 440px 650px at 98% 50%,#ed3b315e,transparent 77%)}.subpage .page-section:nth-of-type(even):before{background:radial-gradient(ellipse 450px 700px at 0 55%,#e039315e,transparent 77%)}.content-band .service-card:nth-child(3):before{background:linear-gradient(90deg,#302a43e8,#20324bd9),url('assets/huan-luyen.webp') center/cover no-repeat}}
 /* Ánh màu chuyển động chậm, không làm chữ hoặc bố cục dịch chuyển. */
 .subpage .page-section:before{animation:refine-color-light 24s ease-in-out infinite alternate}.subpage .page-section:nth-of-type(even):before{animation-delay:-12s}@keyframes refine-color-light{to{opacity:.78;transform:translate(2%,1%)}}@media(prefers-reduced-motion:reduce){.subpage .page-section:before{animation:none}}
+
+/* Giữ khoảng cuối trang trong chính nền main, tránh margin bị dồn ra nền body. */
+.subpage main{display:flow-root}

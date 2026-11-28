@@ -73,3 +73,11 @@ Chỉ số có nguồn phải hiện đúng giá trị từ đầu. Với 40% th
 Coach Duy chốt ngày 28/11/2026: dùng ảnh thật lồng phía sau như khối đào tạo để trang sống động hơn. Áp dụng có chọn lọc ở các phần nói về tư vấn, triển khai và huấn luyện; chọn ảnh khác nhau đúng ngữ cảnh. Lớp phủ và vị trí ảnh phải được chỉnh riêng trên điện thoại để chữ trắng rõ, người trong ảnh vẫn nhận ra được. Phần tiêu chuẩn, biểu đồ và số liệu tiếp tục dùng hình vẽ phù hợp nội dung.
 
 `photo-surfaces.css` giữ lớp ảnh của 3 khối dịch vụ trên trang chủ và trang tổng quan dịch vụ, nạp sau `refinement.css`. Ảnh trang trí bằng CSS, nội dung chính vẫn nằm trong HTML.
+
+## Sơ đồ chi tiết và thư viện chọn lọc, 28/11/2026
+
+Coach Duy yêu cầu phần chi tiết 51 chuẩn dùng sơ đồ giống demo trang chủ. Trang Phương pháp tái dùng `SevenMDiagrams` trong `sevenm-demo.js`, giữ danh sách HTML làm nguồn. `method-diagrams.js/css` thêm nút chọn từng chuẩn, đường nối chuyển động và vùng đọc tên chuẩn; AI hỗ trợ và tài liệu ở dưới sơ đồ. M6 giữ nhãn số liệu giả định. Không tự thêm điểm số đánh giá doanh nghiệp.
+
+Thư viện `/sevenm/blog/`, `/sevenm/podcast/`, `/sevenm/tai-lieu/` lấy nội dung công khai từ cùng website. `library-manifest.json` ghi nguồn và các mục được chọn; `build-library.cjs` dựng HTML tĩnh bằng jsdom 27. Chỉ lấy nội dung phục vụ bán hàng, xây dựng phòng kinh doanh và quản lý. Bản bài viết dùng canonical tới bài gốc; giữ đủ nội dung, chuẩn hóa số và một số cụm theo bảng `library-copy-edits.json`, không sửa trang nguồn. Bìa PDF là trang đầu tài liệu thật. 9 e-book giữ luồng nhận đăng ký trên trang nguồn, PDF giới thiệu 7M mở trực tiếp như trước.
+
+Khi dựng lại thư viện, mỗi CSS/JS chỉ được nạp 1 lần; chặn 4 ảnh khẩu hiệu sales cũ theo AGENTS của website. Đo khoảng nối chân trang: main dùng flow-root để margin khối cuối nằm trong nền trang, không lộ dải đen của body.

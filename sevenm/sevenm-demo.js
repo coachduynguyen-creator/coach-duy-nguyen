@@ -15,6 +15,7 @@
   if(index===5)return `<div class="sm-measure-visual"><figure class="sm-revenue"><figcaption><strong>Doanh thu theo tháng</strong><span>Triệu đồng · Số liệu giả định</span></figcaption><div class="sm-bars" role="img" aria-label="Doanh thu giả định từ tháng 1 đến tháng 6: 130, 165, 145, 220, 240 và 285 triệu đồng.">${[130,165,145,220,240,285].map((v,i)=>`<div style="--ratio:${v/300}"><b>${v}</b><i></i><span>T${i+1}</span></div>`).join('')}</div></figure><figure class="sm-funnel"><figcaption><strong>Cơ hội bán hàng</strong><span>Số lượng · Số liệu giả định</span></figcaption>${[['Mới',24],['Đang tư vấn',12],['Đã đề xuất',8],['Đã mua',5]].map(([t,v])=>`<div><span>${t}</span><b>${v}</b><i style="--amount:${v/24*100}%"></i></div>`).join('')}</figure></div><div class="sm-measure-standards">${s.map(x=>node(x)).join('')}</div>`;
   return `<div class="sm-diagram sm-manage"><div class="sm-manage-root">${n(0,'sm-root')}</div><div class="sm-manage-row">${n(1)}${n(2)}${n(7)}</div><div class="sm-manage-row">${n(3)}${n(5)}</div><div class="sm-manage-row">${n(4)}${n(6)}</div></div>`;
  }
+ window.SevenMDiagrams={diagram,draw,titles,layouts};
  const mounts=[...document.querySelectorAll('#dashboard-art,#sales-demo-art,[data-sevenm-demo]')];
  for(const [instance,mount]of mounts.entries()){
   mount.removeAttribute('role');mount.removeAttribute('aria-label');mount.classList.add('sm-mount');
@@ -30,7 +31,7 @@
    const mobile=matchMedia('(max-width:760px)').matches;
    const horizontal=!mobile&&Math.abs(y2-y1)<30;if(horizontal){const s=x2>x1?1:-1;x1+=A.width/2*s;x2-=B.width/2*s;}else{const s=y2>y1?1:-1;y1+=A.height/2*s;y2-=B.height/2*s;}
    const path=document.createElementNS(NS,'path'),mid=horizontal?(x1+x2)/2:(y1+y2)/2;let d=horizontal?`M${x1},${y1}H${mid}V${y2}H${x2}`:`M${x1},${y1}V${mid}H${x2}V${y2}`;
-   if(mobile&&Math.abs(B.y-A.bottom)>45){const gutter=-7;x1=A.left-box.x;y1=A.y+A.height/2-box.y;x2=B.left-box.x;y2=B.y+B.height/2-box.y;d=`M${x1},${y1}H${gutter}V${y2}H${x2}`;}path.setAttribute('d',d);svg.append(path);
+   if(mobile&&Math.abs(B.y-A.bottom)>45){const gutter=-7;x1=A.left-box.x;y1=A.y+A.height/2-box.y;x2=B.left-box.x;y2=B.y+B.height/2-box.y;d=`M${x1},${y1}H${gutter}V${y2}H${x2}`;}path.setAttribute('d',d);path.dataset.from=p.standards[a]?.code||'core';path.dataset.to=p.standards[b].code;if([path.dataset.from,path.dataset.to].includes(graph.dataset.selectedCode))path.classList.add('is-connected');svg.append(path);
   }graph.prepend(svg);
  }
 })();

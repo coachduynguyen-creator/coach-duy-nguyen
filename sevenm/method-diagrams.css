@@ -1,0 +1,39 @@
+/* Dùng cùng thành phần sơ đồ của trang chủ, cỡ chữ theo trang nội dung. */
+.subpage .is-explorer .has-method-diagram .standard-body { display:block; padding:0 30px 30px; }
+.has-method-diagram .standard-body ol[hidden] { display:none; }
+.has-method-diagram .chapter-summary { max-width:76ch; }
+.method-diagram { margin:0; }
+.method-diagram .sm-visual { padding:22px 26px; border:1px solid #90b5d155; border-radius:16px; background:radial-gradient(ellipse at 50% 0,#f14a3820,transparent 65%),linear-gradient(140deg,#152b40,#0e1f32); }
+.method-diagram .sm-standard { width:100%; font-family:inherit; text-align:left; cursor:pointer; transition:border-color .2s,background .2s,box-shadow .2s; }
+.method-diagram .sm-standard strong { font-size:17px; line-height:1.5; color:#fff; }
+.method-diagram .sm-standard>span { color:#b9d4ef; font-size:12px; }
+.method-diagram .sm-standard[aria-pressed=true] { border-color:#ffb1a0; background:linear-gradient(130deg,#643b43,#25334a); box-shadow:0 0 28px #ff51342b,inset 0 1px #ffe1d433; }
+.method-diagram .sm-standard[aria-pressed=true]::before { background:#ff9f85; box-shadow:0 0 0 4px #ff9f8526; }
+.method-diagram .sm-standard:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+.method-diagram .sm-wires path { stroke:#83acd0; stroke-opacity:.8; animation:method-flow 18s linear infinite; }
+.method-diagram .sm-wires path.is-connected { stroke:#ffae96; stroke-width:2; stroke-opacity:1; }
+.method-selection { display:flex; align-items:center; gap:18px; min-height:82px; margin-top:20px; padding:18px 23px; border-left:3px solid #ff6254; background:linear-gradient(90deg,#a53e3933,transparent); }
+.method-selection>span { font:500 14px var(--sevenm-mono); color:#ffbeab; }
+.method-selection>strong { font-size:23px; line-height:1.45; color:#fff; }
+.subpage .has-method-diagram .standard-ai { display:grid; grid-template-columns:1fr 1fr; gap:10px 45px; margin-top:15px; padding-top:23px; }
+.has-method-diagram .standard-ai>.code { grid-column:1; grid-row:1; }
+.has-method-diagram .standard-ai>p:first-of-type { grid-column:1; grid-row:2; margin-top:0; }
+.has-method-diagram .standard-ai>h3 { grid-column:2; grid-row:1; margin:0; font-size:18px; }
+.has-method-diagram .standard-ai>p:last-of-type { grid-column:2; grid-row:2; margin-top:0; }
+.method-diagram .sm-measure-standards strong { font-size:15px; }
+.method-diagram .sm-measure-visual figcaption strong { font-size:20px; }
+.method-diagram .sm-measure-visual figcaption span { font-size:14px; }
+.method-diagram .sm-funnel>div { font-size:16px; }
+@keyframes method-flow { to { stroke-dashoffset:-160; } }
+@media (hover:hover) { .method-diagram .sm-standard:hover { border-color:#d0e5f3; box-shadow:0 0 22px #75b5e22b; } }
+@media(max-width:760px) {
+ .subpage .is-explorer .has-method-diagram .standard-body { padding:0 18px 23px; }
+ .method-diagram .sm-visual { padding:18px 16px; }
+ .method-diagram .sm-standard strong { font-size:17px; }
+ .method-selection { padding:15px; gap:13px; min-height:85px; }
+ .method-selection>strong { font-size:20px; }
+ .subpage .has-method-diagram .standard-ai { display:block; }
+ .has-method-diagram .standard-ai>h3 { margin-top:24px; }
+ .has-method-diagram .standard-ai>p { margin-top:10px!important; }
+}
+@media(prefers-reduced-motion:reduce) { .method-diagram .sm-wires path { animation:none; }.method-diagram .sm-standard { transition:none; } }
