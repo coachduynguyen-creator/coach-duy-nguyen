@@ -4,11 +4,10 @@
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
  const count=section.querySelector('[data-selling-count]');
  const fill=section.querySelector('.pain-chart-fill');
- let frame=0,started=false;
- function settle(){cancelAnimationFrame(frame);count.textContent='40';fill.getAnimations().forEach(a=>a.cancel());}
+ let started=false;
+ function settle(){count.textContent='40';fill.getAnimations().forEach(a=>a.cancel());}
  function enter(){if(started)return;started=true;if(motion.matches)return;
-  const start=performance.now();fill.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:1000,easing:getComputedStyle(document.documentElement).getPropertyValue('--ease').trim()||'cubic-bezier(0.23,1,0.32,1)'});
-  function tick(now){const p=Math.min((now-start)/1000,1);count.textContent=String(Math.round(40*(1-Math.pow(1-p,3))));if(p<1)frame=requestAnimationFrame(tick);else count.textContent='40';}frame=requestAnimationFrame(tick);
+  count.textContent='40';fill.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:1000,easing:getComputedStyle(document.documentElement).getPropertyValue('--ease').trim()||'cubic-bezier(0.23,1,0.32,1)'});
  }
  const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){enter();observer.disconnect();}},{threshold:.3});observer.observe(section.querySelector('.pain-evidence'));
  motion.addEventListener('change',e=>{if(e.matches)settle();});

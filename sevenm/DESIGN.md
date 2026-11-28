@@ -65,3 +65,5 @@ Coach chỉ rõ 2 lỗi: toàn trang một màu xanh và chữ chìm vào nền;
 `refinement.css/js` nạp cuối trên 12 trang hiện hành. Không nạp lên trang thử. Giữ hero chính và thang chữ Space Grotesk/IBM Plex Mono. Mỗi loại nội dung dùng cách trình bày phù hợp: bộ chọn 7 trụ với một chương đang đọc, quy trình mở có luồng kết nối, hành trình tự chấm có mô phỏng, thư viện bìa tài liệu, nội dung triển khai dùng biểu tượng và nền mở. Không lặp hộp lớn chứa chữ cho mọi phần.
 
 51 chuẩn trong HTML phương pháp vẫn là nguồn chuẩn, JS chỉ thay cách đọc; liên kết trên vòng tròn và bộ chọn chương phải đồng bộ. Mô phỏng tự chấm không tạo điểm số hoặc kết quả doanh nghiệp. Không đổi cách nhận đăng ký. Biểu tượng Phosphor trong assets/ui có giấy phép kèm theo.
+
+Chỉ số có nguồn phải hiện đúng giá trị từ đầu. Với 40% thời gian bán hàng, chỉ thanh tỷ lệ chuyển động; không đếm số từ 0 để ảnh chụp giữa chừng hiện 34% hoặc một số khác với nguồn.
