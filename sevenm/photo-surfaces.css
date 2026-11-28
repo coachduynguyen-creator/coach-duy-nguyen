@@ -1,0 +1,82 @@
+/* Ảnh thật cho các dịch vụ có hoạt động con người; lớp phủ bảo vệ vùng chữ. */
+.content-band #dich-vu .service-card,
+.subpage .offer-list .offer {
+  --service-photo: url('/img/bl-viet-tay.webp');
+  --photo-position: center 28%;
+  --photo-accent: #a7242833;
+  background: #14283f;
+}
+.content-band #dich-vu .service-card:nth-child(2),
+.subpage .offer-list .offer:nth-child(2) {
+  --service-photo: url('/img/mentor/nhom-nho.webp');
+  --photo-position: center 42%;
+  --photo-accent: #407b9a24;
+}
+.content-band #dich-vu .service-card:nth-child(3),
+.subpage .offer-list .offer:nth-child(3) {
+  --service-photo: url('/sevenm/assets/huan-luyen.webp');
+  --photo-position: center 35%;
+  --photo-accent: #a7242826;
+}
+.content-band #dich-vu .service-card::before,
+.subpage .offer-list .offer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 1;
+  transform: none;
+  border: 0;
+  border-radius: inherit;
+  box-shadow: none;
+  background-image:
+    linear-gradient(180deg, #14283f0d 0%, #10223866 35%, #0d1c30ed 100%),
+    linear-gradient(90deg, #16233bbd, #14283f33 80%),
+    linear-gradient(var(--photo-accent), var(--photo-accent)),
+    var(--service-photo);
+  background-size: cover;
+  background-position: var(--photo-position);
+  background-repeat: no-repeat;
+}
+.content-band #dich-vu .service-card h3,
+.subpage .offer-list .offer h3 { color: #fff; text-shadow: 0 2px 15px #02081288; }
+.content-band #dich-vu .service-card p,
+.subpage .offer-list .offer p:not(.eyebrow) { color: #f5f7fa; text-shadow: 0 1px 8px #02081277; }
+.content-band #dich-vu .service-icon {
+  background: #17233873;
+  backdrop-filter: blur(8px);
+}
+/* Khối đào tạo ngang dành vùng ảnh rộng bên phải, chữ giữ trên nền xanh than. */
+@media (min-width: 761px) {
+  .content-band #dich-vu .service-card:nth-child(3)::before {
+    background-image:
+      linear-gradient(90deg, #14243af5 15%, #18253bde 48%, #14283f70),
+      linear-gradient(0deg, #12223899, #14283f0d),
+      var(--service-photo);
+    background-size: cover, cover, 75% auto;
+    background-position: center, center, right 36%;
+  }
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  .subpage .offer-list .offer::before {
+    background-image: linear-gradient(90deg, #14243af0 25%, #14283f80), var(--service-photo);
+    background-position: center, right 35%;
+    background-size: cover, 70% auto;
+  }
+}
+@media (max-width: 760px) {
+  .content-band #dich-vu .service-card,
+  .subpage .offer-list .offer { --photo-position: 12% 30%; }
+  .content-band #dich-vu .service-card:nth-child(2),
+  .subpage .offer-list .offer:nth-child(2) { --photo-position: 15% center; }
+  .content-band #dich-vu .service-card:nth-child(3),
+  .subpage .offer-list .offer:nth-child(3) { --photo-position: center 35%; }
+  .content-band #dich-vu .service-card::before,
+  .subpage .offer-list .offer::before {
+    background-image:
+      linear-gradient(180deg, #14283f26, #14243f80 35%, #102238e8 100%),
+      linear-gradient(90deg, #24263bb3, #15283f40),
+      var(--service-photo);
+  }
+}

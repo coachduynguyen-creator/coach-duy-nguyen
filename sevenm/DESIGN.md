@@ -67,3 +67,9 @@ Coach chỉ rõ 2 lỗi: toàn trang một màu xanh và chữ chìm vào nền;
 51 chuẩn trong HTML phương pháp vẫn là nguồn chuẩn, JS chỉ thay cách đọc; liên kết trên vòng tròn và bộ chọn chương phải đồng bộ. Mô phỏng tự chấm không tạo điểm số hoặc kết quả doanh nghiệp. Không đổi cách nhận đăng ký. Biểu tượng Phosphor trong assets/ui có giấy phép kèm theo.
 
 Chỉ số có nguồn phải hiện đúng giá trị từ đầu. Với 40% thời gian bán hàng, chỉ thanh tỷ lệ chuyển động; không đếm số từ 0 để ảnh chụp giữa chừng hiện 34% hoặc một số khác với nguồn.
+
+## Ảnh lồng trong nội dung dịch vụ
+
+Coach Duy chốt ngày 28/11/2026: dùng ảnh thật lồng phía sau như khối đào tạo để trang sống động hơn. Áp dụng có chọn lọc ở các phần nói về tư vấn, triển khai và huấn luyện; chọn ảnh khác nhau đúng ngữ cảnh. Lớp phủ và vị trí ảnh phải được chỉnh riêng trên điện thoại để chữ trắng rõ, người trong ảnh vẫn nhận ra được. Phần tiêu chuẩn, biểu đồ và số liệu tiếp tục dùng hình vẽ phù hợp nội dung.
+
+`photo-surfaces.css` giữ lớp ảnh của 3 khối dịch vụ trên trang chủ và trang tổng quan dịch vụ, nạp sau `refinement.css`. Ảnh trang trí bằng CSS, nội dung chính vẫn nằm trong HTML.
