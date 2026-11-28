@@ -36,7 +36,7 @@ window.SevenMFramework={mount(host,pillars,{links=false,onGroup}={}){
  const paint=(index,group,whole=false)=>{host.dataset.selection=whole?'group':'pillar';buttons.forEach((b,i)=>{b.classList.toggle('is-active',i===index);if(!links)b.setAttribute('aria-pressed',String(i===index));});sectors.forEach((path,i)=>{const own=i<2?0:i<5?1:2,fill=whole&&own===group?'together':i===index?'selected':'group-'+own;path.setAttribute('fill',`url(#${id}-${fill})`);path.classList.toggle('is-active',i===index);path.classList.toggle('is-group-active',own===group);});arcs.forEach((a,i)=>a.classList.toggle('is-active',i===group));cards.forEach((c,i)=>{c.classList.toggle('is-active',i===group);c.setAttribute('aria-pressed',String(i===group));});};
  const setActive=index=>paint(index,index<2?0:index<5?1:2);
  const setGroup=group=>{paint(-1,group,true);onGroup?.(group);};cards.forEach((c,i)=>c.addEventListener('click',()=>setGroup(i)));
- if(links){buttons.forEach((b,i)=>b.addEventListener('click',()=>{setActive(i);const chapter=document.getElementById('m'+(i+1));if(chapter)chapter.open=true;}));setActive(0);}
+ if(links){buttons.forEach((b,i)=>b.addEventListener('click',()=>{setActive(i);const chapter=document.getElementById('m'+(i+1));if(chapter)chapter.open=true;}));const initial=/^#m([1-7])$/.exec(location.hash);setActive(initial?Number(initial[1])-1:0);addEventListener('sevenm:chapter',event=>{const index=Number(event.detail?.index);if(Number.isInteger(index)&&index>=0&&index<7)setActive(index);});}
  return{buttons,setActive,setGroup,groups,groupButtons:cards};
 }};
 document.querySelectorAll('[data-framework-links]').forEach(host=>window.SevenMFramework.mount(host,window.SevenMStandards,{links:true}));

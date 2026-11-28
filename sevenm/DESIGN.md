@@ -57,3 +57,11 @@ Coach duyệt ngày 27/11/2026: sau section vấn đề là mô hình 7M, rồi 
 ## Trình bày trang Công nghệ và AI
 
 Coach phản hồi ngày 27/11/2026: 7 hàng chữ và 4 thẻ chữ dài thiếu cảm giác công nghệ, lệch hero. Triển khai mới trong technology-story.css/js: chọn trụ 7M ở một bên, vùng tập trung có luồng minh họa 7M → AI hỗ trợ → người phụ trách, đọc đúng nội dung trụ đã chọn và mở tiêu chuẩn tương ứng. 4 bước triển khai nối bằng đường sáng, chữ đặt trực tiếp trên nền; tablet xếp 2 cột, mobile thành tiến trình dọc. Phần nguyên tắc bên dưới dùng chữ và đường phân cách, không lặp thẻ nền. Không thêm số liệu, không thay nội dung chuyên môn, không dùng 7 thẻ lớn lặp lại. Có chế độ giảm chuyển động; không có JS vẫn đọc được cả 7 trụ.
+
+## Điều chỉnh phần thân theo phản hồi 28/11/2026
+
+Coach chỉ rõ 2 lỗi: toàn trang một màu xanh và chữ chìm vào nền; hero tốt vì pha xanh đỏ, có hiệu ứng và chiều sâu. Không tăng sáng bằng cách phủ thêm xanh lên cả nền và hộp. Phần thân cần các vùng ánh đỏ có vị trí, bề mặt kính tối trung tính ở phía trước, chữ trắng đủ tách khỏi nền. Giá trị CSS là phần triển khai đang chỉnh theo phản hồi, chưa coi mọi con số màu đã được Coach duyệt riêng.
+
+`refinement.css/js` nạp cuối trên 12 trang hiện hành. Không nạp lên trang thử. Giữ hero chính và thang chữ Space Grotesk/IBM Plex Mono. Mỗi loại nội dung dùng cách trình bày phù hợp: bộ chọn 7 trụ với một chương đang đọc, quy trình mở có luồng kết nối, hành trình tự chấm có mô phỏng, thư viện bìa tài liệu, nội dung triển khai dùng biểu tượng và nền mở. Không lặp hộp lớn chứa chữ cho mọi phần.
+
+51 chuẩn trong HTML phương pháp vẫn là nguồn chuẩn, JS chỉ thay cách đọc; liên kết trên vòng tròn và bộ chọn chương phải đồng bộ. Mô phỏng tự chấm không tạo điểm số hoặc kết quả doanh nghiệp. Không đổi cách nhận đăng ký. Biểu tượng Phosphor trong assets/ui có giấy phép kèm theo.
